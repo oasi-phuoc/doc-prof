@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1893,
+    "reviewed_trio": 1898,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 375,
+    "reviewed_763_artwork_pending": 370,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -81172,19 +81172,27 @@
         "Au commissariat",
         "À la mairie"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "b04a8100dcedd9565bb92fb60a8a8a59cb53ca1d7dadb6404d1e60626573400b",
       "semantic_before_sha256": "5bbcfa24bc082a24c0968dbb571cc72a2c80ed7c3930e3d20e7c035c7827ef19",
       "semantic_after_sha256": "5bbcfa24bc082a24c0968dbb571cc72a2c80ed7c3930e3d20e7c035c7827ef19",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/un-probleme-d-eau-ou-1.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/co306-commissariat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "target_sha256": [
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "533c71a9dfabd47511318adf75769216d2406917bb9d4c9c09acb39d1e8389f0",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Un réparateur peut venir chez le client, y compris le dimanche ; les lieux publics ne sont pas cités. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Un réparateur peut venir chez le client, y compris le dimanche ; les lieux publics ne sont pas cités. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
     },
     {
       "key": "tcf-ss-a1-s42-co-1#1",
@@ -84571,19 +84579,27 @@
         "Chez elle",
         "Dans un café"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "42d5e9c7499b5280ce1395689e48dab648eff9d131236e8dc642d9d62ea086ea",
       "semantic_before_sha256": "8b23a2c041dfa345baa99784573e858e4b707f6573383e31ba34da4317072d7d",
       "semantic_after_sha256": "8b23a2c041dfa345baa99784573e858e4b707f6573383e31ba34da4317072d7d",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-2.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/co/bg/cafe.webp"
+      ],
+      "target_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "6102ba6e8d84fc324ac014cde448f09c0ef5c6ba5fabddb72ebcfd1c99db267f"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La personne annonce aller à la bibliothèque maintenant pour faire ses devoirs. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La personne annonce aller à la bibliothèque maintenant pour faire ses devoirs. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
     },
     {
       "key": "tcf-ss-a1-s47-co-2#5",
@@ -104326,19 +104342,27 @@
         "À la salle de sport",
         "Chez lui"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "82acba84d496f8a90a61581e21d1831c547b836ac7583da38032a9a936568661",
       "semantic_before_sha256": "30e64b712e9aa2aae8af830afde1d2d50a18e4c92eb14ce7cbd37582eea5fd18",
       "semantic_after_sha256": "30e64b712e9aa2aae8af830afde1d2d50a18e4c92eb14ce7cbd37582eea5fd18",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-2.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/co/bg/salon.webp"
+      ],
+      "target_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de",
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Augustin va d’abord étudier à la bibliothèque ; il ira chez lui ensuite et refuse la salle de sport. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Augustin va d’abord étudier à la bibliothèque ; il ira chez lui ensuite et refuse la salle de sport. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
     },
     {
       "key": "delf-a1-2022-co-ex4-46#5",
@@ -104374,19 +104398,27 @@
         "À la salle de sport",
         "Au cinéma"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "82acba84d496f8a90a61581e21d1831c547b836ac7583da38032a9a936568661",
       "semantic_before_sha256": "2a0505767749ee325e56d10ed7fc30d58e83eb1a85f43379fd6464df70df861c",
       "semantic_after_sha256": "2a0505767749ee325e56d10ed7fc30d58e83eb1a85f43379fd6464df70df861c",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-2.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "target_sha256": [
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Après la bibliothèque, Augustin annonce rentrer chez lui parce qu’il est fatigué. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Après la bibliothèque, Augustin annonce rentrer chez lui parce qu’il est fatigué. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
     },
     {
       "key": "delf-a1-2022-co-ex4-46#7",
@@ -104422,19 +104454,27 @@
         "À la bibliothèque",
         "À la salle de sport"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "676b4eee8a977281ccf1485044f5fc11925ed52e8d523257b6c852f43e721a7f",
       "semantic_before_sha256": "1ea8c568e5933a44396b461830e21146c93539167d4d350a4fc862b7544a71ff",
       "semantic_after_sha256": "1ea8c568e5933a44396b461830e21146c93539167d4d350a4fc862b7544a71ff",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-3.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+      ],
+      "target_sha256": [
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Clément dit aller chez lui pour faire ses devoirs, dans une autre conversation de cette piste. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Clément dit aller chez lui pour faire ses devoirs, dans une autre conversation de cette piste. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
     },
     {
       "key": "delf-a1-2022-co-ex4-46#9",

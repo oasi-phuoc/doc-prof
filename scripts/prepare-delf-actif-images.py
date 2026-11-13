@@ -31,6 +31,7 @@ def load_visual():
 def candidate_allowed(label,question,path,manifest,source=''):
  if not compatible_reuse(label,path,manifest):return False
  base=normalise(label)
+ if base=='orange' and 'couleur' in normalise(question) and ('extension573-orange.webp' in path or 'vocab-oranges' in path):return False
  context=normalise(question+' '+source)
  if base=='creme' and re.search(r'parfum|cosmet|soin',context) and 'creme-alimentaire' in path:return False
  if base=='creme' and re.search(r'recette|cuisine|aliment',context) and 'creme-cosmetique' in path:return False
@@ -86,6 +87,8 @@ def main():
     status,reason=classify(q['enonce'],labels,visual);choices=[]
     for c in text_form(q)['choix']:
      candidates=set(aliases[normalise(c['texte'])]);resolved=resolve_image(c['texte'],q['enonce'])
+     if normalise(c['texte'])=='orange' and 'couleur' in normalise(q['enonce']):
+      candidates.update(p for p in manifest if 'extension573-couleur-orange' in p)
      if resolved in manifest:candidates.add(resolved)
      if normalise(c['texte'])=='creme' and re.search(r'parfum|cosmet|soin',normalise(q['enonce']+' '+source)):
       candidates.update(p for p in manifest if 'extension573-creme-cosmetique' in p)

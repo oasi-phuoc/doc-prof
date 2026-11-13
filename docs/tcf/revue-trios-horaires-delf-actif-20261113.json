@@ -1,0 +1,3236 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "899bc9cd1981cd3a87a8e1d8331ee263c219d28b",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-003-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Agathe. Mercredi la prof de français est absente. On sort à 11h00. On peut aller à la bibliothèque Albert Camus. Apporte ton cahier à spirale. On prépare le contrôle pour vendredi. On rentre à la maison en voiture avec mes parents. J’attends ta réponse avant 18h00.",
+      "source_sha256": "3583736e738653c2b5107d647dc5edf7796d9e465469519e8add9ed5cd1e6ae0",
+      "semantic_sha256": "571c2f51c14f07a884dd008ebfdd947d6b7d9723f5c5a65f8a15edc9c50f2502",
+      "question": {
+        "enonce": "À quelle heure les élèves sortent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 11 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À midi",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 13 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 11 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-003-01.mp3",
+      "audio_sha256": "13e47bdeaf5e5cc9cc27110f970758a7f4529594b263c996540516eeca60feb7",
+      "image_ids": [
+        "co834-horloge-1100-dessinee",
+        "co834-horloge-1200-dessinee",
+        "co834-horloge-1300-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+      ],
+      "image_sha256": [
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les élèves sortent-ils ? Réponse justifiée : À 11 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-005-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Lydia. Tu es toujours d’accord pour venir avec Mathilde chez moi demain à 15h00 pour préparer le contrôle de maths ? N’oublie pas d’apporter ton livre et ton ordinateur. Vers 17h00 on fait une promenade dans le quartier, après on continue la révision. Ma mère peut nous aider.",
+      "source_sha256": "1f5b753aee2362d4424599ce0b568af5c5e9a0b7395014d38714ed73d4268068",
+      "semantic_sha256": "364a9c64c6d5f95bfe679c56292564ea09b050649d285b5524efbbfab8a622ac",
+      "question": {
+        "enonce": "À quelle heure le rendez-vous est-il fixé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 15 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 14 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 16 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 15 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-005-01.mp3",
+      "audio_sha256": "2a546f56383b59122945ef1bb575e6da8dae3509fc5dc994367c16e8a2f36031",
+      "image_ids": [
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1600-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le rendez-vous est-il fixé ? Réponse justifiée : À 15 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-007-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Inès, samedi 10 c’est l’anniversaire d’Alice. Alors aujourd’hui on va acheter son cadeau au nouveau magasin de danse du centre-ville ? Elle voudrait un nouveau sac pour ses affaires. Rendez- vous devant le théâtre à 16h00 heures ! Après on passe à la papeterie pour acheter un cahier de dessin pour moi.",
+      "source_sha256": "7c4bd75c2b30f4a33bb08a6536d8ad633641556e9ea80ac410a5c436be36fa60",
+      "semantic_sha256": "c582d869e903447e3fd13fa025ecdd43ff607b36f3e3609b29e2f6637dbd8f76",
+      "question": {
+        "enonce": "À quelle heure les amis se retrouvent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 16 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 17 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 16 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-007-01.mp3",
+      "audio_sha256": "0ca7443e88e1a2641d970d6e7c1afddde51b3f4ee80dd730d89fe737f7790dbf",
+      "image_ids": [
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1700-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les amis se retrouvent-ils ? Réponse justifiée : À 16 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-008-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, la secrétaire du docteur Legrand à l’appareil. Vous avez un rendez-vous avec le médecin aujourd’hui mercredi à 15h00. Le docteur doit aller en visite à cause d’une urgence. Il me demande de vous avertir de venir à 17h00. Si vous voulez un nouveau rendez-vous pour jeudi, vous pouvez me rappeler.",
+      "source_sha256": "22b84be5bc0655bc6677d748d2f31a47cf4decc20bbe85a2f48efdd36de31a1e",
+      "semantic_sha256": "db00846a25cf0d3f68f598a498d1e3d98b92ea5502475533287cd512b4e94dfc",
+      "question": {
+        "enonce": "À quelle heure le rendez-vous était-il prévu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 15 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 14 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 16 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 15 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-008-01.mp3",
+      "audio_sha256": "5adbbacd38ae3d2fc1cb83a58d74f307fa42d7c898514db5f97649f3ad372153",
+      "image_ids": [
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1600-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le rendez-vous était-il prévu ? Réponse justifiée : À 15 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-008-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, la secrétaire du docteur Legrand à l’appareil. Vous avez un rendez-vous avec le médecin aujourd’hui mercredi à 15h00. Le docteur doit aller en visite à cause d’une urgence. Il me demande de vous avertir de venir à 17h00. Si vous voulez un nouveau rendez-vous pour jeudi, vous pouvez me rappeler.",
+      "source_sha256": "22b84be5bc0655bc6677d748d2f31a47cf4decc20bbe85a2f48efdd36de31a1e",
+      "semantic_sha256": "e8bc4cd6253ff85053e18256123231ead2bb159701c391c8eb9fddf0cfefe9d3",
+      "question": {
+        "enonce": "À quelle heure faut-il finalement venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 17 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 16 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 18 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 17 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-008-01.mp3",
+      "audio_sha256": "5adbbacd38ae3d2fc1cb83a58d74f307fa42d7c898514db5f97649f3ad372153",
+      "image_ids": [
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure faut-il finalement venir ? Réponse justifiée : À 17 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-03#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Je ne peux pas t’accompagner, j’ai un rendez-vous chez le coiffeur le 5 à 17 heures.",
+      "source_sha256": "e7582eeb911dc5568a423865e4daae8ec0136dfa8c28f8903ee2bdba230dbb93",
+      "semantic_sha256": "828e512421fc7521460483c38b6f5aa9a8d44f6654c739d67596d151f5a513c6",
+      "question": {
+        "enonce": "À quelle heure a-t-elle rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 17 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 18 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 17 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-03.mp3",
+      "audio_sha256": "0b972d25008da6033f6784aa21c672e1d77a5071b21f9eb6dbbdf426a8b92764",
+      "image_ids": [
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure a-t-elle rendez-vous ? Réponse justifiée : À 17 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-05#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Les bureaux de la mairie sont ouverts de lundi à samedi de 9 heures à midi et le mercredi après- midi de 14 à 18 heures.",
+      "source_sha256": "75c41a3bc163e227f142265a81333a80d33b6dd92c4c539c5498f0abf3534a20",
+      "semantic_sha256": "67fe918b09b996740056018b1e95233b76265d6a0380e1a09bbe416b4b3b7590",
+      "question": {
+        "enonce": "À quelle heure les bureaux ouvrent-ils le matin ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 9 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 10 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 9 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-05.mp3",
+      "audio_sha256": "24c540a532e0aff8b794a215d5f96c01715d1a3663e3dced800ab7bf7483198a",
+      "image_ids": [
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-0800-dessinee",
+        "co834-horloge-1000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les bureaux ouvrent-ils le matin ? Réponse justifiée : À 9 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-05#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Les bureaux de la mairie sont ouverts de lundi à samedi de 9 heures à midi et le mercredi après- midi de 14 à 18 heures.",
+      "source_sha256": "75c41a3bc163e227f142265a81333a80d33b6dd92c4c539c5498f0abf3534a20",
+      "semantic_sha256": "e30ad842480294ce8d53da6b3c6a319ec5c10984e5e84df61acb363c3ba9d782",
+      "question": {
+        "enonce": "À quelle heure ferment-ils le mercredi après-midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 18 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 17 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 19 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 18 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-05.mp3",
+      "audio_sha256": "24c540a532e0aff8b794a215d5f96c01715d1a3663e3dced800ab7bf7483198a",
+      "image_ids": [
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ferment-ils le mercredi après-midi ? Réponse justifiée : À 18 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-019-05#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Stéphane, pour cet après-midi le rendez-vous est à la gare routière à 14h00.",
+      "source_sha256": "fd2fdb567d182dd89309fb7a39c8348884559fd19469079655f3f33d7b3c21cc",
+      "semantic_sha256": "52252a3bcfb944f0e6e67572a9b8ac633d2cd1eeca47d75a139a70613619314f",
+      "question": {
+        "enonce": "À quelle heure faut-il venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 13 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 15 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-05.mp3",
+      "audio_sha256": "bca362004fad58be1734331f7a070f86b447aa136336d6c73d53e0de7e05dd3e",
+      "image_ids": [
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1300-dessinee",
+        "co834-horloge-1500-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+      ],
+      "image_sha256": [
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8"
+      ],
+      "reason": "Transcription entière relue : À quelle heure faut-il venir ? Réponse justifiée : À 14 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-020-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Maeva, depuis jeudi je suis chez ma tante qui habite derrière la boulangerie. Pour notre soirée de samedi viens me chercher à 18h00 chez-elle pour arriver en avance à la salle de concert. Apporte les billets. Il faut arriver au moins à 19h00.",
+      "source_sha256": "f825454868502c81b466cbbdfc8212fb381adbd0c730cb40ffebe47ff3bc197d",
+      "semantic_sha256": "69f607c85908d9e9225eed9c5c3917cff7781fe3c2dc720a095bf8bd33da345f",
+      "question": {
+        "enonce": "À quelle heure Maeva doit-elle venir chercher son amie ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 18 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 17 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 19 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 18 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-020-01.mp3",
+      "audio_sha256": "498ae51d5e334051b91d7fc5d85c05c91d18e1cb4b63d1efc68e06cd12d3e89c",
+      "image_ids": [
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+      ],
+      "reason": "Transcription entière relue : À quelle heure Maeva doit-elle venir chercher son amie ? Réponse justifiée : À 18 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-020-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Maeva, depuis jeudi je suis chez ma tante qui habite derrière la boulangerie. Pour notre soirée de samedi viens me chercher à 18h00 chez-elle pour arriver en avance à la salle de concert. Apporte les billets. Il faut arriver au moins à 19h00.",
+      "source_sha256": "f825454868502c81b466cbbdfc8212fb381adbd0c730cb40ffebe47ff3bc197d",
+      "semantic_sha256": "a28d993aba64d3aa31f32f39773599089763662a24ee2590c10ce63cec9ef609",
+      "question": {
+        "enonce": "À quelle heure faut-il arriver à la salle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 18 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 20 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-020-01.mp3",
+      "audio_sha256": "498ae51d5e334051b91d7fc5d85c05c91d18e1cb4b63d1efc68e06cd12d3e89c",
+      "image_ids": [
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-2000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure faut-il arriver à la salle ? Réponse justifiée : À 19 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-023-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut c’est Marc, rappelle-toi le rendez-vous de demain à 8h00. On part à la montagne avec mes cousins. La maison est près d’un lac et il y a des randonnées à faire. On rentre jeudi vers 18h00. N’oublie pas tes chaussures de marche. Et oui, on va marcher !",
+      "source_sha256": "ae34082228fc5eeb8b91532d0f20ddca7ef5ced5ce2688af2ff0ac3104618606",
+      "semantic_sha256": "47b5299d725e05f26b2e8d42afc50ce25b2192c72e493ca0c6b79034cec81218",
+      "question": {
+        "enonce": "À quelle heure le départ est-il fixé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 8 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 7 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 9 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 8 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-023-01.mp3",
+      "audio_sha256": "d82cf3116c331eeb88355819cf8bcee13d3cd3b7bac2bb6c7378b3499f5153ac",
+      "image_ids": [
+        "co834-horloge-0800-dessinee",
+        "vocab-horloge-0700",
+        "co834-horloge-0900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0700.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le départ est-il fixé ? Réponse justifiée : À 8 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-024-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut c’est Sylvain, il y a un nouveau magasin de sport au centre-ville. Tu cherches toujours un blouson pour aller faire du tennis ? On peut faire des achats à 15h00 avant de commencer nos devoirs. À 18h30, on doit terminer d’étudier. Je dois aller chez le dentiste. Pour la couleur apporte le pantalon bleu marine.",
+      "source_sha256": "622fb909180ceb5abdca2412902e07ce8208e53815501d0bf71b1c2f77d4e5d4",
+      "semantic_sha256": "24d82de7e11aebf609e275f088fd016ce0a0454189bce2aecd7195e56962e201",
+      "question": {
+        "enonce": "À quelle heure les amis peuvent-ils faire les achats ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 15 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 14 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 16 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 15 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-024-01.mp3",
+      "audio_sha256": "c9aace00f25adc5c2604804549a12e762ad6891fa3bd4d1be96b7de5c872ab85",
+      "image_ids": [
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1600-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les amis peuvent-ils faire les achats ? Réponse justifiée : À 15 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-025-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Zoé, j’ai besoin d’un cadeau pour ce soir à 20h00. On fête mon père. Je cherche une belle écharpe. Tu as du temps pour venir avec moi chez Accessory ? Tu peux apporter ta carte pour avoir une réduction ? On s’attend à 17h00 devant la pharmacie de rue Lagrange.",
+      "source_sha256": "93dd3019e70c1f5838510181a603ef1bc393b41d6565fbfa1121b7365e141e0e",
+      "semantic_sha256": "69663c116681a4c8f7c92b73a4e69162b03b21e8edcbd6a68d866d60c2fbbcd6",
+      "question": {
+        "enonce": "À quelle heure les amies se retrouvent-elles ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 17 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 16 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 18 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 17 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-025-01.mp3",
+      "audio_sha256": "81d5119bcd0e266667b83324f0eed8ea2e03e926cbd1878d931557b4965a15f1",
+      "image_ids": [
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les amies se retrouvent-elles ? Réponse justifiée : À 17 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-026-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Justine. Je ne trouve plus mon portefeuille. Peux-tu m’aider ? Je dois acheter un ticket de bus pour rentrer chez moi ce soir à 18h00 et je n’ai pas d’argent. Tu me prêtes 1€ cet après- midi à 16h00 quand on est en salle de sport ?",
+      "source_sha256": "881566ef5a6f40a455f38f4c6262f05c7434966a697c1a22dee40f41145ab9c0",
+      "semantic_sha256": "0ea5d9ead55edb0ebc6a78cc8048dababe47837e0064e81d6f3993adf51a1d50",
+      "question": {
+        "enonce": "À quelle heure doit-elle rentrer chez elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 18 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 17 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 19 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 18 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
+      "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
+      "image_ids": [
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+      ],
+      "reason": "Transcription entière relue : À quelle heure doit-elle rentrer chez elle ? Réponse justifiée : À 18 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-027-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Livia. Je te rappelle le voyage d’une journée à Nice. Nous partons de l’aéroport de Paris à 8h15, nous allons visiter le musée Matisse et revenons à Paris à 23 heures. Demain, apporte-moi ton petit sac bleu et n’oublie pas d’arriver à l’école de langue à 6h00.",
+      "source_sha256": "ef686138b3097402aeaec9319230a02e5bda2411364277f359d8abbdec0ccd5e",
+      "semantic_sha256": "606a974850c70f981350be10a7ff1aecb0dde928c1444c440cee4baece14c674",
+      "question": {
+        "enonce": "À quelle heure reviennent-ils à Paris ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 23 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 21 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 22 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 23 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-027-01.mp3",
+      "audio_sha256": "ebd01e0803cff53911978e140d7f7c317b5cfc80ca190d15560b3388f59cd2b9",
+      "image_ids": [
+        "vocab-horloge-2300",
+        "co834-horloge-2100-dessinee",
+        "co834-horloge-2200-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-2300.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp"
+      ],
+      "image_sha256": [
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure reviennent-ils à Paris ? Réponse justifiée : À 23 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+      "source_sha256": "38adc2d35d30f00958f831b3e7e87042664797497dbce53f43f271b8a0daa5bf",
+      "semantic_sha256": "8e5351a7b3bcd4db7c68c12b8f712e20808643f49988448860a1ecaa5d045dd2",
+      "question": {
+        "enonce": "À quelle heure revient-il au collège ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 13 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 15 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+      "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+      "image_ids": [
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1300-dessinee",
+        "co834-horloge-1500-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+      ],
+      "image_sha256": [
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8"
+      ],
+      "reason": "Transcription entière relue : À quelle heure revient-il au collège ? Réponse justifiée : À 14 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-034-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Paulo, tu dois être encore en cours mais je te rappelle de passer au supermarché pour prendre de l’eau minérale, des pâtes italiennes, un paquet de café et du beurre. Pour le dîner tu nous prépares des pâtes à la bolognaise comme dans ton pays ? Je rentre à la maison vers 19h00. À plus tard.",
+      "source_sha256": "dae59714596879ae662568a53a5740ac3236208adcb3a7d776f55e0ba687bee8",
+      "semantic_sha256": "d3f239b9c92502865334439158e81037d8ca055c08903a88e7ad11cddec03889",
+      "question": {
+        "enonce": "À quelle heure la personne qui appelle rentre-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Vers 19 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vers 18 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vers 20 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "Vers 19 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
+      "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
+      "image_ids": [
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-2000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure la personne qui appelle rentre-t-elle ? Réponse justifiée : Vers 19 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-035-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sébastien. J’ai un superbe vélo. C’est le cadeau de mes parents pour mon anniversaire. J’ai aussi une nouvelle montre de la part de mes grands-parents et un bracelet offert par ma sœur. La fête c’est samedi à 16h00. Viens manger le gâteau d’anniversaire et passer un bel après-midi.",
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "9339d412b49cb4b39915bad0ec2c7301667131587c257c70f4f865be47343a54",
+      "question": {
+        "enonce": "À quelle heure commence-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 16 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 17 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 16 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
+      "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
+      "image_ids": [
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1700-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure commence-t-elle ? Réponse justifiée : À 16 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-045#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Nous allons au marché.\nVous me donnez votre numéro de téléphone ?\nJe n’ai pas son adresse.\nElle s’appelle comment ?\nQue faites-vous ce matin ?\nIl est déjà 10 heures.\nÀ quelle heure rentrez-vous ?\nIl est brésilien.\nIl faut acheter des pommes.\nQue voulez-vous faire demain ?",
+      "source_sha256": "a52178f2282735fbcddcfc17b26c645b03b4ab11a2c56503f37af69f0544af87",
+      "semantic_sha256": "1311c50eadccb27d702a8e7fa5c92ed35eea19f2216063142138e727ae9c781d",
+      "question": {
+        "enonce": "Quelle heure est annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "10 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "11 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "12 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "10 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-045.mp3",
+      "audio_sha256": "166c41ca57a17dac1d9f1d1f7652982179e6107bcc05cdc0826c97a5f8cd6a1e",
+      "image_ids": [
+        "co834-horloge-1000-dessinee",
+        "co834-horloge-1100-dessinee",
+        "co834-horloge-1200-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27"
+      ],
+      "reason": "Transcription entière relue : Quelle heure est annoncée ? Réponse justifiée : 10 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-01-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tchao Anton , c’est Alexandre. Jeudi on a une interrogation. On révise ensemble ? Mercredi à la sortie du collège on va manger un sandwich à la boulangerie près de la bibliothèque. Après on va à la bibliothèque où on peut travailler jusqu’à 18h00. Pense à prendre ton cahier à spirale et moi j’apporte mon ordinateur.",
+      "source_sha256": "e3f12f074ceadf3550957b97a474b0f9ba41989f02a8924d144407efdf5d888f",
+      "semantic_sha256": "811c5216e42971ec26a8ecf20426e70c5d105fca61c1b4f766492c736c7560b0",
+      "question": {
+        "enonce": "Jusqu’à quelle heure peuvent-ils travailler ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "18 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "17 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "19 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "18 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-01-01.mp3",
+      "audio_sha256": "f351fd6715c6dca42b7704e10ec6252ca5bb1485daa3bfc5c3fee44198472dc5",
+      "image_ids": [
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+      ],
+      "reason": "Transcription entière relue : Jusqu’à quelle heure peuvent-ils travailler ? Réponse justifiée : 18 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-03-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est André ! Le site de la mairie annonce une entrée gratuite demain à 11h00 à la piscine communale. Tu viens avec moi ? Prends ton maillot de bain. Les profs présentent les cours. Moi je veux faire de l’aquabike. Rendez-vous devant le théâtre à 10h30.",
+      "source_sha256": "cd9a827a9ede2086903f88323b6601232b100abddf647f43db05d830eb160c27",
+      "semantic_sha256": "553d1d210174da9545ec91265f1875869475627ab0cd25bfecb730806cee1839",
+      "question": {
+        "enonce": "À quelle heure l’entrée gratuite est-elle prévue ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 11 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 10 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À midi",
+            "correct": false
+          }
+        ],
+        "written_model": "À 11 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-03-01.mp3",
+      "audio_sha256": "498c4db6f2fd0967fb5b63c349b2556d8ee1dc10440203d7a02e96cda1482f80",
+      "image_ids": [
+        "co834-horloge-1100-dessinee",
+        "co834-horloge-1000-dessinee",
+        "co834-horloge-1200-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+      ],
+      "image_sha256": [
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27"
+      ],
+      "reason": "Transcription entière relue : À quelle heure l’entrée gratuite est-elle prévue ? Réponse justifiée : À 11 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-03-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Clément ! Samedi mon école de musique organise un gala de fin d’année. Tu viens m’écouter ? ça commence à 15h00. Je t’attends à 18h00 dans la salle Bleue, il y a un buffet avec des gâteaux et des boissons. Apporte ton portable pour filmer le spectacle.",
+      "source_sha256": "243487246a2fd2af86d92660153202f97f258a061a58afe7087177fca6cafccc",
+      "semantic_sha256": "b89bb63fa4cd3a45c3077b0e8340341f88ac0d1d0dce56635ff42d7f6e645d8e",
+      "question": {
+        "enonce": "À quelle heure le gala commence-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 15 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 14 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 16 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 15 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-03-01.mp3",
+      "audio_sha256": "579ff7cf6018b6bbb616bb894ce9e411eba085cad5f07ca5a74e4a5b0bccd7bb",
+      "image_ids": [
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1600-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le gala commence-t-il ? Réponse justifiée : À 15 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-05-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Paula. Tu veux faire de la musique avec moi ? Dans mon école on apprend à jouer de la batterie, de la guitare électrique, du violon. Le prof est super sympa. Moi je fais du piano de 16h00 à 17h00 et le cours a lieu le jeudi après -midi.",
+      "source_sha256": "219a77b4a7c18de33a75d0db4fa08ffe25e803a32cdbf2bab878d947e8209229",
+      "semantic_sha256": "876beeb835c22f5fba638303e81169980d7b2bd84bfff2f5ba32123b4102609e",
+      "question": {
+        "enonce": "À quelle heure son cours commence-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 16 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 17 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 16 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
+      "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
+      "image_ids": [
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1700-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure son cours commence-t-il ? Réponse justifiée : À 16 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Lola, Tu es libre mercredi après-midi ? C’est l’anniversaire de Louis et samedi il organise une fête chez lui. Tu viens avec moi acheter un cadeau ? Qu’en dis-tu d’un support téléphone pour son vélo ? Rendez-vous à 16h00 chez moi. Appelle-moi pour confirmer.",
+      "source_sha256": "144bedf3de0f064fcd8340d9f9be956aa5b8bc0286c946020294884bce9d63bf",
+      "semantic_sha256": "161200146247f5a55b5d4d58551ddffb6a8404f6b1907270b3397d8329eb4aed",
+      "question": {
+        "enonce": "À quelle heure les amis doivent-ils se retrouver ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 16 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 17 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 16 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-01-01.mp3",
+      "audio_sha256": "4accfbbc1fcf2bfd06d47cc764a32a3614e8b341e57540759ff79e9890e8b7fc",
+      "image_ids": [
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1700-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les amis doivent-ils se retrouver ? Réponse justifiée : À 16 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-04#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Au bureau d’Information jeunesse, venez vous renseigner gratuitement pour vous déplacer en Europe ! Nos conseillers répondent à vos questions du lundi au vendredi de 9h00 à 18h00 non-stop.",
+      "source_sha256": "97c14e92ceacc9f0fe7efa4e997d19d954132d029c1c14d131b437df1e81ef88",
+      "semantic_sha256": "f7cca5a0a58e320e5dcb1964532b35fa142a096ff921e3b601d7973649568576",
+      "question": {
+        "enonce": "À quelle heure le bureau ouvre-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 9 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 10 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 9 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-04.mp3",
+      "audio_sha256": "be28c503812092def929e588c7c4ff4d53c1a28044786c7b14ceb4e987b38744",
+      "image_ids": [
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-0800-dessinee",
+        "co834-horloge-1000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le bureau ouvre-t-il ? Réponse justifiée : À 9 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-04#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Au bureau d’Information jeunesse, venez vous renseigner gratuitement pour vous déplacer en Europe ! Nos conseillers répondent à vos questions du lundi au vendredi de 9h00 à 18h00 non-stop.",
+      "source_sha256": "97c14e92ceacc9f0fe7efa4e997d19d954132d029c1c14d131b437df1e81ef88",
+      "semantic_sha256": "223b1bc90964b702bc8af76d0d9328a38db6e073173f9836caccfcc3c989666c",
+      "question": {
+        "enonce": "À quelle heure ferme-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 18 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 17 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 19 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 18 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-04.mp3",
+      "audio_sha256": "be28c503812092def929e588c7c4ff4d53c1a28044786c7b14ceb4e987b38744",
+      "image_ids": [
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ferme-t-il ? Réponse justifiée : À 18 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-008-02#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "En raison du passage de la course à pied le 8 mai, l’avenue Wilson est fermée à partir de 10h00 à tous les véhicules et cyclistes. Selon la police municipale la circulation dans les 2 sens reprend à 18h00.",
+      "source_sha256": "e0733a5d82737c9be1dd140771510b0a2056bb9062339324a12853cbf3b85652",
+      "semantic_sha256": "e2778ec35081519123bcda3886722554b9bf642ce0fe64bcaaafaa260c971e89",
+      "question": {
+        "enonce": "À quelle heure l’avenue ferme-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 10 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 9 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 11 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 10 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-02.mp3",
+      "audio_sha256": "64ccb905f0c3f047c2075e05f0069458c4dce0bcd50c432b8105e0ffbbf25bdc",
+      "image_ids": [
+        "co834-horloge-1000-dessinee",
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-1100-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594"
+      ],
+      "reason": "Transcription entière relue : À quelle heure l’avenue ferme-t-elle ? Réponse justifiée : À 10 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-008-02#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "En raison du passage de la course à pied le 8 mai, l’avenue Wilson est fermée à partir de 10h00 à tous les véhicules et cyclistes. Selon la police municipale la circulation dans les 2 sens reprend à 18h00.",
+      "source_sha256": "e0733a5d82737c9be1dd140771510b0a2056bb9062339324a12853cbf3b85652",
+      "semantic_sha256": "19067d6a8bda46b0324d13352e2a6a970eba9eec8daba2b2c0268214a6ff3e01",
+      "question": {
+        "enonce": "À quelle heure la circulation reprend-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 18 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 17 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 19 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 18 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-02.mp3",
+      "audio_sha256": "64ccb905f0c3f047c2075e05f0069458c4dce0bcd50c432b8105e0ffbbf25bdc",
+      "image_ids": [
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce"
+      ],
+      "reason": "Transcription entière relue : À quelle heure la circulation reprend-elle ? Réponse justifiée : À 18 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-013-01#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Claire, le 10 mars c’est l’anniversaire de Laure. Alors on va ensemble acheter son cadeau à la parfumerie. Rendez-vous devant la poste à 16h00 ! Après on va acheter aussi une carte de vœux à la papeterie.",
+      "source_sha256": "098dfb15bdae1ad643c8679f814e87a2c0797033fa079e5b42fb53313a36a503",
+      "semantic_sha256": "1015347be7388894642b27dc001e562dfc7656aca055d944b9fa6e43ad3ee4a9",
+      "question": {
+        "enonce": "À quelle heure se retrouvent-elles ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 16 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 17 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 16 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-013-01.mp3",
+      "audio_sha256": "d75a458cdd316768fdce9f24028bbd353799ebfd3a5b9192ef1fbcfae3067e58",
+      "image_ids": [
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1500-dessinee",
+        "co834-horloge-1700-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure se retrouvent-elles ? Réponse justifiée : À 16 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-014-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Benoît, pour ton abonnement à la patinoire il te faut ta carte d’identité. Rappelle-toi pour les inscriptions de t’abonner demain mercredi de 14h00 à 17h00. Moi, ma maman va m’inscrire demain quand elle sort de son travail.",
+      "source_sha256": "6d805a4349175d2b61d4d70749e1817291ae6237c36b35aba3096dbc73c2b075",
+      "semantic_sha256": "fd6715b9c5a0a81b94a5009233635948603fc5269936d58e0ee3ee95a87c889a",
+      "question": {
+        "enonce": "À quelle heure commencent-elles ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 13 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 15 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-014-01.mp3",
+      "audio_sha256": "5b5619f8a8bd5114723f96b80cf089bd578b06dd8e1d973f949d1b7331045b8f",
+      "image_ids": [
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1300-dessinee",
+        "co834-horloge-1500-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+      ],
+      "image_sha256": [
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8"
+      ],
+      "reason": "Transcription entière relue : À quelle heure commencent-elles ? Réponse justifiée : À 14 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-014-01#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Benoît, pour ton abonnement à la patinoire il te faut ta carte d’identité. Rappelle-toi pour les inscriptions de t’abonner demain mercredi de 14h00 à 17h00. Moi, ma maman va m’inscrire demain quand elle sort de son travail.",
+      "source_sha256": "6d805a4349175d2b61d4d70749e1817291ae6237c36b35aba3096dbc73c2b075",
+      "semantic_sha256": "2b66763de32bc26e977f17784eb02f99b3daf3f2f33aaf05d226724c7a1e9574",
+      "question": {
+        "enonce": "À quelle heure se terminent-elles ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 17 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 16 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 18 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 17 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-014-01.mp3",
+      "audio_sha256": "5b5619f8a8bd5114723f96b80cf089bd578b06dd8e1d973f949d1b7331045b8f",
+      "image_ids": [
+        "co834-horloge-1700-dessinee",
+        "co834-horloge-1600-dessinee",
+        "co834-horloge-1800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1600-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2",
+        "c49899115db9190c883a88a022df131beea6069b029ec11430576d24ae45aecc",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure se terminent-elles ? Réponse justifiée : À 17 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-015-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Dimanche, c’est le premier jour de printemps. On va faire un tour à la campagne ? On peut prendre nos VTT, partir vers 9h00 et rentrer dans l’après-midi. Pour déjeuner on apporte des sandwichs et une tablette de chocolat. J’appelle Camille pour demander si elle veut venir avec nous.",
+      "source_sha256": "f0c7956024c32254a75655b7529b0d8318d91e79c020335bb436a8452698abe0",
+      "semantic_sha256": "495a85c6063b4dca416a09466ff5a855d13ef13c893045bf6ab0fd5d296a2a7c",
+      "question": {
+        "enonce": "À quelle heure veulent-ils partir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Vers 9 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vers 8 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vers 10 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "Vers 9 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-015-01.mp3",
+      "audio_sha256": "64fba8569ddca2e55dd1d14e48bb7ce50a8465999fc0d4bc79556680b31dd0e6",
+      "image_ids": [
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-0800-dessinee",
+        "co834-horloge-1000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure veulent-ils partir ? Réponse justifiée : Vers 9 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-016-01#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, Manu, c’est Danielle. Samedi soir je ne peux pas assister à ton spectacle de danse. Je viens de savoir que mon père arrive en avion à 20h00. Nous allons l’attendre ma mère, ma sœur et moi. Je regrette mais je viens te voir volontiers la prochaine fois. Bisous.",
+      "source_sha256": "0f6f693aeda0ceb36ab7f955d28cd5aad22a214f5c0cab2c2a29aa7dc07a2d34",
+      "semantic_sha256": "583e91b32d005f34d4d3ac9177006fcf1bb855715ce58427fcc6f5e57c442590",
+      "question": {
+        "enonce": "À quelle heure arrive-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 20 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 19 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 21 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 20 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-016-01.mp3",
+      "audio_sha256": "b6e98586ae950703009f894e6e3a0a222e44e6e9d1aa0623fd5298f58a35ed89",
+      "image_ids": [
+        "co834-horloge-2000-dessinee",
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-2100-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+      ],
+      "image_sha256": [
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578"
+      ],
+      "reason": "Transcription entière relue : À quelle heure arrive-t-il ? Réponse justifiée : À 20 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-020-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Chère cliente bonjour ! Nous vous informons que notre magasin de prêt à porter féminin « Marika » ouvre prochainement ses portes le 1 er juin à 9h00 entièrement restructuré avec un vaste assortiment de robes d'été, de t-shirt, de chemisiers, de pantalons dans des tissus très agréables à porter. Notre clientèle informée téléphoniquement va recevoir un cadeau floral et va bénéficier d’une réduction en caisse de 5 % sur tout achat.",
+      "source_sha256": "f33cd6784f85bf3a85ea08c34c975f295ef897cf58e9b1287f520e7bf15ecd57",
+      "semantic_sha256": "a48e183bf9bc50bdf0e53602158b66aae782af1b6ad361efda67924616796ed3",
+      "question": {
+        "enonce": "À quelle heure ouvre-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 9 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 10 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 9 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-020-01.mp3",
+      "audio_sha256": "92a405c21ffa2ef11d1e499da76bb424964ad95b1a122e18aaf9e4a8a463cabd",
+      "image_ids": [
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-0800-dessinee",
+        "co834-horloge-1000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ouvre-t-il ? Réponse justifiée : À 9 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-032-04#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ? Demain c’est samedi, notre magasin est ouvert non-stop de 9h00 à 19h00. Oh ! Super ! Alors à demain pour un cadeau d’anniversaire. Très bien, à demain !",
+      "source_sha256": "9dc87a7f5b15bb138d5d424107ad33a4c1dc3f9a1e22b803d30070e3dedfe1ee",
+      "semantic_sha256": "f3e49775dacb4a4317647de0423ca848903d8fbf6802f63ac3e07fcf4ce30eb9",
+      "question": {
+        "enonce": "À quelle heure le magasin ouvre-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 9 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 10 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 9 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-04.mp3",
+      "audio_sha256": "61037682fafbe1c2be98163bc0feb99b3b982d4b4213375845de7c90fd442727",
+      "image_ids": [
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-0800-dessinee",
+        "co834-horloge-1000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le magasin ouvre-t-il ? Réponse justifiée : À 9 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-032-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ? Demain c’est samedi, notre magasin est ouvert non-stop de 9h00 à 19h00. Oh ! Super ! Alors à demain pour un cadeau d’anniversaire. Très bien, à demain !",
+      "source_sha256": "9dc87a7f5b15bb138d5d424107ad33a4c1dc3f9a1e22b803d30070e3dedfe1ee",
+      "semantic_sha256": "219198c56112b0b2f7c0d8033e783c37250140ddc5526eb23559695f1693fcbc",
+      "question": {
+        "enonce": "À quelle heure ferme-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 18 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 20 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-04.mp3",
+      "audio_sha256": "61037682fafbe1c2be98163bc0feb99b3b982d4b4213375845de7c90fd442727",
+      "image_ids": [
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-2000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ferme-t-il ? Réponse justifiée : À 19 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-034-04#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+      "source_sha256": "d94a2293c67ff6158e65164817184d11457bb24526605f7e0c4969708c11615e",
+      "semantic_sha256": "03d6e8286ff6972d1b9fb77ae965c2b85a74d5c2fb5532db792328f1d1e0a444",
+      "question": {
+        "enonce": "À quelle heure l’exposition ouvre-t-elle du mardi au samedi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 10 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 9 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 11 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 10 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "audio_sha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8",
+      "image_ids": [
+        "co834-horloge-1000-dessinee",
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-1100-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594"
+      ],
+      "reason": "Transcription entière relue : À quelle heure l’exposition ouvre-t-elle du mardi au samedi ? Réponse justifiée : À 10 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-034-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+      "source_sha256": "d94a2293c67ff6158e65164817184d11457bb24526605f7e0c4969708c11615e",
+      "semantic_sha256": "3e72e5fcfb1df50d24e278392456c85cfcbe94cb5f4328d514ee34890b9d9f49",
+      "question": {
+        "enonce": "À quelle heure ferme-t-elle ces jours-là ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 18 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 20 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "audio_sha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8",
+      "image_ids": [
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-2000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ferme-t-elle ces jours-là ? Réponse justifiée : À 19 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-034-04#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+      "source_sha256": "d94a2293c67ff6158e65164817184d11457bb24526605f7e0c4969708c11615e",
+      "semantic_sha256": "26fa21860ba4683175e1ea7048372690b5b322bfaeaf4f9a4f877a3a852a3739",
+      "question": {
+        "enonce": "À quelle heure ferme-t-il le dimanche ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 20 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 19 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 18 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 20 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "audio_sha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8",
+      "image_ids": [
+        "co834-horloge-2000-dessinee",
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ferme-t-il le dimanche ? Réponse justifiée : À 20 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu sais si le fleuriste ferme à 19h00 ? Oui, tous les jours. Et je vais où pour prendre une plante pour l’anniversaire de ma mère ? Va voir au supermarché ! Il ferme à 21h00.",
+      "source_sha256": "6d0146cd0b61e5405d0829f36037b646d8c3e8e226b907d8a3c074e1068d8051",
+      "semantic_sha256": "4aa94532b078e50f61bd169c871418b41153cffc5fa681d41f41471601361746",
+      "question": {
+        "enonce": "À quelle heure le fleuriste ferme-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 20 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 21 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+      "image_ids": [
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-2000-dessinee",
+        "co834-horloge-2100-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le fleuriste ferme-t-il ? Réponse justifiée : À 19 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-03-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour. Je sais que votre restaurant ouvre à 11h. Je ne peux pas vous appeler plus tard alors j’anticipe ma réservation pour demain samedi à 20h. J’ai besoin d’une table pour fêter l’anniversaire de mon amie. Mon nom est Hugo Fabre. Je vous demande de mettre un vase de roses rouges sur la table, de préparer un gâteau à la crème avec 18 bougies et de nous placer dans un coin devant la fenêtre. Merci de me confirmer.",
+      "source_sha256": "0fa93ca945970cc5b96c2daebd90d592c1a4dcc4b5fa292f48b71154969c4839",
+      "semantic_sha256": "3c57642e3563237531dca779f1cff3762875456980b323e21054b8f433a8cd0f",
+      "question": {
+        "enonce": "À quelle heure le restaurant ouvre-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 11 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 10 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À midi",
+            "correct": false
+          }
+        ],
+        "written_model": "À 11 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-03-01.mp3",
+      "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
+      "image_ids": [
+        "co834-horloge-1100-dessinee",
+        "co834-horloge-1000-dessinee",
+        "co834-horloge-1200-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+      ],
+      "image_sha256": [
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le restaurant ouvre-t-il ? Réponse justifiée : À 11 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-03-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour. Je sais que votre restaurant ouvre à 11h. Je ne peux pas vous appeler plus tard alors j’anticipe ma réservation pour demain samedi à 20h. J’ai besoin d’une table pour fêter l’anniversaire de mon amie. Mon nom est Hugo Fabre. Je vous demande de mettre un vase de roses rouges sur la table, de préparer un gâteau à la crème avec 18 bougies et de nous placer dans un coin devant la fenêtre. Merci de me confirmer.",
+      "source_sha256": "0fa93ca945970cc5b96c2daebd90d592c1a4dcc4b5fa292f48b71154969c4839",
+      "semantic_sha256": "bf6ee9ba369578fcdda5a4ee78ffe9e71d46b35b2fd611faed553f81d640db0e",
+      "question": {
+        "enonce": "À quelle heure le client veut-il venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 20 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 19 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 21 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 20 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-03-01.mp3",
+      "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
+      "image_ids": [
+        "co834-horloge-2000-dessinee",
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-2100-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp"
+      ],
+      "image_sha256": [
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le client veut-il venir ? Réponse justifiée : À 20 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-04-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pardon monsieur. Vous êtes ouverts demain matin ? Demain non ! C’est le 11 novembre. Et pour avoir de la pâtisserie ? Tous les supermarchés sont fermés sauf les pâtisseries du centre-ville qui sont ouvertes jusqu’à 13h00.",
+      "source_sha256": "99e8a1b8efd0ef022d563bc8c6f9e2643ec8f3ebf7034850b99d1b1ca9909ec9",
+      "semantic_sha256": "2330c5270173fe16c18166729672813b14539aab399b84f8dbca4a5ae26aab94",
+      "question": {
+        "enonce": "Jusqu’à quelle heure sont-elles ouvertes ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "13 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Midi",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "14 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "13 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+      "audio_sha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8",
+      "image_ids": [
+        "co834-horloge-1300-dessinee",
+        "co834-horloge-1200-dessinee",
+        "co834-horloge-1400-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+      ],
+      "image_sha256": [
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92"
+      ],
+      "reason": "Transcription entière relue : Jusqu’à quelle heure sont-elles ouvertes ? Réponse justifiée : 13 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-03-01#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "C’est Sylvie Dujardin, je vous appelle de la part de Mme Bonnet. Je cherche une jeune lycéenne, comme vous, pour s’occuper de mon petit Nicolas. Il a 5 ans. J’ai besoin d’une baby-sitter tous les matins de 7h30 à 13h00 sauf le samedi et le dimanche pour les mois de juillet-août. Vous devez l’emmener au parc, jouer avec lui dans le jardin, dans la maison et servir son repas à 12h00. Si cela vous intéresse, rappelez-moi au plus vite.",
+      "source_sha256": "d05a85168a3da24412843e84741f4c976348974802a2b39ddb9d789eba3cdd47",
+      "semantic_sha256": "12c9f69b6b2c810e8c854c1d005a71491c4ff4335051989dd7f288381091e575",
+      "question": {
+        "enonce": "À quelle heure se termine-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 13 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À midi",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 14 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 13 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-03-01.mp3",
+      "audio_sha256": "215e31a254ece0fbc7d793dcbe1b5793bb1f59bb83e07ba204f62c937f82a59c",
+      "image_ids": [
+        "co834-horloge-1300-dessinee",
+        "co834-horloge-1200-dessinee",
+        "co834-horloge-1400-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+      ],
+      "image_sha256": [
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92"
+      ],
+      "reason": "Transcription entière relue : À quelle heure se termine-t-il ? Réponse justifiée : À 13 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-03-01#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "C’est Sylvie Dujardin, je vous appelle de la part de Mme Bonnet. Je cherche une jeune lycéenne, comme vous, pour s’occuper de mon petit Nicolas. Il a 5 ans. J’ai besoin d’une baby-sitter tous les matins de 7h30 à 13h00 sauf le samedi et le dimanche pour les mois de juillet-août. Vous devez l’emmener au parc, jouer avec lui dans le jardin, dans la maison et servir son repas à 12h00. Si cela vous intéresse, rappelez-moi au plus vite.",
+      "source_sha256": "d05a85168a3da24412843e84741f4c976348974802a2b39ddb9d789eba3cdd47",
+      "semantic_sha256": "85c73e29df29923e81101162e0249f087094c6c4cd71ee6037dd64aea7c68335",
+      "question": {
+        "enonce": "À quelle heure faut-il servir son repas ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À midi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 11 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 13 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À midi"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-03-01.mp3",
+      "audio_sha256": "215e31a254ece0fbc7d793dcbe1b5793bb1f59bb83e07ba204f62c937f82a59c",
+      "image_ids": [
+        "co834-horloge-1200-dessinee",
+        "co834-horloge-1100-dessinee",
+        "co834-horloge-1300-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e"
+      ],
+      "reason": "Transcription entière relue : À quelle heure faut-il servir son repas ? Réponse justifiée : À midi. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-02#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pardon monsieur, à quelle heure part le premier bateau pour les îles l’après-midi ? Le premier à 14h00 et il y a un aller toutes les heures jusqu’à 19h00. Et le retour ? Le premier à 14h30 et le dernier à 18h30.",
+      "source_sha256": "7d14d41a40d472311d86f71d672b1ccf4ed87120d0065f292e8f6b2b77b8d503",
+      "semantic_sha256": "33cad0904b1cc4a69c9e914d6b4a1701c6143a57a6bfd8cfdc664ce810ded0e7",
+      "question": {
+        "enonce": "À quelle heure part le premier bateau de l’après-midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 13 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 15 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-02.mp3",
+      "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+      "image_ids": [
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1300-dessinee",
+        "co834-horloge-1500-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1500-dessinee.webp"
+      ],
+      "image_sha256": [
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e",
+        "ffd5f71d22ebb14c724a3772acbfa354f17775d5823e5ca770b159ab029b0dd8"
+      ],
+      "reason": "Transcription entière relue : À quelle heure part le premier bateau de l’après-midi ? Réponse justifiée : À 14 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-02#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pardon monsieur, à quelle heure part le premier bateau pour les îles l’après-midi ? Le premier à 14h00 et il y a un aller toutes les heures jusqu’à 19h00. Et le retour ? Le premier à 14h30 et le dernier à 18h30.",
+      "source_sha256": "7d14d41a40d472311d86f71d672b1ccf4ed87120d0065f292e8f6b2b77b8d503",
+      "semantic_sha256": "c56f6aa40e482faea8e01e7a3787eaee723d4ecb13b4eae9cc6a05025987a5a9",
+      "question": {
+        "enonce": "À quelle heure a lieu le dernier départ vers les îles ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 18 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 20 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-02.mp3",
+      "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+      "image_ids": [
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1800-dessinee",
+        "co834-horloge-2000-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "081d5668cfcc8340b46d66eb9f44fdfb4af84bafa61e17e7a63fa18dd1f6393b",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure a lieu le dernier départ vers les îles ? Réponse justifiée : À 19 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-04#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Elsa, la séance commence à 21h, je passe te chercher à 20h30. Bon d’accord, je t’attendrai en bas de chez moi. Essaie d’être prête ma chérie.",
+      "source_sha256": "d32705085d365627419aa703e47ec38a5822463a41a77b5e01b107a54dca7aac",
+      "semantic_sha256": "678dbf75cf1cc972f81be6265b271e9419e20da39256aa660127b5e027e20743",
+      "question": {
+        "enonce": "À quelle heure la séance commence-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 21 h",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 20 h",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 22 h",
+            "correct": false
+          }
+        ],
+        "written_model": "À 21 h"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-04.mp3",
+      "audio_sha256": "42a712e8378bc42bd9f8ab202320302e65d0827def675f9302594fbaa993e59a",
+      "image_ids": [
+        "co834-horloge-2100-dessinee",
+        "co834-horloge-2000-dessinee",
+        "co834-horloge-2200-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+      ],
+      "reason": "Transcription entière relue : À quelle heure la séance commence-t-elle ? Réponse justifiée : À 21 h. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-b1-003-01#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Clément, tu te rappelles que samedi c’est l’anniversaire d’André ? Ah oui, c’est vrai. Heureusement que tu es là… moi j’oubliais... Qu’en dis-tu, d’organiser pour lui une fête surprise ? Génial, oui. Tu as toujours des idées super ! mais où la faire et comment organiser tout ça ? On a peu de temps… Ne t’inquiète pas, si tu m’aides on arrivera bien à tout organiser. Je suis d’accord pour t’aider, mais par où commencer ? Moi je dirais par la liste des invités. Et puis, il faudra trouver la salle… et ça… Pour la salle aucun problème. En cette saison on pourrait la faire dans mon jardin. On y a déjà fêté les 18 ans de ma sœur. Super. Bon, alors invitons tous nos copains de classe ! Il faudra les prévenir et surtout avertir Thomas qui ne sait pas garder de secret. D’accord, je m’occupe de leur envoyer des mails avec le plan pour arriver chez moi. Mais à quelle heure ? Parce que vendredi nous avons cours jusqu’à 17 heures. Alors, repoussons à samedi… ! Mais le soir alors. C’est plus facile pour trouver une excuse et faire venir André. Super. Oui, on pourra lui dire de venir chez moi à 21 heures avec l’excuse que mon père nous accompagne en boîte. Et pour organiser la musique ? Je m’en occupe. Mais il reste encore le cadeau… On demandera aux filles de s’en occuper et d’acheter aussi des boissons. Et pour le gâteau ? Ce soir, je vais demander à ma grand-mère si elle veut bien le faire. C’est une excellente pâtissière. Elle ne me dira pas non. Génial, alors on peut se lancer.",
+      "source_sha256": "5ca9a5c974c2c613675c8b130b3b0eaf4c604942a0d68833a8ad22e4b5866e62",
+      "semantic_sha256": "21969f078a8832d7e7c13e781cf4f5147daf5dff084bc4831d618cb22e521f44",
+      "question": {
+        "enonce": "À quelle heure André devra-t-il venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 21 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 19 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 23 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 21 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-003-01.mp3",
+      "audio_sha256": "07dfdec176b1a495d033a1fa5389c6810b5263e75d280a23ff394364017a916c",
+      "image_ids": [
+        "co834-horloge-2100-dessinee",
+        "co834-horloge-1900-dessinee",
+        "vocab-horloge-2300"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-2100-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-2300.webp"
+      ],
+      "image_sha256": [
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594"
+      ],
+      "reason": "Transcription entière relue : À quelle heure André devra-t-il venir ? Réponse justifiée : À 21 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-022-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut. Un nouveau groupe rock passe dans notre ville. On va assister à leur concert ? J’ai deux billets. Il faut être au stade à 19h30. Après le concert mes parents viennent nous chercher. Fais attention il va faire froid. Tu peux dormir chez moi mais apporte le nécessaire.",
+      "source_sha256": "d722a9c148654dfc200b92471e9d3d54ad4366d5bdab5f3564d941713e28bc7f",
+      "semantic_sha256": "767e70774bdef0d8e28ae9b9a0ae1217cfc9c52ab760cf7a3b5c511dd8789397",
+      "question": {
+        "enonce": "À quelle heure faut-il arriver ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 18 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 20 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-022-01.mp3",
+      "audio_sha256": "c27cf624334085f1126a8ae70d674c13f28e034a2c30d81fab85ab484cebafd7",
+      "image_ids": [
+        "co834-horloge-1930-dessinee",
+        "co834-horloge-1830-dessinee",
+        "vocab-horloge-2030"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1930-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-2030.webp"
+      ],
+      "image_sha256": [
+        "9ffca6ceebccfa674fe5c233e34ab1032356a477717a5d6e8a5fb7cb4e984a4b",
+        "1f15d87455088b87723ef580301c53074b8e586819028b7afcd644d7a424df41",
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68"
+      ],
+      "reason": "Transcription entière relue : À quelle heure faut-il arriver ? Réponse justifiée : À 19 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-028-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Viviane. Ta valise est prête pour ce voyage scolaire ? Demain matin, si tu veux, pour aller à la gare, je passe te chercher en voiture avec mon père. À 7h00 devant chez toi. Le train part à 7h30. Pour nos soirées à l’hôtel apporte un jeu de cartes.",
+      "source_sha256": "068a0f853f418e256f6dc88078ef7a54f231d292c0f253791bbcecd64ccdbf62",
+      "semantic_sha256": "303ba642816799fb31c96c8731edafd8941441946104356c6aaa87481256d214",
+      "question": {
+        "enonce": "À quelle heure Viviane passe-t-elle chercher son amie ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 7 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 6 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 7 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 7 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-028-01.mp3",
+      "audio_sha256": "a940d5836aabbd1eb15177adc61b06f31d0ae6e98a3cc4a97dd60fe6d7746941",
+      "image_ids": [
+        "vocab-horloge-0700",
+        "vocab-horloge-0630",
+        "vocab-horloge-0730"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0700.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0630.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp"
+      ],
+      "image_sha256": [
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "ab7a91a9f4f91f09956203f0f86df68e3bafa03acebfc06a0ac2eee0c0b49f61",
+        "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182"
+      ],
+      "reason": "Transcription entière relue : À quelle heure Viviane passe-t-elle chercher son amie ? Réponse justifiée : À 7 heures. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-028-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Viviane. Ta valise est prête pour ce voyage scolaire ? Demain matin, si tu veux, pour aller à la gare, je passe te chercher en voiture avec mon père. À 7h00 devant chez toi. Le train part à 7h30. Pour nos soirées à l’hôtel apporte un jeu de cartes.",
+      "source_sha256": "068a0f853f418e256f6dc88078ef7a54f231d292c0f253791bbcecd64ccdbf62",
+      "semantic_sha256": "5ed35667dc92a1e0835caa836abf3ee2e0f48cbdbc4d83f1d6e287be7b043762",
+      "question": {
+        "enonce": "À quelle heure le train part-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 7 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 7 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 8 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 7 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-028-01.mp3",
+      "audio_sha256": "a940d5836aabbd1eb15177adc61b06f31d0ae6e98a3cc4a97dd60fe6d7746941",
+      "image_ids": [
+        "vocab-horloge-0730",
+        "vocab-horloge-0700",
+        "co834-horloge-0800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0700.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le train part-il ? Réponse justifiée : À 7 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-037-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Dimanche on va faire une randonnée à la montagne. Apporte tes chaussures de marche et ta casquette. Peux-tu apporter aussi ton appareil photo pour photographier les animaux ? Les portables sont interdits, on ne peut pas déranger les animaux. On vient te chercher avec mes parents à 7h30 et on rentre le soir.",
+      "source_sha256": "d52023f020b6f7081031c7c673230b907d4ed7cf74082fd440a06834c6ecc503",
+      "semantic_sha256": "ae97be05e59f3b7371dedb12217efeff34bb50b56546fca45c9bffb185200be2",
+      "question": {
+        "enonce": "À quelle heure les parents viennent-ils chercher l’ami ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 7 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 9 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 7 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-037-01.mp3",
+      "audio_sha256": "6dedbe11f268f6a2d22781005ded7ce9c87b49876fa0b41e5931662ac1109a33",
+      "image_ids": [
+        "vocab-horloge-0730",
+        "vocab-horloge-0830",
+        "co834-horloge-0930-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0930-dessinee.webp"
+      ],
+      "image_sha256": [
+        "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182",
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+        "52b567ef84c95d185de13b257a797d669d7e759f88e5d15ebbb82490a33cf64b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les parents viennent-ils chercher l’ami ? Réponse justifiée : À 7 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-03-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Hugo! Tu es toujours d’accord pour venir en vacances chez moi ? Tu peux m’apporter la boussole ? Prends le bus de 11h30, je viens te chercher à l’arrêt à 12h30. N’oublie pas tes chaussures de marche pour nos randonnées. Appelle-moi ce soir avant ton entraînement.",
+      "source_sha256": "d6a3a0c1159c0e82d68740f3d477d27100c5111c5fc27ceee96dc0ad17830689",
+      "semantic_sha256": "955cbf3ef558fadb4603f47a4011c64f57e47d6578b841a110c256aa7002d4e1",
+      "question": {
+        "enonce": "À quelle heure faut-il prendre le bus ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 11 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 10 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 12 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 11 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-03-01.mp3",
+      "audio_sha256": "63f65325049a585a2aa6a7f359cca9a61c24f432735f4b5237e8c04d83db5516",
+      "image_ids": [
+        "vocab-horloge-1130",
+        "co834-horloge-1030-dessinee",
+        "co834-horloge-1230-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+      ],
+      "image_sha256": [
+        "2cc4b028d356e353b7fe78f929ea5eed2d556d830ddb42fe30396cd5fa5cd25b",
+        "2d39a9be0aa5fe965709ad1e79052cf15346b875bf9c3041c80a4c04d30c8f01",
+        "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee"
+      ],
+      "reason": "Transcription entière relue : À quelle heure faut-il prendre le bus ? Réponse justifiée : À 11 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-03-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Hugo! Tu es toujours d’accord pour venir en vacances chez moi ? Tu peux m’apporter la boussole ? Prends le bus de 11h30, je viens te chercher à l’arrêt à 12h30. N’oublie pas tes chaussures de marche pour nos randonnées. Appelle-moi ce soir avant ton entraînement.",
+      "source_sha256": "d6a3a0c1159c0e82d68740f3d477d27100c5111c5fc27ceee96dc0ad17830689",
+      "semantic_sha256": "02b9075aa28224be2422cb06589a042ced98c5cd56cc8d6280057c9f28f6af76",
+      "question": {
+        "enonce": "À quelle heure Hugo vient-il chercher son ami ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 12 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 11 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 13 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 12 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-03-01.mp3",
+      "audio_sha256": "63f65325049a585a2aa6a7f359cca9a61c24f432735f4b5237e8c04d83db5516",
+      "image_ids": [
+        "co834-horloge-1230-dessinee",
+        "vocab-horloge-1130",
+        "co834-horloge-1330-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+      ],
+      "image_sha256": [
+        "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee",
+        "2cc4b028d356e353b7fe78f929ea5eed2d556d830ddb42fe30396cd5fa5cd25b",
+        "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927"
+      ],
+      "reason": "Transcription entière relue : À quelle heure Hugo vient-il chercher son ami ? Réponse justifiée : À 12 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-03-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Florent. Samedi 3 juillet je fête la fin du championnat de foot et je t’invite avec tous nos copains. Rendez-vous chez moi à 19h30! On regarde un match de l’équipe de France et 21h30 on mange des pizzas. Si tu veux, apporte des biscuits.",
+      "source_sha256": "2c0cf62aced8cebaa00423e3526291ac91839714fe34db6517c83b4876c77821",
+      "semantic_sha256": "e7d789e86cb7208b9e648d8bef1e860285ba5590e7fee07094e6a3b3bac7f0d1",
+      "question": {
+        "enonce": "À quelle heure les invités sont-ils attendus ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 19 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 18 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 20 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 19 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-03-01.mp3",
+      "audio_sha256": "c57f5fb490dd8c37c0f28c9d2068f3e26c27c326eb9c24057ad2af7e076c7ad3",
+      "image_ids": [
+        "co834-horloge-1930-dessinee",
+        "co834-horloge-1830-dessinee",
+        "vocab-horloge-2030"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1930-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-2030.webp"
+      ],
+      "image_sha256": [
+        "9ffca6ceebccfa674fe5c233e34ab1032356a477717a5d6e8a5fb7cb4e984a4b",
+        "1f15d87455088b87723ef580301c53074b8e586819028b7afcd644d7a424df41",
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les invités sont-ils attendus ? Réponse justifiée : À 19 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-02#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bienvenue à la Mairie de Cannes. Tous nos services sont ouverts de 8h30 à 12h00 et de 13h30 à 17h00. L’accueil se trouve dans le hall d’entrée sur votre droite.",
+      "source_sha256": "d9b54eb55e266c35c9c99b617ec8fd2c4bfa92d6c437b331834196600687aac2",
+      "semantic_sha256": "61eb349e117698837daecfaf4ce9bec7ed5f6bff86c12a38f89a959a4d47f21b",
+      "question": {
+        "enonce": "À quelle heure les services ouvrent-ils le matin ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 8 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 9 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 8 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 8 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-02.mp3",
+      "audio_sha256": "9750ec3fde36240f4a1407b738f792fce6a54fd30c3704b73baccd069106ba8f",
+      "image_ids": [
+        "vocab-horloge-0830",
+        "co834-horloge-0900-dessinee",
+        "co834-horloge-0800-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0800-dessinee.webp"
+      ],
+      "image_sha256": [
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les services ouvrent-ils le matin ? Réponse justifiée : À 8 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-02#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bienvenue à la Mairie de Cannes. Tous nos services sont ouverts de 8h30 à 12h00 et de 13h30 à 17h00. L’accueil se trouve dans le hall d’entrée sur votre droite.",
+      "source_sha256": "d9b54eb55e266c35c9c99b617ec8fd2c4bfa92d6c437b331834196600687aac2",
+      "semantic_sha256": "04a66efb2d2df5a6fea08904191f0f2e8a7e771ad7c5da30a55eef0f2c0960ed",
+      "question": {
+        "enonce": "À quelle heure ferment-ils le matin ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À midi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 11 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 12 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À midi"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-02.mp3",
+      "audio_sha256": "9750ec3fde36240f4a1407b738f792fce6a54fd30c3704b73baccd069106ba8f",
+      "image_ids": [
+        "co834-horloge-1200-dessinee",
+        "vocab-horloge-1130",
+        "co834-horloge-1230-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+        "2cc4b028d356e353b7fe78f929ea5eed2d556d830ddb42fe30396cd5fa5cd25b",
+        "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee"
+      ],
+      "reason": "Transcription entière relue : À quelle heure ferment-ils le matin ? Réponse justifiée : À midi. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-02#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bienvenue à la Mairie de Cannes. Tous nos services sont ouverts de 8h30 à 12h00 et de 13h30 à 17h00. L’accueil se trouve dans le hall d’entrée sur votre droite.",
+      "source_sha256": "d9b54eb55e266c35c9c99b617ec8fd2c4bfa92d6c437b331834196600687aac2",
+      "semantic_sha256": "314e54572071abdc358a7c85f256b8498a17a24bfcf1ece5d6230998c5060479",
+      "question": {
+        "enonce": "À quelle heure les services ouvrent-ils l’après-midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 13 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 14 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 13 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 13 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-02.mp3",
+      "audio_sha256": "9750ec3fde36240f4a1407b738f792fce6a54fd30c3704b73baccd069106ba8f",
+      "image_ids": [
+        "co834-horloge-1330-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1300-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+      ],
+      "image_sha256": [
+        "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les services ouvrent-ils l’après-midi ? Réponse justifiée : À 13 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-030-02#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Dans votre lycée, vous rentrez en classe à quelle heure ? Nous avons deux sonneries, la première à 7h35 et la deuxième à 7h40. 7h40 !! vous commencez tôt ! Et oui parce qu’on sort à midi et demi.",
+      "source_sha256": "26d1d4e37bfd4d815c0e6f503a4015d519d22e6366b9874cecabb69ceeaae3b1",
+      "semantic_sha256": "91e1917ad2e8757abd5ae38089dbb442eb2297737551805b65073a3c429fb4f7",
+      "question": {
+        "enonce": "À quelle heure les élèves sortent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 12 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À midi",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 13 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 12 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-02.mp3",
+      "audio_sha256": "325e94315c92628eab363390234c2f9bfecd5ba6345181be9ae9190c275def60",
+      "image_ids": [
+        "co834-horloge-1230-dessinee",
+        "co834-horloge-1200-dessinee",
+        "co834-horloge-1300-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+      ],
+      "image_sha256": [
+        "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee",
+        "0c8e2ca978ba89e27082f7ad7c9d26cbc67946eb61a617a5afeaf8e9f1d86d27",
+        "bdd7d75997db009faf2ce69bc9b12657532670a1538c41d08683527eb16bb53e"
+      ],
+      "reason": "Transcription entière relue : À quelle heure les élèves sortent-ils ? Réponse justifiée : À 12 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-03-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "C’est Sylvie Dujardin, je vous appelle de la part de Mme Bonnet. Je cherche une jeune lycéenne, comme vous, pour s’occuper de mon petit Nicolas. Il a 5 ans. J’ai besoin d’une baby-sitter tous les matins de 7h30 à 13h00 sauf le samedi et le dimanche pour les mois de juillet-août. Vous devez l’emmener au parc, jouer avec lui dans le jardin, dans la maison et servir son repas à 12h00. Si cela vous intéresse, rappelez-moi au plus vite.",
+      "source_sha256": "d05a85168a3da24412843e84741f4c976348974802a2b39ddb9d789eba3cdd47",
+      "semantic_sha256": "1c3dfd2de257c6da1eb0a33b8baec6180f2a16324b0c84b80e30b6bbba6a01fd",
+      "question": {
+        "enonce": "À quelle heure le travail commence-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 7 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 9 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "À 7 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-03-01.mp3",
+      "audio_sha256": "215e31a254ece0fbc7d793dcbe1b5793bb1f59bb83e07ba204f62c937f82a59c",
+      "image_ids": [
+        "vocab-horloge-0730",
+        "vocab-horloge-0830",
+        "co834-horloge-0900-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp"
+      ],
+      "image_sha256": [
+        "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182",
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+        "2e477603b58d88e5669e8dfa62c1bb65a1739908215e1a95ad63519f96c54578"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le travail commence-t-il ? Réponse justifiée : À 7 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-02#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pardon monsieur, à quelle heure part le premier bateau pour les îles l’après-midi ? Le premier à 14h00 et il y a un aller toutes les heures jusqu’à 19h00. Et le retour ? Le premier à 14h30 et le dernier à 18h30.",
+      "source_sha256": "7d14d41a40d472311d86f71d672b1ccf4ed87120d0065f292e8f6b2b77b8d503",
+      "semantic_sha256": "a36e04080519f2ce74a4cd93b8158d1a51c8a275ada030a90d8fa6d9dcbe20f9",
+      "question": {
+        "enonce": "À quelle heure a lieu le premier retour ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 14 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 15 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-02.mp3",
+      "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+      "image_ids": [
+        "co834-horloge-1430-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1530-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp"
+      ],
+      "image_sha256": [
+        "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db"
+      ],
+      "reason": "Transcription entière relue : À quelle heure a lieu le premier retour ? Réponse justifiée : À 14 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-02#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pardon monsieur, à quelle heure part le premier bateau pour les îles l’après-midi ? Le premier à 14h00 et il y a un aller toutes les heures jusqu’à 19h00. Et le retour ? Le premier à 14h30 et le dernier à 18h30.",
+      "source_sha256": "7d14d41a40d472311d86f71d672b1ccf4ed87120d0065f292e8f6b2b77b8d503",
+      "semantic_sha256": "d5208a595c8acb0775173b9ee7f9090f66d3bbae772fa838efdc036a99412bb0",
+      "question": {
+        "enonce": "À quelle heure a lieu le dernier retour ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 18 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 19 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 19 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 18 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-02.mp3",
+      "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+      "image_ids": [
+        "co834-horloge-1830-dessinee",
+        "co834-horloge-1900-dessinee",
+        "co834-horloge-1930-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1830-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1930-dessinee.webp"
+      ],
+      "image_sha256": [
+        "1f15d87455088b87723ef580301c53074b8e586819028b7afcd644d7a424df41",
+        "4ebf9c619b6f1182ae1a982235d8a29c414b79ceacede37067c7e8a2e53f69ce",
+        "9ffca6ceebccfa674fe5c233e34ab1032356a477717a5d6e8a5fb7cb4e984a4b"
+      ],
+      "reason": "Transcription entière relue : À quelle heure a lieu le dernier retour ? Réponse justifiée : À 18 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-05#3",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Mamie, je passerai te faire un petit coucou cet après-midi avant d’aller à la patinoire. À quelle heure viens-tu ? Tu sais que le mercredi je retrouve mes amies au club de troisième âge. Je passerai vers 15h30, tu y seras ? C’est très bien, nous resterons ensemble une demi-heure.",
+      "source_sha256": "1566d006003a578aa74706694451b71a7b4a1fd668ef9530656687256dd7c1b7",
+      "semantic_sha256": "83cabd97ecd08c5222def07c2d064edac07d3ff820a38d6c1e2e782ff6b7d575",
+      "question": {
+        "enonce": "À quelle heure la visite est-elle prévue ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Vers 15 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vers 14 h",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vers 17 h",
+            "correct": false
+          }
+        ],
+        "written_model": "Vers 15 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+      "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
+      "image_ids": [
+        "co834-horloge-1530-dessinee",
+        "co834-horloge-1400-dessinee",
+        "co834-horloge-1700-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1700-dessinee.webp"
+      ],
+      "image_sha256": [
+        "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db",
+        "f00ba0da7654f85d959a5224b23dc3b27b34a31d3c8f6815ed98e33130643d92",
+        "7fdff3a3f5b8ae246c4dfb9d2059e5739a26445fe1a2c1f36bc57f409ca99cd2"
+      ],
+      "reason": "Transcription entière relue : À quelle heure la visite est-elle prévue ? Réponse justifiée : Vers 15 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-b1-028-01#9",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Les pays scandinaves attirent chaque année un nombre de plus en plus important d’étudiants français et européens. Lorsque l’on voit les nombreux atouts que ces destinations proposent, on comprend aisément pourquoi. La Suède et la Norvège restent les pays les plus prisés, car leurs universités sont réputées pour disposer des meilleurs équipements et d’un accompagnement pédagogique particulièrement moderne. En outre, dans les pays nordiques, la scolarité est véritablement au centre du modèle social, c’est pourquoi chaque état s’engage à financer les études, de la maternelle à la fin de l’enseignement supérieur. Et, cerise sur le gâteau, ce principe est également valable pour les étrangers. Autre avantage : pour poursuivre ses études dans une université scandinave, nul besoin de maîtriser la langue du pays. Un grand nombre d’établissements proposent en effet des cursus entièrement en anglais, un atout supplémentaire pour parfaire ses connaissances de la langue de Shakespeare ! Que ce soit en Suède, au Danemark, en Finlande ou en Norvège, la qualité de l’enseignement est réellement exceptionnelle. Il y a quelques années, par exemple, le « Times Higher Education » a classé l’université de Stockholm comme l’une des trois meilleures universités au monde ! Sans parler de la modernité des infrastructures et des équipements sportifs. Savez-vous que dans les pays nordiques le sport fait partie intégrante de la culture ? D’après une étude récente publiée par la Commission européenne, les Scandinaves arrivent en tête du classement des Européens les plus sportifs. Dans certaines universités, les cours se font parfois à la carte, avec une amplitude horaire très large, généralement entre 6h30 et 22h00, parfois même plus. Partir vivre dans un pays scandinave vous permettra donc de vivre une expérience assurément très enrichissante tout en bénéficiant d’un enseignement de qualité et d’infrastructures modernes. Et puis, autre argument de taille, les pays du Nord arrivent régulièrement en tête des classements des endroits où il fait bon vivre…Alors, qu’attendez-vous pour faire le grand saut et tenter l’expérience ?",
+      "source_sha256": "e9e7783ccc592f59796e8d9261829fcd9a1ff2c0820604185041f68836396981",
+      "semantic_sha256": "c84be88c54ddcd9cf96ce082e0fc0cba75e91132c4e82a885eba7b2ce67e99a4",
+      "question": {
+        "enonce": "À quelle heure certains cours peuvent-ils commencer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 6 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 11 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 14 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 6 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-028-01.mp3",
+      "audio_sha256": "0b791fb7626b92a7cf11932e1f47c894aab4b5e9cc1fcdf97c3ce28995c985e6",
+      "image_ids": [
+        "vocab-horloge-0630",
+        "vocab-horloge-1130",
+        "co834-horloge-1430-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0630.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1130.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ab7a91a9f4f91f09956203f0f86df68e3bafa03acebfc06a0ac2eee0c0b49f61",
+        "2cc4b028d356e353b7fe78f929ea5eed2d556d830ddb42fe30396cd5fa5cd25b",
+        "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63"
+      ],
+      "reason": "Transcription entière relue : À quelle heure certains cours peuvent-ils commencer ? Réponse justifiée : À 6 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    },
+    {
+      "key": "tcf-delf-actif-b1-036-01#5",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "L’enseignement à distance mis en place lors de la pandémie de la Covid-19 est une expérience positive pour un grand nombre de jeunes et une expérience négative pour les enseignants. Les enseignants estiment, en effet, qu’il est difficile de maintenir des liens sociaux et affectifs avec les élèves et selon eux tous ne bénéficient pas du même suivi et du même accès aux outils informatiques. Premièrement je parlerai des avantages de cette forme d’enseignement pour les élèves et je donnerai des exemples. Ensuite je présenterai les inconvénients pour les profs et pour les élèves en donnant toujours des exemples. Je terminerai par mon point de vue. Pour les jeunes l’apprentissage à distance a des effets positifs parce qu’ils utilisent des outils numériques qu’ils manipulent aisément. Ils apprécient de ne pas perdre de temps dans les déplacements et ils aiment apprendre à leur rythme tout en gagnant en autonomie. Moi-même j’habite loin du lycée, mon réveil sonne à 6h30 et j’ai un parcours de ¾ heures en car pour arriver à l’heure au lycée. Je connais une même perte de temps pour rentrer à la maison après mes cours. Rester à la maison me permet en effet de déjeuner plus tôt, de me remettre au travail après et de revoir les cours quand je veux puisque mes professeurs les enregistrent. Mais il est vrai aussi que pas tous les professeurs utilisent bien les outils numériques et qu’ils pensent qu’une présence physique ravive le contact avec leurs élèves et aussi entre élèves. Moi aussi j’ai hâte de retrouver mes camarades de classe. Il est vrai que nous ne sommes pas toujours d’accord mais se confronter aide aussi à surmonter les difficultés dans certaines disciplines. Et puis j’adore parler avec mes camarades avant de rentrer au lycée. D’autre part les professeurs ont raison de souligner que l’accès aux outils informatiques n’est pas le même pour tous. Je connais des élèves de ma classe qui ont des difficultés de connexion puisqu’ils habitent à la campagne ou n’ont pas d’outils informatiques performants. Je sais que de nombreux lycéens ont pris goût à l’enseignement à distance et grand nombre de jeunes sont favorables à une évolution du système d'enseignement vers le numérique. Mais moi, je pense que le manque de présence physique entre les professeurs et les élèves ou entre nous, nous isole et ne nous permet pas de nous confronter sur les difficultés scolaires du moment.",
+      "source_sha256": "c488cb062d19e12d116a4baef51d9a03b6c964b524e6f236fbe8ad1c7c0d4efa",
+      "semantic_sha256": "43d126b0bb9f942f5e2549fffe475a77e393aec160a97d38499d426c0460247b",
+      "question": {
+        "enonce": "À quelle heure le réveil de l’intervenant sonne-t-il habituellement ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 6 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 8 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 10 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 6 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-036-01.mp3",
+      "audio_sha256": "ce35b3850f88200319c939af4c41b8d2e980f29b3ed21b5ebdccad2951040ee9",
+      "image_ids": [
+        "vocab-horloge-0630",
+        "vocab-horloge-0830",
+        "co834-horloge-1030-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0630.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1030-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ab7a91a9f4f91f09956203f0f86df68e3bafa03acebfc06a0ac2eee0c0b49f61",
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+        "2d39a9be0aa5fe965709ad1e79052cf15346b875bf9c3041c80a4c04d30c8f01"
+      ],
+      "reason": "Transcription entière relue : À quelle heure le réveil de l’intervenant sonne-t-il habituellement ? Réponse justifiée : À 6 h 30. Les autres horaires concernent des propositions distinctes du fait demandé.",
+      "visual_review": "Trois cadrans du même modèle peint examinés individuellement. Minutes et progression de la petite aiguille exactes ; trois positions distinctes. Le trio ne demande pas de distinguer deux occurrences séparées de douze heures. Les questions gardent leur portée : rendez-vous, départ, arrivée, ouverture ou fermeture, horaire initial ou reporté."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "899bc9cd1981cd3a87a8e1d8331ee263c219d28b",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 81,
+    "registers": [
+      "docs/tcf/revue-trios-horaires-delf-actif-20261113.json",
+      "docs/tcf/revue-trios-sports-transports-20261113.json"
+    ]
+  }
+}

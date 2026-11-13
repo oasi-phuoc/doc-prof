@@ -1,0 +1,692 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "899bc9cd1981cd3a87a8e1d8331ee263c219d28b",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-001-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Frank mercredi l’équipe de foot de la ville joue au stade. On va assister au match ?",
+      "source_sha256": "46088db84e7d520208f991ae70d6b9f735bd6a83fc6bc2966a965ed024cc00c6",
+      "semantic_sha256": "b5b40afb0b75127d7ebad3cfff30456c73d9106062f6862802862952d8b0dfee",
+      "question": {
+        "enonce": "Quel sport l’équipe pratique-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le football",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le rugby",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le basket",
+            "correct": false
+          }
+        ],
+        "written_model": "Le football"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-01.mp3",
+      "audio_sha256": "1f6085e63ee2f1e95646a1d44cf4b759fc233c1380a1ca82abbcfc7c849c74cc",
+      "image_ids": [
+        "co834-football-dessine",
+        "vocab-rugby",
+        "co834-basketball-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+        "/lib/images/tcf/qcm-audit/co834-basketball-dessine.webp"
+      ],
+      "image_sha256": [
+        "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593",
+        "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704",
+        "09ff0ff800a62344fbf6a677d92f2f4852c9c590ab7c28c0b981ea4c40498bbe"
+      ],
+      "reason": "Transcription entière relue : Quel sport l’équipe pratique-t-elle ? Réponse justifiée : Le football. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Manon. Samedi je t’invite à un pique-nique à la campagne. Qu’en dis-tu ? On y va en vélo avec Léo. Mets un vieux jean et de vieilles baskets. Apporte une bouteille d’eau. Moi, je pense aux sandwichs et Léo apporte des fruits. Rendez-vous à l’arrêt de bus.",
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "cbfa0db2bebf01adbe66b6aeb2ef96d4255a745bfec9e86277fc80038b5166ff",
+      "question": {
+        "enonce": "Comment les amis vont-ils à la campagne ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "En voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "En train",
+            "correct": false
+          }
+        ],
+        "written_model": "À vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-002-01.mp3",
+      "audio_sha256": "40b684f1d3edebf63f98ef948f0edbebadd4125c7edb560c60d61720f34ccfbd",
+      "image_ids": [
+        "vocab-velo-isole",
+        "co834-voiture-dessinee",
+        "vocab-train-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+      ],
+      "reason": "Transcription entière relue : Comment les amis vont-ils à la campagne ? Réponse justifiée : À vélo. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-003-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Agathe. Mercredi la prof de français est absente. On sort à 11h00. On peut aller à la bibliothèque Albert Camus. Apporte ton cahier à spirale. On prépare le contrôle pour vendredi. On rentre à la maison en voiture avec mes parents. J’attends ta réponse avant 18h00.",
+      "source_sha256": "3583736e738653c2b5107d647dc5edf7796d9e465469519e8add9ed5cd1e6ae0",
+      "semantic_sha256": "40d948b5d73db823e2032be409345fa6da045aaeca88b6978ce8374c29f9e485",
+      "question": {
+        "enonce": "Comment les amis rentrent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "En voiture",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À pied",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "En voiture"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-003-01.mp3",
+      "audio_sha256": "13e47bdeaf5e5cc9cc27110f970758a7f4529594b263c996540516eeca60feb7",
+      "image_ids": [
+        "co834-voiture-dessinee",
+        "co834-marche-pied-dessinee",
+        "vocab-velo-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "image_sha256": [
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+      ],
+      "reason": "Transcription entière relue : Comment les amis rentrent-ils ? Réponse justifiée : En voiture. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-006-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Léo, Thomas revient de Belgique avec des chocolats. Avant de repartir samedi en avion en Espagne, il nous invite pour un goûter vendredi à 17h00 pour regarder ensemble son blog. Moi, j’apporte des jus de fruits et toi des bons biscuits . On peut aller chez lui à vélo.",
+      "source_sha256": "6b8944ed77905c56c952ebb2f78b4a07092431901692b69029dbded7057fb14c",
+      "semantic_sha256": "2660237a76e984c4ee03fbd8bd97724566472ea89de8f087739df5d3f016a3c1",
+      "question": {
+        "enonce": "Comment les amis peuvent-ils aller chez Thomas ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "En bus",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "En métro",
+            "correct": false
+          }
+        ],
+        "written_model": "À vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-006-01.mp3",
+      "audio_sha256": "a2312fe2126ce19a4fae3b2d81c48c52290046f1a6076214520c765be9b0338f",
+      "image_ids": [
+        "vocab-velo-isole",
+        "vocab-bus-isole",
+        "vocab-metro-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "reason": "Transcription entière relue : Comment les amis peuvent-ils aller chez Thomas ? Réponse justifiée : À vélo. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-009-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, j’ai deux billets pour le concert d’Amir. On va voir son spectacle samedi ? Tu veux venir avec moi ? Pour y aller on prend le bus à 18h00 heures et pour rentrer mon père vient nous chercher avec sa voiture. Jeudi à l’entraînement de volley on parle des détails.",
+      "source_sha256": "f7d7dabbe90665dade51c32c96d62ec17c0b80798365c4798a11165e649dd2c9",
+      "semantic_sha256": "d8752fc9041835258611bb9f16a432f640b41cc31fea86f9fa9e1f83d450a013",
+      "question": {
+        "enonce": "Comment les amis se rendent-ils au spectacle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "En bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "En voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "En bus"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-009-01.mp3",
+      "audio_sha256": "a6f78eb801f472a611c50bb274d7857eecaad05016d29f7fc291f6ca5058dff3",
+      "image_ids": [
+        "vocab-bus-isole",
+        "co834-voiture-dessinee",
+        "vocab-velo-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+      ],
+      "reason": "Transcription entière relue : Comment les amis se rendent-ils au spectacle ? Réponse justifiée : En bus. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-028-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Viviane. Ta valise est prête pour ce voyage scolaire ? Demain matin, si tu veux, pour aller à la gare, je passe te chercher en voiture avec mon père. À 7h00 devant chez toi. Le train part à 7h30. Pour nos soirées à l’hôtel apporte un jeu de cartes.",
+      "source_sha256": "068a0f853f418e256f6dc88078ef7a54f231d292c0f253791bbcecd64ccdbf62",
+      "semantic_sha256": "56889a0904964ca825e483f0c4fcb7af69e5380b97434ea58c4deca635c500ef",
+      "question": {
+        "enonce": "Comment Viviane propose-t-elle d’aller à la gare ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "En voiture",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "En bus",
+            "correct": false
+          }
+        ],
+        "written_model": "En voiture"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-028-01.mp3",
+      "audio_sha256": "a940d5836aabbd1eb15177adc61b06f31d0ae6e98a3cc4a97dd60fe6d7746941",
+      "image_ids": [
+        "co834-voiture-dessinee",
+        "vocab-velo-isole",
+        "vocab-bus-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "image_sha256": [
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "reason": "Transcription entière relue : Comment Viviane propose-t-elle d’aller à la gare ? Réponse justifiée : En voiture. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-029-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Mahdi. Tu viens t’entraîner pour le match de rugby de mercredi après-midi ? Oui, volontiers. Je demande à mes parents.",
+      "source_sha256": "cd1ddda561ae0e1fb27b2ac9730448918aaf859902d6778b7202f3842538294b",
+      "semantic_sha256": "eb3a752b009db9ac1dca38874313fe5efc058dc10d3286fa64bd9174b4d42e30",
+      "question": {
+        "enonce": "Quel sport les amis pratiquent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le rugby",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le football",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le handball",
+            "correct": false
+          }
+        ],
+        "written_model": "Le rugby"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+      "audio_sha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+      "image_ids": [
+        "vocab-rugby",
+        "co834-football-dessine",
+        "extension573-handball-entier"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-handball-entier.png"
+      ],
+      "image_sha256": [
+        "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704",
+        "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593",
+        "c73086fd08a539ea809e7660c65397019b5a9934616cfa22529121ba61867e46"
+      ],
+      "reason": "Transcription entière relue : Quel sport les amis pratiquent-ils ? Réponse justifiée : Le rugby. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-01-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alessio, tu es toujours d’accord pour venir au concert de Stromae ? Rendez-vous devant la gare pour prendre le métro. Après on va directement au stade. N’apporte pas de boissons. Elles sont interdites. Après le concert on mange un sandwich. On rentre avec Gabriel et les autres copains.",
+      "source_sha256": "250e234af8db9c005f3a74373861eb5556e14375f13572e8ad7c6f777b648946",
+      "semantic_sha256": "160e5d71ec3c36e4921f973c84c9adcb0bd10c51af6e1b3074fd6da5ed1c34b0",
+      "question": {
+        "enonce": "Quel transport prendront-ils à la gare ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le métro",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le bus",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le tram",
+            "correct": false
+          }
+        ],
+        "written_model": "Le métro"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-01-01.mp3",
+      "audio_sha256": "1fcdc5f7115af7eacad95e017421f7d0370e4113ede11aea549168b75678c5f7",
+      "image_ids": [
+        "vocab-metro-isole",
+        "vocab-bus-isole",
+        "vocab-tramway"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+      ],
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf"
+      ],
+      "reason": "Transcription entière relue : Quel transport prendront-ils à la gare ? Réponse justifiée : Le métro. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-04#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour aller au musée, il est préférable d’y aller à pied ou de prendre le bus ? Prenez le bus. Il vous laisse devant. De la gare, c’est loin. Merci, mais j’aime marcher. Ah, alors vous avez le choix !",
+      "source_sha256": "65a9cafe29cf01f13d88c3a8c87c7a89bca36ae25ba87372b59984e87d53e649",
+      "semantic_sha256": "30123ced19bcc7649f0a810d6b8830c905b4d2362e5168b6cc308eed1dce57bd",
+      "question": {
+        "enonce": "Quel transport lui conseille-t-on ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le métro",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le tram",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bus"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-04.mp3",
+      "audio_sha256": "b982e025b9d294b4b67b9b76886b3fbee95ff4a1437e81827bf1633c2217830e",
+      "image_ids": [
+        "vocab-bus-isole",
+        "vocab-metro-isole",
+        "vocab-tramway"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+      ],
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf"
+      ],
+      "reason": "Transcription entière relue : Quel transport lui conseille-t-on ? Réponse justifiée : Le bus. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-04-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+      "source_sha256": "69623f8b2e56032eb040301b0f0a79c05a4b3d9b129dd3fb89405121bd8451aa",
+      "semantic_sha256": "27146dbc412dd1048ae3b1e1750636cc9033e97decac7867730417b2cfee1516",
+      "question": {
+        "enonce": "Quel transport est proposé à la place ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le tram",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le métro",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bus"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-04.mp3",
+      "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb",
+      "image_ids": [
+        "vocab-bus-isole",
+        "vocab-tramway",
+        "vocab-metro-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-tramway.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "reason": "Transcription entière relue : Quel transport est proposé à la place ? Réponse justifiée : Le bus. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-03-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, c’est Chloé. Marina pour venir chez moi à pied, au feu rouge de l’avenue Foch, prends à droite. Tu passes devant l’hôtel Lux et au coin de la rue il y a une grande pâtisserie. J’habite en face, le grand immeuble blanc. Il n’y a pas de noms sur la sonnette mais un numéro. Tu sonnes au numéro 68. Tu peux aussi prendre le bus surtout si tu as un abonnement. Apporte ton ordinateur pour réserver nos prochaines vacances.",
+      "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
+      "semantic_sha256": "90dce6ca68a9bc237bb73e00ac5260ea9a0d0a6e878dfb7047008ae200c68595",
+      "question": {
+        "enonce": "Quel moyen de déplacement Chloé décrit-elle d’abord ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La marche",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le métro",
+            "correct": false
+          }
+        ],
+        "written_model": "La marche"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
+      "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
+      "image_ids": [
+        "co834-marche-pied-dessinee",
+        "vocab-velo-isole",
+        "vocab-metro-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "image_sha256": [
+        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "reason": "Transcription entière relue : Quel moyen de déplacement Chloé décrit-elle d’abord ? Réponse justifiée : La marche. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-b1-005-01#4",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Léo ! qu’est-ce que tu fais cet après-midi ? Cet aprèm… Attends, c’est jeudi. À 16h00 j’ai mon cours de natation, comme tous les jeudis. Je suis inscrit dans le nouveau club. Génial ! C’est le nouveau club qui se trouve au bout de l’avenue Foch ? C’est ça. C’est le club où sont inscrits aussi mes cousins. Il est loin de chez moi. Je dois traverser la ville mais tant pis ! J’y vais en vélo et quand il pleut je demande à mon grand-père de m’accompagner. L’ambiance est détendue. La prof super sympa et on s’entraîne dans la grande piscine inaugurée cet été. C’est trop bien ! Ah c’est cool ! Mais… tu prépares des compétitions. Non, pas encore ! Les compétitions se font à partir de la deuxième année. Et toi Julia, tu t’es mise au sport ? Surtout pas. Tu sais depuis que je me suis cassée une jambe j’ai trop peur. Je préfère d’autres loisirs, à part quelques randonnées en été quand je vais chez mes grands-parents. Pour moi, c’est… le dessin, la peinture à l’huile et maintenant même sur toile! Ah bon. Alors tu es une artiste ! Dis, tu exposes quand ? Tu plaisantes ! Ce n’est pas encore pour demain, mais figure-toi que j’y pense. Mon prof me dit que je suis douée alors… peut-être un jour ! J’ai déjà fait de jolies choses tu sais. Tu devrais venir chez moi les voir. J’ai plusieurs tableaux. Si tu m’invites, je viens… mais… penses aussi à moi. Les murs de ma chambre sont vides. Si tu as quelques toiles, je suis prêt à te faire de la pub, surtout si tu m’offres tes tableaux.",
+      "source_sha256": "f4cc46820901fb8ff584f3b4af8a818fe5842c08cf4262a5206b1b1c4fec355d",
+      "semantic_sha256": "200e13b7cdfd593b8d3a5668c514f0601f9d37d1dda4256890d1784661cca46d",
+      "question": {
+        "enonce": "Comment Léo rejoint-il habituellement le club ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "En train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À pied",
+            "correct": false
+          }
+        ],
+        "written_model": "À vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-005-01.mp3",
+      "audio_sha256": "eaf953128d4b1b055e2275a288fbb1c84a3b7638b799bb1912a1f3a8f09b259f",
+      "image_ids": [
+        "vocab-velo-isole",
+        "vocab-train-isole",
+        "co834-marche-pied-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+      ],
+      "reason": "Transcription entière relue : Comment Léo rejoint-il habituellement le club ? Réponse justifiée : À vélo. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-b1-013-05#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Rugby. Nice battu par Limoges 20 à 26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2.",
+      "source_sha256": "c4e9dce609e97c9d1b83ad67ce6f32300f3cd9bfa2525b97a9ce0d2d26d38cea",
+      "semantic_sha256": "26d38c7c79fa983f93bd8237f4b624fea0c39b0c8422fc7679f13f20ee02b639",
+      "question": {
+        "enonce": "Quel sport est concerné ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le rugby",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le football",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le handball",
+            "correct": false
+          }
+        ],
+        "written_model": "Le rugby"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-013-05.mp3",
+      "audio_sha256": "32c6fbaa31b23a44f01a310dfb24fa87e7b4bd4449d1e88af44052b7f7c4aac9",
+      "image_ids": [
+        "vocab-rugby",
+        "co834-football-dessine",
+        "extension573-handball-entier"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-handball-entier.png"
+      ],
+      "image_sha256": [
+        "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704",
+        "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593",
+        "c73086fd08a539ea809e7660c65397019b5a9934616cfa22529121ba61867e46"
+      ],
+      "reason": "Transcription entière relue : Quel sport est concerné ? Réponse justifiée : Le rugby. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-b1-033#2",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Non, il n’est pas intéressant, il est ennuyeux ! L’histoire est banale et je ne l’ai pas aimée.\nC’est absurde ! On ne pourrait circuler qu’à pied et nos parents où devraient-ils nous déposer ?\nLes selfies, c’est nul ! Ils sont même dangereux selon les lieux. Qu’est-ce que c’est ennuyeux de s’arrêter à tout moment pour se faire un selfie et épater nos amis.\nJe n’aime pas du tout ! Je déteste même le bruit qu’il y a dans ces lieux! Tu sais, moi, les fast-foods, ça ne me dit rien, je trouve les aliments de mauvaise qualité.\nOh ! David est casse pieds ! Il est ennuyeux quand il s’y met. Je ne le supporte plus. Quand il insiste, il devient désagréable.\nCe n’est pas génial ! Je m’attendais à mieux ! C’était mal organisé et ça ne m’a pas plu !",
+      "source_sha256": "ed8491fa7b5aa1cac89d0674e60c16d1fd068bfe74a071f34f513280db991a93",
+      "semantic_sha256": "7f7f885ff296632c19e028318352fccd14f5f302664004d1f8402ffdeb305d34",
+      "question": {
+        "enonce": "Quel moyen de déplacement resterait possible dans la deuxième opinion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La marche",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le métro",
+            "correct": false
+          }
+        ],
+        "written_model": "La marche"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-033.mp3",
+      "audio_sha256": "9412f03dc30fa6a0ab0d98a4692ed3f56af99fc689693942142ec4853b381acf",
+      "image_ids": [
+        "co834-marche-pied-dessinee",
+        "co834-voiture-dessinee",
+        "vocab-metro-isole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "image_sha256": [
+        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "reason": "Transcription entière relue : Quel moyen de déplacement resterait possible dans la deuxième opinion ? Réponse justifiée : La marche. Le trajet demandé est distingué des autres moyens de transport cités.",
+      "visual_review": "Images examinées individuellement. Véhicules représentés entiers ; la marche est une action de marche et non un marché. Les sports se distinguent par le ballon, le geste et les équipements : rugby, football, basket et handball. Pour le handball, seule la reprise complète sans pied coupé est retenue. Les personnages illustrent la catégorie, pas une identité du dialogue."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "899bc9cd1981cd3a87a8e1d8331ee263c219d28b",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 81,
+    "registers": [
+      "docs/tcf/revue-trios-horaires-delf-actif-20261113.json",
+      "docs/tcf/revue-trios-sports-transports-20261113.json"
+    ]
+  }
+}

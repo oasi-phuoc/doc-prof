@@ -1,0 +1,406 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-024-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut c’est Sylvain, il y a un nouveau magasin de sport au centre-ville. Tu cherches toujours un blouson pour aller faire du tennis ? On peut faire des achats à 15h00 avant de commencer nos devoirs. À 18h30, on doit terminer d’étudier. Je dois aller chez le dentiste. Pour la couleur apporte le pantalon bleu marine.",
+      "source_sha256": "622fb909180ceb5abdca2412902e07ce8208e53815501d0bf71b1c2f77d4e5d4",
+      "semantic_sha256": "072c87188b32e42c109721f5bc7187671f3d01ed954c777753850716d280da0e",
+      "question": {
+        "enonce": "Quel vêtement l’ami cherche-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un blouson",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une chemise",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un pantalon",
+            "correct": false
+          }
+        ],
+        "written_model": "Un blouson"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-024-01.mp3",
+      "audio_sha256": "c9aace00f25adc5c2604804549a12e762ad6891fa3bd4d1be96b7de5c872ab85",
+      "image_ids": [
+        "extension573-blouson-bleu",
+        "vocab-chemise",
+        "vocab-pantalon"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-blouson-bleu.png",
+        "/lib/images/tcf/qcm-audit/vocab-chemise.webp",
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp"
+      ],
+      "image_sha256": [
+        "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f",
+        "313e2ec2df6f62e1258d3ba92ca8b983a83e1fdee96ded72a55b972a26281f90",
+        "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f"
+      ],
+      "reason": "Sylvain parle du blouson recherché pour le tennis. Le pantalon sert seulement de repère de couleur.",
+      "visual_review": "Blouson court zippé, chemise à boutons et pantalon long : catégories distinctes."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-03-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est André ! Le site de la mairie annonce une entrée gratuite demain à 11h00 à la piscine communale. Tu viens avec moi ? Prends ton maillot de bain. Les profs présentent les cours. Moi je veux faire de l’aquabike. Rendez-vous devant le théâtre à 10h30.",
+      "source_sha256": "cd9a827a9ede2086903f88323b6601232b100abddf647f43db05d830eb160c27",
+      "semantic_sha256": "957a8c3c459995244867da0d6cbac1fab2a7418823ae11a11cd8fc3d6ba54bfb",
+      "question": {
+        "enonce": "Quel vêtement faut-il prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un maillot de bain",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un blouson",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un pantalon",
+            "correct": false
+          }
+        ],
+        "written_model": "Un maillot de bain"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-03-01.mp3",
+      "audio_sha256": "498c4db6f2fd0967fb5b63c349b2556d8ee1dc10440203d7a02e96cda1482f80",
+      "image_ids": [
+        "vocab-maillot-une-piece",
+        "extension573-blouson-bleu",
+        "vocab-pantalon"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+        "/lib/images/tcf/qcm-audit/extension573-blouson-bleu.png",
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp"
+      ],
+      "image_sha256": [
+        "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82",
+        "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f",
+        "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f"
+      ],
+      "reason": "André demande de prendre son maillot de bain pour aller à la piscine.",
+      "visual_review": "Un maillot une pièce illustre la catégorie sans attribuer un genre au destinataire. Blouson et pantalon sont des leurres vestimentaires distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-04-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+      "source_sha256": "cbb64e636c4a5d8f0c7a504bbe1b13db9111450ceec91d46707e75c24bca3b67",
+      "semantic_sha256": "70a661129426112471637a816c1609000145e333fd46dc36d2a45067932e2cc5",
+      "question": {
+        "enonce": "Sous quel vêtement retrouve-t-il l’objet ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un blouson bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un manteau rouge",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un pull vert",
+            "correct": false
+          }
+        ],
+        "written_model": "Un blouson bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+      "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+      "image_ids": [
+        "extension573-blouson-bleu",
+        "extension573-manteau-rouge",
+        "extension573-pull-vert"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-blouson-bleu.png",
+        "/lib/images/tcf/qcm-audit/extension573-manteau-rouge.webp",
+        "/lib/images/tcf/qcm-audit/extension573-pull-vert.png"
+      ],
+      "image_sha256": [
+        "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f",
+        "4a97987ac02ec4fe71f86bc94ef56c1d924e93108b372aaf9d89fecc63b6729c",
+        "16d1f07974e9ac0f670b79b15fee4822453dedd70ea8b5a429f06615aa08e8ef"
+      ],
+      "reason": "Le sac est retrouvé sous le blouson bleu.",
+      "visual_review": "Couleurs et types exacts des trois vêtements : blouson bleu court zippé, manteau rouge long boutonné, pull vert tricoté. La question demande le vêtement, pas une position : aucune scène de sac inventée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-04#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vos bottes modes se trouvent au 2e étage de notre magasin.",
+      "source_sha256": "0809dacee0f3d117985916f7cd9ff0348ba9c5ab391d6cdc3d2eeb4a8fe2314b",
+      "semantic_sha256": "d690ded246633a5506d8517098554c82943aa282048323319c622fc6afffc451",
+      "question": {
+        "enonce": "Quel article est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des bottes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des sandales",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des chaussons",
+            "correct": false
+          }
+        ],
+        "written_model": "Des bottes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-04.mp3",
+      "audio_sha256": "2f6ac40fb01add5e834fb1e2824e99ddb2daaf5bb4f66470a25beac5a1a4f67b",
+      "image_ids": [
+        "vocab-bottes",
+        "co306-sandales-dessine",
+        "extension573-chaussons-maison"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-chaussons-maison.png"
+      ],
+      "image_sha256": [
+        "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581",
+        "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d",
+        "daed1dc3cacbd0dacf7e862c8d20d3926b1fff94582c8a625fc1f69b451b45dd"
+      ],
+      "reason": "L’annonce propose des bottes au deuxième étage.",
+      "visual_review": "Trois paires entières : bottes hautes, sandales ouvertes et chaussons de maison. Le nombre d’étage n’est pas illustré."
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-06#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour un look féminin offrez-vous une jolie paire de chaussures modernes. Nous vous attendons dans notre magasin avec une large collection de chaussures, de basket et de sandales pour l’été.",
+      "source_sha256": "a6389a3d8c955d46fc1d086b971d989cb33df31aee1df8e12d3adf16be1d4f1b",
+      "semantic_sha256": "6a8624c836f3f9fd4e62b7a065484dfae187cd7f8f0786c2a6d29b320027dde3",
+      "question": {
+        "enonce": "Quels types de chaussures sont cités avec les baskets ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les sandales",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les bottes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les chaussons",
+            "correct": false
+          }
+        ],
+        "written_model": "Les sandales"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-06.mp3",
+      "audio_sha256": "e5e1f1f5113bc89c0ad695dc743ccaaf8f55852acb7009c47b1a2642679955bb",
+      "image_ids": [
+        "co306-sandales-dessine",
+        "vocab-bottes",
+        "extension573-chaussons-maison"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+        "/lib/images/tcf/qcm-audit/extension573-chaussons-maison.png"
+      ],
+      "image_sha256": [
+        "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d",
+        "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581",
+        "daed1dc3cacbd0dacf7e862c8d20d3926b1fff94582c8a625fc1f69b451b45dd"
+      ],
+      "reason": "La collection cite les sandales avec les baskets.",
+      "visual_review": "Sandales, bottes et chaussons de maison représentés par paires ; aucune pâtisserie utilisée pour le mot chaussons."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-05-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Pamela, enfin le départ pour les vacances… c’est pour demain. Tu vas enfin connaître la Côte d’Azur ! C’est une région magnifique. On annonce de belles journées. Ta valise est prête ? Moi j’apporte mon maillot de bain, des tee shirts, un short et mes lunettes de soleil. À demain !",
+      "source_sha256": "2843e17a5cc855b1516aca432bfd212b376bfd575240649a6b60aa6fe64cdb2d",
+      "semantic_sha256": "23bf79bdbd53e1c4357f907da279bb3bd0b70454aa38f93078aa8efd2fdf94e6",
+      "question": {
+        "enonce": "Quel vêtement court emporte-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un short",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un pantalon",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une jupe",
+            "correct": false
+          }
+        ],
+        "written_model": "Un short"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-05-01.mp3",
+      "audio_sha256": "5833ee84e92947999ad267d4e08f3bfedf95d5a76febb7e73a29aabc2e844dc7",
+      "image_ids": [
+        "vocab-short",
+        "vocab-pantalon",
+        "88a6b997029d"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-short.webp",
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+        "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
+      ],
+      "image_sha256": [
+        "eb8060e02e626f1fbef7555a5342b5f18741bfeea70b7a7ad11bc238ee4b4766",
+        "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f",
+        "7bcfb889f7fb26c898966c2888df3bd56fa2e594c6fd506823fe272459d4aa1f"
+      ],
+      "reason": "La voyageuse annonce emporter un short.",
+      "visual_review": "Un short court, un pantalon long et une jupe unique verte. Les vêtements sont entiers et au singulier."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-03-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Maman, c’est Béatrice ! Mon amie Olivia m’invite dimanche pour son anniversaire dans la salle des fêtes. Je veux mettre une robe. Apporte, s’il-te-plaît, ma robe bleue pour la faire laver. Elle ne peut pas être lavée à la main mais à sec. Demande de la préparer pour samedi. Peux-tu passer la chercher et préparer pour tous le gâteau aux fraises que tu sais très bien faire ? Pense à acheter le nécessaire. Merci maman. Bisous.",
+      "source_sha256": "ebf3a5afe34c418321ef9c3f42f580ddef399c03a1b8018e3d174bf47836c46f",
+      "semantic_sha256": "ab3a82ed0142b8f05ffede444f84f984e7b182ab5ede5bef1d118c8b7e43381d",
+      "question": {
+        "enonce": "Quel vêtement Béatrice veut-elle porter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une robe",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un pantalon",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une jupe",
+            "correct": false
+          }
+        ],
+        "written_model": "Une robe"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-03-01.mp3",
+      "audio_sha256": "50d0573f95d93b3500e529d76ab42877b460b0a5e3f5b2442f751ea2e9500428",
+      "image_ids": [
+        "extension573-robe-soiree",
+        "vocab-pantalon",
+        "88a6b997029d"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-robe-soiree.png",
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+        "/lib/images/tcf/qcm-audit/88a6b997029d.webp"
+      ],
+      "image_sha256": [
+        "bb2fc55cc710ce177ec13a991c478a383c24c71769d4901f514ac0f15e03e564",
+        "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f",
+        "7bcfb889f7fb26c898966c2888df3bd56fa2e594c6fd506823fe272459d4aa1f"
+      ],
+      "reason": "Béatrice veut porter sa robe bleue pour un anniversaire et la faire nettoyer à sec.",
+      "visual_review": "La robe réutilisée est bien bleue ; la robe légère jaune et la robe rouge sont écartées. Pantalon et jupe distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-021-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Eva, Ça te dit de venir avec ma sœur et moi manger une glace dimanche après-midi ? On se retrouve chez le glacier italien à 16h30. Après, s’il fait beau on peut faire une promenade au bord de mer. Mets tes tennis pour bien marcher. Réponds-moi avant 20 heures.",
+      "source_sha256": "e79d9cbb865eeaacaa13df8550b888c66ebf222e052da5c8c8d7dfb5044a19a8",
+      "semantic_sha256": "ca02f6488b3117cde0b22155012a9b6379039d9ddafc547f6406dbad6e6d08e4",
+      "question": {
+        "enonce": "Quelles chaussures Eva doit-elle mettre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des tennis",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des bottes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des sandales",
+            "correct": false
+          }
+        ],
+        "written_model": "Des tennis"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-021-01.mp3",
+      "audio_sha256": "33305497189bc6ad04e14337b14b821a9992350c048bd7a3a3672748a22272d0",
+      "image_ids": [
+        "vocab-baskets",
+        "vocab-bottes",
+        "co306-sandales-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bottes.webp",
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp"
+      ],
+      "image_sha256": [
+        "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be",
+        "e3ebb554020b25ccfc12b9500a9b1e18b4772dbe5994cc9ca9da0a21a9b95581",
+        "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d"
+      ],
+      "reason": "Eva doit mettre ses tennis pour bien marcher.",
+      "visual_review": "Paire de chaussures basses à lacets et semelles sport, bottes montantes et sandales ouvertes. Tennis désigne ici les chaussures, pas l’activité sportive."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 40,
+    "registers": [
+      "docs/tcf/revue-trios-appareils-lieux-fetes-20261113.json",
+      "docs/tcf/revue-trios-vetements-20261113.json",
+      "docs/tcf/revue-trios-fruits-laitiers-20261113.json",
+      "docs/tcf/revue-trios-domiciles-bibliotheques-20261113.json"
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "d6456363325b8e8c750c4e3c524fc0db9a7d11f8",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-048-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Monsieur. Bonjour jeune homme. Oh ! Qu’est-ce que vous avez là ? Je fais du vélo et voilà ! J’ai mal à la jambe, vous pouvez me donner des médicaments, s’il vous plaît ? Qu’est-ce que je vous donne ? J’ai besoin d’un désinfectant. J’ai ce produit. Il est très efficace. Quel est prix de ce flacon ? Il coûte 4,80 €. Et vous avez aussi des pansements ? Bien sûr. Voici les pansements. Ils sont à quel prix ? La boîte coûte 3,10 €. Il y a combien de pansements dans une boîte ? Il y a 10 pansements. Je peux prendre des comprimés aussi ? Oui, si vous avez mal vous pouvez prendre ces comprimés un le matin et un le soir. Merci, combien je vous dois en tout ? 10,10 € jeune homme. Voici les 10 € et les 10 centimes. Merci et au revoir. Au revoir.",
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "f9c249dadd4fb6d510b697fd47aa43959790d8698473adaf30af3661638f4795",
+      "question": {
+        "enonce": "Où a-t-il mal ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la jambe",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au bras",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au dos",
+            "correct": false
+          }
+        ],
+        "written_model": "À la jambe"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "image_ids": [
+        "vocab-jambe",
+        "vocab-bras",
+        "vocab-dos"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-jambe.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bras.webp",
+        "/lib/images/tcf/qcm-audit/vocab-dos.webp"
+      ],
+      "image_sha256": [
+        "cd7d647c5eeaa755c0641387155b240704937da1de531b314a48f9b7d2a9598a",
+        "12a5e27c5cb480d9ee26d80b9533e59c98fe6097f73eafc9acea8a76623c4612",
+        "9936fc703d18452ecd9586ca2227a3d57274f093f4faaa5bd76c304c5bdc8d53"
+      ],
+      "reason": "Le jeune homme dit explicitement avoir mal à la jambe après avoir fait du vélo.",
+      "visual_review": "Jambe entière avec pied, bras avec main et dos vu de derrière : trois régions corporelles distinctes. La question porte sur la localisation, sans ajouter une blessure inventée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-01-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alessio, tu es toujours d’accord pour venir au concert de Stromae ? Rendez-vous devant la gare pour prendre le métro. Après on va directement au stade. N’apporte pas de boissons. Elles sont interdites. Après le concert on mange un sandwich. On rentre avec Gabriel et les autres copains.",
+      "source_sha256": "250e234af8db9c005f3a74373861eb5556e14375f13572e8ad7c6f777b648946",
+      "semantic_sha256": "17e3d99604e28aa59f20ed08aabf047c9e8b0ae7b3f9c4dd50cefe1ea7613caa",
+      "question": {
+        "enonce": "Quels produits sont interdits ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les boissons",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les biscuits",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les téléphones",
+            "correct": false
+          }
+        ],
+        "written_model": "Les boissons"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-01-01.mp3",
+      "audio_sha256": "1fcdc5f7115af7eacad95e017421f7d0370e4113ede11aea549168b75678c5f7",
+      "image_ids": [
+        "co834-boissons-dessinees",
+        "vocab-biscuits",
+        "vocab-telephones"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+        "/lib/images/tcf/qcm-audit/vocab-telephones.webp"
+      ],
+      "image_sha256": [
+        "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af",
+        "1a56738e046d9744ec1241a9f699fc509a94f85bfc93ef40f8f781d5492c451c"
+      ],
+      "reason": "Le message interdit explicitement les boissons au concert ; les biscuits et téléphones ne sont pas cités.",
+      "visual_review": "Plusieurs boissons, quatre biscuits et trois téléphones. Les pluriels sont respectés ; aucun pictogramme interdit ajouté uniquement sur la bonne réponse."
+    },
+    {
+      "key": "tcf-delf-actif-a2-011-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Une bonne nouvelle cette année pour les animaux domestiques avec un record historique d’adoption de chiens ! Près de 50 000 chiens ont aujourd’hui une nouvelle famille ! Un chien c’est moins de stress et beaucoup d’affection !",
+      "source_sha256": "ddd9b9d61660b8f57549138a58ad3ecf7982fef8a4879d2c3cdf78a717f75c6f",
+      "semantic_sha256": "9cc6f766d3188219be290de5258e22380749771e4c6a183894f532090c0f7cce",
+      "question": {
+        "enonce": "Quels animaux ont trouvé une nouvelle famille ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des chiens",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des chats",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des lapins",
+            "correct": false
+          }
+        ],
+        "written_model": "Des chiens"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-011-01.mp3",
+      "audio_sha256": "fc382c727e994b23fe7195287d4c8deee0df949e843e6dd9ff52e576b79a25f7",
+      "image_ids": [
+        "vocab-chiens",
+        "vocab-chats",
+        "vocab-lapins"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-chiens.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chats.webp",
+        "/lib/images/tcf/qcm-audit/vocab-lapins.webp"
+      ],
+      "image_sha256": [
+        "44bf442f8965b1b862b9816c88c25d66dfc9f4601e24d658850d2daf414bb28d",
+        "2a2f539aa42cba998ae4f49cb0a242ddc35ff829ab02d33f32bce69c5dc01b84",
+        "9999a1771767947f223859a803b0912ec934d343e9bddfb96f4fb14d3b3aa47c"
+      ],
+      "reason": "Le reportage parle du record des adoptions de chiens et de leur nouvelle famille.",
+      "visual_review": "Deux chiens, deux chats et deux lapins, entiers, sur fond crème. Les catégories au pluriel sont illustrées sans représenter le nombre des adoptions."
+    },
+    {
+      "key": "tcf-delf-actif-a2-034-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Madame, quelle belle visite ! Cette ville mérite d’être visitée, c’est vrai. Je veux vous faire tous mes compliments pour vos descriptions claires et riches. C’est gentil ! Je vous remercie infiniment de m’avoir fait découvrir cette ville très intéressante .",
+      "source_sha256": "8a8f0dcc7653143d99706bfad7eeed256ef0abb27f880684f112cf7ce69702bd",
+      "semantic_sha256": "487cbfcfb6b6f0fbacb52bcd1146ae268a806dc693f1dec7c07ec343abafb7c4",
+      "question": {
+        "enonce": "Quel type de lieu vient d’être visité ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une ville",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un parc",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un château",
+            "correct": false
+          }
+        ],
+        "written_model": "Une ville"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-03.mp3",
+      "audio_sha256": "fdbde90da607b9d8223810db79b2ecc1963b6a13eeeaa5d1c34fe67ab2fddc9e",
+      "image_ids": [
+        "retained-20261107-2ea2762cc434",
+        "co306-parc-public-dessine",
+        "co834-chateau-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp"
+      ],
+      "image_sha256": [
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+        "7c9c7a4c856a3a327f756ad5ddd223ba31f15cb647d7841ef5bbecc9af1c56c4"
+      ],
+      "reason": "Les interlocuteurs félicitent la guide pour la visite de cette ville.",
+      "visual_review": "Rue urbaine avec bâtiments et commerces, parc public avec bancs et jeux, château avec tours. Aucun nom de ville inventé."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-01-03#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît ! Un portefeuille rouge contenant une carte étudiante vient d’être trouvé. Nous attendons son propriétaire à l’accueil situé à l’entrée du magasin.",
+      "source_sha256": "fa127bb0fe9709f53a184f2d0ee93ce2a3763731f77549b16abe707a8fd83531",
+      "semantic_sha256": "07f6169709e9a5763baf3efbffdd5aee209cc440dd6f7a386d3d3f3b46af542d",
+      "question": {
+        "enonce": "Où son propriétaire doit-il se présenter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À l’accueil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la caisse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au parking",
+            "correct": false
+          }
+        ],
+        "written_model": "À l’accueil"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
+      "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
+      "image_ids": [
+        "co834-accueil-dessine",
+        "co834-caisse-dessinee",
+        "co834-parking-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+      ],
+      "image_sha256": [
+        "8d7c3b54ccc00430381aeb7649030d4e5cab5560cd7a42e6349887f80713b4a8",
+        "b98abe4ceb7d394ca6496ffd8dcc255390775815e07a0057437ae3523544fd65",
+        "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948"
+      ],
+      "reason": "Le propriétaire du portefeuille est attendu à l’accueil situé à l’entrée du magasin.",
+      "visual_review": "Comptoir d’accueil générique sans indice d’hôtel, caisse de magasin avec tapis et scanner, parking avec places de stationnement. Les personnages illustrent le service et ne prétendent pas représenter le propriétaire de la carte étudiante."
+    }
+  ],
+  "verification": {
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms": 5,
+    "reused_usages": 15,
+    "baseline_commit": "d6456363325b8e8c750c4e3c524fc0db9a7d11f8"
+  }
+}

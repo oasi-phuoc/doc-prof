@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "65e97564f71df96e087b5951e65777ca2ccf1329",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a2-008-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour ce dernier week-end de juillet, on nous annonce beaucoup de circulation sur les autoroutes. Et oui chers auditeurs, du rouge dans le sens des départs et de l’orange dans le sens des retours. Soyez prudents !",
+      "source_sha256": "21d033ab83436d4f2117fcaadf6bfea51b32c9870af0b779641dccad55beca5e",
+      "semantic_sha256": "3e66af8c0847d2d61817855a93c766d527eb6d2a84029f34f8151c8c8612e833",
+      "question": {
+        "enonce": "Quelle couleur est annoncée dans le sens des départs ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Rouge",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Orange",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vert",
+            "correct": false
+          }
+        ],
+        "written_model": "Rouge"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-01.mp3",
+      "audio_sha256": "e1c33e7d65106b0fc07c48460bd74277632005e6213c9d8c9e09b047362b18f7",
+      "image_ids": [
+        "co834-couleur-rouge-dessinee",
+        "extension573-couleur-orange",
+        "co834-couleur-vert-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
+      ],
+      "image_sha256": [
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729",
+        "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+      ],
+      "reason": "La circulation est annoncée rouge dans le sens des départs, orange dans le sens des retours.",
+      "visual_review": "Échantillons rouge, orange et vert entiers. Le nouveau tissu orange remplace le candidat fruit rejeté ; aucun mois ou jour dessiné."
+    },
+    {
+      "key": "tcf-delf-actif-a2-008-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour ce dernier week-end de juillet, on nous annonce beaucoup de circulation sur les autoroutes. Et oui chers auditeurs, du rouge dans le sens des départs et de l’orange dans le sens des retours. Soyez prudents !",
+      "source_sha256": "21d033ab83436d4f2117fcaadf6bfea51b32c9870af0b779641dccad55beca5e",
+      "semantic_sha256": "09dd5b0b4d64328f7a2477491c5cfa054c8acb7216eb5daa1424463c5ba2335b",
+      "question": {
+        "enonce": "Quelle couleur est annoncée dans le sens des retours ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Orange",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Rouge",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vert",
+            "correct": false
+          }
+        ],
+        "written_model": "Orange"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-01.mp3",
+      "audio_sha256": "e1c33e7d65106b0fc07c48460bd74277632005e6213c9d8c9e09b047362b18f7",
+      "image_ids": [
+        "extension573-couleur-orange",
+        "co834-couleur-rouge-dessinee",
+        "co834-couleur-vert-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
+      ],
+      "image_sha256": [
+        "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+      ],
+      "reason": "Le sens des retours est orange, alors que les départs sont rouges.",
+      "visual_review": "Même trio de couleurs réutilisé dans un ordre différent ; les réponses départs et retours restent distinctes. Aucun fruit représenté."
+    },
+    {
+      "key": "tcf-delf-actif-a2-032-03#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur, avez-vous des pulls légers en laine ? Je regrette, ils vont arriver le mois prochain. Nous sommes encore en été. Alors en coton ? C’est pour mettre à la montagne. Et bien pour la saison, le coton est l’idéal.",
+      "source_sha256": "6953c0dee17833b8b035a83e602096df612e31ba327d512c660a540899c49848",
+      "semantic_sha256": "bc9282a23ff36685b0440b4b76f8035a4844ee017862e8ac95af7ec870aac4b0",
+      "question": {
+        "enonce": "Quelle matière demande-t-il d’abord ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La laine",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le coton",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La soie",
+            "correct": false
+          }
+        ],
+        "written_model": "La laine"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+      "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
+      "image_ids": [
+        "vocab-laine",
+        "vocab-coton",
+        "vocab-soie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-laine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-coton.webp",
+        "/lib/images/tcf/qcm-audit/vocab-soie.webp"
+      ],
+      "image_sha256": [
+        "10040f7874d82e7e47f1b2ac2c85003c8c7f0258620bf3dc64e4e9c4e04b505d",
+        "7afd864e0295c5b2d4382554a28f2ee44b85508eb8c00fd313a0b8a33bd781f5",
+        "23d696ad2d1d02548c9f7278fc3973cc0f57e3a8fb2929a0d3d2e30a0163ac17"
+      ],
+      "reason": "Le client demande d’abord des pulls en laine. Il demande ensuite du coton car la laine est indisponible. La soie n’est pas demandée.",
+      "visual_review": "Pelotes avec échantillon tricoté, coton avec tissu et branche de cotonnier, soie drapée brillante examinés. Trois matières distinctes, pas trois vêtements arbitraires. La question porte sur la demande initiale, pas le choix final."
+    }
+  ],
+  "verification": {
+    "added_image_forms": 3,
+    "generated_images": 1,
+    "generated_usages": 2,
+    "reused_usages": 7,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0
+  }
+}

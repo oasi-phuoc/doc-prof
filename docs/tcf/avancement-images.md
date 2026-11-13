@@ -10,7 +10,15 @@ Le lot précédent ajoute vingt trios : quatre historiques et seize des nouveaux
 
 Le lot des métiers ajoute **15 trios** (six A1, neuf A2), avec dix nouveaux PNG 4:3 et 34 réemplois. Les premières versions des métiers sont retenues explicitement par l’utilisateur ([sélection](choix-versions-metiers-20261113.json)). Le reliquat historique passe à **381 trios** ; les nouveaux audios comptent **38 trios actifs**, 332 candidats concrets à vérifier et 1 021 questions à examiner en contexte. Voir la [relecture du lot](revue-trios-metiers-sports-hygiene-20261113.json) et la [comparaison des banques](verification-trios-metiers-sports-hygiene-20261113.json).
 
-Le dernier lot ajoute **26 trios** (quatorze A1, douze A2), avec **huit nouveaux PNG 4:3 et 70 réemplois** : ensembles de voyage, équitation, bus touristique, chauffage au gaz, console, clé USB, horaires, couleurs et objets de la banque. Les premières versions des métiers restent conservées. Il reste **375 trios historiques** ; les nouveaux audios comptent **58 trios actifs**, 312 candidats concrets à vérifier et 1 021 questions à examiner en contexte. Voir la [relecture](revue-trios-voyages-loisirs-couleurs-20261113.json) et la [comparaison des banques](verification-trios-voyages-loisirs-couleurs-20261113.json).
+Le lot voyages ajoute **26 trios** (quatorze A1, douze A2), avec **huit nouveaux PNG 4:3 et 70 réemplois** : ensembles de voyage, équitation, bus touristique, chauffage au gaz, console, clé USB, horaires, couleurs et objets de la banque. Les premières versions des métiers restent conservées. Il reste **375 trios historiques** ; les nouveaux audios comptent **58 trios actifs**, 312 candidats concrets à vérifier et 1 021 questions à examiner en contexte. Voir la [relecture](revue-trios-voyages-loisirs-couleurs-20261113.json) et la [comparaison des banques](verification-trios-voyages-loisirs-couleurs-20261113.json).
+
+Suite orange et matières : **trois trios A2** ajoutés, une nouvelle image 4:3 utilisée deux fois et sept réemplois. Les nouveaux audios comptent **66 trios actifs** et 304 candidats concrets à vérifier ; le reliquat historique reste de 375 trios ([registre](revue-trios-orange-matieres-20261113.json)).
+
+Suite corps, animaux et lieux : **cinq trios** (deux A1, trois A2) et **15 réemplois** vérifiés. Les nouveaux audios comptent **71 trios actifs** et **299 candidats à vérifier** ; le reliquat historique reste de 375 trios ([registre](revue-trios-corps-animaux-lieux-20261113.json)).
+
+Suite horaires et déplacements : **81 trios supplémentaires** (40 A1, 33 A2, huit B1), une nouvelle scène de handball 4:3 utilisée deux fois et 241 réemplois. Le suivi DELF Actif atteint **152 trios actifs**, avec **218 candidats concrets** restants ; les 375 trios historiques sont toujours suivis séparément ([horaires](revue-trios-horaires-delf-actif-20261113.json), [sports/transports](revue-trios-sports-transports-20261113.json)).
+
+Suite appareils, lieux, fêtes, vêtements et aliments : **40 trios** (28 A1, 12 A2), dont cinq historiques, avec **sept nouveaux PNG 4:3** et **108 réemplois**. Le reliquat historique passe à **370** ; DELF Actif compte **187 trios actifs** et **183 candidats concrets**. Les 1 021 questions à examiner en contexte restent suivies séparément.
 
 ## Reprise du 6 novembre 2026 — objets CO inclus
 

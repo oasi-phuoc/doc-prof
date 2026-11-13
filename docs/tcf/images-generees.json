@@ -1,55 +1,73 @@
 {
-  "visual_style_policy": {
-    "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
-    "references": [
-      "/lib/images/tcf/qcm-audit/0be338165a83.webp",
-      "/lib/images/tcf/qcm-audit/2fa9386655ea.webp",
-      "/lib/images/tcf/qcm-audit/66185fc6b8a7.webp",
-      "/lib/images/tcf/qcm-audit/98ece4b786ea.webp",
-      "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
-      "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp",
-      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-creme-chocolat-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-disques-dessines.webp",
-      "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-glace-vanille-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-glaces-dessinees.webp",
-      "/lib/images/tcf/qcm-audit/co834-jouets-dessines.webp",
-      "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
-      "/lib/images/tcf/qcm-audit/co834-pantalons-dessines.webp",
-      "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
-      "/lib/images/tcf/qcm-audit/co834-places-concert-dessinees.webp",
-      "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
-      "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-poulet-frites-dessine.webp",
-      "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp",
-      "/lib/images/tcf/qcm-audit/co834-salade-poulet-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
-      "/lib/images/tcf/qcm-audit/co834-viande-dessinee.webp",
-      "/lib/images/tcf/qcm-audit/f865b17f1741.webp",
-      "/lib/images/tcf/qcm-audit/fd621f9ae768.webp"
-    ],
-    "audit": "docs/tcf/recontrole-style-images.json",
-    "require_visual_reference_on_generation": true,
-    "criteria": [
-      "Référence prioritaire explicite : les 35 images ajoutées dans le commit 48a753d8, validées par l’utilisateur.",
-      "Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins et discrets, couleurs naturelles chaleureuses.",
-      "Objets isolés : fond crème, ombre légère et matières détaillées comme les vêtements, boissons et aliments du commit de référence.",
-      "Scènes et personnages : même traitement peint, visages variés et inclusifs, représentation naturelle sans stéréotypes.",
-      "Format paysage 4:3 pour les prochaines images ; sujet entier et réponse complète lisible.",
-      "Préserver les objets, les couleurs, le sens et les quantités utiles à la réponse ; aucun montant, date, jour ou mois.",
-      "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
-    ]
+  "format_correction": {
+    "images_in_this_batch": 42,
+    "corrected_4_3": 42,
+    "remaining_ids": []
   },
+  "co_generation_scope": "all_834_active_audio_source_entries_explicitly_authorized_2026-11-03",
+  "activated_association_scenes": [
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s1",
+      "dialogue": 1,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-1.webp",
+      "sha256": "a149e1743797a416638ed296d45c0dad667d6e48c177413c942d5d98eee5e904",
+      "source_batch": "active-audios-834",
+      "review_note": "Deux sacs comparables vert/noir ; la cliente pose la main sur le vert, comme dans le dialogue."
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s2",
+      "dialogue": 2,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-2.webp",
+      "sha256": "206e3c9f6124be97d8f1e44d61da773a77722273e678004ef7d34dbc1ed188e9",
+      "source_batch": "active-audios-834",
+      "review_note": "Aspirateur neuf montré à un ami, ordinateur affichant l’appareil sans texte ni montant."
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s3",
+      "dialogue": 3,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-3.webp",
+      "sha256": "45f40654efef6c21f483c857de0e2b0a3c1e57750e573a24c0a25668c58c3cba",
+      "source_batch": "active-audios-834",
+      "review_note": "Crème brune grumeleuse, personne inquiète et aide au fouet ; il s’agit d’aider à cuisiner, sans gâteau."
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "s4",
+      "dialogue": 4,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-4.webp",
+      "sha256": "f84fd78a5b0109bd8f6e01adf0af2205bda0906742ceeda37e614e274ef9b453",
+      "source_batch": "active-audios-834",
+      "review_note": "Étudiante souriante lisant une feuille tournée vers elle, ami qui la félicite dans un contexte scolaire ; aucun résultat chiffré."
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "l1",
+      "dialogue": null,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-1.webp",
+      "sha256": "d76b438253eb04fc4f0db4ec08951a6cbaa8fbc3ac5d3a86aaf1f72eea4a2e7d",
+      "source_batch": "active-audios-834",
+      "review_note": "Coupe de cheveux chez un coiffeur ; distinct des quatre dialogues d’achat, cuisine et examens."
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "situation": "l2",
+      "dialogue": null,
+      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-2.webp",
+      "sha256": "b36d873ee8939ce4cc0b68d06ff360c540a076dbeac3500642b924814a7d15cb",
+      "source_batch": "active-audios-834",
+      "review_note": "Gonflage de roue de vélo dans un atelier ; distinct des quatre dialogues d’achat, cuisine et examens."
+    }
+  ],
+  "scope": "Harmonisation CE/CO du TCF, y compris CO OBJET depuis le 6 novembre 2026 ; suivi historique de la grammaire conservé.",
   "activated_questions": [
     {
       "bank": "src/tcf/content/a0-a1/ce.json",
@@ -7116,12 +7134,18 @@
       ]
     }
   ],
-  "schema_version": 1,
   "discarded_grammar_sheet": {
     "source_png": "/workspace/generated_images/exec-e867014d-0d88-4e30-b1fb-9a7bb37236b5.png",
     "reason": "Style photographique refusé ; dix scènes régénérées individuellement dans le style CE/CO.",
     "usedByExercise": false
   },
+  "required_co_image_format": {
+    "aspect_ratio": "4:3",
+    "width": 1280,
+    "height": 960,
+    "style": "Style dessiné CE/CO déjà défini ; pas de montant, date, jour ou mois."
+  },
+  "schema_version": 1,
   "existing_image_reviews": [
     {
       "path": "/lib/images/vocabulaire/technologie/téléphone.webp",
@@ -7214,12 +7238,77 @@
       "review_note": "Salle intérieure de café avec tables, chaises, comptoir et machine à café ; distincte d’un parc ou d’une université."
     }
   ],
-  "format_correction": {
-    "images_in_this_batch": 42,
-    "corrected_4_3": 42,
-    "remaining_ids": []
+  "visual_style_policy": {
+    "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+    "references": [
+      "/lib/images/tcf/qcm-audit/0be338165a83.webp",
+      "/lib/images/tcf/qcm-audit/2fa9386655ea.webp",
+      "/lib/images/tcf/qcm-audit/66185fc6b8a7.webp",
+      "/lib/images/tcf/qcm-audit/98ece4b786ea.webp",
+      "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+      "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-bouteille-jus-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-bouteille-vin-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-creme-chocolat-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-disques-dessines.webp",
+      "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-glace-vanille-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-glaces-dessinees.webp",
+      "/lib/images/tcf/qcm-audit/co834-jouets-dessines.webp",
+      "/lib/images/tcf/qcm-audit/co834-jus-pomme-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+      "/lib/images/tcf/qcm-audit/co834-pantalons-dessines.webp",
+      "/lib/images/tcf/qcm-audit/co834-places-cinema-dessinees.webp",
+      "/lib/images/tcf/qcm-audit/co834-places-concert-dessinees.webp",
+      "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
+      "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-poulet-frites-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-pulls-bleus-dessines.webp",
+      "/lib/images/tcf/qcm-audit/co834-salade-poulet-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+      "/lib/images/tcf/qcm-audit/co834-viande-dessinee.webp",
+      "/lib/images/tcf/qcm-audit/f865b17f1741.webp",
+      "/lib/images/tcf/qcm-audit/fd621f9ae768.webp"
+    ],
+    "audit": "docs/tcf/recontrole-style-images.json",
+    "require_visual_reference_on_generation": true,
+    "criteria": [
+      "Référence prioritaire explicite : les 35 images ajoutées dans le commit 48a753d8, validées par l’utilisateur.",
+      "Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins et discrets, couleurs naturelles chaleureuses.",
+      "Objets isolés : fond crème, ombre légère et matières détaillées comme les vêtements, boissons et aliments du commit de référence.",
+      "Scènes et personnages : même traitement peint, visages variés et inclusifs, représentation naturelle sans stéréotypes.",
+      "Format paysage 4:3 pour les prochaines images ; sujet entier et réponse complète lisible.",
+      "Préserver les objets, les couleurs, le sens et les quantités utiles à la réponse ; aucun montant, date, jour ou mois.",
+      "Les contours noirs appuyés, hachures et volumes fortement simplifiés des dernières reprises ne correspondent pas à la référence validée."
+    ]
   },
-  "pending": [],
+  "active_audio_scope": {
+    "active_source_entries": 834,
+    "received_source_entries": 836,
+    "copyright_removed": 2,
+    "generation_before_remaining_432_matches": true,
+    "priority_levels": [
+      "A1",
+      "A2"
+    ]
+  },
+  "character_diversity_policy": {
+    "scope": "Les prochaines générations avec personnages uniquement; ne pas modifier les objets sans personnages ni imposer de reprise des images déjà terminées.",
+    "requirements": [
+      "Visages réellement différents d’une scène à l’autre, éviter le même duo récurrent.",
+      "Répartir les origines et nationalités des personnages fictifs, les carnations, les genres et expressions de genre, les âges adultes, les morphologies et les situations de handicap.",
+      "Intégration naturelle dans les rôles et activités, sans stéréotypes ni drapeaux ou costumes utilisés comme raccourcis.",
+      "Conserver la fidélité au support, le style dessiné CE/CO et le paysage exact 4:3."
+    ],
+    "requested_by_user": true
+  },
   "rejected_generations_20261106": [
     {
       "source_png": "/workspace/generated_images/exec-d1a7c884-cbf3-4947-9c99-4df5677f92b8.png",
@@ -7271,79 +7360,6 @@
       "reason": "Rendu anatomique trop photographique et cadrage trop serré ; reprise peinte demandée, fichier non intégré."
     }
   ],
-  "character_diversity_policy": {
-    "scope": "Les prochaines générations avec personnages uniquement; ne pas modifier les objets sans personnages ni imposer de reprise des images déjà terminées.",
-    "requirements": [
-      "Visages réellement différents d’une scène à l’autre, éviter le même duo récurrent.",
-      "Répartir les origines et nationalités des personnages fictifs, les carnations, les genres et expressions de genre, les âges adultes, les morphologies et les situations de handicap.",
-      "Intégration naturelle dans les rôles et activités, sans stéréotypes ni drapeaux ou costumes utilisés comme raccourcis.",
-      "Conserver la fidélité au support, le style dessiné CE/CO et le paysage exact 4:3."
-    ],
-    "requested_by_user": true
-  },
-  "activated_association_scenes": [
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-4",
-      "situation": "s1",
-      "dialogue": 1,
-      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-1.webp",
-      "sha256": "a149e1743797a416638ed296d45c0dad667d6e48c177413c942d5d98eee5e904",
-      "source_batch": "active-audios-834",
-      "review_note": "Deux sacs comparables vert/noir ; la cliente pose la main sur le vert, comme dans le dialogue."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-4",
-      "situation": "s2",
-      "dialogue": 2,
-      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-2.webp",
-      "sha256": "206e3c9f6124be97d8f1e44d61da773a77722273e678004ef7d34dbc1ed188e9",
-      "source_batch": "active-audios-834",
-      "review_note": "Aspirateur neuf montré à un ami, ordinateur affichant l’appareil sans texte ni montant."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-4",
-      "situation": "s3",
-      "dialogue": 3,
-      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-3.webp",
-      "sha256": "45f40654efef6c21f483c857de0e2b0a3c1e57750e573a24c0a25668c58c3cba",
-      "source_batch": "active-audios-834",
-      "review_note": "Crème brune grumeleuse, personne inquiète et aide au fouet ; il s’agit d’aider à cuisiner, sans gâteau."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-4",
-      "situation": "s4",
-      "dialogue": 4,
-      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-4.webp",
-      "sha256": "f84fd78a5b0109bd8f6e01adf0af2205bda0906742ceeda37e614e274ef9b453",
-      "source_batch": "active-audios-834",
-      "review_note": "Étudiante souriante lisant une feuille tournée vers elle, ami qui la félicite dans un contexte scolaire ; aucun résultat chiffré."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-4",
-      "situation": "l1",
-      "dialogue": null,
-      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-1.webp",
-      "sha256": "d76b438253eb04fc4f0db4ec08951a6cbaa8fbc3ac5d3a86aaf1f72eea4a2e7d",
-      "source_batch": "active-audios-834",
-      "review_note": "Coupe de cheveux chez un coiffeur ; distinct des quatre dialogues d’achat, cuisine et examens."
-    },
-    {
-      "bank": "src/tcf/content/a1-a2/co.json",
-      "exercise": "tcf-a2-sb-co-4",
-      "situation": "l2",
-      "dialogue": null,
-      "image": "/lib/images/tcf/co/scenes/magasins/les-achats-leurre-2.webp",
-      "sha256": "b36d873ee8939ce4cc0b68d06ff360c540a076dbeac3500642b924814a7d15cb",
-      "source_batch": "active-audios-834",
-      "review_note": "Gonflage de roue de vélo dans un atelier ; distinct des quatre dialogues d’achat, cuisine et examens."
-    }
-  ],
-  "co_generation_scope": "all_834_active_audio_source_entries_explicitly_authorized_2026-11-03",
   "rejected_existing_reuses": [
     {
       "path": "/lib/images/vocabulaire/accessoires/casque.webp",
@@ -7362,23 +7378,7 @@
       "reason": "Palette seule, insuffisante pour atelier de peinture avec activité des participants."
     }
   ],
-  "scope": "Harmonisation CE/CO du TCF, y compris CO OBJET depuis le 6 novembre 2026 ; suivi historique de la grammaire conservé.",
-  "required_co_image_format": {
-    "aspect_ratio": "4:3",
-    "width": 1280,
-    "height": 960,
-    "style": "Style dessiné CE/CO déjà défini ; pas de montant, date, jour ou mois."
-  },
-  "active_audio_scope": {
-    "active_source_entries": 834,
-    "received_source_entries": 836,
-    "copyright_removed": 2,
-    "generation_before_remaining_432_matches": true,
-    "priority_levels": [
-      "A1",
-      "A2"
-    ]
-  },
+  "pending": [],
   "images": [
     {
       "id": "b3a9535d4a2f",
@@ -89002,6 +89002,297 @@
         ]
       },
       "review_note": "Contrôle visuel individuel sur planches O : sujet entier reconnaissable, peinture douce TCF, proportions et détails cohérents, sans texte lisible. Animaux vivants ; plantes, arbres, fruits et légumes conformes au libellé ; danseur et danseuse représentés selon les formes de vocabulaire ; cancer de la peau illustré par examen dermatologique, sans diagnostic déduit du visage."
+    },
+    {
+      "id": "extension573-couleur-orange",
+      "label": "Orange",
+      "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+      "prompt": "À partir de l’échantillon de tissu rouge joint, créer exactement le même type d’illustration pédagogique : un seul carré de tissu à couture fine, entièrement visible avec marge, sur fond crème et petite ombre douce. Changer sa couleur en ORANGE FRANC ET UNIFORME (entre rouge et jaune, nettement distinct du rouge de référence). Même peinture semi-réaliste douce, texture fine et contours discrets du commit 48a753d8. Image finale paysage EXACT 4:3, 1448 × 1086. Aucun fruit, personne, symbole, mot, chiffre, date, prix ou objet supplémentaire. L’image représente uniquement la couleur orange.",
+      "source_png": "/tmp/orange-couleur.png",
+      "source_sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+      "sha256": "f68601f0c91a7669fcfb8f9b3d53a4a66e14365eff08ff704fa5c3107c95ce5f",
+      "bytes": 2334102,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "review_note": "Échantillon orange entier sur crème, distinct du rouge, couture et matière cohérentes avec la référence ; aucun fruit, texte ou chiffre. Paysage exact 4:3.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-handball-entier",
+      "label": "Le handball",
+      "path": "/lib/images/tcf/qcm-audit/extension573-handball-entier.png",
+      "prompt": "Corriger l'image de handball fournie (première référence) en gardant sa scène et la peinture semi-réaliste douce, volumes progressifs et contours discrets comme la seconde référence de style. Image finale EXACTEMENT paysage 4:3, 1448x1086 ou 1280x960. Reculer suffisamment la caméra pour montrer entièrement les deux adultes joueurs, toutes leurs chaussures et le ballon avec de belles marges sur chaque bord. Le pied gauche de la joueuse ne doit plus sortir de l'image. Femme brune aux cheveux attachés préparant un tir d'une main avec petit ballon de handball rouge-bleu, homme brun défendant dans un gymnase et but de handball rectangulaire rayé rouge/blanc clairement visible. Préserver la diversité naturelle des personnages sans copier ceux de la référence de style. Proportions anatomiques crédibles, gestes sûrs et ordinaires, parquet et lumière naturelle. Aucun texte, ni nombre, ni score ni montant. Peinture numérique et non photographie, pas de contours épais. Produire une seule illustration sans panneaux.",
+      "source_png": "/tmp/tcf-suite-fin-20261113/handball.png",
+      "source_sha256": "c73086fd08a539ea809e7660c65397019b5a9934616cfa22529121ba61867e46",
+      "sha256": "c73086fd08a539ea809e7660c65397019b5a9934616cfa22529121ba61867e46",
+      "bytes": 2276183,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/vocab-handball.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/vocab-handball.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Reprise du cadrage : les deux joueurs, leurs quatre chaussures et le ballon sont entiers avec marges. Ballon tenu à une main, but rectangulaire rouge et blanc, scène en gymnase ; handball distinct du rugby et du football. Peinture douce conforme à la référence de personnages, PNG original 1448 × 1086.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/vocab-handball.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-anniversaire-gateau-cadeaux",
+      "label": "Un anniversaire",
+      "path": "/lib/images/tcf/qcm-audit/extension573-anniversaire-gateau-cadeaux.png",
+      "prompt": "Une illustration pédagogique de la notion « un anniversaire » : une table dressée pour une fête d'anniversaire intime, gâteau rond avec quelques bougies allumées sans bougies-chiffres, deux cadeaux emballés et rubans, petits ballons en arrière-plan. Aucun personnage nécessaire. Ne représenter aucun âge, aucun jour, aucun calendrier, aucun texte, aucun nombre. L'ensemble des objets exprime clairement un anniversaire, distinct d'un mariage et d'une retraite. Peinture numérique semi-réaliste détaillée et douce comme la référence de boissons fournie, contours très fins et discrets, volumes progressifs, couleurs naturelles chaleureuses, lumière douce et matières crédibles, fond crème simple. Composition lisible et aérée, gâteau et cadeaux entièrement visibles avec marges. Pas de photographie, pas de style 3D ou cartoon, pas de contour épais. Une seule image en paysage EXACTEMENT 4:3, 1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-anniversaire-gateau-cadeaux.png",
+      "source_sha256": "78cd0b1b785068201a6d38861bd20e66c16d1816544eeb7c4b3b5e69ee6fc28b",
+      "sha256": "78cd0b1b785068201a6d38861bd20e66c16d1816544eeb7c4b3b5e69ee6fc28b",
+      "bytes": 2175461,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Gâteau avec bougies ordinaires sans chiffres, cadeaux emballés et ballons. Scène festive sans personnage, âge, calendrier ou identité inventés ; ne pas utiliser pour une question de nombre de bougies.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-gaufre",
+      "label": "Une gaufre",
+      "path": "/lib/images/tcf/qcm-audit/extension573-gaufre.png",
+      "prompt": "Une seule gaufre rectangulaire fraîchement cuite, dorée, avec quadrillage profond caractéristique, entière sur une petite assiette céramique ivoire entièrement visible avec marges, une très légère poussière de sucre. Aucun autre aliment, aucune glace, aucun chocolat, aucun personnage, aucun texte ni nombre. Illustration pédagogique de choix de réponse « une gaufre », distincte d'une crêpe et d'un sandwich. Copier seulement le traitement graphique de la référence de boissons : peinture numérique semi-réaliste détaillée douce, volumes progressifs, contours fins discrets, matières crédibles et couleurs chaleureuses naturelles. Fond crème uniforme et ombre légère. Ni photographie ni 3D ni contour épais ni cartoon. Une seule image en paysage EXACTEMENT 4:3, 1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-gaufre.png",
+      "source_sha256": "29df30375cbf408e54b2817a37fa474508281b624b601063c9306b111f6bf2cc",
+      "sha256": "29df30375cbf408e54b2817a37fa474508281b624b601063c9306b111f6bf2cc",
+      "bytes": 1904070,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Gaufre rectangulaire unique avec quadrillage profond, entière sur assiette avec marges ; aucun autre aliment. Différente de la crêpe fine et du sandwich. Peinture douce et fond crème.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-blouson-bleu",
+      "label": "Un blouson bleu",
+      "path": "/lib/images/tcf/qcm-audit/extension573-blouson-bleu.png",
+      "prompt": "Un seul blouson de sport BLEU moyen, modèle court s'arrêtant à la taille, manches longues, fermeture éclair sur le devant, col souple, poignets et taille légèrement resserrés. Blouson de mi-saison, pas un manteau long, pas une chemise, pas un pull. Aucun autre vêtement. Illustration de choix pédagogique, objet seul et entier, vue de face avec volume naturel comme si posé proprement sans corps, marges aérées de chaque côté. Aucun personnage, aucun cintre, aucun texte, numéro, logo, date ou prix. Fond crème uniforme avec ombre légère. Reprendre le style peint de la référence chemises fournie : peinture numérique semi-réaliste douce, contours fins discrets et non épais, plis et matières détaillés, couleurs naturelles chaleureuses. Pas de photographie ni de 3D. Une seule image au format paysage EXACT 4:3, 1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-blouson-bleu.png",
+      "source_sha256": "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f",
+      "sha256": "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f",
+      "bytes": 1536820,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Blouson bleu court, fermeture éclair centrale, manches et bas resserrés. Vêtement entier avec marges, distinct d’une chemise et d’un manteau long.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-pull-vert",
+      "label": "Un pull vert",
+      "path": "/lib/images/tcf/qcm-audit/extension573-pull-vert.png",
+      "prompt": "Un seul pull tricoté VERT franc, col rond, manches longues, sans fermeture ni boutons. Pull entier, texture de maille fine crédible, poignets côtelés. Aucun autre vêtement. Illustration de choix pédagogique, objet seul et entier, vue de face avec volume naturel comme si posé proprement sans corps, marges aérées de chaque côté. Aucun personnage, aucun cintre, aucun texte, numéro, logo, date ou prix. Fond crème uniforme avec ombre légère. Reprendre le style peint de la référence chemises fournie : peinture numérique semi-réaliste douce, contours fins discrets et non épais, plis et matières détaillés, couleurs naturelles chaleureuses. Pas de photographie ni de 3D. Une seule image au format paysage EXACT 4:3, 1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-pull-vert.png",
+      "source_sha256": "16d1f07974e9ac0f670b79b15fee4822453dedd70ea8b5a429f06615aa08e8ef",
+      "sha256": "16d1f07974e9ac0f670b79b15fee4822453dedd70ea8b5a429f06615aa08e8ef",
+      "bytes": 2140852,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Pull vert à col rond, sans fermeture ; maille fine visible, manches et bas entiers avec marges.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-chaussons-maison",
+      "label": "Des chaussons",
+      "path": "/lib/images/tcf/qcm-audit/extension573-chaussons-maison.png",
+      "prompt": "Une paire de chaussons de maison pour adulte, deux pantoufles assorties à bout fermé et talon ouvert, tissu feutré gris chaud et doublure douce beige, posées côte à côte en trois quarts. Chaussons simples clairement distincts de bottes montantes et sandales. Les deux chaussures sont entièrement visibles avec de belles marges. Aucun pied, aucun personnage, aucun autre objet, texte, nombre, logo ni prix. Fond crème uniforme et ombre légère. Illustration pédagogique dans le style de la référence jointe : peinture numérique semi-réaliste douce et détaillée, volumes progressifs, contours fins discrets, matières tactiles crédibles et couleurs naturelles. Pas de photographie, pas de rendu3D, pas de contour épais ni cartoon. Une seule image en paysage EXACTEMENT4:3,1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-chaussons-maison.png",
+      "source_sha256": "daed1dc3cacbd0dacf7e862c8d20d3926b1fff94582c8a625fc1f69b451b45dd",
+      "sha256": "daed1dc3cacbd0dacf7e862c8d20d3926b1fff94582c8a625fc1f69b451b45dd",
+      "bytes": 1978357,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux chaussons gris doublés, talons ouverts et bouts fermés, entiers et distincts des sandales et des bottes. Aucun chausson aux pommes.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-abricots-pluriel",
+      "label": "Des abricots",
+      "path": "/lib/images/tcf/qcm-audit/extension573-abricots-pluriel.png",
+      "prompt": "Des abricots frais : trois petits abricots mûrs orangés aux formes naturelles, dont un ouvert en deux avec un noyau brun bien visible. Très légère texture duveteuse et une petite feuille. Aucun autre fruit, ni pêche ni orange ni poire. Illustration pédagogique d'aliments, tous les sujets entiers avec marges, vue trois quarts, fond crème uni et ombre légère. Aucun personnage, texte, logo, montant, date ou nombre. Reprendre seulement le style de la référence jointe : peinture numérique semi-réaliste douce et détaillée, matières crédibles, volumes progressifs et contours fins discrets. Couleurs naturelles et chaleureuses. Pas de photographie, pas de 3D, pas de cartoon ni contours épais. Une seule image en paysage EXACT4:3,1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-abricots-pluriel.png",
+      "source_sha256": "3d54d4618b7834cce226ee73349454d01902085470b1e005302a0f2c132b6ac5",
+      "sha256": "3d54d4618b7834cce226ee73349454d01902085470b1e005302a0f2c132b6ac5",
+      "bytes": 1971586,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux abricots entiers et un demi-abricot avec noyau brun, forme et chair orangée distinctes des pommes et poires, aucun autre fruit.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
+    },
+    {
+      "id": "extension573-petits-pois",
+      "label": "Des petits pois",
+      "path": "/lib/images/tcf/qcm-audit/extension573-petits-pois.png",
+      "prompt": "Des petits pois : un petit bol en céramique ivoire contenant des petits pois verts et, à côté, une seule gousse de petits pois entrouverte laissant voir ses grains ronds. Aucun autre légume, aucune carotte, aucun haricot plat, aucune purée. Illustration pédagogique d'aliments, tous les sujets entiers avec marges, vue trois quarts, fond crème uni et ombre légère. Aucun personnage, texte, logo, montant, date ou nombre. Reprendre seulement le style de la référence jointe : peinture numérique semi-réaliste douce et détaillée, matières crédibles, volumes progressifs et contours fins discrets. Couleurs naturelles et chaleureuses. Pas de photographie, pas de 3D, pas de cartoon ni contours épais. Une seule image en paysage EXACT4:3,1448x1086 ou1280x960.\n",
+      "source_png": "/tmp/tcf-suite-fin-20261113/extension573-petits-pois.png",
+      "source_sha256": "cf2e6746ef6dc0b20be8a60fe179c94db80aff7f66604a915715dbd9ecd6be7e",
+      "sha256": "cf2e6746ef6dc0b20be8a60fe179c94db80aff7f66604a915715dbd9ecd6be7e",
+      "bytes": 1607907,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "reprise-20261106-objets-inclus",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Bol de petits pois verts et gousse ouverte avec grains ronds ; aucun haricot ou autre légume ajouté. Sujet entier avec marges.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true
     }
   ]
 }
