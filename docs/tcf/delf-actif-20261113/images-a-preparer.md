@@ -1,6 +1,6 @@
 # Illustrations des nouveaux audios DELF Actif
 
-346 supports audio et 1 663 questions suivis. 312 trios concrets proposés à vérifier, 58 trios activés, 1021 questions à examiner plus précisément.
+346 supports audio et 1 663 questions suivis. 307 trios concrets proposés à vérifier, 63 trios activés, 1021 questions à examiner plus précisément.
 
 La génération des illustrations fait partie des tâches de ces nouveaux audios dès que les trois réponses sont illustrables : réutiliser les images adaptées, générer celles qui manquent, puis intégrer le trio contrôlé. Le tri automatique ne vaut pas relecture visuelle.
 

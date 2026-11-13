@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "candidate_visual_review": 312,
+      "candidate_visual_review": 307,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
-      "active_reviewed_trio": 58,
+      "active_reviewed_trio": 63,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "candidate_visual_review": 127,
+        "candidate_visual_review": 125,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
-        "active_reviewed_trio": 25,
+        "active_reviewed_trio": 27,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 143,
-        "active_reviewed_trio": 33,
+        "candidate_visual_review": 140,
+        "active_reviewed_trio": 36,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -6593,8 +6593,8 @@
       "semantic_sha256": "5175912cb229e73cd044c2733c5a85f2358d8ee50f389455aca572d45701a47c",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-010-01.mp3",
       "audio_sha256": "ab41b273a4d918e9a636db74b03fbbba537ec07013ae2df2357142985642ce47",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -6642,8 +6642,24 @@
           "brief": "Représenter entièrement « À l’arrêt de bus » pour « Où Adam vient-il chercher son ami ? ». Vérifier la transcription du support tcf-delf-actif-a1-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "sha256": "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co57-aeroport.webp",
+          "sha256": "9e8d8335ccec3b1d603e35509e6a44a5096e9afe8b7c7fddf786cbd53a75fd04"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+          "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -6654,7 +6670,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-lieux-20261113.json",
+        "reason": "Adam vient chercher son ami à la gare. Aéroport et arrêt de bus ne sont pas cités.",
+        "note": "Train et quai, terminal avec avion et arrêt avec abribus et panneau réutilisés. Les personnages sont génériques, pas des portraits des locuteurs."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-010-01#4",
@@ -14154,8 +14176,8 @@
       "semantic_sha256": "dbae8625b4ba2537965f1cf123b62f33ebfaae0d480473486d1b4581af80b803",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3",
       "audio_sha256": "83eb8a2f70fd1c3500af917ae5f6ffa653d21a2306dfda1f25255f8b15dbc9b5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -14203,8 +14225,24 @@
           "brief": "Représenter entièrement « Une salle de sport » pour « Quel lieu le jeune homme cherche-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-029-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/salle-spectacle.webp",
+          "sha256": "833e153e6a10e9f742548b4c3fc2aee0ddc37d5b722b676e5bd17c9a720aa444"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+          "sha256": "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -14215,7 +14253,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-lieux-20261113.json",
+        "reason": "Le jeune homme cherche la salle de spectacle ; le gymnase sert de repère voisin.",
+        "note": "Scène avec rideaux et fauteuils, bibliothèque avec livres et lecteurs, salle de sport avec appareils. Aucun plan de voisinage arbitraire."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-029-05#2",
@@ -35740,8 +35784,8 @@
       "semantic_sha256": "049c303ab941758d1f87546c417c75eaf7f056f51b3fcea3f3625f2822f6c374",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-01.mp3",
       "audio_sha256": "d9d1023197eef8f8ef24ba648cc1efdd8f94a67a25caa51a459cb9fcff7df53d",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -35789,8 +35833,24 @@
           "brief": "Représenter entièrement « Une mairie » pour « Dans quel établissement l’annonce est-elle faite ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+          "sha256": "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "sha256": "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -35801,7 +35861,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-lieux-20261113.json",
+        "reason": "L’annonce interdit de fumer dans l’ensemble de la gare ; musée et mairie ne sont pas nommés.",
+        "note": "Gare avec train, musée avec œuvres et façade MAIRIE examinés ; trois lieux distincts, sans date ou montant."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-007-01#2",
@@ -50138,8 +50204,8 @@
       "semantic_sha256": "83412c6fd65b36cdb9e7c73e3b5cb1a87831bcadfd0d1b593a94c5d0f10b0a62",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-04.mp3",
       "audio_sha256": "b982e025b9d294b4b67b9b76886b3fbee95ff4a1437e81827bf1633c2217830e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -50193,8 +50259,24 @@
           "brief": "Représenter entièrement « La mairie » pour « Quel lieu la personne veut-elle rejoindre ? ». Vérifier la transcription du support tcf-delf-actif-a2-035-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "sha256": "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -50205,7 +50287,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-lieux-20261113.json",
+        "reason": "La personne demande comment aller au musée. La gare est le point de départ, pas la destination.",
+        "note": "Musée avec tableaux et sculpture, façade THÉÂTRE avec salle visible et façade MAIRIE réutilisés. Le théâtre est un bâtiment, pas une activité jouée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-035-04#2",
@@ -59860,8 +59948,8 @@
       "semantic_sha256": "0d2832ff062ae912fd73e2576836b00d2525347cca7529e1eb9ddcb22a52c46d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
       "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -59909,8 +59997,24 @@
           "brief": "Représenter entièrement « Bleu » pour « De quelle couleur est son immeuble ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-blanc-dessinee.webp",
+          "sha256": "d0bd11dc6bef51426929f7b606b06b8ce38393da7cbf9b56e15894bceacddb76"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-jaune-dessinee.webp",
+          "sha256": "84516a0a2044ec25305367d7e3bd52f155dd839f48b70de11e6939897eaacb21"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -59921,7 +60025,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-lieux-20261113.json",
+        "reason": "Chloé décrit son grand immeuble blanc ; le rouge entendu concerne le feu de circulation.",
+        "note": "Échantillons blanc, jaune et bleu réutilisés. L’énoncé demande une couleur, pas une façade ou une adresse arbitraire."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-03-01#8",

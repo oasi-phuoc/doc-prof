@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "265211bf90d21b8a22897a36bdd41b635304860c",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-010-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut l’espagnol, c’est Adam ! Mardi c’est le 14 juillet, les français sont en fête. On va voir les feux d’artifice ? Je viens te chercher l’après-midi à la gare. Le soir tu dors chez moi et tu rentres mercredi. Prends un sac à dos pour être plus libre.",
+      "source_sha256": "d3634f92935a48fbdc56b847f78c07605c006fa7ddd045115213f8eec0dc73e4",
+      "semantic_sha256": "5175912cb229e73cd044c2733c5a85f2358d8ee50f389455aca572d45701a47c",
+      "question": {
+        "enonce": "Où Adam vient-il chercher son ami ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la gare",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À l’aéroport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À l’arrêt de bus",
+            "correct": false
+          }
+        ],
+        "written_model": "À la gare"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-010-01.mp3",
+      "audio_sha256": "ab41b273a4d918e9a636db74b03fbbba537ec07013ae2df2357142985642ce47",
+      "image_ids": [
+        "co306-gare-dessine",
+        "co57-aeroport",
+        "co306-arret-bus-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+      ],
+      "image_sha256": [
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570",
+        "9e8d8335ccec3b1d603e35509e6a44a5096e9afe8b7c7fddf786cbd53a75fd04",
+        "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
+      ],
+      "reason": "Adam vient chercher son ami à la gare. Aéroport et arrêt de bus ne sont pas cités.",
+      "visual_review": "Train et quai, terminal avec avion et arrêt avec abribus et panneau réutilisés. Les personnages sont génériques, pas des portraits des locuteurs."
+    },
+    {
+      "key": "tcf-delf-actif-a1-029-05#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme. C’est juste à côté du gymnase, à 100 mètres.",
+      "source_sha256": "a698907d9b2d41035685aadc6484608799e931c4342e2eef668e832bdd92c306",
+      "semantic_sha256": "dbae8625b4ba2537965f1cf123b62f33ebfaae0d480473486d1b4581af80b803",
+      "question": {
+        "enonce": "Quel lieu le jeune homme cherche-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une salle de spectacle",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une bibliothèque",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une salle de sport",
+            "correct": false
+          }
+        ],
+        "written_model": "Une salle de spectacle"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3",
+      "audio_sha256": "83eb8a2f70fd1c3500af917ae5f6ffa653d21a2306dfda1f25255f8b15dbc9b5",
+      "image_ids": [
+        "retained-20261107-07a8d6dc01e0",
+        "co306-bibliotheque-dessine",
+        "vocab-salle-sport"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/salle-spectacle.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+      ],
+      "image_sha256": [
+        "833e153e6a10e9f742548b4c3fc2aee0ddc37d5b722b676e5bd17c9a720aa444",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de"
+      ],
+      "reason": "Le jeune homme cherche la salle de spectacle ; le gymnase sert de repère voisin.",
+      "visual_review": "Scène avec rideaux et fauteuils, bibliothèque avec livres et lecteurs, salle de sport avec appareils. Aucun plan de voisinage arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Mesdames et Messieurs, nous vous rappelons qu’il est interdit de fumer dans l’ensemble de la gare. L’utilisation de la cigarette électronique n’est pas non plus autorisée. Merci.",
+      "source_sha256": "9277e9fe660d4cd943ce0a5daaf3a5a62fabb25e91b6f5c3fe8a49ec05a7be15",
+      "semantic_sha256": "049c303ab941758d1f87546c417c75eaf7f056f51b3fcea3f3625f2822f6c374",
+      "question": {
+        "enonce": "Dans quel établissement l’annonce est-elle faite ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une gare",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un musée",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Une gare"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-01.mp3",
+      "audio_sha256": "d9d1023197eef8f8ef24ba648cc1efdd8f94a67a25caa51a459cb9fcff7df53d",
+      "image_ids": [
+        "co306-gare-dessine",
+        "co306-musee-dessine",
+        "co306-mairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570",
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "reason": "L’annonce interdit de fumer dans l’ensemble de la gare ; musée et mairie ne sont pas nommés.",
+      "visual_review": "Gare avec train, musée avec œuvres et façade MAIRIE examinés ; trois lieux distincts, sans date ou montant."
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour aller au musée, il est préférable d’y aller à pied ou de prendre le bus ? Prenez le bus. Il vous laisse devant. De la gare, c’est loin. Merci, mais j’aime marcher. Ah, alors vous avez le choix !",
+      "source_sha256": "65a9cafe29cf01f13d88c3a8c87c7a89bca36ae25ba87372b59984e87d53e649",
+      "semantic_sha256": "83412c6fd65b36cdb9e7c73e3b5cb1a87831bcadfd0d1b593a94c5d0f10b0a62",
+      "question": {
+        "enonce": "Quel lieu la personne veut-elle rejoindre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le musée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le théâtre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Le musée"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-04.mp3",
+      "audio_sha256": "b982e025b9d294b4b67b9b76886b3fbee95ff4a1437e81827bf1633c2217830e",
+      "image_ids": [
+        "co306-musee-dessine",
+        "co306-batiment-theatre-dessine",
+        "co306-mairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "reason": "La personne demande comment aller au musée. La gare est le point de départ, pas la destination.",
+      "visual_review": "Musée avec tableaux et sculpture, façade THÉÂTRE avec salle visible et façade MAIRIE réutilisés. Le théâtre est un bâtiment, pas une activité jouée."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-03-01#7",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, c’est Chloé. Marina pour venir chez moi à pied, au feu rouge de l’avenue Foch, prends à droite. Tu passes devant l’hôtel Lux et au coin de la rue il y a une grande pâtisserie. J’habite en face, le grand immeuble blanc. Il n’y a pas de noms sur la sonnette mais un numéro. Tu sonnes au numéro 68. Tu peux aussi prendre le bus surtout si tu as un abonnement. Apporte ton ordinateur pour réserver nos prochaines vacances.",
+      "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
+      "semantic_sha256": "0d2832ff062ae912fd73e2576836b00d2525347cca7529e1eb9ddcb22a52c46d",
+      "question": {
+        "enonce": "De quelle couleur est son immeuble ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Blanc",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Jaune",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Bleu",
+            "correct": false
+          }
+        ],
+        "written_model": "Blanc"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
+      "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
+      "image_ids": [
+        "co834-couleur-blanc-dessinee",
+        "co834-couleur-jaune-dessinee",
+        "co834-couleur-bleu-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-blanc-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-jaune-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp"
+      ],
+      "image_sha256": [
+        "d0bd11dc6bef51426929f7b606b06b8ce38393da7cbf9b56e15894bceacddb76",
+        "84516a0a2044ec25305367d7e3bd52f155dd839f48b70de11e6939897eaacb21",
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+      ],
+      "reason": "Chloé décrit son grand immeuble blanc ; le rouge entendu concerne le feu de circulation.",
+      "visual_review": "Échantillons blanc, jaune et bleu réutilisés. L’énoncé demande une couleur, pas une façade ou une adresse arbitraire."
+    }
+  ],
+  "verification": {
+    "only_added_image_forms": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_trios": 5,
+    "reused_usages": 15
+  }
+}

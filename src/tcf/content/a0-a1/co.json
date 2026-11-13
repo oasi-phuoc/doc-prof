@@ -99483,6 +99483,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "À la gare"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -103659,6 +103677,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Une salle de spectacle"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/co/bg/salle-spectacle.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+              }
+            ]
           }
         }
       },
