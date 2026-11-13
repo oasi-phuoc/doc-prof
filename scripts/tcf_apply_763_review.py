@@ -38,8 +38,18 @@ for bank in BANKS:
    p.update(status='reviewed_trio',targets=targets,target_sha256=row['selected_sha256'],reason=row['reason'],method='individual_763_candidate_review',review_763_decision='active_reviewed_trio')
    if old!=form:
     assert old is None,key
-    node=['questions',i-1,'formes','qcm_image'];assert not any(o['bank']==rel and o['exercise']==ex['id'] and o['node']==node for o in ops),key
-    ops.append(dict(bank=rel,exercise=ex['id'],question=i,node=node,before=None,after=deepcopy(form),source_sha256=row['source_sha256'],reason=row['reason'],review_ledger='docs/tcf/revue-763-20261107.json'))
+    node=['questions',i-1,'formes','qcm_image']
+    prior=[o for o in ops if o['bank']==rel and o['exercise']==ex['id'] and o['node']==node]
+    operation=dict(bank=rel,exercise=ex['id'],question=i,node=node,before=None,after=deepcopy(form),source_sha256=row['source_sha256'],reason=row['reason'],review_ledger='docs/tcf/revue-763-20261107.json')
+    if prior:
+     # A corrected source can explicitly deactivate an earlier trio. Its
+     # unique journal entry remains, with the refresh note and old reason.
+     assert len(prior)==1 and prior[0].get('source_refresh_note'),key
+     assert prior[0]['before'] is None and prior[0]['after'] is None,key
+     assert prior[0]['source_sha256']==row['source_sha256'],key
+     prior[0]['previous_activation_reason']=prior[0]['reason']
+     prior[0].update(operation)
+    else:ops.append(operation)
     q.setdefault('formes',{})['qcm_image']=form;dirty=True;changed+=1
    row['status']='active_reviewed_trio'
  if dirty:bank.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')

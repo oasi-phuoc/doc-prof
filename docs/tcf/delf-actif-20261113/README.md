@@ -28,7 +28,7 @@ L’installation est détaillée dans [installation.json](installation.json). Ch
 
 ## Vérification dans l’application
 
-`node scripts/check-delf-actif-import.mjs` vérifie les 346 fichiers publiés, les 1 663 questions et les tirages réels de six courts, trois moyens et un long aux trois niveaux. Le contrôle global charge 1 355 exercices et 1 371 pistes ; les anciens trios d’images restent inchangés.
+`node scripts/check-delf-actif-import.mjs` vérifie les 346 fichiers publiés, les 1 663 questions et les tirages réels de six courts, trois moyens et un long aux trois niveaux. Le contrôle global charge 1 355 exercices et 1 371 pistes ; le suivi des nouvelles illustrations est distinct du lot historique.
 
 Les commandes de contrôle complémentaires sont :
 
@@ -53,4 +53,8 @@ Les PDF et textes extraits sont dans `sources/`. Les transcriptions automatiques
 
 ## Suite
 
-Les nouveaux supports disposent des formats QCM texte et réponse sur ligne. Leurs variantes QCM image restent à préparer à partir de questions désormais stabilisées, en réutilisant la banque et le style validé 4:3. Aucune nouvelle illustration ou variante image manquante n’est activée par cet import.
+Les nouveaux supports disposent des formats QCM texte et réponse sur ligne. La génération des illustrations adaptées est ajoutée aux tâches de tous ces audios. Les illustrations possibles sont inscrites dans [le plan complémentaire](images-a-preparer.md), qui couvre les 1 663 questions et conserve les candidats de réemploi ainsi que les questions à examiner. Priorité A1 puis A2, dans le style validé 4:3 ; aucune variante incomplète n’est activée.
+
+Douze trios sont déjà activés, six A1 et six A2, après examen des trois images et de la transcription entière. Les réponses écrites et les choix texte sont conservés. Deux nouvelles images respectent les précisions de leurs supports : portefeuille rouge contenant une carte étudiante anonyme et écouteurs sans fil. Les autres illustrations sont réutilisées après contrôle ([relecture](../revue-trios-pluriels-delf-actif-20261113.json)).
+
+`python3 scripts/check-delf-actif-images.py` vérifie la couverture des 346 supports et des 1 663 questions, les empreintes audio/source/choix, la preuve de chaque trio activé et les fichiers image réellement présents. Une réinstallation audio conserve les variantes image ajoutées sans accepter de modification silencieuse du texte, du corrigé ou de la transcription.
