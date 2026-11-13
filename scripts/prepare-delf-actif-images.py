@@ -35,6 +35,8 @@ def candidate_allowed(label,question,path,manifest,source=''):
  if base=='creme' and re.search(r'parfum|cosmet|soin',context) and 'creme-alimentaire' in path:return False
  if base=='creme' and re.search(r'recette|cuisine|aliment',context) and 'creme-cosmetique' in path:return False
  if base=='patisserie' and re.search(r'magasin|entrer|habite|en face',normalise(question)) and path.endswith('/vocab-patisserie.webp'):return False
+ if base=='chocolat' and 'boisson' in normalise(question) and (path.endswith('/co834-chocolat-dessine.webp') or 'chocolat-tablette' in path):return False
+ if base in {'feuille','feuilles'} and re.search(r'papier|cahier|papeterie|dessin|crayon|stylo',context) and re.search(r'/vocab-feuilles?\.webp$',path):return False
  if base in {'fromage','legumes','poulet'} and 'pates-' in path:return False
  if 'marche' in label.casefold() and 'marché' not in label.casefold() and re.search(r'deplacement|transport',normalise(question)) and path.endswith('/bg/marche.webp'):return False
  if base=='film' and re.search(r'spectacle|sortie',normalise(question)) and 'dvd' in path:return False
@@ -89,6 +91,11 @@ def main():
       candidates.update(p for p in manifest if 'extension573-creme-cosmetique' in p)
      if normalise(c['texte'])=='patisserie' and re.search(r'magasin|entrer|habite|en face',normalise(q['enonce'])):
       candidates.update(p for p in manifest if p.endswith('/co/bg/patisserie.webp'))
+     if normalise(c['texte'])=='chocolat' and 'boisson' in normalise(q['enonce']):
+      candidates.update(p for p in manifest if p.endswith('/co834-chocolat-chaud-dessine.webp'))
+     if normalise(c['texte']) in {'feuille','feuilles'} and re.search(r'papier|cahier|papeterie|dessin|crayon|stylo',normalise(q['enonce']+' '+source)):
+      paper='/vocab-papiers.webp' if normalise(c['texte'])=='feuilles' else '/vocab-feuille-papier.webp'
+      candidates.update(p for p in manifest if p.endswith(paper))
      options=[dict(path=p,sha256=manifest[p]['sha256'],label=manifest[p].get('label'),visual_review_required=True) for p in sorted(candidates) if candidate_allowed(c['texte'],q['enonce'],p,manifest,source)]
      asset=digest(dict(label=normalise(c['texte']),question_context=normalise(q['enonce']) if re.search(r'\b(?:cafe|bureau|carte|casque|cuisiniere)\b',normalise(c['texte'])) else ''))[:16]
      choices.append(dict(id=c['id'],label=c['texte'],correct=bool(c.get('correct')),reuse_candidates=options,asset=asset,brief=f"Représenter entièrement « {c['texte']} » pour « {q['enonce']} ». Vérifier la transcription du support {ex['id']} avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."))

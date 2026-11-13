@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "candidate_visual_review": 332,
+      "candidate_visual_review": 312,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
-      "active_reviewed_trio": 38,
+      "active_reviewed_trio": 58,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "candidate_visual_review": 135,
+        "candidate_visual_review": 127,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
-        "active_reviewed_trio": 17,
+        "active_reviewed_trio": 25,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 155,
-        "active_reviewed_trio": 21,
+        "candidate_visual_review": 143,
+        "active_reviewed_trio": 33,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -4815,8 +4815,8 @@
       "semantic_sha256": "4b58e6fd93989eeaf0dcca1622905f1c603b7e19d49ce3d3811ec02ac31f7491",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-004-01.mp3",
       "audio_sha256": "a95c13766272c5a5e0de3f44894f30d4830db20d3d8cae2fbe73782fa50d34c0",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -4864,8 +4864,24 @@
           "brief": "Représenter entièrement « À 16 h 30 » pour « À quelle heure faut-il venir ? ». Vérifier la transcription du support tcf-delf-actif-a1-004-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+          "sha256": "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+          "sha256": "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+          "sha256": "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -4876,7 +4892,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "L’invitation demande de venir manger le gâteau à 14 h 30. Les dates et l’âge de la sœur ne sont pas le sujet de ce QCM.",
+        "note": "Trois horloges existantes examinées : grande aiguille sur 6, petite aiguille entre 2/3, 3/4 et 4/5. Les trois heures de l’après-midi sont distinctes dans le trio ; aucune opposition matin/soir entre heures identiques, date ou montant en image."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-004-01#4",
@@ -11362,8 +11384,8 @@
       "semantic_sha256": "6ebfca0c6257a489445214a4b08fd413a539416297914393911a477db49b7fe9",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-021-01.mp3",
       "audio_sha256": "33305497189bc6ad04e14337b14b821a9992350c048bd7a3a3672748a22272d0",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -11411,8 +11433,24 @@
           "brief": "Représenter entièrement « À 17 h 30 » pour « À quelle heure le rendez-vous est-il fixé ? ». Vérifier la transcription du support tcf-delf-actif-a1-021-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+          "sha256": "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+          "sha256": "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp",
+          "sha256": "9ab18c613d9d82105b396b1c2353762e538b2e6277c7c6ca237b89fd1450628c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -11423,7 +11461,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le rendez-vous chez le glacier est à 16 h 30 dimanche après-midi. L’heure limite de réponse à 20 heures n’est pas l’heure du rendez-vous.",
+        "note": "Horloges à 4 h 30, 3 h 30 et 5 h 30 relues, correspondant ici aux trois choix de l’après-midi. Aiguilles des heures à mi-chemin, minutes sur 6 ; les cadrans ne prétendent pas distinguer deux périodes de la journée pour une même heure."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-021-01#5",
@@ -17456,8 +17500,8 @@
       "semantic_sha256": "f52b812f9f5631e73da9055a5ea3ac26c16f7dd1de50471e81d7475f17cd056e",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
       "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -17505,8 +17549,24 @@
           "brief": "Représenter entièrement « À la boulangerie » pour « Où Paulo doit-il faire les courses ? ». Vérifier la transcription du support tcf-delf-actif-a1-034-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+          "sha256": "cdb04119e729cc7588d99bc9e967c339f565ceb027ed9285f4a04bae9eed75aa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/marche.webp",
+          "sha256": "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "sha256": "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -17517,7 +17577,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le message demande à Paulo de passer au supermarché prendre eau, pâtes, café et beurre. Marché et boulangerie ne sont pas indiqués comme lieu des courses.",
+        "note": "Supermarché avec rayons et caisses, marché de plein air à étals et boulangerie avec pains et comptoir réutilisés. Trois lieux commerciaux complets et distincts, sans prix ni enseigne nommée inventée."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-034-01#2",
@@ -21594,8 +21660,8 @@
       "semantic_sha256": "5c79699455dd53c8dbe6e4bc7f0f3d5c456fc04e9d66e24d82e25320d28c341e",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
       "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -21661,8 +21727,24 @@
           "brief": "Représenter entièrement « Le métro » pour « Quel moyen de transport est cité dans la question commençant par « Pourquoi » ? ». Vérifier la transcription du support tcf-delf-actif-a1-046 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+          "sha256": "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+          "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
+          "sha256": "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21673,7 +21755,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "La question commençant par Pourquoi est Pourquoi prenez-vous le bus ? Train et métro ne sont pas nommés dans cette série.",
+        "note": "Bus routier fermé, train régional isolé et métro en station souterraine réutilisés. La station distingue le métro du train ; aucun bus touristique n’est imposé à cette question sur le bus générique."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-046#2",
@@ -21902,8 +21990,8 @@
       "semantic_sha256": "fe5e0a30aa758df30d9d04bf01244630e3199ae8896f171fc6936f0e8e68479b",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
       "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -21957,8 +22045,24 @@
           "brief": "Représenter entièrement « Une moto » pour « Quel véhicule est cité dans la question sur la possession ? ». Vérifier la transcription du support tcf-delf-actif-a1-046 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+          "sha256": "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+          "sha256": "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+          "sha256": "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21969,7 +22073,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "La question sur la possession est Est-ce que vous avez un vélo ? Voiture et moto ne sont pas citées.",
+        "note": "Vélo sans moteur, voiture verte et moto à moteur, selle et réservoir réutilisés. Trois véhicules entiers ; aucune personne, marque ou propriété n’est attribuée par le dessin."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-046#6",
@@ -22586,8 +22696,8 @@
       "semantic_sha256": "ed530d26954fbdad521915e29cdb469da621e9aa48098366a68b3bfc00631618",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
       "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -22641,8 +22751,24 @@
           "brief": "Représenter entièrement « Du ski » pour « Quelle activité le jeune homme faisait-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-048-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+          "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+          "sha256": "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+          "sha256": "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22653,7 +22779,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le jeune homme explique Je fais du vélo et voilà ! avant d’évoquer sa jambe blessée. Il ne pratiquait ni football ni ski dans ce dialogue.",
+        "note": "Scènes génériques des trois activités : cycliste sur un vélo entier, tir au football et skieuse sur deux skis. Les personnages ne sont pas présentés comme des portraits du client ; seules les activités des libellés sont illustrées. L’alternative rugby/football/handball reste à préparer : le pied coupé de l’image de handball n’est pas repris dans un nouveau trio."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-048-01#2",
@@ -25109,8 +25241,8 @@
       "semantic_sha256": "180bcc3ca99293e2dd8f64c0fcef2d764ed260f81366c6143a9e90c8273ae762",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-01-01.mp3",
       "audio_sha256": "794be2f094b10366775152311289a3f101157f1b014e60a97d513d733fb838e9",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -25158,8 +25290,24 @@
           "brief": "Représenter entièrement « Une veste » pour « Quel vêtement Sacha doit-il changer ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+          "sha256": "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-pull.webp",
+          "sha256": "f2331f1b4efe4ecc1066a7a5cbd7a55dba9e9199e4b75cd13e28a652a5682069"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-veste.webp",
+          "sha256": "0f7859a2a0c1c671a10877af09fce7b6f03f91002fc1868876c7a1458fcbf65b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25170,7 +25318,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Sacha doit changer un pantalon acheté précédemment, puis veut voir les baskets. Pull et veste ne sont pas à échanger.",
+        "note": "Pantalon à deux jambes, pull fermé en laine et veste ouverte par fermeture frontale réutilisés. Trois vêtements entiers et distincts ; aucune taille ou date de l’achat n’est dessinée."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-050-01-01#2",
@@ -28352,8 +28506,8 @@
       "semantic_sha256": "df57202bf9398b192d29ee55a1bb839ada3cc0458b7137e2ae4037c8ff7cd75e",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
       "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -28401,8 +28555,24 @@
           "brief": "Représenter entièrement « À 15 h 30 » pour « À quelle heure partent-ils ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+          "sha256": "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+          "sha256": "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+          "sha256": "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -28413,7 +28583,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "L’enseignant répond 14 h 30 à la question sur le départ pour monter à la tour Eiffel. Les deux autres horaires ne sont pas proposés.",
+        "note": "Horloges à 2 h 30, 1 h 30 et 3 h 30 examinées : minutes sur 6, petite aiguille entre deux heures. Elles distinguent les trois choix de l’après-midi ; pas de faux repère de date ou de matin/soir."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-051-04-04#4",
@@ -30464,7 +30640,14 @@
           "id": "a",
           "label": "Une clé USB",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-cle-usb.png",
+              "sha256": "4d57eb18b45cfd86973143794b60851c774ff8a567f158c3f41a6b68944ef8b7",
+              "label": "Une clé USB",
+              "visual_review_required": true
+            }
+          ],
           "asset": "b2f8eb344c42d330",
           "brief": "Représenter entièrement « Une clé USB » pour « Sur quel support doit-elle apporter de la musique ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -42006,8 +42189,8 @@
       "semantic_sha256": "3345f32676c3e04a82a3ac02d6c7de6aeca15acfe01a1fcb71415b603d49ee8b",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-018-01.mp3",
       "audio_sha256": "0576ae06942c458bdabfdc85bc4a75aeeb82cff510e455ff55f479ba5c1b1fee",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -42055,8 +42238,24 @@
           "brief": "Représenter entièrement « Vert » pour « De quelle couleur est le survêtement proposé ? ». Vérifier la transcription du support tcf-delf-actif-a2-018-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -42067,7 +42266,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le message cite précisément un survêtement bleu. Rouge et vert ne qualifient pas ce vêtement.",
+        "note": "Échantillons uniformes bleu, rouge et vert réutilisés, mêmes dimensions et fond crème. La réponse est une couleur ; les échantillons ne prétendent pas reproduire un modèle de survêtement ou son prix."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-018-01#5",
@@ -42292,8 +42497,8 @@
       "semantic_sha256": "6874a85165bde7b6a76f99449155afb5640189e99510b134209b8ff8c7cb4a3c",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-019-01.mp3",
       "audio_sha256": "6863dadb5bf6d58faf8d33c66cff1f81e27bdcdc4cfeb575651f05742cf2a144",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -42341,8 +42546,24 @@
           "brief": "Représenter entièrement « Rouge » pour « De quelle couleur doit être le feutre ? ». Vérifier la transcription du support tcf-delf-actif-a2-019-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-noir-dessinee.webp",
+          "sha256": "167068cc8de9be52e562652ad7051be477c15443b8fa8572868f7b984f957b16"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -42353,7 +42574,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "La mère demande un crayon noir et un feutre bleu. L’énoncé porte sur le feutre, donc bleu ; le noir entendu concerne l’autre article.",
+        "note": "Échantillons bleu, noir et rouge réutilisés. Les objets demandés ne sont pas confondus : aucune couleur de crayon ne remplace celle du feutre. Les images illustrent uniquement les trois couleurs des réponses."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-019-01#5",
@@ -53155,8 +53382,8 @@
       "semantic_sha256": "25fcb62067e1270f0a1050f32ea3d770cb70958aab5bd924e817cf4ec4d56124",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-042-01.mp3",
       "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -53204,8 +53431,24 @@
           "brief": "Représenter entièrement « Vert » pour « De quelle couleur est le dessus de lit ? ». Vérifier la transcription du support tcf-delf-actif-a2-042-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53216,7 +53459,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le dessus de lit est décrit comme bleu. Le blanc de l’armoire et le bleu/jaune du tapis et des rideaux ne changent pas cette réponse.",
+        "note": "Trois échantillons bleu, rouge et vert réutilisés. L’énoncé et ses trois réponses portent uniquement sur la couleur, sans dessiner une chambre arbitraire ou ajouter un motif au dessus de lit."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-042-01#5",
@@ -53936,8 +54185,8 @@
       "semantic_sha256": "ab0379ba511c376a1f30e9378ba709a380d97df3e73354251a8d7c48f10b23d6",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-03.mp3",
       "audio_sha256": "b3c00733ce1d5e6046410026c101759fa61715164b81e74ed7fdf01bbad9c98d",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -53975,9 +54224,9 @@
           "correct": false,
           "reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/vocab-feuilles.webp",
-              "sha256": "d4ccec3054989979fad72ea9ee6acf4bd2938e44e7869e95f776526ba41a4dbc",
-              "label": "Des feuilles",
+              "path": "/lib/images/tcf/qcm-audit/vocab-papiers.webp",
+              "sha256": "bf045b3f00d0ce7d4774b346f70b44c201c5776a1fec11de0f8c16ec71bf4483",
+              "label": "Des papiers",
               "visual_review_required": true
             }
           ],
@@ -53985,8 +54234,24 @@
           "brief": "Représenter entièrement « Des feuilles » pour « Quel produit est vendu par paquets en promotion ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-01-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cahiers.webp",
+          "sha256": "ce135d6bff2d4efed9562dab89d2c6eb2e7dcd88706b616adf3612c83ab324e3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
+          "sha256": "50e3fb307e1ef99b74ba8214a35e5b3e612ca74e1e0679766428361ad9635446"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-papiers.webp",
+          "sha256": "bf045b3f00d0ce7d4774b346f70b44c201c5776a1fec11de0f8c16ec71bf4483"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53997,7 +54262,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "La promotion concerne deux paquets de cahiers pour le prix d’un. Stylos, règles et gommes ont une autre offre ; crayons et feuilles ne sont pas les paquets cités.",
+        "note": "Trois cahiers, quatre crayons et trois feuilles de papier blanc réutilisés au pluriel. Les feuilles d’arbre proposées par l’alias sont rejetées pour ce contexte de papeterie ; aucun prix ou chiffre de promotion n’est dessiné."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-01-03#2",
@@ -58143,8 +58414,8 @@
       "semantic_sha256": "d042caf36bfae3e64de6746edd8908ff44af95848e02c68bb2fd771780ef544a",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-01-06.mp3",
       "audio_sha256": "03e9ee3c8b5e521e8df7cab5832a787828492349a9282cc0eb57dc722dd8db3c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -58188,15 +58459,9 @@
           "correct": false,
           "reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/co834-chocolat-dessine.webp",
-              "sha256": "7595f29c85273aad4f731014601af1e6cfc030d841ac07fbcdf99320a196137f",
-              "label": "Du chocolat",
-              "visual_review_required": true
-            },
-            {
-              "path": "/lib/images/tcf/qcm-audit/vocab-chocolat-tablette.webp",
-              "sha256": "667d6db1c750d0390bbcd8e5beae7121e629c1af9e62ca94a6ede53cda6a7d96",
-              "label": "Le chocolat",
+              "path": "/lib/images/tcf/qcm-audit/co834-chocolat-chaud-dessine.webp",
+              "sha256": "0cd6f064d532f735503871d5337b209ae8275e1e48f0234e9d126839a3b36db2",
+              "label": "Un chocolat chaud",
               "visual_review_required": true
             }
           ],
@@ -58204,8 +58469,24 @@
           "brief": "Représenter entièrement « Un chocolat » pour « Autour de quelle boisson les rencontres ont-elles lieu ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-01-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+          "sha256": "6b4622c9174580a3cc80ef58711086d1fd8b668c710c756372aa231ddea2b126"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-the-dessine.webp",
+          "sha256": "4d0adb09009394fe86b95b66526f73ab66beedb2bc3640664071adbe1312e26d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-chocolat-chaud-dessine.webp",
+          "sha256": "0cd6f064d532f735503871d5337b209ae8275e1e48f0234e9d126839a3b36db2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -58216,7 +58497,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Les rencontres littéraires sont organisées autour d’un café. Thé et chocolat ne sont pas annoncés comme boisson de ces rencontres.",
+        "note": "Café noir en tasse, thé ambré avec sachet et chocolat chaud en tasse réutilisés. Le chocolat du leurre est une boisson ; la tablette de chocolat et le café représenté par un établissement sont écartés. Trois tasses lisibles, aucune fréquence calendaire dessinée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-01-06#4",
@@ -61333,8 +61620,8 @@
       "semantic_sha256": "fb9c7ccd29ce24983b0a774bbfb5614af0a4011e85f739322fc4374bc3a06d04",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
       "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -61382,8 +61669,24 @@
           "brief": "Représenter entièrement « Noir » pour « De quelle couleur est-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-01-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-noir-dessinee.webp",
+          "sha256": "167068cc8de9be52e562652ad7051be477c15443b8fa8572868f7b984f957b16"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -61394,7 +61697,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le portefeuille trouvé est explicitement rouge. La carte étudiante à l’intérieur n’en modifie pas la couleur.",
+        "note": "Échantillons rouge, bleu et noir réutilisés. L’énoncé demande la couleur, pas le contenu ou le propriétaire ; aucune identité ou carte n’est nécessaire dans ces trois réponses."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-01-03#3",
@@ -63772,8 +64081,8 @@
       "semantic_sha256": "3d2b4314d702a3a1cd6b1bde268be4f9446fe9b335a79f0a6ceba5f9bcbd2e96",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3",
       "audio_sha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -63821,8 +64130,24 @@
           "brief": "Représenter entièrement « Rouge » pour « De quelle couleur est l’anorak prêté ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -63833,7 +64158,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le propriétaire dit Prends le bleu. Le vêtement prêté est donc bleu ; il garde le vert.",
+        "note": "Échantillons bleu, vert et rouge réutilisés. La relation de prêt est relue dans le dialogue ; le bleu entendu est attribué au bon anorak. Les images de couleur n’inventent aucun propriétaire."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-04-01#4",
@@ -63846,8 +64177,8 @@
       "semantic_sha256": "bec2df4735f1882e6ac4348fcaa1a73ae130ce4c4a707de7360c1ee24f5c63d7",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3",
       "audio_sha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -63895,8 +64226,24 @@
           "brief": "Représenter entièrement « Noir » pour « De quelle couleur est celui que garde son propriétaire ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-noir-dessinee.webp",
+          "sha256": "167068cc8de9be52e562652ad7051be477c15443b8fa8572868f7b984f957b16"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -63907,7 +64254,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Après avoir proposé l’anorak bleu, le propriétaire précise Moi je prends le vert. Celui qu’il garde est vert, pas bleu.",
+        "note": "Échantillons vert, bleu et noir réutilisés, distincts. L’autre question du même dialogue vise l’anorak prêté ; les bonnes réponses restent différentes, sans changement du corrigé."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-04-02#1",
@@ -65393,8 +65746,8 @@
       "semantic_sha256": "22d4f220cf3f8f9a9a54613119216d4f6032d34f05d560b2ff1b740ec4712a68",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-01-04.mp3",
       "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -65442,8 +65795,24 @@
           "brief": "Représenter entièrement « Le yaourt » pour « Quel ingrédient est cité avec les fruits pour les gâteaux ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-creme-alimentaire.webp",
+          "sha256": "ca365a1ad2dd8474740779b58fb6e133701110386889b5cb7419ed9be4c1223b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-miel.webp",
+          "sha256": "63c63852584cf4953cc28806ca9d3e4a4221fb02f11eb60e8659c379ca181bce"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+          "sha256": "105c25eaed5891a8e2994e635d3d5fd91411c3d04c9dadc08506c778a5e02480"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -65454,7 +65823,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "L’annonce propose des gâteaux aux fruits et à la crème. Miel et yaourt ne sont pas cités comme ingrédients.",
+        "note": "Crème alimentaire en récipient de cuisine, miel ambré avec cuillère à miel et pot de yaourt ouvert réutilisés. Ici la crème alimentaire est adaptée au dessert ; le pot cosmétique du lot précédent est exclu."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-01-04#4",
@@ -66675,8 +67050,8 @@
       "semantic_sha256": "014dfee56e27dc8f865c1c0a7b6a282bb7b95dc0d64c0a3aea098dd4001078ad",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-02-03.mp3",
       "audio_sha256": "cf52878433c083f84deab53aec643154a0dce43760cdcc244150a07ee39402da",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -66724,8 +67099,24 @@
           "brief": "Représenter entièrement « Rouge » pour « De quelle couleur est le maillot du leader ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-02-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-jaune-dessinee.webp",
+          "sha256": "84516a0a2044ec25305367d7e3bd52f155dd839f48b70de11e6939897eaacb21"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -66736,7 +67127,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Le leader du Tour de France porte un maillot jaune selon l’annonce. Ni vert ni rouge n’est indiqué pour ce leader.",
+        "note": "Échantillons jaune, vert et rouge réutilisés. La question demande seulement la couleur du maillot, sans représenter une date, un coureur nommé, une arrivée précise ou une nationalité."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-02-03#4",
@@ -67081,8 +67478,8 @@
       "semantic_sha256": "1fb5354be663ca61d6922b9433e98d8f82aa9d80969a0aadc38474f81cdcee7d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-03-01.mp3",
       "audio_sha256": "50d0573f95d93b3500e529d76ab42877b460b0a5e3f5b2442f751ea2e9500428",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -67130,8 +67527,24 @@
           "brief": "Représenter entièrement « Vert » pour « De quelle couleur est ce vêtement ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+          "sha256": "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+          "sha256": "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+          "sha256": "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -67142,7 +67555,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Béatrice demande d’apporter sa robe bleue au nettoyage à sec. Le bleu qualifie bien la robe et non un autre objet du message.",
+        "note": "Échantillons bleu, rouge et vert réutilisés. Aucune robe de couleur arbitraire ou date de nettoyage n’est ajoutée ; les images correspondent entièrement aux réponses qui sont trois couleurs."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-03-01#6",
@@ -67261,8 +67680,8 @@
       "semantic_sha256": "8d71c79ddbc44497f306755edf04bb69a970d949451b05a050f0ac1a19acd8b0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-03-01.mp3",
       "audio_sha256": "50d0573f95d93b3500e529d76ab42877b460b0a5e3f5b2442f751ea2e9500428",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -67322,8 +67741,24 @@
           "brief": "Représenter entièrement « Une tarte au citron » pour « Quel gâteau Béatrice demande-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-gateau-fraises.webp",
+          "sha256": "c20362fd7429ea1aa14c6837626634ac33140be8f6506a1b6feeb2ce9c54c191"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-gateau-chocolat.webp",
+          "sha256": "0fbe8d4104ec63f5429821dbb693234081a4517652df31ad22dd1b15d6104153"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp",
+          "sha256": "395345c543575c1f64ddd60889f816e5e1268b46333830ac7036c88016c18b11"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -67334,7 +67769,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+        "reason": "Béatrice demande à sa mère de préparer le gâteau aux fraises qu’elle fait bien. Gâteau au chocolat et tarte au citron ne sont pas demandés.",
+        "note": "Gâteau entier avec fraises visibles dans la garniture et sur le dessus, gâteau entier chocolat et tarte au citron entière réutilisés. Les trois desserts sont distincts ; aucune bougie, date ou inscription d’anniversaire arbitraire."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-03-01#9",
@@ -72050,7 +72491,14 @@
           "id": "c",
           "label": "L’équitation",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+              "sha256": "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+              "label": "L’équitation",
+              "visual_review_required": true
+            }
+          ],
           "asset": "5c17c6768cdb7d79",
           "brief": "Représenter entièrement « L’équitation » pour « Quel sport Léo pratique-t-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-005-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -75354,7 +75802,14 @@
           "id": "c",
           "label": "La console de jeux",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-console-jeux.png",
+              "sha256": "3bb03b7813eda1059e9716b3ffbdbbde6b47f0d325b7bebb5c76743cabbe2ee5",
+              "label": "Une console de jeux",
+              "visual_review_required": true
+            }
+          ],
           "asset": "8cb03b26b3c667a0",
           "brief": "Représenter entièrement « La console de jeux » pour « Quel objet provoque la discussion ? ». Vérifier la transcription du support tcf-delf-actif-b1-011-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -106708,9 +107163,9 @@
       "label": "Des feuilles",
       "reuse_candidates": [
         {
-          "path": "/lib/images/tcf/qcm-audit/vocab-feuilles.webp",
-          "sha256": "d4ccec3054989979fad72ea9ee6acf4bd2938e44e7869e95f776526ba41a4dbc",
-          "label": "Des feuilles",
+          "path": "/lib/images/tcf/qcm-audit/vocab-papiers.webp",
+          "sha256": "bf045b3f00d0ce7d4774b346f70b44c201c5776a1fec11de0f8c16ec71bf4483",
+          "label": "Des papiers",
           "visual_review_required": true
         }
       ],
@@ -107143,15 +107598,9 @@
       "label": "Un chocolat",
       "reuse_candidates": [
         {
-          "path": "/lib/images/tcf/qcm-audit/co834-chocolat-dessine.webp",
-          "sha256": "7595f29c85273aad4f731014601af1e6cfc030d841ac07fbcdf99320a196137f",
-          "label": "Du chocolat",
-          "visual_review_required": true
-        },
-        {
-          "path": "/lib/images/tcf/qcm-audit/vocab-chocolat-tablette.webp",
-          "sha256": "667d6db1c750d0390bbcd8e5beae7121e629c1af9e62ca94a6ede53cda6a7d96",
-          "label": "Le chocolat",
+          "path": "/lib/images/tcf/qcm-audit/co834-chocolat-chaud-dessine.webp",
+          "sha256": "0cd6f064d532f735503871d5337b209ae8275e1e48f0234e9d126839a3b36db2",
+          "label": "Un chocolat chaud",
           "visual_review_required": true
         }
       ],
