@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-13",
+  "baseline": "2508f28ab233a9656d672d9380486e6a1cbe88ee",
+  "scope": "Associations image–mot des planches imprimables Vocabulaire et Mémory, sans modifier leur recto verso",
+  "tests": {
+    "newTests": 8,
+    "focusedPassed": 8,
+    "fullSuitePassed": 267,
+    "failed": 0,
+    "generatedConfigurations": 600,
+    "fixtureTheme": "fruits",
+    "difficulties": [
+      "facile",
+      "moyen",
+      "avance"
+    ],
+    "freeEdits": "Numéros de paires, ordre des cartes, mots et images absents, planches invalides et remplacements ambigus vérifiés.",
+    "persistence": "Classe collective, Solo automatique et reprise durable conservent les associations et leurs corrections."
+  },
+  "coverage": {
+    "newFamilies": [
+      "jeux-vocabulaire",
+      "jeux-memory"
+    ],
+    "defaultQuestions": [
+      9,
+      4
+    ],
+    "playableVariants": 714,
+    "inventoryVariants": 2112,
+    "catalogTypes": 2080,
+    "generationErrors": 8
+  },
+  "browser": {
+    "passed": [
+      "printable-pairs-browser",
+      "readability-browser",
+      "source-adapters-browser",
+      "a4-regression"
+    ],
+    "all49StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "class": "Correction collective dans les cartes, navigation et reprise ; images complètes, centrées et sans recouvrement.",
+    "solo": "Réponse juste, fausse et expiration ; passage automatique après une seconde.",
+    "competition": "Deux mascottes, image et mots source ; jeu local après préparation puis coupure réseau. Le contenu du blob est identique au fichier source.",
+    "accessibility": "Axe passe sur les vues Classe et compétition du nouveau parcours ; textes longs, dialogue complet et clavier passent dans le parcours de lisibilité existant.",
+    "sourceTemplate": "unchanged",
+    "serverWrites": 0,
+    "errors": []
+  },
+  "paper": {
+    "printablePairs": "Recto verso et contenu source inchangés ; vérifiés par les tests de génération.",
+    "a4Witness": {
+      "identicalScreenshot": true,
+      "dimensions": [
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        },
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        }
+      ],
+      "draftLaunch": "passed",
+      "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+      "viewport": "1366x1000"
+    },
+    "witnessScreenshotSha256": "2c70ef917508f9ea7ac0dcee1ddbf012aaa6137ec7aca5adc5d49841dd135331",
+    "cscRevision": "../tcm-csc/axes-et-cadres-20261113.json"
+  },
+  "limits": [
+    "Micro-questions indépendantes : élimination des paires et groupes de six encore ouverts.",
+    "Retournement des cartes M11 encore ouvert.",
+    "Autres thèmes non déclarés relus pédagogiquement ; toutes les 49 étapes navigateur n’ont pas été relancées.",
+    "Les autres familles et les travaux externes du suivi V4 restent ouverts.",
+    "Les nouvelles synthèses audio restent reportées."
+  ],
+  "checks": {
+    "appTypes": "passed",
+    "lint": "passed with existing warnings",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed",
+    "changedFilesSecrets": "Gitleaks 8.30.1: zero findings in changed files and commits since the C0 baseline"
+  }
+}

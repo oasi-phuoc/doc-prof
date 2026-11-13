@@ -158,18 +158,14 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
   const show = mode === 'answers'
   const isCsc = item.cscTask?.kind === 'large-count'
   if (!scene) return null
-  return (
-    <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} aria-label="Compter les formes">
-      {isCsc && <p className="csc-count-instruction">Comptez les formes <span className="csc-count-target" role="img" aria-label={scene.label}><svg viewBox="0 0 24 24" aria-hidden><CountIconGlyph kind={scene.targetKind}/></svg></span>.</p>}
-      <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
-        {scene.tokens.map((token, index) => (
+  const tokens = scene.tokens.map((token, index) => (
           <span
             key={`ci-${index}`}
             className={`count-icon-token kind-${token.kind}`}
             style={{
               left: `${token.x}%`,
               top: `${token.y}%`,
-              width: `${token.size}%`,
+              width: isCsc ? `min(${token.size/Math.SQRT2}cqw, ${token.size*1.25/Math.SQRT2}cqh)` : `${token.size}%`,
               transform: `translate(-50%, -50%) rotate(${token.rot}deg)`,
             }}
           >
@@ -177,7 +173,12 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
               <CountIconGlyph kind={token.kind} />
             </svg>
           </span>
-        ))}
+        ))
+  return (
+    <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} aria-label="Compter les formes">
+      {isCsc && <p className="csc-count-instruction">Comptez les formes <span className="csc-count-target" role="img" aria-label={scene.label}><svg viewBox="0 0 24 24" aria-hidden><CountIconGlyph kind={scene.targetKind}/></svg></span>.</p>}
+      <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
+        {isCsc ? <div className="csc-count-content">{tokens}</div> : tokens}
       </div>
       <p className="count-icons-caption">
         Il y a{' '}

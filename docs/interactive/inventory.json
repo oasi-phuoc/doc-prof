@@ -3,8 +3,8 @@
   "seed": 20261107,
   "scope": "Un tirage réel par type de catalogue, count=2, niveau par défaut. Ne garantit pas les autres graines, variantes et niveaux.",
   "summary": {
-    "types": 2111,
-    "catalogTypes": 2079,
+    "types": 2112,
+    "catalogTypes": 2080,
     "declaredDomains": [
       "français",
       "algèbre",
@@ -165,7 +165,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 712,
+    "playableTypes": 714,
     "generationErrors": 8
   },
   "rows": [
@@ -75033,20 +75033,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 9,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 jeux-vocabulaire",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 jeux-vocabulaire",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "gameBoard",
@@ -75508,20 +75499,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 4,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 jeux-memory",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 jeux-memory",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "gameBoard",
@@ -114862,6 +114844,48 @@
       ]
     },
     {
+      "id": "gram-ex-avoir-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Associer les sujets et les formes",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-avoir-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-avoir-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
       "id": "vocabulaire-placeholder",
       "domain": "vocabulaire",
       "topic": "vocabulaire-a-venir",
@@ -119117,19 +119141,19 @@
             "colors": [
               3,
               1,
-              0
+              2
             ]
           },
           "segments": [
             {
               "mm": 98,
-              "unit": "cm",
-              "display": "9,8"
+              "unit": "mm",
+              "display": "98"
             },
             {
               "mm": 34,
-              "unit": "cm",
-              "display": "3,4"
+              "unit": "mm",
+              "display": "34"
             },
             {
               "mm": 55,
@@ -119900,7 +119924,9 @@
           "coordTask": "read",
           "answer": "cœur : (B ; 6) · maison : (G ; 3) · pentagone : (D ; 4) · trapèze : (A ; 3) · croix : (B ; 8) · flèche : (A ; 8)",
           "cscTask": {
-            "kind": "coordinates-left"
+            "kind": "coordinates-left",
+            "xDirection": "right-to-left",
+            "yDirection": "top-to-bottom"
           }
         }
       ]
@@ -120027,7 +120053,9 @@
           "coordTask": "place",
           "answer": "cœur : (B ; 6) · maison : (G ; 3) · pentagone : (D ; 4) · trapèze : (A ; 3) · croix : (B ; 8) · flèche : (A ; 8)",
           "cscTask": {
-            "kind": "coordinates-left"
+            "kind": "coordinates-left",
+            "xDirection": "right-to-left",
+            "yDirection": "top-to-bottom"
           }
         }
       ]

@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-13",
+  "baseline": "3e271ce900dd157d1713151e1961d6f64e090380",
+  "scope": "M06 progressif pour les deux familles imprimables Vocabulaire et Mémory",
+  "tests": {
+    "newTests": 7,
+    "newFocusedPassed": 7,
+    "fullSuitePassed": 274,
+    "failed": 0,
+    "groupConfigurations": 800,
+    "existingPrintableConfigurations": 600,
+    "theme": "fruits",
+    "groups": "2 à 9 paires sur 100 graines ; groupes de six au maximum ; 7 devient 5+2 et 9 devient 6+3.",
+    "state": "Questions passées, erreurs, expirations, rétractation, tentatives, sélection partielle, ordre personnalisé, plafonds et reprise compacte vérifiés."
+  },
+  "coverage": {
+    "families": [
+      "jeux-vocabulaire",
+      "jeux-memory"
+    ],
+    "playableVariants": 714,
+    "inventoryVariants": 2112,
+    "generationErrors": 8,
+    "note": "Complète des familles déjà comptées ; pas de nouvelle famille déclarée jouable."
+  },
+  "browser": {
+    "passed": [
+      "printable-pairs-browser",
+      "competition-browser",
+      "competition-worker",
+      "a4-regression"
+    ],
+    "all49StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "class": "Choix déjà associés grisés, emplacements inchangés, autres groupes indépendants ; reprise des paires corrigées.",
+    "solo": "Juste, faux et expiration ; mot déjà associé désactivé ; bilan 1 paire réussie sur 3.",
+    "layout": "Titre, image complète, cartes, mascotte et commandes visibles pendant la réflexion et après correction ; lignes de réponse de 44 px au moins.",
+    "zoom": "Image agrandie et zoom effectif ; Échap ferme et rend le focus sans sélectionner une réponse.",
+    "competition": "Les deux joueurs locaux gardent les mêmes choix durant le tour courant ; les mots des tours précédents sont bloqués, y compris par le moteur serveur.",
+    "worker": "Vrai workerd et SQLite : reprise après redémarrage, groupe et mots indisponibles conservés, HTTP 400 pour une carte utilisée, 2000 points après les deux premières paires correctes.",
+    "accessibility": "Axe passe sur les vues d’associations contrôlées.",
+    "sourceTemplate": "unchanged",
+    "serverWritesToFicheApi": 0,
+    "errors": []
+  },
+  "checks": {
+    "appTypes": "passed",
+    "lint": "passed with existing warnings; no warnings in the changed matching code",
+    "productionBuild": "passed",
+    "bundleBudgets": "passed",
+    "a4Witness": "identical screenshot against 0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "changedFilesSecrets": "Gitleaks 8.30.1: zero findings in changed files and commits since the C0 baseline"
+  },
+  "limits": [
+    "Les groupes progressifs restent à étendre aux autres familles d’associations.",
+    "M11 (retourner deux cartes) reste ouvert ; Mémory fournit ici les paires image–mot.",
+    "Les autres thèmes ne sont pas déclarés relus pédagogiquement par ces tests.",
+    "Toutes les 49 étapes navigateur n’ont pas été relancées.",
+    "Aucune nouvelle narration générée ni activée ; aucun déploiement du Worker ni changement de configuration cloud effectué."
+  ],
+  "paper": {
+    "a4Witness": {
+      "identicalScreenshot": true,
+      "dimensions": [
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        },
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        }
+      ],
+      "draftLaunch": "passed",
+      "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+      "viewport": "1366x1000"
+    },
+    "witnessScreenshotSha256": "2c70ef917508f9ea7ac0dcee1ddbf012aaa6137ec7aca5adc5d49841dd135331",
+    "printableSources": "unchanged"
+  }
+}

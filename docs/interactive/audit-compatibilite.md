@@ -2,11 +2,11 @@
 
 `npm run interactive:inventory` produit `inventory.json` à partir de **chaque type réel du catalogue**, avec `buildPage`, puis applique le nouvel adaptateur. Paramètres : graine 20261107, deux items, niveau par défaut ; source, champs, layouts, configuration et deux items témoins sont conservés par entrée. Le résultat est reproductible, sans modification des banques.
 
-- 2 079 types de catalogue ; 2 111 couples type/domaine après ajout des variantes TCF CSC et CFR.
+- 2 080 types de catalogue ; 2 112 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 51 layouts observés sur 54 déclarés. `grammar`, `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
-- 712 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 70 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 399 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 714 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 72 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
+- 1 398 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
@@ -31,6 +31,7 @@
 | PO à images, dont quatre scènes | Projection et déplacement par boutons ; modèle après révélation | Aucun ordre ou score automatique inventé |
 | Associations audio | Une question par enregistrement, mots ou images source, correspondances vérifiées | Repli guidé pour un audio de mot remplaçant une syllabe ; six choix source maximum |
 | Paires de vocabulaire | Micro-questions avec propositions source ; mot complet vérifié pour les parties à compléter | Associations indépendantes, sans élimination des paires déjà traitées |
+| Jeux imprimables Vocabulaire et Mémory | Une micro-question image–mot par numéro de paire ; groupes de six paires au maximum ; mots déjà associés désactivés sans déplacer les cartes ; reprise, bilan par groupe et compétition | Images et mots doivent être distincts pour la correction automatique ; ambiguïtés guidées ; retournement M11 encore ouvert ; ADR 0036 et 0037 |
 | Phrases à ordonner | Deux à six jetons source manipulables, modèle séparé, appréciation humaine ; layouts `phrase-order` et `order` à consigne de phrase explicite | Phrases longues ou incohérentes signalées ; aucune troncature et aucun ordre alternatif déclaré faux automatiquement ; ADR 0028 |
 | Dossiers complets | Explication de non-compatibilité | Ouvrir une fiche individuelle |
 | Autres layouts | Motif explicite, visible dans la préparation | Ne sont pas masqués par domaine |
@@ -39,8 +40,12 @@
 
 Vérifier les contextes et médias propres à chaque famille ; les QCM multi-réponses ne sont pas encore convertis. Tester d’autres graines, les niveaux non échantillonnés, les continuations de documents, les titres très longs, les accents et les éditions libres complexes. Le convertisseur travaille sur les blocs avant pagination A4 pour ne pas rejouer les items des pages de suite.
 
-Inventaire recalculé le 12 novembre 2026. Les nombres historiques du prototype décrivaient un catalogue antérieur ; plusieurs exercices de grammaire auparavant rendus en TCF utilisent maintenant le layout `text` et demandent un adaptateur dédié. Aucune compatibilité générique n’est déduite du seul domaine.
+Inventaire recalculé le 13 novembre 2026. Les nombres historiques du prototype décrivaient un catalogue antérieur ; plusieurs exercices de grammaire auparavant rendus en TCF utilisent maintenant le layout `text` et demandent un adaptateur dédié. Aucune compatibilité générique n’est déduite du seul domaine.
 
 Le tirage courant trouve 24 variantes de géométrie jouables : seize types de mesures, deux types de reconnaissance et six mélanges. Les deux items de chaque mélange de ce relevé sont convertibles ; les autres figures de ces mélanges restent signalées quand elles apparaissent sur une autre graine. Il trouve cinq variantes Gattegno, contre six dans le relevé précédent : les phrases issues de la banque enrichie restent soumises à la limite de deux à six mots manipulables. Les nouveaux types de grammaire intégrés sont conservés dans ce relevé ; ils ne sont pas assimilés à une adaptation automatique au jeu.
 
 La banque de logique importée contient 206 `correctIndex` initialisés à 0 faute de corrigé connu ; ces valeurs ne sont pas utilisées pour inventer un verdict. Une relecture des bonnes réponses est nécessaire avant leur adaptation au score automatique. Voir [ADR 0032](adr-0032-reconnaissance-des-formes.md).
+
+Les deux familles de jeux imprimables produisent respectivement neuf et quatre questions dans le tirage témoin. La hausse du nombre de types comprend aussi le nouvel exercice de grammaire intégré depuis `main` ; aucun adaptateur générique n’est déduit de cet ajout. Voir [ADR 0036](adr-0036-paires-imprimees-image-mot.md).
+
+Le [complément M06](adr-0037-groupes-associations.md) ajoute les groupes progressifs aux deux familles imprimables, sans changer le nombre de variantes déjà comptées. Les questions passées restent disponibles ; les paires corrigées sont conservées lors de la reprise. La règle est également imposée par le moteur de compétition et vérifiée après redémarrage du vrai Worker.

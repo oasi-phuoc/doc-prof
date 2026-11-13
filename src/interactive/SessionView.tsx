@@ -1,5 +1,6 @@
 import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
 import { questionsForRound, roundsFor } from './domain/plan'
+import { matchingSummary, usedMatchingChoices } from './domain/matching'
 import { startSession, transition } from './domain/session'
 import type { Action, Game, Session } from './domain/types'
 import type { ShapeId } from './domain/palette'
@@ -221,6 +222,7 @@ function ActiveSessionView({
     return () => controller.abort()
   }, [game, state.index, state.finished, state.paused, hidden, mediaManager])
   if (state.finished) {
+    const associations=matchingSummary(game,state)
     const finish = (callback: () => void) => {
       flushClock()
       void writes.current.then(callback).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING))
@@ -244,6 +246,7 @@ function ActiveSessionView({
           <p>
             {state.mode === 'solo' ? 'Ce bilan décrit tes réponses. Une absence de réponse dans le temps compte comme fausse. Les activités ouvertes ne sont pas notées automatiquement.' : 'Ce bilan décrit les activités travaillées collectivement. Les éventuels comptages sont saisis par l’enseignant. Aucun résultat individuel n’est déduit des cartes de la classe.'}
           </p>
+          {!!associations.length && <section className="ci-panel ci-matching-summary" aria-label="Bilan des associations"><h2>Associations image–mot</h2>{associations.map(group=><p key={group.groupId}><b>{group.title}</b> · Groupe {group.number}/{group.total} · {state.mode==='solo'?`${group.correct} ${group.correct>1?'paires réussies':'paire réussie'} sur ${group.size}`:`${group.completed} ${group.completed>1?'paires abordées':'paire abordée'} sur ${group.size}`}</p>)}</section>}
           <div className="ci-panel ci-summary-questions">
             {game.questions.map((original) => {
               const position = rounds.findIndex((round) => round.questionIds.includes(original.id))
@@ -499,6 +502,7 @@ function PlayingRound({
                     }
                     imageOrder={runtime.imageOrders[q.id]}
                     interactionsDisabled={blocked}
+                    unavailableChoiceIds={usedMatchingChoices(game,state,q)}
                     onImageOrder={(order) => dispatch({ type: 'IMAGE_ORDER_SET', questionId: q.id, order })}
                     onSelect={(choiceId) =>
                       dispatch({ type: 'SELECT', questionId: q.id, choiceId })

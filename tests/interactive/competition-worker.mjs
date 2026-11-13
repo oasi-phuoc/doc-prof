@@ -41,12 +41,29 @@ try {
   assert.equal(corrected.status, 200); assert.equal(corrected.body.view.phase, 'correction')
   assert.deepEqual(corrected.body.view.players.map((player) => player.score), [1000, 0])
   await request(`/rooms/${code}/host`, { action: 'pause' }, host)
+  const words=['pomme','poire','banane']
+  const matchingQuiz={id:'real-matching',title:'Associations',items:words.map((word,i)=>({question:{id:`source-pair-${i}`,prompt:'Quel mot correspond à cette image ?',images:[`${origin}/images/${word}.webp`],choices:words.map(text=>({id:`source-word-${text}`,text})),matchingGroup:{groupId:'source-group',number:1,total:1}},correctChoiceId:`source-word-${word}`}))}
+  const matching=await request('/rooms',{quiz:matchingQuiz,settings},teacherKey)
+  assert.equal(matching.status,201,matching.body.error)
+  const matchingCode=matching.body.code,matchingHost=matching.body.token,learner=(await request(`/rooms/${matchingCode}/join`,{avatarId:'panda'})).body.token
+  assert.equal((await request(`/rooms/${matchingCode}/host`,{action:'start'},matchingHost)).status,200)
+  const firstPair=await request(`/rooms/${matchingCode}/answer`,{questionId:'q1',choiceId:'c0'},learner)
+  assert.equal(firstPair.status,200,firstPair.body.error);assert.equal(firstPair.body.view.phase,'correction')
+  assert.equal((await request(`/rooms/${matchingCode}/host`,{action:'next',index:0,phase:'correction'},matchingHost)).status,200)
+  assert.equal((await request(`/rooms/${matchingCode}/host`,{action:'pause'},matchingHost)).status,200)
   await runtime.dispose(); runtime = new Miniflare(convertV4MiniflareOptions(options))
   const restored = await request(`/rooms/${code}`, undefined, first.token)
   assert.equal(restored.status, 200); assert.equal(restored.body.view.paused, true)
   assert.equal(restored.body.view.correctChoiceId, 'c0'); assert.deepEqual(restored.body.view.players.map((player) => player.score), [1000, 0])
+  const resumedMatching=(await request(`/rooms/${matchingCode}`,undefined,learner)).body.view
+  assert.equal(resumedMatching.paused,true);assert.equal(resumedMatching.question.id,'q2');assert.deepEqual(resumedMatching.unavailableChoiceIds,['c0']);assert.equal(resumedMatching.correctChoiceId,undefined)
+  assert.equal(resumedMatching.question.matchingGroup.groupId,'m1');assert.ok(!JSON.stringify(resumedMatching).includes('source-word-'))
+  assert.equal((await request(`/rooms/${matchingCode}/host`,{action:'resume'},matchingHost)).status,200)
+  assert.equal((await request(`/rooms/${matchingCode}/answer`,{questionId:'q2',choiceId:'c0'},learner)).status,400)
+  const matched=await request(`/rooms/${matchingCode}/answer`,{questionId:'q2',choiceId:'c1'},learner)
+  assert.equal(matched.status,200);assert.equal(matched.body.view.players[0].score,2000)
   const report = { runtime: 'real workerd through Miniflare, SQLite-backed Durable Objects', workerBytes: (await stat(path.join(compiled, 'index.js'))).size,
-    quiz: '60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime', authority: 'teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view', grading: '1000 and 0 points derived by server', restart: 'new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage', productionDeployment: false }
+    quiz: '60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime', authority: 'teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view', grading: '1000 and 0 points derived by server', restart: 'new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage', matching:'Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private', productionDeployment: false }
   await writeFile('docs/interactive/competition-worker-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report, null, 2))
 } finally { await runtime?.dispose(); await rm(temporary, { recursive: true, force: true }) }

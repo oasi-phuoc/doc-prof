@@ -9,7 +9,7 @@
 .csc-shape-names > .tcf-question { text-align: center; min-width: 0; margin: 0; }
 .csc-name-figure { height: 42mm; width: 100%; display: flex; align-items: center; justify-content: center; }
 .csc-name-figure .geometry-figure { margin: 0; height: 100%; max-width: 100%; }
-.csc-shape-answer { padding-top: 25px; padding-bottom: 15px; }
+.csc-shape-answer { padding-top: 12.5px; padding-bottom: 15px; }
 .csc-shape-names .answer-line-field { width: 100%; font-size: calc(11pt * var(--app-font-scale, 1)); }
 .csc-connect svg { display: block; width: 100%; height: 67.5mm; }
 .csc-connect { width: 90%; margin-inline: auto; border: 1.5px solid var(--purple); }
@@ -24,6 +24,8 @@
 .csc-length-table th:first-child { text-align: left; }
 .csc-length-check { display: inline-grid; place-items: center; width: 5mm; height: 5mm; border: 1px solid var(--ink); font-size: calc(12pt * var(--app-font-scale, 1)); line-height: 1; }
 .worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: 97.5mm; max-height: 97.5mm; aspect-ratio: auto; }
+.is-csc-large .count-icons-frame { padding: 25px; }
+.csc-count-content { position: absolute; inset: 25px; container-type: size; }
 .csc-count-instruction { margin: 0; display: flex; align-items: center; gap: .3em; }
 .csc-count-target { display: inline-flex; width: 1.5em; height: 1.5em; color: var(--purple); print-color-adjust: exact; }
 .csc-count-target svg { width: 100%; height: 100%; }
@@ -51,10 +53,10 @@
 .csc-problem-text .draft-pad.draft-pad-short { --grid-rows: calc(6 * var(--sheet-columns, 1)); }
 .csc-problem-text .draft-pad + .answer-line-field { margin-top: calc(1lh + 3.5px); }
 .csc-sequence-hint { display: flex; align-items: center; gap: 5mm; }
-.csc-step-hint { border: 2px solid #6d3ca8; background: #f0e4ff; color: #492171; padding: 2mm 3mm; margin: 0; min-width: 14mm; text-align: center; font-weight: 700; print-color-adjust: exact; }
+.csc-step-hint { border: 1.5px solid #6d3ca8; background: #f0e4ff; color: #492171; margin: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; print-color-adjust: exact; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .exercise-grid { row-gap: calc(2mm + 10px); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .sequence-row { gap: 16px; }
-.exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .sequence-term { border: 1.5px solid var(--purple); min-width: 2.8em; min-height: 2em; padding: 4px; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) :is(.sequence-term,.csc-step-hint) { border: 1.5px solid var(--purple); width: 2.8em; height: 2.8em; min-width: 2.8em; min-height: 2.8em; flex: 0 0 2.8em; padding: 4px; font-size: inherit; line-height: 1; }
 .is-tcm-csc .tcf-audio-frame-head { margin: 0; }
 .csc-order-series .column-prompt { font-weight: 400; }
 .csc-order-series .order-answer-row:last-child { padding-bottom: 15px; }
@@ -78,12 +80,12 @@
 .csc-operation-group .column-grid { width: max-content; margin-inline: auto; }
 .exercise-block[data-exercise-type="tcm-csc-ex10"] .exercise-grid { row-gap: 15px; }
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .csc-operation-groups { row-gap: 60px; }
-.exercise-block[data-exercise-type="tcm-csc-ex11"] .column-prompt { font-size: 1.5em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 16px; text-align: center; }
+.exercise-block[data-exercise-type="tcm-csc-ex11"] .column-prompt { font-size: 1.5em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 16px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); }
 .is-tcm-csc .exercise-instruction { white-space: pre-line; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
-.exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell { font-size: min(calc(30px * var(--app-font-scale, 1)), 33px); }
-.exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell.carry { font-size: min(calc(18px * var(--app-font-scale, 1)), 21px); }
+.exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell { font-size: min(calc(25.5px * var(--app-font-scale, 1)), 28.05px); }
+.exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell.carry { font-size: min(calc(15.3px * var(--app-font-scale, 1)), 17.85px); }
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }

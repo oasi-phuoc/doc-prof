@@ -1,9 +1,10 @@
 {
   "runtime": "real workerd through Miniflare, SQLite-backed Durable Objects",
-  "workerBytes": 44409,
+  "workerBytes": 48906,
   "quiz": "60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime",
   "authority": "teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view",
   "grading": "1000 and 0 points derived by server",
   "restart": "new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage",
+  "matching": "Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private",
   "productionDeployment": false
 }

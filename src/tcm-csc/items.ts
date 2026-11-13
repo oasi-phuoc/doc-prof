@@ -77,11 +77,14 @@ function columnOperations(rng: Rng, count: number, empty: boolean): MathItem[] {
 }
 function lengthTable(rng: Rng): MathItem {
   const lengths = shuffle(rng, [int(rng, 25, 40), int(rng, 50, 75), int(rng, 90, 120)])
-  return { layout: 'segment-measure', cscTask: { kind: 'length-table', colors: shuffle(rng,[0,1,2,3]).slice(0,3) }, segments: lengths.map((mm) => ({ mm, unit: 'cm', display: String(mm / 10).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}` }
+  const units=shuffle(rng,['cm','mm',rng()<.5?'cm':'mm'] as const)
+  return { layout: 'segment-measure', cscTask: { kind: 'length-table', colors: shuffle(rng,[0,1,2,3]).slice(0,3) }, segments: lengths.map((mm,index) => ({ mm, unit: units[index]!, display: String(units[index]==='cm'?mm/10:mm).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}` }
 }
 function coordinates(rng: Rng, place: boolean): MathItem[] {
   const config: PageConfig = { domain: 'géométrie', topic: 'reperage', exerciseType: place ? 'reperage-placer' : 'reperage-lire', difficulty: 'facile', count: 6, columns: 1, coordCols: 8, coordRows: 8, coordCellMm: 8 }
-  return (tryGenerateReperage(config, rng)?.items ?? []).map((item) => ({ ...item, cscTask: { kind: 'coordinates-left' } }))
+  const items=tryGenerateReperage(config,rng)?.items??[]
+  const xDirection=rng()<.5?'left-to-right':'right-to-left',yDirection=rng()<.5?'bottom-to-top':'top-to-bottom'
+  return items.map((item) => ({ ...item, cscTask: { kind: 'coordinates-left', xDirection, yDirection } }))
 }
 
 function connectingPoints(rng: Rng): MathItem {

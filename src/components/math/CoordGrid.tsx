@@ -146,6 +146,9 @@ function CellsScene({
   cellScale = 1,
   shapeColors,
   paddedLabels = false,
+  rowLabelsRight = false,
+  reverseColumns = false,
+  reverseRows = false,
 }: {
   scene: CoordScene
   editable?: boolean
@@ -154,9 +157,12 @@ function CellsScene({
   cellScale?: number
   shapeColors?: Partial<Record<CoordShape,string>>
   paddedLabels?: boolean
+  rowLabelsRight?: boolean
+  reverseColumns?: boolean
+  reverseRows?: boolean
 }) {
   const cellMm = (scene.cellMm ?? 8) * cellScale
-  const { padL, padR, padT, padB } = paddedLabels ? {padL:10,padR:2,padT:4,padB:10} : mmPads('cells')
+  const { padL, padR, padT, padB } = paddedLabels ? {padL:rowLabelsRight?2:10,padR:rowLabelsRight?10:2,padT:4,padB:10} : mmPads('cells')
   const gridW = scene.cols * cellMm
   const gridH = scene.rows * cellMm
   const svgW = padL + gridW + padR
@@ -167,6 +173,8 @@ function CellsScene({
   return (
     <svg
       className="coord-grid scene-cells is-fixed-mm"
+      data-column-direction={reverseColumns?'rtl':'ltr'}
+      data-row-direction={reverseRows?'top-down':'bottom-up'}
       width={`${svgW}mm`}
       height={`${svgH}mm`}
       viewBox={`0 0 ${svgW} ${svgH}`}
@@ -174,12 +182,12 @@ function CellsScene({
       aria-label="Tableau de repérage"
     >
       {Array.from({ length: scene.rows }, (_, i) => {
-        const y = scene.rows - i
+        const y = reverseRows ? i+1 : scene.rows-i
         const gy = padT + i * cellMm
         return (
           <g key={`h-${y}`}>
             <line x1={padL} y1={gy} x2={padL + gridW} y2={gy} className="grid-line" />
-            <text x={padL - (paddedLabels?3:1.2)} y={gy + cellMm / 2 + (paddedLabels?0:1.1)} dominantBaseline={paddedLabels?'middle':undefined} className="axis-label" textAnchor="end" fontSize={3.4}>
+            <text data-axis="y" data-coordinate={y} x={rowLabelsRight?padL+gridW+3:padL-(paddedLabels?3:1.2)} y={gy + cellMm / 2 + (paddedLabels?0:1.1)} dominantBaseline={paddedLabels?'middle':undefined} className="axis-label" textAnchor={rowLabelsRight?'start':'end'} fontSize={3.4}>
               {axisTickLabel(y, scene.axis, 'y')}
             </text>
           </g>
@@ -187,12 +195,14 @@ function CellsScene({
       })}
       <line x1={padL} y1={padT + gridH} x2={padL + gridW} y2={padT + gridH} className="grid-line" />
       {Array.from({ length: scene.cols }, (_, i) => {
-        const x = i + 1
+        const x = reverseColumns ? scene.cols-i : i+1
         const gx = padL + i * cellMm
         return (
           <g key={`v-${x}`}>
             <line x1={gx} y1={padT} x2={gx} y2={padT + gridH} className="grid-line" />
             <text
+              data-axis="x"
+              data-coordinate={x}
               x={paddedLabels || x !== scene.cols ? gx + cellMm / 2 : gx + cellMm - 0.2}
               y={padT + gridH + (paddedLabels?5.5:3.6)}
               dominantBaseline={paddedLabels?'middle':undefined}
@@ -208,12 +218,12 @@ function CellsScene({
       <line x1={padL + gridW} y1={padT} x2={padL + gridW} y2={padT + gridH} className="grid-line" />
       {Array.from({ length: scene.rows }, (_, i) =>
         Array.from({ length: scene.cols }, (_, j) => {
-          const x = j + 1
-          const y = scene.rows - i
-          const { cx, cy } = cellCenterMm(scene.rows, x, y, padL, padT, cellMm)
+          const x = reverseColumns ? scene.cols-j : j+1
+          const y = reverseRows ? i+1 : scene.rows-i
+          const { cx, cy } = cellCenterMm(scene.rows, j+1, scene.rows-i, padL, padT, cellMm)
           const mark = markAt(x, y)
           return (
-            <g key={`c-${x}-${y}`}>
+            <g key={`c-${x}-${y}`} data-coord-cell={`${x};${y}`}>
               {editable ? (
                 <rect
                   x={padL + j * cellMm}
@@ -818,6 +828,9 @@ export function CoordGrid({
   cellScale = 1,
   shapeColors,
   paddedLabels = false,
+  rowLabelsRight = false,
+  reverseColumns = false,
+  reverseRows = false,
 }: {
   point?: Pt
   pointImage?: Pt
@@ -831,6 +844,9 @@ export function CoordGrid({
   cellScale?: number
   shapeColors?: Partial<Record<CoordShape,string>>
   paddedLabels?: boolean
+  rowLabelsRight?: boolean
+  reverseColumns?: boolean
+  reverseRows?: boolean
 }) {
   if (scene?.variant === 'polygon') return <PolygonScene scene={scene} />
   if (scene?.variant === 'polar') return <PolarScene scene={scene} />
@@ -852,7 +868,7 @@ export function CoordGrid({
     )
   }
   if (scene?.variant === 'cells') {
-    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} paddedLabels={paddedLabels} />
+    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} paddedLabels={paddedLabels} rowLabelsRight={rowLabelsRight} reverseColumns={reverseColumns} reverseRows={reverseRows} />
   }
 
   const ticks = Array.from({ length: 2 * RANGE + 1 }, (_, i) => i - RANGE)
