@@ -5,7 +5,7 @@ import { audioIdentity, MAX_AUDIO_PARTS } from '../domain/audio'
 import type { Figure, FigureDims } from '@/math/types'
 import { matchingTextKey } from '../domain/matching'
 
-export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'matchingGroup' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
+export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'wordClassification' | 'matchingGroup' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
 export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string; transcript?: string }[] }
 export type CompetitionSettings = { enabled: boolean; seconds: number; feedbackSeconds: number; speedPoints: boolean; showTranscripts?: boolean }
 export type CompetitionPhase = 'lobby' | 'handoff' | 'question' | 'correction' | 'finished'
@@ -88,7 +88,7 @@ export function competitionQuiz(game: Game, origin: string, includeTranscripts =
     if (q.mode !== 'choice' || !correctChoiceId || !q.choices.some((choice) => choice.id === correctChoiceId)) return []
     const transcript = includeTranscripts && q.audio ? game.corrections[q.id]?.transcript?.trim() : undefined
     return [{ correctChoiceId, ...(transcript ? { transcript } : {}), question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(q.audioParts ? { audioParts: q.audioParts.map(media) } : {}),
-      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.matchingGroup ? { matchingGroup: { ...q.matchingGroup } } : {}), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
+      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.matchingGroup ? { matchingGroup: { ...q.matchingGroup } } : {}), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.wordClassification ? { wordClassification: { tokens: [...q.wordClassification.tokens], target: q.wordClassification.target } } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
   }) }
 }
 
@@ -132,6 +132,12 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       if (!audio || audioParts[0] !== audio || audioParts.some((part) => !/^https?:\/\//.test(part))) throw new CompetitionError('La séquence audio doit conserver sa première piste et ses adresses autorisées.', 400)
     }
     if (entry.transcript !== undefined && (!audio || !string(entry.transcript, 30_000))) throw new CompetitionError('Transcription audio invalide.', 400)
+    let wordClassification: CompetitionQuestion['wordClassification']
+    if (q.wordClassification !== undefined) {
+      const words = q.wordClassification
+      if (!record(words) || Object.keys(words).some(key => !['tokens', 'target'].includes(key)) || !Array.isArray(words.tokens) || words.tokens.length < 2 || words.tokens.length > 64 || words.tokens.some(word => !string(word, 120)) || words.tokens.reduce((size, word) => size + String(word).length, 0) > 3000 || !Number.isInteger(words.target) || Number(words.target) < 0 || Number(words.target) >= words.tokens.length) throw new CompetitionError('Éléments du tri invalides.', 400)
+      wordClassification = { tokens: [...words.tokens] as string[], target: Number(words.target) }
+    }
     let numberSequence: CompetitionQuestion['numberSequence']
     if (q.numberSequence !== undefined) {
       const sequence = q.numberSequence
@@ -147,7 +153,7 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       matchingGroup = existing ?? {groupId:`m${matchingGroups.size+1}`,number:Number(group.number),total:Number(group.total)}
       matchingGroups.set(group.groupId,matchingGroup)
     }
-    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, ...(entry.transcript !== undefined ? { transcript: (entry.transcript as string).trim() } : {}), question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
+    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, ...(entry.transcript !== undefined ? { transcript: (entry.transcript as string).trim() } : {}), question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(wordClassification ? { wordClassification } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
   })
   for (const {groupId} of matchingGroups.values()) {
     const members=items.filter(item=>item.question.matchingGroup?.groupId===groupId)

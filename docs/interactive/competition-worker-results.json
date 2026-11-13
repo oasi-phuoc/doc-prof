@@ -1,11 +1,12 @@
 {
   "runtime": "real workerd through Miniflare, SQLite-backed Durable Objects",
-  "workerBytes": 50449,
+  "workerBytes": 51201,
   "quiz": "60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime",
   "authority": "teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view",
   "grading": "1000 and 0 points derived by server",
   "restart": "new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage",
   "matching": "Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private",
   "productionDeployment": false,
-  "transcripts": "Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime."
+  "transcripts": "Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.",
+  "wordClassification": "Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading."
 }
