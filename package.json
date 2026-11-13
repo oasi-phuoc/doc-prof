@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/image-gallery-catalog.mjs",
-    "prebuild": "node scripts/image-gallery-catalog.mjs",
+    "predev": "node scripts/image-gallery-catalog.mjs && node scripts/audio-catalog.mjs",
+    "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/audio-catalog.mjs",
     "gallery:index": "node scripts/image-gallery-catalog.mjs",
     "test:gallery": "node --test tests/gallery/catalog.test.mjs",
     "test:gallery:browser": "node tests/gallery/browser.mjs",
@@ -46,7 +46,10 @@
     "test:grammar:levels": "node scripts/test-grammar-levels.cjs",
     "test:grammar:contracts": "node scripts/test-grammar-contracts.cjs",
     "test:grammar:contracts:browser": "node tests/grammar/contracts-browser.mjs",
-    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs"
+    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs",
+    "audio:index": "node scripts/audio-catalog.mjs",
+    "test:audio-catalog": "node --test tests/audio-catalog/catalog.test.mjs",
+    "test:audio-catalog:browser": "node tests/audio-catalog/browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
