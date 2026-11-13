@@ -15,6 +15,7 @@ import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
 import { adaptRecognition } from './recognition'
 import { adaptPrintablePairs } from './printable-pairs'
+import { adaptPrintableDecks } from './printable-decks'
 import { adaptPrintableRiddles } from './printable-riddles'
 export { hash } from './seeds'
 const normalized = (s: string) =>
@@ -110,9 +111,9 @@ export function convertRecipe(
           typeof media.audio === 'string'
             ? media.audio
             : block.document?.audioSrc
-        const printablePairs=adaptPrintablePairs(block.items,block.exerciseType,
-          (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}),
-          src=>recipe.imageOverrides?.[src]??src)
+        const pairSeed=(item:number,part:number)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'})
+        const pairImage=(src:string)=>recipe.imageOverrides?.[src]??src
+        const printablePairs=adaptPrintablePairs(block.items,block.exerciseType,pairSeed,pairImage)??adaptPrintableDecks(block.items,block.exerciseType,pairSeed,pairImage)
         const printableRiddles=adaptPrintableRiddles(block.items,block.exerciseType,
           (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}))
         block.items.forEach((item, itemIndex) => {

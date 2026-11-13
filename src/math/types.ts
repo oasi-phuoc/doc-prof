@@ -754,6 +754,8 @@ export type MathItem = {
       scatter?: Array<{ text: string; rotate: number; x: number; y: number }>
       /** Corrigé source Intrus ; absent des données publiques du mode jeu. */
       intrusAnswer?: string
+      /** Libellé source de l’image d’un domino, sans rendu papier. */
+      dominoWord?: string
       variant?: string
       badge?: string
       textRight?: string
