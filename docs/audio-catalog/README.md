@@ -15,15 +15,15 @@ Le Word contient la transcription enregistrée dans les banques, les consignes, 
 
 ## Données disponibles
 
-L’index du 13 novembre 2026 contient **8 455 fichiers audio** servis depuis `public/lib/audio`, répartis entre TCF, grammaire, vocabulaire, soutien français, syllabes et nombres. Il recense :
+L’index du 13 novembre 2026 contient **8 801 fichiers audio** servis depuis `public/lib/audio`, répartis entre TCF, grammaire, vocabulaire, soutien français, syllabes et nombres. Il recense :
 
-- 4 711 pistes avec un texte de transcription renseigné ;
-- 1 025 pistes avec des questions préparées ;
-- 4 971 questions et 11 234 formes de réponse.
+- 5 057 pistes avec un texte de transcription renseigné ;
+- 1 371 pistes avec des questions préparées ;
+- 6 634 questions et 14 560 formes de réponse.
 
 Les textes et les questions proviennent des banques existantes. L’absence d’une transcription ou d’une question rattachée est indiquée dans la page et le document Word. Aucune nouvelle reconnaissance vocale, synthèse audio ou question pédagogique n’est créée par le catalogue.
 
-Les banques TCF sont lues intégralement, avant tout tirage de fiche. Pour les supports à plusieurs pistes, les transcriptions et les questions sont reliées à leur piste précise. Les remplacements audio suivent les correspondances utilisées par les fiches ; une ancienne piste physique reste identifiable et ne reçoit pas le texte de sa remplaçante. Les préparations de travail non installées dans les banques actives, dont les sources DELF Actif en cours d’import, ne sont pas présentées comme disponibles.
+Les banques TCF sont lues intégralement, avant tout tirage de fiche. Pour les supports à plusieurs pistes, les transcriptions et les questions sont reliées à leur piste précise. Les remplacements audio suivent les correspondances utilisées par les fiches ; une ancienne piste physique reste identifiable et ne reçoit pas le texte de sa remplaçante. Les 346 supports DELF Actif nouvellement installés sont également indexés avec leurs 1 663 questions et leurs transcriptions. Le détail de cet ajout est dans [le compte rendu de l’import](../tcf/delf-actif-20261113/README.md). Les préparations non installées ne sont pas présentées comme disponibles.
 
 ## Régénération et limites
 

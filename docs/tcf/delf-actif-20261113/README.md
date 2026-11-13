@@ -41,6 +41,8 @@ python3 scripts/check_tcf_763_review.py
 node tests/audio-replacement/delf-actif-browser.mjs
 ```
 
+Les 346 nouveaux supports figurent aussi dans le catalogue `/audios`, avec leurs transcriptions et toutes leurs questions téléchargeables. Son index a été régénéré après intégration des autres modifications de main.
+
 Le contrôle navigateur couvre la lecture technique d’un fichier par niveau et le basculement Texte/Phrase. Il n’équivaut pas à une écoute intégrale des enregistrements.
 
 ## Sources et reprise
