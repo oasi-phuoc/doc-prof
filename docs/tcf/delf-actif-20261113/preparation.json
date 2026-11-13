@@ -2950,11 +2950,30 @@
         "Comment vous appelez-vous ? Je m’appelle Mélina Ionnidou.",
         "Vous pouvez m’épeler votre nom? Bien sûr, Rossi. Alors : R-O-S-S-I.",
         "Vous avez quel âge ? J’ai 13 ans.",
-        "Quelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athène."
+        "Quelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athènes."
       ],
-      "transcription": "Bonjour jeune homme ! Bonjour Monsieur\nAu revoir Mademoiselle ! Au revoir Madame\nQuel est votre nom? Mon nom est Anton .\nQuel est votre prénom ? Mon prénom est Gabriel.\nComment vous appelez-vous ? Je m’appelle Mélina Ionnidou.\nVous pouvez m’épeler votre nom? Bien sûr, Rossi. Alors : R-O-S-S-I.\nVous avez quel âge ? J’ai 13 ans.\nQuelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athène.",
+      "transcription": "Bonjour jeune homme ! Bonjour Monsieur\nAu revoir Mademoiselle ! Au revoir Madame\nQuel est votre nom? Mon nom est Anton .\nQuel est votre prénom ? Mon prénom est Gabriel.\nComment vous appelez-vous ? Je m’appelle Mélina Ionnidou.\nVous pouvez m’épeler votre nom? Bien sûr, Rossi. Alors : R-O-S-S-I.\nVous avez quel âge ? J’ai 13 ans.\nQuelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athènes.",
       "pdf_line": 1018,
       "thematic_compilation": true,
+      "pdf_reference_parts": [
+        "Bonjour jeune homme ! Bonjour Monsieur",
+        "Au revoir Mademoiselle ! Au revoir Madame",
+        "Quel est votre nom? Mon nom est Anton .",
+        "Quel est votre prénom ? Mon prénom est Gabriel.",
+        "Comment vous appelez-vous ? Je m’appelle Mélina Ionnidou.",
+        "Vous pouvez m’épeler votre nom? Bien sûr, Rossi. Alors : R-O-S-S-I.",
+        "Vous avez quel âge ? J’ai 13 ans.",
+        "Quelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athène."
+      ],
+      "editorial_correction": {
+        "replace": [
+          [
+            "Athène.",
+            "Athènes."
+          ]
+        ],
+        "reason": "Graphie française de la ville Athènes, reconnue dans les deux moteurs ; aucun changement de lieu."
+      },
       "source_id": "delf-actif-a1-41",
       "source_sha256": "169977ba65c83f168b75d4453ebd3c59f3884d31f02c25cbfdb927e9e08f7216",
       "source_file": "/workspace/attachments/31f4b60e-569b-40cf-83b4-88bd777353f0/DELF_41.mp3",
@@ -3106,7 +3125,7 @@
           "alternatives": []
         },
         {
-          "reference": "Quelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athène.",
+          "reference": "Quelle est votre adresse ? J’habite, 4 rue Agiou Konstantinou, Athènes.",
           "status": "candidate",
           "start": 52.928,
           "end": 59.188,
@@ -3115,9 +3134,9 @@
             "last_word": 76,
             "start_word": 53.208,
             "end_word": 58.96799982655048,
-            "similarity": 0.8182,
+            "similarity": 0.9091,
             "first_reference_match": 0,
-            "last_reference_match": 8,
+            "last_reference_match": 10,
             "text": "Quelle est votre adresse? J'habite 4 rue Agiou Constantinou, Athènes.",
             "reference_words": 11,
             "recognition_model": "parakeet_tdt"
@@ -6860,21 +6879,17 @@
         {
           "reference": "Votre attention s’il vous plaît. Merci de vous préparer à la descente du train et de vérifier de ne rien avoir oublié à bord.",
           "status": "candidate",
-          "start": 89.088,
+          "start": 90.43,
           "end": 105.312,
-          "recognition": {
-            "first_word": 123,
-            "last_word": 146,
-            "start_word": 89.36799938964843,
-            "end_word": 105.43199999284744,
-            "similarity": 0.96,
-            "first_reference_match": 1,
-            "last_reference_match": 24,
-            "text": "répondez. Attention s'il vous plaît! Merci de vous préparer à la descente du train et de vérifier de ne rien avoir oublié à bord.",
-            "reference_words": 25,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 90.43,
+            "end": 105.312,
+            "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -7815,21 +7830,17 @@
         {
           "reference": "Une bonne nouvelle cette année pour les animaux domestiques avec un record historique d’adoption de chiens ! Près de 50 000 chiens ont aujourd’hui une nouvelle famille ! Un chien c’est moins de stress et beaucoup d’affection !",
           "status": "candidate",
-          "start": 10.656,
+          "start": 15.8,
           "end": 29.316,
-          "recognition": {
-            "first_word": 14,
-            "last_word": 48,
-            "start_word": 10.935999771118164,
-            "end_word": 29.095999763965608,
-            "similarity": 0.8947,
-            "first_reference_match": 2,
-            "last_reference_match": 37,
-            "text": "puis répondez. Nouvelle cette année pour les animaux domestiques avec un record historique d'adoption de chiens. Près de 50 000 chiens ont aujourd'hui une nouvelle famille. Un chien, c'est moins de stress et beaucoup d'affection.",
-            "reference_words": 38,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 15.8,
+            "end": 29.316,
+            "reason": "Début du bulletin sans puis répondez ni bip, guidé par l’alignement français local (relectures/delf-actif-a2-11-13.json et -40.json). Les premiers mots DTW absorbent le silence ; marge vérifiée par nouvelle reconnaissance du MP3 final."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -7852,21 +7863,17 @@
         {
           "reference": "Dans la salle B du Palais des expositions de Toulouse on vous raconte l’histoire de Séville. Vous avez du 1er au 30 juin pour voir la perle de l’Andalousie sans vous déplacer en Espagne. Rendez- vous sur le site www.Expotoulouse.com.",
           "status": "candidate",
-          "start": 38.736,
+          "start": 42.95,
           "end": 60.388,
-          "recognition": {
-            "first_word": 57,
-            "last_word": 95,
-            "start_word": 39.01599954223633,
-            "end_word": 60.16799923169613,
-            "similarity": 0.7727,
-            "first_reference_match": 3,
-            "last_reference_match": 43,
-            "text": "puis répondez. Dall B du Palais des Expositions de Toulouse, on vous raconte l'histoire de Séville. You have du 1er au 30 juin to voice la perle de l'Andalousie sans vous déplacer in Espan. Rendez-vous sur le site www.expoToouse.com",
-            "reference_words": 44,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 42.95,
+            "end": 60.388,
+            "reason": "Début du bulletin sans puis répondez ni bip, guidé par l’alignement français local (relectures/delf-actif-a2-11-13.json et -40.json). Les premiers mots DTW absorbent le silence ; marge vérifiée par nouvelle reconnaissance du MP3 final."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -8148,34 +8155,17 @@
         {
           "reference": "Coucou, Manu, c’est Danielle. Samedi soir je ne peux pas assister à ton spectacle de danse. Je viens de savoir que mon père arrive en avion à 20h00. Nous allons l’attendre ma mère, ma sœur et moi. Je regrette mais je viens te voir volontiers la prochaine fois. Bisous.",
           "status": "candidate",
-          "start": 9.096,
+          "start": 30.43,
           "end": 47.564,
-          "recognition": {
-            "first_word": 20,
-            "last_word": 68,
-            "start_word": 9.375999694824218,
-            "end_word": 47.68399923706055,
-            "similarity": 0.9423,
-            "first_reference_match": 2,
-            "last_reference_match": 51,
-            "text": "puis répondez. C'est Daniel. Samedi soir, je ne peux pas assister à ton spectacle de danse. Je viens de savoir que mon père arrive en avion à 20h. Nous allons l'attendre, ma mère, ma sœur et moi. Je regrette, mais je viens te voir volontiers la prochaine fois. Bisous",
-            "reference_words": 52,
-            "recognition_model": "whisper_fr_dtw"
+          "reviewed_boundary": {
+            "start": 30.43,
+            "end": 47.564,
+            "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
           },
-          "alternatives": [
-            {
-              "first_word": 18,
-              "last_word": 63,
-              "start_word": 8.535999542236327,
-              "end_word": 47.863999616742134,
-              "similarity": 0.5769,
-              "first_reference_match": 4,
-              "last_reference_match": 51,
-              "text": "le document, puis répondez. Danielle. Samedi soir assister at ton spectacle de danse. I vient de savoir que mon père arrive en avion at 20 heures. Nous allons l'attendre, myre, my sir, and moi. Je regrette, but I viens te voir volontiers la prochaine fois. Bisous!",
-              "reference_words": 52,
-              "recognition_model": "parakeet_tdt"
-            }
-          ]
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -8231,21 +8221,17 @@
         {
           "reference": "Salut Carole, tu es toujours d’accord pour faire des achats demain après-midi? Au centre-ville dans le magasin Jean-Pierre Sport il y a le dernier modèle de ma marque préférée de basket en promotion et le survêtement bleu de Jules et Jim à 60€.",
           "status": "candidate",
-          "start": 9.232,
+          "start": 30.53,
           "end": 47.06,
-          "recognition": {
-            "first_word": 20,
-            "last_word": 63,
-            "start_word": 9.511999961853027,
-            "end_word": 46.83999957859516,
-            "similarity": 0.9583,
-            "first_reference_match": 2,
-            "last_reference_match": 47,
-            "text": "puis répondez. Tu es toujours d'accord pour faire des achats demain après-midi? Au centre-ville, dans le magasin Jean-Pierre Sport, il y a le dernier modèle de ma marque préférée de basket en promotion, et le survêtement bleu de Jules et Jim à 60 euros.",
-            "reference_words": 48,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 30.53,
+            "end": 47.06,
+            "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -8268,21 +8254,17 @@
         {
           "reference": "C’est maman. Quand tu rentres de ton cours de musique j’ai besoin de toi pour des courses. Passe à la papeterie. Ton frère n’a plus de feuilles de dessin petit modèle. Prends un paquet de 20 feuilles. Il a besoin aussi d’un crayon noir et d’un feutre bleu. Ensuite tu t’arrêtes à la boulangerie. Tu prends un kilo de farine pour des crêpes et demande à notre boulangère de mettre de côté 3 baguettes pour demain après-midi. Bisous.",
           "status": "candidate",
-          "start": 8.336,
+          "start": 31.2,
           "end": 56.932,
-          "recognition": {
-            "first_word": 17,
-            "last_word": 92,
-            "start_word": 8.615999771118164,
-            "end_word": 56.71199877750874,
-            "similarity": 0.7294,
-            "first_reference_match": 2,
-            "last_reference_match": 84,
-            "text": "répondez. Say Maman. Quand tu rentres de ton cours de music, I'm besoin de toi pour des courses. Passe à la papeterie. Ton frère has plus de feuilles de dessin petit modèle. Prend un paquet de 20 feuilles. He has besoin aussi d'un crayon noir and feutre bleu. Ensuite, you t'arrête à la boulangerie. Tu prends 1 kg of farine pour des crêpes and demandes à notre boulangère to mettre de côtés pour demain après-midi. Bisous!",
-            "reference_words": 85,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 31.2,
+            "end": 56.932,
+            "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -8342,21 +8324,17 @@
         {
           "reference": "Bonjour, Sophie secrétaire chez Jeunesse France à l’appareil. Je vous appelle pour vous proposer un stage d’un mois dans votre ville, du 1 er au 31 juillet. La société recherche une jeune fille avec un moyen de transport personnel et de bonnes connaissances d’anglais. Si notre proposition vous intéresse, venez au plus vite avant demain 11h00 pour laisser votre CV. Le 25 juin, au plus tard, vous devez vous présenter dans la société.",
           "status": "candidate",
-          "start": 8.944,
+          "start": 30.72,
           "end": 58.18,
-          "recognition": {
-            "first_word": 17,
-            "last_word": 88,
-            "start_word": 9.223999465942383,
-            "end_word": 57.96000011265278,
-            "similarity": 0.8816,
-            "first_reference_match": 1,
-            "last_reference_match": 75,
-            "text": "répondez. Sophie, secrétaire chez Jeunesse France à l'appareil. Je vous appelle pour vous proposer un stage d'un mois dans votre ville du 1er au 31 juillet. The society recherche une jeune fille avec un moyen de transport personnel and a bonne connaissance d'anglais. Si notre proposition vous intéresse, vene au plus vite, avant demain 11h pour laisser votre CV. Le 25 juin au plus tard, vous devez vous présenter dans la société.",
-            "reference_words": 76,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 30.72,
+            "end": 58.18,
+            "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",
@@ -14546,16 +14524,28 @@
       "track": 11,
       "part": 1,
       "reference_parts": [
+        "Jérémy... Mais arrête donc d’avoir toujours ton téléphone à la main ! Mais, tu n’es pas branché Papy ! Nous, aujourd’hui, on s’envoie des messages, de la musique, des photos... et on se fait des appels vidéos. D’accord, je sais mais vous, les jeunes, vous passez trop d’heures au téléphone ! Mais dis-moi Papy, comment faisais-tu à mon âge sans téléphone ? Autrefois c’était bien différent. Toutefois ce n’était pas plus mal tu sais. Les conquêtes des filles se faisaient par petits mots, par courrier, par rendez-vous que l’on respectait. Pas comme vous qui vous appelez dix fois pour anticiper ou repousser… et il n’y avait pas de télé non plus. Pas de télé ! C’était nul ! Pas du tout. Le soir, après le dîner on se réunissait en famille, on discutait, on racontait des histoires, on écoutait de la musique, on jouait aux cartes, aux échecs, on lisait… On passait de bonnes soirées, tu sais ! Peut-être, mais moi je préfère aujourd’hui. Aujourd’hui, vous avez trop de choses et vous ne savez plus les apprécier. Peut-être, mais c’est mieux maintenant. Je peux envoyer des méls à mes cousins en Martinique. Je peux même leur envoyer des photos, leur parler et les voir au téléphone… Au téléphone ? Et ça coûte combien tout ça ? Rien, j’ai installé WhatsApp sur mon téléphone. Wa... quoi ? WhatsApp. Bon d’accord. Laisse tomber ! C’est trop long à t’expliquer. Ce soir je te montrerai. Tu perds beaucoup de temps avec ça au lieu d’élargir ta culture, Tu pourrais regarder des documentaires scientifiques ou historiques plutôt, au moins ça ne serait pas du temps perdu ! Mais Papy avec mon smartphone je peux aller sur Internet et je peux justement regarder des documentaires ! Je suis curieux que tu me fasses voir comment ça marche… Ah, ces jeunes !"
+      ],
+      "transcription": "Jérémy... Mais arrête donc d’avoir toujours ton téléphone à la main ! Mais, tu n’es pas branché Papy ! Nous, aujourd’hui, on s’envoie des messages, de la musique, des photos... et on se fait des appels vidéos. D’accord, je sais mais vous, les jeunes, vous passez trop d’heures au téléphone ! Mais dis-moi Papy, comment faisais-tu à mon âge sans téléphone ? Autrefois c’était bien différent. Toutefois ce n’était pas plus mal tu sais. Les conquêtes des filles se faisaient par petits mots, par courrier, par rendez-vous que l’on respectait. Pas comme vous qui vous appelez dix fois pour anticiper ou repousser… et il n’y avait pas de télé non plus. Pas de télé ! C’était nul ! Pas du tout. Le soir, après le dîner on se réunissait en famille, on discutait, on racontait des histoires, on écoutait de la musique, on jouait aux cartes, aux échecs, on lisait… On passait de bonnes soirées, tu sais ! Peut-être, mais moi je préfère aujourd’hui. Aujourd’hui, vous avez trop de choses et vous ne savez plus les apprécier. Peut-être, mais c’est mieux maintenant. Je peux envoyer des méls à mes cousins en Martinique. Je peux même leur envoyer des photos, leur parler et les voir au téléphone… Au téléphone ? Et ça coûte combien tout ça ? Rien, j’ai installé WhatsApp sur mon téléphone. Wa... quoi ? WhatsApp. Bon d’accord. Laisse tomber ! C’est trop long à t’expliquer. Ce soir je te montrerai. Tu perds beaucoup de temps avec ça au lieu d’élargir ta culture, Tu pourrais regarder des documentaires scientifiques ou historiques plutôt, au moins ça ne serait pas du temps perdu ! Mais Papy avec mon smartphone je peux aller sur Internet et je peux justement regarder des documentaires ! Je suis curieux que tu me fasses voir comment ça marche… Ah, ces jeunes !",
+      "pdf_line": 339,
+      "pdf_reference_parts": [
         "Jérémy... Mais arrête donc d’avoir toujours ton téléphone à la main ! Mais, tu n’es pas branché Papy ! Nous, aujourd’hui, on s’envoie des messages, de la musique, des photos... et on se fait des appels vidéos. D’accord, je sais mais vous, les jeunes, vous passez trop d’heures au téléphone ! Mais dis-moi Papy, comment faisais-tu à mon âge sans téléphone ? Autrefois c’était bien différent. Toutefois ce n’était pas plus mal tu sais. Les conquêtes des filles se faisaient par petits mots, par courrier, par rendez-vous que l’on respectait. Pas comme vous qui vous appelez dix fois pour anticiper ou repousser… et il n’y avait pas de télé non plus. Pas de télé ! C’était nul ! Pas du tout. Le soir, après le dîner on se réunissait en famille, on discutait, on racontait des histoires, on écoutait de la musique, on jouait aux cartes, aux échecs, on lisait… On passait de bonnes soirées, tu sais ! Peut-être, mais moi je préfère aujourd’hui. Aujourd’hui, vous avez trop de choses et vous ne savez plus les apprécier. Peut-être, mais c’est mieux maintenant. Je peux envoyer des méls à mes cousins en Martinique. Je peux même leur envoyer des photos, leur parler et les voir au téléphone… Au téléphone ? Et ça coûte combien tout ça ? Rien, j’ai installé Wap sur mon téléphone. Wa... quoi ? Wap. Bon d’accord. Laisse tomber ! C’est trop long à t’expliquer. Ce soir je te montrerai. Tu perds beaucoup de temps avec ça au lieu d’élargir ta culture, Tu pourrais regarder des documentaires scientifiques ou historiques plutôt, au moins ça ne serait pas du temps perdu ! Mais Papy avec mon smartphone je peux aller sur Internet et je peux justement regarder des documentaires ! Je suis curieux que tu me fasses voir comment ça marche… Ah, ces jeunes !"
       ],
-      "transcription": "Jérémy... Mais arrête donc d’avoir toujours ton téléphone à la main ! Mais, tu n’es pas branché Papy ! Nous, aujourd’hui, on s’envoie des messages, de la musique, des photos... et on se fait des appels vidéos. D’accord, je sais mais vous, les jeunes, vous passez trop d’heures au téléphone ! Mais dis-moi Papy, comment faisais-tu à mon âge sans téléphone ? Autrefois c’était bien différent. Toutefois ce n’était pas plus mal tu sais. Les conquêtes des filles se faisaient par petits mots, par courrier, par rendez-vous que l’on respectait. Pas comme vous qui vous appelez dix fois pour anticiper ou repousser… et il n’y avait pas de télé non plus. Pas de télé ! C’était nul ! Pas du tout. Le soir, après le dîner on se réunissait en famille, on discutait, on racontait des histoires, on écoutait de la musique, on jouait aux cartes, aux échecs, on lisait… On passait de bonnes soirées, tu sais ! Peut-être, mais moi je préfère aujourd’hui. Aujourd’hui, vous avez trop de choses et vous ne savez plus les apprécier. Peut-être, mais c’est mieux maintenant. Je peux envoyer des méls à mes cousins en Martinique. Je peux même leur envoyer des photos, leur parler et les voir au téléphone… Au téléphone ? Et ça coûte combien tout ça ? Rien, j’ai installé Wap sur mon téléphone. Wa... quoi ? Wap. Bon d’accord. Laisse tomber ! C’est trop long à t’expliquer. Ce soir je te montrerai. Tu perds beaucoup de temps avec ça au lieu d’élargir ta culture, Tu pourrais regarder des documentaires scientifiques ou historiques plutôt, au moins ça ne serait pas du temps perdu ! Mais Papy avec mon smartphone je peux aller sur Internet et je peux justement regarder des documentaires ! Je suis curieux que tu me fasses voir comment ça marche… Ah, ces jeunes !",
-      "pdf_line": 339,
+      "editorial_correction": {
+        "replace": [
+          [
+            "Wap",
+            "WhatsApp"
+          ]
+        ],
+        "reason": "Le nom de l’application est WhatsApp dans les deux reconnaissances finales indépendantes. Le PDF abrège ou utilise Wap ; aucune question ne porte sur le nom commercial."
+      },
       "source_id": "delf-actif-b1-11",
       "source_sha256": "15e1e0a45fb37604983c2677c2721dbed0776787116416c0600ab97a4abd6e89",
       "source_file": "/workspace/attachments/65c93bc1-ecc7-4d8c-a198-693cb0d6a55e/DEFLF-B1_11.mp3",
       "segments": [
         {
-          "reference": "Jérémy... Mais arrête donc d’avoir toujours ton téléphone à la main ! Mais, tu n’es pas branché Papy ! Nous, aujourd’hui, on s’envoie des messages, de la musique, des photos... et on se fait des appels vidéos. D’accord, je sais mais vous, les jeunes, vous passez trop d’heures au téléphone ! Mais dis-moi Papy, comment faisais-tu à mon âge sans téléphone ? Autrefois c’était bien différent. Toutefois ce n’était pas plus mal tu sais. Les conquêtes des filles se faisaient par petits mots, par courrier, par rendez-vous que l’on respectait. Pas comme vous qui vous appelez dix fois pour anticiper ou repousser… et il n’y avait pas de télé non plus. Pas de télé ! C’était nul ! Pas du tout. Le soir, après le dîner on se réunissait en famille, on discutait, on racontait des histoires, on écoutait de la musique, on jouait aux cartes, aux échecs, on lisait… On passait de bonnes soirées, tu sais ! Peut-être, mais moi je préfère aujourd’hui. Aujourd’hui, vous avez trop de choses et vous ne savez plus les apprécier. Peut-être, mais c’est mieux maintenant. Je peux envoyer des méls à mes cousins en Martinique. Je peux même leur envoyer des photos, leur parler et les voir au téléphone… Au téléphone ? Et ça coûte combien tout ça ? Rien, j’ai installé Wap sur mon téléphone. Wa... quoi ? Wap. Bon d’accord. Laisse tomber ! C’est trop long à t’expliquer. Ce soir je te montrerai. Tu perds beaucoup de temps avec ça au lieu d’élargir ta culture, Tu pourrais regarder des documentaires scientifiques ou historiques plutôt, au moins ça ne serait pas du temps perdu ! Mais Papy avec mon smartphone je peux aller sur Internet et je peux justement regarder des documentaires ! Je suis curieux que tu me fasses voir comment ça marche… Ah, ces jeunes !",
+          "reference": "Jérémy... Mais arrête donc d’avoir toujours ton téléphone à la main ! Mais, tu n’es pas branché Papy ! Nous, aujourd’hui, on s’envoie des messages, de la musique, des photos... et on se fait des appels vidéos. D’accord, je sais mais vous, les jeunes, vous passez trop d’heures au téléphone ! Mais dis-moi Papy, comment faisais-tu à mon âge sans téléphone ? Autrefois c’était bien différent. Toutefois ce n’était pas plus mal tu sais. Les conquêtes des filles se faisaient par petits mots, par courrier, par rendez-vous que l’on respectait. Pas comme vous qui vous appelez dix fois pour anticiper ou repousser… et il n’y avait pas de télé non plus. Pas de télé ! C’était nul ! Pas du tout. Le soir, après le dîner on se réunissait en famille, on discutait, on racontait des histoires, on écoutait de la musique, on jouait aux cartes, aux échecs, on lisait… On passait de bonnes soirées, tu sais ! Peut-être, mais moi je préfère aujourd’hui. Aujourd’hui, vous avez trop de choses et vous ne savez plus les apprécier. Peut-être, mais c’est mieux maintenant. Je peux envoyer des méls à mes cousins en Martinique. Je peux même leur envoyer des photos, leur parler et les voir au téléphone… Au téléphone ? Et ça coûte combien tout ça ? Rien, j’ai installé WhatsApp sur mon téléphone. Wa... quoi ? WhatsApp. Bon d’accord. Laisse tomber ! C’est trop long à t’expliquer. Ce soir je te montrerai. Tu perds beaucoup de temps avec ça au lieu d’élargir ta culture, Tu pourrais regarder des documentaires scientifiques ou historiques plutôt, au moins ça ne serait pas du temps perdu ! Mais Papy avec mon smartphone je peux aller sur Internet et je peux justement regarder des documentaires ! Je suis curieux que tu me fasses voir comment ça marche… Ah, ces jeunes !",
           "status": "candidate",
           "start": 9.31,
           "end": 116.7,
@@ -14760,16 +14750,28 @@
       "track": 13,
       "part": 5,
       "reference_parts": [
+        "Rugby. Nice battu par Limoges 20 à 26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2."
+      ],
+      "transcription": "Rugby. Nice battu par Limoges 20 à 26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2.",
+      "pdf_line": 410,
+      "pdf_reference_parts": [
         "Rugby. Nice battu par Limoges 20-26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2."
       ],
-      "transcription": "Rugby. Nice battu par Limoges 20-26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2.",
-      "pdf_line": 410,
+      "editorial_correction": {
+        "replace": [
+          [
+            "20-26",
+            "20 à 26"
+          ]
+        ],
+        "reason": "Le score est dit vingt à vingt-six ; la transcription explicite le lien oral sans le confondre avec une soustraction."
+      },
       "source_id": "delf-actif-b1-13",
       "source_sha256": "216dfefa95a9a54065c6714287d812615be8d7839afa1afcc8c7287e08f6f279",
       "source_file": "/workspace/attachments/24089fd4-172d-4745-9648-f81184b027d4/DEFLF-B1_13.mp3",
       "segments": [
         {
-          "reference": "Rugby. Nice battu par Limoges 20-26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2.",
+          "reference": "Rugby. Nice battu par Limoges 20 à 26. Qualifié pour les phases de finales du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges ce dimanche après-midi en huitièmes de finale aller. Pour se qualifier, les rugbymen niçois devront aller chercher une victoire avec plus de 6 points d’écart à Limoges, une des équipes favorites à la montée en pro D2.",
           "status": "candidate",
           "start": 110.416,
           "end": 135.582,
@@ -14778,11 +14780,11 @@
             "last_word": 308,
             "start_word": 110.69599992370605,
             "end_word": 135.59199961495398,
-            "similarity": 0.8235,
+            "similarity": 0.8406,
             "first_reference_match": 0,
-            "last_reference_match": 66,
+            "last_reference_match": 67,
             "text": "Rugby. Nice battue par Limoges 20 à 26 Qualifiés pour les phases de finale du championnat de France de Fédérale 1, le RCNA s'est incliné à domicile contre Limoges, ce dimanche après-midi, en 8ème de finale à l'e. Pour se qualifier, les rugbymmen devront aller chercher une victoire avec plus de 6 points d'écart à Limoges, une des équipes favorite à la montée en Pro des",
-            "reference_words": 68,
+            "reference_words": 69,
             "recognition_model": "parakeet_tdt"
           },
           "alternatives": []
@@ -15241,16 +15243,28 @@
       "track": 22,
       "part": 1,
       "reference_parts": [
+        "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui du petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…"
+      ],
+      "transcription": "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui du petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…",
+      "pdf_line": 702,
+      "pdf_reference_parts": [
         "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui sur le petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…"
       ],
-      "transcription": "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui sur le petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…",
-      "pdf_line": 702,
+      "editorial_correction": {
+        "replace": [
+          [
+            "celui sur le petit-déjeuner",
+            "celui du petit-déjeuner"
+          ]
+        ],
+        "reason": "Préposition du fichier reçu confirmée par les deux reconnaissances finales ; sens et réponse inchangés."
+      },
       "source_id": "delf-actif-b1-22",
       "source_sha256": "560d7eb313ecccb44327f02c95b437ea2bad3facd4df60e6dfcb69ac41056097",
       "source_file": "/workspace/attachments/cd68e183-c4bc-4205-8a00-ad6e1395955e/DEFLF-B1_22.mp3",
       "segments": [
         {
-          "reference": "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui sur le petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…",
+          "reference": "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui du petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…",
           "status": "candidate",
           "start": 8.85,
           "end": 121.764,
@@ -15488,16 +15502,28 @@
       "track": 29,
       "part": 1,
       "reference_parts": [
+        "Dans deux ans, je passerai mon bac et je m’inscrirai dans une école vétérinaire car j’ai toujours aimé les animaux. J’ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents qui est aujourd’hui à l’abandon. Quand j’aurai obtenu mes diplômes, il faudra bien sûr trouver de l’argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment je cherche un stage chez un vétérinaire pour me préparer à ma profession future."
+      ],
+      "transcription": "Dans deux ans, je passerai mon bac et je m’inscrirai dans une école vétérinaire car j’ai toujours aimé les animaux. J’ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents qui est aujourd’hui à l’abandon. Quand j’aurai obtenu mes diplômes, il faudra bien sûr trouver de l’argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment je cherche un stage chez un vétérinaire pour me préparer à ma profession future.",
+      "pdf_line": 1926,
+      "pdf_reference_parts": [
         "Dans deux ans, je passerai mon bac et je m’inscrirai dans une faculté de vétérinaire car j’ai toujours aimé les animaux. J’ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents qui est aujourd’hui à l’abandon. Quand j’aurai obtenu mes diplômes, il faudra bien sûr trouver de l’argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment je cherche un stage chez un vétérinaire pour me préparer à ma profession future."
       ],
-      "transcription": "Dans deux ans, je passerai mon bac et je m’inscrirai dans une faculté de vétérinaire car j’ai toujours aimé les animaux. J’ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents qui est aujourd’hui à l’abandon. Quand j’aurai obtenu mes diplômes, il faudra bien sûr trouver de l’argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment je cherche un stage chez un vétérinaire pour me préparer à ma profession future.",
-      "pdf_line": 1926,
+      "editorial_correction": {
+        "replace": [
+          [
+            "une faculté de vétérinaire",
+            "une école vétérinaire"
+          ]
+        ],
+        "reason": "Les deux moteurs sur le MP3 final, ainsi que Whisper sur l’original, disent une école vétérinaire. La citation du QCM est mise à jour ; la réponse Des études vétérinaires reste correcte."
+      },
       "source_id": "delf-actif-b1-29",
       "source_sha256": "1b13dfaf6be84d9baf7f6ba15a61a1e8a532ae6461770b47c8ab9bf2e95a39de",
       "source_file": "/workspace/attachments/ef42e33d-943d-435b-ba1f-e3767894be52/DEFLF-B1_29.mp3",
       "segments": [
         {
-          "reference": "Dans deux ans, je passerai mon bac et je m’inscrirai dans une faculté de vétérinaire car j’ai toujours aimé les animaux. J’ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents qui est aujourd’hui à l’abandon. Quand j’aurai obtenu mes diplômes, il faudra bien sûr trouver de l’argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment je cherche un stage chez un vétérinaire pour me préparer à ma profession future.",
+          "reference": "Dans deux ans, je passerai mon bac et je m’inscrirai dans une école vétérinaire car j’ai toujours aimé les animaux. J’ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents qui est aujourd’hui à l’abandon. Quand j’aurai obtenu mes diplômes, il faudra bien sûr trouver de l’argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment je cherche un stage chez un vétérinaire pour me préparer à ma profession future.",
           "status": "candidate",
           "start": 14.72,
           "end": 40.004,
@@ -15506,11 +15532,11 @@
             "last_word": 100,
             "start_word": 15.000000114440917,
             "end_word": 39.784000532269474,
-            "similarity": 0.9756,
+            "similarity": 1.0,
             "first_reference_match": 0,
-            "last_reference_match": 81,
+            "last_reference_match": 80,
             "text": "Dans deux ans, je passerai mon bac et je m'inscrirai dans une école vétérinaire. Car j'ai toujours aimé les animaux. J'ouvrirai une clinique vétérinaire dans la ferme de mes grands-parents, qui est aujourd'hui à l'abandon. Quand j'aurai obtenu mes diplômes, il faudra bien sûr trouver de l'argent pour réaliser ce rêve que mon père trouve ambitieux. Pour le moment, je cherche un stage chez un vétérinaire pour me préparer à ma profession future.",
-            "reference_words": 82,
+            "reference_words": 81,
             "recognition_model": "parakeet_tdt"
           },
           "alternatives": []
@@ -16320,21 +16346,17 @@
         {
           "reference": "Le gaspillage alimentaire est un scandale quand beaucoup sont privés de nourriture. Je juge le mot scandale très adapté à cette situation. Le gaspillage alimentaire ne doit pas être pensé seulement avec les aliments que nous, les ados, laissons dans nos assiettes, mais je pense aussi au gaspillage de produits alimentaires à tous les niveaux à partir de la production, de la commercialisation, de l’achat, de la conservation avant d’arriver à la consommation.",
           "status": "candidate",
-          "start": 78.016,
+          "start": 81.74,
           "end": 107.94,
-          "recognition": {
-            "first_word": 214,
-            "last_word": 286,
-            "start_word": 78.29599885559082,
-            "end_word": 107.7200000745058,
-            "similarity": 0.9733,
-            "first_reference_match": 2,
-            "last_reference_match": 74,
-            "text": "pas. 4 Alimentaire est un scandale quand beaucoup sont privés de nourriture. Je juge le mot scandale très adapté à cette situation. Le gaspillage alimentaire ne doit pas être pensé seulement avec les aliments que nous, les ados, laissons dans nos assiettes. Mais je pense aussi au gaspillage de produits alimentaires à tous les niveaux, à partir de la production, de la commercialisation, de l'achat, de la conservation, avant d'arriver à la consommation.",
-            "reference_words": 75,
-            "recognition_model": "parakeet_tdt"
+          "reviewed_boundary": {
+            "start": 81.74,
+            "end": 107.94,
+            "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
           },
-          "alternatives": []
+          "recognition": {
+            "recognition_model": "localized_acoustic_review",
+            "similarity": null
+          }
         }
       ],
       "status": "candidate",

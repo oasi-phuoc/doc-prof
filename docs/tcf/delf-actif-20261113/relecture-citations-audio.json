@@ -1,0 +1,798 @@
+{
+  "date": "2026-11-13",
+  "method": "Relecture éditoriale des alertes lexicales sur le PDF et les reconnaissances indépendantes du fichier final. Les correspondances orthographiques ne sont pas forcées pour masquer une divergence de valeur.",
+  "human_audio_listening_performed": false,
+  "alerts_reviewed": 37,
+  "unresolved": [],
+  "questions": [
+    {
+      "key": "a1:014:01",
+      "question": 1,
+      "quote": "à destination de Nice-Ville",
+      "decision": "answer_supported",
+      "reason": "Nice-Ville / Niceville : même nom composé, présent dans les deux reconnaissances.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "a destination de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.4,
+          "recognized": "3440 destination de",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a1:018:05",
+      "question": 5,
+      "quote": "de 14 à 18 heures",
+      "decision": "answer_supported",
+      "reason": "Les deux moteurs confirment 14h à18h ; le PDF abrège la première unité horaire. Aucun changement de valeur.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.75,
+          "recognized": "de 14h00 a 18h00",
+          "numeric_missing": [
+            "14"
+          ]
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.75,
+          "recognized": "de 14h00 a 18h00",
+          "numeric_missing": [
+            "14"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a1:021:01",
+      "question": 5,
+      "quote": "Mets tes tennis",
+      "decision": "answer_supported",
+      "reason": "Mets tes tennis est segmenté mer mettez tennis. Le mot tennis et le contexte des chaussures sont présents ; réponse inchangée.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.3333,
+          "recognized": "mer mettez tennis",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "mer mettez tennis",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a1:030:04",
+      "question": 3,
+      "quote": "ses tableaux et ses dessins",
+      "decision": "answer_supported",
+      "reason": "Ses / ces sont homophones ; tableaux et dessins sont tous deux reconnus en français.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.2,
+          "recognized": "his tableau and his dessins",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "ces tableaux et ces dessins",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a1:033:04",
+      "question": 1,
+      "quote": "Vos bottes",
+      "decision": "answer_supported",
+      "reason": "Bottes est transcrit bott ou botte : même mot entendu, sans différence utile à la réponse.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.5,
+          "recognized": "vos",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.5,
+          "recognized": "vos",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a1:052:04:03",
+      "question": 1,
+      "quote": "Mateo",
+      "decision": "answer_supported",
+      "reason": "Mateo / Mathéo : graphie du prénom non épelé conservée selon le PDF ; aucune opposition de réponses entre deux graphies homophones.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.0,
+          "recognized": "matheo",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.0,
+          "recognized": "matheo",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:003:06",
+      "question": 2,
+      "quote": "au rayon de variétés françaises",
+      "decision": "answer_supported",
+      "reason": "Variétés françaises / variété française : homophonie, même rayon du magasin.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "au rayon de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "au rayon de",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:005:06",
+      "question": 1,
+      "quote": "au rayon parfumerie",
+      "decision": "answer_supported",
+      "reason": "Whisper identifie parfumerie ; rayon est transcrit rillon. Les autres informations du message sont concordantes.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.3333,
+          "recognized": "au",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "au rillon parfumerie",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:006:02",
+      "question": 2,
+      "quote": "un embarquement prioritaire",
+      "decision": "answer_supported",
+      "reason": "Le moteur lexical transforme parfois l’article un en1, mais conserve un embarquement prioritaire. SVP et AF320 sont des variantes de graphie.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "un embarquement prioritaire",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "un embarquement prioritaire",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:019:01",
+      "question": 4,
+      "quote": "un feutre bleu",
+      "decision": "answer_supported",
+      "reason": "Le feutre bleu est confirmé par les deux moteurs sur le montage repris ; le match court est pénalisé par la normalisation de l’article.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "and feutre bleu",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "un feutre bleu",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:021:01",
+      "question": 3,
+      "quote": "de bonnes connaissances d’anglais",
+      "decision": "answer_supported",
+      "reason": "Bonnes connaissances d’anglais / bonne connaissance d’anglais : homophonie des marques du pluriel, compétence identique.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "de bonne connaissance d anglais",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "de bonne connaissance d anglais",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:031:03",
+      "question": 3,
+      "quote": "une pizza aux fromages",
+      "decision": "answer_supported",
+      "reason": "Pizza aux fromages / au fromage : même ingrédient fromager et même réponse ; pas de question sur le nombre de fromages.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.5,
+          "recognized": "1 pizza",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.5,
+          "recognized": "1 pizza",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:034:02",
+      "question": 4,
+      "quote": "12 euros 50",
+      "decision": "answer_supported",
+      "reason": "12 euros50 et12,50 euros représentent exactement le même prix ; aucun arrondi ni changement de montant.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.3333,
+          "recognized": "12",
+          "numeric_missing": [
+            "50"
+          ]
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "12",
+          "numeric_missing": [
+            "50"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "a2:040:01",
+      "question": 6,
+      "quote": "dépensier",
+      "decision": "answer_supported",
+      "reason": "Dépensier est présent sous dépensiers dans Whisper ; pluriel graphique non prononcé.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.0,
+          "recognized": "je",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.0,
+          "recognized": "je",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:043:01:02",
+      "question": 2,
+      "quote": "sur son Tshirt",
+      "decision": "answer_supported",
+      "reason": "Tshirt / t-shirt : graphies et segmentation du même vêtement.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "sur son",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "sur son",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:043:03:01",
+      "question": 6,
+      "quote": "roses rouges",
+      "decision": "answer_supported",
+      "reason": "Roses rouges / rose rouge : mêmes fleurs et même couleur, marques du pluriel non prononcées.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.0,
+          "recognized": "bonjour",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.0,
+          "recognized": "bonjour",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:043:03:01",
+      "question": 7,
+      "quote": "rouges",
+      "decision": "answer_supported",
+      "reason": "Roses rouges / rose rouge : mêmes fleurs et même couleur, marques du pluriel non prononcées.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.0,
+          "recognized": "bonjour",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.0,
+          "recognized": "bonjour",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:043:04:01",
+      "question": 2,
+      "quote": "les voitures sport",
+      "decision": "answer_supported",
+      "reason": "Voitures sport / voitures de sport : même catégorie de véhicules.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "les voitures",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "les voitures",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:044:01:02",
+      "question": 2,
+      "quote": "sandwichs et boissons",
+      "decision": "answer_supported",
+      "reason": "Sandwichs / sandwich et boissons / boisson : accords graphiques homophones, service de restauration confirmé.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "sandwich et boissons",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "sandwich et",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:045:01:02",
+      "question": 3,
+      "quote": "Arbitre et capitaines",
+      "decision": "answer_supported",
+      "reason": "Arbitre et capitaines est correctement reconnu par Parakeet ; Whisper fusionne arbitre et capitaine dans arbite récapitaine. Les fonctions restent soutenues par le premier moteur et le PDF.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "arbitre et",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.0,
+          "recognized": "communication",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:045:02:01",
+      "question": 4,
+      "quote": "baisser le son",
+      "decision": "answer_supported",
+      "reason": "Baisser / baissez : infinitif et impératif homophones ; action baisser le son identique.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "baissez le son",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "baissez le son",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:045:02:03",
+      "question": 1,
+      "quote": "à Cannes",
+      "decision": "answer_supported",
+      "reason": "Palme d’Or à Cannes est fusionné en Palme d’Oracane ; contexte du festival et prononciation concordent avec le lieu du PDF.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.0,
+          "recognized": "cette",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.0,
+          "recognized": "cette",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:045:03:01",
+      "question": 1,
+      "quote": "une baby-sitter",
+      "decision": "answer_supported",
+      "reason": "Baby-sitter est écrit bébisiteur par Whisper ; l’âge, les horaires et la garde de l’enfant confirment la fonction.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.0,
+          "recognized": "it",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "1",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:045:04:01",
+      "question": 1,
+      "quote": "deux anoraks",
+      "decision": "answer_supported",
+      "reason": "Anoraks / anorak : pluriel graphique muet, le nombre deux est reconnu.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.5,
+          "recognized": "2",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.5,
+          "recognized": "2",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "a2:046:01:03",
+      "question": 4,
+      "quote": "pour raisons personnelles",
+      "decision": "answer_supported",
+      "reason": "Raisons personnelles / raison personnelle : variation graphique homophone ; même motif annoncé.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.3333,
+          "recognized": "pour",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "pour",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:001:02",
+      "question": 3,
+      "quote": "un bifteck et des légumes",
+      "decision": "answer_supported",
+      "reason": "Bifteck / beef steak / bif teque : même aliment, avec les légumes explicitement reconnus.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "beef steak et des legumes",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "bif teque et des legumes",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:002:05",
+      "question": 1,
+      "quote": "la formation aux premiers secours",
+      "decision": "answer_supported",
+      "reason": "Premiers secours est normalisé au1 secours ; c’est une forme ordinale mal normalisée, non un autre type de formation.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "la formation au 1 secours",
+          "numeric_missing": [
+            "1ers"
+          ]
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "la formation au 1 secours",
+          "numeric_missing": [
+            "1ers"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "b1:009:01",
+      "question": 7,
+      "quote": "Il la bichonne tellement sa voiture",
+      "decision": "answer_supported",
+      "reason": "Bichonne est segmenté abichonne / habitonne. Les deux moteurs et le contexte confirment que le père protège et soigne sa voiture ; aucune question ne porte sur saisons, erreur pour seize ans.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "il abichonne tellement sa voiture",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "il l habitonne tellement sa voiture",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:013:01",
+      "question": 3,
+      "quote": "implantation de stimulateur électrique",
+      "decision": "answer_supported",
+      "reason": "Stimulateur électrique / stimulateurs électriques : appareil identique, pas de question sur son nombre.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.5,
+          "recognized": "implantation de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.5,
+          "recognized": "implantation de",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:014:04",
+      "question": 1,
+      "quote": "sur 25 encres de tatouages étudiées",
+      "decision": "answer_supported",
+      "reason": "Tatouages / tatouage et encres / ancres : homophonies ; les25 encres et15 produits à risque sont confirmés.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6667,
+          "recognized": "sur 25 encres de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.5,
+          "recognized": "sur 25 ancres de",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:027:01",
+      "question": 7,
+      "quote": "problèmes cardio-vasculaires et respiratoires",
+      "decision": "answer_supported",
+      "reason": "Cardio-vasculaires / cardiovasculaires : graphies du même adjectif, risques respiratoires également reconnus.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "problemes et respiratoires",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "problemes cardiovasculaires et respiratoires",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:035:02",
+      "question": 2,
+      "quote": "des moyens de communications pratiques",
+      "decision": "answer_supported",
+      "reason": "Communication / communications : marque du pluriel non audible ; les risques de publication et la praticité sont présents.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "des moyens de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "des moyens de",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:036:01",
+      "question": 6,
+      "quote": "un parcours de ¾ heures en car",
+      "decision": "answer_supported",
+      "reason": "Trois quarts d’heure, ¾ heure et3/4 heures désignent45 minutes ; aucun moteur n’indique trois ou quatre heures.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.5,
+          "recognized": "1 parcours de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6667,
+          "recognized": "1 parcours de 3 4h00 en car",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:038:03:01",
+      "question": 5,
+      "quote": "distraire par leur téléphone",
+      "decision": "answer_supported",
+      "reason": "Leur téléphone / leurs téléphones : accord graphique homophone ; SMS et appels suivent explicitement dans le document.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.25,
+          "recognized": "multiplie par",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.5,
+          "recognized": "distraire par",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:039:01:01",
+      "question": 10,
+      "quote": "cyberdépendance et de cyber harcèlement",
+      "decision": "answer_supported",
+      "reason": "Cyber harcèlement / cyberharcèlement : mot composé segmenté différemment.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.6,
+          "recognized": "cyberdependance et de",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.6,
+          "recognized": "cyberdependance et de",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:039:03:01",
+      "question": 3,
+      "quote": "les Blouses roses",
+      "decision": "answer_supported",
+      "reason": "Blouses roses / Blues Rose : graphie officielle de l’association conservée selon le PDF ; même appellation phonétique.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.3333,
+          "recognized": "les",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "les",
+          "numeric_missing": []
+        }
+      ]
+    },
+    {
+      "key": "b1:040:01:01",
+      "question": 8,
+      "quote": "chez Moto shop",
+      "decision": "answer_supported",
+      "reason": "Moto shop / Motoshop : même enseigne, espaces non prononcés.",
+      "recognition_matches": [
+        {
+          "engine": "final-parakeet",
+          "score": 0.3333,
+          "recognized": "chez",
+          "numeric_missing": []
+        },
+        {
+          "engine": "final-whisper",
+          "score": 0.3333,
+          "recognized": "chez",
+          "numeric_missing": []
+        }
+      ]
+    }
+  ]
+}

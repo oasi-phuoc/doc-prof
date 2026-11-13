@@ -113,6 +113,51 @@
         ]
       ],
       "reason": "Mot manquant dans le PDF extrait, présent dans la reconnaissance de l’audio ; seconde reconnaissance française demandée."
+    },
+    "b1:011:01": {
+      "replace": [
+        [
+          "Wap",
+          "WhatsApp"
+        ]
+      ],
+      "reason": "Le nom de l’application est WhatsApp dans les deux reconnaissances finales indépendantes. Le PDF abrège ou utilise Wap ; aucune question ne porte sur le nom commercial."
+    },
+    "a1:041": {
+      "replace": [
+        [
+          "Athène.",
+          "Athènes."
+        ]
+      ],
+      "reason": "Graphie française de la ville Athènes, reconnue dans les deux moteurs ; aucun changement de lieu."
+    },
+    "b1:029:01": {
+      "replace": [
+        [
+          "une faculté de vétérinaire",
+          "une école vétérinaire"
+        ]
+      ],
+      "reason": "Les deux moteurs sur le MP3 final, ainsi que Whisper sur l’original, disent une école vétérinaire. La citation du QCM est mise à jour ; la réponse Des études vétérinaires reste correcte."
+    },
+    "b1:013:05": {
+      "replace": [
+        [
+          "20-26",
+          "20 à 26"
+        ]
+      ],
+      "reason": "Le score est dit vingt à vingt-six ; la transcription explicite le lien oral sans le confondre avec une soustraction."
+    },
+    "b1:022:01": {
+      "replace": [
+        [
+          "celui sur le petit-déjeuner",
+          "celui du petit-déjeuner"
+        ]
+      ],
+      "reason": "Préposition du fichier reçu confirmée par les deux reconnaissances finales ; sens et réponse inchangés."
     }
   }
 }

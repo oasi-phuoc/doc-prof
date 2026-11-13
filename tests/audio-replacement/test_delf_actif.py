@@ -54,7 +54,7 @@ class ReviewGate(unittest.TestCase):
             unit=dict(key='a1:999:01',level='a1',source_sha256='raw',transcription='Le bus part samedi.')
             item=dict(key=unit['key'],title='Le départ',theme='transports',questions=[dict(enonce='Quand part le bus ?',choices=['Samedi','Lundi','Jeudi'],evidence_quote='samedi'),dict(enonce='Quel véhicule part ?',choices=['Le bus','Le train','Le bateau'],evidence_quote='Le bus')])
             cut=dict(source_sha256='raw',path=str(path),sha256=importer.sha(path),duration_seconds=9)
-            approval=dict(decision='ready_for_tcf',human_audio_listening_performed=False,audio_sha256=cut['sha256'],transcription_sha256=importer.content_sha(unit['transcription']),questions_sha256=importer.content_sha(item),final_recognition_engines=['test-fixture'])
+            approval=dict(decision='ready_for_tcf',human_audio_listening_performed=False,audio_sha256=cut['sha256'],transcription_sha256=importer.content_sha(unit['transcription']),questions_sha256=importer.content_sha(item),final_recognition_engines=['final-parakeet','final-whisper'])
             importer.check_ready(unit,item,cut,approval)
             altered=copy.deepcopy(item);altered['questions'][0]['choices'][0]='Dimanche'
             with self.assertRaises(AssertionError):importer.check_ready(unit,altered,cut,approval)

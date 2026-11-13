@@ -1,26 +1,54 @@
-# Import DELF Actif — 13 novembre 2026
+# DELF Actif — intégration du 13 novembre 2026
 
-Les trois nouvelles collections A1, A2 et B1 sont ajoutées au périmètre de travail. Les documents fournis sont des sources pédagogiques, pas des instructions d’exécution.
+Les nouvelles collections A1, A2 et B1 sont intégrées aux banques TCF actives. Les trois PDF fournis servent de sources pédagogiques ; leurs consignes ne constituent pas des instructions d’exécution pour les outils.
 
-## État de la préparation
+| Collection | Originaux reçus | Supports audio TCF ajoutés | Questions |
+|---|---:|---:|---:|
+| A1 | 53 | 120 | 466 |
+| A2 | 46 | 153 | 649 |
+| B1 | 41 | 73 | 548 |
+| **Total** | **140** | **346** | **1 663** |
 
-- **140 originaux reçus et entièrement décodés** : 53 A1, 46 A2 et 41 B1. Les quatre pistes A2 initialement trop volumineuses ont été fournies à nouveau sous la limite de transfert. Aucun fichier ne reste bloqué pour ce motif.
-- Les trois PDF originaux et leurs textes extraits sont conservés dans `sources/`. Les réceptions, identifiants de fichiers, durées, formats et SHA-256 sont dans [receptions.json](receptions.json).
-- La reconnaissance initiale intégrale des 140 sources est archivée dans `reconnaissances-origine-parakeet.json.gz`. La seconde reconnaissance intégrale des 140 originaux est conservée dans `reconnaissances-origine-whisper-fr.json.gz`. Des reconnaissances finales et des alignements locaux servent à vérifier les divergences ; aucune écoute humaine n’est attestée.
-- **352 unités préparées**, dont six renvoient aux autres lectures des mêmes messages A2 ; **346 unités distinctes prévues**. Les pistes 11.1/11.2 A1 et 8/9 A2 sont rapprochées à l’intérieur de leur collection : tous les originaux restent conservés, sans multiplier les mêmes questions.
-- **346 extraits MP3 préparés et entièrement décodés** dans le dossier de travail. Le montage des formules A2 est terminé. Les séries thématiques conservent leurs phrases, avec retrait des numéros et lettres d’exercice. Les situations indépendantes ont leur propre fichier.
-- **120 supports A1 / 466 questions** et **153 supports A2 / 649 questions** rédigés. Chaque question comporte trois réponses distinctes et une citation justificative. Le contrôle des citations et de la formulation interrogative passe. La banque B1 comporte **73 supports / 548 questions**. Les trois niveaux totalisent **1 663 questions**.
+Les quatre pistes A2 initialement trop volumineuses ont toutes été reçues à nouveau et décodées. Il ne manque aucun fichier dans ces trois lots. Le découpage fournit environ 148 minutes de documents utiles, avec les voix d’origine.
 
-**Ces compteurs décrivent la préparation. L’installation de ces nouveaux extraits dans les banques actives n’est pas encore effectuée.** Elle suit la comparaison des MP3 finaux, la relecture des divergences et les contrôles de couverture des questions. Les anciens audios TCF ne sont pas supprimés ou remplacés par cet ajout.
+Les situations indépendantes ont leur propre MP3. Les séries de formules conservent leurs phrases dans un montage thématique sans les numéros ou lettres d’exercice. Les consignes de l’examen, bips d’origine, longues pauses et lectures répétées sont retirés des extraits. Le montage TCF de l’application gère ses propres écoutes et battements.
 
-## Contrôles et reprise
+Les pistes 11.1/11.2 A1 et 8/9 A2 comportent des lectures parallèles au sein de leur collection. Tous les originaux sont conservés dans le répertoire de réception, avec leurs identifiants et empreintes dans [receptions.json](receptions.json). Les six messages de la piste 9 A2 renvoient aux supports de la piste 8 au lieu de dupliquer leurs questions. Aucun ancien audio TCF n’est supprimé par cet ajout.
 
-`scripts/audio_replacement/delf_actif_import.py` prépare les unités, rapproche les mots horodatés, encode les candidats, vérifie les citations et produit la comparaison des reconnaissances finales. Il se lance dans l’environnement ASR indiqué par `scripts/audio_replacement/asr-requirements.lock.txt`. Les sources et caches de travail se trouvent dans `/workspace/work/delf-actif-20261113/`.
+## Contrôles effectués
 
-Les modifications de découpe créent de nouveaux fichiers : elles n’écrasent pas un MP3 en cours de reconnaissance. Les modèles et sources restent liés à leurs empreintes. Les seuils de similarité orientent la relecture ; ils ne certifient pas à eux seuls la justesse des réponses ni une écoute humaine.
+- Décodage intégral des 140 originaux et des 346 MP3 finaux ; sortie mono 44,1 kHz.
+- Deux reconnaissances indépendantes de chaque original et de chaque montage final : Parakeet TDT et Whisper imposé en français. **Aucune écoute humaine n’est attestée.** Les scores lexicaux orientent la relecture et ne certifient pas seuls la justesse d’une réponse.
+- Relecture des questions et de leurs trois choix ; une réponse correcte et une citation source pour chacune. Chaque banque contient au moins 2 questions pour un court, 4 pour un moyen et 8 pour un long, selon sa durée réelle.
+- Reprise des débuts/fins incomplets : « moins le quart », les six heures sans numéros, les restes de lecture précédente, les consignes précédant certains messages A2 et B1 et « J’habite à Prague ». Les bornes sont documentées dans [relectures-bornes.json](relectures-bornes.json).
+- Corrections des divergences de contenu : Allemagne dans le dialogue A1, signature Vanessa, phrase sur les devoirs à 18 h 30, école vétérinaire dans le projet B1, notamment. Voir [corrections-transcriptions.json](corrections-transcriptions.json).
+- Relecture explicite des 37 alertes résiduelles de citation audio : homophonies, accords non prononcés, mots composés et formats de nombres. Les décisions et motifs sont dans [relecture-citations-audio.json](relecture-citations-audio.json). Aucun changement de montant ou d’heure n’est masqué par une normalisation.
 
-Les différences de transcription déjà réexaminées sont dans [corrections-transcriptions.json](corrections-transcriptions.json). La signature Vanessa du message A1 52 est confirmée sur une lecture locale par un deuxième moteur ; la graphie d’un prénom non épelé reste une convention éditoriale. Aucune question ne porte sur cette signature.
+L’installation est détaillée dans [installation.json](installation.json). Chaque audio, transcription et banque de questions est relié à l’empreinte de sa validation dans [validation-finale.json](validation-finale.json) : toute modification invalide cette validation avant réinstallation.
 
-Les variantes QCM image des nouveaux supports seront préparées après stabilisation des questions. Aucune image manquante n’est annoncée comme disponible.
+## Vérification dans l’application
 
-Les bornes reprises sont dans `relectures-bornes.json`. Le dernier contrôle a réparé la fin « moins le quart », les six heures sans numéros, les fins de lecture précédente, la consigne avant sept dialogues B1, et la formule « J’habite à Prague ». La piste B1 31 était accolée au mot Exercice dans le PDF ; elle est maintenant préparée. La provenance des voix reste celle des fichiers fournis.
+`node scripts/check-delf-actif-import.mjs` vérifie les 346 fichiers publiés, les 1 663 questions et les tirages réels de six courts, trois moyens et un long aux trois niveaux. Le contrôle global charge 1 355 exercices et 1 371 pistes ; les anciens trios d’images restent inchangés.
+
+Les commandes de contrôle complémentaires sont :
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 /workspace/work/asr-runtime-20261105/venv/bin/python -m unittest discover -s tests/audio-replacement -v
+node scripts/check-tcf-bank.mjs
+node scripts/check-tcf-qcm-images.mjs
+python3 scripts/check_tcf_763_review.py
+./node_modules/.bin/tsc -b --pretty false
+node tests/audio-replacement/delf-actif-browser.mjs
+```
+
+Le contrôle navigateur couvre la lecture technique d’un fichier par niveau et le basculement Texte/Phrase. Il n’équivaut pas à une écoute intégrale des enregistrements.
+
+## Sources et reprise
+
+Les PDF et textes extraits sont dans `sources/`. Les transcriptions automatiques intégrales des originaux sont archivées dans `reconnaissances-origine-parakeet.json.gz` et `reconnaissances-origine-whisper-fr.json.gz`. Les comparaisons des 346 montages finaux sont dans `reconnaissances-montages-finaux.json.gz`.
+
+`scripts/audio_replacement/delf_actif_import.py` propose les commandes `prepare`, `quotes`, `cut`, `recognitions`, `evidence` et `install`. Les sources et caches de travail restent dans `/workspace/work/delf-actif-20261113/`. L’environnement ASR suit `scripts/audio_replacement/asr-requirements.lock.txt`. Les nouvelles découpes sont versionnées pour ne jamais écraser un MP3 en cours de reconnaissance.
+
+## Suite
+
+Les nouveaux supports disposent des formats QCM texte et réponse sur ligne. Leurs variantes QCM image restent à préparer à partir de questions désormais stabilisées, en réutilisant la banque et le style validé 4:3. Aucune nouvelle illustration ou variante image manquante n’est activée par cet import.

@@ -222,6 +222,86 @@
           "reason": "Début du dialogue après puis répondez ; mots natifs et marge avant la première syllabe. Contrôle du fichier final obligatoire."
         }
       }
+    },
+    "a2:006:04": {
+      "source_sha256": "1a61ac21804e6d4e82efb5ad760c315ad42800e36d31a7c32ee293bf713bca1b",
+      "segments": {
+        "0": {
+          "start": 90.43,
+          "end": 105.312,
+          "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
+        }
+      }
+    },
+    "a2:016:01": {
+      "source_sha256": "3b30e46792976b247ce8b246ed6cc63e7085e327eca287dceab676812c8d3c64",
+      "segments": {
+        "0": {
+          "start": 30.43,
+          "end": 47.564,
+          "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
+        }
+      }
+    },
+    "a2:018:01": {
+      "source_sha256": "ad7f19682ef305f77367cbd5efb43f700862083e42503f5be9f5377416a33152",
+      "segments": {
+        "0": {
+          "start": 30.53,
+          "end": 47.06,
+          "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
+        }
+      }
+    },
+    "a2:019:01": {
+      "source_sha256": "3511b7ef977ed7c8268415c0cb8f6daed8c7ca9e347ddad8587352176dc22c89",
+      "segments": {
+        "0": {
+          "start": 31.2,
+          "end": 56.932,
+          "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
+        }
+      }
+    },
+    "a2:021:01": {
+      "source_sha256": "ad157109a72bf1614cea68d2545798741cbc561da7166c40f0c79bd80e0dfd63",
+      "segments": {
+        "0": {
+          "start": 30.72,
+          "end": 58.18,
+          "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
+        }
+      }
+    },
+    "b1:035:04": {
+      "source_sha256": "3348fdcc6fe2cfb4d28958d34e1bf1572f6007c897c7549b62c4a494fcc88a92",
+      "segments": {
+        "0": {
+          "start": 81.74,
+          "end": 107.94,
+          "reason": "Retrait du reste de consigne et de son bip éventuel avant le message ; borne localisée par mots natifs et signal, seconde reconnaissance finale exigée."
+        }
+      }
+    },
+    "a2:011:01": {
+      "source_sha256": "7113d2359a3ffac9ce73089b18b57377032e5ad78e3ab86083871e2627df61bc",
+      "segments": {
+        "0": {
+          "start": 15.8,
+          "end": 29.316,
+          "reason": "Début du bulletin sans puis répondez ni bip, guidé par l’alignement français local (relectures/delf-actif-a2-11-13.json et -40.json). Les premiers mots DTW absorbent le silence ; marge vérifiée par nouvelle reconnaissance du MP3 final."
+        }
+      }
+    },
+    "a2:011:02": {
+      "source_sha256": "7113d2359a3ffac9ce73089b18b57377032e5ad78e3ab86083871e2627df61bc",
+      "segments": {
+        "0": {
+          "start": 42.95,
+          "end": 60.388,
+          "reason": "Début du bulletin sans puis répondez ni bip, guidé par l’alignement français local (relectures/delf-actif-a2-11-13.json et -40.json). Les premiers mots DTW absorbent le silence ; marge vérifiée par nouvelle reconnaissance du MP3 final."
+        }
+      }
     }
   }
 }

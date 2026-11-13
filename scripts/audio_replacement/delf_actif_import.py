@@ -457,7 +457,7 @@ def check_ready(unit, item, cut, approval):
     spoken=' '.join(literal_words(unit['transcription']))
     for q in item['questions']:
         assert ' '.join(literal_words(q['evidence_quote'])) in spoken,(unit['key'],q)
-    assert approval.get('final_recognition_engines'),unit['key']
+    assert set(approval.get('final_recognition_engines',[]))=={'final-parakeet','final-whisper'},unit['key']
 
 
 def install():
@@ -517,7 +517,7 @@ def recognition_report():
             edits=[dict(operation=op,expected=' '.join(expected[a:b]),recognized=' '.join(actual[c:d])) for op,a,b,c,d in matcher.get_opcodes() if op!='equal']
             first=difflib.SequenceMatcher(None,expected[:5],actual[:7],autojunk=False).ratio()
             last=difflib.SequenceMatcher(None,expected[-5:],actual[-7:],autojunk=False).ratio()
-            numbering=bool(re.search(r'(?i)^\W*(?:exercice|situation numéro|document numéro|dialogue numéro)\b|\b(?:écoutez le document|lisez les questions)\b',record['text']))
+            numbering=bool(re.search(r'(?i)^\W*(?:exercice|situation numéro|document numéro|dialogue numéro|puis répondez)\b|^\W*\d+\s*[.)]|\b(?:écoutez le document|lisez les questions|deuxième écoute|seconde écoute)\b',record['text']))
             comparisons.append(dict(engine=engine,path=str(path),text=record['text'],similarity=round(matcher.ratio(),4),prefix_similarity=round(first,4),suffix_similarity=round(last,4),numbering_or_instructions=numbering,edits=edits))
         best=max(comparisons,key=lambda r:r['similarity'],default=None)
         status='recognition_missing' if not best else 'comparison_available'
