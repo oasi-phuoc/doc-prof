@@ -1173,7 +1173,7 @@ function recalcProportion(item: MathItem): MathItem {
 /** Recalcule un item selon son layout / type d’exercice. */
 export function recalcTpmLibreItem(item: MathItem, exerciseType: string): MathItem {
   if (exerciseType === 'tcm-csc-ex18' && item.countIcons) item = { ...item, cscTask: { kind: 'large-count' } }
-  if (['tcm-csc-ex19', 'tcm-csc-ex20'].includes(exerciseType) && item.coordScene) item = { ...item, cscTask: { kind: 'coordinates-left' } }
+  if (['tcm-csc-ex19', 'tcm-csc-ex20'].includes(exerciseType) && item.coordScene) item = { ...item, cscTask: { ...(item.cscTask?.kind==='coordinates-left'?item.cscTask:{}), kind: 'coordinates-left' } }
   if (['tcm-csc-ex12', 'tcm-csc-ex13'].includes(exerciseType) && item.symmetryFigure) item = { ...item, cscTask: { kind: 'copy', scale: exerciseType.endsWith('ex13') ? 2 : 1 } }
   const csc = recalculateCsc(item, exerciseType)
   if (csc) return csc

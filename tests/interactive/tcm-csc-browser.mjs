@@ -149,10 +149,10 @@ try {
   assert.deepEqual(overflow, [], 'Every printed exercise stays above its footer.')
   assert.equal(await printed.locator('.csc-copy').count(), copiesCount*2)
   const copies = await printed.locator('.csc-copy').evaluateAll((pairs) => pairs.map((pair) => [...pair.querySelectorAll('svg')].map((svg) => ({ cols: Number(svg.dataset.copyCols), rows: Number(svg.dataset.copyRows), scale: Number(svg.dataset.copyScale), paths: svg.querySelectorAll('[data-copy-figure]').length,cellMm:svg.getBoundingClientRect().width/(Number(svg.dataset.copyCols)+2)*25.4/96,colors:[...svg.querySelectorAll('[data-copy-figure]')].map(path=>getComputedStyle(path).stroke),theme:getComputedStyle(svg).getPropertyValue('--purple').trim() }))))
-  assert.deepEqual(copies[0].map((grid) => grid.scale), [1, 1]); assert.deepEqual(copies[1].map((grid) => grid.scale), [1, 2])
-  for (const pair of copies.slice(0, 2)) { assert.ok(pair[0].paths > 0); assert.equal(pair[1].paths, 0); assert.equal(pair[1].cols, pair[0].cols * pair[1].scale); assert.equal(pair[1].rows, pair[0].rows * pair[1].scale) }
+  assert.deepEqual(copies[0].map((grid) => grid.scale), [1, 1]); assert.deepEqual(copies[1].map((grid) => grid.scale), [2, 1])
+  for (const pair of copies.slice(0, 2)) { assert.ok(pair[1].paths > 0); assert.equal(pair[0].paths, 0); assert.equal(pair[0].cols, pair[1].cols * pair[0].scale); assert.equal(pair[0].rows, pair[1].rows * pair[0].scale) }
   for(const pair of copies)for(const grid of pair){assert.ok(Math.abs(grid.cellMm-4.6)<.01);assert.ok(grid.colors.every(color=>color!=='rgb(24, 34, 56)'&&color!=='rgb(23, 78, 174)'))}
-  if (pages === 34) for (const pair of copies.slice(2)) assert.ok(pair[1].paths > 0)
+  if (pages === 34) for (const pair of copies.slice(2)) assert.ok(pair[0].paths > 0)
   const coords = await printed.locator('.coord-block.is-csc-left').evaluateAll((blocks) => blocks.map((block) => ({ questions: block.querySelectorAll('.coord-question').length, columns: getComputedStyle(block.querySelector('.coord-questions')).gridTemplateColumns.split(' ').length, side: block.querySelector('.coord-side').getBoundingClientRect().x, grid: block.querySelector('.coord-grid').getBoundingClientRect().x, gridWidth: block.querySelector('.coord-grid').getBoundingClientRect().width, legendRight:Math.max(...[...block.querySelectorAll('.coord-question')].map(node=>node.lastElementChild.getBoundingClientRect().right)), names:block.querySelectorAll('.coord-question-label').length, colors:[...new Set([...block.querySelectorAll('.coord-question-icon')].map(node=>getComputedStyle(node).color))], inline:[...block.querySelectorAll('.coord-question')].every(node=>{const icon=node.querySelector('.coord-question-icon').getBoundingClientRect(),pair=node.querySelector('.coord-pair,.coord-given,.filled-answer').getBoundingClientRect();return Math.abs((icon.y+icon.height/2)-(pair.y+pair.height/2))<3}) })))
   for (const coord of coords) { assert.equal(coord.questions, 6); assert.equal(coord.columns, 1); assert.ok(coord.side < coord.grid); assert.ok(Math.abs(coord.gridWidth-140*96/25.4)<1); assert.ok(coord.legendRight<=coord.grid-1,JSON.stringify(coord)); assert.equal(coord.names,0); assert.equal(coord.colors.length,6); assert.equal(coord.inline,true) }
   const frameHeight = await printed.locator('.is-csc-large .count-icons-frame').first().evaluate((node) => node.getBoundingClientRect().height)
@@ -177,9 +177,12 @@ try {
     assert.ok(centers.every(delta=>delta<1),JSON.stringify(centers))
   }
   const boxes=await printed.locator('[data-exercise-type="tcm-csc-ex04"] .sequence-term,[data-exercise-type="tcm-csc-ex05"] .sequence-term').evaluateAll(nodes=>nodes.map(node=>({top:parseFloat(getComputedStyle(node).borderTopWidth),bottom:parseFloat(getComputedStyle(node).borderBottomWidth),left:parseFloat(getComputedStyle(node).borderLeftWidth)})))
+  const squares=await printed.locator('[data-exercise-type="tcm-csc-ex04"] :is(.sequence-term,.csc-step-hint),[data-exercise-type="tcm-csc-ex05"] .sequence-term').evaluateAll(nodes=>nodes.map(node=>({w:node.getBoundingClientRect().width,h:node.getBoundingClientRect().height})))
+  assert.ok(squares.every(box=>Math.abs(box.w-box.h)<.1&&Math.abs(box.w-squares[0].w)<.1),JSON.stringify(squares))
   assert.equal(boxes.length,copiesCount*40);assert.ok(boxes.every(box=>box.top>0&&box.top===box.bottom&&box.left===box.top))
   assert.equal(await exercise(7).locator('.exercise-item').count(),copiesCount*10)
-  assert.match(await exercise(7).first().locator('.exercise-instruction').innerText(),/Coloriez/)
+  assert.equal((await exercise(7).first().locator('.exercise-instruction').innerText()).trim(),'Comparez les nombres et coloriez le signe correct.')
+  assert.match(await exercise(7).first().locator('.exercise-instruction').innerText(),/coloriez/i)
   const hints=await exercise(4).locator('.csc-step-hint').evaluateAll(nodes=>nodes.map(node=>({text:node.textContent,border:parseFloat(getComputedStyle(node).borderWidth),hint:node.getBoundingClientRect().toJSON(),row:node.nextElementSibling.getBoundingClientRect().toJSON()})))
   for(const hint of hints){assert.match(hint.text,/^[+−]\d+$/);assert.ok(hint.border>0);assert.ok(hint.hint.right<=hint.row.x);assert.ok(Math.abs(hint.hint.y+hint.hint.height/2-hint.row.y-hint.row.height/2)<3)}
   assert.equal(await exercise(8).locator('.place-value-row').count(),copiesCount*4)
@@ -199,14 +202,15 @@ try {
   assert.ok(Math.abs(spacing.rows-(2*96/25.4+10))<.1);assert.equal(spacing.numbers,16)
   const cscEdges=await checkGridEdges(page,exercise(10).first().locator('.column-grid'))+await checkGridEdges(page,exercise(11).first().locator('.column-grid'))
   const largeDigits=await exercise(10).first().locator('.digit-cell:not(.carry)').first().evaluate(node=>({font:parseFloat(getComputedStyle(node).fontSize),height:node.getBoundingClientRect().height}))
-  assert.equal(largeDigits.font,33);assert.equal(largeDigits.height,39)
+  assert.ok(Math.abs(largeDigits.font-28.05)<.01);assert.equal(largeDigits.height,39)
   const bottomClearance=await printed.locator('.csc-operation-group').evaluateAll(groups=>groups.map(group=>{const bottom=Math.max(...[...group.querySelectorAll('.column-grid')].map(grid=>grid.getBoundingClientRect().bottom));return group.getBoundingClientRect().bottom-bottom}))
   assert.ok(bottomClearance.every(gap=>gap>=25),JSON.stringify(bottomClearance))
   const calculation=await exercise(11).first().locator('.column-prompt').first().evaluate(node=>({size:parseFloat(getComputedStyle(node).fontSize),body:parseFloat(getComputedStyle(node.closest('.item-content')).fontSize),color:getComputedStyle(node).color}))
   assert.ok(Math.abs(calculation.size-1.5*calculation.body)<.1);assert.notEqual(calculation.color,'rgb(0, 0, 0)')
-  const calculationCenters=await exercise(11).locator('.column-op').evaluateAll(nodes=>nodes.map(node=>{const text=node.querySelector('.column-prompt').getBoundingClientRect(),grid=node.querySelector('.column-grid').getBoundingClientRect();return {delta:Math.abs(text.x+text.width/2-grid.x-grid.width/2),align:getComputedStyle(node.querySelector('.column-prompt')).textAlign}}))
+  const calculationCenters=await exercise(11).locator('.column-op').evaluateAll(nodes=>nodes.map(node=>{const prompt=node.querySelector('.column-prompt'),range=document.createRange();range.selectNodeContents(prompt);const text=range.getBoundingClientRect(),grid=node.querySelector('.digit-row').getBoundingClientRect();return {delta:Math.abs(text.x+text.width/2-grid.x-grid.width/2),align:getComputedStyle(prompt).textAlign}}))
   assert.ok(calculationCenters.every(value=>value.delta<1&&value.align==='center'),JSON.stringify(calculationCenters))
   assert.match(await exercise(13).first().locator('.exercise-instruction').innerText(),/\n1 carré à droite = 2 carrés à gauche\./)
+  assert.equal((await exercise(12).first().locator('.exercise-instruction').innerText()).trim(),'Reproduisez la même figure sur le quadrillage de gauche.')
   assert.doesNotMatch(await exercise(13).first().innerText(),/un carré du modèle correspond/)
   assert.deepEqual(await exercise(14).first().locator('.tcf-audio-frame-head').allTextContents(),['Partie 1','Partie 2'])
   assert.deepEqual(await exercise(14).first().locator('.csc-part-instruction').allTextContents(),['Mesurez les segments avec la règle.','Cochez la bonne réponse.'])
@@ -224,10 +228,12 @@ try {
   assert.equal(await exercise(16).locator('.item-number').count(),0)
   for(const block of await exercise(17).locator('.csc-shape-names').all()){assert.equal((await block.evaluate(node=>getComputedStyle(node).gridTemplateColumns)).split(' ').length,2);assert.equal(await block.locator('.answer-line-field').count(),4)}
   assert.deepEqual(await exercise(17).first().locator('.tcf-audio-frame-head').allTextContents(),['Forme 1','Forme 2','Forme 3','Forme 4'])
-  assert.ok((await exercise(17).locator('.csc-shape-answer').evaluateAll(nodes=>nodes.map(node=>parseFloat(getComputedStyle(node).paddingTop)))).every(padding=>padding===25))
+  assert.ok((await exercise(17).locator('.csc-shape-answer').evaluateAll(nodes=>nodes.map(node=>parseFloat(getComputedStyle(node).paddingTop)))).every(padding=>padding===12.5))
   const centered=await exercise(17).locator('.csc-name-figure').evaluateAll(nodes=>nodes.map(node=>{const frame=node.getBoundingClientRect(),svg=node.querySelector('svg').getBoundingClientRect();return Math.abs(frame.x+frame.width/2-svg.x-svg.width/2)}))
   assert.ok(centered.every(delta=>delta<1))
   assert.equal(await exercise(18).locator('.item-number').count(),0)
+  const insidePadding=await exercise(18).locator('.count-icons-frame').evaluateAll(frames=>frames.map(frame=>{const bounds=frame.getBoundingClientRect(),style=getComputedStyle(frame);return {padding:[style.paddingTop,style.paddingRight,style.paddingBottom,style.paddingLeft],tokens:[...frame.querySelectorAll('.count-icon-token')].map(token=>{const r=token.getBoundingClientRect();return {left:r.left-bounds.left,right:bounds.right-r.right,top:r.top-bounds.top,bottom:bounds.bottom-r.bottom}})}}))
+  for(const frame of insidePadding){assert.deepEqual(frame.padding,['25px','25px','25px','25px']);assert.ok(frame.tokens.every(t=>Object.values(t).every(gap=>gap>=24.9)),JSON.stringify(frame.tokens))}
   assert.equal(await exercise(18).first().locator('.count-icons-caption svg').count(),1)
   assert.match((await exercise(18).first().locator('.count-icons-caption').innerText()).trim(),/^Il y a\s*$/)
   assert.match(await exercise(18).first().locator('.csc-count-instruction').innerText(),/^Comptez les formes/)
@@ -251,7 +257,7 @@ try {
   assert.equal(lastProblemPage,busPage+1)
   const pdf = await page.pdf({ path: 'docs/tcm-csc/tcm-csc-exemple.pdf', preferCSSPageSize: true, printBackground: true })
   assert.equal([...pdf.toString('latin1').matchAll(/\/Type\s*\/Page\b/g)].length, pages)
-  results.push({ print: `${pages} portrait A4 pages; no exercise crosses its footer`, revisions:'20px CSC base body setting; fixed A4/A5 header/footer typography; bold A–E audio lines; boxed sequences; Series 1/2 ordering next to exercise 7; 36px operation digits in fixed 42px cells',gridEdges:{csc:cscEdges,check:'bottom and right strokes cover over 95% of the last cell in print-media screenshots; one-pixel borders, no negative margin'}, copies: '4.6mm squares (+15%); theme-colored figures; two separate grids and unchanged orientation; doubled rows and columns for enlargement; target figures hidden in student copies', geometry: 'Part 1/2 measuring frames preserve physical lengths; full-width point zone with one instruction; Series 1/2 logic frames; Form 1–4 centered in 2x2 frames with 25px response padding and 15px below the answer; black counting shapes, colored prompt target and extra 10px padding; right-aligned coordinate grid, bold colored axes, same-size legend glyphs and 30px row gaps; double-height problem drafts and response spacing, exercise 24 on the next page' })
+  results.push({ print: `${pages} portrait A4 pages; no exercise crosses its footer`, revisions:'20px CSC base body setting; fixed A4/A5 header/footer typography; bold A–E audio lines; equally sized square hint, number and answer boxes; Series 1/2 ordering next to exercise 7; new comparison instruction; 28.05px operation digits (-15%) in fixed 39px cells; exercise 11 calculations centered over the five digit columns excluding the sign gutter',gridEdges:{csc:cscEdges,check:'bottom and right strokes cover over 95% of the last cell in print-media screenshots; one-pixel borders, no negative margin'}, copies: '4.6mm squares (+15%); theme-colored model on the right and student target on the left; doubled rows and columns for enlargement; target figures hidden in student copies', geometry: 'Part 1/2 measuring frames preserve physical lengths; point zone with one instruction; Series 1/2 logic frames; Form 1–4 centered in 2x2 frames with 12.5px response padding and 15px below the answer; counting frame padded by 25px on all four sides with every rotated shape inside the padding; right-aligned coordinate grid, bold colored axes, same-size legend glyphs and 30px row gaps; double-height problem drafts and response spacing, exercise 24 on the next page' })
   console.log('CSC : impression et géométrie vérifiées.')
   await page.close()
   page = await context.newPage()
@@ -259,6 +265,26 @@ try {
   await page.goto(`${base}/generateur`)
   await page.getByLabel('Domaine', { exact: true }).click({ timeout: 120000 })
   await page.getByRole('option', { name: 'TCM CSC', exact: true }).click()
+
+  for(const pageNumber of [14,15]){
+    await page.getByLabel(`Page ${pageNumber}`,{exact:true}).click();await button(page,'Mode libre').click()
+    const axisEditor=page.getByRole('complementary',{name:'Mode libre',exact:true})
+    for(const xDirection of ['left-to-right','right-to-left'])for(const yDirection of ['bottom-to-top','top-to-bottom']){
+      await axisEditor.getByLabel('Sens de l’axe horizontal',{exact:true}).selectOption(xDirection)
+      await axisEditor.getByLabel('Sens de l’axe vertical',{exact:true}).selectOption(yDirection)
+      await button(page,'Valider les changements').click()
+      const grid=preview(page).locator('.coord-grid')
+      assert.equal(await grid.getAttribute('data-column-direction'),xDirection==='right-to-left'?'rtl':'ltr')
+      assert.equal(await grid.getAttribute('data-row-direction'),yDirection==='top-to-bottom'?'top-down':'bottom-up')
+      const rowNumbers=await grid.locator('[data-axis="y"]').evaluateAll(labels=>labels.map(node=>({x:Number(node.getAttribute('x')),anchor:node.getAttribute('text-anchor')})))
+      assert.ok(rowNumbers.every(label=>label.x===133&&label.anchor==='start'))
+    }
+    await button(page,'Fermer le mode libre').click();await button(page,'Mode libre').click()
+    assert.equal(await axisEditor.getByLabel('Sens de l’axe horizontal',{exact:true}).inputValue(),'right-to-left')
+    assert.equal(await axisEditor.getByLabel('Sens de l’axe vertical',{exact:true}).inputValue(),'top-to-bottom')
+    await button(page,'Fermer le mode libre').click()
+  }
+  results.push({axes:'Both coordinate exercises expose independent horizontal and vertical directions in free mode; all four choices render and survive validation/reopening; row numbers stay on the right'})
 
   await page.getByLabel('Page 11', { exact: true }).click()
   await button(page, 'Mode libre').click()

@@ -13,6 +13,10 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
   if (!typeId.startsWith('tcm-csc-')) return null
   const task = item.cscTask
   try {
+    if(task?.kind==='coordinates-left'){
+      if(task.xDirection!==undefined&&!['left-to-right','right-to-left'].includes(task.xDirection)||task.yDirection!==undefined&&!['bottom-to-top','top-to-bottom'].includes(task.yDirection))throw new Error('Choisissez un sens horizontal et un sens vertical valides.')
+      return {...item,libreError:undefined}
+    }
     if (typeId === 'tcm-csc-ex07' && item.layout === 'compare') {
       const a = Number(item.left), b = Number(item.right), max = typeId.endsWith('ex07') ? 100 : 999
       if (!item.left?.trim() || !item.right?.trim() || !integers([a, b], 0, max)) throw new Error(`Choisissez des entiers entre 0 et ${max}, sans décimales.`)

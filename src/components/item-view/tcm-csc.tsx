@@ -47,10 +47,10 @@ export function CscCopyBlock({ item, mode }: { item: MathItem; mode: PreviewMode
   const cellMm=4*1.15
   const columns = template.side === 'left' ? template.axisX : template.cols - template.axisX
   const offset = template.side === 'left' ? 0 : template.axisX
-  return <div className="csc-copy">{[1, task.scale].map((scale, index) => {
-    const cols = columns * scale, rows = template.rows * scale, reveal = index === 0 || mode === 'answers'
+  return <div className="csc-copy">{[{scale:task.scale,model:false},{scale:1,model:true}].map(({scale,model}, index) => {
+    const cols = columns * scale, rows = template.rows * scale, reveal = model || mode === 'answers'
     const point = (p: { x: number; y: number }) => ({ x: 1 + (p.x - offset) * scale, y: 1 + rows - p.y * scale })
-    return <div key={index}><p>{index === 0 ? 'Modèle' : task.scale === 2 ? 'Reproduction agrandie' : 'Reproduction'}</p><svg data-copy-scale={scale} data-copy-cols={cols} data-copy-rows={rows} viewBox={`0 0 ${cols + 2} ${rows + 2}`} style={{ width: `${(cols+2)*cellMm}mm`, height: `${(rows+2)*cellMm}mm` }} role="img" aria-label={index === 0 ? 'Quadrillage du modèle' : 'Quadrillage de reproduction'}>
+    return <div key={index}><p>{model ? 'Modèle' : task.scale === 2 ? 'Reproduction agrandie' : 'Reproduction'}</p><svg data-copy-scale={scale} data-copy-cols={cols} data-copy-rows={rows} viewBox={`0 0 ${cols + 2} ${rows + 2}`} style={{ width: `${(cols+2)*cellMm}mm`, height: `${(rows+2)*cellMm}mm` }} role="img" aria-label={model ? 'Quadrillage du modèle' : 'Quadrillage de reproduction'}>
       {Array.from({ length: cols + 1 }, (_, x) => <line key={`x${x}`} x1={x + 1} x2={x + 1} y1="1" y2={rows + 1} className="csc-copy-grid" />)}
       {Array.from({ length: rows + 1 }, (_, y) => <line key={`y${y}`} y1={y + 1} y2={y + 1} x1="1" x2={cols + 1} className="csc-copy-grid" />)}
       {reveal && template.polylines.map((poly, i) => <path key={i} data-copy-figure d={poly.map((p, j) => { const s = point(p); return `${j ? 'L' : 'M'}${s.x},${s.y}` }).join(' ')} fill="none" stroke="var(--purple)" strokeWidth=".1" />)}

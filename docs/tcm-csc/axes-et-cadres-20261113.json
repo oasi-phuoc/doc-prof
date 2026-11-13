@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-13",
+  "scope": "TCM CSC : sens des axes, cadres carrés et corrections de présentation",
+  "changes": {
+    "ex04ex05": "Cases aide, nombre et réponse carrées de dimensions identiques ; numérotation centrée conservée.",
+    "ex07": "Comparez les nombres et coloriez le signe correct.",
+    "ex10": "Chiffres réduits de 15 % : 28,05 px par défaut. Huit grilles sur une page, cellules de 39 × 39 px identiques au 11.",
+    "ex11": "Calcul centré sur les cinq colonnes de chiffres, en excluant la réserve du signe opératoire.",
+    "ex12ex13": "Modèle à droite et grille de réponse à gauche ; consigne du 12 actualisée, agrandissement du 13 cohérent avec son sens indiqué.",
+    "ex14": "À chaque graine : une unité cm, une unité mm et une troisième aléatoire ; conversion exacte et longueurs physiques conservées.",
+    "ex17": "Espacement avant le trait divisé par deux, de 25 à 12,5 px ; 15 px conservés sous le trait.",
+    "ex18": "Marge intérieure de 25 px sur les quatre côtés ; les formes tournées restent entièrement dans cette zone.",
+    "ex19ex20": "Nombres à droite du quadrillage. Sens horizontal et vertical indépendants en mode libre ; les quatre combinaisons sont tirées selon la nouvelle graine. Le rendu des formes suit les axes sans modifier les coordonnées logiques. Les choix validés sont conservés."
+  },
+  "validation": {
+    "focusedCscTests": 19,
+    "newAxisAndUnitTests": 4,
+    "seedCoverage": "100 graines pour chacun des exercices 19 et 20 ; 100 graines pour les unités du 14.",
+    "svg": "A1 vérifié dans les quatre coins avec lettres et nombres alignés sur les mêmes centres ; graduations numériques hors grille à droite.",
+    "browser": "Parcours CSC/CFR réussi : génération, typographie A4/A5, audio existant, impression, quatre choix d’axes dans les deux exercices, validation et réouverture du mode libre.",
+    "print": {
+      "studentPages": 17,
+      "withCorrections": 34,
+      "footerOverflow": false,
+      "exercise10GridsOnOnePage": 8,
+      "exercise11GridsOnOnePage": 4,
+      "equalSquareSidePx": 60.65625,
+      "maxCalculationCenterErrorPx": 0.0078125,
+      "minimumRotatedShapeFrameClearancePx": 26.029296875
+    },
+    "types": "passed",
+    "productionBuild": "passed",
+    "browserErrors": [],
+    "visualReview": "PDF rendu en PNG : suites 4/5, cadre de comptage 18 et coordonnées 19."
+  },
+  "audio": "Aucune nouvelle synthèse générée ni activée ; narration reportée."
+}

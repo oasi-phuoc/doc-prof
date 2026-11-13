@@ -11,36 +11,39 @@
       "files": [
         {
           "name": "TCM-CSC_EXERCICE-01_NOMBRES.wav",
-          "seconds": 36.6
+          "seconds": 35.1
         },
         {
           "name": "TCM-CSC_EXERCICE-02_CALCULS.wav",
-          "seconds": 47.7
+          "seconds": 48.8
         },
         {
           "name": "TCM-CSC_EXERCICE-03_ENTOURER.wav",
-          "seconds": 35.3
+          "seconds": 35.7
         }
       ]
     },
     {
       "decomposition": "Four questions: two between 11 and 99, then two between 101 and 999",
       "values": [
-        "12",
-        "49",
-        "618",
-        "472"
+        "60",
+        "87",
+        "188",
+        "919"
       ]
     },
     {
       "print": "34 portrait A4 pages; no exercise crosses its footer",
-      "revisions": "20px CSC base body setting; fixed A4/A5 header/footer typography; bold A–E audio lines; boxed sequences; Series 1/2 ordering next to exercise 7; 36px operation digits in fixed 42px cells",
+      "revisions": "20px CSC base body setting; fixed A4/A5 header/footer typography; bold A–E audio lines; equally sized square hint, number and answer boxes; Series 1/2 ordering next to exercise 7; new comparison instruction; 28.05px operation digits (-15%) in fixed 39px cells; exercise 11 calculations centered over the five digit columns excluding the sign gutter",
       "gridEdges": {
         "csc": 12,
         "check": "bottom and right strokes cover over 95% of the last cell in print-media screenshots; one-pixel borders, no negative margin"
       },
-      "copies": "4.6mm squares (+15%); theme-colored figures; two separate grids and unchanged orientation; doubled rows and columns for enlargement; target figures hidden in student copies",
-      "geometry": "Part 1/2 measuring frames preserve physical lengths; full-width point zone with one instruction; Series 1/2 logic frames; Form 1–4 centered in 2x2 frames with 25px response padding and 15px below the answer; black counting shapes, colored prompt target and extra 10px padding; right-aligned coordinate grid, bold colored axes, same-size legend glyphs and 30px row gaps; double-height problem drafts and response spacing, exercise 24 on the next page"
+      "copies": "4.6mm squares (+15%); theme-colored model on the right and student target on the left; doubled rows and columns for enlargement; target figures hidden in student copies",
+      "geometry": "Part 1/2 measuring frames preserve physical lengths; point zone with one instruction; Series 1/2 logic frames; Form 1–4 centered in 2x2 frames with 12.5px response padding and 15px below the answer; counting frame padded by 25px on all four sides with every rotated shape inside the padding; right-aligned coordinate grid, bold colored axes, same-size legend glyphs and 30px row gaps; double-height problem drafts and response spacing, exercise 24 on the next page"
+    },
+    {
+      "axes": "Both coordinate exercises expose independent horizontal and vertical directions in free mode; all four choices render and survive validation/reopening; row numbers stay on the right"
     },
     {
       "freeMode": "source logic question selectable; 103 problem contexts available; changing to subtraction with 98 and 54 recomputes 44 books after validation",

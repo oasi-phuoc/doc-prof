@@ -34,7 +34,7 @@ export function TcmCscFields({ item, typeId, change: onChange }: { item: MathIte
   } else if (task?.kind === 'sign-name') {
     fields = <label>Signe à nommer<select aria-label="Signe à nommer" value={task.symbol} onChange={e=>change({...item,cscTask:{...task,symbol:e.target.value as keyof typeof CSC_SIGN_NAMES}})}>{Object.keys(CSC_SIGN_NAMES).map(symbol=><option key={symbol} value={symbol}>{symbol}</option>)}</select></label>
   } else if (item.layout === 'place-value' && typeId === 'tcm-csc-ex08') {
-    fields = number('Nombre à décomposer', Number((item.prompt ?? '').replace(/['’\s]/g,'')), value=>change({...item,prompt:String(value)}),100,9999)
+    fields = number('Nombre à décomposer', Number((item.prompt ?? '').replace(/['’\s]/g,'')), value=>change({...item,prompt:String(value)}),11,9999)
   } else if (task?.kind === 'number-grid') {
     fields = <><NumberList key={`grid:${task.numbers.join()}`} label="Les 36 nombres de la grille (0–100)" values={task.numbers} change={(numbers) => change({ ...item, cscTask: { ...task, numbers } })} /><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
   } else if (task?.kind === 'shape-names') {

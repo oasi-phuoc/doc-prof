@@ -257,6 +257,9 @@ export function CoordBlock({
       <CoordGrid
         cellScale={csc ? 2 : 1}
         paddedLabels={csc}
+        rowLabelsRight={csc}
+        reverseColumns={csc&&(item.cscTask?.kind==='coordinates-left'&&item.cscTask.xDirection?item.cscTask.xDirection==='right-to-left':isPlace)}
+        reverseRows={csc&&(item.cscTask?.kind==='coordinates-left'&&item.cscTask.yDirection?item.cscTask.yDirection==='top-to-bottom':isPlace)}
         shapeColors={shapeColors}
         point={item.point}
         pointImage={item.pointImage}

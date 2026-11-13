@@ -2666,6 +2666,7 @@ function renderFields(
 
   if (item.layout === 'coord' && item.coordScene) {
     const scene = item.coordScene
+    const cscAxes=item.cscTask?.kind==='coordinates-left'?item.cscTask:undefined
     const unitSquares = scene.unitSquares === 2 ? 2 : 1
     const positiveCells = 24
     const maxUnit = positiveCells / unitSquares
@@ -2703,6 +2704,10 @@ function renderFields(
     }
     return (
       <>
+        {cscAxes&&<>
+          <Field label="Sens horizontal"><LineSelect ariaLabel="Sens de l’axe horizontal" value={cscAxes.xDirection??(item.coordTask==='place'?'right-to-left':'left-to-right')} options={[{value:'left-to-right',label:'A à gauche → lettres vers la droite'},{value:'right-to-left',label:'A à droite → lettres vers la gauche'}]} onChange={value=>patch(index,{...item,cscTask:{...cscAxes,xDirection:value as 'left-to-right'|'right-to-left'}})}/></Field>
+          <Field label="Sens vertical"><LineSelect ariaLabel="Sens de l’axe vertical" value={cscAxes.yDirection??(item.coordTask==='place'?'top-to-bottom':'bottom-to-top')} options={[{value:'bottom-to-top',label:'1 en bas → nombres vers le haut'},{value:'top-to-bottom',label:'1 en haut → nombres vers le bas'}]} onChange={value=>patch(index,{...item,cscTask:{...cscAxes,yDirection:value as 'bottom-to-top'|'top-to-bottom'}})}/></Field>
+        </>}
         <Field label="Graduation">
           <LineSelect
             value={String(unitSquares)}

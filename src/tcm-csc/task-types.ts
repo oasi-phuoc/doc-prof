@@ -11,5 +11,5 @@ export type CscTask =
   | { kind: 'connect-points'; points: { label: string; x: number; y: number }[] }
   | { kind: 'shape-names'; figures: Figure[] }
   | { kind: 'large-count' }
-  | { kind: 'coordinates-left' }
+  | { kind: 'coordinates-left'; xDirection?: 'left-to-right' | 'right-to-left'; yDirection?: 'bottom-to-top' | 'top-to-bottom' }
   | { kind: 'problem'; templateId: string; a: number; b: number }
