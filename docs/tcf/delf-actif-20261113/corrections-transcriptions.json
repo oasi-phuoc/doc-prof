@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-13",
+  "human_audio_listening_performed": false,
+  "units": {
+    "a1:039:01": {
+      "replace": [["un grand un lit", "un grand lit"]],
+      "reason": "Coquille du PDF : le double article n'est présent ni dans Parakeet ni dans la reconnaissance française indépendante Whisper. Les questions ne dépendent pas de cette correction."
+    },
+    "a1:052:01:01": {
+      "replace": [["Hugo", "Vanessa."]],
+      "reason": "Écart de signature entre le PDF et le fichier reçu. Parakeet reconnaît Vanessa aux deux lectures. La seconde lecture locale est aussi transcrite Vanessa par Whisper en français (signature-52-2-caaca983b5dd.json). La graphie d'un nom non épelé reste une convention éditoriale ; aucune question ne porte sur cette signature.",
+      "evidence": "work/delf-actif-20261113/signature-52.json"
+    },
+    "a2:036": {
+      "replace": [["D come David, U comme…", "D comme David, U comme Uli."]],
+      "reason": "La phrase d'épellation est rétablie d'après Parakeet et Whisper français ; le PDF écrit come et s'interrompt après U comme. Uli est une graphie éditoriale d'un prénom non épelé, sans question portant sur ce prénom."
+    }
+  }
+}

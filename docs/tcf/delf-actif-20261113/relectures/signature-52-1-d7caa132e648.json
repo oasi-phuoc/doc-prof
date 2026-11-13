@@ -1,0 +1,89 @@
+{
+  "status": "transcribed",
+  "source": "/workspace/work/delf-actif-20261113/signature-52-1.mp3",
+  "source_sha256": "d7caa132e6486021ec756d26448a4b63ffdd938e9c327d3cf95a1e42f474d39b",
+  "parameters": {
+    "engine": "sherpa-onnx",
+    "version": "2.0.1",
+    "model_files_sha256": {
+      "/tmp/clairfle-whisper-small-20261111/small-encoder.int8.onnx": "4cbe7b22fa9026b843b60a68640c747de05bafb1a11b57edc0e66c232d9f33a9",
+      "/tmp/clairfle-whisper-small-20261111/small-decoder.int8.onnx": "acad50b5c782696e91b55914cc5ab4f756f1532f76e22aa6fc615f39fb69a8ee",
+      "/tmp/clairfle-whisper-small-20261111/small-tokens.txt": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+    },
+    "language": "fr",
+    "task": "transcribe",
+    "provider": "cpu",
+    "decoding_method": "greedy_search",
+    "enable_segment_timestamps": false,
+    "enable_token_timestamps": false,
+    "long_audio_segmentation": "Silero VAD utterances merged into <=27s processing windows; max 26s speech, 350ms silence, 200ms padding"
+  },
+  "decoder_outputs": [
+    "logits",
+    "out_n_layer_self_k_cache",
+    "out_n_layer_self_v_cache"
+  ],
+  "token_timestamps_available": false,
+  "word_timestamps_available": false,
+  "quality": "automatic_draft_requires_review",
+  "provenance": "https://github.com/k2-fsa/sherpa-onnx/releases/tag/asr-models",
+  "text": "d'un support téléphone pour son vélo ? Rendez-vous à 16h chez moi. Appelle-moi pour confirmer. Va naître ça.",
+  "duration_seconds": 7.2,
+  "chunks": [
+    {
+      "start": 0.0,
+      "end": 7.2,
+      "text": "d'un support téléphone pour son vélo ? Rendez-vous à 16h chez moi. Appelle-moi pour confirmer. Va naître ça.",
+      "language": "fr",
+      "tokens": [
+        " d",
+        "'",
+        "un",
+        " support",
+        " téléphone",
+        " pour",
+        " son",
+        " vé",
+        "lo",
+        " ?",
+        " Rend",
+        "ez",
+        "-",
+        "vous",
+        " à",
+        " 16",
+        "h",
+        " chez",
+        " moi",
+        ".",
+        " App",
+        "elle",
+        "-",
+        "moi",
+        " pour",
+        " confir",
+        "mer",
+        ".",
+        " Va",
+        " na",
+        "ître",
+        " ça",
+        "."
+      ],
+      "timestamps": [],
+      "durations": [],
+      "segment_texts": [],
+      "segment_timestamps": [],
+      "segment_durations": []
+    }
+  ],
+  "segments": [],
+  "speech_windows": [
+    {
+      "start": 0.0,
+      "end": 7.2
+    }
+  ],
+  "wall_seconds": 5.407247248993372,
+  "cpu_seconds": 3.1474637449999996
+}
