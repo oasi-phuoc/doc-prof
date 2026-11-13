@@ -29268,6 +29268,171 @@
       "source_sha256": "e0124a5a07dc82047cf6a13bf577ba8745db577a35b683a51ace49a7e1f1936a",
       "reason": "La promotion vise tout l'électroménager et l'annonce énumère téléviseurs, réfrigérateurs, fours et machines à laver. Aucun vêtement ou meuble n'est proposé dans cet extrait. Nouvel ensemble de quatre appareils correspondant aux quatre catégories citées. Vêtements pliés et ensemble table/fauteuil/commode existants relus. Aucun pourcentage, montant ou texte de promotion ; pas de bouilloire seule substituée à l'ensemble.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-002",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-ultimate-passe.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-hockey.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-rugby.webp"
+          }
+        ]
+      },
+      "source_sha256": "f757e8862330cbb2faf7cf4267b14267dae3ff8eb42024cd2d5e330bd5e4aef0",
+      "reason": "Le professeur annonce la découverte de l’Ultimate, pratiqué avec un disque. Hockey et rugby ne sont pas nommés. Vue partielle d’Ultimate relue : disque blanc, porteuse immobile et équipes distinctes ; pas une représentation des effectifs complets. Hockey sur glace avec crosses et palet et rugby avec ballon ovale réutilisés. Les visages de l’Ultimate ont été différenciés de ceux des autres scènes.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-84",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-magazine-couverture.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+          }
+        ]
+      },
+      "source_sha256": "c1b8d1905b63f79dde96398790378b9bbda20d00f6d38bdd77d836011624d7c3",
+      "reason": "La phrase Combien coûte ce magazine ? nomme un magazine. Le QCM demande le produit, jamais son prix. Magazine fin à couverture souple isolé, livre bleu relié et grand journal ouvert relus. Aucun objet de la référence de boissons n’est conservé dans le magazine ; pas de montant, date ou titre inventé.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-001",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-realisation-cinema.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
+          }
+        ]
+      },
+      "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
+      "reason": "L’atelier audiovisuel cite acteur, réalisateur et technicien de cinéma. Ni vétérinaire ni architecte n’est proposé dans le texte. Premières versions de la réalisation et de l’architecture explicitement choisies par l’utilisateur, sans intégration des reprises dessinées. Direction de plateau avec scénario et moniteur, vétérinaire examinant un chien et architecte avec plans et maquette : trois métiers distincts. Genre et apparence ne sont pas les critères de réponse.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-001",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-technicien-cinema.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-mecanicien.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-technicien-laboratoire.png"
+          }
+        ]
+      },
+      "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
+      "reason": "L’atelier 1 nomme le technicien de cinéma. Les deux autres ateliers concernent la pâtisserie et la scène ; ils ne citent aucun technicien automobile ou de laboratoire. Première version de la technicienne de cinéma retenue par l’utilisateur : réglage d’un projecteur sur plateau. Mécanicien existant travaillant sous le capot, puis technicien de laboratoire avec pipette et microscope. Trois actions techniques entières, personnages distincts et variés.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-036",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-eau-savon-duo.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-parfum-lait-duo.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-desinfectant-sols.png"
+          }
+        ]
+      },
+      "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
+      "reason": "La première consigne demande explicitement de se laver les mains avec de l’eau et du savon. Le parfum, le lait et le désinfectant pour sols ne sont pas indiqués pour ce geste. Trois nouvelles compositions relues : savon et eau claire, parfum à vaporisateur et bouteille de lait, bidon marqué DÉSINFECTANT SOLS avec pictogramme de nettoyage. Les deux duos représentent leurs deux produits ; aucun dosage, date ou montant.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

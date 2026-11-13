@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1882,
+    "reviewed_trio": 1887,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 386,
+    "reviewed_763_artwork_pending": 381,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -30052,19 +30052,27 @@
         "Le hockey",
         "Le rugby"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "f757e8862330cbb2faf7cf4267b14267dae3ff8eb42024cd2d5e330bd5e4aef0",
       "semantic_before_sha256": "d50ad69fb8a028a0d762999c5ba2cb700f0d955259cebd98cb876a05bba6a43a",
       "semantic_after_sha256": "d50ad69fb8a028a0d762999c5ba2cb700f0d955259cebd98cb876a05bba6a43a",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-ultimate-passe.png",
+        "/lib/images/tcf/qcm-audit/vocab-hockey.webp",
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp"
+      ],
+      "target_sha256": [
+        "419a02454956b50b6a9fb1620fe611a36a4cca4e817aa0b6b68258a1c8c316c2",
+        "c9df8f3d4517e9fa3be0f60a71f3c741da735687ae2246feff2a8847b9ca099e",
+        "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le professeur annonce la découverte de l’Ultimate, pratiqué avec un disque. Hockey et rugby ne sont pas nommés. Vue partielle d’Ultimate relue : disque blanc, porteuse immobile et équipes distinctes ; pas une représentation des effectifs complets. Hockey sur glace avec crosses et palet et rugby avec ballon ovale réutilisés. Les visages de l’Ultimate ont été différenciés de ceux des autres scènes.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le professeur annonce la découverte de l’Ultimate, pratiqué avec un disque. Hockey et rugby ne sont pas nommés. Vue partielle d’Ultimate relue : disque blanc, porteuse immobile et équipes distinctes ; pas une représentation des effectifs complets. Hockey sur glace avec crosses et palet et rugby avec ballon ovale réutilisés. Les visages de l’Ultimate ont été différenciés de ceux des autres scènes."
     },
     {
       "key": "delf-a1s-ce-002#2",
@@ -110522,19 +110530,27 @@
         "Un livre",
         "Un journal"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "c1b8d1905b63f79dde96398790378b9bbda20d00f6d38bdd77d836011624d7c3",
       "semantic_before_sha256": "ff178364e0d1d796bcc19fd85eb9bc0f3767adf90dc3153858b3b51ce47e6daf",
       "semantic_after_sha256": "ff178364e0d1d796bcc19fd85eb9bc0f3767adf90dc3153858b3b51ce47e6daf",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-1.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-magazine-couverture.png",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+      ],
+      "target_sha256": [
+        "7edf759b5459371479b92f7852e1ed905e81a437333824372e0e67917b3238d5",
+        "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2",
+        "83d43bd2e76e658026a532f524687e8f7d8b4d9d03050433ce3a1a8264d39b7f"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La phrase Combien coûte ce magazine ? nomme un magazine. Le QCM demande le produit, jamais son prix. Magazine fin à couverture souple isolé, livre bleu relié et grand journal ouvert relus. Aucun objet de la référence de boissons n’est conservé dans le magazine ; pas de montant, date ou titre inventé.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La phrase Combien coûte ce magazine ? nomme un magazine. Le QCM demande le produit, jamais son prix. Magazine fin à couverture souple isolé, livre bleu relié et grand journal ouvert relus. Aucun objet de la référence de boissons n’est conservé dans le magazine ; pas de montant, date ou titre inventé."
     },
     {
       "key": "delf-a1-2022-co-84#2",
@@ -124949,19 +124965,27 @@
         "Vétérinaire",
         "Architecte"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
       "semantic_before_sha256": "0805ee2978e4d0a5699e37906819cf5a15b04b2f6b41ae31c260a0e78a0dff25",
       "semantic_after_sha256": "0805ee2978e4d0a5699e37906819cf5a15b04b2f6b41ae31c260a0e78a0dff25",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-realisation-cinema.png",
+        "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp",
+        "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
+      ],
+      "target_sha256": [
+        "f7cb952536a407b7802bce507726fe729f3d618e34c8fe2ad0d73332e61e26c6",
+        "da1d94a2a1f818adb4a139593c359e2d88afbfa2cd519bf7de7d5dd00d916a1f",
+        "dc3ace93e42962803312028f29c4d3a8e455d205555a5549f053970aa62bb5c1"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "L’atelier audiovisuel cite acteur, réalisateur et technicien de cinéma. Ni vétérinaire ni architecte n’est proposé dans le texte. Premières versions de la réalisation et de l’architecture explicitement choisies par l’utilisateur, sans intégration des reprises dessinées. Direction de plateau avec scénario et moniteur, vétérinaire examinant un chien et architecte avec plans et maquette : trois métiers distincts. Genre et apparence ne sont pas les critères de réponse.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’atelier audiovisuel cite acteur, réalisateur et technicien de cinéma. Ni vétérinaire ni architecte n’est proposé dans le texte. Premières versions de la réalisation et de l’architecture explicitement choisies par l’utilisateur, sans intégration des reprises dessinées. Direction de plateau avec scénario et moniteur, vétérinaire examinant un chien et architecte avec plans et maquette : trois métiers distincts. Genre et apparence ne sont pas les critères de réponse."
     },
     {
       "key": "delf-a2j-ce-001#3",
@@ -125091,19 +125115,27 @@
         "Technicien automobile",
         "Technicien de laboratoire"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
       "semantic_before_sha256": "29c8a7117f80ad6944e5cc8c3992a28e58304dd4db8c01aedc002b6bfe182b3a",
       "semantic_after_sha256": "29c8a7117f80ad6944e5cc8c3992a28e58304dd4db8c01aedc002b6bfe182b3a",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-technicien-cinema.png",
+        "/lib/images/tcf/qcm-audit/vocab-mecanicien.webp",
+        "/lib/images/tcf/qcm-audit/extension573-technicien-laboratoire.png"
+      ],
+      "target_sha256": [
+        "6e96ce275cee916e5dad5ae4d2eabb3eacde52049ef9413389ffc968626a5912",
+        "f45e9118d97d48a3b61627dacc92938718556c1de8a6df7545929ff7210d81e5",
+        "aa18ba8aaa99c4a0fdfb35167aa69daa5d7b1bfb74fe354c6bb28cc8fc21307a"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "L’atelier 1 nomme le technicien de cinéma. Les deux autres ateliers concernent la pâtisserie et la scène ; ils ne citent aucun technicien automobile ou de laboratoire. Première version de la technicienne de cinéma retenue par l’utilisateur : réglage d’un projecteur sur plateau. Mécanicien existant travaillant sous le capot, puis technicien de laboratoire avec pipette et microscope. Trois actions techniques entières, personnages distincts et variés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’atelier 1 nomme le technicien de cinéma. Les deux autres ateliers concernent la pâtisserie et la scène ; ils ne citent aucun technicien automobile ou de laboratoire. Première version de la technicienne de cinéma retenue par l’utilisateur : réglage d’un projecteur sur plateau. Mécanicien existant travaillant sous le capot, puis technicien de laboratoire avec pipette et microscope. Trois actions techniques entières, personnages distincts et variés."
     },
     {
       "key": "delf-a2j-ce-002#1",
@@ -146165,19 +146197,27 @@
         "Du parfum et du lait",
         "Du désinfectant pour les sols"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_763_candidate_review",
       "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
       "semantic_before_sha256": "c664528317282415453ccc20434d4b3bf0ea7643c578fb73fd74474df8eed9b7",
       "semantic_after_sha256": "c664528317282415453ccc20434d4b3bf0ea7643c578fb73fd74474df8eed9b7",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-eau-savon-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-parfum-lait-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-desinfectant-sols.png"
+      ],
+      "target_sha256": [
+        "16a2b6834b4bd4eea5dca20050622a8678e3471ebbc4224faef8a34dd53695ba",
+        "c05929e73db8128b2f5a21eaacaa329e8678155a8a3ed5675eefab1044fddd4f",
+        "78d9509f32e0bf599c07ac71eedb010f4eb19e346d4a9f452ed4cc6d2661aaaa"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La première consigne demande explicitement de se laver les mains avec de l’eau et du savon. Le parfum, le lait et le désinfectant pour sols ne sont pas indiqués pour ce geste. Trois nouvelles compositions relues : savon et eau claire, parfum à vaporisateur et bouteille de lait, bidon marqué DÉSINFECTANT SOLS avec pictogramme de nettoyage. Les deux duos représentent leurs deux produits ; aucun dosage, date ou montant.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La première consigne demande explicitement de se laver les mains avec de l’eau et du savon. Le parfum, le lait et le désinfectant pour sols ne sont pas indiqués pour ce geste. Trois nouvelles compositions relues : savon et eau claire, parfum à vaporisateur et bouteille de lait, bidon marqué DÉSINFECTANT SOLS avec pictogramme de nettoyage. Les deux duos représentent leurs deux produits ; aucun dosage, date ou montant."
     },
     {
       "key": "delf-a2r-ce-036#3",

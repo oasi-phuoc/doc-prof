@@ -12,6 +12,10 @@ Pour générer ou reprendre une illustration, joindre de vraies images du commit
 
 Les dernières reprises qui renforçaient fortement les contours ont été écartées. Le diagnostic de 171 images à redessiner reposait sur une mauvaise référence et a été retiré ; il ne doit pas servir de liste de génération. Les originaux validés du commit `48a753d8` sont conservés. Les usages du dossier vocabulaire dans CE/CO ont été remplacés ou retirés de variantes ambiguës ; les originaux sont conservés. Voir le rapport global du 7 novembre 2026.
 
+## Choix des métiers du 13 novembre 2026
+
+L’utilisateur a choisi les **premières versions** de la réalisation, de l’architecture et de la technique de cinéma : « Garde pas cette version mais la 1ere », puis « Celle de métier ». Conserver ce rendu pour les prochaines scènes de métiers, avec des personnages variés. Les reprises plus dessinées de ces trois images sont écartées. Le [registre de sélection](choix-versions-metiers-20261113.json) relie ce choix aux empreintes exactes des PNG intégrés ; aucun recadrage ou changement de rendu n’est appliqué aux versions retenues. La référence générale, le paysage 4:3 et les contraintes de sens des réponses restent applicables.
+
 ## Contrôle de diversité des scènes CO
 
 Ne pas copier les personnes d’une référence graphique. Avant génération, attribuer à chaque scène des visages, coiffures, vêtements et silhouettes distincts ; varier naturellement les carnations, genres, âges adultes, morphologies et situations de handicap sur l’ensemble du lot. Vérifier les scènes côte à côte après génération pour repérer un duo récurrent. La diversité s’exprime dans les activités et rôles ordinaires, sans stéréotypes. Conserver les éléments imposés par le dialogue et les questions.

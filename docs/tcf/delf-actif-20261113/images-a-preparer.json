@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "candidate_visual_review": 342,
+      "candidate_visual_review": 332,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
-      "active_reviewed_trio": 28,
+      "active_reviewed_trio": 38,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "candidate_visual_review": 139,
+        "candidate_visual_review": 135,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
-        "active_reviewed_trio": 13,
+        "active_reviewed_trio": 17,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 161,
-        "active_reviewed_trio": 15,
+        "candidate_visual_review": 155,
+        "active_reviewed_trio": 21,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -21753,8 +21753,8 @@
       "semantic_sha256": "479f78327a76bc733cf1db367bc0dfaa197bb318ee91c332289afa9ec68ffcf0",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
       "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -21802,8 +21802,24 @@
           "brief": "Représenter entièrement « Des biscuits » pour « Quels aliments sont cités dans la question sur les achats ? ». Vérifier la transcription du support tcf-delf-actif-a1-046 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+          "sha256": "a6d85d7b468c6ca2fbd7fbe0a0dba2c13a6bfeb5b5feb33ec599f21263a635c9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+          "sha256": "5f1824b19f70aa1f5ee71ebdf88ee8c321fed7c84423d668d4c324406736c6ee"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+          "sha256": "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21814,7 +21830,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "La série demande Où achetez-vous des fruits ? Aucun légume ou biscuit n’est cité dans les autres phrases.",
+        "note": "Groupe de fruits, groupe de légumes et quatre biscuits entiers réutilisés. Le pluriel est conservé dans les trois réponses ; aucune recette, quantité précise ou personne n’est inventée."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-046#4",
@@ -22997,8 +23019,8 @@
       "semantic_sha256": "84f8dfe951d854ae55a7e954a6aacf2e00e429f575b79321d31d15942df0787c",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
       "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -23046,8 +23068,24 @@
           "brief": "Représenter entièrement « Des gouttes » pour « Quel médicament le client demande-t-il aussi ? ». Vérifier la transcription du support tcf-delf-actif-a1-048-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-comprimes.webp",
+          "sha256": "f3745b9d9a870550e1d6644501bf2e29eb94a3f63b4a7096b59954213018e7cd"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-sirop-medical-dessine.webp",
+          "sha256": "08cc20a679d8e73bb899aebbaf635db8b541eb0cde26b13c633edf53ecaa1246"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-gouttes-medicales-dessine.webp",
+          "sha256": "5111918a395833cab4f8496d6ac6bc3a21d89985da6d313532d361613dd70447"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -23058,7 +23096,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "Après le désinfectant et les pansements, le client demande Je peux prendre des comprimés aussi ? Sirop et gouttes ne sont pas demandés.",
+        "note": "Plusieurs comprimés blancs, flacon de sirop avec cuillère et flacon compte-gouttes réutilisés. Les croix vertes distinguent les deux médicaments liquides d’aliments. Le nombre de comprimés dessiné n’est pas une posologie ; la question demande la forme du médicament."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-048-01#9",
@@ -24969,8 +25013,8 @@
       "semantic_sha256": "a6a7c75a9b1ae5e2a4b8a6e3646f5e9eddc45a325ccf43741077fb64bfaf729f",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-05-01.mp3",
       "audio_sha256": "5833ee84e92947999ad267d4e08f3bfedf95d5a76febb7e73a29aabc2e844dc7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -25018,8 +25062,24 @@
           "brief": "Représenter entièrement « Un chapeau » pour « Quel accessoire protège ses yeux du soleil ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp",
+          "sha256": "cd8d28b76764dda7d88781c7fd11efe6d7ed4db5f4901c9af43b1f2e8cd51ab8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+          "sha256": "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+          "sha256": "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25030,7 +25090,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "La personne annonce emporter ses lunettes de soleil sur la Côte d’Azur. Ni casquette ni chapeau n’est cité ; l’énoncé précise la protection des yeux.",
+        "note": "Paire de lunettes à verres sombres, casquette à visière et chapeau à bord réutilisés. Les trois accessoires sont entiers et distincts, sans visage, marque ou couleur imposée par le support."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-050-01-01#1",
@@ -28427,8 +28493,8 @@
       "semantic_sha256": "9cc43b0bcbd6c320601d223f4c60419bbd22a6231d1dddd3bccc852c62eaea54",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
       "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -28476,8 +28542,24 @@
           "brief": "Représenter entièrement « La guitare » pour « Quel instrument la personne qui appelle apprend-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-piano.webp",
+          "sha256": "5bbe9787f9ae1bb09e5e498205ded4508611d133186333919fc00c91ddf36cf3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-violon.webp",
+          "sha256": "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+          "sha256": "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -28488,7 +28570,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "La personne précise Moi je fais du piano. Violon et guitare électrique sont d’autres cours proposés par l’école, pas son instrument personnel.",
+        "note": "Piano droit, violon avec archet et guitare acoustique entiers réutilisés. Le leurre est libellé La guitare sans sous-type : l’image représente cette catégorie, et ne prétend pas reproduire le cours de guitare électrique du support. Les horaires ne sont pas illustrés."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-051-05-01#2",
@@ -34382,8 +34470,8 @@
       "semantic_sha256": "baa93a333b89497e627c6454fbf555858acea8fe9466ac2dc0b8b0f7e8d6d5bd",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-06.mp3",
       "audio_sha256": "fb4b8e02a75f89f618cf910ddd8d1bb8d13b3cde0a0b82ea7dc296eb747929a6",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34391,9 +34479,9 @@
           "correct": true,
           "reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/vocab-creme-alimentaire.webp",
-              "sha256": "ca365a1ad2dd8474740779b58fb6e133701110386889b5cb7419ed9be4c1223b",
-              "label": "La crème",
+              "path": "/lib/images/tcf/qcm-audit/extension573-creme-cosmetique.png",
+              "sha256": "abd2e06828fcd968612270d3595fa337c7500e313e0247aad4c6d601aa0e1045",
+              "label": "Une crème cosmétique",
               "visual_review_required": true
             }
           ],
@@ -34431,8 +34519,24 @@
           "brief": "Représenter entièrement « Un gel douche » pour « Quel produit est offert pour l’achat d’un parfum ? ». Vérifier la transcription du support tcf-delf-actif-a2-005-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-creme-cosmetique.png",
+          "sha256": "abd2e06828fcd968612270d3595fa337c7500e313e0247aad4c6d601aa0e1045"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+          "sha256": "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp",
+          "sha256": "da617e8ef9fb337e9846cc17228152b10329a244acddd4b933debe6ef59035e1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34443,7 +34547,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "Au rayon parfumerie, l’offre est un parfum acheté, une crème offerte. Ni savon ni gel douche n’est offert.",
+        "note": "Nouveau pot de crème cosmétique ouvert et marqué SOINS, savon solide et gel douche à pictogramme de pommeau réutilisés. La crème alimentaire proposée automatiquement est rejetée. Pas de montant, date ou promotion dessinée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-006-01#1",
@@ -54813,8 +54923,8 @@
       "semantic_sha256": "fc13c13ca9d1a0329a6590e4fb93fbebe9a545c717970196bff80160ecf3e509",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-02-01.mp3",
       "audio_sha256": "626d0c0f3229de7ea951a4eadf3833feda4f8989058812ba5e6202b795911252",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -54852,9 +54962,9 @@
           "correct": false,
           "reuse_candidates": [
             {
-              "path": "/lib/images/tcf/qcm-audit/vocab-creme-alimentaire.webp",
-              "sha256": "ca365a1ad2dd8474740779b58fb6e133701110386889b5cb7419ed9be4c1223b",
-              "label": "La crème",
+              "path": "/lib/images/tcf/qcm-audit/extension573-creme-cosmetique.png",
+              "sha256": "abd2e06828fcd968612270d3595fa337c7500e313e0247aad4c6d601aa0e1045",
+              "label": "Une crème cosmétique",
               "visual_review_required": true
             }
           ],
@@ -54862,8 +54972,24 @@
           "brief": "Représenter entièrement « Une crème » pour « Quel cadeau parfumé est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+          "sha256": "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+          "sha256": "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-creme-cosmetique.png",
+          "sha256": "abd2e06828fcd968612270d3595fa337c7500e313e0247aad4c6d601aa0e1045"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54874,7 +55000,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "Les cadeaux proposés sont parfum, bouquet et foulard. Le parfum est la seule réponse citée parmi les trois produits proposés par le QCM.",
+        "note": "Flacon de parfum à vaporisateur et savon solide réutilisés, nouveau pot de crème cosmétique réemployé. Les trois produits conviennent au thème des soins et cadeaux ; la crème alimentaire est écartée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-02-02#1",
@@ -56497,8 +56629,8 @@
       "semantic_sha256": "4883b18943910c7e0c0aee905664e4533cc6c1cefa5c3c39535f67c15c693488",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
       "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -56508,12 +56640,6 @@
             {
               "path": "/lib/images/tcf/co/bg/patisserie.webp",
               "sha256": "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6",
-              "label": "Une pâtisserie",
-              "visual_review_required": true
-            },
-            {
-              "path": "/lib/images/tcf/qcm-audit/vocab-patisserie.webp",
-              "sha256": "0416837f13c598e6a8f1e1892021350dd8ec52a121ffde13464820a915b0931f",
               "label": "Une pâtisserie",
               "visual_review_required": true
             }
@@ -56552,8 +56678,24 @@
           "brief": "Représenter entièrement « Une pharmacie » pour « Dans quel magasin la personne veut-elle entrer ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/patisserie.webp",
+          "sha256": "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+          "sha256": "db63a77e78367d3ede4c88a3366c7ab8c142146f1076c9b7c3995ae4e2c44eeb"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+          "sha256": "620870f481022e883cabb486221196bed0137eadd45c47c808c55d9fd847b388"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -56564,7 +56706,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "La personne veut entrer dans la pâtisserie pour prendre un gâteau et demande de garder son chien pendant ce temps. Librairie et pharmacie ne sont pas nommées.",
+        "note": "Vraie boutique de pâtisserie à vitrine et caisse réutilisée, pas le mille-feuille isolé proposé par le même mot. Librairie avec livres et caisse, pharmacie avec médicaments et croix verte relues. Le QCM porte sur le magasin ; aucune apparence du client ou du chien n’est ajoutée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-04-03#4",
@@ -59329,8 +59477,8 @@
       "semantic_sha256": "e4e366d66ec6b4b99e9540871cb4edcd119496cda368ff858ae7b3ad5339cb7c",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
       "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -59340,12 +59488,6 @@
             {
               "path": "/lib/images/tcf/co/bg/patisserie.webp",
               "sha256": "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6",
-              "label": "Une pâtisserie",
-              "visual_review_required": true
-            },
-            {
-              "path": "/lib/images/tcf/qcm-audit/vocab-patisserie.webp",
-              "sha256": "0416837f13c598e6a8f1e1892021350dd8ec52a121ffde13464820a915b0931f",
               "label": "Une pâtisserie",
               "visual_review_required": true
             }
@@ -59384,8 +59526,24 @@
           "brief": "Représenter entièrement « Une pharmacie » pour « En face de quel magasin Chloé habite-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/patisserie.webp",
+          "sha256": "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+          "sha256": "db63a77e78367d3ede4c88a3366c7ab8c142146f1076c9b7c3995ae4e2c44eeb"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+          "sha256": "620870f481022e883cabb486221196bed0137eadd45c47c808c55d9fd847b388"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -59396,7 +59554,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "Chloé décrit une grande pâtisserie au coin de la rue puis dit J’habite en face. Aucune librairie ou pharmacie ne sert de repère.",
+        "note": "Même trio de magasins réutilisé après lecture de cette autre source. La boutique identifie la catégorie pâtisserie ; elle ne prétend pas reproduire le plan de la rue, le bâtiment blanc ou son adresse. Pas de gâteau seul substitué au magasin."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-03-01#7",
@@ -59981,8 +60145,8 @@
       "semantic_sha256": "043adcb90a2311e1eb82b9dde626c8552f5defedbf9333bb4057776f0b4f5039",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
       "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -60030,8 +60194,24 @@
           "brief": "Représenter entièrement « Un gel douche » pour « Quel autre produit la cliente demande-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-04-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
+          "sha256": "1ceef03705d7a53c2d204752ebae060f78bb9c17e241c240a7f997307f0ff78a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+          "sha256": "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp",
+          "sha256": "da617e8ef9fb337e9846cc17228152b10329a244acddd4b933debe6ef59035e1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -60042,7 +60222,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "Après le shampoing, la cliente demande Et ce dentifrice il est bon aussi ? Le vendeur ne le connaît pas. Savon et gel douche ne sont pas demandés.",
+        "note": "Tube de dentifrice à pictogramme de dent et pâte visible, savon solide et gel douche à pictogramme de douche réutilisés. Trois produits d’hygiène distincts et entiers, sans marque, prix ou dose."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-04-02#4",
@@ -61706,8 +61892,8 @@
       "semantic_sha256": "962364c3ca872536f1d9e343e64def62a83b4666bba367627ab905decdf6c909",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-05.mp3",
       "audio_sha256": "5c39dabcd052213b9e0e5612d0b7c1a5f744e80b412c01ddc79f761e7d6580c8",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -61755,8 +61941,24 @@
           "brief": "Représenter entièrement « La montre » pour « Quel accessoire faut-il retirer à certains moments ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-01-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+          "sha256": "e25cb11740e390c4adfdbfce7acca0c879814113e3f83b02bd66d53d9dfe3772"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+          "sha256": "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+          "sha256": "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -61767,7 +61969,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-metiers-sports-hygiene-20261113.json",
+        "reason": "L’annonce demande d’enlever les écouteurs pendant le décollage et l’atterrissage pour les consignes de sécurité. Lunettes et montre ne sont pas concernées.",
+        "note": "Paire d’écouteurs filaires, paire de lunettes de vue et montre bracelet réutilisées. Le support ne précise pas sans fil ; la paire existante suffit. La question ne porte pas sur l’heure de la montre ; aucun horaire n’est ajouté à la source."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-01-05#3",
@@ -74814,7 +75022,14 @@
           "id": "c",
           "label": "Architecte",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png",
+              "sha256": "dc3ace93e42962803312028f29c4d3a8e455d205555a5549f053970aa62bb5c1",
+              "label": "Architecte",
+              "visual_review_required": true
+            }
+          ],
           "asset": "dd66a82dbfbf2044",
           "brief": "Représenter entièrement « Architecte » pour « Quel métier son grand-père exerçait-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -106727,12 +106942,6 @@
         {
           "path": "/lib/images/tcf/co/bg/patisserie.webp",
           "sha256": "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6",
-          "label": "Une pâtisserie",
-          "visual_review_required": true
-        },
-        {
-          "path": "/lib/images/tcf/qcm-audit/vocab-patisserie.webp",
-          "sha256": "0416837f13c598e6a8f1e1892021350dd8ec52a121ffde13464820a915b0931f",
           "label": "Une pâtisserie",
           "visual_review_required": true
         }

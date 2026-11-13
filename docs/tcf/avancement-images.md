@@ -6,7 +6,9 @@
 
 La génération des images adaptées est ajoutée aux tâches des 346 nouveaux supports DELF Actif, soit 1 663 questions. Le [plan complémentaire](delf-actif-20261113/images-a-preparer.md) distingue les trios actifs, les candidats à vérifier et les réponses maintenues en texte. Ce lot complète le reliquat historique sans les confondre.
 
-Le dernier lot ajoute vingt trios : quatre historiques et seize des nouveaux audios, soit dix A1 et dix A2. Huit nouveaux PNG exacts 4:3 et 52 réemplois d’images examinées ; 386 trios historiques restent à préparer. Les nouveaux audios comptent 28 trios actifs au total. Le [registre de relecture](revue-trios-documents-desserts-transports-20261113.json) conserve les sources et les raisons du choix de chaque image.
+Le lot précédent ajoute vingt trios : quatre historiques et seize des nouveaux audios, soit dix A1 et dix A2. Huit nouveaux PNG exacts 4:3 et 52 réemplois d’images examinées ; 386 trios historiques restent à préparer. Les nouveaux audios comptent 28 trios actifs au total. Le [registre de relecture](revue-trios-documents-desserts-transports-20261113.json) conserve les sources et les raisons du choix de chaque image.
+
+Le dernier lot ajoute **15 trios** (six A1, neuf A2), avec dix nouveaux PNG 4:3 et 34 réemplois. Les premières versions des métiers sont retenues explicitement par l’utilisateur ([sélection](choix-versions-metiers-20261113.json)). Le reliquat historique passe à **381 trios** ; les nouveaux audios comptent **38 trios actifs**, 332 candidats concrets à vérifier et 1 021 questions à examiner en contexte. Voir la [relecture du lot](revue-trios-metiers-sports-hygiene-20261113.json) et la [comparaison des banques](verification-trios-metiers-sports-hygiene-20261113.json).
 
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
