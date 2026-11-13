@@ -5,8 +5,8 @@
 - 2 080 types de catalogue ; 2 112 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 51 layouts observés sur 54 déclarés. `grammar`, `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
-- 714 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 72 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 398 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 716 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 74 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
+- 1 396 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
@@ -32,6 +32,7 @@
 | Associations audio | Une question par enregistrement, mots ou images source, correspondances vérifiées | Repli guidé pour un audio de mot remplaçant une syllabe ; six choix source maximum |
 | Paires de vocabulaire | Micro-questions avec propositions source ; mot complet vérifié pour les parties à compléter | Associations indépendantes, sans élimination des paires déjà traitées |
 | Jeux imprimables Vocabulaire et Mémory | Une micro-question image–mot par numéro de paire ; groupes de six paires au maximum ; mots déjà associés désactivés sans déplacer les cartes ; reprise, bilan par groupe et compétition | Images et mots doivent être distincts pour la correction automatique ; ambiguïtés guidées ; retournement M11 encore ouvert ; ADR 0036 et 0037 |
+| Jeux imprimables Devinettes et Intrus | Indices reliés aux mots par les numéros recto/verso ; deux à six réponses source ; groupes Intrus avec corrigé explicite conservé par le générateur | Indices génériques absents, indices partagés guidés ; anciennes planches Intrus figées sans clé à régénérer ; aucune règle inventée ; ADR 0038 |
 | Phrases à ordonner | Deux à six jetons source manipulables, modèle séparé, appréciation humaine ; layouts `phrase-order` et `order` à consigne de phrase explicite | Phrases longues ou incohérentes signalées ; aucune troncature et aucun ordre alternatif déclaré faux automatiquement ; ADR 0028 |
 | Dossiers complets | Explication de non-compatibilité | Ouvrir une fiche individuelle |
 | Autres layouts | Motif explicite, visible dans la préparation | Ne sont pas masqués par domaine |
@@ -49,3 +50,5 @@ La banque de logique importée contient 206 `correctIndex` initialisés à 0 fau
 Les deux familles de jeux imprimables produisent respectivement neuf et quatre questions dans le tirage témoin. La hausse du nombre de types comprend aussi le nouvel exercice de grammaire intégré depuis `main` ; aucun adaptateur générique n’est déduit de cet ajout. Voir [ADR 0036](adr-0036-paires-imprimees-image-mot.md).
 
 Le [complément M06](adr-0037-groupes-associations.md) ajoute les groupes progressifs aux deux familles imprimables, sans changer le nombre de variantes déjà comptées. Les questions passées restent disponibles ; les paires corrigées sont conservées lors de la reprise. La règle est également imposée par le moteur de compétition et vérifiée après redémarrage du vrai Worker.
+
+Les [Devinettes et Intrus](adr-0038-devinettes-et-intrus.md) ajoutent deux autres familles. Le tirage de l’inventaire fournit quatre devinettes avec un indice et neuf groupes Intrus ; les cinq indices génériques manquants sont signalés. La vérification des 600 configurations du lot utilise le thème des fruits et ne déclare pas les autres thèmes relus pédagogiquement.

@@ -15,6 +15,7 @@ import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
 import { adaptRecognition } from './recognition'
 import { adaptPrintablePairs } from './printable-pairs'
+import { adaptPrintableRiddles } from './printable-riddles'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -112,6 +113,8 @@ export function convertRecipe(
         const printablePairs=adaptPrintablePairs(block.items,block.exerciseType,
           (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}),
           src=>recipe.imageOverrides?.[src]??src)
+        const printableRiddles=adaptPrintableRiddles(block.items,block.exerciseType,
+          (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}))
         block.items.forEach((item, itemIndex) => {
           const base = (part = 0): Question => ({
             id: `p${pageIndex}b${blockIndex}i${itemIndex}s${part}-${hash(`${recipe.seed}:${block.exerciseType}:${canonicalJson(item)}`)}`,
@@ -225,6 +228,18 @@ export function convertRecipe(
               q.compatibility=entry.teacherLed?'teacher-led':'assisted'
               if(entry.group)q.matchingGroup={groupId:`pairs-p${pageIndex}b${blockIndex}i${itemIndex}g${entry.group.number}`, ...entry.group}
               add(q,entry.model,entry.correctId)
+            }
+            return
+          }
+          const riddles = printableRiddles?.get(itemIndex)
+          if (riddles) {
+            riddles.issues.forEach(reject)
+            for (const entry of riddles.items) {
+              const q = base(entry.part)
+              q.prompt = entry.prompt; q.instruction = entry.instruction; q.choices = entry.choices
+              q.mode = entry.teacherLed ? 'oral' : 'choice'
+              q.compatibility = entry.teacherLed ? 'teacher-led' : 'assisted'
+              add(q, entry.model, entry.correctId)
             }
             return
           }

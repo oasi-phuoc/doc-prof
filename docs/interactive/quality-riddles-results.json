@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-13",
+  "baseline": "1c427370d0a2002e31b5b7a780ad6f45418512a9",
+  "scope": "Devinettes et Intrus des jeux imprimables dans les modes Classe, Solo et compétition ; cartes illustrées adaptées au petit téléphone.",
+  "tests": {
+    "newTests": 8,
+    "newFocusedPassed": 8,
+    "fullSuitePassed": 282,
+    "failed": 0,
+    "realSourceConfigurations": 600,
+    "levels": [
+      "facile",
+      "moyen",
+      "avance"
+    ],
+    "sourceTheme": "fruits",
+    "mergedSourceAdapterAndRiddleTests": 15,
+    "mergedAudioCatalogueTests": 6
+  },
+  "coverage": {
+    "families": [
+      "jeux-devinettes",
+      "jeux-intrus"
+    ],
+    "playableVariants": 716,
+    "inventoryVariants": 2112,
+    "generationErrors": 8,
+    "riddlesInInventoryWitness": 4,
+    "oddWordGroupsInInventoryWitness": 9,
+    "missingGenericCluesInInventoryWitness": 5,
+    "note": "Couverture structurelle ; aucune validation pédagogique globale des autres thèmes."
+  },
+  "browser": {
+    "passed": [
+      "printable-riddles-browser",
+      "readability-browser",
+      "printable-pairs-browser",
+      "a4-regression"
+    ],
+    "all50StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "class": "Vote collectif sans sélection au tableau ; source et corrigé conservés après rechargement et navigation ; bonne carte en couleur et autres cartes grises.",
+    "solo": "Bonne réponse, erreur et expiration ; correction et passage automatiques après une seconde ; bilan de trois questions.",
+    "competition": "Deux mascottes et deux questions sans réseau après préparation des images ; contenu des blobs comparé aux images source ; corrigé privé jusqu’à la fin du tour des deux joueurs.",
+    "accessibility": "Axe passe sur les nouvelles questions et les parcours de lisibilité.",
+    "serverWritesToFicheApi": 0,
+    "errors": []
+  },
+  "checks": {
+    "types": "tsc -b réussi",
+    "lint": "réussi avec avertissements préexistants ; aucun dans les fichiers du nouveau jeu",
+    "productionBuild": "réussi",
+    "bundleBudgets": {
+      "landing": {
+        "gzip": 121679,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 140605,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 142756,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 172523,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2747760,
+        "maximumGzip": 3145728
+      }
+    },
+    "changedFilesSecrets": "Voir secrets-results.json pour le contrôle Gitleaks du périmètre des modifications."
+  },
+  "paper": {
+    "sourceGenerator": "Ajout du corrigé Intrus déjà choisi par le générateur, sans appel aléatoire supplémentaire ni changement des mots, positions ou dos.",
+    "intrusScreenshotIdenticalWithAndWithoutAnswerField": true,
+    "intrusScreenshotSha256": "05e8911852349282b5cda860f9ab19ddca64f90eca44562a1ecb4c518ebdc9d9",
+    "a4Witness": {
+      "identicalScreenshot": true,
+      "dimensions": [
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        },
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        }
+      ],
+      "draftLaunch": "passed",
+      "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+      "viewport": "1366x1000"
+    },
+    "a4WitnessScreenshotSha256": "2c70ef917508f9ea7ac0dcee1ddbf012aaa6137ec7aca5adc5d49841dd135331"
+  },
+  "limits": [
+    "Les formules génériques sans indice sont signalées ; un indice commun à plusieurs mots devient guidé, sans verdict automatique.",
+    "Les anciennes planches Intrus figées sans corrigé doivent être régénérées depuis leur modèle ; aucun corrigé n’est déduit du thème.",
+    "Le mot intrus est conservé depuis la source ; aucune règle d’explication absente de la source n’est inventée.",
+    "Les contrôles sur 600 configurations utilisent le thème des fruits ; les autres thèmes ne sont pas déclarés relus pédagogiquement.",
+    "M08, M11 et les autres familles non converties restent ouverts.",
+    "Aucune nouvelle synthèse audio, configuration cloud ou publication d’environnement effectuée."
+  ]
+}

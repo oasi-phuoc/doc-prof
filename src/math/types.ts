@@ -752,6 +752,8 @@ export type MathItem = {
       imageSrc?: string
       lines?: string[]
       scatter?: Array<{ text: string; rotate: number; x: number; y: number }>
+      /** Corrigé source Intrus ; absent des données publiques du mode jeu. */
+      intrusAnswer?: string
       variant?: string
       badge?: string
       textRight?: string
