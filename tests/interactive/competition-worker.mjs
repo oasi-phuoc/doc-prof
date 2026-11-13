@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 import { spawn } from 'node:child_process'
-import { mkdtemp, readFile, rm, stat, writeFile } from 'node:fs/promises'
+import { mkdtemp, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 const root = process.cwd(), api = path.join(root, 'api/fiches'), requireApi = createRequire(path.join(api, 'package.json'))
@@ -51,6 +51,35 @@ try {
   assert.equal(firstPair.status,200,firstPair.body.error);assert.equal(firstPair.body.view.phase,'correction')
   assert.equal((await request(`/rooms/${matchingCode}/host`,{action:'next',index:0,phase:'correction'},matchingHost)).status,200)
   assert.equal((await request(`/rooms/${matchingCode}/host`,{action:'pause'},matchingHost)).status,200)
+  const transcript='Texte privé de la piste : le rendez-vous est à midi.'
+  const listeningQuiz={id:'real-transcripts',title:'Écoute',items:[0,1].map(i=>({question:{id:`source-listening-${i}`,prompt:'Quelle réponse ?',audio:`${origin}/listen.mp3`,images:[],choices:[{id:'yes',text:'midi'},{id:'no',text:'demain'}]},correctChoiceId:'yes',transcript}))}
+  const listening=await request('/rooms',{quiz:listeningQuiz,settings:{...settings,showTranscripts:true}},teacherKey)
+  assert.equal(listening.status,201,listening.body.error)
+  const listeningCode=listening.body.code,listeningHost=listening.body.token
+  const listeners=[]
+  for(const avatarId of ['panda','fox'])listeners.push((await request(`/rooms/${listeningCode}/join`,{avatarId})).body)
+  await request(`/rooms/${listeningCode}/host`,{action:'start'},listeningHost)
+  for(const id of ['q1','q2']){
+    assert.ok(!JSON.stringify((await request(`/rooms/${listeningCode}`,undefined,listeners[0].token)).body.view).includes(transcript))
+    await request(`/rooms/${listeningCode}/answer`,{questionId:id,choiceId:'c0'},listeners[0].token)
+    assert.ok(!JSON.stringify((await request(`/rooms/${listeningCode}`,undefined,listeners[0].token)).body.view).includes(transcript))
+    const done=await request(`/rooms/${listeningCode}/answer`,{questionId:id,choiceId:'c1'},listeners[1].token)
+    assert.equal(done.body.view.transcript,id==='q2'?transcript:undefined)
+    if(id==='q1')await request(`/rooms/${listeningCode}/host`,{action:'next',index:0,phase:'correction'},listeningHost)
+  }
+  assert.equal((await request(`/rooms/${listeningCode}/host`,{action:'pause',index:0,phase:'correction'},listeningHost)).status,409)
+  assert.equal((await request(`/rooms/${listeningCode}/host`,{action:'pause',index:1,phase:'correction'},listeningHost)).status,200)
+  const wordQuiz={id:'real-word-classification',title:'Catégories',items:[0,1].map(target=>({question:{id:`word-${target}`,prompt:'Quelle catégorie ?',images:[],wordClassification:{tokens:['Le','chat'],target},choices:[{id:'source-det',text:'Déterminants'},{id:'source-noun',text:'Noms'}]},correctChoiceId:target?'source-noun':'source-det'}))}
+  const forgedWords=structuredClone(wordQuiz);forgedWords.items[0].question.wordClassification.categories=['determinant','nom']
+  assert.equal((await request('/rooms',{quiz:forgedWords,settings},teacherKey)).status,400)
+  const wordRoom=await request('/rooms',{quiz:wordQuiz,settings},teacherKey)
+  assert.equal(wordRoom.status,201,wordRoom.body.error)
+  const wordCode=wordRoom.body.code,wordHost=wordRoom.body.token,wordPlayer=(await request(`/rooms/${wordCode}/join`,{avatarId:'koala'})).body.token
+  await request(`/rooms/${wordCode}/host`,{action:'start'},wordHost)
+  const publicWord=(await request(`/rooms/${wordCode}`,undefined,wordPlayer)).body.view
+  assert.deepEqual(publicWord.question.wordClassification,{tokens:['Le','chat'],target:0})
+  assert.equal(publicWord.correctChoiceId,undefined);assert.ok(!JSON.stringify(publicWord).includes('source-det'))
+  await request(`/rooms/${wordCode}/host`,{action:'pause'},wordHost)
   await runtime.dispose(); runtime = new Miniflare(convertV4MiniflareOptions(options))
   const restored = await request(`/rooms/${code}`, undefined, first.token)
   assert.equal(restored.status, 200); assert.equal(restored.body.view.paused, true)
@@ -62,8 +91,19 @@ try {
   assert.equal((await request(`/rooms/${matchingCode}/answer`,{questionId:'q2',choiceId:'c0'},learner)).status,400)
   const matched=await request(`/rooms/${matchingCode}/answer`,{questionId:'q2',choiceId:'c1'},learner)
   assert.equal(matched.status,200);assert.equal(matched.body.view.players[0].score,2000)
+  const restoredListening=(await request(`/rooms/${listeningCode}`,undefined,listeners[0].token)).body.view
+  assert.equal(restoredListening.paused,true);assert.equal(restoredListening.transcript,transcript)
+  assert.equal(restoredListening.question.transcript,undefined);assert.equal(restoredListening.quiz,undefined)
+  assert.deepEqual(restoredListening.players.map(p=>p.score),[2000,0])
+  const restoredWord=(await request(`/rooms/${wordCode}`,undefined,wordPlayer)).body.view
+  assert.equal(restoredWord.paused,true);assert.deepEqual(restoredWord.question.wordClassification,{tokens:['Le','chat'],target:0});assert.equal(restoredWord.correctChoiceId,undefined)
+  await request(`/rooms/${wordCode}/host`,{action:'resume'},wordHost)
+  const wordAnswer=await request(`/rooms/${wordCode}/answer`,{questionId:'q1',choiceId:'c0'},wordPlayer)
+  assert.equal(wordAnswer.status,200);assert.equal(wordAnswer.body.view.players[0].score,1000)
   const report = { runtime: 'real workerd through Miniflare, SQLite-backed Durable Objects', workerBytes: (await stat(path.join(compiled, 'index.js'))).size,
     quiz: '60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime', authority: 'teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view', grading: '1000 and 0 points derived by server', restart: 'new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage', matching:'Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private', productionDeployment: false }
+  report.transcripts='Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.'
+  report.wordClassification='Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading.'
   await writeFile('docs/interactive/competition-worker-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report, null, 2))
 } finally { await runtime?.dispose(); await rm(temporary, { recursive: true, force: true }) }

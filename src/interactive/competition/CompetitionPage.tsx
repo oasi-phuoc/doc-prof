@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { Game, Question } from '../domain/types'
 import type { ShapeId } from '../domain/palette'
 import type { TimerSettings } from '../domain/settings'
 import { IconButton } from '../components/Icons'
 import { QuestionStage } from '../components/QuestionStage'
 import { AudioPlayer } from '../components/Media'
+import { TextReadingDialog } from '../components/TextReadingDialog'
 import { LoadingScreen } from '@/components/LoadingScreen'
 import { CompetitionAvatarPicker, CompetitionPortrait } from './Avatar'
 import { CompetitionArt } from './artwork'
@@ -13,18 +14,11 @@ import { competitionQuiz, competitionStep, competitionView, type CompetitionActi
 import { answerRoom, competitionAvailable, createRoom, joinRoom, readRoom, readRoomCapability, roomCommand, saveRoomCapability, type RoomCapability } from './client'
 import { newLocalCompetition, prepareLocalCompetition, readLocalCompetition, writeLocalCompetition } from './local'
 import { hasLocalCompetition } from './storage-key'
+import { CompetitionShell } from './CompetitionShell'
 import './competition.css'
+const DuelSetup = lazy(() => import('../duel/DuelSetup'))
 
 function navigate(path: string) { history.pushState({}, '', path); window.dispatchEvent(new PopStateEvent('popstate')) }
-function CompetitionShell({ children, title = 'Compétition', playing = false, onExit }: { children: ReactNode; title?: string; playing?: boolean; onExit: () => void }) {
-  const [fullscreen, setFullscreen] = useState(false), [contrast, setContrast] = useState(false)
-  useEffect(() => { const changed = () => setFullscreen(!!document.fullscreenElement); document.addEventListener('fullscreenchange', changed); return () => document.removeEventListener('fullscreenchange', changed) }, [])
-  return <div className={`ci-app ci-competition${playing ? ' ci-competition-playing' : ''}${fullscreen ? ' ci-immersive' : ''}${contrast ? ' ci-high-contrast' : ''}`}>
-    <header className="ci-header ci-no-print"><div className="ci-header-start"><a href="/generateur" className="brand" aria-label="ClairFLE"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>Clair<span className="brand-accent">FLE</span></a><span className="ci-competition-heading">{title}</span></div>
-      <nav className="ci-toolbar ci-header-tools" aria-label="Affichage de la compétition"><IconButton icon="contrast" label="Contraste" aria-pressed={contrast} onClick={() => setContrast((value) => !value)} /><IconButton data-ci-fullscreen icon="expand" label={fullscreen ? 'Quitter le plein écran' : 'Plein écran'} aria-pressed={fullscreen} onClick={() => { setFullscreen(!fullscreen); if (fullscreen && document.fullscreenElement) void document.exitFullscreen().catch(() => {}); else if (!fullscreen) void document.documentElement.requestFullscreen?.().catch(() => {}) }} /><IconButton icon="exit" label="Quitter la compétition" onClick={onExit} /></nav>
-    </header>{children}
-  </div>
-}
 function Scores({ view, remove }: { view: RoomView; remove?: (id: string) => void }) {
   return <ol className="ci-competition-scores" aria-label="Classement">{view.players.map((player) => <li key={player.id} data-player-id={player.id}>
     <b className="ci-competition-rank">{player.rank}</b><CompetitionPortrait avatarId={player.avatarId} seat={player.seat} outcome={view.phase === 'correction' ? player.lastCorrect : undefined} />
@@ -45,8 +39,16 @@ function RoomJoinLink({ code }: { code: string }) {
 }
 function RoomGame({ view, host, local = false, busy = false, now, command, answer, addPlayer }: { view: RoomView; host: boolean; local?: boolean; busy?: boolean; now: number; command: (action: string, playerId?: string) => void; answer: (choiceId?: string) => void; addPlayer?: (avatar: CompetitionAvatar) => void }) {
   const [avatar, setAvatar] = useState<CompetitionAvatar>('panda'), [scoresAt, setScoresAt] = useState<number | null>(null), [finishAt, setFinishAt] = useState<number | null>(null)
+  const [readingAt, setReadingAt] = useState<number | null>(null)
   const q = view.question, self = view.players.find((player) => player.id === view.self?.id), turn = view.players.find((player) => player.id === view.turnPlayerId)
   const revealed = view.phase === 'correction'
+  const transcript = revealed ? view.transcript : undefined
+  if (readingAt !== null && (readingAt !== view.index || !transcript || host && !view.paused && !busy)) setReadingAt(null)
+  const reviewButton = transcript ? <IconButton key="transcript" icon="transcript" label="Lire la transcription" aria-haspopup="dialog" aria-disabled={busy || undefined} onClick={() => {
+    if (busy) return
+    if (host && !view.paused) command('pause')
+    setReadingAt(view.index)
+  }} /> : undefined
   const seconds = view.paused ? Math.ceil((view.remainingMs ?? 0) / 1000) : view.deadline === undefined ? null : Math.max(0, Math.ceil((view.deadline - now) / 1000))
   const publicQuestion = useMemo((): Question | undefined => q ? { ...q, source: { page: 0, block: 0, item: view.index, part: 0, exerciseType: 'competition' }, title: view.title, instruction: '', mode: 'choice', compatibility: 'auto' } : undefined, [q, view.index, view.title])
   useEffect(() => { document.querySelector<HTMLElement>('.ci-competition-main h1')?.focus({ preventScroll: true }) }, [view.phase, q?.id])
@@ -77,8 +79,11 @@ function RoomGame({ view, host, local = false, busy = false, now, command, answe
     {host && <div className="ci-toolbar ci-competition-host-controls"><IconButton icon={view.paused ? 'play' : 'pause'} label={view.paused ? 'Reprendre' : 'Pause'} disabled={busy} onClick={() => command(view.paused ? 'resume' : 'pause')} />
       {!view.paused && (revealed || !local) && <button className="ci-primary" disabled={busy} onClick={() => command('next')}>{revealed ? 'Question suivante' : 'Afficher la correction'}</button>}
       {local && !revealed && !view.paused && <button disabled={busy} onClick={() => answer()}>Passer mon tour</button>}
+      {reviewButton}
       <IconButton icon="finish" label="Terminer la compétition" disabled={busy} onClick={() => setFinishAt(view.index)} />
     </div>}
+    {!host && reviewButton && <div className="ci-competition-review-controls">{reviewButton}</div>}
+    {readingAt === view.index && transcript && (!host || view.paused) && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingAt(null)} />}
     {scoresAt === view.index && revealed && <ScoresDialog view={view} close={() => setScoresAt(null)} />}
     {finishAt === view.index && <ConfirmFinish confirm={() => { setFinishAt(null); command('finish') }} close={() => setFinishAt(null)} />}
   </main>
@@ -90,8 +95,9 @@ function ConfirmFinish({ confirm, close }: { confirm: () => void; close: () => v
 }
 function LocalGame({ quiz, settings, colors, shapes, onExit, onNewPart }: { quiz: CompetitionQuiz; settings: CompetitionSettings; colors: string[]; shapes: ShapeId[]; onExit: () => void; onNewPart?: () => void }) {
   const [state, setState] = useState(() => readLocalCompetition(quiz, settings, colors, shapes)), current = useRef(state), [now, setNow] = useState(Date.now)
-  const dispatch = useCallback((action: CompetitionAction) => {
+  const dispatch = useCallback((action: CompetitionAction, target?: Pick<RoomView, 'index' | 'phase'>) => {
     const previous = current.current, at = Date.now()
+    if (target && (target.index !== previous.room.index || target.phase !== previous.room.phase || !previous.room.paused && previous.room.deadline !== undefined && at >= previous.room.deadline)) return
     try {
       const room = competitionStep(previous.room, action, at)
       if (room === previous.room) return
@@ -107,7 +113,7 @@ function LocalGame({ quiz, settings, colors, shapes, onExit, onNewPart }: { quiz
   const reset = () => { const next = newLocalCompetition(quiz, settings, colors, shapes); writeLocalCompetition(next.journal); current.current = next; setState(next) }
   return <CompetitionShell title="Défi local" playing={!['lobby', 'finished'].includes(view.phase)} onExit={() => { dispatch({ type: 'pause' }); onExit() }}>
     {state.warning && <p className="ci-notice" role="status">{state.warning} <button onClick={reset}>Recommencer le défi local</button></p>}
-    <RoomGame view={view} now={now} host local command={(type, playerId) => { if (type === 'remove') dispatch({ type, playerId: playerId! }); else dispatch({ type: type as 'start' | 'begin-turn' | 'pause' | 'resume' | 'next' | 'finish' }) }} addPlayer={(avatarId) => dispatch({ type: 'join', avatarId })} answer={(choiceId) => dispatch({ type: 'answer', questionId: view.question!.id, playerId: view.turnPlayerId!, ...(choiceId ? { choiceId } : {}) })} />
+    <RoomGame view={view} now={now} host local command={(type, playerId) => { if (type === 'remove') dispatch({ type, playerId: playerId! }); else dispatch({ type: type as 'start' | 'begin-turn' | 'pause' | 'resume' | 'next' | 'finish' }, ['pause', 'resume'].includes(type) ? { index: view.index, phase: view.phase } : undefined) }} addPlayer={(avatarId) => dispatch({ type: 'join', avatarId })} answer={(choiceId) => dispatch({ type: 'answer', questionId: view.question!.id, playerId: view.turnPlayerId!, ...(choiceId ? { choiceId } : {}) })} />
     {view.phase === 'finished' && <button className="ci-primary ci-competition-restart" onClick={onNewPart ?? reset}>Nouvelle compétition</button>}
   </CompetitionShell>
 }
@@ -138,13 +144,16 @@ function RemoteGame({ access, onExit }: { access: RoomCapability; onExit: () => 
   </CompetitionShell>
 }
 
-export function CompetitionSetup({ game, timer, colors, shapes, onExit, onNewPart }: { game: Game; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; onExit: () => void; onNewPart?: () => void }) {
-  const quiz = useMemo(() => competitionQuiz(game, location.origin), [game])
-  const [kind, setKind] = useState<'setup' | 'local'>('setup'), [speedPoints, setSpeedPoints] = useState(true), [teacherKey, setTeacherKey] = useState(''), [busy, setBusy] = useState(false), [error, setError] = useState('')
-  const settings = useMemo(() => ({ ...timer, speedPoints }), [timer, speedPoints])
+export function CompetitionSetup({ game, timer, colors, shapes, showTranscripts: initialTranscripts = true, onExit, onNewPart }: { game: Game; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; showTranscripts?: boolean; onExit: () => void; onNewPart?: () => void }) {
+  const [showTranscripts, setShowTranscripts] = useState(initialTranscripts)
+  const hasTranscripts = game.questions.some(q => q.audio && game.corrections[q.id]?.transcript)
+  const quiz = useMemo(() => competitionQuiz(game, location.origin, hasTranscripts && showTranscripts), [game, hasTranscripts, showTranscripts])
+  const [kind, setKind] = useState<'setup' | 'local' | 'duel' | 'teams'>('setup'), [speedPoints, setSpeedPoints] = useState(true), [teacherKey, setTeacherKey] = useState(''), [busy, setBusy] = useState(false), [error, setError] = useState('')
+  const settings = useMemo(() => ({ ...timer, speedPoints, ...(hasTranscripts ? { showTranscripts } : {}) }), [timer, speedPoints, hasTranscripts, showTranscripts])
   const [availability, setAvailability] = useState<boolean | null>(null)
   useEffect(() => { const controller = new AbortController(); void competitionAvailable(controller.signal).then((ready) => { if (!controller.signal.aborted) setAvailability(ready) }); return () => controller.abort() }, [])
   if (kind === 'local') return <LocalPreparation quiz={quiz} settings={settings} colors={colors} shapes={shapes} onExit={onExit} onNewPart={onNewPart} />
+  if (kind === 'duel' || kind === 'teams') return <Suspense fallback={<LoadingScreen title="Préparation du duel" />}><DuelSetup quiz={quiz} timer={timer} colors={colors} shapes={shapes} mode={kind} onExit={() => setKind('setup')} onNewPart={onNewPart} /></Suspense>
   const online = () => {
     setBusy(true); setError('')
     void createRoom(quiz, settings, colors, shapes, teacherKey).then((reply) => { saveRoomCapability({ code: reply.code, token: reply.token, role: 'host', returnTo: location.pathname + location.search }); setTeacherKey(''); navigate(`/interactif/salle/${reply.code}`) }, (reason: unknown) => setError(reason instanceof Error ? reason.message : 'Création impossible.')).finally(() => setBusy(false))
@@ -153,10 +162,13 @@ export function CompetitionSetup({ game, timer, colors, shapes, onExit, onNewPar
     {quiz.items.length !== game.questions.length && <p role="status">Les activités guidées restent dans les modes Classe et Solo. La compétition utilise les questions à réponse vérifiable.</p>}
     <p>Une mascotte et un numéro par joueur, sans nom ni pseudo. Une bonne réponse rapporte jusqu’à 1 000 points ; une erreur ou le temps écoulé rapporte 0.</p>
     <label><input type="checkbox" checked={speedPoints} onChange={(event) => setSpeedPoints(event.target.checked)} />Bonus de rapidité</label>
+    {hasTranscripts && <div className="ci-competition-transcript-setting"><label><input type="checkbox" checked={showTranscripts} onChange={event => setShowTranscripts(event.target.checked)} />Proposer la transcription après les réponses</label><p>Disponible après toutes les questions d’une écoute. L’enseignant peut ouvrir le texte pour mettre la correction en pause, puis reprendre la partie.</p></div>}
     <p>{timer.enabled ? `${timer.seconds} secondes par question` : 'Sans limite de temps'} · {timer.feedbackSeconds} seconde(s) de correction.</p>
     <div className="ci-competition-modes"><section className="ci-panel"><h2>Salle en ligne</h2><p>Chaque élève rejoint la salle sur son appareil, avec le code et une mascotte. Les réponses et scores sont synchronisés par le serveur.</p>
       {availability ? <><label>Accès enseignant aux salles<input type="password" autoComplete="off" value={teacherKey} onChange={(event) => setTeacherKey(event.target.value)} /></label><button className="ci-primary" disabled={busy || !teacherKey || !quiz.items.length} onClick={online}>{busy ? 'Création de la salle…' : 'Créer la salle'}</button></> : <p role="status">{availability === null ? 'Vérification des salles…' : 'Les salles en ligne ne sont pas encore activées sur ce site.'}</p>}
-    </section><section className="ci-panel"><h2>Sur cet appareil</h2><p>Sans réseau entre les appareils : choisissez vos mascottes et passez-vous cet appareil à tour de rôle. Les médias sont chargés avant le départ.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('local')}>{hasLocalCompetition(quiz.id) ? 'Reprendre le défi local' : 'Préparer le défi local'}</button></section></div>
+    </section><section className="ci-panel"><h2>Sur cet appareil</h2><p>Sans réseau entre les appareils : choisissez vos mascottes et passez-vous cet appareil à tour de rôle. Les médias sont chargés avant le départ.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('local')}>{hasLocalCompetition(quiz.id) ? 'Reprendre le défi local' : 'Préparer le défi local'}</button></section>
+    <section className="ci-panel"><h2>Duel à deux</h2><p>Deux côtés du même écran, 100 % de vie chacun. Le premier clic inflige 10 % à l’adversaire si la réponse est juste, à soi-même si elle est fausse. Un critique double les dégâts.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('duel')}>Préparer un duel</button></section>
+    <section className="ci-panel"><h2>Duels par équipes</h2><p>Deux équipes coopèrent. Les binômes sont tirés au sort au départ, puis appelés à tour de rôle. L’équipe qui remporte le plus de duels gagne.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('teams')}>Créer les équipes</button></section></div>
     {error && <p role="alert">{error}</p>}
   </main></CompetitionShell>
 }

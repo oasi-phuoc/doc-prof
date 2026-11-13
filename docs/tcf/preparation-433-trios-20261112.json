@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 47,
-    "initial_pending": 386,
+    "activated_since_baseline": 58,
+    "initial_pending": 375,
     "additional_pending": 0,
-    "total_pending": 386,
+    "total_pending": 375,
     "pending_by_level": {
-      "A0-A1": 161,
-      "A1-A2": 202,
+      "A0-A1": 153,
+      "A1-A2": 199,
       "A2-B1": 23
     }
   },
@@ -222,14 +222,20 @@
       "audio": null,
       "source_sha256": "f757e8862330cbb2faf7cf4267b14267dae3ff8eb42024cd2d5e330bd5e4aef0",
       "semantic_sha256": "d50ad69fb8a028a0d762999c5ba2cb700f0d955259cebd98cb876a05bba6a43a",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le professeur annonce la découverte de l’Ultimate, pratiqué avec un disque. Hockey et rugby ne sont pas nommés. Vue partielle d’Ultimate relue : disque blanc, porteuse immobile et équipes distinctes ; pas une représentation des effectifs complets. Hockey sur glace avec crosses et palet et rugby avec ballon ovale réutilisés. Les visages de l’Ultimate ont été différenciés de ceux des autres scènes.",
       "choices": [
         {
           "id": "a",
           "label": "L'Ultimate",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-ultimate-passe.png",
+              "sha256": "419a02454956b50b6a9fb1620fe611a36a4cca4e817aa0b6b68258a1c8c316c2",
+              "label": "L’Ultimate"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -259,7 +265,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-ultimate-passe.png",
+        "/lib/images/tcf/qcm-audit/vocab-hockey.webp",
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -268,7 +278,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -3590,14 +3600,20 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-4.mp3",
       "source_sha256": "9feb065da036fe5d1e1728508ed4482191c57d95226df3903021e41469cf21f5",
       "semantic_sha256": "cec1ecb6616ef281364c60b6fdbb2cf4b4a9d087e7c2234db944208f9b5d8100",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La phrase est Je fais de l’équitation. Aucun tennis ou natation n’y est cité. Nouvelle cavalière sur un cheval entier, casque et quatre sabots avec marge après reprise ; tennis avec raquettes, balle et filet, puis nageuse en piscine avec planche réutilisés. Trois activités distinctes ; les personnes des références ne sont pas copiées dans le nouveau dessin.",
       "choices": [
         {
           "id": "a",
           "label": "L'équitation",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+              "sha256": "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+              "label": "L’équitation"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -3615,7 +3631,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3624,7 +3644,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -3686,14 +3706,20 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-1.mp3",
       "source_sha256": "c1b8d1905b63f79dde96398790378b9bbda20d00f6d38bdd77d836011624d7c3",
       "semantic_sha256": "ff178364e0d1d796bcc19fd85eb9bc0f3767adf90dc3153858b3b51ce47e6daf",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La phrase Combien coûte ce magazine ? nomme un magazine. Le QCM demande le produit, jamais son prix. Magazine fin à couverture souple isolé, livre bleu relié et grand journal ouvert relus. Aucun objet de la référence de boissons n’est conservé dans le magazine ; pas de montant, date ou titre inventé.",
       "choices": [
         {
           "id": "a",
           "label": "Un magazine",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-magazine-couverture.png",
+              "sha256": "7edf759b5459371479b92f7852e1ed905e81a437333824372e0e67917b3238d5",
+              "label": "Un magazine"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -3723,7 +3749,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-magazine-couverture.png",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3732,7 +3762,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4356,32 +4386,54 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-1.mp3",
       "source_sha256": "c6724fc010d2050a1cb185b396af27dc98e76b88fdaefa4ce3b4790f494d0069",
       "semantic_sha256": "9056e5d6e9d625dc63f7e2e4121091211fddaef596c1ebf0dd0e73cebb7665cc",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Pour les vacances à la mer, l’annonce demande de mettre une serviette et des lunettes de soleil dans la valise. Les deux autres ensembles ne sont pas cités. Trois nouveaux ensembles complets : une serviette de plage et une paire de lunettes, une écharpe et une paire de gants, un ordinateur portable et trois cahiers fins. Aucun objet isolé substitué à une réponse composée, pas de valise supplémentaire.",
       "choices": [
         {
           "id": "a",
           "label": "Une serviette et des lunettes de soleil",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-serviette-lunettes-duo.png",
+              "sha256": "e56a57c73cd8e0c37f7f5106f1f152dd320612e61ccefc65677371cf4bdd2c30",
+              "label": "Une serviette et des lunettes de soleil"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Une écharpe et des gants",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-echarpe-gants-duo.png",
+              "sha256": "1af5c4a55e4de455ebc9f77516dec4c61e2b5da6b0d4081dc42524a3adab0a72",
+              "label": "Une écharpe et des gants"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Un ordinateur et des cahiers",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-ordinateur-cahiers-duo.png",
+              "sha256": "c01c1d231683af3fae36391673556ce4826131697def88a608d72dfe0b63d68d",
+              "label": "Un ordinateur et des cahiers"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-serviette-lunettes-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-echarpe-gants-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-ordinateur-cahiers-duo.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4390,7 +4442,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4404,14 +4456,20 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-3.mp3",
       "source_sha256": "e2b218892bf42faa4f64c78f95212475db76ce38d8782e89c719e87d8d7b7b94",
       "semantic_sha256": "1d2ed1993c3d7aa4502ac993be4ae6ab662a2832aa1e1d2e62bac4265f518966",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce demande de prendre le bus touristique pour visiter la ville, d’acheter un ticket au musée puis de monter dans ce bus. Bateau et métro ne sont pas proposés. Nouveau bus de visite à deux étages avec étage supérieur ouvert et sièges visibles. Bateau de passagers entier et rame en station souterraine réutilisés. Pas de simple bus de ligne substitué au bus touristique, aucune destination ou marque inventée.",
       "choices": [
         {
           "id": "a",
           "label": "Le bus touristique",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+              "sha256": "330ce9feb76da804656f3270f07f4a55fe94bfa9194be84c28b20deba84fcb63",
+              "label": "Le bus touristique"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -4446,7 +4504,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4455,7 +4517,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -8451,8 +8513,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-1.mp3",
       "source_sha256": "efbb40e488bcca92e9135fa965a2a7ec7517c347b41955ec21287eb7c2bc3aa5",
       "semantic_sha256": "b5c1939d2f505636b7ef77915d228054a62adad79b1b0dfb8b8b18f785d13fe6",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le réfrigérateur fait partie des appareils qui ne marchent plus. Les radiateurs restent chauds grâce au chauffage au gaz. Le téléphone sert à appeler le dépannage et aucune panne du téléphone fixe n’est annoncée. Réfrigérateur entier et téléphone fixe filaire réutilisés. Nouvelle installation de chaudière au gaz reliée au radiateur, arrivée jaune et flamme bleue identifiables. Le dessin représente la catégorie d’équipement, pas un état de panne arbitraire ; aucun chauffage électrique substitué.",
       "choices": [
         {
           "id": "a",
@@ -8471,7 +8533,13 @@
           "id": "b",
           "label": "Le chauffage au gaz",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-chauffage-gaz.png",
+              "sha256": "092a6a5d0a4a6c2cfba0796ad945335af1bfa6e9e16acc0bda1613c652d9c00b",
+              "label": "Le chauffage au gaz"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -8488,7 +8556,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+        "/lib/images/tcf/qcm-audit/extension573-chauffage-gaz.png",
+        "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -8497,7 +8569,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -9438,8 +9510,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-thomas.mp3",
       "source_sha256": "e36a1c502fc4b8ad268311de0e6b275ad422ae39ea707aff1ccc573409e81024",
       "semantic_sha256": "b4e84114be224434584652f4f39d45817bc0783e5f6b8a297b54db4c04b32691",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Thomas invite à jouer au foot et dit que ses parents ont acheté un nouveau ballon. Aucun vélo ou console ne lui est offert dans le message. Ballon de football rond et vélo entier réutilisés ; nouvelle console de salon avec manette. La console n’est pas représentée par une seule télécommande. Pas de marque ou d’objet familial déduit d’une scène de personnages.",
       "choices": [
         {
           "id": "a",
@@ -9485,7 +9557,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-console-jeux.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9494,7 +9570,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -9766,14 +9842,20 @@
       "audio": "/lib/audio/tcf/co/transports/madame-etes-arrive-1.mp3",
       "source_sha256": "bf27cdf5154d76e3aa0363d0e1702505c061967bf829c50f55151946401b1b52",
       "semantic_sha256": "ffd7f93ab93587770fcfb0e58a78814c117ac51121d1f99b5762d36d7ab2238c",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La clé USB est offerte à partir du seuil indiqué. Les DVD et le chocolat sont des produits en promotion, pas le cadeau offert. Nouvelle clé informatique USB-A, DVD avec boîtier et boîte ouverte de chocolats réutilisés. La question demande le cadeau ; aucun montant, remise, date ou seuil n’est dessiné. Le DVD n’est pas confondu avec un lecteur DVD.",
       "choices": [
         {
           "id": "a",
           "label": "Une clé USB",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-cle-usb.png",
+              "sha256": "4d57eb18b45cfd86973143794b60851c774ff8a567f158c3f41a6b68944ef8b7",
+              "label": "Une clé USB"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -9797,7 +9879,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cle-usb.png",
+        "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9806,7 +9892,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -10576,14 +10662,20 @@
       "audio": null,
       "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
       "semantic_sha256": "0805ee2978e4d0a5699e37906819cf5a15b04b2f6b41ae31c260a0e78a0dff25",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’atelier audiovisuel cite acteur, réalisateur et technicien de cinéma. Ni vétérinaire ni architecte n’est proposé dans le texte. Premières versions de la réalisation et de l’architecture explicitement choisies par l’utilisateur, sans intégration des reprises dessinées. Direction de plateau avec scénario et moniteur, vétérinaire examinant un chien et architecte avec plans et maquette : trois métiers distincts. Genre et apparence ne sont pas les critères de réponse.",
       "choices": [
         {
           "id": "a",
           "label": "Réalisateur",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-realisation-cinema.png",
+              "sha256": "f7cb952536a407b7802bce507726fe729f3d618e34c8fe2ad0d73332e61e26c6",
+              "label": "Réalisateur"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -10603,11 +10695,21 @@
           "id": "c",
           "label": "Architecte",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png",
+              "sha256": "dc3ace93e42962803312028f29c4d3a8e455d205555a5549f053970aa62bb5c1",
+              "label": "Architecte"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-realisation-cinema.png",
+        "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp",
+        "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10616,7 +10718,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -10684,14 +10786,20 @@
       "audio": null,
       "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
       "semantic_sha256": "29c8a7117f80ad6944e5cc8c3992a28e58304dd4db8c01aedc002b6bfe182b3a",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’atelier 1 nomme le technicien de cinéma. Les deux autres ateliers concernent la pâtisserie et la scène ; ils ne citent aucun technicien automobile ou de laboratoire. Première version de la technicienne de cinéma retenue par l’utilisateur : réglage d’un projecteur sur plateau. Mécanicien existant travaillant sous le capot, puis technicien de laboratoire avec pipette et microscope. Trois actions techniques entières, personnages distincts et variés.",
       "choices": [
         {
           "id": "a",
           "label": "Technicien de cinéma",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-technicien-cinema.png",
+              "sha256": "6e96ce275cee916e5dad5ae4d2eabb3eacde52049ef9413389ffc968626a5912",
+              "label": "Technicien de cinéma"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -10705,11 +10813,21 @@
           "id": "c",
           "label": "Technicien de laboratoire",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-technicien-laboratoire.png",
+              "sha256": "aa18ba8aaa99c4a0fdfb35167aa69daa5d7b1bfb74fe354c6bb28cc8fc21307a",
+              "label": "Technicien de laboratoire"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-technicien-cinema.png",
+        "/lib/images/tcf/qcm-audit/vocab-mecanicien.webp",
+        "/lib/images/tcf/qcm-audit/extension573-technicien-laboratoire.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10718,7 +10836,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -12811,7 +12929,13 @@
           "id": "a",
           "label": "L’équitation",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+              "sha256": "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+              "label": "L’équitation"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -13271,32 +13395,54 @@
       "audio": null,
       "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
       "semantic_sha256": "c664528317282415453ccc20434d4b3bf0ea7643c578fb73fd74474df8eed9b7",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La première consigne demande explicitement de se laver les mains avec de l’eau et du savon. Le parfum, le lait et le désinfectant pour sols ne sont pas indiqués pour ce geste. Trois nouvelles compositions relues : savon et eau claire, parfum à vaporisateur et bouteille de lait, bidon marqué DÉSINFECTANT SOLS avec pictogramme de nettoyage. Les deux duos représentent leurs deux produits ; aucun dosage, date ou montant.",
       "choices": [
         {
           "id": "a",
           "label": "De l’eau et du savon",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-eau-savon-duo.png",
+              "sha256": "16a2b6834b4bd4eea5dca20050622a8678e3471ebbc4224faef8a34dd53695ba",
+              "label": "De l’eau et du savon"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Du parfum et du lait",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-parfum-lait-duo.png",
+              "sha256": "c05929e73db8128b2f5a21eaacaa329e8678155a8a3ed5675eefab1044fddd4f",
+              "label": "Du parfum et du lait"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Du désinfectant pour les sols",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-desinfectant-sols.png",
+              "sha256": "78d9509f32e0bf599c07ac71eedb010f4eb19e346d4a9f452ed4cc6d2661aaaa",
+              "label": "Du désinfectant pour les sols"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-eau-savon-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-parfum-lait-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-desinfectant-sols.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13305,7 +13451,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15248,7 +15394,13 @@
           "id": "c",
           "label": "À l’équitation",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+              "sha256": "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+              "label": "L’équitation"
+            }
+          ],
           "generation_jobs": []
         }
       ],

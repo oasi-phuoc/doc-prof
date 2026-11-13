@@ -24,4 +24,4 @@ Le parcours `npm run test:interactive:transcripts` vérifie Classe sur 390 × 84
 
 ## Suite du cahier
 
-Le démarrage à froid hors ligne de tous les médias et les transcriptions dans les salles de compétition restent ouverts. Aucune nouvelle synthèse audio n’est requise pour ce lot.
+Les transcriptions dans les salles de compétition sont prolongées par l’[ADR 0041](adr-0041-transcriptions-en-competition.md). Le démarrage à froid hors ligne de tous les médias reste ouvert. Aucune nouvelle synthèse audio n’est requise pour ce lot.

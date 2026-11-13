@@ -64,8 +64,25 @@ def verify():
     counts = dict(Counter(r['status'] for r in rows.values()))
     assert counts == plan['summary']['statuses']
     assert active == counts.get('active_reviewed_trio', 0)
+    for name in ['tcf-delf-actif-a2-005-06#5', 'tcf-delf-actif-a2-043-02-01#4']:
+        cream = next(c for c in rows[name]['choices'] if 'crème' in c['label'].casefold())
+        assert cream['reuse_candidates'] and all('creme-alimentaire' not in c['path'] for c in cream['reuse_candidates']), name
+        assert any('extension573-creme-cosmetique' in c['path'] for c in cream['reuse_candidates']), name
+    for name in ['tcf-delf-actif-a2-043-04-03#3', 'tcf-delf-actif-a2-044-03-01#6']:
+        shop = next(c for c in rows[name]['choices'] if 'pâtisserie' in c['label'].casefold())
+        assert shop['reuse_candidates'] and all(not c['path'].endswith('/vocab-patisserie.webp') for c in shop['reuse_candidates']), name
+        assert any(c['path'].endswith('/co/bg/patisserie.webp') for c in shop['reuse_candidates']), name
     for level, summary in plan['summary']['by_level'].items():
         assert summary == dict(Counter(r['status'] for r in rows.values() if r['level'] == level))
+    drink = next(c for c in rows['tcf-delf-actif-a2-044-01-06#3']['choices'] if 'chocolat' in c['label'].casefold())
+    assert drink['reuse_candidates'] and all(not c['path'].endswith('/co834-chocolat-dessine.webp') and 'chocolat-tablette' not in c['path'] for c in drink['reuse_candidates'])
+    assert any(c['path'].endswith('/co834-chocolat-chaud-dessine.webp') for c in drink['reuse_candidates'])
+    cream = next(c for c in rows['tcf-delf-actif-a2-046-01-04#3']['choices'] if 'crème' in c['label'].casefold())
+    assert any('creme-alimentaire' in c['path'] for c in cream['reuse_candidates'])
+    assert all('creme-cosmetique' not in c['path'] for c in cream['reuse_candidates'])
+    paper = next(c for c in rows['tcf-delf-actif-a2-043-01-03#1']['choices'] if 'feuilles' in c['label'].casefold())
+    assert paper['reuse_candidates'] and all(not c['path'].endswith('/vocab-feuilles.webp') for c in paper['reuse_candidates'])
+    assert any(c['path'].endswith('/vocab-papiers.webp') for c in paper['reuse_candidates'])
     print(f'346 supports et 1 663 questions suivis ; {active} trios actifs liés à leur relecture, images et MP3 vérifiés.')
 
 

@@ -41,6 +41,7 @@ import {
 } from './domain/settings'
 import { MODE_KEY } from './legacy-preferences'
 import { hasLocalCompetition } from './competition/storage-key'
+import { hasDuel } from './duel/storage-key'
 import { useReadabilityPreflight } from './layout/useReadabilityPreflight'
 import { ReadabilityCheck } from './components/ReadabilityCheck'
 
@@ -269,7 +270,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   }
   const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).then((next) => setPaletteVersion(next.paletteVersion ?? 1), (error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
-    onCompetition: activeGame && media.complete && readability.complete ? () => { if (!hasLocalCompetition(activeGame.id)) newPart(false); setCompetitionOpen(true) } : undefined,
+    onCompetition: activeGame && media.complete && readability.complete ? () => { if (!hasLocalCompetition(activeGame.id) && !hasDuel(activeGame.id, 'duel') && !hasDuel(activeGame.id, 'teams')) newPart(false); setCompetitionOpen(true) } : undefined,
     toolbarGuard,
     mascot,
     onMascot: (next: MascotKind) => { setMascot(next); savePreferences({ mascot: next }) },
@@ -298,7 +299,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     },
   }
   if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><LoadingScreen title="Préparation de la compétition" description="Vos questions et leurs médias se préparent." /></div>
-  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
+  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} showTranscripts={showTranscripts} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}

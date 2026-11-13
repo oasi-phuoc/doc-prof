@@ -1,0 +1,1256 @@
+{
+  "date": "2026-11-13",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "baseline_commit": "5deed27485f99525efb10d20e53e408c4da3371b",
+  "human_audio_listening_performed": false,
+  "trios": [
+    {
+      "key": "delf-a1-2022-co-74#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Je fais de l'équitation.",
+      "source_sha256": "9feb065da036fe5d1e1728508ed4482191c57d95226df3903021e41469cf21f5",
+      "semantic_sha256": "cec1ecb6616ef281364c60b6fdbb2cf4b4a9d087e7c2234db944208f9b5d8100",
+      "question": {
+        "enonce": "Quel sport pratique-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L'équitation",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le tennis",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La natation",
+            "correct": false
+          }
+        ],
+        "written_model": "L'équitation"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_74-4.mp3",
+      "audio_sha256": "dd0d5c23bf2ff4a54f2ddbd5cce200c33e4fa913838da6110c6fe394719159df",
+      "image_ids": [
+        "extension573-equitation-cavaliere",
+        "26876e2318ce",
+        "eb82d6d99458"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+      ],
+      "image_sha256": [
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727",
+        "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+      ],
+      "reason": "La phrase est Je fais de l’équitation. Aucun tennis ou natation n’y est cité.",
+      "visual_review": "Nouvelle cavalière sur un cheval entier, casque et quatre sabots avec marge après reprise ; tennis avec raquettes, balle et filet, puis nageuse en piscine avec planche réutilisés. Trois activités distinctes ; les personnes des références ne sont pas copiées dans le nouveau dessin."
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-12#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour vos vacances, prenez un billet de train et allez à la mer. Dans votre valise, mettez une serviette et des lunettes de soleil !",
+      "source_sha256": "c6724fc010d2050a1cb185b396af27dc98e76b88fdaefa4ce3b4790f494d0069",
+      "semantic_sha256": "9056e5d6e9d625dc63f7e2e4121091211fddaef596c1ebf0dd0e73cebb7665cc",
+      "question": {
+        "enonce": "Quels objets faut-il mettre dans la valise ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une serviette et des lunettes de soleil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une écharpe et des gants",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un ordinateur et des cahiers",
+            "correct": false
+          }
+        ],
+        "written_model": "Une serviette et des lunettes de soleil"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-1.mp3",
+      "audio_sha256": "6d877e3377e6acde5a54041dd7c5466557be616731978d3e7612bdd50a797186",
+      "image_ids": [
+        "extension573-serviette-lunettes-duo",
+        "extension573-echarpe-gants-duo",
+        "extension573-ordinateur-cahiers-duo"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-serviette-lunettes-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-echarpe-gants-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-ordinateur-cahiers-duo.png"
+      ],
+      "image_sha256": [
+        "e56a57c73cd8e0c37f7f5106f1f152dd320612e61ccefc65677371cf4bdd2c30",
+        "1af5c4a55e4de455ebc9f77516dec4c61e2b5da6b0d4081dc42524a3adab0a72",
+        "c01c1d231683af3fae36391673556ce4826131697def88a608d72dfe0b63d68d"
+      ],
+      "reason": "Pour les vacances à la mer, l’annonce demande de mettre une serviette et des lunettes de soleil dans la valise. Les deux autres ensembles ne sont pas cités.",
+      "visual_review": "Trois nouveaux ensembles complets : une serviette de plage et une paire de lunettes, une écharpe et une paire de gants, un ordinateur portable et trois cahiers fins. Aucun objet isolé substitué à une réponse composée, pas de valise supplémentaire."
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-12#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour visiter la ville, prenez le bus touristique. Achetez un ticket au musée et montez dans le bus. Regardez les grands immeubles et les boulevards. C’est magnifique !",
+      "source_sha256": "e2b218892bf42faa4f64c78f95212475db76ce38d8782e89c719e87d8d7b7b94",
+      "semantic_sha256": "1d2ed1993c3d7aa4502ac993be4ae6ab662a2832aa1e1d2e62bac4265f518966",
+      "question": {
+        "enonce": "Quel moyen de transport est proposé pour visiter la ville ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bus touristique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le bateau",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le métro",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bus touristique"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-3.mp3",
+      "audio_sha256": "28139eef41cef72e31df96bb4d9a8501b49ec013ff7569edb6e91eb19cc96c48",
+      "image_ids": [
+        "extension573-bus-touristique",
+        "co834-bateau-dessine",
+        "co834-metro-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
+      "image_sha256": [
+        "330ce9feb76da804656f3270f07f4a55fe94bfa9194be84c28b20deba84fcb63",
+        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+      ],
+      "reason": "L’annonce demande de prendre le bus touristique pour visiter la ville, d’acheter un ticket au musée puis de monter dans ce bus. Bateau et métro ne sont pas proposés.",
+      "visual_review": "Nouveau bus de visite à deux étages avec étage supérieur ouvert et sièges visibles. Bateau de passagers entier et rame en station souterraine réutilisés. Pas de simple bus de ligne substitué au bus touristique, aucune destination ou marque inventée."
+    },
+    {
+      "key": "tcf-ss-a1-s41-co-2#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- SOS Dépannage, j'écoute !\n- Bonjour monsieur, je vous appelle pour une panne…\nJe n'ai plus de lumière…\n- Qu'est-ce qui ne va pas exactement ?\n- Les lampes, la télé, l'ordinateur, le frigo ne marchent pas…\nJe n'ai plus d'électricité !\n- Et les radiateurs, ils sont chauds ?\n- Oui, j'ai un chauffage au gaz.\n- Bien…\non peut prendre rendez-vous pour demain.\n- Désolée, mais c'est vraiment urgent.\n- D'accord, je peux venir aujourd'hui, mais à 16 heures.\nVous pouvez me donner votre adresse s'il vous plaît ?\n- J'habite 8, rue du Jura.\nEt le prix de la réparation ?\n- Je viens, je regarde, ensuite je fais un devis.\n- D'accord, merci !",
+      "source_sha256": "efbb40e488bcca92e9135fa965a2a7ec7517c347b41955ec21287eb7c2bc3aa5",
+      "semantic_sha256": "b5c1939d2f505636b7ef77915d228054a62adad79b1b0dfb8b8b18f785d13fe6",
+      "question": {
+        "enonce": "Quel appareil ne fonctionne plus ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le réfrigérateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le chauffage au gaz",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le téléphone fixe",
+            "correct": false
+          }
+        ],
+        "written_model": "Le réfrigérateur"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/sos-depannage-j-ecoute-1.mp3",
+      "audio_sha256": "ba4d945a7bf3df5ce036b6cbfeef0da1c104f546d5179dd7add9dd25fb176989",
+      "image_ids": [
+        "vocab-refrigerateur",
+        "extension573-chauffage-gaz",
+        "vocab-telephone-fixe"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+        "/lib/images/tcf/qcm-audit/extension573-chauffage-gaz.png",
+        "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp"
+      ],
+      "image_sha256": [
+        "b866622b33f7d931d666395c951d8a69940358de84c0697e55f7a32d45abe8fa",
+        "092a6a5d0a4a6c2cfba0796ad945335af1bfa6e9e16acc0bda1613c652d9c00b",
+        "cf7ea1022b9237339429aee8a5c0882f8d46feb412eebdd7679a62032ead4d1a"
+      ],
+      "reason": "Le réfrigérateur fait partie des appareils qui ne marchent plus. Les radiateurs restent chauds grâce au chauffage au gaz. Le téléphone sert à appeler le dépannage et aucune panne du téléphone fixe n’est annoncée.",
+      "visual_review": "Réfrigérateur entier et téléphone fixe filaire réutilisés. Nouvelle installation de chaudière au gaz reliée au radiateur, arrivée jaune et flamme bleue identifiables. Le dessin représente la catégorie d’équipement, pas un état de panne arbitraire ; aucun chauffage électrique substitué."
+    },
+    {
+      "key": "tcf-ss-a1-s48-co-4#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, c'est Thomas.\nTu veux venir jouer au foot chez moi demain ?\nMes parents m'ont acheté un nouveau ballon.\nIl est super.\nViens à 16 heures et reste manger à la maison le soir.\nMon père va préparer des pâtes.\nAh oui, n'oublie pas, apporte tes baskets.\nSalut !",
+      "source_sha256": "e36a1c502fc4b8ad268311de0e6b275ad422ae39ea707aff1ccc573409e81024",
+      "semantic_sha256": "b4e84114be224434584652f4f39d45817bc0783e5f6b8a297b54db4c04b32691",
+      "question": {
+        "enonce": "Quel objet ses parents lui ont-ils acheté ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un ballon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une console",
+            "correct": false
+          }
+        ],
+        "written_model": "Un ballon"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-c-est-thomas.mp3",
+      "audio_sha256": "9283e31465c49b525dae4701a2b5adf72d6ce72dd63654641bb24267df1507d9",
+      "image_ids": [
+        "vocab-ballon-football",
+        "vocab-velo-isole",
+        "extension573-console-jeux"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-console-jeux.png"
+      ],
+      "image_sha256": [
+        "9a1fd2cab3b1cc541d2ef2d8a80e5f1c7769fccde473f528467b78b8e5f63089",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "3bb03b7813eda1059e9716b3ffbdbbde6b47f0d325b7bebb5c76743cabbe2ee5"
+      ],
+      "reason": "Thomas invite à jouer au foot et dit que ses parents ont acheté un nouveau ballon. Aucun vélo ou console ne lui est offert dans le message.",
+      "visual_review": "Ballon de football rond et vélo entier réutilisés ; nouvelle console de salon avec manette. La console n’est pas représentée par une seule télécommande. Pas de marque ou d’objet familial déduit d’une scène de personnages."
+    },
+    {
+      "key": "tcf-ss-a1-s54-co-1#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Les magasins SuperJ ouvrent exceptionnellement ce samedi et ce dimanche de 9h à 19h sans interruption. Il y aura beaucoup de promotions, -10% sur le chocolat, -20% sur les vêtements et -25% sur les DVD. Si vous dépensez 200€ ou plus, SuperJ vous offre une clé USB.",
+      "source_sha256": "bf27cdf5154d76e3aa0363d0e1702505c061967bf829c50f55151946401b1b52",
+      "semantic_sha256": "ffd7f93ab93587770fcfb0e58a78814c117ac51121d1f99b5762d36d7ab2238c",
+      "question": {
+        "enonce": "Quel cadeau est offert à partir de 200 euros d'achats ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une clé USB",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un DVD",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une boîte de chocolats",
+            "correct": false
+          }
+        ],
+        "written_model": "Une clé USB"
+      },
+      "audio": "/lib/audio/tcf/co/transports/madame-etes-arrive-1.mp3",
+      "audio_sha256": "082192c7ca32c70925a29e8f5159e8e864382e77910c1c4fc65b7b2a9d6ce9d9",
+      "image_ids": [
+        "extension573-cle-usb",
+        "co834-film-dvd-dessine",
+        "co834-boite-chocolats-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cle-usb.png",
+        "/lib/images/tcf/qcm-audit/co834-film-dvd-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4d57eb18b45cfd86973143794b60851c774ff8a567f158c3f41a6b68944ef8b7",
+        "53895bfd2058aaac5142339f6358dabf7803f89881cda91f232273dbec3ef4f5",
+        "9e787e97a134357b013cd150b2e25f4981f90352eb3609413a3f6332fbbe357a"
+      ],
+      "reason": "La clé USB est offerte à partir du seuil indiqué. Les DVD et le chocolat sont des produits en promotion, pas le cadeau offert.",
+      "visual_review": "Nouvelle clé informatique USB-A, DVD avec boîtier et boîte ouverte de chocolats réutilisés. La question demande le cadeau ; aucun montant, remise, date ou seuil n’est dessiné. Le DVD n’est pas confondu avec un lecteur DVD."
+    },
+    {
+      "key": "tcf-delf-actif-a1-004-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Simon. Tu es libre le samedi 22 ? Avec ma famille nous fêtons les 18 ans de ma sœur Léa. Tu es invité à manger le gâteau d’anniversaire à 14h30 chez moi. Ses amis apportent de la musique pour danser. Nous t’attendons tous. Appelle-moi pour confirmer avant jeudi.",
+      "source_sha256": "162ca3640d0658d0fac7cbe38f408aacbdc0f586f21c253dbdda526b790f4671",
+      "semantic_sha256": "4b58e6fd93989eeaf0dcca1622905f1c603b7e19d49ce3d3811ec02ac31f7491",
+      "question": {
+        "enonce": "À quelle heure faut-il venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 16 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-004-01.mp3",
+      "audio_sha256": "a95c13766272c5a5e0de3f44894f30d4830db20d3d8cae2fbe73782fa50d34c0",
+      "image_ids": [
+        "co834-horloge-1430-dessinee",
+        "co834-horloge-1530-dessinee",
+        "co834-horloge-1630-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp"
+      ],
+      "image_sha256": [
+        "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63",
+        "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db",
+        "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5"
+      ],
+      "reason": "L’invitation demande de venir manger le gâteau à 14 h 30. Les dates et l’âge de la sœur ne sont pas le sujet de ce QCM.",
+      "visual_review": "Trois horloges existantes examinées : grande aiguille sur 6, petite aiguille entre 2/3, 3/4 et 4/5. Les trois heures de l’après-midi sont distinctes dans le trio ; aucune opposition matin/soir entre heures identiques, date ou montant en image."
+    },
+    {
+      "key": "tcf-delf-actif-a1-021-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Eva, Ça te dit de venir avec ma sœur et moi manger une glace dimanche après-midi ? On se retrouve chez le glacier italien à 16h30. Après, s’il fait beau on peut faire une promenade au bord de mer. Mets tes tennis pour bien marcher. Réponds-moi avant 20 heures.",
+      "source_sha256": "e79d9cbb865eeaacaa13df8550b888c66ebf222e052da5c8c8d7dfb5044a19a8",
+      "semantic_sha256": "6ebfca0c6257a489445214a4b08fd413a539416297914393911a477db49b7fe9",
+      "question": {
+        "enonce": "À quelle heure le rendez-vous est-il fixé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 16 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 15 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 17 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 16 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-021-01.mp3",
+      "audio_sha256": "33305497189bc6ad04e14337b14b821a9992350c048bd7a3a3672748a22272d0",
+      "image_ids": [
+        "co834-horloge-1630-dessinee",
+        "co834-horloge-1530-dessinee",
+        "co834-horloge-1730-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1730-dessinee.webp"
+      ],
+      "image_sha256": [
+        "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5",
+        "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db",
+        "9ab18c613d9d82105b396b1c2353762e538b2e6277c7c6ca237b89fd1450628c"
+      ],
+      "reason": "Le rendez-vous chez le glacier est à 16 h 30 dimanche après-midi. L’heure limite de réponse à 20 heures n’est pas l’heure du rendez-vous.",
+      "visual_review": "Horloges à 4 h 30, 3 h 30 et 5 h 30 relues, correspondant ici aux trois choix de l’après-midi. Aiguilles des heures à mi-chemin, minutes sur 6 ; les cadrans ne prétendent pas distinguer deux périodes de la journée pour une même heure."
+    },
+    {
+      "key": "tcf-delf-actif-a1-034-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Paulo, tu dois être encore en cours mais je te rappelle de passer au supermarché pour prendre de l’eau minérale, des pâtes italiennes, un paquet de café et du beurre. Pour le dîner tu nous prépares des pâtes à la bolognaise comme dans ton pays ? Je rentre à la maison vers 19h00. À plus tard.",
+      "source_sha256": "dae59714596879ae662568a53a5740ac3236208adcb3a7d776f55e0ba687bee8",
+      "semantic_sha256": "f52b812f9f5631e73da9055a5ea3ac26c16f7dd1de50471e81d7475f17cd056e",
+      "question": {
+        "enonce": "Où Paulo doit-il faire les courses ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au supermarché",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au marché",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la boulangerie",
+            "correct": false
+          }
+        ],
+        "written_model": "Au supermarché"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
+      "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
+      "image_ids": [
+        "co306-supermarche-dessine",
+        "retained-20261107-c98f6a0464f3",
+        "co834-boulangerie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+        "/lib/images/tcf/co/bg/marche.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "cdb04119e729cc7588d99bc9e967c339f565ceb027ed9285f4a04bae9eed75aa",
+        "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be",
+        "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+      ],
+      "reason": "Le message demande à Paulo de passer au supermarché prendre eau, pâtes, café et beurre. Marché et boulangerie ne sont pas indiqués comme lieu des courses.",
+      "visual_review": "Supermarché avec rayons et caisses, marché de plein air à étals et boulangerie avec pains et comptoir réutilisés. Trois lieux commerciaux complets et distincts, sans prix ni enseigne nommée inventée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous aimez lire ?\nAllez-vous à l’école demain ?\nPourquoi prenez-vous le bus ?\nEst-ce que vous mangez au self à midi ?\nOù achetez-vous des fruits ?\nAimez-vous la mer ?\nEst-ce que vous connaissez Paris ?\nVous habitez à la campagne ?\nEst-ce que vous avez un vélo ?\nVous faites du sport ?",
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "5c79699455dd53c8dbe6e4bc7f0f3d5c456fc04e9d66e24d82e25320d28c341e",
+      "question": {
+        "enonce": "Quel moyen de transport est cité dans la question commençant par « Pourquoi » ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le métro",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bus"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
+      "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
+      "image_ids": [
+        "vocab-bus-isole",
+        "vocab-train-isole",
+        "co834-metro-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+      ],
+      "reason": "La question commençant par Pourquoi est Pourquoi prenez-vous le bus ? Train et métro ne sont pas nommés dans cette série.",
+      "visual_review": "Bus routier fermé, train régional isolé et métro en station souterraine réutilisés. La station distingue le métro du train ; aucun bus touristique n’est imposé à cette question sur le bus générique."
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous aimez lire ?\nAllez-vous à l’école demain ?\nPourquoi prenez-vous le bus ?\nEst-ce que vous mangez au self à midi ?\nOù achetez-vous des fruits ?\nAimez-vous la mer ?\nEst-ce que vous connaissez Paris ?\nVous habitez à la campagne ?\nEst-ce que vous avez un vélo ?\nVous faites du sport ?",
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "fe5e0a30aa758df30d9d04bf01244630e3199ae8896f171fc6936f0e8e68479b",
+      "question": {
+        "enonce": "Quel véhicule est cité dans la question sur la possession ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une moto",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
+      "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
+      "image_ids": [
+        "vocab-velo-isole",
+        "co834-voiture-dessinee",
+        "co306-moto-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+      ],
+      "reason": "La question sur la possession est Est-ce que vous avez un vélo ? Voiture et moto ne sont pas citées.",
+      "visual_review": "Vélo sans moteur, voiture verte et moto à moteur, selle et réservoir réutilisés. Trois véhicules entiers ; aucune personne, marque ou propriété n’est attribuée par le dessin."
+    },
+    {
+      "key": "tcf-delf-actif-a1-048-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Monsieur. Bonjour jeune homme. Oh ! Qu’est-ce que vous avez là ? Je fais du vélo et voilà ! J’ai mal à la jambe, vous pouvez me donner des médicaments, s’il vous plaît ? Qu’est-ce que je vous donne ? J’ai besoin d’un désinfectant. J’ai ce produit. Il est très efficace. Quel est prix de ce flacon ? Il coûte 4,80 €. Et vous avez aussi des pansements ? Bien sûr. Voici les pansements. Ils sont à quel prix ? La boîte coûte 3,10 €. Il y a combien de pansements dans une boîte ? Il y a 10 pansements. Je peux prendre des comprimés aussi ? Oui, si vous avez mal vous pouvez prendre ces comprimés un le matin et un le soir. Merci, combien je vous dois en tout ? 10,10 € jeune homme. Voici les 10 € et les 10 centimes. Merci et au revoir. Au revoir.",
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "ed530d26954fbdad521915e29cdb469da621e9aa48098366a68b3bfc00631618",
+      "question": {
+        "enonce": "Quelle activité le jeune homme faisait-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du football",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du ski",
+            "correct": false
+          }
+        ],
+        "written_model": "Du vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "image_ids": [
+        "co306-faire-velo-dessine",
+        "co834-football-dessine",
+        "co834-ski-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp"
+      ],
+      "image_sha256": [
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593",
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316"
+      ],
+      "reason": "Le jeune homme explique Je fais du vélo et voilà ! avant d’évoquer sa jambe blessée. Il ne pratiquait ni football ni ski dans ce dialogue.",
+      "visual_review": "Scènes génériques des trois activités : cycliste sur un vélo entier, tir au football et skieuse sur deux skis. Les personnages ne sont pas présentés comme des portraits du client ; seules les activités des libellés sont illustrées. L’alternative rugby/football/handball reste à préparer : le pied coupé de l’image de handball n’est pas repris dans un nouveau trio."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-01-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sacha. Je dois changer un pantalon acheté samedi. Tu viens au magasin avec moi mercredi ? On va prendre la taille la plus petite. Je veux voir aussi les nouveaux modèles de baskets. Rendez-vous à l’arrêt de bus 234 Place Joffre. Après on va manger une gaufre.",
+      "source_sha256": "51a741967f5ed6d75ec72f9c5d19b0bfd4bb45f5f66ebb6182bedb1fe225af5f",
+      "semantic_sha256": "180bcc3ca99293e2dd8f64c0fcef2d764ed260f81366c6143a9e90c8273ae762",
+      "question": {
+        "enonce": "Quel vêtement Sacha doit-il changer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un pantalon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un pull",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une veste",
+            "correct": false
+          }
+        ],
+        "written_model": "Un pantalon"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-01-01.mp3",
+      "audio_sha256": "794be2f094b10366775152311289a3f101157f1b014e60a97d513d733fb838e9",
+      "image_ids": [
+        "vocab-pantalon",
+        "vocab-pull",
+        "vocab-veste"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+        "/lib/images/tcf/qcm-audit/vocab-pull.webp",
+        "/lib/images/tcf/qcm-audit/vocab-veste.webp"
+      ],
+      "image_sha256": [
+        "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f",
+        "f2331f1b4efe4ecc1066a7a5cbd7a55dba9e9199e4b75cd13e28a652a5682069",
+        "0f7859a2a0c1c671a10877af09fce7b6f03f91002fc1868876c7a1458fcbf65b"
+      ],
+      "reason": "Sacha doit changer un pantalon acheté précédemment, puis veut voir les baskets. Pull et veste ne sont pas à échanger.",
+      "visual_review": "Pantalon à deux jambes, pull fermé en laine et veste ouverte par fermeture frontale réutilisés. Trois vêtements entiers et distincts ; aucune taille ou date de l’achat n’est dessinée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-04-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+      "source_sha256": "092e7e9826cfc580d350f5a21cf60393fad2494c516060c8cc08808873ec3433",
+      "semantic_sha256": "df57202bf9398b192d29ee55a1bb839ada3cc0458b7137e2ae4037c8ff7cd75e",
+      "question": {
+        "enonce": "À quelle heure partent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 14 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 13 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 15 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "À 14 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
+      "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
+      "image_ids": [
+        "co834-horloge-1430-dessinee",
+        "co834-horloge-1330-dessinee",
+        "co834-horloge-1530-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1430-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1530-dessinee.webp"
+      ],
+      "image_sha256": [
+        "268f57bab0c1d36c1846445e743cad2a1eeaa1761dd523682ed3425f1647ea63",
+        "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927",
+        "f3f3ce0a0fd97bf9ec317ddbea59d5622c7794713ba55ef9b5654aceaf1526db"
+      ],
+      "reason": "L’enseignant répond 14 h 30 à la question sur le départ pour monter à la tour Eiffel. Les deux autres horaires ne sont pas proposés.",
+      "visual_review": "Horloges à 2 h 30, 1 h 30 et 3 h 30 examinées : minutes sur 6, petite aiguille entre deux heures. Elles distinguent les trois choix de l’après-midi ; pas de faux repère de date ou de matin/soir."
+    },
+    {
+      "key": "tcf-delf-actif-a2-018-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Salut Carole, tu es toujours d’accord pour faire des achats demain après-midi? Au centre-ville dans le magasin Jean-Pierre Sport il y a le dernier modèle de ma marque préférée de basket en promotion et le survêtement bleu de Jules et Jim à 60€.",
+      "source_sha256": "93a1fbfd60d573a4798782c98cbb9bcebca629cc28eae80fc2a17019636f7a35",
+      "semantic_sha256": "3345f32676c3e04a82a3ac02d6c7de6aeca15acfe01a1fcb71415b603d49ee8b",
+      "question": {
+        "enonce": "De quelle couleur est le survêtement proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Rouge",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vert",
+            "correct": false
+          }
+        ],
+        "written_model": "Bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-018-01.mp3",
+      "audio_sha256": "0576ae06942c458bdabfdc85bc4a75aeeb82cff510e455ff55f479ba5c1b1fee",
+      "image_ids": [
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-rouge-dessinee",
+        "co834-couleur-vert-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+      ],
+      "reason": "Le message cite précisément un survêtement bleu. Rouge et vert ne qualifient pas ce vêtement.",
+      "visual_review": "Échantillons uniformes bleu, rouge et vert réutilisés, mêmes dimensions et fond crème. La réponse est une couleur ; les échantillons ne prétendent pas reproduire un modèle de survêtement ou son prix."
+    },
+    {
+      "key": "tcf-delf-actif-a2-019-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "C’est maman. Quand tu rentres de ton cours de musique j’ai besoin de toi pour des courses. Passe à la papeterie. Ton frère n’a plus de feuilles de dessin petit modèle. Prends un paquet de 20 feuilles. Il a besoin aussi d’un crayon noir et d’un feutre bleu. Ensuite tu t’arrêtes à la boulangerie. Tu prends un kilo de farine pour des crêpes et demande à notre boulangère de mettre de côté 3 baguettes pour demain après-midi. Bisous.",
+      "source_sha256": "a71e211ae2d97b68da1b3f592bb9a6009ff868497a2b471f4f6840976752ac0f",
+      "semantic_sha256": "6874a85165bde7b6a76f99449155afb5640189e99510b134209b8ff8c7cb4a3c",
+      "question": {
+        "enonce": "De quelle couleur doit être le feutre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Noir",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Rouge",
+            "correct": false
+          }
+        ],
+        "written_model": "Bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-019-01.mp3",
+      "audio_sha256": "6863dadb5bf6d58faf8d33c66cff1f81e27bdcdc4cfeb575651f05742cf2a144",
+      "image_ids": [
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-noir-dessinee",
+        "co834-couleur-rouge-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-noir-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "167068cc8de9be52e562652ad7051be477c15443b8fa8572868f7b984f957b16",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+      ],
+      "reason": "La mère demande un crayon noir et un feutre bleu. L’énoncé porte sur le feutre, donc bleu ; le noir entendu concerne l’autre article.",
+      "visual_review": "Échantillons bleu, noir et rouge réutilisés. Les objets demandés ne sont pas confondus : aucune couleur de crayon ne remplace celle du feutre. Les images illustrent uniquement les trois couleurs des réponses."
+    },
+    {
+      "key": "tcf-delf-actif-a2-042-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "J’ai une jolie petite chambre pour moi tout seul. La pièce est lumineuse et une porte-fenêtre donne sur un balcon. Dans ma chambre il y a mon lit. C’est un lit à une place avec un beau dessus de lit bleu. Il y a une grande armoire en bois blanc qui occupe un côté de la pièce. J’ai bien sûr une table de nuit avec une lampe de chevet et un réveil. Devant l’armoire, il y a un tapis moderne avec du bleu et du jaune. Les rideaux aussi sont bleus et jaunes. Près de la fenêtre se trouve mon bureau avec une chaise et une petite bibliothèque. Mon ordinateur est posé sur mon bureau avec mes livres de classe. Dans ma chambre, il n’y a pas de télévision parce que mes parents ne sont pas d’accord et d’habitude je la regarde dans le salon. Comme tous les jeunes de mon âge j’aime les posters et j’en ai mis partout sur les murs.",
+      "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
+      "semantic_sha256": "25fcb62067e1270f0a1050f32ea3d770cb70958aab5bd924e817cf4ec4d56124",
+      "question": {
+        "enonce": "De quelle couleur est le dessus de lit ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Rouge",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vert",
+            "correct": false
+          }
+        ],
+        "written_model": "Bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-042-01.mp3",
+      "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
+      "image_ids": [
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-rouge-dessinee",
+        "co834-couleur-vert-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+      ],
+      "reason": "Le dessus de lit est décrit comme bleu. Le blanc de l’armoire et le bleu/jaune du tapis et des rideaux ne changent pas cette réponse.",
+      "visual_review": "Trois échantillons bleu, rouge et vert réutilisés. L’énoncé et ses trois réponses portent uniquement sur la couleur, sans dessiner une chambre arbitraire ou ajouter un motif au dessus de lit."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-01-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Cette semaine profitez d’une vente promotionnelle : deux paquets de cahiers pour le prix d’un. Les stylos à bille, les règles, les gommes… à prix unique. Attention : offre limitée.",
+      "source_sha256": "b02049bc4be062657b9a828c5063c87518f08cba9ccc466552d93883b08c2953",
+      "semantic_sha256": "ab0379ba511c376a1f30e9378ba709a380d97df3e73354251a8d7c48f10b23d6",
+      "question": {
+        "enonce": "Quel produit est vendu par paquets en promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des cahiers",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des crayons",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des feuilles",
+            "correct": false
+          }
+        ],
+        "written_model": "Des cahiers"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-03.mp3",
+      "audio_sha256": "b3c00733ce1d5e6046410026c101759fa61715164b81e74ed7fdf01bbad9c98d",
+      "image_ids": [
+        "vocab-cahiers",
+        "vocab-crayons",
+        "vocab-papiers"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-cahiers.webp",
+        "/lib/images/tcf/qcm-audit/vocab-crayons.webp",
+        "/lib/images/tcf/qcm-audit/vocab-papiers.webp"
+      ],
+      "image_sha256": [
+        "ce135d6bff2d4efed9562dab89d2c6eb2e7dcd88706b616adf3612c83ab324e3",
+        "50e3fb307e1ef99b74ba8214a35e5b3e612ca74e1e0679766428361ad9635446",
+        "bf045b3f00d0ce7d4774b346f70b44c201c5776a1fec11de0f8c16ec71bf4483"
+      ],
+      "reason": "La promotion concerne deux paquets de cahiers pour le prix d’un. Stylos, règles et gommes ont une autre offre ; crayons et feuilles ne sont pas les paquets cités.",
+      "visual_review": "Trois cahiers, quatre crayons et trois feuilles de papier blanc réutilisés au pluriel. Les feuilles d’arbre proposées par l’alias sont rejetées pour ce contexte de papeterie ; aucun prix ou chiffre de promotion n’est dessiné."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-01-06#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "La médiathèque organise, 2 samedis par mois, des rencontres littéraires. Autour d’un café, bibliothécaires et libraires viennent présenter l’actualité d’un livre. Pour réserver rendez-vous en ligne sur le site.",
+      "source_sha256": "1de58eae10dccebfdf43e1f90eb9147ddc4411956ebd010984272d21af3f0b0b",
+      "semantic_sha256": "d042caf36bfae3e64de6746edd8908ff44af95848e02c68bb2fd771780ef544a",
+      "question": {
+        "enonce": "Autour de quelle boisson les rencontres ont-elles lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un café",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un thé",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un chocolat",
+            "correct": false
+          }
+        ],
+        "written_model": "Un café"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-01-06.mp3",
+      "audio_sha256": "03e9ee3c8b5e521e8df7cab5832a787828492349a9282cc0eb57dc722dd8db3c",
+      "image_ids": [
+        "co834-cafe-dessine",
+        "co834-the-dessine",
+        "co834-chocolat-chaud-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-the-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-chocolat-chaud-dessine.webp"
+      ],
+      "image_sha256": [
+        "6b4622c9174580a3cc80ef58711086d1fd8b668c710c756372aa231ddea2b126",
+        "4d0adb09009394fe86b95b66526f73ab66beedb2bc3640664071adbe1312e26d",
+        "0cd6f064d532f735503871d5337b209ae8275e1e48f0234e9d126839a3b36db2"
+      ],
+      "reason": "Les rencontres littéraires sont organisées autour d’un café. Thé et chocolat ne sont pas annoncés comme boisson de ces rencontres.",
+      "visual_review": "Café noir en tasse, thé ambré avec sachet et chocolat chaud en tasse réutilisés. Le chocolat du leurre est une boisson ; la tablette de chocolat et le café représenté par un établissement sont écartés. Trois tasses lisibles, aucune fréquence calendaire dessinée."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-01-03#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît ! Un portefeuille rouge contenant une carte étudiante vient d’être trouvé. Nous attendons son propriétaire à l’accueil situé à l’entrée du magasin.",
+      "source_sha256": "fa127bb0fe9709f53a184f2d0ee93ce2a3763731f77549b16abe707a8fd83531",
+      "semantic_sha256": "fb9c7ccd29ce24983b0a774bbfb5614af0a4011e85f739322fc4374bc3a06d04",
+      "question": {
+        "enonce": "De quelle couleur est-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Rouge",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Bleu",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Noir",
+            "correct": false
+          }
+        ],
+        "written_model": "Rouge"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
+      "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
+      "image_ids": [
+        "co834-couleur-rouge-dessinee",
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-noir-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-noir-dessinee.webp"
+      ],
+      "image_sha256": [
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729",
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "167068cc8de9be52e562652ad7051be477c15443b8fa8572868f7b984f957b16"
+      ],
+      "reason": "Le portefeuille trouvé est explicitement rouge. La carte étudiante à l’intérieur n’en modifie pas la couleur.",
+      "visual_review": "Échantillons rouge, bleu et noir réutilisés. L’énoncé demande la couleur, pas le contenu ou le propriétaire ; aucune identité ou carte n’est nécessaire dans ces trois réponses."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-04-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu as deux anoraks ? Oui, ma mère exagère toujours. Mais non ! Tu peux me prêter l’anorak que tu ne mets pas ? Le mien est trop léger. Prends le bleu. Moi je prends le vert.",
+      "source_sha256": "8251869c25425c838dd0840624106c78adaccc9da3a2068e86422a0c5705b490",
+      "semantic_sha256": "3d2b4314d702a3a1cd6b1bde268be4f9446fe9b335a79f0a6ceba5f9bcbd2e96",
+      "question": {
+        "enonce": "De quelle couleur est l’anorak prêté ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vert",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Rouge",
+            "correct": false
+          }
+        ],
+        "written_model": "Bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3",
+      "audio_sha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
+      "image_ids": [
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-vert-dessinee",
+        "co834-couleur-rouge-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+      ],
+      "reason": "Le propriétaire dit Prends le bleu. Le vêtement prêté est donc bleu ; il garde le vert.",
+      "visual_review": "Échantillons bleu, vert et rouge réutilisés. La relation de prêt est relue dans le dialogue ; le bleu entendu est attribué au bon anorak. Les images de couleur n’inventent aucun propriétaire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-04-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu as deux anoraks ? Oui, ma mère exagère toujours. Mais non ! Tu peux me prêter l’anorak que tu ne mets pas ? Le mien est trop léger. Prends le bleu. Moi je prends le vert.",
+      "source_sha256": "8251869c25425c838dd0840624106c78adaccc9da3a2068e86422a0c5705b490",
+      "semantic_sha256": "bec2df4735f1882e6ac4348fcaa1a73ae130ce4c4a707de7360c1ee24f5c63d7",
+      "question": {
+        "enonce": "De quelle couleur est celui que garde son propriétaire ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Vert",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Bleu",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Noir",
+            "correct": false
+          }
+        ],
+        "written_model": "Vert"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3",
+      "audio_sha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
+      "image_ids": [
+        "co834-couleur-vert-dessinee",
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-noir-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-noir-dessinee.webp"
+      ],
+      "image_sha256": [
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc",
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "167068cc8de9be52e562652ad7051be477c15443b8fa8572868f7b984f957b16"
+      ],
+      "reason": "Après avoir proposé l’anorak bleu, le propriétaire précise Moi je prends le vert. Celui qu’il garde est vert, pas bleu.",
+      "visual_review": "Échantillons vert, bleu et noir réutilisés, distincts. L’autre question du même dialogue vise l’anorak prêté ; les bonnes réponses restent différentes, sans changement du corrigé."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-01-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour fêter cette journée, pensez à mettre sur votre table un bon dessert. Vaste choix de tartes au chocolat, de gâteaux aux fruits et à la crème. Une surprise vous attend chez notre pâtissier.",
+      "source_sha256": "e2374941cd257d184bd8cc6e454c6bf1580905944f73d6047fdca49c677ef993",
+      "semantic_sha256": "22d4f220cf3f8f9a9a54613119216d4f6032d34f05d560b2ff1b740ec4712a68",
+      "question": {
+        "enonce": "Quel ingrédient est cité avec les fruits pour les gâteaux ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La crème",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le miel",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le yaourt",
+            "correct": false
+          }
+        ],
+        "written_model": "La crème"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-01-04.mp3",
+      "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
+      "image_ids": [
+        "vocab-creme-alimentaire",
+        "vocab-miel",
+        "vocab-yaourt"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-creme-alimentaire.webp",
+        "/lib/images/tcf/qcm-audit/vocab-miel.webp",
+        "/lib/images/tcf/qcm-audit/vocab-yaourt.webp"
+      ],
+      "image_sha256": [
+        "ca365a1ad2dd8474740779b58fb6e133701110386889b5cb7419ed9be4c1223b",
+        "63c63852584cf4953cc28806ca9d3e4a4221fb02f11eb60e8659c379ca181bce",
+        "105c25eaed5891a8e2994e635d3d5fd91411c3d04c9dadc08506c778a5e02480"
+      ],
+      "reason": "L’annonce propose des gâteaux aux fruits et à la crème. Miel et yaourt ne sont pas cités comme ingrédients.",
+      "visual_review": "Crème alimentaire en récipient de cuisine, miel ambré avec cuillère à miel et pot de yaourt ouvert réutilisés. Ici la crème alimentaire est adaptée au dessert ; le pot cosmétique du lot précédent est exclu."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-02-03#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Le 14 juillet, le leader du Tour de France cyclisme porte un maillot jaune à l’arrivée de cette course sur l’avenue des Champs Élysées. Objectif pour l’an prochain départ d’un pays étranger.",
+      "source_sha256": "9ca09abc6ad102f19dfb73997fbcb5f7c9603b476dc8853dbb0adf08bb73c52c",
+      "semantic_sha256": "014dfee56e27dc8f865c1c0a7b6a282bb7b95dc0d64c0a3aea098dd4001078ad",
+      "question": {
+        "enonce": "De quelle couleur est le maillot du leader ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Jaune",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vert",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Rouge",
+            "correct": false
+          }
+        ],
+        "written_model": "Jaune"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-02-03.mp3",
+      "audio_sha256": "cf52878433c083f84deab53aec643154a0dce43760cdcc244150a07ee39402da",
+      "image_ids": [
+        "co834-couleur-jaune-dessinee",
+        "co834-couleur-vert-dessinee",
+        "co834-couleur-rouge-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-jaune-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp"
+      ],
+      "image_sha256": [
+        "84516a0a2044ec25305367d7e3bd52f155dd839f48b70de11e6939897eaacb21",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729"
+      ],
+      "reason": "Le leader du Tour de France porte un maillot jaune selon l’annonce. Ni vert ni rouge n’est indiqué pour ce leader.",
+      "visual_review": "Échantillons jaune, vert et rouge réutilisés. La question demande seulement la couleur du maillot, sans représenter une date, un coureur nommé, une arrivée précise ou une nationalité."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-03-01#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Maman, c’est Béatrice ! Mon amie Olivia m’invite dimanche pour son anniversaire dans la salle des fêtes. Je veux mettre une robe. Apporte, s’il-te-plaît, ma robe bleue pour la faire laver. Elle ne peut pas être lavée à la main mais à sec. Demande de la préparer pour samedi. Peux-tu passer la chercher et préparer pour tous le gâteau aux fraises que tu sais très bien faire ? Pense à acheter le nécessaire. Merci maman. Bisous.",
+      "source_sha256": "ebf3a5afe34c418321ef9c3f42f580ddef399c03a1b8018e3d174bf47836c46f",
+      "semantic_sha256": "1fb5354be663ca61d6922b9433e98d8f82aa9d80969a0aadc38474f81cdcee7d",
+      "question": {
+        "enonce": "De quelle couleur est ce vêtement ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Bleu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Rouge",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vert",
+            "correct": false
+          }
+        ],
+        "written_model": "Bleu"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-03-01.mp3",
+      "audio_sha256": "50d0573f95d93b3500e529d76ab42877b460b0a5e3f5b2442f751ea2e9500428",
+      "image_ids": [
+        "co834-couleur-bleu-dessinee",
+        "co834-couleur-rouge-dessinee",
+        "co834-couleur-vert-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-couleur-bleu-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-rouge-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-couleur-vert-dessinee.webp"
+      ],
+      "image_sha256": [
+        "7ed683740b0f9bd5e32a9b12919df8f26a7ada00624af7a3670d114136d88688",
+        "cd2c251c5c8504d6e817502f0ef2d0ea4bd4d6dc965632473f9ee8ea741c0729",
+        "ce3137c87389115e7486d019c7b3ff9ffe5700c09d5097968f0f636008e046cc"
+      ],
+      "reason": "Béatrice demande d’apporter sa robe bleue au nettoyage à sec. Le bleu qualifie bien la robe et non un autre objet du message.",
+      "visual_review": "Échantillons bleu, rouge et vert réutilisés. Aucune robe de couleur arbitraire ou date de nettoyage n’est ajoutée ; les images correspondent entièrement aux réponses qui sont trois couleurs."
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-03-01#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Maman, c’est Béatrice ! Mon amie Olivia m’invite dimanche pour son anniversaire dans la salle des fêtes. Je veux mettre une robe. Apporte, s’il-te-plaît, ma robe bleue pour la faire laver. Elle ne peut pas être lavée à la main mais à sec. Demande de la préparer pour samedi. Peux-tu passer la chercher et préparer pour tous le gâteau aux fraises que tu sais très bien faire ? Pense à acheter le nécessaire. Merci maman. Bisous.",
+      "source_sha256": "ebf3a5afe34c418321ef9c3f42f580ddef399c03a1b8018e3d174bf47836c46f",
+      "semantic_sha256": "8d71c79ddbc44497f306755edf04bb69a970d949451b05a050f0ac1a19acd8b0",
+      "question": {
+        "enonce": "Quel gâteau Béatrice demande-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un gâteau aux fraises",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un gâteau au chocolat",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une tarte au citron",
+            "correct": false
+          }
+        ],
+        "written_model": "Un gâteau aux fraises"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-03-01.mp3",
+      "audio_sha256": "50d0573f95d93b3500e529d76ab42877b460b0a5e3f5b2442f751ea2e9500428",
+      "image_ids": [
+        "audit-context-gateau-fraises",
+        "audit-context-gateau-chocolat",
+        "co306-tarte-citron-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-gateau-fraises.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-gateau-chocolat.webp",
+        "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp"
+      ],
+      "image_sha256": [
+        "c20362fd7429ea1aa14c6837626634ac33140be8f6506a1b6feeb2ce9c54c191",
+        "0fbe8d4104ec63f5429821dbb693234081a4517652df31ad22dd1b15d6104153",
+        "395345c543575c1f64ddd60889f816e5e1268b46333830ac7036c88016c18b11"
+      ],
+      "reason": "Béatrice demande à sa mère de préparer le gâteau aux fraises qu’elle fait bien. Gâteau au chocolat et tarte au citron ne sont pas demandés.",
+      "visual_review": "Gâteau entier avec fraises visibles dans la garniture et sur le dessus, gâteau entier chocolat et tarte au citron entière réutilisés. Les trois desserts sont distincts ; aucune bougie, date ou inscription d’anniversaire arbitraire."
+    }
+  ]
+}

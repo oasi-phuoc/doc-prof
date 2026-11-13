@@ -1,0 +1,728 @@
+{
+  "date": "2026-11-13",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "baseline_commit": "8591dc8219d74a2a6f3d6655ddd457989f714f22",
+  "human_audio_listening_performed": false,
+  "trios": [
+    {
+      "key": "delf-a1s-ce-002#1",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Chers élèves,\nCe semestre, nous allons découvrir un sport nouveau : l’Ultimate. On y joue avec un disque volant et deux équipes de sept joueurs. Pour marquer un point, il faut faire passer le disque dans la zone de l’équipe adverse. Attention : on ne peut pas courir avec le disque en main. Vous avez dix secondes au maximum pour le passer à un coéquipier.\nM. Berset, professeur de sport",
+      "source_sha256": "f757e8862330cbb2faf7cf4267b14267dae3ff8eb42024cd2d5e330bd5e4aef0",
+      "semantic_sha256": "d50ad69fb8a028a0d762999c5ba2cb700f0d955259cebd98cb876a05bba6a43a",
+      "question": {
+        "enonce": "Quel sport les élèves vont-ils découvrir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L'Ultimate",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le hockey",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le rugby",
+            "correct": false
+          }
+        ],
+        "written_model": "L'Ultimate"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-ultimate-passe",
+        "vocab-hockey",
+        "vocab-rugby"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-ultimate-passe.png",
+        "/lib/images/tcf/qcm-audit/vocab-hockey.webp",
+        "/lib/images/tcf/qcm-audit/vocab-rugby.webp"
+      ],
+      "image_sha256": [
+        "419a02454956b50b6a9fb1620fe611a36a4cca4e817aa0b6b68258a1c8c316c2",
+        "c9df8f3d4517e9fa3be0f60a71f3c741da735687ae2246feff2a8847b9ca099e",
+        "72eb2cf8c8f4002ea7eab0e4301c99ed438ffbfffd9d1a7b456af7d5df953704"
+      ],
+      "reason": "Le professeur annonce la découverte de l’Ultimate, pratiqué avec un disque. Hockey et rugby ne sont pas nommés.",
+      "visual_review": "Vue partielle d’Ultimate relue : disque blanc, porteuse immobile et équipes distinctes ; pas une représentation des effectifs complets. Hockey sur glace avec crosses et palet et rugby avec ballon ovale réutilisés. Les visages de l’Ultimate ont été différenciés de ceux des autres scènes."
+    },
+    {
+      "key": "delf-a2j-ce-001#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Atelier 1 — Vous rêvez de devenir acteur, réalisateur ou technicien de cinéma ? Cet atelier vous fait découvrir l’audiovisuel et ses métiers.\n\nAtelier 2 — Apprenez à réussir croissants et pains au chocolat : l’atelier dévoile les secrets de la pâtisserie suisse.\n\nAtelier 3 — Découvrez les métiers de la scène (opéra, danse, cirque…) : une formation artistique, mais aussi de gestion et d’administration.",
+      "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
+      "semantic_sha256": "0805ee2978e4d0a5699e37906819cf5a15b04b2f6b41ae31c260a0e78a0dff25",
+      "question": {
+        "enonce": "Quel métier de l’audiovisuel est cité ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Réalisateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vétérinaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Architecte",
+            "correct": false
+          }
+        ],
+        "written_model": "Réalisateur"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-realisation-cinema",
+        "vocab-veterinaire",
+        "extension573-architecte-atelier"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-realisation-cinema.png",
+        "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp",
+        "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png"
+      ],
+      "image_sha256": [
+        "f7cb952536a407b7802bce507726fe729f3d618e34c8fe2ad0d73332e61e26c6",
+        "da1d94a2a1f818adb4a139593c359e2d88afbfa2cd519bf7de7d5dd00d916a1f",
+        "dc3ace93e42962803312028f29c4d3a8e455d205555a5549f053970aa62bb5c1"
+      ],
+      "reason": "L’atelier audiovisuel cite acteur, réalisateur et technicien de cinéma. Ni vétérinaire ni architecte n’est proposé dans le texte.",
+      "visual_review": "Premières versions de la réalisation et de l’architecture explicitement choisies par l’utilisateur, sans intégration des reprises dessinées. Direction de plateau avec scénario et moniteur, vétérinaire examinant un chien et architecte avec plans et maquette : trois métiers distincts. Genre et apparence ne sont pas les critères de réponse."
+    },
+    {
+      "key": "delf-a2j-ce-001#8",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Atelier 1 — Vous rêvez de devenir acteur, réalisateur ou technicien de cinéma ? Cet atelier vous fait découvrir l’audiovisuel et ses métiers.\n\nAtelier 2 — Apprenez à réussir croissants et pains au chocolat : l’atelier dévoile les secrets de la pâtisserie suisse.\n\nAtelier 3 — Découvrez les métiers de la scène (opéra, danse, cirque…) : une formation artistique, mais aussi de gestion et d’administration.",
+      "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
+      "semantic_sha256": "29c8a7117f80ad6944e5cc8c3992a28e58304dd4db8c01aedc002b6bfe182b3a",
+      "question": {
+        "enonce": "Quel métier technique peut-on découvrir dans l’atelier 1 ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Technicien de cinéma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Technicien automobile",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Technicien de laboratoire",
+            "correct": false
+          }
+        ],
+        "written_model": "Technicien de cinéma"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-technicien-cinema",
+        "vocab-mecanicien",
+        "extension573-technicien-laboratoire"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-technicien-cinema.png",
+        "/lib/images/tcf/qcm-audit/vocab-mecanicien.webp",
+        "/lib/images/tcf/qcm-audit/extension573-technicien-laboratoire.png"
+      ],
+      "image_sha256": [
+        "6e96ce275cee916e5dad5ae4d2eabb3eacde52049ef9413389ffc968626a5912",
+        "f45e9118d97d48a3b61627dacc92938718556c1de8a6df7545929ff7210d81e5",
+        "aa18ba8aaa99c4a0fdfb35167aa69daa5d7b1bfb74fe354c6bb28cc8fc21307a"
+      ],
+      "reason": "L’atelier 1 nomme le technicien de cinéma. Les deux autres ateliers concernent la pâtisserie et la scène ; ils ne citent aucun technicien automobile ou de laboratoire.",
+      "visual_review": "Première version de la technicienne de cinéma retenue par l’utilisateur : réglage d’un projecteur sur plateau. Mécanicien existant travaillant sous le capot, puis technicien de laboratoire avec pipette et microscope. Trois actions techniques entières, personnages distincts et variés."
+    },
+    {
+      "key": "delf-a1-2022-co-84#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Combien coûte ce magazine ?",
+      "source_sha256": "c1b8d1905b63f79dde96398790378b9bbda20d00f6d38bdd77d836011624d7c3",
+      "semantic_sha256": "ff178364e0d1d796bcc19fd85eb9bc0f3767adf90dc3153858b3b51ce47e6daf",
+      "question": {
+        "enonce": "Quel produit la personne évoque-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un magazine",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un livre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un journal",
+            "correct": false
+          }
+        ],
+        "written_model": "Un magazine"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_84-1.mp3",
+      "audio_sha256": "93fabf0469fdd68c43cd2c893be5e2f6cf44a6aca508ef7ba22fc9048c5ef192",
+      "image_ids": [
+        "extension573-magazine-couverture",
+        "co834-livre-dessine",
+        "audit-context-journal"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-magazine-couverture.png",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+      ],
+      "image_sha256": [
+        "7edf759b5459371479b92f7852e1ed905e81a437333824372e0e67917b3238d5",
+        "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2",
+        "83d43bd2e76e658026a532f524687e8f7d8b4d9d03050433ce3a1a8264d39b7f"
+      ],
+      "reason": "La phrase Combien coûte ce magazine ? nomme un magazine. Le QCM demande le produit, jamais son prix.",
+      "visual_review": "Magazine fin à couverture souple isolé, livre bleu relié et grand journal ouvert relus. Aucun objet de la référence de boissons n’est conservé dans le magazine ; pas de montant, date ou titre inventé."
+    },
+    {
+      "key": "delf-a2r-ce-036#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Quand vous arrivez au travail :\n• Lavez-vous les mains avec de l’eau et du savon.\n• Mettez votre tenue de travail (blouse, pantalon, chaussures).\n• Nettoyez votre table après le passage de chaque client.\n• S’il vous manque des produits, vous pouvez en trouver à l’accueil.\n• Les toilettes de l’institut sont réservées au personnel.\n• Évitez de manger en dehors de la salle de repos.",
+      "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
+      "semantic_sha256": "c664528317282415453ccc20434d4b3bf0ea7643c578fb73fd74474df8eed9b7",
+      "question": {
+        "enonce": "Avec quels produits faut-il se laver les mains ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "De l’eau et du savon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du parfum et du lait",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du désinfectant pour les sols",
+            "correct": false
+          }
+        ],
+        "written_model": "De l’eau et du savon"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-eau-savon-duo",
+        "extension573-parfum-lait-duo",
+        "extension573-desinfectant-sols"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-eau-savon-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-parfum-lait-duo.png",
+        "/lib/images/tcf/qcm-audit/extension573-desinfectant-sols.png"
+      ],
+      "image_sha256": [
+        "16a2b6834b4bd4eea5dca20050622a8678e3471ebbc4224faef8a34dd53695ba",
+        "c05929e73db8128b2f5a21eaacaa329e8678155a8a3ed5675eefab1044fddd4f",
+        "78d9509f32e0bf599c07ac71eedb010f4eb19e346d4a9f452ed4cc6d2661aaaa"
+      ],
+      "reason": "La première consigne demande explicitement de se laver les mains avec de l’eau et du savon. Le parfum, le lait et le désinfectant pour sols ne sont pas indiqués pour ce geste.",
+      "visual_review": "Trois nouvelles compositions relues : savon et eau claire, parfum à vaporisateur et bouteille de lait, bidon marqué DÉSINFECTANT SOLS avec pictogramme de nettoyage. Les deux duos représentent leurs deux produits ; aucun dosage, date ou montant."
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous aimez lire ?\nAllez-vous à l’école demain ?\nPourquoi prenez-vous le bus ?\nEst-ce que vous mangez au self à midi ?\nOù achetez-vous des fruits ?\nAimez-vous la mer ?\nEst-ce que vous connaissez Paris ?\nVous habitez à la campagne ?\nEst-ce que vous avez un vélo ?\nVous faites du sport ?",
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "479f78327a76bc733cf1db367bc0dfaa197bb318ee91c332289afa9ec68ffcf0",
+      "question": {
+        "enonce": "Quels aliments sont cités dans la question sur les achats ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des fruits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des légumes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des biscuits",
+            "correct": false
+          }
+        ],
+        "written_model": "Des fruits"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
+      "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
+      "image_ids": [
+        "co834-fruits-dessines",
+        "co834-legumes-dessines",
+        "vocab-biscuits"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+        "/lib/images/tcf/qcm-audit/vocab-biscuits.webp"
+      ],
+      "image_sha256": [
+        "a6d85d7b468c6ca2fbd7fbe0a0dba2c13a6bfeb5b5feb33ec599f21263a635c9",
+        "5f1824b19f70aa1f5ee71ebdf88ee8c321fed7c84423d668d4c324406736c6ee",
+        "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af"
+      ],
+      "reason": "La série demande Où achetez-vous des fruits ? Aucun légume ou biscuit n’est cité dans les autres phrases.",
+      "visual_review": "Groupe de fruits, groupe de légumes et quatre biscuits entiers réutilisés. Le pluriel est conservé dans les trois réponses ; aucune recette, quantité précise ou personne n’est inventée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-048-01#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Monsieur. Bonjour jeune homme. Oh ! Qu’est-ce que vous avez là ? Je fais du vélo et voilà ! J’ai mal à la jambe, vous pouvez me donner des médicaments, s’il vous plaît ? Qu’est-ce que je vous donne ? J’ai besoin d’un désinfectant. J’ai ce produit. Il est très efficace. Quel est prix de ce flacon ? Il coûte 4,80 €. Et vous avez aussi des pansements ? Bien sûr. Voici les pansements. Ils sont à quel prix ? La boîte coûte 3,10 €. Il y a combien de pansements dans une boîte ? Il y a 10 pansements. Je peux prendre des comprimés aussi ? Oui, si vous avez mal vous pouvez prendre ces comprimés un le matin et un le soir. Merci, combien je vous dois en tout ? 10,10 € jeune homme. Voici les 10 € et les 10 centimes. Merci et au revoir. Au revoir.",
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "84f8dfe951d854ae55a7e954a6aacf2e00e429f575b79321d31d15942df0787c",
+      "question": {
+        "enonce": "Quel médicament le client demande-t-il aussi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des comprimés",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du sirop",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des gouttes",
+            "correct": false
+          }
+        ],
+        "written_model": "Des comprimés"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "image_ids": [
+        "vocab-comprimes",
+        "co306-sirop-medical-dessine",
+        "co306-gouttes-medicales-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-comprimes.webp",
+        "/lib/images/tcf/qcm-audit/co306-sirop-medical-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gouttes-medicales-dessine.webp"
+      ],
+      "image_sha256": [
+        "f3745b9d9a870550e1d6644501bf2e29eb94a3f63b4a7096b59954213018e7cd",
+        "08cc20a679d8e73bb899aebbaf635db8b541eb0cde26b13c633edf53ecaa1246",
+        "5111918a395833cab4f8496d6ac6bc3a21d89985da6d313532d361613dd70447"
+      ],
+      "reason": "Après le désinfectant et les pansements, le client demande Je peux prendre des comprimés aussi ? Sirop et gouttes ne sont pas demandés.",
+      "visual_review": "Plusieurs comprimés blancs, flacon de sirop avec cuillère et flacon compte-gouttes réutilisés. Les croix vertes distinguent les deux médicaments liquides d’aliments. Le nombre de comprimés dessiné n’est pas une posologie ; la question demande la forme du médicament."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-05-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Pamela, enfin le départ pour les vacances… c’est pour demain. Tu vas enfin connaître la Côte d’Azur ! C’est une région magnifique. On annonce de belles journées. Ta valise est prête ? Moi j’apporte mon maillot de bain, des tee shirts, un short et mes lunettes de soleil. À demain !",
+      "source_sha256": "2843e17a5cc855b1516aca432bfd212b376bfd575240649a6b60aa6fe64cdb2d",
+      "semantic_sha256": "a6a7c75a9b1ae5e2a4b8a6e3646f5e9eddc45a325ccf43741077fb64bfaf729f",
+      "question": {
+        "enonce": "Quel accessoire protège ses yeux du soleil ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des lunettes de soleil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une casquette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un chapeau",
+            "correct": false
+          }
+        ],
+        "written_model": "Des lunettes de soleil"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-05-01.mp3",
+      "audio_sha256": "5833ee84e92947999ad267d4e08f3bfedf95d5a76febb7e73a29aabc2e844dc7",
+      "image_ids": [
+        "vocab-lunettes-soleil",
+        "co834-casquette-dessinee",
+        "co834-chapeau-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp",
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
+      ],
+      "image_sha256": [
+        "cd8d28b76764dda7d88781c7fd11efe6d7ed4db5f4901c9af43b1f2e8cd51ab8",
+        "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f",
+        "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39"
+      ],
+      "reason": "La personne annonce emporter ses lunettes de soleil sur la Côte d’Azur. Ni casquette ni chapeau n’est cité ; l’énoncé précise la protection des yeux.",
+      "visual_review": "Paire de lunettes à verres sombres, casquette à visière et chapeau à bord réutilisés. Les trois accessoires sont entiers et distincts, sans visage, marque ou couleur imposée par le support."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-05-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Paula. Tu veux faire de la musique avec moi ? Dans mon école on apprend à jouer de la batterie, de la guitare électrique, du violon. Le prof est super sympa. Moi je fais du piano de 16h00 à 17h00 et le cours a lieu le jeudi après -midi.",
+      "source_sha256": "219a77b4a7c18de33a75d0db4fa08ffe25e803a32cdbf2bab878d947e8209229",
+      "semantic_sha256": "9cc43b0bcbd6c320601d223f4c60419bbd22a6231d1dddd3bccc852c62eaea54",
+      "question": {
+        "enonce": "Quel instrument la personne qui appelle apprend-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le piano",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le violon",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La guitare",
+            "correct": false
+          }
+        ],
+        "written_model": "Le piano"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
+      "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
+      "image_ids": [
+        "vocab-piano",
+        "vocab-violon",
+        "co834-guitare-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-piano.webp",
+        "/lib/images/tcf/qcm-audit/vocab-violon.webp",
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp"
+      ],
+      "image_sha256": [
+        "5bbe9787f9ae1bb09e5e498205ded4508611d133186333919fc00c91ddf36cf3",
+        "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd",
+        "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77"
+      ],
+      "reason": "La personne précise Moi je fais du piano. Violon et guitare électrique sont d’autres cours proposés par l’école, pas son instrument personnel.",
+      "visual_review": "Piano droit, violon avec archet et guitare acoustique entiers réutilisés. Le leurre est libellé La guitare sans sous-type : l’image représente cette catégorie, et ne prétend pas reproduire le cours de guitare électrique du support. Les horaires ne sont pas illustrés."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-06#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Du jeudi 20 mars au samedi 22 mars, au rayon parfumerie situé au premier étage, profitez de notre offre exclusive : 1 parfum acheté, une crème offerte.",
+      "source_sha256": "59ace0ba5838a9ab9d0d4227ba731f3824bf70b9431686ae8056a8c84832115f",
+      "semantic_sha256": "baa93a333b89497e627c6454fbf555858acea8fe9466ac2dc0b8b0f7e8d6d5bd",
+      "question": {
+        "enonce": "Quel produit est offert pour l’achat d’un parfum ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une crème",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un savon",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un gel douche",
+            "correct": false
+          }
+        ],
+        "written_model": "Une crème"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-06.mp3",
+      "audio_sha256": "fb4b8e02a75f89f618cf910ddd8d1bb8d13b3cde0a0b82ea7dc296eb747929a6",
+      "image_ids": [
+        "extension573-creme-cosmetique",
+        "co834-savon-dessine",
+        "co306-gel-douche-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-creme-cosmetique.png",
+        "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp"
+      ],
+      "image_sha256": [
+        "abd2e06828fcd968612270d3595fa337c7500e313e0247aad4c6d601aa0e1045",
+        "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393",
+        "da617e8ef9fb337e9846cc17228152b10329a244acddd4b933debe6ef59035e1"
+      ],
+      "reason": "Au rayon parfumerie, l’offre est un parfum acheté, une crème offerte. Ni savon ni gel douche n’est offert.",
+      "visual_review": "Nouveau pot de crème cosmétique ouvert et marqué SOINS, savon solide et gel douche à pictogramme de pommeau réutilisés. La crème alimentaire proposée automatiquement est rejetée. Pas de montant, date ou promotion dessinée."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-02-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Jeunes et moins jeunes vous vous demandez quand souhaiter bonne fête à votre maman ? Et bien c’est demain. Il vous reste du temps, si vous voulez, pour acheter un parfum, un bouquet de fleurs ou encore un foulard.",
+      "source_sha256": "d377dff0a8429a796093c1498bb50baac1054ff5268f4fcfc8b12074821a1ba3",
+      "semantic_sha256": "fc13c13ca9d1a0329a6590e4fb93fbebe9a545c717970196bff80160ecf3e509",
+      "question": {
+        "enonce": "Quel cadeau parfumé est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un parfum",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un savon",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une crème",
+            "correct": false
+          }
+        ],
+        "written_model": "Un parfum"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-02-01.mp3",
+      "audio_sha256": "626d0c0f3229de7ea951a4eadf3833feda4f8989058812ba5e6202b795911252",
+      "image_ids": [
+        "vocab-parfum",
+        "co834-savon-dessine",
+        "extension573-creme-cosmetique"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+        "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-creme-cosmetique.png"
+      ],
+      "image_sha256": [
+        "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72",
+        "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393",
+        "abd2e06828fcd968612270d3595fa337c7500e313e0247aad4c6d601aa0e1045"
+      ],
+      "reason": "Les cadeaux proposés sont parfum, bouquet et foulard. Le parfum est la seule réponse citée parmi les trois produits proposés par le QCM.",
+      "visual_review": "Flacon de parfum à vaporisateur et savon solide réutilisés, nouveau pot de crème cosmétique réemployé. Les trois produits conviennent au thème des soins et cadeaux ; la crème alimentaire est écartée."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-04-03#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Excusez-moi, vous pouvez garder mon chien 1 minute s’il vous plaît ? Oui mais vous allez où ? Je rentre dans la pâtisserie prendre un gâteau. Pas de problèmes, allez-y.",
+      "source_sha256": "7052cd271ca75d1a38ab10896a53fcfad8bb1fa67b1b738be08e8318b079a651",
+      "semantic_sha256": "4883b18943910c7e0c0aee905664e4533cc6c1cefa5c3c39535f67c15c693488",
+      "question": {
+        "enonce": "Dans quel magasin la personne veut-elle entrer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une pâtisserie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une librairie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une pharmacie",
+            "correct": false
+          }
+        ],
+        "written_model": "Une pâtisserie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+      "image_ids": [
+        "retained-20261107-ba9800f52bb5",
+        "vocab-librairie",
+        "co834-pharmacie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/patisserie.webp",
+        "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+        "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6",
+        "db63a77e78367d3ede4c88a3366c7ab8c142146f1076c9b7c3995ae4e2c44eeb",
+        "620870f481022e883cabb486221196bed0137eadd45c47c808c55d9fd847b388"
+      ],
+      "reason": "La personne veut entrer dans la pâtisserie pour prendre un gâteau et demande de garder son chien pendant ce temps. Librairie et pharmacie ne sont pas nommées.",
+      "visual_review": "Vraie boutique de pâtisserie à vitrine et caisse réutilisée, pas le mille-feuille isolé proposé par le même mot. Librairie avec livres et caisse, pharmacie avec médicaments et croix verte relues. Le QCM porte sur le magasin ; aucune apparence du client ou du chien n’est ajoutée."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-03-01#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, c’est Chloé. Marina pour venir chez moi à pied, au feu rouge de l’avenue Foch, prends à droite. Tu passes devant l’hôtel Lux et au coin de la rue il y a une grande pâtisserie. J’habite en face, le grand immeuble blanc. Il n’y a pas de noms sur la sonnette mais un numéro. Tu sonnes au numéro 68. Tu peux aussi prendre le bus surtout si tu as un abonnement. Apporte ton ordinateur pour réserver nos prochaines vacances.",
+      "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
+      "semantic_sha256": "e4e366d66ec6b4b99e9540871cb4edcd119496cda368ff858ae7b3ad5339cb7c",
+      "question": {
+        "enonce": "En face de quel magasin Chloé habite-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une pâtisserie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une librairie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une pharmacie",
+            "correct": false
+          }
+        ],
+        "written_model": "Une pâtisserie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
+      "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
+      "image_ids": [
+        "retained-20261107-ba9800f52bb5",
+        "vocab-librairie",
+        "co834-pharmacie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/patisserie.webp",
+        "/lib/images/tcf/qcm-audit/vocab-librairie.webp",
+        "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "69af7a2ba33830e11bc855ec337f04e038df95064c7c5ca15241bdd4851e0bb6",
+        "db63a77e78367d3ede4c88a3366c7ab8c142146f1076c9b7c3995ae4e2c44eeb",
+        "620870f481022e883cabb486221196bed0137eadd45c47c808c55d9fd847b388"
+      ],
+      "reason": "Chloé décrit une grande pâtisserie au coin de la rue puis dit J’habite en face. Aucune librairie ou pharmacie ne sert de repère.",
+      "visual_review": "Même trio de magasins réutilisé après lecture de cette autre source. La boutique identifie la catégorie pâtisserie ; elle ne prétend pas reproduire le plan de la rue, le bâtiment blanc ou son adresse. Pas de gâteau seul substitué au magasin."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-04-02#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Ce shampoing va bien pour mes cheveux frisés ? Oui, ma cousine le prend et dit qu’il est super. Et ce dentifrice il est bon aussi ? Je ne sais pas, je ne le connais pas.",
+      "source_sha256": "743e5818a14aac9a1a69a8d123d1d7aa0e5d5d8d3933a879f9b73da7b4c9a0a9",
+      "semantic_sha256": "043adcb90a2311e1eb82b9dde626c8552f5defedbf9333bb4057776f0b4f5039",
+      "question": {
+        "enonce": "Quel autre produit la cliente demande-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un dentifrice",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un savon",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un gel douche",
+            "correct": false
+          }
+        ],
+        "written_model": "Un dentifrice"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+      "image_ids": [
+        "co834-dentifrice-dessine",
+        "co834-savon-dessine",
+        "co306-gel-douche-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-dentifrice-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gel-douche-dessine.webp"
+      ],
+      "image_sha256": [
+        "1ceef03705d7a53c2d204752ebae060f78bb9c17e241c240a7f997307f0ff78a",
+        "7581a905ab128b946bb41a38c86c19c6433236abcfba6bd67cbd39da71cd6393",
+        "da617e8ef9fb337e9846cc17228152b10329a244acddd4b933debe6ef59035e1"
+      ],
+      "reason": "Après le shampoing, la cliente demande Et ce dentifrice il est bon aussi ? Le vendeur ne le connaît pas. Savon et gel douche ne sont pas demandés.",
+      "visual_review": "Tube de dentifrice à pictogramme de dent et pâte visible, savon solide et gel douche à pictogramme de douche réutilisés. Trois produits d’hygiène distincts et entiers, sans marque, prix ou dose."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-01-05#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "L’utilisation des appareils électroniques est autorisée pendant tout le voyage. Toutefois, nous prions nos passagers d’enlever leurs écouteurs pendant le décollage et l’atterrissage au moment des consignes de sécurité.",
+      "source_sha256": "10d0c39bed6fdb38d515b8e66ae8d1ec0cb297df84ce93c8331f5209b4da077a",
+      "semantic_sha256": "962364c3ca872536f1d9e343e64def62a83b4666bba367627ab905decdf6c909",
+      "question": {
+        "enonce": "Quel accessoire faut-il retirer à certains moments ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les écouteurs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les lunettes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La montre",
+            "correct": false
+          }
+        ],
+        "written_model": "Les écouteurs"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-05.mp3",
+      "audio_sha256": "5c39dabcd052213b9e0e5612d0b7c1a5f744e80b412c01ddc79f761e7d6580c8",
+      "image_ids": [
+        "co306-ecouteurs-dessine",
+        "co306-lunettes-vue-dessine",
+        "co834-montre-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-ecouteurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+      ],
+      "image_sha256": [
+        "e25cb11740e390c4adfdbfce7acca0c879814113e3f83b02bd66d53d9dfe3772",
+        "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245",
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629"
+      ],
+      "reason": "L’annonce demande d’enlever les écouteurs pendant le décollage et l’atterrissage pour les consignes de sécurité. Lunettes et montre ne sont pas concernées.",
+      "visual_review": "Paire d’écouteurs filaires, paire de lunettes de vue et montre bracelet réutilisées. Le support ne précise pas sans fil ; la paire existante suffit. La question ne porte pas sur l’heure de la montre ; aucun horaire n’est ajouté à la source."
+    }
+  ]
+}

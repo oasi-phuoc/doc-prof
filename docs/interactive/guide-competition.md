@@ -12,6 +12,8 @@ Une bonne réponse rapporte de 500 à 1 000 points avec le bonus de rapidité, o
 
 Un rechargement dans le même onglet retrouve l’accès à la salle. La clé enseignant n’est pas mémorisée ; seule une autorisation limitée à cette salle et à ce rôle reste dans l’onglet. Les salles et leurs accès expirent au plus tard deux heures après leur création. Fermer l’onglet peut faire perdre cet accès.
 
+Si l’option **Proposer la transcription après les réponses** est activée, l’icône livre apparaît après la dernière question liée à une écoute. L’enseignant peut ouvrir le texte pour mettre la correction en pause, puis fermer la lecture et choisir **Reprendre**. Les élèves peuvent lire le texte publié sur leur appareil ; leur lecture n’arrête pas la salle et se ferme quand la question suivante arrive. Le même réglage est disponible pour le défi local.
+
 ## Sans aucun réseau entre appareils
 
 Les appareils séparés ne peuvent pas synchroniser leurs réponses sans moyen de communication. Choisissez **Sur cet appareil** pour jouer sur un appareil commun que les joueurs se passent à tour de rôle.
@@ -19,6 +21,16 @@ Les appareils séparés ne peuvent pas synchroniser leurs réponses sans moyen d
 Préparez le défi pendant que la fiche est accessible, attendez le chargement complet des images, des audios et des mascottes, puis ajoutez une mascotte par joueur. La connexion peut ensuite être coupée. L’écran **À toi !** masque la question et les choix précédents ; **Je suis prêt** affiche la question et démarre le temps personnel. La correction attend tous les tours. Les points sont calculés localement et le classement reste sur cet appareil.
 
 Gardez la page ouverte pour continuer sans connexion. Un démarrage à froid entièrement hors ligne ou un rechargement hors ligne ne sont pas garantis par cette version. Le journal du défi conserve ses actions dans l’onglet, pendant deux heures au maximum ; il n’embarque ni les questions ni leur corrigé. Quitter le défi le met en pause. Avec une connexion pour préparer de nouveau les médias, l’icône trophée puis **Reprendre le défi local** retrouve la même série, les mascottes et les réponses. **Nouvelle compétition**, au bilan, renouvelle le tirage et propose une liste de joueurs vide. Une sauvegarde incompatible est préservée et demande un redémarrage explicite.
+
+## Duel et équipes sur le même écran
+
+Choisissez **Préparer un duel**, puis une mascotte pour chaque côté. Chaque joueur commence à 100 % de vie. Le premier clic décide : juste, l’adversaire perd 10 % ; faux, le joueur perd lui-même 10 %. Les questions **Critique !** infligent 20 % et arrivent au hasard, environ une fois sur quatre. Les traits animés au centre et la réaction de la mascotte indiquent le coup. Le premier à 0 % perd.
+
+Le minuteur est facultatif ; sans clic à la fin du temps, personne ne perd de vie. Réglez la correction de 1 à 10 secondes : les questions s’enchaînent automatiquement, en répétant la série sélectionnée jusqu’à une victoire. Les cartes restent tactiles ; au clavier, utilisez A–F pour le côté gauche et 1–6 pour le côté droit. Sur téléphone les deux zones sont l’une sous l’autre.
+
+**Créer les équipes** permet d’ajouter le même nombre de mascottes de chaque côté. Les binômes et leur ordre sont tirés au sort au départ. Après chaque duel, les deux mascottes suivantes sont appelées avec 100 % de vie ; **Commencer le duel** lance leur rencontre. L’équipe qui a le plus de victoires gagne. Le tournoi peut finir à égalité.
+
+Après la préparation complète, les duels peuvent continuer sans réseau sur l’écran commun. Quitter met la partie en pause ; **Reprendre la partie** retrouve les vies et l’ordre du tirage dans le même onglet, pendant 24 heures au maximum, avec une connexion pour recharger les médias. **Nouvelle partie** revient au choix de compétition, renouvelle la graine des exercices générés en conservant la sélection et les paramètres, puis permet un nouveau tirage des binômes et des critiques. Les questions écrites manuellement gardent leur contenu. Ces duels locaux n’utilisent pas de code de salle. Voir les [règles et limites](adr-0043-duels-par-equipes.md).
 
 ## Activation par l’administrateur
 

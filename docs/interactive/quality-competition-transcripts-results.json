@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-13",
+  "baseline": "6c7130bb207e54a1049f2a65f4023f6076d4b61d",
+  "scope": "F29 : transcriptions CO facultatives en compétition, dans le défi local et le code des salles Internet.",
+  "tests": {
+    "newDomainTests": 8,
+    "newApiTests": 2,
+    "focusedPassed": 19,
+    "fullSuitePassed": 310,
+    "failed": 0,
+    "backwardCompatibility": "Paramètres anciens sans transcription ; journal local version 1 et anciennes commandes de pause acceptés."
+  },
+  "browser": {
+    "passed": [
+      "competition-transcripts-browser",
+      "competition-worker",
+      "competition-browser",
+      "transcripts-browser",
+      "a4-regression"
+    ],
+    "all53StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "source": "Deux enregistrements TCF existants, deux questions sur la première écoute et une sur la suivante ; transcriptions exactes conservées.",
+    "online": "Deux navigateurs élèves et un enseignant. Le texte reste absent des réponses API pendant les questions et la première correction ; il apparaît après la seconde correction partagée.",
+    "teacherReading": "Ouvrir le livre met la correction en pause sur le serveur. Onze secondes réelles ne consomment pas le battement et ne changent pas les scores. Fermer garde la pause ; reprise explicite.",
+    "learnerReading": "Aucun contrôle de la pause commune ; fermeture automatique de la lecture à la question suivante.",
+    "local": "Deux mascottes et trois tailles d’écran, connexion coupée après préparation des médias. Questions et texte masqués lors des transmissions. Douze secondes réelles de lecture ne font pas avancer la partie.",
+    "disabled": "Décocher le réglage retire les transcriptions du quiz envoyé au serveur.",
+    "resume": "Redémarrage de la salle, rechargement des navigateurs et replay local conservent l’éligibilité ; la fenêtre de lecture reste fermée à la reprise.",
+    "privacy": "Le texte est séparé de la question publique et n’est pas stocké dans le journal local ; questions futures liées et textes contradictoires bloquent sa publication.",
+    "keyboard": "Échap et retour du focus au livre, y compris après la mise en pause enseignant.",
+    "axeTranscriptDialogViolations": 0,
+    "serverWritesToFicheApi": 0,
+    "sourceTemplate": "unchanged",
+    "errors": []
+  },
+  "worker": {
+    "runtime": "real workerd through Miniflare, SQLite-backed Durable Objects",
+    "workerBytes": 50449,
+    "quiz": "60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime",
+    "authority": "teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view",
+    "grading": "1000 and 0 points derived by server",
+    "restart": "new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage",
+    "matching": "Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private",
+    "productionDeployment": false,
+    "transcripts": "Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime."
+  },
+  "checks": {
+    "types": "tsc -b et typecheck:api réussis",
+    "lint": "oxlint réussi ; avertissements préexistants, aucun nouveau signalement dans les fichiers applicatifs modifiés.",
+    "build": "vite build --manifest réussi",
+    "budgets": {
+      "landing": {
+        "gzip": 121675,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 140658,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 142810,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 173295,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2751258,
+        "maximumGzip": 3145728
+      }
+    },
+    "changedFilesSecrets": "Voir secrets-results.json pour le contrôle Gitleaks des modifications et de l’historique depuis C0."
+  },
+  "paper": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "limits": [
+    "Le service Internet reste à activer par l’administrateur ; ces tests ne déploient pas le Worker Cloudflare de production.",
+    "Seuls les textes déjà rattachés à une piste et aux questions du quiz sont proposés ; aucune nouvelle validation linguistique ou écoute humaine revendiquée.",
+    "Le défi sans réseau utilise un appareil commun ; aucun démarrage à froid ou rechargement entièrement hors ligne n’est revendiqué.",
+    "La proposition V4 de 200 Ko pour le jeu complet reste ouverte ; le plafond provisoire du projet est respecté.",
+    "Aucune synthèse audio, écriture sur les fiches du serveur ou publication de configuration cloud effectuée."
+  ]
+}

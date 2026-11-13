@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "online": "two real TCF questions and two learner browsers; raw API responses withhold the transcript until the final shared correction; the next recording removes it",
+      "teacherReading": "opening pauses the authoritative correction; eleven seconds do not consume the remaining time or change scores; explicit resume required",
+      "learnerReading": "read-only; cannot pause everyone; closes on next question",
+      "restart": "room restart and browser reload retain eligible text and pause, with reading window closed",
+      "viewports": [
+        "1366x768",
+        "390x844",
+        "360x640"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "disabled": "unchecked preparation option sends no private transcripts to the server"
+    },
+    {
+      "local": "390x844",
+      "offline": "two mascots complete the shared recording with network disabled after full media preparation",
+      "privacy": "handoff and first correction hide the text; last correction permits review",
+      "pause": "twelve seconds of reading cannot advance; explicit resume preserves control",
+      "journal": "no transcript, reading window or answer key stored",
+      "axeViolations": 0
+    },
+    {
+      "local": "1366x768",
+      "offline": "two mascots complete the shared recording with network disabled after full media preparation",
+      "privacy": "handoff and first correction hide the text; last correction permits review",
+      "pause": "twelve seconds of reading cannot advance; explicit resume preserves control",
+      "journal": "no transcript, reading window or answer key stored",
+      "axeViolations": 0
+    },
+    {
+      "local": "360x640",
+      "offline": "two mascots complete the shared recording with network disabled after full media preparation",
+      "privacy": "handoff and first correction hide the text; last correction permits review",
+      "pause": "twelve seconds of reading cannot advance; explicit resume preserves control",
+      "journal": "no transcript, reading window or answer key stored",
+      "axeViolations": 0
+    }
+  ],
+  "errors": [],
+  "serverWritesToFicheApi": 0,
+  "productionDeployment": false
+}

@@ -28,6 +28,6 @@ export async function serveCompetition(vite, { port = 5193, origin, teacherKey }
   return {
     snapshot(code) { const data = records.get(code); const parts = data?.get('room-parts')?.parts; return parts ? JSON.parse(Array.from({ length: parts }, (_, i) => data.get(`room-${i}`)).join('')) : undefined },
     restart(code) { instances.set(code, new ClassroomCompetitionRoom(context(code))) },
-    async close() { for (const timer of alarms.values()) clearTimeout(timer); await new Promise((resolve) => server.close(resolve)); server.closeAllConnections() },
+    async close() { for (const timer of alarms.values()) clearTimeout(timer); await new Promise((resolve) => { server.close(resolve); server.closeAllConnections() }) },
   }
 }
