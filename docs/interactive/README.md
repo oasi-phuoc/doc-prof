@@ -57,6 +57,8 @@ Les QCM TCF privilégient les variantes en images de la banque, même si la fich
 
 Les [nouveaux adaptateurs](adr-0014-associer-et-ordonner.md) couvrent aussi les associations audio, les paires de vocabulaire et les phrases courtes à ordonner. Ils conservent les alternatives source et proposent une appréciation humaine lorsque la réponse n’est pas unique ou que l’audio est un repli sur un mot entier. Les phrases se déplacent au toucher ou au clavier, avec annulation et reprise de l’ordre proposé.
 
+Les [Devinettes et Intrus imprimables](adr-0038-devinettes-et-intrus.md) reprennent leurs indices, mots et corrigés dans les modes Classe, Solo et compétition. Les devinettes sans véritable indice et les anciennes planches Intrus figées sans corrigé sont signalées dans la préparation.
+
 Le choix de mascotte propose six images animées : Esprit feuille, Hibou, Pieuvre, Hérisson, Lapin lunaire et Dragon. Les animations restent actives selon la demande du propriétaire. Le mode immersif masque les commandes du menu, avec un bouton de sortie et le lecteur audio nécessaire au jeu.
 
 ## Suivi local

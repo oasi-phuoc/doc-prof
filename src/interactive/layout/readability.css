@@ -45,6 +45,10 @@
 .ci-readability-check progress { width: 100%; }
 .ci-readability-frame { position: fixed; top: 0; left: -100000px; border: 0; pointer-events: none; visibility: hidden; }
 @media screen and (max-width: 700px) {
+  /* A caption keeps its full line while its picture uses the remaining card
+     height, including when the thinking mascot reduces the space available. */
+  .ci-app.ci-playing .ci-answer-content:has(> img):has(> span) { display: grid; grid-template-rows: minmax(24px, 1fr) auto; gap: 4px; align-content: stretch; justify-items: center; }
+  .ci-app.ci-playing .ci-answer-content:has(> span) > img { min-height: 0; height: 100%; max-height: min(8dvh, 68px); align-self: center; }
   .ci-app.ci-playing .ci-round-question .ci-question.ci-picture-pair { max-height: 55%; }
   .ci-app.ci-playing .ci-picture-pair .ci-stimulus-images > .ci-image-zoom img { height: clamp(84px, 17dvh, 150px); }
   /* Reserve complete 44px answer rows before fitting the matching illustration.

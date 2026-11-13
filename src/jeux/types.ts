@@ -28,6 +28,8 @@ export type GameCard = {
   lines?: string[]
   /** Mots éparpillés (Intrus recto). */
   scatter?: ScatterWord[]
+  /** Corrigé du groupe Intrus, conservé pour le jeu ; jamais imprimé. */
+  intrusAnswer?: string
   /** Variante visuelle. */
   variant?:
     | 'default'

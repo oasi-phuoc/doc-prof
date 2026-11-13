@@ -626,6 +626,7 @@ function intrus(
       variant: 'scatter' as const,
       badge: String(i + 1),
       scatter: scatterWords(five, rng, sizeId),
+      intrusAnswer: g.intrus,
     }
   })
   const verso = makeSeriesBackCards(recto, cols, series, frame)
