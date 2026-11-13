@@ -4,12 +4,12 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 58,
-    "initial_pending": 375,
+    "activated_since_baseline": 63,
+    "initial_pending": 370,
     "additional_pending": 0,
-    "total_pending": 375,
+    "total_pending": 370,
     "pending_by_level": {
-      "A0-A1": 153,
+      "A0-A1": 148,
       "A1-A2": 199,
       "A2-B1": 23
     }
@@ -5639,8 +5639,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-2.mp3",
       "source_sha256": "82acba84d496f8a90a61581e21d1831c547b836ac7583da38032a9a936568661",
       "semantic_sha256": "30e64b712e9aa2aae8af830afde1d2d50a18e4c92eb14ce7cbd37582eea5fd18",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Augustin va d’abord étudier à la bibliothèque ; il ira chez lui ensuite et refuse la salle de sport. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
       "choices": [
         {
           "id": "a",
@@ -5676,7 +5676,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/co/bg/salon.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5685,7 +5689,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -5699,8 +5703,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-2.mp3",
       "source_sha256": "82acba84d496f8a90a61581e21d1831c547b836ac7583da38032a9a936568661",
       "semantic_sha256": "2a0505767749ee325e56d10ed7fc30d58e83eb1a85f43379fd6464df70df861c",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Après la bibliothèque, Augustin annonce rentrer chez lui parce qu’il est fatigué. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
       "choices": [
         {
           "id": "a",
@@ -5730,7 +5734,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5739,7 +5747,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -5753,8 +5761,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-3.mp3",
       "source_sha256": "676b4eee8a977281ccf1485044f5fc11925ed52e8d523257b6c852f43e721a7f",
       "semantic_sha256": "1ea8c568e5933a44396b461830e21146c93539167d4d350a4fc862b7544a71ff",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Clément dit aller chez lui pour faire ses devoirs, dans une autre conversation de cette piste. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
       "choices": [
         {
           "id": "a",
@@ -5790,7 +5798,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5799,7 +5811,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -8583,8 +8595,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/un-probleme-d-eau-ou-1.mp3",
       "source_sha256": "b04a8100dcedd9565bb92fb60a8a8a59cb53ca1d7dadb6404d1e60626573400b",
       "semantic_sha256": "5bbcfa24bc082a24c0968dbb571cc72a2c80ed7c3930e3d20e7c035c7827ef19",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Un réparateur peut venir chez le client, y compris le dimanche ; les lieux publics ne sont pas cités. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
       "choices": [
         {
           "id": "a",
@@ -8620,7 +8632,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/co306-commissariat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -8629,7 +8645,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -9391,8 +9407,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-2.mp3",
       "source_sha256": "42d5e9c7499b5280ce1395689e48dab648eff9d131236e8dc642d9d62ea086ea",
       "semantic_sha256": "8b23a2c041dfa345baa99784573e858e4b707f6573383e31ba34da4317072d7d",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La personne annonce aller à la bibliothèque maintenant pour faire ses devoirs. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
       "choices": [
         {
           "id": "a",
@@ -9433,7 +9449,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/co/bg/cafe.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9442,7 +9462,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

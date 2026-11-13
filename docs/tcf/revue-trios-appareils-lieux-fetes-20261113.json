@@ -1,0 +1,886 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-033-05#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Achetez au meilleur prix l’ordinateur portable MacBe !",
+      "source_sha256": "964cf887ee7ef61f6b7a54cae1d19aeb285128d14568a1b168f295c534b4d5d2",
+      "semantic_sha256": "6fa2469e197fd80d751fb53e4aeb37c336da03e587a7ed853be6e15e122d463c",
+      "question": {
+        "enonce": "Quel appareil est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un ordinateur portable",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une tablette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un téléphone",
+            "correct": false
+          }
+        ],
+        "written_model": "Un ordinateur portable"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-05.mp3",
+      "audio_sha256": "79c976735ff54b2cd89195ebd3354a874b238c9a56970d7f3f2978ecab6b5d07",
+      "image_ids": [
+        "vocab-ordinateur-portable",
+        "co834-tablette-dessinee",
+        "co834-telephone-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "image_sha256": [
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "reason": "Transcription entière relue : Quel appareil est proposé ? Réponse justifiée : Un ordinateur portable.",
+      "visual_review": "Appareils entiers examinés : téléphone, ordinateur portable avec clavier, tablette sans clavier, appareil photo ou réveil à cloches. L’ordinateur à apporter est portable. Les interdictions ne sont pas signalées graphiquement sur la seule bonne réponse ; aucun modèle commercial arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a1-037-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Dimanche on va faire une randonnée à la montagne. Apporte tes chaussures de marche et ta casquette. Peux-tu apporter aussi ton appareil photo pour photographier les animaux ? Les portables sont interdits, on ne peut pas déranger les animaux. On vient te chercher avec mes parents à 7h30 et on rentre le soir.",
+      "source_sha256": "d52023f020b6f7081031c7c673230b907d4ed7cf74082fd440a06834c6ecc503",
+      "semantic_sha256": "9e5772b6647d6561eb2ef9ecc0f7c8a457bf42028b96ba0b94ff9ac67844a287",
+      "question": {
+        "enonce": "Quel appareil est interdit ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le téléphone portable",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’appareil photo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le réveil",
+            "correct": false
+          }
+        ],
+        "written_model": "Le téléphone portable"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-037-01.mp3",
+      "audio_sha256": "6dedbe11f268f6a2d22781005ded7ce9c87b49876fa0b41e5931662ac1109a33",
+      "image_ids": [
+        "co834-telephone-dessine",
+        "co834-appareil-photo-dessine",
+        "vocab-reveil"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-reveil.webp"
+      ],
+      "image_sha256": [
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "1e48367ff177787169c730f799c7bbc18eb7cd9a81bb656f61acb94b59fa6ba6"
+      ],
+      "reason": "Transcription entière relue : Quel appareil est interdit ? Réponse justifiée : Le téléphone portable.",
+      "visual_review": "Appareils entiers examinés : téléphone, ordinateur portable avec clavier, tablette sans clavier, appareil photo ou réveil à cloches. L’ordinateur à apporter est portable. Les interdictions ne sont pas signalées graphiquement sur la seule bonne réponse ; aucun modèle commercial arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-03#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Mesdames et Messieurs le spectacle va commencer. Nous vous prions d’éteindre vos portables.",
+      "source_sha256": "7d11c0d9f66f6a8e47a3e2e794a232f67d16658d09f6d67bcc5aca683ed93160",
+      "semantic_sha256": "33b23b6942e197f28b4b76da4b94fb7d2bf51b44ffe28dc5c0a0df82a3ba7ae1",
+      "question": {
+        "enonce": "Quel appareil faut-il éteindre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le téléphone portable",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’appareil photo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "L’ordinateur",
+            "correct": false
+          }
+        ],
+        "written_model": "Le téléphone portable"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-03.mp3",
+      "audio_sha256": "c5b47fe1b6fc49a3bc79f4e07b9c72939115ee16ec0d3b4d9dfb1ab21323d80b",
+      "image_ids": [
+        "co834-telephone-dessine",
+        "co834-appareil-photo-dessine",
+        "vocab-ordinateur-portable"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp"
+      ],
+      "image_sha256": [
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97"
+      ],
+      "reason": "Transcription entière relue : Quel appareil faut-il éteindre ? Réponse justifiée : Le téléphone portable.",
+      "visual_review": "Appareils entiers examinés : téléphone, ordinateur portable avec clavier, tablette sans clavier, appareil photo ou réveil à cloches. L’ordinateur à apporter est portable. Les interdictions ne sont pas signalées graphiquement sur la seule bonne réponse ; aucun modèle commercial arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-028#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu sais me dire où se trouve la banque ?\nTu as envie d’aller au cinéma ce soir ?\nC’est le dernier modèle de téléphone ?\nEn France les musées ferment à quelle heure ?",
+      "source_sha256": "0c669820e339c5d68f99705b8f6db74e741811acaab1fc41338d946322cfc79a",
+      "semantic_sha256": "3e76054695b127ecfd8ca700e7a16c52324162df6d923a599eadb97bb6e3a3c3",
+      "question": {
+        "enonce": "Quel appareil est cité dans la troisième question ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un téléphone",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un ordinateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une tablette",
+            "correct": false
+          }
+        ],
+        "written_model": "Un téléphone"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-028.mp3",
+      "audio_sha256": "f88f04eaf57c57ad358968302532acde00f7df027af032fda2d9e0d12ddf025b",
+      "image_ids": [
+        "co834-telephone-dessine",
+        "vocab-ordinateur-portable",
+        "co834-tablette-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032"
+      ],
+      "reason": "Transcription entière relue : Quel appareil est cité dans la troisième question ? Réponse justifiée : Un téléphone.",
+      "visual_review": "Appareils entiers examinés : téléphone, ordinateur portable avec clavier, tablette sans clavier, appareil photo ou réveil à cloches. L’ordinateur à apporter est portable. Les interdictions ne sont pas signalées graphiquement sur la seule bonne réponse ; aucun modèle commercial arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-03-01#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, c’est Chloé. Marina pour venir chez moi à pied, au feu rouge de l’avenue Foch, prends à droite. Tu passes devant l’hôtel Lux et au coin de la rue il y a une grande pâtisserie. J’habite en face, le grand immeuble blanc. Il n’y a pas de noms sur la sonnette mais un numéro. Tu sonnes au numéro 68. Tu peux aussi prendre le bus surtout si tu as un abonnement. Apporte ton ordinateur pour réserver nos prochaines vacances.",
+      "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
+      "semantic_sha256": "2757a9827a6575bc297505d0498b67290cb29cb8079ec9aa84452f2a5358c257",
+      "question": {
+        "enonce": "Quel appareil faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un ordinateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une tablette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un appareil photo",
+            "correct": false
+          }
+        ],
+        "written_model": "Un ordinateur"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
+      "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
+      "image_ids": [
+        "vocab-ordinateur-portable",
+        "co834-tablette-dessinee",
+        "co834-appareil-photo-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp"
+      ],
+      "image_sha256": [
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032",
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d"
+      ],
+      "reason": "Transcription entière relue : Quel appareil faut-il apporter ? Réponse justifiée : Un ordinateur.",
+      "visual_review": "Appareils entiers examinés : téléphone, ordinateur portable avec clavier, tablette sans clavier, appareil photo ou réveil à cloches. L’ordinateur à apporter est portable. Les interdictions ne sont pas signalées graphiquement sur la seule bonne réponse ; aucun modèle commercial arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-04-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Je cherche un dernier modèle de téléphone portable. Nous venons de recevoir ces deux derniers modèles. Qu’est-ce qu’il a de particulier ce modèle-ci ? Il a une très bonne autonomie, les photos sont de bonne qualité et le prix est avantageux.",
+      "source_sha256": "8cbfd81d91e36ce095b8204fcac14bf718e0206295e64032914505c2cf234632",
+      "semantic_sha256": "a27530288f7c544d841ae1ac657e384dde90c4fba2c52d6dbf5964b50c6c87c9",
+      "question": {
+        "enonce": "Quel appareil le client recherche-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un téléphone portable",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une tablette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un ordinateur",
+            "correct": false
+          }
+        ],
+        "written_model": "Un téléphone portable"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+      "image_ids": [
+        "co834-telephone-dessine",
+        "co834-tablette-dessinee",
+        "vocab-ordinateur-portable"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp"
+      ],
+      "image_sha256": [
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97"
+      ],
+      "reason": "Transcription entière relue : Quel appareil le client recherche-t-il ? Réponse justifiée : Un téléphone portable.",
+      "visual_review": "Appareils entiers examinés : téléphone, ordinateur portable avec clavier, tablette sans clavier, appareil photo ou réveil à cloches. L’ordinateur à apporter est portable. Les interdictions ne sont pas signalées graphiquement sur la seule bonne réponse ; aucun modèle commercial arbitraire."
+    },
+    {
+      "key": "tcf-delf-actif-a1-011-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous pouvez acheter vos billets pour la nouvelle exposition sur l’art Asiatique au prix de 10€ à l’entrée du musée.",
+      "source_sha256": "153dd3194587417028f3226a7a249cf24230f4a8bf94b013954bc4c473c6d14f",
+      "semantic_sha256": "82f8591fb7d393749399e0965594274994c56b5eda3436c5e192e313b0c4aeda",
+      "question": {
+        "enonce": "Où peut-on acheter les billets ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À l’entrée du musée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la mairie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la gare",
+            "correct": false
+          }
+        ],
+        "written_model": "À l’entrée du musée"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-04.mp3",
+      "audio_sha256": "fd6675deb806b2e9ab9c5bcd35730aaf4a46c12be26b18339783dc3e6e9351c7",
+      "image_ids": [
+        "co306-entree-musee-dessine",
+        "co306-mairie-dessine",
+        "co306-gare-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "image_sha256": [
+        "45b7d869883cb324424c1bf47b7756342fe5f20ac59ad34e27fc9be0cbad8b54",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+      ],
+      "reason": "Les billets se vendent à l’entrée du musée ; le tarif n’est pas illustré.",
+      "visual_review": "Entrée ouverte d’un musée explicitement visible, mairie et gare ferroviaire. L’entrée est représentée, sans inventer de guichet ou de prix."
+    },
+    {
+      "key": "tcf-delf-actif-a1-040-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "On achète quoi pour l’anniversaire de Mme Dubois ? C’est demain et on n’a pas de cadeau. Elle aime les fleurs mais ma mère conseille un parfum. Ou alors on peut prendre un foulard. Rappelle- moi, je suis dans le centre -ville, je peux m’occuper du cadeau.",
+      "source_sha256": "821ad8e191e838d723c87473035a197d82b307ca98860b3521c4d160a296ec2b",
+      "semantic_sha256": "3db5feec7eef7f8bd3c969fb891ab0ee99e15b2a6e23cc0ff23df244a9216ee9",
+      "question": {
+        "enonce": "Pour quelle occasion faut-il un cadeau ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un anniversaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un mariage",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un départ à la retraite",
+            "correct": false
+          }
+        ],
+        "written_model": "Un anniversaire"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-040-01.mp3",
+      "audio_sha256": "e74f7f97d6eb0e2073e3c353f097c28b60108c33dc2bd4ed2c811516690670eb",
+      "image_ids": [
+        "extension573-anniversaire-gateau-cadeaux",
+        "co306-mariage-dessine",
+        "co306-depart-retraite-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-anniversaire-gateau-cadeaux.png",
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp"
+      ],
+      "image_sha256": [
+        "78cd0b1b785068201a6d38861bd20e66c16d1816544eeb7c4b3b5e69ee6fc28b",
+        "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4",
+        "6de8c7dab780fb7751ee6a80510f974bb000a033ba6bc69662784005d324e4c3"
+      ],
+      "reason": "Le cadeau est destiné à l’anniversaire de Mme Dubois.",
+      "visual_review": "Anniversaire sans personnage ni âge attribué, mariage avec échange d’alliance et pot de retraite explicitement identifié. Les scènes sont des catégories d’événements, pas les portraits des personnes citées."
+    },
+    {
+      "key": "tcf-delf-actif-a2-029#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Quel temps fait-il aujourd’hui ?\nJe viens volontiers à ton anniversaire.\nÀ votre avis, qui est-ce ?\nQue me conseillez-vous aujourd’hui ?",
+      "source_sha256": "591ab216b005784da0735646e7f0f5e4819f2a80afd85b9f1bd45e581f7a6a03",
+      "semantic_sha256": "1bc4bdacf46bbaf0cdae5222046f018ffb25da91c487c8320f0bb0c55594e70b",
+      "question": {
+        "enonce": "À quel événement la deuxième personne accepte-t-elle de venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un anniversaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un mariage",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un concert",
+            "correct": false
+          }
+        ],
+        "written_model": "Un anniversaire"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-029.mp3",
+      "audio_sha256": "da3cafc58d54da67fe5a2643f019bbc53af0985a55ecdeab59ed39b4eeb4ca01",
+      "image_ids": [
+        "extension573-anniversaire-gateau-cadeaux",
+        "co306-mariage-dessine",
+        "co834-concert-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-anniversaire-gateau-cadeaux.png",
+        "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
+      ],
+      "image_sha256": [
+        "78cd0b1b785068201a6d38861bd20e66c16d1816544eeb7c4b3b5e69ee6fc28b",
+        "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4",
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+      ],
+      "reason": "La deuxième phrase accepte l’invitation à un anniversaire.",
+      "visual_review": "Gâteau d’anniversaire et cadeaux, échange d’alliance, concert avec chanteuse et guitariste devant un public : événements distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-001-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Frank mercredi l’équipe de foot de la ville joue au stade. On va assister au match ?",
+      "source_sha256": "46088db84e7d520208f991ae70d6b9f735bd6a83fc6bc2966a965ed024cc00c6",
+      "semantic_sha256": "f0c8e05c47cd0be8006e8536d7cd885b66981624ca3b7e705ba3ddd93fd6d459",
+      "question": {
+        "enonce": "Où l’équipe joue-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au stade",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au gymnase",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au parc",
+            "correct": false
+          }
+        ],
+        "written_model": "Au stade"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-01.mp3",
+      "audio_sha256": "1f6085e63ee2f1e95646a1d44cf4b759fc233c1380a1ca82abbcfc7c849c74cc",
+      "image_ids": [
+        "co834-aller-stade-dessine",
+        "co306-gymnase-municipal-dessine",
+        "co306-parc-public-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+      ],
+      "image_sha256": [
+        "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6",
+        "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466"
+      ],
+      "reason": "L’équipe de football joue au stade.",
+      "visual_review": "Stade avec terrain et tribunes, gymnase intérieur avec parquet et équipements, parc public avec bancs et jeux. Trois lieux distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-011-05#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Attention, le supermarché ferme ses portes dans 15 minutes.",
+      "source_sha256": "7f6d0087e1ba97ecacebb5da084de45e076753d2d5c3e8bfa261c82bea553327",
+      "semantic_sha256": "05519e9767d261d80a894c54c5aceb2391292bea324f5fdf369bc5885198772e",
+      "question": {
+        "enonce": "Quel lieu va fermer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le supermarché",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La poste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le musée",
+            "correct": false
+          }
+        ],
+        "written_model": "Le supermarché"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-05.mp3",
+      "audio_sha256": "b21f65798fcac2db3110f8ac4b725ceb2dceb9ad712d998051ca5f0eed50356a",
+      "image_ids": [
+        "co306-supermarche-dessine",
+        "co306-bureau-poste-dessine",
+        "co306-musee-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+      ],
+      "image_sha256": [
+        "cdb04119e729cc7588d99bc9e967c339f565ceb027ed9285f4a04bae9eed75aa",
+        "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326",
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+      ],
+      "reason": "L’annonce prévient de la fermeture du supermarché.",
+      "visual_review": "Supermarché avec rayons et caisses, poste avec colis et courriers, musée avec œuvres exposées. Pas de durée illustrée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-05#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Les bureaux de la mairie sont ouverts de lundi à samedi de 9 heures à midi et le mercredi après- midi de 14 à 18 heures.",
+      "source_sha256": "75c41a3bc163e227f142265a81333a80d33b6dd92c4c539c5498f0abf3534a20",
+      "semantic_sha256": "05bead7b2c9c89b44dae5f6ae6e0e83d7e24fd98801f3b9af40a4f0e45d1a5d2",
+      "question": {
+        "enonce": "Quel service annonce ses horaires ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La mairie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La poste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La bibliothèque",
+            "correct": false
+          }
+        ],
+        "written_model": "La mairie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-05.mp3",
+      "audio_sha256": "24c540a532e0aff8b794a215d5f96c01715d1a3663e3dced800ab7bf7483198a",
+      "image_ids": [
+        "co306-mairie-dessine",
+        "co306-bureau-poste-dessine",
+        "co306-bibliotheque-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+      ],
+      "image_sha256": [
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+      ],
+      "reason": "L’annonce présente les horaires des bureaux de la mairie.",
+      "visual_review": "Mairie avec enseigne, bureau postal avec courrier, bibliothèque avec rayonnages et lecteurs. Aucune date dessinée."
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-05#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour et bienvenue à l’office du tourisme. L’accueil est à 10 mètres. Pour vous orienter suivez les ronds jaunes dessinés sur le sol.",
+      "source_sha256": "5bf387cd1d9b48c8903d7e984fdf3618877eff0ef83924ed22ed6f65bbe656c2",
+      "semantic_sha256": "3121609ac03b587da619cec449981a9528a86acedeb6f1fa5df9a6d834fb6db5",
+      "question": {
+        "enonce": "Dans quel lieu les visiteurs sont-ils accueillis ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L’office du tourisme",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La mairie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le musée",
+            "correct": false
+          }
+        ],
+        "written_model": "L’office du tourisme"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-05.mp3",
+      "audio_sha256": "4f02588ac158c417b691f1d58cc63e8ddd439ee3e77fe7d528c639dd530c1829",
+      "image_ids": [
+        "co306-office-tourisme-dessine",
+        "co306-mairie-dessine",
+        "co306-musee-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-office-tourisme-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+      ],
+      "image_sha256": [
+        "a0dbf8b737503fc71b6eba4010f49f5b432e935dc792bba5f53f64b749fc240e",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+      ],
+      "reason": "Le message souhaite la bienvenue à l’office du tourisme.",
+      "visual_review": "Office avec brochures touristiques et comptoir d’information, mairie et musée. La distance et les ronds jaunes ne sont pas ajoutés à ces images de catégorie."
+    },
+    {
+      "key": "tcf-delf-actif-a2-028#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu sais me dire où se trouve la banque ?\nTu as envie d’aller au cinéma ce soir ?\nC’est le dernier modèle de téléphone ?\nEn France les musées ferment à quelle heure ?",
+      "source_sha256": "0c669820e339c5d68f99705b8f6db74e741811acaab1fc41338d946322cfc79a",
+      "semantic_sha256": "e16aab5a16ecb9822d0c27bacb7a7ec5659c9eafadf2108773ad47d4b00760fb",
+      "question": {
+        "enonce": "Quel établissement la première personne cherche-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La banque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La poste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "La banque"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-028.mp3",
+      "audio_sha256": "f88f04eaf57c57ad358968302532acde00f7df027af032fda2d9e0d12ddf025b",
+      "image_ids": [
+        "co306-banque-dessine",
+        "co306-bureau-poste-dessine",
+        "co306-mairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "a04e11e667af9b9d1f88cc4e1d29e441528484e618e4dcefd5c78ce96c3dbb12",
+        "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "reason": "La première personne cherche la banque.",
+      "visual_review": "Banque avec guichet et distributeur, bureau postal avec courriers et colis, mairie. Trois établissements distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-02-02#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Il arrive prochainement sur nos écrans cinématographiques le nouveau film de Jacques Rochelle. Pour le bonheur des amateurs de films dramatiques. Il raconte l’histoire d’un policier arrivé dans la banlieue sensible de la capitale. Alors ne le ratez pas !",
+      "source_sha256": "bb43a78ace78eba1e02401b393bc2906703c12f6fb918b253fdfa88565f67b82",
+      "semantic_sha256": "4df120d84b491930c14face6fe0fe8f6a902c381a3acf30fcb515b6ba1e91185",
+      "question": {
+        "enonce": "Où ce nouveau film sera-t-il présenté ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au cinéma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au théâtre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au musée",
+            "correct": false
+          }
+        ],
+        "written_model": "Au cinéma"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-02-02.mp3",
+      "audio_sha256": "69f6c43922ef4cc8614a93357d6dd896993c3d19e63a702b37b9af6e9b486a16",
+      "image_ids": [
+        "extension573-cinema-facade",
+        "co306-batiment-theatre-dessine",
+        "co306-musee-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+      ],
+      "image_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+      ],
+      "reason": "Le nouveau film arrive sur les écrans cinématographiques.",
+      "visual_review": "Façade CINÉMA avec affiches de films, façade THÉÂTRE avec salle visible, intérieur de musée. Images de lieux, sans inventer l’affiche de ce nouveau film."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-04-02#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+      "source_sha256": "782f65bdb69ba902dc12fb3c5e107e3db2d9340517fb9f2282cd1c65b34e6aae",
+      "semantic_sha256": "5ecae124671868124048ac56709438e2b35e73bd270bfe9b0f5106dd8ba309e1",
+      "question": {
+        "enonce": "Quel lieu le voyageur veut-il rejoindre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le stade",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La gare",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le musée",
+            "correct": false
+          }
+        ],
+        "written_model": "Le stade"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+      "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485",
+      "image_ids": [
+        "co834-aller-stade-dessine",
+        "co306-gare-dessine",
+        "co306-musee-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+      ],
+      "image_sha256": [
+        "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570",
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+      ],
+      "reason": "Le voyageur cherche un transport passant par le stade.",
+      "visual_review": "Stade avec tribunes et terrain sportif, gare avec train, musée avec œuvres. La distinction porte sur la destination et non sur un itinéraire inventé."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-01-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sacha. Je dois changer un pantalon acheté samedi. Tu viens au magasin avec moi mercredi ? On va prendre la taille la plus petite. Je veux voir aussi les nouveaux modèles de baskets. Rendez-vous à l’arrêt de bus 234 Place Joffre. Après on va manger une gaufre.",
+      "source_sha256": "51a741967f5ed6d75ec72f9c5d19b0bfd4bb45f5f66ebb6182bedb1fe225af5f",
+      "semantic_sha256": "34608b498cbaba52860fd135429df2204e63745d7edf36bde408c4480ff4f04c",
+      "question": {
+        "enonce": "Que mangeront les amis après les achats ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une gaufre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une crêpe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une glace",
+            "correct": false
+          }
+        ],
+        "written_model": "Une gaufre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-01-01.mp3",
+      "audio_sha256": "794be2f094b10366775152311289a3f101157f1b014e60a97d513d733fb838e9",
+      "image_ids": [
+        "extension573-gaufre",
+        "vocab-crepe",
+        "vocab-glace-cornet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-gaufre.png",
+        "/lib/images/tcf/qcm-audit/vocab-crepe.webp",
+        "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp"
+      ],
+      "image_sha256": [
+        "29df30375cbf408e54b2817a37fa474508281b624b601063c9306b111f6bf2cc",
+        "9d52de3287243f60f8641e75fde8c2334e007bb1435c31cde809d5e2ae0c56e0",
+        "29152bb7cb5df718407477be059e94cbcd281dbf4c8a2bdbe5101e3cd06e3331"
+      ],
+      "reason": "Sacha propose de manger une gaufre après les achats.",
+      "visual_review": "Gaufre entière à quadrillage, crêpe fine pliée, glace en cornet : catégories différentes et quantités au singulier."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-01-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alessio, tu es toujours d’accord pour venir au concert de Stromae ? Rendez-vous devant la gare pour prendre le métro. Après on va directement au stade. N’apporte pas de boissons. Elles sont interdites. Après le concert on mange un sandwich. On rentre avec Gabriel et les autres copains.",
+      "source_sha256": "250e234af8db9c005f3a74373861eb5556e14375f13572e8ad7c6f777b648946",
+      "semantic_sha256": "1f390814ae475e2a0cca8e1d02631ea40b8e13b0edfa2d689302990be654abb8",
+      "question": {
+        "enonce": "Que mangeront les amis après le concert ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un sandwich",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une pizza",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une gaufre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un sandwich"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-01-01.mp3",
+      "audio_sha256": "1fcdc5f7115af7eacad95e017421f7d0370e4113ede11aea549168b75678c5f7",
+      "image_ids": [
+        "co834-sandwich-dessine",
+        "co834-pizza-dessinee",
+        "extension573-gaufre"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-sandwich-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-gaufre.png"
+      ],
+      "image_sha256": [
+        "a1be35905e3ba7734f3be031c33e2a06408fa846de84a39391461d1ddc2256bc",
+        "be5d4a7cf9dab36bbba9217877079d73e81a98419c319dcd4050deb14d2e5599",
+        "29df30375cbf408e54b2817a37fa474508281b624b601063c9306b111f6bf2cc"
+      ],
+      "reason": "Les amis mangeront un sandwich après le concert.",
+      "visual_review": "Sandwich entier, pizza entière et gaufre unique. Pas de type de garniture demandé, aucun nouveau détail ajouté au texte."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 40,
+    "registers": [
+      "docs/tcf/revue-trios-appareils-lieux-fetes-20261113.json",
+      "docs/tcf/revue-trios-vetements-20261113.json",
+      "docs/tcf/revue-trios-fruits-laitiers-20261113.json",
+      "docs/tcf/revue-trios-domiciles-bibliotheques-20261113.json"
+    ]
+  }
+}

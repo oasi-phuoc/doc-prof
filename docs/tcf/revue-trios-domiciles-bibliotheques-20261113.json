@@ -1,0 +1,262 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "delf-a1-2022-co-ex4-46#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "– Augustin, tu vas à la salle de sport ? – Non, je dois étudier. Je vais à la bibliothèque. – D’accord. Et après, tu viens faire du sport avec moi ? – Non, après, je vais chez moi. Je suis fatigué.",
+      "source_sha256": "82acba84d496f8a90a61581e21d1831c547b836ac7583da38032a9a936568661",
+      "semantic_sha256": "30e64b712e9aa2aae8af830afde1d2d50a18e4c92eb14ce7cbd37582eea5fd18",
+      "question": {
+        "enonce": "Où Augustin va-t-il d'abord ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la bibliothèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la salle de sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Chez lui",
+            "correct": false
+          }
+        ],
+        "written_model": "À la bibliothèque"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-2.mp3",
+      "audio_sha256": "fb624ba5ccaaf48a92c2cc8a34565e16ff99600a43eb18350f87bfd410902ba5",
+      "image_ids": [
+        "co306-bibliotheque-dessine",
+        "vocab-salle-sport",
+        "retained-20261107-14a19b383c5c"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/co/bg/salon.webp"
+      ],
+      "image_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de",
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599"
+      ],
+      "reason": "Augustin va d’abord étudier à la bibliothèque ; il ira chez lui ensuite et refuse la salle de sport.",
+      "visual_review": "Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
+    },
+    {
+      "key": "delf-a1-2022-co-ex4-46#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "– Augustin, tu vas à la salle de sport ? – Non, je dois étudier. Je vais à la bibliothèque. – D’accord. Et après, tu viens faire du sport avec moi ? – Non, après, je vais chez moi. Je suis fatigué.",
+      "source_sha256": "82acba84d496f8a90a61581e21d1831c547b836ac7583da38032a9a936568661",
+      "semantic_sha256": "2a0505767749ee325e56d10ed7fc30d58e83eb1a85f43379fd6464df70df861c",
+      "question": {
+        "enonce": "Où ira-t-il ensuite ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez lui",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la salle de sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au cinéma",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez lui"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-2.mp3",
+      "audio_sha256": "fb624ba5ccaaf48a92c2cc8a34565e16ff99600a43eb18350f87bfd410902ba5",
+      "image_ids": [
+        "retained-20261107-14a19b383c5c",
+        "vocab-salle-sport",
+        "extension573-cinema-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "image_sha256": [
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
+      "reason": "Après la bibliothèque, Augustin annonce rentrer chez lui parce qu’il est fatigué.",
+      "visual_review": "Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
+    },
+    {
+      "key": "delf-a1-2022-co-ex4-46#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "– Clément, où est-ce que tu vas ? – Je vais chez moi maintenant pour faire mes devoirs. Et toi ? – Moi aussi ! J’ai des devoirs de mathématiques pour demain. – À demain !",
+      "source_sha256": "676b4eee8a977281ccf1485044f5fc11925ed52e8d523257b6c852f43e721a7f",
+      "semantic_sha256": "1ea8c568e5933a44396b461830e21146c93539167d4d350a4fc862b7544a71ff",
+      "question": {
+        "enonce": "Où Clément va-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez lui",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la bibliothèque",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la salle de sport",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez lui"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_46-3.mp3",
+      "audio_sha256": "b7dc0351fc132ddf81a7c8a5a550da4863a56bc7d9682673365ad16f686f300e",
+      "image_ids": [
+        "retained-20261107-14a19b383c5c",
+        "co306-bibliotheque-dessine",
+        "vocab-salle-sport"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp"
+      ],
+      "image_sha256": [
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de"
+      ],
+      "reason": "Clément dit aller chez lui pour faire ses devoirs, dans une autre conversation de cette piste.",
+      "visual_review": "Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
+    },
+    {
+      "key": "tcf-ss-a1-s47-co-2#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tu as déjà fait tes devoirs pour demain ? Non, pas encore. Je vais à la bibliothèque maintenant pour les faire. Moi aussi. Je viens avec toi. On peut travailler ensemble. Oui, super !",
+      "source_sha256": "42d5e9c7499b5280ce1395689e48dab648eff9d131236e8dc642d9d62ea086ea",
+      "semantic_sha256": "8b23a2c041dfa345baa99784573e858e4b707f6573383e31ba34da4317072d7d",
+      "question": {
+        "enonce": "Où la personne va-t-elle faire ses devoirs ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la bibliothèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Chez elle",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans un café",
+            "correct": false
+          }
+        ],
+        "written_model": "À la bibliothèque"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-essaie-retirer-1-2.mp3",
+      "audio_sha256": "dce23d2da83c80868270ddff297acfde2acb04f4335829fd5acf3973975fdacf",
+      "image_ids": [
+        "co306-bibliotheque-dessine",
+        "retained-20261107-14a19b383c5c",
+        "retained-20261107-856e85b22e12"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/co/bg/cafe.webp"
+      ],
+      "image_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "6102ba6e8d84fc324ac014cde448f09c0ef5c6ba5fabddb72ebcfd1c99db267f"
+      ],
+      "reason": "La personne annonce aller à la bibliothèque maintenant pour faire ses devoirs.",
+      "visual_review": "Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
+    },
+    {
+      "key": "tcf-ss-a1-s41-co-4#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Un problème d'eau ou d'électricité ?\nUn problème de serrure ?\nVous pouvez appeler l'assistance téléphonique au 118 712.\nUn réparateur : plombier, électricien ou serrurier, peut venir très vite chez vous, même le dimanche !",
+      "source_sha256": "b04a8100dcedd9565bb92fb60a8a8a59cb53ca1d7dadb6404d1e60626573400b",
+      "semantic_sha256": "5bbcfa24bc082a24c0968dbb571cc72a2c80ed7c3930e3d20e7c035c7827ef19",
+      "question": {
+        "enonce": "Où le réparateur peut-il venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez le client",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au commissariat",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez le client"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/un-probleme-d-eau-ou-1.mp3",
+      "audio_sha256": "bbdd65fa50fc01578149246ee747f65f2ebf16fa34d0658c576865077eb6c97c",
+      "image_ids": [
+        "retained-20261107-14a19b383c5c",
+        "co306-commissariat-dessine",
+        "co306-mairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/salon.webp",
+        "/lib/images/tcf/qcm-audit/co306-commissariat-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "8ea2193b33a1138181772ed9439bf0c5d9277a13a439cfdd1d93e68ef919b599",
+        "533c71a9dfabd47511318adf75769216d2406917bb9d4c9c09acb39d1e8389f0",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "reason": "Un réparateur peut venir chez le client, y compris le dimanche ; les lieux publics ne sont pas cités.",
+      "visual_review": "Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 40,
+    "registers": [
+      "docs/tcf/revue-trios-appareils-lieux-fetes-20261113.json",
+      "docs/tcf/revue-trios-vetements-20261113.json",
+      "docs/tcf/revue-trios-fruits-laitiers-20261113.json",
+      "docs/tcf/revue-trios-domiciles-bibliotheques-20261113.json"
+    ]
+  }
+}

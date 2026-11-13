@@ -1,0 +1,454 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-002-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Manon. Samedi je t’invite à un pique-nique à la campagne. Qu’en dis-tu ? On y va en vélo avec Léo. Mets un vieux jean et de vieilles baskets. Apporte une bouteille d’eau. Moi, je pense aux sandwichs et Léo apporte des fruits. Rendez-vous à l’arrêt de bus.",
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "9ce16266e368399bd7853525feb78465d4bf85b6f535a48d5e29051e6f828262",
+      "question": {
+        "enonce": "Qu’apporte Léo ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des fruits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des biscuits",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du fromage",
+            "correct": false
+          }
+        ],
+        "written_model": "Des fruits"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-002-01.mp3",
+      "audio_sha256": "40b684f1d3edebf63f98ef948f0edbebadd4125c7edb560c60d61720f34ccfbd",
+      "image_ids": [
+        "co834-fruits-dessines",
+        "vocab-biscuits",
+        "co306-assiette-fromage-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp",
+        "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp"
+      ],
+      "image_sha256": [
+        "a6d85d7b468c6ca2fbd7fbe0a0dba2c13a6bfeb5b5feb33ec599f21263a635c9",
+        "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af",
+        "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff"
+      ],
+      "reason": "Léo apporte des fruits au pique-nique.",
+      "visual_review": "Plusieurs fruits de types différents, plusieurs biscuits, fromage sans pâtes ni pain ajouté. Les quantités catégorielles sont respectées."
+    },
+    {
+      "key": "tcf-delf-actif-a1-006-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Léo, Thomas revient de Belgique avec des chocolats. Avant de repartir samedi en avion en Espagne, il nous invite pour un goûter vendredi à 17h00 pour regarder ensemble son blog. Moi, j’apporte des jus de fruits et toi des bons biscuits . On peut aller chez lui à vélo.",
+      "source_sha256": "6b8944ed77905c56c952ebb2f78b4a07092431901692b69029dbded7057fb14c",
+      "semantic_sha256": "20df6bcb15ebb1a40c6f025020db57f2e5af7353c8ee8769f54a70a37ca858a2",
+      "question": {
+        "enonce": "Que doit apporter Léo ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des biscuits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des chocolats",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des fruits",
+            "correct": false
+          }
+        ],
+        "written_model": "Des biscuits"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-006-01.mp3",
+      "audio_sha256": "a2312fe2126ce19a4fae3b2d81c48c52290046f1a6076214520c765be9b0338f",
+      "image_ids": [
+        "vocab-biscuits",
+        "co834-boite-chocolats-dessinee",
+        "co834-fruits-dessines"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-fruits-dessines.webp"
+      ],
+      "image_sha256": [
+        "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af",
+        "9e787e97a134357b013cd150b2e25f4981f90352eb3609413a3f6332fbbe357a",
+        "a6d85d7b468c6ca2fbd7fbe0a0dba2c13a6bfeb5b5feb33ec599f21263a635c9"
+      ],
+      "reason": "Le destinataire Léo doit apporter des biscuits ; les chocolats sont ceux rapportés par Thomas.",
+      "visual_review": "Biscuits, chocolats variés en boîte ouverte et fruits entiers. Le rôle de chaque personne reste distingué dans le corrigé."
+    },
+    {
+      "key": "tcf-delf-actif-a1-012-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Cette semaine profitez de notre promotion sur les fromages. 10% sur beaucoup de variétés françaises. Vous pouvez gagner un bon de 100 € sur vos prochains achats en magasin. Tirage au sort samedi 18 mai à 20 heures. Alors faites-vous plaisir ! Mangez du fromage !",
+      "source_sha256": "ba4114d73d5c2b455d6da0922ce611a01b8303c6cb63b9da838d11a4679e5f68",
+      "semantic_sha256": "f8e56eddf6033480b4584ab9dfa5e5a628a05165013f2025cda8d016c9040e0b",
+      "question": {
+        "enonce": "Sur quels produits porte la promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les fromages",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les yaourts",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les chocolats",
+            "correct": false
+          }
+        ],
+        "written_model": "Les fromages"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-012-01.mp3",
+      "audio_sha256": "480980e6620c29b66ab3604eb3cb2f3f4ddede12167ec1a524b8bc819c7c6fd3",
+      "image_ids": [
+        "co306-assiette-fromage-dessine",
+        "vocab-yaourts",
+        "co834-boite-chocolats-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-yaourts.webp",
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp"
+      ],
+      "image_sha256": [
+        "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff",
+        "216fadaff7e766fdfdc08ffd7b590a626c686358534adf0d604a37df1e0fbac4",
+        "9e787e97a134357b013cd150b2e25f4981f90352eb3609413a3f6332fbbe357a"
+      ],
+      "reason": "La promotion concerne de nombreuses variétés de fromages.",
+      "visual_review": "Plusieurs sortes de fromage, plusieurs yaourts et plusieurs chocolats : pluriels respectés, aucun prix ou pourcentage montré."
+    },
+    {
+      "key": "tcf-delf-actif-a1-034-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Paulo, tu dois être encore en cours mais je te rappelle de passer au supermarché pour prendre de l’eau minérale, des pâtes italiennes, un paquet de café et du beurre. Pour le dîner tu nous prépares des pâtes à la bolognaise comme dans ton pays ? Je rentre à la maison vers 19h00. À plus tard.",
+      "source_sha256": "dae59714596879ae662568a53a5740ac3236208adcb3a7d776f55e0ba687bee8",
+      "semantic_sha256": "8490e2bd40f6c50f2ce40f8a24e6cf9619a53d89649636f05f8e23283c3368b7",
+      "question": {
+        "enonce": "Quel produit laitier doit-il acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du beurre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du fromage",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du yaourt",
+            "correct": false
+          }
+        ],
+        "written_model": "Du beurre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
+      "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
+      "image_ids": [
+        "vocab-beurre",
+        "co306-assiette-fromage-dessine",
+        "vocab-yaourt"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-beurre.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-yaourt.webp"
+      ],
+      "image_sha256": [
+        "e5fcb80d08c31b65f9ec8a2d7852e1768f7ec820cda289edf82a9c5cdb368987",
+        "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff",
+        "105c25eaed5891a8e2994e635d3d5fd91411c3d04c9dadc08506c778a5e02480"
+      ],
+      "reason": "La liste de courses demande du beurre.",
+      "visual_review": "Beurre en motte avec tranches, fromage sans autres aliments, yaourt dans son pot. Aucun plat de pâtes pour illustrer un ingrédient isolé."
+    },
+    {
+      "key": "tcf-delf-actif-a1-043-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Au self Bonjour Monsieur, qu’est-ce qu’il y a aujourd’hui au menu ? En entrée il y a une salade composée ou des œufs mimosa. Et comme plat ? De la viande ou du poisson grillé avec des carottes, ail et persil ou de la purée de pommes de terre. Et comme dessert ? On propose du fromage, de la compote de pommes ou de la salade de fruits.",
+      "source_sha256": "e333d7cb571d94b22470994f38d557af67a0b715e289a669609f629f7de4f427",
+      "semantic_sha256": "b58a63636a7f467c59ab3f94b8c10bd3e88f58533f10bbeadbe17abd3f1ab405",
+      "question": {
+        "enonce": "Quel légume accompagne les plats ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des carottes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des courgettes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des petits pois",
+            "correct": false
+          }
+        ],
+        "written_model": "Des carottes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
+      "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
+      "image_ids": [
+        "co834-carottes-dessinees",
+        "co834-courgettes-dessinees",
+        "extension573-petits-pois"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-carottes-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-courgettes-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/extension573-petits-pois.png"
+      ],
+      "image_sha256": [
+        "d7b5161b081ed6cb1644fc4ab94f472e1885d8049344e54fd51dc6f098cc0869",
+        "c183a7e1dbbbc662910086254d170d510fa408c86520a4b4367f62e98fb758fb",
+        "cf2e6746ef6dc0b20be8a60fe179c94db80aff7f66604a915715dbd9ecd6be7e"
+      ],
+      "reason": "Les plats sont accompagnés notamment de carottes avec ail et persil.",
+      "visual_review": "La question demande le légume : carottes, courgettes et petits pois sont montrés isolément, sans ajouter un plat complet ou d’autres légumes."
+    },
+    {
+      "key": "tcf-delf-actif-a1-043-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Au self Bonjour Monsieur, qu’est-ce qu’il y a aujourd’hui au menu ? En entrée il y a une salade composée ou des œufs mimosa. Et comme plat ? De la viande ou du poisson grillé avec des carottes, ail et persil ou de la purée de pommes de terre. Et comme dessert ? On propose du fromage, de la compote de pommes ou de la salade de fruits.",
+      "source_sha256": "e333d7cb571d94b22470994f38d557af67a0b715e289a669609f629f7de4f427",
+      "semantic_sha256": "90df6b59c3af9ecdcfa6876ef3ab6629cc88be34a5f6a9947b1dff2286d3086b",
+      "question": {
+        "enonce": "Avec quel fruit la compote est-elle préparée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pommes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des poires",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des abricots",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pommes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
+      "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
+      "image_ids": [
+        "696e493d40b2",
+        "vocab-poires",
+        "extension573-abricots-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/696e493d40b2.webp",
+        "/lib/images/tcf/qcm-audit/vocab-poires.webp",
+        "/lib/images/tcf/qcm-audit/extension573-abricots-pluriel.png"
+      ],
+      "image_sha256": [
+        "61d536e2296fc4dcff59ae34dd97a03ab592290854e0f8ebd1d7175329b4f28b",
+        "d736bdca5440e33ad7e0aba5033cfc28749dcb14f39961ba28babe34e7098c3e",
+        "3d54d4618b7834cce226ee73349454d01902085470b1e005302a0f2c132b6ac5"
+      ],
+      "reason": "La compote est préparée avec des pommes.",
+      "visual_review": "Trois catégories de fruits identifiables au pluriel : pommes, poires et abricots à noyau. Les fruits sont montrés comme ingrédients, pas comme trois compotes indiscernables."
+    },
+    {
+      "key": "tcf-delf-actif-a1-043-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Au self Bonjour Monsieur, qu’est-ce qu’il y a aujourd’hui au menu ? En entrée il y a une salade composée ou des œufs mimosa. Et comme plat ? De la viande ou du poisson grillé avec des carottes, ail et persil ou de la purée de pommes de terre. Et comme dessert ? On propose du fromage, de la compote de pommes ou de la salade de fruits.",
+      "source_sha256": "e333d7cb571d94b22470994f38d557af67a0b715e289a669609f629f7de4f427",
+      "semantic_sha256": "982f93587f87c2778766590d9af5c2ede5788dd479a5a6fd2cbd3b532e2346f7",
+      "question": {
+        "enonce": "Quel produit laitier est proposé à la fin du repas ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du fromage",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du yaourt",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "De la crème",
+            "correct": false
+          }
+        ],
+        "written_model": "Du fromage"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
+      "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
+      "image_ids": [
+        "co306-assiette-fromage-dessine",
+        "vocab-yaourt",
+        "vocab-creme-alimentaire"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-yaourt.webp",
+        "/lib/images/tcf/qcm-audit/vocab-creme-alimentaire.webp"
+      ],
+      "image_sha256": [
+        "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff",
+        "105c25eaed5891a8e2994e635d3d5fd91411c3d04c9dadc08506c778a5e02480",
+        "ca365a1ad2dd8474740779b58fb6e133701110386889b5cb7419ed9be4c1223b"
+      ],
+      "reason": "Le produit laitier proposé à la fin du repas est le fromage.",
+      "visual_review": "Fromages, pot de yaourt et crème alimentaire en crémier/bol ; aucun cosmétique. Trois produits laitiers distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-045#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Nous allons au marché.\nVous me donnez votre numéro de téléphone ?\nJe n’ai pas son adresse.\nElle s’appelle comment ?\nQue faites-vous ce matin ?\nIl est déjà 10 heures.\nÀ quelle heure rentrez-vous ?\nIl est brésilien.\nIl faut acheter des pommes.\nQue voulez-vous faire demain ?",
+      "source_sha256": "a52178f2282735fbcddcfc17b26c645b03b4ab11a2c56503f37af69f0544af87",
+      "semantic_sha256": "2cd7b83576c8318847ca9a190cb4c978e8c34985e05fc253be75a7e8d9673f28",
+      "question": {
+        "enonce": "Quels fruits faut-il acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pommes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des poires",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des bananes",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pommes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-045.mp3",
+      "audio_sha256": "166c41ca57a17dac1d9f1d1f7652982179e6107bcc05cdc0826c97a5f8cd6a1e",
+      "image_ids": [
+        "696e493d40b2",
+        "vocab-poires",
+        "vocab-banans-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/696e493d40b2.webp",
+        "/lib/images/tcf/qcm-audit/vocab-poires.webp",
+        "/lib/images/tcf/qcm-audit/vocab-banans-pluriel.webp"
+      ],
+      "image_sha256": [
+        "61d536e2296fc4dcff59ae34dd97a03ab592290854e0f8ebd1d7175329b4f28b",
+        "d736bdca5440e33ad7e0aba5033cfc28749dcb14f39961ba28babe34e7098c3e",
+        "1b41b5123150cd2904dbe9f9b158d7be22bfcd0fea0c0d77f7c31d417a0ad5a2"
+      ],
+      "reason": "La phrase indique qu’il faut acheter des pommes.",
+      "visual_review": "Pommes, poires et trois bananes sont effectivement au pluriel. Aucun prix ou quantité demandée inventés."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-01-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tous les jours notre magasin vous propose des articles à des prix exceptionnels. Aujourd’hui nos chocolats de Noël sont à moins 10 %. Faites-vous plaisir !",
+      "source_sha256": "f81272a4d8f487c9d05d1d09708e1249783818d0c4bd8d35114bcafc07b12b4a",
+      "semantic_sha256": "ce87ced7061f69374ba3c781837378ea895470b87e9d1f3dd5bf787b555f8b52",
+      "question": {
+        "enonce": "Quels produits sont en promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les chocolats",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les biscuits",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les fromages",
+            "correct": false
+          }
+        ],
+        "written_model": "Les chocolats"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-01.mp3",
+      "audio_sha256": "1ee6ebb877263d579ee8e77e21537f2265920856c5b90b6cec56bba176f24e36",
+      "image_ids": [
+        "co834-boite-chocolats-dessinee",
+        "vocab-biscuits",
+        "co306-assiette-fromage-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-boite-chocolats-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp"
+      ],
+      "image_sha256": [
+        "9e787e97a134357b013cd150b2e25f4981f90352eb3609413a3f6332fbbe357a",
+        "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af",
+        "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff"
+      ],
+      "reason": "La promotion porte sur les chocolats de Noël.",
+      "visual_review": "Plusieurs chocolats dans une boîte, biscuits et variétés de fromage. La question demande le produit, pas un décor saisonnier ; aucun montant ou réduction illustrés."
+    }
+  ],
+  "verification": {
+    "baseline_commit": "a29e9bcb5cc712ae44d3ef1a1df8a29b07909441",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 40,
+    "registers": [
+      "docs/tcf/revue-trios-appareils-lieux-fetes-20261113.json",
+      "docs/tcf/revue-trios-vetements-20261113.json",
+      "docs/tcf/revue-trios-fruits-laitiers-20261113.json",
+      "docs/tcf/revue-trios-domiciles-bibliotheques-20261113.json"
+    ]
+  }
+}

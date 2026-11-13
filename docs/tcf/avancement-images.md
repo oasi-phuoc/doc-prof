@@ -18,6 +18,8 @@ Suite corps, animaux et lieux : **cinq trios** (deux A1, trois A2) et **15 réem
 
 Suite horaires et déplacements : **81 trios supplémentaires** (40 A1, 33 A2, huit B1), une nouvelle scène de handball 4:3 utilisée deux fois et 241 réemplois. Le suivi DELF Actif atteint **152 trios actifs**, avec **218 candidats concrets** restants ; les 375 trios historiques sont toujours suivis séparément ([horaires](revue-trios-horaires-delf-actif-20261113.json), [sports/transports](revue-trios-sports-transports-20261113.json)).
 
+Suite appareils, lieux, fêtes, vêtements et aliments : **40 trios** (28 A1, 12 A2), dont cinq historiques, avec **sept nouveaux PNG 4:3** et **108 réemplois**. Le reliquat historique passe à **370** ; DELF Actif compte **187 trios actifs** et **183 candidats concrets**. Les 1 021 questions à examiner en contexte restent suivies séparément.
+
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
 La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.
