@@ -52,14 +52,15 @@ def register(items):
             with Image.open(target) as image:
                 width, height = image.size
             refs = item['style_references']
+            reference_commit = item.get('style_reference_commit', STYLE_COMMIT)
             entry = dict(id=item['id'], label=item['label'], path=item['path'],
                          status='visually_reviewed', domain='catalogue', batch='catalogue-20261113',
                          gallery_types=[item['type']], width=width, height=height, aspect_ratio='4:3',
                          bytes=target.stat().st_size, sha256=sha(target), source_png=item['source_png'],
                          source_sha256=sha(Path(item['source_png'])), prompt=item['prompt'],
                          reference_images=item['reference_images'], style_references=refs,
-                         style_reference_commit=STYLE_COMMIT,
-                         style_review=dict(status='aligned', reference_commit=STYLE_COMMIT, references=refs),
+                         style_reference_commit=reference_commit,
+                         style_review=dict(status='aligned', reference_commit=reference_commit, references=refs),
                          review_note=item['review_note'])
             manifest['images'].append(entry)
             by_path[item['path']] = entry

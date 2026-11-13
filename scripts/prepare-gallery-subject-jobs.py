@@ -1,11 +1,14 @@
 """Prepare missing gallery subjects; reuse candidates must be visually reviewed first."""
 from pathlib import Path
 import json
+import subprocess
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/gallery/extension-tcf-20261113.json'
 STYLE_OBJECT = '/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp'
 STYLE_PEOPLE = '/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp'
+STYLE_JOBS = '/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png'
 COMMON = ('Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. '
           'Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. '
           'Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. '
@@ -16,6 +19,19 @@ PEOPLE = ['une femme noire adulte aux cheveux courts naturels', 'un homme asiati
           'une femme adulte à peau brune portant un foulard bleu', 'un homme blanc adulte aux cheveux gris et lunettes',
           'une femme asiatique adulte aux cheveux courts', 'un homme noir adulte avec une barbe courte',
           'une femme blanche adulte aux cheveux roux bouclés', 'un homme adulte à peau brune aux cheveux bouclés']
+FEMININE_JOBS = {'infirmière', 'professeure', 'serveuse', 'vendeuse', 'couturière',
+                'hôtesse de l’air', 'policière', 'écrivaine', 'actrice', 'chanteuse',
+                'danseuse', 'costumière', 'avocate'}
+MASCULINE_JOBS = {'infirmier', 'professeur', 'serveur', 'vendeur', 'couturier',
+                 'steward', 'policier', 'écrivain', 'acteur', 'chanteur', 'danseur', 'avocat'}
+
+
+def person_for_job(label, index):
+    candidates = [p for p in PEOPLE if (label not in FEMININE_JOBS or p.startswith('une femme'))
+                  and (label not in MASCULINE_JOBS or p.startswith('un homme'))]
+    return candidates[index % len(candidates)]
+
+
 MEDICAL = {
 'rhume': 'Une personne enrhumée se mouche avec un mouchoir, nez légèrement rouge, un autre mouchoir et verre d’eau à côté, pas de thermomètre ou lésion.',
 'grippe': 'Une personne grippée très fatiguée et fébrile se repose sous une couverture, main sur le front, thermomètre sans affichage lisible, eau et mouchoirs proches.',
@@ -96,6 +112,9 @@ MEDICAL = {
 
 def prepare():
     plan = json.loads(PLAN.read_text())
+    job_style_commit = subprocess.check_output(
+        ['git', 'log', '-1', '--format=%H', '--', 'public' + STYLE_JOBS], cwd=ROOT, text=True).strip()
+    assert job_style_commit, 'La référence métier choisie doit être versionnée avant préparation'
     known = {j['id'] for j in plan['jobs']}
     buckets = {name: [] for name in ['Animal', 'Végétal', 'Métier', 'Maladie']}
     for i, subject in enumerate(plan['subjects']):
@@ -119,7 +138,9 @@ def prepare():
                       'Pour un fruit ou légume montrer principalement un seul spécimen entier ; une demi-coupe peut aider uniquement si elle est indispensable à l’identification. '
                       'Avocat signifie ici le FRUIT et rose signifie la FLEUR ; jamais un avocat-juriste ni un carré de couleur.')
         elif typ == 'Métier':
-            detail = (f'Métier réel : {label}. Montrer {PEOPLE[i % len(PEOPLE)]} en train d’exercer cette profession, '
+            # Keep paired vocabulary forms consistent with the pictured person.
+            person = person_for_job(label, i)
+            detail = (f'Métier réel : {label}. Montrer {person} en train d’exercer cette profession, '
                       'avec geste professionnel précis, véritables outils et lieu de travail approprié. '
                       'Ne pas réduire le métier à une tenue ou un portrait sans activité ; décor entier peint sobre. '
                       'Varier les visages, vêtements et rôles sans stéréotypes, pas de duplication de la salle de la référence. '
@@ -137,10 +158,12 @@ def prepare():
                       'Une seule scène ou un seul sujet anatomique, fond crème et contexte sobre. '
                       'Le sujet illustre la manifestation, le soin ou l’examen décrit ; ne pas inventer une maladie reconnaissable à un simple visage. '
                       'Ni pictogrammes flottants, ni diagnostic écrit, ni chiffre sur écran, ni médicament de marque, ni scène graphique.')
-        style = STYLE_OBJECT if typ in ['Animal', 'Végétal'] else STYLE_PEOPLE
+        style = STYLE_OBJECT if typ in ['Animal', 'Végétal'] else (STYLE_JOBS if typ == 'Métier' else STYLE_PEOPLE)
         job = dict(subject, path=f'/lib/images/tcf/catalogue/{directory}/{slug}.webp', status='planned',
                    prompt=COMMON + 'Sujet : ' + detail, reference_images=[str(ROOT / 'public' / style.lstrip('/'))],
                    style_references=[style])
+        if typ == 'Métier':
+            job['style_reference_commit'] = job_style_commit
         buckets[typ].append(job)
     # Each successive group covers all four requested families; no family is
     # silently omitted if the image service stops this long queue at its quota.
@@ -153,13 +176,24 @@ def prepare():
     PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n')
     from collections import defaultdict
     families = {name: defaultdict(list) for name in ['Animal', 'Végétal', 'Métier', 'Maladie']}
-    for job in plan['jobs']:
+    for index, job in enumerate(plan['jobs']):
         if job['type'] == 'Action':
             continue
         metadata = ROOT / 'docs/gallery/generation-20261113' / (job['id'] + '.json')
-        if metadata.exists() and json.loads(metadata.read_text())['status'] != 'generation_failed':
+        state = json.loads(metadata.read_text()) if metadata.exists() else {}
+        if state and state['status'] not in ['generation_failed', 'rejected_visual_review']:
             continue
-        families[job['type']][job['subtype']].append(job)
+        candidate = dict(job)
+        if state.get('next_prompt'):
+            candidate['prompt'] = state['next_prompt']
+        if job['type'] == 'Métier':
+            candidate.update(reference_images=[str(ROOT / 'public' / STYLE_JOBS.lstrip('/'))],
+                             style_references=[STYLE_JOBS], style_reference_commit=job_style_commit)
+            candidate['prompt'] = re.sub(r'Montrer .*? en train',
+                                        'Montrer ' + person_for_job(job['label'], index) + ' en train',
+                                        candidate['prompt'], count=1)
+        candidate['status'] = 'planned'
+        families[job['type']][job['subtype']].append(candidate)
     ordered = {name: [] for name in families}
     for name, subgroups in families.items():
         while any(subgroups.values()):
