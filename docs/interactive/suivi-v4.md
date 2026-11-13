@@ -34,7 +34,7 @@ La révision TCM CSC du 13 novembre est décrite dans [axes-et-cadres-20261113.j
 
 ## Trente mascottes et effets du duel
 
-Les trente mascottes et leurs six poses animées sont communes à Classe, Solo, duel et compétition. Les anciens choix restent valides. La préparation du duel propose dix attaques dirigées vers l’adversaire et dix effets d’erreur avec objets tombants sur soi-même, avec prévisualisation et reprise des choix. Voir [ADR 0045](adr-0045-mascottes-et-effets-duel.md).
+Les trente mascottes et leurs six poses animées sont communes à Classe, Solo, duel et compétition. Les anciens choix restent valides. Les trente attaques sont désormais liées automatiquement aux mascottes, sans sélecteur de coups : carpe koï → jet d’eau, kitsune → tourbillon de flammes. L’aperçu suit le choix de mascotte, y compris le membre sélectionné d’une équipe. Les erreurs déclenchent des objets tombants sur soi, choisis automatiquement et de façon reproductible. Voir [ADR 0046](adr-0046-attaques-des-mascottes.md).
 
 ## Préchargement manuel F40
 

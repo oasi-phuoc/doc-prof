@@ -59,7 +59,7 @@ export function DuelGame(props: Props) {
   }, [dispatch, props.quiz])
   useEffect(() => { document.querySelector<HTMLElement>('.ci-duel-arena h1, .ci-duel-ready h1, .ci-duel-finished h1')?.focus({ preventScroll: true }) }, [state.phase, round.id])
   const resolution = state.resolution, freshImpact = state.phase === 'feedback' && !!resolution?.damage && now - resolution.at >= 0 && now - resolution.at < 1100
-  const impact=impactFor(resolution,state.config.effects)
+  const impact=impactFor(resolution,pair,round.id)
   const seconds = state.paused ? state.remainingMs === undefined ? null : Math.ceil(state.remainingMs / 1000) : state.deadline === undefined ? null : Math.max(0, Math.ceil((state.deadline - now) / 1000))
   const message = state.phase === 'question' ? 'Le premier clic décide du coup.' : !resolution?.side ? 'Temps écoulé : aucun dégât.' : `${resolution.correct ? 'Bonne réponse' : 'Mauvaise réponse'} : ${fighterName(pair[resolution.victim!])} perd ${resolution.damage} %.${resolution.winner ? ` ${fighterName(pair[resolution.winner])} remporte le duel !` : ''}`
   return <CompetitionShell title={state.config.mode === 'teams' ? 'Duels par équipes' : 'Duel à deux'} playing={['question', 'feedback'].includes(state.phase)} onExit={() => { pause(); props.onExit() }}>

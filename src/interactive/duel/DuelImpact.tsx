@@ -1,36 +1,29 @@
 import type { CSSProperties } from 'react'
-import { ATTACK_EFFECTS, trajectory, type AttackEffect, type FighterPoints, type Impact, type MistakeEffect } from './effects'
+import { trajectory, type FighterPoints, type Impact, type MistakeEffect } from './effects'
+import { SignatureAttackArt } from './SignatureAttackArt'
+import { attackSequence, signatureAttack } from './signature-attacks'
+import { CriticalSpecials } from './CriticalSpecials'
 import './effects.css'
 
 export function DuelImpact({impact,points}:{impact:Impact;points:FighterPoints}) {
   const target=points[impact.target],path=impact.kind==='attack'?trajectory(points[impact.from],target):undefined
-  const length=path?Math.hypot(path.dx,path.dy)||1:1,bend=path?Math.min(60,length*.24):0
+  const signature=impact.kind==='attack'?signatureAttack(impact.style):undefined
+  const sequence=impact.kind==='attack'?attackSequence(impact.style,impact.critical):[]
+  const length=path?Math.hypot(path.dx,path.dy)||1:1,bend=path?Math.min(60,length*.24)*(signature?.bend??1):0
   // Portrait fighters share the left edge: bend inward so the coup stays visible.
   const normal=path&&path.dy>0?-1:1
   const bendX=path?-path.dy/length*bend*normal:0,bendY=path?path.dx/length*bend*normal:0
-  const css={'--ci-hit-x':`${target.x}px`,'--ci-hit-y':`${target.y}px`} as CSSProperties
+  const css={'--ci-hit-x':`${target.x}px`,'--ci-hit-y':`${target.y}px`,'--ci-critical-color':signature?.color,'--ci-critical-accent':signature?.accent} as CSSProperties
   return <div className={`ci-duel-impact${impact.critical?' ci-duel-critical-impact':''}`} data-impact-kind={impact.kind} data-effect={impact.style} data-victim={impact.target} data-direction={path?.direction} data-attacker={impact.kind==='attack'?impact.from:undefined} style={css} aria-hidden="true">
     {impact.kind==='attack'&&path?<>
-      {Array.from({length:impact.critical?2:1},(_,index)=><div key={index} className={`ci-duel-flight ci-attack-${impact.style}`} data-ci-motion style={{left:points[impact.from].x,top:points[impact.from].y,'--ci-dx':`${path.dx}px`,'--ci-dy':`${path.dy}px`,'--ci-bend-x':`${bendX}px`,'--ci-bend-y':`${bendY}px`,animationDelay:`${index*160}ms`} as CSSProperties}><svg viewBox="-64 -64 128 128" style={{rotate:`${path.angle}rad`}}><AttackArt style={impact.style}/></svg></div>)}
-      {Array.from({length:impact.critical?2:1},(_,index)=><div key={index} className="ci-duel-hit-burst" data-ci-motion style={{animationDelay:`${440+index*160}ms`}}><Burst/></div>)}
+      {sequence.map(hit=><div key={hit.index} className={`ci-duel-flight ci-attack-${signature!.motion}`} data-ci-motion data-attack-mascot={impact.style} style={{left:points[impact.from].x,top:points[impact.from].y,'--ci-dx':`${path.dx}px`,'--ci-dy':`${path.dy}px`,'--ci-bend-x':`${bendX}px`,'--ci-bend-y':`${bendY}px`,'--ci-hit-scale':signature!.scale,animationDuration:`${hit.duration}ms`,animationDelay:`${hit.delay}ms`} as CSSProperties}><svg viewBox="-64 -64 128 128" style={{rotate:`${path.angle+(impact.critical?(hit.index%3-1)*.12:0)}rad`}}><SignatureAttackArt mascot={impact.style}/></svg></div>)}
+      {sequence.map(hit=><div key={hit.index} className="ci-duel-hit-burst" data-ci-motion style={{animationDelay:`${hit.impactDelay}ms`}}><Burst/></div>)}
+      {impact.critical&&<CriticalSpecials mascot={impact.style} origin={points[impact.from]} target={target}/>}
     </>:impact.kind==='mistake'?<>
       {Array.from({length:impact.critical?6:3},(_,index)=><div className="ci-mistake-object" data-ci-motion key={index} style={{left:target.x+((index%3)-1)*27,top:target.y-12,'--ci-fall-turn':`${(index%2?1:-1)*(30+index*9)}deg`,animationDelay:`${index*65}ms`} as CSSProperties}><svg viewBox="-32 -32 64 64"><MistakeArt style={impact.style}/></svg></div>)}
       <div className="ci-duel-hit-burst ci-duel-mistake-burst" data-ci-motion><Burst/></div>
     </>:null}
   </div>
-}
-export function AttackArt({style}:{style:AttackEffect}) {
-  const color=ATTACK_EFFECTS.find(effect=>effect.id===style)!.color
-  const crescent='M-49 38Q-23-38 52-30Q6-24-49 38Z'
-  if(style==='crescent'||style==='twin')return <g fill={color}><path d={crescent}/><path d="M-30 27Q0-12 43-21Q8-5-30 27Z" fill="#fff"/>{style==='twin'&&<path d={crescent} transform="translate(9 21) scale(.72)" opacity=".7"/>}</g>
-  if(style==='vortex')return <g fill={color}><path d="M-50 24Q-40-44 17-43Q-14-16-4 1Q-35-13-50 24Z"/><path d="M-20 48Q-10 3 25-4Q47-9 50-31Q55 25 18 41Q24 17 8 12Q-10 17-20 48Z"/><circle cx="3" cy="-4" r="6" fill="#fff"/></g>
-  if(style==='leaves')return <g>{[[-34,21,-35],[-14,-12,20],[13,21,-10],[35,-10,40]].map(([x,y,a],index)=><g key={index} transform={`translate(${x} ${y}) rotate(${a})`}><path d="M-14 9Q-20-16 13-20Q23 6-14 9Z" fill={index%2?'#8bbf59':color}/><path d="M-11 7 10-16" stroke="#fff" strokeWidth="2"/></g>)}</g>
-  if(style==='petals')return <g fill={color}>{[[-37,18,-30],[-21,-17,25],[2,8,40],[23,-25,-20],[37,14,70]].map(([x,y,a],index)=><path key={index} d="M0 15Q-22-3-7-16Q0-20 0-9Q1-20 8-15Q22-2 0 15Z" transform={`translate(${x} ${y}) rotate(${a})`} opacity={.65+index*.07}/>)}</g>
-  if(style==='wave')return <g><path d="M-53 31Q-27 12-20-20Q-3-53 28-32Q47-14 22-2Q33-23 15-22Q2-14 14 4Q30 21 53 12Q25 47-8 24Q-22 17-53 31Z" fill={color}/><path d="M-21 5Q-8-23 12-31Q-13-19-21 5ZM0 18Q21 36 42 20Q20 42 0 18Z" fill="#d6f7ff"/></g>
-  if(style==='spiral')return <g><path d="M-52 27Q-50-29-1-41Q47-48 49-7Q47 26 14 27Q-13 26-9 2Q-5-14 12-10Q24-6 17 5Q5 0 7 11Q24 22 32 5Q45-26 10-28Q-26-26-52 27Z" fill={color}/><circle cx="-30" cy="32" r="4" fill="#e6c5f3"/></g>
-  if(style==='claws')return <g fill={color}>{[-22,0,22].map((y,index)=><path key={y} d="M-45 21Q-9-24 45-28Q6-8-45 21Z" transform={`translate(${index*6-5} ${y}) scale(.88)`}/>)}</g>
-  if(style==='gust')return <g fill={color}><path d="M-53 9Q-22-12 10-4Q43 1 38-19Q34-31 25-22Q28-41 44-28Q65-2 30 10Q-8 0-53 9Z"/><path d="M-40 32Q-1 9 32 24Q50 33 53 16Q58 50 24 35Q-8 24-40 32Z"/><circle cx="-35" cy="-17" r="6" fill="#cce9ed"/></g>
-  return <g fill="none" stroke={color}>{[17,32,48].map((r,index)=><ellipse key={r} cx={index*3} rx={r*.46} ry={r} strokeWidth={8-index*2}/>)}<path d="M42-9 56-14 52 1 62 13 47 10 37 22 39 6 29-5Z" fill="#ffe6a0" stroke="none"/></g>
 }
 export function MistakeArt({style}:{style:MistakeEffect}) {
   if(style==='stones')return <g><path d="M-24 7-15-19 4-25 24-9 21 15 1 26-21 20Z" fill="#91a0ac" stroke="#4c6271" strokeWidth="3"/><path d="M-15-17 1-4 21-8M1-4-1 22" stroke="#cdd8de" strokeWidth="3" fill="none"/></g>

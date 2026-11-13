@@ -168,6 +168,7 @@ try{
         const label={determinant:'Déterminants',nom:'Noms',pronom:'Pronoms',verbe:'Verbes'}[tokens[position].category]
         const damage=await page.locator('.ci-duel-critical').count()?20:10
         await answer(page,'left',label).click();targetHP=Math.max(0,targetHP-damage);assert.equal((await hp(page))[1],targetHP)
+        assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-effect'),expected[pairIndex].left.avatarId)
         if(targetHP)await next(page,old)
       }
       assert.equal(targetHP,0)

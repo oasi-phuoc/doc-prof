@@ -2,62 +2,485 @@
   "results": [
     {
       "viewport": "390x844",
-      "mascots": "30 image-only choices, each selectable and animated in Class; same 30 in each competition picker; legacy six and new atlas rows verified",
-      "previews": "all ten attacks have distinct motion curves and measured intermediate transforms, reach their target and work in both directions; all ten falling-object errors tested on both players; critical doubles attacks and impact flashes or falling objects",
+      "mascots": "30 shared animated mascots, with image-only selection retained",
+      "previews": "Each of the thirty chosen mascots automatically provides its own named attack and distinct intermediate motion; both directions reach the correct target; no attack selector or effect setting",
       "attackMotions": [
-        "ci-attack-crescent",
-        "ci-attack-twin",
-        "ci-attack-vortex",
-        "ci-attack-leaves",
-        "ci-attack-petals",
-        "ci-attack-wave",
-        "ci-attack-spiral",
-        "ci-attack-claws",
-        "ci-attack-gust",
-        "ci-attack-shockwave"
+        {
+          "mascot": "leaf",
+          "name": "ci-attack-leaves",
+          "duration": 820
+        },
+        {
+          "mascot": "owl",
+          "name": "ci-attack-crescent",
+          "duration": 860
+        },
+        {
+          "mascot": "octopus",
+          "name": "ci-attack-spiral",
+          "duration": 790
+        },
+        {
+          "mascot": "hedgehog",
+          "name": "ci-attack-twin",
+          "duration": 680
+        },
+        {
+          "mascot": "rabbit",
+          "name": "ci-attack-petals",
+          "duration": 810
+        },
+        {
+          "mascot": "dragon",
+          "name": "ci-attack-wave",
+          "duration": 760
+        },
+        {
+          "mascot": "rat",
+          "name": "ci-attack-gust",
+          "duration": 700
+        },
+        {
+          "mascot": "ox",
+          "name": "ci-attack-shockwave",
+          "duration": 740
+        },
+        {
+          "mascot": "tiger",
+          "name": "ci-attack-claws",
+          "duration": 630
+        },
+        {
+          "mascot": "snake",
+          "name": "ci-attack-spiral",
+          "duration": 880
+        },
+        {
+          "mascot": "horse",
+          "name": "ci-attack-twin",
+          "duration": 720
+        },
+        {
+          "mascot": "goat",
+          "name": "ci-attack-vortex",
+          "duration": 910
+        },
+        {
+          "mascot": "monkey",
+          "name": "ci-attack-petals",
+          "duration": 730
+        },
+        {
+          "mascot": "rooster",
+          "name": "ci-attack-shockwave",
+          "duration": 690
+        },
+        {
+          "mascot": "dog",
+          "name": "ci-attack-crescent",
+          "duration": 710
+        },
+        {
+          "mascot": "boar",
+          "name": "ci-attack-gust",
+          "duration": 750
+        },
+        {
+          "mascot": "panda",
+          "name": "ci-attack-wave",
+          "duration": 930
+        },
+        {
+          "mascot": "fox",
+          "name": "ci-attack-petals",
+          "duration": 770
+        },
+        {
+          "mascot": "tanuki",
+          "name": "ci-attack-vortex",
+          "duration": 890
+        },
+        {
+          "mascot": "otter",
+          "name": "ci-attack-gust",
+          "duration": 840
+        },
+        {
+          "mascot": "koala",
+          "name": "ci-attack-twin",
+          "duration": 920
+        },
+        {
+          "mascot": "turtle",
+          "name": "ci-attack-wave",
+          "duration": 970
+        },
+        {
+          "mascot": "axolotl",
+          "name": "ci-attack-petals",
+          "duration": 900
+        },
+        {
+          "mascot": "leopard",
+          "name": "ci-attack-claws",
+          "duration": 670
+        },
+        {
+          "mascot": "crane",
+          "name": "ci-attack-crescent",
+          "duration": 870
+        },
+        {
+          "mascot": "cat",
+          "name": "ci-attack-shockwave",
+          "duration": 800
+        },
+        {
+          "mascot": "koi",
+          "name": "ci-attack-wave",
+          "duration": 830
+        },
+        {
+          "mascot": "red-panda",
+          "name": "ci-attack-vortex",
+          "duration": 850
+        },
+        {
+          "mascot": "penguin",
+          "name": "ci-attack-twin",
+          "duration": 780
+        },
+        {
+          "mascot": "kitsune",
+          "name": "ci-attack-vortex",
+          "duration": 880
+        }
       ],
-      "duel": "offline leaf versus Kitsune uses prepared shared sprite sheets; wrong answer triggers a bucket drop on oneself, correct answer flies from right player to left, upward on portrait phones",
-      "resume": "chosen effects and both mascot identities survive the paused journal replay",
+      "duel": "Offline Koi sends a water jet from left to right (down on portrait phones); Kitsune sends a fire tornado in the reverse direction; errors drop automatically selected objects only on the mistaken player",
+      "critical": "Mascot-specific three-to-five-hit sequence, glowing attack, two auras and twenty themed sparkles; all finish inside the minimum one-second correction",
+      "resume": "Koi and Kitsune identities survive replay; the new journal has no configurable effects",
       "axeViolations": 0
     },
     {
       "viewport": "1366x768",
-      "mascots": "30 image-only choices, each selectable and animated in Class; same 30 in each competition picker; legacy six and new atlas rows verified",
-      "previews": "all ten attacks have distinct motion curves and measured intermediate transforms, reach their target and work in both directions; all ten falling-object errors tested on both players; critical doubles attacks and impact flashes or falling objects",
+      "mascots": "30 shared animated mascots, with image-only selection retained",
+      "previews": "Each of the thirty chosen mascots automatically provides its own named attack and distinct intermediate motion; both directions reach the correct target; no attack selector or effect setting",
       "attackMotions": [
-        "ci-attack-crescent",
-        "ci-attack-twin",
-        "ci-attack-vortex",
-        "ci-attack-leaves",
-        "ci-attack-petals",
-        "ci-attack-wave",
-        "ci-attack-spiral",
-        "ci-attack-claws",
-        "ci-attack-gust",
-        "ci-attack-shockwave"
+        {
+          "mascot": "leaf",
+          "name": "ci-attack-leaves",
+          "duration": 820
+        },
+        {
+          "mascot": "owl",
+          "name": "ci-attack-crescent",
+          "duration": 860
+        },
+        {
+          "mascot": "octopus",
+          "name": "ci-attack-spiral",
+          "duration": 790
+        },
+        {
+          "mascot": "hedgehog",
+          "name": "ci-attack-twin",
+          "duration": 680
+        },
+        {
+          "mascot": "rabbit",
+          "name": "ci-attack-petals",
+          "duration": 810
+        },
+        {
+          "mascot": "dragon",
+          "name": "ci-attack-wave",
+          "duration": 760
+        },
+        {
+          "mascot": "rat",
+          "name": "ci-attack-gust",
+          "duration": 700
+        },
+        {
+          "mascot": "ox",
+          "name": "ci-attack-shockwave",
+          "duration": 740
+        },
+        {
+          "mascot": "tiger",
+          "name": "ci-attack-claws",
+          "duration": 630
+        },
+        {
+          "mascot": "snake",
+          "name": "ci-attack-spiral",
+          "duration": 880
+        },
+        {
+          "mascot": "horse",
+          "name": "ci-attack-twin",
+          "duration": 720
+        },
+        {
+          "mascot": "goat",
+          "name": "ci-attack-vortex",
+          "duration": 910
+        },
+        {
+          "mascot": "monkey",
+          "name": "ci-attack-petals",
+          "duration": 730
+        },
+        {
+          "mascot": "rooster",
+          "name": "ci-attack-shockwave",
+          "duration": 690
+        },
+        {
+          "mascot": "dog",
+          "name": "ci-attack-crescent",
+          "duration": 710
+        },
+        {
+          "mascot": "boar",
+          "name": "ci-attack-gust",
+          "duration": 750
+        },
+        {
+          "mascot": "panda",
+          "name": "ci-attack-wave",
+          "duration": 930
+        },
+        {
+          "mascot": "fox",
+          "name": "ci-attack-petals",
+          "duration": 770
+        },
+        {
+          "mascot": "tanuki",
+          "name": "ci-attack-vortex",
+          "duration": 890
+        },
+        {
+          "mascot": "otter",
+          "name": "ci-attack-gust",
+          "duration": 840
+        },
+        {
+          "mascot": "koala",
+          "name": "ci-attack-twin",
+          "duration": 920
+        },
+        {
+          "mascot": "turtle",
+          "name": "ci-attack-wave",
+          "duration": 970
+        },
+        {
+          "mascot": "axolotl",
+          "name": "ci-attack-petals",
+          "duration": 900
+        },
+        {
+          "mascot": "leopard",
+          "name": "ci-attack-claws",
+          "duration": 670
+        },
+        {
+          "mascot": "crane",
+          "name": "ci-attack-crescent",
+          "duration": 870
+        },
+        {
+          "mascot": "cat",
+          "name": "ci-attack-shockwave",
+          "duration": 800
+        },
+        {
+          "mascot": "koi",
+          "name": "ci-attack-wave",
+          "duration": 830
+        },
+        {
+          "mascot": "red-panda",
+          "name": "ci-attack-vortex",
+          "duration": 850
+        },
+        {
+          "mascot": "penguin",
+          "name": "ci-attack-twin",
+          "duration": 780
+        },
+        {
+          "mascot": "kitsune",
+          "name": "ci-attack-vortex",
+          "duration": 880
+        }
       ],
-      "duel": "offline leaf versus Kitsune uses prepared shared sprite sheets; wrong answer triggers a bucket drop on oneself, correct answer flies from right player to left, upward on portrait phones",
-      "resume": "chosen effects and both mascot identities survive the paused journal replay",
+      "duel": "Offline Koi sends a water jet from left to right (down on portrait phones); Kitsune sends a fire tornado in the reverse direction; errors drop automatically selected objects only on the mistaken player",
+      "critical": "Mascot-specific three-to-five-hit sequence, glowing attack, two auras and twenty themed sparkles; all finish inside the minimum one-second correction",
+      "resume": "Koi and Kitsune identities survive replay; the new journal has no configurable effects",
       "axeViolations": 0
     },
     {
       "viewport": "360x640",
-      "mascots": "30 image-only choices, each selectable and animated in Class; same 30 in each competition picker; legacy six and new atlas rows verified",
-      "previews": "all ten attacks have distinct motion curves and measured intermediate transforms, reach their target and work in both directions; all ten falling-object errors tested on both players; critical doubles attacks and impact flashes or falling objects",
+      "mascots": "30 shared animated mascots, with image-only selection retained",
+      "previews": "Each of the thirty chosen mascots automatically provides its own named attack and distinct intermediate motion; both directions reach the correct target; no attack selector or effect setting",
       "attackMotions": [
-        "ci-attack-crescent",
-        "ci-attack-twin",
-        "ci-attack-vortex",
-        "ci-attack-leaves",
-        "ci-attack-petals",
-        "ci-attack-wave",
-        "ci-attack-spiral",
-        "ci-attack-claws",
-        "ci-attack-gust",
-        "ci-attack-shockwave"
+        {
+          "mascot": "leaf",
+          "name": "ci-attack-leaves",
+          "duration": 820
+        },
+        {
+          "mascot": "owl",
+          "name": "ci-attack-crescent",
+          "duration": 860
+        },
+        {
+          "mascot": "octopus",
+          "name": "ci-attack-spiral",
+          "duration": 790
+        },
+        {
+          "mascot": "hedgehog",
+          "name": "ci-attack-twin",
+          "duration": 680
+        },
+        {
+          "mascot": "rabbit",
+          "name": "ci-attack-petals",
+          "duration": 810
+        },
+        {
+          "mascot": "dragon",
+          "name": "ci-attack-wave",
+          "duration": 760
+        },
+        {
+          "mascot": "rat",
+          "name": "ci-attack-gust",
+          "duration": 700
+        },
+        {
+          "mascot": "ox",
+          "name": "ci-attack-shockwave",
+          "duration": 740
+        },
+        {
+          "mascot": "tiger",
+          "name": "ci-attack-claws",
+          "duration": 630
+        },
+        {
+          "mascot": "snake",
+          "name": "ci-attack-spiral",
+          "duration": 880
+        },
+        {
+          "mascot": "horse",
+          "name": "ci-attack-twin",
+          "duration": 720
+        },
+        {
+          "mascot": "goat",
+          "name": "ci-attack-vortex",
+          "duration": 910
+        },
+        {
+          "mascot": "monkey",
+          "name": "ci-attack-petals",
+          "duration": 730
+        },
+        {
+          "mascot": "rooster",
+          "name": "ci-attack-shockwave",
+          "duration": 690
+        },
+        {
+          "mascot": "dog",
+          "name": "ci-attack-crescent",
+          "duration": 710
+        },
+        {
+          "mascot": "boar",
+          "name": "ci-attack-gust",
+          "duration": 750
+        },
+        {
+          "mascot": "panda",
+          "name": "ci-attack-wave",
+          "duration": 930
+        },
+        {
+          "mascot": "fox",
+          "name": "ci-attack-petals",
+          "duration": 770
+        },
+        {
+          "mascot": "tanuki",
+          "name": "ci-attack-vortex",
+          "duration": 890
+        },
+        {
+          "mascot": "otter",
+          "name": "ci-attack-gust",
+          "duration": 840
+        },
+        {
+          "mascot": "koala",
+          "name": "ci-attack-twin",
+          "duration": 920
+        },
+        {
+          "mascot": "turtle",
+          "name": "ci-attack-wave",
+          "duration": 970
+        },
+        {
+          "mascot": "axolotl",
+          "name": "ci-attack-petals",
+          "duration": 900
+        },
+        {
+          "mascot": "leopard",
+          "name": "ci-attack-claws",
+          "duration": 670
+        },
+        {
+          "mascot": "crane",
+          "name": "ci-attack-crescent",
+          "duration": 870
+        },
+        {
+          "mascot": "cat",
+          "name": "ci-attack-shockwave",
+          "duration": 800
+        },
+        {
+          "mascot": "koi",
+          "name": "ci-attack-wave",
+          "duration": 830
+        },
+        {
+          "mascot": "red-panda",
+          "name": "ci-attack-vortex",
+          "duration": 850
+        },
+        {
+          "mascot": "penguin",
+          "name": "ci-attack-twin",
+          "duration": 780
+        },
+        {
+          "mascot": "kitsune",
+          "name": "ci-attack-vortex",
+          "duration": 880
+        }
       ],
-      "duel": "offline leaf versus Kitsune uses prepared shared sprite sheets; wrong answer triggers a bucket drop on oneself, correct answer flies from right player to left, upward on portrait phones",
-      "resume": "chosen effects and both mascot identities survive the paused journal replay",
+      "duel": "Offline Koi sends a water jet from left to right (down on portrait phones); Kitsune sends a fire tornado in the reverse direction; errors drop automatically selected objects only on the mistaken player",
+      "critical": "Mascot-specific three-to-five-hit sequence, glowing attack, two auras and twenty themed sparkles; all finish inside the minimum one-second correction",
+      "resume": "Koi and Kitsune identities survive replay; the new journal has no configurable effects",
       "axeViolations": 0
     }
   ],

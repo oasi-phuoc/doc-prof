@@ -2,11 +2,15 @@ import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {readFile} from 'node:fs/promises'
 import {createServer} from 'vite'
+import {createElement} from 'react'
+import {renderToStaticMarkup} from 'react-dom/server'
 const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom'})
 try{
   const {MASCOTS,MASCOT_IMAGES,MASCOT_POSES,mascotStyle}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
   const {COMPETITION_AVATARS,validAvatar}=await vite.ssrLoadModule('/src/interactive/competition/avatars.ts')
   const {ATTACK_EFFECTS,MISTAKE_EFFECTS,DEFAULT_EFFECTS,impactFor,trajectory,validEffects}=await vite.ssrLoadModule('/src/interactive/duel/effects.ts')
+  const {SIGNATURE_ATTACKS,signatureAttack,attackSequence}=await vite.ssrLoadModule('/src/interactive/duel/signature-attacks.ts')
+  const {SignatureAttackArt}=await vite.ssrLoadModule('/src/interactive/duel/SignatureAttackArt.tsx')
   const {createDuel,stepDuel,duelRoundId,parseDuelConfig}=await vite.ssrLoadModule('/src/interactive/duel/core.ts')
   const {newDuelRun,readDuel,duelPlanId}=await vite.ssrLoadModule('/src/interactive/duel/storage.ts')
   await test('thirty unique mascots are shared by Class, Solo and competition while all existing identities remain valid',()=>{
@@ -35,7 +39,7 @@ try{
     }
     assert.ok(mascotStyle('kitsune',src=>'blob:https://class.test/'+src.split('/').at(-1))['--ci-mascot-image'].includes('blob:'))
   })
-  await test('ten attack and ten mistake presets are fixed safe choices, with no arbitrary resource, damage or direction injected in configuration',()=>{
+  await test('legacy effect fields remain strictly validated when reading an old journal',()=>{
     assert.equal(ATTACK_EFFECTS.length,10);assert.equal(MISTAKE_EFFECTS.length,10)
     for(const attack of ATTACK_EFFECTS)for(const mistake of MISTAKE_EFFECTS)assert.equal(validEffects({attack:attack.id,mistake:mistake.id}),true)
     for(const bad of [{...DEFAULT_EFFECTS,damage:100},{...DEFAULT_EFFECTS,from:'right'},{attack:'laser',mistake:'stones'},{attack:'crescent',mistake:'https://foreign.test/object.svg'}])assert.equal(validEffects(bad),false)
@@ -44,15 +48,48 @@ try{
     assert.deepEqual(parseDuelConfig({...config,effects:{attack:'leaves',mistake:'bucket'}}).effects,{attack:'leaves',mistake:'bucket'})
     assert.throws(()=>parseDuelConfig({...config,effects:{...DEFAULT_EFFECTS,damage:100}}))
   })
-  await test('correct answers attack the opponent; wrong answers create only a local falling-object effect, including critical mistakes',()=>{
-    for(const side of ['left','right'])for(const critical of [false,true]){
-      const other=side==='left'?'right':'left',damage=critical?20:10
-      const good=impactFor({at:1000,side,victim:other,correct:true,damage,critical},{attack:'petals',mistake:'books'})
-      assert.deepEqual(good,{kind:'attack',style:'petals',from:side,target:other,critical})
-      const bad=impactFor({at:1000,side,victim:side,correct:false,damage,critical},{attack:'petals',mistake:'books'})
-      assert.deepEqual(bad,{kind:'mistake',style:'books',target:side,critical});assert.equal(Object.hasOwn(bad,'from'),false)
+  await test('each of the thirty mascots has a fixed named attack, including a water jet for Koi and a fire tornado for Kitsune',()=>{
+    assert.deepEqual(Object.keys(SIGNATURE_ATTACKS).sort(),MASCOTS.map(m=>m.id).sort())
+    assert.equal(new Set(Object.values(SIGNATURE_ATTACKS).map(attack=>attack.label)).size,30)
+    assert.equal(signatureAttack('koi').label,'Jet d’eau');assert.equal(signatureAttack('kitsune').label,'Tourbillon de flammes')
+    for(const mascot of MASCOTS){
+      const attack=signatureAttack(mascot.id)
+      assert.ok(ATTACK_EFFECTS.some(effect=>effect.id===attack.motion));assert.ok(attack.duration<=1000&&attack.duration>=600)
     }
-    assert.equal(impactFor(undefined),null);assert.equal(impactFor({at:1000,damage:0,critical:false}),null)
+  })
+  await test('critical signatures combine three to five visible hits inside one second without changing the normal attack',()=>{
+    const counts=new Set()
+    for(const mascot of MASCOTS){
+      const normal=attackSequence(mascot.id,false),critical=attackSequence(mascot.id,true)
+      assert.equal(normal.length,1);assert.equal(normal[0].delay,0);assert.equal(normal[0].duration,signatureAttack(mascot.id).duration)
+      assert.ok(critical.length>=3&&critical.length<=5);counts.add(critical.length)
+      for(const hit of critical){assert.ok(hit.delay+hit.duration<=1000);assert.ok(hit.impactDelay+340<=1000)}
+      assert.deepEqual(attackSequence(mascot.id,true),critical)
+    }
+    assert.deepEqual([...counts].sort(),[3,4,5]);assert.equal(attackSequence('koi',true).length,4);assert.equal(attackSequence('kitsune',true).length,5)
+  })
+  await test('all thirty attack illustrations have different geometry, without external media, even if their colours and identity attributes are removed',()=>{
+    const geometry=MASCOTS.map(mascot=>renderToStaticMarkup(createElement(SignatureAttackArt,{mascot:mascot.id})).replace(/ (?:fill|stroke|data-signature)="[^"]*"/g,''))
+    assert.equal(new Set(geometry).size,30)
+    assert.ok(geometry.every(svg=>!/<(?:image|script|foreignObject)\b/.test(svg)&&!svg.includes('href=')))
+  })
+  await test('correct answers always use the responding mascot; wrong answers produce only local falling objects, with deterministic automatic variety',()=>{
+    const mistakes=new Set()
+    for(const mascot of MASCOTS)for(const side of ['left','right'])for(const critical of [false,true]){
+      const other=side==='left'?'right':'left',damage=critical?20:10
+      const fighters={left:{avatarId:mascot.id,seat:1},right:{avatarId:mascot.id,seat:1}}
+      const good=impactFor({at:1000,side,victim:other,correct:true,damage,critical},fighters,'round')
+      assert.deepEqual(good,{kind:'attack',style:mascot.id,from:side,target:other,critical})
+      for(let turn=0;turn<20;turn++){
+        const resolution={at:1000,side,victim:side,correct:false,damage,critical}
+        const bad=impactFor(resolution,fighters,`seed:pair:${turn}`)
+        assert.equal(bad.kind,'mistake');assert.equal(bad.target,side);assert.equal(Object.hasOwn(bad,'from'),false)
+        assert.ok(MISTAKE_EFFECTS.some(effect=>effect.id===bad.style));assert.deepEqual(impactFor(resolution,fighters,`seed:pair:${turn}`),bad)
+        mistakes.add(bad.style)
+      }
+    }
+    assert.equal(mistakes.size,10)
+    assert.equal(impactFor(undefined,{},'round'),null);assert.equal(impactFor({at:1000,damage:0,critical:false},{},'round'),null)
   })
   await test('trajectories reverse for the other attacker and follow the real vertical arrangement on a phone',()=>{
     const left={x:100,y:220},right={x:900,y:220},top={x:180,y:180},bottom={x:180,y:420}
@@ -61,7 +98,7 @@ try{
     assert.equal(trajectory(top,bottom).direction,'down');assert.equal(trajectory(bottom,top).direction,'up')
     assert.equal(trajectory(top,bottom).dy,-trajectory(bottom,top).dy)
   })
-  await test('old duel journals keep their results and default effects; chosen effects and all new mascot identities survive replay without changing damage',async()=>{
+  await test('old journals with or without former effect settings retain their results, while the mascot now determines the attack',async()=>{
     const previous=globalThis.sessionStorage,values=new Map();globalThis.sessionStorage={getItem:key=>values.get(key)??null}
     try{
       const quiz={id:'effects-source',title:'Calcul',items:[{question:{id:'q',prompt:'2 + 2 = ?',images:[],choices:[{id:'yes',text:'4'},{id:'no',text:'5'}]},correctChoiceId:'yes'}]},timer={enabled:false,seconds:5,feedbackSeconds:1},planId=await duelPlanId(quiz)
@@ -73,8 +110,10 @@ try{
         const journal={...run.journal,events:[{at:1010,action:{type:'start',pairIndex:0}},{at:1020,action}]}
         values.set('clairfle.duel.duel.effects-source',JSON.stringify(journal))
         const restored=readDuel(quiz,planId,config,timer,2000)
-        assert.deepEqual(restored.state,state);assert.equal(restored.warning,'');assert.equal(impactFor(restored.state.resolution,restored.state.config.effects).kind,'mistake')
+        assert.deepEqual(restored.state,state);assert.equal(restored.warning,'');assert.equal(impactFor(restored.state.resolution,restored.state.pairs[restored.state.pairIndex],duelRoundId(restored.state)).kind,'mistake')
         assert.equal(restored.state.hp.left,100);assert.ok([80,90].includes(restored.state.hp.right));assert.deepEqual(restored.state.config.effects,effects)
+        const good={...restored.state.resolution,side:'right',victim:'left',correct:true}
+        assert.equal(impactFor(good,restored.state.pairs[restored.state.pairIndex],duelRoundId(restored.state)).style,'kitsune')
       }
     }finally{globalThis.sessionStorage=previous}
   })

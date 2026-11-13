@@ -1,5 +1,7 @@
 # ADR 0045 — Trente mascottes communes et effets dirigés du duel
 
+Les choix d’effets décrits ici sont remplacés par les [attaques automatiques propres aux mascottes](adr-0046-attaques-des-mascottes.md), selon la demande suivante du propriétaire. Les preuves de ce jalon restent conservées.
+
 La demande du propriétaire porte le choix à **30 mascottes** au total. Les six existantes sont conservées, et 24 nouvelles illustrations originales ont été générées avec six poses chacune : réflexion, carte levée, discussion, réussite, larmes et pause. Les dix animaux manquants du zodiaque japonais complètent le Lapin et le Dragon ; quatorze autres animaux complètent la collection. Voir `mascots-generation.json` pour les quatre planches, leurs lignes et leurs empreintes.
 
 ## Une collection dans tous les modes

@@ -1,5 +1,7 @@
-import type { DuelResolution, Side } from './core'
+import type { DuelPair, DuelResolution, Side } from './core'
+import { hash } from '../domain/seeds'
 
+/** Accepted only when reading journals created before mascot-specific attacks. */
 export const ATTACK_EFFECTS = [
   {id:'crescent',label:'Croissant',color:'#7953d6'}, {id:'twin',label:'Double entaille',color:'#d16b27'},
   {id:'vortex',label:'Tourbillon',color:'#2787a1'}, {id:'leaves',label:'Feuilles',color:'#4a9857'},
@@ -32,10 +34,10 @@ export function trajectory(from:Point,to:Point) {
   const dx=to.x-from.x,dy=to.y-from.y
   return {dx,dy,angle:Math.atan2(dy,dx),direction:Math.abs(dx)>=Math.abs(dy)?dx>=0?'right':'left':dy>=0?'down':'up'}
 }
-export function impactFor(resolution:DuelResolution|undefined,effects:DuelEffects=DEFAULT_EFFECTS) {
+export function impactFor(resolution:DuelResolution|undefined,fighters:DuelPair,roundKey:string) {
   if(!resolution?.damage||!resolution.side||!resolution.victim)return null
   return resolution.correct
-    ? {kind:'attack' as const,style:effects.attack,from:resolution.side,target:resolution.victim,critical:resolution.critical}
-    : {kind:'mistake' as const,style:effects.mistake,target:resolution.side,critical:resolution.critical}
+    ? {kind:'attack' as const,style:fighters[resolution.side].avatarId,from:resolution.side,target:resolution.victim,critical:resolution.critical}
+    : {kind:'mistake' as const,style:MISTAKE_EFFECTS[hash(`${roundKey}:${resolution.side}:${fighters[resolution.side].avatarId}`)%MISTAKE_EFFECTS.length]!.id,target:resolution.side,critical:resolution.critical}
 }
 export type Impact = NonNullable<ReturnType<typeof impactFor>>
