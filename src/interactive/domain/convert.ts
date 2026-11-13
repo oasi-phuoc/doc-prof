@@ -15,7 +15,10 @@ import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
 import { adaptRecognition } from './recognition'
 import { adaptPrintablePairs } from './printable-pairs'
+import { adaptPrintableDecks } from './printable-decks'
 import { adaptPrintableRiddles } from './printable-riddles'
+import { sourceTranscript } from './transcripts'
+import { adaptWordClassification } from './word-classification'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -110,9 +113,9 @@ export function convertRecipe(
           typeof media.audio === 'string'
             ? media.audio
             : block.document?.audioSrc
-        const printablePairs=adaptPrintablePairs(block.items,block.exerciseType,
-          (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}),
-          src=>recipe.imageOverrides?.[src]??src)
+        const pairSeed=(item:number,part:number)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'})
+        const pairImage=(src:string)=>recipe.imageOverrides?.[src]??src
+        const printablePairs=adaptPrintablePairs(block.items,block.exerciseType,pairSeed,pairImage)??adaptPrintableDecks(block.items,block.exerciseType,pairSeed,pairImage)
         const printableRiddles=adaptPrintableRiddles(block.items,block.exerciseType,
           (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}))
         block.items.forEach((item, itemIndex) => {
@@ -168,7 +171,8 @@ export function convertRecipe(
               image: c.image ? image(c.image) : undefined,
             }))
             game.questions.push(q)
-            game.corrections[q.id] = { text, choiceId }
+            const transcript = exercise?.competence === 'CO' ? sourceTranscript(media, q.audio, q.audioParts) : undefined
+            game.corrections[q.id] = { text, choiceId, ...(transcript ? { transcript } : {}) }
           }
           const tcfQuestion = (
             t:
@@ -308,6 +312,24 @@ export function convertRecipe(
               const choices = numberChoices(csc.result, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }))
               q.choices = choices.choices
               add(q, csc.model, choices.correctId)
+            }
+            return
+          }
+          const classification = adaptWordClassification(item)
+          if (classification) {
+            classification.issues.forEach(reject)
+            for (const entry of classification.items) {
+              const q = base(entry.part)
+              q.prompt = entry.prompt
+              q.instruction = 'Classez l’élément encadré dans sa catégorie. Une catégorie peut servir plusieurs fois.'
+              q.context = undefined
+              q.wordClassification = entry.classification
+              q.choices = entry.choices
+              q.choiceOrderPolicy = 'fixed'
+              q.mode = entry.teacherLed ? 'oral' : 'choice'
+              q.compatibility = entry.teacherLed ? 'teacher-led' : 'assisted'
+              if (q.audio) q.audioGrouping = 'individual'
+              add(q, entry.model, entry.correctId)
             }
             return
           }

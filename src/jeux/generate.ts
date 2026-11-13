@@ -677,6 +677,7 @@ function dominos(
       textRight: right.text,
       variant: 'domino',
       badge: String(i + 1),
+      dominoWord: left.text,
     })
   }
   const cards = shuffle(rng, raw)

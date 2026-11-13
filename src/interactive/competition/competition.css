@@ -40,6 +40,9 @@
 .ci-competition-audio { max-width: 600px; width: 100%; margin: auto; }
 .ci-competition-audio audio { height: 34px; }
 .ci-competition-host-controls { flex-shrink: 0; justify-content: center; }
+.ci-competition-review-controls { display: flex; justify-content: center; flex-shrink: 0; }
+.ci-competition-transcript-setting { max-width: 620px; margin: 16px auto; }
+.ci-competition-transcript-setting p { font-size: 14px; }
 .ci-competition-pause { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .ci-competition-dialog { border: 2px solid #b9bfd0; border-radius: 20px; padding: 24px; max-width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); overflow: auto; color: #182238; background: #f6f7fb; }
 .ci-competition-dialog::backdrop { background: #182238bb; }

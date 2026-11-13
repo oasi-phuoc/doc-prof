@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "duel": "first simultaneous click wins; normal correct answer deals 10%; critical wrong answer deals 20% to oneself; repeated questions continue to zero; one winner",
+      "resume": "exit through all setup screens retains source quiz, seed, 80/90 health and progress",
+      "restart": "explicit new game renews the source session and creates a separate empty journal; the previous completed duel is preserved",
+      "journal": "replayed actions only, without question bodies, private keys or score snapshots"
+    },
+    {
+      "viewport": "390x844",
+      "cards": "two players and health bars fit; touch targets at least 44 px; only correct cards retain color",
+      "animation": "one central unarmed slash, two on critical and stronger hurt, active with reduced-motion preference",
+      "fullscreen": "only exit-fullscreen remains in the header",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "cards": "two players and health bars fit; touch targets at least 44 px; only correct cards retain color",
+      "animation": "one central unarmed slash, two on critical and stronger hurt, active with reduced-motion preference",
+      "fullscreen": "only exit-fullscreen remains in the header",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "360x640",
+      "cards": "two players and health bars fit; touch targets at least 44 px; only correct cards retain color",
+      "animation": "one central unarmed slash, two on critical and stronger hurt, active with reduced-motion preference",
+      "fullscreen": "only exit-fullscreen remains in the header",
+      "axeViolations": 0
+    },
+    {
+      "teams": "390x844",
+      "pairing": "equal rosters required; fixed seed draws every seat once; preview and called order retained; 100% health at each new pair",
+      "source": "Gattegno sentence and current word stay neutral; repeated categories remain usable",
+      "offline": "network disabled after preparation, two complete duels then team winner 2–0",
+      "preview": [
+        "Duel 12contre1",
+        "Duel 21contre2"
+      ]
+    },
+    {
+      "teams": "1366x768",
+      "pairing": "equal rosters required; fixed seed draws every seat once; preview and called order retained; 100% health at each new pair",
+      "source": "Gattegno sentence and current word stay neutral; repeated categories remain usable",
+      "offline": "network disabled after preparation, two complete duels then team winner 2–0",
+      "preview": [
+        "Duel 11contre2",
+        "Duel 22contre1"
+      ]
+    },
+    {
+      "teams": "360x640",
+      "pairing": "equal rosters required; fixed seed draws every seat once; preview and called order retained; 100% health at each new pair",
+      "source": "Gattegno sentence and current word stay neutral; repeated categories remain usable",
+      "offline": "network disabled after preparation, two complete duels then team winner 2–0",
+      "preview": [
+        "Duel 12contre2",
+        "Duel 21contre1"
+      ]
+    }
+  ],
+  "errors": [],
+  "serverWritesToFicheApi": 0,
+  "network": "shared screen, local play after media preparation; no production deployment"
+}

@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-13",
+  "baseline": "8591dc8219d74a2a6f3d6655ddd457989f714f22",
+  "scope": "Associations M06 des planches Dominos et du lot animateur Loto en Classe, Solo et compétition.",
+  "tests": {
+    "newTests": 9,
+    "newFocusedPassed": 9,
+    "fullSuitePassed": 291,
+    "fullSuiteReference": "84a4c7e76edeed4a5ca5b2882aebda3c478d3e9e",
+    "postMergeMatchingAndSourceTests": 24,
+    "postMergeAudioCatalogueTests": 6,
+    "failed": 0,
+    "realSourceConfigurations": 600,
+    "sourceTheme": "fruits",
+    "levels": [
+      "facile",
+      "moyen",
+      "avance"
+    ],
+    "defaultDominoGroups": [
+      6,
+      6,
+      4
+    ],
+    "defaultLotoGroups": [
+      6,
+      6,
+      6,
+      6,
+      3
+    ]
+  },
+  "coverage": {
+    "families": [
+      "jeux-dominos",
+      "jeux-loto"
+    ],
+    "playableVariants": 718,
+    "inventoryVariants": 2112,
+    "generationErrors": 8,
+    "playableJeuxFamilies": 6,
+    "inventoryWitnessQuestions": {
+      "jeux-dominos": 12,
+      "jeux-loto": 12
+    },
+    "note": "Couverture structurelle et fidélité aux sources ; pas de validation pédagogique globale de tous les thèmes."
+  },
+  "browser": {
+    "passed": [
+      "printable-decks-browser",
+      "printable-pairs-browser",
+      "a4-regression"
+    ],
+    "all51StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "class": "16 paires Dominos en trois groupes et 27 paires Loto en cinq groupes ; correction dans les cartes, mots utilisés indisponibles, groupes et fiches indépendants.",
+    "solo": "Bonne réponse, erreur et expiration ; passage automatique après une seconde et bilan 1/3.",
+    "resume": "Image, corrigé et lettres conservés après rechargement et navigation.",
+    "competition": "Deux mascottes, une paire Dominos et deux paires Loto sans réseau après préparation ; images comparées aux octets des originaux ; disponibilité des mots et corrigé privé conservés pour les deux joueurs.",
+    "accessibility": "Images entières, cartes, mascotte et commandes dans la fenêtre ; axe passe.",
+    "sourceTemplate": "unchanged",
+    "serverWritesToFicheApi": 0,
+    "errors": []
+  },
+  "checks": {
+    "types": "tsc -b réussi",
+    "lint": "réussi avec avertissements préexistants ; aucun dans les fichiers du nouveau jeu",
+    "productionBuild": "réussi",
+    "bundleBudgets": {
+      "landing": {
+        "gzip": 121682,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 140604,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 142758,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 172529,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2750526,
+        "maximumGzip": 3145728
+      }
+    },
+    "changedFilesSecrets": "Voir secrets-results.json pour le contrôle Gitleaks du périmètre des modifications."
+  },
+  "paper": {
+    "dominoSourceChange": "Le générateur conserve le libellé de sa propre image, sans nouvel appel aléatoire ; le mot de droite continue de désigner la suivante.",
+    "dominoScreenshotIdenticalWithAndWithoutSourceWord": true,
+    "dominoScreenshotSha256": "de04f9a23f2f11cb3d43e8d687dc96a36a6dbb4e6f0fb62a675ec4b6a9b8745b",
+    "lotoBoards": "unchanged",
+    "a4Witness": {
+      "identicalScreenshot": true,
+      "dimensions": [
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        },
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        }
+      ],
+      "draftLaunch": "passed",
+      "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+      "viewport": "1366x1000"
+    },
+    "a4WitnessScreenshotSha256": "2c70ef917508f9ea7ac0dcee1ddbf012aaa6137ec7aca5adc5d49841dd135331"
+  },
+  "limits": [
+    "Les banques alimentent des associations image–mot ; le plateau Loto M12, la chaîne de pose des Dominos, M08 et le retournement M11 restent ouverts.",
+    "Les anciennes planches Dominos figées sans libellé image doivent être régénérées depuis leur modèle.",
+    "Les images manquantes sont signalées ; images ou mots partagés restent guidés, sans verdict automatique.",
+    "Les 600 configurations utilisent le thème des fruits ; les autres thèmes ne sont pas déclarés relus pédagogiquement.",
+    "La suite de 291 tests précède la dernière fusion des illustrations TCF ; 24 tests d’associations, six tests du catalogue audio, les types, le build, les budgets et le témoin A4 sont revérifiés ensuite.",
+    "Aucune nouvelle synthèse audio, écriture sur les fiches du serveur ou publication de configuration cloud effectuée."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-13",
+  "baseline": "d5115766094ee109b3f4fd9fc542b33c9adc1cd8",
+  "scope": "F29 : transcriptions CO facultatives après toutes les corrections de la piste, en Classe et Solo.",
+  "tests": {
+    "newTests": 9,
+    "fullSuitePassed": 300,
+    "failed": 0,
+    "realTcfBankSamples": 9,
+    "levels": [
+      "a0-a1",
+      "a1-a2",
+      "a2-b1"
+    ],
+    "realQuestionsCheckedAtLeast": 50,
+    "recordingsCheckedAtLeast": 10,
+    "legacyPlanIdentity": "SHA-256 historique identique sans texte de relecture ; reprise avec le texte actuel ; changement du corrigé toujours détecté"
+  },
+  "browser": {
+    "passed": [
+      "transcripts-browser",
+      "listening-browser",
+      "audio-sequences-browser",
+      "readability-browser",
+      "a4-regression"
+    ],
+    "all52StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "class": "Deux questions pour une écoute ; texte absent avant correction, fenêtre accessible après les deux réponses ; rétractation, verrou, nouvelle tentative, navigation et reprise vérifiés.",
+    "solo": "Texte indisponible après la première réponse ; douze secondes de lecture sans passage automatique après la seconde ; fermeture reprenant le temps restant.",
+    "keyboard": "Échap, retour du focus au livre et Entrée sans progression pendant la lecture.",
+    "axeTranscriptDialogViolations": 0,
+    "preferences": "Désactivation conservée après rechargement ; anciennes préférences acceptées ; fusion atomique avec mascotte ; valeur invalide refusée sans altérer les réglages.",
+    "audioRegression": "Lecture native, quotas, autorisations, pistes composées, récupération des erreurs, navigation, reprise et préparation locale sans réseau vérifiés.",
+    "sourceTemplate": "unchanged",
+    "serverWritesToFicheApi": 0,
+    "errors": [],
+    "visibility": "Les événements de visibilité simulés ferment la lecture ; le retour au premier plan ne la rouvre pas sans clic."
+  },
+  "checks": {
+    "types": "tsc -b réussi",
+    "lint": "oxlint réussi ; avertissements existants, aucun nouveau signalement dans le code modifié",
+    "build": "vite build --manifest réussi",
+    "budgets": {
+      "landing": {
+        "gzip": 121679,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 140679,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 142826,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 172671,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2751285,
+        "maximumGzip": 3145728
+      }
+    },
+    "changedFilesSecrets": "Voir secrets-results.json pour le contrôle Gitleaks des modifications et de l’historique depuis C0."
+  },
+  "paper": {
+    "sourceWorksheets": "Objets imprimables identiques avant/après conversion, y compris les supports CO à plusieurs pistes.",
+    "a4Witness": {
+      "identicalScreenshot": true,
+      "dimensions": [
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        },
+        {
+          "width": "793.688px",
+          "height": "1122.52px",
+          "overflow": "hidden"
+        }
+      ],
+      "draftLaunch": "passed",
+      "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+      "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+      "viewport": "1366x1000"
+    }
+  },
+  "limits": [
+    "Uniquement les textes explicitement rattachés à la piste jouée ; un texte commun non découpé ou contradictoire reste masqué.",
+    "Les transcriptions des salles de compétition restent ouvertes ; aucune transcription ajoutée au protocole élève.",
+    "Une banque sans questions convertibles ne devient pas jouable par cet ajout ; aucune nouvelle validation humaine des textes ou des audios revendiquée.",
+    "Le démarrage à froid hors ligne de tous les médias et le découpage du bundle complet par domaine restent ouverts.",
+    "Aucune nouvelle synthèse audio, écriture sur les fiches du serveur ou publication de configuration cloud effectuée."
+  ]
+}

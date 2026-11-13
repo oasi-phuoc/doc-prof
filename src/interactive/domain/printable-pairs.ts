@@ -5,8 +5,9 @@ import { hash } from './seeds'
 
 type Card = NonNullable<MathItem['gameBoard']>['cards'][number]
 type Entry = {part:number; image:string; choices:Choice[]; correctId?:string; model:string; teacherLed:boolean; group?:{number:number;total:number}}
-type Result = {items:Entry[]; issues:string[]}
-type Pair = {part:number; image:string; text:string}
+export type PrintablePairResult = {items:Entry[]; issues:string[]}
+type Result = PrintablePairResult
+export type PrintablePair = {part:number; image:string; sourceImage:string; text:string; label?:string}
 const key=(value:string)=>value.normalize('NFC').trim().replace(/\s+/g,' ').toLocaleLowerCase('fr')
 const emptyWord=(value:unknown)=>value===undefined||typeof value==='string'&&(!value.trim()||/^…\d*$/.test(value.trim()))
 const numbered=(card:Card)=>typeof card.badge==='string'&&/^[1-9]\d?$/.test(card.badge)
@@ -43,7 +44,7 @@ export function adaptPrintablePairs(
     return fail('Les numéros de paires sont absents ou répétés. Aucune association ne peut être choisie arbitrairement.')
   const imageNumbers=new Set(images.map(({card})=>card.badge))
   if(activeWords.some(card=>!imageNumbers.has(card.badge)))return fail('Un mot n’a pas de carte image portant le même numéro de paire.')
-  const pairs:Pair[]=[]
+  const pairs:PrintablePair[]=[]
   for(const {card,part} of images){
     const word=activeWords.find(word=>word.badge===card.badge)
     if(!word){output.issues.push(`Paire ${card.badge} : mot correspondant absent.`);continue}
@@ -52,13 +53,22 @@ export function adaptPrintablePairs(
     if(typeof card.imageSrc!=='string'||!card.imageSrc.trim()){output.issues.push(`Paire ${card.badge} : image absente.`);continue}
     const image=displayedImage(card.imageSrc)
     if(typeof image!=='string'||!image.trim()){output.issues.push(`Paire ${card.badge} : image remplacée absente.`);continue}
-    pairs.push({part,image,text:word.text.trim()})
+    pairs.push({part,image,sourceImage:card.imageSrc,text:word.text.trim(),label:card.badge})
   }
-  const pool=[...new Map(pairs.map(pair=>[key(pair.text),pair.text])).entries()].map(([identity,text])=>({identity,id:`pair-word-${hash(identity)}`,text}))
-  if(new Set(pool.map(choice=>choice.id)).size!==pool.length)return fail('Les références des mots ne permettent pas de distinguer ces propositions.')
   if(!pairs.length&&!output.issues.length)output.issues.push('Aucune paire image/mot exploitable dans ces planches.')
+  const resolved=resolvePrintablePairs(pairs,part=>seedFor(frontIndex,part))
+  output.items.push(...resolved.items);output.issues.push(...resolved.issues)
+  return result
+}
+
+/** Shared M06 grouping for explicit source pairs. `image` is used only for
+ * ambiguity checks; `sourceImage` still receives exactly one display override. */
+export function resolvePrintablePairs(pairs:PrintablePair[],seedFor:(part:number)=>number):PrintablePairResult {
+  const output:PrintablePairResult={items:[],issues:[]}
+  const pool=[...new Map(pairs.map(pair=>[key(pair.text),pair.text])).entries()].map(([identity,text])=>({identity,id:`pair-word-${hash(identity)}`,text}))
+  if(new Set(pool.map(choice=>choice.id)).size!==pool.length)return {items:[],issues:['Les références des mots ne permettent pas de distinguer ces propositions.']}
   const unambiguous=pairs.filter(pair=>pairs.filter(other=>other.image===pair.image).length===1&&pairs.filter(other=>key(other.text)===key(pair.text)).length===1)
-  const groups:Pair[][]=[]
+  const groups:PrintablePair[][]=[]
   for(let start=0;start<unambiguous.length;start+=6)groups.push(unambiguous.slice(start,start+6))
   // A final singleton would have no meaningful alternative: use groups of 5 + 2.
   if(groups.length>1&&groups.at(-1)!.length===1)groups.at(-1)!.unshift(groups.at(-2)!.pop()!)
@@ -67,12 +77,11 @@ export function adaptPrintablePairs(
     const groupIndex=groups.findIndex(group=>group.includes(pair)),group=groups[groupIndex]
     const teacherLed=!group||group.length<2
     const correct=pool.find(choice=>choice.identity===key(pair.text))!
-    const rng=createRng(seedFor(frontIndex,pair.part))
+    const rng=createRng(seedFor(pair.part))
     const choices=teacherLed?[]:shuffle(rng,pool.filter(choice=>group.some(other=>key(other.text)===choice.identity))).map(({id,text})=>({id,text}))
     // Keep original paths here: convertRecipe applies image replacements exactly once.
-    const original=images.find(({part})=>part===pair.part)!.card
-    output.items.push({part:pair.part,image:original.imageSrc!,choices,...(teacherLed?{}:{correctId:correct.id,group:{number:groupIndex+1,total:groups.length}}),model:models.join(' / '),teacherLed})
-    if(teacherLed)output.issues.push(`Paire ${original.badge} : association à guider, car une image ou un mot est partagé entre plusieurs paires, ou qu’il manque une alternative.`)
+    output.items.push({part:pair.part,image:pair.sourceImage,choices,...(teacherLed?{}:{correctId:correct.id,group:{number:groupIndex+1,total:groups.length}}),model:models.join(' / '),teacherLed})
+    if(teacherLed)output.issues.push(`Paire ${pair.label??pair.part+1} : association à guider, car une image ou un mot est partagé entre plusieurs paires, ou qu’il manque une alternative.`)
   }
-  return result
+  return output
 }

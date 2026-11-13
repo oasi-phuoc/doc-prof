@@ -30,6 +30,8 @@ export type GameCard = {
   scatter?: ScatterWord[]
   /** Corrigé du groupe Intrus, conservé pour le jeu ; jamais imprimé. */
   intrusAnswer?: string
+  /** Mot de l’image à gauche du domino ; indépendant du mot imprimé à droite. */
+  dominoWord?: string
   /** Variante visuelle. */
   variant?:
     | 'default'

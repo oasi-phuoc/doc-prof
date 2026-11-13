@@ -13,6 +13,7 @@ import { IconButton } from './Icons'
 import { Icon } from './Icons'
 import { TextReadingDialog } from './TextReadingDialog'
 import { NumberSequenceView } from './NumberSequenceView'
+import { WordClassificationView } from './WordClassificationView'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
@@ -49,7 +50,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.numberSequence, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.numberSequence, q.wordClassification, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, phase, number]))
   const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
@@ -71,6 +72,7 @@ export function QuestionStage({
           ? <section className="ci-context ci-figure-context" aria-label="Mesures de la figure"><p>{q.context}</p></section>
           : <ReadingDocument text={q.context} />)}
         {q.numberSequence && <NumberSequenceView sequence={q.numberSequence} />}
+        {q.wordClassification && <WordClassificationView classification={q.wordClassification} />}
         <GrammarImageSupports supports={q.grammarImages} zoom/>
         {q.mode === 'sequence' && (
           <details className="ci-full-instruction">
@@ -173,7 +175,7 @@ export function QuestionStage({
         </section>
       )}
       {report.manualScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
-      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} onClose={() => setReading(null)} />}
+      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }

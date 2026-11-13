@@ -41,6 +41,7 @@ import {
 } from './domain/settings'
 import { MODE_KEY } from './legacy-preferences'
 import { hasLocalCompetition } from './competition/storage-key'
+import { hasDuel } from './duel/storage-key'
 import { useReadabilityPreflight } from './layout/useReadabilityPreflight'
 import { ReadabilityCheck } from './components/ReadabilityCheck'
 
@@ -99,6 +100,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const [shapes, setShapes] = useState(initialPreferences.shapes)
   const [paletteVersion, setPaletteVersion] = useState(initialPreferences.paletteVersion ?? 1)
   const [timer, setTimer] = useState(initialPreferences.timer)
+  const [showTranscripts, setShowTranscripts] = useState(initialPreferences.showTranscripts ?? true)
   const [contrast, setContrast] = useState(initialPreferences.contrast)
   const [mascot, setMascot] = useState<MascotKind>(initialPreferences.mascot)
   const [preferencesWarning, setPreferencesWarning] = useState(initialWarning)
@@ -268,7 +270,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   }
   const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).then((next) => setPaletteVersion(next.paletteVersion ?? 1), (error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
-    onCompetition: activeGame && media.complete && readability.complete ? () => { if (!hasLocalCompetition(activeGame.id)) newPart(false); setCompetitionOpen(true) } : undefined,
+    onCompetition: activeGame && media.complete && readability.complete ? () => { if (!hasLocalCompetition(activeGame.id) && !hasDuel(activeGame.id, 'duel') && !hasDuel(activeGame.id, 'teams')) newPart(false); setCompetitionOpen(true) } : undefined,
     toolbarGuard,
     mascot,
     onMascot: (next: MascotKind) => { setMascot(next); savePreferences({ mascot: next }) },
@@ -297,7 +299,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     },
   }
   if (competitionOpen && activeGame && !media.complete) return <div className="ci-app"><LoadingScreen title="Préparation de la compétition" description="Vos questions et leurs médias se préparent." /></div>
-  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
+  if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} showTranscripts={showTranscripts} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
@@ -329,6 +331,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                 colors={colors}
                 shapes={shapes}
                 timer={timer}
+                showTranscripts={showTranscripts}
                 onExit={() => setPlaying(false)}
                 onFinish={() => newPart(false)}
                 onNewPart={() => newPart(true)}
@@ -559,6 +562,9 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                         {mode === 'solo' ? '30 secondes par défaut, ou sans limite si le minuteur est désactivé. La correction et la suite sont automatiques après le choix.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
                       </p>
                     </div>
+                    {activeGame.questions.some(question => activeGame.corrections[question.id]?.transcript) && <div className="ci-setup-guard"><label><input type="checkbox" checked={showTranscripts} onChange={(event) => {
+                      setShowTranscripts(event.target.checked); savePreferences({ showTranscripts: event.target.checked })
+                    }} />Proposer la transcription après les réponses</label><p>En Classe et en Solo, le texte de l’écoute devient accessible une fois toutes ses questions corrigées. La lecture suspend le passage automatique à la question suivante.</p></div>}
                     {mode === 'class' && <div className="ci-setup-guard"><label><input type="checkbox" checked={toolbarGuard === 'hold-to-reveal'} onChange={(event) => {
                       const next = event.target.checked ? 'hold-to-reveal' : 'none'
                       setToolbarGuard(next); savePreferences({ toolbarGuard: next })

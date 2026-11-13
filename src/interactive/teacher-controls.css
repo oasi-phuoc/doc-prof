@@ -46,6 +46,9 @@
   .ci-app .ci-teacher-confirm { padding: 20px; }
 }
 .ci-app .ci-header .ci-audio { flex-direction: column; gap: 2px; }
+.ci-app .ci-audio-review { display: flex; align-items: center; gap: 8px; width: 100%; max-width: 400px; margin: auto; }
+.ci-app .ci-audio-review .ci-audio { flex: 1; min-width: 0; }
+.ci-app .ci-audio-review > .ci-icon-button { flex: 0 0 44px; width: 44px; height: 44px; min-height: 44px; padding: 8px; border-radius: 12px; }
 .ci-app .ci-audio-caption { display: flex; justify-content: space-between; gap: 12px; width: 100%; font-size: 12px; line-height: 1.3; font-variant-numeric: tabular-nums; }
 .ci-app .ci-audio audio[aria-disabled="true"] { opacity: .65; }
 .ci-app .ci-audio-quota { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; font-size: 12px; }

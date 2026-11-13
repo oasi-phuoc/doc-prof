@@ -184,7 +184,7 @@ export class ClassroomCompetitionRoom {
       } else if (url.pathname === '/host' && request.method === 'POST' && host) {
         const data = requestData!
         if (!only(data, ['action', 'playerId', 'index', 'phase']) || typeof data.action !== 'string') throw new CompetitionError('Commande invalide.', 400)
-        if (data.action === 'next' && (data.index !== this.stored.room.index || data.phase !== this.stored.room.phase)) throw new CompetitionError('La question a déjà changé. L’affichage se met à jour.')
+        if ((data.action === 'next' || ['pause', 'resume'].includes(data.action) && (data.index !== undefined || data.phase !== undefined)) && (data.index !== this.stored.room.index || data.phase !== this.stored.room.phase)) throw new CompetitionError('La question a déjà changé. L’affichage se met à jour.')
         if (data.action === 'remove' && typeof data.playerId === 'string') { this.stored.room = competitionStep(this.stored.room, { type: 'remove', playerId: data.playerId }, now); delete this.stored.playerHashes[data.playerId] }
         else if (['start', 'next', 'pause', 'resume', 'finish'].includes(data.action) && data.playerId === undefined) this.stored.room = competitionStep(this.stored.room, { type: data.action as 'start' | 'next' | 'pause' | 'resume' | 'finish' }, now)
         else throw new CompetitionError('Commande invalide.', 400)

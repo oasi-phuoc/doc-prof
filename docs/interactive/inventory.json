@@ -165,7 +165,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 716,
+    "playableTypes": 725,
     "generationErrors": 8
   },
   "rows": [
@@ -75734,56 +75734,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 11,
-      "playableQuestions": 0,
+      "playableQuestions": 12,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/3 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/4 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/5 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/6 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/7 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/8 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/9 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/10 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/11 jeux-loto",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "gameBoard",
@@ -76623,20 +76578,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 12,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 jeux-dominos",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 jeux-dominos",
-          "reason": "Rendu « card-grid » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "gameBoard",
@@ -76657,112 +76603,128 @@
                 "imageSrc": "/lib/images/vocabulaire/boissons/eau.webp",
                 "textRight": "yaourt",
                 "variant": "domino",
-                "badge": "9"
+                "badge": "9",
+                "dominoWord": "eau"
               },
               {
                 "id": "dom-0",
                 "imageSrc": "/lib/images/vocabulaire/boissons/lait.webp",
                 "textRight": "fromage",
                 "variant": "domino",
-                "badge": "1"
+                "badge": "1",
+                "dominoWord": "lait"
               },
               {
                 "id": "dom-9",
                 "imageSrc": "/lib/images/vocabulaire/aliments/yaourt.webp",
                 "textRight": "pomme",
                 "variant": "domino",
-                "badge": "10"
+                "badge": "10",
+                "dominoWord": "yaourt"
               },
               {
                 "id": "dom-1",
                 "imageSrc": "/lib/images/vocabulaire/aliments/fromage.webp",
                 "textRight": "soupe",
                 "variant": "domino",
-                "badge": "2"
+                "badge": "2",
+                "dominoWord": "fromage"
               },
               {
                 "id": "dom-12",
                 "text": "…13",
                 "textRight": "…14",
                 "variant": "domino",
-                "badge": "13"
+                "badge": "13",
+                "dominoWord": "…13"
               },
               {
                 "id": "dom-2",
                 "imageSrc": "/lib/images/vocabulaire/aliments/soupe.webp",
                 "textRight": "riz",
                 "variant": "domino",
-                "badge": "3"
+                "badge": "3",
+                "dominoWord": "soupe"
               },
               {
                 "id": "dom-6",
                 "imageSrc": "/lib/images/vocabulaire/legumes/salade.webp",
                 "textRight": "pain",
                 "variant": "domino",
-                "badge": "7"
+                "badge": "7",
+                "dominoWord": "salade"
               },
               {
                 "id": "dom-10",
                 "imageSrc": "/lib/images/vocabulaire/fruits/pomme.webp",
                 "textRight": "poulet",
                 "variant": "domino",
-                "badge": "11"
+                "badge": "11",
+                "dominoWord": "pomme"
               },
               {
                 "id": "dom-4",
                 "imageSrc": "/lib/images/vocabulaire/fruits/fruit.webp",
                 "textRight": "poisson",
                 "variant": "domino",
-                "badge": "5"
+                "badge": "5",
+                "dominoWord": "fruit"
               },
               {
                 "id": "dom-7",
                 "imageSrc": "/lib/images/vocabulaire/aliments/pain.webp",
                 "textRight": "eau",
                 "variant": "domino",
-                "badge": "8"
+                "badge": "8",
+                "dominoWord": "pain"
               },
               {
                 "id": "dom-5",
                 "imageSrc": "/lib/images/vocabulaire/aliments/poisson.webp",
                 "textRight": "salade",
                 "variant": "domino",
-                "badge": "6"
+                "badge": "6",
+                "dominoWord": "poisson"
               },
               {
                 "id": "dom-13",
                 "text": "…14",
                 "textRight": "…15",
                 "variant": "domino",
-                "badge": "14"
+                "badge": "14",
+                "dominoWord": "…14"
               },
               {
                 "id": "dom-14",
                 "text": "…15",
                 "textRight": "…16",
                 "variant": "domino",
-                "badge": "15"
+                "badge": "15",
+                "dominoWord": "…15"
               },
               {
                 "id": "dom-3",
                 "imageSrc": "/lib/images/vocabulaire/aliments/riz.webp",
                 "textRight": "fruit",
                 "variant": "domino",
-                "badge": "4"
+                "badge": "4",
+                "dominoWord": "riz"
               },
               {
                 "id": "dom-15",
                 "text": "…16",
                 "textRight": "lait",
                 "variant": "domino",
-                "badge": "16"
+                "badge": "16",
+                "dominoWord": "…16"
               },
               {
                 "id": "dom-11",
                 "imageSrc": "/lib/images/vocabulaire/aliments/poulet.webp",
                 "textRight": "…13",
                 "variant": "domino",
-                "badge": "12"
+                "badge": "12",
+                "dominoWord": "poulet"
               }
             ],
             "kind": "dominos",
@@ -190744,20 +190706,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 8,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-simple-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-simple-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",
@@ -191055,20 +191008,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 11,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-determinants-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-determinants-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",
@@ -191396,20 +191340,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 11,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-pronominaux-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-pronominaux-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",
@@ -191737,20 +191672,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 18,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-adjectif-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-adjectif-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",
@@ -192148,20 +192074,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 14,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-preposition-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-preposition-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",
@@ -192519,20 +192436,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 10,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-adverbe-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-adverbe-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",
@@ -192850,20 +192758,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 21,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 phrase-conjonctions-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 phrase-conjonctions-colorier",
-          "reason": "Rendu « phrase-color » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "layout",

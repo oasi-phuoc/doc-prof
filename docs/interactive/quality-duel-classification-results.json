@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-13",
+  "baseline": "cd66361ca022aacfc425b225152187eb7f26f0bb",
+  "scope": "Duels locaux avec vies et tournoi par équipes tirées au sort ; tri Gattegno M08 par occurrence.",
+  "tests": {
+    "newWordClassificationTests": 8,
+    "sourceConfigurations": 2800,
+    "newDuelTests": 10,
+    "fullSuitePassed": 328,
+    "finalFocusedDuelPassed": 10,
+    "failed": 0
+  },
+  "browser": {
+    "passed": [
+      "duel-browser",
+      "word-classification-browser",
+      "competition-browser",
+      "readability-browser",
+      "competition-worker",
+      "a4-regression"
+    ],
+    "all55StagesRun": false,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "duel": "Deux joueurs sur un même écran, six cartes chacun ; premier clic seul retenu, dégâts adverses à 10 %, erreur critique sur soi à 20 %, deux traits animés sans arme, réaction renforcée, KO compté une fois. Animations présentes avec la préférence système de réduction des mouvements.",
+    "teams": "Deux duels entiers sur chaque taille, réseau coupé après préparation ; équipes de même effectif, ordre des mascottes appelé identique au tirage initial affiché ; retour à 100 % et victoire finale 2–0.",
+    "resume": "Retour à la fiche puis au duel : graine, tours et vies 80/90 conservés. Une nouvelle partie renouvelle la session source et crée un journal vide distinct ; le duel achevé est conservé.",
+    "classification": "Phrase complète neutre, un élément encadré, cartes fixes et catégories réutilisables ; Classe collective, Solo automatique avec bonne réponse, erreur et temps écoulé ; défi local avec deux occurrences de la même catégorie et 2000 points par mascotte.",
+    "reading": {
+      "checks": 1,
+      "detail": "Complete neutral sentence and target retained in the small-screen reading dialog; Escape restores focus; axe passes."
+    },
+    "interaction": "Clavier A–F / 1–6 ; réponses tactiles de 44 px minimum ; contraste vérifié ; plein écran avec le seul bouton de sortie dans l’en-tête.",
+    "axeViolations": 0,
+    "serverWritesToFicheApi": 0,
+    "sourceTemplate": "unchanged",
+    "errors": []
+  },
+  "worker": {
+    "runtime": "real workerd through Miniflare, SQLite-backed Durable Objects",
+    "workerBytes": 51201,
+    "quiz": "60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime",
+    "authority": "teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view",
+    "grading": "1000 and 0 points derived by server",
+    "restart": "new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage",
+    "matching": "Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private",
+    "productionDeployment": false,
+    "transcripts": "Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.",
+    "wordClassification": "Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading."
+  },
+  "checks": {
+    "types": "tsc -b et typecheck:api réussis",
+    "lint": "oxlint réussi ; 81 avertissements préexistants, aucun nouveau signalement dans les fichiers du lot.",
+    "build": "vite build --manifest réussi ; duel chargé à la demande",
+    "budgets": {
+      "landing": {
+        "gzip": 121708,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 141015,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 143162,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 176250,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2752622,
+        "maximumGzip": 3145728
+      }
+    },
+    "changedFilesSecrets": "Voir secrets-results.json pour le contrôle Gitleaks des modifications et de l’historique depuis C0."
+  },
+  "inventory": {
+    "playable": 725,
+    "total": 2112,
+    "gattegno": 12,
+    "sourceQcm": 518,
+    "adapted": 83,
+    "teacherLed": 90,
+    "mixed": 34,
+    "unsupported": 1387,
+    "preexistingGenerationErrors": 8
+  },
+  "paper": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "limits": [
+    "Le duel utilise un écran commun ; le duel synchronisé sur plusieurs appareils et l’activation du service Internet de production restent ouverts.",
+    "La page ouverte peut jouer sans réseau après préparation ; le démarrage à froid et le rechargement entièrement hors ligne ne sont pas couverts.",
+    "Chaque duel parcourt la sélection par cycles jusqu’au KO. Nouvelle partie renouvelle les recettes générées ; les questions manuscrites gardent leur contenu.",
+    "Le tri libre en colonnes et les autres familles M08 restent ouverts ; moins de deux ou plus de six catégories gardent une évaluation humaine.",
+    "La proposition V4 de 200 Ko pour le jeu complet reste ouverte ; les budgets provisoires actuels sont respectés.",
+    "Aucune synthèse audio, écriture sur les fiches du serveur, publication de configuration cloud ou déploiement Cloudflare effectué."
+  ]
+}

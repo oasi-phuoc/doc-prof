@@ -1,4 +1,4 @@
-import { hash } from './convert'
+import { hash } from './seeds'
 import type { Game, Question, Round, PlayMode } from './types'
 import { assignChoicePositions, choiceOrderPolicy } from './slots'
 import { audioIdentity } from './audio'
