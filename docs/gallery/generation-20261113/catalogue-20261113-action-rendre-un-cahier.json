@@ -1,0 +1,23 @@
+{
+  "id": "catalogue-20261113-action-rendre-un-cahier",
+  "label": "Rendre un cahier",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/rendre-un-cahier.webp",
+  "original_sha256": "2af5f151ceecd8ae227c5c3382ba1b5cf5c0fa49b6afda0ab4cf3b5f48c8dd87",
+  "path": "/lib/images/tcf/catalogue/actions/rendre-un-cahier.webp",
+  "status": "visually_reviewed",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Représenter clairement l’action « rendre un cahier » montrée dans la première référence, avec tous les accessoires utiles et un décor approprié sobre. Personnage principal proposé : un homme adulte à peau brune aux cheveux bouclés, chemise ocre. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/rendre-un-cahier.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-d0bf3714-56ac-4270-ac57-3f0a287f4c72.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-d0bf3714-56ac-4270-ac57-3f0a287f4c72.png",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "review_note": "Contrôle visuel : action et accessoires complets, scène unique, peinture TCF et proportions naturelles, aucun prix/date/texte parasite. Élève effectivement au tableau ; étiquette de soldes sans chiffre ni pourcentage.",
+  "sha256": "69a3a92c6dc3ff567dc1949762709d9c1962ba0c3c355a1673627a339a0b4b40",
+  "original_label": "rendre un cahier"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "catalogue-20261113-action-rentrer-a-pied",
+  "label": "Rentrer à pied",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/rentrer-a-pied.webp",
+  "original_sha256": "383b5080c39313a389ff2a62ee09426de4985118a9a02248201e84433dcfee78",
+  "path": "/lib/images/tcf/catalogue/actions/rentrer-a-pied.webp",
+  "status": "visually_reviewed",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Représenter clairement l’action « rentrer à pied » montrée dans la première référence, avec tous les accessoires utiles et un décor approprié sobre. Personnage principal proposé : une femme noire adulte aux cheveux courts naturels, haut terracotta. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/rentrer-a-pied.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-95747a1d-2a5a-45be-bb5b-64d166d613ad.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-95747a1d-2a5a-45be-bb5b-64d166d613ad.png",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "review_note": "Action entière et accessoires pertinents contrôlés sur planche, peinture douce TCF, silhouettes et visages variés ; ni prix ni date ni panneaux multiples. Libellé grammatical adapté au genre effectivement représenté si nécessaire.",
+  "sha256": "3f476402c682c04a363f79c5d9ffbd9ed9ada4b54e2893f8f99cce39fa3d1469",
+  "original_label": "rentrer à pied"
+}

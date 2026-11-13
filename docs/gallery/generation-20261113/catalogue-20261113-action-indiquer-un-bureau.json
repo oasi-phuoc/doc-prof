@@ -1,0 +1,23 @@
+{
+  "id": "catalogue-20261113-action-indiquer-un-bureau",
+  "label": "Indiquer un bureau",
+  "type": "Action",
+  "subtype": "Actions quotidiennes",
+  "original": "/lib/images/vocabulaire/actions/indiquer-un-bureau.webp",
+  "original_sha256": "e5363cc3a31caa29677bdb02376ef4da5494b9ae1c933c088ab485859cda33c1",
+  "path": "/lib/images/tcf/catalogue/actions/indiquer-un-bureau.webp",
+  "status": "visually_reviewed",
+  "prompt": "Refaire entièrement la PREMIÈRE référence dans le style graphique de la DEUXIÈME référence TCF validée. La première ne fournit que le sens de l’action ; supprimer son rendu photo/détouré, ses visages et ses éventuels textes. La seconde est une référence de peinture uniquement : ne pas reprendre ses personnages ni leurs instruments. Peinture numérique semi-réaliste détaillée, volumes doux, contours fins discrets, couleurs naturelles chaleureuses ; aucun rendu photo, 3D ou gros contour BD. Paysage EXACTEMENT 4:3. Sujet et accessoires entiers, marges suffisantes. Une seule scène cohérente, décor également peint sobre avec fond crème lumineux ; pas de collage, bulle ou panneau explicatif. Aucun texte, chiffre, date, jour, mois, prix, pourcentage, logo ou signature. Ne jamais reproduire les mêmes visages d’une scène à l’autre. Sujet : Une agente indique à un visiteur la porte d’un bureau, ni texte ni numéro. Personnage principal proposé : un homme adulte à peau brune aux cheveux bouclés, chemise ocre. Adapter naturellement le genre au rôle ; ne pas utiliser de stéréotype. Si un enfant est nécessaire à l’action, garder un adulte accompagnant.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/vocabulaire/actions/indiquer-un-bureau.webp",
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-64657f31-30eb-4ea7-853f-3699047e2562.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "source_png": "/workspace/generated_images/exec-64657f31-30eb-4ea7-853f-3699047e2562.png",
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "review_note": "Action entière et accessoires pertinents contrôlés sur planche, peinture douce TCF, silhouettes et visages variés ; ni prix ni date ni panneaux multiples. Libellé grammatical adapté au genre effectivement représenté si nécessaire.",
+  "sha256": "b33348e161ac0eca30323ddc8638faf22386bb367e493d7f10e8549160214fba",
+  "original_label": "indiquer un bureau"
+}

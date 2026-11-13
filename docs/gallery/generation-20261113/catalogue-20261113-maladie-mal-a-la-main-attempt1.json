@@ -1,0 +1,17 @@
+{
+  "id": "catalogue-20261113-maladie-mal-a-la-main",
+  "label": "mal à la main",
+  "type": "Maladie",
+  "subtype": "Douleurs et parties du corps",
+  "status": "generation_failed",
+  "reuse_candidates": [],
+  "path": "/lib/images/tcf/catalogue/maladies/mal-a-la-main.webp",
+  "prompt": "Créer une nouvelle illustration du seul sujet décrit ci-dessous, en reprenant uniquement la technique peinte de la référence TCF validée. Supprimer tous les objets, personnages et instruments de la référence ; ne pas copier ses visages, plantes, étagères ou meubles. Peinture numérique semi-réaliste détaillée, volumes doux et progressifs, contours fins discrets, couleurs naturelles chaleureuses. Ni photo, ni 3D, ni gros contours BD. Format PAYSAGE EXACTEMENT 4:3. Sujet entier avec des marges ; anatomie et proportions exactes. UNE seule composition cohérente, aucun collage, séquence, panneau, bulle ou encadré. Aucun mot, lettre, chiffre, logo, signature, date, jour, mois, prix ou montant. Sujet : Illustration pédagogique de santé, thème : mal à la main. une femme blanche adulte aux cheveux roux bouclés, personne entière habillée, exprime précisément « mal à la main ». La main touche uniquement la zone anatomique réellement douloureuse, rendue très lisible par une légère rougeur diffuse locale. Posture naturelle ; ne pas indiquer une autre partie du corps. Ne pas ajouter d’autre maladie, blessure, sang ou traitement. Style peint doux, anatomie et matériel médical corrects, personne représentée avec respect. Une seule scène ou un seul sujet anatomique, fond crème et contexte sobre. Le sujet illustre la manifestation, le soin ou l’examen décrit ; ne pas inventer une maladie reconnaissable à un simple visage. Ni pictogrammes flottants, ni diagnostic écrit, ni chiffre sur écran, ni médicament de marque, ni scène graphique.",
+  "reference_images": [
+    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "style_references": [
+    "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+  ],
+  "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID fa7db588-5560-45f6-972e-a42f8ad7bd8a. safety_violations=[self-harm].\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"self-harm\\\"\\n      ]\\n    }\\n  }\\n}\")"
+}

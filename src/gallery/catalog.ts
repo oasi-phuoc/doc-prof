@@ -11,7 +11,7 @@ export type GalleryImage = {
   keywords: string
   bytes: number
 }
-export const normalizeSearch = (text: string) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().trim()
+export const normalizeSearch = (text: string) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/œ/g, 'oe').replace(/[’‘]/g, "'").trim()
 export const galleryImages: GalleryImage[] = data.map(image => ({
   ...image,
   src: galleryAssetUrls[image.id] ?? `${import.meta.env.BASE_URL}${image.src.replace(/^\//, '')}`,
