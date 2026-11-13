@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "candidate_visual_review": 304,
+      "candidate_visual_review": 299,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
-      "active_reviewed_trio": 66,
+      "active_reviewed_trio": 71,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "candidate_visual_review": 125,
+        "candidate_visual_review": 123,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
-        "active_reviewed_trio": 27,
+        "active_reviewed_trio": 29,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 137,
-        "active_reviewed_trio": 39,
+        "candidate_visual_review": 134,
+        "active_reviewed_trio": 42,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -22842,8 +22842,8 @@
       "semantic_sha256": "f9c249dadd4fb6d510b697fd47aa43959790d8698473adaf30af3661638f4795",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
       "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -22891,8 +22891,24 @@
           "brief": "Représenter entièrement « Au dos » pour « Où a-t-il mal ? ». Vérifier la transcription du support tcf-delf-actif-a1-048-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-jambe.webp",
+          "sha256": "cd7d647c5eeaa755c0641387155b240704937da1de531b314a48f9b7d2a9598a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bras.webp",
+          "sha256": "12a5e27c5cb480d9ee26d80b9533e59c98fe6097f73eafc9acea8a76623c4612"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-dos.webp",
+          "sha256": "9936fc703d18452ecd9586ca2227a3d57274f093f4faaa5bd76c304c5bdc8d53"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22903,7 +22919,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-corps-animaux-lieux-20261113.json",
+        "reason": "Le jeune homme dit explicitement avoir mal à la jambe après avoir fait du vélo.",
+        "note": "Jambe entière avec pied, bras avec main et dos vu de derrière : trois régions corporelles distinctes. La question porte sur la localisation, sans ajouter une blessure inventée."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-048-01#3",
@@ -27261,8 +27283,8 @@
       "semantic_sha256": "17e3d99604e28aa59f20ed08aabf047c9e8b0ae7b3f9c4dd50cefe1ea7613caa",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-01-01.mp3",
       "audio_sha256": "1fcdc5f7115af7eacad95e017421f7d0370e4113ede11aea549168b75678c5f7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -27310,8 +27332,24 @@
           "brief": "Représenter entièrement « Les téléphones » pour « Quels produits sont interdits ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-biscuits.webp",
+          "sha256": "b1805aca892c70d8035ebc8a545ef52f19d3c9d139fe6197131d1a55c2b475af"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-telephones.webp",
+          "sha256": "1a56738e046d9744ec1241a9f699fc509a94f85bfc93ef40f8f781d5492c451c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -27322,7 +27360,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-corps-animaux-lieux-20261113.json",
+        "reason": "Le message interdit explicitement les boissons au concert ; les biscuits et téléphones ne sont pas cités.",
+        "note": "Plusieurs boissons, quatre biscuits et trois téléphones. Les pluriels sont respectés ; aucun pictogramme interdit ajouté uniquement sur la bonne réponse."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-051-01-01#5",
@@ -39227,8 +39271,8 @@
       "semantic_sha256": "9cc6f766d3188219be290de5258e22380749771e4c6a183894f532090c0f7cce",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-011-01.mp3",
       "audio_sha256": "fc382c727e994b23fe7195287d4c8deee0df949e843e6dd9ff52e576b79a25f7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -39276,8 +39320,24 @@
           "brief": "Représenter entièrement « Des lapins » pour « Quels animaux ont trouvé une nouvelle famille ? ». Vérifier la transcription du support tcf-delf-actif-a2-011-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-chiens.webp",
+          "sha256": "44bf442f8965b1b862b9816c88c25d66dfc9f4601e24d658850d2daf414bb28d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-chats.webp",
+          "sha256": "2a2f539aa42cba998ae4f49cb0a242ddc35ff829ab02d33f32bce69c5dc01b84"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-lapins.webp",
+          "sha256": "9999a1771767947f223859a803b0912ec934d343e9bddfb96f4fb14d3b3aa47c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -39288,7 +39348,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-corps-animaux-lieux-20261113.json",
+        "reason": "Le reportage parle du record des adoptions de chiens et de leur nouvelle famille.",
+        "note": "Deux chiens, deux chats et deux lapins, entiers, sur fond crème. Les catégories au pluriel sont illustrées sans représenter le nombre des adoptions."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-011-01#2",
@@ -49214,8 +49280,8 @@
       "semantic_sha256": "487cbfcfb6b6f0fbacb52bcd1146ae268a806dc693f1dec7c07ec343abafb7c4",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-03.mp3",
       "audio_sha256": "fdbde90da607b9d8223810db79b2ecc1963b6a13eeeaa5d1c34fe67ab2fddc9e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -49263,8 +49329,24 @@
           "brief": "Représenter entièrement « Un château » pour « Quel type de lieu vient d’être visité ? ». Vérifier la transcription du support tcf-delf-actif-a2-034-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/ville.webp",
+          "sha256": "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+          "sha256": "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-chateau-dessine.webp",
+          "sha256": "7c9c7a4c856a3a327f756ad5ddd223ba31f15cb647d7841ef5bbecc9af1c56c4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -49275,7 +49357,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-corps-animaux-lieux-20261113.json",
+        "reason": "Les interlocuteurs félicitent la guide pour la visite de cette ville.",
+        "note": "Rue urbaine avec bâtiments et commerces, parc public avec bancs et jeux, château avec tours. Aucun nom de ville inventé."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-034-03#2",
@@ -61959,8 +62047,8 @@
       "semantic_sha256": "07f6169709e9a5763baf3efbffdd5aee209cc440dd6f7a386d3d3f3b46af542d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
       "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -62014,8 +62102,24 @@
           "brief": "Représenter entièrement « Au parking » pour « Où son propriétaire doit-il se présenter ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-01-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+          "sha256": "8d7c3b54ccc00430381aeb7649030d4e5cab5560cd7a42e6349887f80713b4a8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-caisse-dessinee.webp",
+          "sha256": "b98abe4ceb7d394ca6496ffd8dcc255390775815e07a0057437ae3523544fd65"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+          "sha256": "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -62026,7 +62130,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-13",
+        "register": "docs/tcf/revue-trios-corps-animaux-lieux-20261113.json",
+        "reason": "Le propriétaire du portefeuille est attendu à l’accueil situé à l’entrée du magasin.",
+        "note": "Comptoir d’accueil générique sans indice d’hôtel, caisse de magasin avec tapis et scanner, parking avec places de stationnement. Les personnages illustrent le service et ne prétendent pas représenter le propriétaire de la carte étudiante."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-01-04#1",

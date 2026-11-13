@@ -14,6 +14,8 @@ Le lot voyages ajoute **26 trios** (quatorze A1, douze A2), avec **huit nouveaux
 
 Suite orange et matières : **trois trios A2** ajoutés, une nouvelle image 4:3 utilisée deux fois et sept réemplois. Les nouveaux audios comptent **66 trios actifs** et 304 candidats concrets à vérifier ; le reliquat historique reste de 375 trios ([registre](revue-trios-orange-matieres-20261113.json)).
 
+Suite corps, animaux et lieux : **cinq trios** (deux A1, trois A2) et **15 réemplois** vérifiés. Les nouveaux audios comptent **71 trios actifs** et **299 candidats à vérifier** ; le reliquat historique reste de 375 trios ([registre](revue-trios-corps-animaux-lieux-20261113.json)).
+
 ## Reprise du 6 novembre 2026 — objets CO inclus
 
 La nouvelle demande utilisateur reprend l’harmonisation des images et inclut désormais les 26 banques CO **OBJET**. Elle remplace les anciennes consignes de pause audio et d’exclusion des objets conservées ci-dessous pour l’historique. Le style validé du commit `48a753d8`, le paysage 4:3 et les réponses restent inchangés.
