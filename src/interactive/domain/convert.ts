@@ -14,6 +14,7 @@ import { decimalChoices } from './decimal-choices'
 import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
 import { adaptRecognition } from './recognition'
+import { adaptPrintablePairs } from './printable-pairs'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -108,6 +109,9 @@ export function convertRecipe(
           typeof media.audio === 'string'
             ? media.audio
             : block.document?.audioSrc
+        const printablePairs=adaptPrintablePairs(block.items,block.exerciseType,
+          (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}),
+          src=>recipe.imageOverrides?.[src]??src)
         block.items.forEach((item, itemIndex) => {
           const base = (part = 0): Question => ({
             id: `p${pageIndex}b${blockIndex}i${itemIndex}s${part}-${hash(`${recipe.seed}:${block.exerciseType}:${canonicalJson(item)}`)}`,
@@ -209,6 +213,18 @@ export function convertRecipe(
           }
           if (item.libreError) {
             reject(item.libreError)
+            return
+          }
+          const pairs=printablePairs?.get(itemIndex)
+          if(pairs){
+            pairs.issues.forEach(reject)
+            for(const entry of pairs.items){
+              const q=base(entry.part)
+              q.prompt='Quel mot correspond à cette image ?';q.instruction='Choisis le mot associé à l’image.'
+              q.images=[entry.image];q.choices=entry.choices;q.mode=entry.teacherLed?'oral':'choice'
+              q.compatibility=entry.teacherLed?'teacher-led':'assisted'
+              add(q,entry.model,entry.correctId)
+            }
             return
           }
           const ordering = adaptOrdering(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))

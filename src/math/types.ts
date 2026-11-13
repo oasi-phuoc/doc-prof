@@ -707,6 +707,7 @@ export type MathItem = {
   /** Domaine Jeux : une grille de cartes / bandes / plateau. */
   gameBoard?: {
     title?: string
+    side?: 'recto' | 'verso'
     cols: number
     rows: number
     kind?:

@@ -2,6 +2,8 @@
 .ci-app .ci-figure-context { width: auto; margin: 6px auto; padding: 6px 10px; }
 .ci-app .ci-figure-context p { font-size: clamp(18px, 2vw, 26px); line-height: 1.35; }
 .ci-answer-wrap { display: contents; }
+.ci-app .ci-round-question .ci-question.ci-picture-pair { max-height: 60%; }
+.ci-app .ci-picture-pair .ci-stimulus-images .ci-image-zoom { display: flex; align-items: center; justify-content: center; }
 .ci-app [data-ci-fit] { display: flex; flex-direction: column; height: var(--ci-fit-height); min-height: 0; gap: 8px; }
 .ci-app [data-ci-fit] .ci-question { position: relative; display: flex; flex-direction: column; min-height: 60px; flex: 0 1 var(--ci-fit-question-height); max-height: 42%; overflow: hidden; margin-bottom: 0; }
 .ci-app [data-ci-fit] .ci-question-body { display: block; flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
@@ -41,6 +43,8 @@
 .ci-readability-check progress { width: 100%; }
 .ci-readability-frame { position: fixed; top: 0; left: -100000px; border: 0; pointer-events: none; visibility: hidden; }
 @media screen and (max-width: 700px) {
+  .ci-app.ci-playing .ci-round-question .ci-question.ci-picture-pair { max-height: 55%; }
+  .ci-app.ci-playing .ci-picture-pair .ci-stimulus-images img { height: clamp(84px, 17dvh, 150px); }
   /* A short shape question needs room for the complete drawing as well as its title. */
   .ci-app.ci-playing .ci-round-question .ci-question:has(.ci-figure):not(:has(.ci-context)) { max-height: 55%; }
   .ci-app.ci-playing .ci-round-question .ci-question:has(.ci-figure):not(:has(.ci-context)) .ci-figure { height: 65px; margin: 4px auto; }

@@ -52,9 +52,10 @@ export function QuestionStage({
   const showCorrection =
     phase === 'revealed' &&
     q.choices.some((entry) => entry.id === correctChoiceId)
+  const picturePair=q.mode==='choice'&&q.images.length===1&&q.choices.length>0&&q.choices.every(choice=>!choice.image)&&!q.context&&!q.figure
   return (
     <>
-      <section ref={section} className="ci-question">
+      <section ref={section} className={`ci-question${picturePair?' ci-picture-pair':''}`}>
         <div className="ci-question-body" tabIndex={report.questionScroll ? 0 : undefined} role={report.questionScroll ? 'region' : undefined} aria-label={report.questionScroll ? 'Question et document à faire défiler' : undefined}>
         <h1 tabIndex={-1} className={number !== undefined ? 'ci-numbered-heading' : undefined}>
           {number !== undefined && (
