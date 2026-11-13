@@ -6396,5 +6396,15 @@ textarea.pill-input,
 .grammar-production-model { white-space: pre-line; line-height: 1.6; }
 .grammar-production h3 { margin: 0 0 2mm; font-size: 1em; }
 .grammar-model-label { font-style: italic; }
+.grammar-support-images { display: grid; gap: 3mm; }
+.grammar-support-image { margin: 2mm 0; min-width: 0; text-align: center; }
+.grammar-support-image img { max-height: 45mm; max-width: 100%; width: auto; object-fit: contain; }
+.grammar-production .grammar-support-image img { max-height: 35mm; }
+.grammar-media-status, .grammar-media-error { display: block; }
+.grammar-media-error { color: var(--ink); font-weight: 600; }
+.grammar-scenario-support h3, .grammar-scenario-open h3 { margin: 0 0 2mm; font-size: 1em; font-weight: 700; }
+.grammar-scenario-roles, .grammar-scenario-follow-ups { margin: 0 0 2mm; padding-left: 5mm; }
+.grammar-dialogue { margin: 3mm 0; }
+.ci-question .grammar-support-image img { max-height: 240px; }
 .grammar-rubric { list-style: none; padding: 0; margin: 0; }
 .grammar-rubric li { margin: 2mm 0; }

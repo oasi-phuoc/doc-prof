@@ -1,4 +1,4 @@
-# Implémentation du curriculum Grammaire — cinq notions pilotes
+# Implémentation du curriculum Grammaire — pilotes et extension A1
 
 Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf36a0004474`.
 
@@ -82,6 +82,27 @@ Les 50 scènes couvrent **13 volontés ou préférences, 13 sentiments ou appré
 
 Cette tranche ajoute **200 unités sélectionnables et 250 variantes de réponse**. Les cinq notions pilotes du registre sont désormais couvertes : **23 activités, 31 offres activité/niveau/présentation, 1 190 unités sélectionnables et 1 570 variantes**, dont **40 documents et 120 questions de lecture**. Les documents sont inclus dans les unités sélectionnables ; leurs questions enfants sont comptées dans les variantes. Les banques restent au statut pilote, avec validation enseignante en attente.
 
+### Première extension G3 — Avoir au présent, A1
+
+Dans **Grammaire → Conjuguer au présent → Avoir**, sélectionner **A1 — pilote** :
+
+| Activité | Banque A1 |
+| --- | --- |
+| Conjuguer avoir | 50 phrases, une activité avec réglage QCM / Lacune |
+| Corriger l’erreur | 50 phrases, réécriture complète et intervalle d’erreur figé |
+| Mots dans l’ordre | 50 phrases, catégories Gattegno et élisions |
+| Associer les sujets et les formes | 50 problèmes de trois associations, liés aux phrases sources |
+
+La [relecture Avoir A1](avoir-a1-relecture.md) présente les complétions et les modèles réemployés. Les sources historiques restent intactes. Les exercices couvrent les six formes d’avoir, l’âge, la possession, les sensations et les expressions courantes. Aucun infinitif redondant n’est ajouté. L’élision `J’ai` reste jointe au corrigé inline ; les champs élèves restent vides et larges. Les niveaux A2 historiques restent accessibles par **Banque actuelle**, sans nouvelle banque graduée A2 déclarée.
+
+Cette extension ajoute **200 unités sélectionnables et 250 variantes**, soit **27 activités, 36 offres, 1 390 unités sélectionnables et 1 820 variantes** disponibles en aperçu explicite. Les cinq notions G2 sont conservées ; Avoir inaugure G3. Les **40 textes et 120 questions de lecture** sont inchangés. Aucune approbation enseignante n’est déclarée.
+
+### Contrats techniques de dialogue et de support image
+
+Les [essais G2](contrats-situations-images.md) couvrent les dialogues fermés avec QCM/lacune mélangés, le jeu de rôle ouvert avec intentions et relances, ainsi que l’image intégrée à une activité. Les groupes, répliques, critères, images et options sont figés dans les sauvegardes. Les coupures par question conservent les dialogues, et le tableau reprend le contexte sans modèle dévoilé.
+
+Un visuel existant est copié à l’identique sous un chemin fondé sur son empreinte, avec source et texte alternatif. Il est vérifié avant affichage et impression ; un fichier absent ou modifié ne remplace jamais silencieusement celui d’une fiche sauvegardée. Ces exemples restent **hors menus et hors quotas**. Les onze obligations illustrées complètes et les banques de 50 situations/dialogues restent à rédiger dans les activités hôtes.
+
 Les nouvelles séries vont jusqu’à 50 questions et se répartissent sur plusieurs feuilles A4, avec des marges réservées aux corrigés. La pagination ne relance pas le tirage. Le pilote utilise un nouveau rendu grammatical, compatible avec 2 à 6 propositions, sans modifier les limites TCF.
 
 ## Tableau collectif et sauvegardes
@@ -96,39 +117,34 @@ Les anciennes recettes et la compréhension orale restent sur leurs chemins hist
 
 ## Sources et revue
 
-`src/grammaire/curriculum/data/etre.json`, `er-particuliers.json`, `imparfait-ou-pc.json`, `i4.json` et `k10.json` sont les sources éditoriales des pilotes, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
+`src/grammaire/curriculum/data/etre.json`, `er-particuliers.json`, `imparfait-ou-pc.json`, `i4.json`, `k10.json` et `avoir.json` sont les sources éditoriales des pilotes et de l’extension A1, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
 
 Pour publier une banque après revue enseignant : enregistrer la personne, la date et la décision dans `review`, puis passer `review.humanReview` et `editorialStatus` à `approved`. Ne pas déclarer l’approbation à partir d’un simple comptage automatique. Les variantes QCM sont relues avec leurs distracteurs ; les variantes ouvertes sont contrôlées avec leurs solutions ou critères.
 
 ## Vérifications reproductibles
 
 - `npm run test:grammar:baseline` : 735 sorties à graines fixes, types actuels et alias CO ; empreintes de 256 fichiers CO/audio. Le script refuse d’écraser la référence G0 existante.
-- `npm run test:grammar:levels` : 1 570 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau.
+- `npm run test:grammar:levels` : 1 820 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau.
+- `npm run test:grammar:contracts` et, avec Vite actif, `npm run test:grammar:contracts:browser` : essais de dialogue/situation et de support image, sans quota fictif.
 - `node node_modules/typescript/bin/tsc -b --pretty false` : contrôle TypeScript.
-- Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1 dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
+- Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2, subjonctif B1 et Avoir A1 dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
 
 Résultats du lot : [verification.json](verification.json). Les scénarios du cahier des charges restent des critères à exécuter lors des lots concernés ; ce premier lot ne prétend pas les avoir tous réalisés.
 
 ## Suite de l’implémentation
 
-G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. Les cinq notions prévues pour G2 sont utilisables en pilote : Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1. Restent la validation enseignante, les essais de dialogue/situation et de support image prévus par G2, la généralisation aux autres notions et les lots suivants. Les 98 notions / 123 couples notion-niveau du registre sont des cibles, pas une couverture livrée.
+G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. Les cinq notions prévues pour G2 sont utilisables en pilote : Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1. Les essais techniques dialogue/situation et image sont réalisés ; G3 commence avec Avoir A1. Restent la validation enseignante et la généralisation aux autres activités, supports et niveaux. Les 98 notions / 123 couples notion-niveau du registre sont des cibles, pas une couverture livrée.
 
 Aucun audio, transcription, banque CO ou contenu des autres domaines n’est modifié par ce lot.
 
-Les commits TCF et interactifs arrivés jusqu’à `9fccae6f` ont été intégrés par rebase ; les références G0 sont toujours identiques après cette intégration. Si un filtre ne laisse aucune unité disponible, le lancement du jeu affiche le diagnostic et conserve la fiche au lieu de créer une séance vide.
+## État vérifié du lot
 
-Le 12 novembre 2026, les contrôles TypeScript, G0, 250 variantes du pilote, sept tests des adaptateurs interactifs et Chrome (élève/corrigé/tableau) passent sur cette version fusionnée.
+Sur la base intégrée `0bae1726`, les 1 820 variantes et les 36 présentations passent les contrôles ciblés et Chrome : 3 640 questions imprimées élève/corrigé, sans débordement. Les cinq essais techniques ajoutent 16 réponses imprimées hors quotas. Leurs coupures, jeux de rôle, images vérifiées et erreurs médias simulées passent aussi. TypeScript, G0 (735 sorties / 256 fichiers protégés), les 36 tests des adaptateurs/TCM/CFR partagés et le contrôle de galerie passent.
 
-La tranche m5 porte le contrôle ciblé à 650 variantes et ajoute huit parcours d’impression A1/A2, plus le lancement réel d’une transformation au tableau. Le test historique `scripts/test-grammar-curriculum.cjs` demeure obsolète : il attend 99 fiches visibles et l’ancienne identité de plusieurs théories. Le catalogue en expose déjà 98 avec l’alias sauvegardé a5 → a4 avant cette tranche ; aucun fichier de théorie n’est modifié ici. Cette divergence est consignée séparément des vérifications G0 et des tests ciblés, sans déclarer ce test global réussi.
+Les ajouts TCM/TCF et triangles arrivés jusqu’à `1ab49f23` sont intégrés. Après cette intégration, TypeScript, G0, les 1 820 variantes, les cinq présentations Avoir A1, les cinq essais techniques, les 26 tests ciblés des adaptateurs/TCM/triangles et la galerie passent. Le parcours complet des 36 présentations reste enregistré sur la base précédente, avec les contrôles complémentaires distingués dans `verification.json`.
 
-Le lot h8 a été vérifié avec les 960 variantes, les 19 présentations dans Chrome (1 920 questions imprimées élève/corrigé), les groupes de lecture, les coupures réversibles, les preuves et révisions archivées, le réassemblage des continuations, les sept tests des adaptateurs existants et TypeScript. Les banques sont relues par l’assistant ; aucune approbation enseignante n’est déclarée.
+L’intégration finale jusqu’à `e3f734b2` ajoute les derniers médias TCF et les propriétés de trapèzes, sans changer le rendu grammatical. Le 13 novembre, TypeScript, les 1 820 variantes, les contrats, G0, la galerie et les 11 tests ciblés des adaptateurs/trapèzes passent sur cette base.
 
-Les commits arrivés jusqu’à `a4a97144` ont été intégrés par rebase. Après intégration, G0, les 960 variantes, TypeScript, Chrome h8 et les 15 tests des adaptateurs/géométrie passent.
+Le test historique `scripts/test-grammar-curriculum.cjs` garde une divergence antérieure : il attend 99 fiches de théorie visibles et d’anciennes références de contenu. Le catalogue comporte déjà 98 fiches avec l’alias sauvegardé a5 → a4. Aucun fichier de théorie n’est modifié pour rendre ce test vert ; cette limite est enregistrée séparément dans `verification.json`.
 
-Le lot COD a été vérifié avec 1 320 variantes et 26 présentations dans Chrome (2 640 questions imprimées élève/corrigé), dont les élisions sans espace ajouté, les coupures de lecture et le lancement collectif. Les références G0, les sauvegardes et TypeScript passent. Les sources restent au statut pilote, avec relecture enseignante en attente.
-
-Les commits arrivés jusqu’à `54478049` ont été intégrés par rebase pour le lot COD. Après intégration, G0, les 1 320 variantes, TypeScript, Chrome COD et les sept tests des adaptateurs existants passent.
-
-Les commits jusqu’à `033d50bb` sont intégrés pour le lot COD ; les 1 320 variantes, G0, TypeScript et Chrome COD passent sur cette base.
-
-Le lot k10 couvre les cinq offres B1 prévues pour les emplois principaux du subjonctif. Les 1 570 variantes et les 31 présentations passent les contrôles ciblés et Chrome (3 140 questions imprimées élève/corrigé). G0, les sept tests des adaptateurs existants et TypeScript passent. Les cinq notions restent en pilote, sans validation enseignante déclarée.
+Les banques restent en aperçu pilote, avec validation enseignante en attente. Les prototypes de situation et d’image ne constituent pas des banques de 50 unités publiées.

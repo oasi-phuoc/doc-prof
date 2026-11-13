@@ -133,6 +133,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     sheetTotalPoints,
   } = props
   const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
+  const grammarSituations=activeBlock.grammarPresentation==='scenario-set'
   const sheetItems = activeSheet?.blocks?.[safeBlockIndex]?.items
   const sheetHasInlineBlank = sheetItems?.some((item) => {
     if (!item.tcf) return false
@@ -163,7 +164,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isSoutienMotsMeles ? null : (
               <label className="select-shell">
                 <span>
-                  {isTransform
+                  {grammarSituations?'SITUATIONS':isTransform
                     ? 'Points'
                     : isReperage
                       ? 'Questions'
@@ -176,7 +177,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
                   aria-label={
-                    isSoutienLignes
+                    grammarSituations?'Nombre de situations':isSoutienLignes
                       ? 'Nombre de lignes'
                       : isSoutienMotsCount
                         ? 'Nombre de mots'
@@ -185,7 +186,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   aria-invalid={questionsInputOverflow}
                   title={
                     bankOverflow
-                      ? activeBlock.grammarLevel ? `Ces paramètres permettent ${bankQuestionCap} questions.` : `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
+                      ? activeBlock.grammarLevel ? `Ces paramètres permettent ${bankQuestionCap} ${grammarSituations?'situations':'questions'}.` : `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
                       : questionsOverflow
                         ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
                         : undefined

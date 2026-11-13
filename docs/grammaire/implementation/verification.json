@@ -7,15 +7,16 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 1570,
+    "reviewedResponseVariants": 1820,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 1190,
-    "reviewedSelectableUnits": 1190,
+    "reviewedActivityUnits": 1390,
+    "reviewedSelectableUnits": 1390,
     "reviewedDocuments": 40,
     "reviewedDocumentQuestions": 120,
-    "reviewedActivities": 23,
-    "reviewedOfferings": 31,
-    "reviewedPilotNotions": 5
+    "reviewedActivities": 27,
+    "reviewedOfferings": 36,
+    "reviewedPilotNotions": 5,
+    "reviewedNotions": 6
   },
   "browser": {
     "results": [
@@ -64,7 +65,7 @@
     ],
     "errors": []
   },
-  "remaining": "Les cinq notions pilotes sont accessibles en aperçu explicite. Validation enseignante, essais dialogue/situation/support image et généralisation aux autres notions/niveaux restent à effectuer.",
+  "remaining": "Les cinq notions G2 et Avoir A1 (première extension G3) sont accessibles en aperçu explicite. Les contrats techniques situation/dialogue et image sont éprouvés, hors quotas. Validation enseignante et généralisation aux autres banques, supports et niveaux restent à effectuer.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
@@ -79,7 +80,7 @@
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 1570,
+      "reviewedVariants": 1820,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
@@ -91,13 +92,15 @@
       "manualEditingAssembly": "repeated supports removed without overwriting questions",
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
-      "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions"
+      "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
+      "reviewedActivityOfferings": 36,
+      "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
       "result": "passed",
       "tests": 7,
-      "validatedAtUpstream": "7c7c353f3e5279b8f79c7257a79a526b5bee38d4"
+      "validatedAtUpstream": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed"
     },
     "chrome": {
       "command": "npm run test:grammar:browser",
@@ -106,17 +109,20 @@
       "javascriptErrors": 0,
       "emptyFilterPool": "clear notice; no broken session",
       "classroomLaunch": "passed",
-      "presentationsChecked": 31,
+      "presentationsChecked": 36,
       "classroomTransform": "source and imposed subject visible",
       "printedQuestionsPerOrdinaryPresentation": 100,
       "printedCeQuestions": 240,
-      "printedQuestionsTotal": 3140,
+      "printedQuestionsTotal": 3640,
       "cePageBreak": "reversible; stable IDs and options; support repeated",
       "classroomCe": "two texts, six linked questions; source text visible",
       "printedCeQuestionsPerBank": 120,
       "elision": "l’ joins the following verb; 12 per COD completion presentation",
       "classroomSubjunctive": "source, required introductory expression and human assessment visible",
-      "subjunctiveWritingDefault": "one task, six answer lines; model and rubric only in correction"
+      "subjunctiveWritingDefault": "one task, six answer lines; model and rubric only in correction",
+      "avoirElision": "J’ joins ai in the corrected inline answer; empty student fields stay wide",
+      "validatedAtUpstream": "0bae17265f92bd80df5e9a56df86b7d174c51c1d",
+      "latestTargetedValidation": "Avoir A1 and technical contracts checked again after the final TCM/triangle merge; full 36-presentation run remains recorded on the preceding base."
     },
     "legacyGlobalCurriculum": {
       "command": "node scripts/test-grammar-curriculum.cjs",
@@ -133,13 +139,21 @@
       "validatedAtUpstream": "a4a971447d0095ca2c6d1f2d08246d20f7e32a8c"
     },
     "postRebase": {
-      "upstream": "033d50bba1d6c876cbfcc9552330a89e1d295fa0",
+      "upstream": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed",
       "typeScript": "passed",
       "legacyAndCo": "passed",
-      "pilotVariants": 1320,
-      "codChrome": "passed",
-      "allChromePresentationsBeforeGalleryMerge": 26,
-      "interactiveAdapterTests": 7
+      "pilotVariants": 1820,
+      "fullChromeBaselineUpstream": "0bae17265f92bd80df5e9a56df86b7d174c51c1d",
+      "fullChromePresentations": 36,
+      "latestChromeAvoirPresentations": 5,
+      "latestChromeContractsCases": 5,
+      "contractsChrome": "passed",
+      "sharedContractTests": 26,
+      "gallery": "passed",
+      "latestChromeAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f",
+      "latestChromeScope": "Avoir A1 and five technical cases; the final merge changes only recognition, TCF and gallery sources",
+      "finalMergeAdapterTests": 11,
+      "galleryImages": 5816
     },
     "cod": {
       "references": 50,
@@ -171,10 +185,152 @@
       "productionCriteria": 5,
       "tense": "present subjunctive; past subjunctive belongs to k12",
       "humanReview": "pending"
+    },
+    "avoir": {
+      "phase": "G3",
+      "level": "A1",
+      "activityUnits": 200,
+      "responseVariants": 250,
+      "activities": 4,
+      "presentations": 5,
+      "correctionIntervals": 50,
+      "associationProblems": 50,
+      "pairsPerProblem": 3,
+      "sourcePhrases": "50 completions, 50 corrections and 50 A1 ordering entries reused; no claim of 200 new stories",
+      "humanReview": "pending"
+    },
+    "technicalContracts": {
+      "commands": [
+        "npm run test:grammar:contracts",
+        "npm run test:grammar:contracts:browser"
+      ],
+      "result": "passed",
+      "countedInBankCoverage": false,
+      "fixtureUnits": 5,
+      "dialogueSituations": 3,
+      "imageActivityUnits": 2,
+      "copiedExistingImages": 1,
+      "generatedImages": 0,
+      "printedResponses": 16,
+      "snapshotRevision": "technical-contracts-2026-11-12.1",
+      "closedQuestions": 4,
+      "closedChoiceQuestions": 2,
+      "closedGapQuestions": 2,
+      "openAssessment": "teacher-led; roles, intentions, follow-ups, non-exclusive model and rubric",
+      "imageIntegrity": "same bytes as existing original; immutable hash-based path; runtime verification before display and printing",
+      "mediaFailures": "changed and missing files show a diagnostic and block the print button; a delayed image is awaited",
+      "browser": {
+        "results": [
+          {
+            "case": "closed",
+            "presentation": "scenario-set",
+            "responses": 4,
+            "printedResponses": 8,
+            "sheets": 6,
+            "overflow": false
+          },
+          {
+            "scenarioBreak": "reversible; all four child IDs preserved"
+          },
+          {
+            "classroom": "closed",
+            "status": "passed"
+          },
+          {
+            "case": "open",
+            "presentation": "scenario-set",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "classroom": "open",
+            "status": "passed"
+          },
+          {
+            "case": "imageChoice",
+            "presentation": "choice",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "classroom": "imageChoice",
+            "status": "passed"
+          },
+          {
+            "case": "imageChoice",
+            "presentation": "gap",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "case": "imageWriting",
+            "presentation": "open-written",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "imageFailure": "changed",
+            "status": "diagnostic shown; no replacement image"
+          },
+          {
+            "imageFailure": "missing",
+            "status": "diagnostic shown; no replacement image"
+          },
+          {
+            "printReadiness": "waits for verified and decoded image bytes; changed/missing images block the print button"
+          }
+        ],
+        "errors": []
+      },
+      "validatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f",
+      "coreValidatedAtUpstream": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed",
+      "browserValidatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f"
+    },
+    "mergedSharedContracts": {
+      "command": "node --test --test-concurrency=1 tests/interactive/source-adapters.test.mjs tests/interactive/cfr-recognition.test.mjs tests/interactive/tcm-csc.test.mjs tests/interactive/csc-game.test.mjs",
+      "result": "passed",
+      "tests": 36,
+      "validatedAtUpstream": "0bae17265f92bd80df5e9a56df86b7d174c51c1d",
+      "purpose": "Verify the shared grammar adapter and incoming TCM/CFR contracts after resolving the ItemView numbering conflict."
+    },
+    "gallery": {
+      "command": "node --test tests/gallery/catalog.test.mjs",
+      "result": "passed",
+      "images": 5816,
+      "temporaryWorkArtifacts": "excluded",
+      "versionedGrammarImage": "labelled from its recorded alt text",
+      "validatedAtUpstream": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed"
+    },
+    "latestSharedContracts": {
+      "command": "node --test --test-concurrency=2 tests/interactive/source-adapters.test.mjs tests/interactive/tcm-csc.test.mjs tests/interactive/triangle-recognition.test.mjs",
+      "result": "passed",
+      "tests": 26,
+      "validatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f"
+    },
+    "finalMergeChecks": {
+      "date": "2026-11-13",
+      "upstream": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed",
+      "typeScript": "passed",
+      "grammarVariants": 1820,
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "contracts": "passed",
+      "gallery": "passed",
+      "adapterCommand": "node --test --test-concurrency=2 tests/interactive/source-adapters.test.mjs tests/interactive/trapezoid-recognition.test.mjs",
+      "adapterTests": 11,
+      "adapterResult": "passed"
     }
   },
-  "upstreamIntegrated": "7c7c353f3e5279b8f79c7257a79a526b5bee38d4",
-  "lastValidatedDate": "2026-11-12",
+  "upstreamIntegrated": "e3f734b24cf88aa1c3d6b08aa849ce9dea4f11ed",
+  "lastValidatedDate": "2026-11-13",
   "browserM5": {
     "results": [
       {
@@ -429,5 +585,55 @@
       }
     ],
     "errors": []
+  },
+  "browserAvoir": {
+    "results": [
+      {
+        "type": "gram-ex-avoir-qcm-conj",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 20,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-avoir-qcm-conj",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 18,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-avoir-corriger-erreur",
+        "level": "A1",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-avoir-ordre",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-avoir-curriculum-a",
+        "level": "A1",
+        "presentation": "match",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3
+      }
+    ],
+    "errors": [],
+    "validatedAtUpstream": "1ab49f236d3a474e86a215b475fce6978089320f"
   }
 }

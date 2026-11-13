@@ -288,6 +288,8 @@ export function convertRecipe(
               q.mode = item.mode ?? 'choice'; q.audio = item.audio ?? q.audio; q.images = item.images ?? []
               if (item.context!==undefined) q.context=item.context
               if (item.documentId!==undefined) q.source.documentId=item.documentId
+              if (item.scenarioId!==undefined) q.source.scenarioId=item.scenarioId
+              if (item.grammarImages!==undefined) q.grammarImages=item.grammarImages
               if (item.words) q.words = item.words
               if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'

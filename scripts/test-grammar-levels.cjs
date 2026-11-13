@@ -232,6 +232,26 @@ const subjGame=convertRecipe(buildFicheRecipe(recipeInput([subjProduction])))
 assert(subjGame.questions.every(q=>q.compatibility==='teacher-led'&&q.choices.length===0))
 assert(subjGame.questions.every(q=>!subjGame.corrections[q.id].choiceId&&/Repères enseignant/.test(subjGame.corrections[q.id].text)))
 assert(grammarBanksForType(subjPrefix+'curriculum-e')[0].units.every(u=>u.rubric.length===5&&u.writeLines===6&&u.task.includes('deux phrases')))
+// G3 starts with avoir A1: existing phrases, all six forms and source-linked pairs.
+const haveBanks=banks.filter(b=>b.activityId.startsWith('gram-ex-avoir-'))
+assert.equal(haveBanks.length,4)
+assert(haveBanks.every(b=>b.level==='A1'&&b.units.length===50))
+const haveQuiz=grammarBanksForType('gram-ex-avoir-qcm-conj')[0]
+assert.deepEqual([...new Set(haveQuiz.units.map(u=>u.answers[0]))].sort(),['a','ai','as','avons','avez','ont'].sort())
+assert(haveBanks.flatMap(b=>b.units).every(u=>u.givenVerb===undefined),'A single-verb activity does not add redundant infinitive hints.')
+for(const u of grammarBanksForType('gram-ex-avoir-curriculum-a')[0].units)for(const pair of u.pairs) {
+ const source=haveQuiz.units.find(s=>s.id===pair.sourceId)
+ assert(source&&pair.left===source.prompt&&pair.right===source.answers[0])
+}
+for(const u of grammarBanksForType('gram-ex-avoir-corriger-erreur')[0].units) {
+ assert.equal(u.prompt.slice(u.error.start,u.error.end),u.error.text)
+ const expected=/\b(?:avons|avez|ont|ai|as|a)\b/u.exec(u.answers[0])[0]
+ assert.equal(u.prompt.slice(0,u.error.start)+expected+u.prompt.slice(u.error.end),u.answers[0])
+}
+for(const u of grammarBanksForType('gram-ex-avoir-ordre')[0].units) {
+ assert.equal(u.tokens.map(t=>t.text).join(' ').replace(/’ /g,'’')+'.',u.answers[0])
+ assert(u.source.partition==='a1'&&!u.tokens.some(t=>t.category==='negation'))
+}
 // Missing new fields is the legacy route, never implicit A1.
 const old={...base(),grammarLevel:undefined,grammarActivityId:undefined,grammarPresentation:undefined,grammarBankRevision:undefined,grammarPreview:undefined}
 assert.equal(generateGradedGrammarBlock(old,17),null)

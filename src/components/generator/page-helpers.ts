@@ -242,7 +242,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
           : isPhraseChart || isVocabLearn || isJeux || isCalli || isTheory
             ? { count: 1 }
             : isGramEx
-              ? { count: type.id.endsWith('-curriculum-e')?1:type.id.includes('-curriculum-')?2:quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
+              ? { count: /-curriculum-[es]$/.test(type.id)?1:type.id.includes('-curriculum-')?2:quiSuisJeCount ?? (isGrammarReadingType(type.id) ? 5 : 6) }
             : isVocabPool
               ? { count: Math.min(6, Math.max(2, vocabSelected.length)) }
               : isPhrase

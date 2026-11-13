@@ -235,6 +235,14 @@
     "node scripts/check-tcf-qcm-images.mjs",
     "node --test tests/gallery/catalog.test.mjs",
     "node scripts/check-tcf-bank.mjs",
-    "git diff --check"
-  ]
+    "git diff --check",
+    "./node_modules/.bin/tsc -b --pretty false",
+    "npm run test:grammar:contracts",
+    "npm run test:grammar:levels"
+  ],
+  "synchronization": {
+    "remote_main_integrated": "a49ee23d85707ef103300090350373e6731f882a",
+    "gallery_images_after_merge": 5826,
+    "resolution": "Catalogue régénéré avec les images TCF et le nouveau support de grammaire ; compteur actualisé, modifications de grammaire conservées."
+  }
 }

@@ -477,7 +477,7 @@ export function WorksheetSheet({
                     item.layout === 'theory' &&
                     item.theoryBlock?.kind === 'section' &&
                     sourceIndex < theoryBreakCount - 1
-                  const readingPart=item.grammar?.readingPart
+                  const readingPart=item.grammar?.readingPart??item.grammar?.scenarioPart
                   const isGrammarPageBreakable=item.layout==='grammar'&&readingPart?.kind==='question'
                   const theoryPageBreakAfter = isGrammarPageBreakable ? Boolean(block.grammarPageBreakAfterQuestionIds?.includes(readingPart.questionId)) : Boolean(
                     block.tcfPageBreakAfter?.[sourceIndex] ??

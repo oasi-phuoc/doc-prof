@@ -310,8 +310,8 @@ export function usePageConfig({
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const sheet = worksheets[sheetAt]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
-        const readingPart=sheetBlock?.items[itemIndex]?.grammar?.readingPart
-        if (block.grammarPresentation==='document-set'&&readingPart?.kind==='question') {
+        const grammar=sheetBlock?.items[itemIndex]?.grammar,readingPart=grammar?.readingPart??grammar?.scenarioPart
+        if ((block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set')&&readingPart?.kind==='question') {
           const ids=block.grammarPageBreakAfterQuestionIds??[]
           return setPageBlock(page,targetBlock,{grammarPageBreakAfterQuestionIds:ids.includes(readingPart.questionId)?ids.filter(id=>id!==readingPart.questionId):[...ids,readingPart.questionId]})
         }

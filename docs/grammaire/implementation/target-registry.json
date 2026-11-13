@@ -2375,7 +2375,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -2389,12 +2389,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/avoir.json",
       "instructionsByPresentation": {
         "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/avoir.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -2427,7 +2436,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -2442,13 +2451,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/avoir.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/avoir.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -2484,7 +2502,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -2498,12 +2516,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/avoir.json",
       "instructionsByPresentation": {
         "order": "Remettez les mots dans l’ordre pour écrire une phrase avec le verbe avoir au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/avoir.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13676,7 +13703,7 @@
       "themeId": "gram-present",
       "runtimeSubthemeId": "avoir",
       "pedagogicalNotionId": "m3",
-      "label": "Associer",
+      "label": "Associer les sujets et les formes",
       "families": [
         "A"
       ],
@@ -13693,7 +13720,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13707,12 +13734,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/avoir.json",
       "instructionsByPresentation": {
         "match": "Associez chaque élément à la proposition qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/avoir.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -23794,16 +23830,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Âge, possession, besoin, expressions usuelles au présent",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-avoir-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avoir-a1-corriger-erreur-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/avoir.json"
     },
     {
       "offeringId": "gram-ex-avoir-qcm-conj@A1@choice",
@@ -23818,16 +23859,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Âge, possession, besoin, expressions usuelles au présent",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-avoir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avoir-a1-qcm-conj-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/avoir.json"
     },
     {
       "offeringId": "gram-ex-avoir-qcm-conj@A1@gap",
@@ -23842,16 +23888,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Âge, possession, besoin, expressions usuelles au présent",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-avoir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avoir-a1-qcm-conj-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/avoir.json"
     },
     {
       "offeringId": "gram-ex-avoir-ordre@A1@order",
@@ -23866,16 +23917,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Âge, possession, besoin, expressions usuelles au présent",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-avoir-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avoir-a1-ordre-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/avoir.json"
     },
     {
       "offeringId": "gram-ex-aller-destination-corriger-erreur@A1@correct",
@@ -32602,22 +32658,27 @@
       "themeId": "gram-present",
       "runtimeSubthemeId": "avoir",
       "pedagogicalNotionId": "m3",
-      "label": "Associer",
+      "label": "Associer les sujets et les formes",
       "level": "A1",
       "presentation": "match",
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Âge, possession, besoin, expressions usuelles au présent",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avoir-a1-curriculum-a-2026-11-12.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/avoir.json"
     },
     {
       "offeringId": "gram-ex-aller-destination-curriculum-t@A1@transform",
@@ -38285,24 +38346,32 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 1570,
+    "reviewedVariants": 1820,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Validation enseignant et essais dialogue/situation/support image du pilote en attente ; généralisation aux autres notions et niveaux selon les lots prévus.",
-    "reviewedActivityUnits": 1190,
+    "remaining": "Validation enseignante et généralisation G3/G4/G5 aux autres activités/niveaux. Les contrats techniques situation/dialogue et image sont éprouvés ; les banques illustrées complètes restent à produire et à relire.",
+    "reviewedActivityUnits": 1390,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
       "imparfait-ou-pc A2",
       "i4 COD A2",
-      "k10 subjonctif B1"
+      "k10 subjonctif B1",
+      "avoir A1 (G3)"
     ],
-    "reviewedOfferings": 31,
-    "lastUpdated": "2026-11-12",
-    "reviewedSelectableUnits": 1190,
+    "reviewedOfferings": 36,
+    "lastUpdated": "2026-11-13",
+    "reviewedSelectableUnits": 1390,
     "reviewedDocuments": 40,
     "reviewedDocumentQuestions": 120,
-    "reviewedActivities": 23,
-    "reviewedPilotNotions": 5
+    "reviewedActivities": 27,
+    "reviewedPilotNotions": 5,
+    "reviewedNotions": 6,
+    "technicalContracts": {
+      "scenarios": "closed and open; prototypes excluded from all bank quotas",
+      "images": "one existing image copied to immutable content-addressed path; bytes verified at display and printing",
+      "reference": "docs/grammaire/implementation/contrats-situations-images.md",
+      "countedInBankCoverage": false
+    }
   }
 }

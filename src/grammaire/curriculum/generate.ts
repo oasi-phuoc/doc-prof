@@ -1,9 +1,11 @@
 import { createRng, shuffle } from '@/math/rng'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { grammarBankFor } from './registry'
-import { GrammarCurriculumError, isProtectedGrammarCo, type GrammarBank, type GrammarQuestion, type GrammarSnapshot, type GrammarUnit } from './types'
+import { GrammarCurriculumError, isProtectedGrammarCo, type GrammarBank, type GrammarSnapshot, type GrammarUnit } from './types'
 import { isGrammarSnapshot } from './validation'
 import { grammarItems } from './items'
+import { createGrammarQuestion } from './questions'
+import { grammarGroups } from './scenario'
 
 export function hasGrammarSettings(block: ExerciseBlock): boolean {
   return ['grammarLevel','grammarActivityId','grammarPresentation','grammarBankRevision','grammarSnapshot','grammarPreview','grammarDocumentCount','grammarPageBreakAfterQuestionIds']
@@ -74,24 +76,10 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
     selected=shuffle(rng,[...n.slice(0,negatives),...a.slice(0,block.count-negatives)])
     if (selected.length!==block.count) throw new GrammarCurriculumError('GRAMMAR_CAPACITY_EXCEEDED','Ce tirage mixte ne contient pas assez de phrases dans chaque forme.')
   }
-  const questions=selected.map(unit=>{
-    // Per-unit substream: rendering/pagination never consumes randomness.
-    let hash=seed|0
-    for (const c of unit.id) hash=Math.imul(hash^c.charCodeAt(0),16777619)
-    const local=createRng(hash>>>0)
-    const question:GrammarQuestion={id:unit.id,presentation:block.grammarPresentation!,unit}
-    if (unit.kind==='completion' && block.grammarPresentation==='choice') question.options=shuffle(local,unit.options)
-    if (unit.kind==='order') {
-      question.tokens=shuffle(local,unit.tokens)
-      if (question.tokens.every((token,i)=>token.text===unit.tokens[i]!.text)) question.tokens.push(question.tokens.shift()!)
-    }
-    if (unit.kind==='match') question.rightOptions=shuffle(local,unit.pairs.map(p=>({id:p.id,text:p.right})))
-    if (unit.kind==='reading') question.readingOptions=Object.fromEntries(unit.questions.filter(q=>q.response==='choice').map(q=>[q.id,shuffle(local,q.options!)]))
-    return question
-  })
+  const questions=selected.map(unit=>createGrammarQuestion(unit,block.grammarPresentation!,seed))
   return {schemaVersion:1,activityId:bank.activityId,level:bank.level,presentation:block.grammarPresentation,
     bankRevision:bank.revision,seed,requestKey:key,instruction:bank.instructions[block.grammarPresentation]!,pilot,questions,
-    ...(documents?{groups:questions.map(q=>({id:q.id,kind:'document' as const,supportIds:[q.id],questionIds:q.unit.kind==='reading'?q.unit.questions.map(c=>c.id):[]}))}:{})}
+    ...(documents||block.grammarPresentation==='scenario-set'?{groups:grammarGroups(questions,block.grammarPresentation)}:{})}
 }
 
 export function generateGradedGrammarBlock(config: PageConfig, seed: number): { instruction:string;items:MathItem[];bankQuestionCap:number } | null {
