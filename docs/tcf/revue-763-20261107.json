@@ -1630,14 +1630,14 @@
         "Un vélo de course",
         "Un vélo d'enfant"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "audio": null,
       "review_index": 34,
       "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "L'annonce de Julien vend explicitement un vélo de ville bleu avec panier et lumière. La bonne image reprend ces trois détails ; vélo de course et vélo d'enfant ne sont pas proposés à la vente dans le texte. Trois types de vélos cohérents, aucune autre réponse ne décrit l'objet annoncé. Trois vélos bleus entiers comparés : ville adulte à cadre bas avec panier et phare, course à cadre triangulaire et guidon recourbé, puis petit vélo d'enfant à roulettes. Les détails distinctifs et proportions se lisent sans texte, prix ni date ; fond crème peint, même format exact 4:3.",
       "brief": {
         "context_question": "Quel objet Julien vend-il ?",
         "choices_to_illustrate": [
@@ -1668,7 +1668,18 @@
           "Un vélo d'enfant"
         ]
       },
-      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization",
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-course.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-enfant.png"
+      ],
+      "selected_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "cf99d0508f6b04df9602dd3bfbe85d2b3353f578817b18adc9d58275c38802d4",
+        "ef251bc4c01441c10ee7a96922fe8bab24412f486e19a6993bd17e45d29551de"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-ecole-aeroport-velos-20261113.json"
     },
     {
       "key": "delf-a1v-ce-013#3",
@@ -7875,14 +7886,14 @@
         "Son passeport",
         "Son permis de conduire"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "7035266578db2b042b3ed201b9d88f0855a65062571f5da4b638b86df4fb6d0c",
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-2.mp3",
       "review_index": 183,
       "semantic_sha256": "02f8de5cedd1e48da421d30891f45ca199b09108548601765626f800c3e86ea2",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "La troisième situation annonce explicitement la réception prochaine des billets d'avion après le voyage gagné. Le passeport et le permis ne sont nommés dans aucune des quatre situations : trois catégories de documents cohérentes et une seule réponse correcte. Deux billets neufs respectent le pluriel ; le passeport fermé bleu et le permis rose portant une voiture sont réutilisés après examen individuel. Trois documents distincts, titres lisibles, pas de données chiffrées ni de dates, style peint crème et format 4:3.",
       "brief": {
         "context_question": "Dans la troisième situation, quels documents recevra-t-elle bientôt ?",
         "choices_to_illustrate": [
@@ -7902,7 +7913,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-billets-avion-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
+      "selected_sha256": [
+        "0e6097b9a91dc758df8ababbb7a01e1f238baffdc83fb9a2870f46bd4f07180a",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-documents-boissons-20261113.json"
     },
     {
       "key": "tcf-ss-a1-s22-co-4#2",
@@ -8606,14 +8628,14 @@
         "L’addition",
         "Le programme"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "7ace0f9aee5e5b93ae7805777ee76166553c202d9d820182fe23e4c76af16096",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avons-reservation-1.mp3",
       "review_index": 200,
       "semantic_sha256": "b9c7c8a3da39e791f756b24badb74330f1f9ac6abe4b02c9c19beed4134da73a",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le serveur annonce Je vous apporte le menu avant de prendre la commande. L'addition et le programme ne sont pas cités dans la transcription entière ; les trois réponses sont des documents distincts. Le programme illustré de concert est un exemple du document générique proposé. Trois images existantes examinées : menu ouvert avec plats dessinés, addition à tableau vierge sur un plateau et programme de concert plié avec instruments. Titres distinctifs, aucun prix ni calendrier ; tous les documents sont entiers, sur fond crème peint et en 4:3.",
       "brief": {
         "context_question": "Quel document le serveur apporte-t-il d’abord ?",
         "choices_to_illustrate": [
@@ -8633,7 +8655,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-menu-restaurant.webp",
+        "/lib/images/tcf/qcm-audit/extension573-addition.webp",
+        "/lib/images/tcf/qcm-audit/extension573-programme-concert.webp"
+      ],
+      "selected_sha256": [
+        "fecb95f22372ad198fb64f2d5f029bb84d1a609c3354fc996575f2fbcb2368e9",
+        "f1e02ff2c5749806ce3a4899509848c2fad6732284c0a3dd4113e8da3c5fdd3f",
+        "48d9c0392d00ae7d1118e98bb50208a103d8e890c2a2f36ec59583b571a966ac"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-documents-boissons-20261113.json"
     },
     {
       "key": "tcf-ss-a1-s29-co-4#5",
@@ -14903,14 +14936,14 @@
         "Un devis",
         "Un billet"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "7221c5887cf7510575b84a4cd9f4f6260c1c83894e4df9996fdcc0aa2dc492ce",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
       "review_index": 355,
       "semantic_sha256": "2d32b6b3b840f139663a794cdf25bfb8f5f87d9c9df7c5902d47d14b07e3531a",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "L'énumération nomme explicitement une addition. La précision paiement au restaurant distingue cette réponse du menu également cité. Ni devis ni billet ne figurent dans la transcription entière ; les trois réponses sont des documents, le billet étant illustré par un billet de transport. Réemploi de trois originaux examinés : addition à tableau vierge sur plateau, devis à tableau vide et billet de train à talon avec pictogramme ferroviaire. Titres addition/devis et formes du billet distincts ; pas de prix, de date ou d'horaire, fond crème peint et paysage 4:3.",
       "brief": {
         "context_question": "Quel document de paiement au restaurant est nommé ?",
         "choices_to_illustrate": [
@@ -14930,7 +14963,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-addition.webp",
+        "/lib/images/tcf/qcm-audit/extension573-devis.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "selected_sha256": [
+        "f1e02ff2c5749806ce3a4899509848c2fad6732284c0a3dd4113e8da3c5fdd3f",
+        "c76a84024c91141eff08b6e764fdd1b710c2f6c52b4606973838e3d2df0ce88a",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-ecole-aeroport-velos-20261113.json"
     },
     {
       "key": "delf-a1-2022-co-ex5-54-1#1",
@@ -24931,14 +24975,14 @@
         "De l’eau",
         "Du bouillon"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "review_index": 615,
       "semantic_sha256": "faa8c6ba1aaf74ff44d29e57e7c0edc00bcf03643e40c412e47ed8cd105d495b",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Lucie dit explicitement Il ne faut surtout pas lui donner de lait. La question porte sur la boisson interdite : le lait est la seule bonne réponse. Ni l'eau ni le bouillon ne sont nommés dans le message entier ; les trois choix restent cohérents comme liquides à boire. Bouteille de lait blanc et verre d'eau transparent réutilisés et examinés individuellement ; le nouveau bouillon doré en tasse est confirmé par sa boîte BOUILLON. Liquides visuellement distincts, objets entiers, aucun chiffre ni date, même peinture douce et format paysage 4:3.",
       "brief": {
         "context_question": "Quelle boisson ne faut-il surtout pas lui donner ?",
         "choices_to_illustrate": [
@@ -24962,7 +25006,18 @@
       "source_refresh_review": {
         "date": "2026-11-12",
         "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-bouillon-clair.png"
+      ],
+      "selected_sha256": [
+        "aaf1746c6df84474fd5f25938f9df329eb5caa5e25198e2c7e49d08139259920",
+        "3c1f04c74b88b3b20d943e0388c67daa463c1e74e333bc9962843964388cd433",
+        "b5299544258242f588963002853ac9bff197a0053b75fa12034522afcd96f059"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-documents-boissons-20261113.json"
     },
     {
       "key": "tcf-ss-a2-s25-co-1#7",
@@ -25462,14 +25517,14 @@
         "Son carnet de notes",
         "Sa carte de cantine"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3",
       "review_index": 628,
       "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps. Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3.",
       "brief": {
         "context_question": "Quel document l'élève ne trouve-t-il pas ?",
         "choices_to_illustrate": [
@@ -25493,7 +25548,18 @@
       "source_refresh_review": {
         "date": "2026-11-12",
         "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
+        "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
+        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+      ],
+      "selected_sha256": [
+        "555b2ed9c4b7bd1e1f65c4fcd9333542a1d576e7dad1dbbbffc31d9c1a4549af",
+        "e9b4c1b022cdb1de98501b57be0b9d10a93f32cfe7495d669bb16bfc90019dac",
+        "f3a8aa61c89b60724136cfde7cd8bee24918b3c45031db47dd9944555b8dd398"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-ecole-aeroport-velos-20261113.json"
     },
     {
       "key": "tcf-ss-a2-s49-co-1#2",
@@ -25698,14 +25764,14 @@
         "Une carte bancaire",
         "Un passeport"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "714c44b58341854ea6697580ad346a1257940955c0f330de4ad75f1dae9a57ba",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-22.mp3",
       "review_index": 634,
       "semantic_sha256": "fd66762c6649f57e3356083eab27fa4675eaa26989d15784687aa4b080b70678",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "Le magasin demande de venir avec le bon de commande et la carte d'identité pour retirer le jeu. La nouvelle image contient les deux documents de la réponse complète. Carte bancaire et passeport restent des documents plausibles mais absents du message entier. Nouvelle paire bon de commande à tableau vide et carte d'identité bleue, portrait fictif varié ; carte bancaire bleue à puce et passeport bleu fermé réutilisés après examen. Chaque image représente exactement son choix, sans montant, date ou numéro ; peinture douce crème et paysage 4:3.",
       "brief": {
         "context_question": "Quels documents devez-vous apporter pour retirer la commande ?",
         "choices_to_illustrate": [
@@ -25725,7 +25791,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-bon-commande-identite.png",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp"
+      ],
+      "selected_sha256": [
+        "cde4bbf0186bf4c8c690798bedc120fecbb951aa2d80f76fd2b047db2407c5c3",
+        "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-documents-boissons-20261113.json"
     },
     {
       "key": "tcf-ss-a2-s51-co-1#5",
@@ -25798,14 +25875,14 @@
         "Le billet et la carte bancaire",
         "Le billet et la carte d'étudiant"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "a707a4921d7735ab12dfa10de2cbf9d582ebb7d9c14006abc69297ecb7b0a35d",
       "audio": "/lib/audio/tcf/co/transports/les-passagers-vol-air-2.mp3",
       "review_index": 637,
       "semantic_sha256": "971f12d18474f5364b5a656dd6124a70ba6eb2a752153a43bbbf8d434b06475c",
       "reviewed": true,
-      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
+      "reason": "L'annonce d'embarquement demande explicitement le billet et la pièce d'identité. Les trois paires conservent le billet commun ; la seconde pièce différencie la bonne réponse des cartes bancaire et d'étudiant, toutes deux absentes de l'annonce. Aucune autre paire ne satisfait la consigne. Trois nouvelles images comparées individuellement : même billet d'avion à gauche, carte d'identité bleue avec jeune homme à lunettes, carte de paiement à puce, puis carte d'étudiant verte avec jeune femme rousse. Les deux portraits diffèrent. Documents entiers sans données, dates ni montants, même peinture crème en 4:3.",
       "brief": {
         "context_question": "Quels documents faut-il présenter ?",
         "choices_to_illustrate": [
@@ -25825,7 +25902,18 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
-      }
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion-identite.png",
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion-bancaire.png",
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion-etudiant.png"
+      ],
+      "selected_sha256": [
+        "cbaffb11a2eccc892758e5c7e45a85215e114581f5c43d6a86adee1e952bbec1",
+        "d7f2492757d2dc2aabe4ae2b467867c47367cee69c448f4d185ead4911f557f2",
+        "2e2f2a6194c1b0a28c64651e541b9be545d47a634de4c02eea3bb386266f90eb"
+      ],
+      "incremental_review": "docs/tcf/revue-trios-ecole-aeroport-velos-20261113.json"
     },
     {
       "key": "tcf-ss-a2-s55-co-3#3",
@@ -30309,20 +30397,20 @@
   "summary": {
     "artwork_needed_contextual_locations": 278,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 250,
-    "artwork_needed_whole_answer_concepts": 96,
+    "active_reviewed_trio": 258,
+    "artwork_needed_whole_answer_concepts": 94,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
-    "artwork_needed_distinct_document_types": 27,
     "keep_text_nonvisual_or_quantified_claim": 9,
+    "artwork_needed_distinct_document_types": 21,
     "keep_text_arbitrary_identifier": 8,
     "keep_text_rule_temporal_scope": 1
   },
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 250,
+  "activated_total": 258,
   "retained_text_total": 112,
-  "artwork_pending_total": 401
+  "artwork_pending_total": 393
 }

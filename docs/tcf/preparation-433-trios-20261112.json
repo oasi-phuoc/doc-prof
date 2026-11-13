@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 33,
-    "initial_pending": 400,
+    "activated_since_baseline": 41,
+    "initial_pending": 392,
     "additional_pending": 1,
-    "total_pending": 401,
+    "total_pending": 393,
     "pending_by_level": {
-      "A0-A1": 171,
-      "A1-A2": 207,
+      "A0-A1": 167,
+      "A1-A2": 203,
       "A2-B1": 23
     }
   },
@@ -1638,8 +1638,8 @@
       "audio": null,
       "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L'annonce de Julien vend explicitement un vélo de ville bleu avec panier et lumière. La bonne image reprend ces trois détails ; vélo de course et vélo d'enfant ne sont pas proposés à la vente dans le texte. Trois types de vélos cohérents, aucune autre réponse ne décrit l'objet annoncé. Trois vélos bleus entiers comparés : ville adulte à cadre bas avec panier et phare, course à cadre triangulaire et guidon recourbé, puis petit vélo d'enfant à roulettes. Les détails distinctifs et proportions se lisent sans texte, prix ni date ; fond crème peint, même format exact 4:3.",
       "choices": [
         {
           "id": "a",
@@ -1652,18 +1652,46 @@
           "id": "b",
           "label": "Un vélo de course",
           "correct": false,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-velo-course.png",
+              "sha256": "cf99d0508f6b04df9602dd3bfbe85d2b3353f578817b18adc9d58275c38802d4",
+              "label": "Un vélo de course"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-velo-course",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-velo-course.png"
+            }
+          ]
         },
         {
           "id": "c",
           "label": "Un vélo d'enfant",
           "correct": false,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-velo-enfant.png",
+              "sha256": "ef251bc4c01441c10ee7a96922fe8bab24412f486e19a6993bd17e45d29551de",
+              "label": "Un vélo d’enfant"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-velo-enfant",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-velo-enfant.png"
+            }
+          ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-course.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-enfant.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1672,7 +1700,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -5803,8 +5831,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_52.mp3",
       "source_sha256": "7221c5887cf7510575b84a4cd9f4f6260c1c83894e4df9996fdcc0aa2dc492ce",
       "semantic_sha256": "2d32b6b3b840f139663a794cdf25bfb8f5f87d9c9df7c5902d47d14b07e3531a",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L'énumération nomme explicitement une addition. La précision paiement au restaurant distingue cette réponse du menu également cité. Ni devis ni billet ne figurent dans la transcription entière ; les trois réponses sont des documents, le billet étant illustré par un billet de transport. Réemploi de trois originaux examinés : addition à tableau vierge sur plateau, devis à tableau vide et billet de train à talon avec pictogramme ferroviaire. Titres addition/devis et formes du billet distincts ; pas de prix, de date ou d'horaire, fond crème peint et paysage 4:3.",
       "choices": [
         {
           "id": "a",
@@ -5857,7 +5885,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-addition.webp",
+        "/lib/images/tcf/qcm-audit/extension573-devis.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5866,7 +5898,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -6893,8 +6925,8 @@
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-2.mp3",
       "source_sha256": "7035266578db2b042b3ed201b9d88f0855a65062571f5da4b638b86df4fb6d0c",
       "semantic_sha256": "02f8de5cedd1e48da421d30891f45ca199b09108548601765626f800c3e86ea2",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La troisième situation annonce explicitement la réception prochaine des billets d'avion après le voyage gagné. Le passeport et le permis ne sont nommés dans aucune des quatre situations : trois catégories de documents cohérentes et une seule réponse correcte. Deux billets neufs respectent le pluriel ; le passeport fermé bleu et le permis rose portant une voiture sont réutilisés après examen individuel. Trois documents distincts, titres lisibles, pas de données chiffrées ni de dates, style peint crème et format 4:3.",
       "choices": [
         {
           "id": "a",
@@ -6918,7 +6950,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-billets-avion-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6927,7 +6963,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -7428,8 +7464,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avons-reservation-1.mp3",
       "source_sha256": "7ace0f9aee5e5b93ae7805777ee76166553c202d9d820182fe23e4c76af16096",
       "semantic_sha256": "b9c7c8a3da39e791f756b24badb74330f1f9ac6abe4b02c9c19beed4134da73a",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le serveur annonce Je vous apporte le menu avant de prendre la commande. L'addition et le programme ne sont pas cités dans la transcription entière ; les trois réponses sont des documents distincts. Le programme illustré de concert est un exemple du document générique proposé. Trois images existantes examinées : menu ouvert avec plats dessinés, addition à tableau vierge sur un plateau et programme de concert plié avec instruments. Titres distinctifs, aucun prix ni calendrier ; tous les documents sont entiers, sur fond crème peint et en 4:3.",
       "choices": [
         {
           "id": "a",
@@ -7470,7 +7506,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-menu-restaurant.webp",
+        "/lib/images/tcf/qcm-audit/extension573-addition.webp",
+        "/lib/images/tcf/qcm-audit/extension573-programme-concert.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -7479,7 +7519,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -19874,8 +19914,8 @@
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "semantic_sha256": "faa8c6ba1aaf74ff44d29e57e7c0edc00bcf03643e40c412e47ed8cd105d495b",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Lucie dit explicitement Il ne faut surtout pas lui donner de lait. La question porte sur la boisson interdite : le lait est la seule bonne réponse. Ni l'eau ni le bouillon ne sont nommés dans le message entier ; les trois choix restent cohérents comme liquides à boire. Bouteille de lait blanc et verre d'eau transparent réutilisés et examinés individuellement ; le nouveau bouillon doré en tasse est confirmé par sa boîte BOUILLON. Liquides visuellement distincts, objets entiers, aucun chiffre ni date, même peinture douce et format paysage 4:3.",
       "choices": [
         {
           "id": "a",
@@ -19895,11 +19935,27 @@
           "id": "c",
           "label": "Du bouillon",
           "correct": false,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-bouillon-clair.png",
+              "sha256": "b5299544258242f588963002853ac9bff197a0053b75fa12034522afcd96f059",
+              "label": "Du bouillon"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-bouillon-clair",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-bouillon-clair.png"
+            }
+          ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-bouillon-clair.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -19908,7 +19964,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -20656,8 +20712,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3",
       "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
       "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps. Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3.",
       "choices": [
         {
           "id": "a",
@@ -20693,7 +20749,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
+        "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
+        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20702,7 +20762,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -20944,15 +21004,27 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-22.mp3",
       "source_sha256": "714c44b58341854ea6697580ad346a1257940955c0f330de4ad75f1dae9a57ba",
       "semantic_sha256": "fd66762c6649f57e3356083eab27fa4675eaa26989d15784687aa4b080b70678",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le magasin demande de venir avec le bon de commande et la carte d'identité pour retirer le jeu. La nouvelle image contient les deux documents de la réponse complète. Carte bancaire et passeport restent des documents plausibles mais absents du message entier. Nouvelle paire bon de commande à tableau vide et carte d'identité bleue, portrait fictif varié ; carte bancaire bleue à puce et passeport bleu fermé réutilisés après examen. Chaque image représente exactement son choix, sans montant, date ou numéro ; peinture douce crème et paysage 4:3.",
       "choices": [
         {
           "id": "a",
           "label": "Le bon de commande et une carte d'identité",
           "correct": true,
-          "exact_label_reuse_candidates": [],
-          "generation_jobs": []
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-bon-commande-identite.png",
+              "sha256": "cde4bbf0186bf4c8c690798bedc120fecbb951aa2d80f76fd2b047db2407c5c3",
+              "label": "Le bon de commande et une carte d’identité"
+            }
+          ],
+          "generation_jobs": [
+            {
+              "id": "extension573-bon-commande-identite",
+              "status": "visually_reviewed",
+              "source": "/lib/images/tcf/qcm-audit/extension573-bon-commande-identite.png"
+            }
+          ]
         },
         {
           "id": "b",
@@ -20981,7 +21053,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-bon-commande-identite.png",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20990,7 +21066,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -21052,8 +21128,8 @@
       "audio": "/lib/audio/tcf/co/transports/les-passagers-vol-air-2.mp3",
       "source_sha256": "a707a4921d7735ab12dfa10de2cbf9d582ebb7d9c14006abc69297ecb7b0a35d",
       "semantic_sha256": "971f12d18474f5364b5a656dd6124a70ba6eb2a752153a43bbbf8d434b06475c",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L'annonce d'embarquement demande explicitement le billet et la pièce d'identité. Les trois paires conservent le billet commun ; la seconde pièce différencie la bonne réponse des cartes bancaire et d'étudiant, toutes deux absentes de l'annonce. Aucune autre paire ne satisfait la consigne. Trois nouvelles images comparées individuellement : même billet d'avion à gauche, carte d'identité bleue avec jeune homme à lunettes, carte de paiement à puce, puis carte d'étudiant verte avec jeune femme rousse. Les deux portraits diffèrent. Documents entiers sans données, dates ni montants, même peinture crème en 4:3.",
       "choices": [
         {
           "id": "a",
@@ -21077,7 +21153,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion-identite.png",
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion-bancaire.png",
+        "/lib/images/tcf/qcm-audit/extension573-billet-avion-etudiant.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -21086,7 +21166,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

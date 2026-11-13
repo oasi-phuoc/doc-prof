@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-13",
+  "trios": [
+    {
+      "key": "delf-a1-2022-co-ex5-52#5",
+      "source_sha256": "7221c5887cf7510575b84a4cd9f4f6260c1c83894e4df9996fdcc0aa2dc492ce",
+      "semantic_sha256": "2d32b6b3b840f139663a794cdf25bfb8f5f87d9c9df7c5902d47d14b07e3531a",
+      "source": "Un savon. Un menu. Une chemise. Du papier toilette. Une addition. Une jupe.",
+      "question": {
+        "enonce": "Quel document de paiement au restaurant est nommé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une addition",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un devis",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un billet",
+            "correct": false
+          }
+        ],
+        "written_model": "Une addition"
+      },
+      "image_ids": [
+        "extension573-addition",
+        "extension573-devis",
+        "audit-context-billet-train"
+      ],
+      "reason": "L'énumération nomme explicitement une addition. La précision paiement au restaurant distingue cette réponse du menu également cité. Ni devis ni billet ne figurent dans la transcription entière ; les trois réponses sont des documents, le billet étant illustré par un billet de transport.",
+      "visual_review": "Réemploi de trois originaux examinés : addition à tableau vierge sur plateau, devis à tableau vide et billet de train à talon avec pictogramme ferroviaire. Titres addition/devis et formes du billet distincts ; pas de prix, de date ou d'horaire, fond crème peint et paysage 4:3."
+    },
+    {
+      "key": "tcf-ss-a2-s48-co-4#12",
+      "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
+      "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
+      "source": "Je ne trouve pas mon emploi du temps.\nTu peux me dire à quelle heure est le cours d'histoire aujourd'hui ?\nC'est à midi.\nEt le cours de musique ?\nÀ 14h30.\nSuper !\nMerci !",
+      "question": {
+        "enonce": "Quel document l'élève ne trouve-t-il pas ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son emploi du temps",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son carnet de notes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sa carte de cantine",
+            "correct": false
+          }
+        ],
+        "written_model": "Son emploi du temps"
+      },
+      "image_ids": [
+        "extension573-emploi-temps",
+        "extension573-carnet-notes",
+        "co306-carte-cantine-dessine"
+      ],
+      "reason": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps.",
+      "visual_review": "Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3."
+    },
+    {
+      "key": "tcf-ss-a2-s55-co-2#5",
+      "source_sha256": "a707a4921d7735ab12dfa10de2cbf9d582ebb7d9c14006abc69297ecb7b0a35d",
+      "semantic_sha256": "971f12d18474f5364b5a656dd6124a70ba6eb2a752153a43bbbf8d434b06475c",
+      "source": "Les passagers du vol Air France, numéro 4568, à destination de Berlin, sont priés d'aller à la porte d'embarquement numéro 45. Veuillez sortir votre billet et votre pièce d'identité pour les présenter aux hôtesses. Vous pouvez utiliser la file d'attente prioritaire Si vous voyagez en classe affaires, ou si vous êtes accompagné d'un enfant de moins de trois ans, nous vous rappelons qu'un seul bagage à main par passager est autorisé. Air France, vous souhaite un agréable vol.",
+      "question": {
+        "enonce": "Quels documents faut-il présenter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le billet et la pièce d'identité",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le billet et la carte bancaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le billet et la carte d'étudiant",
+            "correct": false
+          }
+        ],
+        "written_model": "Le billet et la pièce d'identité"
+      },
+      "image_ids": [
+        "extension573-billet-avion-identite",
+        "extension573-billet-avion-bancaire",
+        "extension573-billet-avion-etudiant"
+      ],
+      "reason": "L'annonce d'embarquement demande explicitement le billet et la pièce d'identité. Les trois paires conservent le billet commun ; la seconde pièce différencie la bonne réponse des cartes bancaire et d'étudiant, toutes deux absentes de l'annonce. Aucune autre paire ne satisfait la consigne.",
+      "visual_review": "Trois nouvelles images comparées individuellement : même billet d'avion à gauche, carte d'identité bleue avec jeune homme à lunettes, carte de paiement à puce, puis carte d'étudiant verte avec jeune femme rousse. Les deux portraits diffèrent. Documents entiers sans données, dates ni montants, même peinture crème en 4:3."
+    },
+    {
+      "key": "delf-a1v-ce-013#1",
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
+      "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
+      "source": "Petites annonces – www.annonces-suisses.ch/velos\nJe vends mon vélo de ville bleu avec un panier et une lumière : 150 CHF. Il a deux ans, mais il roule très bien. Le casque est offert.\nAppelez-moi au 079 321 54 98 après 18 h, sauf le jeudi.\nJulien, Yverdon",
+      "question": {
+        "enonce": "Quel objet Julien vend-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo de ville",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un vélo de course",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un vélo d'enfant",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo de ville"
+      },
+      "image_ids": [
+        "extension573-velo-ville-panier-lumiere",
+        "extension573-velo-course",
+        "extension573-velo-enfant"
+      ],
+      "reason": "L'annonce de Julien vend explicitement un vélo de ville bleu avec panier et lumière. La bonne image reprend ces trois détails ; vélo de course et vélo d'enfant ne sont pas proposés à la vente dans le texte. Trois types de vélos cohérents, aucune autre réponse ne décrit l'objet annoncé.",
+      "visual_review": "Trois vélos bleus entiers comparés : ville adulte à cadre bas avec panier et phare, course à cadre triangulaire et guidon recourbé, puis petit vélo d'enfant à roulettes. Les détails distinctifs et proportions se lisent sans texte, prix ni date ; fond crème peint, même format exact 4:3."
+    }
+  ]
+}

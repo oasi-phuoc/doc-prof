@@ -4090,20 +4090,163 @@
         "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-billets-avion-pluriel",
+      "label": "Des billets d’avion",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une seule illustration pédagogique au format paysage EXACT 4:3. Respecter le style de l'image de référence : illustration peinte douce semi-réaliste, volumes naturels, contours fins, fond crème clair uni, ombres discrètes, aucune photographie ni rendu 3D. Sujet : DEUX billets d'avion distincts, entièrement visibles et un peu décalés l'un au-dessus de l'autre, chacun en papier allongé avec talon détachable, un petit pictogramme d'avion et une trajectoire aérienne dessinée. Le pluriel doit être immédiatement évident. Titre facultatif très court « BILLET D’AVION », aucune autre information écrite. Aucun nom de personne, chiffre, montant, date, jour, mois, horaire, passeport, carte bancaire, carte d'identité, personnage ou valise. Objet central bien lisible avec de grandes marges. Image complète pour une seule réponse de QCM, jamais une planche de choix.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-billets-avion-pluriel.png",
+      "sha256": "0e6097b9a91dc758df8ababbb7a01e1f238baffdc83fb9a2870f46bd4f07180a",
+      "review_note": "Deux billets séparés et entièrement visibles avec talons et pictogrammes d'avion. Aucun chiffre, montant ni date ; le pluriel est représenté sans ajouter de passeport ou de permis. Peinture douce, fond crème, paysage exact 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-bon-commande-identite",
+      "label": "Le bon de commande et une carte d’identité",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une seule image pédagogique paysage EXACT 4:3, dans le style des références : peinture douce semi-réaliste, contours fins, papier crème, ombres délicates, volumes naturels. Montrer ensemble DEUX documents entiers côte à côte avec larges marges : à gauche un bon de commande en papier avec le titre « BON DE COMMANDE », un petit dessin de colis et un tableau à cases VIDES ; à droite une carte d'identité bleue avec titre « CARTE D’IDENTITÉ », portrait fictif peint d'une femme adulte à peau brune, cheveux noirs courts et bouclés, vêtements ordinaires, puis traits gris sans données. Composition unique représentant la réponse complète bon de commande ET carte d'identité. Aucun autre document, aucune convocation, aucun passeport, carte de paiement ou billet. Aucune donnée personnelle, aucun chiffre, montant, date, jour, mois, adresse, logo officiel ni code. Ne pas reprendre le visage de la référence. Conserver le fond crème et la cohérence de texture de la banque existante, éviter l'aspect icône vectorielle.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-bon-commande-identite.png",
+      "sha256": "cde4bbf0186bf4c8c690798bedc120fecbb951aa2d80f76fd2b047db2407c5c3",
+      "review_note": "Bon de commande à tableau vide et carte d'identité bleue visibles ensemble, titres corrects, portrait fictif d'une femme à peau brune et cheveux courts bouclés distinct du modèle. Aucune donnée chiffrée, aucun autre document ; rendu peint doux crème en 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-identite-convocation.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-bon-commande.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-bouillon-clair",
+      "label": "Du bouillon",
+      "kind": "whole_answer_concept",
+      "prompt": "Une seule illustration pédagogique paysage EXACT 4:3, même style que la référence : peinture douce semi-réaliste, contours fins et naturels, fond crème uni, ombre subtile, matière visible, aucune photo ni illustration vectorielle. Au centre une tasse basse à deux petites anses en porcelaine blanche contenant un bouillon CLAIR doré translucide et chaud, quelques très petits points d'herbes flottent, surface liquide sans morceaux de viande ni nouilles. À côté une cuillère en métal et une petite brique de bouillon fermée avec le seul mot « BOUILLON » et un discret dessin de carotte et poireau, aucun autre texte. Il s'agit de la représentation complète d'un bouillon à boire, l'emballage confirme ce que contient la tasse. Aucune bouteille de lait, aucun verre d'eau, aucun jus, aucun animal ni personne. Aucun chiffre, montant, date, jour ou mois. Tous les objets entiers avec de bonnes marges.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-bouillon-clair.png",
+      "sha256": "b5299544258242f588963002853ac9bff197a0053b75fa12034522afcd96f059",
+      "review_note": "Bouillon doré translucide dans une tasse blanche à deux anses, cuillère entière et boîte marquée BOUILLON avec légumes. Pas de lait ni d'eau représentés séparément, aucune donnée chiffrée ; peinture douce et fond crème au format 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-billet-avion-bancaire",
+      "label": "Le billet d’avion et une carte bancaire",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une image pédagogique complète en paysage EXACT 4:3, conserver le style peint doux semi-réaliste, le fond crème, les volumes naturels et les ombres fines des références. Disposition de DEUX objets côte à côte avec marges : à gauche UN billet d'avion en papier crème et bleu identique au principe de la référence, titre « BILLET D’AVION », avion dessiné, talon détachable et quelques traits gris sans données ; à droite UNE carte bancaire bleue, à puce métallique dorée bien visible et symbole de paiement sans contact, sans numéro ni nom ni logo. Supprimer entièrement la carte d'identité et tout portrait : la réponse est billet d'avion ET carte bancaire. Aucun autre document, aucune carte d'étudiant, passeport, convocation ou bon de commande. Aucun chiffre, montant, date, jour, mois, horaire ou donnée personnelle. Aucune légende extérieure aux objets. Papier et plastique peints avec textures légères, aucune photographie ni 3D ni icônes plates.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-billet-avion-bancaire.png",
+      "sha256": "d7f2492757d2dc2aabe4ae2b467867c47367cee69c448f4d185ead4911f557f2",
+      "review_note": "Un billet d'avion à talon et une carte bancaire bleue à puce dorée et symbole sans contact sont entiers côte à côte. Aucun portrait ni autre carte, pas de données chiffrées, date ou montant. Même composition, texture peinte douce crème et format 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-billet-avion-identite.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-billet-avion-etudiant",
+      "label": "Le billet d’avion et une carte d’étudiant",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une illustration pédagogique paysage EXACT 4:3 dans le style peint doux semi-réaliste de la référence. Fond crème, contours fins, matière légère, ombres naturelles, mêmes positions et proportions générales des deux documents. À gauche UN billet d'avion papier bleu et crème avec titre « BILLET D’AVION », avion et talon détachable, champs en traits gris. À droite UNE carte d'étudiant vert doux avec titre exact « CARTE D’ÉTUDIANT », petit symbole de livre ouvert, portrait fictif peint d'une jeune femme adulte à peau claire avec taches de rousseur et cheveux roux attachés, visage différent de la référence. Champs anonymes en traits gris. La réponse complète est billet d'avion ET carte d'étudiant : aucun autre document, aucune carte d'identité, carte bancaire, aucun passeport. Aucune légende hors des objets, aucun chiffre, montant, date, jour, mois, horaire, nom ou donnée personnelle. Tous les objets entièrement visibles avec marges. Ni photo ni 3D ni illustration vectorielle.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-billet-avion-etudiant.png",
+      "sha256": "2e2f2a6194c1b0a28c64651e541b9be545d47a634de4c02eea3bb386266f90eb",
+      "review_note": "Un billet d'avion et une carte verte portant CARTE D'ÉTUDIANT et un symbole de livre sont entiers. Portrait fictif différent : jeune femme rousse avec taches de rousseur ; aucun numéro, montant ou date. Peinture douce crème, disposition et format 4:3 cohérents.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-billet-avion-identite.png"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-billet-avion-identite",
+      "label": "Le billet d’avion et une pièce d’identité",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer UNE illustration paysage EXACT 4:3 dans la peinture douce semi-réaliste des références, fond crème uni, ombres fines naturelles, objets entiers avec marges. Montrer DEUX documents côte à côte dans une même réponse : à gauche un seul billet d'avion allongé de papier crème et bleu, titre « BILLET D’AVION » imprimé sur le billet, un avion dessiné et un talon détachable ; à droite une seule carte d'identité au titre « CARTE D’IDENTITÉ » avec un petit portrait peint fictif d'un jeune homme aux cheveux noirs raides, peau claire dorée et lunettes rondes, traits individuels naturels. Les champs du billet et de la carte sont seulement des traits gris sans texte de données. Ne pas ajouter de bon de commande, passeport ou autre document. Aucun chiffre, numéro, montant, date, jour, mois, horaire, nom, adresse ou logo officiel. Le billet et la carte d'identité doivent être clairement distincts et identifiables. Style peint avec textures de papier, pas d'icônes plates, pas de photographie ni effet 3D. Aucune légende hors des objets.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-billet-avion-identite.png",
+      "sha256": "cbaffb11a2eccc892758e5c7e45a85215e114581f5c43d6a86adee1e952bbec1",
+      "review_note": "Un billet d'avion à talon et une carte d'identité bleue sont entiers côte à côte. Titres lisibles, portrait fictif d'un jeune homme à peau claire dorée, cheveux noirs et lunettes ; champs anonymes en traits. Ni date ni numéro, fond crème peint en 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-bon-commande-identite.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-billets-avion-pluriel.png"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-carnet-notes",
+      "label": "Un carnet de notes",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une seule illustration pédagogique en paysage EXACT 4:3 dans le style de référence : peinture douce semi-réaliste, matières de papier et couverture, contours fins, ombres naturelles, fond crème uni. Sujet unique central : un petit CARNET DE NOTES scolaire relié, ouvert ; la couverture rabattue visible porte le titre « CARNET DE NOTES ». Les pages montrent un tableau d'évaluations scolaires avec les seuls mots « Français », « Maths », « Sciences » et des appréciations courtes « Bien », « Très bien », « À revoir ». Aucun chiffre et aucune heure, date, nom de jour, mois, montant ou donnée personnelle. Le carnet est un vrai petit livre relié avec des pages visibles et des résultats scolaires, distinct d'un emploi du temps ou d'une carte de cantine. Pas de stylo, de personnage, de calendrier ou d'autre objet. Carnet entier dans le cadre avec larges marges. Ne pas ajouter de grande légende hors de l'objet.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
+      "sha256": "e9b4c1b022cdb1de98501b57be0b9d10a93f32cfe7495d669bb16bfc90019dac",
+      "review_note": "Carnet relié bleu ouvert, titre CARNET DE NOTES et tableau d'appréciations scolaires lisibles. Français, Maths et Sciences, appréciations sans chiffres, dates ni jours. Objet entier, pages peintes crème, ombre naturelle et format 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-velo-course",
+      "label": "Un vélo de course",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une seule illustration pédagogique paysage EXACT 4:3 dans le même style peint doux semi-réaliste et le même fond crème que la référence. Sujet unique : un VÉLO DE COURSE adulte bleu, entier, vu de profil légèrement en trois quarts. Cadre sportif triangulaire léger, guidon recourbé de course en forme de deux cornes descendantes, selle fine, pneus de route fins, dérailleur et pédalier mécaniquement crédibles. Aucun panier ni lumière ni porte-bagages ni garde-boue ni petites roulettes. Deux grandes roues entières et deux pédales, guidon et selle bien distincts. Conserver des marges suffisantes et une ombre fine au sol. Pas de personne, décor, logo, lettre, chiffre, montant, date ou calendrier. Matière peinte naturelle, pas de photographie ni 3D ni icône vectorielle. Cette image doit montrer sans ambiguïté le vélo sportif de course, distinct du vélo de ville à cadre bas de la référence.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-velo-course.png",
+      "sha256": "cf99d0508f6b04df9602dd3bfbe85d2b3353f578817b18adc9d58275c38802d4",
+      "review_note": "Vélo de course adulte bleu avec cadre triangulaire sportif, guidon recourbé, selle fine et pneus étroits. Absence de panier et de petites roulettes ; roues et pédales entières, mécanique plausible. Fond crème peint doux et paysage 4:3, aucun texte ni donnée chiffrée.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-velo-enfant",
+      "label": "Un vélo d’enfant",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une seule illustration pédagogique en paysage EXACT 4:3. Même peinture douce semi-réaliste, texture et fond crème que la référence. Sujet unique : un petit VÉLO D'ENFANT bleu clairement reconnaissable, cadre bas de très petite taille, selle et guidon proches, deux roues principales petites à pneus épais, deux petites ROULETTES stabilisatrices à l'arrière visibles de chaque côté, carter de chaîne bleu fermé. Tous les éléments entiers et mécaniquement cohérents, deux pédales, poignées courtes et protections de guidon simples. Vue latérale en léger trois-quarts permettant de voir les deux roulettes, ombre naturelle et bonnes marges. Aucun panier ni porte-bagages ni accessoire de course. Pas de personne, d'animal, de décor, de logo, de lettre, de chiffre, de montant, de date ou de calendrier. Ne pas conserver les proportions d'un vélo adulte. Image unique d'un vélo pour enfant, sans légende, sans photographie ni 3D ni style vectoriel.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-velo-enfant.png",
+      "sha256": "ef251bc4c01441c10ee7a96922fe8bab24412f486e19a6993bd17e45d29551de",
+      "review_note": "Petit vélo bleu à cadre bas et proportions d'enfant, pneus épais, deux roulettes stabilisatrices arrière visibles, carter de chaîne fermé et poignées courtes. Vélo entier, aucun personnage ni texte ; texture peinte douce, ombre naturelle et fond crème en 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "generation_stage": "extension-573-20261107"
+    },
+    {
+      "id": "extension573-velo-ville-panier-lumiere",
+      "label": "Un vélo de ville bleu avec panier et lumière",
+      "kind": "whole_answer_concept",
+      "prompt": "Créer une seule illustration pédagogique paysage EXACT 4:3 reprenant la peinture douce semi-réaliste et le fond crème de la référence. Un seul vélo de ville adulte BLEU, vu de profil légèrement en trois quarts, ENTIER et bien lisible avec marges, cadre bas, guidon relevé confortable, roues de ville, garde-boue et porte-bagages. Ajouter un panier en osier FIXÉ DEVANT LE GUIDON et un petit phare avant bien visible fixé sous le panier ; le phare est la lumière mentionnée dans le texte. Géométrie mécanique crédible, deux roues, deux pédales, câbles réalistes ; pas de guidon de course, pas de petites roulettes. Aucun personnage, casque séparé, route, décor, texte, logo, chiffre, montant, date ou calendrier. Texture peinte légère et ombre discrète au sol, sans rendu 3D ni photographie. La réponse complète est un vélo de ville bleu équipé d'un panier et d'une lumière.",
+      "status": "visually_reviewed",
+      "source": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+      "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+      "review_note": "Vélo de ville adulte bleu à cadre bas, panier fixé devant le guidon et phare clairement visible sous le panier. Garde-boue et porte-bagages, deux roues entières, proportions crédibles, sans personne ni texte. Matières peintes et fond crème au format exact 4:3.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "generation_stage": "extension-573-20261107"
     }
   ],
   "status": "in_progress",
   "progress": {
-    "activated_trios": 172,
+    "activated_trios": 180,
     "retained_text": 1,
-    "pending_trios": 400,
+    "pending_trios": 392,
     "pending_categories": {
       "artwork_needed_contextual_locations": 278,
-      "artwork_needed_whole_answer_concepts": 95,
-      "artwork_needed_distinct_document_types": 27
+      "artwork_needed_whole_answer_concepts": 93,
+      "artwork_needed_distinct_document_types": 21
     },
     "generation_status": {
-      "visually_reviewed": 172,
+      "visually_reviewed": 182,
       "queued_after_quota_reset": 15
     }
   },

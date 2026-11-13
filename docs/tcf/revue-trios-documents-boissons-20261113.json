@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-13",
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s22-co-3#7",
+      "source_sha256": "7035266578db2b042b3ed201b9d88f0855a65062571f5da4b638b86df4fb6d0c",
+      "semantic_sha256": "02f8de5cedd1e48da421d30891f45ca199b09108548601765626f800c3e86ea2",
+      "source": "Bonjour, j'ai très mal à la tête. Avez-vous de l'aspirine ? Oui, bien sûr, monsieur. Ça fera 2,50 euros la boîte. Qu'est-ce que tu fais ? J'écoute de la musique. J'ai besoin d'un coup de main pour ranger. Tu peux venir ? Allô, Madame Martin ? C'est Radio FM. Vous avez gagné un voyage en Martinique. Oh ! Mais c'est super ! Je n’en reviens pas ! Vous recevrez vos billets d'avion bientôt ! Que pensez-vous de cette casquette ? Elle est jolie, mais je n'aime pas la couleur. Je peux vous proposer une autre couleur si vous voulez. Oui, je veux bien s'il vous plaît.",
+      "question": {
+        "enonce": "Dans la troisième situation, quels documents recevra-t-elle bientôt ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Ses billets d’avion",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son passeport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son permis de conduire",
+            "correct": false
+          }
+        ],
+        "written_model": "Ses billets d’avion"
+      },
+      "image_ids": [
+        "extension573-billets-avion-pluriel",
+        "co306-passeport-dessine",
+        "audit-context-permis-conduire"
+      ],
+      "reason": "La troisième situation annonce explicitement la réception prochaine des billets d'avion après le voyage gagné. Le passeport et le permis ne sont nommés dans aucune des quatre situations : trois catégories de documents cohérentes et une seule réponse correcte.",
+      "visual_review": "Deux billets neufs respectent le pluriel ; le passeport fermé bleu et le permis rose portant une voiture sont réutilisés après examen individuel. Trois documents distincts, titres lisibles, pas de données chiffrées ni de dates, style peint crème et format 4:3."
+    },
+    {
+      "key": "tcf-ss-a1-s29-co-4#2",
+      "source_sha256": "7ace0f9aee5e5b93ae7805777ee76166553c202d9d820182fe23e4c76af16096",
+      "semantic_sha256": "b9c7c8a3da39e791f756b24badb74330f1f9ac6abe4b02c9c19beed4134da73a",
+      "source": "- Bonjour, nous avons une réservation pour huit.\n- Ah oui, voici une table pour huit.\nJe vous apporte le menu.\n- Je prends votre commande ?\n- Oui, nous prenons huit menus, huit entrées et huit plats, mais pas de dessert.\n- Est-ce que vous prenez du fromage ?\n- Non, pas de fromage.\n- Et qu'est-ce que vous buvez ?\nDu vin ?\n- Non, pas de vin.\nTrois jus d'orange, une eau gazeuse, un jus de tomate et une carafe d'eau.",
+      "question": {
+        "enonce": "Quel document le serveur apporte-t-il d’abord ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le menu",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’addition",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le programme",
+            "correct": false
+          }
+        ],
+        "written_model": "Le menu"
+      },
+      "image_ids": [
+        "extension573-menu-restaurant",
+        "extension573-addition",
+        "extension573-programme-concert"
+      ],
+      "reason": "Le serveur annonce Je vous apporte le menu avant de prendre la commande. L'addition et le programme ne sont pas cités dans la transcription entière ; les trois réponses sont des documents distincts. Le programme illustré de concert est un exemple du document générique proposé.",
+      "visual_review": "Trois images existantes examinées : menu ouvert avec plats dessinés, addition à tableau vierge sur un plateau et programme de concert plié avec instruments. Titres distinctifs, aucun prix ni calendrier ; tous les documents sont entiers, sur fond crème peint et en 4:3."
+    },
+    {
+      "key": "tcf-ss-a2-s25-co-1#6",
+      "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
+      "semantic_sha256": "faa8c6ba1aaf74ff44d29e57e7c0edc00bcf03643e40c412e47ed8cd105d495b",
+      "source": "Salut, c'est Lucie. Je pars en vacances deux semaines et j'ai besoin de toi pour garder mon chat. Tu pourrais venir chaque jour à 9h pour lui donner à manger ? Il mange de la pâtée et des croquettes. Il ne faut surtout pas lui donner de lait. Sa nourriture est dans le placard de l'entrée. Attention à bien fermer la porte de la cuisine. Ses jeux sont dans le salon. Voici le code de mon immeuble. 6991. C'est au deuxième étage. Merci beaucoup.",
+      "question": {
+        "enonce": "Quelle boisson ne faut-il surtout pas lui donner ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du lait",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "De l’eau",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du bouillon",
+            "correct": false
+          }
+        ],
+        "written_model": "Du lait"
+      },
+      "image_ids": [
+        "co834-bouteille-lait-dessinee",
+        "co834-verre-eau-dessine",
+        "extension573-bouillon-clair"
+      ],
+      "reason": "Lucie dit explicitement Il ne faut surtout pas lui donner de lait. La question porte sur la boisson interdite : le lait est la seule bonne réponse. Ni l'eau ni le bouillon ne sont nommés dans le message entier ; les trois choix restent cohérents comme liquides à boire.",
+      "visual_review": "Bouteille de lait blanc et verre d'eau transparent réutilisés et examinés individuellement ; le nouveau bouillon doré en tasse est confirmé par sa boîte BOUILLON. Liquides visuellement distincts, objets entiers, aucun chiffre ni date, même peinture douce et format paysage 4:3."
+    },
+    {
+      "key": "tcf-ss-a2-s51-co-1#3",
+      "source_sha256": "714c44b58341854ea6697580ad346a1257940955c0f330de4ad75f1dae9a57ba",
+      "semantic_sha256": "fd66762c6649f57e3356083eab27fa4675eaa26989d15784687aa4b080b70678",
+      "source": "Bonjour, ici le magasin d'électronique Eurovidéo. Nous vous appelons pour vous dire que le jeu \"Voyage en Espagne\" que vous avez commandé est arrivé dans notre magasin de la rue Saint-Rome. Vous pouvez venir le chercher du mardi au vendredi, le matin seulement. Pour retirer votre commande, vous devez venir avec le bon de commande et votre carte d'identité. Nous vous attendons.",
+      "question": {
+        "enonce": "Quels documents devez-vous apporter pour retirer la commande ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le bon de commande et une carte d'identité",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une carte bancaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un passeport",
+            "correct": false
+          }
+        ],
+        "written_model": "Le bon de commande et une carte d'identité"
+      },
+      "image_ids": [
+        "extension573-bon-commande-identite",
+        "co834-carte-bancaire-dessinee",
+        "co306-passeport-dessine"
+      ],
+      "reason": "Le magasin demande de venir avec le bon de commande et la carte d'identité pour retirer le jeu. La nouvelle image contient les deux documents de la réponse complète. Carte bancaire et passeport restent des documents plausibles mais absents du message entier.",
+      "visual_review": "Nouvelle paire bon de commande à tableau vide et carte d'identité bleue, portrait fictif varié ; carte bancaire bleue à puce et passeport bleu fermé réutilisés après examen. Chaque image représente exactement son choix, sans montant, date ou numéro ; peinture douce crème et paysage 4:3."
+    }
+  ]
+}
