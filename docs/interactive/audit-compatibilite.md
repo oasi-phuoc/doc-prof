@@ -31,7 +31,7 @@
 | PO à images, dont quatre scènes | Projection et déplacement par boutons ; modèle après révélation | Aucun ordre ou score automatique inventé |
 | Associations audio | Une question par enregistrement, mots ou images source, correspondances vérifiées | Repli guidé pour un audio de mot remplaçant une syllabe ; six choix source maximum |
 | Paires de vocabulaire | Micro-questions avec propositions source ; mot complet vérifié pour les parties à compléter | Associations indépendantes, sans élimination des paires déjà traitées |
-| Jeux imprimables Vocabulaire et Mémory | Une micro-question image–mot par numéro de paire explicite ; recto verso et réordonnancement conservés ; mots source uniquement, images remplacées vérifiées | Deux à six choix indépendants ; associations ambiguës guidées ; élimination des paires et retournement M11 encore ouverts ; ADR 0036 |
+| Jeux imprimables Vocabulaire et Mémory | Une micro-question image–mot par numéro de paire ; groupes de six paires au maximum ; mots déjà associés désactivés sans déplacer les cartes ; reprise, bilan par groupe et compétition | Images et mots doivent être distincts pour la correction automatique ; ambiguïtés guidées ; retournement M11 encore ouvert ; ADR 0036 et 0037 |
 | Phrases à ordonner | Deux à six jetons source manipulables, modèle séparé, appréciation humaine ; layouts `phrase-order` et `order` à consigne de phrase explicite | Phrases longues ou incohérentes signalées ; aucune troncature et aucun ordre alternatif déclaré faux automatiquement ; ADR 0028 |
 | Dossiers complets | Explication de non-compatibilité | Ouvrir une fiche individuelle |
 | Autres layouts | Motif explicite, visible dans la préparation | Ne sont pas masqués par domaine |
@@ -47,3 +47,5 @@ Le tirage courant trouve 24 variantes de géométrie jouables : seize types de m
 La banque de logique importée contient 206 `correctIndex` initialisés à 0 faute de corrigé connu ; ces valeurs ne sont pas utilisées pour inventer un verdict. Une relecture des bonnes réponses est nécessaire avant leur adaptation au score automatique. Voir [ADR 0032](adr-0032-reconnaissance-des-formes.md).
 
 Les deux familles de jeux imprimables produisent respectivement neuf et quatre questions dans le tirage témoin. La hausse du nombre de types comprend aussi le nouvel exercice de grammaire intégré depuis `main` ; aucun adaptateur générique n’est déduit de cet ajout. Voir [ADR 0036](adr-0036-paires-imprimees-image-mot.md).
+
+Le [complément M06](adr-0037-groupes-associations.md) ajoute les groupes progressifs aux deux familles imprimables, sans changer le nombre de variantes déjà comptées. Les questions passées restent disponibles ; les paires corrigées sont conservées lors de la reprise. La règle est également imposée par le moteur de compétition et vérifiée après redémarrage du vrai Worker.

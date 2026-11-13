@@ -10,7 +10,7 @@ Ces questions reprennent les mécanismes existants : Classe collective, Solo ave
 
 Sur téléphone, la zone de question laisse assez de place à l’image et à son titre. L’image est centrée et sa hauteur s’adapte à l’écran. Les contrôles vérifient que l’image entière, les réponses et les commandes ne se coupent ni ne se recouvrent.
 
-Il s’agit d’une extension des micro-questions d’association M06. Les choix restent indépendants à chaque question : l’élimination des paires déjà trouvées et les groupes de six restent ouverts. Le retournement de deux cartes et la recherche de leur jumelle M11 ne sont pas implémentés par ce lot.
+Ce premier lot étendait les micro-questions d’association M06 avec des choix indépendants. Le [complément ADR 0037](adr-0037-groupes-associations.md) ajoute depuis les groupes de six et la désactivation progressive des mots déjà associés. Le retournement de deux cartes et la recherche de leur jumelle M11 restent ouverts.
 
 Huit tests couvrent 600 configurations réelles sur le thème des fruits, les trois difficultés, les numéros des paires, les cartes réordonnées, les données incomplètes, les remplacements ambigus, les plafonds de choix, les nouvelles graines et la conservation des sources. Le [parcours navigateur](printable-pairs-results.json) vérifie Classe et reprise sur trois tailles d’écran, Solo juste/faux/expiration, et défi local à deux mascottes sans réseau après préparation. Les parcours existants de lisibilité et d’adaptateurs source ont aussi été relancés. Les autres thèmes ne sont pas déclarés relus pédagogiquement par ces tests.
 

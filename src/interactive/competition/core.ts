@@ -3,8 +3,9 @@ import { PALETTE, defaultShapes, SHAPES, type ShapeId } from '../domain/palette'
 import { validAvatar, type CompetitionAvatar } from './avatars'
 import { MAX_AUDIO_PARTS } from '../domain/audio'
 import type { Figure, FigureDims } from '@/math/types'
+import { matchingTextKey } from '../domain/matching'
 
-export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
+export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'matchingGroup' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
 export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string }[] }
 export type CompetitionSettings = { enabled: boolean; seconds: number; feedbackSeconds: number; speedPoints: boolean }
 export type CompetitionPhase = 'lobby' | 'handoff' | 'question' | 'correction' | 'finished'
@@ -25,6 +26,7 @@ export type RoomView = {
   code: string; title: string; mode: CompetitionRoom['mode']; phase: CompetitionPhase; index: number; total: number;
   paused: boolean; deadline?: number; remainingMs?: number; serverNow: number; revision: number;
   settings: CompetitionSettings; colors: string[]; shapes: ShapeId[]; question?: CompetitionQuestion; correctChoiceId?: string;
+  unavailableChoiceIds?: string[];
   turnPlayerId?: string; answered: number;
   players: { id: string; seat: number; avatarId: CompetitionAvatar; score: number; lastPoints: number; lastCorrect?: boolean; rank: number }[];
   self?: { id: string; answered: boolean; selected?: string; correct?: boolean; points?: number };
@@ -84,7 +86,7 @@ export function competitionQuiz(game: Game, origin: string): CompetitionQuiz {
     const correctChoiceId = game.corrections[q.id]?.choiceId
     if (q.mode !== 'choice' || !correctChoiceId || !q.choices.some((choice) => choice.id === correctChoiceId)) return []
     return [{ correctChoiceId, question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(q.audioParts ? { audioParts: q.audioParts.map(media) } : {}),
-      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
+      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.matchingGroup ? { matchingGroup: { ...q.matchingGroup } } : {}), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
   }) }
 }
 
@@ -100,6 +102,7 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
     return url.href
   }
   const ids = new Set<string>()
+  const matchingGroups = new Map<string, NonNullable<Question['matchingGroup']>>()
   const items = value.items.map((entry, questionIndex) => {
     if (!record(entry) || !record(entry.question)) throw new CompetitionError('Question invalide.', 400)
     const q = entry.question
@@ -131,9 +134,33 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       if (!record(sequence) || !Array.isArray(sequence.terms) || sequence.terms.length < 3 || sequence.terms.length > 12 || sequence.terms.some((term) => term !== null && !string(term, 80)) || sequence.terms.filter((term) => term !== null).length < 2 || sequence.terms.filter((term) => term === null).length > 6 || !Number.isInteger(sequence.target) || Number(sequence.target) < 0 || Number(sequence.target) >= sequence.terms.length || sequence.terms[Number(sequence.target)] !== null || sequence.hint !== undefined && !string(sequence.hint, 160)) throw new CompetitionError('Suite numérique invalide.', 400)
       numberSequence = { terms: [...sequence.terms] as (string | null)[], target: Number(sequence.target), ...(sequence.hint ? { hint: sequence.hint as string } : {}) }
     }
-    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}) } }
+    let matchingGroup: Question['matchingGroup']
+    if (q.matchingGroup !== undefined) {
+      const group = q.matchingGroup
+      if (!record(group) || Object.keys(group).some(key => !['groupId','number','total'].includes(key)) || !string(group.groupId,160) || !Number.isInteger(group.number) || !Number.isInteger(group.total) || Number(group.number)<1 || Number(group.total)<Number(group.number) || Number(group.total)>100 || q.images.length!==1 || choices.some(choice=>choice.image) || new Set(choices.map(choice=>matchingTextKey(choice.text))).size!==choices.length) throw new CompetitionError('Groupe d’associations invalide.',400)
+      const existing = matchingGroups.get(group.groupId)
+      if (existing && (existing.number!==group.number || existing.total!==group.total)) throw new CompetitionError('Groupe d’associations incohérent.',400)
+      matchingGroup = existing ?? {groupId:`m${matchingGroups.size+1}`,number:Number(group.number),total:Number(group.total)}
+      matchingGroups.set(group.groupId,matchingGroup)
+    }
+    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
   })
+  for (const {groupId} of matchingGroups.values()) {
+    const members=items.filter(item=>item.question.matchingGroup?.groupId===groupId)
+    const targets=members.map(item=>matchingTextKey(item.question.choices.find(choice=>choice.id===item.correctChoiceId)!.text))
+    if (members.length>6 || new Set(targets).size!==targets.length || new Set(members.map(item=>item.question.images[0])).size!==members.length) throw new CompetitionError('Les paires de ce groupe ne sont pas distinctes.',400)
+  }
   return { id: value.id, title: value.title, items }
+}
+
+/** Only earlier, publicly corrected rounds consume a word. Local players share
+ * the same choices until everyone has completed the current question. */
+function usedCompetitionChoices(room: CompetitionRoom): string[] {
+  const current=room.quiz.items[room.index]!
+  if (!current.question.matchingGroup) return []
+  const used=new Set(room.quiz.items.slice(0,room.index).filter(item=>item.question.matchingGroup?.groupId===current.question.matchingGroup!.groupId)
+    .map(item=>matchingTextKey(item.question.choices.find(choice=>choice.id===item.correctChoiceId)!.text)))
+  return current.question.choices.filter(choice=>choice.id!==current.correctChoiceId&&used.has(matchingTextKey(choice.text))).map(choice=>choice.id)
 }
 
 export function parseCompetitionSettings(value: unknown): CompetitionSettings {
@@ -215,7 +242,7 @@ export function competitionStep(original: CompetitionRoom, action: CompetitionAc
         throw new CompetitionError('La réponse est déjà envoyée.')
       }
       if (room.phase !== 'question' || room.paused || action.questionId !== currentId || room.mode === 'local' && room.players[room.turn]?.id !== player.id) throw new CompetitionError('Le temps de réponse est terminé ou en pause.')
-      if (action.choiceId === undefined && room.mode !== 'local' || action.choiceId !== undefined && !room.quiz.items[room.index]!.question.choices.some((choice) => choice.id === action.choiceId)) throw new CompetitionError('Cette réponse n’est pas proposée.', 400)
+      if (action.choiceId === undefined && room.mode !== 'local' || action.choiceId !== undefined && (!room.quiz.items[room.index]!.question.choices.some((choice) => choice.id === action.choiceId) || usedCompetitionChoices(room).includes(action.choiceId))) throw new CompetitionError('Cette réponse n’est pas proposée.', 400)
       const elapsedMs = room.settings.enabled && room.deadline !== undefined ? room.settings.seconds * 1000 - clamp(room.deadline - now, 0, room.settings.seconds * 1000) : 0
       player.answers.push({ questionId: currentId, ...(action.choiceId !== undefined ? { choiceId: action.choiceId } : {}), elapsedMs })
       if (room.mode === 'local') answeredTurn(room, now)
@@ -252,7 +279,7 @@ export function competitionView(room: CompetitionRoom, now: number, playerId?: s
   const answer = self?.answers.find((answer) => answer.questionId === item.question.id)
   return { code: room.code, title: room.quiz.title, mode: room.mode, phase: room.phase, index: room.index, total: room.quiz.items.length,
     paused: room.paused, deadline: room.deadline, remainingMs: room.remainingMs, serverNow: now, revision: room.revision, settings: { ...room.settings }, colors: [...room.colors], shapes: [...room.shapes],
-    ...(['question', 'correction'].includes(room.phase) ? { question: structuredClone(item.question) } : {}), ...(revealed ? { correctChoiceId: item.correctChoiceId } : {}),
+    ...(['question', 'correction'].includes(room.phase) ? { question: structuredClone(item.question), ...(item.question.matchingGroup ? { unavailableChoiceIds: usedCompetitionChoices(room) } : {}) } : {}), ...(revealed ? { correctChoiceId: item.correctChoiceId } : {}),
     ...(room.mode === 'local' ? { turnPlayerId: room.players[room.turn]?.id } : {}), answered: room.players.filter((player) => player.answers.some((answer) => answer.questionId === item.question.id)).length, players,
     ...(self ? { self: { id: self.id, answered: !!answer, ...(answer?.choiceId ? { selected: answer.choiceId } : {}), ...(revealed ? { correct: self.lastCorrect, points: self.lastPoints } : {}) } } : {}) }
 }

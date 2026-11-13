@@ -15,6 +15,7 @@ try {
  const {positionOf}=await server.ssrLoadModule('/src/interactive/domain/source-position.ts')
  const {createGameSource,renewGameSource}=await server.ssrLoadModule('/src/interactive/game-run.ts')
  const {startSession,transition}=await server.ssrLoadModule('/src/interactive/domain/session.ts')
+ const {usedMatchingChoices}=await server.ssrLoadModule('/src/interactive/domain/matching.ts')
  const {newRecord,compactSession,replaySession,planIdentity}=await server.ssrLoadModule('/src/interactive/domain/persistence.ts')
  const {competitionQuiz,parseCompetitionQuiz,createCompetition,competitionStep,competitionView}=await server.ssrLoadModule('/src/interactive/competition/core.ts')
  const base=demoRecipe(),types=['jeux-vocabulaire','jeux-memory']
@@ -85,7 +86,7 @@ try {
   for(const maxChoices of [2,3,4,5,6]){
    const plan=prepareGame(applyPlanOptions(game,{...DEFAULT_PLAN_OPTIONS,maxChoices,numericOrder:true,orderMode:'custom',customOrder:game.questions.map(positionOf).reverse()}))
    assert.deepEqual(plan.questions.map(positionOf),game.questions.map(positionOf).reverse())
-   for(const q of plan.questions){assert.equal(q.choices.length,maxChoices);assert.ok(q.choices.some(choice=>choice.id===game.corrections[q.id].choiceId));assert.equal(key(game,q),key(plan,q))}
+   for(const q of plan.questions){assert.equal(q.choices.length,Math.min(maxChoices,game.questions.find(source=>source.id===q.id).choices.length));assert.ok(q.choices.some(choice=>choice.id===game.corrections[q.id].choiceId));assert.equal(key(game,q),key(plan,q))}
   }
   assert.deepEqual(game,before)
  })
@@ -103,7 +104,7 @@ try {
   let solo=startSession(game,'solo')
   for(const [index,kind] of ['correct','wrong','timeout','correct'].entries()){
    const q=game.questions[index],id=game.corrections[q.id].choiceId
-   solo=transition(game,solo,kind==='timeout'?{type:'TIMEOUT'}:{type:'SELECT',choiceId:kind==='correct'?id:q.choices.find(c=>c.id!==id).id})
+   solo=transition(game,solo,kind==='timeout'?{type:'TIMEOUT'}:{type:'SELECT',choiceId:kind==='correct'?id:q.choices.find(c=>c.id!==id&&!usedMatchingChoices(game,solo,q).includes(c.id)).id})
    assert.equal(solo.phase,'revealed');assert.equal(solo.history.at(-1).correct,kind==='correct');solo=transition(game,solo,{type:'NEXT'})
   }
   const record=compactSession(await newRecord(game,'solo'),solo);assert.deepEqual(replaySession(game,record,await planIdentity(game),Date.now(),'solo').state,solo)

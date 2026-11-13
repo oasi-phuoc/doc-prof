@@ -12,6 +12,7 @@ export type Choice = {
   audio?: string
 }
 export type NumberSequence = { terms: Array<string | null>; target: number; hint?: string }
+export type MatchingGroup = { groupId: string; number: number; total: number }
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
   id: string
@@ -29,6 +30,7 @@ export type Question = {
   prompt: string
   context?: string
   numberSequence?: NumberSequence
+  matchingGroup?: MatchingGroup
   audio?: string
   /** Ordered source clips forming one recording and one listening allowance. */
   audioParts?: string[]

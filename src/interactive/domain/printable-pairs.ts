@@ -4,7 +4,7 @@ import type { Choice } from './types'
 import { hash } from './seeds'
 
 type Card = NonNullable<MathItem['gameBoard']>['cards'][number]
-type Entry = {part:number; image:string; choices:Choice[]; correctId?:string; model:string; teacherLed:boolean}
+type Entry = {part:number; image:string; choices:Choice[]; correctId?:string; model:string; teacherLed:boolean; group?:{number:number;total:number}}
 type Result = {items:Entry[]; issues:string[]}
 type Pair = {part:number; image:string; text:string}
 const key=(value:string)=>value.normalize('NFC').trim().replace(/\s+/g,' ').toLocaleLowerCase('fr')
@@ -57,17 +57,22 @@ export function adaptPrintablePairs(
   const pool=[...new Map(pairs.map(pair=>[key(pair.text),pair.text])).entries()].map(([identity,text])=>({identity,id:`pair-word-${hash(identity)}`,text}))
   if(new Set(pool.map(choice=>choice.id)).size!==pool.length)return fail('Les références des mots ne permettent pas de distinguer ces propositions.')
   if(!pairs.length&&!output.issues.length)output.issues.push('Aucune paire image/mot exploitable dans ces planches.')
+  const unambiguous=pairs.filter(pair=>pairs.filter(other=>other.image===pair.image).length===1&&pairs.filter(other=>key(other.text)===key(pair.text)).length===1)
+  const groups:Pair[][]=[]
+  for(let start=0;start<unambiguous.length;start+=6)groups.push(unambiguous.slice(start,start+6))
+  // A final singleton would have no meaningful alternative: use groups of 5 + 2.
+  if(groups.length>1&&groups.at(-1)!.length===1)groups.at(-1)!.unshift(groups.at(-2)!.pop()!)
   for(const pair of pairs){
     const models=[...new Map(pairs.filter(other=>other.image===pair.image).map(other=>[key(other.text),other.text])).values()]
-    const teacherLed=models.length>1||pool.length<2
+    const groupIndex=groups.findIndex(group=>group.includes(pair)),group=groups[groupIndex]
+    const teacherLed=!group||group.length<2
     const correct=pool.find(choice=>choice.identity===key(pair.text))!
     const rng=createRng(seedFor(frontIndex,pair.part))
-    const choices=teacherLed?[]:shuffle(rng,[correct,...shuffle(rng,pool.filter(choice=>choice.id!==correct.id)).slice(0,5)]).map(({id,text})=>({id,text}))
+    const choices=teacherLed?[]:shuffle(rng,pool.filter(choice=>group.some(other=>key(other.text)===choice.identity))).map(({id,text})=>({id,text}))
     // Keep original paths here: convertRecipe applies image replacements exactly once.
     const original=images.find(({part})=>part===pair.part)!.card
-    output.items.push({part:pair.part,image:original.imageSrc!,choices,...(teacherLed?{}:{correctId:correct.id}),model:models.join(' / '),teacherLed})
-    if(teacherLed)output.issues.push(`Paire ${original.badge} : association à guider, car l’image admet plusieurs mots source ou qu’il manque une alternative.`)
+    output.items.push({part:pair.part,image:original.imageSrc!,choices,...(teacherLed?{}:{correctId:correct.id,group:{number:groupIndex+1,total:groups.length}}),model:models.join(' / '),teacherLed})
+    if(teacherLed)output.issues.push(`Paire ${original.badge} : association à guider, car une image ou un mot est partagé entre plusieurs paires, ou qu’il manque une alternative.`)
   }
-  if(pool.length>6)output.issues.push('Six mots source au maximum sont conservés par image, avec la réponse prévue par la paire.')
   return result
 }

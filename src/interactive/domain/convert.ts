@@ -223,6 +223,7 @@ export function convertRecipe(
               q.prompt='Quel mot correspond à cette image ?';q.instruction='Choisis le mot associé à l’image.'
               q.images=[entry.image];q.choices=entry.choices;q.mode=entry.teacherLed?'oral':'choice'
               q.compatibility=entry.teacherLed?'teacher-led':'assisted'
+              if(entry.group)q.matchingGroup={groupId:`pairs-p${pageIndex}b${blockIndex}i${itemIndex}g${entry.group.number}`, ...entry.group}
               add(q,entry.model,entry.correctId)
             }
             return

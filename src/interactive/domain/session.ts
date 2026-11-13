@@ -4,6 +4,7 @@ import { validateManualVote } from './votes'
 import { retractionRemaining } from './teacher'
 import { captureRound, navigateToRound, runtimeFor, sequenceLength } from './round-runtime'
 import { canListen, maxListensFor } from './listening'
+import { usedMatchingChoices } from './matching'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return captureRound(game, {
@@ -119,7 +120,8 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
       )
       if (
         state.mode !== 'solo' || state.phase !== 'thinking' ||
-        !target?.choices.some((c) => c.id === action.choiceId)
+        !target?.choices.some((c) => c.id === action.choiceId) ||
+        usedMatchingChoices(game, state, target).includes(action.choiceId)
       )
         return state
       const selections = { ...state.selections, [target.id]: action.choiceId }

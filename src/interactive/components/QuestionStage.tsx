@@ -32,11 +32,13 @@ export function QuestionStage({
   imageOrder,
   onImageOrder,
   interactionsDisabled = false,
+  unavailableChoiceIds = [],
 }: {
   canSelect?: boolean
   imageOrder?: number[]
   onImageOrder?: (order: number[]) => void
   interactionsDisabled?: boolean
+  unavailableChoiceIds?: string[]
   q: Question
   phase: Phase
   selected?: string
@@ -47,15 +49,16 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.numberSequence, q.choices, q.images, q.grammarImages, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.numberSequence, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, phase, number]))
   const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
     q.choices.some((entry) => entry.id === correctChoiceId)
   const picturePair=q.mode==='choice'&&q.images.length===1&&q.choices.length>0&&q.choices.every(choice=>!choice.image)&&!q.context&&!q.figure
+  const availableWords=q.choices.length-unavailableChoiceIds.length
   return (
     <>
-      <section ref={section} className={`ci-question${picturePair?' ci-picture-pair':''}`}>
+      <section ref={section} className={`ci-question${picturePair?' ci-picture-pair':''}${q.matchingGroup?' ci-matching-question':''}`}>
         <div className="ci-question-body" tabIndex={report.questionScroll ? 0 : undefined} role={report.questionScroll ? 'region' : undefined} aria-label={report.questionScroll ? 'Question et document à faire défiler' : undefined}>
         <h1 tabIndex={-1} className={number !== undefined ? 'ci-numbered-heading' : undefined}>
           {number !== undefined && (
@@ -63,6 +66,7 @@ export function QuestionStage({
           )}
           <span className="ci-question-prompt">{q.prompt}</span>
         </h1>
+        {q.matchingGroup && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}
         {q.context && (q.figure && q.context.length <= 240
           ? <section className="ci-context ci-figure-context" aria-label="Mesures de la figure"><p>{q.context}</p></section>
           : <ReadingDocument text={q.context} />)}
@@ -105,6 +109,7 @@ export function QuestionStage({
             const slot = slotOffset + i
             const palette = PALETTE[slot]!
             const chosen = selected === choice.id
+            const used = unavailableChoiceIds.includes(choice.id)
             const correctAnswer = showCorrection && choice.id === correctChoiceId
             const verdict =
               phase === 'revealed' && chosen
@@ -115,14 +120,15 @@ export function QuestionStage({
             return (
               <div key={choice.id} className="ci-answer-wrap">
               <button
-                className={`ci-answer${chosen ? ' ci-chosen' : ''}${verdict ? ` ci-answer-${verdict}` : ''}${showCorrection ? correctAnswer ? ' ci-answer-key' : ' ci-answer-muted' : ''}`}
+                className={`ci-answer${chosen ? ' ci-chosen' : ''}${used ? ' ci-answer-used' : ''}${verdict ? ` ci-answer-${verdict}` : ''}${showCorrection ? correctAnswer ? ' ci-answer-key' : ' ci-answer-muted' : ''}`}
                 style={
                   {
                     '--card-color': colors[slot],
                     '--card-ink': inkForColor(colors[slot]!),
                   } as CSSProperties
                 }
-                disabled={!canSelect}
+                disabled={!canSelect || used}
+                aria-label={used ? `${palette.letter}. ${choice.text} · déjà associé` : undefined}
                 aria-pressed={chosen}
                 onClick={() => onSelect(choice.id)}
               >

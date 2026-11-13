@@ -2,6 +2,8 @@
 .ci-app .ci-figure-context { width: auto; margin: 6px auto; padding: 6px 10px; }
 .ci-app .ci-figure-context p { font-size: clamp(18px, 2vw, 26px); line-height: 1.35; }
 .ci-answer-wrap { display: contents; }
+.ci-app .ci-matching-progress { margin: 0 0 6px; text-align: center; font-size: 14px; font-weight: 650; }
+.ci-app .ci-answer-used:not(.ci-answer-key) { background: #e7e7e7; color: #555; border-color: #777; filter: grayscale(1); }
 .ci-app .ci-round-question .ci-question.ci-picture-pair { max-height: 60%; }
 .ci-app .ci-picture-pair .ci-stimulus-images .ci-image-zoom { display: flex; align-items: center; justify-content: center; }
 .ci-app [data-ci-fit] { display: flex; flex-direction: column; height: var(--ci-fit-height); min-height: 0; gap: 8px; }
@@ -44,7 +46,19 @@
 .ci-readability-frame { position: fixed; top: 0; left: -100000px; border: 0; pointer-events: none; visibility: hidden; }
 @media screen and (max-width: 700px) {
   .ci-app.ci-playing .ci-round-question .ci-question.ci-picture-pair { max-height: 55%; }
-  .ci-app.ci-playing .ci-picture-pair .ci-stimulus-images img { height: clamp(84px, 17dvh, 150px); }
+  .ci-app.ci-playing .ci-picture-pair .ci-stimulus-images > .ci-image-zoom img { height: clamp(84px, 17dvh, 150px); }
+  /* Reserve complete 44px answer rows before fitting the matching illustration.
+     The picture uses the space left by its title, rather than the whole viewport. */
+  .ci-app.ci-playing .ci-round-question { --ci-pair-answer-space: 152px; }
+  .ci-app.ci-playing .ci-round-question:has(> .ci-count-3, > .ci-count-4) { --ci-pair-answer-space: 102px; }
+  .ci-app.ci-playing .ci-round-question:has(> .ci-count-2) { --ci-pair-answer-space: 52px; }
+  .ci-app.ci-playing .ci-round-question .ci-question.ci-matching-question { display: flex; flex-direction: column; height: min(55%, calc(100% - var(--ci-pair-answer-space))); max-height: min(55%, calc(100% - var(--ci-pair-answer-space))); }
+  .ci-app.ci-playing .ci-matching-question .ci-question-body { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+  .ci-app.ci-playing .ci-matching-question h1,
+  .ci-app.ci-playing .ci-matching-progress { flex: 0 0 auto; }
+  .ci-app.ci-playing .ci-matching-question .ci-stimulus-images { flex: 1; min-height: 44px; container-type: size; }
+  .ci-app.ci-playing .ci-matching-question .ci-stimulus-images > .ci-image-zoom { height: 100%; }
+  .ci-app.ci-playing .ci-matching-question .ci-stimulus-images > .ci-image-zoom img { height: 100cqh; max-height: 150px; }
   /* A short shape question needs room for the complete drawing as well as its title. */
   .ci-app.ci-playing .ci-round-question .ci-question:has(.ci-figure):not(:has(.ci-context)) { max-height: 55%; }
   .ci-app.ci-playing .ci-round-question .ci-question:has(.ci-figure):not(:has(.ci-context)) .ci-figure { height: 65px; margin: 4px auto; }
