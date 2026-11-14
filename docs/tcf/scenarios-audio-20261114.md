@@ -4,14 +4,14 @@ La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.m
 
 **Priorité demandée : générer les scènes avant les trios, en commençant par A1 puis A2.** Aucun nouveau trio QCM n’est ajouté pendant cette reprise.
 
-**96 dialogues** conviennent à une association de scènes. **45 sont liés à une scène disponible** ; **51 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **66 pistes**, contre 21 auparavant.
+**96 dialogues** conviennent à une association de scènes. **49 sont liés à une scène disponible** ; **47 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **70 pistes**, contre 21 auparavant.
 
 | Nouveaux supports | Candidats | Avec scène disponible | À terminer |
 |---|---:|---:|---:|
 | A1 | 41 | 23 | 18 |
-| A2 | 39 | 21 | 18 |
+| A2 | 39 | 25 | 14 |
 | B1 | 16 | 1 | 15 |
-| Total | 96 | 45 | 51 |
+| Total | 96 | 49 | 47 |
 
 Les **250 autres supports** gardent leurs formats de compréhension : 188 messages, annonces ou prises de position, 18 suites de phrases ou consignes, quatre échanges essentiellement temporels, cinq descriptions ou questionnaires et 35 documents longs. Cette catégorie ne signifie pas que leur transcription est incorrecte.
 
@@ -29,7 +29,9 @@ La [suite des six scènes A2](generation-scenarios-a2-suite-20261114.json) est t
 
 Le [complément A1](scenes-a1-complement-20261114.md) ajoute **13 PNG natifs**, **quatre liaisons** et **neuf préparations avec personnes à vérifier**. Les prénoms seuls ne valident pas le genre représenté. **Aucune situation A1 candidate ne reste sans image liée ou préparée.** À la fin de ce complément A1, les 60 attentes comprenaient 22 images préparées à vérifier et 38 situations sans image préparée (23 A2, 15 B1). [Registre](generation-scenarios-a1-complement-20261114.json) et [comparaison des banques](verification-scenes-a1-complement-20261114.json).
 
-Le [complément de douze scènes A2](scenes-a2-complement-20261114.md) ajoute **neuf liaisons** et **trois préparations avec personnes à vérifier**. Les compositions liées montrent les rôles documentés ; leurs interlocuteurs non confirmés restent hors cadre. Le lot respecte la commande de roses blanches au stade de l’échantillon, la proposition du pull et les actions encore projetées. **Reste courant : 26 situations sans image préparée (11 A2, 15 B1) et 25 liaisons à vérifier (18 A1, sept A2).** [Registre](generation-scenarios-a2-complement-20261114.json) et [preuves](verification-scenes-a2-complement-20261114.json).
+Le [complément de douze scènes A2](scenes-a2-complement-20261114.md) ajoute **neuf liaisons** et **trois préparations avec personnes à vérifier**. Les compositions liées montrent les rôles documentés ; leurs interlocuteurs non confirmés restent hors cadre. Le lot respecte la commande de roses blanches au stade de l’échantillon, la proposition du pull et les actions encore projetées. À la fin de ce complément, il restait 26 situations sans image préparée (11 A2, 15 B1) et 25 liaisons à vérifier (18 A1, sept A2). [Registre](generation-scenarios-a2-complement-20261114.json) et [preuves](verification-scenes-a2-complement-20261114.json).
+
+La [fin des illustrations A2](scenes-a2-final-20261114.md) ajoute **neuf PNG natifs et un réemploi pour deux supports**, soit onze situations illustrées. **Quatre liaisons** sont activées et **sept scènes** gardent une vérification des personnes. **Reste courant : 15 situations B1 sans image et 32 liaisons à vérifier (18 A1, 14 A2).** Toutes les situations A1/A2 candidates sont désormais illustrées. [Registre](generation-scenarios-a2-final-20261114.json) et [preuves](verification-scenes-a2-final-20261114.json).
 
 **Contrôle demandé sur les personnes :** vérifier les rôles, les destinataires de « Monsieur » et « Madame », les accords et les personnages nommés. L’apparence ou une estimation de hauteur de voix ne prouvent pas une identité de genre. Les cas non documentés restent en attente ; un enseignant peut rester hors cadre quand la source ne précise pas son genre. Les élèves figurants d’un groupe ne reçoivent pas arbitrairement la voix d’un locuteur précis. Aucune écoute humaine n’est attestée.
 
@@ -39,7 +41,7 @@ La [comparaison des six banques](verification-scenes-priorite-20261114.json) con
 
 Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les scènes activées sont liées aux audios du sélecteur. Galerie : **6 641 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
 
-Les contrôles couvrent les empreintes, les rôles documentés et l’exclusion des vingt-cinq attentes illustrées, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le rapport [Chromium prioritaire](scenarios-priorite-20261114-browser.json) complète celui du [premier lot](scenarios-audio-20261114-browser.json).
+Les contrôles couvrent les empreintes, les rôles documentés et l’exclusion des trente-deux attentes illustrées, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le rapport [Chromium prioritaire](scenarios-priorite-20261114-browser.json) complète celui du [premier lot](scenarios-audio-20261114-browser.json).
 
 ```sh
 node scripts/check-tcf-association-images.mjs
@@ -52,4 +54,6 @@ Le [contrôle Chromium A2](scenarios-a2-suite-20261114-browser.json) charge les 
 
 Le [contrôle Chromium du complément A1](scenarios-a1-complement-20261114-browser.json) charge 18 images sur trois associations et les 13 nouveaux PNG dans la galerie. Les 12 tests de catalogues, TypeScript, la compilation et les 600 tirages passent. Galerie à la fin du complément A1 : **6 878 images**. Aucun QCM, corrigé ou audio modifié.
 
-Le [contrôle Chromium du complément A2](scenarios-a2-complement-20261114-browser.json) charge les neuf nouvelles liaisons sur trois associations (18 images) et les douze nouveaux PNG au catalogue. Les 600 tirages, 12 tests des catalogues, TypeScript et la compilation passent. Galerie actuelle : **6 896 images**. Aucun QCM, corrigé ou audio modifié.
+Le [contrôle Chromium du complément A2](scenarios-a2-complement-20261114-browser.json) charge les neuf nouvelles liaisons sur trois associations (18 images) et les douze nouveaux PNG au catalogue. Les 600 tirages, 12 tests des catalogues, TypeScript et la compilation passent. Galerie à la fin du complément A2 : **6 896 images**. Aucun QCM, corrigé ou audio modifié.
+
+Le [contrôle Chromium des dernières scènes A2](scenarios-a2-final-20261114-browser.json) couvre les quatre nouvelles liaisons sur deux associations (12 images), puis les neuf nouveaux PNG et le réemploi dans la galerie. Les 600 tirages, 12 tests des catalogues, TypeScript et la compilation passent. Galerie actuelle : **6 912 images**. Les deux sources utilisant le même arrêt de bus sont exclues d’un tirage commun.

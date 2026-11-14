@@ -1,0 +1,607 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "fb05edeeaa3c3deb3e6e3b1d162412d0f820ae11",
+  "scope": "Dernières onze situations A2 sans image : neuf PNG originaux et réemploi d’un arrêt de bus pour deux supports. Quatre nouvelles liaisons, sept images avec personnes à vérifier. Aucun texte, audio, question ou corrigé modifié.",
+  "summary": {
+    "original_pngs": 9,
+    "reused_images": 1,
+    "prepared_scene_uses": 11,
+    "new_scenario_audio_bindings": 4,
+    "awaiting_gender_confirmation": 7,
+    "remaining_scenes": 47,
+    "total_bound_scenario_sources": 70,
+    "generation_calls": 11,
+    "rejected_generations": 2,
+    "a2_without_prepared_image": 0
+  },
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "2e8304a9df8752b131b94994751ddf6992918a10161fff53e2c05c1cdfea0bf3",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "identical_to_baseline": true
+    }
+  ],
+  "native_pngs": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-tour-voiture-sport.png",
+      "sha256": "b67697d43bfe108c06c9f38d162ee731deaccad36b9533e31e091b1c4cf94138",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "documented_roles_match"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-remerciements-retour-visite-iles.png",
+      "sha256": "81cc26bb8436c05304c952c1f56640978a6c45c62b5291793a7955ea6745d8b2",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "documented_roles_match"
+    }
+  ],
+  "reuses": [
+    {
+      "key": "scenario-arret-bus-reemploi",
+      "label": "L'arrêt de bus",
+      "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "width": 1280,
+      "height": 960,
+      "existing_bytes_preserved": true,
+      "visual_review": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-02",
+        "tcf-delf-actif-a2-043-04-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-02",
+          "transcription": "Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+          "source_sha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+          "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485"
+        },
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-04",
+          "transcription": "Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+          "source_sha256": "3b3232d68f1fe52ab2e8d6ec72b712dd78417f66e118657d7d306f9be792d90a",
+          "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb"
+        }
+      ]
+    }
+  ],
+  "new_qcm_trios": 0,
+  "audio_files_modified": 0,
+  "transcriptions_modified": 0,
+  "questions_modified": 0,
+  "answers_modified": 0,
+  "human_audio_listening_performed": false,
+  "checks": {
+    "scenario_draws": 600,
+    "scenario_sources": 70,
+    "approved_decoys": 10,
+    "active_audio_question_pools": 1371,
+    "context_question_reviews": 1021,
+    "catalogue_tests": 12,
+    "typescript": true,
+    "production_build": true,
+    "browser": {
+      "report": "docs/tcf/scenarios-a2-final-20261114-browser.json",
+      "pages": 2,
+      "association_images": 12,
+      "gallery_images": 10,
+      "errors": []
+    },
+    "new_pending_person_bindings_excluded": 7,
+    "shared_bus_exclusion": true
+  },
+  "remaining_by_level": [
+    {
+      "level": "A1",
+      "candidates": 41,
+      "bound": 23,
+      "pending": 18,
+      "with_prepared_image": 18,
+      "without_prepared_image": 0
+    },
+    {
+      "level": "A2",
+      "candidates": 39,
+      "bound": 25,
+      "pending": 14,
+      "with_prepared_image": 14,
+      "without_prepared_image": 0
+    },
+    {
+      "level": "B1",
+      "candidates": 16,
+      "bound": 1,
+      "pending": 15,
+      "with_prepared_image": 0,
+      "without_prepared_image": 15
+    }
+  ],
+  "remaining_scenarios": [
+    {
+      "exercise": "tcf-delf-actif-a1-019-03",
+      "level": "A0-A1",
+      "title": "Le déjeuner du samedi",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png",
+      "reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-029-01",
+      "level": "A0-A1",
+      "title": "L’entraînement de rugby",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-030-01",
+      "level": "A0-A1",
+      "title": "Déjeuner à la maison",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-rentrer-dejeuner-maison.png",
+      "reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-030-02",
+      "level": "A0-A1",
+      "title": "Le mal de ventre",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-01",
+      "level": "A0-A1",
+      "title": "Des livres sur les volcans",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-02",
+      "level": "A0-A1",
+      "title": "La musique et la lecture",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-03",
+      "level": "A0-A1",
+      "title": "Le jeu sur ordinateur",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+      "prepared_image": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-04",
+      "level": "A0-A1",
+      "title": "Les sorties avec les copains",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-01",
+      "level": "A0-A1",
+      "title": "Le poisson et son accompagnement",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-02",
+      "level": "A0-A1",
+      "title": "Le compas emprunté",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-04",
+      "level": "A0-A1",
+      "title": "Osman au tableau",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-osman-comprehension-ecrite.png",
+      "reason": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-050-04-04",
+      "level": "A0-A1",
+      "title": "Diego à l’infirmerie",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-01",
+      "level": "A0-A1",
+      "title": "Luca et Tessa",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-luca-tessa-rencontre.png",
+      "reason": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-03",
+      "level": "A0-A1",
+      "title": "Découvrir le saut en hauteur",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-01",
+      "level": "A0-A1",
+      "title": "Le dossier de classe de neige",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige.png",
+      "reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-02",
+      "level": "A0-A1",
+      "title": "Changer de place",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-03",
+      "level": "A0-A1",
+      "title": "Les résultats de Mateo",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mateo-resultats-baisse.png",
+      "reason": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-04",
+      "level": "A0-A1",
+      "title": "Le sac au vestiaire",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-030-04",
+      "level": "A1-A2",
+      "title": "Le trajet jusqu’au lycée",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-01",
+      "level": "A1-A2",
+      "title": "La décoration avec Mélanie",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-melanie-decoration-maison.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-02",
+      "level": "A1-A2",
+      "title": "La fin des vacances",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-03",
+      "level": "A1-A2",
+      "title": "La pizza de ce soir",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-03",
+      "level": "A1-A2",
+      "title": "L’erreur de place réservée",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-01",
+      "level": "A1-A2",
+      "title": "L’intérieur de Versailles",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-03",
+      "level": "A1-A2",
+      "title": "La plante pour un anniversaire",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-03",
+      "level": "A1-A2",
+      "title": "Le chien devant la pâtisserie",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-02",
+      "level": "A1-A2",
+      "title": "Le shampoing et le dentifrice",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-04",
+      "level": "A1-A2",
+      "title": "Choisir un nouveau téléphone",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-02",
+      "level": "A1-A2",
+      "title": "La raclette au restaurant",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-03",
+      "level": "A1-A2",
+      "title": "Attendre la météo",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-04",
+      "level": "A1-A2",
+      "title": "Le téléphérique",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-01",
+      "level": "A1-A2",
+      "title": "Une visite des îles",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-01",
+      "level": "A2-B1",
+      "title": "La tenue pour le lycée",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-01.mp3",
+      "prepared_image": null,
+      "reason": "Mère conseillant une tenue contre pluie et fraîcheur avant le lycée ; ne pas montrer seulement le soleil annoncé plus tard."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-02",
+      "level": "A2-B1",
+      "title": "Le choix des plats",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+      "prepared_image": null,
+      "reason": "Choix de repas à trois, poisson, viande/légumes et moussaka ; respecter les trois interlocuteurs et ne pas substituer un menu de deux personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-03",
+      "level": "A2-B1",
+      "title": "La place dans la file",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-03.mp3",
+      "prepared_image": null,
+      "reason": "Discussion d’ordre dans une file, avec une femme en veste blanche au guichet ; pas simple foule sans cet indice."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-04",
+      "level": "A2-B1",
+      "title": "Le départ pour la séance",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-04.mp3",
+      "prepared_image": null,
+      "reason": "Organisation d’un départ pour une séance ; pas de salle ou d’heure ajoutées, ne pas montrer le départ comme déjà réalisé."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-05",
+      "level": "A2-B1",
+      "title": "La visite à Mamie",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+      "prepared_image": null,
+      "reason": "Projet de visite à la grand-mère au club ; ne pas réutiliser sans contrôle la scène où elle attend un déjeuner chez elle."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-002-03",
+      "level": "A2-B1",
+      "title": "Le témoin de l’accident",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-002-03.mp3",
+      "prepared_image": null,
+      "reason": "Cycliste témoignant auprès d’un policier d’un accident voiture/scooter ; ne pas dessiner une collision vélo seule comme récit exact."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-012-01",
+      "level": "A2-B1",
+      "title": "Un contrôle de police",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-012-01.mp3",
+      "prepared_image": null,
+      "reason": "Contrôle de motocycliste sans casque par un policier, puis aide envisagée aux grands-parents ; dialogue long mais situation suivie. Ne pas montrer le casque porté."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-01",
+      "level": "A2-B1",
+      "title": "Réviser pour demain",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-01.mp3",
+      "prepared_image": null,
+      "reason": "Enseignante face à la protestation d’élèves sur une révision ; pas de trente pages fictivement lisibles ni horaire inventé."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-02",
+      "level": "A2-B1",
+      "title": "Une nouvelle trottinette",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
+      "prepared_image": null,
+      "reason": "Discussion d’une nouvelle trottinette ; ne pas représenter automatiquement une conduite sur chaussée, lieu non dit."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-03",
+      "level": "A2-B1",
+      "title": "Un exercice non fait",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-03.mp3",
+      "prepared_image": null,
+      "reason": "Exercice non fait pour cause de contrôle médical ; distinguer justification après la visite et consultation en cours."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-04",
+      "level": "A2-B1",
+      "title": "Une sortie après les révisions",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-04.mp3",
+      "prepared_image": null,
+      "reason": "Discussion sur sortie et révisions ; pas de note chiffrée ni parent de genre inventé."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-05",
+      "level": "A2-B1",
+      "title": "Trop de choses à faire",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-05.mp3",
+      "prepared_image": null,
+      "reason": "Invitation refusée faute de disponibilité avec travail et visites attendues ; ne pas imposer un métier ou un lieu non donné."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-038-01-01",
+      "level": "A2-B1",
+      "title": "Les loisirs citoyens",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-01-01.mp3",
+      "prepared_image": null,
+      "reason": "Discussion d’un projet citoyen et d’un puzzle collectif en bois ; dialogue long, une illustration complète du projet reste à préparer."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-040-01-01",
+      "level": "A2-B1",
+      "title": "Choisir un cadeau pour Patrick",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+      "prepared_image": null,
+      "reason": "Amies cherchant un cadeau et envisageant un accessoire moto ; pas de montre comme décision finale, la personne en possède déjà une."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-041-01-01",
+      "level": "A2-B1",
+      "title": "Des boîtes à livres dans les quartiers",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
+      "prepared_image": null,
+      "reason": "Lycéen stagiaire interviewant une femme sur un projet de boîtes à livres ; ne pas montrer l’installation comme un fait accompli, pas d’adresse inventée."
+    }
+  ],
+  "catalogues": {
+    "images": 6912,
+    "audio_files": 8801,
+    "questions": 6634,
+    "response_formats": 14856
+  },
+  "post_integration": {
+    "upstream_commit": "3cb31b4687233b6de991f3a3e05a0bc784eb3c37",
+    "retained_upstream_changes": "Interrogations et classification Gattegno ; sept captures supplémentaires indexées, distinctes des illustrations TCF.",
+    "upstream_screenshots": 7,
+    "scenario_draws": 600,
+    "catalogue_tests": 12,
+    "upstream_interrogative_tests": 12,
+    "total_unit_tests": 24,
+    "typescript": true,
+    "production_build": true,
+    "browser_report": "docs/tcf/scenarios-a2-final-20261114-browser.json",
+    "banks_identical_to_upstream": true
+  }
+}
