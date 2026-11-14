@@ -1,42 +1,46 @@
 # Avancement du curriculum Grammaire — 14 novembre 2026
 
-Référence : [cahier des charges v2](cahier-des-charges-v2.md) et [registre détaillé](target-registry.json). Base intégrée au lancement : `165f1027` ; dernière intégration : `55677f81`. Les compteurs décrivent des banques relues par l’assistant, accessibles en **pilote explicite** ; aucune variante n’est déclarée approuvée par un enseignant.
+Référence : [cahier des charges v2](cahier-des-charges-v2.md) et [registre détaillé](target-registry.json). Base de cette tranche : `73a261b5`. Les banques sont relues par l’assistant et accessibles en **pilote explicite**. Aucune unité n’est déclarée approuvée par un enseignant.
 
-## Ajout de ce lot
+## Dernière tranche — présent A1
 
-| Notion | Niveaux | Activités distinctes | Offres niveau/présentation | Unités sélectionnables | Variantes |
-| --- | --- | ---: | ---: | ---: | ---: |
-| Verbes en -ir | A1, A2 | 4 | 8 | 300 | 400 |
-| Verbes en -re et -oir | A1, A2 | 4 | 8 | 300 | 400 |
-| Total ajouté | 4 couples notion/niveau | 8 | 16 | 600 | 800 |
+| Notion | Activités | Offres | Unités sélectionnables | Variantes |
+| --- | ---: | ---: | ---: | ---: |
+| Verbes modaux | 7 | 8 | 320 | 410 |
+| Verbes pronominaux | 5 | 6 | 250 | 300 |
+| Négation ne…pas | 4 | 5 | 200 | 250 |
+| Autres négations A1 | 2 | 3 | 100 | 150 |
+| Ajout total | 18 | 22 | 870 | 1 110 |
 
-Chaque banque contient 50 unités. En A1, 200 unités sont réemployées pour les complétions et mises en ordre. En A2, **100 contextes nouveaux** sont partagés entre quatre tâches : ce sont 400 unités d’activité, pas 400 contextes nouveaux. Le QCM et la lacune partagent une seule activité, avec leur propre présentation.
+Les verbes modaux ajoutent 50 tâches écrites, 50 tâches orales et 50 jeux de rôle ouverts avec rôles, contraintes et relances, issus des mêmes 50 situations communicatives. Ils ajoutent aussi 20 documents et 60 questions de lecture avec preuves exactes. Ces réemplois ne sont pas présentés comme des contextes nouveaux supplémentaires.
 
-Les modèles A2 varient les sujets, les verbes et les situations. Les transformations adaptent les possessifs, la négation et, lorsque nécessaire, le verbe d’une proposition liée. Exemples : « Tu perds du temps quand tu cherches tes clés » → « Vous perdez du temps quand vous cherchez vos clés » ; « Les apprenties ne sortent pas de l’atelier sans leur casque » → « Elle ne sort pas de l’atelier sans son casque ».
+Les transformations pronominales changent ensemble le sujet, le pronom réfléchi et le verbe. La négation simple traite ne/n’, pas et les articles de/d’. Les autres négations A1 disposent de 50 contextes naturels, avec indices de sens et infinitifs. Les sources historiques restent intactes ; les corrections éditoriales sont appliquées aux nouvelles banques.
 
-Les mises en ordre A2 contiennent **44 phrases positives et 6 négatives**, soit 50 en mode Mixte. L’interface indique ces capacités ; les tirages trop grands sont limités ou refusés, sans doublon ni changement silencieux de filtre.
+Les mises en ordre pronominales sont positives, y compris « plus tôt » : ce comparatif n’est pas une négation. Les mises en ordre de négation sont exclusivement négatives ; choisir Négative pour tirer les 50 unités. Les filtres incompatibles annoncent leur capacité réelle et ne remplacent pas les phrases.
 
-Relecture de toutes les unités : [IR A1/A2](ir-a1-a2-relecture.md), [RE/OIR A1/A2](re-oir-a1-a2-relecture.md). Les recettes conservent la sélection, les propositions, les mots et les corrigés ; les productions ouvertes restent appréciées par l’enseignant.
+Relectures complètes : [modaux](modaux-a1-relecture.md), [pronominaux](pronominaux-a1-relecture.md), [ne…pas](a8-a1-relecture.md), [autres négations](a9-a1-relecture.md). Les tâches ouvertes ne reçoivent aucune note automatique. Les modèles restent au corrigé.
 
-## Couverture cumulée et reste à fournir
+La tranche précédente IR/RE-OIR A1/A2 reste disponible : 600 unités et 800 variantes, documentées dans [IR](ir-a1-a2-relecture.md) et [RE/OIR](re-oir-a1-a2-relecture.md).
 
-| Mesure | Pilotes disponibles | Cible | Sans banque pilote à ce stade |
+## Couverture cumulée
+
+| Mesure | Pilotes disponibles | Cible | Sans banque pilote |
 | --- | ---: | ---: | ---: |
-| Notions | 10 | 98 | 88 |
-| Couples notion/niveau | 13 | 123 | 110 |
-| Activités distinctes | 44 | 424 | 380 |
-| Offres activité/niveau/présentation | 63 | 601 | 538 |
+| Notions | 14 | 98 | 84 |
+| Couples notion/niveau | 17 | 123 | 106 |
+| Activités distinctes | 62 | 424 | 362 |
+| Offres activité/niveau/présentation | 85 | 601 | 516 |
 
-**2 440 unités sélectionnables et 3 170 variantes de réponse** sont disponibles. Les 40 documents et 120 questions de lecture restent inchangés : les documents sont compris dans les unités sélectionnables et leurs questions dans les variantes. Une activité déjà disponible peut encore nécessiter d’autres offres ou niveaux ; les colonnes ne s’additionnent pas.
+**3 310 unités sélectionnables et 4 280 variantes** sont disponibles, dont **60 documents et 180 questions de lecture**. Les documents sont inclus dans les unités sélectionnables ; leurs questions sont comptées dans les variantes. Les colonnes ne s’additionnent pas : une activité disponible peut encore avoir d’autres niveaux à fournir.
 
-Le [relevé des 601 offres et de l’action restante pour chacune](reste-a-faire-20261114.csv) distingue les 63 pilotes à faire approuver des 538 offres à préparer. Le CSV utilise le point-virgule pour l’ouverture dans un tableur.
+Le [CSV des 601 offres](reste-a-faire-20261114.csv) indique pour chacune l’action restante : approbation enseignante des 85 pilotes, ou préparation des 516 autres offres. Il s’ouvre dans un tableur avec le séparateur point-virgule.
 
 ## Offres par thème
 
 | Thème | Pilotes | Cible | À préparer |
 | --- | ---: | ---: | ---: |
 | Se présenter | 0 | 40 | 40 |
-| Conjuguer au présent | 45 | 72 | 27 |
+| Conjuguer au présent | 67 | 72 | 5 |
 | Parler du passé | 6 | 49 | 43 |
 | Parler de l'avenir | 0 | 27 | 27 |
 | Décrire | 0 | 63 | 63 |
@@ -55,15 +59,13 @@ Le [relevé des 601 offres et de l’action restante pour chacune](reste-a-faire
 | S'expliquer et argumenter | 0 | 15 | 15 |
 | Exprimer quelque chose | 5 | 63 | 58 |
 
-## Suite selon le cahier des charges
+## Suite du cahier des charges
 
-1. Poursuivre les notions A1 de conjugaison : verbes modaux et pronominaux, négation simple et autres négations, en respectant les activités précises du registre.
-2. Étendre les autres thèmes A1 puis les niveaux A2 et B1 manquants, avec des différences pédagogiques réelles entre niveaux.
-3. Rédiger les banques complètes de dialogue/situation et les onze obligations illustrées. Les essais techniques existants restent hors quotas ; pour la grammaire, réemployer les médias disponibles.
-4. Compléter la manipulation de toutes les associations dans un tableau. L’interface actuelle propose les paires successivement.
-5. Faire relire et approuver toutes les unités par un enseignant avant publication pédagogique. Les 63 offres pilotes sont des aperçus, pas des offres approuvées.
-6. Composer les révisions G6 à partir des banques prêtes, puis achever la recette G7 : médias, sauvegardes, niveaux, A4, tableau et guide.
+1. Compléter les cinq offres A2 des autres négations pour terminer le thème Conjuguer au présent. Les offres A1 prévues de ce thème disposent désormais toutes de banques pilotes.
+2. Poursuivre les autres thèmes A1 puis les extensions A2/B1 manquantes, avec des différences pédagogiques réelles entre niveaux.
+3. Généraliser les banques de dialogue/situation et remplir les onze obligations illustrées, avec les médias existants. Les essais techniques ne remplacent pas des banques complètes.
+4. Compléter la manipulation de toutes les associations dans un tableau : l’interface actuelle propose les paires successivement.
+5. Faire relire et approuver toutes les unités par un enseignant avant publication pédagogique ; les tests automatiques ne constituent pas cette approbation.
+6. Composer les révisions G6, puis achever la recette G7 des niveaux, supports, sauvegardes, A4, tableau et guide.
 
-La divergence historique du test global de théorie (99 fiches attendues, 98 fiches actuelles avec alias a5 → a4) reste un point distinct documenté. Aucun contenu de théorie n’est changé pour masquer cette divergence.
-
-Les modifications TCF arrivées sur main sont conservées. Ce lot grammatical ne modifie aucun audio, transcription ou banque CO. Les preuves reproductibles sont consignées dans [verification.json](verification.json).
+La divergence historique du test global de théorie (99 fiches attendues, 98 fiches actuelles avec alias a5 → a4) reste un point distinct. Aucun contenu de théorie n’est réécrit pour masquer cette divergence. Aucun audio, transcription ou banque CO n’est modifié par cette tranche. Les preuves figurent dans [verification.json](verification.json).
