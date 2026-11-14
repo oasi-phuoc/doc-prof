@@ -6,15 +6,15 @@
   "summary": {
     "supports": 346,
     "scenario_eligible": 96,
-    "scenario_bound": 18,
-    "scenario_pending": 78,
+    "scenario_bound": 30,
+    "scenario_pending": 66,
     "prior_bound": 21,
-    "total_bound": 39,
+    "total_bound": 51,
     "decisions": {
       "keep_message_announcement_or_discourse": 188,
       "keep_temporal_exchange": 4,
-      "eligible_scene_pending": 78,
-      "eligible_bound_scene": 18,
+      "eligible_scene_pending": 66,
+      "eligible_bound_scene": 30,
       "keep_sequence": 18,
       "keep_description_or_preferences": 5,
       "keep_long_document": 35
@@ -23,8 +23,8 @@
       "A0-A1": {
         "keep_message_announcement_or_discourse": 73,
         "keep_temporal_exchange": 2,
-        "eligible_scene_pending": 34,
-        "eligible_bound_scene": 7,
+        "eligible_scene_pending": 22,
+        "eligible_bound_scene": 19,
         "keep_sequence": 4
       },
       "A1-A2": {
@@ -44,8 +44,10 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 7,
-    "new_scene_image_uses": 8
+    "new_original_pngs": 27,
+    "new_scene_image_uses": 20,
+    "priority_scene_reuses": 0,
+    "priority_prepared_scene_uses": 21
   },
   "supports": [
     {
@@ -716,7 +718,18 @@
       "evidenceQuote": "t’entraîner pour le match de rugby",
       "reason": "Proposition d’entraînement de rugby ; ballon et terrain adaptés, pas de football.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Invitation entre deux adolescents au bord du terrain ; ballon ovale et poteaux en H, aucun ballon rond ni match déjà joué. Appareil auditif discret comme choix illustratif inclusif ; aucune nationalité déduite des visages.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "preparedImageSha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-02",
@@ -735,8 +748,22 @@
       ],
       "evidenceQuote": "votre nouveau professeur",
       "reason": "Accueil d’un nouveau professeur homme ; ne pas réutiliser une scène de professeure.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouveau-professeur.png",
+      "imageSha256": "ecc4523f25dc8c7c2f7df11b94c925d5793f840b6ebab095da19bd422314f1a0",
+      "visualReview": "Professeur homme saluant trois élèves adolescents ; tableau vierge, aucun cours ou résultat ajouté. Personnages et pieds complets, peinture douce et paysage natif 4:3.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Bonjour, je suis votre nouveau professeur de Français. Bonjour Monsieur."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-029-03",
@@ -755,8 +782,26 @@
       ],
       "evidenceQuote": "je cherche dans mon sac",
       "reason": "Deux élèves filles cherchent le cahier de sciences dans un sac ; pas de remise de dictionnaire.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
+      "imageSha256": "37e4b974a8c70c2d158e78f1a60cccecda07917401959d7f3095bf30f748be83",
+      "visualReview": "Deux élèves ; l’une cherche dans son sac, l’autre attend le cahier. Aucun cahier retrouvé ou remis : l’oubli annoncé reste respecté. Visages distincts, silhouettes et chaussures entières.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "deux élèves féminines",
+            "quote": "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ?"
+          },
+          {
+            "role": "élève qui cherche, accord féminin",
+            "quote": "Désolée … j’oublie toujours ton cahier."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-029-04",
@@ -775,8 +820,22 @@
       ],
       "evidenceQuote": "Tu es toujours en retard",
       "reason": "Élève Nicolas arrivant en retard et s’excusant devant un professeur homme.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-retard-professeur.png",
+      "imageSha256": "ffd25c9be6020e7657176ec8fff3869bd840849332d434c5d27446d1d6346e34",
+      "visualReview": "Élève arrivant pendant le cours, geste d’excuse et professeur homme conforme à Monsieur. Pas d’heure, de retard chiffré ni de scène humiliante ; cadrage complet.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme et élève Nicolas",
+            "quote": "Bonjour monsieur. Bonjour Nicolas."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-029-05",
@@ -796,8 +855,22 @@
       ],
       "evidenceQuote": "la salle de spectacle Mitterrand",
       "reason": "Jeune homme demandant son chemin à une femme ; pas de bâtiment présenté comme l’authentique salle Mitterrand.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
+      "imageSha256": "773cfa399c324d71adbd9d36fa3e14bbf807151c5d6ee0a3ca7900b9ae6b259e",
+      "visualReview": "Jeune homme demandant son chemin à une femme qui indique une direction. Destination hors cadre : aucune fausse salle Mitterrand, rue ou distance inventée. Figures et chaussures entières.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "femme indiquant le chemin et jeune homme",
+            "quote": "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-029-06",
@@ -816,8 +889,22 @@
       ],
       "evidenceQuote": "je dois préparer un exposé",
       "reason": "Enseignante proposant son aide à une élève pour un exposé ; ne pas inventer la matière.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+      "imageSha256": "f31d384ceb6143c76ecf050ee5ce6fb0a8a0609fd6c33a0071f1469bfd59f630",
+      "visualReview": "Enseignante et élève préparant un exposé, sans sujet inventé. Bureau accessible et fauteuil visibles en entier ; le fauteuil est un choix de représentation inclusive et ne constitue pas une information à tirer de l’audio.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante et élève Nina",
+            "quote": "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-030-01",
@@ -858,7 +945,18 @@
       "evidenceQuote": "aller voir ton médecin",
       "reason": "Personne souffrant du ventre à qui une femme conseille un médecin ; ne pas présenter une consultation déjà réalisée.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Élève indiquant son ventre douloureux à une enseignante ; conseil avant une éventuelle consultation, aucun médecin, médicament ou diagnostic ajouté.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "preparedImageSha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-030-03",
@@ -877,8 +975,22 @@
       ],
       "evidenceQuote": "un certificat de scolarité",
       "reason": "Élève demandant un certificat à une employée de secrétariat scolaire, aucun contenu nominatif inventé.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-certificat-scolarite.png",
+      "imageSha256": "bc29b596515fa8e326b47e095baf8b29a21db6ac047ceea01c61ad1a079c828b",
+      "visualReview": "Jeune élève et secrétaire femme au collège ; certificat demandé et en préparation, aucun document déjà remis ni nom écrit. Bureau scolaire distinct d’une consultation médicale.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "secrétaire femme et élève Carlos Garcia",
+            "quote": "Bonjour Madame. Ma famille a besoin d’un certificat de scolarité au collège. À quel nom ? Carlos Garcia."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-030-04",
@@ -921,7 +1033,18 @@
       "evidenceQuote": "des livres de sciences",
       "reason": "Recherche documentaire sur les volcans en bibliothèque ; le rayon orange n’est pas à remplacer par un rayon d’une autre couleur.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Bibliothécaire femme, élève et livre à couverture de volcan dans le rayon à panneau orange ; revues sur le présentoir près de l’entrée. Aucun volcan nommé, texte de classement ou autre couleur présentée comme la réponse.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "preparedImageSha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-02",
@@ -940,8 +1063,22 @@
       ],
       "evidenceQuote": "Les calculs sont faciles à faire",
       "reason": "Enseignant homme donnant une révision de calcul ; la calculatrice n’est pas autorisée ce jour-là.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Enseignant explicitement appelé Monsieur ; élèves figurants sans attribution individuelle de la voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignant homme",
+            "quote": "Monsieur on peut utiliser la calculatrice ?"
+          }
+        ]
+      },
+      "imageSha256": "685495633d0af3dd38da283ab3100a416f1f01778b762350696412a3c8faf05f",
+      "visualReview": "Professeur homme conforme à Monsieur ; groupe d’élèves révisant avec des cahiers et crayons, sans calculatrice autorisée à tort. Aucun calcul ou résultat écrit inventé ; personnages complets. Le turban est un choix de représentation sans nationalité attribuée.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-03",
@@ -1004,8 +1141,22 @@
       ],
       "evidenceQuote": "Prenez vos blousons et sortez dans la cour",
       "reason": "Récréation dans une cour d’école par temps froid ; ne pas montrer les élèves restant en classe.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-recreation-blousons-froid.png",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Enseignante explicitement appelée madame ; groupe d’élèves figurants non nommés.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante femme",
+            "quote": "Mais madame il fait froid aujourd’hui."
+          }
+        ]
+      },
+      "imageSha256": "d790f09dc13f004a3253fd375652248ca85633f5f1da81b7d07e9e6c685b244a",
+      "visualReview": "Enseignante femme conforme à madame, élèves prenant leurs blousons et sortant dans la cour malgré le froid. Les manteaux et chaussures sont dans le cadre, sans tempête ou maintien en classe substitués.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-02",
@@ -1024,8 +1175,26 @@
       ],
       "evidenceQuote": "votre nouvelle camarade",
       "reason": "Présentation d’une nouvelle élève à sa classe ; aucun drapeau ni origine déduite de son visage.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Accord féminin nouvelle camarade et prénom Anissa ; Sarah nommée. Enseignant hors cadre car son genre n’est pas précisé.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "nouvelle élève féminine",
+            "quote": "Je vous présente votre nouvelle camarade."
+          },
+          {
+            "role": "Anissa et Sarah",
+            "quote": "Anissa, va t’assoir à côté de Sarah."
+          }
+        ]
+      },
+      "imageSha256": "09ddb7ddec1b1c50d5b342fde8df729c3f9abe9d563cb9a8158f353330f7b9ca",
+      "visualReview": "Nouvelle camarade Anissa accueillie par Sarah avec une chaise libre à côté. Accord féminin et prénoms respectés ; enseignant volontairement hors cadre car son genre n’est pas précisé. Aucun drapeau ou cliché de nationalité.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-03",
@@ -1067,8 +1236,22 @@
       ],
       "evidenceQuote": "ranger le matériel",
       "reason": "Rangement de tapis de gymnastique avec une enseignante ; un tapis de salon ne convient pas.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-ranger-tapis-gym.png",
+      "imageSha256": "d009ba69afeab10fddf4e29bdc7972deb6bd86d6494219c13e9d0f90a78227ae",
+      "visualReview": "Élève aidant une professeure à empiler les tapis de gymnastique en fin de cours. Équipement épais dans un gymnase, rangement coopératif, aucun tapis domestique ou saut à la place du rangement.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeure et élève Tonin",
+            "quote": "Madame je m’occupe des tapis ? Très bien Tonin."
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-033-01",
@@ -1335,7 +1518,18 @@
       "evidenceQuote": "j’aime bien lire des livres",
       "reason": "Goûts pour musique et lecture ; la scène doit conserver les deux activités, sans transformer ce questionnaire en transaction.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Livre ouvert et casque relié au lecteur, musique et lecture tous deux représentés ; aucune télévision choisie à leur place. Silhouette et chaussures entières, personnage distinct sans nationalité attribuée.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png",
+      "preparedImageSha256": "850438f1810a2f067432486e223891286c9b90c432e428739dbe100fe93caee8",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-044-03",
@@ -1355,7 +1549,18 @@
       "evidenceQuote": "Je préfère jouer à l’ordinateur",
       "reason": "Jeu sur ordinateur préféré à la télévision ; ne pas montrer une console comme choix retenu.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Réemploi vérifié visuellement : personne jouant sur un ordinateur de bureau, tour, écran, clavier et manette connectée visibles ; aucune télévision donnée comme activité préférée. Personnage distinct, chaussures et objets complets, image native 4:3 approuvée. L’âge et le genre du personnage restent des choix illustratifs, pas des réponses déduites de la source.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+      "preparedImageSha256": "388e73c43f3da179abe40a98a050734a4a4f9cf20372eb3b5b750da99ed11a38",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-044-04",
@@ -1376,7 +1581,18 @@
       "evidenceQuote": "du vélo et des promenades",
       "reason": "Loisirs entre amis à vélo et en promenade ; les magasins sont explicitement rejetés.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Groupe d’amis en balade : vélo avec cycliste et marcheurs, deux vélos entièrement dans le cadre. Les magasins rejetés par la source ne sont pas représentés comme activité choisie.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "preparedImageSha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-045",
@@ -1513,7 +1729,18 @@
       "evidenceQuote": "Voilà ton poisson et ton riz",
       "reason": "Service de poisson avec riz ; ni poisson avec légumes seuls ni viande substitués.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Service de poisson avec riz blanc distinct sur l’assiette ; sauce proposée dans une petite cruche, sans sauce versée ni légumes substitués au riz. Personnel et élève distincts et cadrage entier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "preparedImageSha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-049-04-02",
@@ -1533,7 +1760,18 @@
       "evidenceQuote": "me prêter ton compas",
       "reason": "Prêt d’un compas de géométrie entre camarades ; un compas de navigation serait faux.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Prêt d’un compas de géométrie à deux branches, pointe et crayon visibles ; ni boussole ni autre matériel substitué. Deux élèves, mains et chaussures dans le cadre. Le foulard est un choix illustratif et ne prouve aucune nationalité.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "preparedImageSha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-049-04-03",
@@ -1649,8 +1887,22 @@
       ],
       "evidenceQuote": "un tour de la piste",
       "reason": "Séance sur piste avec enseignante puis course au signal ; étirement dans un parc insuffisant.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-course-piste.png",
+      "imageSha256": "2f51178dc4ac36bf176911e1d38d9057a46527d57a139261bf4db8be51efb92c",
+      "visualReview": "Professeure donnant le signal et élèves en préparation sur une piste d’athlétisme. Aucun résultat, distance chiffrée, classement ou horaire ajouté.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeure et groupe d’élèves sans attribution individuelle de voix",
+            "quote": "Et après on va faire quoi madame ?"
+          }
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-050-04-02",
@@ -1691,8 +1943,22 @@
       ],
       "evidenceQuote": "Voici mon cahier madame",
       "reason": "Élève donnant son cahier à l’enseignante pour correction ; pas un paiement ou un dictionnaire.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Élève Dania nommée dans le dialogue ; enseignante explicitement appelée Madame.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève Dania et enseignante femme",
+            "quote": "Dania ? Oui, Madame."
+          }
+        ]
+      },
+      "imageSha256": "ce501acd3390edeca99c17403188154b721379146a11beab5c8d19a9c97bc220",
+      "visualReview": "Élève Dania remettant son cahier à une enseignante femme, conforme à Madame ; aucune remise à un camarade masculin. Cahier sans note ou exercice ajouté, mains et chaussures dans le cadre.",
+      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-050-04-04",
@@ -1834,7 +2100,18 @@
       "evidenceQuote": "saut en hauteur",
       "reason": "Découverte du saut en hauteur ; ne pas représenter le football ou le basket comme activité découverte.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Débutant hésitant et camarade rassurante devant la barre horizontale, les deux poteaux et le tapis épais du saut en hauteur. Aucun saut maîtrisé déjà réussi, ni football ou basket substitué.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "preparedImageSha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+      "pendingReason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+      "preparationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-051-04-04",
@@ -5574,5 +5851,13 @@
       "reason": "Des lecteurs assis ne représentent pas la demande de livres sur les volcans ; lieu bibliothèque non explicitement nommé. Image retenue uniquement comme leurre de lecture sous conditions d’absence."
     }
   ],
-  "image_generation_register": "docs/tcf/generation-scenarios-20261114.json"
+  "image_generation_register": "docs/tcf/generation-scenarios-20261114.json",
+  "generation_priority": [
+    "scenes",
+    "trios"
+  ],
+  "image_generation_registers": [
+    "docs/tcf/generation-scenarios-20261114.json",
+    "docs/tcf/generation-scenarios-priorite-20261114.json"
+  ]
 }

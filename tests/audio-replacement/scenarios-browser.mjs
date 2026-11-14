@@ -4,6 +4,7 @@ import { createServer } from 'vite'
 import { chromium } from 'playwright'
 
 const base = 'http://127.0.0.1:5194'
+const priorityMode = process.argv.includes('--priority')
 const server = await createServer({ cacheDir: '/tmp/clairfle-scenarios-browser', server: { host: '127.0.0.1', port: 5194, strictPort: true } })
 await server.listen()
 let browser
@@ -14,7 +15,10 @@ try {
   const { createRng } = await server.ssrLoadModule('/src/math/rng.ts')
   const configs = buildTpfFamilyTestPages('tpf', 923)
   const sample = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
-  const specs = [
+  const specs = priorityMode ? [
+    { level: 'A0-A1', difficulty: 'facile', clips: ['a1-029-02', 'a1-029-05', 'a1-030-03', 'a1-032-04'] },
+    { level: 'A0-A1', difficulty: 'facile', clips: ['a1-032-01', 'a1-050-04-01', 'a1-029-04', 'a1-029-05'] },
+  ] : [
     { level: 'A0-A1', difficulty: 'facile', clips: ['a1-047-01', 'a1-048-01', 'a1-051-04-02', 'a1-044-01'] },
     { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-044-04-03', 'a2-045-04-01', 'a2-032-02', 'a2-033-01'] },
   ]
@@ -53,10 +57,13 @@ try {
       assert.equal(await selectors.first().locator(`option[value="${config.tcfAudioSlots[1]}"]`).isDisabled(), true)
     }
     results.push({ level: specs[index].level, audios: config.tcfAudioSlots, images: expected, loaded: expected.length, native_new_pngs: expected.filter(p => p.includes('/delf-actif/')).length })
+    if (priorityMode) await stage.screenshot({ path: `/tmp/scenarios-priorite-20261114-page-${index + 1}.png` })
   }
   assert.deepEqual(errors, [])
-  assert.equal(new Set(results.flatMap(r => r.images).filter(p => p.includes('/delf-actif/'))).size, 7)
-  await writeFile('docs/tcf/scenarios-audio-20261114-browser.json', JSON.stringify({ date: '2026-11-14', results, errors, human_audio_listening_performed: false }, null, 2) + '\n')
-  console.log(JSON.stringify({ pages: results.length, native_new_pngs: 7, images: results.reduce((n, r) => n + r.loaded, 0), errors }))
+  const nativeNewPngs = new Set(results.flatMap(r => r.images).filter(p => p.includes('/delf-actif/'))).size
+  assert.equal(nativeNewPngs, 7)
+  const report = priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
+  await writeFile(report, JSON.stringify({ date: '2026-11-14', results, errors, human_audio_listening_performed: false }, null, 2) + '\n')
+  console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), errors }))
   await context.close()
 } finally { await browser?.close(); await server.close() }

@@ -4,6 +4,8 @@
 
 ## Reprise du 14 novembre 2026
 
+**Priorité actuelle : les scènes avant les trios.** Vingt nouveaux PNG A1 natifs 4:3 sont générés ; douze scènes sont activées avec des rôles documentés, et neuf autres images (dont un réemploi) restent en attente de vérification des personnes dans l’audio. Le tirage dispose de **51 sources** ; **66 scènes restent à terminer**, dont 22 A1, 29 A2 et 15 B1. Les 277 trios DELF Actif, leurs 469 candidatures restantes et les 370 trios historiques sont conservés. Aucun texte, corrigé ou MP3 n’est modifié ([registre](generation-scenarios-priorite-20261114.json), [classement](scenarios-audio-20261114.md), [comparaison](verification-scenes-priorite-20261114.json)). Galerie : 6 641 images.
+
 **Huit trios A1 supplémentaires** : sept nouveaux PNG natifs exacts 4:3, huit usages de ces images et seize réemplois. Compas de géométrie et équerre, fauteuil et tabouret, livre de lecture, chaussures de marche et de danse. Le fauteuil individuel n’est pas représenté par plusieurs sièges ; la boussole n’est pas utilisée pour le compas. Les choix boissons, cadeaux et lieux sportifs sont réutilisés après examen visuel. Comparaison intégrale des six banques : seuls huit formats QCM image ajoutés, aucun texte, corrigé, source ou MP3 modifié ([registre](revue-trios-objets-ecole-randonnee-20261114.json)).
 
 État : **228 trios DELF Actif actifs** (118 A1, 101 A2, neuf B1), **142 candidats concrets** encore à vérifier et 1 021 questions en contexte. Les **370 trios historiques** restent suivis séparément. Contrôles des 346 supports DELF Actif, des 763 décisions historiques, de la banque, du rendu QCM (2 225 variantes), de la galerie (6 543 images) et TypeScript réussis. Aucune nouvelle écoute humaine n’est attestée.

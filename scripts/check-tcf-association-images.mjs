@@ -118,7 +118,15 @@ try {
   assert.equal(entries.length, review.summary.total_bound)
   const generation = read('docs/tcf/generation-scenarios-20261114.json')
   assert.equal(generation.images.length, 7)
-  for (const asset of generation.images) {
+  const priority = read('docs/tcf/generation-scenarios-priorite-20261114.json')
+  assert.equal(priority.human_audio_listening_performed, false)
+  assert.equal(priority.images.length, priority.summary.original_pngs)
+  assert.equal(new Set(priority.reuses.map((r) => r.path)).size, priority.summary.reused_images)
+  assert.equal(priority.baseline.scenario_sources + priority.summary.new_scenario_audio_bindings, catalog.sources.length)
+  assert.equal(priority.summary.remaining_scenes, review.summary.scenario_pending)
+  assert.equal(priority.images.length + generation.images.length, review.summary.new_original_pngs)
+  assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
+  for (const asset of [...generation.images, ...priority.images]) {
     const bytes = readFileSync(`public${asset.path}`)
     assert.equal(sha(bytes), asset.sha256)
     assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
@@ -128,8 +136,36 @@ try {
     assert.equal(approved.get(asset.path).style_review.reference_commit, '48a753d8d6bd095e41968b39da88dbcb331fee11')
     assert.ok(asset.visual_review)
   }
-  const pending = review.supports.find((r) => r.decision === 'eligible_scene_pending')
-  const pendingEntry = tcfAudioEntries([bank.find((e) => e.id === pending.exercise)])[0]
+  for (const asset of [...priority.images, ...priority.reuses]) {
+    assert.equal(sha(readFileSync(`public${asset.path}`)), asset.sha256)
+    assert.ok(asset.visual_review)
+    assert.deepEqual(asset.bindings.map((b) => b.exercise), asset.exercise_ids)
+    for (const binding of asset.bindings) {
+      const source = catalog.sources.find((s) => s.exercise === binding.exercise)
+      const reviewed = review.supports.find((s) => s.exercise === binding.exercise)
+      assert.equal(reviewed.transcription, binding.transcription)
+      assert.equal(reviewed.sourceSha256, binding.source_sha256)
+      assert.equal(reviewed.audioSha256, binding.audio_sha256)
+      assert.ok(asset.gender_review)
+      for (const evidence of asset.gender_review.evidence) assert.ok(binding.transcription.includes(evidence.quote))
+      if (asset.gender_review.status !== 'documented_roles_match') {
+        assert.equal(asset.gender_review.status, 'needs_voice_review')
+        assert.equal(source, undefined, 'An unresolved gender match must not activate a scene')
+        assert.equal(reviewed.decision, 'eligible_scene_pending')
+        assert.equal(reviewed.preparedImage, asset.path)
+        assert.equal(reviewed.preparedImageSha256, asset.sha256)
+        continue
+      }
+      assert.equal(source.image, asset.path)
+      assert.equal(source.transcription, binding.transcription)
+      assert.equal(source.sourceSha256, binding.source_sha256)
+      assert.equal(source.audioSha256, binding.audio_sha256)
+      assert.equal(source.genderReview.status, 'documented_roles_match')
+    }
+  }
+  // Keep this guard once the last pending scene has been illustrated too.
+  const unillustrated = review.supports.find((r) => r.decision !== 'eligible_bound_scene')
+  const pendingEntry = tcfAudioEntries([bank.find((e) => e.id === unillustrated.exercise)])[0]
   const base = bank.find((e) => e.type_exercice === 'association_images')
   assert.equal(applyAssociationDialogueSlot(base, pendingEntry, 0), base, 'An unillustrated recording cannot inherit an unrelated scene')
   const added = entries.find((e) => e.exercise.id.startsWith('tcf-delf-actif-') && entries.some((other) => other.audio !== e.audio && other.scenarioScene.sceneKey === e.scenarioScene.sceneKey))
