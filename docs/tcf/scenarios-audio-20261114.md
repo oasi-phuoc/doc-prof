@@ -1,17 +1,19 @@
 # Catégories audio et scénarios — 14 novembre 2026
 
+**Reprise des interlocuteurs :** un dialogue doit montrer ses deux interlocuteurs. Le choix antérieur de laisser une personne hors cadre est abandonné. Une première scène mère/Bastien est corrigée ; trois nouveaux rendus à une seule personne restent hors des liaisons actives. Le [registre de reprise](reprise-interlocuteurs-scenes-20261114.md) signale 27 liaisons à reprendre et 62 à recompter. Ces scènes ne sont pas déclarées conformes à la nouvelle règle, même si leur liaison technique existait déjà. Aucune écoute directe des voix n’a été effectuée.
+
 La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.md) et ses 41 corrections sont terminées. Le classement porte sur les **346 nouveaux supports DELF Actif** ; il ne constitue pas une nouvelle écoute humaine.
 
 **Priorité demandée : générer les scènes avant les trios, en commençant par A1 puis A2.** Aucun nouveau trio QCM n’est ajouté pendant cette reprise.
 
-**96 dialogues** conviennent à une association de scènes. **65 sont liés à une scène disponible** ; **31 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **86 pistes**, contre 21 auparavant.
+**96 dialogues** conviennent à une association de scènes. **66 sont liés à une scène disponible** ; **30 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **87 pistes**, contre 21 auparavant.
 
 | Nouveaux supports | Candidats | Avec scène disponible | À terminer |
 |---|---:|---:|---:|
 | A1 | 41 | 31 | 10 |
 | A2 | 39 | 29 | 10 |
-| B1 | 16 | 5 | 11 |
-| Total | 96 | 65 | 31 |
+| B1 | 16 | 6 | 10 |
+| Total | 96 | 66 | 30 |
 
 Les **250 autres supports** gardent leurs formats de compréhension : 188 messages, annonces ou prises de position, 18 suites de phrases ou consignes, quatre échanges essentiellement temporels, cinq descriptions ou questionnaires et 35 documents longs. Cette catégorie ne signifie pas que leur transcription est incorrecte.
 
@@ -27,13 +29,15 @@ Les lots complémentaires récupérés sur `main` ajoutent **40 PNG et leurs pre
 
 La [suite B1](generation-scenarios-b1-suite-20261114.json) ajoute **quatre PNG originaux et quatre liaisons** : vêtements de pluie conseillés par la mère, désaccord dans une file avec la dame en veste blanche, cycliste témoin auprès d’un agent, enquête sur les boîtes à livres. Les personnages et objets utiles sont entiers, les rôles sont cités dans la transcription et les projets ne sont pas représentés comme accomplis.
 
-Au total, **20 scènes A1/A2 ont une image préparée en attente de confirmation des personnes** ; **11 scènes B1 restent à créer**. Ces 31 scènes ne sont pas comptées comme disponibles.
+La [suite complémentaire B1](generation-scenarios-b1-complement-20261114.json) ajoute quatre visuels : le contrôle routier montre deux interlocuteurs et est lié ; enseignante, personne débordée et Elsa restent préparés sans activation, car leur second interlocuteur manque. La [reprise mère/Bastien](correction-interlocuteurs-pluie-20261114.json) remplace également la première image de la mère seule, sans ajouter une nouvelle piste.
 
-**Neuf autres usages de ce lot sont préparés sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Ils sont inclus dans les 31 scènes à terminer et ne sont pas comptés comme disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
+Au total, **20 scènes A1/A2 ont une image préparée en attente de confirmation des personnes** ; **sept scènes B1 restent à créer et trois sont à reprendre pour ajouter un interlocuteur**. Ces 30 scènes ne sont pas comptées comme disponibles.
+
+**Neuf autres usages de ce lot sont préparés sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Ils sont inclus dans les 30 scènes à terminer et ne sont pas comptés comme disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
 
 Le [recontrôle des anciennes scènes](recontrole-genres-scenes-20261114.md) couvre **39 liaisons et 33 images**. L’inversion du coureur est corrigée par un PNG supplémentaire, distinct des 46 images prioritaires. Les anciennes recettes chargent également cette correction. **29 liaisons historiques gardent une réserve sur les personnes**, faute d’indication complète dans leur transcription ; elles ne sont pas présentées comme confirmées par écoute.
 
-**Contrôle demandé sur les personnes :** vérifier les rôles, les destinataires de « Monsieur » et « Madame », les accords et les personnages nommés. L’apparence ou une estimation de hauteur de voix ne prouvent pas une identité de genre. Les cas non documentés restent en attente ; un enseignant peut rester hors cadre quand la source ne précise pas son genre. Les élèves figurants d’un groupe ne reçoivent pas arbitrairement la voix d’un locuteur précis. Aucune écoute humaine n’est attestée.
+**Contrôle demandé sur les personnes :** vérifier les rôles, les destinataires de « Monsieur » et « Madame », les accords et les personnages nommés. L’apparence ou une estimation de hauteur de voix ne prouvent pas une identité de genre. Les cas non documentés restent en attente ; les interlocuteurs ne sont plus placés hors cadre pour contourner une incertitude ; la scène reste à reprendre. Les élèves figurants d’un groupe ne reçoivent pas arbitrairement la voix d’un locuteur précis. Aucune écoute humaine n’est attestée.
 
 Les personnages varient en âge, carnation, genre, coiffure et morphologie, avec fauteuil roulant, appareil auditif et vêtements variés, sans stéréotypes. Ces choix illustratifs ne sont pas des informations à déduire des audios. Le rendu suit le commit **48a753d8**, avec paysage exact **4:3**, sujets utiles entiers et octets PNG conservés sans recadrage ni conversion.
 
@@ -41,7 +45,7 @@ Le contrôle de la fiche imprimable a aussi révélé une dernière rangée masq
 
 La [comparaison des six banques](verification-scenes-priorite-20261114.json) confirme : **zéro nouveau trio, question, réponse, transcription ou MP3 modifié**. Seule l’URL de l’image du coureur change dans la banque A1. Les **277 trios DELF Actif actifs**, **469 candidatures restantes** et **370 trios historiques** sont conservés pendant la priorité aux scènes.
 
-Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie : **6 951 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
+Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie : **6 956 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
 
 Les contrôles couvrent les empreintes, les rôles documentés, les 39 recontrôles et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le [contrôle Chromium prioritaire](scenarios-priorite-20261114-browser.json) charge 36 images sur six pages A1/A2, dont 21 PNG distincts du lot, sans erreur. Le [test des anciennes recettes](scenarios-genres-20261114-browser.json) contrôle aussi le coureur corrigé ; le [contrôle B1](scenarios-b1-suite-20261114-browser.json) couvre les quatre nouvelles scènes.
 

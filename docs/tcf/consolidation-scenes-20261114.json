@@ -9,16 +9,19 @@
     "docs/tcf/generation-scenarios-a1-complement-20261114.json",
     "docs/tcf/generation-scenarios-a2-complement-20261114.json",
     "docs/tcf/generation-scenarios-a2-final-20261114.json",
-    "docs/tcf/generation-scenarios-b1-suite-20261114.json"
+    "docs/tcf/generation-scenarios-b1-suite-20261114.json",
+    "docs/tcf/generation-scenarios-b1-complement-20261114.json",
+    "docs/tcf/correction-interlocuteurs-pluie-20261114.json"
   ],
   "summary": {
-    "active_scenario_sources": 86,
-    "delf_scenario_sources": 65,
-    "remaining_scenes": 31,
-    "pending_with_prepared_image": 20,
-    "pending_without_prepared_image": 11,
-    "distinct_generated_scenario_pngs": 97,
-    "historical_corrections": 1
+    "active_scenario_sources": 87,
+    "delf_scenario_sources": 66,
+    "remaining_scenes": 30,
+    "pending_with_prepared_image": 23,
+    "pending_without_prepared_image": 7,
+    "distinct_generated_scenario_pngs": 102,
+    "historical_corrections": 1,
+    "interlocutor_corrections": 1
   },
   "bindings": [
     {
@@ -928,11 +931,11 @@
       "dialogue": 1,
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-01.mp3",
       "audio_sha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
-      "image_sha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "image_sha256": "5875fef2dd4ffca283583d079c6d0eaca84b51d9615dfcdbaf007aae7251e2cb",
       "source_sha256": "99915c194064416b2192534a623cb7801c56de720ffd9f01ba7593c8646588f1",
-      "selected_register": "docs/tcf/generation-scenarios-b1-suite-20261114.json",
-      "reason": "Personnages et rôles explicitement documentés ; image entière relue en contexte."
+      "selected_register": "docs/tcf/correction-interlocuteurs-pluie-20261114.json",
+      "reason": "Correction de visibilité : les deux interlocuteurs sont désormais montrés ensemble."
     },
     {
       "exercise": "tcf-delf-actif-b1-001-03",
@@ -965,6 +968,17 @@
       "image_sha256": "7309a3ad87b33c11bcfc42cb6f6445eb230e87139f8714baa7d541d62a058261",
       "source_sha256": "d08518263851b36d3c53dfabc48771aa0e83846f9a68b1140c931a38f20ffc20",
       "selected_register": "docs/tcf/generation-scenarios-b1-suite-20261114.json",
+      "reason": "Personnages et rôles explicitement documentés ; image entière relue en contexte."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-012-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-012-01.mp3",
+      "audio_sha256": "e9a392b12402424af73372c2afcc85a06ede28a452974c0ec683e53fcd3ab2f1",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
+      "image_sha256": "4d75e304c3e0c3175c9acf9508ea0db8da49fa4af28d2c0c3a5fc34fcc0b4a48",
+      "source_sha256": "30a277807b5fa3c19eab379bd3f79006fccbe52d5ea52fafd520589d22555c5b",
+      "selected_register": "docs/tcf/generation-scenarios-b1-complement-20261114.json",
       "reason": "Personnages et rôles explicitement documentés ; image entière relue en contexte."
     }
   ],

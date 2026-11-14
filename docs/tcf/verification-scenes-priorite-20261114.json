@@ -43,7 +43,7 @@
   "answers_modified": 0,
   "reviewed_scene_images_replaced": 1,
   "native_pngs": {
-    "count": 91,
+    "count": 96,
     "priority_scenes": 46,
     "historical_scene_correction": 1,
     "width": 1448,
@@ -51,7 +51,9 @@
     "original_bytes_preserved": true,
     "complementary_scenes": 40,
     "b1_suite": 4,
-    "first_batch_already_in_baseline": 7
+    "first_batch_already_in_baseline": 7,
+    "b1_complement": 4,
+    "visible_interlocutor_correction": 1
   },
   "human_audio_listening_performed": false,
   "checks": {
@@ -60,8 +62,8 @@
     "catalogue_tests": 12,
     "typescript": true,
     "bank_exercises": 1355,
-    "scenario_sources": 86,
-    "gallery_images": 6951,
+    "scenario_sources": 87,
+    "gallery_images": 6956,
     "browser": {
       "report": "docs/tcf/scenarios-priorite-20261114-browser.json",
       "pages": 6,
@@ -91,7 +93,7 @@
       "confirmed_image_mismatches": 1,
       "corrections_installed": 1
     },
-    "pending_primary_scenes_with_image": 20,
+    "pending_primary_scenes_with_image": 23,
     "b1_browser": {
       "report": "docs/tcf/scenarios-b1-suite-20261114-browser.json",
       "pages": 1,
@@ -100,7 +102,7 @@
       "errors": []
     },
     "priority_unconfirmed_gender_bindings_excluded": 9,
-    "unconfirmed_primary_gender_bindings_excluded": 20,
+    "unconfirmed_primary_gender_bindings_excluded": 23,
     "merged_a2_browser": {
       "report": "docs/tcf/scenarios-a2-complement-20261114-browser.json",
       "pages": 3,
@@ -109,7 +111,14 @@
       "errors": [],
       "gallery_images": 12
     },
-    "all_six_scene_frames_fit_first_page_with_header": true
+    "all_six_scene_frames_fit_first_page_with_header": true,
+    "b1_complement_browser": {
+      "report": "docs/tcf/scenarios-b1-complement-20261114-browser.json",
+      "pages": 1,
+      "images": 6,
+      "legacy_mother_image_replaced": true,
+      "errors": []
+    }
   },
   "priority_batch_summary": {
     "original_pngs": 46,
@@ -121,13 +130,17 @@
     "total_bound_scenario_sources": 81
   },
   "summary": {
-    "active_scenario_sources": 86,
-    "delf_scenario_sources": 65,
-    "remaining_scenes": 31,
-    "pending_with_prepared_image": 20,
-    "pending_without_prepared_image": 11,
-    "distinct_generated_scenario_pngs": 97,
-    "historical_corrections": 1
+    "active_scenario_sources": 87,
+    "delf_scenario_sources": 66,
+    "remaining_scenes": 30,
+    "pending_with_prepared_image": 23,
+    "pending_without_prepared_image": 7,
+    "distinct_generated_scenario_pngs": 102,
+    "historical_corrections": 1,
+    "interlocutor_corrections": 1
   },
-  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json"
+  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json",
+  "interlocutor_rework_register": "docs/tcf/reprise-interlocuteurs-scenes-20261114.json",
+  "full_interlocutor_audit_finished": false,
+  "voice_check_available": false
 }

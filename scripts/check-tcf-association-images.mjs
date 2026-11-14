@@ -159,7 +159,14 @@ try {
   const a2Complement = read('docs/tcf/generation-scenarios-a2-complement-20261114.json')
   const a2Final = read('docs/tcf/generation-scenarios-a2-final-20261114.json')
   const b1Suite = read('docs/tcf/generation-scenarios-b1-suite-20261114.json')
-  const expansions = [priority, suite, a1Complement, a2Complement, a2Final, b1Suite]
+  const b1Complement = read('docs/tcf/generation-scenarios-b1-complement-20261114.json')
+  const interlocutorCorrection = read('docs/tcf/correction-interlocuteurs-pluie-20261114.json')
+  const expansions = [priority, suite, a1Complement, a2Complement, a2Final, b1Suite, b1Complement, interlocutorCorrection]
+  for (const asset of interlocutorCorrection.images) {
+    assert.equal(asset.scene_review.visible_interlocutors, 2)
+    assert.equal(tcfImageSrc(asset.previous_image), asset.path)
+    assert.equal(tcfImageSrc(`${asset.previous_image}?revision=2`), `${asset.path}?revision=2`)
+  }
   assert.equal(priority.human_audio_listening_performed, false)
   assert.equal(priority.images.length, priority.summary.original_pngs)
   assert.equal(new Set(priority.reuses.map((r) => r.path)).size, priority.summary.reused_images)

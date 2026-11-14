@@ -34,6 +34,11 @@ export function tcfImageSrc(src: string | null | undefined): string {
     // dialogue dit « fou / motivé », le personnage sportif est un homme.
     /^\/lib\/images\/tcf\/co\/scenes\/loisirs\/s-echauffer\.webp(?=$|[?#])/,
     '/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png',
+  ).replace(
+    // Dialogue mère / Bastien : les deux interlocuteurs doivent être visibles,
+    // y compris sur une fiche enregistrée avec la première image de la mère seule.
+    /^\/lib\/images\/tcf\/co\/scenes\/delf-actif\/scenario-b1-conseil-vetements-pluie\.png(?=$|[?#])/,
+    '/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png',
   )
 }
 

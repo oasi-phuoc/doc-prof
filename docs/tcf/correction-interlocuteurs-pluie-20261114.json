@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-14",
+  "scope": "Correction demandée : deux interlocuteurs visibles, sans prétendre à une écoute directe des voix.",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "summary": {
+    "original_pngs": 1,
+    "reused_images": 0,
+    "replaced_bindings": 1,
+    "new_scenario_audio_bindings": 0,
+    "awaiting_gender_confirmation": 0,
+    "prepared_scene_uses": 1
+  },
+  "images": [
+    {
+      "key": "scene-b1-pluie-deux-interlocuteurs",
+      "label": "La mère et Bastien discutent des vêtements de pluie",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "sha256": "5875fef2dd4ffca283583d079c6d0eaca84b51d9615dfcdbaf007aae7251e2cb",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538"
+        },
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
+          "sha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac"
+        }
+      ],
+      "prompt": "EDIT the attached original mother-at-the-door illustration. The user requires BOTH ACTUAL INTERLOCUTORS of the dialogue visible in the SAME coherent scene. Keep the same mother, raincoat, folded sweater, pair of weatherproof shoes and rainy home entry, and ADD her son BASTIEN facing her at the right. Bastien is a teenage high-school boy around 16, with medium-brown skin and short dark curls, wearing a simple light grey T-shirt, dark navy trousers and light canvas shoes. The text calls the mother maman and addresses her child as Bastien; the scene should show mother and named son speaking directly with one another, not the mother talking to the viewer. She advises him to change his shoes and wear the sweater and raincoat because it is raining; he gently objects and gestures conversationally toward the window because better weather is forecast later. He is still indoors before leaving, NOT wearing the advised sweater or raincoat yet. The weatherproof shoes stay on the floor, sweater on the bench, raincoat in the mother's arm. Exactly TWO main people, both faces, hands and both pairs of feet fully visible, with clear margins. Recompose the entryway and move the bench if needed to fit the whole boy and mother naturally; do not crop either person's body. No additional person, no speech bubbles, no letters or legible writing, no clock, date, day, month, numbers, money, brand or logo. No sunny afternoon already occurring, no completed school trip, no angry threatening gesture. Retain the approved warm softly painted semi-realistic drawn editorial style, natural textures, discreet contours and inclusive ordinary characters of the second attached style reference. Original native landscape EXACTLY 1448 by 1086 pixels, 4:3; no square, no border, no digital collage, no stretch or resampling.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux interlocuteurs principaux visibles en entier : la mère et Bastien, face à face avant le départ. Imperméable dans le bras de la mère, pull plié et chaussures à changer ; pluie actuelle. Ni enfant déjà sorti ni soleil déjà présent, ni texte ou horaire. Les voix ne sont pas déclarées écoutées.",
+      "exercise_ids": [
+        "tcf-delf-actif-b1-001-01"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Mère appelée maman et enfant nommé Bastien. Rôles de personnages établis à partir du texte ; aucune écoute directe ni confirmation du timbre des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Bastien nommé dans la source",
+            "quote": "Bastien, tu ne peux pas aller au lycée comme ça"
+          },
+          {
+            "role": "mère appelée maman",
+            "quote": "Mais maman, la météo a annoncé du soleil pour cet après-midi."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "roles": [
+          "mère",
+          "Bastien"
+        ]
+      },
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
+      "previous_image_sha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac",
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-001-01",
+          "transcription": "Bastien, tu ne peux pas aller au lycée comme ça, il pleut et il fait frais. Change de chaussures, mets un pull et n’oublie pas ton imper ! Mais maman, la météo a annoncé du soleil pour cet après-midi. Je ne serai pas à mon aise après.",
+          "source_sha256": "99915c194064416b2192534a623cb7801c56de720ffd9f01ba7593c8646588f1",
+          "audio_sha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71"
+        }
+      ]
+    }
+  ],
+  "reuses": []
+}

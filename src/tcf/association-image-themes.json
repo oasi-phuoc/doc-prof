@@ -2026,18 +2026,31 @@
       ],
       "sceneKey": "vetements-pluie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
-      "imageSha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac",
-      "review": "Mère seule en pied, imperméable entier, pull plié et paire de chaussures visibles ; pluie dehors, enfant hors cadre. Conseil avant le départ, pas de soleil déjà présent, texte ou montant.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "imageSha256": "5875fef2dd4ffca283583d079c6d0eaca84b51d9615dfcdbaf007aae7251e2cb",
+      "review": "Deux interlocuteurs principaux visibles en entier : la mère et Bastien, face à face avant le départ. Imperméable dans le bras de la mère, pull plié et chaussures à changer ; pluie actuelle. Ni enfant déjà sorti ni soleil déjà présent, ni texte ou horaire. Les voix ne sont pas déclarées écoutées.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Mère explicitement appelée maman ; enfant hors cadre. Conseil avant le départ, pluie actuelle et soleil annoncé non représenté comme déjà présent.",
+        "basis": "Mère appelée maman et enfant nommé Bastien. Rôles de personnages établis à partir du texte ; aucune écoute directe ni confirmation du timbre des voix déclarée.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "mère femme",
+            "role": "Bastien nommé dans la source",
+            "quote": "Bastien, tu ne peux pas aller au lycée comme ça"
+          },
+          {
+            "role": "mère appelée maman",
             "quote": "Mais maman, la météo a annoncé du soleil pour cet après-midi."
           }
+        ]
+      },
+      "sceneReview": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "roles": [
+          "mère",
+          "Bastien"
         ]
       }
     },
@@ -2127,6 +2140,34 @@
           {
             "role": "habitante femme et lycéen homme",
             "quote": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ?"
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-012-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-012-01.mp3",
+      "audioSha256": "e9a392b12402424af73372c2afcc85a06ede28a452974c0ec683e53fcd3ab2f1",
+      "transcription": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent. Votre permis moto et votre attestation d’assurance, s’il vous plaît. Je les cherche… mais qu’est-ce que j’ai fait qui ne va pas ? Je vous conteste deux infractions. Le port du casque et vous avez pris cette rue en sens interdit. En sens interdit ? Mais je n’ai pas vu le panneau. J’ai déjà emprunté cette route et il n’y a jamais eu de panneau. C’est nouveau ! C’est nouveau en effet. Le camion qui se trouve au bout de la rue commence à tailler des arbres et aujourd’hui on n’a laissé qu’une voie. Les panneaux peuvent changer. Ah, moi je me souviens d’y être passé et il était possible de prendre la rue dans ce sens. Oui, mais la viabilité peut changer, comme je vous disais. Et porter un casque, c’est nouveau aussi ! Monsieur l’agent… Je suis parti de chez moi très vite. Ma grand-mère vient de me téléphoner. Mon grand-père est tombé. Elle n’arrive pas à le relever et elle m’a demandé d’aller chez eux. Il va peut-être falloir appeler une ambulance. Il a du sang sur le visage. Je suis désolé de ce qui vient d’arriver à vos grands-parents mais moi je dois vous faire une contravention. Mais Monsieur l’agent, vous ne pouvez pas être indulgent pour une fois ? Ma grand- mère m’attend… je suis inquiet. Et puis, c’est la première fois que je ne mets pas mon casque. Je viens d’être choqué par cette mauvaise nouvelle. Vos grands-parents habitent loin d’ici ? Non, ils habitent rue Jean Jaurès, une traverse du boulevard Dugommier. À quel numéro ? Au numéro 25. Alors moi, je prends ma voiture et je vais chez eux. Ils s’appellent comment ? Comme moi, Giordan. Pierre Giordan c’est mon grand-père paternel. Vous, jeune homme venez très lentement et soyez très prudent.",
+      "sourceSha256": "30a277807b5fa3c19eab379bd3f79006fccbe52d5ea52fafd520589d22555c5b",
+      "themes": [
+        "deplacements",
+        "sante"
+      ],
+      "sceneKey": "controle-routier",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
+      "imageSha256": "4d75e304c3e0c3175c9acf9508ea0db8da49fa4af28d2c0c3a5fc34fcc0b4a48",
+      "review": "Agent et jeune conducteur hommes en pied, moto entière à l’arrêt, conducteur sans casque cherchant ses documents ; sens interdit et entretien des arbres en arrière-plan. Les deux ouvriers lointains sont des figurants, sans voix de dialogue attribuée. Ni accident en cours, ni ambulance arrivée, ni visite déjà réalisée chez les grands-parents. Aucun montant, nom de rue ou numéro lisible.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Deux hommes explicitement jeune homme et Monsieur l’Agent ; moto à l’arrêt, aide aux grands-parents encore future et famille hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "conducteur homme et agent homme",
+            "quote": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent."
           }
         ]
       }

@@ -6,15 +6,15 @@
   "summary": {
     "supports": 346,
     "scenario_eligible": 96,
-    "scenario_bound": 65,
-    "scenario_pending": 31,
+    "scenario_bound": 66,
+    "scenario_pending": 30,
     "prior_bound": 21,
-    "total_bound": 86,
+    "total_bound": 87,
     "decisions": {
       "keep_message_announcement_or_discourse": 188,
       "keep_temporal_exchange": 4,
-      "eligible_scene_pending": 31,
-      "eligible_bound_scene": 65,
+      "eligible_scene_pending": 30,
+      "eligible_bound_scene": 66,
       "keep_sequence": 18,
       "keep_description_or_preferences": 5,
       "keep_long_document": 35
@@ -36,15 +36,15 @@
         "keep_description_or_preferences": 5
       },
       "A2-B1": {
-        "eligible_bound_scene": 5,
-        "eligible_scene_pending": 11,
+        "eligible_bound_scene": 6,
+        "eligible_scene_pending": 10,
         "keep_message_announcement_or_discourse": 18,
         "keep_long_document": 35,
         "keep_sequence": 3,
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 97,
+    "new_original_pngs": 102,
     "new_scene_image_uses": 46,
     "priority_scene_reuses": 4,
     "priority_prepared_scene_uses": 51,
@@ -63,8 +63,8 @@
       "confirmed_image_mismatches": 1,
       "corrections_installed": 1
     },
-    "prepared_scenes_awaiting_gender_confirmation": 20,
-    "remaining_without_prepared_image": 11
+    "prepared_scenes_awaiting_gender_confirmation": 23,
+    "remaining_without_prepared_image": 7
   },
   "supports": [
     {
@@ -5982,21 +5982,59 @@
       "evidenceQuote": "mets un pull et n’oublie pas ton imper",
       "reason": "Mère conseillant une tenue contre pluie et fraîcheur avant le lycée ; ne pas montrer seulement le soleil annoncé plus tard.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
-      "imageSha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac",
-      "visualReview": "Mère seule en pied, imperméable entier, pull plié et paire de chaussures visibles ; pluie dehors, enfant hors cadre. Conseil avant le départ, pas de soleil déjà présent, texte ou montant.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "imageSha256": "5875fef2dd4ffca283583d079c6d0eaca84b51d9615dfcdbaf007aae7251e2cb",
+      "visualReview": "Deux interlocuteurs principaux visibles en entier : la mère et Bastien, face à face avant le départ. Imperméable dans le bras de la mère, pull plié et chaussures à changer ; pluie actuelle. Ni enfant déjà sorti ni soleil déjà présent, ni texte ou horaire. Les voix ne sont pas déclarées écoutées.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Mère explicitement appelée maman ; enfant hors cadre. Conseil avant le départ, pluie actuelle et soleil annoncé non représenté comme déjà présent.",
+        "basis": "Mère appelée maman et enfant nommé Bastien. Rôles de personnages établis à partir du texte ; aucune écoute directe ni confirmation du timbre des voix déclarée.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "mère femme",
+            "role": "Bastien nommé dans la source",
+            "quote": "Bastien, tu ne peux pas aller au lycée comme ça"
+          },
+          {
+            "role": "mère appelée maman",
             "quote": "Mais maman, la météo a annoncé du soleil pour cet après-midi."
           }
         ]
       },
-      "generationRegister": "docs/tcf/generation-scenarios-b1-suite-20261114.json"
+      "generationRegister": "docs/tcf/correction-interlocuteurs-pluie-20261114.json",
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
+          "sha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac",
+          "register": "docs/tcf/generation-scenarios-b1-suite-20261114.json",
+          "gender_review": {
+            "status": "documented_roles_match",
+            "basis": "Mère explicitement appelée maman ; enfant hors cadre. Conseil avant le départ, pluie actuelle et soleil annoncé non représenté comme déjà présent.",
+            "audio_listening_performed": false,
+            "evidence": [
+              {
+                "role": "mère femme",
+                "quote": "Mais maman, la météo a annoncé du soleil pour cet après-midi."
+              }
+            ]
+          },
+          "source_sha256": "99915c194064416b2192534a623cb7801c56de720ffd9f01ba7593c8646588f1",
+          "audio_sha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71",
+          "scene_review": {
+            "status": "superseded_missing_interlocutor",
+            "visible_interlocutors": 1,
+            "replacement": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png"
+          }
+        }
+      ],
+      "sceneReview": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "roles": [
+          "mère",
+          "Bastien"
+        ]
+      }
     },
     {
       "exercise": "tcf-delf-actif-b1-001-02",
@@ -6074,7 +6112,22 @@
       "evidenceQuote": "je passe te chercher",
       "reason": "Organisation d’un départ pour une séance ; pas de salle ou d’heure ajoutées, ne pas montrer le départ comme déjà réalisé.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Elsa explicitement décrite prête et ma chérie ; partenaire hors cadre. Accord sur une sortie future sans heure dessinée ni séance déjà commencée. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Elsa femme",
+            "quote": "Essaie d’être prête ma chérie."
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+      "preparedImageSha256": "18d10dbac87d8dece38cfc885feb32e878d288215f238dfae9027651b57572c0",
+      "pendingReason": "Deux interlocuteurs doivent être visibles. Image à une seule personne à reprendre ; contrôle de la voix du second interlocuteur non effectué.",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-001-05",
@@ -6347,8 +6400,22 @@
       ],
       "evidenceQuote": "votre permis moto",
       "reason": "Contrôle de motocycliste sans casque par un policier, puis aide envisagée aux grands-parents ; dialogue long mais situation suivie. Ne pas montrer le casque porté.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
+      "imageSha256": "4d75e304c3e0c3175c9acf9508ea0db8da49fa4af28d2c0c3a5fc34fcc0b4a48",
+      "visualReview": "Agent et jeune conducteur hommes en pied, moto entière à l’arrêt, conducteur sans casque cherchant ses documents ; sens interdit et entretien des arbres en arrière-plan. Les deux ouvriers lointains sont des figurants, sans voix de dialogue attribuée. Ni accident en cours, ni ambulance arrivée, ni visite déjà réalisée chez les grands-parents. Aucun montant, nom de rue ou numéro lisible.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Deux hommes explicitement jeune homme et Monsieur l’Agent ; moto à l’arrêt, aide aux grands-parents encore future et famille hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "conducteur homme et agent homme",
+            "quote": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent."
+          }
+        ]
+      },
+      "generationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-013-01",
@@ -6746,7 +6813,22 @@
       "evidenceQuote": "Trente pages à réviser",
       "reason": "Enseignante face à la protestation d’élèves sur une révision ; pas de trente pages fictivement lisibles ni horaire inventé.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Enseignante explicitement appelée madame ; élèves hors cadre. Révision avant le contrôle, aucune note ou quantité de pages inventée dans l’image. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante femme",
+            "quote": "Mais madame, ce n’est pas possible."
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
+      "preparedImageSha256": "c0959560db6b99032f056c3a513d6792f8330e2df4a6a3feedd45b889a7752aa",
+      "pendingReason": "Deux interlocuteurs doivent être visibles. Image à une seule personne à reprendre ; contrôle de la voix du second interlocuteur non effectué.",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-032-02",
@@ -6827,7 +6909,22 @@
       "evidenceQuote": "j’attends des visites",
       "reason": "Invitation refusée faute de disponibilité avec travail et visites attendues ; ne pas imposer un métier ou un lieu non donné.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Locuteur au masculin débordé ; auteur de l’invitation hors cadre. Visites attendues, aucune visite déjà arrivée ni métier précis inventé. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "homme débordé",
+            "quote": "Je suis débordé de travail, de plus j’attends des visites et pfff ! Je n’en peux plus !"
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+      "preparedImageSha256": "04605f1c7d0aef02236cc8dda52fb4c6ae2c8eb9e0537ff6757a6015367f3af0",
+      "pendingReason": "Deux interlocuteurs doivent être visibles. Image à une seule personne à reprendre ; contrôle de la voix du second interlocuteur non effectué.",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-032-06",
@@ -7207,8 +7304,17 @@
     "docs/tcf/generation-scenarios-a1-complement-20261114.json",
     "docs/tcf/generation-scenarios-a2-complement-20261114.json",
     "docs/tcf/generation-scenarios-a2-final-20261114.json",
-    "docs/tcf/generation-scenarios-b1-suite-20261114.json"
+    "docs/tcf/generation-scenarios-b1-suite-20261114.json",
+    "docs/tcf/generation-scenarios-b1-complement-20261114.json",
+    "docs/tcf/correction-interlocuteurs-pluie-20261114.json"
   ],
   "previous_scenes_gender_audit": "docs/tcf/recontrole-genres-scenes-20261114.json",
-  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json"
+  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json",
+  "dialogue_scene_policy": {
+    "minimum_visible_interlocutors": 2,
+    "all_speaking_roles_must_be_visible": true,
+    "off_frame_speaker_is_not_a_valid_workaround": true,
+    "direct_audio_listening_available": false,
+    "automatic_transcription_is_not_voice_gender_validation": true
+  }
 }
