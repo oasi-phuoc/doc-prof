@@ -19,3 +19,14 @@ condition = "AND"
 paths = ['''(^|/)docs/tcf/delf-actif-20261113/relectures/(?:signature-52-1-d7caa132e648|signature-52-2-caaca983b5dd)\.json$''']
 regexTarget = "match"
 regexes = ['''^small-tokens\.txt"\s*:\s*"[0-9a-f]{64}"?$''']
+
+[[rules.allowlists]]
+description = "Identifiants publics exacts de dix scènes TCF, reliés à leurs images et empreintes vérifiées dans les trois rapports du 14 novembre."
+condition = "AND"
+paths = [
+  '''(^|/)docs/tcf/correction\-interlocuteurs\-pluie\-20261114\.json$''',
+  '''(^|/)docs/tcf/generation\-scenarios\-b1\-complement\-20261114\.json$''',
+  '''(^|/)docs/tcf/generation\-scenarios\-priorite\-20261114\.json$''',
+]
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"(?:scene\-b1\-deborde\-travail|scene\-b1\-elsa\-rendezvous|scene\-b1\-pluie\-deux\-interlocuteurs|scene\-prio\-a2\-claudine\-interro|scene\-prio\-a2\-decoration\-mere|scene\-prio\-a2\-horaires\-cadeaux|scene\-prio\-a2\-pere\-refus\-bowling|scene\-prio\-a2\-remerciements\-iles|scene\-prio\-a2\-vendeur\-coton|scene\-prio\-a2\-voiture\-pere)"?$''' ]
