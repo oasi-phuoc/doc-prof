@@ -3,8 +3,8 @@
   "seed": 20261107,
   "scope": "Un tirage réel par type de catalogue, count=2, niveau par défaut. Ne garantit pas les autres graines, variantes et niveaux.",
   "summary": {
-    "types": 2117,
-    "catalogTypes": 2085,
+    "types": 2150,
+    "catalogTypes": 2118,
     "declaredDomains": [
       "français",
       "algèbre",
@@ -84,8 +84,10 @@
       "order",
       "phrase-build",
       "phrase-color",
+      "phrase-images",
       "phrase-order",
       "phrase-scramble",
+      "phrase-svc",
       "phrase-write",
       "place-value",
       "read-phrases",
@@ -130,9 +132,11 @@
       "order",
       "letter-grid",
       "syllable-table",
+      "phrase-svc",
       "phrase-color",
       "phrase-order",
       "phrase-build",
+      "phrase-images",
       "phrase-write",
       "gattegno-chart",
       "vocab-table",
@@ -165,7 +169,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 725,
+    "playableTypes": 739,
     "generationErrors": 8
   },
   "rows": [
@@ -74843,7 +74847,7 @@
         "exerciseType": "phrase-tableau-categories",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "gattegno-chart"
@@ -74887,7 +74891,7 @@
         "exerciseType": "phrase-tableau-mots",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "gattegno-chart"
@@ -74931,7 +74935,7 @@
         "exerciseType": "phrase-tableau-vide",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "gattegno-chart"
@@ -81429,49 +81433,49 @@
               "support": {
                 "nb_dialogues": 4,
                 "audios": [
-                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
-                  "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3"
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3",
+                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3"
                 ],
                 "transcription": [
-                  "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
-                  "Bonjour, je m’appelle Célia Leblanc.\nJe suis la nouvelle secrétaire.\n— Bienvenue !\nJe m’appelle Charlotte Colombe, je suis la comptable.\n— Enchantée.",
-                  "Papa, est-ce que tu peux m'aider avec mes devoirs ?\nD'accord.\nQu'est-ce que tu fais ?\nCe sont des exercices de mathématiques.",
-                  "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes."
+                  "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ? Attends je cherche dans mon sac. Désolée … j’oublie toujours ton cahier.",
+                  "Où sont les yaourts s'il vous plaît ? Dans le rayon frais, au fond du magasin. Merci, monsieur.",
+                  "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
+                  "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège."
                 ]
               },
               "questions": [],
               "situations": [
                 {
                   "id": "d1",
-                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
                   "dialogue": 1
                 },
                 {
-                  "id": "d4",
-                  "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-                  "dialogue": 4
-                },
-                {
                   "id": "d3",
-                  "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
+                  "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
                   "dialogue": 3
                 },
                 {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
                   "dialogue": null
                 },
                 {
                   "id": "d2",
-                  "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+                  "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
                   "dialogue": 2
                 },
                 {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+                  "id": "l1",
+                  "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
                   "dialogue": null
+                },
+                {
+                  "id": "d4",
+                  "image": "/lib/images/tcf/co/bg/piscine.webp",
+                  "dialogue": 4
                 }
               ],
               "consigne_supplementaire": null
@@ -81489,37 +81493,37 @@
             "situations": [
               {
                 "lettre": "A",
-                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
                 "dialogue": 1,
-                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3"
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3"
               },
               {
                 "lettre": "B",
                 "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-                "dialogue": 4,
+                "dialogue": 3,
                 "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3"
               },
               {
                 "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
-                "dialogue": 3,
-                "audioSrc": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+                "dialogue": null
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3"
               },
               {
                 "lettre": "E",
-                "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "dialogue": null
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/bg/piscine.webp",
+                "dialogue": 4,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3"
               }
             ]
           },
@@ -81588,49 +81592,49 @@
               "support": {
                 "nb_dialogues": 4,
                 "audios": [
-                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
-                  "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
-                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3"
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3",
+                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+                  "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3"
                 ],
                 "transcription": [
-                  "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
-                  "Bonjour, je m’appelle Célia Leblanc.\nJe suis la nouvelle secrétaire.\n— Bienvenue !\nJe m’appelle Charlotte Colombe, je suis la comptable.\n— Enchantée.",
-                  "Papa, est-ce que tu peux m'aider avec mes devoirs ?\nD'accord.\nQu'est-ce que tu fais ?\nCe sont des exercices de mathématiques.",
-                  "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes."
+                  "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ? Attends je cherche dans mon sac. Désolée … j’oublie toujours ton cahier.",
+                  "Où sont les yaourts s'il vous plaît ? Dans le rayon frais, au fond du magasin. Merci, monsieur.",
+                  "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
+                  "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège."
                 ]
               },
               "questions": [],
               "situations": [
                 {
                   "id": "d1",
-                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
                   "dialogue": 1
                 },
                 {
-                  "id": "d4",
-                  "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-                  "dialogue": 4
-                },
-                {
                   "id": "d3",
-                  "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
+                  "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
                   "dialogue": 3
                 },
                 {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
                   "dialogue": null
                 },
                 {
                   "id": "d2",
-                  "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+                  "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
                   "dialogue": 2
                 },
                 {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+                  "id": "l1",
+                  "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
                   "dialogue": null
+                },
+                {
+                  "id": "d4",
+                  "image": "/lib/images/tcf/co/bg/piscine.webp",
+                  "dialogue": 4
                 }
               ],
               "consigne_supplementaire": null
@@ -81648,37 +81652,37 @@
             "situations": [
               {
                 "lettre": "A",
-                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
                 "dialogue": 1,
-                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3"
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3"
               },
               {
                 "lettre": "B",
                 "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-                "dialogue": 4,
+                "dialogue": 3,
                 "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3"
               },
               {
                 "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
-                "dialogue": 3,
-                "audioSrc": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+                "dialogue": null
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3"
               },
               {
                 "lettre": "E",
-                "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "dialogue": null
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/bg/piscine.webp",
+                "dialogue": 4,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3"
               }
             ]
           },
@@ -81747,49 +81751,49 @@
               "support": {
                 "nb_dialogues": 4,
                 "audios": [
-                  "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
-                  "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
                   "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
-                  "/lib/audio/tcf/co/magasins/les-achats-1.mp3"
+                  "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-04.mp3",
+                  "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
+                  "/lib/audio/tcf/co/magasins/les-achats-4.mp3"
                 ],
                 "transcription": [
-                  "La cuisine, c'est vraiment trop difficile pour moi. Qu'est-ce qui se passe ? Je peux faire quelque chose ? J'ai raté ma crème au chocolat. Attends, je te montre. C'est très facile.",
-                  "Alors Emma, tes examens, tu as reçu les résultats ? Oui Alex, j'ai réussi, je suis trop contente ! Bravo, toutes mes félicitations, tu as bien travaillé ! Merci, c'est gentil.",
                   "Aujourd'hui, dans le bus, j'ai croisé Thomas.\nC'est qui ?\nLe frère de Sophie.\nIl a déménagé à Lyon pour ses études.\nIl est très sympa.\nInvite-le à la maison si tu veux.",
-                  "Alors, tu prends quoi ? Le sac vert ou le sac noir ? Le noir ne me plaît pas trop. Je crois que j'aime mieux le vert. C'est un bon choix. Merci."
+                  "Bonjour monsieur, quel est le prix d’un billet pour les îles ? Un aller-retour, c’est 12 € par personne. Y a-t-il des réductions ? Nous sommes un groupe de 5. Pour un groupe de 5 vous avez un billet gratuit.",
+                  "Salut Marc, ça va ? Tu fais quoi samedi ? Rien je crois. Je suis libre. Pourquoi ? Ça te dit de venir avec moi au Musée d'Histoire ? J'ai deux billets. D'accord.",
+                  "Alors Emma, tes examens, tu as reçu les résultats ? Oui Alex, j'ai réussi, je suis trop contente ! Bravo, toutes mes félicitations, tu as bien travaillé ! Merci, c'est gentil."
                 ]
               },
               "questions": [],
               "situations": [
                 {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
+                  "id": "l1",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
                   "dialogue": null
-                },
-                {
-                  "id": "d3",
-                  "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
-                  "dialogue": 3
                 },
                 {
                   "id": "d1",
-                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
+                  "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
                   "dialogue": 1
                 },
                 {
-                  "id": "d4",
-                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
-                  "dialogue": 4
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
+                  "dialogue": null
                 },
                 {
                   "id": "d2",
-                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+                  "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
                   "dialogue": 2
                 },
                 {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
-                  "dialogue": null
+                  "id": "d4",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+                  "dialogue": 4
+                },
+                {
+                  "id": "d3",
+                  "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+                  "dialogue": 3
                 }
               ],
               "consigne_supplementaire": null
@@ -81807,37 +81811,37 @@
             "situations": [
               {
                 "lettre": "A",
-                "image": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
+                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
                 "dialogue": null
               },
               {
                 "lettre": "B",
                 "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
-                "dialogue": 3,
+                "dialogue": 1,
                 "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3"
               },
               {
                 "lettre": "C",
-                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
-                "dialogue": 1,
-                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-3.mp3"
+                "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
+                "dialogue": null
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
-                "dialogue": 4,
-                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-1.mp3"
+                "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-04.mp3"
               },
               {
                 "lettre": "E",
                 "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
-                "dialogue": 2,
+                "dialogue": 4,
                 "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-4.mp3"
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+                "dialogue": 3,
+                "audioSrc": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3"
               }
             ]
           },
@@ -115035,6 +115039,804 @@
       "issues": [
         {
           "source": "1/1/1 gram-ex-re-oir-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-modaux-curriculum-s",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Jouer une situation",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-modaux-curriculum-s",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-modaux-curriculum-s",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-pronominaux-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-pronominaux-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-pronominaux-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-pronominaux-curriculum-p",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "S’exprimer à l’oral",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-pronominaux-curriculum-p",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-pronominaux-curriculum-p",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-a8-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-a8-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-a8-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-a9-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-a9-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-a9-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b1-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Associer les situations et les formes",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b1-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b1-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b1-curriculum-p",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "S’exprimer à l’oral",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b1-curriculum-p",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b1-curriculum-p",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b1-curriculum-s",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Jouer une situation",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b1-curriculum-s",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b1-curriculum-s",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b2-curriculum-o",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Mots dans l’ordre",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b2-curriculum-o",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b2-curriculum-o",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b2-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Associer les situations et les formes",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b2-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b2-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b2-curriculum-p",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "S’exprimer à l’oral",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b2-curriculum-p",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b2-curriculum-p",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b2-curriculum-s",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Jouer une situation",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b2-curriculum-s",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b2-curriculum-s",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b3-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Associer les situations et les formes",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b3-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b3-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b3-curriculum-p",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "S’exprimer à l’oral",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b3-curriculum-p",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b3-curriculum-p",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-b3-curriculum-s",
+      "domain": "grammaire",
+      "topic": "gram-entrer-contact",
+      "label": "Jouer une situation",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-entrer-contact",
+        "exerciseType": "gram-ex-b3-curriculum-s",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-b3-curriculum-s",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-a2-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-se-presenter",
+      "label": "Associer les sujets et les pronoms",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-se-presenter",
+        "exerciseType": "gram-ex-a2-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-a2-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-a2-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-se-presenter",
+      "label": "Remplacer le sujet par un pronom",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-se-presenter",
+        "exerciseType": "gram-ex-a2-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-a2-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-a6-curriculum-a",
+      "domain": "grammaire",
+      "topic": "gram-se-presenter",
+      "label": "Associer les sujets et les formes de venir",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-se-presenter",
+        "exerciseType": "gram-ex-a6-curriculum-a",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-a6-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-a6-curriculum-p",
+      "domain": "grammaire",
+      "topic": "gram-se-presenter",
+      "label": "S’exprimer à l’oral",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-se-presenter",
+        "exerciseType": "gram-ex-a6-curriculum-p",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-a6-curriculum-p",
           "reason": "Rendu « text » non pris en charge dans ce premier prototype."
         }
       ],
@@ -190939,6 +191741,98 @@
       ]
     },
     {
+      "id": "phrase-simple-svc",
+      "domain": "gattegno",
+      "topic": "phrase-simple",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-simple",
+        "exerciseType": "phrase-simple-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "des",
+              "category": "determinant"
+            },
+            {
+              "text": "bonbons",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Ruth. Verbe à souligner : partage.",
+          "responseAnswer": "Ruth partage des bonbons."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Tu",
+              "category": "pronom"
+            },
+            {
+              "text": "allumes",
+              "category": "verbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "lampe",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Tu. Verbe à souligner : allumes.",
+          "responseAnswer": "Tu allumes la lampe."
+        }
+      ]
+    },
+    {
       "id": "phrase-simple-colorier",
       "domain": "gattegno",
       "topic": "phrase-simple",
@@ -190950,7 +191844,7 @@
         "exerciseType": "phrase-simple-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -191027,7 +191921,7 @@
         "exerciseType": "phrase-simple-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -191128,7 +192022,7 @@
         "exerciseType": "phrase-simple-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -191187,6 +192081,126 @@
       ]
     },
     {
+      "id": "phrase-simple-images",
+      "domain": "gattegno",
+      "topic": "phrase-simple",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-simple",
+        "exerciseType": "phrase-simple-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "protégeons",
+              "category": "verbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "forêt",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "protéger",
+              "imageSrc": "/lib/images/gattegno/verbe-proteger.webp"
+            },
+            {
+              "category": "nom",
+              "label": "forêt",
+              "imageSrc": "/lib/images/tcf/co/bg/foret.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous protégeons la forêt.",
+          "responseAnswer": "Nous protégeons la forêt."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Je",
+              "category": "pronom"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "clémentine",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Je",
+              "imageSrc": "/lib/images/gattegno/pronom-je.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "manger",
+              "imageSrc": "/lib/images/tcf/catalogue/actions/manger.webp"
+            },
+            {
+              "category": "nom",
+              "label": "clémentine",
+              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/clementine.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Je mange une clémentine.",
+          "responseAnswer": "Je mange une clémentine."
+        }
+      ]
+    },
+    {
       "id": "phrase-simple-ecrire",
       "domain": "gattegno",
       "topic": "phrase-simple",
@@ -191198,7 +192212,7 @@
         "exerciseType": "phrase-simple-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"
@@ -191241,6 +192255,113 @@
       ]
     },
     {
+      "id": "phrase-determinants-svc",
+      "domain": "gattegno",
+      "topic": "phrase-determinants",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-determinants",
+        "exerciseType": "phrase-determinants-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Mon",
+              "category": "determinant"
+            },
+            {
+              "text": "frère",
+              "category": "nom"
+            },
+            {
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "des",
+              "category": "determinant"
+            },
+            {
+              "text": "bonbons",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Mon frère. Verbe à souligner : partage.",
+          "responseAnswer": "Mon frère partage des bonbons."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Le",
+              "category": "determinant"
+            },
+            {
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "cuisine",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Le garçon. Verbe à souligner : mange.",
+          "responseAnswer": "Le garçon mange dans la cuisine."
+        }
+      ]
+    },
+    {
       "id": "phrase-determinants-colorier",
       "domain": "gattegno",
       "topic": "phrase-determinants",
@@ -191252,7 +192373,7 @@
         "exerciseType": "phrase-determinants-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -191341,7 +192462,7 @@
         "exerciseType": "phrase-determinants-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -191457,7 +192578,7 @@
         "exerciseType": "phrase-determinants-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -191519,6 +192640,126 @@
       ]
     },
     {
+      "id": "phrase-determinants-images",
+      "domain": "gattegno",
+      "topic": "phrase-determinants",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-determinants",
+        "exerciseType": "phrase-determinants-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "protégeons",
+              "category": "verbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "forêt",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "protéger",
+              "imageSrc": "/lib/images/gattegno/verbe-proteger.webp"
+            },
+            {
+              "category": "nom",
+              "label": "forêt",
+              "imageSrc": "/lib/images/tcf/co/bg/foret.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous protégeons la forêt.",
+          "responseAnswer": "Nous protégeons la forêt."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Je",
+              "category": "pronom"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "clémentine",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Je",
+              "imageSrc": "/lib/images/gattegno/pronom-je.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "manger",
+              "imageSrc": "/lib/images/tcf/catalogue/actions/manger.webp"
+            },
+            {
+              "category": "nom",
+              "label": "clémentine",
+              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/clementine.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Je mange une clémentine.",
+          "responseAnswer": "Je mange une clémentine."
+        }
+      ]
+    },
+    {
       "id": "phrase-determinants-ecrire",
       "domain": "gattegno",
       "topic": "phrase-determinants",
@@ -191530,7 +192771,7 @@
         "exerciseType": "phrase-determinants-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"
@@ -191573,6 +192814,113 @@
       ]
     },
     {
+      "id": "phrase-pronominaux-svc",
+      "domain": "gattegno",
+      "topic": "phrase-pronominaux",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-pronominaux",
+        "exerciseType": "phrase-pronominaux-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "s’",
+              "category": "pronom"
+            },
+            {
+              "text": "intéresse",
+              "category": "verbe"
+            },
+            {
+              "text": "au",
+              "category": "preposition"
+            },
+            {
+              "text": "cinéma",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            null,
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Ruth. Verbe à souligner : intéresse.",
+          "responseAnswer": "Ruth s’intéresse au cinéma."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Tu",
+              "category": "pronom"
+            },
+            {
+              "text": "te",
+              "category": "pronom"
+            },
+            {
+              "text": "penches",
+              "category": "verbe"
+            },
+            {
+              "text": "vers",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "fenêtre",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            null,
+            "verbe",
+            "complement",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Tu. Verbe à souligner : penches.",
+          "responseAnswer": "Tu te penches vers la fenêtre."
+        }
+      ]
+    },
+    {
       "id": "phrase-pronominaux-colorier",
       "domain": "gattegno",
       "topic": "phrase-pronominaux",
@@ -191584,7 +192932,7 @@
         "exerciseType": "phrase-pronominaux-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -191673,7 +193021,7 @@
         "exerciseType": "phrase-pronominaux-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -191789,7 +193137,7 @@
         "exerciseType": "phrase-pronominaux-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -191851,6 +193199,154 @@
       ]
     },
     {
+      "id": "phrase-pronominaux-images",
+      "domain": "gattegno",
+      "topic": "phrase-pronominaux",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-pronominaux",
+        "exerciseType": "phrase-pronominaux-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "nous",
+              "category": "pronom"
+            },
+            {
+              "text": "approchons",
+              "category": "verbe"
+            },
+            {
+              "text": "du",
+              "category": "preposition"
+            },
+            {
+              "text": "guichet",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "pronom",
+              "label": "nous"
+            },
+            {
+              "category": "verbe",
+              "label": "s’approcher",
+              "imageSrc": "/lib/images/gattegno/verbe-s-approcher.webp"
+            },
+            {
+              "category": "preposition",
+              "label": "du"
+            },
+            {
+              "category": "nom",
+              "label": "guichet",
+              "imageSrc": "/lib/images/tcf/co/bg/guichet.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous nous approchons du guichet.",
+          "responseAnswer": "Nous nous approchons du guichet."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Je",
+              "category": "pronom"
+            },
+            {
+              "text": "me",
+              "category": "pronom"
+            },
+            {
+              "text": "coiffe",
+              "category": "verbe"
+            },
+            {
+              "text": "avant",
+              "category": "preposition"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "travail",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Je",
+              "imageSrc": "/lib/images/gattegno/pronom-je.webp"
+            },
+            {
+              "category": "pronom",
+              "label": "me"
+            },
+            {
+              "category": "verbe",
+              "label": "se coiffer",
+              "imageSrc": "/lib/images/gattegno/verbe-se-coiffer.webp"
+            },
+            {
+              "category": "preposition",
+              "label": "avant"
+            },
+            {
+              "category": "nom",
+              "label": "travail",
+              "imageSrc": "/lib/images/tcf/co/bg/bureau.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Je me coiffe avant le travail.",
+          "responseAnswer": "Je me coiffe avant le travail."
+        }
+      ]
+    },
+    {
       "id": "phrase-pronominaux-ecrire",
       "domain": "gattegno",
       "topic": "phrase-pronominaux",
@@ -191862,7 +193358,7 @@
         "exerciseType": "phrase-pronominaux-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"
@@ -191905,6 +193401,148 @@
       ]
     },
     {
+      "id": "phrase-adjectif-svc",
+      "domain": "gattegno",
+      "topic": "phrase-adjectif",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-adjectif",
+        "exerciseType": "phrase-adjectif-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Le",
+              "category": "determinant"
+            },
+            {
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "un",
+              "category": "determinant"
+            },
+            {
+              "text": "repas",
+              "category": "nom"
+            },
+            {
+              "text": "convivial",
+              "category": "adjectif"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Le garçon. Verbe à souligner : partage.",
+          "responseAnswer": "Le garçon partage un repas convivial."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Ibrahim",
+              "category": "nom"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "cuisine",
+              "category": "nom"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "tante",
+              "category": "nom"
+            },
+            {
+              "text": "range",
+              "category": "verbe"
+            },
+            {
+              "text": "les",
+              "category": "determinant"
+            },
+            {
+              "text": "chaussures",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            null,
+            "complement",
+            "complement",
+            "complement",
+            null,
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujets à entourer : Ibrahim ; la tante. Verbes à souligner : mange ; range.",
+          "responseAnswer": "Ibrahim mange souvent dans la cuisine et la tante range les chaussures."
+        }
+      ]
+    },
+    {
       "id": "phrase-adjectif-colorier",
       "domain": "gattegno",
       "topic": "phrase-adjectif",
@@ -191916,7 +193554,7 @@
         "exerciseType": "phrase-adjectif-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -192033,7 +193671,7 @@
         "exerciseType": "phrase-adjectif-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -192184,7 +193822,7 @@
         "exerciseType": "phrase-adjectif-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -192253,6 +193891,134 @@
       ]
     },
     {
+      "id": "phrase-adjectif-images",
+      "domain": "gattegno",
+      "topic": "phrase-adjectif",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-adjectif",
+        "exerciseType": "phrase-adjectif-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "protégeons",
+              "category": "verbe"
+            },
+            {
+              "text": "les",
+              "category": "determinant"
+            },
+            {
+              "text": "oiseaux",
+              "category": "nom"
+            },
+            {
+              "text": "migrateurs",
+              "category": "adjectif"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "protéger",
+              "imageSrc": "/lib/images/gattegno/verbe-proteger.webp"
+            },
+            {
+              "category": "nom",
+              "label": "oiseaux",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-oiseau.webp"
+            },
+            {
+              "category": "adjectif",
+              "label": "migrateurs"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous protégeons les oiseaux migrateurs.",
+          "responseAnswer": "Nous protégeons les oiseaux migrateurs."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Je",
+              "category": "pronom"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "pomme",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Je",
+              "imageSrc": "/lib/images/gattegno/pronom-je.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "manger",
+              "imageSrc": "/lib/images/tcf/catalogue/actions/manger.webp"
+            },
+            {
+              "category": "nom",
+              "label": "pomme",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-pomme.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Je mange une pomme.",
+          "responseAnswer": "Je mange une pomme."
+        }
+      ]
+    },
+    {
       "id": "phrase-adjectif-ecrire",
       "domain": "gattegno",
       "topic": "phrase-adjectif",
@@ -192264,7 +194030,7 @@
         "exerciseType": "phrase-adjectif-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"
@@ -192307,6 +194073,128 @@
       ]
     },
     {
+      "id": "phrase-preposition-svc",
+      "domain": "gattegno",
+      "topic": "phrase-preposition",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-preposition",
+        "exerciseType": "phrase-preposition-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "accroche",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "étagère",
+              "category": "nom"
+            },
+            {
+              "text": "à",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "maison",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            "complement",
+            "complement",
+            "complement",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Ruth. Verbe à souligner : accroche.",
+          "responseAnswer": "Ruth accroche une étagère à la maison."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Tu",
+              "category": "pronom"
+            },
+            {
+              "text": "quittes",
+              "category": "verbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "maison",
+              "category": "nom"
+            },
+            {
+              "text": "après",
+              "category": "preposition"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "dîner",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            "complement",
+            "complement",
+            "complement",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Tu. Verbe à souligner : quittes.",
+          "responseAnswer": "Tu quittes la maison après le dîner."
+        }
+      ]
+    },
+    {
       "id": "phrase-preposition-colorier",
       "domain": "gattegno",
       "topic": "phrase-preposition",
@@ -192318,7 +194206,7 @@
         "exerciseType": "phrase-preposition-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -192419,7 +194307,7 @@
         "exerciseType": "phrase-preposition-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -192550,7 +194438,7 @@
         "exerciseType": "phrase-preposition-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -192615,6 +194503,163 @@
       ]
     },
     {
+      "id": "phrase-preposition-images",
+      "domain": "gattegno",
+      "topic": "phrase-preposition",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-preposition",
+        "exerciseType": "phrase-preposition-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "grillons",
+              "category": "verbe"
+            },
+            {
+              "text": "des",
+              "category": "determinant"
+            },
+            {
+              "text": "aubergines",
+              "category": "nom"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "cuisine",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "griller",
+              "imageSrc": "/lib/images/gattegno/verbe-griller.webp"
+            },
+            {
+              "category": "nom",
+              "label": "aubergines",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-aubergine.webp"
+            },
+            {
+              "category": "preposition",
+              "label": "dans"
+            },
+            {
+              "category": "nom",
+              "label": "cuisine",
+              "imageSrc": "/lib/images/tcf/co/bg/cuisine.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous grillons des aubergines dans la cuisine.",
+          "responseAnswer": "Nous grillons des aubergines dans la cuisine."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "J’",
+              "category": "pronom"
+            },
+            {
+              "text": "habite",
+              "category": "verbe"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "dans",
+              "category": "preposition"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "maison",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "J’",
+              "imageSrc": "/lib/images/gattegno/pronom-je.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "habiter",
+              "imageSrc": "/lib/images/gattegno/verbe-habiter.webp"
+            },
+            {
+              "category": "adverbe",
+              "label": "souvent"
+            },
+            {
+              "category": "preposition",
+              "label": "dans"
+            },
+            {
+              "category": "nom",
+              "label": "maison",
+              "imageSrc": "/lib/images/tcf/co/bg/maison.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "J’habite souvent dans une maison.",
+          "responseAnswer": "J’habite souvent dans une maison."
+        }
+      ]
+    },
+    {
       "id": "phrase-preposition-ecrire",
       "domain": "gattegno",
       "topic": "phrase-preposition",
@@ -192626,7 +194671,7 @@
         "exerciseType": "phrase-preposition-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"
@@ -192669,6 +194714,108 @@
       ]
     },
     {
+      "id": "phrase-adverbe-svc",
+      "domain": "gattegno",
+      "topic": "phrase-adverbe",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-adverbe",
+        "exerciseType": "phrase-adverbe-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "des",
+              "category": "determinant"
+            },
+            {
+              "text": "bonbons",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            null,
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Ruth. Verbe à souligner : partage.",
+          "responseAnswer": "Ruth partage souvent des bonbons."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Tu",
+              "category": "pronom"
+            },
+            {
+              "text": "allumes",
+              "category": "verbe"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "lampe",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            null,
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujet à entourer : Tu. Verbe à souligner : allumes.",
+          "responseAnswer": "Tu allumes souvent la lampe."
+        }
+      ]
+    },
+    {
       "id": "phrase-adverbe-colorier",
       "domain": "gattegno",
       "topic": "phrase-adverbe",
@@ -192680,7 +194827,7 @@
         "exerciseType": "phrase-adverbe-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -192765,7 +194912,7 @@
         "exerciseType": "phrase-adverbe-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -192876,7 +195023,7 @@
         "exerciseType": "phrase-adverbe-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -192937,6 +195084,142 @@
       ]
     },
     {
+      "id": "phrase-adverbe-images",
+      "domain": "gattegno",
+      "topic": "phrase-adverbe",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-adverbe",
+        "exerciseType": "phrase-adverbe-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "protégeons",
+              "category": "verbe"
+            },
+            {
+              "text": "souvent",
+              "category": "adverbe"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "forêt",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "protéger",
+              "imageSrc": "/lib/images/gattegno/verbe-proteger.webp"
+            },
+            {
+              "category": "adverbe",
+              "label": "souvent"
+            },
+            {
+              "category": "nom",
+              "label": "forêt",
+              "imageSrc": "/lib/images/tcf/co/bg/foret.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous protégeons souvent la forêt.",
+          "responseAnswer": "Nous protégeons souvent la forêt."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Je",
+              "category": "pronom"
+            },
+            {
+              "text": "mange",
+              "category": "verbe"
+            },
+            {
+              "text": "vite",
+              "category": "adverbe"
+            },
+            {
+              "text": "un",
+              "category": "determinant"
+            },
+            {
+              "text": "abricot",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Je",
+              "imageSrc": "/lib/images/gattegno/pronom-je.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "manger",
+              "imageSrc": "/lib/images/tcf/catalogue/actions/manger.webp"
+            },
+            {
+              "category": "adverbe",
+              "label": "vite"
+            },
+            {
+              "category": "nom",
+              "label": "abricot",
+              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/abricot.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Je mange vite un abricot.",
+          "responseAnswer": "Je mange vite un abricot."
+        }
+      ]
+    },
+    {
       "id": "phrase-adverbe-ecrire",
       "domain": "gattegno",
       "topic": "phrase-adverbe",
@@ -192948,7 +195231,7 @@
         "exerciseType": "phrase-adverbe-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"
@@ -192991,6 +195274,163 @@
       ]
     },
     {
+      "id": "phrase-conjonctions-svc",
+      "domain": "gattegno",
+      "topic": "phrase-conjonctions",
+      "label": "S-V-C : sujet, verbe et complément",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-conjonctions",
+        "exerciseType": "phrase-conjonctions-svc",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-svc"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseSyntaxRoles",
+        "responseAnswer",
+        "tokens"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Ruth",
+              "category": "nom"
+            },
+            {
+              "text": "partage",
+              "category": "verbe"
+            },
+            {
+              "text": "un",
+              "category": "determinant"
+            },
+            {
+              "text": "secret",
+              "category": "nom"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "garçon",
+              "category": "nom"
+            },
+            {
+              "text": "salue",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "commerçante",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "verbe",
+            "complement",
+            "complement",
+            null,
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujets à entourer : Ruth ; le garçon. Verbes à souligner : partage ; salue.",
+          "responseAnswer": "Ruth partage un secret et le garçon salue une commerçante."
+        },
+        {
+          "layout": "phrase-svc",
+          "tokens": [
+            {
+              "text": "Le",
+              "category": "determinant"
+            },
+            {
+              "text": "boulanger",
+              "category": "nom"
+            },
+            {
+              "text": "cherche",
+              "category": "verbe"
+            },
+            {
+              "text": "un",
+              "category": "determinant"
+            },
+            {
+              "text": "contact",
+              "category": "nom"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "la",
+              "category": "determinant"
+            },
+            {
+              "text": "factrice",
+              "category": "nom"
+            },
+            {
+              "text": "utilise",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "tablette",
+              "category": "nom"
+            }
+          ],
+          "phraseSyntaxRoles": [
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement",
+            null,
+            "sujet",
+            "sujet",
+            "verbe",
+            "complement",
+            "complement"
+          ],
+          "answer": "Sujets à entourer : Le boulanger ; la factrice. Verbes à souligner : cherche ; utilise.",
+          "responseAnswer": "Le boulanger cherche un contact et la factrice utilise une tablette."
+        }
+      ]
+    },
+    {
       "id": "phrase-conjonctions-colorier",
       "domain": "gattegno",
       "topic": "phrase-conjonctions",
@@ -193002,7 +195442,7 @@
         "exerciseType": "phrase-conjonctions-colorier",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-color"
@@ -193131,7 +195571,7 @@
         "exerciseType": "phrase-conjonctions-ordre",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-order"
@@ -193297,7 +195737,7 @@
         "exerciseType": "phrase-conjonctions-construire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-build"
@@ -193369,6 +195809,177 @@
       ]
     },
     {
+      "id": "phrase-conjonctions-images",
+      "domain": "gattegno",
+      "topic": "phrase-conjonctions",
+      "label": "Écrire une phrase en images",
+      "seed": 20261107,
+      "config": {
+        "domain": "gattegno",
+        "topic": "phrase-conjonctions",
+        "exerciseType": "phrase-conjonctions-images",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 2
+      },
+      "layouts": [
+        "phrase-images"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 2,
+      "playableQuestions": 2,
+      "compatibility": [
+        "teacher-led"
+      ],
+      "issues": [],
+      "fields": [
+        "answer",
+        "layout",
+        "phraseImageLabels",
+        "phraseImages",
+        "responseAnswer",
+        "tokens",
+        "writeLines"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Nous",
+              "category": "pronom"
+            },
+            {
+              "text": "bricolons",
+              "category": "verbe"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "étagère",
+              "category": "nom"
+            },
+            {
+              "text": "et",
+              "category": "conjonction"
+            },
+            {
+              "text": "le",
+              "category": "determinant"
+            },
+            {
+              "text": "cuisinier",
+              "category": "nom"
+            },
+            {
+              "text": "essuie",
+              "category": "verbe"
+            },
+            {
+              "text": "les",
+              "category": "determinant"
+            },
+            {
+              "text": "assiettes",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Nous",
+              "imageSrc": "/lib/images/gattegno/pronom-nous.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "bricoler",
+              "imageSrc": "/lib/images/gattegno/verbe-bricoler.webp"
+            },
+            {
+              "category": "nom",
+              "label": "étagère",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-etagere.webp"
+            },
+            {
+              "category": "conjonction",
+              "label": "et"
+            },
+            {
+              "category": "nom",
+              "label": "cuisinier",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-cuisinier.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "essuyer",
+              "imageSrc": "/lib/images/gattegno/verbe-essuyer.webp"
+            },
+            {
+              "category": "nom",
+              "label": "assiettes",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-assiette.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Nous bricolons une étagère et le cuisinier essuie les assiettes.",
+          "responseAnswer": "Nous bricolons une étagère et le cuisinier essuie les assiettes."
+        },
+        {
+          "layout": "phrase-images",
+          "tokens": [
+            {
+              "text": "Elles",
+              "category": "pronom"
+            },
+            {
+              "text": "insistent",
+              "category": "verbe"
+            },
+            {
+              "text": "sur",
+              "category": "preposition"
+            },
+            {
+              "text": "une",
+              "category": "determinant"
+            },
+            {
+              "text": "règle",
+              "category": "nom"
+            }
+          ],
+          "phraseImages": [
+            {
+              "category": "pronom",
+              "label": "Elles",
+              "imageSrc": "/lib/images/gattegno/pronom-elles.webp"
+            },
+            {
+              "category": "verbe",
+              "label": "insister",
+              "imageSrc": "/lib/images/gattegno/verbe-insister.webp"
+            },
+            {
+              "category": "preposition",
+              "label": "sur"
+            },
+            {
+              "category": "nom",
+              "label": "règle",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-regle.webp"
+            }
+          ],
+          "phraseImageLabels": false,
+          "writeLines": 1,
+          "answer": "Elles insistent sur une règle.",
+          "responseAnswer": "Elles insistent sur une règle."
+        }
+      ]
+    },
+    {
       "id": "phrase-conjonctions-ecrire",
       "domain": "gattegno",
       "topic": "phrase-conjonctions",
@@ -193380,7 +195991,7 @@
         "exerciseType": "phrase-conjonctions-ecrire",
         "difficulty": "moyen",
         "count": 2,
-        "columns": 1
+        "columns": 2
       },
       "layouts": [
         "phrase-write"

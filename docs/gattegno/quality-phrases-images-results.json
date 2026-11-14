@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-14T13:09:56.282088+00:00",
+  "scope": "S-V-C et écrire une phrase en images dans les sept thèmes Gattegno",
+  "previousDelivery": "af120baf",
+  "mergedMain": "1b22f4d9",
+  "unitTests": {
+    "tests": 373,
+    "passed": 373,
+    "failed": 0,
+    "afterMainMerge": true
+  },
+  "focusedTests": {
+    "tests": 17,
+    "passed": 17,
+    "failed": 0
+  },
+  "checks": {
+    "frontendTypes": "passed",
+    "apiTypes": "passed",
+    "lint": "passed with existing warnings",
+    "build": "passed",
+    "secrets": "passed, no findings",
+    "gattegnoLanguageAudits": "all three passed"
+  },
+  "browserStagesPassed": [
+    "gattegno-browser",
+    "source-adapters-browser",
+    "readability-browser",
+    "phrase-images-browser",
+    "a4-regression"
+  ],
+  "browserProof": "phrases-images-browser-results.json",
+  "viewports": [
+    "1366x1000",
+    "390x844",
+    "360x640"
+  ],
+  "a4": {
+    "reference": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "arithmeticGeometryScreenshot": "identical",
+    "phraseImagePagesPerViewport": 4,
+    "overflows": 0,
+    "draftRecipe": "unchanged"
+  },
+  "accessibility": {
+    "axeViolations": 0,
+    "scope": "targeted new exercise screens in the browser fixture"
+  },
+  "persistence": {
+    "simulatedApiSaveReload": "passed",
+    "liveServerWrites": 0,
+    "sourceTemplateChanged": false
+  },
+  "illustrations": {
+    "newIndividualImages": 214,
+    "pronouns": 8,
+    "actions": 206,
+    "width": 1448,
+    "height": 1086,
+    "newFilesBytes": 95177050,
+    "reusedTCFImages": 35,
+    "conceptAliases": {
+      "rouler": "conduire"
+    },
+    "uniqueSourceVerbs": 281,
+    "illustratedSourceVerbs": 239,
+    "pendingSourceVerbs": 42,
+    "pendingExtraVerbs": [
+      "rougir"
+    ],
+    "pendingQueue": "illustrations-en-attente.json",
+    "limitation": "Temporary image generation usage limit reached; no arbitrary replacement for missing verbs"
+  },
+  "performanceGzip": {
+    "landing": {
+      "bytes": 121804,
+      "maximum": 153600
+    },
+    "calibration": {
+      "bytes": 141742,
+      "maximum": 204800
+    },
+    "diagnostic": {
+      "bytes": 143883,
+      "maximum": 204800
+    },
+    "competition": {
+      "bytes": 186104,
+      "maximum": 204800
+    },
+    "game": {
+      "bytes": 2992537,
+      "maximum": 3145728
+    }
+  },
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 59,
+  "limits": [
+    "Remaining verb illustrations are not complete.",
+    "Syntactic roles and passive constructions use controlled source data, not a general French parser.",
+    "Open image sentences and S-V-C use teacher assessment, without automatic competition scoring.",
+    "Offline play verified after complete media preparation, not cold start.",
+    "Physical printer and ENI pilot not attested."
+  ]
+}

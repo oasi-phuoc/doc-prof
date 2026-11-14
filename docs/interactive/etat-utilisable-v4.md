@@ -2,12 +2,12 @@
 
 Vérification du 14 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
 
-Complément du 12 novembre : la [banque Gattegno](../gattegno/README.md) est relue et enrichie de 5 476 à 19 513 constructions distinctes dans douze domaines, avec corrections des possessifs, prépositions, adverbes et coordinations. Les sept thèmes, les quatre formats et l’impression des fiches/corrigés sont vérifiés sur mobile et ordinateur. L’inventaire ci-dessous est actualisé après l’ajout des mesures, des décompositions et de la reconnaissance des formes.
+Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserve ses 19 513 constructions distinctes dans douze domaines. Les sept thèmes proposent désormais six formats, avec **S-V-C** avant les pastilles et **Écrire une phrase en images** avant la production écrite. Les formes de phrase et la voix se règlent indépendamment ; l’option colonnes est retirée de Gattegno. Les [preuves du lot](../gattegno/quality-phrases-images-results.json) couvrent les fiches, les corrigés et le jeu guidé sur ordinateur et mobile. Les illustrations encore manquantes restent recensées.
 
 | Élément existant | Utilisable / réutilisable | Limites connues |
 |---|---|---|
 | Générateur et fiches v1 | Recettes, banques, rendu imprimable et navigation réutilisés | Huit erreurs de génération repérées dans l’inventaire ; aucun remaniement de banque fait pour les masquer |
-| Conversion vers le jeu | 725 variantes sur 2 117, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases courtes manipulables | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
+| Conversion vers le jeu | 739 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases courtes manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
 | Modes Classe et Solo | Vote collectif, protections enseignant ; états et minuteurs conservés par écran, nouvelles tentatives et essais archivés ; Solo automatique | Mécaniques avancées encore à étendre |
 | Compétition | Code de salle, 30 mascottes sans pseudo, scores serveur, classement et reprise dans l’onglet ; défi local sur un appareil commun après préparation complète ; duels avec vies, attaque propre à chaque mascotte et tournoi par équipes tirées au sort | Code vérifié avec le moteur Cloudflare ; activation du Worker de production à faire par l’administrateur ; appareils séparés non synchronisables sans réseau ; démarrage à froid hors ligne non couvert |
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias ; transcription CO facultative après les corrections, avec suspension du battement Solo pendant la lecture | Préchargement manuel des images, audios et 30 mascottes en Classe et Solo ; page ouverte jouable sans réseau ; démarrage à froid et rechargement hors ligne encore ouverts |
@@ -20,7 +20,7 @@ Complément du 12 novembre : la [banque Gattegno](../gattegno/README.md) est rel
 
 ## Couverture observée
 
-L’inventaire courant trouve 725 variantes avec au moins une activité : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 83 adaptations vérifiées, 90 uniquement guidées et 34 mixtes. Répartition : soutien FR 229, alphabétisation 213, grammaire 152, TCF CFR 10, TCF CSC 9, TPF 9, algèbre 25, Gattegno 12, TPM 14, géométrie 24, TCM CFR 9, TCM CSC 13 et Jeux 6. Les 1 392 autres variantes demandent des adaptateurs ou une correction de génération. Le jeu signale ces incompatibilités dans la préparation.
+L’inventaire courant trouve 739 variantes avec au moins une activité : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 83 adaptations vérifiées, 104 uniquement guidées et 34 mixtes. Répartition : soutien FR 229, alphabétisation 213, grammaire 152, TCF CFR 10, TCF CSC 9, TPF 9, algèbre 25, Gattegno 26, TPM 14, géométrie 24, TCM CFR 9, TCM CSC 13 et Jeux 6. Les 1 411 autres variantes demandent des adaptateurs ou une correction de génération. Le jeu signale ces incompatibilités dans la préparation.
 
 Les sources déjà prises en charge et leurs limites sont décrites dans l’[audit de compatibilité](audit-compatibilite.md). L’inventaire conserve les configurations et items témoins pour étendre chaque famille avec des tests fiables. Le moteur, les médias, les cartes, les minuteurs, le plan de réponses et la persistance constituent le socle à garder pour ces extensions.
 
@@ -29,6 +29,8 @@ Les sources déjà prises en charge et leurs limites sont décrites dans l’[au
 La [revue des six PR](../maintenance/pr-review-2026-11-10.md) identifie cinq travaux déjà intégrés et une PR 51 contenant encore un patch distinct (banques et rendu de famille / grammaire). Ce contenu est une piste de réutilisation à examiner par fichier ; il n’est pas assimilé à une implémentation achevée du jeu. La fermeture des anciennes PR n’a pas été exécutée par cette session, faute d’accès à l’API GitHub.
 
 ## Vérifications récentes
+
+Le lot **S-V-C et phrases en images** passe avec **373 tests**, les audits linguistiques existants et les parcours ciblés. Il intègre 214 nouvelles images individuelles avec décor, 35 références TCF et une réutilisation de la scène de conduite ; 42 verbes sources et le bonus *rougir* attendent la reprise de génération. Le modèle complet reste privé avant révélation et l’appréciation reste humaine. L’orchestrateur compte 59 étapes disponibles ; seules les étapes consignées dans le [relevé du lot](../gattegno/quality-phrases-images-results.json) ont été exécutées pour cette livraison.
 
 L’[oral guidé et le glisser-déposer](adr-0047-oral-guide-et-glisser-deposer.md) ajoutent des zones numérotées pour les mots et les images, avec insertion, aperçu sous le doigt ou la souris, annulation, clavier et reprise. Les 175 sources illustrées conservent leurs rôles, relances, récits et dialogues complets ; le lecteur suspend le battement Solo. Les galeries de une à quatre images utilisent la zone centrale. La suite complète passe avec **356 tests** ; les [preuves du lot](quality-guided-oral-results.json) consignent les parcours ciblés, les gestes tactiles natifs et le témoin A4 identique.
 
