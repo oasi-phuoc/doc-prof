@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 252,
+      "active_reviewed_trio": 265,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 494,
+      "candidate_visual_review": 481,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 137,
+        "active_reviewed_trio": 150,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 125,
+        "candidate_visual_review": 112,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -11128,8 +11128,8 @@
       "semantic_sha256": "6fe46cd8a064dd93ca0477565a0c9ebccfd13d8c4d0cb5d253c00dc37cc0982d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-01.mp3",
       "audio_sha256": "e49455c9a7542ca299bfe327d62fb32207bc0a704dd6b31f9615cd94011a6e5e",
-      "status": "candidate_visual_review",
-      "reason": "Course à pied, vélo et tennis ; représenter l’activité entière et les équipements nécessaires.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -11169,8 +11169,24 @@
           "brief": "Représenter entièrement « Du tennis » pour « Quelle activité est prévue ? ». Vérifier la transcription du support tcf-delf-actif-a1-019-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Course à pied, vélo et tennis ; représenter l’activité entière et les équipements nécessaires."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+          "sha256": "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+          "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp",
+          "sha256": "2e91648e03ea1847d24ac46f663c2f631bc703ec064de001b4f371d1b082a094"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -11188,6 +11204,12 @@
         "evidence_quote": "faire du jogging",
         "semantic_sha256": "6fe46cd8a064dd93ca0477565a0c9ebccfd13d8c4d0cb5d253c00dc37cc0982d",
         "note": "Course à pied, vélo et tennis ; représenter l’activité entière et les équipements nécessaires."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "Le rendez-vous est prévu pour faire du jogging dans le parc près du stade.",
+        "note": "Course douce dans un parc, cycliste à vélo et partie de tennis ; activités et corps utiles entiers. La première proposition de tennis dont une chaussure était coupée est écartée au profit de la scène complète déjà en banque."
       }
     },
     {
@@ -17111,8 +17133,8 @@
       "semantic_sha256": "b79b89fc4eaf2e150cf4ca460e54fa1119acd14e21d94fc02348dbe4b5650098",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-04.mp3",
       "audio_sha256": "e6431956551195d521e833affdb67ae64b635a3ebf5bffbd4773284e19ee94ac",
-      "status": "candidate_visual_review",
-      "reason": "Peintre au chevalet, musicien jouant et écrivain écrivant ; ne pas inventer le portrait de l’artiste nommé.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -17153,8 +17175,24 @@
           "brief": "Représenter entièrement « Écrivain » pour « Quel métier cet artiste exerce-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Peintre au chevalet, musicien jouant et écrivain écrivant ; ne pas inventer le portrait de l’artiste nommé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/metiers/peintre-artiste.webp",
+          "sha256": "3f21a22a28090180bcad31d48f332313bbf0e7de2b3128a023df7af203960724"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/catalogue/metiers/musicien.webp",
+          "sha256": "264574bac6e102e4ad577d7b298e408752a9e066d7125df33afd0ee2a4b3c8ba"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/metiers/ecrivain.webp",
+          "sha256": "5ca96cd58e4c6bf643b2971e9101e603f185217788e6feed5d5879c6546706d0"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -17172,6 +17210,12 @@
         "evidence_quote": "ce peintre",
         "semantic_sha256": "b79b89fc4eaf2e150cf4ca460e54fa1119acd14e21d94fc02348dbe4b5650098",
         "note": "Peintre au chevalet, musicien jouant et écrivain écrivant ; ne pas inventer le portrait de l’artiste nommé."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "La professeure annonce les tableaux et dessins de Matisse et dit parler de ce peintre.",
+        "note": "Peinture au chevalet, pratique musicale et rédaction de manuscrit ; métiers représentés par leur activité. Les personnes et le tableau illustratifs ne sont pas présentés comme les portraits ou les œuvres de Matisse. Le peintre en bâtiment est écarté."
       }
     },
     {
@@ -19629,8 +19673,8 @@
       "semantic_sha256": "9ec97eeb06d5cd6621f592d56432ab1fb16d1df6ad9a73662f36e1df45028ef8",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-06.mp3",
       "audio_sha256": "71c1fc7c2b22b42082ebc8b84efba213983466828ee11aacbd84d72e553e893d",
-      "status": "candidate_visual_review",
-      "reason": "Lunettes solaires, chapeaux et montres entiers ; pluriels conservés et sans prix/date.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -19666,13 +19710,36 @@
           "id": "c",
           "label": "Des montres",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-montres-pluriel.png",
+              "sha256": "f23f1493b61f0eb992faa0b34ce0dd775883f79f120827291c724f0d32f34453",
+              "label": "Des montres",
+              "visual_review_required": true
+            }
+          ],
           "asset": "f53fea8e0cf8451c",
           "brief": "Représenter entièrement « Des montres » pour « Quel accessoire peut-on essayer ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Lunettes solaires, chapeaux et montres entiers ; pluriels conservés et sans prix/date."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp",
+          "sha256": "cd8d28b76764dda7d88781c7fd11efe6d7ed4db5f4901c9af43b1f2e8cd51ab8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png",
+          "sha256": "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-montres-pluriel.png",
+          "sha256": "f23f1493b61f0eb992faa0b34ce0dd775883f79f120827291c724f0d32f34453"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19690,6 +19757,12 @@
         "evidence_quote": "lunettes de soleil",
         "semantic_sha256": "9ec97eeb06d5cd6621f592d56432ab1fb16d1df6ad9a73662f36e1df45028ef8",
         "note": "Lunettes solaires, chapeaux et montres entiers ; pluriels conservés et sans prix/date."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "L’annonce propose d’essayer les nouveaux modèles de lunettes de soleil.",
+        "note": "Une paire de lunettes de soleil, trois chapeaux et trois montres : pluriels physiques ou grammaticaux respectés. Les montres ne sont pas utilisées comme cadrans répondant à une heure."
       }
     },
     {
@@ -20356,14 +20429,21 @@
       "semantic_sha256": "63ffd4493ee0e85a7db031810c2d4a33af86ff58b0dc0c35ddb1a8138059081f",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
       "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
-      "status": "candidate_visual_review",
-      "reason": "Bracelet, bague et pendentif ; la montre vient des grands-parents et ne répond pas à cette question.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Un bracelet",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png",
+              "sha256": "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508",
+              "label": "Un bracelet",
+              "visual_review_required": true
+            }
+          ],
           "asset": "823163a723fceaa8",
           "brief": "Représenter entièrement « Un bracelet » pour « Quel cadeau sa sœur lui a-t-elle offert ? ». Vérifier la transcription du support tcf-delf-actif-a1-035-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bracelet, bague et pendentif ; la montre vient des grands-parents et ne répond pas à cette question."
         },
@@ -20391,8 +20471,24 @@
           "brief": "Représenter entièrement « Un pendentif » pour « Quel cadeau sa sœur lui a-t-elle offert ? ». Vérifier la transcription du support tcf-delf-actif-a1-035-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bracelet, bague et pendentif ; la montre vient des grands-parents et ne répond pas à cette question."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png",
+          "sha256": "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-bague-singuliere.webp",
+          "sha256": "b905e40681120d37d13b2e83bcbef76781c8cac53c5df0492acdbb40b06871e2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pendentif-eiffel-argent.png",
+          "sha256": "c77882f8b997ceef37546d3cb2f9aa46de6235342062729406b8bbb9464f717e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -20410,6 +20506,12 @@
         "evidence_quote": "un bracelet offert par ma sœur",
         "semantic_sha256": "63ffd4493ee0e85a7db031810c2d4a33af86ff58b0dc0c35ddb1a8138059081f",
         "note": "Bracelet, bague et pendentif ; la montre vient des grands-parents et ne répond pas à cette question."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "Le bracelet est le cadeau de la sœur ; le vélo vient des parents et la montre des grands-parents.",
+        "note": "Un bracelet à maillons, une bague unique et un pendentif sur chaîne ; trois bijoux entiers distincts. Le motif du pendentif est un exemple de leurre, aucune préférence non dite n’est attribuée à Sébastien."
       }
     },
     {
@@ -22075,8 +22177,8 @@
       "semantic_sha256": "5bf777f444d6f41f082f4a5635ebdd3379b4925996aaca1b3da68938d331d285",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-040-01.mp3",
       "audio_sha256": "e74f7f97d6eb0e2073e3c353f097c28b60108c33dc2bd4ed2c811516690670eb",
-      "status": "candidate_visual_review",
-      "reason": "Fleurs, bijoux et livres ; la question porte sur l’objet aimé, pas sur le cadeau finalement choisi.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -22110,8 +22212,24 @@
           "brief": "Représenter entièrement « Les livres » pour « Qu’aime Madame Dubois ? ». Vérifier la transcription du support tcf-delf-actif-a1-040-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Fleurs, bijoux et livres ; la question porte sur l’objet aimé, pas sur le cadeau finalement choisi."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+          "sha256": "298c7360cece03dfde1d8fb0d9c1ac005316a67ad691824bc53561317703e3b1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-bracelets-dessine.webp",
+          "sha256": "2bfb21e50366525a6b70a691500b71cd816cefc877258020c9a48d09ca418b4a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+          "sha256": "1d06d1a07f1cbed1152ba0e2b88551fb6fdc0b2d52187279cb11b3d7245c7f0e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22129,6 +22247,12 @@
         "evidence_quote": "Elle aime les fleurs",
         "semantic_sha256": "5bf777f444d6f41f082f4a5635ebdd3379b4925996aaca1b3da68938d331d285",
         "note": "Fleurs, bijoux et livres ; la question porte sur l’objet aimé, pas sur le cadeau finalement choisi."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "Le message dit que Madame Dubois aime les fleurs, avant de proposer aussi parfum ou foulard comme cadeau.",
+        "note": "Bouquet de fleurs, deux bracelets représentant des bijoux au pluriel et trois livres ; trois familles d’objets distinctes. Les propositions de parfum et foulard ne sont pas prises pour ses goûts confirmés."
       }
     },
     {
@@ -24113,8 +24237,8 @@
       "semantic_sha256": "a6035e62708d0f7bf622d5e3eefbd9203924a5080b2ff9f112f9e50ddd034ecc",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
       "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
-      "status": "candidate_visual_review",
-      "reason": "Les promenades sont l’activité à pied ; distinguer marche tranquille, jogging et randonnée en montagne, avec tout le contexte nécessaire.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -24141,8 +24265,24 @@
           "brief": "Représenter entièrement « La randonnée en montagne » pour « Quelle activité à pied aiment-ils ? ». Vérifier la transcription du support tcf-delf-actif-a1-044-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Les promenades sont l’activité à pied ; distinguer marche tranquille, jogging et randonnée en montagne, avec tout le contexte nécessaire."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp",
+          "sha256": "df61225be45134f696668dbfcb00b1c2376da9151b7d44b7c7793ddf97e8622f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+          "sha256": "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-randonnee.webp",
+          "sha256": "4f2ef4747a6bbb84139138a5381117fee4104ccac312a8bf1312670560a9d530"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -24160,6 +24300,12 @@
         "evidence_quote": "du vélo et des promenades",
         "semantic_sha256": "a6035e62708d0f7bf622d5e3eefbd9203924a5080b2ff9f112f9e50ddd034ecc",
         "note": "Les promenades sont l’activité à pied ; distinguer marche tranquille, jogging et randonnée en montagne, avec tout le contexte nécessaire."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "La personne aime faire des promenades avec ses copains, ainsi que du vélo.",
+        "note": "Promenade paisible à pied, jogging en tenue sportive et randonnée équipée en montagne ; les trois activités sont distinctes. Personnages génériques sans identité attribuée aux locuteurs."
       }
     },
     {
@@ -24239,8 +24385,8 @@
       "semantic_sha256": "68afc71744a0934259c5cfd07d36caa48a4c9838a8075cfc4c63515bca1deba7",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-045.mp3",
       "audio_sha256": "166c41ca57a17dac1d9f1d1f7652982179e6107bcc05cdc0826c97a5f8cd6a1e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -24281,8 +24427,24 @@
           "brief": "Représenter entièrement « Le stade » pour « Quel lieu est cité comme destination ? ». Vérifier la transcription du support tcf-delf-actif-a1-045 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/marche.webp",
+          "sha256": "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "sha256": "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+          "sha256": "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -24293,7 +24455,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "La première phrase isolée de la séquence est « Nous allons au marché ».",
+        "note": "Étals alimentaires, galerie de musée et terrain à gradins ; le marché commerçant est distingué de la marche à pied. Les autres phrases isolées de la piste ne sont pas inventées comme une même histoire."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-045#2",
@@ -25082,8 +25250,8 @@
       "semantic_sha256": "6aea787617fdf853f7f2c03a0354bef4bd2e657fef7e80c6e5b10e4a74cdf058",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
       "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -25117,8 +25285,24 @@
           "brief": "Représenter entièrement « La cuisine » pour « Quelle activité est citée dans la dernière question ? ». Vérifier la transcription du support tcf-delf-actif-a1-046 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+          "sha256": "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/catalogue/metiers/musicien.webp",
+          "sha256": "264574bac6e102e4ad577d7b298e408752a9e066d7125df33afd0ee2a4b3c8ba"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp",
+          "sha256": "26b36795a1579d518cf9806bbccbf952aa4ecca1e91006c7a5c4d32cdb109601"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25129,7 +25313,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "La dernière question isolée de la piste est « Vous faites du sport ? ».",
+        "note": "Pratique sportive illustrée par le jogging, musique par une personne jouant d’un instrument, cuisine par la préparation d’un repas. Il s’agit des catégories d’activité, pas des portraits ou des loisirs affirmés d’un interlocuteur."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-047-01#1",
@@ -25308,8 +25498,8 @@
       "semantic_sha256": "ddcb17d1c274325ac1ce234879ca2aff06dd773d7318a48eb4789a22d2e1113d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
       "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
-      "status": "candidate_visual_review",
-      "reason": "Le modèle retenu est le pendentif présenté juste avant ; bracelet seulement proposé puis refusé pour son prix, bague non proposée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -25338,13 +25528,36 @@
           "id": "c",
           "label": "Un bracelet",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png",
+              "sha256": "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508",
+              "label": "Un bracelet",
+              "visual_review_required": true
+            }
+          ],
           "asset": "823163a723fceaa8",
           "brief": "Représenter entièrement « Un bracelet » pour « Quel bijou choisit-il finalement ? ». Vérifier la transcription du support tcf-delf-actif-a1-047-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Le modèle retenu est le pendentif présenté juste avant ; bracelet seulement proposé puis refusé pour son prix, bague non proposée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pendentif-eiffel-argent.png",
+          "sha256": "c77882f8b997ceef37546d3cb2f9aa46de6235342062729406b8bbb9464f717e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-bague-singuliere.webp",
+          "sha256": "b905e40681120d37d13b2e83bcbef76781c8cac53c5df0492acdbb40b06871e2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png",
+          "sha256": "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25362,6 +25575,12 @@
         "evidence_quote": "je prends ce modèle",
         "semantic_sha256": "ddcb17d1c274325ac1ce234879ca2aff06dd773d7318a48eb4789a22d2e1113d",
         "note": "Le modèle retenu est le pendentif présenté juste avant ; bracelet seulement proposé puis refusé pour son prix, bague non proposée."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "Le client refuse le bracelet trop cher et choisit le pendentif Tour Eiffel en argent.",
+        "note": "Le pendentif conserve le motif Tour Eiffel et le métal argenté explicitement décrits. Bague et bracelet distincts, sans prix ni quantité d’argent représentée."
       }
     },
     {
@@ -27452,8 +27671,8 @@
       "semantic_sha256": "7cc6642aec7e02298564c1c81b1a3fd47cb5ccff49174368a0327a4628259f16",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
       "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
-      "status": "candidate_visual_review",
-      "reason": "Poisson, poulet et bœuf ; l’accompagnement est le riz, pas une autre viande.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -27501,8 +27720,24 @@
           "brief": "Représenter entièrement « Du bœuf » pour « Quel aliment principal la personne choisit-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Poisson, poulet et bœuf ; l’accompagnement est le riz, pas une autre viande."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+          "sha256": "356cdd21e65e27be90da7c1686b5ccb57b53071b414ed6eeedb0df866abaa387"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-poulet.webp",
+          "sha256": "9c2647e1160f1094d61160adc24ca7ebf523eb6b94b4f3d815ea3c36069eba01"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roti-boeuf.webp",
+          "sha256": "e1c38ddd292344219c701d740b06c2de6d9283ed3474326a539c282380b0139e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -27520,6 +27755,12 @@
         "evidence_quote": "Je veux bien du poisson",
         "semantic_sha256": "7cc6642aec7e02298564c1c81b1a3fd47cb5ccff49174368a0327a4628259f16",
         "note": "Poisson, poulet et bœuf ; l’accompagnement est le riz, pas une autre viande."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "La personne veut du poisson avec du riz, au lieu des légumes d’abord proposés.",
+        "note": "Poisson cuisiné avec riz conforme au choix final, poulet rôti et rôti de bœuf ; trois aliments de repas. L’image de poisson grillé avec carottes est écartée car la personne demande du riz."
       }
     },
     {
@@ -29774,8 +30015,8 @@
       "semantic_sha256": "670546f449684fd2bcdccbe33d4843bde753092f09ceaa24a7db8f5495b31b9d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-02.mp3",
       "audio_sha256": "f7a6fe7e28b11817b3da12d6e176138c51e9c8471f4602068c176bfe610a4f68",
-      "status": "candidate_visual_review",
-      "reason": "Livre, cahier et trousse distincts ; l’absence est explicite mais pas sa cause : reformuler oublié en n’a pas avec elle.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -29802,8 +30043,24 @@
           "brief": "Représenter entièrement « Sa trousse » pour « Quel objet Léna n’a-t-elle pas avec elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-04-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Livre, cahier et trousse distincts ; l’absence est explicite mais pas sa cause : reformuler oublié en n’a pas avec elle."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-livre-lecture.png",
+          "sha256": "ec628ec5590b667ceebef330c329ebb412f94c7579c275a39164f99a4d7f9acb"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+          "sha256": "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-trousse.webp",
+          "sha256": "e33fd8537df50e0bc0c197205747ba3ec20d72b997b768f3a52d0c87e95e7881"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -29821,6 +30078,12 @@
         "evidence_quote": "je n’ai pas mon livre",
         "semantic_sha256": "670546f449684fd2bcdccbe33d4843bde753092f09ceaa24a7db8f5495b31b9d",
         "note": "Livre, cahier et trousse distincts ; l’absence est explicite mais pas sa cause : reformuler oublié en n’a pas avec elle."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "Léna dit ne pas avoir son livre quand la professeure demande de l’ouvrir.",
+        "note": "Livre ouvert à paragraphes, cahier à spirale et trousse scolaire à fermeture ; un exemplaire de chaque, pas une trousse de toilette."
       }
     },
     {
@@ -34303,8 +34566,8 @@
       "semantic_sha256": "186f8a66a943a0cac01b60c8c8d1c609353aeae976458d7d6d24b436d2959eda",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
       "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
-      "status": "candidate_visual_review",
-      "reason": "Sac, livre et téléphone entiers ; le sac est retrouvé sous un blouson mais la question vise l’objet recherché.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34331,8 +34594,24 @@
           "brief": "Représenter entièrement « Son téléphone » pour « Quel objet l’élève cherche-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Sac, livre et téléphone entiers ; le sac est retrouvé sous un blouson mais la question vise l’objet recherché."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+          "sha256": "39fecb91cc22acc3046157be1a637a432a00c481f181b4bfd4927c5bc474b16e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-livre-lecture.png",
+          "sha256": "ec628ec5590b667ceebef330c329ebb412f94c7579c275a39164f99a4d7f9acb"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+          "sha256": "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34350,6 +34629,12 @@
         "evidence_quote": "mon sac n’est plus au vestiaire",
         "semantic_sha256": "186f8a66a943a0cac01b60c8c8d1c609353aeae976458d7d6d24b436d2959eda",
         "note": "Sac, livre et téléphone entiers ; le sac est retrouvé sous un blouson mais la question vise l’objet recherché."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "L’élève cherche son sac au vestiaire ; il se trouve sous le blouson bleu.",
+        "note": "Un sac à dos scolaire entier illustre la catégorie sac, puis livre et téléphone seuls ; le bleu du blouson n’est pas présenté comme une information sur la couleur du sac."
       }
     },
     {
@@ -34749,8 +35034,8 @@
       "semantic_sha256": "0239b2b89bdaacd66ce3eae5814f58b1aa7760a5fd74d92d0ad234646db41515",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-05-01.mp3",
       "audio_sha256": "ee2fbc9175429a3711d29794e46a38372dcc54dee2d34c7e05930c0144af1240",
-      "status": "candidate_visual_review",
-      "reason": "Clé USB, CD et cassette ; objets seuls suffisants pour le type de support, sans inventer leur contenu sonore.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34791,8 +35076,24 @@
           "brief": "Représenter entièrement « Une cassette » pour « Sur quel support doit-elle apporter de la musique ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Clé USB, CD et cassette ; objets seuls suffisants pour le type de support, sans inventer leur contenu sonore."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cle-usb.png",
+          "sha256": "4d57eb18b45cfd86973143794b60851c774ff8a567f158c3f41a6b68944ef8b7"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/4b22b570e1e4.webp",
+          "sha256": "34f9cf448164ccd528d35505111be49a1b6d0ecb263841931314feb96f4c0360"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cassette-audio.png",
+          "sha256": "c23ec89c07587f7bbcf1259f44cabfd7a7658f3b0843e391a566ed813d1faf66"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34810,6 +35111,12 @@
         "evidence_quote": "clé USB avec de la musique",
         "semantic_sha256": "0239b2b89bdaacd66ce3eae5814f58b1aa7760a5fd74d92d0ad234646db41515",
         "note": "Clé USB, CD et cassette ; objets seuls suffisants pour le type de support, sans inventer leur contenu sonore."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-bijoux-accessoires-loisirs-20261114.json",
+        "reason": "Clara doit apporter sa clé USB avec de la musique, tandis que Carlos apporte les DVD.",
+        "note": "Une clé USB seule, un CD avec boîtier et une cassette audio à bande ; trois supports distincts. La cassette vidéo VHS et le lecteur DVD sont écartés."
       }
     },
     {
@@ -116699,7 +117006,14 @@
     {
       "id": "f53fea8e0cf8451c",
       "label": "Des montres",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-montres-pluriel.png",
+          "sha256": "f23f1493b61f0eb992faa0b34ce0dd775883f79f120827291c724f0d32f34453",
+          "label": "Des montres",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-033-06#1",
@@ -116996,7 +117310,14 @@
     {
       "id": "823163a723fceaa8",
       "label": "Un bracelet",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png",
+          "sha256": "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508",
+          "label": "Un bracelet",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-035-01#3",
