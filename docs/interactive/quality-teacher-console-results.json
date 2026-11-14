@@ -32,45 +32,46 @@
   "axeViolations": 0,
   "allWorkflowStagesRun": false,
   "workflowStagesAvailable": 60,
-  "build": "passed after merging origin/main c11c2741",
+  "build": "passed after merging origin/main acbc316a",
   "limits": [
     "Same browser, same origin, same device; distant tablet console remains open.",
     "Initial window opening needs a connection; already loaded windows and prepared media work offline.",
     "Extended display and physical ENI pilot not attested.",
     "No deployment or cloud environment configuration publication."
   ],
-  "mergedMain": "c11c2741",
+  "mergedMain": "acbc316a",
   "frontendTypes": "passed",
   "lint": "passed, existing warnings outside new console files",
   "secrets": "Gitleaks: no findings",
   "a4": {
     "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
     "screenshot": "identical",
-    "draftRecipe": "unchanged"
+    "draftRecipe": "unchanged",
+    "testedAfterMergedMain": "c11c2741"
   },
   "routeBudgets": {
     "landing": {
-      "gzip": 121824,
+      "gzip": 121817,
       "maximumGzip": 153600
     },
     "calibration": {
-      "gzip": 141869,
+      "gzip": 141864,
       "maximumGzip": 204800
     },
     "diagnostic": {
-      "gzip": 144018,
+      "gzip": 144009,
       "maximumGzip": 204800
     },
     "competition": {
-      "gzip": 186841,
+      "gzip": 186827,
       "maximumGzip": 204800
     },
     "teacherConsole": {
-      "gzip": 157757,
+      "gzip": 157750,
       "maximumGzip": 204800
     },
     "game": {
-      "gzip": 2999294,
+      "gzip": 3000645,
       "maximumGzip": 3145728
     }
   }
