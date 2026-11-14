@@ -7,17 +7,17 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 3170,
+    "reviewedResponseVariants": 4280,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 2440,
-    "reviewedSelectableUnits": 2440,
-    "reviewedDocuments": 40,
-    "reviewedDocumentQuestions": 120,
-    "reviewedActivities": 44,
-    "reviewedOfferings": 63,
+    "reviewedActivityUnits": 3310,
+    "reviewedSelectableUnits": 3310,
+    "reviewedDocuments": 60,
+    "reviewedDocumentQuestions": 180,
+    "reviewedActivities": 62,
+    "reviewedOfferings": 85,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 10,
-    "reviewedNotionLevelPairs": 13
+    "reviewedNotions": 14,
+    "reviewedNotionLevelPairs": 17
   },
   "browser": {
     "results": [
@@ -66,44 +66,44 @@
     ],
     "errors": []
   },
-  "remaining": "Dix notions, 13 couples notion/niveau et 63 offres sont accessibles en pilote explicite. Validation enseignante en attente. 380 activités et 538 offres restent sans banque pilote ; voir avancement-20261114.md.",
+  "remaining": "Toutes les offres A1 du thème Conjuguer au présent sont en pilote ; cinq offres A2 des autres négations restent à préparer dans ce thème. Au total 516 offres et 362 activités sont sans banque pilote. Approbation enseignante des 85 pilotes en attente ; voir avancement-20261114.md.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
       "result": "passed",
-      "validatedAtUpstream": "55677f81"
+      "validatedAtUpstream": "73a261b5"
     },
     "legacyAndCo": {
       "command": "node scripts/grammar-baseline.cjs",
       "result": "passed",
       "fixtures": 735,
       "protectedFiles": 256,
-      "validatedAtUpstream": "55677f81"
+      "validatedAtUpstream": "73a261b5"
     },
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 3170,
+      "reviewedVariants": 4280,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
         "A2",
         "B1"
       ],
-      "documentGroups": "40 texts / 120 child questions",
+      "documentGroups": "60 texts / 180 child questions",
       "archiveSupport": "text, options and evidence preserved without current bank revision",
       "manualEditingAssembly": "repeated supports removed without overwriting questions",
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
       "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
-      "reviewedActivityOfferings": 63,
+      "reviewedActivityOfferings": 85,
       "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension",
       "g3Notions": [
         "avoir A1",
         "aller-destination A1",
         "er A1"
       ],
-      "validatedAtUpstream": "55677f81"
+      "validatedAtUpstream": "73a261b5"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -446,9 +446,42 @@
       "reviewedResponseVariants": 3170,
       "fullBrowserAtUpstream": "165f1027",
       "productionBuildAtUpstream": "b9744575"
+    },
+    "presentA1Next": {
+      "upstream": "73a261b5",
+      "commands": [
+        "npm run test:grammar:present-a1-next",
+        "npm run test:grammar:present-a1-next:browser"
+      ],
+      "result": "passed",
+      "activities": 18,
+      "offerings": 22,
+      "selectableUnits": 870,
+      "responseVariants": 1110,
+      "newReadingDocuments": 20,
+      "newReadingQuestions": 60,
+      "newOpenDialogues": 50,
+      "humanApproval": "pending",
+      "oralAndWrittenModels": "non-exclusive; no automatic score",
+      "roles": "constraints supplied as facts, model replies kept in correction",
+      "reflexiveOrder": "50 positive phrases; comparative plus tôt correctly tagged as adverb",
+      "negativeOrder": "50 negative phrases in each negation bank; positive/mixed unavailable without fallback",
+      "negativeArticles": "un/une -> de/d’; du in discuter du projet preserved",
+      "spellingAndElision": "Je n’arrive pas ; nous nous levons ; je me promène ; vous vous arrêtez",
+      "browserPresentations": 22,
+      "printedQuestions": 2220,
+      "browserErrors": 0,
+      "classroomLaunches": 4,
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-present-a1-build --emptyOutDir",
+      "generatedImages": 0,
+      "generatedAudios": 0,
+      "fullPrevious63BrowserAtUpstream": "165f1027",
+      "all85OnSingleBaseClaimed": false
     }
   },
-  "upstreamIntegrated": "55677f81",
+  "upstreamIntegrated": "73a261b5",
   "lastValidatedDate": "2026-11-14",
   "browserM5": {
     "results": [
@@ -1004,6 +1037,211 @@
         "sub": "re-oir",
         "classroomTransform": "source and target subject preserved",
         "selectedQuestions": 3
+      }
+    ],
+    "errors": []
+  },
+  "browserPresentA1Next": {
+    "results": [
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "open-written",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "scenario-set",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "level": "A1",
+        "presentation": "document-set",
+        "sheets": 80,
+        "printedQuestions": 120,
+        "overflow": false
+      },
+      {
+        "sub": "modaux",
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3,
+        "teacherLed": true
+      },
+      {
+        "sub": "pronominaux",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "pronominaux",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "pronominaux",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "pronominaux",
+        "level": "A1",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "pronominaux",
+        "level": "A1",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "pronominaux",
+        "level": "A1",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "pronominaux",
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3,
+        "teacherLed": true
+      },
+      {
+        "sub": "a8",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a8",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a8",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a8",
+        "level": "A1",
+        "presentation": "correct",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a8",
+        "level": "A1",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a8",
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3,
+        "teacherLed": true
+      },
+      {
+        "sub": "a9",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a9",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a9",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "a9",
+        "classroomLaunch": "passed",
+        "selectedQuestions": 3,
+        "teacherLed": false
       }
     ],
     "errors": []

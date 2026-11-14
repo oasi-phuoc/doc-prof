@@ -8,12 +8,16 @@ import go from './data/aller-destination.json'
 import regularEr from './data/er.json'
 import ir from './data/ir.json'
 import reOir from './data/re-oir.json'
+import modals from './data/modaux.json'
+import reflexive from './data/pronominaux.json'
+import simpleNegation from './data/a8.json'
+import otherNegations from './data/a9.json'
 import type { ExerciseType } from '@/math/types'
 import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {
