@@ -830,7 +830,8 @@
   .ci-app.ci-playing .ci-header .brand { font-size: 17px; }
   .ci-app.ci-playing .ci-header .ci-progress { order: 0; flex: 1; min-width: 0; max-width: none; font-size: 11px; }
   .ci-app.ci-playing .ci-header .ci-session-actions { order: 0; flex: 0 0 auto; }
-  .ci-app.ci-playing .ci-header .ci-header-tools { order: 1; flex: 0 0 100%; }
+  .ci-app.ci-playing .ci-header .ci-header-tools { order: 1; flex: 0 0 100%; gap: 2px; }
+  .ci-app.ci-playing .ci-header .ci-header-tools .ci-icon-button { width: 44px; min-width: 44px; flex: 0 0 44px; }
   .ci-app.ci-playing .ci-header-audio { order: 2; flex: 1 0 100%; max-width: none; }
   .ci-app.ci-playing .ci-header audio { height: 34px; }
   .ci-app.ci-playing > .ci-notice { flex: 0 0 auto; max-height: 48px; overflow: auto; margin: 0; font-size: 12px; }
@@ -891,6 +892,10 @@
   .ci-app.ci-playing.ci-immersive .ci-header-audio { flex: 1; min-width: 0; order: 0; }
 }
 .ci-app .ci-mascot-pick .ci-mascot { width: 72px; height: 72px; max-width: 100%; }
+@media screen and (max-width: 380px) {
+  .ci-app.ci-playing > .ci-header { padding-inline: 4px; }
+  .ci-app.ci-playing .ci-header .ci-header-tools { gap: 0; }
+}
 @media screen and (max-width: 700px) {
   .ci-app.ci-playing .ci-solo-session.ci-is-revealed .ci-play-layout:has(.ci-margin-left:empty) > .ci-margin-right { grid-column: 1 / -1; }
 }

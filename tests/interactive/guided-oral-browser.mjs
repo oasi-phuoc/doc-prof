@@ -80,7 +80,11 @@ try{
     await dragSequence(page,zones.nth(3),zones.nth(0),{touch:true});assert.deepEqual(await scenes(page),['Scène 4','Scène 1','Scène 2','Scène 3'])
     await button(page,'Annuler le déplacement').click()
     for(const options of [{finish:'escape'},{touch:true,finish:'cancel'},{touch:true,finish:'outside'}]){await dragSequence(page,zones.nth(0),zones.nth(3),options);assert.deepEqual(await scenes(page),['Scène 1','Scène 2','Scène 3','Scène 4'])}
-    await button(page,'Choisir la scène 1, place 1').click();await button(page,'Choisir la scène 3, place 3').click()
+    if(width<=700){
+      await button(page,'Choisir la scène 1, place 1').tap()
+      await page.locator('.ci-scene-position[aria-pressed="true"]').waitFor()
+      await button(page,'Choisir la scène 3, place 3').tap()
+    }else{await button(page,'Choisir la scène 1, place 1').click();await button(page,'Choisir la scène 3, place 3').click()}
     assert.deepEqual(await scenes(page),['Scène 2','Scène 3','Scène 1','Scène 4'])
     await button(page,'Annuler le déplacement').click();assert.deepEqual(await scenes(page),['Scène 1','Scène 2','Scène 3','Scène 4'])
     await button(page,'Choisir la scène 1, place 1').focus();await page.keyboard.press('ArrowRight')

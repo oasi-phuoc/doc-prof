@@ -77,7 +77,10 @@ try {
     assert.equal(adaptSourceItem({ ...phrase, labels: ['un', 'autre', 'texte'] }, 'soutien').items.length, 0)
     assert.equal(adaptSourceItem({ ...phrase, answer: '', responseAnswer: '' }, 'soutien').items.length, 0)
     const words = ['un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept']
-    assert.equal(adaptSourceItem({ ...phrase, tokens: words.map((text) => ({ text })), labels: words, answer: words.join(' '), responseAnswer: undefined }, 'soutien').items.length, 0)
+    const longer=adaptSourceItem({ ...phrase, tokens: words.map((text) => ({ text })), labels: words, answer: words.join(' '), responseAnswer: undefined }, 'soutien')
+    assert.equal(longer.items.length,1);assert.equal(longer.items[0].words.length,7)
+    const tooLong=Array.from({length:13},(_,i)=>`mot${i}`)
+    assert.equal(adaptSourceItem({...phrase,tokens:tooLong.map(text=>({text})),labels:tooLong,answer:tooLong.join(' '),responseAnswer:undefined},'soutien').items.length,0)
   })
   await test('real catalogue sources convert reproducibly while paper worksheets remain unchanged', async () => {
     const { buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')

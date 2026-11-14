@@ -16,9 +16,11 @@ function capChoices(choices: Choice[], correctId: string, key: string): Choice[]
   return choices.filter((choice) => kept.has(choice.id))
 }
 
+export const MAX_PHRASE_ORDER_ELEMENTS=12
 function phraseOrdering(words: string[], ordered: string[], model: string): Result {
-  if (words.length < 2 || words.length > 6 || words.some((word) => !word) || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable ou hors limite de deux à six éléments.'] }
-  return { items: [{ part: 0, prompt: 'Remets les mots dans l’ordre.', instruction: 'Choisissez un mot puis une autre place, ou utilisez les flèches du clavier.', choices: [], model, mode: 'sequence', words: words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
+  const valid=(values:unknown):values is string[]=>Array.isArray(values)&&Array.from(values).every(word=>typeof word==='string'&&word.trim().length>0&&word.length<=120)
+  if (!valid(words) || !valid(ordered) || words.length < 2 || words.length > MAX_PHRASE_ORDER_ELEMENTS || words.reduce((n,word)=>n+word.length,0)>1200 || new Set(words.map(textKey)).size < 2 || !sameBag(words, ordered) || !model || letters(model) !== letters(ordered.join(' '))) return { items: [], issues: ['Phrase à ordonner non vérifiable : conservez de deux à douze éléments lisibles, avec tous les mots et le corrigé de la fiche.'] }
+  return { items: [{ part: 0, prompt: words.length>6?'Remets en ordre.':'Remets les mots dans l’ordre.', instruction: 'Glissez un mot vers sa place, ou touchez un mot puis sa destination. Au clavier, les flèches déplacent le mot ciblé.', choices: [], model, mode: 'sequence', words: words.every((word, index) => word === ordered[index]) ? [...words.slice(1), words[0]!] : words, teacherLed: true }], issues: ['Phrase manipulable avec modèle source ; les autres ordres possibles sont appréciés par l’enseignant, sans verdict automatique.'] }
 }
 
 /** Explicit source relations only. Each audio/association gets its own stable source part. */
@@ -150,14 +152,15 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
   }
   if (item.layout === 'order' && item.orderOp === undefined) {
     if (!/^remettez la phrase en ordre[.]?$/.test(textKey(item.prompt ?? ''))) return { items: [], issues: ['Ce classement demande une activité dédiée ; sa consigne ne décrit pas une phrase à remettre en ordre.'] }
-    return phraseOrdering(item.sequence?.map((word) => word.trim()) ?? [], item.placeParts ?? [], item.answer.trim())
+    return phraseOrdering(Array.isArray(item.sequence)?item.sequence.map(word=>typeof word==='string'?word.trim():''):[], item.placeParts ?? [], typeof item.answer==='string'?item.answer.trim():'')
   }
   if (item.layout === 'phrase-order') {
-    const words = item.tokens?.map((token) => (token.joinBefore??'')+token.text.trim()) ?? []
+    if(!Array.isArray(item.tokens)||Array.from(item.tokens).some(token=>!token||typeof token.text!=='string'||token.joinBefore!==undefined&&!['-','-t-'].includes(token.joinBefore)))return {items:[],issues:['Les mots à déplacer doivent être des éléments textuels lisibles de la fiche.']}
+    const words = item.tokens.map((token) => (token.joinBefore??'')+token.text.trim())
     const ordered = item.labels ?? []
-    const model = item.responseAnswer?.trim() || item.answer.trim()
+    const model = typeof item.responseAnswer==='string'&&item.responseAnswer.trim()||typeof item.answer==='string'&&item.answer.trim()||''
     const result=phraseOrdering(words,ordered,item.phraseQuestion?(item.phraseQuestionForm?model:model.replace(/^Est-ce qu(?:e |[’'])/i,'')).replace(/\s*\?$/,'.'):model)
-    if(item.phraseQuestion)for(const entry of result.items){entry.model=model;entry.prompt+=item.phraseQuestionForm?' Écris une phrase interrogative.':' Écris une question avec « Est-ce que ».'}
+    if(item.phraseQuestion)for(const entry of result.items){entry.model=model;if(item.phraseQuestionForm)entry.prompt=words.length>6?'Crée une question.':'Remets la question dans l’ordre.';else entry.prompt+=' Écris une question avec « Est-ce que ».'}
     return result
   }
 }
