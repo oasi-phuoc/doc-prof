@@ -3,6 +3,7 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
 import { chromium } from 'playwright'
 import AxeBuilder from '@axe-core/playwright'
+import {dragSequence} from './sequence-drag-actions.mjs'
 
 const base = 'http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL = `${base}/__test_api`
@@ -33,7 +34,8 @@ const button = (page, name) => page.getByRole('button', { name, exact: true })
 const card = (page, value) => page.locator('.ci-answer').filter({ has: page.getByText(value, { exact: true }) })
 const words = (page) => page.locator('.ci-word-sequence > button > b').allTextContents()
 async function setup(width, height) {
-  const context = await browser.newContext({ viewport: { width, height } })
+  console.log(`Word ordering ${width}x${height}`)
+  const context = await browser.newContext({ viewport: { width, height }, hasTouch: width <= 700 })
   await context.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
   await context.addInitScript(() => localStorage.setItem('clairfle-fiche-sync', 'ordering-fixture-only'))
   await context.route('**/__test_api/fiches', (route) => { methods.push(route.request().method()); return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ fiches: [saved] }) }) })
@@ -90,8 +92,15 @@ try {
     await navigate(page, 'Remets les mots dans l’ordre.')
     const start = await words(page)
     assert.deepEqual(start, ['le', 'chat', 'voit', 'Le', 'chien']); assert.equal(await page.locator('.ci-model-answer').count(), 0)
+    try{await page.waitForFunction(()=>{const manual=document.querySelector('.ci-manual'),controls=document.querySelector('.ci-controls');return manual.scrollHeight<=manual.clientHeight+1&&controls.getBoundingClientRect().bottom<=innerHeight+1})}catch(error){await page.screenshot({path:'/tmp/clairfle-word-layout-failure.png'});console.log(await page.locator('.ci-question,.ci-manual,.ci-round-questions,.ci-round-question,.ci-play-layout,.ci-margin-left,.ci-controls').evaluateAll(nodes=>nodes.map(node=>({class:node.className,client:node.clientHeight,scroll:node.scrollHeight,box:node.getBoundingClientRect().toJSON()}))));throw error}
+    const zones=page.locator('.ci-word-sequence > button')
+    await dragSequence(page,zones.first(),zones.nth(3),{screenshot:`docs/interactive/screenshots/word-drag-${width}.png`});assert.deepEqual(await words(page),['chat','voit','Le','le','chien'])
+    await button(page,'Annuler le déplacement').click();assert.deepEqual(await words(page),start)
+    await dragSequence(page,zones.last(),zones.first(),{touch:true});assert.deepEqual(await words(page),['chien','le','chat','voit','Le'])
+    await button(page,'Annuler le déplacement').click()
+    for(const options of [{finish:'escape'},{touch:true,finish:'outside'}]){await dragSequence(page,zones.first(),zones.last(),options);assert.deepEqual(await words(page),start)}
     await page.locator('.ci-word-sequence > button').first().click(); await page.locator('.ci-word-sequence > button').nth(3).click()
-    assert.deepEqual(await words(page), ['Le', 'chat', 'voit', 'le', 'chien'])
+    assert.deepEqual(await words(page), ['chat', 'voit', 'Le', 'le', 'chien'])
     await button(page, 'Annuler le déplacement').click(); assert.deepEqual(await words(page), start)
     await page.locator('.ci-word-sequence > button').first().focus(); await page.keyboard.press('ArrowRight')
     const moved = await words(page)
@@ -100,7 +109,7 @@ try {
     await reveal(page, undefined, true); assert.match(await page.locator('.ci-model-answer').innerText(), /Le chat voit le chien/)
     assert.equal(await page.locator('.ci-answer-key').count(), 0); await button(page, 'Acquis').click()
     await axe(page); await fits(page, width, height)
-    results.push({ viewport: `${width}x${height}`, numericOrder: 'seven independent ranks with six source cards and all seven given numbers, correct smallest/largest rank, exact descending decimal order', alphabet: 'five source letters and teacher-only key', correction: 'only the correct card is colored, no duplicated key; rank and correction resume after reload', words: 'original tokens, repeated words by distinct positions, touch swap, undo, keyboard move and reload; source model only after reveal and human assessment', longPhrase: 'visible exclusion without truncating its seven words', fullReadingOpened: fullReading, layout: 'answers and commands fit; axe passes' })
+    results.push({ viewport: `${width}x${height}`, numericOrder: 'seven independent ranks with six source cards and all seven given numbers, correct smallest/largest rank, exact descending decimal order', alphabet: 'five source letters and teacher-only key', correction: 'only the correct card is colored, no duplicated key; rank and correction resume after reload', words: 'original tokens retain distinct identities; mouse and native touch drag into numbered zones insert and shift other words; Escape/outside drops cancel; tap fallback, undo, keyboard move and reload; source model only after reveal and human assessment', longPhrase: 'visible exclusion without truncating its seven words', fullReadingOpened: fullReading, layout: 'answers and commands fit; axe passes' })
     if (width === 390) {
       await button(page, 'Quitter la séance').click(); await page.locator('.ci-launch:enabled').waitFor(); await button(page, 'Tout désélectionner').click()
       await page.locator('.ci-question-list fieldset > label').filter({ hasText: 'Quel est le 2e plus petit nombre ?' }).locator('input').check()

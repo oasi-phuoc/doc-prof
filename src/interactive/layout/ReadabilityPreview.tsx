@@ -14,7 +14,7 @@ export function ReadabilityPreview({ questions, options, total }: { questions: Q
     <ClassroomHeader {...options} playing fullscreen={false} onContrast={noop} onMode={noop} onMascot={noop} onTimer={noop} onFullscreen={noop} onFiches={noop}
       session={{ progress: `Question 1 / ${total}`, paused: false, canSkip: true, onSkip: noop, onPause: noop, onExit: noop,
         audio: questions.some((q) => q.audio) ? <div className="ci-audio"><audio controls preload="none" aria-label="Extrait audio" /><small>Écoute 1 / 2</small></div> : undefined }} />
-    <main className={`ci-session${options.mode === 'solo' ? ' ci-solo-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${questions[0]?.words ? ' ci-word-session' : ''}`}>
+    <main className={`ci-session${options.mode === 'solo' ? ' ci-solo-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${((questions[0]?.mode==='sequence'&&!questions[0].words)||(questions[0]?.mode==='oral'&&questions[0].images.length>0))?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}`}>
       <div><div className="ci-play-layout">
         <aside className="ci-phase-margin ci-margin-left"><PhaseBanner phase="thinking" choice={questions[0]?.mode === 'choice'} side="left" />{options.timer.enabled && <div className="ci-timer"><span className="ci-timer-value">{options.timer.seconds} s</span><button>Pause</button></div>}</aside>
         <div className="ci-round-questions">{questions.map((q, i) => <article className="ci-round-question" data-ci-question-id={q.id} key={q.id}>

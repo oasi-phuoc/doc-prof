@@ -46,7 +46,11 @@ try {
   assert.equal(await page.locator('.a4-frame .grammar-explanation,.a4-frame .grammar-production-model,.a4-frame .grammar-rubric').count(),0,'Corrections stay off student sheets.')
   if(presentation==='choice'||presentation==='gap')assert.equal(await page.locator('.a4-frame .grammar-answer-inline + .grammar-verb-hint').count(),50)
   if(presentation==='transform')assert.equal(await page.locator('.a4-frame .grammar-transform-directive').count(),50)
-  if(presentation==='open-written')assert.equal(await page.locator('.a4-frame .grammar-production-lines .answer-line-field').count(),300)
+  if(presentation==='open-written') {
+   const lines=page.locator('.a4-frame .grammar-production-lines .answer-line-field')
+   await lines.nth(299).waitFor({state:'attached'})
+   assert.equal(await lines.count(),300)
+  }
   await page.emulateMedia({media:'print'})
   const boxes=await page.locator('.print-only-sheets .worksheet-sheet').evaluateAll(sheets=>sheets.filter(s=>s.getBoundingClientRect().height>0).map(s=>{
    const r=s.getBoundingClientRect(),body=s.querySelector('.sheet-body').getBoundingClientRect(),footer=s.querySelector('.doc-footer').getBoundingClientRect()

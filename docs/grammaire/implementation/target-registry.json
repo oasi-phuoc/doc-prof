@@ -3136,7 +3136,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3150,12 +3150,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/ir.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant le verbe au présent. Conservez les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/ir.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3189,7 +3198,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3209,13 +3218,23 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/ir.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la forme du verbe qui convient au présent.",
+        "gap": "Conjuguez le verbe indiqué au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/ir.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3252,7 +3271,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3270,12 +3289,22 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/ir.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour écrire une phrase avec les verbes indiqués au présent."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase correcte au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/ir.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3307,7 +3336,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3321,12 +3350,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/re-oir.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant le verbe au présent. Conservez les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/re-oir.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3360,7 +3398,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3380,13 +3418,23 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/re-oir.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la forme du verbe qui convient au présent.",
+        "gap": "Conjuguez le verbe indiqué au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/re-oir.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3423,7 +3471,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3441,12 +3489,22 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/re-oir.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour écrire une phrase avec les verbes indiqués au présent."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase correcte au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/re-oir.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3479,7 +3537,7 @@
       "sourceDocumentCount": 20,
       "sourceQuestionTotal": 100,
       "currentGenerationQuestionCap": 5,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -3493,12 +3551,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "document-set": "Lisez le document et répondez aux questions."
+        "document-set": "Lisez chaque document. Repérez ce qui est possible, ce qui est obligatoire et ce qui est souhaité."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3531,7 +3598,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -3545,12 +3612,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "open-written": "Écrivez une seule phrase adaptée à la situation."
+        "open-written": "Écrivez un court message adapté à la situation avec un verbe modal au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3583,7 +3659,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -3597,12 +3673,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "open-oral": "Dites une seule phrase adaptée à la situation."
+        "open-oral": "Échangez avec votre partenaire et répondez à sa relance avec une phrase adaptée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3634,7 +3719,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3648,12 +3733,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant le verbe au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3686,7 +3780,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3701,13 +3795,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la forme qui convient au présent.",
+        "gap": "Complétez avec la forme qui convient au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3743,7 +3846,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3757,12 +3860,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour écrire une phrase avec les verbes indiqués au présent."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3794,7 +3906,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3808,12 +3920,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant le verbe au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/pronominaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3846,7 +3967,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3861,13 +3982,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la forme qui convient au présent.",
+        "gap": "Complétez avec la forme qui convient au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/pronominaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3903,7 +4033,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3917,12 +4047,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour écrire une phrase avec les verbes indiqués au présent."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/pronominaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -3954,7 +4093,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -3968,12 +4107,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a8.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant la place de la négation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a8.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -4006,7 +4154,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -4021,13 +4169,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a8.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la forme qui convient au présent.",
+        "gap": "Complétez avec la forme qui convient au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a8.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -4063,7 +4220,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -4077,12 +4234,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a8.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour écrire une phrase avec les verbes indiqués au présent."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a8.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -4167,7 +4333,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -4187,13 +4353,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la négation correspondant à l’indice de sens.",
+        "gap": "Complétez avec la négation correspondant à l’indice de sens."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a9.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -4230,7 +4405,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 100,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -4248,12 +4423,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour écrire une phrase avec les verbes indiqués au présent."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase négative."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a9.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14054,7 +14238,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14068,12 +14252,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/ir.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Réécrivez la phrase avec le sujet indiqué au présent. Adaptez les possessifs et les autres mots qui dépendent du sujet ; conservez la négation et les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/ir.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14101,7 +14294,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14115,12 +14308,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/re-oir.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Réécrivez la phrase avec le sujet indiqué au présent. Adaptez les possessifs et les autres mots qui dépendent du sujet ; conservez la négation et les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/re-oir.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14148,7 +14350,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -14162,12 +14364,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/modaux.json",
       "instructionsByPresentation": {
-        "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+        "scenario-set": "Jouez les rôles à deux. Faites une demande ou une proposition et discutez de la réponse."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/modaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14195,7 +14406,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14209,12 +14420,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Réécrivez avec le sujet indiqué. Changez le pronom réfléchi et la forme du verbe au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/pronominaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14242,7 +14462,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -14256,12 +14476,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json",
       "instructionsByPresentation": {
-        "open-oral": "Exprimez-vous dans la situation proposée."
+        "open-oral": "Décrivez la routine d’un personnage fictif et répondez à la relance du partenaire."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/pronominaux.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14289,7 +14518,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14303,12 +14532,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a8.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Réécrivez chaque phrase à la forme négative, sans changer les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a8.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -24462,16 +24700,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et comparer plusieurs modèles en -ir dans une situation",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-ir-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a2-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-ir-qcm-conj@A1@choice",
@@ -24486,16 +24729,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer finir et quelques formes fréquentes",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-ir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-ir-qcm-conj@A1@gap",
@@ -24510,16 +24758,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer finir et quelques formes fréquentes",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-ir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-ir-qcm-conj@A2@choice",
@@ -24534,16 +24787,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et comparer plusieurs modèles en -ir dans une situation",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-ir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a2-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-ir-qcm-conj@A2@gap",
@@ -24558,16 +24816,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et comparer plusieurs modèles en -ir dans une situation",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-ir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a2-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-ir-ordre@A1@order",
@@ -24582,16 +24845,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer finir et quelques formes fréquentes",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-ir-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a1-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-ir-ordre@A2@order",
@@ -24606,16 +24874,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et comparer plusieurs modèles en -ir dans une situation",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-ir-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a2-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-corriger-erreur@A2@correct",
@@ -24630,16 +24903,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Réutiliser les modèles irréguliers selon le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-re-oir-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a2-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-qcm-conj@A1@choice",
@@ -24654,16 +24932,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer les verbes fréquents dans des phrases courtes",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-re-oir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-qcm-conj@A1@gap",
@@ -24678,16 +24961,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer les verbes fréquents dans des phrases courtes",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-re-oir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-qcm-conj@A2@choice",
@@ -24702,16 +24990,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Réutiliser les modèles irréguliers selon le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-re-oir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a2-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-qcm-conj@A2@gap",
@@ -24726,16 +25019,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Réutiliser les modèles irréguliers selon le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-re-oir-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a2-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-ordre@A1@order",
@@ -24750,16 +25048,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer les verbes fréquents dans des phrases courtes",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-re-oir-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a1-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-ordre@A2@order",
@@ -24774,16 +25077,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Réutiliser les modèles irréguliers selon le contexte",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-re-oir-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a2-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-modaux-communication-ce@A1@document-set",
@@ -24798,16 +25106,21 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/modal-communication.ts | src/grammaire/exercises/modal-reading-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-modaux-communication-ce",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 20,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-communication-ce-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-modaux-communication-pe@A1@open-written",
@@ -24822,16 +25135,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/modal-communication.ts | src/grammaire/exercises/modal-production-data.json",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-modaux-communication-pe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-communication-pe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-modaux-communication-po@A1@open-oral",
@@ -24846,16 +25164,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/modal-communication.ts | src/grammaire/exercises/modal-production-data.json",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-modaux-communication-po",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-communication-po-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-modaux-corriger-erreur@A1@correct",
@@ -24870,16 +25193,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-modaux-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-modaux-qcm-conj@A1@choice",
@@ -24894,16 +25222,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-modaux-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-modaux-qcm-conj@A1@gap",
@@ -24918,16 +25251,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-modaux-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-modaux-ordre@A1@order",
@@ -24942,16 +25280,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-modaux-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-pronominaux-corriger-erreur@A1@correct",
@@ -24966,16 +25309,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer se lever, se laver, s'appeler avec le bon pronom",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-pronominaux-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "pronominaux-a1-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json"
     },
     {
       "offeringId": "gram-ex-pronominaux-qcm-conj@A1@choice",
@@ -24990,16 +25338,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer se lever, se laver, s'appeler avec le bon pronom",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-pronominaux-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "pronominaux-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json"
     },
     {
       "offeringId": "gram-ex-pronominaux-qcm-conj@A1@gap",
@@ -25014,16 +25367,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer se lever, se laver, s'appeler avec le bon pronom",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-pronominaux-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "pronominaux-a1-qcm-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json"
     },
     {
       "offeringId": "gram-ex-pronominaux-ordre@A1@order",
@@ -25038,16 +25396,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer se lever, se laver, s'appeler avec le bon pronom",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-pronominaux-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "pronominaux-a1-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json"
     },
     {
       "offeringId": "gram-ex-a8-corriger-erreur@A1@correct",
@@ -25062,16 +25425,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Passer d'une phrase affirmative à une négative simple",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a8-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a8-a1-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a8.json"
     },
     {
       "offeringId": "gram-ex-a8-qcm-verbe@A1@choice",
@@ -25086,16 +25454,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Passer d'une phrase affirmative à une négative simple",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a8-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a8-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a8.json"
     },
     {
       "offeringId": "gram-ex-a8-qcm-verbe@A1@gap",
@@ -25110,16 +25483,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Passer d'une phrase affirmative à une négative simple",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a8-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a8-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a8.json"
     },
     {
       "offeringId": "gram-ex-a8-ordre@A1@order",
@@ -25134,16 +25512,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Passer d'une phrase affirmative à une négative simple",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-a8-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a8-a1-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a8.json"
     },
     {
       "offeringId": "gram-ex-a9-corriger-erreur@A2@correct",
@@ -25182,16 +25565,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Repérer jamais, plus, rien, personne dans des cas simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-qcm-verbe@A1@gap",
@@ -25206,16 +25594,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Repérer jamais, plus, rien, personne dans des cas simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-qcm-verbe@A2@choice",
@@ -25278,16 +25671,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Repérer jamais, plus, rien, personne dans des cas simples",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-a9-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a1-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-ordre@A2@order",
@@ -32930,16 +33328,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et comparer plusieurs modèles en -ir dans une situation",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "ir-a2-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/ir.json"
     },
     {
       "offeringId": "gram-ex-re-oir-curriculum-t@A2@transform",
@@ -32954,16 +33357,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Réutiliser les modèles irréguliers selon le contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "re-oir-a2-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/re-oir.json"
     },
     {
       "offeringId": "gram-ex-modaux-curriculum-s@A1@scenario-set",
@@ -32978,16 +33386,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer au présent et exprimer possibilité, obligation, souhait",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "modaux-a1-curriculum-s-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/modaux.json"
     },
     {
       "offeringId": "gram-ex-pronominaux-curriculum-t@A1@transform",
@@ -33002,16 +33415,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer se lever, se laver, s'appeler avec le bon pronom",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "pronominaux-a1-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json"
     },
     {
       "offeringId": "gram-ex-pronominaux-curriculum-p@A1@open-oral",
@@ -33026,16 +33444,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer se lever, se laver, s'appeler avec le bon pronom",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "pronominaux-a1-curriculum-p-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/pronominaux.json"
     },
     {
       "offeringId": "gram-ex-a8-curriculum-t@A1@transform",
@@ -33050,16 +33473,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Passer d'une phrase affirmative à une négative simple",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a8-a1-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a8.json"
     },
     {
       "offeringId": "gram-ex-a9-curriculum-t@A2@transform",
@@ -38482,11 +38910,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 2370,
+    "reviewedVariants": 4280,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
     "remaining": "Validation enseignante et généralisation G3/G4/G5 aux autres activités/niveaux. Les contrats techniques situation/dialogue et image sont éprouvés ; les banques illustrées complètes restent à produire et à relire.",
-    "reviewedActivityUnits": 1840,
+    "reviewedActivityUnits": 3310,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -38495,16 +38923,22 @@
       "k10 subjonctif B1",
       "avoir A1 (G3)",
       "aller-destination A1 (G3)",
-      "er A1 (G3)"
+      "er A1 (G3)",
+      "ir A1/A2 (G3/G4)",
+      "re-oir A1/A2 (G3/G4)",
+      "modaux A1 (G3)",
+      "pronominaux A1 (G3)",
+      "a8 ne…pas A1 (G3)",
+      "a9 autres négations A1 (G3)"
     ],
-    "reviewedOfferings": 47,
-    "lastUpdated": "2026-11-13",
-    "reviewedSelectableUnits": 1840,
-    "reviewedDocuments": 40,
-    "reviewedDocumentQuestions": 120,
-    "reviewedActivities": 36,
+    "reviewedOfferings": 85,
+    "lastUpdated": "2026-11-14",
+    "reviewedSelectableUnits": 3310,
+    "reviewedDocuments": 60,
+    "reviewedDocumentQuestions": 180,
+    "reviewedActivities": 62,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 8,
+    "reviewedNotions": 14,
     "technicalContracts": {
       "scenarios": "closed and open; prototypes excluded from all bank quotas",
       "images": "one existing image copied to immutable content-addressed path; bytes verified at display and printing",

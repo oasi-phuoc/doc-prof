@@ -4,6 +4,8 @@ Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf3
 
 Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-charges-v2.md) ; les 424 activités cibles et les décisions sont suivies dans `target-registry.json`. L’option recommandée d’intégration des 43 activités omises est retenue comme hypothèse de construction au lancement ; aucun ancien type n’est supprimé. Les cinq décisions pédagogiques précédentes sont conservées.
 
+**État au 14 novembre 2026 : 14 notions, 62 activités et 85 offres en pilote**, soit 3 310 unités sélectionnables et 4 280 variantes. Validation enseignante en attente. Les offres A1 prévues du thème **Conjuguer au présent** disposent toutes de banques pilotes. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
+
 ## Disponible dans ce lot
 
 Dans **Grammaire → Conjuguer au présent → Être**, choisir **A1 — pilote** sur les types existants :
@@ -115,6 +117,36 @@ Les listes de relecture couvrent toutes les unités : [Aller A1](aller-destinati
 
 Les explications de préposition longues disposent d’une réserve supplémentaire de pagination, y compris sans infinitif donné. Élève et corrigé conservent le même ordre de questions.
 
+### Extension du 14 novembre — verbes en -ir et en -re/-oir, A1/A2
+
+Dans **Grammaire → Conjuguer au présent → Verbes en -ir** ou **Verbes en -re et -oir**, les niveaux pilotes suivent le registre :
+
+| Activité | A1 — pilote | A2 — pilote |
+| --- | --- | --- |
+| Conjuguer en -ir / en -re et -oir | 50 phrases, QCM / Lacune | 50 contextes, QCM / Lacune |
+| Mots dans l’ordre | 50 phrases positives | 44 phrases positives et 6 négatives, 50 en Mixte |
+| Corriger l’erreur | Banque historique conservée | 50 réécritures complètes |
+| Transformer une phrase | — | 50 changements de sujet |
+
+Les deux familles ajoutent **600 unités d’activité et 800 variantes**, dont 100 contextes A2 rédigés individuellement puis partagés entre quatre tâches. Les corrections ciblent une seule forme réellement fautive ; les transformations adaptent les possessifs et les éléments dépendant du nouveau sujet. Les infinitifs restent en couleur après le blanc ou les traits de réponse. Les deux graphies connaît/connait sont acceptées sans créer deux bonnes options dans un QCM.
+
+Les capacités positives et négatives de mise en ordre sont indiquées à l’enseignant ; les autres filtres peuvent les réduire. Les sources sont recensées dans les relectures [IR A1/A2](ir-a1-a2-relecture.md) et [RE/OIR A1/A2](re-oir-a1-a2-relecture.md). Aucune modification des banques historiques, des audios ou des théories.
+
+### Présent A1 — modaux, pronominaux et négations
+
+| Notion | Banques A1 |
+| --- | --- |
+| Verbes modaux | QCM/lacune, ordre, correction : 50 unités par activité ; 20 documents/60 questions ; 50 productions écrites, 50 orales et 50 jeux de rôle |
+| Verbes pronominaux | QCM/lacune, ordre, correction, transformation et oral : 50 unités par activité |
+| Négation ne…pas | QCM/lacune, ordre, correction et transformation : 50 unités par activité |
+| Autres négations | QCM/lacune et ordre : 50 unités par activité ; aucun nouveau niveau A2 dans cette tranche |
+
+Cette tranche ajoute **18 activités, 22 offres, 870 unités sélectionnables et 1 110 variantes**. Les productions modales réemploient 50 situations avec une tâche adaptée à chaque famille ; elles ne constituent pas 150 contextes inédits. Les modèles et critères restent au corrigé, avec appréciation humaine. Les jeux de rôle donnent des rôles, contraintes et relances ; les contraintes ne sont pas des répliques modèles.
+
+Les transformations pronominales accordent le pronom et le verbe. La négation simple traite les articles de/d’ et les élisions. Les autres négations proposent des infinitifs et des indices de sens visibles sur papier et au tableau. Les sources sont recensées dans les fiches [modaux](modaux-a1-relecture.md), [pronominaux](pronominaux-a1-relecture.md), [ne…pas](a8-a1-relecture.md) et [autres négations](a9-a1-relecture.md).
+
+Pour l’ordre, les 50 phrases de négation demandent **Négative** ; Positive/Mixte restent indisponibles. Les 50 phrases pronominales sont positives, y compris « plus tôt », dont le comparatif est correctement étiqueté comme adverbe. Les banques historiques restent intactes.
+
 ### Contrats techniques de dialogue et de support image
 
 Les [essais G2](contrats-situations-images.md) couvrent les dialogues fermés avec QCM/lacune mélangés, le jeu de rôle ouvert avec intentions et relances, ainsi que l’image intégrée à une activité. Les groupes, répliques, critères, images et options sont figés dans les sauvegardes. Les coupures par question conservent les dialogues, et le tableau reprend le contexte sans modèle dévoilé.
@@ -135,24 +167,25 @@ Les anciennes recettes et la compréhension orale restent sur leurs chemins hist
 
 ## Sources et revue
 
-`src/grammaire/curriculum/data/etre.json`, `er-particuliers.json`, `imparfait-ou-pc.json`, `i4.json`, `k10.json`, `avoir.json`, `aller-destination.json` et `er.json` sont les sources éditoriales des pilotes et de l’extension A1, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
+Les quatorze fichiers JSON dans `src/grammaire/curriculum/data/`, dont `ir.json` et `re-oir.json`, sont les sources éditoriales des pilotes, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
 
 Pour publier une banque après revue enseignant : enregistrer la personne, la date et la décision dans `review`, puis passer `review.humanReview` et `editorialStatus` à `approved`. Ne pas déclarer l’approbation à partir d’un simple comptage automatique. Les variantes QCM sont relues avec leurs distracteurs ; les variantes ouvertes sont contrôlées avec leurs solutions ou critères.
 
 ## Vérifications reproductibles
 
 - `npm run test:grammar:baseline` : 735 sorties à graines fixes, types actuels et alias CO ; empreintes de 256 fichiers CO/audio. Le script refuse d’écraser la référence G0 existante.
-- `npm run test:grammar:levels` : 2 370 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau.
+- `npm run test:grammar:levels` : 4 280 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau. Les banques d’ordre sont intégralement vérifiées avec la polarité disponible : Positive, Négative ou Mixte.
 - `npm run test:grammar:present-g3` : provenance Aller/-er, erreurs réelles, corrections complètes, sujets imposés, informations conservées, élisions, pagination des explications longues et 50 tâches orales sans score automatique.
+- `npm run test:grammar:ir-re` : 800 variantes IR/RE-OIR, réemploi A1, contextes A2 distincts, modèles, erreurs uniques, sujets imposés, possessifs, élisions, graphies admises, capacités 44/6/50 et transformations guidées.
 - `npm run test:grammar:contracts` et, avec Vite actif, `npm run test:grammar:contracts:browser` : essais de dialogue/situation et de support image, sans quota fictif.
 - `node node_modules/typescript/bin/tsc -b --pretty false` : contrôle TypeScript.
-- Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2, subjonctif B1, Avoir A1, Aller A1 et -er A1 dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `npm run test:grammar:present-g3:browser` cible les onze nouvelles présentations. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
+- Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels des quatorze notions dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `npm run test:grammar:present-g3:browser` cible les onze présentations Aller/-er ; `npm run test:grammar:ir-re:browser` les seize présentations IR/RE-OIR et leurs capacités filtrées. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
 
 Résultats du lot : [verification.json](verification.json). Les scénarios du cahier des charges restent des critères à exécuter lors des lots concernés ; ce premier lot ne prétend pas les avoir tous réalisés.
 
 ## Suite de l’implémentation
 
-G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. Les cinq notions prévues pour G2 sont utilisables en pilote : Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1. Les essais techniques dialogue/situation et image sont réalisés ; G3 couvre désormais Avoir, Aller et les verbes réguliers en -er au niveau A1. Restent la validation enseignante et la généralisation aux autres activités, supports et niveaux. Le [bilan du 13 novembre](avancement-20261113.md) distingue les pilotes disponibles des cibles : 98 notions, 123 couples notion-niveau, 424 activités et 601 offres.
+G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. Les cinq notions prévues pour G2 sont utilisables en pilote : Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1. Les essais techniques dialogue/situation et image sont réalisés. L’extension couvre Avoir, Aller, les verbes réguliers en -er au niveau A1, puis les verbes en -ir et -re/-oir aux niveaux A1/A2. Restent la validation enseignante et la généralisation aux autres activités, supports et niveaux. Le [bilan du 14 novembre](avancement-20261114.md) distingue les pilotes disponibles des cibles : 98 notions, 123 couples notion-niveau, 424 activités et 601 offres.
 
 Aucun audio, transcription, banque CO ou contenu des autres domaines n’est modifié par ce lot.
 
@@ -175,3 +208,21 @@ Aller A1 et les verbes réguliers en -er A1 ajoutent neuf activités et onze pr�
 Les 2 370 variantes, leurs recettes, filtres et adaptations au tableau passent les contrôles. TypeScript, la compilation de production, les contrats et G0 (735 sorties / 256 fichiers protégés) passent également. La relecture enseignante reste nécessaire avant publication pédagogique. Voir le [bilan et les prochaines étapes](avancement-20261113.md).
 
 Le commit `59a76f48` (attaques des mascottes du mode duel) est intégré après ce parcours complet. Sur cette base, TypeScript, la compilation de production, G0, les 2 370 variantes, les contrats, les tests des mascottes et les onze nouvelles présentations Chromium passent à nouveau. Les deux lancements au tableau sont revérifiés ; le parcours complet des 47 présentations reste tracé sur `220a4124`.
+
+### Lot du 14 novembre — IR et RE/OIR
+
+Sur la base `165f1027`, les **63 présentations et 6 340 questions imprimées élève/corrigé** passent dans Chromium, sans débordement ni erreur JavaScript. Les essais techniques ajoutent 16 réponses imprimées hors quotas. Les seize nouvelles présentations IR/RE-OIR couvrent les changements de niveau, les indices, les filtres positifs/négatifs et les transformations au tableau avec leur source et le sujet imposé.
+
+Les 3 170 variantes, leurs recettes et capacités réelles passent les contrôles, avec G0, les contrats, TypeScript et la compilation de production. Le test B1 de production écrite attend désormais les 300 lignes réellement rendues, après une vérification initiale trop précoce fondée sur une pause fixe ; la relance et le test ajusté passent. Les unités n’ont pas changé pour contourner cet échec de synchronisation.
+
+Le [rapport du 14 novembre](avancement-20261114.md) et le [CSV des 601 offres avec leur action restante](reste-a-faire-20261114.csv) distinguent les pilotes disponibles des banques à préparer et de la validation enseignante encore nécessaire.
+
+Les deux ajouts de trios TCF jusqu’à `b9744575` sont intégrés. Ils ne changent aucun fichier d’exécution grammatical, du générateur ou du tableau. Après intégration, TypeScript, la compilation, G0, les 3 170 variantes et les contrats passent à nouveau. Le parcours des 63 présentations reste tracé sur `165f1027`.
+
+Le dernier ajout TCF `55677f81` est aussi conservé. Il laisse le code grammatical, le générateur et le tableau inchangés ; TypeScript, G0 et les 3 170 variantes passent après intégration. La compilation de production est tracée sur `b9744575` et le parcours complet Chromium sur `165f1027`.
+
+### Présent A1 — tranche sur `73a261b5`
+
+Les 22 nouvelles présentations passent dans Chromium : 2 220 questions imprimées élève/corrigé, sans débordement, et quatre lancements au tableau. Le registre totalise 85 offres disponibles ; le parcours complet des 63 offres précédentes reste tracé sur sa base antérieure. Aucun parcours global des 85 offres sur une base unique n’est déclaré.
+
+`npm run test:grammar:present-a1-next` contrôle les lectures, rôles, contraintes, groupes, articles négatifs, élisions et transformations ; `npm run test:grammar:present-a1-next:browser` contrôle leurs fiches et séances. Les 4 280 variantes, G0 (735 sorties / 256 fichiers protégés), les contrats, les tests IR/RE-OIR et Aller/-er, TypeScript et la compilation passent. Les relectures enseignantes restent en attente.

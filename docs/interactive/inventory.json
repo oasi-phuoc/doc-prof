@@ -3,8 +3,8 @@
   "seed": 20261107,
   "scope": "Un tirage réel par type de catalogue, count=2, niveau par défaut. Ne garantit pas les autres graines, variantes et niveaux.",
   "summary": {
-    "types": 2112,
-    "catalogTypes": 2080,
+    "types": 2117,
+    "catalogTypes": 2085,
     "declaredDomains": [
       "français",
       "algèbre",
@@ -79267,6 +79267,24 @@
                     "lignes": {
                       "nb_lignes": 1,
                       "reponse_modele": "13 heures"
+                    },
+                    "qcm_image": {
+                      "melanger": true,
+                      "choix": [
+                        {
+                          "id": "a",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
+                          "correct": true
+                        },
+                        {
+                          "id": "b",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp"
+                        },
+                        {
+                          "id": "c",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp"
+                        }
+                      ]
                     }
                   },
                   "audio": 1
@@ -79470,6 +79488,7 @@
                   "active": "qcm_texte",
                   "filled": [
                     "qcm_texte",
+                    "qcm_image",
                     "lignes"
                   ],
                   "variants": {
@@ -79490,6 +79509,28 @@
                         {
                           "lettre": "C",
                           "texte": "13 heures",
+                          "correct": true
+                        }
+                      ],
+                      "answer": "C"
+                    },
+                    "qcm_image": {
+                      "kind": "qcm",
+                      "mode": "image",
+                      "choix": [
+                        {
+                          "lettre": "A",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "B",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1400-dessinee.webp",
+                          "correct": false
+                        },
+                        {
+                          "lettre": "C",
+                          "image": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp",
                           "correct": true
                         }
                       ],
@@ -114784,6 +114825,216 @@
       "issues": [
         {
           "source": "1/1/1 gram-ex-avoir-curriculum-a",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-aller-destination-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-aller-destination-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-aller-destination-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-aller-destination-curriculum-p",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Dire où l’on va",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-aller-destination-curriculum-p",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-aller-destination-curriculum-p",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-er-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-er-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-er-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-ir-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-ir-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-ir-curriculum-t",
+          "reason": "Rendu « text » non pris en charge dans ce premier prototype."
+        }
+      ],
+      "fields": [
+        "answer",
+        "layout",
+        "prompt"
+      ],
+      "sourceFixture": [
+        {
+          "layout": "text",
+          "prompt": "Choisissez une activité, un niveau et un mode de réponse grammaticaux disponibles (1 à 50 questions).",
+          "answer": ""
+        }
+      ]
+    },
+    {
+      "id": "gram-ex-re-oir-curriculum-t",
+      "domain": "grammaire",
+      "topic": "gram-present",
+      "label": "Transformer une phrase",
+      "seed": 20261107,
+      "config": {
+        "domain": "grammaire",
+        "topic": "gram-present",
+        "exerciseType": "gram-ex-re-oir-curriculum-t",
+        "difficulty": "moyen",
+        "count": 2,
+        "columns": 1
+      },
+      "layouts": [
+        "text"
+      ],
+      "tcfKinds": [],
+      "sourceItems": 1,
+      "playableQuestions": 0,
+      "compatibility": [
+        "unsupported"
+      ],
+      "issues": [
+        {
+          "source": "1/1/1 gram-ex-re-oir-curriculum-t",
           "reason": "Rendu « text » non pris en charge dans ce premier prototype."
         }
       ],

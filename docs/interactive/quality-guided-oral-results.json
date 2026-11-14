@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-14",
+  "baseline": "73a261b5",
+  "scope": "F31 M14-lite : une à quatre images, rôles, relances, modèle complet privé puis lisible ; zones de glisser-déposer pour les images et phrases courtes.",
+  "tests": {
+    "fullSuitePassed": 356,
+    "focusedTestsPassed": 22,
+    "newDomainTests": 9,
+    "failed": 0,
+    "illustratedSourceExercises": 175,
+    "seedsPerSource": 3,
+    "uniqueRealWebPImagesChecked": 403,
+    "nativeBanks": {
+      "fourImages": 76,
+      "oneImage": 99
+    }
+  },
+  "browser": {
+    "passed": [
+      "guided-oral-browser",
+      "ordering-browser",
+      "source-adapters-browser",
+      "readability-browser",
+      "navigation-browser",
+      "teacher-sheet-browser",
+      "browser",
+      "a4-regression"
+    ],
+    "allWorkflowStagesRun": false,
+    "workflowStagesAvailable": 58,
+    "viewports": [
+      "390x844",
+      "1366x768",
+      "360x640"
+    ],
+    "editedScenes": [
+      2,
+      3
+    ],
+    "gestures": "Real mouse events and Chromium native touch dispatch; live preview and highlighted target, no intermediate order commits, insertion, shift, undo, keyboard focus, Escape, cancelled touch and outside drop.",
+    "resume": "Image order, staged hints and human assessment survive navigation and reload.",
+    "privacy": "No narration or dialogue before reveal; full reader pauses the one-second Solo transition until close; oral activities remain ungraded.",
+    "media": "Prepared real WebP images and zooms work after cutting the network; reloading requires connected preparation.",
+    "accessibility": "Axe passes in the oral stage, full model reader, two- and three-picture galleries and existing word-order and readability fixtures.",
+    "serverWritesToFicheApi": 0,
+    "sourceRecipes": "unchanged",
+    "developmentRetry": "One initial teacher-sheet run lost its execution context during development navigation; the unchanged fixture passed on restart with the cache warm.",
+    "errors": []
+  },
+  "checks": {
+    "types": "tsc -b and typecheck:api passed",
+    "lint": "oxlint passed; no warnings in files introduced or changed by this feature",
+    "build": "vite build --manifest passed",
+    "budgets": {
+      "landing": {
+        "gzip": 121769,
+        "maximumGzip": 153600
+      },
+      "calibration": {
+        "gzip": 141683,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 143828,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 179184,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 2817258,
+        "maximumGzip": 3145728
+      }
+    },
+    "secrets": "Scoped Gitleaks result recorded in secrets-results.json; not the global F22 audit."
+  },
+  "paper": {
+    "identicalScreenshot": true,
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "draftLaunch": "passed"
+  },
+  "inventory": {
+    "variants": 2117,
+    "catalogTypes": 2085,
+    "playableVariants": 725,
+    "unsupportedVariants": 1392,
+    "existingGenerationErrors": 8,
+    "note": "One catalogue sample per type; incoming grammar pilots are retained, not counted as adapted game families."
+  },
+  "limits": [
+    "No invented prediction question, unique story order or automatic oral score.",
+    "M14 annotations and automatic M07 ordering remain open.",
+    "Physical classroom/ENI and printer validation remain open.",
+    "Prepared media are in page memory, not a cold-start offline cache."
+  ]
+}

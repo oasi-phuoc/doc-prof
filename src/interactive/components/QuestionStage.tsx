@@ -1,4 +1,4 @@
-import { useId, useState, type CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
 import {
   PALETTE,
@@ -14,6 +14,9 @@ import { Icon } from './Icons'
 import { TextReadingDialog } from './TextReadingDialog'
 import { NumberSequenceView } from './NumberSequenceView'
 import { WordClassificationView } from './WordClassificationView'
+import { ImageSequence } from './ImageSequence'
+import { WordSequence } from './WordSequence'
+import './guided-oral.css'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
@@ -50,7 +53,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.numberSequence, q.wordClassification, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
   const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
@@ -74,7 +77,8 @@ export function QuestionStage({
         {q.numberSequence && <NumberSequenceView sequence={q.numberSequence} />}
         {q.wordClassification && <WordClassificationView classification={q.wordClassification} />}
         <GrammarImageSupports supports={q.grammarImages} zoom/>
-        {q.mode === 'sequence' && (
+        {q.oralSituation && <details className="ci-oral-situation"><summary>Situation et consigne</summary><p>{q.instruction}</p><p>{q.oralSituation}</p></details>}
+        {q.mode === 'sequence' && !q.oralSituation && (
           <details className="ci-full-instruction">
             <summary>Consigne complète</summary>
             <p>{q.instruction}</p>
@@ -85,7 +89,7 @@ export function QuestionStage({
             <GeometryFigure type={q.figure.type} dims={q.figure.dims} />
           </div>
         )}
-        {q.mode !== 'sequence' && !!q.images.length && (
+        {q.mode !== 'sequence' && q.mode !== 'oral' && !!q.images.length && (
           <div className="ci-stimulus-images">
             {q.images.map((image, i) => (
               <SafeImage
@@ -165,7 +169,9 @@ export function QuestionStage({
       ) : (
         <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
           {q.mode === 'sequence' ? (
-            q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} /> : <Sequence key={q.id} question={q} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
+            q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} /> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
+          ) : q.mode==='oral'&&q.images.length ? (
+            <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom/>)}</div>
           ) : (
             <p>
               Échange oral ou production libre. L’enseignant guide l’activité et
@@ -175,80 +181,7 @@ export function QuestionStage({
         </section>
       )}
       {report.manualScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
-      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
-    </>
-  )
-}
-
-function WordSequence({ words, order, onOrder, disabled }: { words: string[]; order?: number[]; onOrder?: (order: number[]) => void; disabled: boolean }) {
-  const positions = order ?? words.map((_, index) => index)
-  const [selected, setSelected] = useState<number | undefined>(undefined)
-  const [previous, setPrevious] = useState<number[] | undefined>(undefined)
-  const [announcement, setAnnouncement] = useState('')
-  const help = useId()
-  const update = (next: number[], message: string) => { setPrevious([...positions]); onOrder?.(next); setAnnouncement(message) }
-  const choose = (index: number) => {
-    if (disabled) return
-    if (selected === undefined) { setSelected(index); setAnnouncement(`Mot sélectionné : ${words[index]}. Choisissez sa place.`); return }
-    if (selected === index) { setSelected(undefined); return }
-    const next = [...positions], from = next.indexOf(selected), to = next.indexOf(index)
-    ;[next[from], next[to]] = [next[to]!, next[from]!]
-    update(next, `Mot déplacé à la place ${to + 1}.`); setSelected(undefined)
-  }
-  const move = (index: number, delta: number) => {
-    const next = [...positions], from = next.indexOf(index), to = from + delta
-    if (disabled || to < 0 || to >= next.length) return
-    ;[next[from], next[to]] = [next[to]!, next[from]!]
-    update(next, `Mot déplacé à la place ${to + 1}.`); setSelected(undefined)
-  }
-  return <div className="ci-word-order">
-    <p id={help}>Choisissez un mot, puis sa place. Au clavier, utilisez les flèches.</p>
-    <div className="ci-word-sequence" role="group" aria-label="Mots à remettre dans l’ordre" aria-describedby={help}>{positions.map((index, position) => <button type="button" key={index} disabled={disabled} aria-label={`Mot ${position + 1} : ${words[index]}`} aria-pressed={selected === index} onClick={() => choose(index)} onKeyDown={(event) => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') { event.preventDefault(); move(index, event.key === 'ArrowLeft' ? -1 : 1) } }}><small aria-hidden="true">{position + 1}</small><b>{words[index]}</b></button>)}</div>
-    <button type="button" className="ci-word-undo" disabled={disabled || !previous} onClick={() => { if (previous) { onOrder?.(previous); setPrevious(undefined); setSelected(undefined); setAnnouncement('Dernier déplacement annulé.') } }}>Annuler le déplacement</button>
-    <span className="ci-sr-only" role="status">{announcement}</span>
-  </div>
-}
-
-function Sequence({ question, order, onOrder, disabled }: { question: Question; order?: number[]; onOrder?: (order: number[]) => void; disabled: boolean }) {
-  const images = (order ?? question.images.map((_, index) => index)).map((index) => ({ src: question.images[index]!, index }))
-  const move = (position: number, delta: number) => {
-      const next = images.map((image) => image.index)
-      const target = position + delta
-      if (disabled || target < 0 || target >= next.length) return
-      ;[next[position], next[target]] = [next[target]!, next[position]!]
-      onOrder?.(next)
-  }
-  return (
-    <>
-      <p>
-        Racontez l’histoire. Vous pouvez déplacer les images pour expliquer
-        votre proposition.
-      </p>
-      <div className="ci-sequence">
-        {images.map((image, i) => (
-          <div key={image.index}>
-            <SafeImage src={image.src} alt={`Scène ${image.index + 1}`} zoom />
-            <div className="ci-toolbar">
-              <button
-                aria-label={`Déplacer la scène ${image.index + 1} à gauche`}
-                disabled={disabled || !i}
-                onClick={() => move(i, -1)}
-              >
-                ←
-              </button>
-              <span>{i + 1}</span>
-              <button
-                aria-label={`Déplacer la scène ${image.index + 1} à droite`}
-                disabled={disabled || i === images.length - 1}
-                onClick={() => move(i, 1)}
-              >
-                →
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-      <p>Aucune note automatique pour cette activité orale.</p>
+      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }

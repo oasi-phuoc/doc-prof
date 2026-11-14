@@ -7,6 +7,7 @@ export function CorrectionView({
   correction,
   selected,
   onAssess,
+  onReadModel,
   assessment,
   placement = 'model',
   number,
@@ -19,6 +20,7 @@ export function CorrectionView({
   correction: Correction
   selected?: string
   onAssess: (value: 'acquired' | 'retry') => void
+  onReadModel?: () => void
   assessment?: 'acquired' | 'retry'
   placement?: 'right' | 'model'
   number?: number
@@ -48,10 +50,8 @@ export function CorrectionView({
   if (placement !== 'model') return null
   return (
     <div className="ci-model-answer">
-      <p>
-        <b>Exemple de réponse</b>
-      </p>
-      <p>{correction.text}</p>
+      <div className="ci-model-head"><b>Exemple de réponse</b>{onReadModel&&correction.text.length>240&&<button disabled={disabled} onClick={onReadModel}>Lire le modèle</button>}</div>
+      <div className="ci-model-content" tabIndex={correction.text.length>240?0:undefined} role={correction.text.length>240?'region':undefined} aria-label={correction.text.length>240?'Exemple de réponse à faire défiler':undefined}><p>{correction.text}</p></div>
       <p>
         D’autres réponses peuvent convenir. L’enseignant apprécie la production.
       </p>
