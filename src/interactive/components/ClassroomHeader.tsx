@@ -23,7 +23,7 @@ export type ClassroomHeaderProps = {
   onCompetition?: () => void
 }
 export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
-  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void }
+  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void; onConsole?: () => void }
 }) {
   const locked = !!session?.teacherLocked
   const [panel, setPanel] = useState<'mascot' | 'timer' | null>(null)
@@ -76,6 +76,7 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
             <button onClick={closePanel}>Fermer les réglages</button>
           </div>}
         </div>
+        {session?.onConsole && <IconButton icon="console" label="Ouvrir la console enseignant" disabled={locked} onClick={() => { setPanel(null); session.onConsole?.() }} />}
         <IconButton data-ci-fullscreen icon="expand" label={fullscreen ? 'Quitter le plein écran' : 'Plein écran'} aria-pressed={fullscreen} onClick={() => { setPanel(null); onFullscreen() }} />
         <IconButton icon="folder" label="Mes fiches" disabled={locked} onClick={onFiches} />
         {session && <IconButton icon="exit" label="Quitter la séance" disabled={locked} onClick={session.onExit} />}

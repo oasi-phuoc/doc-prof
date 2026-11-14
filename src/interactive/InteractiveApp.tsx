@@ -10,7 +10,12 @@ const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
 const CardsPage = lazy(() => import('./CardsPage'))
 const GameApp = lazy(() => import('./GameApp'))
 const CompetitionPage = lazy(() => import('./competition/CompetitionPage'))
+const TeacherConsolePage = lazy(() => import('./teacher-console/TeacherConsolePage'))
 export default function InteractiveApp() {
+  if (window.location.pathname.replace(/\/+$/, '') === '/interactif/console') return <Suspense fallback={<LoadingScreen title="Ouverture de la console enseignant" />}><TeacherConsolePage /></Suspense>
+  return <InteractiveRoutes />
+}
+function InteractiveRoutes() {
   const [loaded, setLoaded] = useState<{ preferences: ClassroomPreferences; warning: string } | null>(null)
   useEffect(() => {
     let active = true

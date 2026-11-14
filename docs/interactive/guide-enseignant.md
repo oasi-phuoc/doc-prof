@@ -24,6 +24,8 @@ Les associations audio compatibles proposent une question par enregistrement, av
 
 Le cadenas en pied **verrouille les commandes** et les réglages. Il reste verrouillé après actualisation ; déverrouillez-le pour reprendre les commandes. La sortie du plein écran reste disponible. Le verrou ne remplace pas la pause : le minuteur déjà lancé continue en Classe.
 
+En **Classe**, l’icône d’écran **Ouvrir la console enseignant** ouvre une seconde fenêtre. Placez-la sur votre écran en affichage étendu et gardez la fenêtre de projection sur l’écran de la classe. La console montre les corrigés, les modèles et les relances à l’avance. Elle permet de piloter les étapes, de choisir une question, de mettre en pause, de verrouiller et d’apprécier une activité ouverte. Les lettres des bonnes réponses suivent les cartes affichées, même après une nouvelle tentative. Fermer la console laisse la séance fonctionner ; l’icône permet de la rouvrir. Si le navigateur bloque la fenêtre, autorisez les fenêtres de ClairFLE ou utilisez la feuille enseignant de la préparation. La console fonctionne sur ce même navigateur et ce même appareil ; elle ne s’ouvre pas sur une tablette distante. Voir les [détails de la console](adr-0048-console-enseignant-locale.md).
+
 La flèche **Masquer à nouveau** reste disponible dix secondes après la révélation. Elle revient à la discussion sans compter deux fois la question. **Passer** demande confirmation ; le drapeau **Terminer la séance** permet d’ouvrir le bilan plus tôt, après confirmation. Annuler ou Échap conserve la partie. L’audio et le décompte de réflexion sont suspendus pendant ces confirmations.
 
 Au clavier, utilisez Tab pour rejoindre les boutons. Entrée ou Espace active le bouton ciblé. Avec le focus sur le groupe des commandes de phase, Entrée propose l’étape suivante ; si le maintien est activé, le focus va au bouton de révélation et il faut ensuite le maintenir.
@@ -47,5 +49,7 @@ Pour importer, ouvrez la fiche d’origine puis choisissez le fichier JSON et v�
 ## Préparer une séance sans connexion
 
 Ouvrez la fiche avec une connexion, sélectionnez les questions, puis choisissez **Précharger toute la séance** dans la préparation. Le poids téléchargé et la progression s’affichent. Attendez **Prêt à jouer sans connexion**, puis gardez cette page ouverte : vous pouvez couper Internet et jouer en Classe ou Solo. Les pistes composées, les images, leur zoom et les 30 mascottes sont inclus. Le préchargement ne consomme aucune écoute.
+
+Pour utiliser la console enseignant sans réseau, ouvrez aussi sa fenêtre avant de couper la connexion. Gardez les deux fenêtres ouvertes.
 
 Une erreur empêche d’annoncer la séance prête. Réessayez le préchargement ou réduisez la sélection ; **Annuler le préchargement** rend le lancement habituel disponible. Si la sélection nécessite d’autres fichiers, préchargez à nouveau. **Libérer les médias chargés** retire la préparation sans connexion. Fermer ou recharger la page nécessite une connexion pour ouvrir la fiche et préparer de nouveau les médias.
