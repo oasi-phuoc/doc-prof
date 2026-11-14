@@ -10,6 +10,10 @@
 
 Suite A2 du 14 novembre : **trois trios** supplémentaires, trois nouveaux PNG natifs 4:3 et six réemplois. Foulard de soie distinct d’une cravate, cuir distinct du coton et de la laine, deux paquets jaunes de biscuits avec contenu visible. **231 trios DELF Actif actifs**, 139 candidats concrets restants. Les textes, choix, corrigés, transcriptions et MP3 sont conservés, avec comparaison des six banques ([registre](revue-trios-matieres-accessoires-biscuits-20261114.json)). Les contrôles des images, import audio, banque, catalogue et TypeScript passent : 2 228 variantes QCM image et 6 546 images dans la galerie.
 
+Suite vêtements et plats : **cinq trios** (quatre A1 et un A2), six nouveaux PNG natifs 4:3 et neuf réemplois. Les deux hamburgers respectent le pluriel ; le poisson grillé reprend les carottes et le persil du menu ; la salade de fruits est distinguée de l’entrée. Le pull léger ne remplace pas le manteau. **236 trios DELF Actif actifs** (122 A1, 105 A2, neuf B1) ; **134 candidats concrets restants**, 1 021 questions en contexte et 370 trios historiques suivis séparément ([preuves du lot](revue-trios-vetements-plats-20261114.json)).
+
+Total de cette reprise du 14 novembre : **16 trios** (12 A1 et quatre A2), 16 nouveaux PNG natifs, 17 usages de ces images et **31 réemplois**. La [comparaison cumulée](verification-images-20261114.json) vérifie les six banques et les empreintes des premières versions des métiers. Aucun texte, choix, corrigé, transcription ou MP3 modifié. Contrôles réussis des images, des 346 supports DELF Actif, des 763 décisions historiques, de la banque, des catalogues et TypeScript. Galerie : **6 552 images** ; **2 233 variantes QCM image** actives. Aucune nouvelle écoute humaine n’est attestée.
+
 ## Reprise du 13 novembre 2026 — nouveaux audios inclus
 
 La génération des images adaptées est ajoutée aux tâches des 346 nouveaux supports DELF Actif, soit 1 663 questions. Le [plan complémentaire](delf-actif-20261113/images-a-preparer.md) distingue les trios actifs, les candidats à vérifier et les réponses maintenues en texte. Ce lot complète le reliquat historique sans les confondre.

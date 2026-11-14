@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 231,
+      "active_reviewed_trio": 236,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73,
-      "candidate_visual_review": 139
+      "candidate_visual_review": 134
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 118,
+        "active_reviewed_trio": 122,
         "keep_text_calendar_or_duration": 46,
         "needs_context_review": 208,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37,
-        "candidate_visual_review": 34
+        "candidate_visual_review": 30
       },
       "A1-A2": {
-        "candidate_visual_review": 72,
-        "active_reviewed_trio": 104,
+        "candidate_visual_review": 71,
+        "active_reviewed_trio": 105,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -21976,8 +21976,8 @@
       "semantic_sha256": "9568f7d3905be055219b451ea300e5f0e0811949ff9a295f4cdefe0a5ac7bd06",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
       "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -22006,13 +22006,36 @@
           "id": "c",
           "label": "Une salade de pâtes",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-salade-pates.png",
+              "sha256": "fb27e4d8cfe3db1e47e114a1fe0ca129cfd1831f30509ae27df84d5a04c0eee6",
+              "label": "Salade de pâtes",
+              "visual_review_required": true
+            }
+          ],
           "asset": "08495b3285c591c5",
           "brief": "Représenter entièrement « Une salade de pâtes » pour « Quelle salade est proposée en entrée ? ». Vérifier la transcription du support tcf-delf-actif-a1-043-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+          "sha256": "1f0961879e219aff23ee649eb8ece1d7111053fd740e21737f57f4419bca46dd"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-salade-fruits-dessinee.webp",
+          "sha256": "9b4c2f63838240ee1357738bf4113ff5bf1872dce54529bbce2845128df529fe"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-salade-pates.png",
+          "sha256": "fb27e4d8cfe3db1e47e114a1fe0ca129cfd1831f30509ae27df84d5a04c0eee6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22023,7 +22046,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-vetements-plats-20261114.json",
+        "reason": "La salade composée est proposée en entrée ; la salade de fruits est proposée en dessert.",
+        "note": "Salade composée de légumes et fromage, bol de fruits et salade froide de pâtes à fusilli dominants. La salade de fruits entendue est un dessert, pas l’entrée demandée."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-043-01#2",
@@ -22036,14 +22065,21 @@
       "semantic_sha256": "63bd15e7710bd34da390449acc2c7cddd0616df49b7cbe4a7773e5ab815215f1",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
       "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Du poisson grillé",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-poisson-grille.png",
+              "sha256": "383bfadbd7f1f2f8dc06c8e63f9fc89081a8df77e62ed843959117ebb8525e1e",
+              "label": "Poisson grillé",
+              "visual_review_required": true
+            }
+          ],
           "asset": "07fbe746f89ceca6",
           "brief": "Représenter entièrement « Du poisson grillé » pour « Quel plat peut-on choisir à la place de la viande ? ». Vérifier la transcription du support tcf-delf-actif-a1-043-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -22051,7 +22087,14 @@
           "id": "b",
           "label": "Une omelette",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-omelette.png",
+              "sha256": "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1",
+              "label": "Omelette",
+              "visual_review_required": true
+            }
+          ],
           "asset": "0a5698ce1d26edf1",
           "brief": "Représenter entièrement « Une omelette » pour « Quel plat peut-on choisir à la place de la viande ? ». Vérifier la transcription du support tcf-delf-actif-a1-043-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -22064,8 +22107,24 @@
           "brief": "Représenter entièrement « Des pâtes » pour « Quel plat peut-on choisir à la place de la viande ? ». Vérifier la transcription du support tcf-delf-actif-a1-043-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-poisson-grille.png",
+          "sha256": "383bfadbd7f1f2f8dc06c8e63f9fc89081a8df77e62ed843959117ebb8525e1e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-omelette.png",
+          "sha256": "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+          "sha256": "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22076,7 +22135,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-vetements-plats-20261114.json",
+        "reason": "Le menu offre du poisson grillé comme alternative à la viande, avec carottes ou purée.",
+        "note": "Poisson grillé entier avec carottes et persil, omelette dorée en demi-lune et assiette de pâtes : trois plats distincts, sans sauce masquant le poisson."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-043-01#3",
@@ -30696,8 +30761,8 @@
       "semantic_sha256": "47b9598230c0860c8128ee146f1384d6f289ac8fdbedf1bd88bec73e248fcb2d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
       "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -30733,13 +30798,36 @@
           "id": "c",
           "label": "Un imperméable",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-impermeable-simple.png",
+              "sha256": "82de39963c07aeec77cae57aeccc8690445d10a3659e50ba40096904045d8907",
+              "label": "Imperméable",
+              "visual_review_required": true
+            }
+          ],
           "asset": "91c2211ebdb1b686",
           "brief": "Représenter entièrement « Un imperméable » pour « Quel vêtement doivent-ils prendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-pull-vert.png",
+          "sha256": "16d1f07974e9ac0f670b79b15fee4822453dedd70ea8b5a429f06615aa08e8ef"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+          "sha256": "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-impermeable-simple.png",
+          "sha256": "82de39963c07aeec77cae57aeccc8690445d10a3659e50ba40096904045d8907"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -30750,7 +30838,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-vetements-plats-20261114.json",
+        "reason": "Le professeur demande de prendre un pull pour monter en haut de la tour Eiffel.",
+        "note": "Pull entier, maillot de bain entier et imperméable à capuche entier sans parapluie : trois vêtements distincts."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-051-05-01#1",
@@ -31964,8 +32058,8 @@
       "semantic_sha256": "5a2741fabe5f4616350937b55f55dbf8bf03b177445b5b88338857ce8c0b1206",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-03-01.mp3",
       "audio_sha256": "c57f5fb490dd8c37c0f28c9d2068f3e26c27c326eb9c24057ad2af7e076c7ad3",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -31994,13 +32088,36 @@
           "id": "c",
           "label": "Des hamburgers",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-hamburgers-pluriel.png",
+              "sha256": "f144a34ed2765f9ccc2beea9991c1dabd3274dafc37d49aecb215990f9232597",
+              "label": "Des hamburgers",
+              "visual_review_required": true
+            }
+          ],
           "asset": "b220ed15e13ff6ce",
           "brief": "Représenter entièrement « Des hamburgers » pour « Quel plat mangeront-ils ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-pizzas.webp",
+          "sha256": "bcc20ce51c3d35fefff95e06cdfec2474b2565a3fc24a047e6546822627a3547"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+          "sha256": "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-hamburgers-pluriel.png",
+          "sha256": "f144a34ed2765f9ccc2beea9991c1dabd3274dafc37d49aecb215990f9232597"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32011,7 +32128,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-vetements-plats-20261114.json",
+        "reason": "Florent annonce que les amis mangeront des pizzas après le match.",
+        "note": "Deux pizzas entières, assiette de pâtes et deux hamburgers entiers sans frites ni boisson ; les deux réponses au pluriel ne sont pas réduites à un seul objet."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-052-04-01#1",
@@ -50274,14 +50397,21 @@
       "semantic_sha256": "73f366467504ed87b62c2534e3d303f1dc02e80bb9daee9467dc4d82230199f1",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
       "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Un pull léger",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-pull-leger.png",
+              "sha256": "33702d16e4984623177faa51bd7e48d63bc0cb9615fda16404a94339024ac661",
+              "label": "Pull léger",
+              "visual_review_required": true
+            }
+          ],
           "asset": "f4643770a31fad87",
           "brief": "Représenter entièrement « Un pull léger » pour « Quel vêtement le client cherche-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -50316,8 +50446,24 @@
           "brief": "Représenter entièrement « Une chemise » pour « Quel vêtement le client cherche-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-pull-leger.png",
+          "sha256": "33702d16e4984623177faa51bd7e48d63bc0cb9615fda16404a94339024ac661"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+          "sha256": "fdf16b04ffb9351bb6a2a01cbc9c1e27941ae7183aa62b71c0d69868e3013662"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-chemise.webp",
+          "sha256": "313e2ec2df6f62e1258d3ba92ca8b983a83e1fdee96ded72a55b972a26281f90"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -50328,7 +50474,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-vetements-plats-20261114.json",
+        "reason": "Le client demande des pulls légers ; la discussion compare ensuite laine et coton pour la saison.",
+        "note": "Pull fin bleu clair, manteau épais à revers et chemise à col et boutons ; la légèreté n’est pas représentée par un gros tricot."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-032-03#2",
@@ -72989,7 +73141,14 @@
           "id": "c",
           "label": "Une omelette",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-omelette.png",
+              "sha256": "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1",
+              "label": "Omelette",
+              "visual_review_required": true
+            }
+          ],
           "asset": "0a5698ce1d26edf1",
           "brief": "Représenter entièrement « Une omelette » pour « Quel plat Alain choisit-il volontiers ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -107444,7 +107603,14 @@
     {
       "id": "08495b3285c591c5",
       "label": "Une salade de pâtes",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-salade-pates.png",
+          "sha256": "fb27e4d8cfe3db1e47e114a1fe0ca129cfd1831f30509ae27df84d5a04c0eee6",
+          "label": "Salade de pâtes",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-043-01#1",
@@ -107455,7 +107621,14 @@
     {
       "id": "07fbe746f89ceca6",
       "label": "Du poisson grillé",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-poisson-grille.png",
+          "sha256": "383bfadbd7f1f2f8dc06c8e63f9fc89081a8df77e62ed843959117ebb8525e1e",
+          "label": "Poisson grillé",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-043-01#2",
@@ -107466,7 +107639,14 @@
     {
       "id": "0a5698ce1d26edf1",
       "label": "Une omelette",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-omelette.png",
+          "sha256": "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1",
+          "label": "Omelette",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-043-01#2",
@@ -108820,7 +109000,14 @@
     {
       "id": "91c2211ebdb1b686",
       "label": "Un imperméable",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-impermeable-simple.png",
+          "sha256": "82de39963c07aeec77cae57aeccc8690445d10a3659e50ba40096904045d8907",
+          "label": "Imperméable",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-04-04#4",
@@ -108958,7 +109145,14 @@
     {
       "id": "b220ed15e13ff6ce",
       "label": "Des hamburgers",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-hamburgers-pluriel.png",
+          "sha256": "f144a34ed2765f9ccc2beea9991c1dabd3274dafc37d49aecb215990f9232597",
+          "label": "Des hamburgers",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-03-01#5",
@@ -110865,7 +111059,14 @@
     {
       "id": "f4643770a31fad87",
       "label": "Un pull léger",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-pull-leger.png",
+          "sha256": "33702d16e4984623177faa51bd7e48d63bc0cb9615fda16404a94339024ac661",
+          "label": "Pull léger",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-032-03#1",

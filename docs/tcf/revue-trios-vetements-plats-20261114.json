@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "b9744575fd61e92055078b6af897bf6a32fc9039",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "b9744575fd61e92055078b6af897bf6a32fc9039",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 5
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-051-04-04#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+      "source_sha256": "092e7e9826cfc580d350f5a21cf60393fad2494c516060c8cc08808873ec3433",
+      "semantic_sha256": "47b9598230c0860c8128ee146f1384d6f289ac8fdbedf1bd88bec73e248fcb2d",
+      "question": {
+        "enonce": "Quel vêtement doivent-ils prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un pull",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un maillot",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un imperméable",
+            "correct": false
+          }
+        ],
+        "written_model": "Un pull"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
+      "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
+      "image_ids": [
+        "extension573-pull-vert",
+        "vocab-maillot-une-piece",
+        "extension573-impermeable-simple"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-pull-vert.png",
+        "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+        "/lib/images/tcf/qcm-audit/extension573-impermeable-simple.png"
+      ],
+      "image_sha256": [
+        "16d1f07974e9ac0f670b79b15fee4822453dedd70ea8b5a429f06615aa08e8ef",
+        "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82",
+        "82de39963c07aeec77cae57aeccc8690445d10a3659e50ba40096904045d8907"
+      ],
+      "reason": "Le professeur demande de prendre un pull pour monter en haut de la tour Eiffel.",
+      "visual_review": "Pull entier, maillot de bain entier et imperméable à capuche entier sans parapluie : trois vêtements distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a2-032-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur, avez-vous des pulls légers en laine ? Je regrette, ils vont arriver le mois prochain. Nous sommes encore en été. Alors en coton ? C’est pour mettre à la montagne. Et bien pour la saison, le coton est l’idéal.",
+      "source_sha256": "6953c0dee17833b8b035a83e602096df612e31ba327d512c660a540899c49848",
+      "semantic_sha256": "73f366467504ed87b62c2534e3d303f1dc02e80bb9daee9467dc4d82230199f1",
+      "question": {
+        "enonce": "Quel vêtement le client cherche-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un pull léger",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un manteau",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une chemise",
+            "correct": false
+          }
+        ],
+        "written_model": "Un pull léger"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+      "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
+      "image_ids": [
+        "extension573-pull-leger",
+        "co834-manteau-dessine",
+        "vocab-chemise"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-pull-leger.png",
+        "/lib/images/tcf/qcm-audit/co834-manteau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chemise.webp"
+      ],
+      "image_sha256": [
+        "33702d16e4984623177faa51bd7e48d63bc0cb9615fda16404a94339024ac661",
+        "fdf16b04ffb9351bb6a2a01cbc9c1e27941ae7183aa62b71c0d69868e3013662",
+        "313e2ec2df6f62e1258d3ba92ca8b983a83e1fdee96ded72a55b972a26281f90"
+      ],
+      "reason": "Le client demande des pulls légers ; la discussion compare ensuite laine et coton pour la saison.",
+      "visual_review": "Pull fin bleu clair, manteau épais à revers et chemise à col et boutons ; la légèreté n’est pas représentée par un gros tricot."
+    },
+    {
+      "key": "tcf-delf-actif-a1-043-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Au self Bonjour Monsieur, qu’est-ce qu’il y a aujourd’hui au menu ? En entrée il y a une salade composée ou des œufs mimosa. Et comme plat ? De la viande ou du poisson grillé avec des carottes, ail et persil ou de la purée de pommes de terre. Et comme dessert ? On propose du fromage, de la compote de pommes ou de la salade de fruits.",
+      "source_sha256": "e333d7cb571d94b22470994f38d557af67a0b715e289a669609f629f7de4f427",
+      "semantic_sha256": "9568f7d3905be055219b451ea300e5f0e0811949ff9a295f4cdefe0a5ac7bd06",
+      "question": {
+        "enonce": "Quelle salade est proposée en entrée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une salade composée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une salade de fruits",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une salade de pâtes",
+            "correct": false
+          }
+        ],
+        "written_model": "Une salade composée"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
+      "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
+      "image_ids": [
+        "co306-salade-grecque-dessine",
+        "co834-salade-fruits-dessinee",
+        "extension573-salade-pates"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-salade-grecque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-salade-fruits-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-salade-pates.png"
+      ],
+      "image_sha256": [
+        "1f0961879e219aff23ee649eb8ece1d7111053fd740e21737f57f4419bca46dd",
+        "9b4c2f63838240ee1357738bf4113ff5bf1872dce54529bbce2845128df529fe",
+        "fb27e4d8cfe3db1e47e114a1fe0ca129cfd1831f30509ae27df84d5a04c0eee6"
+      ],
+      "reason": "La salade composée est proposée en entrée ; la salade de fruits est proposée en dessert.",
+      "visual_review": "Salade composée de légumes et fromage, bol de fruits et salade froide de pâtes à fusilli dominants. La salade de fruits entendue est un dessert, pas l’entrée demandée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-043-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Au self Bonjour Monsieur, qu’est-ce qu’il y a aujourd’hui au menu ? En entrée il y a une salade composée ou des œufs mimosa. Et comme plat ? De la viande ou du poisson grillé avec des carottes, ail et persil ou de la purée de pommes de terre. Et comme dessert ? On propose du fromage, de la compote de pommes ou de la salade de fruits.",
+      "source_sha256": "e333d7cb571d94b22470994f38d557af67a0b715e289a669609f629f7de4f427",
+      "semantic_sha256": "63bd15e7710bd34da390449acc2c7cddd0616df49b7cbe4a7773e5ab815215f1",
+      "question": {
+        "enonce": "Quel plat peut-on choisir à la place de la viande ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du poisson grillé",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une omelette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des pâtes",
+            "correct": false
+          }
+        ],
+        "written_model": "Du poisson grillé"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-043-01.mp3",
+      "audio_sha256": "920fda73e2cbb9f8568df7412141902dcbbb4f58397b0b95d423b9f838430e1c",
+      "image_ids": [
+        "extension573-poisson-grille",
+        "extension573-omelette",
+        "co306-pates-legumes-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-poisson-grille.png",
+        "/lib/images/tcf/qcm-audit/extension573-omelette.png",
+        "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp"
+      ],
+      "image_sha256": [
+        "383bfadbd7f1f2f8dc06c8e63f9fc89081a8df77e62ed843959117ebb8525e1e",
+        "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1",
+        "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c"
+      ],
+      "reason": "Le menu offre du poisson grillé comme alternative à la viande, avec carottes ou purée.",
+      "visual_review": "Poisson grillé entier avec carottes et persil, omelette dorée en demi-lune et assiette de pâtes : trois plats distincts, sans sauce masquant le poisson."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-03-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Florent. Samedi 3 juillet je fête la fin du championnat de foot et je t’invite avec tous nos copains. Rendez-vous chez moi à 19h30! On regarde un match de l’équipe de France et 21h30 on mange des pizzas. Si tu veux, apporte des biscuits.",
+      "source_sha256": "2c0cf62aced8cebaa00423e3526291ac91839714fe34db6517c83b4876c77821",
+      "semantic_sha256": "5a2741fabe5f4616350937b55f55dbf8bf03b177445b5b88338857ce8c0b1206",
+      "question": {
+        "enonce": "Quel plat mangeront-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pizzas",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des pâtes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des hamburgers",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pizzas"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-03-01.mp3",
+      "audio_sha256": "c57f5fb490dd8c37c0f28c9d2068f3e26c27c326eb9c24057ad2af7e076c7ad3",
+      "image_ids": [
+        "vocab-pizzas",
+        "co306-pates-legumes-dessine",
+        "extension573-hamburgers-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-pizzas.webp",
+        "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-hamburgers-pluriel.png"
+      ],
+      "image_sha256": [
+        "bcc20ce51c3d35fefff95e06cdfec2474b2565a3fc24a047e6546822627a3547",
+        "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c",
+        "f144a34ed2765f9ccc2beea9991c1dabd3274dafc37d49aecb215990f9232597"
+      ],
+      "reason": "Florent annonce que les amis mangeront des pizzas après le match.",
+      "visual_review": "Deux pizzas entières, assiette de pâtes et deux hamburgers entiers sans frites ni boisson ; les deux réponses au pluriel ne sont pas réduites à un seul objet."
+    }
+  ]
+}
