@@ -1,0 +1,757 @@
+{
+  "date": "2026-11-14",
+  "scope": "Complément des treize scènes A1 encore sans image préparée. Quatre liaisons audio admissibles, neuf préparations avec personnes à vérifier ; les prénoms ne servent pas seuls à prouver le genre. Aucun texte, audio ou QCM modifié.",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "baseline": {
+    "pending_scenes": 64,
+    "scenario_sources": 53,
+    "main_commit": "c11c2741eb9ad3bfc184aa66cbff01cf1600a7f5"
+  },
+  "summary": {
+    "original_pngs": 13,
+    "reused_images": 0,
+    "prepared_scene_uses": 13,
+    "new_scenario_audio_bindings": 4,
+    "awaiting_gender_confirmation": 9,
+    "remaining_scenes": 60,
+    "total_bound_scenario_sources": 57,
+    "generation_calls": 15,
+    "rejected_generations": 2,
+    "a1_without_prepared_image": 0
+  },
+  "images": [
+    {
+      "key": "scenario-augmenter-volume-classe",
+      "label": "Le volume de l’enregistrement",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-augmenter-volume-classe.png",
+      "sha256": "8faaa34ce12b7b992e0b091edbfd1503e04d94de7a99cf44a7d342be9025d8d2",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-93a3fe12-84f0-478f-a7a0-9eac8c733e48.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a secondary-school classroom, a MALE teacher aged about 40 with medium brown skin, a closely trimmed beard, short black hair, a dusty blue overshirt, beige trousers and dark shoes stands at the FRONT beside a SMALL SPEAKER with one large unlabelled volume knob. He is turning this knob upward with one hand while looking toward the BACK of the classroom with an attentive checking expression. Four diverse teenage students, girls and boys as an unassigned GROUP, sit at desks toward the back, one cupping an ear in a listening gesture. The teacher is NOT at the back. Speaker clearly visible at the front, no microphone, musical instrument, headphones or text on board. A blank board behind him. Teacher fully framed head to shoes, students visible naturally behind their desks. No particular student is identified as the voice in the recording. Exact source transcript, for context only: Vous entendez bien l’enregistrement ? Non Monsieur. Vous pouvez augmenter le volume ? Bien sûr !... Et comme ça, vous entendez du fond de la classe ?",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a secondary-school classroom, a MALE teacher aged about 40 with medium brown skin, a closely trimmed beard, short black hair, a dusty blue overshirt, beige trousers and dark shoes stands at the FRONT beside a SMALL SPEAKER with one large unlabelled volume knob. He is turning this knob upward with one hand while looking toward the BACK of the classroom with an attentive checking expression. Four diverse teenage students, girls and boys as an unassigned GROUP, sit at desks toward the back, one cupping an ear in a listening gesture. The teacher is NOT at the back. Speaker clearly visible at the front, no microphone, musical instrument, headphones or text on board. A blank board behind him. Teacher fully framed head to shoes, students visible naturally behind their desks. No particular student is identified as the voice in the recording. Exact source transcript, for context only: Vous entendez bien l’enregistrement ? Non Monsieur. Vous pouvez augmenter le volume ? Bien sûr !... Et comme ça, vous entendez du fond de la classe ?",
+      "prompt_is_summary": false,
+      "visual_review": "Professeur homme à l’avant, main sur le gros bouton de volume de l’enceinte et regard vers le groupe d’élèves du fond. Tableau vierge, pieds et mains visibles, sans attribuer une voix à un élève précis.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-049-04-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Non Monsieur."
+          },
+          {
+            "role": "groupe d’élèves au fond",
+            "quote": "vous entendez du fond de la classe ?"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-049-04-03",
+          "transcription": "Vous entendez bien l’enregistrement ? Non Monsieur. Vous pouvez augmenter le volume ? Bien sûr !... Et comme ça, vous entendez du fond de la classe ?",
+          "source_sha256": "6df5d1cbd8186cbb488b6f88d639767c88190c7fdce2752c4af6f2ee8d370718",
+          "audio_sha256": "0fb5924eafc0480ab2195e9c3fc5912523198c4532360b2181d322d7a61c7947"
+        }
+      ]
+    },
+    {
+      "key": "scenario-osman-comprehension-ecrite",
+      "label": "Osman au tableau",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-osman-comprehension-ecrite.png",
+      "sha256": "7a3f278b57e45bbfebd6933cd84faae6cb94d1657c9e04aad508409ba2e13896",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-e6bd08b4-5a3f-4b82-80de-69cecacc3e6e.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A secondary-school boy named Osman, around 14, with dark brown skin, a slim build and short textured hair, a forest-green hoodie, charcoal trousers and white trainers, has come up to a BLANK WHITEBOARD carrying an OPEN READING WORKBOOK. A FEMALE teacher aged about 50, fair skin, short silver hair, plum cardigan and cream trousers, invites him to explain with an open palm. The workbook contains only faint tiny grey line-like marks, no legible text. Teacher and boy stand beside one another in a WIDE classroom view, heads, hands and shoes fully visible. No maths equations, flower drawing, geometric diagrams, computer or other subject; the task concerns WRITTEN COMPREHENSION. Do not write exercise number two, any name, words or numerals on the board. A few closed books and desks in the background. Exact source transcript, for context only: Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame ! On commence par l’exercice 2.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A secondary-school boy named Osman, around 14, with dark brown skin, a slim build and short textured hair, a forest-green hoodie, charcoal trousers and white trainers, has come up to a BLANK WHITEBOARD carrying an OPEN READING WORKBOOK. A FEMALE teacher aged about 50, fair skin, short silver hair, plum cardigan and cream trousers, invites him to explain with an open palm. The workbook contains only faint tiny grey line-like marks, no legible text. Teacher and boy stand beside one another in a WIDE classroom view, heads, hands and shoes fully visible. No maths equations, flower drawing, geometric diagrams, computer or other subject; the task concerns WRITTEN COMPREHENSION. Do not write exercise number two, any name, words or numerals on the board. A few closed books and desks in the background. Exact source transcript, for context only: Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame ! On commence par l’exercice 2.",
+      "prompt_is_summary": false,
+      "visual_review": "Élève nommé Osman près du tableau avec un livre ouvert, enseignante qui l’invite à expliquer. Aucun calcul, dessin de fleur ou numéro d’exercice inventé. Le prénom ne suffit pas à confirmer le genre représenté : liaison en attente.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-049-04-04"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Osman",
+            "quote": "Alors Osman, tu viens au tableau"
+          },
+          {
+            "role": "enseignante",
+            "quote": "Oui madame !"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-049-04-04",
+          "transcription": "Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame ! On commence par l’exercice 2.",
+          "source_sha256": "3f3ef6cf27ac2f7f9dd1af40a4f09bf27bd19d29090a2c11803dd3b6e57ed27a",
+          "audio_sha256": "d273d13323744d039d37f27de4d4d8e83389312250c0fd535d3a506626dbaf6c"
+        }
+      ]
+    },
+    {
+      "key": "scenario-mateo-resultats-baisse",
+      "label": "Les résultats de Mateo",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-mateo-resultats-baisse.png",
+      "sha256": "76e3774f0781d9f3c78420e093893f9e4c325ef98c1cd565734d350d8929bbfd",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-77b0ebbc-4a28-4c27-8a49-a885216ea1a6.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Edit this illustration with ONE PRECISE CHANGE ONLY: replace ALL footwear on ALL people with simple plain solid-colour canvas shoes or leather loafers. REMOVE EVERY BRAND LOGO, swoosh, side stripe, tick, star, contrasting curved mark or lettering from all shoes. Shoes must have wholly plain undecorated sides, no Nike-like shape. Keep all people, faces, poses, expressions, hands, clothing above shoes, objects, document, room, colour palette, soft semi-realistic painting technique and full-body framing unchanged. No readable writing, numbers, symbols or new branding anywhere. Retain exact native 1448 x 1086 pixels, 4:3 landscape. This is only removal of unintended shoe branding, no other change.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. In a quiet corner of a secondary-school classroom, a FEMALE teacher aged about 35 with East Asian features, straight black shoulder-length hair, a muted terracotta blouse, dark trousers and low shoes talks calmly and seriously to a teenage BOY named Mateo, with light olive skin, curly dark hair, a navy jumper, pale grey trousers and trainers. They stand at diagonal sides of a small desk, both FULL-BODY head to shoes. She refers to a single exercise sheet with faint unreadable grey lines but NO grades, numbers, graph, red crosses, fail labels or marks. Mateo listens thoughtfully, a little concerned; no celebration, tears, humiliation, diploma or punishment. The scene is a supportive conversation about DECLINING RESULTS, not lateness or a forgotten book. Blank board and neutral classroom background. Exact source transcript, for context only: Mateo je dois te parler 2 minutes. Oui Madame. C’est pour quoi ? Tu as vu tes derniers résultats ? Ta moyenne baisse ce trimestre.",
+      "prompt_is_summary": false,
+      "visual_review": "Entretien calme entre une enseignante et Mateo, concerné par une feuille de résultats sans note, graphique, diplôme ou sanction. Les marques de chaussures de la première version sont retirées. Genre de l’élève à confirmer avant liaison.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-03"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Mateo",
+            "quote": "Mateo je dois te parler"
+          },
+          {
+            "role": "enseignante",
+            "quote": "Oui Madame."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-03",
+          "transcription": "Mateo je dois te parler 2 minutes. Oui Madame. C’est pour quoi ? Tu as vu tes derniers résultats ? Ta moyenne baisse ce trimestre.",
+          "source_sha256": "b0b4a1f084753c2b830a7b1f31ac72e465dabe31b5d231907e70bcfa50481ebd",
+          "audio_sha256": "a19f4698701a8009a693dc778c1830fdd4be1534d5d2456585679b84586f8c79"
+        }
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-20d90c7c-d119-4bfb-b284-17751dcccbf1.png",
+      "edit_source_sha256": "931e84e5bf344533c16e9e15b14506e365c9b5cb86b500aa139ac418307a0bb0"
+    },
+    {
+      "key": "scenario-luca-tessa-rencontre",
+      "label": "Luca et Tessa",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-luca-tessa-rencontre.png",
+      "sha256": "63b645965350dd39e1cb581b021a34e77fb7dd9ffce49fdb7293321c6cf014e5",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-a4f32587-ea73-401b-a973-a030ec52455e.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A teenage BOY named Luca, about 15, with fair freckled skin, short wavy ginger hair, teal sweatshirt, cream trousers and dark trainers, is politely asking to sit beside a teenage GIRL named Tessa, with medium brown skin, a long black braid, a mustard cardigan, dark blue trousers and white trainers. Generic bright common study area with a plain table and two chairs, no identifiable country, flags, map, national dress, name labels or writing. The GIRL is seated, smiling and indicating the EMPTY CHAIR beside her with an open hand. The BOY stands beside that empty chair, one relaxed hand on its back, introducing himself; no handshake required. Both complete heads, hands, legs and shoes visible. The scene conveys an initial meeting and permission to sit. Italy and American nationality are ONLY facts heard in the audio, never drawn as appearance or props. Exact source transcript, for context only: Salut, je peux m’assoir ? Oui bien sûr ! Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A teenage BOY named Luca, about 15, with fair freckled skin, short wavy ginger hair, teal sweatshirt, cream trousers and dark trainers, is politely asking to sit beside a teenage GIRL named Tessa, with medium brown skin, a long black braid, a mustard cardigan, dark blue trousers and white trainers. Generic bright common study area with a plain table and two chairs, no identifiable country, flags, map, national dress, name labels or writing. The GIRL is seated, smiling and indicating the EMPTY CHAIR beside her with an open hand. The BOY stands beside that empty chair, one relaxed hand on its back, introducing himself; no handshake required. Both complete heads, hands, legs and shoes visible. The scene conveys an initial meeting and permission to sit. Italy and American nationality are ONLY facts heard in the audio, never drawn as appearance or props. Exact source transcript, for context only: Salut, je peux m’assoir ? Oui bien sûr ! Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine.",
+      "prompt_is_summary": false,
+      "visual_review": "Présentation près d’une chaise libre proposée par Tessa à Luca. Aucun drapeau, costume ou détail prétendant prouver une nationalité. Prénoms conservés ; tous les genres ne sont pas explicités dans la transcription, liaison en attente.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-051-04-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personnage nommé Luca",
+            "quote": "Je m’appelle Luca"
+          },
+          {
+            "role": "Tessa, accord féminin",
+            "quote": "Moi, c’est Tessa et je suis américaine."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-051-04-01",
+          "transcription": "Salut, je peux m’assoir ? Oui bien sûr ! Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine.",
+          "source_sha256": "43fc4e31e8618455f09231bf536cc62f50a2df2c1fb96fa47c6005627a6fdad2",
+          "audio_sha256": "5507e96758e466b130da77d158bd305f87015b8aa5532b0ef18531a7ae30a98e"
+        }
+      ]
+    },
+    {
+      "key": "scenario-preparer-exposition-matisse",
+      "label": "L’exposition Matisse",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-exposition-matisse.png",
+      "sha256": "a8d0fcbc8e1565ed12bccbeaf43366e65f12ac373054abc49d74ee29ff09fd1d",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-d3897657-c81e-40c8-8e40-960f4c58f9d2.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Edit this illustration with ONE PRECISE CHANGE ONLY: replace ALL footwear on ALL people with simple plain solid-colour canvas shoes or leather loafers. REMOVE EVERY BRAND LOGO, swoosh, side stripe, tick, star, contrasting curved mark or lettering from all shoes. Shoes must have wholly plain undecorated sides, no Nike-like shape. Keep all people, faces, poses, expressions, hands, clothing above shoes, objects, document, room, colour palette, soft semi-realistic painting technique and full-body framing unchanged. No readable writing, numbers, symbols or new branding anywhere. Retain exact native 1448 x 1086 pixels, 4:3 landscape. This is only removal of unintended shoe branding, no other change.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A FEMALE teacher with warm brown skin, dark hair in a neat loose bun, sage-green blouse and navy trousers stands in a classroom introducing an upcoming ART EXHIBITION to a mixed group of three teenage students at desks. She holds a LARGE OPEN ART-HISTORY PORTFOLIO facing the students: camera sees ONLY THE PLAIN OUTSIDE COVER AND PAGE EDGES, the artwork-facing pages are NOT visible. One neutral closed folder of reproductions lies on a small table. Do NOT invent or show an image as a painting by Matisse. NO identifiable artwork, painted composition, artist portrait or reproduction is visible, no artist name on cover. The art contents are off-view, preserving the source without making false artwork attributions. The teacher gestures as she explains, before a planned museum trip, NOT already inside a museum. Teacher fully visible head through shoes, students an unassigned mixed group; blank wall and board. No travel date or clock. Exact source transcript, for context only: Madame c’est la semaine prochaine qu’on va visiter l’exposition de Matisse ? Oui et aujourd’hui je vais vous montrer ses tableaux et ses dessins. Je vais vous parler aussi de ce peintre.",
+      "prompt_is_summary": false,
+      "visual_review": "Enseignante présentant un livre d’art ouvert vers un groupe d’élèves ; seules couverture extérieure et tranches visibles. Aucune œuvre fictive attribuée à Matisse. Préparation en classe, sans visite déjà réalisée. Chaussures sans marque après reprise.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante",
+            "quote": "Madame c’est la semaine prochaine"
+          },
+          {
+            "role": "groupe d’élèves",
+            "quote": "je vais vous montrer ses tableaux et ses dessins"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-04",
+          "transcription": "Madame c’est la semaine prochaine qu’on va visiter l’exposition de Matisse ? Oui et aujourd’hui je vais vous montrer ses tableaux et ses dessins. Je vais vous parler aussi de ce peintre.",
+          "source_sha256": "b52e42ad902537c514a0b9615e6df868d0dc2486ecb970d438ce667c8403e467",
+          "audio_sha256": "e6431956551195d521e833affdb67ae64b635a3ebf5bffbd4773284e19ee94ac"
+        }
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-431f729b-a4e9-4683-93e3-0e4a843f33c6.png",
+      "edit_source_sha256": "a794cad25013ce88f1135af4e948d9757cb6b4a00fc1ba7456f5057e282c5699"
+    },
+    {
+      "key": "scenario-preparer-visite-tour-eiffel",
+      "label": "Paris depuis la tour Eiffel",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel.png",
+      "sha256": "35a0e3d42093b251345dd98174724a618f1624a1d46cf8b811c8614c24b6562b",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-2c36b718-4c86-49f2-801e-40763b6c624d.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+          "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+          "role": "content"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a classroom BEFORE a planned outing, a MALE teacher aged about 55 with fair skin, short greying hair, a rust-coloured shirt and dark trousers holds a large UNLABELLED PRINT showing the WHOLE EIFFEL TOWER, closely based on the separate attached tower reference. Correct recognizable four-legged iron lattice tower, complete base, arch, top and antenna within the print. NO invented generic tower, no words, numerals, flags, dates or clocks. Three diverse teenagers, girls and boys as an unassigned group, listen; one holds a neatly folded plain PULLOVER as a reminder of what to bring. This is CLASSROOM PLANNING, NOT a visit already underway, not people at the top of the monument. Full teacher, foreground students and their shoes visible in a wide room with generous margins. The teacher points to the print; no extra Paris monuments or false itinerary. Exact source transcript, for context only: Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a classroom BEFORE a planned outing, a MALE teacher aged about 55 with fair skin, short greying hair, a rust-coloured shirt and dark trousers holds a large UNLABELLED PRINT showing the WHOLE EIFFEL TOWER, closely based on the separate attached tower reference. Correct recognizable four-legged iron lattice tower, complete base, arch, top and antenna within the print. NO invented generic tower, no words, numerals, flags, dates or clocks. Three diverse teenagers, girls and boys as an unassigned group, listen; one holds a neatly folded plain PULLOVER as a reminder of what to bring. This is CLASSROOM PLANNING, NOT a visit already underway, not people at the top of the monument. Full teacher, foreground students and their shoes visible in a wide room with generous margins. The teacher points to the print; no extra Paris monuments or false itinerary. Exact source transcript, for context only: Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+      "prompt_is_summary": false,
+      "visual_review": "Professeur homme montrant la tour Eiffel entière sur un support imprimé, d’après l’illustration du monument déjà disponible. Groupe d’élèves avec pull plié, préparation en classe et non visite effectuée. Aucun horaire, drapeau ou itinéraire ajouté.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-051-04-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "À quelle heure on part Monsieur ?"
+          },
+          {
+            "role": "groupe d’élèves",
+            "quote": "N’oubliez pas de prendre un pull."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-051-04-04",
+          "transcription": "Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+          "source_sha256": "ff0227d733dc670becafc8616d2474c6d4201950ec190443e20b4abfcc49f07e",
+          "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84"
+        }
+      ]
+    },
+    {
+      "key": "scenario-film-en-classe",
+      "label": "Le film en classe",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe.png",
+      "sha256": "9912d00d4820a0b7eae3c16ab032f2c4e6c96d1478f45c14f8c487553bb60837",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-6c3642da-9282-4552-82d0-a0eaf5b4b0de.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Wide full-body secondary-school classroom scene of FOUR diverse teenage students, girls and boys as an UNASSIGNED GROUP, quietly entering and taking their places for a classroom FILM SCREENING. A compact projector and a lowered white projection screen are clearly visible at the front, only a soft blank glow on the screen, no movie characters or footage, no title, text, numbers or pictorial scene. One school table has closed presentation folders, not a pupil already presenting the final work. ALL adult teachers stay COMPLETELY OFF-FRAME because the source does not specify the teacher's gender. No individual student is identified as the voice who asks a question or as the later presenter. The foreground students are full head to shoes, a couple of empty chairs, ordinary desks and schoolbags. This is a school classroom, NEVER a cinema auditorium, no popcorn, tickets or rows of cinema seats. No invented representation of Lupin. Exact source transcript, for context only: Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Wide full-body secondary-school classroom scene of FOUR diverse teenage students, girls and boys as an UNASSIGNED GROUP, quietly entering and taking their places for a classroom FILM SCREENING. A compact projector and a lowered white projection screen are clearly visible at the front, only a soft blank glow on the screen, no movie characters or footage, no title, text, numbers or pictorial scene. One school table has closed presentation folders, not a pupil already presenting the final work. ALL adult teachers stay COMPLETELY OFF-FRAME because the source does not specify the teacher's gender. No individual student is identified as the voice who asks a question or as the later presenter. The foreground students are full head to shoes, a couple of empty chairs, ordinary desks and schoolbags. This is a school classroom, NEVER a cinema auditorium, no popcorn, tickets or rows of cinema seats. No invented representation of Lupin. Exact source transcript, for context only: Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+      "prompt_is_summary": false,
+      "visual_review": "Groupe d’élèves s’installant en classe devant un vidéoprojecteur et un écran clair, sans film inventé, séance de cinéma ou représentation de Lupin. Enseignant hors cadre, aucune voix attribuée à un élève particulier du groupe.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Adultes hors cadre ; groupe mixte d’élèves sans attribution d’une voix ou du travail sur Lupin à un élève précis. La situation de film en classe est explicitement documentée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "groupe d’élèves",
+            "quote": "rentrez en classe en silence"
+          },
+          {
+            "role": "film en classe",
+            "quote": "On va finir de regarder le film aujourd’hui ?"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-04",
+          "transcription": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+          "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+          "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408"
+        }
+      ]
+    },
+    {
+      "key": "scenario-sac-sous-blouson-bleu",
+      "label": "Le sac au vestiaire",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-d17f4601-5fd1-4bdb-bdf6-a29dd4934b6c.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a SCHOOL CLOAKROOM with plain lockers and a wooden bench, a teenage student with fair skin, short black hair, a cream sweatshirt, aubergine trousers and trainers is LIFTING ONE CORNER of a BLUE JACKET draped over a BURGUNDY SCHOOLBAG ON THE BENCH. The bag must clearly be UNDER the blue jacket and partly revealed, not lying separately alongside it or hanging on a different hook. A FEMALE adult teacher with dark skin, a rounded face, close-cropped natural hair, beige jacket and dark green trousers points toward the revealed bag helpfully. Show both people entirely from head to shoes, hands and complete bench within the frame. Exactly ONE prominent BLUE jacket; other distant garments only neutral beige or grey, no second blue coat. No thief, missing-person drama, written locker numbers or labels. Source confirms the teacher is a woman but does not confirm the student's gender; the drawn student's role remains pending verification. Exact source transcript, for context only: Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a SCHOOL CLOAKROOM with plain lockers and a wooden bench, a teenage student with fair skin, short black hair, a cream sweatshirt, aubergine trousers and trainers is LIFTING ONE CORNER of a BLUE JACKET draped over a BURGUNDY SCHOOLBAG ON THE BENCH. The bag must clearly be UNDER the blue jacket and partly revealed, not lying separately alongside it or hanging on a different hook. A FEMALE adult teacher with dark skin, a rounded face, close-cropped natural hair, beige jacket and dark green trousers points toward the revealed bag helpfully. Show both people entirely from head to shoes, hands and complete bench within the frame. Exactly ONE prominent BLUE jacket; other distant garments only neutral beige or grey, no second blue coat. No thief, missing-person drama, written locker numbers or labels. Source confirms the teacher is a woman but does not confirm the student's gender; the drawn student's role remains pending verification. Exact source transcript, for context only: Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+      "prompt_is_summary": false,
+      "visual_review": "Le coin d’un seul blouson bleu est soulevé pour révéler le sac bordeaux sur le banc du vestiaire. Enseignante indiquant la cachette ; mains, pieds et objets utiles entiers. Genre du jeune interlocuteur non confirmé, liaison en attente.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-04"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante",
+            "quote": "Madame, mon sac n’est plus au vestiaire !"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-04",
+          "transcription": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+          "source_sha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+          "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704"
+        }
+      ]
+    },
+    {
+      "key": "scenario-photo-dossier-classe-neige",
+      "label": "Le dossier de classe de neige",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige.png",
+      "sha256": "03443634d2cd1b134025e73ba8a117b417e678942c29f96b426289fee04eaa8b",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-95bcee32-4e30-44d7-aa92-722477a2a9e7.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a SCHOOL ADMINISTRATION OFFICE, a teenage student with medium brown skin, long dark hair tied low, a plain cream jumper, dark trousers and trainers hands ONE SMALL PHOTOGRAPH to an adult MALE staff member aged about 45 with fair skin, short auburn hair, a moustache, muted blue cardigan and charcoal trousers. A small simple PERSON PORTRAIT is visible in the photograph, not a passport, ID card, signature form or medical certificate. The man receives it beside a plain open dossier with blank pages. A compact freestanding desk lets BOTH people and all their shoes remain visible from head to toe in a wide shot; no counter cropped at the bottom. NO ski gear, slopes, snowy mountains, trip already underway, school name, dates or writing anywhere. This is preparing paperwork for a future school snow trip. Student's gender is unspecified in the audio and remains pending verification. Exact source transcript, for context only: Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. Inside a SCHOOL ADMINISTRATION OFFICE, a teenage student with medium brown skin, long dark hair tied low, a plain cream jumper, dark trousers and trainers hands ONE SMALL PHOTOGRAPH to an adult MALE staff member aged about 45 with fair skin, short auburn hair, a moustache, muted blue cardigan and charcoal trousers. A small simple PERSON PORTRAIT is visible in the photograph, not a passport, ID card, signature form or medical certificate. The man receives it beside a plain open dossier with blank pages. A compact freestanding desk lets BOTH people and all their shoes remain visible from head to toe in a wide shot; no counter cropped at the bottom. NO ski gear, slopes, snowy mountains, trip already underway, school name, dates or writing anywhere. This is preparing paperwork for a future school snow trip. Student's gender is unspecified in the audio and remains pending verification. Exact source transcript, for context only: Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+      "prompt_is_summary": false,
+      "visual_review": "Photo-portrait remise à un membre du personnel homme, dossier ouvert sans texte. Pas de carte d’identité, certificat, piste de ski ou départ déjà réalisé. La photo représente le personnage dessiné, sans attester le genre du jeune de l’audio.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "membre du personnel homme",
+            "quote": "Bonjour Monsieur."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-01",
+          "transcription": "Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+          "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+          "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8"
+        }
+      ]
+    },
+    {
+      "key": "scenario-changer-place-vers-avant",
+      "label": "Changer de place",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-7e00cda6-af5c-4071-af96-6a9209e8144e.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A teenage student with warm brown skin, a slim build, straight dark chin-length hair, a plain soft lilac sweatshirt, dark jeans and trainers moves toward a clearly EMPTY DESK IN THE FRONT ROW of a classroom. A MALE teacher aged about 50 with light olive skin, balding head, short beard, olive cardigan and cream trousers stands near the blank front board and indicates that empty front desk with an open hand. The student carries only a closed exercise book and small schoolbag. NO GLASSES on the student, in their hands, on the desk or on their bag; the glasses arrive tomorrow, they are not already received. Teacher also without spectacles to avoid visual confusion. The student is not moving to the back or out to a corridor. Wide full-body framing with visible shoes and floor; a few other pupils behind as an unassigned background group. No labels or numbers. Exact source transcript, for context only: Monsieur, je peux changer de place ? Pour aujourd’hui ou définitivement ? Pour aujourd’hui, mes lunettes arrivent demain Oui, mets-toi devant. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. A teenage student with warm brown skin, a slim build, straight dark chin-length hair, a plain soft lilac sweatshirt, dark jeans and trainers moves toward a clearly EMPTY DESK IN THE FRONT ROW of a classroom. A MALE teacher aged about 50 with light olive skin, balding head, short beard, olive cardigan and cream trousers stands near the blank front board and indicates that empty front desk with an open hand. The student carries only a closed exercise book and small schoolbag. NO GLASSES on the student, in their hands, on the desk or on their bag; the glasses arrive tomorrow, they are not already received. Teacher also without spectacles to avoid visual confusion. The student is not moving to the back or out to a corridor. Wide full-body framing with visible shoes and floor; a few other pupils behind as an unassigned background group. No labels or numbers. Exact source transcript, for context only: Monsieur, je peux changer de place ? Pour aujourd’hui ou définitivement ? Pour aujourd’hui, mes lunettes arrivent demain Oui, mets-toi devant.",
+      "prompt_is_summary": false,
+      "visual_review": "Élève avançant vers un bureau vide au premier rang, professeur homme qui l’y invite. Aucune lunette déjà reçue ou portée ; tableau vierge. Genre de l’élève à vérifier avant liaison.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-02"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Monsieur, je peux changer de place ?"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-02",
+          "transcription": "Monsieur, je peux changer de place ? Pour aujourd’hui ou définitivement ? Pour aujourd’hui, mes lunettes arrivent demain Oui, mets-toi devant.",
+          "source_sha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
+          "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a"
+        }
+      ]
+    },
+    {
+      "key": "scenario-accompagner-diego-infirmerie",
+      "label": "Diego à l’infirmerie",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-966676c1-959a-4fb1-926d-197afce5ad2b.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. In a school corridor, a teenage BOY named Diego with medium brown skin, short black curls, a mustard hoodie, navy trousers and trainers walks slowly, one hand on his ABDOMEN and an uncomfortable but non-dramatic expression. Another teenage student with fair skin, medium-length light brown hair, a muted blue jacket, grey trousers and trainers walks SUPPORTIVELY beside him, gesturing toward a nearby SCHOOL FIRST-AID ROOM DOOR. A small neutral pictogram of a simple bed with a green medical plus identifies the room without any word or letter. Both entire students head to shoes and their hands are fully visible, no cropped companion. The image shows GOING TOWARD the infirmary, not a completed medical exam, no doctor, nurse, injection, pill, diagnosis, ambulance, blood or injury. The companion's gender is not specified in the text; do not claim it is verified. Exact source transcript, for context only: Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. In a school corridor, a teenage BOY named Diego with medium brown skin, short black curls, a mustard hoodie, navy trousers and trainers walks slowly, one hand on his ABDOMEN and an uncomfortable but non-dramatic expression. Another teenage student with fair skin, medium-length light brown hair, a muted blue jacket, grey trousers and trainers walks SUPPORTIVELY beside him, gesturing toward a nearby SCHOOL FIRST-AID ROOM DOOR. A small neutral pictogram of a simple bed with a green medical plus identifies the room without any word or letter. Both entire students head to shoes and their hands are fully visible, no cropped companion. The image shows GOING TOWARD the infirmary, not a completed medical exam, no doctor, nurse, injection, pill, diagnosis, ambulance, blood or injury. The companion's gender is not specified in the text; do not claim it is verified. Exact source transcript, for context only: Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne.",
+      "prompt_is_summary": false,
+      "visual_review": "Diego tient son abdomen et marche avec une autre personne vers la porte de l’infirmerie, repérée par un pictogramme de lit et une croix verte. Pas de diagnostic, médecin, médicament ou consultation déjà menée. Personne accompagnante à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-050-04-04"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Diego",
+            "quote": "Diego, comment ça va"
+          },
+          {
+            "role": "douleur au ventre",
+            "quote": "J’ai mal au ventre"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-050-04-04",
+          "transcription": "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne.",
+          "source_sha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+          "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53"
+        }
+      ]
+    },
+    {
+      "key": "scenario-rentrer-dejeuner-maison",
+      "label": "Déjeuner à la maison",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-rentrer-dejeuner-maison.png",
+      "sha256": "71906481aca55feedad83b88860b48a12ace9b9269f325244c352b54ea6c7a8e",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-b0a75cf9-13a1-4b8a-9017-77c07739c519.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. At a GENERIC SCHOOL ENTRANCE, a teenage student with dark brown skin, natural short curls, a pale green sweatshirt, dark jeans and trainers speaks to a classmate with light olive skin, shoulder-length wavy black hair, a cream jacket and dark trousers. The first student indicates their MOTHER, an adult woman aged about 40 with matching warm dark complexion, braided bun, rust blouse, navy trousers and flat shoes, waiting a little to the side of the doorway ready to walk home with them. Three complete people visible head through shoes with wide margins; the classmates are still conversing, not eating. It is an everyday pickup illustrating RETURNING HOME FOR LUNCH, not school cafeteria or restaurant. No meal, menu, car, confirmed route, numbers or clock added. No claim that the mother is either of the two audio speakers; she is a separate contextual person explicitly mentioned. The students' genders are not documented and remain pending verification. Exact source transcript, for context only: Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. At a GENERIC SCHOOL ENTRANCE, a teenage student with dark brown skin, natural short curls, a pale green sweatshirt, dark jeans and trainers speaks to a classmate with light olive skin, shoulder-length wavy black hair, a cream jacket and dark trousers. The first student indicates their MOTHER, an adult woman aged about 40 with matching warm dark complexion, braided bun, rust blouse, navy trousers and flat shoes, waiting a little to the side of the doorway ready to walk home with them. Three complete people visible head through shoes with wide margins; the classmates are still conversing, not eating. It is an everyday pickup illustrating RETURNING HOME FOR LUNCH, not school cafeteria or restaurant. No meal, menu, car, confirmed route, numbers or clock added. No claim that the mother is either of the two audio speakers; she is a separate contextual person explicitly mentioned. The students' genders are not documented and remain pending verification. Exact source transcript, for context only: Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux élèves discutent à la sortie de l’école tandis que la mère mentionnée dans le texte vient chercher l’un d’eux. Aucun self, restaurant, repas servi, trajet, véhicule ou horaire inventé. Les élèves représentés restent à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "mère mentionnée, non locutrice",
+            "quote": "Ma mère est en vacances, elle vient me chercher"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-01",
+          "transcription": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+          "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+          "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4"
+        }
+      ]
+    },
+    {
+      "key": "scenario-proposer-dejeuner-ensemble",
+      "label": "Le déjeuner du samedi",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png",
+      "sha256": "7afea049f02f0e2a1f8d80153a0484a69d1fac2a744a5d864ce1ad4cabefbb09",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-a3380cb6-edf3-4368-a6e6-00778106de5c.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. In a neutral bright everyday interior, an adult with light olive skin, short black curly hair, a dusty terracotta overshirt, dark trousers and trainers makes a friendly INVITATION while holding a smartphone in one hand and gesturing with the other toward a SMALL EMPTY TABLE WITH TWO EMPTY CHAIRS. No food, place settings, menu or restaurant staff: lunch is only PROPOSED, not already eaten or booked. Only this one main person is visible; the recipient is off-frame and not assigned a face. Both complete head, hands, legs and shoes fully visible in a wide room; smartphone has a plain unlabelled screen with no call text or written details. No time, clock, date, day of the week, calendar, named location, cost or exact meeting place invented. The image is a neutral visual interpretation of an invitation, not proof that the actual recording was a telephone call. The visible speaker's gender is not confirmed and remains pending verification. Exact source transcript, for context only: Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart. FOOTWEAR MUST BE ENTIRELY UNBRANDED: plain solid-colour shoes with undecorated sides, NO swoosh, tick, star, side stripe, contrasting curved marking or logo of any kind. Use plain canvas shoes or simple leather loafers.",
+      "initial_prompt": "Create ONE coherent educational illustration for a French TCF listening scene. Use the attached approved images as painting-technique references ONLY: warm softly painted semi-realistic digital illustration, soft progressive shading, fine unobtrusive contours, natural gentle colours, believable faces, hands and materials. No photograph, no 3D render, no thick cartoon outlines. Entire environment painted in the same style. Entirely NEW people, faces, hairstyles, builds and clothing, no copying reference characters. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: all foreground people visible from head through SHOES with comfortable margins above heads and below feet, all relevant hands and objects complete. Plenty of floor visible. No close-up cropped people behind counters. No collage, inset panels, bubbles, readable words, letters, numerals, money, dates, days, months, clock, timetable, logo, watermark or national flag. Do not present a request or future plan as a completed event. No nationality inferred from appearance. In a neutral bright everyday interior, an adult with light olive skin, short black curly hair, a dusty terracotta overshirt, dark trousers and trainers makes a friendly INVITATION while holding a smartphone in one hand and gesturing with the other toward a SMALL EMPTY TABLE WITH TWO EMPTY CHAIRS. No food, place settings, menu or restaurant staff: lunch is only PROPOSED, not already eaten or booked. Only this one main person is visible; the recipient is off-frame and not assigned a face. Both complete head, hands, legs and shoes fully visible in a wide room; smartphone has a plain unlabelled screen with no call text or written details. No time, clock, date, day of the week, calendar, named location, cost or exact meeting place invented. The image is a neutral visual interpretation of an invitation, not proof that the actual recording was a telephone call. The visible speaker's gender is not confirmed and remains pending verification. Exact source transcript, for context only: Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart.",
+      "prompt_is_summary": false,
+      "visual_review": "Invitation proposée devant une table vide et deux chaises, sans repas servi, réservation, menu, heure ou date. Le téléphone est un choix illustratif, pas la preuve du mode de communication ; identité du personnage à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-019-03"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-019-03",
+          "transcription": "Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart.",
+          "source_sha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+          "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88"
+        }
+      ]
+    }
+  ],
+  "reuses": [],
+  "rejected_generations": [
+    {
+      "key": "scenario-mateo-resultats-baisse",
+      "source_png": "/workspace/generated_images/exec-20d90c7c-d119-4bfb-b284-17751dcccbf1.png",
+      "sha256": "931e84e5bf344533c16e9e15b14506e365c9b5cb86b500aa139ac418307a0bb0",
+      "reason": "Marque de chaussures dessinée involontairement ; image écartée avant intégration.",
+      "status": "not_integrated",
+      "replacement": "/lib/images/tcf/co/scenes/delf-actif/scenario-mateo-resultats-baisse.png"
+    },
+    {
+      "key": "scenario-preparer-exposition-matisse",
+      "source_png": "/workspace/generated_images/exec-431f729b-a4e9-4683-93e3-0e4a843f33c6.png",
+      "sha256": "a794cad25013ce88f1135af4e948d9757cb6b4a00fc1ba7456f5057e282c5699",
+      "reason": "Marque de chaussures dessinée involontairement ; image écartée avant intégration.",
+      "status": "not_integrated",
+      "replacement": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-exposition-matisse.png"
+    }
+  ],
+  "candidate_reuse_review": [
+    {
+      "path": "/lib/images/tcf/co/scenes/ecole/48-ecole-venir-au-tableau.webp",
+      "decision": "rejected",
+      "reason": "Calcul visible et matière différente de la compréhension écrite."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/actions/eleve-au-tableau.webp",
+      "decision": "rejected",
+      "reason": "Dessin/diagramme et rôles différents de la scène Osman."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/actions/parler-au-professeur.webp",
+      "decision": "rejected",
+      "reason": "Interlocuteur adulte, pas élève adolescent Mateo."
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "decision": "rejected",
+      "reason": "Conseil médical, pas accompagnement vers l’infirmerie."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+      "decision": "content_reference",
+      "reason": "Monument entier réemployé comme référence du support présenté en classe, pas comme scène de visite déjà réalisée."
+    }
+  ]
+}

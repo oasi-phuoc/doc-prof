@@ -6,15 +6,15 @@
   "summary": {
     "supports": 346,
     "scenario_eligible": 96,
-    "scenario_bound": 32,
-    "scenario_pending": 64,
+    "scenario_bound": 36,
+    "scenario_pending": 60,
     "prior_bound": 21,
-    "total_bound": 53,
+    "total_bound": 57,
     "decisions": {
       "keep_message_announcement_or_discourse": 188,
       "keep_temporal_exchange": 4,
-      "eligible_scene_pending": 64,
-      "eligible_bound_scene": 32,
+      "eligible_scene_pending": 60,
+      "eligible_bound_scene": 36,
       "keep_sequence": 18,
       "keep_description_or_preferences": 5,
       "keep_long_document": 35
@@ -23,8 +23,8 @@
       "A0-A1": {
         "keep_message_announcement_or_discourse": 73,
         "keep_temporal_exchange": 2,
-        "eligible_scene_pending": 22,
-        "eligible_bound_scene": 19,
+        "eligible_scene_pending": 18,
+        "eligible_bound_scene": 23,
         "keep_sequence": 4
       },
       "A1-A2": {
@@ -44,13 +44,14 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 33,
-    "new_scene_image_uses": 22,
+    "new_original_pngs": 46,
+    "new_scene_image_uses": 26,
     "priority_scene_reuses": 0,
     "priority_prepared_scene_uses": 21,
     "suite_prepared_scene_uses": 6,
-    "prepared_scenes_awaiting_gender_confirmation": 13,
-    "remaining_without_prepared_image": 51
+    "prepared_scenes_awaiting_gender_confirmation": 22,
+    "remaining_without_prepared_image": 38,
+    "a1_complement_prepared_scene_uses": 13
   },
   "supports": [
     {
@@ -547,7 +548,18 @@
       "evidenceQuote": "Nous pourrions déjeuner ensemble",
       "reason": "Invitation à déjeuner ; montrer le repas projeté sans inventer restaurant, menu ou heure.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Invitation proposée devant une table vide et deux chaises, sans repas servi, réservation, menu, heure ou date. Le téléphone est un choix illustratif, pas la preuve du mode de communication ; identité du personnage à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png",
+      "preparedImageSha256": "7afea049f02f0e2a1f8d80153a0484a69d1fac2a744a5d864ce1ad4cabefbb09",
+      "pendingReason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-019-04",
@@ -927,7 +939,23 @@
       "evidenceQuote": "je rentre chez moi",
       "reason": "Dialogue sur le repas à domicile et le trajet avec la mère ; ne pas illustrer le self comme le choix retenu.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Deux élèves discutent à la sortie de l’école tandis que la mère mentionnée dans le texte vient chercher l’un d’eux. Aucun self, restaurant, repas servi, trajet, véhicule ou horaire inventé. Les élèves représentés restent à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "mère mentionnée, non locutrice",
+            "quote": "Ma mère est en vacances, elle vient me chercher"
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-rentrer-dejeuner-maison.png",
+      "preparedImageSha256": "71906481aca55feedad83b88860b48a12ace9b9269f325244c352b54ea6c7a8e",
+      "pendingReason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-030-02",
@@ -1013,8 +1041,25 @@
       ],
       "evidenceQuote": "aujourd’hui je vais vous montrer ses tableaux",
       "reason": "Enseignante présentant des œuvres en classe avant la visite ; ne pas attribuer des tableaux inventés à Matisse.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-exposition-matisse.png",
+      "visualReview": "Enseignante présentant un livre d’art ouvert vers un groupe d’élèves ; seules couverture extérieure et tranches visibles. Aucune œuvre fictive attribuée à Matisse. Préparation en classe, sans visite déjà réalisée. Chaussures sans marque après reprise.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante",
+            "quote": "Madame c’est la semaine prochaine"
+          },
+          {
+            "role": "groupe d’élèves",
+            "quote": "je vais vous montrer ses tableaux et ses dessins"
+          }
+        ]
+      },
+      "imageSha256": "a8d0fcbc8e1565ed12bccbeaf43366e65f12ac373054abc49d74ee29ff09fd1d"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-01",
@@ -1124,8 +1169,25 @@
       ],
       "evidenceQuote": "finir de regarder le film",
       "reason": "Film regardé en classe avec travail à présenter, pas une sortie dans une salle de cinéma.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe.png",
+      "visualReview": "Groupe d’élèves s’installant en classe devant un vidéoprojecteur et un écran clair, sans film inventé, séance de cinéma ou représentation de Lupin. Enseignant hors cadre, aucune voix attribuée à un élève particulier du groupe.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Adultes hors cadre ; groupe mixte d’élèves sans attribution d’une voix ou du travail sur Lupin à un élève précis. La situation de film en classe est explicitement documentée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "groupe d’élèves",
+            "quote": "rentrez en classe en silence"
+          },
+          {
+            "role": "film en classe",
+            "quote": "On va finir de regarder le film aujourd’hui ?"
+          }
+        ]
+      },
+      "imageSha256": "9912d00d4820a0b7eae3c16ab032f2c4e6c96d1478f45c14f8c487553bb60837"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-01",
@@ -1793,8 +1855,25 @@
       ],
       "evidenceQuote": "augmenter le volume",
       "reason": "Réglage du volume d’un enregistrement en classe par un professeur homme ; élèves au fond, pas professeur placé au fond.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-augmenter-volume-classe.png",
+      "visualReview": "Professeur homme à l’avant, main sur le gros bouton de volume de l’enceinte et regard vers le groupe d’élèves du fond. Tableau vierge, pieds et mains visibles, sans attribuer une voix à un élève précis.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Non Monsieur."
+          },
+          {
+            "role": "groupe d’élèves au fond",
+            "quote": "vous entendez du fond de la classe ?"
+          }
+        ]
+      },
+      "imageSha256": "8faaa34ce12b7b992e0b091edbfd1503e04d94de7a99cf44a7d342be9025d8d2"
     },
     {
       "exercise": "tcf-delf-actif-a1-049-04-04",
@@ -1814,7 +1893,27 @@
       "evidenceQuote": "corriger les exercices de compréhension écrite",
       "reason": "Osman appelé au tableau par une enseignante pour la compréhension écrite ; écarter le dessin de fleur ou le calcul d’une autre scène.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Élève nommé Osman près du tableau avec un livre ouvert, enseignante qui l’invite à expliquer. Aucun calcul, dessin de fleur ou numéro d’exercice inventé. Le prénom ne suffit pas à confirmer le genre représenté : liaison en attente.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Osman",
+            "quote": "Alors Osman, tu viens au tableau"
+          },
+          {
+            "role": "enseignante",
+            "quote": "Oui madame !"
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-osman-comprehension-ecrite.png",
+      "preparedImageSha256": "7a3f278b57e45bbfebd6933cd84faae6cb94d1657c9e04aad508409ba2e13896",
+      "pendingReason": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-049-05-01",
@@ -1982,7 +2081,27 @@
       "evidenceQuote": "on va à l’infirmerie",
       "reason": "Accompagnement d’un élève souffrant du ventre à l’infirmerie ; pas une consultation déjà menée par un médecin.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Diego tient son abdomen et marche avec une autre personne vers la porte de l’infirmerie, repérée par un pictogramme de lit et une croix verte. Pas de diagnostic, médecin, médicament ou consultation déjà menée. Personne accompagnante à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Diego",
+            "quote": "Diego, comment ça va"
+          },
+          {
+            "role": "douleur au ventre",
+            "quote": "J’ai mal au ventre"
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "preparedImageSha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+      "pendingReason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-050-05-01",
@@ -2059,7 +2178,27 @@
       "evidenceQuote": "je peux m’assoir",
       "reason": "Deux personnes faisant connaissance en s’asseyant ; aucune nationalité représentée par l’apparence ou un costume.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Présentation près d’une chaise libre proposée par Tessa à Luca. Aucun drapeau, costume ou détail prétendant prouver une nationalité. Prénoms conservés ; tous les genres ne sont pas explicités dans la transcription, liaison en attente.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personnage nommé Luca",
+            "quote": "Je m’appelle Luca"
+          },
+          {
+            "role": "Tessa, accord féminin",
+            "quote": "Moi, c’est Tessa et je suis américaine."
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-luca-tessa-rencontre.png",
+      "preparedImageSha256": "63b645965350dd39e1cb581b021a34e77fb7dd9ffce49fdb7293321c6cf014e5",
+      "pendingReason": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-051-04-02",
@@ -2134,8 +2273,25 @@
       ],
       "evidenceQuote": "en haut de la tour Eiffel",
       "reason": "Préparation d’une visite de la tour Eiffel, sans heure ajoutée ni bâtiment approximatif présenté comme le monument.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel.png",
+      "visualReview": "Professeur homme montrant la tour Eiffel entière sur un support imprimé, d’après l’illustration du monument déjà disponible. Groupe d’élèves avec pull plié, préparation en classe et non visite effectuée. Aucun horaire, drapeau ou itinéraire ajouté.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "À quelle heure on part Monsieur ?"
+          },
+          {
+            "role": "groupe d’élèves",
+            "quote": "N’oubliez pas de prendre un pull."
+          }
+        ]
+      },
+      "imageSha256": "35a0e3d42093b251345dd98174724a618f1624a1d46cf8b811c8614c24b6562b"
     },
     {
       "exercise": "tcf-delf-actif-a1-051-05-01",
@@ -2211,7 +2367,23 @@
       "evidenceQuote": "Voici ma photo pour mon dossier",
       "reason": "Remise d’une photo à un homme pour un dossier de classe de neige ; ne pas représenter un départ déjà effectué.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Photo-portrait remise à un membre du personnel homme, dossier ouvert sans texte. Pas de carte d’identité, certificat, piste de ski ou départ déjà réalisé. La photo représente le personnage dessiné, sans attester le genre du jeune de l’audio.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "membre du personnel homme",
+            "quote": "Bonjour Monsieur."
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige.png",
+      "preparedImageSha256": "03443634d2cd1b134025e73ba8a117b417e678942c29f96b426289fee04eaa8b",
+      "pendingReason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-02",
@@ -2231,7 +2403,23 @@
       "evidenceQuote": "mets-toi devant",
       "reason": "Élève autorisé à changer de place vers l’avant ; ne pas ajouter de lunettes déjà reçues.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Élève avançant vers un bureau vide au premier rang, professeur homme qui l’y invite. Aucune lunette déjà reçue ou portée ; tableau vierge. Genre de l’élève à vérifier avant liaison.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Monsieur, je peux changer de place ?"
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "preparedImageSha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+      "pendingReason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-03",
@@ -2251,7 +2439,27 @@
       "evidenceQuote": "Ta moyenne baisse ce trimestre",
       "reason": "Enseignante parlant à Mateo de résultats en baisse ; aucun score non dit, pas de diplôme de réussite.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Entretien calme entre une enseignante et Mateo, concerné par une feuille de résultats sans note, graphique, diplôme ou sanction. Les marques de chaussures de la première version sont retirées. Genre de l’élève à confirmer avant liaison.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Mateo",
+            "quote": "Mateo je dois te parler"
+          },
+          {
+            "role": "enseignante",
+            "quote": "Oui Madame."
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-mateo-resultats-baisse.png",
+      "preparedImageSha256": "76e3774f0781d9f3c78420e093893f9e4c325ef98c1cd565734d350d8929bbfd",
+      "pendingReason": "Les prénoms sont repris exactement, mais ne suffisent pas à confirmer seuls tous les genres représentés dans la transcription. Les indices de la banque de questions ne remplacent pas la vérification demandée des personnes du dialogue. Image au catalogue ; liaison audio en attente.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-04",
@@ -2271,7 +2479,23 @@
       "evidenceQuote": "Regarde sous le blouson bleu",
       "reason": "Recherche d’un sac caché sous un blouson bleu au vestiaire ; conserver cachette et couleur.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Le coin d’un seul blouson bleu est soulevé pour révéler le sac bordeaux sur le banc du vestiaire. Enseignante indiquant la cachette ; mains, pieds et objets utiles entiers. Genre du jeune interlocuteur non confirmé, liaison en attente.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante",
+            "quote": "Madame, mon sac n’est plus au vestiaire !"
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "preparedImageSha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+      "pendingReason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a1-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-052-05-01",
