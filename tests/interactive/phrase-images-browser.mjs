@@ -33,7 +33,7 @@ async function checkForms(page){
   await page.getByRole('group',{name:'Type de phrase',exact:true}).getByRole('button',{name:'Interrogatif',exact:true}).click()
   await page.getByRole('group',{name:'Forme des phrases',exact:true}).getByRole('button',{name:'Négative',exact:true}).click()
   await page.getByRole('group',{name:'Voix de la phrase',exact:true}).getByRole('button',{name:'Passif',exact:true}).click()
-  const text=await preview(page).locator('.phrase-svc-block').first().innerText();assert.match(text,/^Est-ce qu/);assert.match(text,/pas/);assert.ok(text.trim().endsWith('?'))
+  const text=await preview(page).locator('.phrase-svc-block').first().innerText();assert.match(text,/pas/);assert.ok(text.trim().endsWith('?'));assert.ok(await preview(page).locator('.phrase-svc-verbe').count()>=2)
   await page.getByRole('group',{name:'Voix de la phrase',exact:true}).getByRole('button',{name:'Actif',exact:true}).click()
   await page.getByRole('group',{name:'Type de phrase',exact:true}).getByRole('button',{name:'Affirmatif',exact:true}).click()
   await page.getByRole('group',{name:'Forme des phrases',exact:true}).getByRole('button',{name:'Positive',exact:true}).click()

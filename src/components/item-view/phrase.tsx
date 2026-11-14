@@ -51,13 +51,14 @@ export function PhraseAnswerSlot({
 export function PhraseColorBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const tokens = item.tokens ?? []
+  const legacyQuestion=!!item.phraseQuestion&&!item.phraseQuestionForm
   return (
     <div className="phrase-color-block">
       <div className="phrase-word-row">
-        {item.phraseQuestion&&<span>{interrogativePrefix(tokens)}</span>}
+        {legacyQuestion&&<span>{interrogativePrefix(tokens)}</span>}
         {tokens.map((token, i) => (
           <div className="phrase-word-slot" key={`${token.text}-${i}`}>
-            <span className="phrase-word">{i===0&&item.phraseQuestion&&token.category!=='nom'?token.text[0]!.toLowerCase()+token.text.slice(1):token.text}</span>
+            <span className="phrase-word">{token.joinBefore}{i===0&&legacyQuestion&&token.category!=='nom'?token.text[0]!.toLowerCase()+token.text.slice(1):token.text}</span>
             <PhrasePastille category={token.category} filled={show} />
           </div>
         ))}
@@ -80,7 +81,7 @@ export function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: Preview
     item.answer
   return (
     <div className="phrase-order-block">
-      {item.phraseQuestion&&<p>Écrivez une question avec « Est-ce que ».</p>}
+      {item.phraseQuestion&&<p>{item.phraseQuestionForm?'Écrivez une phrase interrogative.':'Écrivez une question avec « Est-ce que ».'}</p>}
       <div className="phrase-bubble-row">
         {tokens.map((token, i) => {
           const fill = PHRASE_COLORS[token.category]
@@ -97,7 +98,7 @@ export function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: Preview
                 printColorAdjust: 'exact',
               }}
             >
-              {labelOf(token.text)}
+              {token.joinBefore}{labelOf(token.text)}
             </span>
           )
         })}
@@ -113,7 +114,7 @@ export function PhraseBuildBlock({ item, mode }: { item: MathItem; mode: Preview
   const answer = item.responseAnswer ?? (item.answer && !item.answer.includes(' · ') ? item.answer : undefined)
   return (
     <div className="phrase-build-block">
-      {item.phraseQuestion&&<p>Écrivez une question avec « Est-ce que ».</p>}
+      {item.phraseQuestion&&<p>{item.phraseQuestionForm?'Écrivez une phrase interrogative.':'Écrivez une question avec « Est-ce que ».'}</p>}
       <p className="phrase-verb-prompt">{item.prompt}</p>
       <PhraseAnswerSlot show={show} answer={answer} />
       <div className="phrase-pastille-row">

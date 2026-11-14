@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-14",
+  "scope": "Questions interrogatives variées Gattegno et conversion vers le jeu",
+  "previousDelivery": "7c2e27d2",
+  "unitTests": {
+    "tests": 392,
+    "passed": 392,
+    "failed": 0
+  },
+  "focusedInterrogativeTests": {
+    "tests": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "generationCoverage": {
+    "configurations": 504,
+    "deterministicRepeatConfigurations": 504,
+    "formats": 6,
+    "themes": 7,
+    "questionsPerBatch": 6,
+    "independentPolarityAndVoice": true
+  },
+  "browserStagesPassed": [
+    "phrase-interrogatives-browser",
+    "phrase-images-browser",
+    "a4-regression"
+  ],
+  "browserProof": "interrogatives-browser-results.json",
+  "viewports": [
+    "1366x1000",
+    "390x844",
+    "360x640"
+  ],
+  "paper": {
+    "pagesPerViewport": 8,
+    "rootOverflows": 0,
+    "bodyOverflows": 0
+  },
+  "forms": [
+    "quel",
+    "quelle",
+    "quels",
+    "quelles",
+    "qui",
+    "que",
+    "quoi",
+    "où",
+    "quand",
+    "comment",
+    "combien",
+    "pourquoi",
+    "est-ce que",
+    "inversion"
+  ],
+  "wordClasses": "Interrogative words are explicit tagged elements; est-ce que is an adverbial locution.",
+  "syntacticRoles": "Moved subject and finite/passive verb roles retained; nominal reprise keeps the main nominal subject marked.",
+  "compatibility": "Saved legacy separate-prefix questions remain readable; new materialized questions contain all their words.",
+  "game": "Class collective vote and Solo automatic choice retain neutral words, apostrophes and inversion links; private competition key remains separate.",
+  "apiWrites": 0,
+  "axeViolations": 0,
+  "languageAudits": "All three existing audits passed; 19,513 source constructions retained.",
+  "frontendTypes": "passed",
+  "lint": "passed with existing repository warnings",
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 61,
+  "build": "passed; regenerating final gallery metadata before push",
+  "limits": [
+    "Question construction uses reviewed source clauses and agreement information, not a general French parser.",
+    "Questions involving a requested word are generated when the source context supports that word.",
+    "Image generation queue still has 42 source verbs and the bonus rougir pending due to the temporary service limit.",
+    "Physical ENI and printer pilot not attested."
+  ],
+  "a4Regression": {
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "screenshot": "identical",
+    "sourceRecipe": "unchanged"
+  }
+}

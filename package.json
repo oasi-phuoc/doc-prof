@@ -17,6 +17,7 @@
     "test:gattegno": "node scripts/audit-gattegno.cjs && node scripts/audit-gattegno-combinations.cjs && node scripts/audit-gattegno-editorial.cjs",
     "test:gattegno:browser": "node tests/interactive/gattegno-browser.mjs",
     "test:gattegno:images:browser": "node tests/interactive/phrase-images-browser.mjs",
+    "test:gattegno:questions:browser": "node tests/interactive/phrase-interrogatives-browser.mjs",
     "interactive:inventory": "node scripts/interactive-inventory.mjs",
     "test:interactive:browser": "node tests/interactive/browser.mjs",
     "test:interactive:classroom": "node tests/interactive/classroom-browser.mjs",

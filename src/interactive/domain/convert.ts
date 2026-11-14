@@ -249,7 +249,7 @@ export function convertRecipe(
           }
           if(item.layout==='phrase-svc'){
             if(!item.tokens?.length){reject('Phrase S-V-C absente.');return}
-            const q=base();q.mode='oral';q.compatibility='teacher-led';q.prompt=phraseSentence(item.tokens,item.phraseQuestion);q.instruction='Entourez le sujet et soulignez le verbe.';add(q,syntaxModel(item.tokens));return
+            const q=base();q.mode='oral';q.compatibility='teacher-led';q.prompt=phraseSentence(item.tokens,item.phraseQuestion,!!item.phraseQuestionForm);q.instruction='Entourez le sujet et soulignez le verbe.';add(q,syntaxModel(item.tokens));return
           }
           if(item.layout==='phrase-images'){
             const clues=item.phraseImages
@@ -258,7 +258,7 @@ export function convertRecipe(
             }
             const q=base();q.mode='oral';q.compatibility='teacher-led';q.prompt='Écrivez une phrase à partir des images.'
             q.phraseImages=clues.map(({category,label,imageSrc})=>({category,label,...(imageSrc?{imageSrc}:{})}))
-            q.phraseImageLabels=item.phraseImageLabels===true;if(item.phraseQuestion)q.phraseImagePrefix=interrogativePrefix(item.tokens??[]);q.images=clues.flatMap(clue=>clue.imageSrc?[clue.imageSrc]:[])
+            q.phraseImageLabels=item.phraseImageLabels===true;if(item.phraseQuestion&&!item.phraseQuestionForm)q.phraseImagePrefix=interrogativePrefix(item.tokens??[]);q.images=clues.flatMap(clue=>clue.imageSrc?[clue.imageSrc]:[])
             add(q,item.responseAnswer??item.answer??'Aucun exemple fourni. L’enseignant apprécie la phrase.');return
           }
           const ordering = adaptOrdering(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))

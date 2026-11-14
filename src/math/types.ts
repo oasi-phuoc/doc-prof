@@ -40,6 +40,10 @@ export type PhraseToken = {
   category: PhraseCategory
   /** Passive compound verb; both parts keep the verb colour. */
   verbPart?: 'auxiliary' | 'participle'
+  /** Written link of an inverted subject; the pronoun remains a separate word. */
+  joinBefore?: '-' | '-t-'
+  /** Explicit roles retained when a reviewed question moves words. */
+  syntaxRole?: import('@/francais/phrase-forms').PhraseSyntaxRole
 }
 export type PhraseImageClue = {category:PhraseCategory;label:string;imageSrc?:string}
 
@@ -593,6 +597,8 @@ export type MathItem = {
   /** Mots étiquetés (grammaire en couleur). */
   tokens?: PhraseToken[]
   phraseQuestion?: boolean
+  /** Present when the interrogative words are already included in tokens. */
+  phraseQuestionForm?: import('@/francais/phrase-interrogatives').PhraseQuestionForm
   phraseSyntaxRoles?: import('@/francais/phrase-forms').PhraseSyntaxRole[]
   /** Images lexicales et mots de liaison ; le modèle reste dans responseAnswer. */
   phraseImages?: PhraseImageClue[]

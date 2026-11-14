@@ -46,7 +46,10 @@ export function phraseImageClues(tokens:readonly PhraseToken[],verbIds:readonly 
   const pictures=nounPictures(tokens);if(!pictures)return undefined
   let verb=0,subject=true
   for(const [index,token] of tokens.entries()){
-    if(token.category==='determinant')continue
+    if(token.category==='determinant'){
+      if(/^(?:quel|quelle|quels|quelles)$/i.test(token.text))clues.push({category:'determinant',label:token.text})
+      continue
+    }
     if(token.category==='verbe'){
       if(token.verbPart==='auxiliary'){clues.push({category:'verbe',label:token.text});continue}
       const label=verbIds[verb++],imageSrc=label?actionPicture(label):undefined
@@ -55,7 +58,7 @@ export function phraseImageClues(tokens:readonly PhraseToken[],verbIds:readonly 
     }else if(token.category==='nom'){
       const imageSrc=pictures.get(index);if(!imageSrc)return undefined
       clues.push({category:'nom',label:token.text,imageSrc})
-    }else if(token.category==='pronom'&&subject&&pronounPicture(token.text)){
+    }else if(token.category==='pronom'&&(token.syntaxRole==='sujet'||token.syntaxRole===undefined&&subject)&&pronounPicture(token.text)){
       clues.push({category:'pronom',label:token.text,imageSrc:pronounPicture(token.text)});subject=false
     }else{
       clues.push({category:token.category,label:token.text})

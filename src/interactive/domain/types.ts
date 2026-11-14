@@ -12,7 +12,7 @@ export type Choice = {
   audio?: string
 }
 export type NumberSequence = { terms: Array<string | null>; target: number; hint?: string }
-export type WordClassification = { tokens: string[]; target: number; prefix?:string; ending?:string }
+export type WordClassification = { tokens: string[]; target: number; prefix?:string; ending?:string; joins?:(''|'-'|'-t-')[] }
 export type MatchingGroup = { groupId: string; number: number; total: number }
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {

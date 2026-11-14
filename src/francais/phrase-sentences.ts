@@ -51,7 +51,8 @@ export function joinPhrase(tokens: PhraseToken[]): string {
       out = token.text
       continue
     }
-    if (out.endsWith("'") || out.endsWith('’')) out += token.text
+    if (token.joinBefore) out += token.joinBefore + token.text
+    else if (out.endsWith("'") || out.endsWith('’')) out += token.text
     else out += ` ${token.text}`
   }
   return `${out}.`

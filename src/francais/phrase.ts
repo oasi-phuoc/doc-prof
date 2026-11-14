@@ -19,6 +19,7 @@ import { pick, shuffle, type Rng } from '@/math/rng'
 import type { Difficulty, MathItem, PhraseToken, PhraseVerbGroup } from '@/math/types'
 import {illustratedFrames,phraseImageClues,imageSubjectsForFrame,imageExtraFrames} from './phrase-images'
 import {passiveFrames,passivePhrase,phraseSentence,phraseSyntaxRoles,syntaxModel,type PhraseSentenceType,type PhraseVoice} from './phrase-forms'
+import {interrogativePhrase,type PhraseQuestionForm} from './phrase-interrogatives'
 
 export type PhraseBatch = {
   items: MathItem[]
@@ -35,6 +36,7 @@ type BuiltPhrase = {
   verbInfinitive: string
   verbInfinitives: string[]
   question?:boolean
+  questionForm?:PhraseQuestionForm
 }
 
 function uncap(text: string): string {
@@ -98,6 +100,8 @@ function pickPhrase(
   passive = false,
   question = false,
   passiveAgent=true,
+  usedQuestions=new Set<PhraseQuestionForm>(),
+  categories?:PhraseCategories,
 ): BuiltPhrase {
   const unused = frames.filter((frame) => !used.has(`frame:${frame.id}`))
   const model = pick(rng, unused.length ? unused : frames)
@@ -118,9 +122,11 @@ function pickPhrase(
   )
   const infinitives=frame.rightId?[frame.id,frame.rightId]:[frame.id]
   const positive=passive?passivePhrase(tokens,infinitives,passiveAgent):tokens
-  if(!positive)throw new Error('Cette construction ne peut pas être transformée à la voix passive.')
+  if(!positive)throw new Error(`Cette construction ne peut pas être transformée à la voix passive : ${frame.id} — ${joinPhrase(tokens)}`)
   const final=negative?withNegation(positive,passive?infinitives.map(()=>'être'):infinitives):positive
-  return {...builtFromTokens(final,frame.id,frame.rightId),sentence:phraseSentence(final,question),...(question?{question:true}:{})}
+  const interrogative=question?interrogativePhrase(final,infinitives,rng,usedQuestions,categories):undefined
+  const result=interrogative?.tokens??final
+  return {...builtFromTokens(result,frame.id,frame.rightId),sentence:phraseSentence(result,question,!!interrogative),...(interrogative?{question:true,questionForm:interrogative.form}:{})}
 }
 
 function typeColor(phrase: BuiltPhrase): MathItem {
@@ -144,7 +150,7 @@ function typeOrder(rng: Rng, phrase: BuiltPhrase): MathItem {
     tokens: scrambled,
     answer: phrase.sentence,
     responseAnswer: phrase.sentence,
-    labels: ordered.map((token) => token.text),
+    labels: ordered.map((token) => (token.joinBefore??'')+token.text),
   }
 }
 
@@ -228,6 +234,7 @@ export function tryGeneratePhraseBatch(
     ? shuffle(rng, Array.from({ length: n }, (_, index) => n === 1 ? pick(rng, [true, false]) : index < Math.ceil(n / 2)))
     : Array.from({ length: n }, () => mode === 'negative')
   const used = new Set<string>()
+  const usedQuestions=new Set<PhraseQuestionForm>()
   const mixFlags=(mode:string,positive:string)=>mode==='mixed'?shuffle(rng,Array.from({length:n},(_,index)=>n===1?pick(rng,[true,false]):index<Math.ceil(n/2))):Array.from({length:n},()=>mode===positive)
   const questions=sentenceType==='declarative'?Array(n).fill(false):mixFlags(sentenceType,'interrogative')
   const passiveFlags=voice==='active'?Array(n).fill(false):mixFlags(voice,'passive').map(value=>value&&passives.length>0)
@@ -236,23 +243,24 @@ export function tryGeneratePhraseBatch(
     const items:MathItem[]=[],seen=new Set<string>()
     for(const [index,negative] of polarities.entries()){
       for(let attempt=0;attempt<64;attempt++){
-        const phrase=pickPhrase(rng,theme,used,passiveFlags[index]?passives:frames,negative,true,passiveFlags[index],questions[index],categories?.preposition!==false),clues=phraseImageClues(phrase.tokens,phrase.verbInfinitives)
+        const phrase=pickPhrase(rng,theme,used,passiveFlags[index]?passives:frames,negative,true,passiveFlags[index],questions[index],categories?.preposition!==false,usedQuestions,categories),clues=phraseImageClues(phrase.tokens,phrase.verbInfinitives)
         if(!clues||seen.has(phrase.sentence))continue
         seen.add(phrase.sentence)
-        items.push({layout:'phrase-images',tokens:phrase.tokens,...(phrase.question?{phraseQuestion:true}:{}),phraseImages:clues,phraseImageLabels:imageLabels,writeLines:1,answer:phrase.sentence,responseAnswer:phrase.sentence})
+        items.push({layout:'phrase-images',tokens:phrase.tokens,...(phrase.question?{phraseQuestion:true,phraseQuestionForm:phrase.questionForm}:{}),phraseImages:clues,phraseImageLabels:imageLabels,writeLines:1,answer:phrase.sentence,responseAnswer:phrase.sentence})
         break
       }
     }
     return {items,instruction:items.length?'Écrivez une phrase à partir des images. Ajoutez les mots nécessaires. Plusieurs phrases sont possibles.':'Aucune construction illustrée n’est disponible avec ces filtres. Choisissez un autre groupe de verbes ou un autre thème.',preferredColumns:1,bankQuestionCap:frames.length}
   }
   // Draw all sentences first: the exercise layout cannot change the bank or subjects drawn.
-  const phrases = polarities.map((negative,index) => pickPhrase(rng, theme, used, passiveFlags[index]?passives:frames, negative,false,passiveFlags[index],questions[index],categories?.preposition!==false))
+  const phrases = polarities.map((negative,index) => pickPhrase(rng, theme, used, passiveFlags[index]?passives:frames, negative,false,passiveFlags[index],questions[index],categories?.preposition!==false,usedQuestions,categories))
   const items: MathItem[] = phrases.map(phrase => {
-    if (kind === 'svc') return {layout:'phrase-svc',tokens:phrase.tokens,phraseSyntaxRoles:phraseSyntaxRoles(phrase.tokens),answer:syntaxModel(phrase.tokens),responseAnswer:phrase.sentence,...(phrase.question?{phraseQuestion:true}:{})}
-    if (kind === 'colorier') return {...typeColor(phrase),...(phrase.question?{phraseQuestion:true}:{})}
-    if (kind === 'ordre') return {...typeOrder(rng, phrase),...(phrase.question?{phraseQuestion:true}:{})}
-    if (kind === 'construire') return {...typeBuild(phrase),...(phrase.question?{phraseQuestion:true}:{})}
-    return { layout: 'phrase-write', writeLines: 1, answer: phrase.sentence, responseAnswer: phrase.sentence,...(phrase.question?{phraseQuestion:true}:{}) }
+    const question=phrase.question?{phraseQuestion:true,phraseQuestionForm:phrase.questionForm}:{}
+    if (kind === 'svc') return {layout:'phrase-svc',tokens:phrase.tokens,phraseSyntaxRoles:phraseSyntaxRoles(phrase.tokens),answer:syntaxModel(phrase.tokens),responseAnswer:phrase.sentence,...question}
+    if (kind === 'colorier') return {...typeColor(phrase),...question}
+    if (kind === 'ordre') return {...typeOrder(rng, phrase),...question}
+    if (kind === 'construire') return {...typeBuild(phrase),...question}
+    return { layout: 'phrase-write', writeLines: 1, answer: phrase.sentence, responseAnswer: phrase.sentence,...question }
   })
   const prompts = PRODUCTION_PROMPTS_BY_THEME[theme]
   const excluded = PHRASE_OPTIONAL_CATEGORIES.filter(({ category }) => categories?.[category] === false)
@@ -269,7 +277,7 @@ export function tryGeneratePhraseBatch(
     : mode === 'negative' ? 'Utilisez la forme négative (ne… pas).' : 'Utilisez la forme affirmative.'
   return {
     items,
-    instruction: kind === 'ecrire' ? `${baseInstruction} ${formInstruction}${sentenceType==='interrogative'?' Posez des questions avec « Est-ce que ».':sentenceType==='mixed'?' Mélangez déclarations et questions.':''}${voice==='passive'?' Utilisez la voix passive.':voice==='mixed'?' Mélangez les voix active et passive lorsque la construction le permet.':''}${restrictions}` : baseInstruction,
+    instruction: kind === 'ecrire' ? `${baseInstruction} ${formInstruction}${sentenceType==='interrogative'?' Variez les questions : mots interrogatifs, « est-ce que » et inversions.':sentenceType==='mixed'?' Mélangez déclarations et questions.':''}${voice==='passive'?' Utilisez la voix passive.':voice==='mixed'?' Mélangez les voix active et passive lorsque la construction le permet.':''}${restrictions}` : baseInstruction,
     preferredColumns: 1,
     bankQuestionCap: frames.length,
   }

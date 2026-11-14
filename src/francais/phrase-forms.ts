@@ -11,14 +11,16 @@ export type PhraseSyntaxRole='sujet'|'verbe'|'complement'|null
 export function interrogativePrefix(tokens:readonly PhraseToken[]):string {
   return startsWithVowelSound(tokens[0]?.text??'')?'Est-ce qu’':'Est-ce que '
 }
-export function phraseSentence(tokens:PhraseToken[],question=false):string {
+export function phraseSentence(tokens:PhraseToken[],question=false,materialized=false):string {
   if(!question)return joinPhrase(tokens)
+  if(materialized)return joinPhrase(tokens).replace(/\.$/,' ?')
   const words=tokens.map((token,index)=>index===0&&token.category!=='nom'?{...token,text:token.text[0]!.toLowerCase()+token.text.slice(1)}:{...token})
   return interrogativePrefix(tokens)+joinPhrase(words).replace(/\.$/,' ?')
 }
 
 /** Whole nominal subjects; reflected clitics and negative particles are excluded. */
 export function phraseSyntaxRoles(tokens:readonly PhraseToken[]):PhraseSyntaxRole[]{
+  if(tokens.length&&tokens.every(token=>Object.hasOwn(token,'syntaxRole')))return tokens.map(token=>token.syntaxRole??null)
   const roles:PhraseSyntaxRole[]=tokens.map(()=>null)
   let start=0
   for(let end=0;end<=tokens.length;end++){

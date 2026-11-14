@@ -153,11 +153,11 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     return phraseOrdering(item.sequence?.map((word) => word.trim()) ?? [], item.placeParts ?? [], item.answer.trim())
   }
   if (item.layout === 'phrase-order') {
-    const words = item.tokens?.map((token) => token.text.trim()) ?? []
+    const words = item.tokens?.map((token) => (token.joinBefore??'')+token.text.trim()) ?? []
     const ordered = item.labels ?? []
     const model = item.responseAnswer?.trim() || item.answer.trim()
-    const result=phraseOrdering(words,ordered,item.phraseQuestion?model.replace(/^Est-ce qu(?:e |[’'])/i,'').replace(/\s*\?$/,'.'):model)
-    if(item.phraseQuestion)for(const entry of result.items){entry.model=model;entry.prompt+=' Écris une question avec « Est-ce que ».'}
+    const result=phraseOrdering(words,ordered,item.phraseQuestion?(item.phraseQuestionForm?model:model.replace(/^Est-ce qu(?:e |[’'])/i,'')).replace(/\s*\?$/,'.'):model)
+    if(item.phraseQuestion)for(const entry of result.items){entry.model=model;entry.prompt+=item.phraseQuestionForm?' Écris une phrase interrogative.':' Écris une question avec « Est-ce que ».'}
     return result
   }
 }
