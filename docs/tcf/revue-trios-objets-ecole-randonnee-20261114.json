@@ -1,0 +1,400 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "165f1027977699b9e6596598ce4d183907de240b",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "165f1027977699b9e6596598ce4d183907de240b",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 8
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-038-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Emma, tu viens en cours jeudi ? Pour sa leçon la prof demande d’apporter un compas, une règle plate de 30 cm et une boîte de crayons de couleurs. On prépare les affiches de notre spectacle de théâtre en français pour l’école de langues. La prof veut nous photographier au travail.",
+      "source_sha256": "e877ed57d91436078bba61cf57a1b2e5c47279e0b29876ddf8a6f8ee67040e94",
+      "semantic_sha256": "5e3b280f635187c0611bcec4e713661e6d52b6c14a5894673ddd52af800cf144",
+      "question": {
+        "enonce": "Quel outil de géométrie faut-il apporter avec la règle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un compas",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une calculatrice",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une équerre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un compas"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-038-01.mp3",
+      "audio_sha256": "bc09fd7e93829615ef6210824590a6cf014a412a598c67dd875b3002e7014f52",
+      "image_ids": [
+        "extension573-compas-geometrie",
+        "co306-calculatrice-dessine",
+        "extension573-equerre-geometrie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-compas-geometrie.png",
+        "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-equerre-geometrie.png"
+      ],
+      "image_sha256": [
+        "866ed2517e87c5cf8cb7f870a61463e970e9c22339d2755d2e943351c121888f",
+        "1837752fe613b91d6070f982dba8d8b5eb5a4ef0aa2b695b73ed8035d976981b",
+        "87b06eb529ac62b6bbf3eee928d58b9c62a33d222769b2602e8dbeb21e92ff86"
+      ],
+      "reason": "La prof demande un compas, une règle et des crayons pour préparer les affiches.",
+      "visual_review": "Compas à deux branches avec pointe et mine, calculatrice à écran vide et équerre triangulaire avec angle droit ; trois outils distincts. La boussole est écartée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-035-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sébastien. J’ai un superbe vélo. C’est le cadeau de mes parents pour mon anniversaire. J’ai aussi une nouvelle montre de la part de mes grands-parents et un bracelet offert par ma sœur. La fête c’est samedi à 16h00. Viens manger le gâteau d’anniversaire et passer un bel après-midi.",
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "82e72c62f8ec23cff5c20c6d4eb0d0ad283a0666159d801472c0b3282c839fe2",
+      "question": {
+        "enonce": "Quel cadeau ses grands-parents lui ont-ils offert ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une montre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un appareil photo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un casque",
+            "correct": false
+          }
+        ],
+        "written_model": "Une montre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
+      "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
+      "image_ids": [
+        "co834-montre-dessinee",
+        "co834-appareil-photo-dessine",
+        "vocab-casque-audio"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp"
+      ],
+      "image_sha256": [
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629",
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60"
+      ],
+      "reason": "Les grands-parents ont offert une montre ; le vélo vient des parents et le bracelet de la sœur.",
+      "visual_review": "Montre classique entière, appareil photographique et casque audio ; trois objets distincts. Le cadran ne sert pas à répondre à une question sur une heure."
+    },
+    {
+      "key": "tcf-delf-actif-a1-034-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Paulo, tu dois être encore en cours mais je te rappelle de passer au supermarché pour prendre de l’eau minérale, des pâtes italiennes, un paquet de café et du beurre. Pour le dîner tu nous prépares des pâtes à la bolognaise comme dans ton pays ? Je rentre à la maison vers 19h00. À plus tard.",
+      "source_sha256": "dae59714596879ae662568a53a5740ac3236208adcb3a7d776f55e0ba687bee8",
+      "semantic_sha256": "606bda803cb60ab589b054a113452f84869105bc598a921e85e03597fa714292",
+      "question": {
+        "enonce": "Quelle boisson doit-il acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "De l’eau minérale",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du jus d’orange",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du lait",
+            "correct": false
+          }
+        ],
+        "written_model": "De l’eau minérale"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
+      "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
+      "image_ids": [
+        "co834-bouteille-eau-dessinee",
+        "co834-jus-orange-dessine",
+        "co834-bouteille-lait-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp"
+      ],
+      "image_sha256": [
+        "c0f525c2f7e347128c94a162d9f516a910aaa1935a35727de6a69ef2dfd958eb",
+        "47bf446aec09cf3930268a1421321038c144cd5013a23a44b2f9f2b2e8d35822",
+        "aaf1746c6df84474fd5f25938f9df329eb5caa5e25198e2c7e49d08139259920"
+      ],
+      "reason": "Le message demande de prendre de l’eau minérale au supermarché.",
+      "visual_review": "Bouteille d’eau transparente, jus orange avec demi-orange, bouteille de lait blanc : trois boissons distinctes sans prix ni date."
+    },
+    {
+      "key": "tcf-delf-actif-a1-031-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+      "source_sha256": "71bc57c902160b343859fba6d93fcf1e579e814488e796c2522e9441de997a5d",
+      "semantic_sha256": "ceae29122b7bd7e2f9610bc561ee7061ea6e195a8bd4d41295dc3ade55daf7ed",
+      "question": {
+        "enonce": "Dans quel lieu les élèves se trouvent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la piscine",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au gymnase",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au stade",
+            "correct": false
+          }
+        ],
+        "written_model": "À la piscine"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+      "audio_sha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
+      "image_ids": [
+        "co306-piscine-dessine",
+        "co306-gymnase-municipal-dessine",
+        "co834-aller-stade-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp"
+      ],
+      "image_sha256": [
+        "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456",
+        "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4",
+        "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6"
+      ],
+      "reason": "Le professeur demande de sortir du bassin ; les élèves parlent de revenir à la piscine.",
+      "visual_review": "Bassin à couloirs, gymnase intérieur avec paniers et but, stade extérieur à gradins. Aucun concert n’est utilisé pour le stade sportif."
+    },
+    {
+      "key": "tcf-delf-actif-a1-039-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Salima. J’habite une nouvelle maison à la campagne. Elle est super belle. J’ai une chambre pour moi toute seule au premier étage. Elle est spacieuse et j’ai un grand lit, un beau fauteuil et un grand bureau. Je t’invite samedi après-midi si tu es libre.",
+      "source_sha256": "6d542905e3a33f9de49f905bce687422dc9c01d259d8f9c55a57c5d757d59eac",
+      "semantic_sha256": "41f4c60482ed52eb0836b2fccb107e44d54d684d0da1a61e1b69ff4faf2d919f",
+      "question": {
+        "enonce": "Quel siège se trouve dans la chambre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un fauteuil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un canapé",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un tabouret",
+            "correct": false
+          }
+        ],
+        "written_model": "Un fauteuil"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-039-01.mp3",
+      "audio_sha256": "1339fdb115ada4ca16db5ee12451ded82015a678dfe3f6e77b83e41c294b941d",
+      "image_ids": [
+        "extension573-fauteuil-simple",
+        "co306-canape-dessine",
+        "extension573-tabouret-simple"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-fauteuil-simple.png",
+        "/lib/images/tcf/qcm-audit/co306-canape-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-tabouret-simple.png"
+      ],
+      "image_sha256": [
+        "a88eaa0a16afda18dea65d187616009453821873476370973bd95021fe72fc38",
+        "3c80bd23975029525e1e714e6c1614cc85beb6413193d6dce9d7f15274463177",
+        "4367a6258ea157bbef52a2394d28d0649a8d38bf75987eb082e3c3e8966d3e1e"
+      ],
+      "reason": "La nouvelle chambre comporte un grand lit, un beau fauteuil et un bureau.",
+      "visual_review": "Un fauteuil individuel à deux accoudoirs, un canapé à plusieurs places et un tabouret sans dossier ; sièges entiers sans personne ni identité inventée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-031-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Alors prenez votre cahier. Ce matin nous préparons l’interrogation de la semaine prochaine. Monsieur on peut utiliser la calculatrice ? Non pas aujourd’hui. Les calculs sont faciles à faire.",
+      "source_sha256": "5903058bbd54e5de59992eb9ea49b66b8147b4fce56808ff8144620cae754f43",
+      "semantic_sha256": "1714a9b01835d68d17569f692c9dcb3af98896d343789461e54b63f576fbe936",
+      "question": {
+        "enonce": "Quel objet faut-il prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un cahier",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un dictionnaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un livre de lecture",
+            "correct": false
+          }
+        ],
+        "written_model": "Un cahier"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-02.mp3",
+      "audio_sha256": "b55bee5b9363c74450abbb82a4208c966c2061b4434fdf8bf3a4cd31f91483a7",
+      "image_ids": [
+        "co306-cahier-dessine",
+        "co306-dictionnaire-dessine",
+        "extension573-livre-lecture"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-livre-lecture.png"
+      ],
+      "image_sha256": [
+        "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97",
+        "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1",
+        "ec628ec5590b667ceebef330c329ebb412f94c7579c275a39164f99a4d7f9acb"
+      ],
+      "reason": "Le professeur demande de prendre le cahier pour préparer l’interrogation.",
+      "visual_review": "Cahier à spirale, dictionnaire à deux colonnes avec index et livre de fiction à paragraphes avec illustration narrative. Les trois types sont visuellement distincts."
+    },
+    {
+      "key": "tcf-delf-actif-a1-023-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut c’est Marc, rappelle-toi le rendez-vous de demain à 8h00. On part à la montagne avec mes cousins. La maison est près d’un lac et il y a des randonnées à faire. On rentre jeudi vers 18h00. N’oublie pas tes chaussures de marche. Et oui, on va marcher !",
+      "source_sha256": "ae34082228fc5eeb8b91532d0f20ddca7ef5ced5ce2688af2ff0ac3104618606",
+      "semantic_sha256": "74766e027f11110761f8c7bb83c13dc71b14f4d90350c62bc254242250c7768d",
+      "question": {
+        "enonce": "Quelles chaussures faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des chaussures de marche",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des chaussures de danse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des chaussures de ville",
+            "correct": false
+          }
+        ],
+        "written_model": "Des chaussures de marche"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-023-01.mp3",
+      "audio_sha256": "d82cf3116c331eeb88355819cf8bcee13d3cd3b7bac2bb6c7378b3499f5153ac",
+      "image_ids": [
+        "extension573-chaussures-marche",
+        "extension573-chaussures-danse",
+        "f9e55937da20"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-chaussures-marche.png",
+        "/lib/images/tcf/qcm-audit/extension573-chaussures-danse.png",
+        "/lib/images/tcf/qcm-audit/f9e55937da20.webp"
+      ],
+      "image_sha256": [
+        "c31a338f9ca0f7c75d2fae3e37745806095010cf876022426d03e30fb1837087",
+        "ff8eb5d7b18b74420a885b6df5443481b3ce0097ec322b64a614e10278136be5",
+        "c15994c0d4782e2127a61760e71bdd8905b9b4727c81f06251bc4890a1e795a0"
+      ],
+      "reason": "Marc demande des chaussures de marche pour les randonnées à la montagne.",
+      "visual_review": "Paire de chaussures montantes à semelles crantées, paire de demi-pointes à élastiques et paire de chaussures de ville en cuir : chaque choix montre deux chaussures entières."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-03-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Hugo! Tu es toujours d’accord pour venir en vacances chez moi ? Tu peux m’apporter la boussole ? Prends le bus de 11h30, je viens te chercher à l’arrêt à 12h30. N’oublie pas tes chaussures de marche pour nos randonnées. Appelle-moi ce soir avant ton entraînement.",
+      "source_sha256": "d6a3a0c1159c0e82d68740f3d477d27100c5111c5fc27ceee96dc0ad17830689",
+      "semantic_sha256": "c1e8c238bbaba92a0f3c4455bf2af7d88a56ebe64b032130ee0f2b358030a415",
+      "question": {
+        "enonce": "Quelles chaussures faut-il prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des chaussures de marche",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des sandales",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des bottes de pluie",
+            "correct": false
+          }
+        ],
+        "written_model": "Des chaussures de marche"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-03-01.mp3",
+      "audio_sha256": "63f65325049a585a2aa6a7f359cca9a61c24f432735f4b5237e8c04d83db5516",
+      "image_ids": [
+        "extension573-chaussures-marche",
+        "co306-sandales-dessine",
+        "co834-bottes-pluie-dessinees"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-chaussures-marche.png",
+        "/lib/images/tcf/qcm-audit/co306-sandales-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bottes-pluie-dessinees.webp"
+      ],
+      "image_sha256": [
+        "c31a338f9ca0f7c75d2fae3e37745806095010cf876022426d03e30fb1837087",
+        "0d2b8c57c019a0406e87a8f45d4b7c5a3f10f0de67b1a3e84f71c8d7a17fe48d",
+        "775d0eeda4df59f08012ffa5b560649e563630a8487f6c18189d4290aad3d7e6"
+      ],
+      "reason": "Hugo demande des chaussures de marche pour les randonnées pendant les vacances.",
+      "visual_review": "Deux chaussures de randonnée robustes, deux sandales ouvertes et deux bottes de pluie en caoutchouc ; paires entières, sans accessoires supplémentaires."
+    }
+  ]
+}

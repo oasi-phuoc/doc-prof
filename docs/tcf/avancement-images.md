@@ -2,6 +2,12 @@
 
 > État actuel : voir le [bilan du cahier des charges du 11 novembre 2026](bilan-cahier-des-charges-20261111.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
 
+## Reprise du 14 novembre 2026
+
+**Huit trios A1 supplémentaires** : sept nouveaux PNG natifs exacts 4:3, huit usages de ces images et seize réemplois. Compas de géométrie et équerre, fauteuil et tabouret, livre de lecture, chaussures de marche et de danse. Le fauteuil individuel n’est pas représenté par plusieurs sièges ; la boussole n’est pas utilisée pour le compas. Les choix boissons, cadeaux et lieux sportifs sont réutilisés après examen visuel. Comparaison intégrale des six banques : seuls huit formats QCM image ajoutés, aucun texte, corrigé, source ou MP3 modifié ([registre](revue-trios-objets-ecole-randonnee-20261114.json)).
+
+État : **228 trios DELF Actif actifs** (118 A1, 101 A2, neuf B1), **142 candidats concrets** encore à vérifier et 1 021 questions en contexte. Les **370 trios historiques** restent suivis séparément. Contrôles des 346 supports DELF Actif, des 763 décisions historiques, de la banque, du rendu QCM (2 225 variantes), de la galerie (6 543 images) et TypeScript réussis. Aucune nouvelle écoute humaine n’est attestée.
+
 ## Reprise du 13 novembre 2026 — nouveaux audios inclus
 
 La génération des images adaptées est ajoutée aux tâches des 346 nouveaux supports DELF Actif, soit 1 663 questions. Le [plan complémentaire](delf-actif-20261113/images-a-preparer.md) distingue les trios actifs, les candidats à vérifier et les réponses maintenues en texte. Ce lot complète le reliquat historique sans les confondre.
