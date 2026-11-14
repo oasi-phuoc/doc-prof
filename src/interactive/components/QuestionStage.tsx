@@ -42,6 +42,7 @@ export function QuestionStage({
   wordPlacements,
   onWordPlacements,
   sortingTargets,
+  attempt=0,
   interactionsDisabled = false,
   unavailableChoiceIds = [],
 }: {
@@ -51,6 +52,7 @@ export function QuestionStage({
   wordPlacements?: (string|null)[]
   onWordPlacements?: (placements:(string|null)[])=>void
   sortingTargets?: string[]
+  attempt?: number
   interactionsDisabled?: boolean
   unavailableChoiceIds?: string[]
   q: Question
@@ -179,7 +181,7 @@ export function QuestionStage({
         </div>
       ) : (
         <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
-          {q.wordSorting?<WordSortingBoard key={q.id} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
+          {q.wordSorting?<WordSortingBoard key={`${q.id}:${attempt}`} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
             q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} review={phase==='revealed'} onRead={()=>setReading('question')}/> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
           ) : q.mode==='oral'&&q.images.length ? (
             <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom/>)}</div>

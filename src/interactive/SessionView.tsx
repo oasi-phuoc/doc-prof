@@ -530,6 +530,7 @@ function PlayingRound({
                     }
                     imageOrder={runtime.imageOrders[q.id]}
                     wordPlacements={runtime.wordSorts?.[q.id]}
+                    attempt={runtime.attempt}
                     onWordPlacements={placements=>dispatch({type:'WORD_SORT_SET',questionId:q.id,placements})}
                     sortingTargets={reveal?game.corrections[q.id]?.sortingTargets:undefined}
                     interactionsDisabled={blocked}
