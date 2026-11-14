@@ -4,14 +4,14 @@ La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.m
 
 **Priorité demandée : générer les scènes avant les trios, en commençant par A1 puis A2.** Aucun nouveau trio QCM n’est ajouté pendant cette reprise.
 
-**96 dialogues** conviennent à une association de scènes. **30 sont liés à une scène disponible** ; **66 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **51 pistes**, contre 21 auparavant.
+**96 dialogues** conviennent à une association de scènes. **32 sont liés à une scène disponible** ; **64 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **53 pistes**, contre 21 auparavant.
 
 | Nouveaux supports | Candidats | Avec scène disponible | À terminer |
 |---|---:|---:|---:|
 | A1 | 41 | 19 | 22 |
-| A2 | 39 | 10 | 29 |
+| A2 | 39 | 12 | 27 |
 | B1 | 16 | 1 | 15 |
-| Total | 96 | 30 | 66 |
+| Total | 96 | 32 | 64 |
 
 Les **250 autres supports** gardent leurs formats de compréhension : 188 messages, annonces ou prises de position, 18 suites de phrases ou consignes, quatre échanges essentiellement temporels, cinq descriptions ou questionnaires et 35 documents longs. Cette catégorie ne signifie pas que leur transcription est incorrecte.
 
@@ -23,6 +23,10 @@ La [reprise prioritaire](generation-scenarios-priorite-20261114.json) produit **
 
 **Neuf autres images sont préparées sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Elles attendent une vérification des personnes dans les voix de l’audio. Elles ne sont pas comptées comme scènes disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
 
+La [suite des six scènes A2](generation-scenarios-a2-suite-20261114.json) est terminée : bagage levé au porte-bagages, place cédée, chien gardé devant la pâtisserie, comparaison de deux téléphones, shampoing/dentifrice et erreur de place. **Deux liaisons** sont activées (bagage et place cédée). Les **quatre autres images sont au catalogue**, avec personnes du dialogue à vérifier avant liaison. Tous les personnages utiles sont entiers ; le premier cadrage des téléphones est écarté. Le lot garde les octets PNG natifs et ne modifie aucun texte, QCM, corrigé ou audio. [Vérification des six banques](verification-scenes-a2-suite-20261114.json).
+
+Au total, les 64 attentes comprennent **13 scènes déjà illustrées avec personnes à vérifier** et **51 sans image préparée**. Les neuf attentes du lot prioritaire restent distinctes des quatre nouvelles attentes A2.
+
 **Contrôle demandé sur les personnes :** vérifier les rôles, les destinataires de « Monsieur » et « Madame », les accords et les personnages nommés. L’apparence ou une estimation de hauteur de voix ne prouvent pas une identité de genre. Les cas non documentés restent en attente ; un enseignant peut rester hors cadre quand la source ne précise pas son genre. Les élèves figurants d’un groupe ne reçoivent pas arbitrairement la voix d’un locuteur précis. Aucune écoute humaine n’est attestée.
 
 Les personnages varient en âge, carnation, genre, coiffure et morphologie, avec fauteuil roulant, appareil auditif et vêtements variés, sans stéréotypes. Ces choix illustratifs ne sont pas des informations à déduire des audios. Le rendu suit le commit **48a753d8**, avec paysage exact **4:3**, sujets utiles entiers et octets PNG conservés sans recadrage ni conversion.
@@ -31,7 +35,7 @@ La [comparaison des six banques](verification-scenes-priorite-20261114.json) con
 
 Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les scènes activées sont liées aux audios du sélecteur. Galerie : **6 641 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
 
-Les contrôles couvrent les empreintes, les rôles documentés et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le rapport [Chromium prioritaire](scenarios-priorite-20261114-browser.json) complète celui du [premier lot](scenarios-audio-20261114-browser.json).
+Les contrôles couvrent les empreintes, les rôles documentés et l’exclusion des treize attentes illustrées, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le rapport [Chromium prioritaire](scenarios-priorite-20261114-browser.json) complète celui du [premier lot](scenarios-audio-20261114-browser.json).
 
 ```sh
 node scripts/check-tcf-association-images.mjs
@@ -39,3 +43,5 @@ node scripts/check-tcf-bank.mjs
 python3 scripts/check-delf-actif-context-review.py
 node tests/audio-replacement/scenarios-browser.mjs --priority
 ```
+
+Le [contrôle Chromium A2](scenarios-a2-suite-20261114-browser.json) charge les six images d’une association comprenant les deux nouvelles liaisons, puis les six nouvelles scènes dans la galerie. Galerie : **6 865 images**. Catalogue audio : **8 801 fichiers**, **6 634 questions**, **14 856 formats**. Aucun nouveau trio ni écoute humaine dans cette suite.

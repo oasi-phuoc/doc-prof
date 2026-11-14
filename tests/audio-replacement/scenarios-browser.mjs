@@ -5,6 +5,7 @@ import { chromium } from 'playwright'
 
 const base = 'http://127.0.0.1:5194'
 const priorityMode = process.argv.includes('--priority')
+const suiteMode = process.argv.includes('--a2-suite')
 const server = await createServer({ cacheDir: '/tmp/clairfle-scenarios-browser', server: { host: '127.0.0.1', port: 5194, strictPort: true } })
 await server.listen()
 let browser
@@ -15,7 +16,9 @@ try {
   const { createRng } = await server.ssrLoadModule('/src/math/rng.ts')
   const configs = buildTpfFamilyTestPages('tpf', 923)
   const sample = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
-  const specs = priorityMode ? [
+  const specs = suiteMode ? [
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-033-04', 'a2-035-01', 'a2-044-04-03', 'a2-045-04-01'] },
+  ] : priorityMode ? [
     { level: 'A0-A1', difficulty: 'facile', clips: ['a1-029-02', 'a1-029-05', 'a1-030-03', 'a1-032-04'] },
     { level: 'A0-A1', difficulty: 'facile', clips: ['a1-032-01', 'a1-050-04-01', 'a1-029-04', 'a1-029-05'] },
   ] : [
@@ -61,9 +64,25 @@ try {
   }
   assert.deepEqual(errors, [])
   const nativeNewPngs = new Set(results.flatMap(r => r.images).filter(p => p.includes('/delf-actif/'))).size
-  assert.equal(nativeNewPngs, 7)
-  const report = priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
-  await writeFile(report, JSON.stringify({ date: '2026-11-14', results, errors, human_audio_listening_performed: false }, null, 2) + '\n')
-  console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), errors }))
+  assert.equal(nativeNewPngs, suiteMode ? 4 : 7)
+  let galleryImages = 0
+  if (suiteMode) {
+    const suite = JSON.parse(await readFile('docs/tcf/generation-scenarios-a2-suite-20261114.json', 'utf8'))
+    await page.goto(`${base}/images`, { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'Galerie d’images', exact: true }).waitFor()
+    await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
+    await page.getByLabel('Thème', { exact: true }).selectOption('CO CFR A2')
+    for (const asset of suite.images) {
+      await page.getByLabel('Rechercher une image', { exact: true }).fill(asset.label)
+      const image = page.locator(`.gallery-card img[src="${asset.path}"]`)
+      await image.waitFor();await image.evaluate(node => node.decode())
+      assert.deepEqual(await image.evaluate(node => [node.naturalWidth, node.naturalHeight]), [1448, 1086])
+      galleryImages++
+    }
+    await page.screenshot({ path: '/tmp/scenarios-a2-suite-20261114-gallery.png' })
+  }
+  const report = suiteMode ? 'docs/tcf/scenarios-a2-suite-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
+  await writeFile(report, JSON.stringify({ date: '2026-11-14', results, gallery_images: galleryImages, errors, human_audio_listening_performed: false }, null, 2) + '\n')
+  console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), gallery_images: galleryImages, errors }))
   await context.close()
 } finally { await browser?.close(); await server.close() }

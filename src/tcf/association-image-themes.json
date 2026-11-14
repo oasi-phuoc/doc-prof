@@ -906,6 +906,68 @@
           }
         ]
       }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-04.mp3",
+      "audioSha256": "d6ad22b441806709dff2ddb9c01b4a6ca96879fc0d2dec983733cd30d3202238",
+      "transcription": "Jeune homme, je peux vous demander de m’aider ? Si je peux, volontiers ! Mon sac de voyage est lourd. Je suis petit. Vous arrivez à le mettre en haut sur le porte-bagage ? Bien sûr, sans problème.",
+      "sourceSha256": "628b48905b3c5d617133d359902731213de80ecd45e55fbc0b27a97a16f5dfea",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "bagage-rangement",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
+      "imageSha256": "e8fb4ed5853d4a8dd1dafb458b87e67c07ec1758a2b07f51ab5f44f48331c6f7",
+      "review": "Un jeune homme grand lève un sac de voyage bordeaux avec ses deux mains vers le rack ouvert au-dessus des sièges ; un homme adulte plus petit demande de l’aide à côté. Sac, mains, pieds et porte-bagages entiers, aucun numéro ou paiement.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Jeune homme désigne la personne qui aide ; je suis petit confirme le masculin grammatical de la personne demandant de l’aide.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune homme qui aide",
+            "quote": "Jeune homme, je peux vous demander de m’aider ?"
+          },
+          {
+            "role": "homme adulte plus petit",
+            "quote": "Je suis petit."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-01.mp3",
+      "audioSha256": "17e98e5d85f0eaa0731fd2d87b894623cb5a625fcfb48ca44bb5a50695fd6093",
+      "transcription": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame. Ça fait plaisir de rencontrer des jeunes comme vous ! Je laisse toujours ma place à ma grand-mère. Vous êtes mignonne !",
+      "sourceSha256": "4d6d29af13d5a177d3a790e57d2d4391493bb3c47881adbdbdbc1f303f903292",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "ceder-place",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
+      "imageSha256": "56b2bac62ba3de9a5e0731e2ef4bbd21fcba3fc3f5a211c30c836aa65dc44f84",
+      "review": "Une jeune femme se soulève du siège en proposant la place avec une main ouverte à une femme plus âgée ; siège libre et geste de gratitude visibles. Deux femmes entières, aucune parenté ou cause médicale attribuée.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Mademoiselle et une dame de mon âge documentent les deux rôles féminins ; la grand-mère citée reste une autre personne, pas une parenté attribuée à la bénéficiaire.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune femme qui cède sa place",
+            "quote": "C’est très gentil mademoiselle"
+          },
+          {
+            "role": "femme plus âgée",
+            "quote": "une dame de mon âge"
+          }
+        ]
+      }
     }
   ],
   "decoys": [
