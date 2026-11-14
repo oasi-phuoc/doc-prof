@@ -63,7 +63,7 @@
   "lint": "passed with existing repository warnings",
   "allWorkflowStagesRun": false,
   "workflowStagesAvailable": 61,
-  "build": "passed; regenerating final gallery metadata before push",
+  "build": "passed after integration of origin/main fb05edee",
   "limits": [
     "Question construction uses reviewed source clauses and agreement information, not a general French parser.",
     "Questions involving a requested word are generated when the source context supports that word.",
@@ -74,5 +74,33 @@
     "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
     "screenshot": "identical",
     "sourceRecipe": "unchanged"
+  },
+  "mergedMain": "fb05edee",
+  "secrets": "Gitleaks: no findings",
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121818,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 141871,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144018,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 187346,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 157761,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3008836,
+      "maximumGzip": 3145728
+    }
   }
 }

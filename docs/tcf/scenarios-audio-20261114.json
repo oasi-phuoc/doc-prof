@@ -6,15 +6,15 @@
   "summary": {
     "supports": 346,
     "scenario_eligible": 96,
-    "scenario_bound": 36,
-    "scenario_pending": 60,
+    "scenario_bound": 45,
+    "scenario_pending": 51,
     "prior_bound": 21,
-    "total_bound": 57,
+    "total_bound": 66,
     "decisions": {
       "keep_message_announcement_or_discourse": 188,
       "keep_temporal_exchange": 4,
-      "eligible_scene_pending": 60,
-      "eligible_bound_scene": 36,
+      "eligible_scene_pending": 51,
+      "eligible_bound_scene": 45,
       "keep_sequence": 18,
       "keep_description_or_preferences": 5,
       "keep_long_document": 35
@@ -30,9 +30,9 @@
       "A1-A2": {
         "keep_sequence": 11,
         "keep_message_announcement_or_discourse": 97,
-        "eligible_scene_pending": 27,
+        "eligible_bound_scene": 21,
         "keep_temporal_exchange": 1,
-        "eligible_bound_scene": 12,
+        "eligible_scene_pending": 18,
         "keep_description_or_preferences": 5
       },
       "A2-B1": {
@@ -44,14 +44,15 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 46,
-    "new_scene_image_uses": 26,
+    "new_original_pngs": 58,
+    "new_scene_image_uses": 35,
     "priority_scene_reuses": 0,
     "priority_prepared_scene_uses": 21,
     "suite_prepared_scene_uses": 6,
-    "prepared_scenes_awaiting_gender_confirmation": 22,
-    "remaining_without_prepared_image": 38,
-    "a1_complement_prepared_scene_uses": 13
+    "prepared_scenes_awaiting_gender_confirmation": 25,
+    "remaining_without_prepared_image": 26,
+    "a1_complement_prepared_scene_uses": 13,
+    "a2_complement_prepared_scene_uses": 12
   },
   "supports": [
     {
@@ -3453,8 +3454,25 @@
       ],
       "evidenceQuote": "notre classe organise un repas",
       "reason": "Invitation d’une enseignante au repas de classe ; ne pas attribuer de lieu ou de menu précis.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-inviter-enseignante-repas-classe.png",
+      "visualReview": "Enseignante féminine acceptant une invitation verbale d’un groupe d’élèves non attribués à une voix précise. Aucun repas, restaurant, menu, carte d’invitation ou événement déjà réalisé.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante invitée",
+            "quote": "Bonjour Madame"
+          },
+          {
+            "role": "accord féminin",
+            "quote": "Vous êtes invitée à ce repas"
+          }
+        ]
+      },
+      "imageSha256": "f3fe07c86841d813d4f321f893777318dd8619af24dc6d42ca14969989090a0a"
     },
     {
       "exercise": "tcf-delf-actif-a2-030-02",
@@ -3487,8 +3505,25 @@
       ],
       "evidenceQuote": "te faire interroger à ma place",
       "reason": "Service entre camarades avant une interrogation ; une scène doit rendre visible la substitution, pas seulement des élèves qui discutent.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-claudine-volontaire-interrogation.png",
+      "visualReview": "Claudine s’avance volontairement vers l’avant avec son cahier ouvert et un geste vers elle-même. Accord féminin prête documenté ; professeur et camarade remplacé hors cadre, groupe arrière non identifié à une voix.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Claudine nommée",
+            "quote": "Claudine, c’est très gentil à toi"
+          },
+          {
+            "role": "accord féminin de la personne prête",
+            "quote": "Je me sens prête."
+          }
+        ]
+      },
+      "imageSha256": "b4bc206f5b388cfa5593b0962a64771616ab9fb7351f29f7bae3f4778c99568f"
     },
     {
       "exercise": "tcf-delf-actif-a2-030-04",
@@ -3529,7 +3564,23 @@
       "evidenceQuote": "J’adore faire la décoration",
       "reason": "Fille aidant sa mère à décorer ; ne pas représenter seulement le dressage de la table, l’autre tâche proposée.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Deux personnes commencent à installer une guirlande sans texte ; la table reste vide, sans fête ou occasion précise inventée. La mère est documentée, le genre de Mélanie n’est pas déduit du prénom ; liaison en attente.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "mère directement appelée",
+            "quote": "Bien sûr maman."
+          }
+        ]
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-melanie-decoration-maison.png",
+      "preparedImageSha256": "cd4771c614304f6d2f84eb57074886d8051f7aa8e32c82c0cca81d457cad33cb",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-031-02",
@@ -3549,7 +3600,18 @@
       "evidenceQuote": "te laisser repartir de chez moi",
       "reason": "Remerciements et départ après un séjour chez quelqu’un ; aucune destination, heure ou nationalité inventée.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Départ du domicile après le séjour, valise entière et remerciements amicaux, sans destination, nationalité, transport ou relation amoureuse ajoutés. Genres des deux interlocuteurs non confirmés, liaison en attente.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "preparedImageSha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-031-03",
@@ -3569,7 +3631,18 @@
       "evidenceQuote": "on peut faire une pizza aux fromages",
       "reason": "Préparation projetée d’une pizza aux fromages à la maison ; ni légumes poêlés ni autre plat comme réalisation retenue.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Discussion à domicile devant une boule de pâte et deux fromages, sans pizza cuite, repas servi, légumes, viande ou cuisine professionnelle. Aucun geste de cuisson déjà réalisé. Genres des interlocuteurs à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "preparedImageSha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-complement-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-031-04",
@@ -3588,8 +3661,25 @@
       ],
       "evidenceQuote": "Je te dis non",
       "reason": "Père refusant la sortie au bowling ; ne pas montrer un adolescent déjà au bowling comme si la sortie était autorisée.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pere-refuse-sortie-bowling.png",
+      "visualReview": "Père au domicile, expression ferme, paume en geste d’arrêt et autre main vers l’intérieur. Pas de bowling ni sortie déjà autorisée ; enfant et ami Mathieu non représentés, leurs genres ne sont pas inventés.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "père",
+            "quote": "Mais papa"
+          },
+          {
+            "role": "refus explicite",
+            "quote": "Je te dis non !"
+          }
+        ]
+      },
+      "imageSha256": "79e11688f54c9b8cca827c37f6dd2078692dc853ef9bb1ab01e651e738881037"
     },
     {
       "exercise": "tcf-delf-actif-a2-032-01",
@@ -3608,8 +3698,21 @@
       ],
       "evidenceQuote": "un bouquet de roses blanches",
       "reason": "Commande de roses blanches à une fleuriste ; si le bouquet commandé est montré entier, respecter les dix-huit roses, sans date ou prix.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-commander-roses-blanches.png",
+      "visualReview": "Fleuriste féminine présentant une seule rose blanche comme échantillon de commande. Carnet vierge, aucune commande ou bouquet de dix-huit fleurs déjà livré ; le nombre reste une information audio. Interlocuteur non confirmé hors cadre.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "fleuriste féminine",
+            "quote": "Bonjour Madame"
+          }
+        ]
+      },
+      "imageSha256": "3de4c485a826b6c1075a32c320915607652cc1cb6f4f663f933146452fb6673a"
     },
     {
       "exercise": "tcf-delf-actif-a2-032-02",
@@ -3651,8 +3754,21 @@
       ],
       "evidenceQuote": "Alors en coton",
       "reason": "Conseil d’un vendeur homme sur un pull en coton pour la montagne ; ne pas représenter la laine indisponible comme achat final.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-pull-coton.png",
+      "visualReview": "Vendeur homme proposant un pull léger écru à maille fine, sans laine épaisse, étiquette de composition ou achat accompli. Le coton est donné par le texte, non prouvé par le dessin. Client non confirmé hors cadre.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "vendeur homme",
+            "quote": "Bonjour Monsieur"
+          }
+        ]
+      },
+      "imageSha256": "df847c2bf899f2c6d9e63bf16db5e4620290845f48ffee8b4b999f255c7279e6"
     },
     {
       "exercise": "tcf-delf-actif-a2-032-04",
@@ -3671,8 +3787,21 @@
       ],
       "evidenceQuote": "notre magasin est ouvert non-stop",
       "reason": "Renseignement sur l’ouverture d’un magasin ; pas de jour écrit, pas d’heure arbitraire ni d’achat déjà réalisé.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseigner-horaires-magasin.png",
+      "visualReview": "Employé homme renseignant près de l’entrée d’un magasin de cadeaux, sans jour, horaire, calendrier ou achat déjà effectué. Visiteur non confirmé hors cadre, personnages et objets utiles entiers.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "employé homme",
+            "quote": "Excusez-moi Monsieur"
+          }
+        ]
+      },
+      "imageSha256": "dda517a966f116ff6b32a15b3d4519723d24e0bca8791195555f865007b073e1"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-01",
@@ -3854,8 +3983,21 @@
       ],
       "evidenceQuote": "vos descriptions claires et riches",
       "reason": "Remerciements à une guide après une visite urbaine ; pas de monument précis ajouté.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-remercier-guide-ville.png",
+      "visualReview": "Guide féminine recevant les remerciements, main sur le cœur, plan sans nom et rue non identifiable. Aucun monument ou ville précis ajouté, pas de vente ou demande de direction. Visiteur non confirmé hors cadre.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "guide féminine",
+            "quote": "Madame, quelle belle visite !"
+          }
+        ]
+      },
+      "imageSha256": "ef04c6a0cb76cb858882cf71be55e631f6ab056c334e6dfbaed763068f688bd9"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-04",
@@ -3933,8 +4075,25 @@
       ],
       "evidenceQuote": "cette machine ne rend pas la monnaie",
       "reason": "Demande de monnaie près d’une machine ; aucun montant visible, ne pas remplacer la machine par un commerce inventé.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-monnaie-machine.png",
+      "visualReview": "Homme montrant trois pièces sans valeur ou devise écrite, dont deux semblables, près d’une machine sans fonction inventée. Aucun billet de cinq euros ou achat terminé ; demandeur hors cadre.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "homme qui propose les pièces",
+            "quote": "Pardon Monsieur."
+          },
+          {
+            "role": "destinataire masculin remercié",
+            "quote": "Merci Monsieur."
+          }
+        ]
+      },
+      "imageSha256": "14fa9e7a021af6fba33b299f0245f008099ba161137d1ac68b4a85a2b1dc06f1"
     },
     {
       "exercise": "tcf-delf-actif-a2-035-03",
@@ -4466,8 +4625,21 @@
       ],
       "evidenceQuote": "les pâtisseries du centre-ville",
       "reason": "Renseignement sur les pâtisseries ouvertes ; pas de calendrier ni supermarché ouvert à tort.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseigner-patisseries-ouvertes.png",
+      "visualReview": "Commerçant homme indiquant les alternatives dans la rue depuis une pâtisserie, sans enseigne, date, horaire, supermarché annoncé ouvert ou gâteau acheté. Les ouvertures futures restent des informations audio.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "commerçant homme",
+            "quote": "Pardon monsieur."
+          }
+        ]
+      },
+      "imageSha256": "49c46df920ec730dcc0c4b3cc4e3467301ad072f963d9d97a0fee08c95b60f77"
     },
     {
       "exercise": "tcf-delf-actif-a2-044-04-02",
