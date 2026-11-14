@@ -1,0 +1,784 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "683c7bdf11000199962235e3c79050f63e90184e",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "683c7bdf11000199962235e3c79050f63e90184e",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 16
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-026-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Justine. Je ne trouve plus mon portefeuille. Peux-tu m’aider ? Je dois acheter un ticket de bus pour rentrer chez moi ce soir à 18h00 et je n’ai pas d’argent. Tu me prêtes 1€ cet après- midi à 16h00 quand on est en salle de sport ?",
+      "source_sha256": "881566ef5a6f40a455f38f4c6262f05c7434966a697c1a22dee40f41145ab9c0",
+      "semantic_sha256": "d367f9a83fb0bd8509766e52c21327f2c0fb24f1339f3711a27945816890c619",
+      "question": {
+        "enonce": "Quel objet Justine a-t-elle perdu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son portefeuille",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son téléphone",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Ses clés",
+            "correct": false
+          }
+        ],
+        "written_model": "Son portefeuille"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
+      "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
+      "image_ids": [
+        "co834-portefeuille-dessine",
+        "co834-telephone-dessine",
+        "vocab-cles"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-cles.webp"
+      ],
+      "image_sha256": [
+        "f5d1b424e5b154a7640670426f719b673c0e6cbf474ed7fc85006b280b424110",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "79cbb4bea609117a9a282759e4fadaf0c40af478ebcf61b2de5afba31e77b04d"
+      ],
+      "reason": "Justine ne retrouve plus son portefeuille et demande de l’argent pour son ticket.",
+      "visual_review": "Un portefeuille seul sans montant, un téléphone portable seul et trois clés sur anneau ; trois objets distincts, pluriel des clés respecté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Je ne peux pas t’accompagner, j’ai un rendez-vous chez le coiffeur le 5 à 17 heures.",
+      "source_sha256": "e7582eeb911dc5568a423865e4daae8ec0136dfa8c28f8903ee2bdba230dbb93",
+      "semantic_sha256": "e0ca01138e3247b7c5ae8a9d4216d60a82525e50268fc4b49e276a4f9476a9b2",
+      "question": {
+        "enonce": "Chez quel professionnel la personne a-t-elle rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez le coiffeur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Chez le dentiste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Chez le médecin",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez le coiffeur"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-03.mp3",
+      "audio_sha256": "0b972d25008da6033f6784aa21c672e1d77a5071b21f9eb6dbbdf426a8b92764",
+      "image_ids": [
+        "co834-coiffeur-dessine",
+        "co834-dentiste-dessine",
+        "co834-medecin-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-coiffeur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+      ],
+      "image_sha256": [
+        "e5f1c179541e95446b54f2b803c5deab003fa0a467f96d4462bfb044d6ae6bd1",
+        "263259c27dc2075d7f20ff27f98718823b126a1f997cf8c3cf405a4c4ebee17a",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+      ],
+      "reason": "La personne annonce un rendez-vous chez le coiffeur.",
+      "visual_review": "Coupe de cheveux au salon, examen dentaire au fauteuil et auscultation au stéthoscope ; lieux et gestes distinguent les trois professionnels, sans prétendre représenter le locuteur."
+    },
+    {
+      "key": "tcf-delf-actif-a1-024-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut c’est Sylvain, il y a un nouveau magasin de sport au centre-ville. Tu cherches toujours un blouson pour aller faire du tennis ? On peut faire des achats à 15h00 avant de commencer nos devoirs. À 18h30, on doit terminer d’étudier. Je dois aller chez le dentiste. Pour la couleur apporte le pantalon bleu marine.",
+      "source_sha256": "622fb909180ceb5abdca2412902e07ce8208e53815501d0bf71b1c2f77d4e5d4",
+      "semantic_sha256": "b7aab94305a517dc6f3ecb9d84991e37efc910f00a16a99c933e9cae545d6eab",
+      "question": {
+        "enonce": "Chez quel professionnel Sylvain doit-il aller ensuite ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez le dentiste",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Chez le coiffeur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Chez le médecin",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez le dentiste"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-024-01.mp3",
+      "audio_sha256": "c9aace00f25adc5c2604804549a12e762ad6891fa3bd4d1be96b7de5c872ab85",
+      "image_ids": [
+        "co834-dentiste-dessine",
+        "co834-coiffeur-dessine",
+        "co834-medecin-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-coiffeur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+      ],
+      "image_sha256": [
+        "263259c27dc2075d7f20ff27f98718823b126a1f997cf8c3cf405a4c4ebee17a",
+        "e5f1c179541e95446b54f2b803c5deab003fa0a467f96d4462bfb044d6ae6bd1",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+      ],
+      "reason": "Après les devoirs Sylvain doit aller chez le dentiste.",
+      "visual_review": "Consultation dentaire, salon de coiffure et cabinet médical ; le dentiste est distinct du médecin généraliste. Scènes génériques, sans identité attribuée au patient."
+    },
+    {
+      "key": "tcf-delf-actif-a1-028-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Viviane. Ta valise est prête pour ce voyage scolaire ? Demain matin, si tu veux, pour aller à la gare, je passe te chercher en voiture avec mon père. À 7h00 devant chez toi. Le train part à 7h30. Pour nos soirées à l’hôtel apporte un jeu de cartes.",
+      "source_sha256": "068a0f853f418e256f6dc88078ef7a54f231d292c0f253791bbcecd64ccdbf62",
+      "semantic_sha256": "b5302ba7f734c5987ad20cecdb461be8b3943a748d9e783192782ebce406b3c3",
+      "question": {
+        "enonce": "Quel jeu faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un jeu de cartes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un jeu d’échecs",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un jeu de dominos",
+            "correct": false
+          }
+        ],
+        "written_model": "Un jeu de cartes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-028-01.mp3",
+      "audio_sha256": "a940d5836aabbd1eb15177adc61b06f31d0ae6e98a3cc4a97dd60fe6d7746941",
+      "image_ids": [
+        "co306-jeu-cartes-dessine",
+        "vocab-echecs",
+        "qcm-a1-jeu-dominos"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-echecs.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png"
+      ],
+      "image_sha256": [
+        "feab05dbf3eae3394474b48168a26e58ce989bbef983ce5c99462011559f676c",
+        "057afc80cda6cdc3030db61be052d7ad3178a030510f46e2ed282a86f3872971",
+        "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a"
+      ],
+      "reason": "Viviane demande un jeu de cartes pour les soirées à l’hôtel du voyage scolaire.",
+      "visual_review": "Paquet et cartes à enseignes, échiquier à pièces et boîte de dominos à points ; trois jeux complets reconnaissables, sans compter seulement une carte ou une pièce."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-05-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Clara, quand tu viens chez moi en Savoie pendant les vacances d’hiver, apporte ton jeu de cartes et ta clé USB avec de la musique. Carlos lui, apporte ses DVD pour nos soirées cinéma. On va jouer aussi avec mon nouveau jeu vidéo. On va passer de super vacances.",
+      "source_sha256": "e2f6727a56b7c3ee6e275a3499b6d6e03e9226c8cf870cbcb09b4068dab2e44e",
+      "semantic_sha256": "30ab9b60de55e12f9ef6ce40b1e0f151a8ac4eee86bccdc4c2ecf4c3b156c5a9",
+      "question": {
+        "enonce": "Quel jeu doit-elle apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un jeu de cartes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un jeu d’échecs",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un jeu de dominos",
+            "correct": false
+          }
+        ],
+        "written_model": "Un jeu de cartes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-05-01.mp3",
+      "audio_sha256": "ee2fbc9175429a3711d29794e46a38372dcc54dee2d34c7e05930c0144af1240",
+      "image_ids": [
+        "co306-jeu-cartes-dessine",
+        "vocab-echecs",
+        "qcm-a1-jeu-dominos"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-echecs.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png"
+      ],
+      "image_sha256": [
+        "feab05dbf3eae3394474b48168a26e58ce989bbef983ce5c99462011559f676c",
+        "057afc80cda6cdc3030db61be052d7ad3178a030510f46e2ed282a86f3872971",
+        "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a"
+      ],
+      "reason": "Clara doit apporter son jeu de cartes pour les vacances d’hiver en Savoie.",
+      "visual_review": "Cartes, échecs et dominos distincts sur fond crème ; le jeu de dominos généré est réutilisé après lecture de ce second support."
+    },
+    {
+      "key": "tcf-delf-actif-a1-001-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Manon. Je t’invite à un pique-nique à la campagne. Qu’en dis-tu ?",
+      "source_sha256": "533f9e6da2db33fe7244fff38af57b43c2372e1e38b60bc2e74813d69ff08a76",
+      "semantic_sha256": "1d392030eb2a1b01e58115f0f796065fa9b8d8a25e5b5e3bbff56dbf6f175d33",
+      "question": {
+        "enonce": "À quelle activité Manon invite-t-elle son ami ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À un pique-nique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À une randonnée",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À une baignade",
+            "correct": false
+          }
+        ],
+        "written_model": "À un pique-nique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-02.mp3",
+      "audio_sha256": "0398e8a89afa529950f872cd827cca18132a0375de09dd8f2261803358a53913",
+      "image_ids": [
+        "retained-20261107-112b838e9f30",
+        "vocab-randonnee",
+        "co306-baignade-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/pique-nique.webp",
+        "/lib/images/tcf/qcm-audit/vocab-randonnee.webp",
+        "/lib/images/tcf/qcm-audit/co306-baignade-dessinee.webp"
+      ],
+      "image_sha256": [
+        "bc85c3169aa61640949235d035e43618e0d9aa1377531ccd98c47c36d979f020",
+        "4f2ef4747a6bbb84139138a5381117fee4104ccac312a8bf1312670560a9d530",
+        "a51bf42655b59fe6d0ba1fbadaf73563d62ebe6138018feab20b010c968f3ec8"
+      ],
+      "reason": "Manon invite son ami à un pique-nique à la campagne.",
+      "visual_review": "Repas sur une nappe au bord de l’eau dans la nature, marche avec sacs sur sentier et personnes dans l’eau ; activités distinctes, sans ajouter une identité à Manon."
+    },
+    {
+      "key": "tcf-delf-actif-a1-009-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, j’ai deux billets pour le concert d’Amir. On va voir son spectacle samedi ? Tu veux venir avec moi ? Pour y aller on prend le bus à 18h00 heures et pour rentrer mon père vient nous chercher avec sa voiture. Jeudi à l’entraînement de volley on parle des détails.",
+      "source_sha256": "f7d7dabbe90665dade51c32c96d62ec17c0b80798365c4798a11165e649dd2c9",
+      "semantic_sha256": "6e372816481131324b7190f924cae72a547df1bef3f38658cb8f1d57c3f75135",
+      "question": {
+        "enonce": "Quel spectacle est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un concert",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un film",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une pièce de théâtre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un concert"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-009-01.mp3",
+      "audio_sha256": "a6f78eb801f472a611c50bb274d7857eecaad05016d29f7fc291f6ca5058dff3",
+      "image_ids": [
+        "co834-concert-dessine",
+        "co834-seance-cinema-dessinee",
+        "d8953c7ddfe7"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp"
+      ],
+      "image_sha256": [
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+        "ca3bc5f49aec1ce39ffbdd1cf53d19e35e07100013022d90498a82e59f8f8fca"
+      ],
+      "reason": "Le message propose d’aller au concert d’Amir.",
+      "visual_review": "Musique jouée devant un public, projection sur écran de cinéma et acteurs en dialogue sur scène ; trois spectacles distincts. Le concert illustre le type de sortie et ne prétend pas être un portrait du chanteur nommé."
+    },
+    {
+      "key": "tcf-delf-actif-a1-001-05#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est pour te rappeler notre rendez-vous de demain pour le concert de Pokora.",
+      "source_sha256": "9c1e5fd3f6129017c572400424276d0471b1cdb42b6b15f201d8a3c55021ef38",
+      "semantic_sha256": "d2ea4740f1c4c4091837c3aae3f4d5b816300ada7801a1b2736374794f748773",
+      "question": {
+        "enonce": "Pour quelle sortie le rendez-vous est-il prévu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un concert",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un match",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un film",
+            "correct": false
+          }
+        ],
+        "written_model": "Un concert"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-05.mp3",
+      "audio_sha256": "2da35a0d69fe835e2c07e8fc11b0bc8f2afb620f49eb4f92f7598ec0c3dcc4d7",
+      "image_ids": [
+        "co834-concert-dessine",
+        "qcm-a1-match-stade",
+        "co834-seance-cinema-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+      ],
+      "image_sha256": [
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924",
+        "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+      ],
+      "reason": "Le message rappelle le rendez-vous pour le concert de Pokora.",
+      "visual_review": "Concert sur scène, match vu dans le stade et film au cinéma ; le match télévisé est écarté parce que la question porte sur une sortie. Aucune identité de chanteur n’est déduite de la scène générique."
+    },
+    {
+      "key": "tcf-delf-actif-a1-001-06#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Xavier, ce soir tu veux venir avec moi et ma famille voir les feux d’artifice sur la mer ?",
+      "source_sha256": "465e73f2993563c73082531daf0aef4d3bd6b763359deac78c9fef38ae3a0da9",
+      "semantic_sha256": "84d8d73e8ac30ce4c3e2e7d69e5be60188810e5550a27ef769a23b713dee96b3",
+      "question": {
+        "enonce": "Quel spectacle est proposé à Xavier ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des feux d’artifice",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un spectacle de danse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un concert",
+            "correct": false
+          }
+        ],
+        "written_model": "Des feux d’artifice"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-06.mp3",
+      "audio_sha256": "14972324d813d83bea8e5758a3bdc09e57ade77f6190b3ebc1d3def9b21bd460",
+      "image_ids": [
+        "qcm-a1-feux-artifice-mer",
+        "co834-spectacle-danse-dessine",
+        "co834-concert-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-feux-artifice-mer.png",
+        "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp"
+      ],
+      "image_sha256": [
+        "879d3734ff53e27abb8270dfae17834004df5c20dcd0e84abc8defdef157c58d",
+        "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0",
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+      ],
+      "reason": "Xavier est invité aux feux d’artifice sur la mer.",
+      "visual_review": "Gerbes de feux d’artifice sur la mer, danseurs en spectacle et concert joué ; le lieu marin effectivement annoncé est conservé, sans date écrite."
+    },
+    {
+      "key": "tcf-delf-actif-a1-010-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut l’espagnol, c’est Adam ! Mardi c’est le 14 juillet, les français sont en fête. On va voir les feux d’artifice ? Je viens te chercher l’après-midi à la gare. Le soir tu dors chez moi et tu rentres mercredi. Prends un sac à dos pour être plus libre.",
+      "source_sha256": "d3634f92935a48fbdc56b847f78c07605c006fa7ddd045115213f8eec0dc73e4",
+      "semantic_sha256": "96c8e4f362d478732663fa50130992352a5529f8aee37370eb34e623daf55fd0",
+      "question": {
+        "enonce": "Quel spectacle Adam propose-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des feux d’artifice",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un concert",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un match",
+            "correct": false
+          }
+        ],
+        "written_model": "Des feux d’artifice"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-010-01.mp3",
+      "audio_sha256": "ab41b273a4d918e9a636db74b03fbbba537ec07013ae2df2357142985642ce47",
+      "image_ids": [
+        "qcm-a1-feux-artifice-mer",
+        "co834-concert-dessine",
+        "qcm-a1-match-stade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-feux-artifice-mer.png",
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png"
+      ],
+      "image_sha256": [
+        "879d3734ff53e27abb8270dfae17834004df5c20dcd0e84abc8defdef157c58d",
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924",
+        "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+      ],
+      "reason": "Adam propose de voir les feux d’artifice pendant la fête nationale.",
+      "visual_review": "Feux d’artifice, concert et match direct ; le paysage marin est une illustration générique du spectacle, sans affirmer que le message précise un lieu. Ni date ni mois en image."
+    },
+    {
+      "key": "tcf-delf-actif-a1-009-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, j’ai deux billets pour le concert d’Amir. On va voir son spectacle samedi ? Tu veux venir avec moi ? Pour y aller on prend le bus à 18h00 heures et pour rentrer mon père vient nous chercher avec sa voiture. Jeudi à l’entraînement de volley on parle des détails.",
+      "source_sha256": "f7d7dabbe90665dade51c32c96d62ec17c0b80798365c4798a11165e649dd2c9",
+      "semantic_sha256": "37a7fbf2fe43f5ede27662d434cf3e0541c558eb110d50e314d105498c27e3f0",
+      "question": {
+        "enonce": "Combien de billets la personne possède-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Deux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Trois",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Quatre",
+            "correct": false
+          }
+        ],
+        "written_model": "Deux"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-009-01.mp3",
+      "audio_sha256": "a6f78eb801f472a611c50bb274d7857eecaad05016d29f7fc291f6ca5058dff3",
+      "image_ids": [
+        "qcm-billets-2",
+        "qcm-billets-3",
+        "qcm-billets-4"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+        "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+        "/lib/images/tcf/qcm-audit/qcm-billets-4.png"
+      ],
+      "image_sha256": [
+        "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115",
+        "9d5f75e2b278eed8cdd673b39714275841c696f943e2bd582d4c7135fa881c37",
+        "d29e508df5d675cb26077165b4d1ec4976ae7ba12de798473d88f717884f0d57"
+      ],
+      "reason": "La personne dit posséder deux billets pour le concert.",
+      "visual_review": "Groupes de deux, trois et quatre coupons entiers sans chevauchement, sans prix ni date ; quantités recomptées individuellement."
+    },
+    {
+      "key": "tcf-delf-actif-a1-022-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut. Un nouveau groupe rock passe dans notre ville. On va assister à leur concert ? J’ai deux billets. Il faut être au stade à 19h30. Après le concert mes parents viennent nous chercher. Fais attention il va faire froid. Tu peux dormir chez moi mais apporte le nécessaire.",
+      "source_sha256": "d722a9c148654dfc200b92471e9d3d54ad4366d5bdab5f3564d941713e28bc7f",
+      "semantic_sha256": "37a7fbf2fe43f5ede27662d434cf3e0541c558eb110d50e314d105498c27e3f0",
+      "question": {
+        "enonce": "Combien de billets la personne possède-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Deux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Trois",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Quatre",
+            "correct": false
+          }
+        ],
+        "written_model": "Deux"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-022-01.mp3",
+      "audio_sha256": "c27cf624334085f1126a8ae70d674c13f28e034a2c30d81fab85ab484cebafd7",
+      "image_ids": [
+        "qcm-billets-2",
+        "qcm-billets-3",
+        "qcm-billets-4"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+        "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+        "/lib/images/tcf/qcm-audit/qcm-billets-4.png"
+      ],
+      "image_sha256": [
+        "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115",
+        "9d5f75e2b278eed8cdd673b39714275841c696f943e2bd582d4c7135fa881c37",
+        "d29e508df5d675cb26077165b4d1ec4976ae7ba12de798473d88f717884f0d57"
+      ],
+      "reason": "Le message annonce deux billets pour le concert du groupe rock.",
+      "visual_review": "Deux, trois et quatre billets séparés ; aucun score, prix, horaire ou détail d’événement écrit. La quantité est le seul objet de la question."
+    },
+    {
+      "key": "tcf-delf-actif-a2-033-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Je voudrais un renseignement. Nous sommes 10 et nous voulons aller à Lyon. Y a-t-il une réduction ? Vous avez moins de 15 ans ? Oui. Vous avez 2 billets gratuits alors. Je vous remercie, je reviens acheter les billets.",
+      "source_sha256": "509c1dce455e5fcce4295d9d2ef6d358d1c73cae305fbf547a62ae51de55e24b",
+      "semantic_sha256": "8f713c3941fc9b3c00ebde419b33c9446bdfb690b1a22e00400374d6500965dd",
+      "question": {
+        "enonce": "Combien de billets gratuits obtiennent-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Deux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Trois",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Quatre",
+            "correct": false
+          }
+        ],
+        "written_model": "Deux"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-01.mp3",
+      "audio_sha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec",
+      "image_ids": [
+        "qcm-billets-2",
+        "qcm-billets-3",
+        "qcm-billets-4"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+        "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+        "/lib/images/tcf/qcm-audit/qcm-billets-4.png"
+      ],
+      "image_sha256": [
+        "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115",
+        "9d5f75e2b278eed8cdd673b39714275841c696f943e2bd582d4c7135fa881c37",
+        "d29e508df5d675cb26077165b4d1ec4976ae7ba12de798473d88f717884f0d57"
+      ],
+      "reason": "Le préposé accorde deux billets gratuits au groupe de voyageurs.",
+      "visual_review": "Deux, trois et quatre billets neutres entiers ; aucun prix ni tarif zéro affiché, aucune destination ou mode de transport inventé. La gratuité vient de la question et de l’audio ; l’image répond seulement au nombre demandé."
+    },
+    {
+      "key": "tcf-delf-actif-a1-029-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ? Attends je cherche dans mon sac. Désolée … j’oublie toujours ton cahier.",
+      "source_sha256": "05bff6d5991d36ff0e7383bc2dd14365d5ba77efbbf8b29c3625e171d15da155",
+      "semantic_sha256": "0f92db0ba24916c5032fbf81972ad3e0996a462427d497c72eee8a214464537b",
+      "question": {
+        "enonce": "Quel objet Vanessa demande-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son cahier",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son dictionnaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sa calculatrice",
+            "correct": false
+          }
+        ],
+        "written_model": "Son cahier"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3",
+      "audio_sha256": "3b2affb2af76de276cd7ac0e9edf9fbc201808417cdb0810ba4fafdeed7760da",
+      "image_ids": [
+        "co306-cahier-dessine",
+        "co306-dictionnaire-dessine",
+        "co306-calculatrice-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp"
+      ],
+      "image_sha256": [
+        "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97",
+        "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1",
+        "1837752fe613b91d6070f982dba8d8b5eb5a4ef0aa2b695b73ed8035d976981b"
+      ],
+      "reason": "Vanessa demande son cahier de sciences ; Zara le cherche dans son sac.",
+      "visual_review": "Cahier à spirale, dictionnaire ouvert avec index et colonnes, calculatrice à écran vide ; objets distincts sans imposer une langue à la question."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-01-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tchao Anton , c’est Alexandre. Jeudi on a une interrogation. On révise ensemble ? Mercredi à la sortie du collège on va manger un sandwich à la boulangerie près de la bibliothèque. Après on va à la bibliothèque où on peut travailler jusqu’à 18h00. Pense à prendre ton cahier à spirale et moi j’apporte mon ordinateur.",
+      "source_sha256": "e3f12f074ceadf3550957b97a474b0f9ba41989f02a8924d144407efdf5d888f",
+      "semantic_sha256": "c58ca60bd3ad3d850e2b6d3fd03cba638a05310fa5f7837f17229ac14ceaf702",
+      "question": {
+        "enonce": "Quel objet le destinataire doit-il prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son cahier à spirale",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son ordinateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son dictionnaire",
+            "correct": false
+          }
+        ],
+        "written_model": "Son cahier à spirale"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-01-01.mp3",
+      "audio_sha256": "f351fd6715c6dca42b7704e10ec6252ca5bb1485daa3bfc5c3fee44198472dc5",
+      "image_ids": [
+        "co306-cahier-dessine",
+        "vocab-ordinateur-portable",
+        "co306-dictionnaire-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp"
+      ],
+      "image_sha256": [
+        "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1"
+      ],
+      "reason": "Alexandre demande à Anton de prendre son cahier à spirale ; lui apporte l’ordinateur.",
+      "visual_review": "Spirale du cahier visible, ordinateur portable entier et dictionnaire à index. Le PC de bureau est écarté au profit d’un objet transportable ; le cahier reste la bonne réponse."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-04-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tu peux me prêter ton compas s’il te plaît ? Encore ? Allez, sois sympa ! Bon d’accord, mais n’oublie plus tes affaires.",
+      "source_sha256": "70bd4f2018b4744c801c099adae9dacc7b21d499cc0de82b17ca29a1110769b4",
+      "semantic_sha256": "7d9011d756892a240f21c8860d1bf38fc02a3e542aa069bb6750bae98f9e8eab",
+      "question": {
+        "enonce": "Quel objet l’élève demande-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un compas",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une règle",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une équerre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un compas"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
+      "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
+      "image_ids": [
+        "extension573-compas-geometrie",
+        "vocab-regle",
+        "extension573-equerre-geometrie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-compas-geometrie.png",
+        "/lib/images/tcf/qcm-audit/vocab-regle.webp",
+        "/lib/images/tcf/qcm-audit/extension573-equerre-geometrie.png"
+      ],
+      "image_sha256": [
+        "866ed2517e87c5cf8cb7f870a61463e970e9c22339d2755d2e943351c121888f",
+        "a52668a93f30836d33ce51d0989c5bdae30e89c33724d8f886b8a6b0095e5aaa",
+        "87b06eb529ac62b6bbf3eee928d58b9c62a33d222769b2602e8dbeb21e92ff86"
+      ],
+      "reason": "L’élève demande à emprunter un compas.",
+      "visual_review": "Compas de géométrie à pointe et mine, règle droite et équerre à angle droit ; aucune boussole ou autre sens de compas."
+    }
+  ]
+}

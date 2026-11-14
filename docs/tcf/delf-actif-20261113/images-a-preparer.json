@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 236,
+      "active_reviewed_trio": 252,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 510,
+      "candidate_visual_review": 494,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 122,
+        "active_reviewed_trio": 137,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 140,
+        "candidate_visual_review": 125,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 233,
-        "active_reviewed_trio": 105,
+        "candidate_visual_review": 232,
+        "active_reviewed_trio": 106,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -3397,8 +3397,8 @@
       "semantic_sha256": "1d392030eb2a1b01e58115f0f796065fa9b8d8a25e5b5e3bbff56dbf6f175d33",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-02.mp3",
       "audio_sha256": "0398e8a89afa529950f872cd827cca18132a0375de09dd8f2261803358a53913",
-      "status": "candidate_visual_review",
-      "reason": "Trois activités distinctes ; représenter le repas dehors, la marche équipée et la baignade, sans remplacer l’activité par le seul paysage.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -3425,8 +3425,24 @@
           "brief": "Représenter entièrement « À une baignade » pour « À quelle activité Manon invite-t-elle son ami ? ». Vérifier la transcription du support tcf-delf-actif-a1-001-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois activités distinctes ; représenter le repas dehors, la marche équipée et la baignade, sans remplacer l’activité par le seul paysage."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/pique-nique.webp",
+          "sha256": "bc85c3169aa61640949235d035e43618e0d9aa1377531ccd98c47c36d979f020"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-randonnee.webp",
+          "sha256": "4f2ef4747a6bbb84139138a5381117fee4104ccac312a8bf1312670560a9d530"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-baignade-dessinee.webp",
+          "sha256": "a51bf42655b59fe6d0ba1fbadaf73563d62ebe6138018feab20b010c968f3ec8"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -3444,6 +3460,12 @@
         "evidence_quote": "pique-nique à la campagne",
         "semantic_sha256": "1d392030eb2a1b01e58115f0f796065fa9b8d8a25e5b5e3bbff56dbf6f175d33",
         "note": "Trois activités distinctes ; représenter le repas dehors, la marche équipée et la baignade, sans remplacer l’activité par le seul paysage."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Manon invite son ami à un pique-nique à la campagne.",
+        "note": "Repas sur une nappe au bord de l’eau dans la nature, marche avec sacs sur sentier et personnes dans l’eau ; activités distinctes, sans ajouter une identité à Manon."
       }
     },
     {
@@ -3808,8 +3830,8 @@
       "semantic_sha256": "d2ea4740f1c4c4091837c3aae3f4d5b816300ada7801a1b2736374794f748773",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-05.mp3",
       "audio_sha256": "2da35a0d69fe835e2c07e8fc11b0bc8f2afb620f49eb4f92f7598ec0c3dcc4d7",
-      "status": "candidate_visual_review",
-      "reason": "Concert, match et projection ; le portrait ou le nom de Pokora n’est pas nécessaire pour distinguer les types de sortie.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -3843,8 +3865,24 @@
           "brief": "Représenter entièrement « Un film » pour « Pour quelle sortie le rendez-vous est-il prévu ? ». Vérifier la transcription du support tcf-delf-actif-a1-001-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Concert, match et projection ; le portrait ou le nom de Pokora n’est pas nécessaire pour distinguer les types de sortie."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -3862,6 +3900,12 @@
         "evidence_quote": "concert de Pokora",
         "semantic_sha256": "d2ea4740f1c4c4091837c3aae3f4d5b816300ada7801a1b2736374794f748773",
         "note": "Concert, match et projection ; le portrait ou le nom de Pokora n’est pas nécessaire pour distinguer les types de sortie."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Le message rappelle le rendez-vous pour le concert de Pokora.",
+        "note": "Concert sur scène, match vu dans le stade et film au cinéma ; le match télévisé est écarté parce que la question porte sur une sortie. Aucune identité de chanteur n’est déduite de la scène générique."
       }
     },
     {
@@ -3935,8 +3979,8 @@
       "semantic_sha256": "84d8d73e8ac30ce4c3e2e7d69e5be60188810e5550a27ef769a23b713dee96b3",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-06.mp3",
       "audio_sha256": "14972324d813d83bea8e5758a3bdc09e57ade77f6190b3ebc1d3def9b21bd460",
-      "status": "candidate_visual_review",
-      "reason": "Feux au-dessus de la mer, danse et concert ; ne pas confondre le spectacle avec la destination.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -3977,8 +4021,24 @@
           "brief": "Représenter entièrement « Un concert » pour « Quel spectacle est proposé à Xavier ? ». Vérifier la transcription du support tcf-delf-actif-a1-001-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Feux au-dessus de la mer, danse et concert ; ne pas confondre le spectacle avec la destination."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-feux-artifice-mer.png",
+          "sha256": "879d3734ff53e27abb8270dfae17834004df5c20dcd0e84abc8defdef157c58d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -3996,6 +4056,12 @@
         "evidence_quote": "feux d’artifice sur la mer",
         "semantic_sha256": "84d8d73e8ac30ce4c3e2e7d69e5be60188810e5550a27ef769a23b713dee96b3",
         "note": "Feux au-dessus de la mer, danse et concert ; ne pas confondre le spectacle avec la destination."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Xavier est invité aux feux d’artifice sur la mer.",
+        "note": "Gerbes de feux d’artifice sur la mer, danseurs en spectacle et concert joué ; le lieu marin effectivement annoncé est conservé, sans date écrite."
       }
     },
     {
@@ -6597,8 +6663,8 @@
       "semantic_sha256": "6e372816481131324b7190f924cae72a547df1bef3f38658cb8f1d57c3f75135",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-009-01.mp3",
       "audio_sha256": "a6f78eb801f472a611c50bb274d7857eecaad05016d29f7fc291f6ca5058dff3",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -6639,8 +6705,24 @@
           "brief": "Représenter entièrement « Une pièce de théâtre » pour « Quel spectacle est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-009-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+          "sha256": "ca3bc5f49aec1ce39ffbdd1cf53d19e35e07100013022d90498a82e59f8f8fca"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -6651,7 +6733,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Le message propose d’aller au concert d’Amir.",
+        "note": "Musique jouée devant un public, projection sur écran de cinéma et acteurs en dialogue sur scène ; trois spectacles distincts. Le concert illustre le type de sortie et ne prétend pas être un portrait du chanteur nommé."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-009-01#2",
@@ -6664,8 +6752,8 @@
       "semantic_sha256": "37a7fbf2fe43f5ede27662d434cf3e0541c558eb110d50e314d105498c27e3f0",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-009-01.mp3",
       "audio_sha256": "a6f78eb801f472a611c50bb274d7857eecaad05016d29f7fc291f6ca5058dff3",
-      "status": "candidate_visual_review",
-      "reason": "Deux, trois et quatre billets entiers et identiques par choix ; sans prix, date, jour ou mois.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -6692,8 +6780,24 @@
           "brief": "Représenter entièrement « Quatre » pour « Combien de billets la personne possède-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-009-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Deux, trois et quatre billets entiers et identiques par choix ; sans prix, date, jour ou mois."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+          "sha256": "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+          "sha256": "9d5f75e2b278eed8cdd673b39714275841c696f943e2bd582d4c7135fa881c37"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-4.png",
+          "sha256": "d29e508df5d675cb26077165b4d1ec4976ae7ba12de798473d88f717884f0d57"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -6711,6 +6815,12 @@
         "evidence_quote": "deux billets",
         "semantic_sha256": "37a7fbf2fe43f5ede27662d434cf3e0541c558eb110d50e314d105498c27e3f0",
         "note": "Deux, trois et quatre billets entiers et identiques par choix ; sans prix, date, jour ou mois."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "La personne dit posséder deux billets pour le concert.",
+        "note": "Groupes de deux, trois et quatre coupons entiers sans chevauchement, sans prix ni date ; quantités recomptées individuellement."
       }
     },
     {
@@ -6985,8 +7095,8 @@
       "semantic_sha256": "96c8e4f362d478732663fa50130992352a5529f8aee37370eb34e623daf55fd0",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-010-01.mp3",
       "audio_sha256": "ab41b273a4d918e9a636db74b03fbbba537ec07013ae2df2357142985642ce47",
-      "status": "candidate_visual_review",
-      "reason": "Trois spectacles distincts ; pas de date nationale dessinée ni de portrait d’Adam.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -7020,8 +7130,24 @@
           "brief": "Représenter entièrement « Un match » pour « Quel spectacle Adam propose-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois spectacles distincts ; pas de date nationale dessinée ni de portrait d’Adam."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-feux-artifice-mer.png",
+          "sha256": "879d3734ff53e27abb8270dfae17834004df5c20dcd0e84abc8defdef157c58d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -7039,6 +7165,12 @@
         "evidence_quote": "On va voir les feux d’artifice",
         "semantic_sha256": "96c8e4f362d478732663fa50130992352a5529f8aee37370eb34e623daf55fd0",
         "note": "Trois spectacles distincts ; pas de date nationale dessinée ni de portrait d’Adam."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Adam propose de voir les feux d’artifice pendant la fête nationale.",
+        "note": "Feux d’artifice, concert et match direct ; le paysage marin est une illustration générique du spectacle, sans affirmer que le message précise un lieu. Ni date ni mois en image."
       }
     },
     {
@@ -10261,8 +10393,8 @@
       "semantic_sha256": "e0ca01138e3247b7c5ae8a9d4216d60a82525e50268fc4b49e276a4f9476a9b2",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-03.mp3",
       "audio_sha256": "0b972d25008da6033f6784aa21c672e1d77a5071b21f9eb6dbbdf426a8b92764",
-      "status": "candidate_visual_review",
-      "reason": "Coiffure, soins dentaires et consultation médicale en contexte professionnel ; ne pas se fier seulement aux vêtements.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -10296,8 +10428,24 @@
           "brief": "Représenter entièrement « Chez le médecin » pour « Chez quel professionnel la personne a-t-elle rendez-vous ? ». Vérifier la transcription du support tcf-delf-actif-a1-018-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coiffure, soins dentaires et consultation médicale en contexte professionnel ; ne pas se fier seulement aux vêtements."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-coiffeur-dessine.webp",
+          "sha256": "e5f1c179541e95446b54f2b803c5deab003fa0a467f96d4462bfb044d6ae6bd1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "sha256": "263259c27dc2075d7f20ff27f98718823b126a1f997cf8c3cf405a4c4ebee17a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -10315,6 +10463,12 @@
         "evidence_quote": "chez le coiffeur",
         "semantic_sha256": "e0ca01138e3247b7c5ae8a9d4216d60a82525e50268fc4b49e276a4f9476a9b2",
         "note": "Coiffure, soins dentaires et consultation médicale en contexte professionnel ; ne pas se fier seulement aux vêtements."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "La personne annonce un rendez-vous chez le coiffeur.",
+        "note": "Coupe de cheveux au salon, examen dentaire au fauteuil et auscultation au stéthoscope ; lieux et gestes distinguent les trois professionnels, sans prétendre représenter le locuteur."
       }
     },
     {
@@ -12620,8 +12774,8 @@
       "semantic_sha256": "37a7fbf2fe43f5ede27662d434cf3e0541c558eb110d50e314d105498c27e3f0",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-022-01.mp3",
       "audio_sha256": "c27cf624334085f1126a8ae70d674c13f28e034a2c30d81fab85ab484cebafd7",
-      "status": "candidate_visual_review",
-      "reason": "Deux, trois et quatre billets sans prix ni dates ; conserver le même modèle et des groupes entiers.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -12648,8 +12802,24 @@
           "brief": "Représenter entièrement « Quatre » pour « Combien de billets la personne possède-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-022-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Deux, trois et quatre billets sans prix ni dates ; conserver le même modèle et des groupes entiers."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+          "sha256": "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+          "sha256": "9d5f75e2b278eed8cdd673b39714275841c696f943e2bd582d4c7135fa881c37"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-4.png",
+          "sha256": "d29e508df5d675cb26077165b4d1ec4976ae7ba12de798473d88f717884f0d57"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12667,6 +12837,12 @@
         "evidence_quote": "J’ai deux billets",
         "semantic_sha256": "37a7fbf2fe43f5ede27662d434cf3e0541c558eb110d50e314d105498c27e3f0",
         "note": "Deux, trois et quatre billets sans prix ni dates ; conserver le même modèle et des groupes entiers."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Le message annonce deux billets pour le concert du groupe rock.",
+        "note": "Deux, trois et quatre billets séparés ; aucun score, prix, horaire ou détail d’événement écrit. La quantité est le seul objet de la question."
       }
     },
     {
@@ -13588,8 +13764,8 @@
       "semantic_sha256": "b7aab94305a517dc6f3ecb9d84991e37efc910f00a16a99c933e9cae545d6eab",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-024-01.mp3",
       "audio_sha256": "c9aace00f25adc5c2604804549a12e762ad6891fa3bd4d1be96b7de5c872ab85",
-      "status": "candidate_visual_review",
-      "reason": "Dentiste, coiffeur et médecin dans leurs activités ; le rendez-vous suit les devoirs, pas un achat de matériel sportif.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -13623,8 +13799,24 @@
           "brief": "Représenter entièrement « Chez le médecin » pour « Chez quel professionnel Sylvain doit-il aller ensuite ? ». Vérifier la transcription du support tcf-delf-actif-a1-024-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Dentiste, coiffeur et médecin dans leurs activités ; le rendez-vous suit les devoirs, pas un achat de matériel sportif."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "sha256": "263259c27dc2075d7f20ff27f98718823b126a1f997cf8c3cf405a4c4ebee17a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-coiffeur-dessine.webp",
+          "sha256": "e5f1c179541e95446b54f2b803c5deab003fa0a467f96d4462bfb044d6ae6bd1"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -13642,6 +13834,12 @@
         "evidence_quote": "aller chez le dentiste",
         "semantic_sha256": "b7aab94305a517dc6f3ecb9d84991e37efc910f00a16a99c933e9cae545d6eab",
         "note": "Dentiste, coiffeur et médecin dans leurs activités ; le rendez-vous suit les devoirs, pas un achat de matériel sportif."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Après les devoirs Sylvain doit aller chez le dentiste.",
+        "note": "Consultation dentaire, salon de coiffure et cabinet médical ; le dentiste est distinct du médecin généraliste. Scènes génériques, sans identité attribuée au patient."
       }
     },
     {
@@ -14012,8 +14210,8 @@
       "semantic_sha256": "d367f9a83fb0bd8509766e52c21327f2c0fb24f1339f3711a27945816890c619",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
       "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
-      "status": "candidate_visual_review",
-      "reason": "Portefeuille, téléphone et trousseau de clés entiers ; le portefeuille est l’objet perdu, pas le billet à acheter.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -14040,8 +14238,24 @@
           "brief": "Représenter entièrement « Ses clés » pour « Quel objet Justine a-t-elle perdu ? ». Vérifier la transcription du support tcf-delf-actif-a1-026-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Portefeuille, téléphone et trousseau de clés entiers ; le portefeuille est l’objet perdu, pas le billet à acheter."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-portefeuille-dessine.webp",
+          "sha256": "f5d1b424e5b154a7640670426f719b673c0e6cbf474ed7fc85006b280b424110"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+          "sha256": "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cles.webp",
+          "sha256": "79cbb4bea609117a9a282759e4fadaf0c40af478ebcf61b2de5afba31e77b04d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -14059,6 +14273,12 @@
         "evidence_quote": "Je ne trouve plus mon portefeuille",
         "semantic_sha256": "d367f9a83fb0bd8509766e52c21327f2c0fb24f1339f3711a27945816890c619",
         "note": "Portefeuille, téléphone et trousseau de clés entiers ; le portefeuille est l’objet perdu, pas le billet à acheter."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Justine ne retrouve plus son portefeuille et demande de l’argent pour son ticket.",
+        "note": "Un portefeuille seul sans montant, un téléphone portable seul et trois clés sur anneau ; trois objets distincts, pluriel des clés respecté."
       }
     },
     {
@@ -15026,8 +15246,8 @@
       "semantic_sha256": "b5302ba7f734c5987ad20cecdb461be8b3943a748d9e783192782ebce406b3c3",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-028-01.mp3",
       "audio_sha256": "a940d5836aabbd1eb15177adc61b06f31d0ae6e98a3cc4a97dd60fe6d7746941",
-      "status": "candidate_visual_review",
-      "reason": "Jeu de cartes, échiquier avec pièces et dominos ; sans carte portant une date ou un prix.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -15056,13 +15276,36 @@
           "id": "c",
           "label": "Un jeu de dominos",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png",
+              "sha256": "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a",
+              "label": "Un jeu de dominos",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6d5d6c644b4e1eb0",
           "brief": "Représenter entièrement « Un jeu de dominos » pour « Quel jeu faut-il apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-028-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Jeu de cartes, échiquier avec pièces et dominos ; sans carte portant une date ou un prix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+          "sha256": "feab05dbf3eae3394474b48168a26e58ce989bbef983ce5c99462011559f676c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-echecs.webp",
+          "sha256": "057afc80cda6cdc3030db61be052d7ad3178a030510f46e2ed282a86f3872971"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png",
+          "sha256": "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -15080,6 +15323,12 @@
         "evidence_quote": "un jeu de cartes",
         "semantic_sha256": "b5302ba7f734c5987ad20cecdb461be8b3943a748d9e783192782ebce406b3c3",
         "note": "Jeu de cartes, échiquier avec pièces et dominos ; sans carte portant une date ou un prix."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Viviane demande un jeu de cartes pour les soirées à l’hôtel du voyage scolaire.",
+        "note": "Paquet et cartes à enseignes, échiquier à pièces et boîte de dominos à points ; trois jeux complets reconnaissables, sans compter seulement une carte ou une pièce."
       }
     },
     {
@@ -15421,8 +15670,8 @@
       "semantic_sha256": "0f92db0ba24916c5032fbf81972ad3e0996a462427d497c72eee8a214464537b",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3",
       "audio_sha256": "3b2affb2af76de276cd7ac0e9edf9fbc201808417cdb0810ba4fafdeed7760da",
-      "status": "candidate_visual_review",
-      "reason": "Cahier, dictionnaire et calculatrice ; ne pas confondre l’objet demandé avec le sac où Zara le cherche.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -15449,8 +15698,24 @@
           "brief": "Représenter entièrement « Sa calculatrice » pour « Quel objet Vanessa demande-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-029-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cahier, dictionnaire et calculatrice ; ne pas confondre l’objet demandé avec le sac où Zara le cherche."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+          "sha256": "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+          "sha256": "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-calculatrice-dessine.webp",
+          "sha256": "1837752fe613b91d6070f982dba8d8b5eb5a4ef0aa2b695b73ed8035d976981b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -15468,6 +15733,12 @@
         "evidence_quote": "tu as mon cahier de sciences",
         "semantic_sha256": "0f92db0ba24916c5032fbf81972ad3e0996a462427d497c72eee8a214464537b",
         "note": "Cahier, dictionnaire et calculatrice ; ne pas confondre l’objet demandé avec le sac où Zara le cherche."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Vanessa demande son cahier de sciences ; Zara le cherche dans son sac.",
+        "note": "Cahier à spirale, dictionnaire ouvert avec index et colonnes, calculatrice à écran vide ; objets distincts sans imposer une langue à la question."
       }
     },
     {
@@ -26397,8 +26668,8 @@
       "semantic_sha256": "c58ca60bd3ad3d850e2b6d3fd03cba638a05310fa5f7837f17229ac14ceaf702",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-01-01.mp3",
       "audio_sha256": "f351fd6715c6dca42b7704e10ec6252ca5bb1485daa3bfc5c3fee44198472dc5",
-      "status": "candidate_visual_review",
-      "reason": "Cahier à spirale visible, ordinateur et dictionnaire ; l’ordinateur est apporté par l’autre ami.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -26425,8 +26696,24 @@
           "brief": "Représenter entièrement « Son dictionnaire » pour « Quel objet le destinataire doit-il prendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cahier à spirale visible, ordinateur et dictionnaire ; l’ordinateur est apporté par l’autre ami."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+          "sha256": "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+          "sha256": "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+          "sha256": "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -26444,6 +26731,12 @@
         "evidence_quote": "ton cahier à spirale",
         "semantic_sha256": "c58ca60bd3ad3d850e2b6d3fd03cba638a05310fa5f7837f17229ac14ceaf702",
         "note": "Cahier à spirale visible, ordinateur et dictionnaire ; l’ordinateur est apporté par l’autre ami."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Alexandre demande à Anton de prendre son cahier à spirale ; lui apporte l’ordinateur.",
+        "note": "Spirale du cahier visible, ordinateur portable entier et dictionnaire à index. Le PC de bureau est écarté au profit d’un objet transportable ; le cahier reste la bonne réponse."
       }
     },
     {
@@ -27403,8 +27696,8 @@
       "semantic_sha256": "7d9011d756892a240f21c8860d1bf38fc02a3e542aa069bb6750bae98f9e8eab",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
       "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
-      "status": "candidate_visual_review",
-      "reason": "Compas de géométrie, règle et équerre entiers ; pas de boussole pour le compas.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -27438,8 +27731,24 @@
           "brief": "Représenter entièrement « Une équerre » pour « Quel objet l’élève demande-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-04-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Compas de géométrie, règle et équerre entiers ; pas de boussole pour le compas."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-compas-geometrie.png",
+          "sha256": "866ed2517e87c5cf8cb7f870a61463e970e9c22339d2755d2e943351c121888f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-regle.webp",
+          "sha256": "a52668a93f30836d33ce51d0989c5bdae30e89c33724d8f886b8a6b0095e5aaa"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-equerre-geometrie.png",
+          "sha256": "87b06eb529ac62b6bbf3eee928d58b9c62a33d222769b2602e8dbeb21e92ff86"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -27457,6 +27766,12 @@
         "evidence_quote": "me prêter ton compas",
         "semantic_sha256": "7d9011d756892a240f21c8860d1bf38fc02a3e542aa069bb6750bae98f9e8eab",
         "note": "Compas de géométrie, règle et équerre entiers ; pas de boussole pour le compas."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "L’élève demande à emprunter un compas.",
+        "note": "Compas de géométrie à pointe et mine, règle droite et équerre à angle droit ; aucune boussole ou autre sens de compas."
       }
     },
     {
@@ -34338,8 +34653,8 @@
       "semantic_sha256": "30ab9b60de55e12f9ef6ce40b1e0f151a8ac4eee86bccdc4c2ecf4c3b156c5a9",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-05-01.mp3",
       "audio_sha256": "ee2fbc9175429a3711d29794e46a38372dcc54dee2d34c7e05930c0144af1240",
-      "status": "candidate_visual_review",
-      "reason": "Cartes, échecs et dominos entiers et distincts ; aucune date ou prix imprimé.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34368,13 +34683,36 @@
           "id": "c",
           "label": "Un jeu de dominos",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png",
+              "sha256": "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a",
+              "label": "Un jeu de dominos",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6d5d6c644b4e1eb0",
           "brief": "Représenter entièrement « Un jeu de dominos » pour « Quel jeu doit-elle apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cartes, échecs et dominos entiers et distincts ; aucune date ou prix imprimé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-jeu-cartes-dessine.webp",
+          "sha256": "feab05dbf3eae3394474b48168a26e58ce989bbef983ce5c99462011559f676c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-echecs.webp",
+          "sha256": "057afc80cda6cdc3030db61be052d7ad3178a030510f46e2ed282a86f3872971"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png",
+          "sha256": "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34392,6 +34730,12 @@
         "evidence_quote": "ton jeu de cartes",
         "semantic_sha256": "30ab9b60de55e12f9ef6ce40b1e0f151a8ac4eee86bccdc4c2ecf4c3b156c5a9",
         "note": "Cartes, échecs et dominos entiers et distincts ; aucune date ou prix imprimé."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Clara doit apporter son jeu de cartes pour les vacances d’hiver en Savoie.",
+        "note": "Cartes, échecs et dominos distincts sur fond crème ; le jeu de dominos généré est réutilisé après lecture de ce second support."
       }
     },
     {
@@ -53777,8 +54121,8 @@
       "semantic_sha256": "8f713c3941fc9b3c00ebde419b33c9446bdfb690b1a22e00400374d6500965dd",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-01.mp3",
       "audio_sha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec",
-      "status": "candidate_visual_review",
-      "reason": "Deux, trois et quatre billets entiers identiques ; gratuit est dans l’énoncé, aucun prix n’est imprimé dans les choix.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -53805,8 +54149,24 @@
           "brief": "Représenter entièrement « Quatre » pour « Combien de billets gratuits obtiennent-ils ? ». Vérifier la transcription du support tcf-delf-actif-a2-033-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Deux, trois et quatre billets entiers identiques ; gratuit est dans l’énoncé, aucun prix n’est imprimé dans les choix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+          "sha256": "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+          "sha256": "9d5f75e2b278eed8cdd673b39714275841c696f943e2bd582d4c7135fa881c37"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-4.png",
+          "sha256": "d29e508df5d675cb26077165b4d1ec4976ae7ba12de798473d88f717884f0d57"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53824,6 +54184,12 @@
         "evidence_quote": "2 billets gratuits",
         "semantic_sha256": "8f713c3941fc9b3c00ebde419b33c9446bdfb690b1a22e00400374d6500965dd",
         "note": "Deux, trois et quatre billets entiers identiques ; gratuit est dans l’énoncé, aucun prix n’est imprimé dans les choix."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-jeux-spectacles-objets-20261114.json",
+        "reason": "Le préposé accorde deux billets gratuits au groupe de voyageurs.",
+        "note": "Deux, trois et quatre billets neutres entiers ; aucun prix ni tarif zéro affiché, aucune destination ou mode de transport inventé. La gratuité vient de la question et de l’audio ; l’image répond seulement au nombre demandé."
       }
     },
     {
@@ -114815,7 +115181,14 @@
     {
       "id": "6d5d6c644b4e1eb0",
       "label": "Un jeu de dominos",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-jeu-dominos.png",
+          "sha256": "909f8c72814a34cf74fd23535928401033c7fada4518111599cd87229326585a",
+          "label": "Un jeu de dominos",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-028-01#5",

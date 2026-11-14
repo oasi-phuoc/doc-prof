@@ -1,6 +1,6 @@
 # Illustrations des nouveaux audios DELF Actif
 
-346 supports audio et 1 663 questions suivis. 510 trios concrets proposés à vérifier, 236 trios activés, 0 questions à examiner plus précisément.
+346 supports audio et 1 663 questions suivis. 494 trios concrets proposés à vérifier, 252 trios activés, 0 questions à examiner plus précisément.
 Les 1,021 questions en attente de contexte ont été relues avec leur transcription complète et leurs trois réponses ; 41 ont été corrigées. Les décisions individuelles et citations sont dans [la revue contextuelle](revue-contexte-20261114.md). Une candidature reste à vérifier visuellement ; elle n’est pas une image livrée.
 
 

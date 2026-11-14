@@ -22,5 +22,7 @@ Le [registre JSON](revue-contexte-20261114.json) conserve les sources, empreinte
 ```sh
 python3 scripts/prepare-delf-actif-images.py
 python3 scripts/check-delf-actif-images.py
-python3 scripts/check-delf-actif-context-review.py --audit-only
+python3 scripts/check-delf-actif-context-review.py
 ```
+
+L’option `--audit-only` sert à vérifier l’état figé à la clôture de la seule revue contextuelle, avant la reprise des images. Après l’ajout de nouveaux trios relus, utiliser le contrôle ci-dessus sans cette option ; les décisions, sources et corrigés restent vérifiés.
