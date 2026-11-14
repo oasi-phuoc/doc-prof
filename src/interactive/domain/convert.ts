@@ -340,6 +340,7 @@ export function convertRecipe(
               if (item.documentId!==undefined) q.source.documentId=item.documentId
               if (item.scenarioId!==undefined) q.source.scenarioId=item.scenarioId
               if (item.grammarImages!==undefined) q.grammarImages=item.grammarImages
+              if (item.grammarCountryGender!==undefined) q.grammarCountryGender=item.grammarCountryGender
               if (item.words) q.words = item.words
               if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'

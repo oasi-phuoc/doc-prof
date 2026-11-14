@@ -6,7 +6,7 @@ import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 import { grammarReadingChild } from '@/grammaire/curriculum/items'
 import { grammarScenarioChild, grammarScenarioContext } from '@/grammaire/curriculum/scenario'
 
-type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; words?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
 type Result = { items: Adaptation[]; issues: string[] }
 const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
 const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
@@ -26,9 +26,10 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
   if (item.layout==='grammar') {
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
-    const imageSupport=u.imageSupports?{grammarImages:u.imageSupports}:{}
+    const imageSupport={...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
     const model=u.answers.join(' / ')+'\n'+u.explanation
-    const rawPrompt=u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
+    const rawPrompt=u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
+      u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
     const prompt=u.cue?u.cue+'\n'+rawPrompt:rawPrompt
     if(u.kind==='scenario') {
       const common={...imageSupport,part:0,instruction:sourceInstruction,context:grammarScenarioContext(u),scenarioId:u.id}

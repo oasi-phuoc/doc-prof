@@ -24,6 +24,7 @@ type Source = { path: string; typeId: string; position: number; partition?: stri
 type BaseUnit = {
   id: string; prompt: string; answers: string[]; explanation: string; source: Source
   givenVerb?: string
+  countryGender?: 'masculin' | 'féminin' | 'pluriel'
   responseLines?: 1 | 2
   cue?: string
   imageSupports?: GrammarImageSupport[]
