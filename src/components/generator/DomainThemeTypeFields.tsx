@@ -1,5 +1,6 @@
 import { TcfCeFormatControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
+import {PhraseFormControls} from './PhraseFormControls'
 import { PhraseCategoryControls } from './PhraseCategoryControls'
 import { GrammarCoLevelControl } from './GrammarCoLevelControl'
 import { GrammarLevelControl } from './GrammarLevelControl'
@@ -8,6 +9,8 @@ import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
 import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
 import { phraseSelection } from '@/francais/phrase-options'
+import {newPictureSentence} from '@/francais/phrase-images'
+import {blockItemsForConfig} from './sheet-items'
 import { isPresentSupplementOrderType, presentOrderQuestionCap } from '@/grammaire/exercises/present-supplement'
 import {
   ACCESS_DOMAIN_OPTIONS,
@@ -339,6 +342,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   }}
                 />
               ) : null}
+              {isPhraseDomain&&!isPhraseChart&&<PhraseFormControls sentenceType={activeBlock.phraseSentenceType??'declarative'} voice={activeBlock.phraseVoice??'active'} onSentenceType={phraseSentenceType=>updatePage({...clearLibreContentFreeze(),phraseSentenceType,verbGroup:activeBlock.verbGroup==='libre'?'er':activeBlock.verbGroup,phraseItems:undefined,phraseInstruction:undefined})} onVoice={phraseVoice=>updatePage({...clearLibreContentFreeze(),phraseVoice,verbGroup:activeBlock.verbGroup==='libre'?'er':activeBlock.verbGroup,phraseItems:undefined,phraseInstruction:undefined})}/>}
               {showPhraseParameters ? (
                 <PhraseCategoryControls
                   value={activeBlock.phraseCategories}
@@ -359,6 +363,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   }}
                 />
               ) : null}
+              {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&activeBlock.verbGroup!=='libre'&&<label className="phrase-image-label-option"><input type="checkbox" aria-label="Afficher les mots sous les images" checked={activeBlock.phraseImageLabels??false} onChange={event=>updatePage({phraseImageLabels:event.target.checked})}/><span>Afficher les mots sous les images<small>Les pronoms restent identifiés pour préciser qui parle.</small></span></label>}
+              {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&!libreMode&&activeBlock.verbGroup!=='libre'&&<button type="button" onClick={()=>{const block=blockItemsForConfig(worksheets,activeSheet?.configIndex??safeSheetIndex,safeBlockIndex);updatePage({verbGroup:'libre',phraseItems:block?.items.length?block.items:[newPictureSentence()],phraseInstruction:block?.items.length?block.instruction:'Écrivez une phrase à partir des images. Ajoutez les mots nécessaires.'})}}>Personnaliser les images</button>}
               {!libreMode &&
               isPhraseDomain &&
               !isPhraseChart &&
@@ -372,7 +378,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     activeSheet?.blocks[safeBlockIndex]?.instruction ??
                     ''
                   }
-                  onChangeItems={(phraseItems) => updatePage({ phraseItems })}
+                  onChangeItems={(phraseItems) => updatePage({ phraseItems,...(activeBlock.exerciseType.endsWith('-images')?{count:phraseItems.length}:{}) })}
                   onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
                 />
               ) : null}

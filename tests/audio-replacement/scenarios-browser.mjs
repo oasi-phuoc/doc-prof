@@ -6,6 +6,11 @@ import { chromium } from 'playwright'
 const base = 'http://127.0.0.1:5194'
 const priorityMode = process.argv.includes('--priority')
 const genderReviewMode = process.argv.includes('--gender-review')
+const b1SuiteMode = process.argv.includes('--b1-suite')
+const suiteMode = process.argv.includes('--a2-suite')
+const a1ComplementMode = process.argv.includes('--a1-complement')
+const a2ComplementMode = process.argv.includes('--a2-complement')
+const a2FinalMode = process.argv.includes('--a2-final')
 const server = await createServer({ cacheDir: '/tmp/clairfle-scenarios-browser', server: { host: '127.0.0.1', port: 5194, strictPort: true } })
 await server.listen()
 let browser
@@ -21,6 +26,21 @@ try {
   const correction = genderAudit?.corrections[0]
   const specs = genderReviewMode ? [
     { level: 'A0-A1', difficulty: 'facile', rawSlots: genderAudit.sources.filter(s => s.exercise === correction.exercise).sort((a, b) => a.dialogue - b.dialogue).map(s => s.audio) },
+  ] : b1SuiteMode ? [
+    { level: 'A2-B1', difficulty: 'avance', clips: ['b1-001-01', 'b1-001-03', 'b1-002-03', 'b1-041-01-01'] },
+  ] : a2FinalMode ? [
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-043-04-01', 'a2-043-04-02', 'a2-046-04-03', 'a2-033-04'] },
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-043-04-04', 'a2-043-04-01', 'a2-046-04-03', 'a2-035-01'] },
+  ] : a2ComplementMode ? [
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-030-01', 'a2-030-03', 'a2-031-04', 'a2-032-01'] },
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-032-03', 'a2-032-04', 'a2-034-03', 'a2-035-02'] },
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-044-04-01', 'a2-033-04', 'a2-035-01', 'a2-045-04-01'] },
+  ] : a1ComplementMode ? [
+    { level: 'A0-A1', difficulty: 'facile', clips: ['a1-049-04-03', 'a1-051-04-04', 'a1-030-03', 'a1-032-04'] },
+    { level: 'A0-A1', difficulty: 'facile', clips: ['a1-030-04', 'a1-029-05', 'a1-032-01', 'a1-050-04-01'] },
+    { level: 'A0-A1', difficulty: 'facile', clips: ['a1-031-04', 'a1-029-05', 'a1-030-03', 'a1-032-04'] },
+  ] : suiteMode ? [
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-033-04', 'a2-035-01', 'a2-044-04-03', 'a2-045-04-01'] },
   ] : priorityMode ? [
     { level: 'A0-A1', difficulty: 'facile', clips: ['a1-029-02', 'a1-029-05', 'a1-030-03', 'a1-032-04'] },
     { level: 'A0-A1', difficulty: 'facile', clips: ['a1-032-01', 'a1-050-04-01', 'a1-029-04', 'a1-029-05'] },
@@ -62,24 +82,58 @@ try {
       assert.equal(size.width * 3, size.height * 4)
       if (src.includes('/delf-actif/')) assert.deepEqual(size, { width: 1448, height: 1086 })
     }
+    const clippedFrames = await stage.locator('.tcf-situation-frame').evaluateAll(nodes => nodes.flatMap((node, index) => {
+      const frame = node.getBoundingClientRect()
+      const body = node.closest('.sheet-body').getBoundingClientRect()
+      return frame.bottom > body.bottom + 1 || frame.left < body.left - 1 || frame.right > body.right + 1
+        ? [{ index, frameBottom: frame.bottom, bodyBottom: body.bottom }] : []
+    }))
+    assert.deepEqual(clippedFrames, [], 'All six scene frames must fit inside the printable page body')
     const selectors = page.locator('.tcf-co-audio-slots select')
     if (await selectors.count() === 4) {
       assert.equal(await selectors.first().inputValue(), config.tcfAudioSlots[0])
       assert.equal(await selectors.first().locator(`option[value="${config.tcfAudioSlots[1]}"]`).isDisabled(), true)
     }
-    results.push({ level: specs[index].level, audios: config.tcfAudioSlots, images: expected, loaded: expected.length, native_new_pngs: expected.filter(p => p.includes('/delf-actif/')).length })
-    if (priorityMode) await stage.screenshot({ path: `/tmp/scenarios-priorite-20261114-page-${index + 1}.png` })
+    results.push({ level: specs[index].level, audios: config.tcfAudioSlots, images: expected, loaded: expected.length, native_new_pngs: expected.filter(p => p.includes('/delf-actif/')).length, clipped_frames: clippedFrames })
+    if (b1SuiteMode) await stage.screenshot({ path: '/tmp/scenarios-b1-suite-20261114.png' })
+    if (a2FinalMode) await stage.screenshot({ path: `/tmp/scenarios-a2-final-20261114-page-${index + 1}.png` })
     if (genderReviewMode) {
       assert.equal(await stage.locator(`img[src="${correction.previous_image}"]`).count(), 0)
       assert.equal(await stage.locator(`img[src="${correction.path}"]`).count(), 1)
       await stage.screenshot({ path: '/tmp/scenarios-genres-20261114-ancienne-recette.png' })
     }
+    if (priorityMode) await stage.screenshot({ path: `/tmp/scenarios-priorite-20261114-page-${index + 1}.png` })
   }
   assert.deepEqual(errors, [])
   const nativeNewPngs = new Set(results.flatMap(r => r.images).filter(p => p.includes('/delf-actif/'))).size
-  assert.equal(nativeNewPngs, genderReviewMode ? 1 : priorityMode ? 21 : 7)
-  const report = genderReviewMode ? 'docs/tcf/scenarios-genres-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
-  await writeFile(report, JSON.stringify({ date: '2026-11-14', results, errors, human_audio_listening_performed: false }, null, 2) + '\n')
-  console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), errors }))
+  if (!a1ComplementMode && !a2ComplementMode && !a2FinalMode) assert.equal(nativeNewPngs, genderReviewMode ? 1 : b1SuiteMode ? 4 : priorityMode ? 21 : suiteMode ? 4 : 7)
+  let galleryImages = 0
+  if (suiteMode || a1ComplementMode || a2ComplementMode || a2FinalMode) {
+    const suite = JSON.parse(await readFile(a2FinalMode ? 'docs/tcf/generation-scenarios-a2-final-20261114.json' : a2ComplementMode ? 'docs/tcf/generation-scenarios-a2-complement-20261114.json' : a1ComplementMode ? 'docs/tcf/generation-scenarios-a1-complement-20261114.json' : 'docs/tcf/generation-scenarios-a2-suite-20261114.json', 'utf8'))
+    const assets = a2FinalMode ? [...suite.images, ...suite.reuses] : suite.images
+    const catalogue = JSON.parse(await readFile('src/tcf/association-image-themes.json', 'utf8'))
+    for (const asset of assets.filter(a => a.gender_review.status === 'documented_roles_match')) {
+      for (const binding of asset.bindings) {
+        const active = catalogue.sources.find(source => source.exercise === binding.exercise)
+        assert.ok(active)
+        assert(results.some(result => result.audios.includes(active.audio) && result.images.includes(active.image)), `The currently selected approved scene appears in an actual association: ${active.image}`)
+      }
+    }
+    await page.goto(`${base}/images`, { waitUntil: 'networkidle' })
+    await page.getByRole('heading', { name: 'Galerie d’images', exact: true }).waitFor()
+    await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
+    await page.getByLabel('Thème', { exact: true }).selectOption(a1ComplementMode ? 'CO CFR A1' : 'CO CFR A2')
+    for (const asset of assets) {
+      await page.getByLabel('Rechercher une image', { exact: true }).fill(asset.label)
+      const image = page.locator(`.gallery-card img[src="${asset.path}"]`)
+      await image.waitFor();await image.evaluate(node => node.decode())
+      assert.deepEqual(await image.evaluate(node => [node.naturalWidth, node.naturalHeight]), [asset.width, asset.height])
+      galleryImages++
+    }
+    await page.screenshot({ path: a2FinalMode ? '/tmp/scenarios-a2-final-20261114-gallery.png' : a2ComplementMode ? '/tmp/scenarios-a2-complement-20261114-gallery.png' : a1ComplementMode ? '/tmp/scenarios-a1-complement-20261114-gallery.png' : '/tmp/scenarios-a2-suite-20261114-gallery.png' })
+  }
+  const report = b1SuiteMode ? 'docs/tcf/scenarios-b1-suite-20261114-browser.json' : genderReviewMode ? 'docs/tcf/scenarios-genres-20261114-browser.json' : a2FinalMode ? 'docs/tcf/scenarios-a2-final-20261114-browser.json' : a2ComplementMode ? 'docs/tcf/scenarios-a2-complement-20261114-browser.json' : a1ComplementMode ? 'docs/tcf/scenarios-a1-complement-20261114-browser.json' : suiteMode ? 'docs/tcf/scenarios-a2-suite-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
+  await writeFile(report, JSON.stringify({ date: '2026-11-14', results, gallery_images: galleryImages, errors, human_audio_listening_performed: false }, null, 2) + '\n')
+  console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), gallery_images: galleryImages, errors }))
   await context.close()
 } finally { await browser?.close(); await server.close() }

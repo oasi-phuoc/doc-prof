@@ -27,6 +27,8 @@ async function select(page, label, value) {
   await page.getByRole('button', { name: label, exact: true }).click()
   await page.getByRole('option', { name: value, exact: true }).click()
   await page.getByRole('button', { name: label, exact: true }).getByText(value, { exact: true }).waitFor()
+  // The historical colour fixture chooses its format explicitly; S-V-C is now first.
+  if(label==='Thème'){await button(page,'Type d’exercice').click();await page.getByRole('option',{name:/^Colorier /}).click()}
 }
 async function countInPreview(page, selector, count) {
   await page.waitForFunction(({ selector, count }) => document.querySelector('.sheet-stage:not(.print-only-sheets) .worksheet-sheet')?.querySelectorAll(selector).length === count, { selector, count })

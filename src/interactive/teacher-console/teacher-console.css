@@ -1,0 +1,46 @@
+.ci-app.ci-teacher-console { min-height: 100dvh; font-size: 17px; }
+.ci-app .ci-console-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 24px max(20px, calc((100vw - 1240px) / 2)); background: var(--ci-paper); border-bottom: 1px solid var(--ci-line); }
+.ci-app .ci-console-heading h1 { font-size: clamp(28px, 4vw, 40px); margin: 8px 0; }
+.ci-app .ci-console-heading p:last-child { margin: 0; max-width: 700px; color: var(--ci-muted); }
+.ci-app .ci-console-heading > button { flex-shrink: 0; }
+.ci-app .ci-console-private { display: inline-block; margin: 0; padding: 5px 10px; border-radius: 8px; color: #473183; background: #eeebfa; font-size: 14px; font-weight: 800; }
+.ci-app .ci-console-main { max-width: 1280px; margin: auto; padding: 24px 20px 40px; }
+.ci-app .ci-console-status { border: 1px solid var(--ci-line); background: var(--ci-paper); border-radius: 12px; padding: 12px 16px; }
+.ci-app .ci-console-connected { border-color: #6d998b; background: #eaf5ef; color: #254b3b; }
+.ci-app .ci-console-error { padding: 12px 16px; border: 1px solid #a94747; background: #fff2f2; color: #792525; border-radius: 12px; }
+.ci-app .ci-console-progress { margin: 24px 0; }
+.ci-app .ci-console-progress h2 { margin-bottom: 8px; }
+.ci-app .ci-console-layout { display: grid; grid-template-columns: minmax(0, 1fr) 330px; align-items: start; gap: 20px; }
+.ci-app .ci-console-questions { display: grid; gap: 20px; min-width: 0; }
+.ci-app .ci-console-card { min-width: 0; border: 1px solid var(--ci-line); border-radius: 18px; background: var(--ci-paper); padding: 24px; box-shadow: 0 8px 24px rgb(24 34 56 / 4%); overflow-wrap: anywhere; }
+.ci-app .ci-console-card h2 { font-size: 24px; }
+.ci-app .ci-console-card h3 { margin: 20px 0 10px; font-size: 18px; }
+.ci-app .ci-console-instruction { color: var(--ci-muted); }
+.ci-app .ci-console-model, .ci-app .ci-console-card details p { white-space: pre-wrap; }
+.ci-app .ci-console-card details { margin: 16px 0; }
+.ci-app .ci-console-card summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.ci-app .ci-console-answer { display: flex; align-items: center; gap: 20px; padding: 20px; margin: 20px 0; border: 2px solid currentColor; border-radius: 14px; }
+.ci-app .ci-console-answer .ci-card-badge { flex: 0 0 56px; }
+.ci-app .ci-console-answer p { margin: 8px 0 0; }
+.ci-app .ci-console-answer img { display: block; max-width: 100%; max-height: 180px; object-fit: contain; margin-top: 12px; border-radius: 8px; }
+.ci-app .ci-console-hints ol { padding-left: 24px; }
+.ci-app .ci-console-hints li { margin: 12px 0; }
+.ci-app .ci-console-hints li span { color: var(--ci-muted); font-size: 14px; }
+.ci-app .ci-console-controls { position: sticky; top: 20px; }
+.ci-app .ci-console-primary { margin-bottom: 20px; }
+.ci-app .ci-console-primary button { width: 100%; }
+.ci-app .ci-console-secondary, .ci-app .ci-console-assessment { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.ci-app .ci-console-secondary button { flex: 1 0 100%; }
+.ci-app .ci-console-controls label { display: grid; gap: 8px; margin: 24px 0; font-weight: 700; }
+.ci-app .ci-console-controls select { width: 100%; min-width: 0; }
+.ci-app .ci-console-other { display: grid; gap: 10px; border-top: 1px solid var(--ci-line); padding-top: 20px; }
+.ci-app .ci-console-controls > p { color: var(--ci-muted); font-size: 14px; margin: 20px 0 0; }
+.ci-app .ci-console-assessment [aria-pressed='true'] { color: #fff; background: #473183; border-color: #473183; }
+@media screen and (max-width: 850px) {
+  .ci-app .ci-console-heading { flex-wrap: wrap; padding: 20px; }
+  .ci-app .ci-console-layout { display: flex; flex-direction: column; }
+  .ci-app .ci-console-controls { width: 100%; position: static; order: -1; }
+  .ci-app .ci-console-questions { width: 100%; }
+  .ci-app .ci-console-main { padding: 16px 12px 32px; }
+  .ci-app .ci-console-card { padding: 20px; }
+}

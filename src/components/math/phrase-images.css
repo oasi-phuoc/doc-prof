@@ -1,0 +1,24 @@
+.phrase-images-block { width:100%; min-width:0; display:flex; flex-direction:column; gap:10px; }
+.phrase-image-row { display:grid; grid-template-columns:repeat(var(--phrase-image-count),minmax(0,1fr)); gap:8px; width:100%; max-width:calc(var(--phrase-image-count) * 136px); align-items:stretch; break-inside:avoid; }
+.phrase-image-clue { min-width:0; margin:0; border:3px solid; border-radius:8px; padding:4px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#fff; color:#182238; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.phrase-image-clue > img, .phrase-image-clue > .ci-image-zoom > img { display:block; width:100%; height:96px; min-width:0; object-fit:contain; }
+.phrase-image-clue figcaption { font-size:calc(13px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
+.phrase-image-word { min-height:92px; }
+.phrase-image-word > span { font-size:calc(14px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
+.phrase-images-block .phrase-answer-slot { min-height:32px; }
+.phrase-image-editor-list { display:flex; flex-direction:column; gap:12px; }
+.phrase-image-editor-clue { border-left:4px solid; padding:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.phrase-image-editor-clue img { width:64px; height:64px; object-fit:contain; }
+.phrase-image-editor-clue input { min-width:0; max-width:100%; }
+.ci-app .phrase-image-row { grid-template-columns:repeat(var(--phrase-game-columns),minmax(0,1fr)); max-width:100%; }
+.ci-app .phrase-image-clue > .ci-image-zoom { min-height:44px; }
+.phrase-image-label-option { display:flex; gap:8px; align-items:flex-start; min-height:44px; }
+.phrase-image-label-option input[type="checkbox"] { width:18px; height:18px; flex:0 0 auto; padding:0; margin:2px 0 0; }
+.phrase-image-label-option > span { display:flex; flex-direction:column; gap:4px; }
+@media print { .phrase-images-block,.phrase-image-row { break-inside:avoid; } }
+
+.phrase-image-editor-list label, .phrase-image-editor-list label > span, .phrase-image-editor-list small { color:#352b47; }
+
+.ci-app .phrase-image-row { max-width:calc(var(--phrase-game-columns) * 200px); margin-inline:auto; }
+.ci-app .phrase-image-clue > .ci-image-zoom > img { height:auto; aspect-ratio:4/3; max-height:clamp(44px,calc(31dvh / var(--phrase-game-rows) - 24px),160px); }
+.ci-app .phrase-image-word { min-height:44px; }

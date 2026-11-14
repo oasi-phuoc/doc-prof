@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { questionsForRound, roundsFor } from './domain/plan'
 import { matchingSummary, usedMatchingChoices } from './domain/matching'
 import { startSession, transition } from './domain/session'
@@ -36,6 +36,7 @@ import { makeTransfer, downloadTransfer } from './session-transfer'
 import type { MediaManager } from './media/manager'
 import { acquireSessionLease, type SessionLease } from './session-lease'
 import type { SessionSource } from './domain/source'
+import { useTeacherConsole, type TeacherConsoleBridge } from './teacher-console/useTeacherConsole'
 
 export function SessionView(props: Omit<Parameters<typeof ActiveSessionView>[0], 'resume' | 'initialWarning' | 'ownership' | 'registerDrain'>) {
   const [attempt, setAttempt] = useState({ number: 0, takeover: false })
@@ -191,6 +192,7 @@ function ActiveSessionView({
       record.current = Promise.resolve(await saveSession(next.finished || updated.events.length >= 5000 ? compactSession(updated, next) : updated, previous))
     }).catch((error: unknown) => { enabled.current = false; setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING) })
   }, [game, ownership])
+  const teacherConsole = useTeacherConsole({ game, state, getState: () => current.current, dispatch, ownership, guard: header.toolbarGuard ?? 'none', colors, shapes })
   useEffect(() => {
     if (!enabled.current) return
     writes.current = writes.current.then(async () => {
@@ -321,6 +323,7 @@ function ActiveSessionView({
   return (
     <>
     {storageWarning && <p className="ci-notice" role="status">{storageWarning}</p>}
+    {teacherConsole.error && <p className="ci-notice" role="alert">{teacherConsole.error}</p>}
     <PlayingRound
       key={`${round.id}:${runtimeFor(game, state).attempt}`}
       game={game}
@@ -332,9 +335,10 @@ function ActiveSessionView({
       showTranscripts={showTranscripts}
       header={header}
       onExit={() => { flushClock(); void writes.current.then(onExit) }}
-      suspended={state.paused || hidden}
+      suspended={state.paused || hidden || teacherConsole.dialogOpen}
       initialClock={viewClock}
       onClock={onClock}
+      teacherConsole={teacherConsole.bridge}
     />
     </>
   )
@@ -353,6 +357,7 @@ function PlayingRound({
   suspended,
   initialClock,
   onClock,
+  teacherConsole,
 }: {
   initialClock?: SessionClock
   onClock: (clock: SessionClock) => void
@@ -366,6 +371,7 @@ function PlayingRound({
   header: ClassroomHeaderProps
   onExit: () => void
   suspended: boolean
+  teacherConsole: TeacherConsoleBridge
 }) {
   const runtime = runtimeFor(game, state)
   const questions = questionsForAttempt(game, state.index, runtime.attempt)
@@ -392,6 +398,8 @@ function PlayingRound({
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
   const guidedOral=questions.length===1&&((questions[0]?.mode==='sequence'&&!questions[0].words)||(questions[0]?.mode==='oral'&&questions[0].images.length>0))
+  const consoleBlocked = confirmation !== null || navigating || counting || readingTranscript || !!readingModel
+  useLayoutEffect(() => { teacherConsole.setBlocked(consoleBlocked); return () => teacherConsole.setBlocked(true) }, [teacherConsole, consoleBlocked])
   // A withdrawn or suspended review must stay closed when controls return.
   if (readingTranscript && (!transcript || suspended || locked || confirmation !== null || navigating)) setReadingTranscript(false)
   if (readingModel && (!modelQuestion || suspended || locked || confirmation !== null || navigating)) setReadingModel(null)
@@ -449,6 +457,7 @@ function PlayingRound({
           audio: audioPlayer,
           teacherLocked: locked,
           onNavigate: solo ? undefined : () => setNavigating(true),
+          onConsole: solo ? undefined : teacherConsole.open,
         }}
       />
       <main

@@ -6325,12 +6325,14 @@ textarea.pill-input,
 /* CO situations : même bandeau que les mini-audios, ensemble sur une A4. */
 .tcf-situations{row-gap:6mm;column-gap:3mm;--situation-image-height:42mm}
 .tcf-situations.is-many{--situation-image-height:32mm}
+/* L'en-tête institutionnel doit laisser visibles les six scènes sur la première page. */
+.worksheet-sheet:has(.doc-header) .tcf-situations{row-gap:4mm;--situation-image-height:26mm}
 .tcf-situations>li.tcf-situation-frame{margin:0;padding:0;gap:0;border-color:var(--purple);break-inside:avoid}
 .tcf-situation-body{display:grid;grid-template-columns:minmax(0,1fr) 26mm;align-items:center;gap:3mm;padding:2mm;min-width:0}
 .tcf-situations .tcf-situation-body .tcf-image{width:100%;height:var(--situation-image-height);max-height:var(--situation-image-height);object-fit:contain}
 .tcf-situation-frame .tcf-audio-frame-head{padding-left:2mm;padding-right:2mm;gap:4px;font-size:9pt;letter-spacing:0}
 .worksheet-sheet:has(.tcf-situations)>.sheet-body{overflow:hidden}
-.worksheet-sheet:has(.tcf-situations)>.doc-footer{margin-top:50px}
+.worksheet-sheet:has(.tcf-situations)>.doc-footer{margin-top:auto}
 
 /* CE en image : document pleine largeur, questions dessous avec le gap standard de la grille. */
 .tcf-ce-art{width:100%;min-width:0}

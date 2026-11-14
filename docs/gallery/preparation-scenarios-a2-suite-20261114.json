@@ -3,10 +3,10 @@
   "date": "2026-11-14",
   "scope": "Suite de six scènes CO CFR A2 DELF Actif ; préparations distinctes des images effectivement disponibles.",
   "baseline_commit": "a6b636ad",
-  "status": "partially_completed_after_quota_reset",
-  "generated_images": 3,
-  "published_images": 3,
-  "new_audio_bindings": 3,
+  "status": "generated_audio_activation_partial",
+  "generated_images": 6,
+  "published_images": 6,
+  "new_audio_bindings": 2,
   "prepared_scenes": 6,
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "quota_observation": {
@@ -21,7 +21,8 @@
     "attempted_reference_paths": [
       "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
     ],
-    "historical_observation_only": true
+    "resolved": true,
+    "generation_resumed_on": "2026-11-14"
   },
   "items": [
     {
@@ -40,7 +41,7 @@
       "themes": [
         "deplacements"
       ],
-      "status": "generated_reviewed_bound",
+      "status": "generated_audio_linked",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -99,10 +100,28 @@
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
       ],
-      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
-      "generated_sha256": "a2fe163b847ea8004ad1ec4b99576fef23c6fef7eb672041d3d2d6ae4f2f28c4",
-      "generation_register": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
+      "generated_sha256": "e8fb4ed5853d4a8dd1dafb458b87e67c07ec1758a2b07f51ab5f44f48331c6f7",
+      "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+      "visual_review": "Un jeune homme grand lève un sac de voyage bordeaux avec ses deux mains vers le rack ouvert au-dessus des sièges ; un homme adulte plus petit demande de l’aide à côté. Sac, mains, pieds et porte-bagages entiers, aucun numéro ou paiement.",
       "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Jeune homme désigne la personne qui aide ; je suis petit confirme le masculin grammatical de la personne demandant de l’aide.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune homme qui aide",
+            "quote": "Jeune homme, je peux vous demander de m’aider ?"
+          },
+          {
+            "role": "homme adulte plus petit",
+            "quote": "Je suis petit."
+          }
+        ]
+      },
+      "current_decision": "eligible_bound_scene",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
+      "current_gender_review": {
         "status": "documented_roles_match",
         "basis": "Aidant appelé jeune homme ; propriétaire dit je suis petit, accord masculin. Aucune fragilité médicale ou vieillesse déduite de sa petite taille.",
         "audio_listening_performed": false,
@@ -116,8 +135,7 @@
             "quote": "Mon sac de voyage est lourd. Je suis petit."
           }
         ]
-      },
-      "current_visual_review": "Deux personnages masculins : jeune homme aidant et propriétaire de petite taille, conforme à je suis petit. Sac encore tenu des deux mains pendant son placement en hauteur, pas de personne âgée ou handicap médical inventé."
+      }
     },
     {
       "priority": 2,
@@ -135,7 +153,7 @@
       "themes": [
         "deplacements"
       ],
-      "status": "generated_reviewed_bound",
+      "status": "generated_audio_linked",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -185,10 +203,28 @@
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
       ],
-      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
-      "generated_sha256": "c38ea79d862d0c7cb57f7005e9a5cf3fab44332217de813b50cd2bdffc4d609f",
-      "generation_register": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
+      "generated_sha256": "56b2bac62ba3de9a5e0731e2ef4bbd21fcba3fc3f5a211c30c836aa65dc44f84",
+      "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+      "visual_review": "Une jeune femme se soulève du siège en proposant la place avec une main ouverte à une femme plus âgée ; siège libre et geste de gratitude visibles. Deux femmes entières, aucune parenté ou cause médicale attribuée.",
       "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Mademoiselle et une dame de mon âge documentent les deux rôles féminins ; la grand-mère citée reste une autre personne, pas une parenté attribuée à la bénéficiaire.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune femme qui cède sa place",
+            "quote": "C’est très gentil mademoiselle"
+          },
+          {
+            "role": "femme plus âgée",
+            "quote": "une dame de mon âge"
+          }
+        ]
+      },
+      "current_decision": "eligible_bound_scene",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+      "current_gender_review": {
         "status": "documented_roles_match",
         "basis": "Jeune femme appelée mademoiselle et femme plus âgée appelée Madame, deux rôles explicitement féminins.",
         "audio_listening_performed": false,
@@ -198,8 +234,7 @@
             "quote": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame."
           }
         ]
-      },
-      "current_visual_review": "Jeune femme et femme plus âgée, explicitement mademoiselle et Madame dans la source. Siège libéré et geste d’invitation visibles ; pas de simple attente côte à côte ni de personne déjà assise ailleurs."
+      }
     },
     {
       "priority": 3,
@@ -217,7 +252,7 @@
       "themes": [
         "achats"
       ],
-      "status": "prepared_not_generated",
+      "status": "generated_pending_person_verification",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -276,8 +311,24 @@
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
       ],
-      "character_plan_status": "unconfirmed_roles_not_specified_in_source",
-      "gender_review_required": "La transcription ne documente pas le genre de chaque interlocuteur. Le plan de personnages du brief ne vaut pas confirmation ; vérifier avant activation ou conserver les interlocuteurs non documentés hors cadre."
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "generated_sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+      "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+      "visual_review": "Laisse confiée à une autre personne devant une porte de pâtisserie ouverte ; chien entier dehors, gâteaux en vitrine et achat encore projeté. Aucun gâteau acheté, argent ou chien dans le magasin.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "current_decision": "eligible_scene_pending",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "current_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
     },
     {
       "priority": 4,
@@ -295,7 +346,7 @@
       "themes": [
         "achats"
       ],
-      "status": "prepared_not_generated",
+      "status": "generated_pending_person_verification",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -354,8 +405,24 @@
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
       ],
-      "character_plan_status": "unconfirmed_roles_not_specified_in_source",
-      "gender_review_required": "La transcription ne documente pas le genre de chaque interlocuteur. Le plan de personnages du brief ne vaut pas confirmation ; vérifier avant activation ou conserver les interlocuteurs non documentés hors cadre."
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "generated_sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+      "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+      "visual_review": "Deux téléphones distincts seulement sur une table de démonstration ; cliente désignant un modèle et membre du personnel qui renseigne. Cadrage repris pour montrer les deux personnages et leurs chaussures, aucun prix, chiffre ou vente accomplie.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "current_decision": "eligible_scene_pending",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "current_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
     },
     {
       "priority": 5,
@@ -373,7 +440,7 @@
       "themes": [
         "achats"
       ],
-      "status": "prepared_not_generated",
+      "status": "generated_pending_person_verification",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -423,8 +490,24 @@
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
       ],
-      "character_plan_status": "unconfirmed_roles_not_specified_in_source",
-      "gender_review_required": "La transcription ne documente pas le genre de chaque interlocuteur. Le plan de personnages du brief ne vaut pas confirmation ; vérifier avant activation ou conserver les interlocuteurs non documentés hors cadre."
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "generated_sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+      "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+      "visual_review": "Deux adultes, un flacon avec pictogramme de cheveux et un tube avec pictogramme de dent. Cheveux frisés visibles et geste hésitant de la personne qui répond ; pas de pharmacien, blouse, recommandation prouvée ou produit supplémentaire.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "current_decision": "eligible_scene_pending",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "current_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
     },
     {
       "priority": 6,
@@ -442,7 +525,7 @@
       "themes": [
         "deplacements"
       ],
-      "status": "generated_reviewed_bound",
+      "status": "generated_pending_person_verification",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -501,10 +584,24 @@
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
       ],
-      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
-      "generated_sha256": "e244aa7b8eb64b8a68f7d866b02cee53d594f09c5713b5eae08923c6a8881a50",
-      "generation_register": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "generated_sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+      "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+      "visual_review": "Voyageuse sans lunettes se levant à côté du siège, son billet et celui de l’autre personne visibles, chacun entièrement vierge. Vérification courtoise, personnages entiers, aucun numéro de place ni amende ; les figurants ne sont pas des locuteurs identifiés.",
       "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "voyageuse féminine",
+            "quote": "Madame, cette place est réservée."
+          }
+        ]
+      },
+      "current_decision": "eligible_bound_scene",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
+      "current_gender_review": {
         "status": "documented_roles_match",
         "basis": "Voyageuse explicitement appelée Madame ; autre voyageur hors champ, billet seul montré depuis son point de vue. Aucun genre, numéro de place ou montant ajouté.",
         "audio_listening_performed": false,
@@ -518,12 +615,13 @@
             "quote": "Je n’ai pas mes lunettes…"
           }
         ]
-      },
-      "current_visual_review": "Voyageuse femme conforme à Madame se levant après une erreur, sans lunettes. Deux billets distincts sans numéro ni montant ; autre voyageur hors cadre, seul son billet apparaît depuis le point de vue du spectateur."
+      }
     }
   ],
-  "remaining_prepared_scenes": 3,
-  "current_scenario_sources": 81,
-  "current_pending_scenes": 36,
-  "completion_register": "docs/tcf/generation-scenarios-priorite-20261114.json"
+  "pending_person_verification": 4,
+  "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+  "current_bound_scenes": 3,
+  "current_pending_scenes": 3,
+  "current_scenario_sources": 86,
+  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json"
 }

@@ -878,6 +878,14 @@ for (const def of allSoutienBankDefs()) {
 for (const theme of PHRASE_THEME_DEFS) {
   exerciseTypes.push(
     t(
+      `${theme.topic}-svc`,
+      theme.topic,
+      'S-V-C : sujet, verbe et complément',
+      'Repérer le sujet et le verbe dans une phrase.',
+      'Entourez le sujet et soulignez le verbe.',
+      'texte',
+    ),
+    t(
       `${theme.topic}-colorier`,
       theme.topic,
       'Colorier les pastilles',
@@ -901,6 +909,15 @@ for (const theme of PHRASE_THEME_DEFS) {
       'Écrire selon les pastilles',
       'Verbe donné + séquence de pastilles logique pour écrire une phrase.',
       'Écrivez les phrases selon la couleur du mot.',
+      'texte',
+      { preferredColumns: 1 },
+    ),
+    t(
+      `${theme.topic}-images`,
+      theme.topic,
+      'Écrire une phrase en images',
+      'Images de pronoms, d’actions et de vocabulaire pour créer des phrases en contexte.',
+      'Écrivez une phrase à partir des images. Ajoutez les mots nécessaires.',
       'texte',
       { preferredColumns: 1 },
     ),

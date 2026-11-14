@@ -162,6 +162,7 @@ const isAlphaSyllabeTableCols =
 const isAlphaPrononcerCols = isAlphabetisation && soutienKind === 'syllabes-prononcer'
 /** Types sans option colonnes (lettre / souligner). */
 const hideColumnsOption =
+  isPhraseDomain ||
   Boolean(isGrammaireDomain && activeBlock.grammarLevel) ||
   soutienKind === 'lettres-maj' ||
   soutienKind === 'lettres-min' ||

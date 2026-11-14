@@ -1,0 +1,138 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "c30f4bd4",
+  "scope": "Six scènes CO CFR A2 ; galerie disponible et liaisons partielles selon les personnes documentées.",
+  "summary": {
+    "original_pngs": 6,
+    "reused_images": 0,
+    "prepared_scene_uses": 6,
+    "new_scenario_audio_bindings": 2,
+    "awaiting_gender_confirmation": 4,
+    "remaining_scenes": 64,
+    "total_bound_scenario_sources": 53,
+    "generation_calls": 7,
+    "rejected_generations": 1
+  },
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "2e8304a9df8752b131b94994751ddf6992918a10161fff53e2c05c1cdfea0bf3",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "identical_to_baseline": true
+    }
+  ],
+  "native_pngs": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
+      "sha256": "e8fb4ed5853d4a8dd1dafb458b87e67c07ec1758a2b07f51ab5f44f48331c6f7",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "documented_roles_match"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
+      "sha256": "56b2bac62ba3de9a5e0731e2ef4bbd21fcba3fc3f5a211c30c836aa65dc44f84",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "documented_roles_match"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "gender_review": "needs_voice_review"
+    }
+  ],
+  "new_qcm_trios": 0,
+  "audio_files_modified": 0,
+  "transcriptions_modified": 0,
+  "questions_modified": 0,
+  "answers_modified": 0,
+  "human_audio_listening_performed": false,
+  "checks": {
+    "scenario_draws": 600,
+    "scenario_sources": 53,
+    "approved_decoys": 10,
+    "active_audio_question_pools": 1371,
+    "context_question_reviews": 1021,
+    "audio_catalogue_tests": 8,
+    "gallery_catalogue": "passed",
+    "typescript": true,
+    "production_build": true,
+    "browser": {
+      "report": "docs/tcf/scenarios-a2-suite-20261114-browser.json",
+      "pages": 1,
+      "association_images": 6,
+      "gallery_images": 6,
+      "errors": []
+    },
+    "unconfirmed_gender_bindings_excluded": 4
+  },
+  "test_execution_note": "La première exécution groupée du test audio a quitté sans diagnostic détaillé. Une relance isolée avec le réseau local autorisé passe ses huit tests, sans changer leur code.",
+  "remaining": {
+    "eligible_dialogues": 96,
+    "bound_new_dialogues": 32,
+    "available_including_historical": 53,
+    "awaiting_total": 64,
+    "awaiting_people_with_prepared_image": 13,
+    "without_prepared_image": 51
+  },
+  "catalogues": {
+    "images": 6865,
+    "audio_files": 8801,
+    "questions": 6634,
+    "response_formats": 14856
+  }
+}

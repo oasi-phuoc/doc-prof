@@ -1,22 +1,22 @@
-# Prochaines scènes CO CFR A2 — 14 novembre 2026
+# Six scènes CO CFR A2 — génération terminée le 14 novembre 2026
 
-La première tentative de rangement du bagage a été refusée par l’outil (`429`, `usage_limit_reached`), avec une réouverture annoncée le 14 novembre 2026 à 14 h 30 min 54 s, heure de Zurich. Cette observation est conservée pour l’historique ; la génération a depuis repris.
+**État après consolidation des lots :** les six images de cette préparation sont conservées dans la galerie. Trois de ces dialogues disposent désormais d’une image activée, éventuellement d’une autre version aux rôles mieux documentés ; les trois autres restent préparés sans activation. Le [registre de consolidation](../tcf/consolidation-scenes-20261114.json) et les champs `current_decision` du JSON donnent le choix actuel. Le total général est de 86 pistes liées et 31 scènes à terminer. Les observations et nombres du lot initial ci-dessous sont conservés comme historique.
 
-**Trois des six briefs sont maintenant réalisés et liés à leur audio** : bagage sur le porte-bagages, siège cédé et erreur de place réservée. Leurs PNG originaux, rôles documentés, empreintes et chemins effectifs sont consignés dans le [registre prioritaire](../tcf/generation-scenarios-priorite-20261114.json). Le [classement actuel](../tcf/scenarios-audio-20261114.md) dispose de 81 sources liées et suit 36 scènes encore à terminer.
+Le quota qui avait bloqué la première tentative est de nouveau disponible. **Les six scènes préparées sont générées**, examinées et ajoutées à la galerie en PNG natif **1 448 × 1 086**, sans recadrage ni conversion. La première version des téléphones, trop rapprochée, est écartée au profit d’un cadrage entier. Sept générations ont donc produit six images retenues.
 
-Les trois autres briefs restent à produire : chien devant la pâtisserie, choix de téléphone et shampoing/dentifrice. Leur plan de personnages est une proposition illustrative, pas une confirmation du genre des interlocuteurs. La transcription ne précise pas tous leurs rôles ; ce point doit être résolu avant activation ou les interlocuteurs non documentés doivent rester hors cadre.
-
-Les transcriptions et les correspondances de fichiers ont été contrôlées. Les images candidates ont été vues : objets isolés, véhicules vus de l’extérieur ou scènes scolaires ne remplacent pas ces dialogues. La paire shampoing/dentifrice reste pertinente pour une reconnaissance d’objets, mais ne suffit pas à illustrer une conversation. Aucune nouvelle écoute humaine n’est déclarée.
-
-| Priorité | Scène | Point à respecter |
+| Scène | Image | Liaison audio |
 | --- | --- | --- |
-| 1 | Le sac sur le porte-bagages | Le jeune homme porte activement le sac, encore dans ses deux mains sous le rack haut. |
-| 2 | Céder sa place | Le siège libéré est visible et le geste invite l’autre personne à s’asseoir. |
-| 3 | Le chien devant la pâtisserie | Chien entier dehors, jamais au rayon pâtisserie. |
-| 4 | Choisir un nouveau téléphone | Deux smartphones exactement, modèle désigné sans autonomie ou prix inventé. |
-| 5 | Le shampoing et le dentifrice | Un flacon de shampoing et un tube de dentifrice identifiables, deux produits principaux. |
-| 6 | L’erreur de place réservée | Deux billets distincts visibles sans écrire 22 ou 28. |
+| Le sac sur le porte-bagages | `/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png` | Activée : rôles documentés |
+| Céder sa place | `/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png` | Activée : rôles documentés |
+| Le chien devant la pâtisserie | `/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png` | En attente : personnes du dialogue à vérifier |
+| Choisir un nouveau téléphone | `/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png` | En attente : personnes du dialogue à vérifier |
+| Le shampoing et le dentifrice | `/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png` | En attente : personnes du dialogue à vérifier |
+| L’erreur de place réservée | `/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png` | En attente : personnes du dialogue à vérifier |
 
-Le [fichier de reprise](preparation-scenarios-a2-suite-20261114.json) contient les six prompts initiaux, la transcription exacte, les empreintes des sources, les candidats refusés et les références peintes validées. Les chemins `planned_path` conservent le projet initial ; seuls les champs `generated_path` des trois réalisations désignent leurs fichiers effectivement disponibles. Le registre prioritaire conserve les prompts réellement exécutés et leur contrôle visuel.
+Le bagage et la place cédée ont leurs rôles explicitement confirmés par le texte (jeune homme / je suis petit ; mademoiselle / dame de mon âge). Pour les quatre autres scènes, le texte ne confirme pas tous les rôles représentés. Ces images sont repérables au catalogue sous **CO CFR A2** et **Scènes préparées — personnes à vérifier**, sans tag scénario actif ajouté à leur audio. Aucune écoute humaine n’est déclarée.
 
-À la reprise : générer avec les références jointes, examiner le rendu et son format natif 4:3, puis seulement intégrer le PNG, le manifeste et la liaison exacte audio/transcription. Réindexer le catalogue et contrôler les tirages ainsi que le chargement des médias. Une image absente ou non conforme reste hors du catalogue publié.
+Le [dossier de préparation actualisé](preparation-scenarios-a2-suite-20261114.json) conserve les sources exactes, références, empreintes, prompts et statuts. Le [registre de génération](../tcf/generation-scenarios-a2-suite-20261114.json) conserve les six PNG et la reprise de cadrage. Le [rapport de vérification](../tcf/verification-scenes-a2-suite-20261114.json) compare les six banques au commit de départ et prouve que les textes, questions, réponses, transcriptions et audios sont conservés.
+
+**Avancement des scénarios : 53 pistes disponibles pour l’association ; 64 dialogues DELF Actif restent à terminer.** Parmi eux, 13 ont une image préparée avec personnes à vérifier, et 51 n’ont pas encore d’image préparée. Le lot A2 ajoute deux liaisons, pas six. Aucun trio QCM nouveau.
+
+Contrôles : 600 tirages reproductibles, catalogues image et audio, 1 371 pools audio classés, 1 021 relectures de contexte, TypeScript et compilation de production. Chromium affiche les deux nouvelles liaisons dans une association A2 à six images et charge aussi les six scènes dans la galerie, sans erreur.

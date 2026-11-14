@@ -156,7 +156,7 @@ const {applyType}=load(path.join(root,'src/components/generator/page-helpers.ts'
 const {parseFicheRecipe}=load(path.join(root,'src/fiches/recipe.ts'))
 const {exerciseTypeById,gattegnoTopics,typesForTopic}=load(path.join(root,'src/math/catalog.ts'))
 assert.deepEqual(gattegnoTopics.map(topic=>topic.id),['phrase-tableaux',...PHRASE_THEME_DEFS.map(theme=>theme.topic)])
-for(const {topic} of PHRASE_THEME_DEFS)check(typesForTopic(topic).length===4,'four layouts registered '+topic)
+for(const {topic} of PHRASE_THEME_DEFS)check(typesForTopic(topic).length===6,'six layouts registered '+topic)
 const recipe={domain:'gattegno',topic:'phrase-simple',exerciseType:'phrase-simple-ordre',count:6,columns:1,verbGroup:'autres',phrasePolarity:'positive',extraBlocks:[
   {topic:'phrase-pronominaux',exerciseType:'phrase-pronominaux-ordre',count:6,columns:1,verbGroup:'autres',phrasePolarity:'negative'},
   {topic:'phrase-determinants',exerciseType:'phrase-determinants-ordre',count:6,columns:1,verbGroup:'er',phrasePolarity:'mixed'},

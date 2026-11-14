@@ -38,7 +38,14 @@ export type PhraseCategory =
 export type PhraseToken = {
   text: string
   category: PhraseCategory
+  /** Passive compound verb; both parts keep the verb colour. */
+  verbPart?: 'auxiliary' | 'participle'
+  /** Written link of an inverted subject; the pronoun remains a separate word. */
+  joinBefore?: '-' | '-t-'
+  /** Explicit roles retained when a reviewed question moves words. */
+  syntaxRole?: import('@/francais/phrase-forms').PhraseSyntaxRole
 }
+export type PhraseImageClue = {category:PhraseCategory;label:string;imageSrc?:string}
 
 export type PreviewMode = 'student' | 'answers'
 export type Difficulty = 'facile' | 'moyen' | 'avance'
@@ -84,9 +91,11 @@ export type Layout =
   | 'order'
   | 'letter-grid'
   | 'syllable-table'
+  | 'phrase-svc'
   | 'phrase-color'
   | 'phrase-order'
   | 'phrase-build'
+  | 'phrase-images'
   | 'phrase-write'
   | 'gattegno-chart'
   | 'vocab-table'
@@ -587,6 +596,13 @@ export type MathItem = {
   }>
   /** Mots étiquetés (grammaire en couleur). */
   tokens?: PhraseToken[]
+  phraseQuestion?: boolean
+  /** Present when the interrogative words are already included in tokens. */
+  phraseQuestionForm?: import('@/francais/phrase-interrogatives').PhraseQuestionForm
+  phraseSyntaxRoles?: import('@/francais/phrase-forms').PhraseSyntaxRole[]
+  /** Images lexicales et mots de liaison ; le modèle reste dans responseAnswer. */
+  phraseImages?: PhraseImageClue[]
+  phraseImageLabels?: boolean
   /** Séquence de pastilles (type 3). */
   pastilles?: PhraseCategory[]
   /** Nombre de lignes d’écriture (type 4). */
@@ -844,8 +860,12 @@ export type ExerciseBlock = {
   verbGroup?: PhraseVerbGroup
   /** Gattegno: affirmative, negative or a balanced mixture of both banks. */
   phrasePolarity?: import('@/francais/phrase-themes').PhrasePolarity
+  phraseSentenceType?: import('@/francais/phrase-forms').PhraseSentenceType
+  phraseVoice?: import('@/francais/phrase-forms').PhraseVoice
   /** Optional Gattegno categories; false excludes complete predicates using them. */
   phraseCategories?: import('@/francais/phrase-themes').PhraseCategories
+  /** Show lexical hints under the images; personal pronouns remain identified. */
+  phraseImageLabels?: boolean
   /**
    * Graine locale de l’exercice (bouton refresh sur la fiche).
    * Permet de retirer uniquement ce bloc sans régénérer toute la fiche.

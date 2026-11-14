@@ -153,7 +153,10 @@ export function usePageNavigation({
       track: nextType.track,
       verbGroup: activeBlock.verbGroup,
       phrasePolarity: activeBlock.phrasePolarity,
+      phraseSentenceType: activeBlock.phraseSentenceType,
+      phraseVoice: activeBlock.phraseVoice,
       phraseCategories: activeBlock.phraseCategories,
+      phraseImageLabels: activeBlock.phraseImageLabels,
       grammarCoLevel: fields.grammarCoLevel,
       grammarCoAudioId: fields.grammarCoAudioId,
       problemDraftGrids: isProblemExercise(nextType.id)

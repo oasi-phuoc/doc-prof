@@ -33,15 +33,15 @@ export const PHRASE_CATEGORY_LABELS: Record<PhraseCategory, string> = {
 /** Exemples affichés dans le tableau « mots » (extraits des banques). */
 export const CHART_WORD_SAMPLES: Record<PhraseCategory, string> = {
   pronom:
-    'je, tu, il, elle, on, nous, vous, ils, elles, me, te, se, le, la, les, lui, leur, y, en, moi, toi, soi, qui, que, où, dont…',
+    'je, tu, il, elle, on, nous, vous, ils, elles, me, te, se, le, la, les, lui, leur, y, en, moi, toi, soi, qui, que, quoi, dont…',
   verbe: 'être, avoir, aller, faire, prendre, venir, dire, voir, lire, écrire, manger, boire…',
   nom: 'chat, chien, maison, école, livre, fille, garçon, voiture, arbre, montagne…',
   determinant:
-    'le, la, l’, les, un, une, des, du, de la, ce, cet, cette, ces, mon, ma, mes, ton, ta, tes, son, sa, ses, notre, nos, votre, vos, leur, leurs, quel, quelle, quelques, plusieurs, chaque, tout, toute…',
+    'le, la, l’, les, un, une, des, du, de la, ce, cet, cette, ces, mon, ma, mes, ton, ta, tes, son, sa, ses, notre, nos, votre, vos, leur, leurs, quel, quelle, quels, quelles, quelques, plusieurs, chaque, tout, toute…',
   adjectif:
     'grand, petit, beau, belle, joli, long, court, haut, bas, jeune, vieux, nouveau, vieux, bon, mauvais, chaud, froid, rapide, lent, heureux, triste, rouge, bleu, vert, noir, blanc, intelligent, sympa…',
   adverbe:
-    'très, trop, assez, peu, bien, mal, vite, lentement, souvent, toujours, jamais, parfois, ici, là, ailleurs, aujourd’hui, demain, hier, maintenant, bientôt, déjà, encore, aussi, peut-être, vraiment…',
+    'où, quand, comment, combien, pourquoi, est-ce que, très, trop, assez, peu, bien, mal, vite, lentement, souvent, toujours, jamais, parfois, ici, là, ailleurs, aujourd’hui, demain, hier, maintenant, bientôt, déjà, encore, aussi, peut-être, vraiment…',
   preposition:
     'à, de, en, dans, sur, sous, chez, avec, sans, pour, par, entre, parmi, devant, derrière, avant, après, depuis, pendant, vers, jusqu’à, contre, selon, malgré, près de, loin de…',
   conjonction: 'et, ou, mais, donc, or, ni, car…',
