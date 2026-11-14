@@ -4280,7 +4280,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -4294,12 +4294,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant la place de la négation ou du déterminant négatif."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a9.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -4358,15 +4367,16 @@
       "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la négation correspondant à l’indice de sens.",
-        "gap": "Complétez avec la négation correspondant à l’indice de sens."
+        "choice": "Choisissez le groupe qui exprime exactement la précision de l’indice.",
+        "gap": "Complétez avec le groupe négatif qui exprime la précision de l’indice."
       },
       "pilotPreview": {
         "sourcePath": "src/grammaire/curriculum/data/a9.json",
         "levels": [
-          "A1"
+          "A1",
+          "A2"
         ],
-        "reviewedActivityUnits": 50,
+        "reviewedActivityUnits": 100,
         "teacherApprovedUnits": 0,
         "humanReview": "pending"
       }
@@ -4428,14 +4438,15 @@
       "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre et écrivez la phrase négative."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase négative entière."
       },
       "pilotPreview": {
         "sourcePath": "src/grammaire/curriculum/data/a9.json",
         "levels": [
-          "A1"
+          "A1",
+          "A2"
         ],
-        "reviewedActivityUnits": 50,
+        "reviewedActivityUnits": 100,
         "teacherApprovedUnits": 0,
         "humanReview": "pending"
       }
@@ -14574,7 +14585,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14588,12 +14599,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Transformez chaque phrase selon la négation imposée et le contexte, sans changer les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a9.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -25541,16 +25561,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-qcm-verbe@A1@choice",
@@ -25623,16 +25648,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-qcm-verbe@A2@gap",
@@ -25647,16 +25677,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-ordre@A1@order",
@@ -25700,16 +25735,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-a9-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-pc-idee-qcm-verbe@A1@choice",
@@ -33502,16 +33542,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-c1-curriculum-complete@A1@choice",
@@ -38910,11 +38955,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 4280,
+    "reviewedVariants": 4530,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Validation enseignante et généralisation G3/G4/G5 aux autres activités/niveaux. Les contrats techniques situation/dialogue et image sont éprouvés ; les banques illustrées complètes restent à produire et à relire.",
-    "reviewedActivityUnits": 3310,
+    "remaining": "Conjuguer au présent : 72 offres en pilote, validation enseignante en attente. Généralisation aux autres thèmes, supports et niveaux, révisions et recette finale à poursuivre.",
+    "reviewedActivityUnits": 3510,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -38929,14 +38974,15 @@
       "modaux A1 (G3)",
       "pronominaux A1 (G3)",
       "a8 ne…pas A1 (G3)",
-      "a9 autres négations A1 (G3)"
+      "a9 autres négations A1 (G3)",
+      "a9 autres négations A2 (G4)"
     ],
-    "reviewedOfferings": 85,
+    "reviewedOfferings": 90,
     "lastUpdated": "2026-11-14",
-    "reviewedSelectableUnits": 3310,
+    "reviewedSelectableUnits": 3510,
     "reviewedDocuments": 60,
     "reviewedDocumentQuestions": 180,
-    "reviewedActivities": 62,
+    "reviewedActivities": 64,
     "reviewedPilotNotions": 5,
     "reviewedNotions": 14,
     "technicalContracts": {
@@ -38944,6 +38990,7 @@
       "images": "one existing image copied to immutable content-addressed path; bytes verified at display and printing",
       "reference": "docs/grammaire/implementation/contrats-situations-images.md",
       "countedInBankCoverage": false
-    }
+    },
+    "reviewedNotionLevelPairs": 18
   }
 }

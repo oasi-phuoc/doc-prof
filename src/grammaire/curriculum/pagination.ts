@@ -15,8 +15,8 @@ function cost(item: MathItem): number {
   if (q.presentation==='correct') return long?55:38
   if (q.presentation==='order') return long?55:40
   if (q.unit.reference) return 45
-  // A cue and a longer explanation need extra room on corrected gap sheets.
-  if (q.presentation==='gap' && q.unit.cue && q.unit.explanation.length>90) return 45
+  // Contextual cues also consume vertical space when the correction is short.
+  if (q.presentation==='gap' && q.unit.cue && (q.unit.explanation.length>90 || q.unit.cue.length>80)) return 45
   // Include the longest spelling explanation in the corrigé, not only the gap.
   if (q.unit.givenVerb) return q.presentation==='choice'?45:34
   // Destination rules can wrap even without an infinitive hint. Reserve room

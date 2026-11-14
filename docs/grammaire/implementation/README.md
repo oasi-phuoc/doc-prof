@@ -4,7 +4,7 @@ Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf3
 
 Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-charges-v2.md) ; les 424 activités cibles et les décisions sont suivies dans `target-registry.json`. L’option recommandée d’intégration des 43 activités omises est retenue comme hypothèse de construction au lancement ; aucun ancien type n’est supprimé. Les cinq décisions pédagogiques précédentes sont conservées.
 
-**État au 14 novembre 2026 : 14 notions, 62 activités et 85 offres en pilote**, soit 3 310 unités sélectionnables et 4 280 variantes. Validation enseignante en attente. Les offres A1 prévues du thème **Conjuguer au présent** disposent toutes de banques pilotes. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
+**État au 14 novembre 2026 : 14 notions, 64 activités et 90 offres en pilote**, soit 3 510 unités sélectionnables et 4 530 variantes. Validation enseignante en attente. Le thème **Conjuguer au présent** dispose de ses 72 offres prévues, aux niveaux du registre. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
 
 ## Disponible dans ce lot
 
@@ -147,6 +147,23 @@ Les transformations pronominales accordent le pronom et le verbe. La négation s
 
 Pour l’ordre, les 50 phrases de négation demandent **Négative** ; Positive/Mixte restent indisponibles. Les 50 phrases pronominales sont positives, y compris « plus tôt », dont le comparatif est correctement étiqueté comme adverbe. Les banques historiques restent intactes.
 
+### Autres négations A2 — fin de la couverture du présent
+
+Dans **Grammaire → Conjuguer au présent → Autres négations**, le niveau **A2 — pilote** ajoute :
+
+| Activité | Banque A2 |
+| --- | --- |
+| Choisir une autre négation | 50 contextes, une activité QCM / Lacune |
+| Mots dans l’ordre | 50 phrases négatives, deux lignes de réponse |
+| Corriger l’erreur | 50 réécritures avec intervalle sur le groupe mal placé |
+| Transformer une phrase | 50 transformations avec négation et sens imposés |
+
+Les 50 contextes A2 sont partagés entre les quatre tâches, soit **200 unités et 250 variantes**. Ils distinguent jamais, plus, pas encore, rien, personne, aucun et aucune. Les transformations traitent aussi les articles, les réflexifs et la position de rien devant un infinitif. Les deux banques A1 restent inchangées ; la [relecture A2](a9-a2-relecture.md) donne leur empreinte et toutes les unités.
+
+Les indices longs disposent de place supplémentaire dans les lacunes, y compris lorsque l’explication est courte. Le tirage et les IDs restent identiques. Les mises en ordre A2 se tirent en **Négative** ; les autres filtres ne déclenchent aucune substitution. Les corrections et transformations restent guidées par l’enseignant.
+
+Les **72 offres du thème Conjuguer au présent** sont désormais en pilote ; l’approbation enseignante reste nécessaire avant publication pédagogique.
+
 ### Contrats techniques de dialogue et de support image
 
 Les [essais G2](contrats-situations-images.md) couvrent les dialogues fermés avec QCM/lacune mélangés, le jeu de rôle ouvert avec intentions et relances, ainsi que l’image intégrée à une activité. Les groupes, répliques, critères, images et options sont figés dans les sauvegardes. Les coupures par question conservent les dialogues, et le tableau reprend le contexte sans modèle dévoilé.
@@ -174,9 +191,10 @@ Pour publier une banque après revue enseignant : enregistrer la personne, la da
 ## Vérifications reproductibles
 
 - `npm run test:grammar:baseline` : 735 sorties à graines fixes, types actuels et alias CO ; empreintes de 256 fichiers CO/audio. Le script refuse d’écraser la référence G0 existante.
-- `npm run test:grammar:levels` : 4 280 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau. Les banques d’ordre sont intégralement vérifiées avec la polarité disponible : Positive, Négative ou Mixte.
+- `npm run test:grammar:levels` : 4 530 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau. Les banques d’ordre sont intégralement vérifiées avec la polarité disponible : Positive, Négative ou Mixte.
 - `npm run test:grammar:present-g3` : provenance Aller/-er, erreurs réelles, corrections complètes, sujets imposés, informations conservées, élisions, pagination des explications longues et 50 tâches orales sans score automatique.
 - `npm run test:grammar:ir-re` : 800 variantes IR/RE-OIR, réemploi A1, contextes A2 distincts, modèles, erreurs uniques, sujets imposés, possessifs, élisions, graphies admises, capacités 44/6/50 et transformations guidées.
+- `npm run test:grammar:negation-a2` : sept formes négatives en contexte, articles, élisions, réflexifs, infinitifs, intervalles de correction, sens imposé et pagination des indices longs. `npm run test:grammar:negation-a2:browser` vérifie les huit présentations A1/A2, dont les cinq nouvelles, puis la séance de transformation.
 - `npm run test:grammar:contracts` et, avec Vite actif, `npm run test:grammar:contracts:browser` : essais de dialogue/situation et de support image, sans quota fictif.
 - `node node_modules/typescript/bin/tsc -b --pretty false` : contrôle TypeScript.
 - Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels des quatorze notions dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `npm run test:grammar:present-g3:browser` cible les onze présentations Aller/-er ; `npm run test:grammar:ir-re:browser` les seize présentations IR/RE-OIR et leurs capacités filtrées. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
@@ -226,3 +244,11 @@ Le dernier ajout TCF `55677f81` est aussi conservé. Il laisse le code grammatic
 Les 22 nouvelles présentations passent dans Chromium : 2 220 questions imprimées élève/corrigé, sans débordement, et quatre lancements au tableau. Le registre totalise 85 offres disponibles ; le parcours complet des 63 offres précédentes reste tracé sur sa base antérieure. Aucun parcours global des 85 offres sur une base unique n’est déclaré.
 
 `npm run test:grammar:present-a1-next` contrôle les lectures, rôles, contraintes, groupes, articles négatifs, élisions et transformations ; `npm run test:grammar:present-a1-next:browser` contrôle leurs fiches et séances. Les 4 280 variantes, G0 (735 sorties / 256 fichiers protégés), les contrats, les tests IR/RE-OIR et Aller/-er, TypeScript et la compilation passent. Les relectures enseignantes restent en attente.
+
+### Autres négations A2 — tranche sur `af120baf`
+
+Les cinq nouvelles présentations A2 et les trois présentations A1 conservées passent dans Chromium : 800 questions imprimées élève/corrigé, sans débordement, et une séance de transformation qui conserve la source et la consigne. Les 4 530 variantes, leurs sauvegardes et capacités, G0 (735 sorties / 256 fichiers protégés), TypeScript et la compilation de production passent. Les deux banques A1 sont inchangées, empreinte enregistrée dans la relecture A2.
+
+Les ajouts amont d’oral guidé et de glisser-déposer sont préservés. Deux fichiers de tests de l’oral guidé et des adaptateurs passent ; trois présentations précédentes et deux lancements sont revérifiés. Le bilan de 90 offres reste distinct des parcours navigateur antérieurs : aucun contrôle global des 90 offres sur une seule base n’est déclaré. La relecture enseignante reste nécessaire.
+
+Les dernières corrections contextuelles TCF jusqu’à `6491cdad` sont intégrées. Aucun fichier d’exécution de la grammaire, du générateur ou du tableau n’y change. TypeScript, G0, les 4 530 variantes et les contrats A2 passent après intégration ; le navigateur et la compilation de production restent tracés sur `af120baf`.

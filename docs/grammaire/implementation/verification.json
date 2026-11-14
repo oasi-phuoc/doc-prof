@@ -7,17 +7,17 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 4280,
+    "reviewedResponseVariants": 4530,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 3310,
-    "reviewedSelectableUnits": 3310,
+    "reviewedActivityUnits": 3510,
+    "reviewedSelectableUnits": 3510,
     "reviewedDocuments": 60,
     "reviewedDocumentQuestions": 180,
-    "reviewedActivities": 62,
-    "reviewedOfferings": 85,
+    "reviewedActivities": 64,
+    "reviewedOfferings": 90,
     "reviewedPilotNotions": 5,
     "reviewedNotions": 14,
-    "reviewedNotionLevelPairs": 17
+    "reviewedNotionLevelPairs": 18
   },
   "browser": {
     "results": [
@@ -66,24 +66,24 @@
     ],
     "errors": []
   },
-  "remaining": "Toutes les offres A1 du thème Conjuguer au présent sont en pilote ; cinq offres A2 des autres négations restent à préparer dans ce thème. Au total 516 offres et 362 activités sont sans banque pilote. Approbation enseignante des 85 pilotes en attente ; voir avancement-20261114.md.",
+  "remaining": "Conjuguer au présent : 72 offres sur 72 en pilote, approbation enseignante en attente. Au total 511 offres et 360 activités sont sans banque pilote ; poursuivre les autres thèmes, révisions et recette finale.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
       "result": "passed",
-      "validatedAtUpstream": "73a261b5"
+      "validatedAtUpstream": "6491cdad"
     },
     "legacyAndCo": {
       "command": "node scripts/grammar-baseline.cjs",
       "result": "passed",
       "fixtures": 735,
       "protectedFiles": 256,
-      "validatedAtUpstream": "73a261b5"
+      "validatedAtUpstream": "6491cdad"
     },
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 4280,
+      "reviewedVariants": 4530,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
@@ -96,14 +96,14 @@
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
       "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
-      "reviewedActivityOfferings": 85,
+      "reviewedActivityOfferings": 90,
       "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension",
       "g3Notions": [
         "avoir A1",
         "aller-destination A1",
         "er A1"
       ],
-      "validatedAtUpstream": "73a261b5"
+      "validatedAtUpstream": "6491cdad"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -479,9 +479,106 @@
       "generatedAudios": 0,
       "fullPrevious63BrowserAtUpstream": "165f1027",
       "all85OnSingleBaseClaimed": false
+    },
+    "negationA2": {
+      "upstream": "af120baf",
+      "commands": [
+        "npm run test:grammar:negation-a2",
+        "npm run test:grammar:negation-a2:browser"
+      ],
+      "result": "passed",
+      "newActivities": 2,
+      "newOfferings": 5,
+      "selectableUnits": 200,
+      "responseVariants": 250,
+      "distinctContexts": 50,
+      "forms": [
+        "jamais",
+        "plus",
+        "pas encore",
+        "rien",
+        "personne",
+        "aucun",
+        "aucune"
+      ],
+      "humanApproval": "pending",
+      "a1UnchangedCanonicalSha256": "ee3108bd083bdd95137bb9693da9461626d5b9428e747e8de91ecf0a402a3156",
+      "a4Fix": "Long cues reserve extra gap correction space independently of explanation length; frozen IDs and order preserved.",
+      "previousBankUnitsAffectedByLayoutFix": 0,
+      "browserPresentations": 8,
+      "newA2Presentations": 5,
+      "printedQuestions": 800,
+      "newA2PrintedQuestions": 500,
+      "classroomTransform": "source and semantic directive preserved, human assessment",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-negation-a2-build --emptyOutDir",
+      "generatedImages": 0,
+      "generatedAudios": 0,
+      "full90OnSingleBaseClaimed": false
+    },
+    "guidedOralIntegration": {
+      "upstream": "af120baf",
+      "preserved": "Guided oral support and drag-and-drop added upstream",
+      "unitCommand": "node --test tests/interactive/guided-oral.test.mjs tests/interactive/source-adapters.test.mjs",
+      "unitFilesPassed": 2,
+      "browser": {
+        "results": [
+          {
+            "sub": "modaux",
+            "level": "A1",
+            "presentation": "order",
+            "sheets": 26,
+            "printedQuestions": 100,
+            "overflow": false
+          },
+          {
+            "sub": "modaux",
+            "level": "A1",
+            "presentation": "scenario-set",
+            "sheets": 100,
+            "printedQuestions": 100,
+            "overflow": false
+          },
+          {
+            "sub": "modaux",
+            "classroomLaunch": "passed",
+            "selectedQuestions": 3,
+            "teacherLed": true
+          },
+          {
+            "sub": "pronominaux",
+            "level": "A1",
+            "presentation": "order",
+            "sheets": 26,
+            "printedQuestions": 100,
+            "overflow": false
+          },
+          {
+            "sub": "pronominaux",
+            "classroomLaunch": "passed",
+            "selectedQuestions": 3,
+            "teacherLed": true
+          }
+        ],
+        "errors": []
+      },
+      "browserPresentations": 3,
+      "printedQuestions": 300,
+      "classroomLaunches": 2
+    },
+    "negationA2PostIntegration": {
+      "upstream": "6491cdad",
+      "changes": "TCF contextual review and question corrections; no grammar, generator or interactive runtime differences from af120baf upstream.",
+      "typeScript": "passed",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "reviewedResponseVariants": 4530,
+      "negationA2Contracts": "passed",
+      "browserAtUpstream": "af120baf",
+      "productionBuildAtUpstream": "af120baf"
     }
   },
-  "upstreamIntegrated": "73a261b5",
+  "upstreamIntegrated": "6491cdad",
   "lastValidatedDate": "2026-11-14",
   "browserM5": {
     "results": [
@@ -1242,6 +1339,74 @@
         "classroomLaunch": "passed",
         "selectedQuestions": 3,
         "teacherLed": false
+      }
+    ],
+    "errors": []
+  },
+  "browserNegationA2": {
+    "results": [
+      {
+        "levelSwitch": "A1 ↔ A2 keeps the presentation; legacy remains available"
+      },
+      {
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "order",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "classroomTransform": "source, context and directive preserved; teacher assessed",
+        "selectedQuestions": 3
       }
     ],
     "errors": []
