@@ -10,13 +10,19 @@ function cost(item: MathItem): number {
   if (q.unit.imageSupports?.length) return 160
   if (q.unit.kind==='production') return 160
   const long=q.unit.responseLines===2
-  if (q.presentation==='match') return 70
+  if (q.presentation==='match') {
+    const longSet=q.unit.kind==='match' && q.unit.pairs.length>=3 && q.unit.pairs.reduce((n,p)=>n+p.left.length,0)>260
+    return longSet?90:70
+  }
   if (q.presentation==='transform') return 58
   if (q.presentation==='correct') return long?55:38
   if (q.presentation==='order') return long?55:40
   if (q.unit.reference) return 45
-  // Contextual cues also consume vertical space when the correction is short.
-  if (q.presentation==='gap' && q.unit.cue && (q.unit.explanation.length>90 || q.unit.cue.length>80)) return 45
+  // Register and context cues need room even when no infinitive is supplied.
+  if (q.unit.cue) {
+    if (q.presentation==='choice') return 45
+    if (q.presentation==='gap') return q.unit.explanation.length>90 || q.unit.cue.length>80 ? 45 : 34
+  }
   // Include the longest spelling explanation in the corrigé, not only the gap.
   if (q.unit.givenVerb) return q.presentation==='choice'?45:34
   // Destination rules can wrap even without an infinitive hint. Reserve room

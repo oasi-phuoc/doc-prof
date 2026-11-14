@@ -63,7 +63,9 @@
     "test:grammar:present-a1-next:browser": "node tests/grammar/present-a1-next-browser.mjs",
     "test:grammar:negation-a2": "node scripts/test-grammar-negation-a2.cjs",
     "test:grammar:negation-a2:browser": "node tests/grammar/negation-a2-browser.mjs",
-    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs && node tests/grammar/present-g3-browser.mjs && node tests/grammar/ir-re-browser.mjs && node tests/grammar/present-a1-next-browser.mjs && node tests/grammar/negation-a2-browser.mjs",
+    "test:grammar:contact": "node scripts/test-grammar-contact.cjs",
+    "test:grammar:contact:browser": "node tests/grammar/contact-browser.mjs",
+    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs && node tests/grammar/present-g3-browser.mjs && node tests/grammar/ir-re-browser.mjs && node tests/grammar/present-a1-next-browser.mjs && node tests/grammar/negation-a2-browser.mjs && node tests/grammar/contact-browser.mjs",
     "audio:index": "node scripts/audio-catalog.mjs",
     "test:audio-catalog": "node --test tests/audio-catalog/catalog.test.mjs",
     "test:audio-catalog:browser": "node tests/audio-catalog/browser.mjs"

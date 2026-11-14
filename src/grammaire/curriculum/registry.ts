@@ -12,12 +12,15 @@ import modals from './data/modaux.json'
 import reflexive from './data/pronominaux.json'
 import simpleNegation from './data/a8.json'
 import otherNegations from './data/a9.json'
+import addressForms from './data/b1.json'
+import greetings from './data/b2.json'
+import politeness from './data/b3.json'
 import type { ExerciseType } from '@/math/types'
 import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {
