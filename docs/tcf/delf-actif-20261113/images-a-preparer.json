@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 265,
+      "active_reviewed_trio": 271,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 481,
+      "candidate_visual_review": 475,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 150,
+        "active_reviewed_trio": 156,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 112,
+        "candidate_visual_review": 106,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -19234,14 +19234,21 @@
       "semantic_sha256": "0198126f2e563ff1310107fc76abf8cad744cada7f6df8e94f26a4c1d3158ed4",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-03.mp3",
       "audio_sha256": "e0de017d39fb8d894dfc1c1440f2c779ce06c9e2f58c8bf4f27ac9bd185d235d",
-      "status": "candidate_visual_review",
-      "reason": "Guitare avec éléments électriques visibles, piano et violon ; pas une guitare acoustique substituée à l’électrique.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Une guitare électrique",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+              "sha256": "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0",
+              "label": "Une guitare électrique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "acc1de9d43fceaf3",
           "brief": "Représenter entièrement « Une guitare électrique » pour « Quel instrument est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Guitare avec éléments électriques visibles, piano et violon ; pas une guitare acoustique substituée à l’électrique."
         },
@@ -19276,8 +19283,24 @@
           "brief": "Représenter entièrement « Un violon » pour « Quel instrument est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Guitare avec éléments électriques visibles, piano et violon ; pas une guitare acoustique substituée à l’électrique."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+          "sha256": "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-piano.webp",
+          "sha256": "5bbe9787f9ae1bb09e5e498205ded4508611d133186333919fc00c91ddf36cf3"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-violon.webp",
+          "sha256": "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19295,6 +19318,12 @@
         "evidence_quote": "guitares électriques",
         "semantic_sha256": "0198126f2e563ff1310107fc76abf8cad744cada7f6df8e94f26a4c1d3158ed4",
         "note": "Guitare avec éléments électriques visibles, piano et violon ; pas une guitare acoustique substituée à l’électrique."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-instruments-monuments-20261114.json",
+        "reason": "Le magasin annonce une offre de guitares électriques pour les amateurs de musique.",
+        "note": "Guitare électrique à micros et corps plein, piano droit acoustique et violon avec archet ; les trois objets sont entiers. Une guitare acoustique ne remplace pas la réponse électrique."
       }
     },
     {
@@ -25594,14 +25623,21 @@
       "semantic_sha256": "d4f53c6e7052cde42824678249611b9aa060268c8259743de2806b33ad63a8df",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
       "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
-      "status": "candidate_visual_review",
-      "reason": "Motifs architecturaux tour Eiffel, Arc de triomphe et Colisée, clairement dessinés sur le même type de pendentif ; ce n’est pas une question de ville ou nationalité.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "La tour Eiffel",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+              "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+              "label": "La tour Eiffel",
+              "visual_review_required": true
+            }
+          ],
           "asset": "9defd4fd2e5e2bff",
           "brief": "Représenter entièrement « La tour Eiffel » pour « Quel monument figure sur le bijou ? ». Vérifier la transcription du support tcf-delf-actif-a1-047-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Motifs architecturaux tour Eiffel, Arc de triomphe et Colisée, clairement dessinés sur le même type de pendentif ; ce n’est pas une question de ville ou nationalité."
         },
@@ -25609,7 +25645,14 @@
           "id": "b",
           "label": "L’Arc de triomphe",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+              "sha256": "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30",
+              "label": "L’Arc de triomphe",
+              "visual_review_required": true
+            }
+          ],
           "asset": "261c6135c0c54ae7",
           "brief": "Représenter entièrement « L’Arc de triomphe » pour « Quel monument figure sur le bijou ? ». Vérifier la transcription du support tcf-delf-actif-a1-047-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Motifs architecturaux tour Eiffel, Arc de triomphe et Colisée, clairement dessinés sur le même type de pendentif ; ce n’est pas une question de ville ou nationalité."
         },
@@ -25617,13 +25660,36 @@
           "id": "c",
           "label": "Le Colisée",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-colisee.png",
+              "sha256": "96311a3fa43301d608472723cb01c83f30beb37113d323e9f70939562cc8dfa3",
+              "label": "Le Colisée",
+              "visual_review_required": true
+            }
+          ],
           "asset": "eaec8cba02dde00f",
           "brief": "Représenter entièrement « Le Colisée » pour « Quel monument figure sur le bijou ? ». Vérifier la transcription du support tcf-delf-actif-a1-047-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Motifs architecturaux tour Eiffel, Arc de triomphe et Colisée, clairement dessinés sur le même type de pendentif ; ce n’est pas une question de ville ou nationalité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+          "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+          "sha256": "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-colisee.png",
+          "sha256": "96311a3fa43301d608472723cb01c83f30beb37113d323e9f70939562cc8dfa3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25641,6 +25707,12 @@
         "evidence_quote": "un pendentif avec la tour Eiffel",
         "semantic_sha256": "d4f53c6e7052cde42824678249611b9aa060268c8259743de2806b33ad63a8df",
         "note": "Motifs architecturaux tour Eiffel, Arc de triomphe et Colisée, clairement dessinés sur le même type de pendentif ; ce n’est pas une question de ville ou nationalité."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-instruments-monuments-20261114.json",
+        "reason": "Le jeune demande un pendentif avec la tour Eiffel et choisit ce modèle en argent.",
+        "note": "Les trois monuments représentés en entier répondent au motif demandé : tour Eiffel, Arc de triomphe de l’Étoile et Colisée. Aucune image de prix ou de bijou d’un autre métal."
       }
     },
     {
@@ -30546,14 +30618,21 @@
       "semantic_sha256": "4cf5bfea51898baa5395c35712d319d5e1eb1b2889fbc403dd6acd6aabfa3c03",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-05-01.mp3",
       "audio_sha256": "435ac1a2d835a5295f4e43e9f35f0b96c49842fdbba9988765b5a230abdac648",
-      "status": "candidate_visual_review",
-      "reason": "Sites architecturaux distincts avec références fidèles : Mont Saint-Michel, Versailles et tour Eiffel ; pas des paysages anonymes.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Le Mont Saint-Michel",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-mont-saint-michel.png",
+              "sha256": "220b28756ec388d1028f1775023b0e939d3ff62e2f02d57be44e6af70b00bfe2",
+              "label": "Le Mont Saint-Michel",
+              "visual_review_required": true
+            }
+          ],
           "asset": "1da278875cea4e4e",
           "brief": "Représenter entièrement « Le Mont Saint-Michel » pour « Quel lieu Rony va-t-il visiter ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Sites architecturaux distincts avec références fidèles : Mont Saint-Michel, Versailles et tour Eiffel ; pas des paysages anonymes."
         },
@@ -30561,7 +30640,14 @@
           "id": "b",
           "label": "Le château de Versailles",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+              "sha256": "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19",
+              "label": "Le château de Versailles",
+              "visual_review_required": true
+            }
+          ],
           "asset": "d6c3486dc67c9309",
           "brief": "Représenter entièrement « Le château de Versailles » pour « Quel lieu Rony va-t-il visiter ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Sites architecturaux distincts avec références fidèles : Mont Saint-Michel, Versailles et tour Eiffel ; pas des paysages anonymes."
         },
@@ -30569,13 +30655,36 @@
           "id": "c",
           "label": "La tour Eiffel",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+              "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+              "label": "La tour Eiffel",
+              "visual_review_required": true
+            }
+          ],
           "asset": "9defd4fd2e5e2bff",
           "brief": "Représenter entièrement « La tour Eiffel » pour « Quel lieu Rony va-t-il visiter ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Sites architecturaux distincts avec références fidèles : Mont Saint-Michel, Versailles et tour Eiffel ; pas des paysages anonymes."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-mont-saint-michel.png",
+          "sha256": "220b28756ec388d1028f1775023b0e939d3ff62e2f02d57be44e6af70b00bfe2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+          "sha256": "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+          "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -30593,6 +30702,12 @@
         "evidence_quote": "voyage au Mont Saint-Michel",
         "semantic_sha256": "4cf5bfea51898baa5395c35712d319d5e1eb1b2889fbc403dd6acd6aabfa3c03",
         "note": "Sites architecturaux distincts avec références fidèles : Mont Saint-Michel, Versailles et tour Eiffel ; pas des paysages anonymes."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-instruments-monuments-20261114.json",
+        "reason": "Rony doit apporter son matériel pour le voyage au Mont Saint-Michel.",
+        "note": "Mont Saint-Michel avec baie et abbaye, château de Versailles à corps central et ailes entiers, tour Eiffel complète ; la vue de Versailles aux ailes coupées est écartée au profit de sa reprise native."
       }
     },
     {
@@ -32407,14 +32522,21 @@
       "semantic_sha256": "2152921aa36150697d14d6b080bebbd2d6e0b8a99ede05bf60f5d76ccded99f4",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
       "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
-      "status": "candidate_visual_review",
-      "reason": "Tour Eiffel, Arc de triomphe et Sacré-Cœur sont des monuments distincts ; les représenter fidèlement plutôt qu’une ville générique.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "La tour Eiffel",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+              "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+              "label": "La tour Eiffel",
+              "visual_review_required": true
+            }
+          ],
           "asset": "9defd4fd2e5e2bff",
           "brief": "Représenter entièrement « La tour Eiffel » pour « Quel monument les élèves vont-ils visiter ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Tour Eiffel, Arc de triomphe et Sacré-Cœur sont des monuments distincts ; les représenter fidèlement plutôt qu’une ville générique."
         },
@@ -32422,7 +32544,14 @@
           "id": "b",
           "label": "L’Arc de triomphe",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+              "sha256": "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30",
+              "label": "L’Arc de triomphe",
+              "visual_review_required": true
+            }
+          ],
           "asset": "261c6135c0c54ae7",
           "brief": "Représenter entièrement « L’Arc de triomphe » pour « Quel monument les élèves vont-ils visiter ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Tour Eiffel, Arc de triomphe et Sacré-Cœur sont des monuments distincts ; les représenter fidèlement plutôt qu’une ville générique."
         },
@@ -32430,13 +32559,36 @@
           "id": "c",
           "label": "Le Sacré-Cœur",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-sacre-coeur.png",
+              "sha256": "a17b8abca2b986f1f97110cb1dad494ef894d1da3ce6aec46125104d05c9bac4",
+              "label": "Le Sacré-Cœur",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e78b3b5346fea874",
           "brief": "Représenter entièrement « Le Sacré-Cœur » pour « Quel monument les élèves vont-ils visiter ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Tour Eiffel, Arc de triomphe et Sacré-Cœur sont des monuments distincts ; les représenter fidèlement plutôt qu’une ville générique."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+          "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+          "sha256": "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sacre-coeur.png",
+          "sha256": "a17b8abca2b986f1f97110cb1dad494ef894d1da3ce6aec46125104d05c9bac4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32454,6 +32606,12 @@
         "evidence_quote": "en haut de la tour Eiffel",
         "semantic_sha256": "2152921aa36150697d14d6b080bebbd2d6e0b8a99ede05bf60f5d76ccded99f4",
         "note": "Tour Eiffel, Arc de triomphe et Sacré-Cœur sont des monuments distincts ; les représenter fidèlement plutôt qu’une ville générique."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-instruments-monuments-20261114.json",
+        "reason": "Le professeur annonce que les élèves monteront en haut de la tour Eiffel pour voir Paris.",
+        "note": "Tour Eiffel, Arc de triomphe et Sacré-Cœur distincts, sites entiers avec leurs éléments identifiants ; aucune heure ou date affichée dans les images."
       }
     },
     {
@@ -32808,8 +32966,8 @@
       "semantic_sha256": "0fb43f22dac32be0d16da6a2b7248956516fad9e1cd75ed39b0f340dcaea6494",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
       "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
-      "status": "candidate_visual_review",
-      "reason": "Le violon est l’instrument enseigné ; la contrebasse est aussi à cordes frottées mais n’est pas citée. Trois instruments entiers à proportions cohérentes.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -32830,7 +32988,14 @@
           "id": "b",
           "label": "La harpe",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-harpe.png",
+              "sha256": "abc9739211e23e86189d67b4a8ec180f4332d1cfb921b72d5b85cba3b00fb499",
+              "label": "Une harpe",
+              "visual_review_required": true
+            }
+          ],
           "asset": "b7481b55cbe14e85",
           "brief": "Représenter entièrement « La harpe » pour « Quel instrument à cordes frottées est enseigné dans l’école ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Le violon est l’instrument enseigné ; la contrebasse est aussi à cordes frottées mais n’est pas citée. Trois instruments entiers à proportions cohérentes."
         },
@@ -32838,13 +33003,36 @@
           "id": "c",
           "label": "La contrebasse",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-contrebasse.png",
+              "sha256": "ccd86773e59302594bc62e0f5197c164c042ae33928a622ead10d1684e681725",
+              "label": "Une contrebasse",
+              "visual_review_required": true
+            }
+          ],
           "asset": "9509d31daa2840f4",
           "brief": "Représenter entièrement « La contrebasse » pour « Quel instrument à cordes frottées est enseigné dans l’école ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Le violon est l’instrument enseigné ; la contrebasse est aussi à cordes frottées mais n’est pas citée. Trois instruments entiers à proportions cohérentes."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-violon.webp",
+          "sha256": "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-harpe.png",
+          "sha256": "abc9739211e23e86189d67b4a8ec180f4332d1cfb921b72d5b85cba3b00fb499"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-contrebasse.png",
+          "sha256": "ccd86773e59302594bc62e0f5197c164c042ae33928a622ead10d1684e681725"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32862,6 +33050,12 @@
         "evidence_quote": "du violon",
         "semantic_sha256": "0fb43f22dac32be0d16da6a2b7248956516fad9e1cd75ed39b0f340dcaea6494",
         "note": "Le violon est l’instrument enseigné ; la contrebasse est aussi à cordes frottées mais n’est pas citée. Trois instruments entiers à proportions cohérentes."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-instruments-monuments-20261114.json",
+        "reason": "L’école enseigne la batterie, la guitare électrique et le violon ; le locuteur suit le piano.",
+        "note": "Violon à mentonnière et archet, harpe à cordes verticales et contrebasse sur pique ; trois instruments à cordes distincts, sans confondre celui annoncé et celui pratiqué personnellement."
       }
     },
     {
@@ -32875,14 +33069,21 @@
       "semantic_sha256": "62edb181db44a9c5e553e4113e49385e13c5cd7a3b9e25bc64ab197cf8c30a75",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
       "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
-      "status": "candidate_visual_review",
-      "reason": "Guitare électrique, clavier et basse électriques distincts ; la bonne réponse est la seule citée, ne pas représenter une guitare acoustique.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "La guitare électrique",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+              "sha256": "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0",
+              "label": "Une guitare électrique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "acc1de9d43fceaf3",
           "brief": "Représenter entièrement « La guitare électrique » pour « Quel instrument électrique peut-on y apprendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Guitare électrique, clavier et basse électriques distincts ; la bonne réponse est la seule citée, ne pas représenter une guitare acoustique."
         },
@@ -32890,7 +33091,14 @@
           "id": "b",
           "label": "Le clavier électrique",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-clavier-electrique.png",
+              "sha256": "c8fdaee1340e5352a92812712bf12e647904555fbb39e578917ec1ef203498ef",
+              "label": "Un clavier électrique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "dccafcfd95be5b70",
           "brief": "Représenter entièrement « Le clavier électrique » pour « Quel instrument électrique peut-on y apprendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Guitare électrique, clavier et basse électriques distincts ; la bonne réponse est la seule citée, ne pas représenter une guitare acoustique."
         },
@@ -32898,13 +33106,36 @@
           "id": "c",
           "label": "La basse électrique",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-basse-electrique.png",
+              "sha256": "617ef6b0f93b1bbf570dc46ff11e1573d9b0aa23263b56e272b25e3c2e10a4bb",
+              "label": "Une basse électrique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "752102bc52246eaa",
           "brief": "Représenter entièrement « La basse électrique » pour « Quel instrument électrique peut-on y apprendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Guitare électrique, clavier et basse électriques distincts ; la bonne réponse est la seule citée, ne pas représenter une guitare acoustique."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+          "sha256": "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-clavier-electrique.png",
+          "sha256": "c8fdaee1340e5352a92812712bf12e647904555fbb39e578917ec1ef203498ef"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-basse-electrique.png",
+          "sha256": "617ef6b0f93b1bbf570dc46ff11e1573d9b0aa23263b56e272b25e3c2e10a4bb"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32922,6 +33153,12 @@
         "evidence_quote": "la guitare électrique",
         "semantic_sha256": "62edb181db44a9c5e553e4113e49385e13c5cd7a3b9e25bc64ab197cf8c30a75",
         "note": "Guitare électrique, clavier et basse électriques distincts ; la bonne réponse est la seule citée, ne pas représenter une guitare acoustique."
+      },
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-instruments-monuments-20261114.json",
+        "reason": "La guitare électrique figure dans la liste enseignée, avec batterie et violon.",
+        "note": "Guitare électrique à six cordes, clavier électronique portable et basse électrique à quatre cordes ; cordes et mécaniques recomptées, aucune guitare acoustique substituée."
       }
     },
     {
@@ -79044,7 +79281,14 @@
           "id": "b",
           "label": "Le château de Versailles",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+              "sha256": "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19",
+              "label": "Le château de Versailles",
+              "visual_review_required": true
+            }
+          ],
           "asset": "d6c3486dc67c9309",
           "brief": "Représenter entièrement « Le château de Versailles » pour « Quel château est cité parmi les lieux moins connus ? ». Vérifier la transcription du support tcf-delf-actif-b1-002-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Architectures fidèles de Pau, Versailles et Chambord avec références réelles à contrôler ; aucune façade générique attribuée à un nom."
         },
@@ -116729,7 +116973,14 @@
     {
       "id": "acc1de9d43fceaf3",
       "label": "Une guitare électrique",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+          "sha256": "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0",
+          "label": "Une guitare électrique",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-033-03#1",
@@ -118763,7 +119014,14 @@
     {
       "id": "9defd4fd2e5e2bff",
       "label": "La tour Eiffel",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+          "sha256": "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+          "label": "La tour Eiffel",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-047-01#5",
@@ -118782,7 +119040,14 @@
     {
       "id": "261c6135c0c54ae7",
       "label": "L’Arc de triomphe",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+          "sha256": "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30",
+          "label": "L’Arc de triomphe",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-047-01#5",
@@ -118797,7 +119062,14 @@
     {
       "id": "eaec8cba02dde00f",
       "label": "Le Colisée",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-colisee.png",
+          "sha256": "96311a3fa43301d608472723cb01c83f30beb37113d323e9f70939562cc8dfa3",
+          "label": "Le Colisée",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-047-01#5",
@@ -119998,7 +120270,14 @@
     {
       "id": "1da278875cea4e4e",
       "label": "Le Mont Saint-Michel",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-mont-saint-michel.png",
+          "sha256": "220b28756ec388d1028f1775023b0e939d3ff62e2f02d57be44e6af70b00bfe2",
+          "label": "Le Mont Saint-Michel",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-050-05-01#1",
@@ -120009,7 +120288,14 @@
     {
       "id": "d6c3486dc67c9309",
       "label": "Le château de Versailles",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+          "sha256": "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19",
+          "label": "Le château de Versailles",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-050-05-01#1",
@@ -120296,7 +120582,14 @@
     {
       "id": "e78b3b5346fea874",
       "label": "Le Sacré-Cœur",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sacre-coeur.png",
+          "sha256": "a17b8abca2b986f1f97110cb1dad494ef894d1da3ce6aec46125104d05c9bac4",
+          "label": "Le Sacré-Cœur",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-04-04#1",
@@ -120365,7 +120658,14 @@
     {
       "id": "b7481b55cbe14e85",
       "label": "La harpe",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-harpe.png",
+          "sha256": "abc9739211e23e86189d67b4a8ec180f4332d1cfb921b72d5b85cba3b00fb499",
+          "label": "Une harpe",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-05-01#2",
@@ -120376,7 +120676,14 @@
     {
       "id": "9509d31daa2840f4",
       "label": "La contrebasse",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-contrebasse.png",
+          "sha256": "ccd86773e59302594bc62e0f5197c164c042ae33928a622ead10d1684e681725",
+          "label": "Une contrebasse",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-05-01#2",
@@ -120387,7 +120694,14 @@
     {
       "id": "dccafcfd95be5b70",
       "label": "Le clavier électrique",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-clavier-electrique.png",
+          "sha256": "c8fdaee1340e5352a92812712bf12e647904555fbb39e578917ec1ef203498ef",
+          "label": "Un clavier électrique",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-05-01#3",
@@ -120398,7 +120712,14 @@
     {
       "id": "752102bc52246eaa",
       "label": "La basse électrique",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-basse-electrique.png",
+          "sha256": "617ef6b0f93b1bbf570dc46ff11e1573d9b0aa23263b56e272b25e3c2e10a4bb",
+          "label": "Une basse électrique",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-05-01#3",

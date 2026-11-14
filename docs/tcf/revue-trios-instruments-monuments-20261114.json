@@ -1,0 +1,304 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "1a4fd9279db7dc45cc8b3cd44a23a6086e810afe",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "1a4fd9279db7dc45cc8b3cd44a23a6086e810afe",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 6
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-033-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour les amateurs de musique nous offrons des guitares électriques à des prix exceptionnels !",
+      "source_sha256": "4e20904d0b18c11b34873a24e5410fe39b25d9ecc46c1657429e919d969bba86",
+      "semantic_sha256": "0198126f2e563ff1310107fc76abf8cad744cada7f6df8e94f26a4c1d3158ed4",
+      "question": {
+        "enonce": "Quel instrument est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une guitare électrique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un piano",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un violon",
+            "correct": false
+          }
+        ],
+        "written_model": "Une guitare électrique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-03.mp3",
+      "audio_sha256": "e0de017d39fb8d894dfc1c1440f2c779ce06c9e2f58c8bf4f27ac9bd185d235d",
+      "image_ids": [
+        "qcm-a1-guitare-electrique",
+        "vocab-piano",
+        "vocab-violon"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+        "/lib/images/tcf/qcm-audit/vocab-piano.webp",
+        "/lib/images/tcf/qcm-audit/vocab-violon.webp"
+      ],
+      "image_sha256": [
+        "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0",
+        "5bbe9787f9ae1bb09e5e498205ded4508611d133186333919fc00c91ddf36cf3",
+        "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd"
+      ],
+      "reason": "Le magasin annonce une offre de guitares électriques pour les amateurs de musique.",
+      "visual_review": "Guitare électrique à micros et corps plein, piano droit acoustique et violon avec archet ; les trois objets sont entiers. Une guitare acoustique ne remplace pas la réponse électrique."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-05-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Paula. Tu veux faire de la musique avec moi ? Dans mon école on apprend à jouer de la batterie, de la guitare électrique, du violon. Le prof est super sympa. Moi je fais du piano de 16h00 à 17h00 et le cours a lieu le jeudi après -midi.",
+      "source_sha256": "219a77b4a7c18de33a75d0db4fa08ffe25e803a32cdbf2bab878d947e8209229",
+      "semantic_sha256": "0fb43f22dac32be0d16da6a2b7248956516fad9e1cd75ed39b0f340dcaea6494",
+      "question": {
+        "enonce": "Quel instrument à cordes frottées est enseigné dans l’école ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le violon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La harpe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La contrebasse",
+            "correct": false
+          }
+        ],
+        "written_model": "Le violon"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
+      "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
+      "image_ids": [
+        "vocab-violon",
+        "qcm-a1-harpe",
+        "qcm-a1-contrebasse"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-violon.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-harpe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-contrebasse.png"
+      ],
+      "image_sha256": [
+        "4318b9daea7e763100086a889c644e9691900d743b61ff29ee2ea4ef086b93dd",
+        "abc9739211e23e86189d67b4a8ec180f4332d1cfb921b72d5b85cba3b00fb499",
+        "ccd86773e59302594bc62e0f5197c164c042ae33928a622ead10d1684e681725"
+      ],
+      "reason": "L’école enseigne la batterie, la guitare électrique et le violon ; le locuteur suit le piano.",
+      "visual_review": "Violon à mentonnière et archet, harpe à cordes verticales et contrebasse sur pique ; trois instruments à cordes distincts, sans confondre celui annoncé et celui pratiqué personnellement."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-05-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Paula. Tu veux faire de la musique avec moi ? Dans mon école on apprend à jouer de la batterie, de la guitare électrique, du violon. Le prof est super sympa. Moi je fais du piano de 16h00 à 17h00 et le cours a lieu le jeudi après -midi.",
+      "source_sha256": "219a77b4a7c18de33a75d0db4fa08ffe25e803a32cdbf2bab878d947e8209229",
+      "semantic_sha256": "62edb181db44a9c5e553e4113e49385e13c5cd7a3b9e25bc64ab197cf8c30a75",
+      "question": {
+        "enonce": "Quel instrument électrique peut-on y apprendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La guitare électrique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le clavier électrique",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La basse électrique",
+            "correct": false
+          }
+        ],
+        "written_model": "La guitare électrique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-05-01.mp3",
+      "audio_sha256": "99a5c32be4a7ae9d001490bd78cf0b566739176012fccf881761a08a941abcde",
+      "image_ids": [
+        "qcm-a1-guitare-electrique",
+        "qcm-a1-clavier-electrique",
+        "qcm-a1-basse-electrique"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-guitare-electrique.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-clavier-electrique.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-basse-electrique.png"
+      ],
+      "image_sha256": [
+        "628cfad0d8aaaf19aa5a00b25b9a022c27b9c7c14c5cfea8d3aadbb2f74716c0",
+        "c8fdaee1340e5352a92812712bf12e647904555fbb39e578917ec1ef203498ef",
+        "617ef6b0f93b1bbf570dc46ff11e1573d9b0aa23263b56e272b25e3c2e10a4bb"
+      ],
+      "reason": "La guitare électrique figure dans la liste enseignée, avec batterie et violon.",
+      "visual_review": "Guitare électrique à six cordes, clavier électronique portable et basse électrique à quatre cordes ; cordes et mécaniques recomptées, aucune guitare acoustique substituée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-047-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour madame, Bonjour jeune homme. Vous désirez ? Je voudrais un bijou pour ma sœur, s’il vous plaît. Quel âge a-t-elle ? Elle a 16 ans et elle aime les bracelets. Voici un beau bracelet. Il est beau mais il coûte combien ? Il est à 30 €. Oh, mais c’est cher ! Vous avez des bijoux moins chers ? J’ai des pendentifs. Vous avez un pendentif avec la tour Eiffel ? Oui, voici un pendentif. Il est en argent ? Oui, il est en argent. Il coûte combien ? Ce modèle est à 15 €. Très bien, je prends ce modèle. Vous voulez un paquet cadeau ? Oui merci, voici 20 €. Merci, alors 5 € à vous et votre paquet jeune homme. Merci madame et au revoir.",
+      "source_sha256": "451b119319631afb6fe4969604f0490647e999cd5a97c55dc24f2594a2b23b24",
+      "semantic_sha256": "d4f53c6e7052cde42824678249611b9aa060268c8259743de2806b33ad63a8df",
+      "question": {
+        "enonce": "Quel monument figure sur le bijou ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La tour Eiffel",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’Arc de triomphe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le Colisée",
+            "correct": false
+          }
+        ],
+        "written_model": "La tour Eiffel"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
+      "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+      "image_ids": [
+        "qcm-a1-tour-eiffel",
+        "qcm-a1-arc-triomphe",
+        "qcm-a1-colisee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-colisee.png"
+      ],
+      "image_sha256": [
+        "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+        "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30",
+        "96311a3fa43301d608472723cb01c83f30beb37113d323e9f70939562cc8dfa3"
+      ],
+      "reason": "Le jeune demande un pendentif avec la tour Eiffel et choisit ce modèle en argent.",
+      "visual_review": "Les trois monuments représentés en entier répondent au motif demandé : tour Eiffel, Arc de triomphe de l’Étoile et Colisée. Aucune image de prix ou de bijou d’un autre métal."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-04-04#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+      "source_sha256": "092e7e9826cfc580d350f5a21cf60393fad2494c516060c8cc08808873ec3433",
+      "semantic_sha256": "2152921aa36150697d14d6b080bebbd2d6e0b8a99ede05bf60f5d76ccded99f4",
+      "question": {
+        "enonce": "Quel monument les élèves vont-ils visiter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La tour Eiffel",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’Arc de triomphe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le Sacré-Cœur",
+            "correct": false
+          }
+        ],
+        "written_model": "La tour Eiffel"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
+      "audio_sha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
+      "image_ids": [
+        "qcm-a1-tour-eiffel",
+        "qcm-a1-arc-triomphe",
+        "qcm-a1-sacre-coeur"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-arc-triomphe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-sacre-coeur.png"
+      ],
+      "image_sha256": [
+        "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449",
+        "5bde826820db24b8c4bb0c0161c77bfe9e7cac15e0e125bd4e99537c40a89e30",
+        "a17b8abca2b986f1f97110cb1dad494ef894d1da3ce6aec46125104d05c9bac4"
+      ],
+      "reason": "Le professeur annonce que les élèves monteront en haut de la tour Eiffel pour voir Paris.",
+      "visual_review": "Tour Eiffel, Arc de triomphe et Sacré-Cœur distincts, sites entiers avec leurs éléments identifiants ; aucune heure ou date affichée dans les images."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-05-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Rony, pour le voyage au Mont Saint-Michel apporte des serviettes et un maillot de bain. Tu as besoin d’un cahier pour prendre des notes pendant les visites. Quand on rentre au Liban nous devons écrire un article pour notre collège. Moi j’apporte mon appareil photo. Mais surtout n’oublie pas ton passeport.",
+      "source_sha256": "fd8aafd9157ffd59a7b6ea9f669a6602aa3facff8175cde9906b9ae0db367be5",
+      "semantic_sha256": "4cf5bfea51898baa5395c35712d319d5e1eb1b2889fbc403dd6acd6aabfa3c03",
+      "question": {
+        "enonce": "Quel lieu Rony va-t-il visiter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le Mont Saint-Michel",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le château de Versailles",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La tour Eiffel",
+            "correct": false
+          }
+        ],
+        "written_model": "Le Mont Saint-Michel"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-05-01.mp3",
+      "audio_sha256": "435ac1a2d835a5295f4e43e9f35f0b96c49842fdbba9988765b5a230abdac648",
+      "image_ids": [
+        "qcm-a1-mont-saint-michel",
+        "qcm-a1-chateau-versailles",
+        "qcm-a1-tour-eiffel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-mont-saint-michel.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-tour-eiffel.png"
+      ],
+      "image_sha256": [
+        "220b28756ec388d1028f1775023b0e939d3ff62e2f02d57be44e6af70b00bfe2",
+        "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19",
+        "d11f8535d691ed760168b91ba500995fa993ddf3dc5b615f3278f53f36f94449"
+      ],
+      "reason": "Rony doit apporter son matériel pour le voyage au Mont Saint-Michel.",
+      "visual_review": "Mont Saint-Michel avec baie et abbaye, château de Versailles à corps central et ailes entiers, tour Eiffel complète ; la vue de Versailles aux ailes coupées est écartée au profit de sa reprise native."
+    }
+  ]
+}
