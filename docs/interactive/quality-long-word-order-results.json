@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-14",
+  "scope": "Phrases de deux à douze éléments, déplacement tactile et lisibilité mobile ; extension guidée M07",
+  "previousDelivery": "3cb31b46",
+  "featureCommit": "f66786eb",
+  "fullUnitSuite": {
+    "tests": 397,
+    "passed": 397,
+    "failed": 0,
+    "revision": "f66786eb"
+  },
+  "focusedUnitSuite": {
+    "tests": 21,
+    "passed": 21,
+    "failed": 0
+  },
+  "browserStagesPassed": [
+    "long-word-order-browser",
+    "word-classification-browser",
+    "source-adapters-browser",
+    "guided-oral-browser",
+    "teacher-protections-browser",
+    "navigation-browser",
+    "solo-browser",
+    "a4-regression"
+  ],
+  "browserProof": "long-word-order-results.json",
+  "viewports": [
+    "1920x1080",
+    "1366x768",
+    "390x844",
+    "360x640"
+  ],
+  "source": "Every occurrence and interrogative join retained; source recipe and paper comparison unchanged; no automatic verdict on open sentences.",
+  "gestures": "Native mouse and Chromium touch across rows; touch then destination; keyboard; undo; lock; outside release cancels.",
+  "resume": "Twelve positions preserved after question navigation and connected saved-session reload; forged permutations rejected.",
+  "offline": "Prepared open page remains usable without network; cold start not included.",
+  "liveApiWrites": 0,
+  "axeViolations": 0,
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 62,
+  "inventory": {
+    "variants": 2150,
+    "playableVariants": 746,
+    "previousPlayableVariants": 739,
+    "generationErrors": 8,
+    "scope": "One real sample per catalogue variant, count=2 and default difficulty; other seeds and levels not certified by this count."
+  },
+  "frontendTypes": "passed",
+  "apiTypes": "passed",
+  "lint": "passed with existing warnings outside this increment",
+  "secrets": "Gitleaks: no findings in modified-file scope",
+  "limits": [
+    "Open sentences remain teacher-led and are excluded from scored competition quizzes.",
+    "More than twelve elements or incoherent models produce an explicit issue; no source truncation.",
+    "Physical ENI pilot and distant console remain open.",
+    "No deployment or publication of cloud environment configuration.",
+    "Le jeu complet inclut encore les banques et du code partagé. Son plafond provisoire de 3 Mio dépasse la proposition V4 de 200 Ko ; découpage par domaine et mesures ENI restent ouverts."
+  ],
+  "mergedMain": "47e1e113",
+  "testedAfterMerge": "23997168",
+  "postMergeSmallScreen": "passed: native touch, 44 px menu targets, neutral full reader and unclipped appreciation controls",
+  "postMergeImagesUnitSuite": {
+    "tests": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "build": "passed after merging origin/main 47e1e113",
+  "a4": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121830,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 141909,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144056,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 188205,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 157793,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3011515,
+      "maximumGzip": 3145728
+    }
+  },
+  "postMergeChecks": [
+    "build and route budgets",
+    "eight image-phrase unit tests",
+    "360×640 native ordering, menu, reader and appreciation",
+    "A4 screenshot comparison"
+  ]
+}

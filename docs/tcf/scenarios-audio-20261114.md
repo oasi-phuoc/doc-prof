@@ -41,7 +41,7 @@ Le contrôle de la fiche imprimable a aussi révélé une dernière rangée masq
 
 La [comparaison des six banques](verification-scenes-priorite-20261114.json) confirme : **zéro nouveau trio, question, réponse, transcription ou MP3 modifié**. Seule l’URL de l’image du coureur change dans la banque A1. Les **277 trios DELF Actif actifs**, **469 candidatures restantes** et **370 trios historiques** sont conservés pendant la priorité aux scènes.
 
-Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie : **6 943 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
+Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie : **6 951 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
 
 Les contrôles couvrent les empreintes, les rôles documentés, les 39 recontrôles et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le [contrôle Chromium prioritaire](scenarios-priorite-20261114-browser.json) charge 36 images sur six pages A1/A2, dont 21 PNG distincts du lot, sans erreur. Le [test des anciennes recettes](scenarios-genres-20261114-browser.json) contrôle aussi le coureur corrigé ; le [contrôle B1](scenarios-b1-suite-20261114-browser.json) couvre les quatre nouvelles scènes.
 

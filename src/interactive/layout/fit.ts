@@ -4,6 +4,21 @@ export const naturalReadability: Readability = { level: 0, questionScroll: false
 const overflow = (element: HTMLElement | null): boolean => !!element && (element.scrollHeight > element.clientHeight + 2 || element.scrollWidth > element.clientWidth + 2)
 const px = (value: string) => Number.parseFloat(value) || 0
 
+/** Keep ordinary source words on one line; unusually long free text can wrap. */
+function fitSequenceWords(root: HTMLElement) {
+  const win=root.ownerDocument.defaultView!
+  for(const word of root.querySelectorAll<HTMLElement>('.ci-word-order-long .ci-word-sequence > button > b')){
+    const button=word.parentElement!,style=win.getComputedStyle(button),target=px(style.fontSize)
+    const available=button.clientWidth-px(style.paddingLeft)-px(style.paddingRight)
+    word.style.fontSize=`${target}px`;word.style.whiteSpace='nowrap'
+    const range=root.ownerDocument.createRange();range.selectNodeContents(word)
+    const width=range.getBoundingClientRect().width
+    const size=Math.min(target,Math.max(win.innerWidth<=700?14:18,target*available/Math.max(1,width)))
+    word.style.fontSize=`${size}px`
+    if(range.getBoundingClientRect().width>available+1)word.style.whiteSpace='normal'
+  }
+}
+
 export function questionSpace(root: HTMLElement): number {
   const win = root.ownerDocument.defaultView!
   const competition = root.closest<HTMLElement>('.ci-competition-main')
@@ -28,6 +43,7 @@ export function fitQuestion(root: HTMLElement, height = questionSpace(root)): Re
   const grid = root.querySelector<HTMLElement>('.ci-answer-grid')
   const manual = root.querySelector<HTMLElement>('.ci-manual')
   if (!heading || !question || !body || !root.clientWidth) return naturalReadability
+  fitSequenceWords(root)
   delete root.dataset.ciFit
   delete root.dataset.ciMoreQuestion
   delete root.dataset.ciMoreAnswers

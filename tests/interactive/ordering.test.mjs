@@ -5,7 +5,7 @@ import { createServer } from 'vite'
 const server = await createServer({ cacheDir: '/tmp/clairfle-ordering-unit', server: { middlewareMode: true, hmr: false }, appType: 'custom' })
 try {
   const { adaptOrdering } = await server.ssrLoadModule('/src/interactive/domain/ordering.ts')
-  const { adaptSourceItem } = await server.ssrLoadModule('/src/interactive/domain/source-adapters.ts')
+  const { adaptSourceItem, MAX_PHRASE_ORDER_ELEMENTS } = await server.ssrLoadModule('/src/interactive/domain/source-adapters.ts')
   const { convertRecipe } = await server.ssrLoadModule('/src/interactive/domain/convert.ts')
   const { buildPage, buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')
   const { defaultPage, exerciseTypes } = await server.ssrLoadModule('/src/math/catalog.ts')
@@ -51,14 +51,14 @@ try {
     }
   })
 
-  await test('all fifteen sentence families keep source words and human models, while long phrases remain explicitly unsupported', () => {
+  await test('all fifteen sentence families retain every source word and human model within the twelve-element limit', () => {
     const types = exerciseTypes.filter((entry) => entry.id.startsWith('alpha-phrase-') && entry.id.endsWith('-ordre-phrases'))
     assert.equal(types.length, 15)
     for (const type of types) for (const difficulty of ['facile', 'moyen', 'difficile']) for (let seed = 1; seed <= 100; seed++) {
       const config = { ...defaultPage('alphabetisation'), topic: type.topic, exerciseType: type.id, difficulty, count: 2, libreItems: undefined }
       const recipe = { ...base, pages: [config], seed, libreMode: false }, original = structuredClone(recipe)
       const items = buildPage(config, seed).blocks.flatMap((block) => block.items), game = convertRecipe(recipe)
-      const playable = items.filter((item) => item.sequence.length >= 2 && item.sequence.length <= 6)
+      const playable = items.filter((item) => item.sequence.length >= 2 && item.sequence.length <= MAX_PHRASE_ORDER_ELEMENTS)
       assert.equal(game.questions.length, playable.length, `${type.id}/${seed}: ${JSON.stringify(game.issues)}`)
       for (const q of game.questions) {
         const item = items[q.source.item]
@@ -67,7 +67,7 @@ try {
         assert.equal(game.corrections[q.id].text, item.answer); assert.equal(game.corrections[q.id].choiceId, undefined)
         assert.notEqual(q.words.join(' '), item.answer)
       }
-      if (items.some((item) => item.sequence.length > 6)) assert.ok(game.issues.some((issue) => /deux à six/.test(issue.reason)))
+      if (items.some((item) => item.sequence.length > MAX_PHRASE_ORDER_ELEMENTS)) assert.ok(game.issues.some((issue) => /douze/.test(issue.reason)))
       assert.deepEqual(recipe, original)
     }
   })

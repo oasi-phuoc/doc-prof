@@ -66,6 +66,12 @@ export function useSequenceOrder({length,order,onOrder,disabled,label}:{length:n
     const current=gesture.current
     if(!current||event.pointerId!==current.pointerId)return
     if(current.active){event.preventDefault();ignoreClick.current=true;const target=targetAt(event.clientX,event.clientY);if(target!==null)place(current.source,target);else setAnnouncement('Déplacement annulé.')}
+    // Touch browsers may omit the compatibility click after a captured drag.
+    // Activate selection buttons directly, while image buttons keep their zoom.
+    else if(event.pointerType==='touch'&&current.capture.hasAttribute('aria-pressed')){
+      event.preventDefault();ignoreClick.current=true
+      if(targetAt(event.clientX,event.clientY)===positions.indexOf(current.source))choose(current.source)
+    }
     cancel()
   }
   const clickCapture=(event:MouseEvent<HTMLElement>)=>{if(ignoreClick.current&&event.detail!==0){event.preventDefault();event.stopPropagation()}ignoreClick.current=false}
