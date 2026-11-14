@@ -6,15 +6,15 @@
   "summary": {
     "supports": 346,
     "scenario_eligible": 96,
-    "scenario_bound": 45,
-    "scenario_pending": 51,
+    "scenario_bound": 49,
+    "scenario_pending": 47,
     "prior_bound": 21,
-    "total_bound": 66,
+    "total_bound": 70,
     "decisions": {
       "keep_message_announcement_or_discourse": 188,
       "keep_temporal_exchange": 4,
-      "eligible_scene_pending": 51,
-      "eligible_bound_scene": 45,
+      "eligible_scene_pending": 47,
+      "eligible_bound_scene": 49,
       "keep_sequence": 18,
       "keep_description_or_preferences": 5,
       "keep_long_document": 35
@@ -30,9 +30,9 @@
       "A1-A2": {
         "keep_sequence": 11,
         "keep_message_announcement_or_discourse": 97,
-        "eligible_bound_scene": 21,
+        "eligible_bound_scene": 25,
         "keep_temporal_exchange": 1,
-        "eligible_scene_pending": 18,
+        "eligible_scene_pending": 14,
         "keep_description_or_preferences": 5
       },
       "A2-B1": {
@@ -44,15 +44,16 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 58,
-    "new_scene_image_uses": 35,
+    "new_original_pngs": 67,
+    "new_scene_image_uses": 39,
     "priority_scene_reuses": 0,
     "priority_prepared_scene_uses": 21,
     "suite_prepared_scene_uses": 6,
-    "prepared_scenes_awaiting_gender_confirmation": 25,
-    "remaining_without_prepared_image": 26,
+    "prepared_scenes_awaiting_gender_confirmation": 32,
+    "remaining_without_prepared_image": 15,
     "a1_complement_prepared_scene_uses": 13,
-    "a2_complement_prepared_scene_uses": 12
+    "a2_complement_prepared_scene_uses": 12,
+    "a2_final_prepared_scene_uses": 11
   },
   "supports": [
     {
@@ -3544,7 +3545,18 @@
       "evidenceQuote": "Je prends toujours le train",
       "reason": "Trajet vers le lycée en train puis à pied ; pas de bus comme transport retenu.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Conversation à la sortie de la gare, train à quai et chemin piéton vers un lycée générique. Aucun bus ou horaire ; la distance précise reste une information audio. Personnages entiers, genres à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "preparedImageSha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-031-01",
@@ -3939,7 +3951,18 @@
       "evidenceQuote": "la château de Versailles",
       "reason": "Renseignement sur les salles et collections de Versailles ; références architecturales documentées requises, pas château générique.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Demande de renseignements avant la visite, guide fermé et façade reprise de la référence Versailles du catalogue. Aucun intérieur prétendu documenté : la liste des salles et œuvres reste dans le texte audio. Personnes à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "preparedImageSha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-02",
@@ -4113,7 +4136,18 @@
       "evidenceQuote": "Va voir au supermarché",
       "reason": "Recherche d’une plante, supermarché proposé après le fleuriste ; pas de fleuriste montré comme destination retenue.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Conseil devant le rayon de plantes d’un supermarché, avec produits alimentaires en arrière-plan. Aucune plante tenue ou payée, cadeau remis ou ouverture future affirmée. Mère hors cadre, genres des interlocuteurs à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "preparedImageSha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-035-04",
@@ -4393,8 +4427,25 @@
       ],
       "evidenceQuote": "aller faire un tour demain",
       "reason": "Projet de promenade dans une voiture de sport ; ne pas attribuer la propriété au conducteur représenté.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-tour-voiture-sport.png",
+      "visualReview": "Homme souriant montrant la voiture sportive de son père et invitant un ami hors cadre. Véhicule entier, garé, sans marque ni plaque lisible, aucune promenade déjà accomplie ou propriété attribuée au fils. Accord content documenté.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personne masculine contente",
+            "quote": "tu dois être content"
+          },
+          {
+            "role": "accord masculin confirmé",
+            "quote": "Très content."
+          }
+        ]
+      },
+      "imageSha256": "b67697d43bfe108c06c9f38d162ee731deaccad36b9533e31e091b1c4cf94138"
     },
     {
       "exercise": "tcf-delf-actif-a2-043-04-02",
@@ -4413,8 +4464,16 @@
       ],
       "evidenceQuote": "je vais attendre le 32",
       "reason": "Attente du bus permettant d’aller au stade ; le tram évoqué ne convient pas et ne doit pas être l’image retenue.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "visualReview": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "imageSha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
     },
     {
       "exercise": "tcf-delf-actif-a2-043-04-03",
@@ -4464,8 +4523,16 @@
       ],
       "evidenceQuote": "Prends le bus",
       "reason": "Bus proposé parce que le train local ne circule pas ; pas de jour, horaire ou destination inventés en image.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "visualReview": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "imageSha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
     },
     {
       "exercise": "tcf-delf-actif-a2-044-01-01",
@@ -4908,7 +4975,18 @@
       "evidenceQuote": "manger une raclette",
       "reason": "Invitation pour une raclette ; fondue seulement citée en comparaison, ne pas remplacer la raclette par la fondue.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Invitation devant un menu uniquement illustré : appareil à raclette, poêlons, fromage fondu, pommes de terre et cornichons. Aucun caquelon à fondue ni repas servi aux personnages ; genres à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "preparedImageSha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-045-04-03",
@@ -4928,7 +5006,18 @@
       "evidenceQuote": "regarder la météo ce soir",
       "reason": "Projet de regarder la météo avant de décider ; le beau temps n’est pas encore connu, ne pas le dessiner comme acquis.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Discussion indécise devant un téléviseur éteint, télécommande au repos, rideaux fermés. Aucune prévision ou activité de lendemain inventée ; genres des deux interlocuteurs à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "preparedImageSha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-045-04-04",
@@ -4949,7 +5038,18 @@
       "evidenceQuote": "il y a un téléphérique",
       "reason": "Renseignement sur la montée en téléphérique ; route explicitement écartée, pas de fréquence illustrée.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Demande au pied du téléphérique, cabine fermée entière suspendue aux câbles vers la montagne. Aucun télésiège, trajet déjà effectué, route concurrente ou horaire écrit. Personnes à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "preparedImageSha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-01-01",
@@ -5109,7 +5209,18 @@
       "evidenceQuote": "prendre un bateau pour aller les visiter",
       "reason": "Projet d’excursion insulaire en bateau ; ne pas présenter une île non nommée comme un lieu réel précis.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "visualReview": "Projet de visite depuis la jetée, bateau entièrement cadré et îles proches génériques. Personne à bord, aucun billet acheté ou horaire ; fauteuil entier avec repose-pieds. Reprise par génération du bateau initialement coupé ; genres à vérifier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "preparedImageSha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "pendingReason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+      "preparationRegister": "docs/tcf/generation-scenarios-a2-final-20261114.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-02",
@@ -5151,8 +5262,25 @@
       ],
       "evidenceQuote": "cette journée aux îles",
       "reason": "Remerciements après bateau, baignade et visite d’îles ; scène évocatrice entière nécessaire, pas une activité différente seule.",
-      "decision": "eligible_scene_pending",
-      "image": null
+      "decision": "eligible_bound_scene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-remerciements-retour-visite-iles.png",
+      "visualReview": "Femme remerciant après la journée aux îles, main sur le cœur, sac et serviette, bateau entier au mouillage, plage et chemin en arrière-plan. Hôte non confirmé hors cadre, accords invitée et contente documentés. Bateau recadré par une nouvelle génération, sans transformation du PNG.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personne invitée",
+            "quote": "Je te remercie de m’avoir invitée."
+          },
+          {
+            "role": "accord féminin",
+            "quote": "très contente."
+          }
+        ]
+      },
+      "imageSha256": "81cc26bb8436c05304c952c1f56640978a6c45c62b5291793a7955ea6745d8b2"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-04",

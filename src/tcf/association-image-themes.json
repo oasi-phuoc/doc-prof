@@ -1357,6 +1357,113 @@
           }
         ]
       }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+      "audioSha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b",
+      "transcription": "Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+      "sourceSha256": "77a369b285bfd1b25e793d8b1d3f3871991e6b7efc44998bfbe6b149e0e3b529",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "voiture",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-tour-voiture-sport.png",
+      "imageSha256": "b67697d43bfe108c06c9f38d162ee731deaccad36b9533e31e091b1c4cf94138",
+      "review": "Homme souriant montrant la voiture sportive de son père et invitant un ami hors cadre. Véhicule entier, garé, sans marque ni plaque lisible, aucune promenade déjà accomplie ou propriété attribuée au fils. Accord content documenté.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personne masculine contente",
+            "quote": "tu dois être content"
+          },
+          {
+            "role": "accord masculin confirmé",
+            "quote": "Très content."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+      "audioSha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
+      "transcription": "Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "sourceSha256": "1e3ef2a790c9922947df4f447c3a51b3804a9f74c7b28ad00ae2280cc4b9f663",
+      "themes": [
+        "deplacements",
+        "culture"
+      ],
+      "sceneKey": "retour-iles",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-remerciements-retour-visite-iles.png",
+      "imageSha256": "81cc26bb8436c05304c952c1f56640978a6c45c62b5291793a7955ea6745d8b2",
+      "review": "Femme remerciant après la journée aux îles, main sur le cœur, sac et serviette, bateau entier au mouillage, plage et chemin en arrière-plan. Hôte non confirmé hors cadre, accords invitée et contente documentés. Bateau recadré par une nouvelle génération, sans transformation du PNG.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personne invitée",
+            "quote": "Je te remercie de m’avoir invitée."
+          },
+          {
+            "role": "accord féminin",
+            "quote": "très contente."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+      "audioSha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485",
+      "transcription": "Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+      "sourceSha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "arret-bus",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "imageSha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "review": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-04.mp3",
+      "audioSha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb",
+      "transcription": "Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+      "sourceSha256": "3b3232d68f1fe52ab2e8d6ec72b712dd78417f66e118657d7d306f9be792d90a",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "arret-bus",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "imageSha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "review": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
     }
   ],
   "decoys": [

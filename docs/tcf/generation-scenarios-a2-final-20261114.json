@@ -1,0 +1,579 @@
+{
+  "date": "2026-11-14",
+  "scope": "Dernières onze situations A2 sans image : neuf PNG originaux et réemploi d’un arrêt de bus pour deux supports. Quatre nouvelles liaisons, sept images avec personnes à vérifier. Aucun texte, audio, question ou corrigé modifié.",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "baseline": {
+    "pending_scenes": 51,
+    "scenario_sources": 66,
+    "main_commit": "fb05edeeaa3c3deb3e6e3b1d162412d0f820ae11"
+  },
+  "summary": {
+    "original_pngs": 9,
+    "reused_images": 1,
+    "prepared_scene_uses": 11,
+    "new_scenario_audio_bindings": 4,
+    "awaiting_gender_confirmation": 7,
+    "remaining_scenes": 47,
+    "total_bound_scenario_sources": 70,
+    "generation_calls": 11,
+    "rejected_generations": 2,
+    "a2_without_prepared_image": 0
+  },
+  "images": [
+    {
+      "key": "scenario-train-marche-vers-lycee",
+      "label": "Le trajet jusqu’au lycée",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-f151713b-f06c-44d1-9252-503fa3ffbef3.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. Outside a small suburban RAILWAY STATION, two teenage friends discuss the daily journey to high school. A tall slim teenage boy with fair freckled skin, short auburn hair, an olive jacket, cream trousers and a plain backpack; a shorter teenage girl with medium brown skin, black hair in two loose braids, a dusty coral jacket, navy trousers and another plain backpack. One points toward a distant GENERIC school building along a clearly visible pedestrian pavement; a parked passenger TRAIN on rails is visible behind the low station platform. Neither is on the train now, both are talking near the station exit. Show a real length of pedestrian path rather than an adjacent school entrance, no bus, no running race, clock, school sign or asserted travel duration. All people and shoes complete, one coherent place with normal perspective, not a map or collage. Their depicted genders are unconfirmed illustrative choices, so this scene remains pending audio-person verification. Exact source transcript for context only, never writing to draw: Pour aller au lycée, tu utilises le train ou le bus ? Je prends toujours le train. Mais la gare est loin du lycée ! Oui c’est vrai ! Mais je marche vite et j’arrive à l’heure.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Conversation à la sortie de la gare, train à quai et chemin piéton vers un lycée générique. Aucun bus ou horaire ; la distance précise reste une information audio. Personnages entiers, genres à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-030-04"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-030-04",
+          "transcription": "Pour aller au lycée, tu utilises le train ou le bus ? Je prends toujours le train. Mais la gare est loin du lycée ! Oui c’est vrai ! Mais je marche vite et j’arrive à l’heure.",
+          "source_sha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+          "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20"
+        }
+      ]
+    },
+    {
+      "key": "scenario-renseignements-visite-versailles",
+      "label": "L’intérieur de Versailles",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-31ba65e6-bfcd-4c93-905c-a70af8b93075.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+          "sha256": "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19",
+          "role": "content"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. An INFORMATION CONVERSATION BEFORE A VISIT to the palace of VERSAILLES. In the open forecourt, two adult visitors stand to one side, leaving the palace facade clearly visible behind them. One is a woman around 55 with light olive skin, a silver bob, burgundy jacket, cream trousers and plain dark shoes, holding a CLOSED plain unlabelled guidebook and making an inquiring gesture. The other is a man around 40 with dark brown skin, short natural black hair, teal shirt, tan trousers and plain dark shoes, answering with an open hand toward the palace. Use the THIRD attached image ONLY as the CONTENT reference for Versailles: preserve its recognizable stone-and-brick facade, dark roofs, gilded details and two full terminal pavilions. The first two images are STYLE references. Do not copy a real palace interior without a verified reference: NO invented Hall of Mirrors, Hercules room, apartment, furnishing arrangement or paintings pretending to document these rooms. The audio lists the interiors, but the visible moment is asking what can be seen BEFORE entering. Do not show completed guided tour, payment or tickets bought. Whole people and full palace within margins, no railings cutting off their shoes. Their depicted genders are not established by the transcript; retain pending-person status. Exact source transcript for context only, never writing to draw: C’est pour une information... Qu’est-ce qu’on peut voir dans la château de Versailles ? À l’intérieur du château ? C’est ça. Vous avez l’appartement, la galerie des glaces, le salon d’Hercule, des tableaux, des sculptures, des peintures, des meubles...",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Demande de renseignements avant la visite, guide fermé et façade reprise de la référence Versailles du catalogue. Aucun intérieur prétendu documenté : la liste des salles et œuvres reste dans le texte audio. Personnes à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-034-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-034-01",
+          "transcription": "C’est pour une information... Qu’est-ce qu’on peut voir dans la château de Versailles ? À l’intérieur du château ? C’est ça. Vous avez l’appartement, la galerie des glaces, le salon d’Hercule, des tableaux, des sculptures, des peintures, des meubles...",
+          "source_sha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+          "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873"
+        }
+      ]
+    },
+    {
+      "key": "scenario-conseil-plante-supermarche",
+      "label": "La plante pour un anniversaire",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-c677bd61-98eb-4fc7-a307-315a981f2124.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. Two adult friends stand in a GENERIC SUPERMARKET aisle, discussing WHERE TO GET A POTTED PLANT for a mother's birthday. One adult woman around 30 with East Asian features, black hair in a low bun, a mustard cardigan, dark green trousers and plain cream shoes; one adult man around 50 with fair skin, a broad build, short wavy brown-grey hair, a pale blue shirt, rust trousers and plain brown shoes. They point toward a small display of healthy leafy POTTED HOUSEPLANTS on one side of the aisle. Rows of ordinary unlabelled groceries behind them make the setting unmistakably a supermarket, not a florist. Neither holds or buys a plant; both hands empty except open pointing gestures, no checkout, money, basket purchase, birthday party or gift already delivered. The mother stays off-frame. No opening-hour sign, numerals or clock. Full bodies and complete pots on their display with margins. The two friends' genders are not documented, so their audio association must remain pending. Exact source transcript for context only, never writing to draw: Tu sais si le fleuriste ferme à 19h00 ? Oui, tous les jours. Et je vais où pour prendre une plante pour l’anniversaire de ma mère ? Va voir au supermarché ! Il ferme à 21h00.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Conseil devant le rayon de plantes d’un supermarché, avec produits alimentaires en arrière-plan. Aucune plante tenue ou payée, cadeau remis ou ouverture future affirmée. Mère hors cadre, genres des interlocuteurs à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-035-03"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-035-03",
+          "transcription": "Tu sais si le fleuriste ferme à 19h00 ? Oui, tous les jours. Et je vais où pour prendre une plante pour l’anniversaire de ma mère ? Va voir au supermarché ! Il ferme à 21h00.",
+          "source_sha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+          "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350"
+        }
+      ]
+    },
+    {
+      "key": "scenario-proposer-tour-voiture-sport",
+      "label": "Le tour en voiture",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-tour-voiture-sport.png",
+      "sha256": "b67697d43bfe108c06c9f38d162ee731deaccad36b9533e31e091b1c4cf94138",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-464f6802-e6a1-49c2-97fb-8fe35f04c900.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. In a quiet residential driveway, show ONLY ONE main person: a young adult MAN around 23, medium brown skin, short tightly curled black hair, clean-shaven face, plain cream overshirt, dark teal trousers and unbranded brown shoes. He smiles appreciatively beside his FATHER'S new unbranded SPORTY TWO-DOOR CAR, gesturing toward it with one hand and making an inviting open-palm gesture toward a friend who stays ENTIRELY OFF-FRAME. The car is dark muted red, parked with doors closed; show the ENTIRE car, all visible wheels, nose and rear with generous margins. He does not hold keys or documents claiming he owns it; father is not shown. This is proposing a FUTURE drive toward the seaside, not already driving, not at the beach, no completed outing or sale. No racing, speed effect, car badge, brand grille mark, plate letters or numerals; a plain blank licence plate. Whole man including shoes, full car and driveway visible in one wide natural scene. The masculine description content is explicit in the audio; the unconfirmed friend remains off-frame. Exact source transcript for context only, never writing to draw: Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Homme souriant montrant la voiture sportive de son père et invitant un ami hors cadre. Véhicule entier, garé, sans marque ni plaque lisible, aucune promenade déjà accomplie ou propriété attribuée au fils. Accord content documenté.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-01"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personne masculine contente",
+            "quote": "tu dois être content"
+          },
+          {
+            "role": "accord masculin confirmé",
+            "quote": "Très content."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-01",
+          "transcription": "Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+          "source_sha256": "77a369b285bfd1b25e793d8b1d3f3871991e6b7efc44998bfbe6b149e0e3b529",
+          "audio_sha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b"
+        }
+      ]
+    },
+    {
+      "key": "scenario-invitation-raclette-restaurant",
+      "label": "La raclette au restaurant",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-c0ad9f92-6173-49f8-b952-96bb56e8add8.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. Two adults discuss a FUTURE invitation to eat RACLETTE outside a small GENERIC mountain-village RESTAURANT. A woman around 45, dark brown skin, a short natural curly hairstyle, plum sweater, cream trousers and plain dark shoes, and a man around 60, fair skin, thinning grey hair, light blue jacket, charcoal trousers and plain brown shoes. They are NOT eating: they look at an outdoor menu display with NO WRITING, ONLY ONE clear painted food illustration depicting RACLETTE: a rectangular tabletop raclette heating appliance with several little individual cheese pans, melted yellow cheese in one pan, a small plate of boiled potatoes and pickles. It is only a pictorial restaurant display behind glass, not a meal served on their table. Do NOT draw a fondue pot, skewers, communal boiling pot, pizza, menu words, price, restaurant name or snow holiday already underway. Keep the display at a readable size and main figures head to shoes fully visible. The depicted genders are not confirmed by the transcript; retain pending-person status. Exact source transcript for context only, never writing to draw: Ce soir, tu viens avec nous manger une raclette ? On va dans le petit restaurant de la station touristique. Volontiers. Tu connais la raclette ? C’est un plat montagnard avec du bon fromage. Moi, je connais la fondue.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Invitation devant un menu uniquement illustré : appareil à raclette, poêlons, fromage fondu, pommes de terre et cornichons. Aucun caquelon à fondue ni repas servi aux personnages ; genres à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-045-04-02"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-045-04-02",
+          "transcription": "Ce soir, tu viens avec nous manger une raclette ? On va dans le petit restaurant de la station touristique. Volontiers. Tu connais la raclette ? C’est un plat montagnard avec du bon fromage. Moi, je connais la fondue.",
+          "source_sha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+          "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a"
+        }
+      ]
+    },
+    {
+      "key": "scenario-attendre-previsions-meteo",
+      "label": "Attendre la météo",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-e4899746-389f-4e9f-82c8-d18faa4fedaf.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. In an ordinary living room, two adult friends are DISCUSSING WATCHING THE WEATHER FORECAST LATER before deciding what to do tomorrow. An older woman with fair skin, short straight silver hair, soft blue cardigan, rust trousers and plain slippers, standing beside a young adult man with dark brown skin, black shoulder-length locs tied back, an ochre shirt, charcoal trousers and plain shoes. One holds a plain remote loosely at their side, other hand makes a thoughtful open gesture; the other shrugs gently with an undecided expression. A television on a low cabinet is visibly OFF, its screen dark and blank. They face each other in conversation, not already watching or choosing an activity. Curtains closed over the window so no sun, rain, snow or weather outcome is visible. NO weather icons, forecast map, smartphone, sunny trip, raincoat, umbrella, picnic equipment, calendar, time or written day. Full people, shoes, entire television and remote in a wide coherent scene. Neither speaker's gender is documented; keep pending-person status. Exact source transcript for context only, never writing to draw: Demain tu sais si la météo annonce du beau temps ? Non, je ne sais pas, j’espère que oui. Alors il faut regarder la météo ce soir. Bien sûr, ensuite on décide pour demain.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Discussion indécise devant un téléviseur éteint, télécommande au repos, rideaux fermés. Aucune prévision ou activité de lendemain inventée ; genres des deux interlocuteurs à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-045-04-03"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-045-04-03",
+          "transcription": "Demain tu sais si la météo annonce du beau temps ? Non, je ne sais pas, j’espère que oui. Alors il faut regarder la météo ce soir. Bien sûr, ensuite on décide pour demain.",
+          "source_sha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+          "audio_sha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007"
+        }
+      ]
+    },
+    {
+      "key": "scenario-demander-montee-telepherique",
+      "label": "Le téléphérique",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-2debfe86-0446-4031-b445-e3f5cdb68574.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. At the base of a mountain, two adults discuss HOW TO REACH THE SUMMIT. An adult man with light olive skin, shaved head, short neat beard, dusty blue fleece, charcoal walking trousers and plain boots; an adult woman with medium brown skin, short wavy dark hair, muted terracotta jacket, cream walking trousers and plain boots. They stand near the bottom cable-car station: one points up toward a clearly recognizable CLOSED CABLE CAR CABIN suspended from taut overhead cables continuing up toward a mountain summit. The other looks interested, one hand raised in a question. A second smaller cabin can be far up the line if helpful, realistic cable support geometry. Keep the entire nearest cabin, cable grip and suspension visible, not a chairlift, gondola boat, bus or train. No road climbing the mountain, no car alternative, no exact frequency, clock, timetable, altitude numerals or resort name. They have not yet boarded. Both figures head to boots complete and wide margins, mountain scenery painted softly. Both depicted genders remain unconfirmed; audio link pending. Exact source transcript for context only, never writing to draw: On va comment en haut de la montagne ? Par la route ? Non il y a un téléphérique toutes les demi-heures. C’est le seul moyen. Super ! Oui le point de vue est magnifique même si c’est impressionnant.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Demande au pied du téléphérique, cabine fermée entière suspendue aux câbles vers la montagne. Aucun télésiège, trajet déjà effectué, route concurrente ou horaire écrit. Personnes à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-045-04-04"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-045-04-04",
+          "transcription": "On va comment en haut de la montagne ? Par la route ? Non il y a un téléphérique toutes les demi-heures. C’est le seul moyen. Super ! Oui le point de vue est magnifique même si c’est impressionnant.",
+          "source_sha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+          "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e"
+        }
+      ]
+    },
+    {
+      "key": "scenario-projet-bateau-visiter-iles",
+      "label": "Une visite des îles",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-5dcb0fb2-f61c-4471-90e1-27810fc0e213.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "EDIT THE FIRST IMAGE: keep its softly painted TCF style, same two people and the wheelchair, same proposed-future island visit context. Correct ONLY COMPOSITION AND SCALE so the ENTIRE moored passenger BOAT is visible from bow to stern, including the full roof, mast, both ends, hull and fenders, with generous clear margin on every side. Present it as a smaller boat in a wider view, set the people and whole wheelchair on the left third and the WHOLE boat on the right half. No part of the vessel may touch or continue beyond an image edge. Keep both people's full bodies, all shoes, whole wheelchair and both footrests fully framed with margin. Widen the coherent jetty scene naturally, no collage, no cropped close-up. Keep generic nearby islands, no real landmark. No one aboard, no tickets bought, no date, time, words, logos or brand marks. Plain unbranded shoes. EXACT native 1448 x 1086, 4:3 landscape. Remaining attached image is STYLE reference only. Source meaning: Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+      "initial_prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. At a generic seaside PIER, two adult friends consider a FUTURE BOAT VISIT TO NEARBY ISLANDS. A woman around 35, medium brown skin, black hair in a single loose braid, pale sage blouse, navy trousers and plain cream shoes, seated naturally in a manual WHEELCHAIR with both hands relaxed and both feet visible on footrests; a man around 45 with fair freckled skin, short curly copper hair, slate blue overshirt, tan trousers and plain brown shoes, standing alongside at a comfortable eye-contact angle. The woman gestures toward a small passenger BOAT moored safely beside the pier, the man makes an interested open-hand gesture. Nearby generic leafy ISLANDS visible across a short stretch of water, no identifiable landmark or claimed country. No one has boarded, no tickets purchased or in their hands, no ticket office transaction, no morning/afternoon clock or date. Accessible level pier surface with room around the wheelchair, no boarding access claimed. Full bodies including man's shoes, whole wheelchair and footrests, boat and islands with margins. Their depicted genders are not established by the dialogue; pending-person status. Exact source transcript for context only, never writing to draw: Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+      "prompt_is_summary": false,
+      "visual_review": "Projet de visite depuis la jetée, bateau entièrement cadré et îles proches génériques. Personne à bord, aucun billet acheté ou horaire ; fauteuil entier avec repose-pieds. Reprise par génération du bateau initialement coupé ; genres à vérifier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-046-04-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-046-04-01",
+          "transcription": "Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+          "source_sha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+          "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61"
+        }
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-e7c7a61f-8303-47de-9dfb-85901bf9f0e2.png",
+      "edit_source_sha256": "a09f87e6541e788c014712d3d215aa7c76dc27f4d01f80e87a72c7c03c765009",
+      "edit_references": [
+        {
+          "path": "/workspace/generated_images/exec-e7c7a61f-8303-47de-9dfb-85901bf9f0e2.png",
+          "sha256": "a09f87e6541e788c014712d3d215aa7c76dc27f4d01f80e87a72c7c03c765009",
+          "role": "edit_source"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        }
+      ]
+    },
+    {
+      "key": "scenario-remerciements-retour-visite-iles",
+      "label": "Les remerciements après la visite",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-remerciements-retour-visite-iles.png",
+      "sha256": "81cc26bb8436c05304c952c1f56640978a6c45c62b5291793a7955ea6745d8b2",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "source_png": "/workspace/generated_images/exec-242e193a-17f3-45b4-89df-06262ab978e2.png",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "EDIT THE FIRST IMAGE, keeping the exact warm softly painted TCF treatment and the SAME grateful adult woman, her hand over her heart, blouse, trousers, tote with towel, plain sandals, island jetty and shoreline. Correct composition by WIDENING THE VIEW and making the moored passenger boat smaller behind her, fully visible from bow to stern with both ends, whole roof, mast, railing, hull and fenders comfortably WITHIN THE IMAGE. No part of the boat can touch any image edge. Entire woman including head and both sandals remains comfortably inside the frame with margins, standing on the jetty and thanking an unseen person wholly off-frame after an island day trip. Calm nearby beach and generic island greenery with a small path, no identifiable landmark. NO additional people, no payment, no tickets, no text, clocks, brands or flags. No inset, montage, cropping or digital stretching: generate a natural wider scene, EXACT native 1448 x 1086, 4:3 landscape. Second image is only the approved STYLE reference. Source context: Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "initial_prompt": "Create ONE coherent educational scene in the approved TCF painting style. Use attached images ONLY for art direction: warm softly painted semi-realistic digital illustration, gentle progressive volumes and shading, fine discreet outlines, natural warm colours, believable anatomy, materials and expressions. No photograph, no 3D render, no flat cartoon. NEW faces, hairstyles, body types and clothes, never copy reference people or the photo studio. Native canvas EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY VIEW: main people complete from top of head to ALL SHOES, generous margins and visible floor; all important hands and objects within frame. No cropped close-ups behind counters. All shoes plain solid-colour undecorated canvas or leather: NO swoosh, tick, star, side stripe, contrasting curved mark, logo or lettering. No readable text, letters, numbers, amounts, dates, days, months, clocks, calendar, timetable, brands, national flags, watermark, speech bubble, inset panels or collage. Do not show a planned action or purchase as already completed. Unknown interlocutors can remain OFF-FRAME; never invent their gender and present it as confirmed. After an enjoyable DAY VISITING NEARBY ISLANDS, show ONLY ONE main person: an adult WOMAN around 40 with warm olive skin, long wavy chestnut hair loosely tied back, a pale yellow linen blouse, muted teal trousers and plain brown sandals. Standing at a generic island-side JETTY, she thanks a host who stays ENTIRELY OFF-FRAME: warm grateful smile, one open hand over her heart, other hand loosely holding the strap of a plain beach tote with one soft folded towel showing. A small passenger boat moored safely behind her and a nearby island shoreline with a quiet beach and a footpath into greenery together suggest the completed boat/swimming/island visit. No literal montage of multiple scenes, no person swimming now, no bikini focus, no invented famous island, flag or tour brand. She has returned to the jetty after the activities, not starting a new proposal or thanking a ticket seller. No payment, ticket, text, clock or timetable. Full woman head to sandals, hands, tote and jetty in frame with generous margin. Feminine participant documented by invitée and contente; host's unconfirmed gender remains wholly off-frame. Exact source transcript for context only, never writing to draw: Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "prompt_is_summary": false,
+      "visual_review": "Femme remerciant après la journée aux îles, main sur le cœur, sac et serviette, bateau entier au mouillage, plage et chemin en arrière-plan. Hôte non confirmé hors cadre, accords invitée et contente documentés. Bateau recadré par une nouvelle génération, sans transformation du PNG.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-046-04-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "personne invitée",
+            "quote": "Je te remercie de m’avoir invitée."
+          },
+          {
+            "role": "accord féminin",
+            "quote": "très contente."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-046-04-03",
+          "transcription": "Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+          "source_sha256": "1e3ef2a790c9922947df4f447c3a51b3804a9f74c7b28ad00ae2280cc4b9f663",
+          "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5"
+        }
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-aef3f015-37ba-4c21-b6e8-1c24ba170183.png",
+      "edit_source_sha256": "6d610d7e071945d6c391ebcd1389177623d97a62683b1fafb108787afb5ffaa5",
+      "edit_references": [
+        {
+          "path": "/workspace/generated_images/exec-aef3f015-37ba-4c21-b6e8-1c24ba170183.png",
+          "sha256": "6d610d7e071945d6c391ebcd1389177623d97a62683b1fafb108787afb5ffaa5",
+          "role": "edit_source"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        }
+      ]
+    }
+  ],
+  "reuses": [
+    {
+      "key": "scenario-arret-bus-reemploi",
+      "label": "L'arrêt de bus",
+      "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "width": 1280,
+      "height": 960,
+      "existing_bytes_preserved": true,
+      "visual_review": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-02",
+        "tcf-delf-actif-a2-043-04-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-02",
+          "transcription": "Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+          "source_sha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+          "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485"
+        },
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-04",
+          "transcription": "Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+          "source_sha256": "3b3232d68f1fe52ab2e8d6ec72b712dd78417f66e118657d7d306f9be792d90a",
+          "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb"
+        }
+      ]
+    }
+  ],
+  "rejected_generations": [
+    {
+      "key": "scenario-projet-bateau-visiter-iles",
+      "source_png": "/workspace/generated_images/exec-e7c7a61f-8303-47de-9dfb-85901bf9f0e2.png",
+      "sha256": "a09f87e6541e788c014712d3d215aa7c76dc27f4d01f80e87a72c7c03c765009",
+      "reason": "Le bateau de la première composition est coupé au bord droit.",
+      "status": "not_integrated",
+      "replacement": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png"
+    },
+    {
+      "key": "scenario-remerciements-retour-visite-iles",
+      "source_png": "/workspace/generated_images/exec-aef3f015-37ba-4c21-b6e8-1c24ba170183.png",
+      "sha256": "6d610d7e071945d6c391ebcd1389177623d97a62683b1fafb108787afb5ffaa5",
+      "reason": "Le bateau en arrière-plan est coupé au bord gauche.",
+      "status": "not_integrated",
+      "replacement": "/lib/images/tcf/co/scenes/delf-actif/scenario-remerciements-retour-visite-iles.png"
+    }
+  ],
+  "candidate_reuse_review": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "decision": "accepted",
+      "reason": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "reviewed_visually": true,
+      "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/ecole/09-ecole-bus-attend-les-eleves.webp",
+      "decision": "rejected",
+      "reason": "Montée d’élèves dans un bus scolaire : ne représente pas les deux orientations vers une ligne de bus.",
+      "reviewed_visually": true,
+      "sha256": "ad24ab372fc57ab89b6bcdf644b84deca49f3d679437a2312ad0ef7ea6790a0b"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/scenes-courtes/25-temps-demander-la-meteo-1.webp",
+      "decision": "rejected",
+      "reason": "Prévision neigeuse chiffrée déjà affichée ; le dialogue attend encore la météo.",
+      "reviewed_visually": true,
+      "sha256": "600725638d29e1c12d95f5435dec11216862314cc9d308308a330e0a6f852bcc"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/scenes-courtes/24-temps-demander-la-meteo-2.webp",
+      "decision": "rejected",
+      "reason": "Prévision pluvieuse sur téléphone en salle de sport ; pas de résultat connu dans cet audio.",
+      "reviewed_visually": true,
+      "sha256": "953bdb5694e05c374ca3645f5c986347cb502c6151c49c4c900695a35d88042c"
+    },
+    {
+      "path": "/lib/images/tcf/po/a1/arret-de-bus-1.webp",
+      "decision": "rejected",
+      "reason": "Deux interlocuteurs représentés sans genres documentés ; le décor sans personne suffit aux deux dialogues.",
+      "reviewed_visually": true,
+      "sha256": "65bda6cf49132ac12e31e5de871f609ca35aff51b9a489f00dee0f0a760994b2"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-chateau-versailles.png",
+      "decision": "content_reference",
+      "reason": "Façade validée reprise pour une conversation de renseignements avant la visite, pas une preuve des intérieurs du château.",
+      "reviewed_visually": true,
+      "sha256": "f7c9380b5b37ddb96e9569c443527c2ab8728f8b54087a22a3df580cc6037f19"
+    }
+  ]
+}
