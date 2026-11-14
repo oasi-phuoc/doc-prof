@@ -1,5 +1,7 @@
 # Six scènes CO CFR A2 — génération terminée le 14 novembre 2026
 
+**État après consolidation des lots :** les six images de cette préparation sont conservées dans la galerie. Trois de ces dialogues disposent désormais d’une image activée, éventuellement d’une autre version aux rôles mieux documentés ; les trois autres restent préparés sans activation. Le [registre de consolidation](../tcf/consolidation-scenes-20261114.json) et les champs `current_decision` du JSON donnent le choix actuel. Le total général est de 86 pistes liées et 31 scènes à terminer. Les observations et nombres du lot initial ci-dessous sont conservés comme historique.
+
 Le quota qui avait bloqué la première tentative est de nouveau disponible. **Les six scènes préparées sont générées**, examinées et ajoutées à la galerie en PNG natif **1 448 × 1 086**, sans recadrage ni conversion. La première version des téléphones, trop rapprochée, est écartée au profit d’un cadrage entier. Sept générations ont donc produit six images retenues.
 
 | Scène | Image | Liaison audio |

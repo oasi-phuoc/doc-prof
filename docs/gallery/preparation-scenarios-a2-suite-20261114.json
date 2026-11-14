@@ -118,6 +118,23 @@
             "quote": "Je suis petit."
           }
         ]
+      },
+      "current_decision": "eligible_bound_scene",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
+      "current_gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Aidant appelé jeune homme ; propriétaire dit je suis petit, accord masculin. Aucune fragilité médicale ou vieillesse déduite de sa petite taille.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune homme et propriétaire masculin de petite taille",
+            "quote": "Jeune homme, je peux vous demander de m’aider ?"
+          },
+          {
+            "role": "propriétaire masculin",
+            "quote": "Mon sac de voyage est lourd. Je suis petit."
+          }
+        ]
       }
     },
     {
@@ -204,6 +221,19 @@
             "quote": "une dame de mon âge"
           }
         ]
+      },
+      "current_decision": "eligible_bound_scene",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+      "current_gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Jeune femme appelée mademoiselle et femme plus âgée appelée Madame, deux rôles explicitement féminins.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "deux femmes",
+            "quote": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame."
+          }
+        ]
       }
     },
     {
@@ -286,6 +316,14 @@
       "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
       "visual_review": "Laisse confiée à une autre personne devant une porte de pâtisserie ouverte ; chien entier dehors, gâteaux en vitrine et achat encore projeté. Aucun gâteau acheté, argent ou chien dans le magasin.",
       "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "current_decision": "eligible_scene_pending",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "current_gender_review": {
         "status": "needs_voice_review",
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
         "audio_listening_performed": false,
@@ -376,6 +414,14 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "current_decision": "eligible_scene_pending",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "current_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
       }
     },
     {
@@ -449,6 +495,14 @@
       "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
       "visual_review": "Deux adultes, un flacon avec pictogramme de cheveux et un tube avec pictogramme de dent. Cheveux frisés visibles et geste hésitant de la personne qui répond ; pas de pharmacien, blouse, recommandation prouvée ou produit supplémentaire.",
       "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "current_decision": "eligible_scene_pending",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "current_gender_review": {
         "status": "needs_voice_review",
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
         "audio_listening_performed": false,
@@ -544,9 +598,30 @@
             "quote": "Madame, cette place est réservée."
           }
         ]
+      },
+      "current_decision": "eligible_bound_scene",
+      "current_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
+      "current_gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Voyageuse explicitement appelée Madame ; autre voyageur hors champ, billet seul montré depuis son point de vue. Aucun genre, numéro de place ou montant ajouté.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "voyageuse femme",
+            "quote": "Madame, cette place est réservée."
+          },
+          {
+            "role": "absence de lunettes",
+            "quote": "Je n’ai pas mes lunettes…"
+          }
+        ]
       }
     }
   ],
   "pending_person_verification": 4,
-  "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json"
+  "generation_register": "docs/tcf/generation-scenarios-a2-suite-20261114.json",
+  "current_bound_scenes": 3,
+  "current_pending_scenes": 3,
+  "current_scenario_sources": 87,
+  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json"
 }

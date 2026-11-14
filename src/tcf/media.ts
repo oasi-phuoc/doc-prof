@@ -29,6 +29,16 @@ export function tcfImageSrc(src: string | null | undefined): string {
   ).replace(
     /^\/lib\/images\/tcf\/co\/bg\/((?:5|8|10)-tomates|(?:6|10|12)-oeufs|(?:3|6|10)-dvd|cornichons|hamburger-frites|disque-volant)\.webp(?=$|[?#])/,
     '/lib/images/tcf/co/objets/$1.webp',
+  ).replace(
+    // Même correction de rôle pour les recettes déjà enregistrées : le
+    // dialogue dit « fou / motivé », le personnage sportif est un homme.
+    /^\/lib\/images\/tcf\/co\/scenes\/loisirs\/s-echauffer\.webp(?=$|[?#])/,
+    '/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png',
+  ).replace(
+    // Dialogue mère / Bastien : les deux interlocuteurs doivent être visibles,
+    // y compris sur une fiche enregistrée avec la première image de la mère seule.
+    /^\/lib\/images\/tcf\/co\/scenes\/delf-actif\/scenario-b1-conseil-vetements-pluie\.png(?=$|[?#])/,
+    '/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png',
   )
 }
 

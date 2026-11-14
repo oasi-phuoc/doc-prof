@@ -1,0 +1,884 @@
+{
+  "date": "2026-11-14",
+  "scope": "Recontrôle demandé des 39 liaisons de scènes validées avant la reprise prioritaire ; rôles documentés comparés aux images, sans prétendre à une écoute humaine.",
+  "baseline_commit": "b25b73a5c608e4f2e555fb3fb3c47d2d3e7b7555",
+  "human_audio_listening_performed": false,
+  "sources": [
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
+      "transcription": "Attention Marine, c'est mon verre. Pardon ? Tu es en train de boire mon jus d'orange. Je suis désolée.",
+      "sourceSha256": "f70d9a8332e185cbc551ea1ee610e26b3bce86982748d6135b41c86fadc4cb30",
+      "image": "/lib/images/tcf/co/scenes/restaurant/boire-le-jus-d-une-amie.webp",
+      "imageSha256": "d533081b4109c8db299cea7b15c8a006aebadf35b221e977fd35d3bc683e1a48",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "jus-orange",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Deux personnages féminins : Marine boit le jus, son amie le lui signale.",
+      "evidence": [
+        "Marine",
+        "Je suis désolée."
+      ],
+      "note": "Marine et l’accord féminin concordent. Le genre de la propriétaire du verre n’est pas précisé dans les paroles ; sa voix reste à confirmer.",
+      "audioSha256": "d43633d49f744deb0b45f5dc62336e85704b869e1b49b7b34b6e5b8fab72aa02"
+    },
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "transcription": "Où sont les yaourts s'il vous plaît ? Dans le rayon frais, au fond du magasin. Merci, monsieur.",
+      "sourceSha256": "3a25ff0cdc2dee37d9588f2f36ddeb5542afe17cadc61e59f48f67dccaf55ddc",
+      "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+      "imageSha256": "3bce6bb7152859207371a99d92456051ede757787e362ff5903b4bcdb1c13074",
+      "themes": [
+        "achats",
+        "alimentation"
+      ],
+      "sceneKey": "aide-rayon",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Employé homme du magasin indiquant les yaourts à une cliente femme.",
+      "evidence": [
+        "Merci, monsieur."
+      ],
+      "note": "Employé homme conforme à monsieur ; genre de la cliente non précisé par le texte, à confirmer avec la voix.",
+      "audioSha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0"
+    },
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+      "transcription": "Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
+      "sourceSha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+      "image": "/lib/images/tcf/co/bg/piscine.webp",
+      "imageSha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "piscine",
+      "gender_review_status": "no_visible_character",
+      "visual_cast": "Piscine intérieure sans personnage visible.",
+      "evidence": [],
+      "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources.",
+      "audioSha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5"
+    },
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+      "sourceSha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+      "image": "/lib/images/tcf/co/scenes/loisirs/s-echauffer.webp",
+      "imageSha256": "bcb1b651e0b1d3f1548a3a6ac16874c4a077355bf3c6e8c66dc32a2e898ce54c",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "course-parc",
+      "gender_review_status": "corrected_documented_match",
+      "visual_cast": "Femme en tenue de sport s’échauffant ; homme en vêtements de ville surpris.",
+      "evidence": [
+        "Mais tu es fou ?",
+        "Je suis motivé."
+      ],
+      "note": "Le coureur qui se dit motivé est masculin dans les paroles ; l’image place la femme dans le rôle sportif et l’homme dans le rôle surpris. Générer un coureur homme, interlocuteur non documenté hors cadre.",
+      "audioSha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "existing_audio_recognitions": [
+        {
+          "register": "docs/tcf/remplacement-audio/bascule-preuves-reconnaissances-20261105.json",
+          "source_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+          "recognition_file_sha256": "c6e874e3de2c9a16e4316dd139d9fdce49ad0a1d5cbad1b2e1d0abe13a4dc5a4",
+          "text": "Je suis en forme aujourd'hui. Je veux courir 10 kilomètres. 10 kilomètres? Mais tu es fou? Non, je ne suis pas fou. Je suis motivé.",
+          "engine": "nemo-parakeet-tdt-0.6b-v3-int8"
+        },
+        {
+          "register": "docs/tcf/remplacement-audio/bascule-preuves-reconnaissances-20261105.json",
+          "source_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+          "recognition_file_sha256": "a5c469fd716292f1d281e638809ff766a01b4f79a8d23a1dbea80b2fbdf1ea02",
+          "text": "Je suis en forme aujourd'hui. Je veux courir dix kilomètres. Dix kilomètres? Mais tu es fou? Non, je ne suis pas fou. Je suis motivé.",
+          "engine": "whisper-small-fr"
+        }
+      ],
+      "audio_word_check": "Parakeet et Whisper français, reconnaissances déjà enregistrées sur le SHA actuel, confirment fou ; aucune nouvelle reconnaissance ou écoute humaine.",
+      "corrected_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "corrected_image_sha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
+      "correction_note": "Sportif homme actif à la place de la femme qui s’échauffait ; accords fou et motivé recoupés avec les reconnaissances Parakeet et Whisper du SHA du MP3 installé. Interlocuteur non genré hors cadre. Aucun texte, bulle, distance, score ou résultat ajouté ; tête et deux chaussures dans le cadre, PNG natif 4:3 sans conversion."
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-2.mp3",
+      "transcription": "Pardon, monsieur. Le cours d'italien, c'est dans quelle salle ? Salle 12, au premier étage. Ah, merci.",
+      "sourceSha256": "56a222ad6eaa3d636da7779a2ce684ce3f68f316a8a16d88a31c5809d31413c7",
+      "image": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+      "imageSha256": "5c82ed14203a03eb94e9ab36ff5678adca13d1e677e159c4f36c51be9bcaf144",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "couloir-ecole",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Homme du personnel indiquant une salle à une élève femme.",
+      "evidence": [
+        "Pardon, monsieur."
+      ],
+      "note": "Le destinataire homme concorde avec monsieur ; le genre de la personne qui demande la salle n’est pas précisé par le texte.",
+      "audioSha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c"
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
+      "transcription": "Bonjour, je m’appelle Célia Leblanc.\nJe suis la nouvelle secrétaire.\n— Bienvenue !\nJe m’appelle Charlotte Colombe, je suis la comptable.\n— Enchantée.",
+      "sourceSha256": "7162486a286eb805fd9f75f919670632cb3069d2635a17f791d35f2be69abdb7",
+      "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+      "imageSha256": "e87f6f4307b190cf394c7de8f35518ac46331ce60e4527a7b32176ec72dfb274",
+      "themes": [
+        "travail"
+      ],
+      "sceneKey": "faire-connaissance-travail",
+      "gender_review_status": "documented_match",
+      "visual_cast": "Deux femmes se serrant la main dans un bureau.",
+      "evidence": [
+        "Célia Leblanc",
+        "la nouvelle secrétaire",
+        "Charlotte Colombe",
+        "la comptable",
+        "Enchantée."
+      ],
+      "note": "Deux rôles féminins explicités par les prénoms, articles et accord ; image cohérente.",
+      "audioSha256": "12cc35ffbe6b7b371d7e193ec4b51a94dd592636ec4d13f9cfebdb5bed421d6a"
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+      "transcription": "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
+      "sourceSha256": "da151f141f0a013b0bb9fdfcc0c4a02e138ac58ecaaf134b2cda8a86302c7b60",
+      "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
+      "imageSha256": "78f31af347a5cfe534770c9075a5a1ea431a341ff17733edcc024579b6313edd",
+      "themes": [
+        "sante"
+      ],
+      "sceneKey": "accueil-medical",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Personne à l’accueil représentée par une femme, patient représenté par un homme ; figurants en salle d’attente.",
+      "evidence": [],
+      "note": "Aucun titre ou accord ne précise le genre de l’accueil ou du patient dans ce dialogue. Aucun écart documentaire démontré ; voix à vérifier. Le médecin de l’affiche ne représente pas le docteur Charpentier.",
+      "audioSha256": "493003ddc30ec3ddaf585484a19a35261f1c8676a091f2829001e59e919d5381"
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+      "transcription": "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
+      "sourceSha256": "5117f1ce4bc20758817854e5d764196bd99b8c43b9dd68da5d085a9624238bd6",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+      "imageSha256": "20dc499d40f2bdcf44a22a7cfbb072658793f918480ec76e1d48924a3a0d8417",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "montrer-sac",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Deux femmes, dont la propriétaire montrant l’intérieur de son sac.",
+      "evidence": [],
+      "note": "Aucun genre des deux interlocuteurs n’est donné dans les paroles. Pas de contradiction documentaire démontrée ; les voix restent à vérifier.",
+      "audioSha256": "95a691f7c9c339dba48ad47499f1eba1c349e4dd8c55df3ff625b8fe7a1c2716"
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 5,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-5.mp3",
+      "transcription": "Je peux prendre un roman ?\nJe veux lire un nouveau livre.\n— Bien sûr, prends deux livres si tu veux.",
+      "sourceSha256": "be6615ff3c157194cbfc90fc65285c0e221e83bddedb89064fc443c4d04077fd",
+      "image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
+      "imageSha256": "c97639e38f0913ee3a2dfc4679fa6226c118ac19e63f659a9fe06cd5ec3bde62",
+      "themes": [
+        "lecture",
+        "culture"
+      ],
+      "sceneKey": "bibliotheque",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Lectrice et bibliothécaire représentées par deux femmes.",
+      "evidence": [],
+      "note": "Le texte permet de demander et emprunter des livres sans préciser le genre des personnes ; voix à vérifier.",
+      "audioSha256": "41101c21ae1f5c63b3bba46e9086e414265868f95bbfae1d9426adbc5ef16dc3"
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
+      "transcription": "Papa, est-ce que tu peux m'aider avec mes devoirs ?\nD'accord.\nQu'est-ce que tu fais ?\nCe sont des exercices de mathématiques.",
+      "sourceSha256": "e18fba59cb7f5d6073f945a4a8d688bce95c7d142570cd915016538cdc0e4919",
+      "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
+      "imageSha256": "d1b838165f98b39ee20e63bd86e37f4954484cebf88d84904fe3d560740dc580",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "devoirs-maison",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Père homme aidant un enfant représenté par un garçon.",
+      "evidence": [
+        "Papa"
+      ],
+      "note": "Père homme conforme à Papa ; le genre de l’enfant n’est pas précisé dans les paroles.",
+      "audioSha256": "201c5e8ee81e2d33ef47ec13bf8e01fcd47a1e286c216dcc8b8ecf723719659e"
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3",
+      "transcription": "Qui est la femme avec tous les livres là-bas ?\nC'est madame Vega, la nouvelle professeur de français.",
+      "sourceSha256": "d74ffb5ec6df22617a139f3dba72c4d401e2d4e95c66156073387793fbe4dfb9",
+      "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
+      "imageSha256": "8be5f2e25dd245d726f915c353d19fad4d2586bfe8a30b469599062b6e830b74",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-livres",
+      "gender_review_status": "documented_match",
+      "visual_cast": "Professeure femme portant une pile de livres ; élèves figurants.",
+      "evidence": [
+        "la femme",
+        "madame Vega"
+      ],
+      "note": "Le personnage montré avec les livres est bien féminin. Les observateurs ne sont pas identifiés par genre dans le dialogue et restent des élèves figurants.",
+      "audioSha256": "bb6d6c4d81c628153d20cd30c6340d38e982ada8e05a7553a9b523dfb54018bc"
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3",
+      "transcription": "Je n'aime pas le restaurant de l'université.\nOù est-ce que tu manges alors ?\nJe préfère me préparer mes repas.",
+      "sourceSha256": "e6e8cd4a97f7ad5ea55025f2b6354050c5b8cf92bf4dc3c655badcb5ce7e7479",
+      "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
+      "imageSha256": "19d04f2278aa315cb36f49275634e7b973f9b4583a4ab1a6241b0d1cc100e5cd",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "preparer-repas",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Deux étudiants hommes dans une cuisine, l’un prépare un repas.",
+      "evidence": [],
+      "note": "La personne qui préfère préparer ses repas et son interlocuteur ne sont pas genrés dans le texte. La répartition de voix reste à confirmer.",
+      "audioSha256": "be9a78a1683bd6f44524bf5ecaa2fb626722d43c760db25be9b868f64b70b863"
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-3.mp3",
+      "transcription": "Éric, où vas-tu ?\nJe vais à la bibliothèque.\nJe dois emprunter des livres.",
+      "sourceSha256": "0ce12065823f42660e95dbaeccec39c308df0c33dbe761b724237a36121a0deb",
+      "image": "/lib/images/tcf/co/scenes/bibliotheque/aller-a-la-bibliotheque.webp",
+      "imageSha256": "39d6f6d4aa9f16a11854c6d87dc1b93d5dd2279f17158794878373c1a00b87f6",
+      "themes": [
+        "lecture",
+        "culture",
+        "education"
+      ],
+      "sceneKey": "bibliotheque",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Deux jeunes hommes ; Éric se dirige vers la bibliothèque.",
+      "evidence": [
+        "Éric"
+      ],
+      "note": "Personnage Éric nommé et représenté au masculin ; genre de la personne qui lui pose la question non précisé par les paroles.",
+      "audioSha256": "6e61ee7f1b143d3278a654a01606e30cfa2ff47ceef985605b04561d97f7184a"
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
+      "transcription": "Kate, alors ton voyage en Guyane c'était comment ?\nGénial, j'ai fait tout ce que je voulais et pris plein de photos.\nSuper et la météo ?\nBonne ?\nOui, j'ai eu du soleil tout le temps.",
+      "sourceSha256": "938b2a2ac2a207c45b5837c311ee4b9493b8e4e30e6290c1b7e8ec62a35ed7f1",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
+      "imageSha256": "b6c76e7146f626c05bbf68d46a35c74372bcf03887139ea4f413e11d795eebca",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "retour-vacances",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Deux femmes discutent des photos du voyage de Kate.",
+      "evidence": [
+        "Kate"
+      ],
+      "note": "Kate nommée et représentée au féminin ; autre interlocutrice non genrée par les paroles. Aucun genre réel des voix certifié.",
+      "audioSha256": "2e929d5bbff3713c4ea0de73189b8697b2c93a6a09d6db8a6284b5d9b66ceff5"
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3",
+      "transcription": "Je ne comprends pas, le magasin de journaux était fermé à midi. C'est normal, il ouvre seulement l'après-midi cette semaine. Et tu sais à quelle heure ? À 15h je crois, vérifie sur internet. D'accord.",
+      "sourceSha256": "7e1ad745a1aad5587c0dedd904ea3e94bc9afb176d30e69e54aaf61b1aa2f1dc",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
+      "imageSha256": "b16eb48c2469d1b1b5ae6bf931a27e186e2e7ffdbf37aca20e0e7b4405de05d7",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "horaires-magasin",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Un homme et une femme devant le magasin de journaux fermé.",
+      "evidence": [],
+      "note": "Les deux interlocuteurs ne sont pas genrés par les paroles ; distribution des voix à confirmer.",
+      "audioSha256": "516eb7eb22c059ce95f708de26d2714bd9e6837e8225689cafd50c5f0507230d"
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
+      "transcription": "Salut Marc, ça va ? Tu fais quoi samedi ? Rien je crois. Je suis libre. Pourquoi ? Ça te dit de venir avec moi au Musée d'Histoire ? J'ai deux billets. D'accord.",
+      "sourceSha256": "c8a8fffc0012e06ac846d32c7bb010cb6907e1bbf1f9d5cb6183419e599ce0d8",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+      "imageSha256": "abfba3ff9352f1546a4d8e149a35f7581a7c1ea2000c809400b1a22237bf13ce",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "musee",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Deux hommes, l’un montrant deux billets de musée à Marc.",
+      "evidence": [
+        "Marc"
+      ],
+      "note": "Marc est nommé et représenté au masculin ; l’autre interlocuteur n’est pas genré dans le texte. Le projet d’invitation n’ajoute pas de genre confirmé pour cet autre personnage.",
+      "audioSha256": "007508ac6092f98712b196c0a7c39263167e5aa33cdfe2814daf0f99c386d71a"
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
+      "transcription": "Aujourd'hui, dans le bus, j'ai croisé Thomas.\nC'est qui ?\nLe frère de Sophie.\nIl a déménagé à Lyon pour ses études.\nIl est très sympa.\nInvite-le à la maison si tu veux.",
+      "sourceSha256": "3a9b2301bd726e4ebc912dd55319034d9542b6d754e5a3c9e774a2636f1d95a7",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
+      "imageSha256": "837834bd7ef3d15b5cfc4a384e78c87efcd0fb347a49009cb99f32583253c28d",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "bus-rencontre",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Deux femmes conversent dans un bus ; Thomas, homme, apparaît dehors.",
+      "evidence": [
+        "Thomas",
+        "Le frère de Sophie.",
+        "Il a déménagé"
+      ],
+      "note": "Thomas est masculin comme frère et il ; les deux personnes qui parlent de lui ne sont pas genrées par les paroles.",
+      "audioSha256": "a69d5b9ebfc64ebf5b0311b2238990bc789792943ebcc0c75265721386aa1a03"
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-1.mp3",
+      "transcription": "Alors, tu prends quoi ? Le sac vert ou le sac noir ? Le noir ne me plaît pas trop. Je crois que j'aime mieux le vert. C'est un bon choix. Merci.",
+      "sourceSha256": "6df1a4427fba93513c256a7e5c9f0b10bebec6dad7e5a855e61369831549926b",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
+      "imageSha256": "7ab9859b528dda0dedabbe15d2083edabf6de18cfb7572427681c203c6f20737",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "vetements",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Deux femmes discutent du sac vert et du sac noir.",
+      "evidence": [],
+      "note": "La préférence pour le sac vert ne donne aucun genre des interlocuteurs ; voix à confirmer.",
+      "audioSha256": "650f399abf3a064386e54d0f2e652e26d100844731cd2e42535621c756cc664f"
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
+      "transcription": "Il est génial, ton nouvel aspirateur ! Oui, je l'ai acheté sur Internet. Et pas cher en plus. Ah oui ? Combien il t'a coûté ? 78 euros. Oh super ! Je vais acheter le même.",
+      "sourceSha256": "17997ba387cb857b85373528a9bae8596bbc37000bb1c3a67e50403ad4c84273",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-55.png",
+      "imageSha256": "036275321ba9818afbc9c0608f72618cb3200ab6613822567f4e49e0c383e89a",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "aspirateur",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Deux hommes discutent d’un aspirateur acheté sur Internet.",
+      "evidence": [],
+      "note": "Les deux interlocuteurs ne sont pas genrés dans la transcription. Voix à confirmer avant de certifier leur répartition.",
+      "audioSha256": "2ec59a570c9ac9bf2a83b8d3cbfe9d1189b34c910da55f1467de9514505313f3"
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
+      "transcription": "La cuisine, c'est vraiment trop difficile pour moi. Qu'est-ce qui se passe ? Je peux faire quelque chose ? J'ai raté ma crème au chocolat. Attends, je te montre. C'est très facile.",
+      "sourceSha256": "bed4b1483d357dae16182fb80b82c6765f2473c082ae85c47543574723f9b64f",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
+      "imageSha256": "142fba11e56bc88a813c10d79f3c56a4ff22584f8f48bf085f95757f2d76776a",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "creme-chocolat",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Femme déçue par sa crème au chocolat et homme montrant la préparation.",
+      "evidence": [],
+      "note": "Ni la personne qui a raté la crème ni la personne aidante ne sont genrées dans le dialogue. Répartition vocale à confirmer.",
+      "audioSha256": "00c821f26b83b0761222cb5a1d8180f1a83446fdc1f4e75074963b6306454928"
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
+      "transcription": "Alors Emma, tes examens, tu as reçu les résultats ? Oui Alex, j'ai réussi, je suis trop contente ! Bravo, toutes mes félicitations, tu as bien travaillé ! Merci, c'est gentil.",
+      "sourceSha256": "6fcefb3ac1825d1b7721caf58667a9d4a85ea99686ace0d3e49c6102526e5bd3",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+      "imageSha256": "b8f5e7144d6b5ef0636f07d99a30c038435b635b9db44918c51a5a118b0f0cbe",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "resultats-reussite",
+      "gender_review_status": "partial_documented_match",
+      "audioSha256": "9d49d58032c6b75a07166f226dd0b51205df2ec067a08c868856f66189f44868",
+      "visual_cast": "Emma, femme, heureuse de ses résultats ; Alex représenté par un homme la félicite.",
+      "evidence": [
+        "Emma",
+        "je suis trop contente !",
+        "Alex"
+      ],
+      "note": "Emma et l’accord contente concordent ; Alex est un prénom mixte et le genre de la personne qui félicite reste à confirmer dans la voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+      "audioSha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
+      "transcription": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+      "sourceSha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
+      "image": "/lib/images/tcf/co/bg/piscine.webp",
+      "imageSha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "themes": [
+        "sport",
+        "education"
+      ],
+      "sceneKey": "piscine",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Le bassin, les lignes de nage et les vestiaires établissent la piscine ; aucun faux horaire, élève ou professeur de genre contradictoire.",
+      "gender_review_status": "no_visible_character",
+      "visual_cast": "Piscine intérieure sans personnage visible.",
+      "evidence": [],
+      "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-032-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-03.mp3",
+      "audioSha256": "d6cbe9f6e679993156ee6f8252091733f070c945309bda7ef3c599be70be3f42",
+      "transcription": "Tu as un dictionnaire pour le cours d’anglais de demain ? Tiens, je te donne mon dictionnaire. Il est un peu vieux. Oh, mais ça ne fait rien. Merci.",
+      "sourceSha256": "fc61a92a96f997e31c04c3bcbf617ca7bd801c4609b3370be6726109d445e184",
+      "image": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
+      "imageSha256": "0986fdc5a5b4f90b6e45aeba0711ce8e374bc2596e465a847f6472c6c1fc18f8",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-livres",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Dictionnaire explicitement identifiable remis entre camarades ; la scène ne prétend pas établir les conditions d’un prêt ni leur identité.",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Un homme prête le dictionnaire à une femme en classe.",
+      "evidence": [],
+      "note": "Le masculin de il est un peu vieux concerne le dictionnaire, pas les personnes. Aucun genre de prêteur ou emprunteur n’est donné ; voix à confirmer."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+      "audioSha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
+      "transcription": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+      "sourceSha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
+      "image": "/lib/images/tcf/co/bg/piscine.webp",
+      "imageSha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "piscine",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Lieu générique de natation contrôlé ; les jours et horaires ne sont pas écrits dans la scène.",
+      "gender_review_status": "no_visible_character",
+      "visual_cast": "Piscine intérieure sans personnage visible.",
+      "evidence": [],
+      "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-050-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-02.mp3",
+      "audioSha256": "f7a6fe7e28b11817b3da12d6e176138c51e9c8471f4602068c176bfe610a4f68",
+      "transcription": "Bonjour à tous. Un peu de silence s’il vous plaît. Ouvrez le livre à la page 16. Léna tu peux commencer ? Madame, je n’ai pas mon livre.",
+      "sourceSha256": "9865c1c98ba1634e4cea27ef68d70cc0cc4da0da022e6769f13f4be856aa29f0",
+      "image": "/lib/images/tcf/co/scenes/ecole/26-ecole-oublier-livre-mathematiques.webp",
+      "imageSha256": "7af5b36b6f34894a8b31f4f8070dcbae5cca26f3ffab388824369a837830ea95",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-livres",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Élève au sac ouvert sans manuel, camarade montrant le sien en classe ; la matière illustrée n’est pas utilisée comme réponse et aucune cause de l’absence du livre n’est affirmée.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Élève femme cherchant son livre dans son sac ; camarade homme proposant de partager un livre. Enseignante non visible.",
+      "evidence": [
+        "Léna",
+        "Madame"
+      ],
+      "note": "Léna est représentée au féminin. La personne appelée Madame n’est pas montrée ; le jeune homme visible est un camarade, pas le professeur. Pas de remplacement motivé uniquement par sa présence."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-02.mp3",
+      "audioSha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09",
+      "transcription": "Pardon Monsieur, vous pouvez me dire d’où part le train pour Avignon ? Il vient d’être déplacé, il part de la voie C. Je vais être en retard alors. Non, il a 10 minutes de retard. Tant mieux ! Merci Monsieur.",
+      "sourceSha256": "ec1965601793366bc9635844f18d53260f792f69710587e748cf58ff0c2943ae",
+      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Échange de renseignement à un guichet auprès d’un homme ; pas de code de voie, heure, montant ou achat final attribué au dessin générique.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Employé homme au guichet et cliente femme.",
+      "evidence": [
+        "Pardon Monsieur",
+        "Merci Monsieur"
+      ],
+      "note": "Employé homme conforme à Monsieur ; genre de la personne qui demande le départ non précisé dans les paroles."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-02.mp3",
+      "audioSha256": "8a4d524e7a185df655da47af501f123ee920ad0b43feaf69689c1fe3018e813c",
+      "transcription": "Bonjour Monsieur, les excursions organisées par votre bureau pour visiter les îles de Lérins m’intéressent. Oui, ces excursions sont quotidiennes. Bien, mais combien coûte le billet pour des jeunes de 13 ans ? Alors… tarif adolescent : 12 euros 50 mademoiselle.",
+      "sourceSha256": "f4f70a3f683ded253acbc40f83a3309005414f6b10b06a89c3ba305eae4047fc",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+      "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
+      "themes": [
+        "deplacements",
+        "culture"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "gender_review_status": "documented_match",
+      "visual_cast": "Jeune fille à la billetterie et employé homme.",
+      "evidence": [
+        "Bonjour Monsieur",
+        "mademoiselle"
+      ],
+      "note": "La fille et le préposé homme correspondent à mademoiselle et Monsieur ; âge exact laissé à l’oral."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "audioSha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8",
+      "transcription": "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+      "sourceSha256": "817e9b475c792f55be16bc944f087e4442b2dbacc7bc683ef39ded01805db3ad",
+      "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "imageSha256": "45b7d869883cb324424c1bf47b7756342fe5f20ac59ad34e27fc9be0cbad8b54",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "musee",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Entrée générique d’un musée, sans calendrier ou prix ; les œuvres décoratives ne sont pas données pour celles de Matisse ni la façade pour un musée réel identifié.",
+      "gender_review_status": "no_visible_character",
+      "visual_cast": "Entrée de musée, œuvres et buste décoratifs, aucun interlocuteur visible.",
+      "evidence": [
+        "Bonjour Monsieur"
+      ],
+      "note": "Le monsieur auquel on demande les horaires n’est pas représenté ; les figures des œuvres ne jouent aucun rôle dans le dialogue."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-04.mp3",
+      "audioSha256": "b982e025b9d294b4b67b9b76886b3fbee95ff4a1437e81827bf1633c2217830e",
+      "transcription": "Pour aller au musée, il est préférable d’y aller à pied ou de prendre le bus ? Prenez le bus. Il vous laisse devant. De la gare, c’est loin. Merci, mais j’aime marcher. Ah, alors vous avez le choix !",
+      "sourceSha256": "2c59d0532b7ad4e11ffb3336483a1d80d845174b8ce9026741845b0140384397",
+      "image": "/lib/images/tcf/catalogue/actions/montrer-le-chemin.webp",
+      "imageSha256": "12ea782368c2849f6404e217a2ca83179e743d78dd59572cb9adfe13e02b6f6d",
+      "themes": [
+        "deplacements",
+        "culture"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Une personne indique une direction à une autre en ville ; pas de plaque de musée, de ville ou de distance attribuée au dessin.",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Deux jeunes hommes dont l’un indique une direction.",
+      "evidence": [],
+      "note": "Le texte ne donne le genre d’aucun interlocuteur. Répartition vocale à confirmer."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-02.mp3",
+      "audioSha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+      "transcription": "Pardon monsieur, à quelle heure part le premier bateau pour les îles l’après-midi ? Le premier à 14h00 et il y a un aller toutes les heures jusqu’à 19h00. Et le retour ? Le premier à 14h30 et le dernier à 18h30.",
+      "sourceSha256": "3887e8ce560e362fa7d868ff53f5222a94b6b7212c1d1aea315378237d37f3b8",
+      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Renseignement de transport auprès d’un homme à un guichet ; aucune heure, destination ou somme ajoutée.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Employé homme au guichet et cliente femme.",
+      "evidence": [
+        "Pardon monsieur"
+      ],
+      "note": "Employé homme conforme à monsieur ; genre de la personne demandant les horaires non précisé."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-04.mp3",
+      "audioSha256": "2d0ec84f7dd1054cdf4bfcb0439ac2a067747ce8fd7dfc87cbfe096916d671ab",
+      "transcription": "Bonjour monsieur, quel est le prix d’un billet pour les îles ? Un aller-retour, c’est 12 € par personne. Y a-t-il des réductions ? Nous sommes un groupe de 5. Pour un groupe de 5 vous avez un billet gratuit.",
+      "sourceSha256": "12f7aa937ab9a8bfd80fe92a348e26a5f1a00754c59368180163a6c11441d662",
+      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Billetterie générique avec un préposé homme ; ne pas représenter le prix ni supposer que la cliente est seule plutôt que membre du groupe.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Employé homme au guichet et cliente femme.",
+      "evidence": [
+        "Bonjour monsieur"
+      ],
+      "note": "Employé homme conforme à monsieur ; genre de la personne demandant les prix non précisé."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-002-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-002-02.mp3",
+      "audioSha256": "7f169cdf665e6cb06509a6492a39dd24f7505bb7c44db93c97ba31528e80baed",
+      "transcription": "Excusez-moi, je cherche la rue du Général Leclerc. La rue du Général Leclerc, à pied c’est un peu loin. Vous devez prendre le bus n. 10. Descendez place Nationale, la rue du Général Leclerc, c’est la grande rue en face de l’arrêt de bus.",
+      "sourceSha256": "00bb43ea8e9b6abefa932498a148a1398953b57e4d122ba5261638172cf9a40b",
+      "image": "/lib/images/tcf/catalogue/actions/montrer-le-chemin.webp",
+      "imageSha256": "12ea782368c2849f6404e217a2ca83179e743d78dd59572cb9adfe13e02b6f6d",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "review": "Demande et indication de direction en ville ; scène générique sans prétendre identifier la rue du Général Leclerc.",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Deux jeunes hommes dont l’un indique une direction.",
+      "evidence": [],
+      "note": "L’orientation et le bus ne donnent pas le genre des personnes. Répartition vocale à confirmer."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-02.mp3",
+      "audioSha256": "e4b413d9c25d408392c7768646accc16724f649db62774bf01997626d750dcaa",
+      "transcription": "Bonjour Monsieur. Bonjour à toi. Je peux t’aider ? Je cherche la salle de Mme Faure, la prof de français. Je viens d’arriver d’Allemagne.",
+      "sourceSha256": "e8799426971905102624cb623847e8c8f5e2b6f825b011a484a3dc02448bca6b",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "couloir-ecole",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
+      "imageSha256": "a91f979d83709c8750dcfca7889b1844e9834ae6b65c3280fb9da58d0a51a4cf",
+      "review": "Deux personnes nouvelles et portes sans numéro : la source ne donne ni salle 12 ni étage. Le membre du personnel est un homme comme le destinataire de la demande. Aucune nationalité attribuée par le visage.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Homme du personnel de l’école aidant une élève femme dans le couloir.",
+      "evidence": [
+        "Bonjour Monsieur."
+      ],
+      "note": "Le membre du personnel est homme conformément à Monsieur. Mme Faure est une professeure citée mais absente de l’image. Le genre de la personne nouvellement arrivée n’est pas donné dans la transcription."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-047-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
+      "audioSha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+      "transcription": "Bonjour madame, Bonjour jeune homme. Vous désirez ? Je voudrais un bijou pour ma sœur, s’il vous plaît. Quel âge a-t-elle ? Elle a 16 ans et elle aime les bracelets. Voici un beau bracelet. Il est beau mais il coûte combien ? Il est à 30 €. Oh, mais c’est cher ! Vous avez des bijoux moins chers ? J’ai des pendentifs. Vous avez un pendentif avec la tour Eiffel ? Oui, voici un pendentif. Il est en argent ? Oui, il est en argent. Il coûte combien ? Ce modèle est à 15 €. Très bien, je prends ce modèle. Vous voulez un paquet cadeau ? Oui merci, voici 20 €. Merci, alors 5 € à vous et votre paquet jeune homme. Merci madame et au revoir.",
+      "sourceSha256": "a591a9f9290c66703b663b57a79e05e72309bbf1242e202e2cf15853b50c1809",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "bijouterie",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
+      "imageSha256": "b5ab2063353ad68c8dc808c4fef96543e12de096a40003e045d5ec47ac6a1b04",
+      "review": "Vendeuse et jeune client distincts, pendentif argenté en forme de tour Eiffel lisible dans son écrin ; aucun prix, monnaie ou âge écrit. Le décor ne prétend pas être un magasin réel identifié.",
+      "gender_review_status": "documented_match",
+      "visual_cast": "Vendeuse femme et jeune client homme examinant un pendentif.",
+      "evidence": [
+        "Bonjour madame",
+        "Bonjour jeune homme",
+        "Merci madame"
+      ],
+      "note": "Les deux rôles représentés correspondent aux titres explicitement échangés. La sœur destinataire du cadeau n’est pas montrée."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-048-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "audioSha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "transcription": "Bonjour Monsieur. Bonjour jeune homme. Oh ! Qu’est-ce que vous avez là ? Je fais du vélo et voilà ! J’ai mal à la jambe, vous pouvez me donner des médicaments, s’il vous plaît ? Qu’est-ce que je vous donne ? J’ai besoin d’un désinfectant. J’ai ce produit. Il est très efficace. Quel est prix de ce flacon ? Il coûte 4,80 €. Et vous avez aussi des pansements ? Bien sûr. Voici les pansements. Ils sont à quel prix ? La boîte coûte 3,10 €. Il y a combien de pansements dans une boîte ? Il y a 10 pansements. Je peux prendre des comprimés aussi ? Oui, si vous avez mal vous pouvez prendre ces comprimés un le matin et un le soir. Merci, combien je vous dois en tout ? 10,10 € jeune homme. Voici les 10 € et les 10 centimes. Merci et au revoir. Au revoir.",
+      "sourceSha256": "ac7fde2698e73f0b59ed2d211bf1c6ce4e9fae835c293ef07f78d9ec97b02e12",
+      "themes": [
+        "sante",
+        "achats"
+      ],
+      "sceneKey": "pharmacie",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pharmacie-jambe.png",
+      "imageSha256": "96654467ca9892db988af1addf76fc283553b0529ddf271fdf619cd9da2f4b24",
+      "review": "Pharmacien homme conforme à Monsieur ; jeune cycliste montrant le tibia, flacon et boîte avec pictogramme de pansement, vélo au second plan. Aucun dosage, diagnostic, sang, fracture, prix ou compte de comprimés inventé.",
+      "gender_review_status": "documented_match",
+      "visual_cast": "Pharmacien homme et jeune cycliste homme.",
+      "evidence": [
+        "Bonjour Monsieur.",
+        "Bonjour jeune homme."
+      ],
+      "note": "Pharmacien homme et client jeune homme correspondent aux titres explicitement échangés ; aucun changement nécessaire."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-03.mp3",
+      "audioSha256": "ca13afa2c591e1f5661b6716c52d260d03e870e7d261d9f37151a506cecbaa7f",
+      "transcription": "Bonjour jeune homme, vous pourriez me prendre ces paquets de biscuits, ils sont trop en hauteur pour moi. Mais bien sûr, vous voulez deux paquets jaunes ? Oui, deux de la même marque. Tenez !",
+      "sourceSha256": "04f26f93663ef8043484bdce3d7e1d38937e5e34b839551463a3b6a9f09c8175",
+      "themes": [
+        "achats",
+        "alimentation"
+      ],
+      "sceneKey": "aide-rayon",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-biscuits-jaunes.png",
+      "imageSha256": "0352a5970f404ebd403c4ce535e25600b886ec26d0f2d74a10b49d17e3130288",
+      "review": "Deux paquets jaunes identiques seulement : l’un dans la main levée, l’autre dans la main basse. Rayon haut et espace accessible ; femme en fauteuil et jeune homme aux visages différents. Le fauteuil est un choix illustratif inclusif, pas une information à déduire de l’audio ou une réponse sur la cause de la difficulté.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Jeune homme prenant deux paquets pour une femme en fauteuil.",
+      "evidence": [
+        "Bonjour jeune homme"
+      ],
+      "note": "Aidant masculin conforme à jeune homme. Le genre de la personne qui demande de l’aide n’est pas précisé, et sa petite portée ne prouve pas un fauteuil : ce dernier reste un choix illustratif inclusif, pas une information de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3",
+      "audioSha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
+      "transcription": "Tu as deux anoraks ? Oui, ma mère exagère toujours. Mais non ! Tu peux me prêter l’anorak que tu ne mets pas ? Le mien est trop léger. Prends le bleu. Moi je prends le vert.",
+      "sourceSha256": "2b0bf32229d108923a87a9f4a097f60e096a8a6d2d3d9d8e3186bba58151f8f1",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "pret-anorak",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
+      "imageSha256": "4d5525763fc7293c4f35c50c01b1ef9dd45ccf34fd65ee87118e9cd32beec2fb",
+      "review": "Deux anoraks seulement, bleu offert et vert conservé sur l’autre avant-bras ; deux jeunes personnes en tee-shirt, mains et pieds complets, décor neutre sans école ou montagne imposée.",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Jeune homme prêtant l’anorak bleu à une jeune femme, anorak vert conservé.",
+      "evidence": [],
+      "note": "Ma mère est une personne citée, pas un des deux interlocuteurs. Le texte ne donne pas le genre du prêteur ou de la personne qui emprunte ; voix à confirmer."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
+      "audioSha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
+      "transcription": "Je vous fais un paquet cadeau pour ce jeune homme ? Oui s’il vous plaît ! C’est un cadeau d’anniversaire. Alors je mets ce papier bleu clair avec ce ruban bleu foncé. Oh ! que c’est beau ! je vous remercie Madame.",
+      "sourceSha256": "d7524ab43b527fda038da3b0aa6460a533c67e5c16418095740677afe43cfef3",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "emballage-cadeau",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
+      "imageSha256": "c47471cf578667e8ef8d9f54053eeead248c804560c3679d3304f7fc7074f1ef",
+      "review": "Un paquet à papier bleu clair et ruban bleu foncé ; vendeuse nouvelle terminant le nœud et jeune client, aucune date, montant, marque ou contenu de cadeau ajouté.",
+      "gender_review_status": "partial_documented_match",
+      "visual_cast": "Vendeuse femme emballant un cadeau devant un jeune homme.",
+      "evidence": [
+        "je vous remercie Madame.",
+        "pour ce jeune homme"
+      ],
+      "note": "Vendeuse femme conforme à Madame ; le jeune homme est cité comme destinataire du cadeau. Il n’est pas certain que cette mention identifie le locuteur client : ce rôle reste à confirmer avec la voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-01.mp3",
+      "audioSha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec",
+      "transcription": "Je voudrais un renseignement. Nous sommes 10 et nous voulons aller à Lyon. Y a-t-il une réduction ? Vous avez moins de 15 ans ? Oui. Vous avez 2 billets gratuits alors. Je vous remercie, je reviens acheter les billets.",
+      "sourceSha256": "0ca54bb2765879343c7d358e56e46b92441414e9342cedb32dc1f225ede183ad",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "renseignement-transport",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+      "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
+      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "gender_review_status": "roles_not_specified",
+      "visual_cast": "Jeune fille à la billetterie et employé homme.",
+      "evidence": [],
+      "note": "Cette autre source partage l’image mais ne donne aucun titre ou accord de genre : ne pas lui transférer la preuve mademoiselle de l’autre audio. Distribution des voix à confirmer."
+    }
+  ],
+  "summary": {
+    "baseline_sources": 39,
+    "distinct_images": 33,
+    "reviewed": 39,
+    "statuses": {
+      "corrected_documented_match": 1,
+      "documented_match": 5,
+      "no_visible_character": 4,
+      "partial_documented_match": 16,
+      "roles_not_specified": 13
+    },
+    "voices_to_confirm": 29,
+    "confirmed_image_mismatches": 1,
+    "corrections_installed": 1
+  },
+  "corrections": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "sha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true,
+      "prompt": "Edit the first image using the SECOND attached image as the approved painterly STYLE reference. REMOVE BOTH SPEECH BUBBLES AND ALL THEIR LETTERING COMPLETELY, replacing their areas with natural park foliage and sky. ABSOLUTELY NO TEXT, NO WORDS, NO LETTERS, NO QUOTES, NO SPEECH BUBBLES, NO BALLOONS, NO CAPTIONS OR SIGNS ANYWHERE. Keep just ONE MALE ATHLETE actively stretching his thigh beside a bench, one foot raised behind him, one shoe on the ground, cheerful and motivated, reacting to an off-frame companion whose gender must not be invented. Preserve believable anatomy and the main male character. Restyle the WHOLE scene to match the SECOND reference: warm semi-realistic hand-painted educational illustration, subtle visible drawn contours, soft painted volumes and natural fabrics, no photorealistic skin pores or photographic bokeh, no 3D render. Increase the composition breathing room so the complete top of his hair, lifted shoe and standing shoe have generous visible margins; do not crop or zoom tight. The park is generic, no real landmark or named city, no distance number, date, time, amount, logo, race, medal or finish line. One coherent natural scene, native landscape 4:3 PNG at 1448 by 1086, no borders, no panels. Do not copy the people from the style reference.",
+      "first_prompt": "Create one single coherent educational scene in native landscape 4:3, 1448 by 1086 pixels, edge-to-edge, no panels. Match the attached approved ClairFLE reference STYLE: warm semi-realistic painted editorial illustration, soft natural textures, subtle precise outlines, realistic anatomy, gentle daylight and muted natural colours. Use a new character, do not copy anyone in the reference. Correct a French dialogue illustration about being keen to RUN. Exactly ONE foreground athlete: an adult MAN about 30 with medium-brown skin, short dark curls, a neat short beard, a cobalt running top, charcoal athletic trousers and proper running shoes. He confidently warms up by stretching one thigh, holding his lifted foot behind him with one hand while balancing safely on the other leg beside a park bench. His expression is cheerful, energetic and motivated. The dialogue explicitly says tu es fou and je suis motivé with masculine agreement, confirmed by two existing recognitions of this exact MP3, so the ACTIVE ATHLETE MUST BE A MAN, not a woman stretching beside a surprised male bystander. The reacting interlocutor's gender is NOT documented and stays entirely OUT OF FRAME, on the viewer's side; the athlete may look toward them conversationally. Neutral green city park with a plain path, bench and water bottle; no invented named city or recognisable landmark. No race already completed, medal, number, mileage sign, scoreboard, stopwatch, readable text, logo, date, amount or clock. Full athlete including raised shoe and standing shoe with comfortable clear margins, no duplicate limbs. Native PNG, not a square or cropped view.",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "rejected_generations": [
+        {
+          "sha256": "24542d322508a4179da193c3887227ec89119f69e6250fb60dc89486f3807c94",
+          "reason": "Bulles donnant le texte audio et haut de tête trop proche du bord ; rendu trop photographique.",
+          "not_integrated": true
+        }
+      ],
+      "edit_input_sha256": "24542d322508a4179da193c3887227ec89119f69e6250fb60dc89486f3807c94",
+      "visual_review": "Sportif homme actif à la place de la femme qui s’échauffait ; accords fou et motivé recoupés avec les reconnaissances Parakeet et Whisper du SHA du MP3 installé. Interlocuteur non genré hors cadre. Aucun texte, bulle, distance, score ou résultat ajouté ; tête et deux chaussures dans le cadre, PNG natif 4:3 sans conversion.",
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+      "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+      "previous_image": "/lib/images/tcf/co/scenes/loisirs/s-echauffer.webp",
+      "previous_image_sha256": "bcb1b651e0b1d3f1548a3a6ac16874c4a077355bf3c6e8c66dc32a2e898ce54c"
+    }
+  ]
+}

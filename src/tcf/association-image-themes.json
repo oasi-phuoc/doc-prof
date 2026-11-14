@@ -13,7 +13,14 @@
       "themes": [
         "alimentation"
       ],
-      "sceneKey": "jus-orange"
+      "sceneKey": "jus-orange",
+      "audioSha256": "d43633d49f744deb0b45f5dc62336e85704b869e1b49b7b34b6e5b8fab72aa02",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Marine et l’accord féminin concordent. Le genre de la propriétaire du verre n’est pas précisé dans les paroles ; sa voix reste à confirmer."
+      }
     },
     {
       "exercise": "tcf-a1-s3-co-4",
@@ -27,7 +34,14 @@
         "achats",
         "alimentation"
       ],
-      "sceneKey": "aide-rayon"
+      "sceneKey": "aide-rayon",
+      "audioSha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Employé homme conforme à monsieur ; genre de la cliente non précisé par le texte, à confirmer avec la voix."
+      }
     },
     {
       "exercise": "tcf-a1-s3-co-4",
@@ -40,7 +54,14 @@
       "themes": [
         "sport"
       ],
-      "sceneKey": "piscine"
+      "sceneKey": "piscine",
+      "audioSha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "no_visible_character",
+        "voice_confirmation_pending": false,
+        "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+      }
     },
     {
       "exercise": "tcf-a1-s3-co-4",
@@ -48,12 +69,20 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
       "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
       "sourceSha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
-      "image": "/lib/images/tcf/co/scenes/loisirs/s-echauffer.webp",
-      "imageSha256": "bcb1b651e0b1d3f1548a3a6ac16874c4a077355bf3c6e8c66dc32a2e898ce54c",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "imageSha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
       "themes": [
         "sport"
       ],
-      "sceneKey": "course-parc"
+      "sceneKey": "course-parc",
+      "audioSha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "corrected_documented_match",
+        "voice_confirmation_pending": false,
+        "note": "Le coureur qui se dit motivé est masculin dans les paroles ; l’image place la femme dans le rôle sportif et l’homme dans le rôle surpris. Générer un coureur homme, interlocuteur non documenté hors cadre."
+      },
+      "review": "Sportif homme actif à la place de la femme qui s’échauffait ; accords fou et motivé recoupés avec les reconnaissances Parakeet et Whisper du SHA du MP3 installé. Interlocuteur non genré hors cadre. Aucun texte, bulle, distance, score ou résultat ajouté ; tête et deux chaussures dans le cadre, PNG natif 4:3 sans conversion."
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -66,7 +95,14 @@
       "themes": [
         "education"
       ],
-      "sceneKey": "couloir-ecole"
+      "sceneKey": "couloir-ecole",
+      "audioSha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Le destinataire homme concorde avec monsieur ; le genre de la personne qui demande la salle n’est pas précisé par le texte."
+      }
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -79,7 +115,14 @@
       "themes": [
         "travail"
       ],
-      "sceneKey": "faire-connaissance-travail"
+      "sceneKey": "faire-connaissance-travail",
+      "audioSha256": "12cc35ffbe6b7b371d7e193ec4b51a94dd592636ec4d13f9cfebdb5bed421d6a",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "documented_match",
+        "voice_confirmation_pending": false,
+        "note": "Deux rôles féminins explicités par les prénoms, articles et accord ; image cohérente."
+      }
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -92,7 +135,14 @@
       "themes": [
         "sante"
       ],
-      "sceneKey": "accueil-medical"
+      "sceneKey": "accueil-medical",
+      "audioSha256": "493003ddc30ec3ddaf585484a19a35261f1c8676a091f2829001e59e919d5381",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Aucun titre ou accord ne précise le genre de l’accueil ou du patient dans ce dialogue. Aucun écart documentaire démontré ; voix à vérifier. Le médecin de l’affiche ne représente pas le docteur Charpentier."
+      }
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -105,7 +155,14 @@
       "themes": [
         "achats"
       ],
-      "sceneKey": "montrer-sac"
+      "sceneKey": "montrer-sac",
+      "audioSha256": "95a691f7c9c339dba48ad47499f1eba1c349e4dd8c55df3ff625b8fe7a1c2716",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Aucun genre des deux interlocuteurs n’est donné dans les paroles. Pas de contradiction documentaire démontrée ; les voix restent à vérifier."
+      }
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -119,7 +176,14 @@
         "lecture",
         "culture"
       ],
-      "sceneKey": "bibliotheque"
+      "sceneKey": "bibliotheque",
+      "audioSha256": "41101c21ae1f5c63b3bba46e9086e414265868f95bbfae1d9426adbc5ef16dc3",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Le texte permet de demander et emprunter des livres sans préciser le genre des personnes ; voix à vérifier."
+      }
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -132,7 +196,14 @@
       "themes": [
         "education"
       ],
-      "sceneKey": "devoirs-maison"
+      "sceneKey": "devoirs-maison",
+      "audioSha256": "201c5e8ee81e2d33ef47ec13bf8e01fcd47a1e286c216dcc8b8ecf723719659e",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Père homme conforme à Papa ; le genre de l’enfant n’est pas précisé dans les paroles."
+      }
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -145,7 +216,14 @@
       "themes": [
         "education"
       ],
-      "sceneKey": "classe-livres"
+      "sceneKey": "classe-livres",
+      "audioSha256": "bb6d6c4d81c628153d20cd30c6340d38e982ada8e05a7553a9b523dfb54018bc",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "documented_match",
+        "voice_confirmation_pending": false,
+        "note": "Le personnage montré avec les livres est bien féminin. Les observateurs ne sont pas identifiés par genre dans le dialogue et restent des élèves figurants."
+      }
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -158,7 +236,14 @@
       "themes": [
         "alimentation"
       ],
-      "sceneKey": "preparer-repas"
+      "sceneKey": "preparer-repas",
+      "audioSha256": "be9a78a1683bd6f44524bf5ecaa2fb626722d43c760db25be9b868f64b70b863",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "La personne qui préfère préparer ses repas et son interlocuteur ne sont pas genrés dans le texte. La répartition de voix reste à confirmer."
+      }
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -173,7 +258,14 @@
         "culture",
         "education"
       ],
-      "sceneKey": "bibliotheque"
+      "sceneKey": "bibliotheque",
+      "audioSha256": "6e61ee7f1b143d3278a654a01606e30cfa2ff47ceef985605b04561d97f7184a",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Personnage Éric nommé et représenté au masculin ; genre de la personne qui lui pose la question non précisé par les paroles."
+      }
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -186,7 +278,14 @@
       "themes": [
         "deplacements"
       ],
-      "sceneKey": "retour-vacances"
+      "sceneKey": "retour-vacances",
+      "audioSha256": "2e929d5bbff3713c4ea0de73189b8697b2c93a6a09d6db8a6284b5d9b66ceff5",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Kate nommée et représentée au féminin ; autre interlocutrice non genrée par les paroles. Aucun genre réel des voix certifié."
+      }
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -199,7 +298,14 @@
       "themes": [
         "achats"
       ],
-      "sceneKey": "horaires-magasin"
+      "sceneKey": "horaires-magasin",
+      "audioSha256": "516eb7eb22c059ce95f708de26d2714bd9e6837e8225689cafd50c5f0507230d",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Les deux interlocuteurs ne sont pas genrés par les paroles ; distribution des voix à confirmer."
+      }
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -212,7 +318,14 @@
       "themes": [
         "culture"
       ],
-      "sceneKey": "musee"
+      "sceneKey": "musee",
+      "audioSha256": "007508ac6092f98712b196c0a7c39263167e5aa33cdfe2814daf0f99c386d71a",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Marc est nommé et représenté au masculin ; l’autre interlocuteur n’est pas genré dans le texte. Le projet d’invitation n’ajoute pas de genre confirmé pour cet autre personnage."
+      }
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -225,7 +338,14 @@
       "themes": [
         "deplacements"
       ],
-      "sceneKey": "bus-rencontre"
+      "sceneKey": "bus-rencontre",
+      "audioSha256": "a69d5b9ebfc64ebf5b0311b2238990bc789792943ebcc0c75265721386aa1a03",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Thomas est masculin comme frère et il ; les deux personnes qui parlent de lui ne sont pas genrées par les paroles."
+      }
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -238,7 +358,14 @@
       "themes": [
         "achats"
       ],
-      "sceneKey": "vetements"
+      "sceneKey": "vetements",
+      "audioSha256": "650f399abf3a064386e54d0f2e652e26d100844731cd2e42535621c756cc664f",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "La préférence pour le sac vert ne donne aucun genre des interlocuteurs ; voix à confirmer."
+      }
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -251,7 +378,14 @@
       "themes": [
         "achats"
       ],
-      "sceneKey": "aspirateur"
+      "sceneKey": "aspirateur",
+      "audioSha256": "2ec59a570c9ac9bf2a83b8d3cbfe9d1189b34c910da55f1467de9514505313f3",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Les deux interlocuteurs ne sont pas genrés dans la transcription. Voix à confirmer avant de certifier leur répartition."
+      }
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -264,7 +398,14 @@
       "themes": [
         "alimentation"
       ],
-      "sceneKey": "creme-chocolat"
+      "sceneKey": "creme-chocolat",
+      "audioSha256": "00c821f26b83b0761222cb5a1d8180f1a83446fdc1f4e75074963b6306454928",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Ni la personne qui a raté la crème ni la personne aidante ne sont genrées dans le dialogue. Répartition vocale à confirmer."
+      }
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -277,7 +418,14 @@
       "themes": [
         "education"
       ],
-      "sceneKey": "resultats-reussite"
+      "sceneKey": "resultats-reussite",
+      "audioSha256": "9d49d58032c6b75a07166f226dd0b51205df2ec067a08c868856f66189f44868",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Emma et l’accord contente concordent ; Alex est un prénom mixte et le genre de la personne qui félicite reste à confirmer dans la voix."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-031-03",
@@ -294,7 +442,13 @@
       ],
       "sceneKey": "piscine",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Le bassin, les lignes de nage et les vestiaires établissent la piscine ; aucun faux horaire, élève ou professeur de genre contradictoire."
+      "review": "Le bassin, les lignes de nage et les vestiaires établissent la piscine ; aucun faux horaire, élève ou professeur de genre contradictoire.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "no_visible_character",
+        "voice_confirmation_pending": false,
+        "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-032-03",
@@ -310,7 +464,13 @@
       ],
       "sceneKey": "classe-livres",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Dictionnaire explicitement identifiable remis entre camarades ; la scène ne prétend pas établir les conditions d’un prêt ni leur identité."
+      "review": "Dictionnaire explicitement identifiable remis entre camarades ; la scène ne prétend pas établir les conditions d’un prêt ni leur identité.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Le masculin de il est un peu vieux concerne le dictionnaire, pas les personnes. Aucun genre de prêteur ou emprunteur n’est donné ; voix à confirmer."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-044-01",
@@ -326,7 +486,13 @@
       ],
       "sceneKey": "piscine",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Lieu générique de natation contrôlé ; les jours et horaires ne sont pas écrits dans la scène."
+      "review": "Lieu générique de natation contrôlé ; les jours et horaires ne sont pas écrits dans la scène.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "no_visible_character",
+        "voice_confirmation_pending": false,
+        "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-050-04-02",
@@ -342,7 +508,13 @@
       ],
       "sceneKey": "classe-livres",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Élève au sac ouvert sans manuel, camarade montrant le sien en classe ; la matière illustrée n’est pas utilisée comme réponse et aucune cause de l’absence du livre n’est affirmée."
+      "review": "Élève au sac ouvert sans manuel, camarade montrant le sien en classe ; la matière illustrée n’est pas utilisée comme réponse et aucune cause de l’absence du livre n’est affirmée.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Léna est représentée au féminin. La personne appelée Madame n’est pas montrée ; le jeune homme visible est un camarade, pas le professeur. Pas de remplacement motivé uniquement par sa présence."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-033-02",
@@ -358,7 +530,13 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Échange de renseignement à un guichet auprès d’un homme ; pas de code de voie, heure, montant ou achat final attribué au dessin générique."
+      "review": "Échange de renseignement à un guichet auprès d’un homme ; pas de code de voie, heure, montant ou achat final attribué au dessin générique.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Employé homme conforme à Monsieur ; genre de la personne qui demande le départ non précisé dans les paroles."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-034-02",
@@ -375,7 +553,13 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage."
+      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "documented_match",
+        "voice_confirmation_pending": false,
+        "note": "La fille et le préposé homme correspondent à mademoiselle et Monsieur ; âge exact laissé à l’oral."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-034-04",
@@ -391,7 +575,13 @@
       ],
       "sceneKey": "musee",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Entrée générique d’un musée, sans calendrier ou prix ; les œuvres décoratives ne sont pas données pour celles de Matisse ni la façade pour un musée réel identifié."
+      "review": "Entrée générique d’un musée, sans calendrier ou prix ; les œuvres décoratives ne sont pas données pour celles de Matisse ni la façade pour un musée réel identifié.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "no_visible_character",
+        "voice_confirmation_pending": false,
+        "note": "Le monsieur auquel on demande les horaires n’est pas représenté ; les figures des œuvres ne jouent aucun rôle dans le dialogue."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-035-04",
@@ -408,7 +598,13 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Une personne indique une direction à une autre en ville ; pas de plaque de musée, de ville ou de distance attribuée au dessin."
+      "review": "Une personne indique une direction à une autre en ville ; pas de plaque de musée, de ville ou de distance attribuée au dessin.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Le texte ne donne le genre d’aucun interlocuteur. Répartition vocale à confirmer."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-02",
@@ -424,7 +620,13 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Renseignement de transport auprès d’un homme à un guichet ; aucune heure, destination ou somme ajoutée."
+      "review": "Renseignement de transport auprès d’un homme à un guichet ; aucune heure, destination ou somme ajoutée.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Employé homme conforme à monsieur ; genre de la personne demandant les horaires non précisé."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-04",
@@ -440,7 +642,13 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Billetterie générique avec un préposé homme ; ne pas représenter le prix ni supposer que la cliente est seule plutôt que membre du groupe."
+      "review": "Billetterie générique avec un préposé homme ; ne pas représenter le prix ni supposer que la cliente est seule plutôt que membre du groupe.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Employé homme conforme à monsieur ; genre de la personne demandant les prix non précisé."
+      }
     },
     {
       "exercise": "tcf-delf-actif-b1-002-02",
@@ -456,7 +664,13 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Demande et indication de direction en ville ; scène générique sans prétendre identifier la rue du Général Leclerc."
+      "review": "Demande et indication de direction en ville ; scène générique sans prétendre identifier la rue du Général Leclerc.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "L’orientation et le bus ne donnent pas le genre des personnes. Répartition vocale à confirmer."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-051-04-02",
@@ -472,7 +686,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
       "imageSha256": "a91f979d83709c8750dcfca7889b1844e9834ae6b65c3280fb9da58d0a51a4cf",
-      "review": "Deux personnes nouvelles et portes sans numéro : la source ne donne ni salle 12 ni étage. Le membre du personnel est un homme comme le destinataire de la demande. Aucune nationalité attribuée par le visage."
+      "review": "Deux personnes nouvelles et portes sans numéro : la source ne donne ni salle 12 ni étage. Le membre du personnel est un homme comme le destinataire de la demande. Aucune nationalité attribuée par le visage.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Le membre du personnel est homme conformément à Monsieur. Mme Faure est une professeure citée mais absente de l’image. Le genre de la personne nouvellement arrivée n’est pas donné dans la transcription."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-047-01",
@@ -488,7 +708,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
       "imageSha256": "b5ab2063353ad68c8dc808c4fef96543e12de096a40003e045d5ec47ac6a1b04",
-      "review": "Vendeuse et jeune client distincts, pendentif argenté en forme de tour Eiffel lisible dans son écrin ; aucun prix, monnaie ou âge écrit. Le décor ne prétend pas être un magasin réel identifié."
+      "review": "Vendeuse et jeune client distincts, pendentif argenté en forme de tour Eiffel lisible dans son écrin ; aucun prix, monnaie ou âge écrit. Le décor ne prétend pas être un magasin réel identifié.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "documented_match",
+        "voice_confirmation_pending": false,
+        "note": "Les deux rôles représentés correspondent aux titres explicitement échangés. La sœur destinataire du cadeau n’est pas montrée."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-048-01",
@@ -505,7 +731,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pharmacie-jambe.png",
       "imageSha256": "96654467ca9892db988af1addf76fc283553b0529ddf271fdf619cd9da2f4b24",
-      "review": "Pharmacien homme conforme à Monsieur ; jeune cycliste montrant le tibia, flacon et boîte avec pictogramme de pansement, vélo au second plan. Aucun dosage, diagnostic, sang, fracture, prix ou compte de comprimés inventé."
+      "review": "Pharmacien homme conforme à Monsieur ; jeune cycliste montrant le tibia, flacon et boîte avec pictogramme de pansement, vélo au second plan. Aucun dosage, diagnostic, sang, fracture, prix ou compte de comprimés inventé.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "documented_match",
+        "voice_confirmation_pending": false,
+        "note": "Pharmacien homme et client jeune homme correspondent aux titres explicitement échangés ; aucun changement nécessaire."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-044-04-03",
@@ -522,7 +754,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-biscuits-jaunes.png",
       "imageSha256": "0352a5970f404ebd403c4ce535e25600b886ec26d0f2d74a10b49d17e3130288",
-      "review": "Deux paquets jaunes identiques seulement : l’un dans la main levée, l’autre dans la main basse. Rayon haut et espace accessible ; femme en fauteuil et jeune homme aux visages différents. Le fauteuil est un choix illustratif inclusif, pas une information à déduire de l’audio ou une réponse sur la cause de la difficulté."
+      "review": "Deux paquets jaunes identiques seulement : l’un dans la main levée, l’autre dans la main basse. Rayon haut et espace accessible ; femme en fauteuil et jeune homme aux visages différents. Le fauteuil est un choix illustratif inclusif, pas une information à déduire de l’audio ou une réponse sur la cause de la difficulté.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Aidant masculin conforme à jeune homme. Le genre de la personne qui demande de l’aide n’est pas précisé, et sa petite portée ne prouve pas un fauteuil : ce dernier reste un choix illustratif inclusif, pas une information de l’audio."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-045-04-01",
@@ -538,7 +776,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
       "imageSha256": "4d5525763fc7293c4f35c50c01b1ef9dd45ccf34fd65ee87118e9cd32beec2fb",
-      "review": "Deux anoraks seulement, bleu offert et vert conservé sur l’autre avant-bras ; deux jeunes personnes en tee-shirt, mains et pieds complets, décor neutre sans école ou montagne imposée."
+      "review": "Deux anoraks seulement, bleu offert et vert conservé sur l’autre avant-bras ; deux jeunes personnes en tee-shirt, mains et pieds complets, décor neutre sans école ou montagne imposée.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Ma mère est une personne citée, pas un des deux interlocuteurs. Le texte ne donne pas le genre du prêteur ou de la personne qui emprunte ; voix à confirmer."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-032-02",
@@ -554,7 +798,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
       "imageSha256": "c47471cf578667e8ef8d9f54053eeead248c804560c3679d3304f7fc7074f1ef",
-      "review": "Un paquet à papier bleu clair et ruban bleu foncé ; vendeuse nouvelle terminant le nœud et jeune client, aucune date, montant, marque ou contenu de cadeau ajouté."
+      "review": "Un paquet à papier bleu clair et ruban bleu foncé ; vendeuse nouvelle terminant le nœud et jeune client, aucune date, montant, marque ou contenu de cadeau ajouté.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "partial_documented_match",
+        "voice_confirmation_pending": true,
+        "note": "Vendeuse femme conforme à Madame ; le jeune homme est cité comme destinataire du cadeau. Il n’est pas certain que cette mention identifie le locuteur client : ce rôle reste à confirmer avec la voix."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-033-01",
@@ -570,7 +820,13 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
       "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
-      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage."
+      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "genderAudit": {
+        "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
+        "status": "roles_not_specified",
+        "voice_confirmation_pending": true,
+        "note": "Cette autre source partage l’image mais ne donne aucun titre ou accord de genre : ne pas lui transférer la preuve mademoiselle de l’autre audio. Distribution des voix à confirmer."
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-029-02",
@@ -919,21 +1175,21 @@
       ],
       "sceneKey": "bagage-rangement",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
-      "imageSha256": "e8fb4ed5853d4a8dd1dafb458b87e67c07ec1758a2b07f51ab5f44f48331c6f7",
-      "review": "Un jeune homme grand lève un sac de voyage bordeaux avec ses deux mains vers le rack ouvert au-dessus des sièges ; un homme adulte plus petit demande de l’aide à côté. Sac, mains, pieds et porte-bagages entiers, aucun numéro ou paiement.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
+      "imageSha256": "a2fe163b847ea8004ad1ec4b99576fef23c6fef7eb672041d3d2d6ae4f2f28c4",
+      "review": "Deux personnages masculins : jeune homme aidant et propriétaire de petite taille, conforme à je suis petit. Sac encore tenu des deux mains pendant son placement en hauteur, pas de personne âgée ou handicap médical inventé.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Jeune homme désigne la personne qui aide ; je suis petit confirme le masculin grammatical de la personne demandant de l’aide.",
+        "basis": "Aidant appelé jeune homme ; propriétaire dit je suis petit, accord masculin. Aucune fragilité médicale ou vieillesse déduite de sa petite taille.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "jeune homme qui aide",
+            "role": "jeune homme et propriétaire masculin de petite taille",
             "quote": "Jeune homme, je peux vous demander de m’aider ?"
           },
           {
-            "role": "homme adulte plus petit",
-            "quote": "Je suis petit."
+            "role": "propriétaire masculin",
+            "quote": "Mon sac de voyage est lourd. Je suis petit."
           }
         ]
       }
@@ -950,21 +1206,17 @@
       ],
       "sceneKey": "ceder-place",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
-      "imageSha256": "56b2bac62ba3de9a5e0731e2ef4bbd21fcba3fc3f5a211c30c836aa65dc44f84",
-      "review": "Une jeune femme se soulève du siège en proposant la place avec une main ouverte à une femme plus âgée ; siège libre et geste de gratitude visibles. Deux femmes entières, aucune parenté ou cause médicale attribuée.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+      "imageSha256": "c38ea79d862d0c7cb57f7005e9a5cf3fab44332217de813b50cd2bdffc4d609f",
+      "review": "Jeune femme et femme plus âgée, explicitement mademoiselle et Madame dans la source. Siège libéré et geste d’invitation visibles ; pas de simple attente côte à côte ni de personne déjà assise ailleurs.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Mademoiselle et une dame de mon âge documentent les deux rôles féminins ; la grand-mère citée reste une autre personne, pas une parenté attribuée à la bénéficiaire.",
+        "basis": "Jeune femme appelée mademoiselle et femme plus âgée appelée Madame, deux rôles explicitement féminins.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "jeune femme qui cède sa place",
-            "quote": "C’est très gentil mademoiselle"
-          },
-          {
-            "role": "femme plus âgée",
-            "quote": "une dame de mon âge"
+            "role": "deux femmes",
+            "quote": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame."
           }
         ]
       }
@@ -981,21 +1233,17 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-augmenter-volume-classe.png",
-      "imageSha256": "8faaa34ce12b7b992e0b091edbfd1503e04d94de7a99cf44a7d342be9025d8d2",
-      "review": "Professeur homme à l’avant, main sur le gros bouton de volume de l’enceinte et regard vers le groupe d’élèves du fond. Tableau vierge, pieds et mains visibles, sans attribuer une voix à un élève précis.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-augmenter-volume-classe-roles-documentes.png",
+      "imageSha256": "5413fb72df7a59935d4c3a750204eb9cf000f09c9e8c12c86d68974d820699f3",
+      "review": "Professeur homme conforme à Monsieur, réglant le bouton d’une enceinte pendant un enregistrement ; une élève au fond indique le problème de volume. Pas d’instrument ou de film substitué. Élèves figurants sans attribution d’une voix précise.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "basis": "Enseignant explicitement appelé Monsieur ; élèves de groupe sans attribution individuelle de la voix.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "professeur homme",
-            "quote": "Non Monsieur."
-          },
-          {
-            "role": "groupe d’élèves au fond",
-            "quote": "vous entendez du fond de la classe ?"
+            "role": "enseignant homme",
+            "quote": "Non Monsieur. Vous pouvez augmenter le volume ?"
           }
         ]
       }
@@ -1013,21 +1261,17 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-exposition-matisse.png",
-      "imageSha256": "a8d0fcbc8e1565ed12bccbeaf43366e65f12ac373054abc49d74ee29ff09fd1d",
-      "review": "Enseignante présentant un livre d’art ouvert vers un groupe d’élèves ; seules couverture extérieure et tranches visibles. Aucune œuvre fictive attribuée à Matisse. Préparation en classe, sans visite déjà réalisée. Chaussures sans marque après reprise.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-matisse.png",
+      "imageSha256": "d6a8e930d693abdd7c7a234e43c9e7f80aa401c8c56efc33991ed7097336f698",
+      "review": "Professeure adulte conforme à Madame annonçant la présentation d’œuvres, portfolio fermé : aucun élève ne regarde un verso de tableau ni une fausse reproduction de Matisse. Les deux premiers rendus sont rejetés et non intégrés ; seule cette version est conservée.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "basis": "Enseignante appelée Madame ; classe figurante. Elle annonce ce qu’elle va montrer, portfolio fermé sans œuvre inventée.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "enseignante",
-            "quote": "Madame c’est la semaine prochaine"
-          },
-          {
-            "role": "groupe d’élèves",
-            "quote": "je vais vous montrer ses tableaux et ses dessins"
+            "role": "enseignante femme",
+            "quote": "Madame c’est la semaine prochaine qu’on va visiter l’exposition de Matisse ?"
           }
         ]
       }
@@ -1045,21 +1289,17 @@
       ],
       "sceneKey": "visite-tour-eiffel",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel.png",
-      "imageSha256": "35a0e3d42093b251345dd98174724a618f1624a1d46cf8b811c8614c24b6562b",
-      "review": "Professeur homme montrant la tour Eiffel entière sur un support imprimé, d’après l’illustration du monument déjà disponible. Groupe d’élèves avec pull plié, préparation en classe et non visite effectuée. Aucun horaire, drapeau ou itinéraire ajouté.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
+      "imageSha256": "af0cf3503256add3ea5c135d434ce4ddc857ae9e3af80a72de537ca899c50fc8",
+      "review": "Professeur homme conforme à Monsieur, préparation encore en classe avec poster de la tour Eiffel et pull apporté. Monument reproduit d’après l’image validée, pas d’horaire écrit ou visite déjà réalisée.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Rôles explicitement nommés, titres ou accords du texte ; les élèves figurants d’un groupe ne représentent pas un locuteur précis.",
+        "basis": "Enseignant explicitement appelé Monsieur ; élèves de groupe sans attribution individuelle de voix. Visite encore projetée.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "professeur homme",
+            "role": "enseignant homme",
             "quote": "À quelle heure on part Monsieur ?"
-          },
-          {
-            "role": "groupe d’élèves",
-            "quote": "N’oubliez pas de prendre un pull."
           }
         ]
       }
@@ -1077,21 +1317,17 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe.png",
-      "imageSha256": "9912d00d4820a0b7eae3c16ab032f2c4e6c96d1478f45c14f8c487553bb60837",
-      "review": "Groupe d’élèves s’installant en classe devant un vidéoprojecteur et un écran clair, sans film inventé, séance de cinéma ou représentation de Lupin. Enseignant hors cadre, aucune voix attribuée à un élève particulier du groupe.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png",
+      "imageSha256": "465d2c0fee8b14c5d40eab92faac6e1d29682a947c15c67bbdfcd309209250df",
+      "review": "Classe mixte regardant un film projeté, cahiers fermés et professeur hors cadre car son genre n’est pas précisé. Aucun visage d’acteur ou faux extrait de Lupin ; silhouettes et roue du fauteuil principales dans le cadre.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Adultes hors cadre ; groupe mixte d’élèves sans attribution d’une voix ou du travail sur Lupin à un élève précis. La situation de film en classe est explicitement documentée.",
+        "basis": "Aucun professeur visible puisque son genre n’est pas précisé ; classe mixte figurante sans attribution individuelle de la voix. Film sans fausse image de Lupin.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "groupe d’élèves",
-            "quote": "rentrez en classe en silence"
-          },
-          {
-            "role": "film en classe",
-            "quote": "On va finir de regarder le film aujourd’hui ?"
+            "role": "groupe de classe, professeur hors champ",
+            "quote": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ?"
           }
         ]
       }
@@ -1108,17 +1344,17 @@
       ],
       "sceneKey": "fleuriste",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-commander-roses-blanches.png",
-      "imageSha256": "3de4c485a826b6c1075a32c320915607652cc1cb6f4f663f933146452fb6673a",
-      "review": "Fleuriste féminine présentant une seule rose blanche comme échantillon de commande. Carnet vierge, aucune commande ou bouquet de dix-huit fleurs déjà livré ; le nombre reste une information audio. Interlocuteur non confirmé hors cadre.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
+      "imageSha256": "c2160f8c16161890d170a100abee0e1ae2461350b50835595142b2b23e919f30",
+      "review": "Revue visuelle : fleuriste femme en pied, une rose blanche de démonstration et carnet de commande vierge. Client hors cadre ; aucun bouquet de dix-huit roses déjà constitué, ni adresse, âge ou montant visible. Dessin chaud en 4:3 cohérent avec la référence approuvée.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Fleuriste explicitement appelée Madame ; client hors cadre et bouquet encore en commande, sans nombre de fleurs inventé.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "fleuriste féminine",
-            "quote": "Bonjour Madame"
+            "role": "fleuriste femme",
+            "quote": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie."
           }
         ]
       }
@@ -1135,17 +1371,17 @@
       ],
       "sceneKey": "vetements",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-pull-coton.png",
-      "imageSha256": "df847c2bf899f2c6d9e63bf16db5e4620290845f48ffee8b4b999f255c7279e6",
-      "review": "Vendeur homme proposant un pull léger écru à maille fine, sans laine épaisse, étiquette de composition ou achat accompli. Le coton est donné par le texte, non prouvé par le dessin. Client non confirmé hors cadre.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+      "imageSha256": "f13b3c12b5520ecebbd5d3f69be96ef44c0fe374269aef9138f1f9d114e0af3a",
+      "review": "Vendeur homme conforme à Monsieur, présentant un pull à maille fine, non une grosse laine ou un manteau. Client hors cadre car son genre n’est pas précisé ; pas d’achat terminé ou de prix affiché.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Vendeur explicitement appelé Monsieur ; client hors cadre. Pull léger conseillé, laine indisponible non montrée comme achat accompli.",
         "audio_listening_performed": false,
         "evidence": [
           {
             "role": "vendeur homme",
-            "quote": "Bonjour Monsieur"
+            "quote": "Bonjour Monsieur, avez-vous des pulls légers en laine ?"
           }
         ]
       }
@@ -1163,16 +1399,16 @@
       ],
       "sceneKey": "visite-ville",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-remercier-guide-ville.png",
-      "imageSha256": "ef04c6a0cb76cb858882cf71be55e631f6ab056c334e6dfbaed763068f688bd9",
-      "review": "Guide féminine recevant les remerciements, main sur le cœur, plan sans nom et rue non identifiable. Aucun monument ou ville précis ajouté, pas de vente ou demande de direction. Visiteur non confirmé hors cadre.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
+      "imageSha256": "aef61242ec6e26385d2ec7f1f0fd2e8d3eb6c24e3401bab3994037871e240c2f",
+      "review": "Guide femme conforme à Madame recevant les remerciements après une visite ; visiteur remerciant hors cadre sans genre inventé. Groupe figurant mixte et ville non identifiée, pas de monument réel attribué à tort.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Guide explicitement appelée Madame ; visiteur remerciant hors cadre sans genre inventé. Ville non nommée laissée générique.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "guide féminine",
+            "role": "guide femme",
             "quote": "Madame, quelle belle visite !"
           }
         ]
@@ -1190,21 +1426,17 @@
       ],
       "sceneKey": "monnaie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-monnaie-machine.png",
-      "imageSha256": "14fa9e7a021af6fba33b299f0245f008099ba161137d1ac68b4a85a2b1dc06f1",
-      "review": "Homme montrant trois pièces sans valeur ou devise écrite, dont deux semblables, près d’une machine sans fonction inventée. Aucun billet de cinq euros ou achat terminé ; demandeur hors cadre.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+      "imageSha256": "563a0beddefec17313fab4d50d615f4bbb655039d0ccccb7173cb59b1daac509",
+      "review": "Revue visuelle : homme aidant en pied près d’une machine générique, trois pièces distinctes sans valeur lisible sur sa paume. Demandeur hors cadre ; aucun rôle de caissier ou usage commercial précis inventé. Format natif 4:3 et style de référence respectés.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Aidant explicitement appelé Monsieur ; demandeur hors cadre, monnaie sans montant lisible. Machine sans usage commercial inventé.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "homme qui propose les pièces",
-            "quote": "Pardon Monsieur."
-          },
-          {
-            "role": "destinataire masculin remercié",
-            "quote": "Merci Monsieur."
+            "role": "aidant homme",
+            "quote": "Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît."
           }
         ]
       }
@@ -1253,21 +1485,17 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-claudine-volontaire-interrogation.png",
-      "imageSha256": "b4bc206f5b388cfa5593b0962a64771616ab9fb7351f29f7bae3f4778c99568f",
-      "review": "Claudine s’avance volontairement vers l’avant avec son cahier ouvert et un geste vers elle-même. Accord féminin prête documenté ; professeur et camarade remplacé hors cadre, groupe arrière non identifié à une voix.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
+      "imageSha256": "6150f45f2f08e2bfdd9a94cc747d8182ccd0b41a490b1f7cd55a7dc5734c5b00",
+      "review": "Revue visuelle : Claudine seule en pied lève la main avec assurance, cahier ouvert sur une table en classe. Camarade et enseignant hors cadre ; aucune attribution arbitraire de leur voix, note ou matière inventée. Image 4:3 conforme au dessin de référence.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Claudine nommée et accord prête au féminin ; camarade et enseignant hors cadre, aucune voix attribuée à un figurant.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "Claudine nommée",
-            "quote": "Claudine, c’est très gentil à toi"
-          },
-          {
-            "role": "accord féminin de la personne prête",
-            "quote": "Je me sens prête."
+            "role": "Claudine, élève prête à répondre",
+            "quote": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête."
           }
         ]
       }
@@ -1284,21 +1512,17 @@
       ],
       "sceneKey": "refus-sortie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pere-refuse-sortie-bowling.png",
-      "imageSha256": "79e11688f54c9b8cca827c37f6dd2078692dc853ef9bb1ab01e651e738881037",
-      "review": "Père au domicile, expression ferme, paume en geste d’arrêt et autre main vers l’intérieur. Pas de bowling ni sortie déjà autorisée ; enfant et ami Mathieu non représentés, leurs genres ne sont pas inventés.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
+      "imageSha256": "f61771bae236c8db373d314a8421720970b6bf82d0d1cf73c165027681dfaa6c",
+      "review": "Revue visuelle : père homme en pied, expression ferme et main ouverte de refus dans l’entrée du logement. Enfant hors cadre ; aucune sortie au bowling représentée comme réalisée, ni jour ou date. Chaussons visibles, sans bulles ni texte, style approuvé en 4:3.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Père explicitement appelé Papa ; enfant locuteur hors cadre, sans genre inventé. Refus conservé, pas de sortie déjà réalisée.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "père",
-            "quote": "Mais papa"
-          },
-          {
-            "role": "refus explicite",
-            "quote": "Je te dis non !"
+            "role": "père homme",
+            "quote": "Papa, ce soir je sors avec Mathieu, nous allons au bowling !"
           }
         ]
       }
@@ -1315,17 +1539,17 @@
       ],
       "sceneKey": "horaires-magasin",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseigner-horaires-magasin.png",
-      "imageSha256": "dda517a966f116ff6b32a15b3d4519723d24e0bca8791195555f865007b073e1",
-      "review": "Employé homme renseignant près de l’entrée d’un magasin de cadeaux, sans jour, horaire, calendrier ou achat déjà effectué. Visiteur non confirmé hors cadre, personnages et objets utiles entiers.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+      "imageSha256": "e13716a6598abebf32fe60de606fd9ef092b4fb08d65f74945ea436a752f905e",
+      "review": "Revue visuelle : employé homme en pied à la porte d’un magasin de cadeaux ; client hors cadre, geste de renseignement. Aucun horaire, jour ou montant écrit et aucun cadeau remis. Cadrage natif 4:3 et rendu peint approuvé.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Employé explicitement appelé Monsieur ; client hors cadre. Renseignement sur une ouverture future, sans horaire dessiné ni achat déjà réalisé.",
         "audio_listening_performed": false,
         "evidence": [
           {
             "role": "employé homme",
-            "quote": "Excusez-moi Monsieur"
+            "quote": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ?"
           }
         ]
       }
@@ -1343,17 +1567,17 @@
       ],
       "sceneKey": "patisserie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseigner-patisseries-ouvertes.png",
-      "imageSha256": "49c46df920ec730dcc0c4b3cc4e3467301ad072f963d9d97a0fee08c95b60f77",
-      "review": "Commerçant homme indiquant les alternatives dans la rue depuis une pâtisserie, sans enseigne, date, horaire, supermarché annoncé ouvert ou gâteau acheté. Les ouvertures futures restent des informations audio.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+      "imageSha256": "f5fc86d93f014c07e59f9707beffed5af0e214f19e914e0ca33d299e546fc38f",
+      "review": "Revue visuelle : employé homme en pied donnant un renseignement, pâtisseries en vitrine et porte sur la rue. Visiteur hors cadre ; aucune vente accomplie, date, heure, légende ou supermarché ouvert à tort. Illustration peinte conforme à la référence en 4:3.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Titres et accords explicites du texte pour les personnages principaux. Interlocuteurs non confirmés hors cadre ; les groupes figurants ne reçoivent pas arbitrairement la voix d’un locuteur précis.",
+        "basis": "Interlocuteur explicitement appelé monsieur ; visiteur hors cadre. Question sur demain sans calendrier ni supermarché ouvert présenté à tort.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "commerçant homme",
-            "quote": "Pardon monsieur."
+            "role": "employé homme",
+            "quote": "Pardon monsieur. Vous êtes ouverts demain matin ?"
           }
         ]
       }
@@ -1370,21 +1594,17 @@
       ],
       "sceneKey": "voiture",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-tour-voiture-sport.png",
-      "imageSha256": "b67697d43bfe108c06c9f38d162ee731deaccad36b9533e31e091b1c4cf94138",
-      "review": "Homme souriant montrant la voiture sportive de son père et invitant un ami hors cadre. Véhicule entier, garé, sans marque ni plaque lisible, aucune promenade déjà accomplie ou propriété attribuée au fils. Accord content documenté.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+      "imageSha256": "227b4bda9dd40101536474c8dece66eec50018ff7742dbd4ea04c32980bcedbb",
+      "review": "Revue visuelle après correction : jeune homme content en pied présentant la voiture garée de son père ; compagnon hors cadre. Voiture complète, aucun emblème sur capot ou roues, ni plaque lisible, clés ou conduite déjà réalisée. Le premier candidat avec emblème est exclu et tracé dans le registre.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "basis": "Locuteur se disant content au masculin ; compagnon hors cadre. Voiture du père garée et promenade encore proposée.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "personne masculine contente",
-            "quote": "tu dois être content"
-          },
-          {
-            "role": "accord masculin confirmé",
-            "quote": "Très content."
+            "role": "jeune homme content",
+            "quote": "Oui, tu dois être content, parce que tu adores les voitures sport. Très content."
           }
         ]
       }
@@ -1402,21 +1622,17 @@
       ],
       "sceneKey": "retour-iles",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-remerciements-retour-visite-iles.png",
-      "imageSha256": "81cc26bb8436c05304c952c1f56640978a6c45c62b5291793a7955ea6745d8b2",
-      "review": "Femme remerciant après la journée aux îles, main sur le cœur, sac et serviette, bateau entier au mouillage, plage et chemin en arrière-plan. Hôte non confirmé hors cadre, accords invitée et contente documentés. Bateau recadré par une nouvelle génération, sans transformation du PNG.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+      "imageSha256": "54b106ef50711658034efa50b654c44f9996b722a0d3856b5e3a1dde874edada",
+      "review": "Revue visuelle après correction : femme reconnaissante en pied sur le quai, interlocuteur hors cadre et bateau de promenade entièrement cadré devant des îles non identifiées. Activités déjà terminées, aucun lieu réel, horaire ou achat inventé. Premier candidat au bateau coupé exclu et tracé.",
       "genderReview": {
         "status": "documented_roles_match",
-        "basis": "Accords explicites du texte pour la seule personne principale visible ; interlocuteur non confirmé entièrement hors cadre.",
+        "basis": "Locutrice décrite invitée et contente au féminin ; personne remerciée hors cadre. Retour après les activités, îles non identifiées.",
         "audio_listening_performed": false,
         "evidence": [
           {
-            "role": "personne invitée",
-            "quote": "Je te remercie de m’avoir invitée."
-          },
-          {
-            "role": "accord féminin",
-            "quote": "très contente."
+            "role": "femme remerciant après la visite",
+            "quote": "Tu es contente ? Oui vraiment, très contente. Merci encore !"
           }
         ]
       }
@@ -1435,10 +1651,10 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
       "imageSha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
-      "review": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "review": "Scène entière d’arrêt avec abribus et bus sans numéro, personnages absents : le tram est écarté et aucun stade, ligne ou durée inventés. Les interlocuteurs restent hors image, donc aucun genre ne leur est attribué.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "status": "no_visible_character",
+        "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
         "audio_listening_performed": false,
         "evidence": []
       }
@@ -1457,12 +1673,503 @@
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
       "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
       "imageSha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
-      "review": "Bus routier à pneus près de son abri et du pictogramme d’arrêt. Aucun rail, personne, nom de destination, ligne, horaire ou jour écrit. Réemploi contextuel pour les deux orientations vers le bus ; même sceneKey, donc ces sources ne peuvent pas se concurrencer dans un même tirage.",
+      "review": "Même arrêt et bus réutilisés pour le bus proposé à la place du train absent ; aucun horaire, dimanche ou destination écrits. Les deux liaisons partagent leur scène et ne peuvent pas être tirées ensemble.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "La scène représente uniquement le bus et son arrêt, sans personne visible : aucun genre de locuteur n’est inventé. Les deux dialogues orientent vers le bus ; numéros de ligne, destination, jour et horaire restent des informations audio.",
+        "status": "no_visible_character",
+        "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
         "audio_listening_performed": false,
         "evidence": []
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-04.mp3",
+      "audioSha256": "d273d13323744d039d37f27de4d4d8e83389312250c0fd535d3a506626dbaf6c",
+      "transcription": "Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame ! On commence par l’exercice 2.",
+      "sourceSha256": "3f3ef6cf27ac2f7f9dd1af40a4f09bf27bd19d29090a2c11803dd3b6e57ed27a",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-cours",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-osman-correction-tableau.png",
+      "imageSha256": "08aa9796be6d61db4ea424fa0c2b02fae1df9f41a0d180d16e50115cefa54854",
+      "review": "Élève Osman et professeure conforme à madame ; correction au tableau d’un support de lecture, sans addition, dessin de fleur ou note inventée. Figures principales et chaussures entières.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Élève Osman nommé, enseignante explicitement appelée madame.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève Osman et enseignante femme",
+            "quote": "Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame !"
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-03.mp3",
+      "audioSha256": "a19f4698701a8009a693dc778c1830fdd4be1534d5d2456585679b84586f8c79",
+      "transcription": "Mateo je dois te parler 2 minutes. Oui Madame. C’est pour quoi ? Tu as vu tes derniers résultats ? Ta moyenne baisse ce trimestre.",
+      "sourceSha256": "b0b4a1f084753c2b830a7b1f31ac72e465dabe31b5d231907e70bcfa50481ebd",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-cours",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-resultats-mateo.png",
+      "imageSha256": "27bdf99d6d82cb4b0a5dea178f15432993222b23185083129dac45c2f6f56a48",
+      "review": "Élève Mateo préoccupé et enseignante femme conforme à Madame ; cahier avec corrections sans score, remise de prix, diagnostic ou humiliation publique. Aucune valeur de moyenne inventée.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Élève Mateo nommé et enseignante explicitement appelée Madame.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève Mateo et enseignante femme",
+            "quote": "Mateo je dois te parler 2 minutes. Oui Madame."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-01.mp3",
+      "audioSha256": "5507e96758e466b130da77d158bd305f87015b8aa5532b0ef18531a7ae30a98e",
+      "transcription": "Salut, je peux m’assoir ? Oui bien sûr ! Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine.",
+      "sourceSha256": "43fc4e31e8618455f09231bf536cc62f50a2df2c1fb96fa47c6005627a6fdad2",
+      "themes": [
+        "education",
+        "travail"
+      ],
+      "sceneKey": "faire-connaissance",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-rencontre-luca-tessa.png",
+      "imageSha256": "0072bc6c0beef0264f6fcd48d483931a1c2c5c54b9a9b3b592c87c8fd8b58d38",
+      "review": "Luca demande à s’asseoir, Tessa laisse une place libre sur le banc ; présentation et genre documentaire des personnages conservés. Aucune nationalité inférée de la carnation ni représentée par un costume ou un drapeau.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Personnages Luca et Tessa nommés dans leur présentation ; aucune nationalité attribuée d’après les visages. Contrôle documentaire, pas d’analyse d’identité vocale.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Luca et Tessa",
+            "quote": "Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-030-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+      "audioSha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+      "transcription": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+      "sourceSha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "invitation-repas",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png",
+      "imageSha256": "7a1219d7d21e62dda7f19cb601d83f9fa15ee01693a98c4a1d5dc555b9b7c85d",
+      "review": "Mère explicitement citée, seule personne principale attendant à la sortie du collège ; enfant locuteur hors cadre pour ne pas inventer son genre. Aucun mode de transport ou repas au self ajouté.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Mère explicitement citée ; enfant locuteur hors cadre parce que son genre n’est pas précisé. Le transport n’est pas inventé.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "mère femme",
+            "quote": "Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
+      "audioSha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
+      "transcription": "Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+      "sourceSha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "secretariat-scolaire",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png",
+      "imageSha256": "a0870125023408689752a8424d83383d6164f5741966336beae898b636949f55",
+      "review": "Employé homme conforme à Monsieur, photo au verso et dossier scolaire ; élève demandeur hors cadre, sans portrait ou genre inventé. La photo n’est pas remplacée par une carte d’identité.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Interlocuteur appelé Monsieur ; élève hors cadre et verso de photo pour ne pas lui attribuer un genre absent du texte.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "employé homme",
+            "quote": "Bonjour Monsieur. Voici ma photo pour mon dossier."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-050-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
+      "audioSha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
+      "transcription": "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne.",
+      "sourceSha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+      "themes": [
+        "sante",
+        "education"
+      ],
+      "sceneKey": "infirmerie",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+      "imageSha256": "b654f423a271ba708fe9cbf0745db7c7b1162499388d46727a6a0e8bfd34fe28",
+      "review": "Diego devant l’infirmerie, main au ventre ; image vue depuis l’accompagnant laissé hors cadre parce que son genre n’est pas précisé. Ni médecin visible ni consultation accomplie, chaussures entières.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Diego nommé ; accompagnant hors cadre car son genre n’est pas précisé. La scène adopte son point de vue, sans affirmer que Diego va seul.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève Diego",
+            "quote": "Diego, comment ça va, tu es malade ?"
+          },
+          {
+            "role": "accompagnement sans personne visible inventée",
+            "quote": "Viens on va à l’infirmerie. Je t’accompagne."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-02.mp3",
+      "audioSha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a",
+      "transcription": "Monsieur, je peux changer de place ? Pour aujourd’hui ou définitivement ? Pour aujourd’hui, mes lunettes arrivent demain Oui, mets-toi devant.",
+      "sourceSha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-cours",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-devant.png",
+      "imageSha256": "8db3d2f5b54cacd9613e3f69fc2fcc9af07f89a30ba09c2d3afd5ace8692920f",
+      "review": "Professeur homme conforme à Monsieur montrant une place libre devant ; élève demandeur hors cadre. Aucune paire de lunettes déjà reçue, aucun genre attribué au locuteur non identifié.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Professeur appelé Monsieur ; élève demandant la place hors cadre, sans genre ou lunettes reçues inventés.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignant homme",
+            "quote": "Monsieur, je peux changer de place ?"
+          },
+          {
+            "role": "place de devant",
+            "quote": "Oui, mets-toi devant."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-052-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+      "audioSha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+      "transcription": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+      "sourceSha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "vestiaire",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu-roles-documentes.png",
+      "imageSha256": "6570088ab7a8d45a56835dc158ffbfcb34ec53fe74efb34ba15f5934f5dc9444",
+      "review": "Adulte femme conforme à Madame révélant un sac sous un blouson bleu au vestiaire. Élève hors cadre ; couleur et cachette conservées, aucun personnage dénudé ou milieu médical.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Adulte appelée Madame ; élève hors cadre. Cachette sous le blouson bleu conservée sans attribution de genre au locuteur inconnu.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "adulte femme",
+            "quote": "Madame, mon sac n’est plus au vestiaire !"
+          },
+          {
+            "role": "cachette confirmée",
+            "quote": "Regarde sous le blouson bleu. Ah oui, le voilà."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-01.mp3",
+      "audioSha256": "217297adccfd72a352430de30dae4ff38d82970dec705ba5af14ebff6507fb46",
+      "transcription": "Oh, Mélanie, heureusement que tu es là. Je peux te demander un service ? Bien sûr maman. Qu’est-ce que je peux faire ? Tu préfères mettre les décorations ou dresser la table ? J’adore faire la décoration.",
+      "sourceSha256": "bb34ca71ca754b4f0222bfc455081acde5e49cf87e93b01a63c842621b40276c",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "decoration-maison",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-decoration-mere-fille.png",
+      "imageSha256": "3cf14e8e5dcc40b906c9b352da507dd46048d469da8a69b8a567f9beb2c6e2fd",
+      "review": "Mélanie et sa mère installent une guirlande ; deux personnages féminins correspondant aux rôles nommés. Table laissée sans vaisselle : la décoration choisie n’est pas remplacée par le dressage de table.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Mélanie nommée et mère appelée maman ; tâche choisie décoration, non dressage de la table.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Mélanie et sa mère",
+            "quote": "Oh, Mélanie, heureusement que tu es là. Je peux te demander un service ? Bien sûr maman."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
+      "audioSha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
+      "transcription": "Madame, cette place est réservée. Ah bon ? Oui, regardez mon billet. Place numéro 22. Oh, excusez-moi. Je n’ai pas mes lunettes… Ah oui j’ai le numéro 28. Ce n’est pas grave Madame, vous êtes tout excusée.",
+      "sourceSha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "place-reservee",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
+      "imageSha256": "e244aa7b8eb64b8a68f7d866b02cee53d594f09c5713b5eae08923c6a8881a50",
+      "review": "Voyageuse femme conforme à Madame se levant après une erreur, sans lunettes. Deux billets distincts sans numéro ni montant ; autre voyageur hors cadre, seul son billet apparaît depuis le point de vue du spectateur.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Voyageuse explicitement appelée Madame ; autre voyageur hors champ, billet seul montré depuis son point de vue. Aucun genre, numéro de place ou montant ajouté.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "voyageuse femme",
+            "quote": "Madame, cette place est réservée."
+          },
+          {
+            "role": "absence de lunettes",
+            "quote": "Je n’ai pas mes lunettes…"
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-030-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
+      "audioSha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
+      "transcription": "Pour aller au lycée, tu utilises le train ou le bus ? Je prends toujours le train. Mais la gare est loin du lycée ! Oui c’est vrai ! Mais je marche vite et j’arrive à l’heure.",
+      "sourceSha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+      "themes": [
+        "deplacements",
+        "education"
+      ],
+      "sceneKey": "trajet-train",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+      "imageSha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+      "review": "Train entier à quai avec cheminement piéton visible, sans voyageur, nom de gare ou lycée inventé. Illustration du trajet ferroviaire choisi, sans bus ou arrivée déjà obtenue ; pas de genre attribué au locuteur.",
+      "genderReview": {
+        "status": "no_visible_character",
+        "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
+      "audioSha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
+      "transcription": "Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+      "sourceSha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "bateau-iles",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+      "imageSha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+      "review": "Bateau de promenade dans un paysage côtier non identifié, aucun personnage à bord. Évocation du moyen d’excursion proposé sans faire embarquer les locuteurs ni donner une île réelle ou un horaire ; pas d’image d’objet isolé sur fond uni.",
+      "genderReview": {
+        "status": "no_visible_character",
+        "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
+        "audio_listening_performed": false,
+        "evidence": []
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-01.mp3",
+      "audioSha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71",
+      "transcription": "Bastien, tu ne peux pas aller au lycée comme ça, il pleut et il fait frais. Change de chaussures, mets un pull et n’oublie pas ton imper ! Mais maman, la météo a annoncé du soleil pour cet après-midi. Je ne serai pas à mon aise après.",
+      "sourceSha256": "99915c194064416b2192534a623cb7801c56de720ffd9f01ba7593c8646588f1",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "vetements-pluie",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "imageSha256": "5875fef2dd4ffca283583d079c6d0eaca84b51d9615dfcdbaf007aae7251e2cb",
+      "review": "Deux interlocuteurs principaux visibles en entier : la mère et Bastien, face à face avant le départ. Imperméable dans le bras de la mère, pull plié et chaussures à changer ; pluie actuelle. Ni enfant déjà sorti ni soleil déjà présent, ni texte ou horaire. Les voix ne sont pas déclarées écoutées.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Mère appelée maman et enfant nommé Bastien. Rôles de personnages établis à partir du texte ; aucune écoute directe ni confirmation du timbre des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Bastien nommé dans la source",
+            "quote": "Bastien, tu ne peux pas aller au lycée comme ça"
+          },
+          {
+            "role": "mère appelée maman",
+            "quote": "Mais maman, la météo a annoncé du soleil pour cet après-midi."
+          }
+        ]
+      },
+      "sceneReview": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "roles": [
+          "mère",
+          "Bastien"
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-03.mp3",
+      "audioSha256": "e7380ce87dd03c19e5657a152cbd2a97e9863ea98513e9711bfded47f2319803",
+      "transcription": "Madame je suis arrivé avant vous. Mais non Monsieur, vous ne faisiez pas la queue. Devant moi il y avait cette dame avec la veste blanche qui est maintenant au guichet. Si vous insistez…",
+      "sourceSha256": "155dd88a5b10c70f85c6c03aeabba8e32e3ef5cce1b3cee38a3c343c98efdfb7",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "file-attente",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-desaccord-file-guichet.png",
+      "imageSha256": "f4e5401a4d4c09e4da19052f2c597ae282767915be312ffcb6f3f58cb2ceee20",
+      "review": "Trois personnes entières : homme et femme discutant calmement dans la file, troisième femme en veste blanche déjà au guichet ; employé hors cadre. Aucun ordre contesté tranché par une flèche, un numéro ou un ticket.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Deux interlocuteurs explicitement Madame et Monsieur ; une troisième dame en veste blanche déjà au guichet. Employé non documenté hors cadre, ordre contesté non tranché par l’image.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "interlocutrice femme et interlocuteur homme",
+            "quote": "Madame je suis arrivé avant vous. Mais non Monsieur, vous ne faisiez pas la queue."
+          },
+          {
+            "role": "dame en veste blanche",
+            "quote": "Devant moi il y avait cette dame avec la veste blanche qui est maintenant au guichet."
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-002-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-002-03.mp3",
+      "audioSha256": "99cf11b5dd7634f0a4daee38da6c06ee36ba735e9b032473fe1a63cb6167c2a8",
+      "transcription": "Alors jeune homme, pouvez-vous me dire ce que vous avez vu ? Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo, la voiture m’a doublé et a tourné à droite sans respecter le feu. Un scooter arrivait de l’autre côté et la voiture l’a renversé.",
+      "sourceSha256": "f759f5288e71c204e69fedd3a34a1a5bc038b8476dd67f4197aa3f9e89681f6a",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "temoin-accident",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-temoin-accident-velo.png",
+      "imageSha256": "7213eb4362da3bb249a5c780ed1c13f1413890fe4d6d612ef687fb2000841f9d",
+      "review": "Deux hommes entiers conformément à jeune homme et Monsieur l’agent ; témoin avec vélo entier, agent prenant des notes, feu rouge. Aucune victime ou collision en cours, aucun rôle de conducteur attribué au témoin.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Témoin explicitement jeune homme et policier appelé Monsieur l’agent. Aucun conducteur ou blessé dont le genre n’est pas précisé ajouté dans l’image.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "témoin homme",
+            "quote": "Alors jeune homme, pouvez-vous me dire ce que vous avez vu ?"
+          },
+          {
+            "role": "agent homme",
+            "quote": "Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo"
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-041-01-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
+      "audioSha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019",
+      "transcription": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ? Je fréquente le lycée Jean Moulin de la ville et je suis actuellement en stage à la mairie. Ah, oui ! Je sais que les jeunes lycéens doivent faire des stages. C’est ça ! La Mairie m’a chargé d’interviewer des personnes pour savoir ce qu’elles pensent de mettre dans différents quartiers de la ville de grosses boîtes à lettre pour y récolter et distribuer les livres dont des personnes veulent se séparer et d’autres peuvent emprunter gratuitement. Que pensez-vous de cette idée ? Ça serait formidable, J’habite un appartement et vous savez qu’au prix des loyers on ne peut pas toujours se permettre d’avoir une pièce en plus pour y placer une grande bibliothèque, donc de temps à autre je fais le tri de mes livres, j’en donne et quand on me les rend il m’arrive de les mettre à la poubelle quand tous les membres de ma famille les ont lus. Alors vous aimeriez bien en faire bénéficier des inconnus qui les prendraient et à leur tour en feraient profiter encore à d’autres ? Oui bien sûr ! Parce que les livre sont chers. Moi, par exemple, j’ai encore des livres de mes enfants quand ils étaient plus jeunes. Je voudrais bien les donner ! Vous pensez donc que ça serait un bon service ? Selon moi, c’est une idée excellente, il y a des personnes âgées qui pourraient les garder ou les restituer sans le délais qu’impose la bibliothèque municipale . C’est bien à cela que la mairie a pensé et ça serait un service social qui impliquerait tout le monde et sensibiliserait à l’échange. Et bien madame, je vous remercie de m’avoir accordé du temps.",
+      "sourceSha256": "d08518263851b36d3c53dfabc48771aa0e83846f9a68b1140c931a38f20ffc20",
+      "themes": [
+        "lecture",
+        "culture"
+      ],
+      "sceneKey": "projet-boites-livres",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enquete-boites-livres.png",
+      "imageSha256": "7309a3ad87b33c11bcfc42cb6f6445eb230e87139f8714baa7d541d62a058261",
+      "review": "Lycéen homme et habitante femme en pied, entretien avec carnet vierge dans un espace public générique. Projet de boîtes à livres non dessiné comme installé ; aucun bâtiment identifié, don accompli, date ou montant.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Habitante appelée Madame et lycéen appelé jeune homme. Enquête en cours ; boîtes à livres encore proposées et non montrées comme installées.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "habitante femme et lycéen homme",
+            "quote": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ?"
+          }
+        ]
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-012-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-012-01.mp3",
+      "audioSha256": "e9a392b12402424af73372c2afcc85a06ede28a452974c0ec683e53fcd3ab2f1",
+      "transcription": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent. Votre permis moto et votre attestation d’assurance, s’il vous plaît. Je les cherche… mais qu’est-ce que j’ai fait qui ne va pas ? Je vous conteste deux infractions. Le port du casque et vous avez pris cette rue en sens interdit. En sens interdit ? Mais je n’ai pas vu le panneau. J’ai déjà emprunté cette route et il n’y a jamais eu de panneau. C’est nouveau ! C’est nouveau en effet. Le camion qui se trouve au bout de la rue commence à tailler des arbres et aujourd’hui on n’a laissé qu’une voie. Les panneaux peuvent changer. Ah, moi je me souviens d’y être passé et il était possible de prendre la rue dans ce sens. Oui, mais la viabilité peut changer, comme je vous disais. Et porter un casque, c’est nouveau aussi ! Monsieur l’agent… Je suis parti de chez moi très vite. Ma grand-mère vient de me téléphoner. Mon grand-père est tombé. Elle n’arrive pas à le relever et elle m’a demandé d’aller chez eux. Il va peut-être falloir appeler une ambulance. Il a du sang sur le visage. Je suis désolé de ce qui vient d’arriver à vos grands-parents mais moi je dois vous faire une contravention. Mais Monsieur l’agent, vous ne pouvez pas être indulgent pour une fois ? Ma grand- mère m’attend… je suis inquiet. Et puis, c’est la première fois que je ne mets pas mon casque. Je viens d’être choqué par cette mauvaise nouvelle. Vos grands-parents habitent loin d’ici ? Non, ils habitent rue Jean Jaurès, une traverse du boulevard Dugommier. À quel numéro ? Au numéro 25. Alors moi, je prends ma voiture et je vais chez eux. Ils s’appellent comment ? Comme moi, Giordan. Pierre Giordan c’est mon grand-père paternel. Vous, jeune homme venez très lentement et soyez très prudent.",
+      "sourceSha256": "30a277807b5fa3c19eab379bd3f79006fccbe52d5ea52fafd520589d22555c5b",
+      "themes": [
+        "deplacements",
+        "sante"
+      ],
+      "sceneKey": "controle-routier",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
+      "imageSha256": "4d75e304c3e0c3175c9acf9508ea0db8da49fa4af28d2c0c3a5fc34fcc0b4a48",
+      "review": "Agent et jeune conducteur hommes en pied, moto entière à l’arrêt, conducteur sans casque cherchant ses documents ; sens interdit et entretien des arbres en arrière-plan. Les deux ouvriers lointains sont des figurants, sans voix de dialogue attribuée. Ni accident en cours, ni ambulance arrivée, ni visite déjà réalisée chez les grands-parents. Aucun montant, nom de rue ou numéro lisible.",
+      "genderReview": {
+        "status": "documented_roles_match",
+        "basis": "Deux hommes explicitement jeune homme et Monsieur l’Agent ; moto à l’arrêt, aide aux grands-parents encore future et famille hors cadre.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "conducteur homme et agent homme",
+            "quote": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent."
+          }
+        ]
       }
     }
   ],

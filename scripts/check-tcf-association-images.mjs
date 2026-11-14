@@ -22,6 +22,7 @@ try {
   const { tcfBankAllLevels } = await vite.ssrLoadModule('/src/tcf/loader.ts')
   const { tcfScenarioAudioEntries, tcfAudioEntries, applyAssociationDialogueSlot } = await vite.ssrLoadModule('/src/tcf/audio-bank.ts')
   const { createRng } = await vite.ssrLoadModule('/src/math/rng.ts')
+  const { tcfImageSrc } = await vite.ssrLoadModule('/src/tcf/media.ts')
   const bank = tcfBankAllLevels('CO')
   const original = JSON.stringify(bank)
   for (const source of catalog.sources) {
@@ -80,6 +81,40 @@ try {
     draws.set(level, success)
   }
   const review = read('docs/tcf/scenarios-audio-20261114.json')
+  const genderAudit = read('docs/tcf/recontrole-genres-scenes-20261114.json')
+  assert.equal(genderAudit.human_audio_listening_performed, false)
+  assert.equal(genderAudit.sources.length, 39)
+  assert.equal(genderAudit.summary.reviewed, 39)
+  assert.equal(new Set(genderAudit.sources.map(s => s.image)).size, 33)
+  assert.equal(genderAudit.summary.voices_to_confirm, genderAudit.sources.filter(s => ['roles_not_specified', 'partial_documented_match'].includes(s.gender_review_status)).length)
+  for (const source of genderAudit.sources) {
+    assert.notEqual(source.gender_review_status, 'to_review')
+    assert.ok(source.note)
+    for (const evidence of source.evidence) assert.ok(words(source.transcription).includes(words(evidence)))
+    assert.equal(sha(readFileSync(`public${source.audio}`)), source.audioSha256)
+    assert.equal(sha(source.transcription), source.sourceSha256)
+    assert.equal(sha(readFileSync(`public${source.image}`)), source.imageSha256)
+    const active = catalog.sources.find(s => s.audio === source.audio && s.exercise === source.exercise && s.dialogue === source.dialogue)
+    assert.equal(active.image, source.corrected_image ?? source.image)
+    assert.equal(active.genderAudit.status, source.gender_review_status)
+  }
+  for (const correction of genderAudit.corrections) {
+    const bytes = readFileSync(`public${correction.path}`)
+    assert.equal(sha(bytes), correction.sha256)
+    assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
+    assert.deepEqual([bytes.readUInt32BE(16), bytes.readUInt32BE(20)], [1448, 1086])
+    assert.equal(approved.get(correction.path).source_sha256, correction.sha256)
+    assert.equal(sha(readFileSync(`public${correction.reference}`)), correction.reference_sha256)
+    const old = genderAudit.sources.find(s => s.audio === correction.audio)
+    assert.equal(old.existing_audio_recognitions.length, 2)
+    for (const recognition of old.existing_audio_recognitions) {
+      assert.equal(recognition.source_sha256, correction.audio_sha256)
+      assert.ok(recognition.text.includes('tu es fou'))
+    }
+    assert.equal(tcfImageSrc(correction.previous_image), correction.path)
+    assert.equal(tcfImageSrc(`${correction.previous_image}?revision=1#test`), `${correction.path}?revision=1#test`)
+    assert.equal(tcfImageSrc(correction.previous_image.slice('/lib/images/'.length)), correction.path)
+  }
   const entries = tcfScenarioAudioEntries(bank)
   assert.deepEqual(new Set(entries.map((e) => e.audio)), new Set(catalog.sources.map((s) => s.audio)))
   assert.equal(review.supports.length, 346)
@@ -123,16 +158,36 @@ try {
   const a1Complement = read('docs/tcf/generation-scenarios-a1-complement-20261114.json')
   const a2Complement = read('docs/tcf/generation-scenarios-a2-complement-20261114.json')
   const a2Final = read('docs/tcf/generation-scenarios-a2-final-20261114.json')
-  const expansions = [priority, suite, a1Complement, a2Complement, a2Final]
+  const b1Suite = read('docs/tcf/generation-scenarios-b1-suite-20261114.json')
+  const b1Complement = read('docs/tcf/generation-scenarios-b1-complement-20261114.json')
+  const interlocutorCorrection = read('docs/tcf/correction-interlocuteurs-pluie-20261114.json')
+  const expansions = [priority, suite, a1Complement, a2Complement, a2Final, b1Suite, b1Complement, interlocutorCorrection]
+  for (const asset of interlocutorCorrection.images) {
+    assert.equal(asset.scene_review.visible_interlocutors, 2)
+    assert.equal(tcfImageSrc(asset.previous_image), asset.path)
+    assert.equal(tcfImageSrc(`${asset.previous_image}?revision=2`), `${asset.path}?revision=2`)
+  }
   assert.equal(priority.human_audio_listening_performed, false)
   assert.equal(priority.images.length, priority.summary.original_pngs)
   assert.equal(new Set(priority.reuses.map((r) => r.path)).size, priority.summary.reused_images)
-  assert.equal(priority.baseline.scenario_sources + expansions.reduce((n, b) => n + b.summary.new_scenario_audio_bindings, 0), catalog.sources.length)
-  assert.equal(suite.baseline.scenario_sources, priority.summary.total_bound_scenario_sources)
-  assert.equal(a1Complement.baseline.scenario_sources, suite.summary.total_bound_scenario_sources)
-  assert.equal(a2Complement.baseline.scenario_sources, a1Complement.summary.total_bound_scenario_sources)
-  assert.equal(a2Final.baseline.scenario_sources, a2Complement.summary.total_bound_scenario_sources)
-  assert.equal(a2Final.summary.remaining_scenes, review.summary.scenario_pending)
+  // Parallel generation registers retain their original snapshots. Count the
+  // union of eligible audios instead of adding overlapping batches twice.
+  const readyStatuses = ['documented_roles_match', 'no_visible_character']
+  const readyAudios = new Set(expansions.flatMap(batch => [...batch.images, ...batch.reuses])
+    .filter(asset => readyStatuses.includes(asset.gender_review.status))
+    .flatMap(asset => asset.bindings.map(binding => review.supports.find(r => r.exercise === binding.exercise).audio)))
+  assert.equal(new Set([...genderAudit.sources.map(s => s.audio), ...readyAudios]).size, catalog.sources.length)
+  const consolidation = read('docs/tcf/consolidation-scenes-20261114.json')
+  assert.equal(consolidation.summary.active_scenario_sources, catalog.sources.length)
+  assert.equal(consolidation.summary.remaining_scenes, review.summary.scenario_pending)
+  assert.equal(consolidation.bindings.length, catalog.sources.length)
+  for (const binding of consolidation.bindings) {
+    const source = catalog.sources.find(s => s.audio === binding.audio)
+    assert.equal(source.image, binding.image)
+    assert.equal(source.imageSha256, binding.image_sha256)
+    assert.equal(source.audioSha256, binding.audio_sha256)
+    assert.equal(source.sourceSha256, binding.source_sha256)
+  }
   assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length), review.summary.new_original_pngs)
   assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
   assert.equal(suite.images.length, suite.summary.original_pngs)
@@ -166,6 +221,7 @@ try {
     assert.equal(approved.get(asset.path).source_sha256, asset.sha256)
     assert.equal(approved.get(asset.path).style_review.reference_commit, '48a753d8d6bd095e41968b39da88dbcb331fee11')
     assert.ok(asset.visual_review)
+    for (const reference of asset.reference_images ?? []) assert.equal(sha(readFileSync(`public${reference.path}`)), reference.sha256)
   }
   for (const asset of expansions.flatMap(b => [...b.images, ...b.reuses])) {
     assert.equal(sha(readFileSync(`public${asset.path}`)), asset.sha256)
@@ -179,19 +235,23 @@ try {
       assert.equal(reviewed.audioSha256, binding.audio_sha256)
       assert.ok(asset.gender_review)
       for (const evidence of asset.gender_review.evidence) assert.ok(binding.transcription.includes(evidence.quote))
-      if (asset.gender_review.status !== 'documented_roles_match') {
+      if (!['documented_roles_match', 'no_visible_character'].includes(asset.gender_review.status)) {
         assert.equal(asset.gender_review.status, 'needs_voice_review')
-        assert.equal(source, undefined, 'An unresolved gender match must not activate a scene')
-        assert.equal(reviewed.decision, 'eligible_scene_pending')
-        assert.equal(reviewed.preparedImage, asset.path)
-        assert.equal(reviewed.preparedImageSha256, asset.sha256)
+        assert.notEqual(source?.image, asset.path, 'An unresolved image must not activate, even when another version is approved')
+        const prepared = reviewed.preparedImage === asset.path && reviewed.preparedImageSha256 === asset.sha256
+        const retained = reviewed.alternativeSceneImages?.some(candidate => candidate.path === asset.path && candidate.sha256 === asset.sha256)
+        assert.ok(prepared || retained, 'Unconfirmed variants remain traceable')
+        if (!source) assert.equal(reviewed.decision, 'eligible_scene_pending')
         continue
       }
-      assert.equal(source.image, asset.path)
+      assert.ok(source)
+      if (source.image !== asset.path) {
+        assert.ok(reviewed.alternativeSceneImages?.some(candidate => candidate.path === asset.path && candidate.sha256 === asset.sha256), 'Approved alternatives remain traceable')
+      }
       assert.equal(source.transcription, binding.transcription)
       assert.equal(source.sourceSha256, binding.source_sha256)
       assert.equal(source.audioSha256, binding.audio_sha256)
-      assert.equal(source.genderReview.status, 'documented_roles_match')
+      assert.ok(['documented_roles_match', 'no_visible_character'].includes(source.genderReview.status))
     }
   }
   // Keep this guard once the last pending scene has been illustrated too.

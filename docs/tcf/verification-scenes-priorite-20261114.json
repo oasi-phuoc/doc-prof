@@ -1,7 +1,7 @@
 {
   "date": "2026-11-14",
   "baseline_commit": "b25b73a5c608e4f2e555fb3fb3c47d2d3e7b7555",
-  "scope": "Scènes avant les trios ; rôles documentés et attente explicite si une personne n’est pas confirmée.",
+  "scope": "Consolidation des scènes A1/A2, suite B1 et correction du coureur ; conservation des questions, réponses et MP3.",
   "banks": [
     {
       "path": "src/tcf/content/a0-a1/ce.json",
@@ -10,8 +10,10 @@
     },
     {
       "path": "src/tcf/content/a0-a1/co.json",
-      "sha256": "2e8304a9df8752b131b94994751ddf6992918a10161fff53e2c05c1cdfea0bf3",
-      "identical_to_baseline": true
+      "sha256": "8d2883d6133803f724487c6e53e28ffdc1028de5275ce003fa0ccf40c01e8c1c",
+      "identical_to_baseline": false,
+      "only_change": "URL de la scène du coureur, rôle masculin confirmé dans la source.",
+      "identical_except_reviewed_scene_image": true
     },
     {
       "path": "src/tcf/content/a1-a2/ce.json",
@@ -34,25 +36,24 @@
       "identical_to_baseline": true
     }
   ],
-  "summary": {
-    "original_pngs": 20,
-    "reused_images": 1,
-    "prepared_scene_uses": 21,
-    "new_scenario_audio_bindings": 12,
-    "awaiting_gender_confirmation": 9,
-    "remaining_scenes": 66,
-    "total_bound_scenario_sources": 51
-  },
   "new_qcm_trios": 0,
   "audio_files_modified": 0,
   "transcriptions_modified": 0,
   "questions_modified": 0,
   "answers_modified": 0,
+  "reviewed_scene_images_replaced": 1,
   "native_pngs": {
-    "count": 20,
+    "count": 96,
+    "priority_scenes": 46,
+    "historical_scene_correction": 1,
     "width": 1448,
     "height": 1086,
-    "original_bytes_preserved": true
+    "original_bytes_preserved": true,
+    "complementary_scenes": 40,
+    "b1_suite": 4,
+    "first_batch_already_in_baseline": 7,
+    "b1_complement": 4,
+    "visible_interlocutor_correction": 1
   },
   "human_audio_listening_performed": false,
   "checks": {
@@ -60,12 +61,86 @@
     "scenario_draws": 600,
     "catalogue_tests": 12,
     "typescript": true,
+    "bank_exercises": 1355,
+    "scenario_sources": 87,
+    "gallery_images": 6956,
     "browser": {
       "report": "docs/tcf/scenarios-priorite-20261114-browser.json",
-      "pages": 2,
-      "images": 12,
+      "pages": 6,
+      "images": 36,
+      "clipped_frames": [],
       "errors": []
     },
-    "unconfirmed_gender_bindings_excluded": 9
-  }
+    "legacy_recipe_browser": {
+      "report": "docs/tcf/scenarios-genres-20261114-browser.json",
+      "pages": 1,
+      "images": 6,
+      "clipped_frames": [],
+      "errors": []
+    },
+    "previous_scenes": {
+      "baseline_sources": 39,
+      "distinct_images": 33,
+      "reviewed": 39,
+      "statuses": {
+        "corrected_documented_match": 1,
+        "documented_match": 5,
+        "no_visible_character": 4,
+        "partial_documented_match": 16,
+        "roles_not_specified": 13
+      },
+      "voices_to_confirm": 29,
+      "confirmed_image_mismatches": 1,
+      "corrections_installed": 1
+    },
+    "pending_primary_scenes_with_image": 23,
+    "b1_browser": {
+      "report": "docs/tcf/scenarios-b1-suite-20261114-browser.json",
+      "pages": 1,
+      "images": 6,
+      "clipped_frames": [],
+      "errors": []
+    },
+    "priority_unconfirmed_gender_bindings_excluded": 9,
+    "unconfirmed_primary_gender_bindings_excluded": 23,
+    "merged_a2_browser": {
+      "report": "docs/tcf/scenarios-a2-complement-20261114-browser.json",
+      "pages": 3,
+      "images": 18,
+      "clipped_frames": [],
+      "errors": [],
+      "gallery_images": 12
+    },
+    "all_six_scene_frames_fit_first_page_with_header": true,
+    "b1_complement_browser": {
+      "report": "docs/tcf/scenarios-b1-complement-20261114-browser.json",
+      "pages": 1,
+      "images": 6,
+      "legacy_mother_image_replaced": true,
+      "errors": []
+    }
+  },
+  "priority_batch_summary": {
+    "original_pngs": 46,
+    "reused_images": 4,
+    "prepared_scene_uses": 51,
+    "new_scenario_audio_bindings": 42,
+    "awaiting_gender_confirmation": 9,
+    "remaining_scenes": 36,
+    "total_bound_scenario_sources": 81
+  },
+  "summary": {
+    "active_scenario_sources": 87,
+    "delf_scenario_sources": 66,
+    "remaining_scenes": 30,
+    "pending_with_prepared_image": 23,
+    "pending_without_prepared_image": 7,
+    "distinct_generated_scenario_pngs": 102,
+    "historical_corrections": 1,
+    "interlocutor_corrections": 1
+  },
+  "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json",
+  "interlocutor_rework_register": "docs/tcf/reprise-interlocuteurs-scenes-20261114.json",
+  "full_interlocutor_audit_finished": false,
+  "voice_check_available": false
 }

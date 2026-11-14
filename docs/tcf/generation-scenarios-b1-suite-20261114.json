@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-14",
+  "scope": "Suite B1 après préparation des scènes A1/A2 : rôles documentés, scènes avant les trios, sans changement des audios ou questions.",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "baseline": {
+    "scenario_sources": 82,
+    "pending_scenes": 35,
+    "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json"
+  },
+  "summary": {
+    "original_pngs": 4,
+    "reused_images": 0,
+    "prepared_scene_uses": 4,
+    "new_scenario_audio_bindings": 4,
+    "awaiting_gender_confirmation": 0,
+    "remaining_scenes": 31,
+    "total_bound_scenario_sources": 86
+  },
+  "images": [
+    {
+      "key": "scene-b1-conseil-pluie",
+      "label": "Conseiller des vêtements pour la pluie",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conseil-vetements-pluie.png",
+      "sha256": "60a216d260976332a8504bb80b039897ccb929269d44d52798a1f6a8ae1ba6ac",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Show ONE MOTHER, an adult WOMAN about 45 with dark-brown skin, braided hair loosely tied back, a pale blue blouse, warm beige trousers and simple shoes, standing in the entryway of an ordinary family home. She is speaking gently but firmly to her teenage child who stays entirely OUT OF FRAME. She offers a whole muted-green RAINCOAT over one arm, with a plain warm sweater folded on the entry bench, and gestures toward a pair of closed weatherproof shoes fully visible beside the door. Outside the closed window light rain falls on wet pavement. She is advising her child to put on suitable clothes before leaving for school. Do not show the child already going outside or a sunny afternoon already happening. The source explicitly identifies her as mother; the child's image and gender need not be guessed. No calendar, time, school logo, readable labels, written speech or weather map. All useful garments and both shoes fully framed, the mother from head to both feet.",
+      "prompt_is_summary": false,
+      "visual_review": "Mère seule en pied, imperméable entier, pull plié et paire de chaussures visibles ; pluie dehors, enfant hors cadre. Conseil avant le départ, pas de soleil déjà présent, texte ou montant.",
+      "exercise_ids": [
+        "tcf-delf-actif-b1-001-01"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Mère explicitement appelée maman ; enfant hors cadre. Conseil avant le départ, pluie actuelle et soleil annoncé non représenté comme déjà présent.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "mère femme",
+            "quote": "Mais maman, la météo a annoncé du soleil pour cet après-midi."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-001-01",
+          "transcription": "Bastien, tu ne peux pas aller au lycée comme ça, il pleut et il fait frais. Change de chaussures, mets un pull et n’oublie pas ton imper ! Mais maman, la météo a annoncé du soleil pour cet après-midi. Je ne serai pas à mon aise après.",
+          "source_sha256": "99915c194064416b2192534a623cb7801c56de720ffd9f01ba7593c8646588f1",
+          "audio_sha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71"
+        }
+      ]
+    },
+    {
+      "key": "scene-b1-file-guichet",
+      "label": "Un désaccord dans la file au guichet",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-desaccord-file-guichet.png",
+      "sha256": "f4e5401a4d4c09e4da19052f2c597ae282767915be312ffcb6f3f58cb2ceee20",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Show exactly THREE visible people in a generic service-counter waiting area. In the foreground a MAN around 55 with fair skin, cropped grey hair, oval glasses, navy lightweight jacket and brown trousers politely disagrees with a WOMAN around 40 with medium-brown skin, thick dark curls, a muted rust blouse and dark olive trousers about who was waiting first. They turn toward one another with restrained open-handed conversational gestures, neither touching, shouting nor shoving. Farther ahead at the service window is a second WOMAN in an unmistakably WHITE JACKET, seen three-quarter back, with short black hair, a dark skirt and flat shoes. That woman in the white jacket is ALREADY at the counter, not one of the two debating. All THREE people visible from head through their shoes. The counter clerk stays entirely OUT OF FRAME; do not add an invented fourth person. A simple queue rail and unlabelled service window establish the situation. Do not imply by an arrow, number or ticket that the man's disputed account is proven true; leave it a disagreement. No queue numbers, posted times, readable signs, amounts, speech bubbles or text.",
+      "prompt_is_summary": false,
+      "visual_review": "Trois personnes entières : homme et femme discutant calmement dans la file, troisième femme en veste blanche déjà au guichet ; employé hors cadre. Aucun ordre contesté tranché par une flèche, un numéro ou un ticket.",
+      "exercise_ids": [
+        "tcf-delf-actif-b1-001-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Deux interlocuteurs explicitement Madame et Monsieur ; une troisième dame en veste blanche déjà au guichet. Employé non documenté hors cadre, ordre contesté non tranché par l’image.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "interlocutrice femme et interlocuteur homme",
+            "quote": "Madame je suis arrivé avant vous. Mais non Monsieur, vous ne faisiez pas la queue."
+          },
+          {
+            "role": "dame en veste blanche",
+            "quote": "Devant moi il y avait cette dame avec la veste blanche qui est maintenant au guichet."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-001-03",
+          "transcription": "Madame je suis arrivé avant vous. Mais non Monsieur, vous ne faisiez pas la queue. Devant moi il y avait cette dame avec la veste blanche qui est maintenant au guichet. Si vous insistez…",
+          "source_sha256": "155dd88a5b10c70f85c6c03aeabba8e32e3ef5cce1b3cee38a3c343c98efdfb7",
+          "audio_sha256": "e7380ce87dd03c19e5657a152cbd2a97e9863ea98513e9711bfded47f2319803"
+        }
+      ]
+    },
+    {
+      "key": "scene-b1-temoin-agent",
+      "label": "Un cycliste témoigne auprès d’un agent",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-temoin-accident-velo.png",
+      "sha256": "7213eb4362da3bb249a5c780ed1c13f1413890fe4d6d612ef687fb2000841f9d",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Show exactly TWO MALE characters, a young adult male cyclist witness about 22 with medium-brown skin, short black curls, a cream sweatshirt and muted teal trousers, and a male traffic officer about 50 with fair skin, short grey hair, a navy generic uniform and plain cap. They stand safely on the pavement by a street junction. The witness holds his complete ordinary bicycle upright beside him and gestures toward the roadway while recounting what he saw. The officer listens attentively with a small plain notebook in his hand. The cyclist is the WITNESS, not the driver or injured scooter rider. A simple traffic light in the background is red, reflecting where he was stopped; the actual crash is NOT shown occurring now. No victim, no blood, no fallen person, no moving collision, no invented driver or rider, no police weapons or force. No visible specific car or scooter purchase, no written police labels, insignia, rank, readable notes, street names, brand, text or numbers. Whole two men, both pairs of shoes and entire bicycle with both wheels inside the landscape frame. Natural warm painted editorial illustration faithful to the approved style.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux hommes entiers conformément à jeune homme et Monsieur l’agent ; témoin avec vélo entier, agent prenant des notes, feu rouge. Aucune victime ou collision en cours, aucun rôle de conducteur attribué au témoin.",
+      "exercise_ids": [
+        "tcf-delf-actif-b1-002-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Témoin explicitement jeune homme et policier appelé Monsieur l’agent. Aucun conducteur ou blessé dont le genre n’est pas précisé ajouté dans l’image.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "témoin homme",
+            "quote": "Alors jeune homme, pouvez-vous me dire ce que vous avez vu ?"
+          },
+          {
+            "role": "agent homme",
+            "quote": "Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-002-03",
+          "transcription": "Alors jeune homme, pouvez-vous me dire ce que vous avez vu ? Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo, la voiture m’a doublé et a tourné à droite sans respecter le feu. Un scooter arrivait de l’autre côté et la voiture l’a renversé.",
+          "source_sha256": "f759f5288e71c204e69fedd3a34a1a5bc038b8476dd67f4197aa3f9e89681f6a",
+          "audio_sha256": "99cf11b5dd7634f0a4daee38da6c06ee36ba735e9b032473fe1a63cb6167c2a8"
+        }
+      ]
+    },
+    {
+      "key": "scene-b1-interview-livres",
+      "label": "Interroger une habitante sur les boîtes à livres",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enquete-boites-livres.png",
+      "sha256": "7309a3ad87b33c11bcfc42cb6f6445eb230e87139f8714baa7d541d62a058261",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Show exactly TWO people in conversation in a neutral town public square: a YOUNG MALE high-school intern, about 18, fair freckled skin and short auburn hair, sage-green overshirt, cream T-shirt, dark trousers and canvas shoes, and an adult WOMAN around 55 with medium-brown skin, shoulder-length silver-streaked dark hair, a soft blue cardigan, plum trousers and comfortable shoes. The young man holds a plain clipboard and pencil at waist level, politely conducting a survey and listening to the woman's opinion. She responds with an interested encouraging open-hand gesture. A modest generic town-hall-style facade with no signage in the background is illustrative context only, not an identified real building. The subject is a PROPOSED neighbourhood free-book exchange scheme, so do NOT show installed book boxes, donation taking place, an opening ceremony, a library loan counter, money, a gift already offered or a completed construction. No invented smartphone or microphone, no actual box with letters, no written questionnaire, named town, branded school, numbers, street sign, date or text. Two clearly different full people from heads through both pairs of shoes, whole clipboard in frame.",
+      "prompt_is_summary": false,
+      "visual_review": "Lycéen homme et habitante femme en pied, entretien avec carnet vierge dans un espace public générique. Projet de boîtes à livres non dessiné comme installé ; aucun bâtiment identifié, don accompli, date ou montant.",
+      "exercise_ids": [
+        "tcf-delf-actif-b1-041-01-01"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Habitante appelée Madame et lycéen appelé jeune homme. Enquête en cours ; boîtes à livres encore proposées et non montrées comme installées.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "habitante femme et lycéen homme",
+            "quote": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ?"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-041-01-01",
+          "transcription": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ? Je fréquente le lycée Jean Moulin de la ville et je suis actuellement en stage à la mairie. Ah, oui ! Je sais que les jeunes lycéens doivent faire des stages. C’est ça ! La Mairie m’a chargé d’interviewer des personnes pour savoir ce qu’elles pensent de mettre dans différents quartiers de la ville de grosses boîtes à lettre pour y récolter et distribuer les livres dont des personnes veulent se séparer et d’autres peuvent emprunter gratuitement. Que pensez-vous de cette idée ? Ça serait formidable, J’habite un appartement et vous savez qu’au prix des loyers on ne peut pas toujours se permettre d’avoir une pièce en plus pour y placer une grande bibliothèque, donc de temps à autre je fais le tri de mes livres, j’en donne et quand on me les rend il m’arrive de les mettre à la poubelle quand tous les membres de ma famille les ont lus. Alors vous aimeriez bien en faire bénéficier des inconnus qui les prendraient et à leur tour en feraient profiter encore à d’autres ? Oui bien sûr ! Parce que les livre sont chers. Moi, par exemple, j’ai encore des livres de mes enfants quand ils étaient plus jeunes. Je voudrais bien les donner ! Vous pensez donc que ça serait un bon service ? Selon moi, c’est une idée excellente, il y a des personnes âgées qui pourraient les garder ou les restituer sans le délais qu’impose la bibliothèque municipale . C’est bien à cela que la mairie a pensé et ça serait un service social qui impliquerait tout le monde et sensibiliserait à l’échange. Et bien madame, je vous remercie de m’avoir accordé du temps.",
+          "source_sha256": "d08518263851b36d3c53dfabc48771aa0e83846f9a68b1140c931a38f20ffc20",
+          "audio_sha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019"
+        }
+      ]
+    }
+  ],
+  "reuses": []
+}
