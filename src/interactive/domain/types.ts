@@ -30,6 +30,8 @@ export type Question = {
   instruction: string
   prompt: string
   context?: string
+  /** Public roles and goal of an oral scene; never a proposed answer. */
+  oralSituation?: string
   numberSequence?: NumberSequence
   wordClassification?: WordClassification
   matchingGroup?: MatchingGroup

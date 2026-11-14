@@ -20,6 +20,7 @@ import { AudioPlayer, type AudioStatus } from './components/Media'
 import { maxListensFor } from './domain/listening'
 import { reviewTranscript } from './domain/transcripts'
 import { TextReadingDialog } from './components/TextReadingDialog'
+import { GuidedHints } from './components/GuidedHints'
 import { ReflectionTimer } from './components/ReflectionTimer'
 import { ManualCountPanel, ManualVoteView } from './components/ManualCountPanel'
 import { SessionObservations } from './components/SessionObservations'
@@ -381,15 +382,19 @@ function PlayingRound({
   const [confirmation, setConfirmation] = useState<'skip' | 'finish' | 'retry' | null>(null)
   const [navigating, setNavigating] = useState(false)
   const [readingTranscript, setReadingTranscript] = useState(false)
+  const [readingModel, setReadingModel] = useState<string|null>(null)
+  const modelQuestion=state.phase==='revealed'?questions.find(question=>question.id===readingModel&&question.mode!=='choice'):undefined
   const transcript = showTranscripts ? reviewTranscript(game, state) : undefined
   const controls = useRef<HTMLElement>(null)
   const locked = !!state.teacherLocked
-  const blocked = suspended || locked || confirmation !== null || navigating || readingTranscript
+  const blocked = suspended || locked || confirmation !== null || navigating || readingTranscript || !!readingModel
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
+  const guidedOral=questions.length===1&&((questions[0]?.mode==='sequence'&&!questions[0].words)||(questions[0]?.mode==='oral'&&questions[0].images.length>0))
   // A withdrawn or suspended review must stay closed when controls return.
   if (readingTranscript && (!transcript || suspended || locked || confirmation !== null || navigating)) setReadingTranscript(false)
+  if (readingModel && (!modelQuestion || suspended || locked || confirmation !== null || navigating)) setReadingModel(null)
   useEffect(() => { document.querySelector<HTMLElement>('.ci-question h1')?.focus({ preventScroll: true }) }, [])
   useEffect(() => {
     const keydown = (event: KeyboardEvent) => {
@@ -447,7 +452,7 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${questions[0]?.words ? ' ci-word-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">
@@ -536,30 +541,19 @@ function PlayingRound({
                       onAssess={(value) =>
                         dispatch({ type: 'ASSESS', questionId: q.id, value })
                       }
+                      onReadModel={()=>setReadingModel(q.id)}
                     />
                   )}
-                  {!!q.hints?.length &&
-                    state.phase !== 'thinking' &&
-                    !reveal && (
-                      <div className="ci-oral-hints">
-                        {q.hints.slice(0, runtime.hintsShown[q.id] ?? 0).map((hint, n) => (
-                          <p key={n}>{hint}</p>
-                        ))}
-                        <button
-                          disabled={locked || (runtime.hintsShown[q.id] ?? 0) >= q.hints.length}
-                          onClick={() => dispatch({ type: 'HINT_SHOW', questionId: q.id })}
-                        >
-                          Proposer une relance
-                        </button>
-                      </div>
-                    )}
+                  {!guidedOral&&!!q.hints?.length&&state.phase!=='thinking'&&!reveal&&<GuidedHints hints={q.hints} count={runtime.hintsShown[q.id]??0} disabled={locked} onNext={()=>dispatch({type:'HINT_SHOW',questionId:q.id})}/>}
+
                 </article>
               ))}
             </div>
             <aside
               className="ci-phase-margin ci-margin-right"
-              aria-label={reveal ? 'Résultats au tableau' : 'Action au tableau'}
+              aria-label={reveal ? 'Résultats au tableau' : guidedOral?'Relances de l’enseignant':'Action au tableau'}
             >
+              {guidedOral&&state.phase!=='thinking'&&!reveal&&!!questions[0]?.hints?.length&&<GuidedHints hints={questions[0].hints} count={runtime.hintsShown[questions[0].id]??0} disabled={locked} onNext={()=>dispatch({type:'HINT_SHOW',questionId:questions[0].id})}/>}
               {reveal &&
                 questions.map((q, i) => (
                   <CorrectionView
@@ -614,10 +608,11 @@ function PlayingRound({
             )}
             {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
             <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
-            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript || !!readingModel} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
         {readingTranscript && transcript && !suspended && !locked && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingTranscript(false)} />}
+        {readingModel && modelQuestion && !suspended && !locked && <TextReadingDialog title="Exemple de réponse" text={game.corrections[modelQuestion.id]!.text} images={modelQuestion.images} onClose={()=>setReadingModel(null)}/>}
         {counting && !state.paused && !locked && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
         {navigating && !locked && <QuestionNavigator game={game} state={state} onClose={() => setNavigating(false)} onGo={(index) => { setNavigating(false); dispatch({ type: 'NAVIGATE', index }) }} onRetry={() => { setNavigating(false); setConfirmation('retry') }} />}
         {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch(confirmation === 'retry' ? { type: 'RETRY_QUESTION', roundId } : { type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}

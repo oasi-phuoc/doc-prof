@@ -145,8 +145,9 @@ try {
       .first()
       .getAttribute('src')
     await page
-      .getByRole('button', { name: 'Déplacer la scène 1 à droite' })
-      .click()
+      .getByRole('button', { name: 'Choisir la scène 1, place 1', exact: true })
+      .focus()
+    await page.keyboard.press('ArrowRight')
     assert.notEqual(
       await page.locator('.ci-sequence img').first().getAttribute('src'),
       before,

@@ -63,7 +63,7 @@ try {
     const lastIndex = await nav.locator('li').count() - 1
     await nav.locator('li button').last().click()
     await page.locator('.ci-sequence').waitFor()
-    await button(page, 'Déplacer la scène 1 à droite').click()
+    await button(page, 'Choisir la scène 1, place 1').focus(); await page.keyboard.press('ArrowRight')
     const scenes = await page.locator('.ci-sequence .ci-image-zoom > img').evaluateAll((images) => images.map((image) => image.alt))
     assert.deepEqual(scenes.slice(0, 2), ['Scène 2', 'Scène 1'])
     await button(page, 'Commencer l’échange').click()

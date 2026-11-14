@@ -33,7 +33,7 @@ export function teacherSheetRows(game: Game, colors: string[], shapes: ShapeId[]
         prompt: text.length > 80 ? `${text.slice(0, 79).join('')}…` : question.prompt,
         answer: correct ? correct.text || 'Réponse en image' : key?.text || 'Évaluation par l’enseignant, sans modèle fourni.',
         explanation: correct && key?.text !== correct.text ? key?.text ?? '' : '',
-        notes: question.hints?.join(' · ') ?? '',
+        notes: question.oralSituation ? [question.oralSituation,...question.hints??[]].join('\n') : question.hints?.join(' · ') ?? '',
         card: correct && shape ? { letter: PALETTE[slot]!.letter, color: colors[slot]!, colorName: PALETTE.find((entry) => entry.color.toLowerCase() === colors[slot]!.toLowerCase())?.name ?? 'Teinte personnalisée', shape, shapeLabel: SHAPES.find((entry) => entry.id === shape)!.label } : undefined,
         image: correct?.image,
       })

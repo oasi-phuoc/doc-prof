@@ -79,7 +79,7 @@ try {
     await page.locator('.ci-word-sequence > button').first().click()
     assert.equal(await page.locator('.ci-word-sequence > button[aria-pressed="true"]').count(), 1)
     await page.locator('.ci-word-sequence > button').last().click()
-    assert.deepEqual(await words(page), ['Elle', 'petite', 'est'])
+    assert.deepEqual(await words(page), ['petite', 'Elle', 'est'])
     await button(page, 'Annuler le déplacement').click()
     assert.deepEqual(await words(page), ['est', 'petite', 'Elle'])
     await page.locator('.ci-word-sequence > button').first().focus()

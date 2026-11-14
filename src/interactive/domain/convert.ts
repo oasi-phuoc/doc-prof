@@ -19,6 +19,7 @@ import { adaptPrintableDecks } from './printable-decks'
 import { adaptPrintableRiddles } from './printable-riddles'
 import { sourceTranscript } from './transcripts'
 import { adaptWordClassification } from './word-classification'
+import { adaptGuidedOral } from './guided-oral'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -66,11 +67,6 @@ function record(value: unknown): Record<string, unknown> {
     ? (value as Record<string, unknown>)
     : {}
 }
-const strings = (value: unknown): string[] =>
-  Array.isArray(value)
-    ? value.filter((v): v is string => typeof v === 'string')
-    : []
-
 export function convertRecipe(
   recipe: FicheRecipe,
   title = 'Séance collective',
@@ -355,32 +351,12 @@ export function convertRecipe(
           if (t) {
             if (t.kind === 'support') {
               if (exercise?.competence === 'PO') {
-                const q = base()
-                q.mode =
-                  exercise.type_exercice === 'sequence_4_images'
-                    ? 'sequence'
-                    : 'oral'
-                q.compatibility = 'teacher-led'
-                q.hints = strings(media.questions).length
-                  ? strings(media.questions)
-                  : strings(media.exemples_questions)
-                q.prompt = block.instruction
-                q.images = strings(media.images)
-                if (q.images.length === 4) q.mode = 'sequence'
-                if (typeof media.image === 'string') q.images.push(media.image)
-                if (q.mode === 'sequence')
-                  q.prompt =
-                    'Regardez les quatre images et racontez l’histoire.'
-                if (q.images.length)
-                  add(
-                    q,
-                    typeof media.reponse_modele === 'string'
-                      ? media.reponse_modele
-                      : typeof media.description_modele === 'string'
-                        ? media.description_modele
-                        : 'Décrire la scène et échanger avec l’enseignant.',
-                  )
-                else reject('Support oral à adapter pour la projection.')
+                const oral=adaptGuidedOral(exercise,block.instruction)
+                oral?.issues.forEach(reject)
+                if(oral?.question){
+                  const q={...base(),...oral.question,compatibility:'teacher-led' as const}
+                  add(q,oral.model!)
+                }
               }
               return
             }

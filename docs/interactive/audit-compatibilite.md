@@ -2,11 +2,11 @@
 
 `npm run interactive:inventory` produit `inventory.json` à partir de **chaque type réel du catalogue**, avec `buildPage`, puis applique le nouvel adaptateur. Paramètres : graine 20261107, deux items, niveau par défaut ; source, champs, layouts, configuration et deux items témoins sont conservés par entrée. Le résultat est reproductible, sans modification des banques.
 
-- 2 080 types de catalogue ; 2 112 couples type/domaine après ajout des variantes TCF CSC et CFR.
+- 2 085 types de catalogue ; 2 117 couples type/domaine après ajout des variantes TCF CSC et CFR.
 - 20 domaines déclarés : 19 présents dans les variantes du catalogue. `français` est un ancien domaine sans thème actif dans le catalogue actuel ; son fallback de configuration est une addition, ce qui ne constitue pas une couverture du français.
 - 51 layouts observés sur 54 déclarés. `grammar`, `vocab-write` et `audio-match` ne sortent pas dans ces tirages : couverture non démontrée.
 - 725 variantes produisent au moins une activité convertible : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 83 adaptations vérifiées, 90 uniquement guidées et 34 mêlant QCM et activités guidées. Ce nombre décrit la conversion structurelle observée, pas une validation pédagogique de chaque famille, graine et niveau.
-- 1 387 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
+- 1 392 variantes sont non prises en charge, y compris huit échecs de génération déjà présents : association de syllabes `alpha-x-gz` et sept exercices Soutien contenant un jeton sans catégorie. Les détails sont conservés dans l’inventaire ; aucune donnée de banque n’a été réécrite pour masquer ces erreurs.
 
 ## Contrats de conversion actuels
 
@@ -28,14 +28,14 @@
 | Reconnaissance des sons `listen-check` | Une question Oui / Non par mot, son de la consigne conservé, audio et image source ; correspondance vérifiée entre cases cochées et corrigé | Piste absente ou partagée entre mots distincts signalée ; aucune phonétique déduite de l’orthographe ; ne remplace pas un QCM multi-réponses |
 | TCF QCM et cadres audio | Priorité aux variantes en images, même depuis une forme papier à écrire ; piste conservée | Deux QCM maximum par audio, projetés ensemble avec trois choix source chacun ; bonne réponse conservée |
 | Lignes / production écrite TCF | Activité guidée, modèle après révélation, observation humaine | Aucun score automatique |
-| PO à images, dont quatre scènes | Projection et déplacement par boutons ; modèle après révélation | Aucun ordre ou score automatique inventé |
+| PO à images, dont quatre scènes | Visionneuse de une à quatre images, zoom ; lieu, rôles et objectif ; relances progressives ; récit et dialogue complets après révélation, appréciation humaine ; 175 sources illustrées vérifiées | Modèles et images explicites validés sans troncature ; ni annotation, ni prédiction ou score automatique inventés ; ADR 0047 |
 | Associations audio | Une question par enregistrement, mots ou images source, correspondances vérifiées | Repli guidé pour un audio de mot remplaçant une syllabe ; six choix source maximum |
 | Paires de vocabulaire | Micro-questions avec propositions source ; mot complet vérifié pour les parties à compléter | Associations indépendantes, sans élimination des paires déjà traitées |
 | Jeux imprimables Vocabulaire et Mémory | Une micro-question image–mot par numéro de paire ; groupes de six paires au maximum ; mots déjà associés désactivés sans déplacer les cartes ; reprise, bilan par groupe et compétition | Images et mots doivent être distincts pour la correction automatique ; ambiguïtés guidées ; retournement M11 encore ouvert ; ADR 0036 et 0037 |
 | Jeux imprimables Devinettes et Intrus | Indices reliés aux mots par les numéros recto/verso ; deux à six réponses source ; groupes Intrus avec corrigé explicite conservé par le générateur | Indices génériques absents, indices partagés guidés ; anciennes planches Intrus figées sans clé à régénérer ; aucune règle inventée ; ADR 0038 |
 | Jeux imprimables Dominos et Loto | Paires explicites des images Dominos et du lot animateur Loto ; groupes de six, disponibilité progressive et reprise partagées | Anciens Dominos sans libellé image à régénérer ; ne remplace pas la chaîne de pose ni le plateau Loto M12 ; ADR 0039 |
 | Tri Gattegno | Une question par occurrence dans sa phrase neutre ; catégories explicites et corrigé vérifiés ; cartes fixes et réutilisables | Deux à six catégories pour le score, sinon guidé ; tri libre et autres familles M08 à faire ; ADR 0042 |
-| Phrases à ordonner | Deux à six jetons source manipulables, modèle séparé, appréciation humaine ; layouts `phrase-order` et `order` à consigne de phrase explicite | Phrases longues ou incohérentes signalées ; aucune troncature et aucun ordre alternatif déclaré faux automatiquement ; ADR 0028 |
+| Phrases à ordonner | Deux à six jetons source dans des zones numérotées ; glisser-déposer avec insertion, annulation, alternative par pressions et clavier ; modèle séparé, appréciation humaine ; layouts `phrase-order` et `order` à consigne de phrase explicite | Phrases longues ou incohérentes signalées ; aucune troncature et aucun ordre alternatif déclaré faux automatiquement ; ADR 0028 et 0047 |
 | Dossiers complets | Explication de non-compatibilité | Ouvrir une fiche individuelle |
 | Autres layouts | Motif explicite, visible dans la préparation | Ne sont pas masqués par domaine |
 
@@ -43,7 +43,7 @@
 
 Vérifier les contextes et médias propres à chaque famille ; les QCM multi-réponses ne sont pas encore convertis. Tester d’autres graines, les niveaux non échantillonnés, les continuations de documents, les titres très longs, les accents et les éditions libres complexes. Le convertisseur travaille sur les blocs avant pagination A4 pour ne pas rejouer les items des pages de suite.
 
-Inventaire recalculé le 13 novembre 2026. Les nombres historiques du prototype décrivaient un catalogue antérieur ; plusieurs exercices de grammaire auparavant rendus en TCF utilisent maintenant le layout `text` et demandent un adaptateur dédié. Aucune compatibilité générique n’est déduite du seul domaine.
+Inventaire recalculé le 14 novembre 2026. Cinq nouveaux types de grammaire intégrés depuis `main` sont présents sans adaptateur générique supplémentaire pour le jeu. Les nombres historiques du prototype décrivaient un catalogue antérieur ; plusieurs exercices de grammaire auparavant rendus en TCF utilisent maintenant le layout `text` et demandent un adaptateur dédié. Aucune compatibilité générique n’est déduite du seul domaine.
 
 Le tirage courant trouve 24 variantes de géométrie jouables : seize types de mesures, deux types de reconnaissance et six mélanges. Les deux items de chaque mélange de ce relevé sont convertibles ; les autres figures de ces mélanges restent signalées quand elles apparaissent sur une autre graine. Il trouve douze variantes Gattegno : les sept tris de catégories s’ajoutent aux cinq variantes de phrases courtes guidées. La limite de deux à six mots manipulables concerne toujours l’ordonnancement ; le tri conserve la phrase complète et limite le nombre de catégories proposées, avec repli guidé au-delà de six. Les nouveaux types de grammaire intégrés sont conservés dans ce relevé ; ils ne sont pas assimilés à une adaptation automatique au jeu.
 
