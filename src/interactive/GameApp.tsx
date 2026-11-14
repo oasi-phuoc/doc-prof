@@ -9,6 +9,7 @@ import { runById } from './local-runs'
 import { deriveSeed } from './domain/seeds'
 import { canonicalJson, hash } from './domain/seeds'
 import { applyPlanOptions, readPlanOptions, type PlanOptions } from './domain/plan-options'
+import {sortingSelection} from './domain/word-sorting'
 import { PresetPanel } from './components/PresetPanel'
 import { SessionArchive } from './components/SessionArchive'
 import { presetOptions, type LocalPreset } from './presets'
@@ -214,7 +215,14 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
   }
   const changeSelection = (next: string[] | null) => { clearPreparedSession(); setSelected(next) }
-  const changePlanOptions = (options: PlanOptions) => { clearPreparedSession(); setSource((source) => source ? { ...source, options: readPlanOptions(options), presetId: undefined } : source) }
+  const changePlanOptions = (options: PlanOptions) => {
+    clearPreparedSession()
+    if(game&&!!options.wordSorting!==!!source?.options.wordSorting){
+      if(selection!==null)setSelected(sortingSelection(selection,game.questions,!!options.wordSorting))
+      options={...options,customOrder:sortingSelection(options.customOrder,game.questions,!!options.wordSorting)}
+    }
+    setSource((source) => source ? { ...source, options: readPlanOptions(options), presetId: undefined } : source)
+  }
   const applyPreset = (preset: LocalPreset) => {
     clearPreparedSession()
     setSource((source) => source ? { ...source, options: presetOptions(preset), presetId: preset.presetId, sessionId: undefined, restoredGameId: undefined } : source)

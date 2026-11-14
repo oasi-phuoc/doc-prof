@@ -3,7 +3,7 @@ import type { MathItem, PhraseCategory } from '@/math/types'
 import { PHRASE_CATEGORY_LABELS } from '@/francais/phrase-banks'
 import type { Choice, WordClassification } from './types'
 
-type Entry = { part: number; prompt: string; classification: WordClassification; choices: Choice[]; correctId?: string; model: string; teacherLed: boolean }
+type Entry = { part: number; prompt: string; classification: WordClassification; category: { id: string; label: string }; choices: Choice[]; correctId?: string; model: string; teacherLed: boolean }
 
 /** Use explicit bank tags and their printed key, never infer a category from
  * spelling, a colour, a dictionary or another occurrence of the same word. */
@@ -21,7 +21,7 @@ export function adaptWordClassification(item: MathItem): { items: Entry[]; issue
   const sentence = phraseSentence(tokens,item.phraseQuestion,!!item.phraseQuestionForm)
   const joins=tokens.some(token=>token.joinBefore)?tokens.map(token=>token.joinBefore??''):undefined
   return {
-    items: tokens.map((token, part) => ({ part, prompt: `Quelle catégorie pour « ${token.text} » ?`, classification: { tokens: [...words], target: part,...(item.phraseQuestion?{...(legacyQuestion?{prefix:interrogativePrefix(tokens)}:{}),ending:' ?'}:{}),...(joins?{joins:[...joins]}:{}) }, choices: choices.map(choice => ({ ...choice })), ...(teacherLed ? {} : { correctId: `category-${token.category}` }), model: `Élément ${part + 1}/${tokens.length} : ${token.text} → ${PHRASE_CATEGORY_LABELS[token.category]}\nPhrase : ${sentence}`, teacherLed })),
+    items: tokens.map((token, part) => ({ part, prompt: `Quelle catégorie pour « ${token.text} » ?`, classification: { tokens: [...words], target: part,...(item.phraseQuestion?{...(legacyQuestion?{prefix:interrogativePrefix(tokens)}:{}),ending:' ?'}:{}),...(joins?{joins:[...joins]}:{}) }, category: { id: `category-${token.category}`, label: PHRASE_CATEGORY_LABELS[token.category] }, choices: choices.map(choice => ({ ...choice })), ...(teacherLed ? {} : { correctId: `category-${token.category}` }), model: `Élément ${part + 1}/${tokens.length} : ${token.text} → ${PHRASE_CATEGORY_LABELS[token.category]}\nPhrase : ${sentence}`, teacherLed })),
     issues: teacherLed ? [`Tri Gattegno : ${categories.length} catégorie(s) dans cette phrase. L’activité reste guidée sans choix automatique ; les cartes de vote demandent deux à six catégories.`] : [],
   }
 }

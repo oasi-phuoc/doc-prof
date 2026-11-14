@@ -344,6 +344,7 @@ export function convertRecipe(
               q.compatibility = entry.teacherLed ? 'teacher-led' : 'assisted'
               if (q.audio) q.audioGrouping = 'individual'
               add(q, entry.model, entry.correctId)
+              game.corrections[q.id]!.classificationCategory = entry.category
             }
             return
           }

@@ -7,7 +7,7 @@ import type { Game, Question, RoundRuntime, Session } from './types'
 export const sequenceLength = (question: Question) => question.words?.length ?? question.images.length
 
 export function copyRuntime(value: RoundRuntime): RoundRuntime {
-  return { ...value, selections: { ...value.selections }, hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])) }
+  return { ...value, selections: { ...value.selections }, hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])),...(value.wordSorts?{wordSorts:Object.fromEntries(Object.entries(value.wordSorts).map(([id,placements])=>[id,[...placements]]))}:{}) }
 }
 
 export function runtimeFor(game: Game, state: Session, index = state.index): RoundRuntime {

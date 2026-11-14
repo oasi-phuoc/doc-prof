@@ -13,6 +13,7 @@ export type Choice = {
 }
 export type NumberSequence = { terms: Array<string | null>; target: number; hint?: string }
 export type WordClassification = { tokens: string[]; target: number; prefix?:string; ending?:string; joins?:(''|'-'|'-t-')[] }
+export type WordSorting = { sentence: Omit<WordClassification, 'target'>; categories: { id: string; label: string }[] }
 export type MatchingGroup = { groupId: string; number: number; total: number }
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
@@ -34,6 +35,7 @@ export type Question = {
   oralSituation?: string
   numberSequence?: NumberSequence
   wordClassification?: WordClassification
+  wordSorting?: WordSorting
   matchingGroup?: MatchingGroup
   audio?: string
   /** Ordered source clips forming one recording and one listening allowance. */
@@ -48,13 +50,13 @@ export type Question = {
   grammarCountryGender?: 'masculin' | 'féminin' | 'pluriel'
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
-  mode: 'choice' | 'oral' | 'sequence'
+  mode: 'choice' | 'oral' | 'sequence' | 'sorting'
   choices: Choice[]
   choiceOrderPolicy?: ChoiceOrderPolicy
   compatibility: Exclude<Compatibility, 'unsupported'>
   hints?: string[]
 }
-export type Correction = { choiceId?: string; text: string; transcript?: string }
+export type Correction = { choiceId?: string; text: string; transcript?: string; classificationCategory?: { id: string; label: string }; sortingTargets?: string[] }
 export type Issue = { source: string; reason: string }
 export type Game = {
   id: string
@@ -86,6 +88,7 @@ export type RoundRuntime = {
   attempt: number
   hintsShown: Record<string, number>
   imageOrders: Record<string, number[]>
+  wordSorts?: Record<string, (string | null)[]>
   audioComplete: boolean
   audioOverride: boolean
   audioListens?: number
@@ -132,6 +135,7 @@ export type Action = (
   | { type: 'RETRY_QUESTION'; roundId: string }
   | { type: 'HINT_SHOW'; questionId: string }
   | { type: 'IMAGE_ORDER_SET'; questionId: string; order: number[] }
+  | { type: 'WORD_SORT_SET'; questionId: string; placements: (string | null)[] }
   | { type: 'AUDIO_STATE'; roundId: string; status: 'started' | 'ended' | 'override' }
   | { type: 'AUDIO_LISTEN_STARTED' | 'AUDIO_EXTRA_LISTEN_GRANTED'; roundId: string }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }

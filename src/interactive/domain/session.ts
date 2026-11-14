@@ -3,6 +3,7 @@ import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
 import { retractionRemaining } from './teacher'
 import { captureRound, navigateToRound, runtimeFor, sequenceLength } from './round-runtime'
+import {validWordPlacements} from './word-sorting'
 import { canListen, maxListensFor } from './listening'
 import { usedMatchingChoices } from './matching'
 
@@ -76,6 +77,11 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
       const q = questions.find((entry) => entry.id === action.questionId)
       if (!q || q.mode !== 'sequence' || state.phase === 'revealed' || !Array.isArray(action.order) || action.order.length !== sequenceLength(q) || new Set(action.order).size !== sequenceLength(q) || action.order.some((n) => !Number.isInteger(n) || n < 0 || n >= sequenceLength(q))) return state
       return updateRuntime({ ...runtime, imageOrders: { ...runtime.imageOrders, [q.id]: [...action.order] } })
+    }
+    case 'WORD_SORT_SET': {
+      const q=questions.find(entry=>entry.id===action.questionId)
+      if(!q||state.phase==='revealed'||!validWordPlacements(q,action.placements))return state
+      return updateRuntime({...runtime,wordSorts:{...runtime.wordSorts,[q.id]:[...action.placements]}})
     }
     case 'AUDIO_STATE':
       return action.roundId !== roundId || !roundsFor(game)[state.index]?.audio || !['started', 'ended', 'override'].includes(action.status) ? state : updateRuntime({ ...runtime, audioComplete: action.status === 'ended', audioOverride: action.status === 'override' })

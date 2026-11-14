@@ -461,7 +461,7 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">
@@ -529,6 +529,9 @@ function PlayingRound({
                       reveal ? game.corrections[q.id]?.choiceId : undefined
                     }
                     imageOrder={runtime.imageOrders[q.id]}
+                    wordPlacements={runtime.wordSorts?.[q.id]}
+                    onWordPlacements={placements=>dispatch({type:'WORD_SORT_SET',questionId:q.id,placements})}
+                    sortingTargets={reveal?game.corrections[q.id]?.sortingTargets:undefined}
                     interactionsDisabled={blocked}
                     unavailableChoiceIds={usedMatchingChoices(game,state,q)}
                     onImageOrder={(order) => dispatch({ type: 'IMAGE_ORDER_SET', questionId: q.id, order })}
@@ -621,7 +624,7 @@ function PlayingRound({
           </footer>
         </div>
         {readingTranscript && transcript && !suspended && !locked && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingTranscript(false)} />}
-        {readingModel && modelQuestion && !suspended && !locked && <TextReadingDialog title="Exemple de réponse" text={game.corrections[modelQuestion.id]!.text} images={modelQuestion.images} onClose={()=>setReadingModel(null)}/>}
+        {readingModel && modelQuestion && !suspended && !locked && <TextReadingDialog title={modelQuestion.wordSorting?'Classement attendu':'Exemple de réponse'} text={game.corrections[modelQuestion.id]!.text} images={modelQuestion.images} onClose={()=>setReadingModel(null)}/>}
         {counting && !state.paused && !locked && <ManualCountPanel questions={questions} votes={state.manualVotes} onSave={(questionId, vote) => dispatch({ type: 'MANUAL_VOTE_SET', questionId, vote })} onClose={() => setCounting(false)} />}
         {navigating && !locked && <QuestionNavigator game={game} state={state} onClose={() => setNavigating(false)} onGo={(index) => { setNavigating(false); dispatch({ type: 'NAVIGATE', index }) }} onRetry={() => { setNavigating(false); setConfirmation('retry') }} />}
         {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch(confirmation === 'retry' ? { type: 'RETRY_QUESTION', roundId } : { type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}
