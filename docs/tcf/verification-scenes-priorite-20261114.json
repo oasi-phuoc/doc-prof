@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "b25b73a5c608e4f2e555fb3fb3c47d2d3e7b7555",
+  "scope": "Scènes avant les trios ; rôles documentés et attente explicite si une personne n’est pas confirmée.",
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "2e8304a9df8752b131b94994751ddf6992918a10161fff53e2c05c1cdfea0bf3",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "identical_to_baseline": true
+    }
+  ],
+  "summary": {
+    "original_pngs": 20,
+    "reused_images": 1,
+    "prepared_scene_uses": 21,
+    "new_scenario_audio_bindings": 12,
+    "awaiting_gender_confirmation": 9,
+    "remaining_scenes": 66,
+    "total_bound_scenario_sources": 51
+  },
+  "new_qcm_trios": 0,
+  "audio_files_modified": 0,
+  "transcriptions_modified": 0,
+  "questions_modified": 0,
+  "answers_modified": 0,
+  "native_pngs": {
+    "count": 20,
+    "width": 1448,
+    "height": 1086,
+    "original_bytes_preserved": true
+  },
+  "human_audio_listening_performed": false,
+  "checks": {
+    "context_questions": 1021,
+    "scenario_draws": 600,
+    "catalogue_tests": 12,
+    "typescript": true,
+    "browser": {
+      "report": "docs/tcf/scenarios-priorite-20261114-browser.json",
+      "pages": 2,
+      "images": 12,
+      "errors": []
+    },
+    "unconfirmed_gender_bindings_excluded": 9
+  }
+}

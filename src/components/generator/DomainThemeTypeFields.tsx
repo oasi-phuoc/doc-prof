@@ -157,8 +157,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     quadPool,
   } = p
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
-  const isPresentOrder = isGrammaireDomain && isPresentSupplementOrderType(activeBlock.exerciseType)
-  const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isPresentOrder
+  const isGrammarOrder = isGrammaireDomain && (isPresentSupplementOrderType(activeBlock.exerciseType) || activeBlock.grammarPresentation==='order')
+  const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isGrammarOrder
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
   const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
@@ -329,14 +329,14 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   value={activeBlock.phrasePolarity ?? (isPhraseDomain && isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
                   onChange={phrasePolarity => {
                     if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
-                    const countCap = isPresentOrder
+                    const countCap = isGrammarOrder
                       ? activeBlock.grammarLevel ? grammarEligibleCount({...activeBlock,phrasePolarity}) : presentOrderQuestionCap(activeBlock.exerciseType, phrasePolarity, activeBlock.phraseCategories)
                       : activeBlock.count
                     updatePage({
                       ...clearLibreContentFreeze(),
                       phrasePolarity,
                       ...(activeBlock.grammarLevel?{grammarSnapshot:undefined}:{}),
-                      count: isPresentOrder ? Math.max(1, Math.min(activeBlock.count, countCap)) : activeBlock.count,
+                      count: isGrammarOrder ? Math.max(1, Math.min(activeBlock.count, countCap)) : activeBlock.count,
                       ...(isPhraseDomain ? { phraseItems: undefined, phraseInstruction: undefined } : {}),
                     })
                   }}
@@ -350,7 +350,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
                     const cap = isPhraseThemeId(activeBlock.topic)
                       ? phraseSelection(activeBlock.topic, activeBlock.verbGroup ?? 'er', phraseCategories).frames.length
-                      : isPresentOrder
+                      : isGrammarOrder
                         ? activeBlock.grammarLevel ? grammarEligibleCount({...activeBlock,phraseCategories}) : presentOrderQuestionCap(activeBlock.exerciseType, activeBlock.phrasePolarity ?? 'positive', phraseCategories)
                         : activeBlock.count
                     updatePage({

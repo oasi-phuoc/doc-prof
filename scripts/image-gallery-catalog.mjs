@@ -62,7 +62,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     }
   }
   for (const image of read(root, 'docs/tcf/images-generees.json', {}).images ?? []) {
-    add(image.path, { labels: [image.label], types: image.gallery_types, terms: [image.id] })
+    add(image.path, { labels: [image.label], types: image.gallery_types, themes: image.gallery_themes, terms: [image.id] })
   }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], terms: [image.action] })
@@ -98,6 +98,17 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
         }
       }
     }
+  }
+  for (const scene of read(root, 'src/tcf/association-image-themes.json', {}).sources ?? []) {
+    const source = coSources.get(scene.exercise)
+    if (!source) continue
+    const support = source.support ?? {}, index = scene.dialogue - 1
+    const text = Array.isArray(support.transcription) ? support.transcription[index] : support.transcription
+    const audio = support.audios?.[index] ?? (index === 0 ? support.audio : undefined)
+    if (audio !== scene.audio || text !== scene.transcription || createHash('sha256').update(text).digest('hex') !== scene.sourceSha256) continue
+    associationScenes.add(scene.image)
+    const levelTheme = source.niveau === 'A1-A2' ? 'CO CFR A2' : source.niveau === 'A0-A1' ? 'CO A1' : 'CO B1'
+    add(scene.image, { types: ['Scénario'], themes: [levelTheme, 'Situations CO'], terms: [scene.exercise, source.scene, text] })
   }
   for (const reuse of read(root, 'docs/gallery/co-cfr-a2-reuses-20261113.json', {}).reuses ?? []) {
     if (reuse.status !== 'visually_reviewed') continue

@@ -15,6 +15,7 @@ import { isTcfCoAssociation, tcfAssociationTranscriptions } from './association-
 import type { TcfExercise, TcfQuestion } from './types'
 import audioDurations from './content/audio-durations.json'
 import reviewedPools from './content/co-reviewed-pools.json'
+import { reviewedAssociationScene, associationSceneKey, associationThemedDecoyImages, type ReviewedScenarioScene } from './association-image-themes'
 
 const durations: Readonly<Record<string, number>> = audioDurations
 
@@ -38,6 +39,8 @@ export type TcfAudioEntry = {
   objectPool?: TcfObjectPool
   /** Pool de questions liées à cette piste (tags `court` / `moyen` / `long`). */
   questionPool?: TcfQuestion[]
+  /** Scène relue et liée à la transcription exacte ; indépendante de la longueur. */
+  scenarioScene?: ReviewedScenarioScene
 }
 
 export {
@@ -414,7 +417,15 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
       total <= 1
         ? row.base
         : `${row.base} ${index}`
-    const objectPool = tcfObjectPool(tcfObjectTranscription(row.exercise, row.audio))
+    const transcription = tcfObjectTranscription(row.exercise, row.audio)
+    let scenarioScene = reviewedAssociationScene(row.audio, transcription, row.exercise.id)
+    if (scenarioScene && isTcfCoAssociation(row.exercise)) {
+      const situation = row.exercise.situations.find((s) => s.dialogue === row.dialogueIndex)
+      if (!situation || situation.image_pending || situation.image !== scenarioScene.image) scenarioScene = undefined
+    }
+    row.tags = row.tags.filter((tag) => tag !== TCF_AUDIO_TAG_SCENARIO)
+    if (scenarioScene) row.tags = tcfMergeAudioTags(row.tags, [TCF_AUDIO_TAG_SCENARIO])
+    const objectPool = tcfObjectPool(transcription)
     row.tags = row.tags.filter((tag) => tag !== TCF_AUDIO_TAG_OBJET)
     if (objectPool) row.tags = tcfMergeAudioTags(row.tags, [TCF_AUDIO_TAG_OBJET])
     const tagBits = row.tags.length ? `tag:${row.tags.join(',')}` : ''
@@ -437,6 +448,7 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
       dialogueIndex: row.dialogueIndex,
       questionPool: row.questionPool,
       objectPool,
+      scenarioScene,
     })
   }
   return out.sort((a, b) => a.label.localeCompare(b.label, 'fr', { numeric: true }))
@@ -445,7 +457,7 @@ export function tcfAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntr
 /** Audios tagués `scenario` (petits dialogues d’association). */
 export function tcfScenarioAudioEntries(exercises: readonly TcfExercise[]): TcfAudioEntry[] {
   return tcfAudioEntries(exercises).filter((e) => {
-    if (!tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO)) return false
+    if (!tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO) || !e.scenarioScene) return false
     if (!isTcfCoAssociation(e.exercise) || e.dialogueIndex == null) return true
     return !e.exercise.situations.find((s) => s.dialogue === e.dialogueIndex)?.image_pending
   })
@@ -597,7 +609,7 @@ export function applyAssociationDialogueSlot(
   entry: TcfAudioEntry,
   slotIndex: number,
 ): TcfExercise {
-  if (!isTcfCoAssociation(current)) return current
+  if (!isTcfCoAssociation(current) || !entry.scenarioScene) return current
   const n = Math.max(current.support.nb_dialogues, slotIndex + 1)
   const audios = Array.from({ length: n }, (_, i) => current.support.audios?.[i] ?? '')
   const trsSource = Array.isArray(current.support.transcription)
@@ -605,29 +617,39 @@ export function applyAssociationDialogueSlot(
     : [typeof current.support.transcription === 'string' ? current.support.transcription : '']
   while (trsSource.length < n) trsSource.push('')
   audios[slotIndex] = entry.audio
-  const srcTrs = tcfAssociationTranscriptions(
-    isTcfCoAssociation(entry.exercise) ? entry.exercise : (entry.exercise as never),
-  )
-  const fromEntry =
-    entry.dialogueIndex != null ? srcTrs[entry.dialogueIndex - 1] : srcTrs[0]
+  const fromEntry = entry.scenarioScene?.transcription ?? tcfObjectTranscription(entry.exercise, entry.audio)
   trsSource[slotIndex] = fromEntry?.trim() || trsSource[slotIndex] || ''
 
   // Image de situation liée au dialogue source, si présente
   let situations = current.situations.map((s) => ({ ...s }))
-  if (isTcfCoAssociation(entry.exercise) && entry.dialogueIndex != null) {
-    const srcSit = entry.exercise.situations.find((s) => s.dialogue === entry.dialogueIndex)
-    if (srcSit?.image.trim() && !srcSit.image_pending) {
-      const targetDial = slotIndex + 1
-      const hit = situations.findIndex((s) => s.dialogue === targetDial)
-      if (hit >= 0) {
-        situations[hit] = { ...situations[hit]!, image: srcSit.image, image_pending: false }
-      } else {
-        const empty = situations.findIndex((s) => s.dialogue == null && (!s.image.trim() || s.image_pending))
-        if (empty >= 0) {
-          situations[empty] = { ...situations[empty]!, image: srcSit.image, dialogue: targetDial, image_pending: false }
-        }
+  if (entry.scenarioScene) {
+    const image = entry.scenarioScene.image
+    const targetDial = slotIndex + 1
+    const hit = situations.findIndex((s) => s.dialogue === targetDial)
+    if (hit >= 0) {
+      situations[hit] = { ...situations[hit]!, image, image_pending: false }
+    } else {
+      const empty = situations.findIndex((s) => s.dialogue == null && (!s.image.trim() || s.image_pending))
+      if (empty >= 0) {
+        situations[empty] = { ...situations[empty]!, image, dialogue: targetDial, image_pending: false }
       }
     }
+  }
+
+  const sources = audios.flatMap((audio, i) => {
+    const situation = situations.find((s) => s.dialogue === i + 1)
+    return audio && trsSource[i] && situation?.image ? [{ audio, transcription: trsSource[i]!, image: situation.image, dialogue: i + 1 }] : []
+  })
+  const competing = sources.filter((source) => source.dialogue !== slotIndex + 1)
+  if (competing.some((source) => source.image === entry.scenarioScene!.image || associationSceneKey(source) === entry.scenarioScene!.sceneKey)) return current
+  if (sources.length === audios.length) {
+    const available = associationThemedDecoyImages(sources)
+    let index = 0
+    situations = situations.map((s) => {
+      if (s.dialogue != null) return s
+      const image = available[index++] ?? ''
+      return { ...s, image, image_pending: !image }
+    })
   }
 
   return {

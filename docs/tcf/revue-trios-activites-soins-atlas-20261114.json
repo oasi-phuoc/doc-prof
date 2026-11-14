@@ -1,0 +1,304 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "a6b636ade4f1a16e970c4bcc8c34a6ef6f970549",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "a6b636ade4f1a16e970c4bcc8c34a6ef6f970549",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 6
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-044-03#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Le soir vous regardez la télé ? Pas tous les soirs. Je n’aime pas tellement. Je préfère jouer à l’ordinateur.",
+      "source_sha256": "4a9901aaadeca8fedd9516ba57aa8e2e55d818d27bef7fe44305c473c66e41f5",
+      "semantic_sha256": "48600d4d191978782551213ec23256cee2a50d1dc12970414f180d5135079319",
+      "question": {
+        "enonce": "Quelle activité la personne préfère-t-elle à la télévision ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Jouer à l’ordinateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Lire un livre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Faire du sport",
+            "correct": false
+          }
+        ],
+        "written_model": "Jouer à l’ordinateur"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+      "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+      "image_ids": [
+        "qcm-a1-jouer-ordinateur",
+        "catalogue-20261113-action-lire-dans-un-fauteuil",
+        "co306-courir-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+        "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
+      ],
+      "image_sha256": [
+        "388e73c43f3da179abe40a98a050734a4a4f9cf20372eb3b5b750da99ed11a38",
+        "3e520c9d1e970d9c6b37c41631d88affe2d45268f8247c126c6cd5674b8109b9",
+        "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b"
+      ],
+      "reason": "La personne dit ne pas aimer tellement la télévision et préférer jouer à l’ordinateur.",
+      "visual_review": "Jeu sur PC avec manette, lecture d’un livre et jogging ; trois activités distinctes avec gestes et objets utiles visibles. Les personnages sont des illustrations d’activité, sans prétendre être le locuteur."
+    },
+    {
+      "key": "tcf-delf-actif-a1-044-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pendant votre temps libre, que faites-vous avec vos copains ? Nous faisons du vélo et des promenades. Ça me plaît. Et vous ne faites pas les magasins ? Ah non ! j’ai horreur de ça !",
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "semantic_sha256": "8f030850f46e4b8ad84fa65da5ea4e91e7b2af825ea3e0c1f9b883bf79a1a144",
+      "question": {
+        "enonce": "Quelle activité la personne déteste-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Faire les magasins",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Aller au cinéma",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Faire du vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "Faire les magasins"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+      "image_ids": [
+        "qcm-a1-faire-magasins",
+        "co834-seance-cinema-dessinee",
+        "co306-faire-velo-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-faire-magasins.png",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "image_sha256": [
+        "54019a839cbc2d793faaa028ac7f1473839b672ca9aa7ecd0e91a6e9ff4a08b7",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+      ],
+      "reason": "La personne dit avoir horreur de faire les magasins, tandis qu’elle aime le vélo et les promenades.",
+      "visual_review": "Choix de vêtements en magasin, séance au cinéma et trajet à vélo ; scènes illustrant les activités des réponses. Les personnes des dessins ne représentent pas les goûts du locuteur : la négation vient de l’audio et de la question."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-04-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour toi aussi du poisson avec des légumes ? Je veux bien du poisson mais avec du riz. Voilà ton poisson et ton riz. Je te mets de la sauce ?",
+      "source_sha256": "d6de28f6ab6f97f6baa30a4861a93d2f5db40684efaba12f7e07f88bee5be3b6",
+      "semantic_sha256": "a4c870328c4afe670483be131615ce39cd3cd0979edb9218f29ee377e1e8185e",
+      "question": {
+        "enonce": "Quel ajout lui propose-t-on ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "De la sauce",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du fromage",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du beurre",
+            "correct": false
+          }
+        ],
+        "written_model": "De la sauce"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+      "image_ids": [
+        "qcm-a1-sauce-alimentaire",
+        "co306-assiette-fromage-dessine",
+        "vocab-beurre"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-sauce-alimentaire.png",
+        "/lib/images/tcf/qcm-audit/co306-assiette-fromage-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-beurre.webp"
+      ],
+      "image_sha256": [
+        "9eed169251dd92f3e71c7b9b1d23d439ad33331c5e510de155ad23071157a423",
+        "63df847a58c6922746f1726971d8f2eafb1cdd0a47812f4655d21c69584910ff",
+        "e5fcb80d08c31b65f9ec8a2d7852e1768f7ec820cda289edf82a9c5cdb368987"
+      ],
+      "reason": "Après avoir servi le poisson et le riz, la personne propose d’ajouter de la sauce.",
+      "visual_review": "Saucière à sauce, morceaux de fromage sur assiette et beurre en motte/tranches ; trois ajouts alimentaires distincts. La sauce brune illustre la catégorie, sans attribuer une recette ou une saveur non indiquée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-048-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Monsieur. Bonjour jeune homme. Oh ! Qu’est-ce que vous avez là ? Je fais du vélo et voilà ! J’ai mal à la jambe, vous pouvez me donner des médicaments, s’il vous plaît ? Qu’est-ce que je vous donne ? J’ai besoin d’un désinfectant. J’ai ce produit. Il est très efficace. Quel est prix de ce flacon ? Il coûte 4,80 €. Et vous avez aussi des pansements ? Bien sûr. Voici les pansements. Ils sont à quel prix ? La boîte coûte 3,10 €. Il y a combien de pansements dans une boîte ? Il y a 10 pansements. Je peux prendre des comprimés aussi ? Oui, si vous avez mal vous pouvez prendre ces comprimés un le matin et un le soir. Merci, combien je vous dois en tout ? 10,10 € jeune homme. Voici les 10 € et les 10 centimes. Merci et au revoir. Au revoir.",
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "9d1ec62f34ad2d37538f681a3d6268c6e02ede354dbdca302d48b1b54a373efc",
+      "question": {
+        "enonce": "Quel produit demande-t-il d’abord ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un désinfectant",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un shampooing",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une crème solaire",
+            "correct": false
+          }
+        ],
+        "written_model": "Un désinfectant"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "image_ids": [
+        "qcm-a1-desinfectant-cutane",
+        "co306-shampoing-dessine",
+        "co834-creme-solaire-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-desinfectant-cutane.png",
+        "/lib/images/tcf/qcm-audit/co306-shampoing-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-creme-solaire-dessinee.webp"
+      ],
+      "image_sha256": [
+        "046e69e8480d2f3f68b82babfc44aca4419111710430b1e0ef370e0fbbca84bb",
+        "a1cf08b1e8a5be3c4a37e5d826a38cecf9fe8e84c1b12a2e4bb10e426d494fd6",
+        "91843a621156271275bb997488cb541a090bd548b61d799db23ce9d966eb1667"
+      ],
+      "reason": "Le client blessé à la jambe demande d’abord un désinfectant, puis des pansements et des comprimés.",
+      "visual_review": "Désinfectant médical à pictogramme de compresse, shampooing à symbole de chevelure et tube solaire à soleil ; trois produits distincts. Le désinfectant pour les sols est écarté ; ni prix ni dose représentés."
+    },
+    {
+      "key": "tcf-delf-actif-a1-048-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Monsieur. Bonjour jeune homme. Oh ! Qu’est-ce que vous avez là ? Je fais du vélo et voilà ! J’ai mal à la jambe, vous pouvez me donner des médicaments, s’il vous plaît ? Qu’est-ce que je vous donne ? J’ai besoin d’un désinfectant. J’ai ce produit. Il est très efficace. Quel est prix de ce flacon ? Il coûte 4,80 €. Et vous avez aussi des pansements ? Bien sûr. Voici les pansements. Ils sont à quel prix ? La boîte coûte 3,10 €. Il y a combien de pansements dans une boîte ? Il y a 10 pansements. Je peux prendre des comprimés aussi ? Oui, si vous avez mal vous pouvez prendre ces comprimés un le matin et un le soir. Merci, combien je vous dois en tout ? 10,10 € jeune homme. Voici les 10 € et les 10 centimes. Merci et au revoir. Au revoir.",
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "99debf1aa8c2b6a2243c31a9d88eb5c1acfddd66f3cdfb02055e442be75fe926",
+      "question": {
+        "enonce": "Quel autre matériel de soin achète-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pansements",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des béquilles",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un thermomètre",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pansements"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "audio_sha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "image_ids": [
+        "qcm-a1-pansements",
+        "qcm-a1-bequilles",
+        "vocab-thermometre"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-pansements.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bequilles.png",
+        "/lib/images/tcf/qcm-audit/vocab-thermometre.webp"
+      ],
+      "image_sha256": [
+        "dad850d9b60eddd1c14eb6a27db35cad277ab57b9eb80aa65ee4d9621aec6fc5",
+        "78bba4829fe619229b172272b4c7962cc73cf9c8eb51ef05e7a6bd5b005a5a85",
+        "a88f60d57a18b66151ae1ed005188f9bca1dcf2c02cbcb3884570f6ce400c92c"
+      ],
+      "reason": "Le jeune demande aussi des pansements ; la boîte en contient dix.",
+      "visual_review": "Dix pansements adhésifs recomptés, deux béquilles et un thermomètre à écran vide ; pluriel et objets de soin distincts, aucune température ou quantité écrite."
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tu as un dictionnaire pour le cours d’anglais de demain ? Tiens, je te donne mon dictionnaire. Il est un peu vieux. Oh, mais ça ne fait rien. Merci.",
+      "source_sha256": "cdaeba202764d0588c33e3b05fa564b4fa9f7bdb20196ccc74192e1fbea3189b",
+      "semantic_sha256": "8ba9be6c2b9d888e7f8b9e5dafb3b662f5083da2974c6cd1d385839ad87244b4",
+      "question": {
+        "enonce": "Quel objet le camarade remet-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un dictionnaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un atlas",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un roman",
+            "correct": false
+          }
+        ],
+        "written_model": "Un dictionnaire"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-03.mp3",
+      "audio_sha256": "d6cbe9f6e679993156ee6f8252091733f070c945309bda7ef3c599be70be3f42",
+      "image_ids": [
+        "co306-dictionnaire-dessine",
+        "qcm-a1-atlas",
+        "extension573-roman"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-dictionnaire-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-atlas.png",
+        "/lib/images/tcf/qcm-audit/extension573-roman.webp"
+      ],
+      "image_sha256": [
+        "e3bc1989eff5fd73033efdf48858ff89579c3de55b7f53b3866861a4da4ca7b1",
+        "1d3313456f813d6ecf43bbe7fe4cffa442a6ff75ed81366f5ddc7bd76c3e1d19",
+        "d7dc4c387f8437289083fa09986f16f2f717239552ab61786cbf5b1ef386f909"
+      ],
+      "reason": "Le camarade remet son dictionnaire pour le cours d’anglais, en précisant qu’il est un peu vieux.",
+      "visual_review": "Dictionnaire ouvert à colonnes avec index, atlas à cartes géographiques et roman à couverture de fiction identifiée ; trois types de livres entiers et distincts. La question porte sur l’objet et ne demande pas d’inférer la langue depuis une apparence."
+    }
+  ]
+}

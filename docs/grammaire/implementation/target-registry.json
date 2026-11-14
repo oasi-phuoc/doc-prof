@@ -4280,7 +4280,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -4294,12 +4294,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "correct": "Corrigez la conjugaison au présent et réécrivez la phrase entière."
+        "correct": "Réécrivez la phrase entière en corrigeant la place de la négation ou du déterminant négatif."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a9.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -4358,15 +4367,16 @@
       "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la négation correspondant à l’indice de sens.",
-        "gap": "Complétez avec la négation correspondant à l’indice de sens."
+        "choice": "Choisissez le groupe qui exprime exactement la précision de l’indice.",
+        "gap": "Complétez avec le groupe négatif qui exprime la précision de l’indice."
       },
       "pilotPreview": {
         "sourcePath": "src/grammaire/curriculum/data/a9.json",
         "levels": [
-          "A1"
+          "A1",
+          "A2"
         ],
-        "reviewedActivityUnits": 50,
+        "reviewedActivityUnits": 100,
         "teacherApprovedUnits": 0,
         "humanReview": "pending"
       }
@@ -4428,14 +4438,15 @@
       "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre et écrivez la phrase négative."
+        "order": "Remettez les mots dans l’ordre et écrivez la phrase négative entière."
       },
       "pilotPreview": {
         "sourcePath": "src/grammaire/curriculum/data/a9.json",
         "levels": [
-          "A1"
+          "A1",
+          "A2"
         ],
-        "reviewedActivityUnits": 50,
+        "reviewedActivityUnits": 100,
         "teacherApprovedUnits": 0,
         "humanReview": "pending"
       }
@@ -6267,7 +6278,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6282,13 +6293,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a2.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez le pronom selon le sujet indiqué.",
+        "gap": "Complétez avec le pronom selon le sujet indiqué."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6582,7 +6602,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6597,13 +6617,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a6.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez le pays illustré.",
+        "gap": "Écrivez le nom du pays illustré."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a6.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6636,7 +6665,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6651,13 +6680,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a6.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez de, du, d’ ou des selon le pays ; son genre est indiqué à droite du trait.",
+        "gap": "Complétez avec de, du, d’ ou des ; le genre du pays est indiqué à droite du trait."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a6.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6690,7 +6728,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6705,13 +6743,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a6.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "choice": "Choisissez la forme de venir au présent.",
+        "gap": "Complétez avec venir au présent."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a6.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6743,7 +6790,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -6757,12 +6804,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a6.json",
       "instructionsByPresentation": {
-        "open-written": "Observez les images. Écrivez deux phrases (venir de + nationalité).\nExemple : Elles viennent de France. Elles sont françaises."
+        "open-written": "Présentez le personnage fictif en deux phrases : provenance et nationalité déclarée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a6.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6794,7 +6850,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6808,12 +6864,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b1.json",
       "instructionsByPresentation": {
-        "gap": "Complétez avec la forme qui convient."
+        "gap": "Complétez la phrase selon le contexte et le registre annoncé."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6846,7 +6911,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6861,13 +6926,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b1.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "gap": "Complétez la phrase selon le contexte et le registre annoncé.",
+        "choice": "Choisissez la forme qui convient au contexte et au registre annoncé."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6900,7 +6974,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -6915,13 +6989,22 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b2.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "gap": "Complétez la phrase selon le contexte et le registre annoncé.",
+        "choice": "Choisissez la forme qui convient au contexte et au registre annoncé."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -6953,7 +7036,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -6967,12 +7050,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b2.json",
       "instructionsByPresentation": {
-        "open-written": "Écrivez une seule phrase de salutation adaptée à la situation."
+        "open-written": "Écrivez une salutation et une courte phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -7004,7 +7096,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -7018,12 +7110,21 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b3.json",
       "instructionsByPresentation": {
-        "gap": "Complétez avec la forme qui convient."
+        "gap": "Complétez la phrase selon le contexte et le registre annoncé."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -7056,7 +7157,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -7071,13 +7172,22 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b3.json",
       "instructionsByPresentation": {
-        "choice": "Choisissez la forme qui convient.",
-        "gap": "Complétez avec la forme qui convient."
+        "gap": "Complétez la phrase selon le contexte et le registre annoncé.",
+        "choice": "Choisissez la forme qui convient au contexte et au registre annoncé."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13056,7 +13166,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13070,12 +13180,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b1.json",
       "instructionsByPresentation": {
-        "match": "Associez chaque élément à la proposition qui convient."
+        "match": "Associez chaque situation à sa forme. Utilisez chaque proposition une fois."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13103,7 +13222,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13117,12 +13236,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b1.json",
       "instructionsByPresentation": {
-        "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+        "scenario-set": "Jouez les rôles à deux en respectant le contexte, l’intention et le registre."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13150,7 +13278,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13164,12 +13292,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b1.json",
       "instructionsByPresentation": {
-        "open-oral": "Exprimez-vous dans la situation proposée."
+        "open-oral": "Répondez oralement à la situation et poursuivez avec votre partenaire."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13197,7 +13334,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13211,12 +13348,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b2.json",
       "instructionsByPresentation": {
-        "match": "Associez chaque élément à la proposition qui convient."
+        "match": "Associez chaque situation à sa forme. Utilisez chaque proposition une fois."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13244,7 +13390,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13258,12 +13404,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b2.json",
       "instructionsByPresentation": {
-        "order": "Remettez les mots dans l’ordre pour former une phrase correcte."
+        "order": "Remettez les mots dans l’ordre pour saluer et poursuivre ou terminer l’échange."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13291,7 +13446,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13305,12 +13460,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b2.json",
       "instructionsByPresentation": {
-        "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+        "scenario-set": "Jouez les rôles à deux en respectant le contexte, l’intention et le registre."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13338,7 +13502,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13352,12 +13516,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b2.json",
       "instructionsByPresentation": {
-        "open-oral": "Exprimez-vous dans la situation proposée."
+        "open-oral": "Répondez oralement à la situation et poursuivez avec votre partenaire."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13385,7 +13558,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13399,12 +13572,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b3.json",
       "instructionsByPresentation": {
-        "match": "Associez chaque élément à la proposition qui convient."
+        "match": "Associez chaque situation à sa forme. Utilisez chaque proposition une fois."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13432,7 +13614,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13446,12 +13628,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b3.json",
       "instructionsByPresentation": {
-        "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+        "scenario-set": "Jouez les rôles à deux en respectant le contexte, l’intention et le registre."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13479,7 +13670,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13493,12 +13684,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/b3.json",
       "instructionsByPresentation": {
-        "open-oral": "Exprimez-vous dans la situation proposée."
+        "open-oral": "Répondez oralement à la situation et poursuivez avec votre partenaire."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/b3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13573,7 +13773,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13587,12 +13787,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a2.json",
       "instructionsByPresentation": {
-        "match": "Associez chaque élément à la proposition qui convient."
+        "match": "Reliez chaque phrase à son pronom. Utilisez chaque proposition une seule fois."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13620,7 +13829,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13634,12 +13843,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a2.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Réécrivez chaque phrase en remplaçant le groupe sujet par un pronom."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13714,7 +13932,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -13728,12 +13946,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a6.json",
       "instructionsByPresentation": {
-        "match": "Associez chaque élément à la proposition qui convient."
+        "match": "Reliez les trois phrases à leurs formes de venir. Utilisez chaque proposition une seule fois."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a6.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -13761,7 +13988,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -13775,12 +14002,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a6.json",
       "instructionsByPresentation": {
-        "open-oral": "Exprimez-vous dans la situation proposée."
+        "open-oral": "Jouez la rencontre en respectant les informations et le registre annoncés."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a6.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14574,7 +14810,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14588,12 +14824,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/a9.json",
       "instructionsByPresentation": {
-        "transform": "Réécrivez la phrase en respectant l’indication."
+        "transform": "Transformez chaque phrase selon la négation imposée et le contexte, sans changer les autres informations."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/a9.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -25541,16 +25786,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-corriger-erreur",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-corriger-erreur-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-qcm-verbe@A1@choice",
@@ -25623,16 +25873,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-qcm-verbe@A2@gap",
@@ -25647,16 +25902,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a9-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-a9-ordre@A1@order",
@@ -25700,16 +25960,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/present-supplement.ts | src/grammaire/exercises/present-supplement-data.json",
       "sourceRawCount": 100,
       "existingTypeIds": "gram-ex-a9-ordre",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-ordre-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-pc-idee-qcm-verbe@A1@choice",
@@ -27070,16 +27335,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer personnes et pronoms, accorder le sujet et le verbe",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a2-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a2-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a2.json"
     },
     {
       "offeringId": "gram-ex-a2-qcm-verbe@A1@gap",
@@ -27094,16 +27364,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer personnes et pronoms, accorder le sujet et le verbe",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-a2-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a2-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a2.json"
     },
     {
       "offeringId": "gram-ex-a3-nat-image@A1@choice",
@@ -27286,16 +27561,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-pays",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-pays-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-prov-pays@A1@gap",
@@ -27310,16 +27590,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-pays",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-pays-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-prov-prep@A1@choice",
@@ -27334,16 +27619,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-prep",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-prep-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-prov-prep@A1@gap",
@@ -27358,16 +27648,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-prep",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-prep-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-prov-verbe@A1@choice",
@@ -27382,16 +27677,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-prov-verbe@A1@gap",
@@ -27406,16 +27706,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-prov-phrases@A1@open-written",
@@ -27430,16 +27735,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/provenance.ts",
       "sourceRawCount": 20,
       "existingTypeIds": "gram-ex-a6-prov-phrases",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-prov-phrases-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-b1-fill-conj@A1@gap",
@@ -27454,16 +27764,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir le bon registre selon la personne, saluer poliment",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b1-fill-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b1-a1-fill-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b1.json"
     },
     {
       "offeringId": "gram-ex-b1-qcm-verbe@A1@choice",
@@ -27478,16 +27793,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir le bon registre selon la personne, saluer poliment",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b1-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b1-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b1.json"
     },
     {
       "offeringId": "gram-ex-b1-qcm-verbe@A1@gap",
@@ -27502,16 +27822,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir le bon registre selon la personne, saluer poliment",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b1-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b1-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b1.json"
     },
     {
       "offeringId": "gram-ex-b2-qcm-verbe@A1@choice",
@@ -27526,16 +27851,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b2-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b2-qcm-verbe@A1@gap",
@@ -27550,16 +27880,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b2-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b2-ecrire@A1@open-written",
@@ -27574,16 +27909,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b2-ecrire",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-ecrire-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b3-fill-conj@A1@gap",
@@ -27598,16 +27938,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remercier et répondre selon la situation",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b3-fill-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b3-a1-fill-conj-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b3.json"
     },
     {
       "offeringId": "gram-ex-b3-qcm-verbe@A1@choice",
@@ -27622,16 +27967,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remercier et répondre selon la situation",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b3-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b3-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b3.json"
     },
     {
       "offeringId": "gram-ex-b3-qcm-verbe@A1@gap",
@@ -27646,16 +27996,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remercier et répondre selon la situation",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-b3-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b3-a1-qcm-verbe-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b3.json"
     },
     {
       "offeringId": "gram-ex-c1-question-est-ce-que@A1@transform",
@@ -32722,16 +33077,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir le bon registre selon la personne, saluer poliment",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b1-a1-curriculum-a-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b1.json"
     },
     {
       "offeringId": "gram-ex-b1-curriculum-s@A1@scenario-set",
@@ -32746,16 +33106,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir le bon registre selon la personne, saluer poliment",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b1-a1-curriculum-s-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b1.json"
     },
     {
       "offeringId": "gram-ex-b1-curriculum-p@A1@open-oral",
@@ -32770,16 +33135,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir le bon registre selon la personne, saluer poliment",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b1-a1-curriculum-p-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b1.json"
     },
     {
       "offeringId": "gram-ex-b2-curriculum-a@A1@match",
@@ -32794,16 +33164,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-curriculum-a-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b2-curriculum-o@A1@order",
@@ -32818,16 +33193,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-curriculum-o-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b2-curriculum-s@A1@scenario-set",
@@ -32842,16 +33222,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-curriculum-s-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b2-curriculum-p@A1@open-oral",
@@ -32866,16 +33251,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Saluer en début/fin de rencontre, compléter un échange",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b2-a1-curriculum-p-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b2.json"
     },
     {
       "offeringId": "gram-ex-b3-curriculum-a@A1@match",
@@ -32890,16 +33280,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remercier et répondre selon la situation",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b3-a1-curriculum-a-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b3.json"
     },
     {
       "offeringId": "gram-ex-b3-curriculum-s@A1@scenario-set",
@@ -32914,16 +33309,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remercier et répondre selon la situation",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b3-a1-curriculum-s-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b3.json"
     },
     {
       "offeringId": "gram-ex-b3-curriculum-p@A1@open-oral",
@@ -32938,16 +33338,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Remercier et répondre selon la situation",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "b3-a1-curriculum-p-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/b3.json"
     },
     {
       "offeringId": "gram-ex-a1-curriculum-s@A1@scenario-set",
@@ -32986,16 +33391,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer personnes et pronoms, accorder le sujet et le verbe",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a2-a1-curriculum-a-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a2.json"
     },
     {
       "offeringId": "gram-ex-a2-curriculum-t@A1@transform",
@@ -33010,16 +33420,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer personnes et pronoms, accorder le sujet et le verbe",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a2-a1-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a2.json"
     },
     {
       "offeringId": "gram-ex-a3-curriculum-p@A1@open-oral",
@@ -33058,16 +33473,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-curriculum-a-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-a6-curriculum-p@A1@open-oral",
@@ -33082,16 +33502,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer venir de / du / des / d' et un pays",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a6-a1-curriculum-p-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a6.json"
     },
     {
       "offeringId": "gram-ex-famille-curriculum-a@A1@match",
@@ -33502,16 +33927,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Différencier les négations par le sens, corriger leur placement",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "a9-a2-curriculum-t-2026-11-14.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/a9.json"
     },
     {
       "offeringId": "gram-ex-c1-curriculum-complete@A1@choice",
@@ -38910,11 +39340,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 4280,
+    "reviewedVariants": 6130,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Validation enseignante et généralisation G3/G4/G5 aux autres activités/niveaux. Les contrats techniques situation/dialogue et image sont éprouvés ; les banques illustrées complètes restent à produire et à relire.",
-    "reviewedActivityUnits": 3310,
+    "remaining": "Se présenter : 13 offres sur 40 en pilote ; identité, nationalités et famille restent à compléter. Entrer en contact et Conjuguer au présent complets en pilote. Approbation enseignante, autres thèmes, illustrations I, révisions et recette finale en attente.",
+    "reviewedActivityUnits": 4760,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -38929,21 +39359,28 @@
       "modaux A1 (G3)",
       "pronominaux A1 (G3)",
       "a8 ne…pas A1 (G3)",
-      "a9 autres négations A1 (G3)"
+      "a9 autres négations A1 (G3)",
+      "a9 autres négations A2 (G4)",
+      "b1 tu/vous A1 (G3)",
+      "b2 salutations A1 (G3)",
+      "b3 remerciements A1 (G3)",
+      "a2 pronoms sujet A1 (G3)",
+      "a6 provenance A1 (G3)"
     ],
-    "reviewedOfferings": 85,
+    "reviewedOfferings": 122,
     "lastUpdated": "2026-11-14",
-    "reviewedSelectableUnits": 3310,
+    "reviewedSelectableUnits": 4760,
     "reviewedDocuments": 60,
     "reviewedDocumentQuestions": 180,
-    "reviewedActivities": 62,
+    "reviewedActivities": 89,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 14,
+    "reviewedNotions": 19,
     "technicalContracts": {
       "scenarios": "closed and open; prototypes excluded from all bank quotas",
-      "images": "one existing image copied to immutable content-addressed path; bytes verified at display and printing",
+      "images": "20 supports existants réemployés pour a6 A1 avec manifeste de provenance et copies immuables ; prototype technique distinct et onze obligations I encore à préparer.",
       "reference": "docs/grammaire/implementation/contrats-situations-images.md",
       "countedInBankCoverage": false
-    }
+    },
+    "reviewedNotionLevelPairs": 23
   }
 }

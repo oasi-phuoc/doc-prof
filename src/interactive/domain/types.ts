@@ -45,6 +45,7 @@ export type Question = {
   phraseImages?: PhraseImageClue[]
   phraseImagePrefix?:string
   phraseImageLabels?: boolean
+  grammarCountryGender?: 'masculin' | 'féminin' | 'pluriel'
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'

@@ -2,7 +2,8 @@
  * Tags des audios CO découpés / typés — **plusieurs tags possibles** sur une même piste
  * (ex. `scenario` + `court` pour un petit dialogue sélectionnable en ex. 1 et ex. 4).
  *
- * `scenario` = petit dialogue d’association (scénario + scène), une piste = une situation.
+ * `scenario` = dialogue cohérent lié à une scène relue ; une piste = une situation.
+ * Ce tag ne dépend ni du nombre de questions ni du format d’origine de l’exercice.
  * `court` = mini-extrait pour « 6 audios courts » (1 question tirée du pool de la piste).
  * `moyen` = extrait moyen pour « 3 audios moyens » (2 questions tirées du pool de la piste).
  * `long` = document long pour « audio complet » (N questions, défaut 5).

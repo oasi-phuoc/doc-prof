@@ -29,6 +29,7 @@ export function validGrammarUnit(value: unknown): value is GrammarUnit {
     !text(value.source.typeId) || !Number.isInteger(value.source.position) || Number(value.source.position)<0) return false
   if (value.givenVerb!==undefined && !text(value.givenVerb) || value.cue!==undefined && !text(value.cue) ||
     value.responseLines!==undefined && value.responseLines!==1 && value.responseLines!==2) return false
+  if (value.countryGender!==undefined && (value.kind!=='completion'||!['masculin','féminin','pluriel'].includes(String(value.countryGender)))) return false
   if (value.reference!==undefined && (!record(value.reference)||!text(value.reference.text)||
     !['masculine','feminine'].includes(String(value.reference.gender))||!['singular','plural'].includes(String(value.reference.number)))) return false
   if (value.imageSupports!==undefined && (!Array.isArray(value.imageSupports)||!value.imageSupports.length||value.imageSupports.length>3||

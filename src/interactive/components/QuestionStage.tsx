@@ -19,6 +19,7 @@ import { WordSequence } from './WordSequence'
 import {PhraseImageRow} from '@/components/math/PhraseImageRow'
 import './guided-oral.css'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
+import { GrammarCountryPrompt } from '@/components/grammar/GrammarCountryPrompt'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
 
@@ -69,7 +70,7 @@ export function QuestionStage({
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
           )}
-          <span className="ci-question-prompt">{q.prompt}</span>
+          <span className="ci-question-prompt"><GrammarCountryPrompt text={q.prompt} gender={q.grammarCountryGender}/></span>
         </h1>
         {q.matchingGroup && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}
         {q.context && (q.figure && q.context.length <= 240

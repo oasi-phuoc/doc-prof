@@ -1,0 +1,640 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "980a17a5c07a5cd6beb1ce55a3d87876aed226dc",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "980a17a5c07a5cd6beb1ce55a3d87876aed226dc",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 13
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-035-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sébastien. J’ai un superbe vélo. C’est le cadeau de mes parents pour mon anniversaire. J’ai aussi une nouvelle montre de la part de mes grands-parents et un bracelet offert par ma sœur. La fête c’est samedi à 16h00. Viens manger le gâteau d’anniversaire et passer un bel après-midi.",
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "63ffd4493ee0e85a7db031810c2d4a33af86ff58b0dc0c35ddb1a8138059081f",
+      "question": {
+        "enonce": "Quel cadeau sa sœur lui a-t-elle offert ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un bracelet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une bague",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un pendentif",
+            "correct": false
+          }
+        ],
+        "written_model": "Un bracelet"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
+      "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
+      "image_ids": [
+        "qcm-a1-bracelet",
+        "audit-context-bague-singuliere",
+        "qcm-a1-pendentif-eiffel-argent"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png",
+        "/lib/images/tcf/qcm-audit/audit-context-bague-singuliere.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-pendentif-eiffel-argent.png"
+      ],
+      "image_sha256": [
+        "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508",
+        "b905e40681120d37d13b2e83bcbef76781c8cac53c5df0492acdbb40b06871e2",
+        "c77882f8b997ceef37546d3cb2f9aa46de6235342062729406b8bbb9464f717e"
+      ],
+      "reason": "Le bracelet est le cadeau de la sœur ; le vélo vient des parents et la montre des grands-parents.",
+      "visual_review": "Un bracelet à maillons, une bague unique et un pendentif sur chaîne ; trois bijoux entiers distincts. Le motif du pendentif est un exemple de leurre, aucune préférence non dite n’est attribuée à Sébastien."
+    },
+    {
+      "key": "tcf-delf-actif-a1-047-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour madame, Bonjour jeune homme. Vous désirez ? Je voudrais un bijou pour ma sœur, s’il vous plaît. Quel âge a-t-elle ? Elle a 16 ans et elle aime les bracelets. Voici un beau bracelet. Il est beau mais il coûte combien ? Il est à 30 €. Oh, mais c’est cher ! Vous avez des bijoux moins chers ? J’ai des pendentifs. Vous avez un pendentif avec la tour Eiffel ? Oui, voici un pendentif. Il est en argent ? Oui, il est en argent. Il coûte combien ? Ce modèle est à 15 €. Très bien, je prends ce modèle. Vous voulez un paquet cadeau ? Oui merci, voici 20 €. Merci, alors 5 € à vous et votre paquet jeune homme. Merci madame et au revoir.",
+      "source_sha256": "451b119319631afb6fe4969604f0490647e999cd5a97c55dc24f2594a2b23b24",
+      "semantic_sha256": "ddcb17d1c274325ac1ce234879ca2aff06dd773d7318a48eb4789a22d2e1113d",
+      "question": {
+        "enonce": "Quel bijou choisit-il finalement ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un pendentif",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une bague",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un bracelet",
+            "correct": false
+          }
+        ],
+        "written_model": "Un pendentif"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
+      "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+      "image_ids": [
+        "qcm-a1-pendentif-eiffel-argent",
+        "audit-context-bague-singuliere",
+        "qcm-a1-bracelet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-pendentif-eiffel-argent.png",
+        "/lib/images/tcf/qcm-audit/audit-context-bague-singuliere.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bracelet.png"
+      ],
+      "image_sha256": [
+        "c77882f8b997ceef37546d3cb2f9aa46de6235342062729406b8bbb9464f717e",
+        "b905e40681120d37d13b2e83bcbef76781c8cac53c5df0492acdbb40b06871e2",
+        "4d335f0a57c7cd0e16f7860863f81660fdc93e41cecaceeb8ac2488470b71508"
+      ],
+      "reason": "Le client refuse le bracelet trop cher et choisit le pendentif Tour Eiffel en argent.",
+      "visual_review": "Le pendentif conserve le motif Tour Eiffel et le métal argenté explicitement décrits. Bague et bracelet distincts, sans prix ni quantité d’argent représentée."
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-06#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour un été à la mode venez essayer les nouveaux modèles de lunettes de soleil.",
+      "source_sha256": "c31bc02fd78570112d8f3a387142eca647f8e74fab1f3a995d596e02906b1c42",
+      "semantic_sha256": "9ec97eeb06d5cd6621f592d56432ab1fb16d1df6ad9a73662f36e1df45028ef8",
+      "question": {
+        "enonce": "Quel accessoire peut-on essayer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des lunettes de soleil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des chapeaux",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des montres",
+            "correct": false
+          }
+        ],
+        "written_model": "Des lunettes de soleil"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-06.mp3",
+      "audio_sha256": "71c1fc7c2b22b42082ebc8b84efba213983466828ee11aacbd84d72e553e893d",
+      "image_ids": [
+        "vocab-lunettes-soleil",
+        "extension573-chapeaux-pluriel",
+        "qcm-a1-montres-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-lunettes-soleil.webp",
+        "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-montres-pluriel.png"
+      ],
+      "image_sha256": [
+        "cd8d28b76764dda7d88781c7fd11efe6d7ed4db5f4901c9af43b1f2e8cd51ab8",
+        "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2",
+        "f23f1493b61f0eb992faa0b34ce0dd775883f79f120827291c724f0d32f34453"
+      ],
+      "reason": "L’annonce propose d’essayer les nouveaux modèles de lunettes de soleil.",
+      "visual_review": "Une paire de lunettes de soleil, trois chapeaux et trois montres : pluriels physiques ou grammaticaux respectés. Les montres ne sont pas utilisées comme cadrans répondant à une heure."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-05-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Clara, quand tu viens chez moi en Savoie pendant les vacances d’hiver, apporte ton jeu de cartes et ta clé USB avec de la musique. Carlos lui, apporte ses DVD pour nos soirées cinéma. On va jouer aussi avec mon nouveau jeu vidéo. On va passer de super vacances.",
+      "source_sha256": "e2f6727a56b7c3ee6e275a3499b6d6e03e9226c8cf870cbcb09b4068dab2e44e",
+      "semantic_sha256": "0239b2b89bdaacd66ce3eae5814f58b1aa7760a5fd74d92d0ad234646db41515",
+      "question": {
+        "enonce": "Sur quel support doit-elle apporter de la musique ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une clé USB",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un CD",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une cassette",
+            "correct": false
+          }
+        ],
+        "written_model": "Une clé USB"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-05-01.mp3",
+      "audio_sha256": "ee2fbc9175429a3711d29794e46a38372dcc54dee2d34c7e05930c0144af1240",
+      "image_ids": [
+        "extension573-cle-usb",
+        "4b22b570e1e4",
+        "qcm-a1-cassette-audio"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cle-usb.png",
+        "/lib/images/tcf/qcm-audit/4b22b570e1e4.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cassette-audio.png"
+      ],
+      "image_sha256": [
+        "4d57eb18b45cfd86973143794b60851c774ff8a567f158c3f41a6b68944ef8b7",
+        "34f9cf448164ccd528d35505111be49a1b6d0ecb263841931314feb96f4c0360",
+        "c23ec89c07587f7bbcf1259f44cabfd7a7658f3b0843e391a566ed813d1faf66"
+      ],
+      "reason": "Clara doit apporter sa clé USB avec de la musique, tandis que Carlos apporte les DVD.",
+      "visual_review": "Une clé USB seule, un CD avec boîtier et une cassette audio à bande ; trois supports distincts. La cassette vidéo VHS et le lecteur DVD sont écartés."
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-04-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour à tous. Un peu de silence s’il vous plaît. Ouvrez le livre à la page 16. Léna tu peux commencer ? Madame, je n’ai pas mon livre.",
+      "source_sha256": "407fc75c73507307f74690525e7bfe3f14864fbc171d489772b8689aab8f9cd1",
+      "semantic_sha256": "670546f449684fd2bcdccbe33d4843bde753092f09ceaa24a7db8f5495b31b9d",
+      "question": {
+        "enonce": "Quel objet Léna n’a-t-elle pas avec elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son livre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son cahier",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sa trousse",
+            "correct": false
+          }
+        ],
+        "written_model": "Son livre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-02.mp3",
+      "audio_sha256": "f7a6fe7e28b11817b3da12d6e176138c51e9c8471f4602068c176bfe610a4f68",
+      "image_ids": [
+        "extension573-livre-lecture",
+        "co306-cahier-dessine",
+        "vocab-trousse"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-livre-lecture.png",
+        "/lib/images/tcf/qcm-audit/co306-cahier-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trousse.webp"
+      ],
+      "image_sha256": [
+        "ec628ec5590b667ceebef330c329ebb412f94c7579c275a39164f99a4d7f9acb",
+        "2684f0cd8700af31abf18fefa1af9fa66c2a6e1a63aacb72c71ab76033072d97",
+        "e33fd8537df50e0bc0c197205747ba3ec20d72b997b768f3a52d0c87e95e7881"
+      ],
+      "reason": "Léna dit ne pas avoir son livre quand la professeure demande de l’ouvrir.",
+      "visual_review": "Livre ouvert à paragraphes, cahier à spirale et trousse scolaire à fermeture ; un exemplaire de chaque, pas une trousse de toilette."
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-04-04#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+      "source_sha256": "cbb64e636c4a5d8f0c7a504bbe1b13db9111450ceec91d46707e75c24bca3b67",
+      "semantic_sha256": "186f8a66a943a0cac01b60c8c8d1c609353aeae976458d7d6d24b436d2959eda",
+      "question": {
+        "enonce": "Quel objet l’élève cherche-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son sac",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son livre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son téléphone",
+            "correct": false
+          }
+        ],
+        "written_model": "Son sac"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+      "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+      "image_ids": [
+        "vocab-sac-dos",
+        "extension573-livre-lecture",
+        "co834-telephone-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-sac-dos.webp",
+        "/lib/images/tcf/qcm-audit/extension573-livre-lecture.png",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "image_sha256": [
+        "39fecb91cc22acc3046157be1a637a432a00c481f181b4bfd4927c5bc474b16e",
+        "ec628ec5590b667ceebef330c329ebb412f94c7579c275a39164f99a4d7f9acb",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "reason": "L’élève cherche son sac au vestiaire ; il se trouve sous le blouson bleu.",
+      "visual_review": "Un sac à dos scolaire entier illustre la catégorie sac, puis livre et téléphone seuls ; le bleu du blouson n’est pas présenté comme une information sur la couleur du sac."
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-04-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour toi aussi du poisson avec des légumes ? Je veux bien du poisson mais avec du riz. Voilà ton poisson et ton riz. Je te mets de la sauce ?",
+      "source_sha256": "d6de28f6ab6f97f6baa30a4861a93d2f5db40684efaba12f7e07f88bee5be3b6",
+      "semantic_sha256": "7cc6642aec7e02298564c1c81b1a3fd47cb5ccff49174368a0327a4628259f16",
+      "question": {
+        "enonce": "Quel aliment principal la personne choisit-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du poisson",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du poulet",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du bœuf",
+            "correct": false
+          }
+        ],
+        "written_model": "Du poisson"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+      "image_ids": [
+        "co834-poisson-riz-dessine",
+        "vocab-poulet",
+        "extension573-roti-boeuf"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-poisson-riz-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-poulet.webp",
+        "/lib/images/tcf/qcm-audit/extension573-roti-boeuf.webp"
+      ],
+      "image_sha256": [
+        "356cdd21e65e27be90da7c1686b5ccb57b53071b414ed6eeedb0df866abaa387",
+        "9c2647e1160f1094d61160adc24ca7ebf523eb6b94b4f3d815ea3c36069eba01",
+        "e1c38ddd292344219c701d740b06c2de6d9283ed3474326a539c282380b0139e"
+      ],
+      "reason": "La personne veut du poisson avec du riz, au lieu des légumes d’abord proposés.",
+      "visual_review": "Poisson cuisiné avec riz conforme au choix final, poulet rôti et rôti de bœuf ; trois aliments de repas. L’image de poisson grillé avec carottes est écartée car la personne demande du riz."
+    },
+    {
+      "key": "tcf-delf-actif-a1-045#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Nous allons au marché.\nVous me donnez votre numéro de téléphone ?\nJe n’ai pas son adresse.\nElle s’appelle comment ?\nQue faites-vous ce matin ?\nIl est déjà 10 heures.\nÀ quelle heure rentrez-vous ?\nIl est brésilien.\nIl faut acheter des pommes.\nQue voulez-vous faire demain ?",
+      "source_sha256": "a52178f2282735fbcddcfc17b26c645b03b4ab11a2c56503f37af69f0544af87",
+      "semantic_sha256": "68afc71744a0934259c5cfd07d36caa48a4c9838a8075cfc4c63515bca1deba7",
+      "question": {
+        "enonce": "Quel lieu est cité comme destination ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le marché",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le musée",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le stade",
+            "correct": false
+          }
+        ],
+        "written_model": "Le marché"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-045.mp3",
+      "audio_sha256": "166c41ca57a17dac1d9f1d1f7652982179e6107bcc05cdc0826c97a5f8cd6a1e",
+      "image_ids": [
+        "retained-20261107-c98f6a0464f3",
+        "co306-musee-dessine",
+        "co834-aller-stade-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/marche.webp",
+        "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp"
+      ],
+      "image_sha256": [
+        "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be",
+        "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843",
+        "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6"
+      ],
+      "reason": "La première phrase isolée de la séquence est « Nous allons au marché ».",
+      "visual_review": "Étals alimentaires, galerie de musée et terrain à gradins ; le marché commerçant est distingué de la marche à pied. Les autres phrases isolées de la piste ne sont pas inventées comme une même histoire."
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-04#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Madame c’est la semaine prochaine qu’on va visiter l’exposition de Matisse ? Oui et aujourd’hui je vais vous montrer ses tableaux et ses dessins. Je vais vous parler aussi de ce peintre.",
+      "source_sha256": "6369523cd160f1d3b439b22bc7ea914a84c922eeea7496bf687ea495bfba313d",
+      "semantic_sha256": "b79b89fc4eaf2e150cf4ca460e54fa1119acd14e21d94fc02348dbe4b5650098",
+      "question": {
+        "enonce": "Quel métier cet artiste exerce-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Peintre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Musicien",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Écrivain",
+            "correct": false
+          }
+        ],
+        "written_model": "Peintre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-04.mp3",
+      "audio_sha256": "e6431956551195d521e833affdb67ae64b635a3ebf5bffbd4773284e19ee94ac",
+      "image_ids": [
+        "catalogue-20261113-metier-peintre-artiste",
+        "catalogue-20261113-metier-musicien",
+        "catalogue-20261113-metier-ecrivain"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/peintre-artiste.webp",
+        "/lib/images/tcf/catalogue/metiers/musicien.webp",
+        "/lib/images/tcf/catalogue/metiers/ecrivain.webp"
+      ],
+      "image_sha256": [
+        "3f21a22a28090180bcad31d48f332313bbf0e7de2b3128a023df7af203960724",
+        "264574bac6e102e4ad577d7b298e408752a9e066d7125df33afd0ee2a4b3c8ba",
+        "5ca96cd58e4c6bf643b2971e9101e603f185217788e6feed5d5879c6546706d0"
+      ],
+      "reason": "La professeure annonce les tableaux et dessins de Matisse et dit parler de ce peintre.",
+      "visual_review": "Peinture au chevalet, pratique musicale et rédaction de manuscrit ; métiers représentés par leur activité. Les personnes et le tableau illustratifs ne sont pas présentés comme les portraits ou les œuvres de Matisse. Le peintre en bâtiment est écarté."
+    },
+    {
+      "key": "tcf-delf-actif-a1-019-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Dimanche à 9h45 on va faire du jogging dans le parc près du stade.",
+      "source_sha256": "b601780d8699902eee8a242ccaff76b248c24f80d9cc84ca9c641da48701fbfb",
+      "semantic_sha256": "6fe46cd8a064dd93ca0477565a0c9ebccfd13d8c4d0cb5d253c00dc37cc0982d",
+      "question": {
+        "enonce": "Quelle activité est prévue ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du jogging",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du tennis",
+            "correct": false
+          }
+        ],
+        "written_model": "Du jogging"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-01.mp3",
+      "audio_sha256": "e49455c9a7542ca299bfe327d62fb32207bc0a704dd6b31f9615cd94011a6e5e",
+      "image_ids": [
+        "co306-courir-dessine",
+        "co306-faire-velo-dessine",
+        "co834-scene-famille-leurre-2"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp"
+      ],
+      "image_sha256": [
+        "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b",
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "2e91648e03ea1847d24ac46f663c2f631bc703ec064de001b4f371d1b082a094"
+      ],
+      "reason": "Le rendez-vous est prévu pour faire du jogging dans le parc près du stade.",
+      "visual_review": "Course douce dans un parc, cycliste à vélo et partie de tennis ; activités et corps utiles entiers. La première proposition de tennis dont une chaussure était coupée est écartée au profit de la scène complète déjà en banque."
+    },
+    {
+      "key": "tcf-delf-actif-a1-044-04#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pendant votre temps libre, que faites-vous avec vos copains ? Nous faisons du vélo et des promenades. Ça me plaît. Et vous ne faites pas les magasins ? Ah non ! j’ai horreur de ça !",
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "semantic_sha256": "a6035e62708d0f7bf622d5e3eefbd9203924a5080b2ff9f112f9e50ddd034ecc",
+      "question": {
+        "enonce": "Quelle activité à pied aiment-ils ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les promenades",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le jogging",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La randonnée en montagne",
+            "correct": false
+          }
+        ],
+        "written_model": "Les promenades"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+      "image_ids": [
+        "co306-faire-promenade-dessine",
+        "co306-courir-dessine",
+        "vocab-randonnee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-randonnee.webp"
+      ],
+      "image_sha256": [
+        "df61225be45134f696668dbfcb00b1c2376da9151b7d44b7c7793ddf97e8622f",
+        "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b",
+        "4f2ef4747a6bbb84139138a5381117fee4104ccac312a8bf1312670560a9d530"
+      ],
+      "reason": "La personne aime faire des promenades avec ses copains, ainsi que du vélo.",
+      "visual_review": "Promenade paisible à pied, jogging en tenue sportive et randonnée équipée en montagne ; les trois activités sont distinctes. Personnages génériques sans identité attribuée aux locuteurs."
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous aimez lire ?\nAllez-vous à l’école demain ?\nPourquoi prenez-vous le bus ?\nEst-ce que vous mangez au self à midi ?\nOù achetez-vous des fruits ?\nAimez-vous la mer ?\nEst-ce que vous connaissez Paris ?\nVous habitez à la campagne ?\nEst-ce que vous avez un vélo ?\nVous faites du sport ?",
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "6aea787617fdf853f7f2c03a0354bef4bd2e657fef7e80c6e5b10e4a74cdf058",
+      "question": {
+        "enonce": "Quelle activité est citée dans la dernière question ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le sport",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La musique",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La cuisine",
+            "correct": false
+          }
+        ],
+        "written_model": "Le sport"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
+      "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
+      "image_ids": [
+        "co306-courir-dessine",
+        "catalogue-20261113-metier-musicien",
+        "vocab-cuisiner"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+        "/lib/images/tcf/catalogue/metiers/musicien.webp",
+        "/lib/images/tcf/qcm-audit/vocab-cuisiner.webp"
+      ],
+      "image_sha256": [
+        "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b",
+        "264574bac6e102e4ad577d7b298e408752a9e066d7125df33afd0ee2a4b3c8ba",
+        "26b36795a1579d518cf9806bbccbf952aa4ecca1e91006c7a5c4d32cdb109601"
+      ],
+      "reason": "La dernière question isolée de la piste est « Vous faites du sport ? ».",
+      "visual_review": "Pratique sportive illustrée par le jogging, musique par une personne jouant d’un instrument, cuisine par la préparation d’un repas. Il s’agit des catégories d’activité, pas des portraits ou des loisirs affirmés d’un interlocuteur."
+    },
+    {
+      "key": "tcf-delf-actif-a1-040-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "On achète quoi pour l’anniversaire de Mme Dubois ? C’est demain et on n’a pas de cadeau. Elle aime les fleurs mais ma mère conseille un parfum. Ou alors on peut prendre un foulard. Rappelle- moi, je suis dans le centre -ville, je peux m’occuper du cadeau.",
+      "source_sha256": "821ad8e191e838d723c87473035a197d82b307ca98860b3521c4d160a296ec2b",
+      "semantic_sha256": "5bf777f444d6f41f082f4a5635ebdd3379b4925996aaca1b3da68938d331d285",
+      "question": {
+        "enonce": "Qu’aime Madame Dubois ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les fleurs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les bijoux",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les livres",
+            "correct": false
+          }
+        ],
+        "written_model": "Les fleurs"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-040-01.mp3",
+      "audio_sha256": "e74f7f97d6eb0e2073e3c353f097c28b60108c33dc2bd4ed2c811516690670eb",
+      "image_ids": [
+        "co834-bouquet-fleurs-dessine",
+        "co306-bracelets-dessine",
+        "co834-livres-dessines"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bouquet-fleurs-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bracelets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp"
+      ],
+      "image_sha256": [
+        "298c7360cece03dfde1d8fb0d9c1ac005316a67ad691824bc53561317703e3b1",
+        "2bfb21e50366525a6b70a691500b71cd816cefc877258020c9a48d09ca418b4a",
+        "1d06d1a07f1cbed1152ba0e2b88551fb6fdc0b2d52187279cb11b3d7245c7f0e"
+      ],
+      "reason": "Le message dit que Madame Dubois aime les fleurs, avant de proposer aussi parfum ou foulard comme cadeau.",
+      "visual_review": "Bouquet de fleurs, deux bracelets représentant des bijoux au pluriel et trois livres ; trois familles d’objets distinctes. Les propositions de parfum et foulard ne sont pas prises pour ses goûts confirmés."
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Scénarios CO du TCF CFR — A2
 
+Mise à jour du 14 novembre : cet inventaire du 13 couvre les illustrations de toutes les pistes A2, y compris annonces et messages. Pour l’éligibilité au **tirage de quatre scénarios**, voir le [classement relu et les nouvelles liaisons](../tcf/scenarios-audio-20261114.md). Sept scènes A1/A2 ont depuis été générées ; les compteurs de préparation ci-dessous décrivent l’inventaire du 13, pas le nombre actuel de dialogues sélectionnables.
+
 Le TCF CFR utilise la banque **A1-A2**. Cet inventaire ne mélange pas les exercices A2-B1 du TPF.
 
 379 exercices et **563 pistes distinctes** sont répertoriés avec leur transcription exacte. Les **8 scènes déjà associées** et leurs **4 leurres** sont repérables sous « Scénario » et « CO CFR A2 ». Un réemploi supplémentaire contrôlé illustre l’appel de réservation d’hôtel.
@@ -8,7 +10,7 @@ Le TCF CFR utilise la banque **A1-A2**. Cet inventaire ne mélange pas les exerc
 
 Les recherches dans les légendes et thèmes ne prouvent pas qu’une image convient : les candidats restent à voir. Une image de dentiste en train de soigner ne remplace pas un appel de son secrétariat ; une boutique ouverte ne représente pas une fermeture ; un téléphone seul ne remplace pas une scène de conversation.
 
-Le quota d’images est atteint. Reprise annoncée le **14 novembre 2026 vers 14 h 31, heure de Zurich**. Aucune nouvelle image n’est annoncée comme générée par cet audit. Les associations, réponses QCM et tags audio restent ceux de la banque existante.
+Observation du 13 novembre : le quota d’images était atteint, avec une reprise alors annoncée le 14 novembre vers 14 h 31, heure de Zurich. Ce blocage n’est plus l’état courant : la reprise du 14 a produit sept scènes et élargi les tags de scénarios. Cet inventaire seul ne vaut pas validation d’une scène pour un dialogue.
 
 [Inventaire CSV des pistes](inventaire-co-cfr-a2-20261113.csv) · [Audit complet et candidats](scenarios-co-cfr-a2-20261113.json) · [File de préparation](preparation-scenarios-co-cfr-a2-20261113.json)
 

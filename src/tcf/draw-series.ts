@@ -7,7 +7,6 @@ import {
   tcfScenarioAudioEntries,
   type TcfAudioEntry,
 } from './audio-bank'
-import { isTcfCoAssociation } from './association-audio'
 import { associationThemedDecoyImages } from './association-image-themes'
 import { resolveTcfAudioReference } from './audio-replacements'
 import {
@@ -104,26 +103,21 @@ type DialogueUnit = {
   image: string
   sourceId: string
   niveau: TcfNiveau
+  sceneKey: string
 }
 
 function associationDialoguePool(): DialogueUnit[] {
   const out: DialogueUnit[] = []
   for (const entry of tcfScenarioAudioEntries(tcfBankAllLevels('CO'))) {
-    if (!isTcfCoAssociation(entry.exercise) || entry.dialogueIndex == null) continue
-    const ex = entry.exercise
-    const sit = ex.situations.find((s) => s.dialogue === entry.dialogueIndex)
-    if (!sit?.image.trim()) continue
-    const trRaw = ex.support.transcription
-    const trs = Array.isArray(trRaw)
-      ? trRaw.map((t) => String(t))
-      : [String(trRaw ?? '')]
-    const idx = entry.dialogueIndex - 1
+    const scene = entry.scenarioScene
+    if (!scene) continue
     out.push({
       audio: entry.audio,
-      transcription: (trs[idx] ?? '').trim(),
-      image: sit.image.trim(),
-      sourceId: ex.id,
-      niveau: ex.niveau,
+      transcription: scene.transcription,
+      image: scene.image,
+      sceneKey: scene.sceneKey,
+      sourceId: entry.exercise.id,
+      niveau: entry.exercise.niveau,
     })
   }
   const seen = new Set<string>()
@@ -136,7 +130,7 @@ function associationDialoguePool(): DialogueUnit[] {
 
 function enoughDialogueUnits(niveau: TcfNiveau, items: DialogueUnit[], min: number): DialogueUnit[] {
   const here = items.filter((u) => u.niveau === niveau)
-  return here.length >= min ? here : items
+  return new Set(here.map((u) => u.sceneKey)).size >= min ? here : items
 }
 
 /** Résout N unités scénario : chemins épinglés d’abord, puis tirage. */
@@ -150,13 +144,18 @@ function pickDialogueSlots(
   if (fillPool.length < count && !(pinned?.some((p) => p?.trim()))) return null
   const byPath = new Map(lookupPool.map((u) => [u.audio, u]))
   const used = new Set<string>()
+  const usedImages = new Set<string>()
+  const usedScenes = new Set<string>()
   const out: Array<DialogueUnit | null> = Array.from({ length: count }, () => null)
   for (let i = 0; i < count; i++) {
     const path = resolveTcfAudioReference(pinned?.[i])
     const pinnedUnit = path ? byPath.get(path) : undefined
+    if (pinnedUnit && (used.has(pinnedUnit.audio) || usedImages.has(pinnedUnit.image) || usedScenes.has(pinnedUnit.sceneKey))) return null
     if (pinnedUnit && !used.has(pinnedUnit.audio)) {
       out[i] = pinnedUnit
       used.add(pinnedUnit.audio)
+      usedImages.add(pinnedUnit.image)
+      usedScenes.add(pinnedUnit.sceneKey)
     }
   }
   const remaining = shuffle(
@@ -166,10 +165,18 @@ function pickDialogueSlots(
   let ri = 0
   for (let i = 0; i < count; i++) {
     if (out[i]) continue
-    const next = remaining[ri++]
+    let next: DialogueUnit | undefined
+    while (ri < remaining.length) {
+      const candidate = remaining[ri++]!
+      if (usedImages.has(candidate.image) || usedScenes.has(candidate.sceneKey)) continue
+      next = candidate
+      break
+    }
     if (!next) return null
     out[i] = next
     used.add(next.audio)
+    usedImages.add(next.image)
+    usedScenes.add(next.sceneKey)
   }
   return out as DialogueUnit[]
 }
@@ -185,13 +192,23 @@ export function drawAssociationCompose(
 ): TcfCoAssociation | null {
   const all = associationDialoguePool()
   const pool = enoughDialogueUnits(niveau, all, 4)
-  const picked = pickDialogueSlots(pool, 4, rng, opts.audioSlots, all)
+  let picked: DialogueUnit[] | null = null
+  let leurrePool: string[] = []
+  // Retain pinned recordings while trying another fill if a combination has
+  // fewer than two valid decoys; never fall back to an unrelated illustration.
+  for (let attempt = 0; attempt < 16; attempt++) {
+    const candidate = pickDialogueSlots(pool, 4, rng, opts.audioSlots, all)
+    if (!candidate) return null
+    const available = associationThemedDecoyImages(candidate)
+    if (available.length < 2) continue
+    picked = candidate
+    leurrePool = available
+    break
+  }
   if (!picked) return null
   const usedImages = new Set(picked.map((u) => u.image))
   if (usedImages.size !== picked.length) return null
   // Réemplois contrôlés : thème entendu, concept absent, source inchangée.
-  const leurrePool = associationThemedDecoyImages(picked)
-  if (leurrePool.length < 2) return null
   const leurres = shuffle(rng, leurrePool).slice(0, 2)
 
   const matched: TcfSituation[] = picked.map((u, i) => ({

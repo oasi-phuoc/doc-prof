@@ -7,17 +7,17 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 4280,
+    "reviewedResponseVariants": 6130,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 3310,
-    "reviewedSelectableUnits": 3310,
+    "reviewedActivityUnits": 4760,
+    "reviewedSelectableUnits": 4760,
     "reviewedDocuments": 60,
     "reviewedDocumentQuestions": 180,
-    "reviewedActivities": 62,
-    "reviewedOfferings": 85,
+    "reviewedActivities": 89,
+    "reviewedOfferings": 122,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 14,
-    "reviewedNotionLevelPairs": 17
+    "reviewedNotions": 19,
+    "reviewedNotionLevelPairs": 23
   },
   "browser": {
     "results": [
@@ -66,24 +66,24 @@
     ],
     "errors": []
   },
-  "remaining": "Toutes les offres A1 du thème Conjuguer au présent sont en pilote ; cinq offres A2 des autres négations restent à préparer dans ce thème. Au total 516 offres et 362 activités sont sans banque pilote. Approbation enseignante des 85 pilotes en attente ; voir avancement-20261114.md.",
+  "remaining": "Se présenter : 13 offres sur 40 en pilote ; restent identité (11), nationalités (8), famille (8). 479 offres et 335 activités restent sans banque pilote. Approbation enseignante en attente pour tous les pilotes ; onze obligations I, révisions et recette finale à compléter.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
       "result": "passed",
-      "validatedAtUpstream": "73a261b5"
+      "validatedAtUpstream": "683c7bdf"
     },
     "legacyAndCo": {
       "command": "node scripts/grammar-baseline.cjs",
       "result": "passed",
       "fixtures": 735,
       "protectedFiles": 256,
-      "validatedAtUpstream": "73a261b5"
+      "validatedAtUpstream": "683c7bdf"
     },
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 4280,
+      "reviewedVariants": 6130,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
@@ -96,14 +96,14 @@
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
       "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
-      "reviewedActivityOfferings": 85,
+      "reviewedActivityOfferings": 122,
       "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension",
       "g3Notions": [
         "avoir A1",
         "aller-destination A1",
         "er A1"
       ],
-      "validatedAtUpstream": "73a261b5"
+      "validatedAtUpstream": "683c7bdf"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -479,9 +479,267 @@
       "generatedAudios": 0,
       "fullPrevious63BrowserAtUpstream": "165f1027",
       "all85OnSingleBaseClaimed": false
+    },
+    "negationA2": {
+      "upstream": "af120baf",
+      "commands": [
+        "npm run test:grammar:negation-a2",
+        "npm run test:grammar:negation-a2:browser"
+      ],
+      "result": "passed",
+      "newActivities": 2,
+      "newOfferings": 5,
+      "selectableUnits": 200,
+      "responseVariants": 250,
+      "distinctContexts": 50,
+      "forms": [
+        "jamais",
+        "plus",
+        "pas encore",
+        "rien",
+        "personne",
+        "aucun",
+        "aucune"
+      ],
+      "humanApproval": "pending",
+      "a1UnchangedCanonicalSha256": "ee3108bd083bdd95137bb9693da9461626d5b9428e747e8de91ecf0a402a3156",
+      "a4Fix": "Long cues reserve extra gap correction space independently of explanation length; frozen IDs and order preserved.",
+      "previousBankUnitsAffectedByLayoutFix": 0,
+      "browserPresentations": 8,
+      "newA2Presentations": 5,
+      "printedQuestions": 800,
+      "newA2PrintedQuestions": 500,
+      "classroomTransform": "source and semantic directive preserved, human assessment",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-negation-a2-build --emptyOutDir",
+      "generatedImages": 0,
+      "generatedAudios": 0,
+      "full90OnSingleBaseClaimed": false
+    },
+    "guidedOralIntegration": {
+      "upstream": "af120baf",
+      "preserved": "Guided oral support and drag-and-drop added upstream",
+      "unitCommand": "node --test tests/interactive/guided-oral.test.mjs tests/interactive/source-adapters.test.mjs",
+      "unitFilesPassed": 2,
+      "browser": {
+        "results": [
+          {
+            "sub": "modaux",
+            "level": "A1",
+            "presentation": "order",
+            "sheets": 26,
+            "printedQuestions": 100,
+            "overflow": false
+          },
+          {
+            "sub": "modaux",
+            "level": "A1",
+            "presentation": "scenario-set",
+            "sheets": 100,
+            "printedQuestions": 100,
+            "overflow": false
+          },
+          {
+            "sub": "modaux",
+            "classroomLaunch": "passed",
+            "selectedQuestions": 3,
+            "teacherLed": true
+          },
+          {
+            "sub": "pronominaux",
+            "level": "A1",
+            "presentation": "order",
+            "sheets": 26,
+            "printedQuestions": 100,
+            "overflow": false
+          },
+          {
+            "sub": "pronominaux",
+            "classroomLaunch": "passed",
+            "selectedQuestions": 3,
+            "teacherLed": true
+          }
+        ],
+        "errors": []
+      },
+      "browserPresentations": 3,
+      "printedQuestions": 300,
+      "classroomLaunches": 2
+    },
+    "negationA2PostIntegration": {
+      "upstream": "6491cdad",
+      "changes": "TCF contextual review and question corrections; no grammar, generator or interactive runtime differences from af120baf upstream.",
+      "typeScript": "passed",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "reviewedResponseVariants": 4530,
+      "negationA2Contracts": "passed",
+      "browserAtUpstream": "af120baf",
+      "productionBuildAtUpstream": "af120baf"
+    },
+    "contactA1": {
+      "upstream": "adf7e688",
+      "commands": [
+        "npm run test:grammar:contact",
+        "npm run test:grammar:contact:browser"
+      ],
+      "result": "passed",
+      "activities": 16,
+      "offerings": 19,
+      "selectableUnits": 800,
+      "responseVariants": 950,
+      "humanApproval": "pending",
+      "sourceReuse": "Historical sources retained; explicit register cues, clarified situations and curated ambiguous alternatives in the new banks.",
+      "matching": "50 complete problems per notion; 2 distinct forms for tu/vous, 3 for greetings/politeness; canonical source IDs preserved.",
+      "classroomMatchingSteps": {
+        "b1": 100,
+        "b2": 150,
+        "b3": 150
+      },
+      "openAssessment": "non-exclusive models and criteria in correction; no automatic grading",
+      "uiRouting": "curriculum-o recognized and scoped to salutations; graded order filters visible outside the present theme",
+      "a4Fixes": [
+        "Register/context cues reserve space even without a verb hint",
+        "Long sets of three association contexts reserve correction space"
+      ],
+      "browserPresentations": 19,
+      "printedQuestions": 1900,
+      "classroomLaunches": 6,
+      "browserErrors": 0,
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-contact-build --emptyOutDir",
+      "full109OnSingleBaseClaimed": false,
+      "generatedImages": 0,
+      "generatedAudios": 0
+    },
+    "presentationA1": {
+      "upstream": "a49a9297",
+      "coreValidatedAtUpstream": "683c7bdf",
+      "commands": [
+        "npm run test:grammar:presentation",
+        "npm run test:grammar:presentation:browser"
+      ],
+      "result": "passed",
+      "activities": 9,
+      "offerings": 13,
+      "selectableUnits": 450,
+      "responseVariants": 650,
+      "humanApproval": "pending",
+      "sourceReuse": "50 historical subject-pronoun completions curated; 50 nominal-subject transformations; 50 provenance contexts shared across task contracts. Counts do not represent 450 new stories.",
+      "matching": "50 full problems of three distinct forms per notion, with canonical source IDs; Je/J’ are not competing persons.",
+      "images": {
+        "existingFilesReused": 20,
+        "countryFiles": 17,
+        "personFiles": 3,
+        "manifest": "docs/grammaire/implementation/presentation-media.json",
+        "generated": 0,
+        "rejectedJapan": "Historical flag colors reversed; original left untouched, excluded from the pilot.",
+        "integrity": "Unchanged source bytes, immutable hash paths, dimensions and alt text; verified before display and printing.",
+        "writtenProduction": "Two images per unit: person/reference and country; provenance and nationality explicitly supplied as separate fictitious facts."
+      },
+      "countryGender": "Dedicated field; colored parentheses immediately after the blank on paper and in classroom, retained as text in the reading dialog.",
+      "a4Fix": "Paired reference images have a 32 mm maximum height, retaining all facts, three writing lines, model and rubric; the prior maximum produced a 2.45 px overflow.",
+      "openAssessment": "Role, interlocutor, intention, return question and follow-up; non-exclusive examples, teacher rubric, no automatic score.",
+      "browserPresentations": 13,
+      "printedQuestions": 1300,
+      "printedImages": 400,
+      "classroomLaunches": 6,
+      "browserErrors": 0,
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-presentation-build --emptyOutDir",
+      "sharedAdapterTests": "source-adapters and guided-oral: two test files passed on a49a9297",
+      "technicalMediaContractsBrowser": {
+        "results": [
+          {
+            "case": "closed",
+            "presentation": "scenario-set",
+            "responses": 4,
+            "printedResponses": 8,
+            "sheets": 6,
+            "overflow": false
+          },
+          {
+            "scenarioBreak": "reversible; all four child IDs preserved"
+          },
+          {
+            "classroom": "closed",
+            "status": "passed"
+          },
+          {
+            "case": "open",
+            "presentation": "scenario-set",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "classroom": "open",
+            "status": "passed"
+          },
+          {
+            "case": "imageChoice",
+            "presentation": "choice",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "classroom": "imageChoice",
+            "status": "passed"
+          },
+          {
+            "case": "imageChoice",
+            "presentation": "gap",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "case": "imageWriting",
+            "presentation": "open-written",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "imageFailure": "changed",
+            "status": "diagnostic shown; no replacement image"
+          },
+          {
+            "imageFailure": "missing",
+            "status": "diagnostic shown; no replacement image"
+          },
+          {
+            "printReadiness": "waits for verified and decoded image bytes; changed/missing images block the print button"
+          }
+        ],
+        "errors": []
+      },
+      "full122OnSingleBaseClaimed": false,
+      "generatedAudios": 0,
+      "testHarness": "Image readiness counts all A4 sheets, then only visible classroom references; hidden zoom-dialog copies are excluded."
+    },
+    "presentationPostIntegration": {
+      "upstream": "683c7bdf",
+      "integration": "TCF scenarios, audio classification, gallery/audio indexes and scripts; no grammar, generator or shared interactive runtime changes upstream.",
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "reviewedResponseVariants": 6130,
+      "grammarContracts": "passed",
+      "presentationContracts": "passed",
+      "browserAtUpstream": "a49a9297",
+      "full122OnSingleBaseClaimed": false
     }
   },
-  "upstreamIntegrated": "73a261b5",
+  "upstreamIntegrated": "adf7e688",
   "lastValidatedDate": "2026-11-14",
   "browserM5": {
     "results": [
@@ -1242,6 +1500,431 @@
         "classroomLaunch": "passed",
         "selectedQuestions": 3,
         "teacherLed": false
+      }
+    ],
+    "errors": []
+  },
+  "browserNegationA2": {
+    "results": [
+      {
+        "levelSwitch": "A1 ↔ A2 keeps the presentation; legacy remains available"
+      },
+      {
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "order",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "classroomTransform": "source, context and directive preserved; teacher assessed",
+        "selectedQuestions": 3
+      }
+    ],
+    "errors": []
+  },
+  "browserContact": {
+    "results": [
+      {
+        "sub": "b1",
+        "level": "A1",
+        "presentation": "gap-only",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b1",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b1",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b1",
+        "level": "A1",
+        "presentation": "match",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b1",
+        "level": "A1",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b1",
+        "level": "A1",
+        "presentation": "scenario-set",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b1",
+        "classroom": "matching",
+        "sourceProblems": 3,
+        "gameQuestions": 6,
+        "status": "passed"
+      },
+      {
+        "sub": "b1",
+        "classroom": "scenario",
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "status": "passed"
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "open-written",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "match",
+        "sheets": 98,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "level": "A1",
+        "presentation": "scenario-set",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b2",
+        "classroom": "matching",
+        "sourceProblems": 3,
+        "gameQuestions": 9,
+        "status": "passed"
+      },
+      {
+        "sub": "b2",
+        "classroom": "scenario",
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "status": "passed"
+      },
+      {
+        "sub": "b3",
+        "level": "A1",
+        "presentation": "gap-only",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b3",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b3",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b3",
+        "level": "A1",
+        "presentation": "match",
+        "sheets": 62,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b3",
+        "level": "A1",
+        "presentation": "open-oral",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b3",
+        "level": "A1",
+        "presentation": "scenario-set",
+        "sheets": 100,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "b3",
+        "classroom": "matching",
+        "sourceProblems": 3,
+        "gameQuestions": 9,
+        "status": "passed"
+      },
+      {
+        "sub": "b3",
+        "classroom": "scenario",
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "status": "passed"
+      }
+    ],
+    "errors": []
+  },
+  "browserPresentationA1": {
+    "status": "passed",
+    "results": [
+      {
+        "activity": "gram-ex-a2-qcm-verbe",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 34,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-qcm-verbe",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 34,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-a",
+        "presentation": "match",
+        "printedQuestions": 100,
+        "sheets": 50,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-t",
+        "presentation": "transform",
+        "printedQuestions": 100,
+        "sheets": 50,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-pays",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 100,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-pays",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 100,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-prep",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 20,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-prep",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 18,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-verbe",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 20,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-verbe",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 18,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-phrases",
+        "presentation": "open-written",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 200,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-curriculum-a",
+        "presentation": "match",
+        "printedQuestions": 100,
+        "sheets": 50,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-curriculum-p",
+        "presentation": "open-oral",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-a",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 9,
+        "images": 0,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-t",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 0,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-prov-pays",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 1,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-prov-prep",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 0,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-prov-phrases",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 2,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-curriculum-p",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 0,
+        "status": "passed"
       }
     ],
     "errors": []

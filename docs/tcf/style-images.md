@@ -18,6 +18,8 @@ L’utilisateur a choisi les **premières versions** de la réalisation, de l’
 
 ## Contrôle de diversité des scènes CO
 
+**Correspondance des personnes demandée le 14 novembre :** contrôler le genre des rôles représentés avec les personnes du dialogue, notamment « Monsieur », « Madame », parents, élèves et interlocuteurs nommés. Consigner les citations et les limites du contrôle. Quand la transcription ne confirme pas une personne représentée, garder la scène préparée sans activer sa liaison audio avant vérification. Ne pas déduire une identité de genre de la seule apparence ou d’une estimation de hauteur de voix. Les figurants d’un groupe ne représentent pas automatiquement un locuteur particulier.
+
 Ne pas copier les personnes d’une référence graphique. Avant génération, attribuer à chaque scène des visages, coiffures, vêtements et silhouettes distincts ; varier naturellement les carnations, genres, âges adultes, morphologies et situations de handicap sur l’ensemble du lot. Vérifier les scènes côte à côte après génération pour repérer un duo récurrent. La diversité s’exprime dans les activités et rôles ordinaires, sans stéréotypes. Conserver les éléments imposés par le dialogue et les questions.
 
 La reprise ciblée du 7 novembre 2026 est préparée dans [co-character-refresh.json](co-character-refresh.json) : les quatre scènes de bibliothèque et les six situations de « Les achats ». Le plan distingue explicitement les remplacements encore en attente des images réellement produites et contrôlées.

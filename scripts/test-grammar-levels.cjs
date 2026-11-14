@@ -79,7 +79,7 @@ for (const bank of banks) {
   assert.deepEqual(roundTrip.pages[0].grammarSnapshot,recipe.pages[0].grammarSnapshot)
   assert.deepEqual(buildPage(roundTrip.pages[0],839).items,buildPage(block,839).items)
   const game=convertRecipe(roundTrip)
-  assert.equal(game.questions.length,reading?60:presentation==='match'?150:50)
+  assert.equal(game.questions.length,reading?60:presentation==='match'?selected.questions.reduce((n,q)=>n+q.unit.pairs.length,0):50)
   assert(game.questions.every(q=>!('answer' in q)&&!('correctId' in q)))
   assert(game.questions.every(q=>game.corrections[q.id]?.text))
   const prepared=prepareGame(game)

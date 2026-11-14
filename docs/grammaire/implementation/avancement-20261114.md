@@ -1,50 +1,48 @@
 # Avancement du curriculum Grammaire — 14 novembre 2026
 
-Référence : [cahier des charges v2](cahier-des-charges-v2.md) et [registre détaillé](target-registry.json). Base de cette tranche : `73a261b5`. Les banques sont relues par l’assistant et accessibles en **pilote explicite**. Aucune unité n’est déclarée approuvée par un enseignant.
+Référence : [cahier des charges v2](cahier-des-charges-v2.md) et [registre détaillé](target-registry.json). Base de cette tranche : `a49a9297`. Les banques sont accessibles en **pilote explicite**, avec **approbation enseignante en attente**.
 
-## Dernière tranche — présent A1
+## Dernière tranche — Se présenter A1
 
 | Notion | Activités | Offres | Unités sélectionnables | Variantes |
 | --- | ---: | ---: | ---: | ---: |
-| Verbes modaux | 7 | 8 | 320 | 410 |
-| Verbes pronominaux | 5 | 6 | 250 | 300 |
-| Négation ne…pas | 4 | 5 | 200 | 250 |
-| Autres négations A1 | 2 | 3 | 100 | 150 |
-| Ajout total | 18 | 22 | 870 | 1 110 |
+| Pronoms sujet | 3 | 4 | 150 | 200 |
+| Dire sa provenance | 6 | 9 | 300 | 450 |
+| Ajout total | 9 | 13 | 450 | 650 |
 
-Les verbes modaux ajoutent 50 tâches écrites, 50 tâches orales et 50 jeux de rôle ouverts avec rôles, contraintes et relances, issus des mêmes 50 situations communicatives. Ils ajoutent aussi 20 documents et 60 questions de lecture avec preuves exactes. Ces réemplois ne sont pas présentés comme des contextes nouveaux supplémentaires.
+**Se présenter dispose de 13 offres sur 40 en pilote.** Les pronoms proposent complétion QCM/lacune, association et remplacement du sujet. La provenance propose reconnaissance du pays en image, choix de la préposition, conjugaison de venir, association, production écrite à deux images et oral contextualisé.
 
-Les transformations pronominales changent ensemble le sujet, le pronom réfléchi et le verbe. La négation simple traite ne/n’, pas et les articles de/d’. Les autres négations A1 disposent de 50 contextes naturels, avec indices de sens et infinitifs. Les sources historiques restent intactes ; les corrections éditoriales sont appliquées aux nouvelles banques.
+Les 50 complétions de pronoms sont réemployées et clarifiées ; les 50 transformations ont des sujets nominaux et directives explicites. Les 50 contextes de provenance sont partagés entre tâches : les 450 unités ne sont pas 450 nouveaux scénarios. Les associations conservent trois réponses distinctes et les références de leurs sources.
 
-Les mises en ordre pronominales sont positives, y compris « plus tôt » : ce comparatif n’est pas une négation. Les mises en ordre de négation sont exclusivement négatives ; choisir Négative pour tirer les 50 unités. Les filtres incompatibles annoncent leur capacité réelle et ne remplacent pas les phrases.
+Les médias comprennent **20 fichiers existants réemployés : 17 pays et trois références de personnages**. Chaque copie est immuable et contrôlée par SHA-256. Aucun média n’est généré. L’image historique du Japon est écartée pour couleurs inversées ; sa correction reste à faire. La nationalité est donnée explicitement dans les fiches fictives. Les modèles ouverts restent dans le corrigé avec appréciation enseignante.
 
-Relectures complètes : [modaux](modaux-a1-relecture.md), [pronominaux](pronominaux-a1-relecture.md), [ne…pas](a8-a1-relecture.md), [autres négations](a9-a1-relecture.md). Les tâches ouvertes ne reçoivent aucune note automatique. Les modèles restent au corrigé.
+Dans le choix de préposition, le genre est en couleur à droite du trait, aussi au tableau. Relectures : [pronoms](a2-a1-relecture.md), [provenance](a6-a1-relecture.md), [manifeste des images](presentation-media.json).
 
-La tranche précédente IR/RE-OIR A1/A2 reste disponible : 600 unités et 800 variantes, documentées dans [IR](ir-a1-a2-relecture.md) et [RE/OIR](re-oir-a1-a2-relecture.md).
+Les thèmes **Entrer en contact (19/19)** et **Conjuguer au présent (72/72)** restent complets en pilote. Leurs relectures et vérifications antérieures restent tracées dans [README](README.md) et [verification.json](verification.json).
 
 ## Couverture cumulée
 
 | Mesure | Pilotes disponibles | Cible | Sans banque pilote |
 | --- | ---: | ---: | ---: |
-| Notions | 14 | 98 | 84 |
-| Couples notion/niveau | 17 | 123 | 106 |
-| Activités distinctes | 62 | 424 | 362 |
-| Offres activité/niveau/présentation | 85 | 601 | 516 |
+| Notions | 19 | 98 | 79 |
+| Couples notion/niveau | 23 | 123 | 100 |
+| Activités distinctes | 89 | 424 | 335 |
+| Offres activité/niveau/présentation | 122 | 601 | 479 |
 
-**3 310 unités sélectionnables et 4 280 variantes** sont disponibles, dont **60 documents et 180 questions de lecture**. Les documents sont inclus dans les unités sélectionnables ; leurs questions sont comptées dans les variantes. Les colonnes ne s’additionnent pas : une activité disponible peut encore avoir d’autres niveaux à fournir.
+**4 760 unités sélectionnables et 6 130 variantes**, dont **60 documents et 180 questions de lecture** inchangés. Les documents sont inclus dans les unités sélectionnables, leurs questions dans les variantes ; ces colonnes ne s’additionnent pas.
 
-Le [CSV des 601 offres](reste-a-faire-20261114.csv) indique pour chacune l’action restante : approbation enseignante des 85 pilotes, ou préparation des 516 autres offres. Il s’ouvre dans un tableur avec le séparateur point-virgule.
+Le [CSV des 601 offres](reste-a-faire-20261114.csv) donne l’action restante pour chacune : approbation enseignante des 122 pilotes ou préparation des 479 autres offres.
 
 ## Offres par thème
 
 | Thème | Pilotes | Cible | À préparer |
 | --- | ---: | ---: | ---: |
-| Se présenter | 0 | 40 | 40 |
-| Conjuguer au présent | 67 | 72 | 5 |
+| Se présenter | 13 | 40 | 27 |
+| Conjuguer au présent | 72 | 72 | 0 |
 | Parler du passé | 6 | 49 | 43 |
 | Parler de l'avenir | 0 | 27 | 27 |
 | Décrire | 0 | 63 | 63 |
-| Entrer en contact | 0 | 19 | 19 |
+| Entrer en contact | 19 | 19 | 0 |
 | Poser une question | 0 | 24 | 24 |
 | Phrase exclamative | 0 | 9 | 9 |
 | Parler d'une activité | 0 | 15 | 15 |
@@ -59,13 +57,19 @@ Le [CSV des 601 offres](reste-a-faire-20261114.csv) indique pour chacune l’act
 | S'expliquer et argumenter | 0 | 15 | 15 |
 | Exprimer quelque chose | 5 | 63 | 58 |
 
+## Contrôles de cette tranche
+
+Les 13 offres passent dans Chromium : 1 300 unités élève/corrigé et 400 affichages d’images, sans débordement ; six lancements au tableau. Les essais techniques de média, dont les erreurs et l’attente avant impression, passent. La hauteur des illustrations appariées est ajustée sans retirer de ligne d’écriture.
+
+Les ajouts TCF/catalogues jusqu’à `683c7bdf` sont intégrés. TypeScript, la compilation, G0 (735 sorties / 256 fichiers protégés), les 6 130 variantes, les contrats et les tests ciblés passent après intégration. Le navigateur reste tracé sur `a49a9297` ; aucun contrôle global des 122 offres sur une même base n’est déclaré.
+
 ## Suite du cahier des charges
 
-1. Compléter les cinq offres A2 des autres négations pour terminer le thème Conjuguer au présent. Les offres A1 prévues de ce thème disposent désormais toutes de banques pilotes.
-2. Poursuivre les autres thèmes A1 puis les extensions A2/B1 manquantes, avec des différences pédagogiques réelles entre niveaux.
-3. Généraliser les banques de dialogue/situation et remplir les onze obligations illustrées, avec les médias existants. Les essais techniques ne remplacent pas des banques complètes.
+1. Terminer Se présenter : identité/informations personnelles fictives (11 offres), nationalités (8) et famille (8), soit 27 offres. Réemployer les portraits, documents et autres supports adaptés aux contrats.
+2. Compléter les autres thèmes A1 puis les extensions A2/B1 avec des différences pédagogiques réelles.
+3. Généraliser les dialogues/situations et remplir les onze obligations I des autres notions avec les médias existants. Les essais techniques et les supports de provenance ne soldent pas ces obligations.
 4. Compléter la manipulation de toutes les associations dans un tableau : l’interface actuelle propose les paires successivement.
-5. Faire relire et approuver toutes les unités par un enseignant avant publication pédagogique ; les tests automatiques ne constituent pas cette approbation.
-6. Composer les révisions G6, puis achever la recette G7 des niveaux, supports, sauvegardes, A4, tableau et guide.
+5. Faire relire et approuver les unités et supports par un enseignant avant publication pédagogique.
+6. Composer les révisions G6 puis achever la recette G7 des niveaux, supports, sauvegardes, A4, tableau et guide.
 
-La divergence historique du test global de théorie (99 fiches attendues, 98 fiches actuelles avec alias a5 → a4) reste un point distinct. Aucun contenu de théorie n’est réécrit pour masquer cette divergence. Aucun audio, transcription ou banque CO n’est modifié par cette tranche. Les preuves figurent dans [verification.json](verification.json).
+La divergence antérieure du test global de théorie (99 fiches attendues, 98 fiches actuelles avec alias a5 → a4) reste distincte. Les audios et banques CO historiques ne sont pas modifiés par cette tranche. Le statut précis des contrôles et leurs bases est conservé dans [verification.json](verification.json).

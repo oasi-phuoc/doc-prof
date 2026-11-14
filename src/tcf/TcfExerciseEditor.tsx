@@ -576,7 +576,11 @@ function SupportEditor({
                 )
                 set(withSupport(ex, { audios, audio: undefined, nb_dialogues: n }))
               }}
-              bankEntries={scenarioBank}
+              bankEntries={scenarioBank?.filter((candidate) => !slotAudios.some((path, slot) => {
+                if (slot === i || !path) return false
+                const other = scenarioBank.find((item) => item.audio === path)?.scenarioScene
+                return !!other && (other.image === candidate.scenarioScene?.image || other.sceneKey === candidate.scenarioScene?.sceneKey)
+              }))}
               onPickFromBank={pickScenarioSlot(i)}
             />
           ))}

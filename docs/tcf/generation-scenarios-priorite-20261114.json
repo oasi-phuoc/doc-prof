@@ -1,0 +1,735 @@
+{
+  "date": "2026-11-14",
+  "scope": "Scènes avant les trios, selon la priorité demandée ; A1 puis A2 puis B1. Aucun audio, texte de question, distracteur textuel ou réponse correcte modifié par ce lot. Les rôles non confirmés dans la transcription restent en attente de vérification de voix avant activation.",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "baseline": {
+    "pending_scenes": 78,
+    "scenario_sources": 39,
+    "main_commit": "b25b73a5c608e4f2e555fb3fb3c47d2d3e7b7555"
+  },
+  "summary": {
+    "original_pngs": 20,
+    "reused_images": 1,
+    "prepared_scene_uses": 21,
+    "new_scenario_audio_bindings": 12,
+    "awaiting_gender_confirmation": 9,
+    "remaining_scenes": 66,
+    "total_bound_scenario_sources": 51
+  },
+  "images": [
+    {
+      "key": "scene-prio-nouveau-professeur",
+      "label": "Un nouveau professeur se présente",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouveau-professeur.png",
+      "sha256": "ecc4523f25dc8c7c2f7df11b94c925d5793f840b6ebab095da19bd422314f1a0",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. In a bright secondary-school classroom, a new MALE French teacher, a dark-skinned man aged about 45 with a shaved head, thin silver glasses, rust-coloured overshirt, cream trousers and brown shoes, stands in front of a blank green board. He greets his teenage pupils with a friendly open-hand gesture, introducing himself. Three seated young teenagers (13–15), a pale freckled girl with a short dark bob, a brown-skinned boy with wavy hair and an East Asian-looking girl with a long ponytail, turn attentively toward him and greet him. Desks with closed notebooks. Clear distinction between adult male teacher and teenage students. No classroom writing or subject-specific diagrams.",
+      "prompt_is_summary": false,
+      "visual_review": "Professeur homme saluant trois élèves adolescents ; tableau vierge, aucun cours ou résultat ajouté. Personnages et pieds complets, peinture douce et paysage natif 4:3.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-02"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Bonjour, je suis votre nouveau professeur de Français. Bonjour Monsieur."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-02",
+          "transcription": "Bonjour, je suis votre nouveau professeur de Français. Bonjour Monsieur.",
+          "source_sha256": "f30f5fc3725d259691939de8387e4394ce384ff986b4b23b01a7d5eefcbc9d00",
+          "audio_sha256": "8836a82693b6496e37816726c4d327991a623caf0ee345371b2a31615c89bd47"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-cahier-oublie",
+      "label": "Une élève cherche le cahier oublié",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
+      "sha256": "37e4b974a8c70c2d158e78f1a60cccecda07917401959d7f3095bf30f748be83",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Two teenage schoolgirls aged 14 are talking in a quiet school corridor beside a bench. One girl, East Asian-looking with shoulder-length straight black hair, mustard hoodie, dark trousers and trainers, is searching inside her open backpack on the bench, looking regretful because she has FORGOTTEN her friend's science notebook. Her friend, a freckled girl with short red hair, burgundy overshirt, blue jeans and light trainers, stands waiting, one open hand asking for her notebook. Neither girl has found or is handing over any notebook: the missing notebook must NOT appear as recovered. Inside the open bag show only a pencil case and a water bottle, no readable labels. Their gestures clearly show searching and waiting, not an exchange or success. Both girls and shoes entirely in frame.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux élèves ; l’une cherche dans son sac, l’autre attend le cahier. Aucun cahier retrouvé ou remis : l’oubli annoncé reste respecté. Visages distincts, silhouettes et chaussures entières.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "deux élèves féminines",
+            "quote": "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ?"
+          },
+          {
+            "role": "élève qui cherche, accord féminin",
+            "quote": "Désolée … j’oublie toujours ton cahier."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-03",
+          "transcription": "Salut Vanessa. Salut Zara, tu as mon cahier de sciences ? Attends je cherche dans mon sac. Désolée … j’oublie toujours ton cahier.",
+          "source_sha256": "0ec9c11f485fa71254f77e86c074d87a1bd9f30c0ef71efaa4de5712e62d557c",
+          "audio_sha256": "3b2affb2af76de276cd7ac0e9edf9fbc201808417cdb0810ba4fafdeed7760da"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-retard-professeur",
+      "label": "Un élève arrive en retard en classe",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-retard-professeur.png",
+      "sha256": "ffd25c9be6020e7657176ec8fff3869bd840849332d434c5d27446d1d6346e34",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. A teenage boy aged 14 with light brown skin and short black curls, teal sweatshirt, navy trousers, backpack on one shoulder and light trainers has just arrived through an open classroom door while the lesson has already begun. He looks apologetic, with one open hand at his chest. A MALE teacher aged 50 with olive skin, tied-back dark greying hair, cream shirt, navy knitted vest, grey trousers and brown shoes stands beside the doorway, addressing him with a mildly concerned but respectful expression. Two seated pupils and open notebooks in the background establish an ongoing class. Do not show a woman as the teacher. No watch, clock, written late sign or timetable. Full boy and male teacher visible including shoes; no aggressive gestures.",
+      "prompt_is_summary": false,
+      "visual_review": "Élève arrivant pendant le cours, geste d’excuse et professeur homme conforme à Monsieur. Pas d’heure, de retard chiffré ni de scène humiliante ; cadrage complet.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme et élève Nicolas",
+            "quote": "Bonjour monsieur. Bonjour Nicolas."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-04",
+          "transcription": "Bonjour monsieur. Bonjour Nicolas. Tu es toujours en retard ! Excusez-moi monsieur !",
+          "source_sha256": "7b3fcf084f481046d64cc94553f4ea8e51391602d4d624b0eb275a4725e02c35",
+          "audio_sha256": "debe6a83ee9c7ea212fc419500e0621e4f87416be9a4ed04badb3ea92c9bc1ca"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-aide-expose",
+      "label": "Une professeure aide une élève à préparer un exposé",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+      "sha256": "f31d384ceb6143c76ecf050ee5ce6fb0a8a0609fd6c33a0071f1469bfd59f630",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. A FEMALE teacher about 40, with a broad build, fair skin, short blonde hair, navy cardigan, olive trousers and beige shoes, is talking supportively with a teenage girl aged 14 who needs help preparing an oral presentation. The girl has brown skin, black twists tied back, a coral sweatshirt and dark trousers, and sits in her everyday manual wheelchair at an accessible school desk. The girl gestures to a few simple blank planning sheets and a closed notebook on the desk while the teacher bends slightly to listen at eye level and asks about her topic. No presentation subject has been stated: no invented volcano, painting, graph, flag or science model. Friendly natural academic help, not a medical appointment. Keep wheelchair wheels, the girl's resting shoes and teacher's shoes fully within frame.",
+      "prompt_is_summary": false,
+      "visual_review": "Enseignante et élève préparant un exposé, sans sujet inventé. Bureau accessible et fauteuil visibles en entier ; le fauteuil est un choix de représentation inclusive et ne constitue pas une information à tirer de l’audio.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-06"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante et élève Nina",
+            "quote": "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-06",
+          "transcription": "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé. Alors dis-moi ton sujet!",
+          "source_sha256": "11379739ef66003b5bfc4cbbd1efade1a5509f31f4388aaaeb346ee65e8a32d1",
+          "audio_sha256": "67c26dd5cb7520a3b0a65e09e910b1099f17e1e7464db5c9a602deaab6a31ad9"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-invitation-rugby",
+      "label": "Proposer un entraînement de rugby",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "sha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Two teenage friends aged 14–15 are talking beside a rugby training pitch. A tall pale boy with sandy straight hair, a small behind-ear hearing aid, forest-green athletic top, black shorts and trainers holds a clearly OVAL rugby ball at waist level and gestures invitingly toward the training pitch. His friend, a shorter brown-skinned boy with thick dark hair, a cobalt sports jacket, dark jogging trousers and trainers, listens willingly and gestures that he needs to ask first. They are discussing an invitation to practice, not playing a competitive match. A rugby H-shaped goal is visible in the distance, a plain sports bag beside them. NO round football, basketball hoop, football goal net, jersey numbers or text. Show complete boys, feet, ball and H-shaped posts.",
+      "prompt_is_summary": false,
+      "visual_review": "Invitation entre deux adolescents au bord du terrain ; ballon ovale et poteaux en H, aucun ballon rond ni match déjà joué. Appareil auditif discret comme choix illustratif inclusif ; aucune nationalité déduite des visages.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-01",
+          "transcription": "Salut Mahdi. Tu viens t’entraîner pour le match de rugby de mercredi après-midi ? Oui, volontiers. Je demande à mes parents.",
+          "source_sha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+          "audio_sha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-demander-chemin",
+      "label": "Demander le chemin d’une salle de spectacle",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
+      "sha256": "773cfa399c324d71adbd9d36fa3e14bbf807151c5d6ee0a3ca7900b9ae6b259e",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. On an ordinary calm town sidewalk a teenage boy aged 15, medium-brown skin, a neat short haircut, lilac sweatshirt, charcoal jeans, trainers and a small backpack, politely asks a middle-aged woman for directions. The woman has fair skin, a short auburn bob, a softly patterned cream scarf, terracotta jacket, navy trousers and flat shoes. She points helpfully down the street toward an OFF-FRAME destination. They look at each other, a clear asking-and-directing interaction. A few modest generic civic buildings in the background, no recognisable real monument, no storefront words or road signs with text. The source is directions to a performance hall near a gymnasium, but DO NOT invent or depict a supposedly authentic named building, precise distance or street name. Full figures and shoes, safe spacious pavement.",
+      "prompt_is_summary": false,
+      "visual_review": "Jeune homme demandant son chemin à une femme qui indique une direction. Destination hors cadre : aucune fausse salle Mitterrand, rue ou distance inventée. Figures et chaussures entières.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-05"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "femme indiquant le chemin et jeune homme",
+            "quote": "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-05",
+          "transcription": "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme. C’est juste à côté du gymnase, à 100 mètres.",
+          "source_sha256": "7a9ae264770b9cb69d9956eb74a3c10b446224dc3684d2eb3b44625a7c59b18f",
+          "audio_sha256": "83eb8a2f70fd1c3500af917ae5f6ffa653d21a2306dfda1f25255f8b15dbc9b5"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-certificat-scolarite",
+      "label": "Demander un certificat au secrétariat du collège",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-certificat-scolarite.png",
+      "sha256": "bc29b596515fa8e326b47e095baf8b29a21db6ac047ceea01c61ad1a079c828b",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. At the reception desk of a secondary-school administrative office a teenage boy aged 14, light-brown skin, thick straight black hair, coral polo shirt, beige trousers, navy trainers and backpack, is politely asking a FEMALE school secretary for a certificate of enrolment. The secretary is a black woman in her fifties with short natural silver-streaked curls, oval glasses, a teal blouse, dark trousers and loafers, sitting at her workstation and listening while preparing to use her keyboard. Files and a closed folder, a computer with no readable screen, ordinary school corridor visible behind. The document is NOT ready yet: no completed certificate, no document handed to the pupil, no school seal, name or signature visible. No medical decor, no doctor's coat. Full useful people including shoes below the desk, natural respectful exchange.",
+      "prompt_is_summary": false,
+      "visual_review": "Jeune élève et secrétaire femme au collège ; certificat demandé et en préparation, aucun document déjà remis ni nom écrit. Bureau scolaire distinct d’une consultation médicale.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "secrétaire femme et élève Carlos Garcia",
+            "quote": "Bonjour Madame. Ma famille a besoin d’un certificat de scolarité au collège. À quel nom ? Carlos Garcia."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-03",
+          "transcription": "Bonjour Madame. Ma famille a besoin d’un certificat de scolarité au collège. À quel nom ? Carlos Garcia. Très bien, passe à la fin des cours, je prépare ton certificat.",
+          "source_sha256": "c6cdfb9a93abc4c97d7827932fff41823d7308cc6f606906c2010c3c81e927c4",
+          "audio_sha256": "229b48df2151df3641d1c40e922ae831b53dd74b5f6fc38e78e1f69ef4e09090"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-conseil-mal-ventre",
+      "label": "Signaler un mal de ventre à une enseignante",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "sha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. In a quiet corner of a secondary-school classroom, a teenage pupil aged 14 with olive skin, short wavy brown hair, grey-green sweater, blue jeans and trainers stands with one hand gently over the abdomen, looking uncomfortable. A FEMALE teacher aged about 35 with medium-brown skin, long dark hair in a low ponytail, plum cardigan, cream trousers and brown shoes is listening with concern and giving advice with an open-hand gesture. The scene is the pupil telling the teacher about repeated stomach pain and the teacher recommending seeing a doctor. Do NOT show a doctor, examination, medical tools, medicine, ambulance, dramatic suffering, or a diagnosis: this is school advice before a visit. A desk and schoolbooks in the unobtrusive background. Both figures entirely visible and dignified.",
+      "prompt_is_summary": false,
+      "visual_review": "Élève indiquant son ventre douloureux à une enseignante ; conseil avant une éventuelle consultation, aucun médecin, médicament ou diagnostic ajouté.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-02"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-02",
+          "transcription": "Aujourd’hui encore tu as mal au ventre ? Oui madame, hier déjà, et aujourd’hui j’ai encore mal. Et bien je te conseille d’aller voir ton médecin.",
+          "source_sha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+          "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-bibliotheque-volcans",
+      "label": "Chercher des documents sur les volcans à la bibliothèque",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "sha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. In a school library a FEMALE librarian about 50 with fair skin, straight silver bob, small red glasses, moss-green blouse, navy skirt and loafers helps a teenage student aged 14 with dark brown skin, short cropped hair, a pale-blue sweatshirt, burgundy trousers and trainers find documents for a presentation on volcanoes. She indicates a bookshelf section clearly coded ORANGE with a large solid orange end panel, showing a science book with a simple volcano illustration and NO lettering on its cover. Ordinary magazines sit on a display stand near the library entrance, not mixed into a shop. The student listens attentively with a notebook held at the side. The orange shelf code must be clear; no other colourful classification labels competing, no invented named volcano, no text or numeric signs. Full people and shoes, books and orange panel visible.",
+      "prompt_is_summary": false,
+      "visual_review": "Bibliothécaire femme, élève et livre à couverture de volcan dans le rayon à panneau orange ; revues sur le présentoir près de l’entrée. Aucun volcan nommé, texte de classement ou autre couleur présentée comme la réponse.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-01",
+          "transcription": "Que cherches-tu ? Je dois préparer un exposé sur les volcans madame. Nous avons des livres de sciences dans le rayon orange et des revues sur le présentoir à l’entrée.",
+          "source_sha256": "c00afe476616420f42ad11be304ddbdfabb2ebbe32c77c2d12d849c8d2a62a2e",
+          "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-ranger-tapis",
+      "label": "Aider à ranger les tapis au gymnase",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ranger-tapis-gym.png",
+      "sha256": "d009ba69afeab10fddf4e29bdc7972deb6bd86d6494219c13e9d0f90a78227ae",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. At the END of a school PE class in a spacious gymnasium, a teenage boy aged 14 with pale skin, short chestnut hair, a lilac athletic tee shirt, dark blue jogging trousers and trainers is helping his FEMALE PE teacher put away thick padded gymnastics mats. The teacher is a tall broad-shouldered woman about 45 with medium-brown skin, dark wavy hair tied high, a deep-green tracksuit and trainers. Together they hold and slide one blue rectangular gymnastics mat onto a low orderly stack of similar padded mats against the gym wall. Cooperative natural action, not exercising or jumping. The mats are thick gym equipment, clearly not household rugs. A few unlabelled gym wall bars in the background. Complete hands, people and feet; realistic safe lifting, no rolled living-room carpet.",
+      "prompt_is_summary": false,
+      "visual_review": "Élève aidant une professeure à empiler les tapis de gymnastique en fin de cours. Équipement épais dans un gymnase, rangement coopératif, aucun tapis domestique ou saut à la place du rangement.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-032-04"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeure et élève Tonin",
+            "quote": "Madame je m’occupe des tapis ? Très bien Tonin."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-032-04",
+          "transcription": "Le cours de gym se termine. Aidez-moi à ranger le matériel. Madame je m’occupe des tapis ? Très bien Tonin. Merci pour ton aide.",
+          "source_sha256": "71a99f9bd4df08a6477fc2f2bea7b78396c4281c52ea5c997d4752396ca76d32",
+          "audio_sha256": "7f241b9e20bc40c14c59b5ca31294662b84598c34d581a474754adf6fc99daf0"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-servir-poisson-riz",
+      "label": "Servir du poisson avec du riz",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "sha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. At a clean school cafeteria serving counter, a friendly canteen worker, a dark-skinned broad-built woman about 40 with a neat hair cover, cream shirt, burgundy apron, charcoal trousers and black shoes, presents a plate containing ONE cooked fish fillet and a clearly separate portion of white RICE to a teenage pupil aged 15 with light skin, a straight black cropped haircut, mustard sweatshirt, blue jeans and trainers, holding a tray. A small plain sauce jug is beside the plate and the worker gestures to OFFER sauce, but no sauce has been poured on the food. No vegetables on the chosen plate, no chips, pasta or shellfish. Do not show a menu, food prices, letters or a counted total. Camera close enough to clearly distinguish fish from rice while keeping both complete figures and shoes, counter not hiding the whole action.",
+      "prompt_is_summary": false,
+      "visual_review": "Service de poisson avec riz blanc distinct sur l’assiette ; sauce proposée dans une petite cruche, sans sauce versée ni légumes substitués au riz. Personnel et élève distincts et cadrage entier.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-049-04-01"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-049-04-01",
+          "transcription": "Pour toi aussi du poisson avec des légumes ? Je veux bien du poisson mais avec du riz. Voilà ton poisson et ton riz. Je te mets de la sauce ?",
+          "source_sha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+          "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-pret-compas",
+      "label": "Prêter un compas de géométrie",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "sha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Two secondary-school classmates aged 14 sit at adjoining desks during a quiet geometry lesson. A teenage girl with medium-brown skin, an unpatterned plum headscarf, cream cardigan, blue jeans and trainers lends a GEOMETRY DRAWING COMPASS to a teenage boy with fair skin, short sandy hair, small round glasses, a teal sweatshirt, beige trousers and trainers. Her hand holds the compass upright by its small top grip, passing it toward his open hand above the desk. Make the tool clearly recognisable: two slim hinged metal legs, one pointed needle leg and one pencil-holding leg, slightly open. A ruler and an unmarked white sheet on the desk. This is borrowing school supplies, NOT a navigation compass, not a phone, no finished mathematical answers or numbers. Keep complete seated bodies, hands, shoes and both compass legs fully visible.",
+      "prompt_is_summary": false,
+      "visual_review": "Prêt d’un compas de géométrie à deux branches, pointe et crayon visibles ; ni boussole ni autre matériel substitué. Deux élèves, mains et chaussures dans le cadre. Le foulard est un choix illustratif et ne prouve aucune nationalité.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-049-04-02"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-049-04-02",
+          "transcription": "Tu peux me prêter ton compas s’il te plaît ? Encore ? Allez, sois sympa ! Bon d’accord, mais n’oublie plus tes affaires.",
+          "source_sha256": "1603bc74a0f51c1680f940facd9c888be7fc3c065872e7e87ef5dd7ffe1eae08",
+          "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-musique-lecture",
+      "label": "Aimer la musique et la lecture",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png",
+      "sha256": "850438f1810a2f067432486e223891286c9b90c432e428739dbe100fe93caee8",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. In a cosy ordinary living room, an adult with an androgynous presentation, about 30, light olive skin, short dark curly hair with a silver streak, small round glasses, a soft burgundy shirt, loose green trousers and canvas shoes relaxes in a comfortable chair, enjoying a book while listening to music with clearly visible over-ear headphones. One hand rests lightly on an earcup, the other holds the open book, with a gentle engaged smile. A small plain audio player connected to the headphones is on a side table; no screen contents, lyrics or legible pages. This person likes BOTH music and reading: give both book and headphones clear visual importance. No TV watching, shop, study exam or musical performance. Show the entire chair and complete seated figure through the shoes, warm living-room setting, not a floating object collage.",
+      "prompt_is_summary": false,
+      "visual_review": "Livre ouvert et casque relié au lecteur, musique et lecture tous deux représentés ; aucune télévision choisie à leur place. Silhouette et chaussures entières, personnage distinct sans nationalité attribuée.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-02"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-02",
+          "transcription": "Vous écoutez souvent de la musique ? Oui j’aime beaucoup. Et vous n’aimez pas la lecture ? Si, j’aime bien lire des livres.",
+          "source_sha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+          "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-velo-promenade",
+      "label": "Faire du vélo et des promenades entre amis",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "sha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. Four young friends aged 17–20 share a leisurely outing on a wide tree-lined riverside path, clearly enjoying CYCLING and WALKING rather than shopping. On the left, a dark-skinned girl with short natural curls, a coral jacket, navy trousers and a simple bicycle helmet rides a complete ordinary bicycle very slowly beside a pale freckled boy with long auburn hair tied back, olive overshirt and cream trousers walking on foot. On the right an East Asian-looking boy with straight black hair, teal shirt and dark trousers walks his own complete bicycle, talking to a brown-skinned girl with shoulder-length wavy hair, plum jumper and beige trousers walking alongside. All people, their shoes and both full bikes entirely visible with comfortable margins, wheels not cropped or hidden. Natural group conversation with enough space for safety. Plain countryside leisure path, no shop, purchases, signs or dates.",
+      "prompt_is_summary": false,
+      "visual_review": "Groupe d’amis en balade : vélo avec cycliste et marcheurs, deux vélos entièrement dans le cadre. Les magasins rejetés par la source ne sont pas représentés comme activité choisie.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-04"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-04",
+          "transcription": "Pendant votre temps libre, que faites-vous avec vos copains ? Nous faisons du vélo et des promenades. Ça me plaît. Et vous ne faites pas les magasins ? Ah non ! j’ai horreur de ça !",
+          "source_sha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+          "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-course-piste",
+      "label": "Se préparer à courir sur la piste avec la professeure",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-course-piste.png",
+      "sha256": "2f51178dc4ac36bf176911e1d38d9057a46527d57a139261bf4db8be51efb92c",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. On an outdoor school athletics running track with white lane lines but NO written lane numbers, a FEMALE PE teacher about 50 with dark skin, very short salt-and-pepper hair, red tracksuit and trainers gives instructions to three teenagers aged 14–15 before a fast sprint. The teacher raises one hand in a clear ready-to-start signal, without a starting pistol or stopwatch. A stocky fair girl with short brown hair, purple sports tee and black leggings, an olive-skinned boy with a dark crew cut, green tee and shorts, and a light-brown-skinned girl with a long braid, navy tee and grey joggers are standing just before an unnumbered starting line, ready but NOT already finishing. Full figures and feet on the track, no medal, winner, distance sign, scoreboard or exact time. The distinct athletics track, teacher and preparation to run are central.",
+      "prompt_is_summary": false,
+      "visual_review": "Professeure donnant le signal et élèves en préparation sur une piste d’athlétisme. Aucun résultat, distance chiffrée, classement ou horaire ajouté.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-050-04-01"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Rôles du dialogue, titres, accords et prénoms de personnages recoupés avec la transcription. Le groupe figurant n’attribue pas une voix à un élève précis.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeure et groupe d’élèves sans attribution individuelle de voix",
+            "quote": "Et après on va faire quoi madame ?"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-050-04-01",
+          "transcription": "Pour commencer un tour de la piste. Et après on va faire quoi madame ? Aujourd’hui les 100 mètres. Au signal vous devez courir rapidement.",
+          "source_sha256": "6b77260f1c7010dfb29035144dd14c89a65bed332f4ece46852a161ebc6619df",
+          "audio_sha256": "f234fb7ac3bd72458b7ba8eb3f485b6db17c84e830e05f5d0d5ef9f8c195e722"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-premier-saut-hauteur",
+      "label": "Découvrir le saut en hauteur",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "sha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. At a safe school athletics area, two teenage classmates aged 14–15 stand beside a clearly recognisable HIGH JUMP installation: a low horizontal lightweight crossbar resting between two upright standards and a very thick blue landing mat immediately behind it. One boy with brown skin, thick straight black hair, mustard sports tee, navy shorts and trainers looks a little uncertain at the bar because it is his first time; a freckled pale girl with a short dark bob, teal sports top, dark leggings and trainers reassures him with a friendly open-hand gesture. They are preparing and talking before a first high jump, not performing an advanced leap. No basketball, football, pole vault pole, hurdle line or long-jump sandpit. Show complete people, shoes, horizontal bar, both standards and the full useful landing mat, no height markings or numbers.",
+      "prompt_is_summary": false,
+      "visual_review": "Débutant hésitant et camarade rassurante devant la barre horizontale, les deux poteaux et le tapis épais du saut en hauteur. Aucun saut maîtrisé déjà réussi, ni football ou basket substitué.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-051-04-03"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-051-04-03",
+          "transcription": "Tu aimes le saut en hauteur ? C’est ma première fois ! Je fais du foot, du basket, mais pas de saut en hauteur. Ne t’inquiète pas ! Tu vas aimer!",
+          "source_sha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+          "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-revision-cahier",
+      "label": "Réviser les calculs dans le cahier sans calculatrice",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+      "sha256": "685495633d0af3dd38da283ab3100a416f1f01778b762350696412a3c8faf05f",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. A MALE schoolteacher (the audio explicitly addresses him as Monsieur) about 40 with medium-brown skin, a dark full beard, dark blue turban, pale cream shirt, brown trousers and dark shoes stands beside three teenage students at classroom desks. The pupils, a pale girl with straight light-brown hair, a brown-skinned boy with short dark curls and a black girl with small braids, are opening their NOTEBOOKS and preparing simple arithmetic revision with pencils only. The male teacher holds his open notebook and gives a calm instruction with his free hand. No calculators, phones, computers, answer sheets, grades or written calculation on the board; blank board and non-legible notebook pages. The pupils are an illustrative mixed classroom group; don't single out an unidentified speaker as a different named person. Full teacher, seated students, hands and shoes within frame. The turban is a natural wardrobe choice, no nationality or flag assigned.",
+      "prompt_is_summary": false,
+      "visual_review": "Professeur homme conforme à Monsieur ; groupe d’élèves révisant avec des cahiers et crayons, sans calculatrice autorisée à tort. Aucun calcul ou résultat écrit inventé ; personnages complets. Le turban est un choix de représentation sans nationalité attribuée.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-02"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Enseignant explicitement appelé Monsieur ; élèves figurants sans attribution individuelle de la voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignant homme",
+            "quote": "Monsieur on peut utiliser la calculatrice ?"
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-02",
+          "transcription": "Alors prenez votre cahier. Ce matin nous préparons l’interrogation de la semaine prochaine. Monsieur on peut utiliser la calculatrice ? Non pas aujourd’hui. Les calculs sont faciles à faire.",
+          "source_sha256": "266fd7877bf47108143ab334fa7088039f89845f632363ef4cf969a16ce78832",
+          "audio_sha256": "b55bee5b9363c74450abbb82a4208c966c2061b4434fdf8bf3a4cd31f91483a7"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-recreation-froid",
+      "label": "Prendre son blouson pour sortir en récréation",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-recreation-blousons-froid.png",
+      "sha256": "d790f09dc13f004a3253fd375652248ca85633f5f1da81b7d07e9e6c685b244a",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. A FEMALE schoolteacher (the audio explicitly says Madame) about 35 with dark skin, short natural pixie-length curls, an orange jacket, grey trousers and trainers stands beside the open door from a classroom into the school playground. She kindly gestures the class outside for fresh air despite the cold. Three teenage pupils aged 13–15, mixed girls and boys with varied skin tones, put on their warm jackets and scarves as they move toward the playground: one teenage boy is still pulling on a navy coat, a girl zips a plum jacket and another pupil holds a padded green coat. All are fully clothed and comfortable, slightly reluctant rather than distressed. Outside, a cool overcast schoolyard with benches and bare or sparse trees; no invented snowstorm or rain. The pupils are an illustrative group, no named student or exact voice assigned. Full figures and shoes, no text, weather numbers or clock.",
+      "prompt_is_summary": false,
+      "visual_review": "Enseignante femme conforme à madame, élèves prenant leurs blousons et sortant dans la cour malgré le froid. Les manteaux et chaussures sont dans le cadre, sans tempête ou maintien en classe substitués.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-032-01"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Enseignante explicitement appelée madame ; groupe d’élèves figurants non nommés.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante femme",
+            "quote": "Mais madame il fait froid aujourd’hui."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-032-01",
+          "transcription": "Prenez vos blousons et sortez dans la cour ! Mais madame il fait froid aujourd’hui. On peut rester en classe ? Non, ce n’est pas possible vous devez prendre l’air.",
+          "source_sha256": "13f3dbc6de3a994ecd54c0e1d8c5893f6f5ebc824ade3c686896f49a90184d9b",
+          "audio_sha256": "f8c90f69b8abaae26e8152bf47b46b491d33a9b3052bf2df65c8cf2407aabf38"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-cahier-dania",
+      "label": "Apporter son cahier à la professeure",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png",
+      "sha256": "ce501acd3390edeca99c17403188154b721379146a11beab5c8d19a9c97bc220",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. In a secondary-school classroom a teenage GIRL named Dania, aged 14, light skin with freckles, straight auburn hair in a low ponytail, a lilac sweatshirt, blue jeans and white trainers, has walked to her FEMALE teacher's desk and is handing over her closed GREEN school exercise notebook with both hands. The teacher is a broad-built East Asian-looking woman about 50 with a straight black bob streaked silver, forest-green cardigan, cream shirt, navy trousers and brown loafers, reaching to receive the notebook so she can correct the French exercise. She is unmistakably an adult woman, not a male classmate. Keep the notebook plain without an invented title or exercise score. A few school desks behind, no numerical maths on the board. Both complete figures, natural handover, both sets of hands and shoes visible.",
+      "prompt_is_summary": false,
+      "visual_review": "Élève Dania remettant son cahier à une enseignante femme, conforme à Madame ; aucune remise à un camarade masculin. Cahier sans note ou exercice ajouté, mains et chaussures dans le cadre.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-050-04-03"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Élève Dania nommée dans le dialogue ; enseignante explicitement appelée Madame.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève Dania et enseignante femme",
+            "quote": "Dania ? Oui, Madame."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-050-04-03",
+          "transcription": "Dania ? Oui, Madame. Peux-tu m’apporter ton cahier de français ? Je veux corriger ton exercice. Voici mon cahier madame.",
+          "source_sha256": "a7ed1ac97d5a159530c0f210ab346e740fafda87d37f684628c8fa950ebb6e0c",
+          "audio_sha256": "7e26e8ea0a0e274651ba88849421b5b887b74ff07aa71b64e6e7ebbf9395ed57"
+        }
+      ]
+    },
+    {
+      "key": "scene-prio-nouvelle-camarade",
+      "label": "Accueillir une nouvelle camarade en classe",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png",
+      "sha256": "09ddb7ddec1b1c50d5b342fde8df729c3f9abe9d563cb9a8158f353330f7b9ca",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create one single coherent educational scene in native landscape 4:3 (1448 by 1086 pixels), edge-to-edge, not a square, no borders or panels. Match the attached approved ClairFLE reference closely: carefully drawn warm semi-realistic editorial illustration, softly painted natural textures, subtle precise outlines, believable anatomy and objects, gentle daylight, warm cream and muted colours, expressive but realistic faces. No 3D render, no flat cartoon, no photorealistic photograph. Use NEW characters different from the reference. Inclusive, varied people, no caricatures or nationality stereotypes. Show all foreground people from head through shoes with comfortable margins and all useful objects fully visible. No speech bubbles, no captions, no legible text, no numbers, clock, calendar, date, monetary amount, logo or watermark. The image illustrates the described audio situation faithfully; don't invent a different outcome. A new teenage GIRL aged 14 is introducing herself warmly to her new classmates in a secondary-school classroom. She has olive skin, straight dark hair in a loose bun, a soft violet blouse, dark blue jeans, a small canvas backpack and beige trainers. She stands beside an EMPTY chair next to another teenage GIRL with dark brown skin, a close-cropped natural haircut, round glasses, a rust cardigan and cream trousers; the seated classmate smiles welcomingly and indicates the empty seat beside her. The source explicitly calls the newcomer nouvelle camarade and names her Anissa and the classmate Sarah. A few other diverse teenage classmates watch in the background. The adult teacher is entirely OFF-FRAME, because the text doesn't specify the teacher's gender: do not invent a visible male or female teacher. No national flag, map, nationality costume, written name or text; nationality isn't something to infer from appearance. Full foreground girls, empty chair, schoolbags and shoes visible.",
+      "prompt_is_summary": false,
+      "visual_review": "Nouvelle camarade Anissa accueillie par Sarah avec une chaise libre à côté. Accord féminin et prénoms respectés ; enseignant volontairement hors cadre car son genre n’est pas précisé. Aucun drapeau ou cliché de nationalité.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-032-02"
+      ],
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Accord féminin nouvelle camarade et prénom Anissa ; Sarah nommée. Enseignant hors cadre car son genre n’est pas précisé.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "nouvelle élève féminine",
+            "quote": "Je vous présente votre nouvelle camarade."
+          },
+          {
+            "role": "Anissa et Sarah",
+            "quote": "Anissa, va t’assoir à côté de Sarah."
+          }
+        ]
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-032-02",
+          "transcription": "Je vous présente votre nouvelle camarade. Bonjour, tu veux te présenter ? Bonjour je m’appelle Anissa, j’arrive du Maroc et j’habite votre ville. Anissa, va t’assoir à côté de Sarah.",
+          "source_sha256": "ee4d95b47ab51a17bc3d47f80f18361fd98b497138fca2394e4c21202fbd0f39",
+          "audio_sha256": "8218fd8125a86a5a3eac8cd30f2f111cdb94b9b4029816706d09ff9a6c0d198b"
+        }
+      ]
+    }
+  ],
+  "reuses": [
+    {
+      "key": "reuse-ordinateur-a1-044-03",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+      "sha256": "388e73c43f3da179abe40a98a050734a4a4f9cf20372eb3b5b750da99ed11a38",
+      "visual_review": "Réemploi vérifié visuellement : personne jouant sur un ordinateur de bureau, tour, écran, clavier et manette connectée visibles ; aucune télévision donnée comme activité préférée. Personnage distinct, chaussures et objets complets, image native 4:3 approuvée. L’âge et le genre du personnage restent des choix illustratifs, pas des réponses déduites de la source.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-03"
+      ],
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-03",
+          "transcription": "Le soir vous regardez la télé ? Pas tous les soirs. Je n’aime pas tellement. Je préfère jouer à l’ordinateur.",
+          "source_sha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+          "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6"
+        }
+      ]
+    }
+  ]
+}

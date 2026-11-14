@@ -15,20 +15,24 @@ for (const row of [...catalog.sources, ...catalog.decoys]) {
   assert.equal(approved.get(row.image)?.status, 'visually_reviewed')
   assert.equal(approved.get(row.image)?.aspect_ratio, '4:3')
 }
-const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
+const vite = await createServer({ cacheDir: '/tmp/clairfle-association-20261114-vite', server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
 try {
   const { associationThemedDecoyImages: decoys } = await vite.ssrLoadModule('/src/tcf/association-image-themes.ts')
   const { drawAssociationCompose } = await vite.ssrLoadModule('/src/tcf/draw-series.ts')
   const { tcfBankAllLevels } = await vite.ssrLoadModule('/src/tcf/loader.ts')
+  const { tcfScenarioAudioEntries, tcfAudioEntries, applyAssociationDialogueSlot } = await vite.ssrLoadModule('/src/tcf/audio-bank.ts')
   const { createRng } = await vite.ssrLoadModule('/src/math/rng.ts')
   const bank = tcfBankAllLevels('CO')
   const original = JSON.stringify(bank)
   for (const source of catalog.sources) {
     const ex = bank.find((e) => e.id === source.exercise)
-    assert.equal(ex.support.audios[source.dialogue - 1], source.audio)
-    assert.equal(ex.support.transcription[source.dialogue - 1], source.transcription)
+    assert.equal(ex.support.audio ?? ex.support.audios[source.dialogue - 1], source.audio)
+    assert.equal(Array.isArray(ex.support.transcription) ? ex.support.transcription[source.dialogue - 1] : ex.support.transcription, source.transcription)
     assert.equal(sha(source.transcription), source.sourceSha256)
-    assert.equal(ex.situations.find((s) => s.dialogue === source.dialogue).image, source.image)
+    if (ex.type_exercice === 'association_images') assert.equal(ex.situations.find((s) => s.dialogue === source.dialogue).image, source.image)
+    else assert.equal(ex.type_exercice, 'complet')
+    assert.ok(source.sceneKey)
+    if (source.audioSha256) assert.equal(sha(readFileSync(`public${source.audio}`)), source.audioSha256)
   }
   const sourceFor = (audio) => catalog.sources.find((s) => s.audio === audio)
   function verify(sources, images) {
@@ -39,6 +43,7 @@ try {
       assert.ok(row, image)
       assert.ok(row.themes.some((t) => themes.has(t)), image)
       assert.ok(!sources.some((s) => s.image === image), image)
+      assert.ok(!sources.some((s) => s.sceneKey === row.sceneKey), image)
       assert.ok(!row.absentTerms.some((term) => text.includes(words(term))), image)
     }
   }
@@ -65,14 +70,114 @@ try {
       assert.equal(new Set(drawn.situations.map((s) => s.image)).size, 6)
       assert.equal(images.length, 2)
       assert.equal(new Set(drawn.support.audios).size, 4)
+      assert.equal(new Set(sources.map((s) => s.sceneKey)).size, 4, 'Two interchangeable scenes cannot compete')
       for (const s of drawn.situations.filter((s) => s.dialogue != null)) assert.equal(s.image, sources[s.dialogue - 1].image)
       verify(sources, images)
       assert.deepEqual(drawn, drawAssociationCompose(level, createRng(seed * 173)))
       success++
     }
-    assert.ok(success >= 190, `${level}: ${success}/200`)
+    assert.equal(success, 200, `${level}: ${success}/200`)
     draws.set(level, success)
   }
+  const review = read('docs/tcf/scenarios-audio-20261114.json')
+  const entries = tcfScenarioAudioEntries(bank)
+  assert.deepEqual(new Set(entries.map((e) => e.audio)), new Set(catalog.sources.map((s) => s.audio)))
+  assert.equal(review.supports.length, 346)
+  let eligible = 0, bound = 0
+  for (const record of review.supports) {
+    const ex = bank.find((e) => e.id === record.exercise)
+    assert.equal(ex.support.audio, record.audio)
+    assert.equal(ex.support.transcription, record.transcription)
+    assert.equal(sha(record.transcription), record.sourceSha256)
+    assert.equal(sha(readFileSync(`public${record.audio}`)), record.audioSha256)
+    if (record.decision.startsWith('eligible_')) {
+      eligible++
+      assert.ok(words(record.transcription).includes(words(record.evidenceQuote)))
+      assert.ok(record.reason)
+    }
+    if (record.decision === 'eligible_bound_scene') {
+      bound++
+      const entry = entries.find((e) => e.audio === record.audio)
+      assert.equal(entry.scenarioScene.image, record.image)
+      assert.equal(entry.scenarioScene.transcription, record.transcription)
+      const base = bank.find((e) => e.type_exercice === 'association_images')
+      const same = base.support.audios.findIndex(audio => sourceFor(audio).sceneKey === entry.scenarioScene.sceneKey)
+      const slot = same < 0 ? 0 : same
+      const changed = applyAssociationDialogueSlot(base, entry, slot)
+      assert.equal(changed.support.audios[slot], record.audio)
+      assert.equal(changed.support.transcription[slot], record.transcription)
+      assert.equal(changed.situations.find((s) => s.dialogue === slot + 1).image, record.image)
+      verify(changed.support.audios.map(sourceFor), changed.situations.filter(s => s.dialogue == null).map(s => s.image))
+      const modified = structuredClone(ex)
+      modified.support.transcription += ' Une nouvelle précision.'
+      assert.equal(tcfScenarioAudioEntries([modified]).length, 0, 'An edited source must lose its scene eligibility')
+    } else assert.ok(!entries.some((e) => e.audio === record.audio), record.exercise)
+  }
+  assert.equal(eligible, review.summary.scenario_eligible)
+  assert.equal(bound, review.summary.scenario_bound)
+  assert.equal(entries.length, review.summary.total_bound)
+  const generation = read('docs/tcf/generation-scenarios-20261114.json')
+  assert.equal(generation.images.length, 7)
+  const priority = read('docs/tcf/generation-scenarios-priorite-20261114.json')
+  assert.equal(priority.human_audio_listening_performed, false)
+  assert.equal(priority.images.length, priority.summary.original_pngs)
+  assert.equal(new Set(priority.reuses.map((r) => r.path)).size, priority.summary.reused_images)
+  assert.equal(priority.baseline.scenario_sources + priority.summary.new_scenario_audio_bindings, catalog.sources.length)
+  assert.equal(priority.summary.remaining_scenes, review.summary.scenario_pending)
+  assert.equal(priority.images.length + generation.images.length, review.summary.new_original_pngs)
+  assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
+  for (const asset of [...generation.images, ...priority.images]) {
+    const bytes = readFileSync(`public${asset.path}`)
+    assert.equal(sha(bytes), asset.sha256)
+    assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
+    assert.deepEqual([bytes.readUInt32BE(16), bytes.readUInt32BE(20)], [1448, 1086])
+    assert.equal(sha(readFileSync(`public${asset.reference}`)), asset.reference_sha256)
+    assert.equal(approved.get(asset.path).source_sha256, asset.sha256)
+    assert.equal(approved.get(asset.path).style_review.reference_commit, '48a753d8d6bd095e41968b39da88dbcb331fee11')
+    assert.ok(asset.visual_review)
+  }
+  for (const asset of [...priority.images, ...priority.reuses]) {
+    assert.equal(sha(readFileSync(`public${asset.path}`)), asset.sha256)
+    assert.ok(asset.visual_review)
+    assert.deepEqual(asset.bindings.map((b) => b.exercise), asset.exercise_ids)
+    for (const binding of asset.bindings) {
+      const source = catalog.sources.find((s) => s.exercise === binding.exercise)
+      const reviewed = review.supports.find((s) => s.exercise === binding.exercise)
+      assert.equal(reviewed.transcription, binding.transcription)
+      assert.equal(reviewed.sourceSha256, binding.source_sha256)
+      assert.equal(reviewed.audioSha256, binding.audio_sha256)
+      assert.ok(asset.gender_review)
+      for (const evidence of asset.gender_review.evidence) assert.ok(binding.transcription.includes(evidence.quote))
+      if (asset.gender_review.status !== 'documented_roles_match') {
+        assert.equal(asset.gender_review.status, 'needs_voice_review')
+        assert.equal(source, undefined, 'An unresolved gender match must not activate a scene')
+        assert.equal(reviewed.decision, 'eligible_scene_pending')
+        assert.equal(reviewed.preparedImage, asset.path)
+        assert.equal(reviewed.preparedImageSha256, asset.sha256)
+        continue
+      }
+      assert.equal(source.image, asset.path)
+      assert.equal(source.transcription, binding.transcription)
+      assert.equal(source.sourceSha256, binding.source_sha256)
+      assert.equal(source.audioSha256, binding.audio_sha256)
+      assert.equal(source.genderReview.status, 'documented_roles_match')
+    }
+  }
+  // Keep this guard once the last pending scene has been illustrated too.
+  const unillustrated = review.supports.find((r) => r.decision !== 'eligible_bound_scene')
+  const pendingEntry = tcfAudioEntries([bank.find((e) => e.id === unillustrated.exercise)])[0]
+  const base = bank.find((e) => e.type_exercice === 'association_images')
+  assert.equal(applyAssociationDialogueSlot(base, pendingEntry, 0), base, 'An unillustrated recording cannot inherit an unrelated scene')
+  const added = entries.find((e) => e.exercise.id.startsWith('tcf-delf-actif-') && entries.some((other) => other.audio !== e.audio && other.scenarioScene.sceneKey === e.scenarioScene.sceneKey))
+  assert.ok(added)
+  for (const level of ['A0-A1', 'A1-A2', 'A2-B1']) {
+    const pinned = drawAssociationCompose(level, createRng(923), { audioSlots: [added.audio] })
+    assert.ok(pinned)
+    assert.equal(pinned.support.audios[0], added.audio, 'A new scenario can be selected manually at every level')
+  }
+  const repeated = entries.find((e) => e.audio !== added.audio && e.scenarioScene.sceneKey === added.scenarioScene.sceneKey)
+  assert.ok(repeated)
+  assert.equal(drawAssociationCompose('A0-A1', createRng(9), { audioSlots: [added.audio, repeated.audio] }), null, 'Interchangeable pinned scenes must be rejected')
   assert.equal(JSON.stringify(bank), original, 'Drawing must preserve historical banks')
   console.log(`${fixed} associations, ${catalog.sources.length} sources, ${catalog.decoys.length} leurres ; ${[...draws].map(([k, v]) => `${k} ${v}/200`).join(', ')} tirages contrôlés.`)
 } finally { await vite.close() }
