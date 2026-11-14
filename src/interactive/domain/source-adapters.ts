@@ -155,6 +155,8 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     const words = item.tokens?.map((token) => token.text.trim()) ?? []
     const ordered = item.labels ?? []
     const model = item.responseAnswer?.trim() || item.answer.trim()
-    return phraseOrdering(words, ordered, model)
+    const result=phraseOrdering(words,ordered,item.phraseQuestion?model.replace(/^Est-ce qu(?:e |[’'])/i,'').replace(/\s*\?$/,'.'):model)
+    if(item.phraseQuestion)for(const entry of result.items){entry.model=model;entry.prompt+=' Écris une question avec « Est-ce que ».'}
+    return result
   }
 }

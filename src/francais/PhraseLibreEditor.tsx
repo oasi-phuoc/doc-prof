@@ -1,14 +1,16 @@
 import { PHRASE_CATEGORY_LABELS, PHRASE_COLORS } from '@/francais/phrase-banks'
 import { joinPhrase } from '@/francais/phrase-sentences'
 import type { MathItem, PhraseCategory, PhraseToken } from '@/math/types'
+import {PhraseImageEditor} from './PhraseImageEditor'
 
 const CATEGORIES = Object.keys(PHRASE_CATEGORY_LABELS) as PhraseCategory[]
 
-function parsePhraseKind(typeId: string): 'colorier' | 'ordre' | 'construire' | 'ecrire' | null {
+function parsePhraseKind(typeId: string): 'colorier' | 'ordre' | 'construire' | 'images' | 'ecrire' | null {
   if (/-colorier$/.test(typeId)) return 'colorier'
   if (/-ordre$/.test(typeId)) return 'ordre'
   if (/-construire$/.test(typeId)) return 'construire'
   if (/-ecrire$/.test(typeId)) return 'ecrire'
+  if (/-images$/.test(typeId)) return 'images'
   return null
 }
 
@@ -20,7 +22,7 @@ function inkFor(category: PhraseCategory): string {
 function withFinalDot(sentence: string): string {
   const trimmed = sentence.trim()
   if (!trimmed) return ''
-  return trimmed.endsWith('.') ? trimmed : `${trimmed}.`
+  return /[.!?]$/.test(trimmed) ? trimmed : `${trimmed}.`
 }
 
 function rebuildColorItem(item: MathItem, tokens: PhraseToken[]): MathItem {
@@ -119,6 +121,7 @@ export function PhraseLibreEditor({
 }) {
   const kind = parsePhraseKind(exerciseType)
   if (!kind) return null
+  if(kind==='images')return <PhraseImageEditor items={items} instruction={instruction} onChangeItems={onChangeItems} onChangeInstruction={onChangeInstruction}/>
 
   function updateItem(index: number, next: MathItem) {
     const copy = [...items]

@@ -70,6 +70,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   for (const image of read(root, 'docs/grammaire/implementation/media-supports.json', {}).supports ?? []) {
     add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'], terms: [image.source?.path] })
   }
+  for(const image of read(root,'docs/gattegno/illustrations-generation-20261114.json',{}).images??[])add(image.path,{labels:[image.label],themes:['Gattegno','Style TCF validé',image.category==='pronom'?'Pronoms personnels':'Verbes d’action'],types:[image.category==='pronom'?'Personnage':'Action']})
   for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'], terms: [image.genre] })
   for (const image of read(root, 'src/tcf/object-images.json')) add(image.image, { labels: [image.label], themes: [pretty(image.family ?? '')], types: ['Objet'], terms: image.aliases })
   for (const image of classifications.values()) add(image.path, { labels: [image.label], themes: image.themes, terms: image.aliases })
@@ -115,7 +116,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     const stem = path.basename(file, path.extname(file)).replace(/^(?:extension573|co\d+|co-personnages-\d+|vocab)-/, '').replace(/-dessine[es]?$/, '')
     let label = meta.labels.find(Boolean) ?? pretty(stem)
     if (/^\d+$/.test(label) && file.includes('/logique/')) label = `${pretty(file.split('/logique/')[1].split('/')[0])} — ${label}`
-    const collection = file.startsWith('docs/') || file.startsWith('scripts/') || file.startsWith('tmp/') ? 'Documentation et captures' : file.includes('/vocabulaire/') ? 'Vocabulaire' : file.includes('/tcf/') ? 'TCF' : file.includes('/grammaire/') ? 'Grammaire' : file.includes('/logique/') ? 'Logique' : file.includes('/jeux/') || file.includes('/interactive/') ? 'Jeux et interactif' : 'Identité visuelle'
+    const collection = file.startsWith('docs/') || file.startsWith('scripts/') || file.startsWith('tmp/') ? 'Documentation et captures' : file.includes('/vocabulaire/') ? 'Vocabulaire' : file.includes('/tcf/') ? 'TCF' : file.includes('/gattegno/') ? 'Gattegno' : file.includes('/grammaire/') ? 'Grammaire' : file.includes('/logique/') ? 'Logique' : file.includes('/jeux/') || file.includes('/interactive/') ? 'Jeux et interactif' : 'Identité visuelle'
     let types = [...meta.types]
     if (collection === 'Documentation et captures') types = ['Capture et référence']
     else if (/logo|favicon|icons?\.|react.svg|vite.svg/.test(file)) types = ['Logo et icône']

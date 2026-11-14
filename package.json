@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/image-gallery-catalog.mjs && node scripts/audio-catalog.mjs",
-    "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/audio-catalog.mjs",
+    "predev": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs",
+    "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs",
     "gallery:index": "node scripts/image-gallery-catalog.mjs",
     "test:gallery": "node --test tests/gallery/catalog.test.mjs",
     "test:gallery:browser": "node tests/gallery/browser.mjs",
@@ -16,6 +16,7 @@
     "test": "node --test --test-concurrency=1 tests/interactive/*.test.mjs",
     "test:gattegno": "node scripts/audit-gattegno.cjs && node scripts/audit-gattegno-combinations.cjs && node scripts/audit-gattegno-editorial.cjs",
     "test:gattegno:browser": "node tests/interactive/gattegno-browser.mjs",
+    "test:gattegno:images:browser": "node tests/interactive/phrase-images-browser.mjs",
     "interactive:inventory": "node scripts/interactive-inventory.mjs",
     "test:interactive:browser": "node tests/interactive/browser.mjs",
     "test:interactive:classroom": "node tests/interactive/classroom-browser.mjs",

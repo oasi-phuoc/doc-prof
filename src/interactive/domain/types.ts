@@ -1,4 +1,4 @@
-import type { Figure, FigureDims } from '@/math/types'
+import type { Figure, FigureDims, PhraseImageClue } from '@/math/types'
 import type { ManualVote } from './votes'
 import type { GrammarImageSupport } from '@/grammaire/curriculum/types'
 
@@ -12,7 +12,7 @@ export type Choice = {
   audio?: string
 }
 export type NumberSequence = { terms: Array<string | null>; target: number; hint?: string }
-export type WordClassification = { tokens: string[]; target: number }
+export type WordClassification = { tokens: string[]; target: number; prefix?:string; ending?:string }
 export type MatchingGroup = { groupId: string; number: number; total: number }
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
@@ -42,6 +42,9 @@ export type Question = {
   audioMaxListens?: number
   images: string[]
   grammarImages?: GrammarImageSupport[]
+  phraseImages?: PhraseImageClue[]
+  phraseImagePrefix?:string
+  phraseImageLabels?: boolean
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'

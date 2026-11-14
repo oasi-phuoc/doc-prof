@@ -187,7 +187,7 @@ export function verbPersonOf(tagged: string): VerbPerson {
   if (tagged.startsWith('Tu/')) return 'tu'
   if (tagged.startsWith('Nous/')) return 'nous'
   if (tagged.startsWith('Vous/')) return 'vous'
-  if (tagged.startsWith('Ils/') || tagged.startsWith('Elles/')) return 'ils'
+  if (tagged.startsWith('Ils/') || tagged.startsWith('Elles/') || /^(?:Les|Des|Ces|Mes|Tes|Ses|Nos|Vos|Leurs)\/determinant/.test(tagged)) return 'ils'
   return 'il'
 }
 
@@ -275,6 +275,7 @@ export function subjectGender(tagged: string): 'm' | 'f' {
   if (
     tagged === 'Elle/pronom' ||
     tagged === 'Elles/pronom' ||
+    /(?:femmes|filles|voisines|amies)\/nom/.test(tagged) ||
     /^(La|Une|Ma|Ta|Sa|Cette)\//.test(tagged)
   ) {
     return 'f'

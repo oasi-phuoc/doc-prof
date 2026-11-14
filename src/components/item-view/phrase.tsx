@@ -1,3 +1,4 @@
+import {interrogativePrefix} from '@/francais/phrase-forms'
 import type { MathItem, PhraseCategory, PreviewMode } from '@/math/types'
 import { PHRASE_COLORS } from '@/francais/phrase-banks'
 import { highlightThemeLetters } from './highlights'
@@ -26,7 +27,7 @@ function PhrasePastille({ category, filled }: { category?: PhraseCategory; fille
   )
 }
 
-function PhraseAnswerSlot({
+export function PhraseAnswerSlot({
   show,
   answer,
   verb,
@@ -53,13 +54,14 @@ export function PhraseColorBlock({ item, mode }: { item: MathItem; mode: Preview
   return (
     <div className="phrase-color-block">
       <div className="phrase-word-row">
+        {item.phraseQuestion&&<span>{interrogativePrefix(tokens)}</span>}
         {tokens.map((token, i) => (
           <div className="phrase-word-slot" key={`${token.text}-${i}`}>
-            <span className="phrase-word">{token.text}</span>
+            <span className="phrase-word">{i===0&&item.phraseQuestion&&token.category!=='nom'?token.text[0]!.toLowerCase()+token.text.slice(1):token.text}</span>
             <PhrasePastille category={token.category} filled={show} />
           </div>
         ))}
-        <span className="phrase-period">.</span>
+        <span className="phrase-period">{item.phraseQuestion?' ?':'.'}</span>
       </div>
     </div>
   )
@@ -78,6 +80,7 @@ export function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: Preview
     item.answer
   return (
     <div className="phrase-order-block">
+      {item.phraseQuestion&&<p>Écrivez une question avec « Est-ce que ».</p>}
       <div className="phrase-bubble-row">
         {tokens.map((token, i) => {
           const fill = PHRASE_COLORS[token.category]
@@ -110,6 +113,7 @@ export function PhraseBuildBlock({ item, mode }: { item: MathItem; mode: Preview
   const answer = item.responseAnswer ?? (item.answer && !item.answer.includes(' · ') ? item.answer : undefined)
   return (
     <div className="phrase-build-block">
+      {item.phraseQuestion&&<p>Écrivez une question avec « Est-ce que ».</p>}
       <p className="phrase-verb-prompt">{item.prompt}</p>
       <PhraseAnswerSlot show={show} answer={answer} />
       <div className="phrase-pastille-row">

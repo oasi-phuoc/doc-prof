@@ -1,3 +1,4 @@
+import {phraseSentence,syntaxModel,interrogativePrefix} from '@/francais/phrase-forms'
 import { buildPage } from '@/math/generate'
 import { createRng, shuffle } from '@/math/rng'
 import type { FicheRecipe } from '@/fiches/recipe'
@@ -20,6 +21,8 @@ import { adaptPrintableRiddles } from './printable-riddles'
 import { sourceTranscript } from './transcripts'
 import { adaptWordClassification } from './word-classification'
 import { adaptGuidedOral } from './guided-oral'
+import {PHRASE_COLORS} from '@/francais/phrase-banks'
+import {MAX_PHRASE_IMAGE_CLUES} from '@/francais/phrase-images'
 export { hash } from './seeds'
 const normalized = (s: string) =>
   s
@@ -162,6 +165,7 @@ export function convertRecipe(
             }
             const image = (src: string) => recipe.imageOverrides?.[src] ?? src
             q.images = q.images.map(image)
+            if(q.phraseImages)q.phraseImages=q.phraseImages.map(clue=>({...clue,...(clue.imageSrc?{imageSrc:image(clue.imageSrc)}:{})}))
             q.choices = q.choices.map((c) => ({
               ...c,
               image: c.image ? image(c.image) : undefined,
@@ -242,6 +246,20 @@ export function convertRecipe(
               add(q, entry.model, entry.correctId)
             }
             return
+          }
+          if(item.layout==='phrase-svc'){
+            if(!item.tokens?.length){reject('Phrase S-V-C absente.');return}
+            const q=base();q.mode='oral';q.compatibility='teacher-led';q.prompt=phraseSentence(item.tokens,item.phraseQuestion);q.instruction='Entourez le sujet et soulignez le verbe.';add(q,syntaxModel(item.tokens));return
+          }
+          if(item.layout==='phrase-images'){
+            const clues=item.phraseImages
+            if(!Array.isArray(clues)||clues.length<2||clues.length>MAX_PHRASE_IMAGE_CLUES||clues.some(clue=>!clue||!Object.hasOwn(PHRASE_COLORS,clue.category)||typeof clue.label!=='string'||!clue.label.trim()||clue.label.length>200||clue.imageSrc!==undefined&&(typeof clue.imageSrc!=='string'||!clue.imageSrc.trim()))||!clues.some(clue=>clue.imageSrc)){
+              reject('Vérifiez les images, indices et catégories de cette phrase.');return
+            }
+            const q=base();q.mode='oral';q.compatibility='teacher-led';q.prompt='Écrivez une phrase à partir des images.'
+            q.phraseImages=clues.map(({category,label,imageSrc})=>({category,label,...(imageSrc?{imageSrc}:{})}))
+            q.phraseImageLabels=item.phraseImageLabels===true;if(item.phraseQuestion)q.phraseImagePrefix=interrogativePrefix(item.tokens??[]);q.images=clues.flatMap(clue=>clue.imageSrc?[clue.imageSrc]:[])
+            add(q,item.responseAnswer??item.answer??'Aucun exemple fourni. L’enseignant apprécie la phrase.');return
           }
           const ordering = adaptOrdering(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))
           if (ordering) {

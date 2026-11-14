@@ -99,12 +99,9 @@ export function usePageConfig({
             ...fixed,
             // Changement de type → lever le contenu figé (sinon refresh / type restent bloqués après le mode libre).
             ...(patch.exerciseType != null ? clearLibreContentFreeze() : {}),
-            phraseItems:
-              patch.exerciseType != null || patch.count != null ? undefined : fixed.phraseItems,
+            phraseItems: patch.phraseItems!==undefined ? patch.phraseItems : undefined,
             phraseInstruction:
-              patch.exerciseType != null || patch.count != null
-                ? undefined
-                : fixed.phraseInstruction,
+              patch.phraseInstruction!==undefined ? patch.phraseInstruction : patch.phraseItems!==undefined ? fixed.phraseInstruction : undefined,
             problemDraftGrids: isProblemExercise(fixed.exerciseType)
               ? resizeDraftGrids(fixed.problemDraftGrids, count, !/^tcm-csc-ex(?:22|23|24)$/.test(fixed.exerciseType))
               : undefined,

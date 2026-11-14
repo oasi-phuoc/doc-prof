@@ -1,6 +1,6 @@
 # Audit et banques Gattegno
 
-Les sept thèmes sont **Simple**, **Déterminants**, **Verbes pronominaux**, **Adjectif**, **Préposition**, **Adverbe** et **Conjonctions**. Les tableaux de référence restent séparés. Chaque exercice propose **Positive / Négative / Mixte** ; les recettes historiques de négation sont migrées vers le thème correspondant avec la forme négative sélectionnée. Les quatre formats partagent les mêmes phrases pour une même graine et les mêmes réglages.
+Les sept thèmes sont **Simple**, **Déterminants**, **Verbes pronominaux**, **Adjectif**, **Préposition**, **Adverbe** et **Conjonctions**. Les tableaux de référence restent séparés. Chaque exercice propose **Positive / Négative / Mixte** ; les recettes historiques de négation sont migrées vers le thème correspondant avec la forme négative sélectionnée. Les quatre formats historiques partagent les mêmes phrases pour une même graine et les mêmes réglages.
 
 ## Révision éditoriale du 12 novembre 2026
 
@@ -72,3 +72,11 @@ node scripts/audit-gattegno-editorial.cjs --write
 ```
 
 Sans `--write`, les contrôles s’exécutent sans réécrire les rapports. Les audits et le parcours navigateur font partie du workflow de qualité.
+
+## Nouveaux exercices du 14 novembre 2026
+
+**S-V-C : sujet, verbe et complément** précède les pastilles dans les sept thèmes : l’élève entoure le sujet et souligne le verbe ; le corrigé marque le groupe sujet complet et les parties du verbe. **Écrire une phrase en images** précède la production écrite. Les cadres suivent les couleurs grammaticales, les images restent dans l’ordre des mots et l’exemple est réservé au corrigé. Voir le [guide des phrases en images](phrases-en-images.md).
+
+Les réglages Positive / Négative / Mixte, Affirmatif / Interrogatif / Mixte et Actif / Passif / Mixte sont indépendants. Le bouton Affirmatif désigne ici la phrase déclarative. Les questions utilisent « Est-ce que / Est-ce qu’ ». Le passif sélectionne des constructions transitives compatibles, avec accord du participe ; les constructions pronominales restent actives. La sélection Passif signale l’absence de construction compatible. Sans prépositions, le complément d’agent en « par » est omis. Les colonnes sont retirées de Gattegno.
+
+La banque comprend **214 nouvelles illustrations individuelles en grand format**, avec décors dans le style TCF validé et personnages variés. Les références TCF existantes sont conservées. La limite temporaire du service de génération a interrompu le lot : **42 verbes des 281 verbes sources**, ainsi que le bonus *rougir*, restent dans la [file de reprise](illustrations-en-attente.json). Les fichiers en attente ne sont pas proposés comme images disponibles ; les vignettes extraites des planches ont été retirées. Le [manifeste](illustrations-generation-20261114.json) conserve les fichiers réellement intégrés et leurs empreintes.

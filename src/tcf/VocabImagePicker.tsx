@@ -2,6 +2,7 @@ import { CE_ARTWORKS } from './ce-art'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { VOCAB_IMAGE_THEMES } from '@/jeux/vocab-images'
 import { tcfImageSrc } from './media'
+import {GATTEGNO_PICTOGRAMS} from '@/francais/phrase-pictograms'
 
 type VocabHit = { label: string; src: string; theme: string }
 
@@ -16,7 +17,9 @@ function norm(s: string) {
 const ALL_WORDS: VocabHit[] = [
   ...VOCAB_IMAGE_THEMES.flatMap((theme) => theme.words.map((word) => ({ label: word.label, src: word.src, theme: theme.label }))),
   ...CE_ARTWORKS.map((poster) => ({ label: poster.label, src: poster.src, theme: 'Affiches CE — TCF CSC' })),
+  ...GATTEGNO_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — pronoms et actions'})),
 ]
+const uniquePictures=(images:readonly VocabHit[])=>{const seen=new Set<string>();return images.filter(image=>{if(seen.has(image.src))return false;seen.add(image.src);return true})}
 
 /**
  * Fenêtre de recherche d’images vocabulaire : tapez un mot → chemin
@@ -30,14 +33,16 @@ export function VocabImagePicker({
   onUpload,
   onReset,
   uploadError,
+  choices=ALL_WORDS,
 }: {
   open: boolean
   onClose: () => void
-  onPick: (src: string) => void
+  onPick: (src: string, label?:string) => void
   initialQuery?: string
   onUpload?: (file: File) => void | Promise<void>
   onReset?: () => void
   uploadError?: string
+  choices?: readonly VocabHit[]
 }) {
   const [query, setQuery] = useState('')
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -60,9 +65,9 @@ export function VocabImagePicker({
 
   const hits = useMemo(() => {
     const q = norm(query)
-    if (!q) return ALL_WORDS.slice(0, 48)
+    if (!q) return uniquePictures(choices).slice(0, 48)
     const scored: { hit: VocabHit; score: number }[] = []
-    for (const hit of ALL_WORDS) {
+    for (const hit of choices) {
       const label = norm(hit.label)
       const slug = norm(hit.src.split('/').pop()?.replace(/\.webp$/i, '') ?? '')
       let score = 0
@@ -73,8 +78,8 @@ export function VocabImagePicker({
       if (score) scored.push({ hit, score })
     }
     scored.sort((a, b) => b.score - a.score || a.hit.label.localeCompare(b.hit.label, 'fr'))
-    return scored.slice(0, 80).map((s) => s.hit)
-  }, [query])
+    return uniquePictures(scored.map(s=>s.hit)).slice(0,80)
+  }, [query,choices])
 
   if (!open) return null
 
@@ -130,7 +135,7 @@ export function VocabImagePicker({
                   type="button"
                   className="tcf-vocab-picker-item"
                   onClick={() => {
-                    onPick(hit.src)
+                    onPick(hit.src,hit.label)
                     onClose()
                   }}
                 >

@@ -20,6 +20,7 @@ import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateAlphabetisationBatch } from '@/alphabetisation/generate'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
+import {splitPhraseImagePages} from '@/francais/phrase-image-pages'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
 import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { pageAsConfig, pageBlocks } from './page-model'
@@ -288,6 +289,9 @@ function buildSingleBlock(
     config.verbGroup ?? 'er',
     config.phrasePolarity,
     config.phraseCategories,
+    config.phraseImageLabels,
+    config.phraseSentenceType,
+    config.phraseVoice,
   )
   if (phrase) {
     const libre =
@@ -450,7 +454,7 @@ export function buildPage(
       instruction: libre?.instruction ?? result.instruction,
       // Filet anti bruit binaire (7,2700000000000005) sur toutes les fiches.
       items,
-      columns: block.columns,
+      columns: config.domain === 'gattegno' ? 1 : block.columns,
       exerciseType: block.exerciseType,
       pointsPerQuestion: block.pointsPerQuestion,
       givens: libreGivens ?? result.givens,
@@ -628,6 +632,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       }
       return
     }
+    const phraseImagePages=splitPhraseImagePages(worksheet)
+    if(phraseImagePages){out.push(...phraseImagePages.map(sheet=>({...sheet,configIndex:index})));return}
     const cscPages = splitCscColumnPages(worksheet)
     if (cscPages) {
       out.push(...cscPages.map(sheet=>({...sheet,configIndex:index})))

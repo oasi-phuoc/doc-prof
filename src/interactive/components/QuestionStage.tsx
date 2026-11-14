@@ -16,6 +16,7 @@ import { NumberSequenceView } from './NumberSequenceView'
 import { WordClassificationView } from './WordClassificationView'
 import { ImageSequence } from './ImageSequence'
 import { WordSequence } from './WordSequence'
+import {PhraseImageRow} from '@/components/math/PhraseImageRow'
 import './guided-oral.css'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
@@ -53,7 +54,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
   const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
@@ -78,7 +79,7 @@ export function QuestionStage({
         {q.wordClassification && <WordClassificationView classification={q.wordClassification} />}
         <GrammarImageSupports supports={q.grammarImages} zoom/>
         {q.oralSituation && <details className="ci-oral-situation"><summary>Situation et consigne</summary><p>{q.instruction}</p><p>{q.oralSituation}</p></details>}
-        {q.mode === 'sequence' && !q.oralSituation && (
+        {(q.mode === 'sequence'||!!q.phraseImages) && !q.oralSituation && (
           <details className="ci-full-instruction">
             <summary>Consigne complète</summary>
             <p>{q.instruction}</p>
@@ -168,7 +169,7 @@ export function QuestionStage({
         </div>
       ) : (
         <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
-          {q.mode === 'sequence' ? (
+          {q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
             q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} /> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
           ) : q.mode==='oral'&&q.images.length ? (
             <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom/>)}</div>
@@ -181,7 +182,7 @@ export function QuestionStage({
         </section>
       )}
       {report.manualScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
-      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
+      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }
