@@ -31,11 +31,21 @@ await test('every prepared TCF question, all its response forms and the exact pe
    const detail=allDetails[aliases[refs[track-1]]??refs[track-1]],id=`${ex.id}:question-${i+1}`
    const result=detail.blocks.flatMap(b=>b.questions).find(q=>q.id===id);assert.ok(result,id)
    assert.equal(result.prompt,q.enonce);assert.ok(result.formats.some(f=>f.kind==='text'));assert.ok(result.formats.some(f=>f.kind==='lines'))
+   assert.deepEqual(result.formats.find(f=>f.kind==='text').choices.map(c=>[c.text,Boolean(c.correct)]),(q.type_reponse==='qcm_texte'?q:q.formes.qcm_texte).choix.map(c=>[c.texte,Boolean(c.correct)]))
    if(q.formes?.qcm_image){assert.deepEqual(result.formats.find(f=>f.kind==='image').choices.map(c=>c.image.src),q.formes.qcm_image.choix.map(c=>c.image));illustrated++}
    questions++
   }
  }
  assert.ok(questions>4900);assert.ok(illustrated>1300)
+})
+await test('reviewed scenario recordings retain their exact source, searchable category and bound scene in catalogue exports',async()=>{
+ const scenarios=await read('src/tcf/association-image-themes.json')
+ for(const source of scenarios.sources){
+  const entry=index.entries.find(e=>e.id===source.audio),detail=allDetails[source.audio]
+  assert.ok(entry.types.includes('Scénario'),source.audio)
+  assert.ok(detail.transcripts.some(t=>t.text===source.transcription))
+  assert.ok(detail.blocks.some(block=>block.images.some(image=>image.src===source.image&&image.available)),source.audio)
+ }
 })
 await test('multi-track audio and replacement aliases cannot receive another dialogue’s text or questions',async()=>{
  const temp=await mkdtemp(path.join(tmpdir(),'audio-index-'))
@@ -52,6 +62,19 @@ const server=await createServer({cacheDir:'/tmp/clairfle-audio-unit-vite',server
 try{
  const {filterAudios}=await server.ssrLoadModule('/src/audio-catalog/catalog.ts')
  const {audioWordDocument}=await server.ssrLoadModule('/src/audio-catalog/docx.ts')
+ const {tcfAudioEntries}=await server.ssrLoadModule('/src/tcf/audio-bank.ts')
+ const {tcfBankAllLevels}=await server.ssrLoadModule('/src/tcf/loader.ts')
+ await test('short, medium and long catalogue filters agree with every active question pool in the exercise generator',()=>{
+  let checked=0
+  for(const audio of tcfAudioEntries(tcfBankAllLevels('CO'))){
+   if(!audio.questionPool?.length)continue
+   const tag=audio.tags.find(t=>['court','moyen','long'].includes(t)),label=({court:'Court',moyen:'Moyen',long:'Long'})[tag]
+   const entry=index.entries.find(e=>e.id===audio.audio)
+   assert.deepEqual(entry.types.filter(t=>['Court','Moyen','Long'].includes(t)),[label],audio.audio)
+   checked++
+  }
+  assert.ok(checked>=1371)
+ })
  await test('accent-insensitive searches combine with every filter, including exact levels and prepared content',()=>{
   const found=filterAudios(index.entries,'aeroport','','','TCF','','questions');assert.ok(found.length)
   assert.deepEqual(filterAudios(index.entries,'AÉROPORT','','','TCF','','questions'),found)

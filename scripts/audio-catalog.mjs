@@ -14,6 +14,8 @@ const unique=values=>[...new Set(values.filter(Boolean))]
  * a recording's transcript from its filename. Bank texts are copied verbatim. */
 export function buildAudioCatalog(root) {
  const durations=read(root,'src/tcf/content/audio-durations.json',{}),aliases=read(root,'src/tcf/content/audio-replacements.json',{})
+ const reviewedPools=read(root,'src/tcf/content/co-reviewed-pools.json',{}),lengthTags=new Map()
+ const scenarioSources=read(root,'src/tcf/association-image-themes.json',{sources:[]}).sources
  const records=new Map()
  for(const file of walk(root,'public/lib/audio').filter(file=>/\.(mp3|wav|ogg|m4a|aac|flac|opus)$/i.test(file))){
   const bytes=statSync(path.join(root,file)).size
@@ -55,13 +57,21 @@ export function buildAudioCatalog(root) {
    entry.types.add(ex.type_exercice==='association_images'?'Dialogue et situations':ex.type_exercice==='images_a_reconnaitre'?'Objets à reconnaître':'Compréhension orale')
    for(const tag of ex.tags??[])entry.types.add(({scenario:'Scénario',court:'Court',moyen:'Moyen',long:'Long',objet:'Objets à reconnaître'})[tag]??pretty(tag))
    const tr=ex.support.transcription
+   const transcript=Array.isArray(tr)?tr[index]:refs.length===1?tr:undefined
+   const scenario=scenarioSources.find(row=>row.exercise===ex.id&&row.audio===src&&row.transcription===transcript)
+   if(scenario)entry.types.add('Scénario')
    if(Array.isArray(tr))addTranscript(record,tr[index],source)
    else if(refs.length===1)addTranscript(record,tr,source)
    else if(typeof tr==='string'&&tr.trim())detail.notes.push('Une transcription commune à plusieurs pistes existe dans la banque ; son découpage n’est pas renseigné.')
    const all=ex.questions??[]
    const linked=refs.length===1?all:all.filter((q,i)=>q.audio!==undefined?q.audio===index+1:all.length===refs.length&&i===index)
+   if(bank.startsWith('src/tcf/content/')&&ex.competence==='CO'&&linked.length){
+    const seconds=durations[src]
+    const tag=reviewedPools[src]?.tag??(seconds>0?(seconds<=15?'court':seconds<=45?'moyen':'long'):linked.length<=3?'court':linked.length<=7?'moyen':'long')
+    lengthTags.set(src,tag)
+   }
    if(refs.length>1&&all.some(q=>q.audio===undefined)&&all.length!==refs.length)detail.notes.push('Des questions communes à plusieurs pistes ne sont pas attribuées à un dialogue précis dans la banque.')
-   const block={id:source,title:ex.scene||ex.theme||ex.id,level:ex.niveau,instruction:ex.consigne,images:unique([...(refs.length===1&&ex.support.image?[ex.support.image]:[]),...(ex.support.images?.[index]?[ex.support.images[index]]:[])]).map(image),questions:linked.map((q,i)=>question(q,`${ex.id}:question-${all.indexOf(q)+1||i+1}`))}
+   const block={id:source,title:ex.scene||ex.theme||ex.id,level:ex.niveau,instruction:ex.consigne,images:unique([...(refs.length===1&&ex.support.image?[ex.support.image]:[]),...(ex.support.images?.[index]?[ex.support.images[index]]:[]),...(scenario?[scenario.image]:[])]).map(image),questions:linked.map((q,i)=>question(q,`${ex.id}:question-${all.indexOf(q)+1||i+1}`))}
    if(ex.type_exercice==='images_a_reconnaitre'&&ex.images?.length)block.questions.push({id:ex.id+':objets',prompt:ex.consigne||'Quels objets sont entendus ? Cochez oui ou non.',images:[],formats:[{kind:'yes-no',label:'Images — Oui / Non',choices:ex.images.map((c,i)=>({letter:String.fromCharCode(65+i),image:image(c.image),correct:c.correct}))}]})
    if(ex.type_exercice==='association_images'&&ex.situations?.length)block.questions.push({id:ex.id+':situations-'+index,prompt:refs.length>1?'Quelle image correspond à ce dialogue ?':'Associez chaque image au numéro du dialogue entendu.',images:[],formats:[{kind:refs.length>1?'image':'association',label:'Situations en images',choices:ex.situations.map((s,i)=>({letter:/^[a-z]$/i.test(s.id)?s.id.toUpperCase():String.fromCharCode(65+i),image:image(s.image),...(refs.length>1?{correct:s.dialogue===index+1}:{answer:s.dialogue==null?'Aucun dialogue':String(s.dialogue)})}))}]})
    if(ex.support.exemples_questions?.length)block.questions.push(...ex.support.exemples_questions.map((text,i)=>({id:ex.id+':oral-'+i,prompt:text,images:[],formats:[{kind:'lines',label:'Question orale',lines:2}]})))
@@ -115,6 +125,8 @@ export function buildAudioCatalog(root) {
  for(const [src,prompt] of Object.entries(read(root,'src/audio-catalog/prompts.json',{}))){const record=records.get(src);if(record){addTranscript(record,prompt,'Texte de consigne enregistré');record.entry.label=prompt.length>90?prompt.slice(0,87)+'…':prompt}}
  const details={},entries=[]
  for(const [src,{entry,detail}] of records){
+  const length=lengthTags.get(src)
+  if(length){for(const label of ['Court','Moyen','Long'])entry.types.delete(label);entry.types.add(({court:'Court',moyen:'Moyen',long:'Long'})[length])}
   detail.notes=unique(detail.notes)
   if(aliases[src]){entry.types.add('Ancienne piste');detail.notes.push('La banque utilise désormais la piste corrigée : '+aliases[src])}
   if(!entry.themes.size)entry.themes.add(pretty(src.split('/').at(-2)??'Autres audios'))

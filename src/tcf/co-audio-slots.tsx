@@ -223,7 +223,11 @@ export function TcfCoAudioSlotsPicker({
                 {groups.map((g) => (
                   <optgroup key={g.id} label={g.label}>
                     {g.items.map((entry) => (
-                      <option key={entry.audio} value={entry.audio}>
+                      <option key={entry.audio} value={entry.audio} disabled={kind === 'scenario' && current.some((path, slot) => {
+                        if (slot === i || !path) return false
+                        const other = pool.find((candidate) => candidate.audio === path)?.scenarioScene
+                        return !!other && (other.image === entry.scenarioScene?.image || other.sceneKey === entry.scenarioScene?.sceneKey)
+                      })}>
                         {entryOptionLabel(entry)}
                       </option>
                     ))}
