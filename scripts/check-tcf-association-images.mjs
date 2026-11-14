@@ -119,14 +119,22 @@ try {
   const generation = read('docs/tcf/generation-scenarios-20261114.json')
   assert.equal(generation.images.length, 7)
   const priority = read('docs/tcf/generation-scenarios-priorite-20261114.json')
+  const suite = read('docs/tcf/generation-scenarios-a2-suite-20261114.json')
+  const expansions = [priority, suite]
   assert.equal(priority.human_audio_listening_performed, false)
   assert.equal(priority.images.length, priority.summary.original_pngs)
   assert.equal(new Set(priority.reuses.map((r) => r.path)).size, priority.summary.reused_images)
-  assert.equal(priority.baseline.scenario_sources + priority.summary.new_scenario_audio_bindings, catalog.sources.length)
-  assert.equal(priority.summary.remaining_scenes, review.summary.scenario_pending)
-  assert.equal(priority.images.length + generation.images.length, review.summary.new_original_pngs)
+  assert.equal(priority.baseline.scenario_sources + expansions.reduce((n, b) => n + b.summary.new_scenario_audio_bindings, 0), catalog.sources.length)
+  assert.equal(suite.baseline.scenario_sources, priority.summary.total_bound_scenario_sources)
+  assert.equal(suite.summary.remaining_scenes, review.summary.scenario_pending)
+  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length), review.summary.new_original_pngs)
   assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
-  for (const asset of [...generation.images, ...priority.images]) {
+  assert.equal(suite.images.length, suite.summary.original_pngs)
+  assert.equal(suite.summary.new_scenario_audio_bindings + suite.summary.awaiting_gender_confirmation, suite.summary.prepared_scene_uses)
+  assert.equal(suite.human_audio_listening_performed, false)
+  const suitePreparation = read('docs/gallery/preparation-scenarios-a2-suite-20261114.json')
+  assert.equal(suitePreparation.generated_images, suite.images.length)
+  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images)]) {
     const bytes = readFileSync(`public${asset.path}`)
     assert.equal(sha(bytes), asset.sha256)
     assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
@@ -136,7 +144,7 @@ try {
     assert.equal(approved.get(asset.path).style_review.reference_commit, '48a753d8d6bd095e41968b39da88dbcb331fee11')
     assert.ok(asset.visual_review)
   }
-  for (const asset of [...priority.images, ...priority.reuses]) {
+  for (const asset of expansions.flatMap(b => [...b.images, ...b.reuses])) {
     assert.equal(sha(readFileSync(`public${asset.path}`)), asset.sha256)
     assert.ok(asset.visual_review)
     assert.deepEqual(asset.bindings.map((b) => b.exercise), asset.exercise_ids)
