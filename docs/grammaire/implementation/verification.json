@@ -7,17 +7,17 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 5480,
+    "reviewedResponseVariants": 6130,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 4310,
-    "reviewedSelectableUnits": 4310,
+    "reviewedActivityUnits": 4760,
+    "reviewedSelectableUnits": 4760,
     "reviewedDocuments": 60,
     "reviewedDocumentQuestions": 180,
-    "reviewedActivities": 80,
-    "reviewedOfferings": 109,
+    "reviewedActivities": 89,
+    "reviewedOfferings": 122,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 17,
-    "reviewedNotionLevelPairs": 21
+    "reviewedNotions": 19,
+    "reviewedNotionLevelPairs": 23
   },
   "browser": {
     "results": [
@@ -66,24 +66,24 @@
     ],
     "errors": []
   },
-  "remaining": "Entrer en contact : 19 offres sur 19 en pilote ; Conjuguer au présent : 72 sur 72. Approbation enseignante en attente. 492 offres et 344 activités restent sans banque pilote, dont les 40 offres de Se présenter.",
+  "remaining": "Se présenter : 13 offres sur 40 en pilote ; restent identité (11), nationalités (8), famille (8). 479 offres et 335 activités restent sans banque pilote. Approbation enseignante en attente pour tous les pilotes ; onze obligations I, révisions et recette finale à compléter.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
       "result": "passed",
-      "validatedAtUpstream": "adf7e688"
+      "validatedAtUpstream": "683c7bdf"
     },
     "legacyAndCo": {
       "command": "node scripts/grammar-baseline.cjs",
       "result": "passed",
       "fixtures": 735,
       "protectedFiles": 256,
-      "validatedAtUpstream": "adf7e688"
+      "validatedAtUpstream": "683c7bdf"
     },
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 5480,
+      "reviewedVariants": 6130,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
@@ -96,14 +96,14 @@
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
       "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
-      "reviewedActivityOfferings": 109,
+      "reviewedActivityOfferings": 122,
       "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension",
       "g3Notions": [
         "avoir A1",
         "aller-destination A1",
         "er A1"
       ],
-      "validatedAtUpstream": "adf7e688"
+      "validatedAtUpstream": "683c7bdf"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -612,6 +612,131 @@
       "full109OnSingleBaseClaimed": false,
       "generatedImages": 0,
       "generatedAudios": 0
+    },
+    "presentationA1": {
+      "upstream": "a49a9297",
+      "coreValidatedAtUpstream": "683c7bdf",
+      "commands": [
+        "npm run test:grammar:presentation",
+        "npm run test:grammar:presentation:browser"
+      ],
+      "result": "passed",
+      "activities": 9,
+      "offerings": 13,
+      "selectableUnits": 450,
+      "responseVariants": 650,
+      "humanApproval": "pending",
+      "sourceReuse": "50 historical subject-pronoun completions curated; 50 nominal-subject transformations; 50 provenance contexts shared across task contracts. Counts do not represent 450 new stories.",
+      "matching": "50 full problems of three distinct forms per notion, with canonical source IDs; Je/J’ are not competing persons.",
+      "images": {
+        "existingFilesReused": 20,
+        "countryFiles": 17,
+        "personFiles": 3,
+        "manifest": "docs/grammaire/implementation/presentation-media.json",
+        "generated": 0,
+        "rejectedJapan": "Historical flag colors reversed; original left untouched, excluded from the pilot.",
+        "integrity": "Unchanged source bytes, immutable hash paths, dimensions and alt text; verified before display and printing.",
+        "writtenProduction": "Two images per unit: person/reference and country; provenance and nationality explicitly supplied as separate fictitious facts."
+      },
+      "countryGender": "Dedicated field; colored parentheses immediately after the blank on paper and in classroom, retained as text in the reading dialog.",
+      "a4Fix": "Paired reference images have a 32 mm maximum height, retaining all facts, three writing lines, model and rubric; the prior maximum produced a 2.45 px overflow.",
+      "openAssessment": "Role, interlocutor, intention, return question and follow-up; non-exclusive examples, teacher rubric, no automatic score.",
+      "browserPresentations": 13,
+      "printedQuestions": 1300,
+      "printedImages": 400,
+      "classroomLaunches": 6,
+      "browserErrors": 0,
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-presentation-build --emptyOutDir",
+      "sharedAdapterTests": "source-adapters and guided-oral: two test files passed on a49a9297",
+      "technicalMediaContractsBrowser": {
+        "results": [
+          {
+            "case": "closed",
+            "presentation": "scenario-set",
+            "responses": 4,
+            "printedResponses": 8,
+            "sheets": 6,
+            "overflow": false
+          },
+          {
+            "scenarioBreak": "reversible; all four child IDs preserved"
+          },
+          {
+            "classroom": "closed",
+            "status": "passed"
+          },
+          {
+            "case": "open",
+            "presentation": "scenario-set",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "classroom": "open",
+            "status": "passed"
+          },
+          {
+            "case": "imageChoice",
+            "presentation": "choice",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "classroom": "imageChoice",
+            "status": "passed"
+          },
+          {
+            "case": "imageChoice",
+            "presentation": "gap",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "case": "imageWriting",
+            "presentation": "open-written",
+            "responses": 1,
+            "printedResponses": 2,
+            "sheets": 2,
+            "overflow": false
+          },
+          {
+            "imageFailure": "changed",
+            "status": "diagnostic shown; no replacement image"
+          },
+          {
+            "imageFailure": "missing",
+            "status": "diagnostic shown; no replacement image"
+          },
+          {
+            "printReadiness": "waits for verified and decoded image bytes; changed/missing images block the print button"
+          }
+        ],
+        "errors": []
+      },
+      "full122OnSingleBaseClaimed": false,
+      "generatedAudios": 0,
+      "testHarness": "Image readiness counts all A4 sheets, then only visible classroom references; hidden zoom-dialog copies are excluded."
+    },
+    "presentationPostIntegration": {
+      "upstream": "683c7bdf",
+      "integration": "TCF scenarios, audio classification, gallery/audio indexes and scripts; no grammar, generator or shared interactive runtime changes upstream.",
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "reviewedResponseVariants": 6130,
+      "grammarContracts": "passed",
+      "presentationContracts": "passed",
+      "browserAtUpstream": "a49a9297",
+      "full122OnSingleBaseClaimed": false
     }
   },
   "upstreamIntegrated": "adf7e688",
@@ -1641,6 +1766,164 @@
         "classroom": "scenario",
         "sourceProblems": 3,
         "gameQuestions": 3,
+        "status": "passed"
+      }
+    ],
+    "errors": []
+  },
+  "browserPresentationA1": {
+    "status": "passed",
+    "results": [
+      {
+        "activity": "gram-ex-a2-qcm-verbe",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 34,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-qcm-verbe",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 34,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-a",
+        "presentation": "match",
+        "printedQuestions": 100,
+        "sheets": 50,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-t",
+        "presentation": "transform",
+        "printedQuestions": 100,
+        "sheets": 50,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-pays",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 100,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-pays",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 100,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-prep",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 20,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-prep",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 18,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-verbe",
+        "presentation": "choice",
+        "printedQuestions": 100,
+        "sheets": 20,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-verbe",
+        "presentation": "gap",
+        "printedQuestions": 100,
+        "sheets": 18,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-prov-phrases",
+        "presentation": "open-written",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 200,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-curriculum-a",
+        "presentation": "match",
+        "printedQuestions": 100,
+        "sheets": 50,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a6-curriculum-p",
+        "presentation": "open-oral",
+        "printedQuestions": 100,
+        "sheets": 100,
+        "images": 0,
+        "overflow": false
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-a",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 9,
+        "images": 0,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a2-curriculum-t",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 0,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-prov-pays",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 1,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-prov-prep",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 0,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-prov-phrases",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 2,
+        "status": "passed"
+      },
+      {
+        "activity": "gram-ex-a6-curriculum-p",
+        "classroom": true,
+        "sourceProblems": 3,
+        "gameQuestions": 3,
+        "images": 0,
         "status": "passed"
       }
     ],

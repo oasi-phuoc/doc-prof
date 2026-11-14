@@ -16,7 +16,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
     <GrammarImageSupports supports={u.imageSupports}/>
     {u.cue?<p className="grammar-cue">{u.cue}</p>:null}
     {u.kind==='completion'?<>
-      <p><Sentence text={u.prompt} answer={corrected?u.answers[0]:undefined} givenVerb={u.givenVerb}/></p>
+      <p><Sentence text={u.prompt} answer={corrected?u.answers[0]:undefined} givenVerb={u.givenVerb} countryGender={u.countryGender}/></p>
       {q.presentation==='choice'?<ul className="grammar-choices" aria-label="Propositions">
         {q.options?.map((option,index)=><li key={option.id}><span className="grammar-choice-box" aria-hidden="true">{corrected&&u.answers.includes(option.text)?'✓':'\u00a0'}</span> <b>{String.fromCharCode(65+index)}.</b> {option.text}</li>)}
       </ul>:null}

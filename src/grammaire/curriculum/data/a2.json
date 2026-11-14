@@ -1,0 +1,4079 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "a2-a1-qcm-verbe-2026-11-14.1",
+    "activityId": "gram-ex-a2-qcm-verbe",
+    "subthemeId": "a2",
+    "topic": "gram-se-presenter",
+    "level": "A1",
+    "label": "Complétez le pronom",
+    "objective": "Identifier le sujet et choisir un pronom cohérent.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-14",
+      "humanReview": "pending",
+      "note": "Relecture des sources, accords et contrats ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le pronom selon le sujet indiqué.",
+      "gap": "Complétez avec le pronom selon le sujet indiqué."
+    },
+    "units": [
+      {
+        "id": "a2-a1-qcm-verbe-001",
+        "kind": "completion",
+        "prompt": "___ m’appelle Léa.",
+        "answers": [
+          "Je"
+        ],
+        "explanation": "Le sujet indiqué appelle « Je ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 0
+        },
+        "cue": "La personne parle d’elle-même.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Je"
+          },
+          {
+            "id": "o2",
+            "text": "Tu"
+          },
+          {
+            "id": "o3",
+            "text": "Il"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-002",
+        "kind": "completion",
+        "prompt": "___ es en classe, Omar ?",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 1
+        },
+        "cue": "Vous vous adressez à Omar et le tutoyez.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Vous"
+          },
+          {
+            "id": "o3",
+            "text": "Il"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-003",
+        "kind": "completion",
+        "prompt": "___ est à Sion.",
+        "answers": [
+          "Elle"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elle ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 2
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elle"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Ils"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-004",
+        "kind": "completion",
+        "prompt": "___ sommes étudiants.",
+        "answers": [
+          "Nous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Nous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 3
+        },
+        "cue": "Sujet à reprendre : Hugo (personnage masculin) et moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Nous"
+          },
+          {
+            "id": "o2",
+            "text": "Vous"
+          },
+          {
+            "id": "o3",
+            "text": "Ils"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-005",
+        "kind": "completion",
+        "prompt": "Madame Rossi, comment ___ vous appelez ?",
+        "answers": [
+          "vous"
+        ],
+        "explanation": "Le sujet indiqué appelle « vous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 4
+        },
+        "cue": "Vous vous adressez à Madame Rossi et la vouvoyez.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "vous"
+          },
+          {
+            "id": "o2",
+            "text": "tu"
+          },
+          {
+            "id": "o3",
+            "text": "ils"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-006",
+        "kind": "completion",
+        "prompt": "___ sont suisses.",
+        "answers": [
+          "Elles"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elles ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 5
+        },
+        "cue": "Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elles"
+          },
+          {
+            "id": "o2",
+            "text": "Ils"
+          },
+          {
+            "id": "o3",
+            "text": "Elle"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-007",
+        "kind": "completion",
+        "prompt": "___ parle avec le voisin.",
+        "answers": [
+          "Je"
+        ],
+        "explanation": "Le sujet indiqué appelle « Je ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 6
+        },
+        "cue": "Sujet à reprendre : moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Je"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-008",
+        "kind": "completion",
+        "prompt": "___ écoute les consignes.",
+        "answers": [
+          "Il"
+        ],
+        "explanation": "Le sujet indiqué appelle « Il ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 7
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Il"
+          },
+          {
+            "id": "o2",
+            "text": "Nous"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-009",
+        "kind": "completion",
+        "prompt": "___ regardent la météo.",
+        "answers": [
+          "Ils"
+        ],
+        "explanation": "Le sujet indiqué appelle « Ils ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 8
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Ils"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-010",
+        "kind": "completion",
+        "prompt": "___ cherches un logement.",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 9
+        },
+        "cue": "Sujet à reprendre : toi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-011",
+        "kind": "completion",
+        "prompt": "___ travaillons à la bibliothèque.",
+        "answers": [
+          "Nous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Nous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 10
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Nous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-012",
+        "kind": "completion",
+        "prompt": "___ habitent près du marché.",
+        "answers": [
+          "Elles"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elles ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 11
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elles"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-013",
+        "kind": "completion",
+        "prompt": "___ prépare la salade.",
+        "answers": [
+          "Elle"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elle ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 12
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elle"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-014",
+        "kind": "completion",
+        "prompt": "___ demandez une attestation.",
+        "answers": [
+          "Vous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Vous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 13
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et vous.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Vous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-015",
+        "kind": "completion",
+        "prompt": "___arrive à la gare.",
+        "answers": [
+          "J’"
+        ],
+        "explanation": "Le sujet indiqué appelle « J’ ». Je devient j’ devant une voyelle.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 14
+        },
+        "cue": "Sujet à reprendre : moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "J’"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-016",
+        "kind": "completion",
+        "prompt": "___ reste chez ma sœur.",
+        "answers": [
+          "Il"
+        ],
+        "explanation": "Le sujet indiqué appelle « Il ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 15
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Il"
+          },
+          {
+            "id": "o2",
+            "text": "Nous"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-017",
+        "kind": "completion",
+        "prompt": "___ aiment la randonnée.",
+        "answers": [
+          "Ils"
+        ],
+        "explanation": "Le sujet indiqué appelle « Ils ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 16
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Ils"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-018",
+        "kind": "completion",
+        "prompt": "___ dessines un paysage.",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 17
+        },
+        "cue": "Sujet à reprendre : toi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-019",
+        "kind": "completion",
+        "prompt": "___ cuisinons un repas simple.",
+        "answers": [
+          "Nous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Nous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 18
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Nous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-020",
+        "kind": "completion",
+        "prompt": "___ réparent la sonnette.",
+        "answers": [
+          "Elles"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elles ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 19
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elles"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-021",
+        "kind": "completion",
+        "prompt": "___ ferme la fenêtre.",
+        "answers": [
+          "Elle"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elle ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 20
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elle"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-022",
+        "kind": "completion",
+        "prompt": "___ lavez les légumes.",
+        "answers": [
+          "Vous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Vous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 21
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et vous.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Vous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-023",
+        "kind": "completion",
+        "prompt": "___ porte un sac léger.",
+        "answers": [
+          "Je"
+        ],
+        "explanation": "Le sujet indiqué appelle « Je ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 22
+        },
+        "cue": "Sujet à reprendre : moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Je"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-024",
+        "kind": "completion",
+        "prompt": "___ visite le musée.",
+        "answers": [
+          "Il"
+        ],
+        "explanation": "Le sujet indiqué appelle « Il ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 23
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Il"
+          },
+          {
+            "id": "o2",
+            "text": "Nous"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-025",
+        "kind": "completion",
+        "prompt": "___ rangent les outils.",
+        "answers": [
+          "Ils"
+        ],
+        "explanation": "Le sujet indiqué appelle « Ils ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 24
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Ils"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-026",
+        "kind": "completion",
+        "prompt": "___ expliques le trajet.",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 25
+        },
+        "cue": "Sujet à reprendre : toi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-027",
+        "kind": "completion",
+        "prompt": "___ aidons la nouvelle élève.",
+        "answers": [
+          "Nous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Nous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 26
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Nous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-028",
+        "kind": "completion",
+        "prompt": "___ étudient le vocabulaire.",
+        "answers": [
+          "Elles"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elles ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 27
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elles"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-029",
+        "kind": "completion",
+        "prompt": "___ joue au basket.",
+        "answers": [
+          "Elle"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elle ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 28
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elle"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-030",
+        "kind": "completion",
+        "prompt": "___ chantez avec la chorale.",
+        "answers": [
+          "Vous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Vous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 29
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et vous.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Vous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-031",
+        "kind": "completion",
+        "prompt": "___ danse à la fête.",
+        "answers": [
+          "Je"
+        ],
+        "explanation": "Le sujet indiqué appelle « Je ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 30
+        },
+        "cue": "Sujet à reprendre : moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Je"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-032",
+        "kind": "completion",
+        "prompt": "___ réserve une place.",
+        "answers": [
+          "Il"
+        ],
+        "explanation": "Le sujet indiqué appelle « Il ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 31
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Il"
+          },
+          {
+            "id": "o2",
+            "text": "Nous"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-033",
+        "kind": "completion",
+        "prompt": "___ commandent un sandwich.",
+        "answers": [
+          "Ils"
+        ],
+        "explanation": "Le sujet indiqué appelle « Ils ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 32
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Ils"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-034",
+        "kind": "completion",
+        "prompt": "___ partages le dessert.",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 33
+        },
+        "cue": "Sujet à reprendre : toi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-035",
+        "kind": "completion",
+        "prompt": "___ invitons les collègues.",
+        "answers": [
+          "Nous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Nous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 34
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Nous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-036",
+        "kind": "completion",
+        "prompt": "___ racontent une anecdote.",
+        "answers": [
+          "Elles"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elles ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 35
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elles"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-037",
+        "kind": "completion",
+        "prompt": "___ dessine le plan du quartier.",
+        "answers": [
+          "Elle"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elle ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 36
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elle"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-038",
+        "kind": "completion",
+        "prompt": "___ empruntez un roman.",
+        "answers": [
+          "Vous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Vous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 37
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et vous.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Vous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-039",
+        "kind": "completion",
+        "prompt": "___ rapporte le livre.",
+        "answers": [
+          "Je"
+        ],
+        "explanation": "Le sujet indiqué appelle « Je ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 38
+        },
+        "cue": "Sujet à reprendre : moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Je"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-040",
+        "kind": "completion",
+        "prompt": "___ apporte une gourde.",
+        "answers": [
+          "Il"
+        ],
+        "explanation": "Le sujet indiqué appelle « Il ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 39
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Il"
+          },
+          {
+            "id": "o2",
+            "text": "Nous"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-041",
+        "kind": "completion",
+        "prompt": "___ montrent la sortie.",
+        "answers": [
+          "Ils"
+        ],
+        "explanation": "Le sujet indiqué appelle « Ils ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 40
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Ils"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-042",
+        "kind": "completion",
+        "prompt": "___ demandes le prix du billet.",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 41
+        },
+        "cue": "Sujet à reprendre : toi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-043",
+        "kind": "completion",
+        "prompt": "___ notons la nouvelle adresse.",
+        "answers": [
+          "Nous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Nous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 42
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Nous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-044",
+        "kind": "completion",
+        "prompt": "___ signent le formulaire.",
+        "answers": [
+          "Elles"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elles ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 43
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elles"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-045",
+        "kind": "completion",
+        "prompt": "___ patiente devant le guichet.",
+        "answers": [
+          "Elle"
+        ],
+        "explanation": "Le sujet indiqué appelle « Elle ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 44
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Elle"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-046",
+        "kind": "completion",
+        "prompt": "___ traversez la rue.",
+        "answers": [
+          "Vous"
+        ],
+        "explanation": "Le sujet indiqué appelle « Vous ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 45
+        },
+        "cue": "Sujet à reprendre : Lina (personnage féminin) et vous.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Vous"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-047",
+        "kind": "completion",
+        "prompt": "___ tourne à droite.",
+        "answers": [
+          "Je"
+        ],
+        "explanation": "Le sujet indiqué appelle « Je ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 46
+        },
+        "cue": "Sujet à reprendre : moi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Je"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-048",
+        "kind": "completion",
+        "prompt": "___ marche jusqu’au parc.",
+        "answers": [
+          "Il"
+        ],
+        "explanation": "Le sujet indiqué appelle « Il ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 47
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Il"
+          },
+          {
+            "id": "o2",
+            "text": "Nous"
+          },
+          {
+            "id": "o3",
+            "text": "Tu"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-049",
+        "kind": "completion",
+        "prompt": "___ montent les cartons.",
+        "answers": [
+          "Ils"
+        ],
+        "explanation": "Le sujet indiqué appelle « Ils ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 48
+        },
+        "cue": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin).",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Ils"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-qcm-verbe-050",
+        "kind": "completion",
+        "prompt": "___ poses la valise.",
+        "answers": [
+          "Tu"
+        ],
+        "explanation": "Le sujet indiqué appelle « Tu ». Le pronom et le verbe désignent la même personne grammaticale.",
+        "source": {
+          "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+          "typeId": "gram-ex-a2-qcm-verbe",
+          "position": 49
+        },
+        "cue": "Sujet à reprendre : toi.",
+        "options": [
+          {
+            "id": "o1",
+            "text": "Tu"
+          },
+          {
+            "id": "o2",
+            "text": "Il"
+          },
+          {
+            "id": "o3",
+            "text": "Nous"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "a2-a1-curriculum-a-2026-11-14.1",
+    "activityId": "gram-ex-a2-curriculum-a",
+    "subthemeId": "a2",
+    "topic": "gram-se-presenter",
+    "level": "A1",
+    "label": "Associer les sujets et les pronoms",
+    "objective": "Identifier le sujet et choisir un pronom cohérent.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-14",
+      "humanReview": "pending",
+      "note": "Relecture des sources, accords et contrats ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Reliez chaque phrase à son pronom. Utilisez chaque proposition une seule fois."
+    },
+    "units": [
+      {
+        "id": "a2-a1-curriculum-a-001",
+        "kind": "match",
+        "prompt": "Association 1 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "La personne parle d’elle-même. Je m’appelle Léa. ; Sujet à reprendre : Paul (personnage masculin). Il écoute les consignes. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous lavez les légumes."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 0,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "La personne parle d’elle-même. ___ m’appelle Léa.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-001"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ écoute les consignes.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-008"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ lavez les légumes.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-022"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-002",
+        "kind": "match",
+        "prompt": "Association 2 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Vous vous adressez à Omar et le tutoyez. Tu es en classe, Omar ? ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils regardent la météo. ; Sujet à reprendre : Paul (personnage masculin). Il reste chez ma sœur."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 1,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Vous vous adressez à Omar et le tutoyez. ___ es en classe, Omar ?",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-002"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ regardent la météo.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-009"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ reste chez ma sœur.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-016"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-003",
+        "kind": "match",
+        "prompt": "Association 3 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin). Elle est à Sion. ; Sujet à reprendre : toi. Tu cherches un logement. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils aiment la randonnée."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 2,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ est à Sion.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-003"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ cherches un logement.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-010"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ aiment la randonnée.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-017"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-004",
+        "kind": "match",
+        "prompt": "Association 4 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Hugo (personnage masculin) et moi. Nous sommes étudiants. ; Sujet à reprendre : toi. Tu dessines un paysage. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils rangent les outils."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 3,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Hugo (personnage masculin) et moi. ___ sommes étudiants.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-004"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ dessines un paysage.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-018"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ rangent les outils.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-025"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-005",
+        "kind": "match",
+        "prompt": "Association 5 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Vous vous adressez à Madame Rossi et la vouvoyez. Madame Rossi, comment vous vous appelez ? ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles habitent près du marché. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous cuisinons un repas simple."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 4,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Vous vous adressez à Madame Rossi et la vouvoyez. Madame Rossi, comment ___ vous appelez ?",
+            "right": "vous",
+            "sourceId": "a2-a1-qcm-verbe-005"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ habitent près du marché.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-012"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ cuisinons un repas simple.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-019"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-006",
+        "kind": "match",
+        "prompt": "Association 6 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin). Elles sont suisses. ; Sujet à reprendre : Lina (personnage féminin). Elle prépare la salade. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous aidons la nouvelle élève."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 5,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin). ___ sont suisses.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-006"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ prépare la salade.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-013"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ aidons la nouvelle élève.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-027"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-007",
+        "kind": "match",
+        "prompt": "Association 7 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : moi. Je parle avec le voisin. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous demandez une attestation. ; Sujet à reprendre : Lina (personnage féminin). Elle ferme la fenêtre."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 6,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : moi. ___ parle avec le voisin.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-007"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ demandez une attestation.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-014"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ ferme la fenêtre.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-021"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-008",
+        "kind": "match",
+        "prompt": "Association 8 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin). Il écoute les consignes. ; Sujet à reprendre : moi. J’arrive à la gare. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous lavez les légumes."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 7,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ écoute les consignes.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-008"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : moi. ___arrive à la gare.",
+            "right": "J’",
+            "sourceId": "a2-a1-qcm-verbe-015"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ lavez les légumes.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-022"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-009",
+        "kind": "match",
+        "prompt": "Association 9 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils regardent la météo. ; Sujet à reprendre : Paul (personnage masculin). Il reste chez ma sœur. ; Sujet à reprendre : moi. Je porte un sac léger."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 8,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ regardent la météo.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-009"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ reste chez ma sœur.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-016"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : moi. ___ porte un sac léger.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-023"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-010",
+        "kind": "match",
+        "prompt": "Association 10 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : toi. Tu cherches un logement. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils aiment la randonnée. ; Sujet à reprendre : Paul (personnage masculin). Il visite le musée."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 9,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : toi. ___ cherches un logement.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-010"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ aiment la randonnée.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-017"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ visite le musée.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-024"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-011",
+        "kind": "match",
+        "prompt": "Association 11 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et moi. Nous travaillons à la bibliothèque. ; Sujet à reprendre : toi. Tu dessines un paysage. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils rangent les outils."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 10,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ travaillons à la bibliothèque.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-011"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ dessines un paysage.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-018"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ rangent les outils.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-025"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-012",
+        "kind": "match",
+        "prompt": "Association 12 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles habitent près du marché. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous cuisinons un repas simple. ; Sujet à reprendre : toi. Tu expliques le trajet."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 11,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ habitent près du marché.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-012"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ cuisinons un repas simple.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-019"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : toi. ___ expliques le trajet.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-026"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-013",
+        "kind": "match",
+        "prompt": "Association 13 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin). Elle prépare la salade. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles réparent la sonnette. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous aidons la nouvelle élève."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 12,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ prépare la salade.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-013"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ réparent la sonnette.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-020"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ aidons la nouvelle élève.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-027"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-014",
+        "kind": "match",
+        "prompt": "Association 14 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et vous. Vous demandez une attestation. ; Sujet à reprendre : Lina (personnage féminin). Elle ferme la fenêtre. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles étudient le vocabulaire."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 13,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ demandez une attestation.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-014"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ ferme la fenêtre.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-021"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ étudient le vocabulaire.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-028"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-015",
+        "kind": "match",
+        "prompt": "Association 15 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : moi. J’arrive à la gare. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous lavez les légumes. ; Sujet à reprendre : Lina (personnage féminin). Elle joue au basket."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 14,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : moi. ___arrive à la gare.",
+            "right": "J’",
+            "sourceId": "a2-a1-qcm-verbe-015"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ lavez les légumes.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-022"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ joue au basket.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-029"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-016",
+        "kind": "match",
+        "prompt": "Association 16 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin). Il reste chez ma sœur. ; Sujet à reprendre : moi. Je porte un sac léger. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous chantez avec la chorale."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 15,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ reste chez ma sœur.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-016"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : moi. ___ porte un sac léger.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-023"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ chantez avec la chorale.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-030"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-017",
+        "kind": "match",
+        "prompt": "Association 17 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils aiment la randonnée. ; Sujet à reprendre : Paul (personnage masculin). Il visite le musée. ; Sujet à reprendre : moi. Je danse à la fête."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 16,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ aiment la randonnée.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-017"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ visite le musée.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-024"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : moi. ___ danse à la fête.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-031"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-018",
+        "kind": "match",
+        "prompt": "Association 18 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : toi. Tu dessines un paysage. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils rangent les outils. ; Sujet à reprendre : Paul (personnage masculin). Il réserve une place."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 17,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : toi. ___ dessines un paysage.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-018"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ rangent les outils.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-025"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ réserve une place.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-032"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-019",
+        "kind": "match",
+        "prompt": "Association 19 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et moi. Nous cuisinons un repas simple. ; Sujet à reprendre : toi. Tu expliques le trajet. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils commandent un sandwich."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 18,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ cuisinons un repas simple.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-019"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ expliques le trajet.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-026"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ commandent un sandwich.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-033"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-020",
+        "kind": "match",
+        "prompt": "Association 20 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles réparent la sonnette. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous aidons la nouvelle élève. ; Sujet à reprendre : toi. Tu partages le dessert."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 19,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ réparent la sonnette.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-020"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ aidons la nouvelle élève.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-027"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : toi. ___ partages le dessert.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-034"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-021",
+        "kind": "match",
+        "prompt": "Association 21 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin). Elle ferme la fenêtre. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles étudient le vocabulaire. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous invitons les collègues."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 20,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ ferme la fenêtre.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-021"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ étudient le vocabulaire.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-028"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ invitons les collègues.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-035"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-022",
+        "kind": "match",
+        "prompt": "Association 22 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et vous. Vous lavez les légumes. ; Sujet à reprendre : Lina (personnage féminin). Elle joue au basket. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles racontent une anecdote."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 21,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ lavez les légumes.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-022"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ joue au basket.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-029"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ racontent une anecdote.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-036"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-023",
+        "kind": "match",
+        "prompt": "Association 23 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : moi. Je porte un sac léger. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous chantez avec la chorale. ; Sujet à reprendre : Lina (personnage féminin). Elle dessine le plan du quartier."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 22,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : moi. ___ porte un sac léger.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-023"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ chantez avec la chorale.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-030"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ dessine le plan du quartier.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-037"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-024",
+        "kind": "match",
+        "prompt": "Association 24 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin). Il visite le musée. ; Sujet à reprendre : moi. Je danse à la fête. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous empruntez un roman."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 23,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ visite le musée.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-024"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : moi. ___ danse à la fête.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-031"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ empruntez un roman.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-038"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-025",
+        "kind": "match",
+        "prompt": "Association 25 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils rangent les outils. ; Sujet à reprendre : Paul (personnage masculin). Il réserve une place. ; Sujet à reprendre : moi. Je rapporte le livre."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 24,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ rangent les outils.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-025"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ réserve une place.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-032"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : moi. ___ rapporte le livre.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-039"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-026",
+        "kind": "match",
+        "prompt": "Association 26 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : toi. Tu expliques le trajet. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils commandent un sandwich. ; Sujet à reprendre : Paul (personnage masculin). Il apporte une gourde."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 25,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : toi. ___ expliques le trajet.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-026"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ commandent un sandwich.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-033"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ apporte une gourde.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-040"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-027",
+        "kind": "match",
+        "prompt": "Association 27 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et moi. Nous aidons la nouvelle élève. ; Sujet à reprendre : toi. Tu partages le dessert. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils montrent la sortie."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 26,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ aidons la nouvelle élève.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-027"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ partages le dessert.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-034"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ montrent la sortie.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-041"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-028",
+        "kind": "match",
+        "prompt": "Association 28 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles étudient le vocabulaire. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous invitons les collègues. ; Sujet à reprendre : toi. Tu demandes le prix du billet."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 27,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ étudient le vocabulaire.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-028"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ invitons les collègues.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-035"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : toi. ___ demandes le prix du billet.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-042"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-029",
+        "kind": "match",
+        "prompt": "Association 29 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin). Elle joue au basket. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles racontent une anecdote. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous notons la nouvelle adresse."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 28,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ joue au basket.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-029"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ racontent une anecdote.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-036"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ notons la nouvelle adresse.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-043"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-030",
+        "kind": "match",
+        "prompt": "Association 30 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et vous. Vous chantez avec la chorale. ; Sujet à reprendre : Lina (personnage féminin). Elle dessine le plan du quartier. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles signent le formulaire."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 29,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ chantez avec la chorale.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-030"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ dessine le plan du quartier.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-037"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ signent le formulaire.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-044"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-031",
+        "kind": "match",
+        "prompt": "Association 31 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : moi. Je danse à la fête. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous empruntez un roman. ; Sujet à reprendre : Lina (personnage féminin). Elle patiente devant le guichet."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 30,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : moi. ___ danse à la fête.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-031"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ empruntez un roman.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-038"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ patiente devant le guichet.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-045"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-032",
+        "kind": "match",
+        "prompt": "Association 32 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin). Il réserve une place. ; Sujet à reprendre : moi. Je rapporte le livre. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous traversez la rue."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 31,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ réserve une place.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-032"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : moi. ___ rapporte le livre.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-039"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ traversez la rue.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-046"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-033",
+        "kind": "match",
+        "prompt": "Association 33 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils commandent un sandwich. ; Sujet à reprendre : Paul (personnage masculin). Il apporte une gourde. ; Sujet à reprendre : moi. Je tourne à droite."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 32,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ commandent un sandwich.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-033"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ apporte une gourde.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-040"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : moi. ___ tourne à droite.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-047"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-034",
+        "kind": "match",
+        "prompt": "Association 34 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : toi. Tu partages le dessert. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils montrent la sortie. ; Sujet à reprendre : Paul (personnage masculin). Il marche jusqu’au parc."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 33,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : toi. ___ partages le dessert.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-034"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ montrent la sortie.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-041"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ marche jusqu’au parc.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-048"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-035",
+        "kind": "match",
+        "prompt": "Association 35 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et moi. Nous invitons les collègues. ; Sujet à reprendre : toi. Tu demandes le prix du billet. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils montent les cartons."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 34,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ invitons les collègues.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-035"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ demandes le prix du billet.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-042"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ montent les cartons.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-049"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-036",
+        "kind": "match",
+        "prompt": "Association 36 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles racontent une anecdote. ; Sujet à reprendre : Lina (personnage féminin) et moi. Nous notons la nouvelle adresse. ; Sujet à reprendre : toi. Tu poses la valise."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 35,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ racontent une anecdote.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-036"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ notons la nouvelle adresse.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-043"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : toi. ___ poses la valise.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-050"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-037",
+        "kind": "match",
+        "prompt": "Association 37 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin). Elle dessine le plan du quartier. ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles signent le formulaire. ; La personne parle d’elle-même. Je m’appelle Léa."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 36,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ dessine le plan du quartier.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-037"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ signent le formulaire.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-044"
+          },
+          {
+            "id": "p3",
+            "left": "La personne parle d’elle-même. ___ m’appelle Léa.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-001"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-038",
+        "kind": "match",
+        "prompt": "Association 38 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et vous. Vous empruntez un roman. ; Sujet à reprendre : Lina (personnage féminin). Elle patiente devant le guichet. ; Vous vous adressez à Omar et le tutoyez. Tu es en classe, Omar ?"
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 37,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ empruntez un roman.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-038"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ patiente devant le guichet.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-045"
+          },
+          {
+            "id": "p3",
+            "left": "Vous vous adressez à Omar et le tutoyez. ___ es en classe, Omar ?",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-002"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-039",
+        "kind": "match",
+        "prompt": "Association 39 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : moi. Je rapporte le livre. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous traversez la rue. ; Sujet à reprendre : Lina (personnage féminin). Elle est à Sion."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 38,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : moi. ___ rapporte le livre.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-039"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ traversez la rue.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-046"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ est à Sion.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-003"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-040",
+        "kind": "match",
+        "prompt": "Association 40 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin). Il apporte une gourde. ; Sujet à reprendre : moi. Je tourne à droite. ; Sujet à reprendre : Hugo (personnage masculin) et moi. Nous sommes étudiants."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 39,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ apporte une gourde.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-040"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : moi. ___ tourne à droite.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-047"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Hugo (personnage masculin) et moi. ___ sommes étudiants.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-004"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-041",
+        "kind": "match",
+        "prompt": "Association 41 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils montrent la sortie. ; Sujet à reprendre : Paul (personnage masculin). Il marche jusqu’au parc. ; Vous vous adressez à Madame Rossi et la vouvoyez. Madame Rossi, comment vous vous appelez ?"
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 40,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ montrent la sortie.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-041"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ marche jusqu’au parc.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-048"
+          },
+          {
+            "id": "p3",
+            "left": "Vous vous adressez à Madame Rossi et la vouvoyez. Madame Rossi, comment ___ vous appelez ?",
+            "right": "vous",
+            "sourceId": "a2-a1-qcm-verbe-005"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-042",
+        "kind": "match",
+        "prompt": "Association 42 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : toi. Tu demandes le prix du billet. ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils montent les cartons. ; Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin). Elles sont suisses."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 41,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : toi. ___ demandes le prix du billet.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-042"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ montent les cartons.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-049"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin). ___ sont suisses.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-006"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-043",
+        "kind": "match",
+        "prompt": "Association 43 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et moi. Nous notons la nouvelle adresse. ; Sujet à reprendre : toi. Tu poses la valise. ; Sujet à reprendre : moi. Je parle avec le voisin."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 42,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et moi. ___ notons la nouvelle adresse.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-043"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : toi. ___ poses la valise.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-050"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : moi. ___ parle avec le voisin.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-007"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-044",
+        "kind": "match",
+        "prompt": "Association 44 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles signent le formulaire. ; La personne parle d’elle-même. Je m’appelle Léa. ; Sujet à reprendre : Paul (personnage masculin). Il écoute les consignes."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 43,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ signent le formulaire.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-044"
+          },
+          {
+            "id": "p2",
+            "left": "La personne parle d’elle-même. ___ m’appelle Léa.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-001"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ écoute les consignes.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-008"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-045",
+        "kind": "match",
+        "prompt": "Association 45 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin). Elle patiente devant le guichet. ; Vous vous adressez à Omar et le tutoyez. Tu es en classe, Omar ? ; Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils regardent la météo."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 44,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ patiente devant le guichet.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-045"
+          },
+          {
+            "id": "p2",
+            "left": "Vous vous adressez à Omar et le tutoyez. ___ es en classe, Omar ?",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-002"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ regardent la météo.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-009"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-046",
+        "kind": "match",
+        "prompt": "Association 46 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Lina (personnage féminin) et vous. Vous traversez la rue. ; Sujet à reprendre : Lina (personnage féminin). Elle est à Sion. ; Sujet à reprendre : toi. Tu cherches un logement."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 45,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ traversez la rue.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-046"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ est à Sion.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-003"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : toi. ___ cherches un logement.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-010"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-047",
+        "kind": "match",
+        "prompt": "Association 47 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : moi. Je tourne à droite. ; Sujet à reprendre : Hugo (personnage masculin) et moi. Nous sommes étudiants. ; Sujet à reprendre : toi. Tu dessines un paysage."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 46,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : moi. ___ tourne à droite.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-047"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Hugo (personnage masculin) et moi. ___ sommes étudiants.",
+            "right": "Nous",
+            "sourceId": "a2-a1-qcm-verbe-004"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : toi. ___ dessines un paysage.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-018"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-048",
+        "kind": "match",
+        "prompt": "Association 48 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin). Il marche jusqu’au parc. ; Vous vous adressez à Madame Rossi et la vouvoyez. Madame Rossi, comment vous vous appelez ? ; Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). Elles habitent près du marché."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 47,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin). ___ marche jusqu’au parc.",
+            "right": "Il",
+            "sourceId": "a2-a1-qcm-verbe-048"
+          },
+          {
+            "id": "p2",
+            "left": "Vous vous adressez à Madame Rossi et la vouvoyez. Madame Rossi, comment ___ vous appelez ?",
+            "right": "vous",
+            "sourceId": "a2-a1-qcm-verbe-005"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et Nadia (personnage féminin). ___ habitent près du marché.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-012"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-049",
+        "kind": "match",
+        "prompt": "Association 49 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). Ils montent les cartons. ; Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin). Elles sont suisses. ; Sujet à reprendre : Lina (personnage féminin). Elle prépare la salade."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 48,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : Paul (personnage masculin) et Omar (personnage masculin). ___ montent les cartons.",
+            "right": "Ils",
+            "sourceId": "a2-a1-qcm-verbe-049"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : Inès (personnage féminin) et Chloé (personnage féminin). ___ sont suisses.",
+            "right": "Elles",
+            "sourceId": "a2-a1-qcm-verbe-006"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin). ___ prépare la salade.",
+            "right": "Elle",
+            "sourceId": "a2-a1-qcm-verbe-013"
+          }
+        ]
+      },
+      {
+        "id": "a2-a1-curriculum-a-050",
+        "kind": "match",
+        "prompt": "Association 50 : reliez chaque phrase à la forme qui convient.",
+        "answers": [
+          "Sujet à reprendre : toi. Tu poses la valise. ; Sujet à reprendre : moi. Je parle avec le voisin. ; Sujet à reprendre : Lina (personnage féminin) et vous. Vous demandez une attestation."
+        ],
+        "explanation": "Les trois réponses de ce problème sont distinctes. Reprenez le sujet et les indices de chaque phrase.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-a",
+          "position": 49,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "Sujet à reprendre : toi. ___ poses la valise.",
+            "right": "Tu",
+            "sourceId": "a2-a1-qcm-verbe-050"
+          },
+          {
+            "id": "p2",
+            "left": "Sujet à reprendre : moi. ___ parle avec le voisin.",
+            "right": "Je",
+            "sourceId": "a2-a1-qcm-verbe-007"
+          },
+          {
+            "id": "p3",
+            "left": "Sujet à reprendre : Lina (personnage féminin) et vous. ___ demandez une attestation.",
+            "right": "Vous",
+            "sourceId": "a2-a1-qcm-verbe-014"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "a2-a1-curriculum-t-2026-11-14.1",
+    "activityId": "gram-ex-a2-curriculum-t",
+    "subthemeId": "a2",
+    "topic": "gram-se-presenter",
+    "level": "A1",
+    "label": "Remplacer le sujet par un pronom",
+    "objective": "Identifier le sujet et choisir un pronom cohérent.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-14",
+      "humanReview": "pending",
+      "note": "Relecture des sources, accords et contrats ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez chaque phrase en remplaçant le groupe sujet par un pronom."
+    },
+    "units": [
+      {
+        "id": "a2-a1-curriculum-t-001",
+        "kind": "transform",
+        "prompt": "La nouvelle élève habite à Sion.",
+        "answers": [
+          "Elle habite à Sion."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 0,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La nouvelle élève » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-002",
+        "kind": "transform",
+        "prompt": "Le professeur et moi préparons la sortie.",
+        "answers": [
+          "Nous préparons la sortie."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 1,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le professeur et moi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-003",
+        "kind": "transform",
+        "prompt": "La guide et toi traversez le parc.",
+        "answers": [
+          "Vous traversez le parc."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 2,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La guide et toi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-004",
+        "kind": "transform",
+        "prompt": "Les deux musiciennes jouent au concert.",
+        "answers": [
+          "Elles jouent au concert."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 3,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les deux musiciennes » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-005",
+        "kind": "transform",
+        "prompt": "Le boulanger ouvre son magasin.",
+        "answers": [
+          "Il ouvre son magasin."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 4,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le boulanger » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-006",
+        "kind": "transform",
+        "prompt": "Les voisins rangent les vélos.",
+        "answers": [
+          "Ils rangent les vélos."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 5,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les voisins » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-007",
+        "kind": "transform",
+        "prompt": "La bibliothécaire conseille un roman.",
+        "answers": [
+          "Elle conseille un roman."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 6,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La bibliothécaire » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-008",
+        "kind": "transform",
+        "prompt": "Mon frère et moi attendons le bus.",
+        "answers": [
+          "Nous attendons le bus."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 7,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Mon frère et moi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-009",
+        "kind": "transform",
+        "prompt": "Les deux danseurs répètent dans la salle.",
+        "answers": [
+          "Ils répètent dans la salle."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 8,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les deux danseurs » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-010",
+        "kind": "transform",
+        "prompt": "La classe visite le musée.",
+        "answers": [
+          "Elle visite le musée."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 9,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La classe » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-011",
+        "kind": "transform",
+        "prompt": "Le groupe arrive à la gare.",
+        "answers": [
+          "Il arrive à la gare."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 10,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le groupe » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-012",
+        "kind": "transform",
+        "prompt": "Ta sœur et toi dessinez le plan.",
+        "answers": [
+          "Vous dessinez le plan."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 11,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Ta sœur et toi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-013",
+        "kind": "transform",
+        "prompt": "Les étudiantes signent le formulaire.",
+        "answers": [
+          "Elles signent le formulaire."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 12,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les étudiantes » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-014",
+        "kind": "transform",
+        "prompt": "Le médecin écoute le patient.",
+        "answers": [
+          "Il écoute le patient."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 13,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le médecin » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-015",
+        "kind": "transform",
+        "prompt": "L’infirmière prépare le matériel.",
+        "answers": [
+          "Elle prépare le matériel."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 14,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « L’infirmière » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-016",
+        "kind": "transform",
+        "prompt": "Les cuisiniers lavent les légumes.",
+        "answers": [
+          "Ils lavent les légumes."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 15,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les cuisiniers » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-017",
+        "kind": "transform",
+        "prompt": "La vendeuse montre les chaussures.",
+        "answers": [
+          "Elle montre les chaussures."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 16,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La vendeuse » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-018",
+        "kind": "transform",
+        "prompt": "Le directeur et moi présentons le projet.",
+        "answers": [
+          "Nous présentons le projet."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 17,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le directeur et moi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-019",
+        "kind": "transform",
+        "prompt": "Ton cousin et toi portez les cartons.",
+        "answers": [
+          "Vous portez les cartons."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 18,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Ton cousin et toi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-020",
+        "kind": "transform",
+        "prompt": "Les voyageuses cherchent leur quai.",
+        "answers": [
+          "Elles cherchent leur quai."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 19,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les voyageuses » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-021",
+        "kind": "transform",
+        "prompt": "Le facteur apporte un colis.",
+        "answers": [
+          "Il apporte un colis."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 20,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le facteur » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-022",
+        "kind": "transform",
+        "prompt": "Les enfants jouent au ballon.",
+        "answers": [
+          "Ils jouent au ballon."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 21,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les enfants » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-023",
+        "kind": "transform",
+        "prompt": "La famille déjeune sur la terrasse.",
+        "answers": [
+          "Elle déjeune sur la terrasse."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 22,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La famille » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-024",
+        "kind": "transform",
+        "prompt": "Le gardien ferme la porte.",
+        "answers": [
+          "Il ferme la porte."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 23,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le gardien » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-025",
+        "kind": "transform",
+        "prompt": "Ma collègue et moi réservons une table.",
+        "answers": [
+          "Nous réservons une table."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 24,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Ma collègue et moi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-026",
+        "kind": "transform",
+        "prompt": "Les sportives courent dans le parc.",
+        "answers": [
+          "Elles courent dans le parc."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 25,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les sportives » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-027",
+        "kind": "transform",
+        "prompt": "Le chauffeur annonce le prochain arrêt.",
+        "answers": [
+          "Il annonce le prochain arrêt."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 26,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le chauffeur » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-028",
+        "kind": "transform",
+        "prompt": "Votre amie et vous choisissez un dessert.",
+        "answers": [
+          "Vous choisissez un dessert."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 27,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Votre amie et vous » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-029",
+        "kind": "transform",
+        "prompt": "La journaliste pose une question.",
+        "answers": [
+          "Elle pose une question."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 28,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La journaliste » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-030",
+        "kind": "transform",
+        "prompt": "Les touristes regardent la carte.",
+        "answers": [
+          "Ils regardent la carte."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 29,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les touristes » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-031",
+        "kind": "transform",
+        "prompt": "L’équipe gagne le match.",
+        "answers": [
+          "Elle gagne le match."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 30,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « L’équipe » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-032",
+        "kind": "transform",
+        "prompt": "Les serveuses nettoient les tables.",
+        "answers": [
+          "Elles nettoient les tables."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 31,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les serveuses » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-033",
+        "kind": "transform",
+        "prompt": "Le mécanicien répare la roue.",
+        "answers": [
+          "Il répare la roue."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 32,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le mécanicien » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-034",
+        "kind": "transform",
+        "prompt": "Mon voisin et moi plantons des tomates.",
+        "answers": [
+          "Nous plantons des tomates."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 33,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Mon voisin et moi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-035",
+        "kind": "transform",
+        "prompt": "La cliente paie son billet.",
+        "answers": [
+          "Elle paie son billet."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 34,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La cliente » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-036",
+        "kind": "transform",
+        "prompt": "Les deux frères partagent leur chambre.",
+        "answers": [
+          "Ils partagent leur chambre."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 35,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les deux frères » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-037",
+        "kind": "transform",
+        "prompt": "Tes amis et toi organisez une fête.",
+        "answers": [
+          "Vous organisez une fête."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 36,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Tes amis et toi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-038",
+        "kind": "transform",
+        "prompt": "La réceptionniste note le numéro.",
+        "answers": [
+          "Elle note le numéro."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 37,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La réceptionniste » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-039",
+        "kind": "transform",
+        "prompt": "Les deux sœurs empruntent un dictionnaire.",
+        "answers": [
+          "Elles empruntent un dictionnaire."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 38,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les deux sœurs » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-040",
+        "kind": "transform",
+        "prompt": "Le bébé dort dans son lit.",
+        "answers": [
+          "Il dort dans son lit."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 39,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le bébé » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-041",
+        "kind": "transform",
+        "prompt": "La formatrice et moi expliquons la consigne.",
+        "answers": [
+          "Nous expliquons la consigne."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 40,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La formatrice et moi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-042",
+        "kind": "transform",
+        "prompt": "Le libraire commande le livre.",
+        "answers": [
+          "Il commande le livre."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 41,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le libraire » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-043",
+        "kind": "transform",
+        "prompt": "Les élèves masculins étudient le vocabulaire.",
+        "answers": [
+          "Ils étudient le vocabulaire."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 42,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les élèves masculins » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-044",
+        "kind": "transform",
+        "prompt": "La mère aide son enfant.",
+        "answers": [
+          "Elle aide son enfant."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 43,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La mère » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-045",
+        "kind": "transform",
+        "prompt": "Ta voisine et toi écoutez la radio.",
+        "answers": [
+          "Vous écoutez la radio."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 44,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Ta voisine et toi » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-046",
+        "kind": "transform",
+        "prompt": "Les employées prennent leur pause.",
+        "answers": [
+          "Elles prennent leur pause."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 45,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Les employées » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-047",
+        "kind": "transform",
+        "prompt": "Le père et la mère accompagnent leur enfant.",
+        "answers": [
+          "Ils accompagnent leur enfant."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 46,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le père et la mère » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-048",
+        "kind": "transform",
+        "prompt": "L’association propose un atelier.",
+        "answers": [
+          "Elle propose un atelier."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 47,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « L’association » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-049",
+        "kind": "transform",
+        "prompt": "Le club accueille les débutants.",
+        "answers": [
+          "Il accueille les débutants."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 48,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « Le club » par un pronom sujet. Conservez le reste de la phrase."
+      },
+      {
+        "id": "a2-a1-curriculum-t-050",
+        "kind": "transform",
+        "prompt": "La cheffe et moi goûtons la soupe.",
+        "answers": [
+          "Nous goûtons la soupe."
+        ],
+        "explanation": "Le pronom reprend tout le groupe sujet ; le verbe et les autres informations sont conservés.",
+        "source": {
+          "path": "src/grammaire/curriculum/data/a2.json",
+          "typeId": "gram-ex-a2-curriculum-t",
+          "position": 49,
+          "partition": "A1 — rédaction éditoriale figée"
+        },
+        "directive": "Remplacez « La cheffe et moi » par un pronom sujet. Conservez le reste de la phrase."
+      }
+    ]
+  }
+]

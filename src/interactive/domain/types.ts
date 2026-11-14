@@ -42,6 +42,7 @@ export type Question = {
   audioMaxListens?: number
   images: string[]
   grammarImages?: GrammarImageSupport[]
+  grammarCountryGender?: 'masculin' | 'féminin' | 'pluriel'
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
   mode: 'choice' | 'oral' | 'sequence'

@@ -4,9 +4,19 @@ Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf3
 
 Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-charges-v2.md) ; les 424 activités cibles et les décisions sont suivies dans `target-registry.json`. L’option recommandée d’intégration des 43 activités omises est retenue comme hypothèse de construction au lancement ; aucun ancien type n’est supprimé. Les cinq décisions pédagogiques précédentes sont conservées.
 
-**État au 14 novembre 2026 : 17 notions, 80 activités et 109 offres en pilote**, soit 4 310 unités sélectionnables et 5 480 variantes. Validation enseignante en attente. **Entrer en contact** dispose de ses 19 offres A1 et **Conjuguer au présent** de ses 72 offres prévues. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
+**État au 14 novembre 2026 : 19 notions, 89 activités et 122 offres en pilote**, soit 4 760 unités sélectionnables et 6 130 variantes. Validation enseignante en attente. **Entrer en contact** dispose de ses 19 offres A1 et **Conjuguer au présent** de ses 72 offres prévues. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
 
 ## Disponible dans ce lot
+
+### Se présenter — premiers pilotes A1
+
+Les pronoms sujet et la provenance ajoutent **9 activités, 13 offres, 450 unités et 650 variantes**. Dans **Grammaire → Se présenter**, choisir **Pronoms sujet** ou **Dire sa provenance**, puis **A1 — pilote** sur les types existants. Les nouvelles associations et transformations restent dans leur sous-thème.
+
+Les pronoms disposent de 50 complétions réemployées et précisées, 50 associations de trois personnes distinctes et 50 reformulations avec sujet nominal grammatical. La provenance propose 50 unités dans chacun des six types : pays en image, préposition, venir, écrit à deux images, association et oral avec relance. Les contextes sont réemployés entre tâches, sans prétendre à 450 scénarios nouveaux.
+
+Le [manifeste de réemploi](presentation-media.json) trace 20 fichiers existants : 17 pays et trois personnages/référents, copiés sans modification dans un chemin immuable. Aucun média n’est généré. L’image du Japon est écartée pour couleurs inversées. Provenance et nationalité sont deux données explicites des fiches fictives. Le genre du pays apparaît en couleur à droite du trait dans le choix de préposition et au tableau. Les productions ouvertes ont un modèle non exclusif et une grille au corrigé.
+
+Les [relectures des pronoms](a2-a1-relecture.md) et de la [provenance](a6-a1-relecture.md) couvrent toutes les unités. Se présenter atteint **13/40 offres** ; restent l’identité, les nationalités et la famille. Les onze obligations I des autres notions restent distinctes.
 
 ### Entrer en contact — A1
 
@@ -198,18 +208,19 @@ Les anciennes recettes et la compréhension orale restent sur leurs chemins hist
 
 ## Sources et revue
 
-Les dix-sept fichiers JSON dans `src/grammaire/curriculum/data/`, dont `ir.json` et `re-oir.json`, sont les sources éditoriales des pilotes, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
+Les dix-neuf fichiers JSON dans `src/grammaire/curriculum/data/`, dont `a2.json` et `a6.json`, sont les sources éditoriales des pilotes, et non des sorties TS à régénérer. Les IDs de migration y sont stockés une fois, avec type, chemin et position de provenance ; ils ne sont pas recalculés à chaque tirage. Les associations référencent leurs phrases sources. Les scripts historiques ne doivent pas écraser ces sources complémentaires.
 
 Pour publier une banque après revue enseignant : enregistrer la personne, la date et la décision dans `review`, puis passer `review.humanReview` et `editorialStatus` à `approved`. Ne pas déclarer l’approbation à partir d’un simple comptage automatique. Les variantes QCM sont relues avec leurs distracteurs ; les variantes ouvertes sont contrôlées avec leurs solutions ou critères.
 
 ## Vérifications reproductibles
 
 - `npm run test:grammar:baseline` : 735 sorties à graines fixes, types actuels et alias CO ; empreintes de 256 fichiers CO/audio. Le script refuse d’écraser la référence G0 existante.
-- `npm run test:grammar:levels` : 5 480 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau. Les banques d’ordre sont intégralement vérifiées avec la polarité disponible : Positive, Négative ou Mixte. Les associations comptent leur nombre réel de paires.
+- `npm run test:grammar:levels` : 6 130 variantes, niveaux A1/A2/B1, tirages et filtres, capacité réelle, snapshots, recettes, blocs supplémentaires, révisions archivées, propositions 2–6, pagination et adaptation au tableau. Les banques d’ordre sont intégralement vérifiées avec la polarité disponible : Positive, Négative ou Mixte. Les associations comptent leur nombre réel de paires.
 - `npm run test:grammar:present-g3` : provenance Aller/-er, erreurs réelles, corrections complètes, sujets imposés, informations conservées, élisions, pagination des explications longues et 50 tâches orales sans score automatique.
 - `npm run test:grammar:ir-re` : 800 variantes IR/RE-OIR, réemploi A1, contextes A2 distincts, modèles, erreurs uniques, sujets imposés, possessifs, élisions, graphies admises, capacités 44/6/50 et transformations guidées.
 - `npm run test:grammar:negation-a2` : sept formes négatives en contexte, articles, élisions, réflexifs, infinitifs, intervalles de correction, sens imposé et pagination des indices longs. `npm run test:grammar:negation-a2:browser` vérifie les huit présentations A1/A2, dont les cinq nouvelles, puis la séance de transformation.
 - `npm run test:grammar:contact` et `npm run test:grammar:contact:browser` : 19 offres A1, formes polies, associations de deux/trois formes liées aux sources, activités ouvertes et sauvegardes, routage de l’ordre, capacité des filtres et A4.
+- `npm run test:grammar:presentation` et `npm run test:grammar:presentation:browser` : 13 offres A1, pronoms, groupes sujets, élisions, prépositions et genre du pays, 20 médias immuables, productions à deux images, A4 et tableau. Les modèles ouverts restent appréciés par l’enseignant.
 - `npm run test:grammar:contracts` et, avec Vite actif, `npm run test:grammar:contracts:browser` : essais de dialogue/situation et de support image, sans quota fictif.
 - `node node_modules/typescript/bin/tsc -b --pretty false` : contrôle TypeScript.
 - Démarrer Vite sur le port 5183, puis `npm run test:grammar:browser` : parcours réels des dix-sept notions dans Chrome, QCM/Lacune, 50 unités par présentation ordinaire et 20 textes/60 questions par banque de lecture, élève/corrigé, absence de débordement et lancement de la séance. `npm run test:grammar:present-g3:browser` cible les onze présentations Aller/-er ; `npm run test:grammar:ir-re:browser` les seize présentations IR/RE-OIR et leurs capacités filtrées. `GRAMMAR_TEST_URL` et `GRAMMAR_QA_DIR` permettent de choisir le serveur et le dossier de preuves.
@@ -273,3 +284,11 @@ Les dernières corrections contextuelles TCF jusqu’à `6491cdad` sont intégr�
 Les 19 nouvelles présentations passent dans Chromium : 1 900 problèmes imprimés élève/corrigé, sans débordement, et six lancements d’association/jeu de rôle. Les deux problèmes d’impression observés, liés aux indices de registre et aux ensembles de trois contextes longs, sont corrigés avec des tests de pagination. Les problèmes, options et IDs restent identiques.
 
 Les 5 480 variantes, G0 (735 sorties / 256 fichiers protégés), les contrats, les contrôles de contact, négations A2 et présent A1, TypeScript et la compilation de production passent. Les parcours précédents restent tracés sur leurs bases ; aucun parcours global des 109 offres sur une seule base n’est déclaré. Se présenter reste la prochaine tranche et les relectures enseignantes restent en attente.
+
+### Se présenter — tranche sur `a49a9297`
+
+Les 13 nouvelles présentations passent dans Chromium : **1 300 unités imprimées élève/corrigé**, dont **400 affichages d’images**, sans débordement, et **six lancements au tableau**. Le genre du pays reste coloré et les médias sont vérifiés et décodés. La hauteur des images appariées est ajustée à 32 mm pour garder les informations, les trois lignes d’écriture et tout le corrigé sur A4.
+
+Les 6 130 variantes, G0 (735 sorties / 256 fichiers protégés), les contrats, les nouveaux contrôles de pronoms/provenance, les tests de contact et les deux fichiers d’adaptateurs/oral guidé passent. Les cinq essais techniques navigateur, dont les erreurs de fichiers absents/modifiés et l’attente avant impression, passent aussi. Aucun parcours global des 122 offres sur une seule base n’est déclaré ; les preuves antérieures sont conservées.
+
+Les ajouts TCF et catalogues jusqu’à `683c7bdf` sont intégrés sans modification. Ils ne changent aucun fichier d’exécution grammatical, du générateur ou du tableau. Après intégration, TypeScript, la compilation de production, G0, les 6 130 variantes, les contrats et les contrôles de provenance passent à nouveau. Le parcours navigateur reste tracé sur `a49a9297`. L’approbation enseignante reste en attente.

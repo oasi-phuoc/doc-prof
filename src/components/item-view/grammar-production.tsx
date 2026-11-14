@@ -5,7 +5,7 @@ import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 export function GrammarProductionView({unit:u,mode}:{unit:Extract<GrammarUnit,{kind:'production'}>;mode:PreviewMode}) {
   const corrected=mode==='answers'
   const [title,...facts]=u.prompt.split('\n')
-  return <div className="grammar-question grammar-production">
+  return <div className={`grammar-question grammar-production${(u.imageSupports?.length??0)>1?' grammar-production-paired-images':''}`}>
     {facts.length?<><h3>{title}</h3><p>{facts.join('\n')}</p></>:<p>{u.prompt}</p>}
     <GrammarImageSupports supports={u.imageSupports}/>
     <p className="grammar-production-task">{u.task}</p>
