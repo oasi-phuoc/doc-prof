@@ -6,12 +6,14 @@ import subjunctive from './data/k10.json'
 import have from './data/avoir.json'
 import go from './data/aller-destination.json'
 import regularEr from './data/er.json'
+import ir from './data/ir.json'
+import reOir from './data/re-oir.json'
 import type { ExerciseType } from '@/math/types'
 import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {

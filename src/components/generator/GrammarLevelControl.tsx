@@ -7,6 +7,8 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
   const banks=grammarBanksForType(block.exerciseType)
   if (!banks.length) return null
   const bank=banks.find(b=>b.level===block.grammarLevel)
+  const orderUnits=bank?.units.filter(u=>u.kind==='order')??[]
+  const negativeCount=orderUnits.filter(u=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation')).length
   const change=(patch:Partial<ExerciseBlock>)=>{
     if (block.libreItems?.length && !window.confirm('Ce changement remplacera les modifications manuelles de cet exercice. Continuer ?')) return
     onChange({...clearLibreContentFreeze(),grammarSnapshot:undefined,grammarPageBreakAfterQuestionIds:undefined,...patch})
@@ -38,7 +40,7 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
         </div>
       </div>:null}
       <small className="grammar-level-note">{bank.objective} {bank.editorialStatus!=='approved'?'Banque pilote : à relire avant diffusion.':''}</small>
-      {block.grammarPresentation==='order' && bank.editorialStatus!=='approved'?<small className="grammar-level-note">Ce premier pilote contient des phrases affirmatives ; les filtres peuvent réduire le nombre disponible.</small>:null}
+      {block.grammarPresentation==='order' && bank.editorialStatus!=='approved'?<small className="grammar-level-note">Phrases disponibles : {orderUnits.length-negativeCount} positives, {negativeCount} négatives. Les autres filtres peuvent réduire ces nombres.</small>:null}
       {block.grammarBankRevision!==bank.revision?<button type="button" className="button secondary" onClick={()=>change({grammarBankRevision:bank.revision})}>Utiliser la banque actuelle</button>:null}
     </>:null}
   </>

@@ -25,7 +25,8 @@ for (const bank of banks) {
  assert.equal(bank.review.humanReview,'pending')
  for (const presentation of bank.presentations) {
   assert.equal(targetRegistry.offerings.filter(o=>o.activityId===bank.activityId&&o.level===bank.level&&o.presentation===presentation).length,1,'A pilot offering must belong to the agreed curriculum.')
-  const block={...base(bank.activityId),topic:bank.topic??'gram-present',count:reading?1:50,grammarDocumentCount:reading?20:undefined,grammarLevel:bank.level,grammarBankRevision:bank.revision,grammarPresentation:presentation}
+  const mixedOrder=presentation==='order'&&bank.units.some(u=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation'))&&bank.units.some(u=>u.kind==='order'&&!u.tokens.some(t=>t.category==='negation'))
+  const block={...base(bank.activityId),topic:bank.topic??'gram-present',count:reading?1:50,grammarDocumentCount:reading?20:undefined,grammarLevel:bank.level,grammarBankRevision:bank.revision,grammarPresentation:presentation,...(mixedOrder?{phrasePolarity:'mixed'}:{})}
   const selected=select(block,839)
   assert(isGrammarSnapshot(selected))
   assert.equal(selected.questions.length,bank.units.length)

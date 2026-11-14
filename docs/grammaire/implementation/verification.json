@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "baselineCommit": "ff743145ce6724a78cc898789c5aaf36a0004474",
   "reference": {
     "fixtures": 735,
@@ -7,16 +7,17 @@
     "protectedFiles": 256
   },
   "editorial": {
-    "reviewedResponseVariants": 2370,
+    "reviewedResponseVariants": 3170,
     "humanApproval": "pending",
-    "reviewedActivityUnits": 1840,
-    "reviewedSelectableUnits": 1840,
+    "reviewedActivityUnits": 2440,
+    "reviewedSelectableUnits": 2440,
     "reviewedDocuments": 40,
     "reviewedDocumentQuestions": 120,
-    "reviewedActivities": 36,
-    "reviewedOfferings": 47,
+    "reviewedActivities": 44,
+    "reviewedOfferings": 63,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 8
+    "reviewedNotions": 10,
+    "reviewedNotionLevelPairs": 13
   },
   "browser": {
     "results": [
@@ -65,24 +66,24 @@
     ],
     "errors": []
   },
-  "remaining": "Huit notions et 47 offres en pilote explicite ; validation enseignante en attente. 388 activités sans banque graduée pilote et 554 offres restent à préparer. Les contrats techniques situation/dialogue et image restent hors quotas. Voir avancement-20261113.md.",
+  "remaining": "Dix notions, 13 couples notion/niveau et 63 offres sont accessibles en pilote explicite. Validation enseignante en attente. 380 activités et 538 offres restent sans banque pilote ; voir avancement-20261114.md.",
   "validation": {
     "typeScript": {
       "command": "node node_modules/typescript/bin/tsc -b --pretty false",
       "result": "passed",
-      "validatedAtUpstream": "59a76f48"
+      "validatedAtUpstream": "55677f81"
     },
     "legacyAndCo": {
       "command": "node scripts/grammar-baseline.cjs",
       "result": "passed",
       "fixtures": 735,
       "protectedFiles": 256,
-      "validatedAtUpstream": "59a76f48"
+      "validatedAtUpstream": "55677f81"
     },
     "pilot": {
       "command": "node scripts/test-grammar-levels.cjs",
       "result": "passed",
-      "reviewedVariants": 2370,
+      "reviewedVariants": 3170,
       "paperAndBoardOptionOrder": "identical",
       "levels": [
         "A1",
@@ -95,14 +96,14 @@
       "codReferences": "50 explicit noun references; genre, number, elision and placement checked",
       "correctionIntervals": "50 frozen UTF-16 intervals, malformed bounds/segments/text rejected",
       "allPilotOfferings": "31 agreed G2 offerings implemented; 23 activities across five notions",
-      "reviewedActivityOfferings": 47,
+      "reviewedActivityOfferings": 63,
       "g3FirstNotion": "avoir A1; five agreed offerings; no automatic A2 extension",
       "g3Notions": [
         "avoir A1",
         "aller-destination A1",
         "er A1"
       ],
-      "validatedAtUpstream": "59a76f48"
+      "validatedAtUpstream": "55677f81"
     },
     "existingInteractiveAdapters": {
       "command": "node --test tests/interactive/source-adapters.test.mjs",
@@ -117,11 +118,11 @@
       "javascriptErrors": 0,
       "emptyFilterPool": "clear notice; no broken session",
       "classroomLaunch": "passed",
-      "presentationsChecked": 47,
+      "presentationsChecked": 63,
       "classroomTransform": "source and imposed subject visible",
       "printedQuestionsPerOrdinaryPresentation": 100,
       "printedCeQuestions": 240,
-      "printedQuestionsTotal": 4740,
+      "printedQuestionsTotal": 6340,
       "cePageBreak": "reversible; stable IDs and options; support repeated",
       "classroomCe": "two texts, six linked questions; source text visible",
       "printedCeQuestionsPerBank": 120,
@@ -129,9 +130,10 @@
       "classroomSubjunctive": "source, required introductory expression and human assessment visible",
       "subjunctiveWritingDefault": "one task, six answer lines; model and rubric only in correction",
       "avoirElision": "J’ joins ai in the corrected inline answer; empty student fields stay wide",
-      "validatedAtUpstream": "220a412493e5b8464bc892095d3ebebeb38dceb9",
-      "latestTargetedValidation": "Full 47-presentation run on 220a4124; after integrating 59a76f48 (duel mascots), all eleven new presentations and both classroom launches passed again.",
-      "latestTargetedUpstream": "59a76f48"
+      "validatedAtUpstream": "165f1027",
+      "latestTargetedValidation": "Full 63-presentation Chromium run with IR/RE-OIR; both new transformations launched at the board; no JavaScript errors.",
+      "latestTargetedUpstream": "165f1027",
+      "retryNote": "The B1 writing test initially observed zero lines after its fixed 150 ms pause. An unchanged rerun passed; the test now waits for the 300th answer line to be attached, and passed again."
     },
     "legacyGlobalCurriculum": {
       "command": "node scripts/test-grammar-curriculum.cjs",
@@ -299,9 +301,9 @@
         ],
         "errors": []
       },
-      "validatedAtUpstream": "220a412493e5b8464bc892095d3ebebeb38dceb9",
-      "coreValidatedAtUpstream": "59a76f48",
-      "browserValidatedAtUpstream": "220a412493e5b8464bc892095d3ebebeb38dceb9"
+      "validatedAtUpstream": "165f1027",
+      "coreValidatedAtUpstream": "b9744575",
+      "browserValidatedAtUpstream": "165f1027"
     },
     "mergedSharedContracts": {
       "command": "node --test --test-concurrency=1 tests/interactive/source-adapters.test.mjs tests/interactive/cfr-recognition.test.mjs tests/interactive/tcm-csc.test.mjs tests/interactive/csc-game.test.mjs",
@@ -384,10 +386,70 @@
       "classroomLaunchesRetested": 2,
       "javascriptErrors": 0,
       "full47PresentationRunAtUpstream": "220a4124"
+    },
+    "irRe": {
+      "date": "2026-11-14",
+      "upstream": "165f1027",
+      "commands": [
+        "npm run test:grammar:ir-re",
+        "npm run test:grammar:ir-re:browser"
+      ],
+      "result": "passed",
+      "activities": 8,
+      "notionLevelPairs": 4,
+      "offerings": 16,
+      "selectableUnits": 600,
+      "responseVariants": 800,
+      "newA2Contexts": 100,
+      "humanApproval": "pending",
+      "correction": "one actual erroneous verb, full corrected sentence, canonical UTF-16 span",
+      "transformation": "explicit target subject, possessives, related subject-dependent clauses, negation and elision",
+      "spelling": "connaît / connait accepted; one correct option in QCM",
+      "orderCapacityA1": {
+        "positive": 50,
+        "negative": 0
+      },
+      "orderCapacityA2": {
+        "positive": 44,
+        "negative": 6,
+        "mixed": 50
+      },
+      "paper": "1600 student/correction questions; no overflow",
+      "classroom": "two three-question transformations; exact source and subject preserved, human assessment",
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "productionBuildCommand": "node node_modules/vite/bin/vite.js build --outDir /tmp/doc-prof-grammar-ir-re-build --emptyOutDir",
+      "coreValidatedAtUpstream": "b9744575"
+    },
+    "irRePostIntegration": {
+      "upstream": "b9744575",
+      "integration": "Two TCF image-trio commits, preserved without edits. No grammar, generator or interactive runtime differences from 165f1027 upstream.",
+      "typeScript": "passed",
+      "productionBuild": "passed",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "grammarResponseVariants": 3170,
+      "grammarContracts": "passed",
+      "presentG3Contracts": "passed",
+      "irReContracts": "passed",
+      "full63PresentationRunAtUpstream": "165f1027",
+      "fullBrowserPrintedQuestions": 6340,
+      "generatedGrammarImages": 0,
+      "generatedGrammarAudios": 0
+    },
+    "irReFinalIntegration": {
+      "upstream": "55677f81",
+      "changes": "TCF image-trio data and assets only; no grammar/generator/interactive runtime differences from b9744575 upstream.",
+      "typeScript": "passed",
+      "legacyFixtures": 735,
+      "protectedFiles": 256,
+      "reviewedResponseVariants": 3170,
+      "fullBrowserAtUpstream": "165f1027",
+      "productionBuildAtUpstream": "b9744575"
     }
   },
-  "upstreamIntegrated": "59a76f48",
-  "lastValidatedDate": "2026-11-13",
+  "upstreamIntegrated": "55677f81",
+  "lastValidatedDate": "2026-11-14",
   "browserM5": {
     "results": [
       {
@@ -793,6 +855,155 @@
         "classroomLaunch": "passed",
         "selectedQuestions": 3,
         "automaticScoring": false
+      }
+    ],
+    "errors": []
+  },
+  "browserIrRe": {
+    "results": [
+      {
+        "levelSwitch": "A1 ↔ A2 preserves the response mode"
+      },
+      {
+        "type": "gram-ex-ir-qcm-conj",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-qcm-conj",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-qcm-conj",
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-qcm-conj",
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-ordre",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-ordre",
+        "level": "A2",
+        "presentation": "order",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-corriger-erreur",
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-ir-curriculum-t",
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "ir",
+        "classroomTransform": "source and target subject preserved",
+        "selectedQuestions": 3
+      },
+      {
+        "levelSwitch": "A1 ↔ A2 preserves the response mode"
+      },
+      {
+        "type": "gram-ex-re-oir-qcm-conj",
+        "level": "A1",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-qcm-conj",
+        "level": "A1",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-qcm-conj",
+        "level": "A2",
+        "presentation": "choice",
+        "sheets": 34,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-qcm-conj",
+        "level": "A2",
+        "presentation": "gap",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-ordre",
+        "level": "A1",
+        "presentation": "order",
+        "sheets": 26,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-ordre",
+        "level": "A2",
+        "presentation": "order",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-corriger-erreur",
+        "level": "A2",
+        "presentation": "correct",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "type": "gram-ex-re-oir-curriculum-t",
+        "level": "A2",
+        "presentation": "transform",
+        "sheets": 50,
+        "printedQuestions": 100,
+        "overflow": false
+      },
+      {
+        "sub": "re-oir",
+        "classroomTransform": "source and target subject preserved",
+        "selectedQuestions": 3
       }
     ],
     "errors": []
