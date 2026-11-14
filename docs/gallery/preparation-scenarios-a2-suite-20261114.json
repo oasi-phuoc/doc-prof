@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "scope": "Suite de six scènes CO CFR A2 DELF Actif ; préparations distinctes des images effectivement disponibles.",
+  "baseline_commit": "a6b636ad",
+  "status": "generation_blocked_by_quota",
+  "generated_images": 0,
+  "published_images": 0,
+  "new_audio_bindings": 0,
+  "prepared_scenes": 6,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "quota_observation": {
+    "tool": "image_gen.imagegen",
+    "http_status": 429,
+    "error": "usage_limit_reached",
+    "observed_at_utc": "2026-11-14T11:28:44Z",
+    "reset_at_unix": 1794663054,
+    "reset_at_zurich": "2026-11-14T14:30:54+01:00",
+    "timezone": "Europe/Zurich",
+    "attempted_scene": "scenario-bagage-porte-bagages",
+    "attempted_reference_paths": [
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ]
+  },
+  "items": [
+    {
+      "priority": 1,
+      "id": "scenario-bagage-porte-bagages",
+      "exercise_id": "tcf-delf-actif-a2-033-04",
+      "title": "Le sac sur le porte-bagages",
+      "level": "A1-A2",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-04.mp3",
+      "audio_sha256": "d6ad22b441806709dff2ddb9c01b4a6ca96879fc0d2dec983733cd30d3202238",
+      "transcription": "Jeune homme, je peux vous demander de m’aider ? Si je peux, volontiers ! Mon sac de voyage est lourd. Je suis petit. Vous arrivez à le mettre en haut sur le porte-bagage ? Bien sûr, sans problème.",
+      "source_sha256": "628b48905b3c5d617133d359902731213de80ecd45e55fbc0b27a97a16f5dfea",
+      "human_audio_listening_performed": false,
+      "evidence_quote": "le mettre en haut sur le porte-bagage",
+      "scene_key": "bagage-rangement",
+      "themes": [
+        "deplacements"
+      ],
+      "status": "blocked_by_image_quota",
+      "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
+      "planned_catalogue_types": [
+        "Scénario"
+      ],
+      "planned_catalogue_themes": [
+        "CO CFR A2",
+        "Situations CO"
+      ],
+      "scene_brief": "Dans un wagon générique, un jeune homme grand aide un homme adulte plus petit à lever un seul sac de voyage lourd vers le porte-bagages ouvert au-dessus des sièges.",
+      "character_plan": "Homme adulte plus petit, peau olive, cheveux bruns courts bouclés, pull ocre ; jeune homme grand, peau brun foncé, cheveux très courts, chemise bleu-vert.",
+      "candidate_review": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co306-bagages-dessine.webp",
+          "sha256": "d163c4a33e77273b5bc83399aca6d609861da033723ceb8241a5e48be2559c5b",
+          "width": 1280,
+          "height": 960,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Sac et valise isolés : aucun geste d’aide ou rangement en hauteur."
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+          "sha256": "9a8f01f5b88ea6336e7963cab706a0a7545e26e79d76c60822dcbb717101bc66",
+          "width": 1280,
+          "height": 960,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Deux véhicules extérieurs en deux vignettes : aucune scène de rangement ni interaction."
+        }
+      ],
+      "style_references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "prompt": "Create ONE NEW illustration for a French TCF CFR A2 listening exercise. Use the attached approved image ONLY as an art-direction reference: warm softly painted semi-realistic digital illustration, gentle progressive shading, realistic materials and anatomy, subtle fine outlines, natural warm colours, believable friendly expressions. Do NOT copy its people, objects, camera equipment, classroom or composition. Native output MUST be EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE, not square, not 3:2; no cropping after generation. Scene: inside a clean generic passenger train carriage, a SHORT adult man with light olive skin, short dark curly hair, round face and a plain ochre sweater politely asks a TALL young adult man with dark brown skin, close-cropped hair, a slim build and a muted teal shirt to help lift his heavy dark burgundy soft travel bag onto the HIGH OPEN LUGGAGE RACK ABOVE THE SEATS. Show the tall young man actively raising the travel bag with BOTH hands, bag still in his hands just below the high rack, and the shorter man beside him looking appreciatively upward with one relaxed open hand. ONE travel bag is the main object. The rack must be clearly high over the train seats, not a low shelf or overhead airline bin. Both people are standing in the aisle. Show both complete heads, hands and feet with margins, the whole bag and the relevant rack fully in frame. No unrelated extra people. No inference of disability; the shorter adult is simply shorter, no extreme caricature. No numbers or writing on seats, tickets, posters or luggage; no text, letters, prices, dates, days, months, schedules, logos, national flags, watermark or speech bubbles. Soft daylight through train windows, generic countryside with no identifiable destination. Source dialogue to respect: a person says his heavy travel bag is hard to put up high because he is short; a young man agrees to help. Do not depict the owner as an elderly woman or show money/payment.",
+      "prompt_is_summary": false,
+      "visual_acceptance": [
+        "Le jeune homme porte activement le sac, encore dans ses deux mains sous le rack haut.",
+        "L’homme plus petit reste un adulte ; aucune cause médicale ou âge avancé ajouté.",
+        "Un seul sac principal et un porte-bagages ouvert au-dessus des sièges, sans compartiment d’avion."
+      ],
+      "publication_requirements": [
+        "Image réellement générée, fichier présent et examiné visuellement avec la transcription.",
+        "Paysage natif 4:3 et éléments de la réponse exacts ; aucune correction numérique du contenu.",
+        "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
+        "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
+        "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
+      ]
+    },
+    {
+      "priority": 2,
+      "id": "scenario-ceder-sa-place",
+      "exercise_id": "tcf-delf-actif-a2-035-01",
+      "title": "Céder sa place",
+      "level": "A1-A2",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-01.mp3",
+      "audio_sha256": "17e98e5d85f0eaa0731fd2d87b894623cb5a625fcfb48ca44bb5a50695fd6093",
+      "transcription": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame. Ça fait plaisir de rencontrer des jeunes comme vous ! Je laisse toujours ma place à ma grand-mère. Vous êtes mignonne !",
+      "source_sha256": "4d6d29af13d5a177d3a790e57d2d4391493bb3c47881adbdbdbc1f303f903292",
+      "human_audio_listening_performed": false,
+      "evidence_quote": "de laisser votre place",
+      "scene_key": "ceder-place",
+      "themes": [
+        "deplacements"
+      ],
+      "status": "prepared_not_generated",
+      "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
+      "planned_catalogue_types": [
+        "Scénario"
+      ],
+      "planned_catalogue_themes": [
+        "CO CFR A2",
+        "Situations CO"
+      ],
+      "scene_brief": "Une jeune femme se lève et invite clairement une femme plus âgée à prendre le siège qu’elle vient de libérer.",
+      "character_plan": "Jeune femme à peau claire, cheveux noirs courts, veste prune et pantalon crème ; femme plus âgée à peau brune, cheveux gris en chignon, manteau beige.",
+      "candidate_review": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+          "sha256": "9a8f01f5b88ea6336e7963cab706a0a7545e26e79d76c60822dcbb717101bc66",
+          "width": 1280,
+          "height": 960,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Véhicules vus de l’extérieur ; aucun siège cédé et aucune personne."
+        }
+      ],
+      "style_references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "prompt": "Generate ONE NEW warm softly painted semi-realistic educational digital illustration for a TCF CFR A2 listening scene. Match the approved attached references in painting technique only: progressive soft volumes, fine discreet contours, natural warm colours, detailed materials, believable anatomy and gentle expressions. Do not copy reference people, faces, furniture, studio equipment or arrangements. A coherent single painted scene, not a collage. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE; no square or 3:2, no cropping or resampling to conceal a wrong format. Complete main subjects with margins: all relevant hands, heads, feet and required objects in frame. No readable text, letters, numbers, price, amount, date, day, month, calendar, timetable, brand, national flag, watermark or speech bubble. Do not illustrate proposals or uncertain claims as proven outcomes. Use the source transcript to preserve roles, intentions, object counts and actions. The transcript is context, never lettering to put on the picture. Inside a generic public-transport carriage chosen as a neutral illustrative setting, a young adult woman is clearly STANDING UP from a single seat and taking a small step aside, offering that EMPTY SEAT with an open hand to an older adult woman who is approaching it gratefully. Their interaction must unmistakably show giving up her seat, not just two women waiting or already seated together. Both people fully framed. No cane, disability, pregnancy or medical explanation invented. They are not portrayed as relatives; the grandmother is mentioned in the conversation as a separate reference, not identified with the older woman. A few neutral carriage seats and handrails only, no named city or transport line.  Character plan: Jeune femme à peau claire, cheveux noirs courts, veste prune et pantalon crème ; femme plus âgée à peau brune, cheveux gris en chignon, manteau beige. Exact source transcript: C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame. Ça fait plaisir de rencontrer des jeunes comme vous ! Je laisse toujours ma place à ma grand-mère. Vous êtes mignonne !",
+      "prompt_is_summary": false,
+      "visual_acceptance": [
+        "Le siège libéré est visible et le geste invite l’autre personne à s’asseoir.",
+        "Deux femmes d’âges différents, aucune parenté affirmée.",
+        "Le moyen de transport est un décor illustratif générique, pas une réponse déduite du texte."
+      ],
+      "publication_requirements": [
+        "Image réellement générée, fichier présent et examiné visuellement avec la transcription.",
+        "Paysage natif 4:3 et éléments de la réponse exacts ; aucune correction numérique du contenu.",
+        "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
+        "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
+        "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
+      ]
+    },
+    {
+      "priority": 3,
+      "id": "scenario-chien-devant-patisserie",
+      "exercise_id": "tcf-delf-actif-a2-043-04-03",
+      "title": "Le chien devant la pâtisserie",
+      "level": "A1-A2",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+      "transcription": "Excusez-moi, vous pouvez garder mon chien 1 minute s’il vous plaît ? Oui mais vous allez où ? Je rentre dans la pâtisserie prendre un gâteau. Pas de problèmes, allez-y.",
+      "source_sha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+      "human_audio_listening_performed": false,
+      "evidence_quote": "garder mon chien",
+      "scene_key": "chien-patisserie",
+      "themes": [
+        "achats"
+      ],
+      "status": "prepared_not_generated",
+      "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "planned_catalogue_types": [
+        "Scénario"
+      ],
+      "planned_catalogue_themes": [
+        "CO CFR A2",
+        "Situations CO"
+      ],
+      "scene_brief": "Devant une pâtisserie, une personne confie la laisse de son chien à une autre avant d’entrer prendre un gâteau.",
+      "character_plan": "Propriétaire homme à peau claire avec taches de rousseur, cheveux roux ondulés, veste bleu nuit ; personne qui aide, femme à peau foncée, tresses attachées, manteau vert sauge.",
+      "candidate_review": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/vocab-chien.webp",
+          "sha256": "ad3f8e5f558a25ac591a80263255af7a88766f8525f1c3648c51421da873b183",
+          "width": 1448,
+          "height": 1086,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Chien isolé, sans laisse confiée, personnes ou pâtisserie."
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/vocab-patisserie.webp",
+          "sha256": "0416837f13c598e6a8f1e1892021350dd8ec52a121ffde13464820a915b0931f",
+          "width": 1448,
+          "height": 1086,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Une pâtisserie isolée sur fond crème : ne représente ni le commerce ni la demande d’aide."
+        }
+      ],
+      "style_references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "prompt": "Generate ONE NEW warm softly painted semi-realistic educational digital illustration for a TCF CFR A2 listening scene. Match the approved attached references in painting technique only: progressive soft volumes, fine discreet contours, natural warm colours, detailed materials, believable anatomy and gentle expressions. Do not copy reference people, faces, furniture, studio equipment or arrangements. A coherent single painted scene, not a collage. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE; no square or 3:2, no cropping or resampling to conceal a wrong format. Complete main subjects with margins: all relevant hands, heads, feet and required objects in frame. No readable text, letters, numbers, price, amount, date, day, month, calendar, timetable, brand, national flag, watermark or speech bubble. Do not illustrate proposals or uncertain claims as proven outcomes. Use the source transcript to preserve roles, intentions, object counts and actions. The transcript is context, never lettering to put on the picture. Outside the OPEN doorway of a small pastry shop, a man is just about to enter and is handing his ONE DOG’S LEASH to a woman who agrees to hold it. The medium-size friendly dog remains fully OUTSIDE on the pavement next to the helper, with a loose, clearly continuous leash and its entire body visible. The man gestures toward the pastry shop doorway. A window displays a few recognizable whole cakes and pastries, identifying a pastry shop without signage. The man is not already carrying a purchased cake; the purchase is only his intention. No dog inside the shop, no second dog, no veterinary setting, no money or receipt.  Character plan: Propriétaire homme à peau claire avec taches de rousseur, cheveux roux ondulés, veste bleu nuit ; personne qui aide, femme à peau foncée, tresses attachées, manteau vert sauge. Exact source transcript: Excusez-moi, vous pouvez garder mon chien 1 minute s’il vous plaît ? Oui mais vous allez où ? Je rentre dans la pâtisserie prendre un gâteau. Pas de problèmes, allez-y.",
+      "prompt_is_summary": false,
+      "visual_acceptance": [
+        "Chien entier dehors, jamais au rayon pâtisserie.",
+        "Transmission de la laisse clairement visible entre les deux personnes.",
+        "Pas de gâteau déjà acheté ; achat encore projeté."
+      ],
+      "publication_requirements": [
+        "Image réellement générée, fichier présent et examiné visuellement avec la transcription.",
+        "Paysage natif 4:3 et éléments de la réponse exacts ; aucune correction numérique du contenu.",
+        "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
+        "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
+        "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
+      ]
+    },
+    {
+      "priority": 4,
+      "id": "scenario-comparer-deux-telephones",
+      "exercise_id": "tcf-delf-actif-a2-044-04-04",
+      "title": "Choisir un nouveau téléphone",
+      "level": "A1-A2",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+      "transcription": "Je cherche un dernier modèle de téléphone portable. Nous venons de recevoir ces deux derniers modèles. Qu’est-ce qu’il a de particulier ce modèle-ci ? Il a une très bonne autonomie, les photos sont de bonne qualité et le prix est avantageux.",
+      "source_sha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+      "human_audio_listening_performed": false,
+      "evidence_quote": "deux derniers modèles",
+      "scene_key": "telephonie",
+      "themes": [
+        "achats"
+      ],
+      "status": "prepared_not_generated",
+      "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "planned_catalogue_types": [
+        "Scénario"
+      ],
+      "planned_catalogue_themes": [
+        "CO CFR A2",
+        "Situations CO"
+      ],
+      "scene_brief": "Dans un magasin, une personne demande conseil sur deux téléphones présentés par un membre du personnel.",
+      "character_plan": "Cliente adulte à peau brune, cheveux gris très courts, veste bleu cobalt ; vendeur adulte à peau claire, cheveux châtains attachés et fines lunettes, cardigan brique.",
+      "candidate_review": [
+        {
+          "path": "/lib/images/tcf/co/scenes/ecole/10-ecole-nouveau-telephone.webp",
+          "sha256": "ee90e9e0aafcd7275363a3ecd8916d7735ba3125d7712cd552799ae3ee7be775",
+          "width": 1448,
+          "height": 1086,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Deux jeunes discutent d’un téléphone dans un contexte scolaire, sans vendeur ni deux modèles."
+        },
+        {
+          "path": "/lib/images/tcf/co/scenes/ecole/53-ecole-probleme-avec-son-telephone.webp",
+          "sha256": "b90db97c2fead9c53e591dae3beb67ac342ceea81eb7659eea5dab2f570aff4a",
+          "width": 1448,
+          "height": 1086,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Deux jeunes devant une école/magasin : un appareil et problème différent, pas comparaison de deux modèles."
+        }
+      ],
+      "style_references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "prompt": "Generate ONE NEW warm softly painted semi-realistic educational digital illustration for a TCF CFR A2 listening scene. Match the approved attached references in painting technique only: progressive soft volumes, fine discreet contours, natural warm colours, detailed materials, believable anatomy and gentle expressions. Do not copy reference people, faces, furniture, studio equipment or arrangements. A coherent single painted scene, not a collage. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE; no square or 3:2, no cropping or resampling to conceal a wrong format. Complete main subjects with margins: all relevant hands, heads, feet and required objects in frame. No readable text, letters, numbers, price, amount, date, day, month, calendar, timetable, brand, national flag, watermark or speech bubble. Do not illustrate proposals or uncertain claims as proven outcomes. Use the source transcript to preserve roles, intentions, object counts and actions. The transcript is context, never lettering to put on the picture. Inside a simple modern phone shop, an older adult woman customer asks an adult male shop assistant about TWO new smartphone models displayed side by side on small plain stands on the counter. Exactly TWO prominent phones, no rows of extra phones in the background. The customer points at ONE model and the assistant gestures toward it while explaining. Natural attentive expressions. Blank softly illuminated screens with no letters, numbers, battery percentages, price cards, fake performance charts or brand logos. No sale already completed, no payment, no shopping bag, no box handed to the customer. The scene communicates asking about models, not a proven battery life or photograph quality.  Character plan: Cliente adulte à peau brune, cheveux gris très courts, veste bleu cobalt ; vendeur adulte à peau claire, cheveux châtains attachés et fines lunettes, cardigan brique. Exact source transcript: Je cherche un dernier modèle de téléphone portable. Nous venons de recevoir ces deux derniers modèles. Qu’est-ce qu’il a de particulier ce modèle-ci ? Il a une très bonne autonomie, les photos sont de bonne qualité et le prix est avantageux.",
+      "prompt_is_summary": false,
+      "visual_acceptance": [
+        "Deux smartphones exactement, modèle désigné sans autonomie ou prix inventé.",
+        "Échange de renseignements en magasin, achat non accompli.",
+        "Personnages et contexte distincts des deux scènes scolaires candidates."
+      ],
+      "publication_requirements": [
+        "Image réellement générée, fichier présent et examiné visuellement avec la transcription.",
+        "Paysage natif 4:3 et éléments de la réponse exacts ; aucune correction numérique du contenu.",
+        "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
+        "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
+        "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
+      ]
+    },
+    {
+      "priority": 5,
+      "id": "scenario-shampoing-dentifrice",
+      "exercise_id": "tcf-delf-actif-a2-044-04-02",
+      "title": "Le shampoing et le dentifrice",
+      "level": "A1-A2",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+      "transcription": "Ce shampoing va bien pour mes cheveux frisés ? Oui, ma cousine le prend et dit qu’il est super. Et ce dentifrice il est bon aussi ? Je ne sais pas, je ne le connais pas.",
+      "source_sha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+      "human_audio_listening_performed": false,
+      "evidence_quote": "Ce shampoing va bien pour mes cheveux frisés",
+      "scene_key": "produits-hygiene",
+      "themes": [
+        "achats"
+      ],
+      "status": "prepared_not_generated",
+      "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "planned_catalogue_types": [
+        "Scénario"
+      ],
+      "planned_catalogue_themes": [
+        "CO CFR A2",
+        "Situations CO"
+      ],
+      "scene_brief": "Deux adultes parlent d’un shampoing et d’un dentifrice, sans donner à la personne qui répond un rôle de professionnel de santé.",
+      "character_plan": "Femme adulte à peau brune et cheveux noirs naturellement frisés, haut terracotta ; homme adulte est-asiatique aux cheveux noirs ondulés mi-longs, pull crème.",
+      "candidate_review": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co306-dentifrice-shampoing-dessine.webp",
+          "sha256": "9b900cd01a8788c5f4c1f3acfeea5b32de026bf483620e1de920086efe6f971d",
+          "width": 1280,
+          "height": 960,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Bon couple d’objets avec pictogrammes, réutilisable pour une reconnaissance d’objets ; aucune conversation ou incertitude représentée, donc pas une scène de dialogue complète."
+        }
+      ],
+      "style_references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "prompt": "Generate ONE NEW warm softly painted semi-realistic educational digital illustration for a TCF CFR A2 listening scene. Match the approved attached references in painting technique only: progressive soft volumes, fine discreet contours, natural warm colours, detailed materials, believable anatomy and gentle expressions. Do not copy reference people, faces, furniture, studio equipment or arrangements. A coherent single painted scene, not a collage. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE; no square or 3:2, no cropping or resampling to conceal a wrong format. Complete main subjects with margins: all relevant hands, heads, feet and required objects in frame. No readable text, letters, numbers, price, amount, date, day, month, calendar, timetable, brand, national flag, watermark or speech bubble. Do not illustrate proposals or uncertain claims as proven outcomes. Use the source transcript to preserve roles, intentions, object counts and actions. The transcript is context, never lettering to put on the picture. In a neutral everyday interior, two casually dressed adults discuss EXACTLY TWO toiletries on a small table: ONE upright shampoo bottle with a simple hair pictogram and ONE toothpaste tube with a simple tooth pictogram, no lettering or brand. The woman has visibly curly hair and indicates the shampoo while asking; the other adult answers thoughtfully with a modest open hand, no professional uniform, white coat, pharmacy counter or diagnostic equipment. The toothpaste is visible beside the shampoo but is not shown as recommended, medically approved or proven good; the answerer explicitly does not know it. No extra products or toothbrushes that could confuse the object count.  Character plan: Femme adulte à peau brune et cheveux noirs naturellement frisés, haut terracotta ; homme adulte est-asiatique aux cheveux noirs ondulés mi-longs, pull crème. Exact source transcript: Ce shampoing va bien pour mes cheveux frisés ? Oui, ma cousine le prend et dit qu’il est super. Et ce dentifrice il est bon aussi ? Je ne sais pas, je ne le connais pas.",
+      "prompt_is_summary": false,
+      "visual_acceptance": [
+        "Un flacon de shampoing et un tube de dentifrice identifiables, deux produits principaux.",
+        "Cheveux frisés visibles ; aucune expertise médicale attribuée.",
+        "Le dentifrice n’est pas présenté comme conseillé ou validé."
+      ],
+      "publication_requirements": [
+        "Image réellement générée, fichier présent et examiné visuellement avec la transcription.",
+        "Paysage natif 4:3 et éléments de la réponse exacts ; aucune correction numérique du contenu.",
+        "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
+        "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
+        "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
+      ]
+    },
+    {
+      "priority": 6,
+      "id": "scenario-erreur-place-reservee",
+      "exercise_id": "tcf-delf-actif-a2-033-03",
+      "title": "L’erreur de place réservée",
+      "level": "A1-A2",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
+      "audio_sha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
+      "transcription": "Madame, cette place est réservée. Ah bon ? Oui, regardez mon billet. Place numéro 22. Oh, excusez-moi. Je n’ai pas mes lunettes… Ah oui j’ai le numéro 28. Ce n’est pas grave Madame, vous êtes tout excusée.",
+      "source_sha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+      "human_audio_listening_performed": false,
+      "evidence_quote": "cette place est réservée",
+      "scene_key": "place-reservee",
+      "themes": [
+        "deplacements"
+      ],
+      "status": "prepared_not_generated",
+      "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "planned_catalogue_types": [
+        "Scénario"
+      ],
+      "planned_catalogue_themes": [
+        "CO CFR A2",
+        "Situations CO"
+      ],
+      "scene_brief": "Une voyageuse et un autre adulte comparent leurs billets à côté d’un même siège après une erreur de place, dans une ambiance courtoise.",
+      "character_plan": "Voyageuse adulte à peau claire, cheveux courts argentés, veste bleu pâle, sans lunettes ; autre adulte à peau brune, cheveux noirs courts et veste moutarde.",
+      "candidate_review": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+          "sha256": "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115",
+          "width": 1448,
+          "height": 1086,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Deux billets isolés sans personnes ni vérification de place : convient à un décompte d’objets, pas à ce dialogue."
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co306-train-metro-dessine.webp",
+          "sha256": "9a8f01f5b88ea6336e7963cab706a0a7545e26e79d76c60822dcbb717101bc66",
+          "width": 1280,
+          "height": 960,
+          "reviewed_visually": true,
+          "decision": "not_a_complete_matching_dialogue_scene",
+          "reason": "Véhicules extérieurs sans contrôle des billets, donc réemploi de scène refusé."
+        }
+      ],
+      "style_references": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "width": 1280,
+          "height": 960
+        }
+      ],
+      "prompt": "Generate ONE NEW warm softly painted semi-realistic educational digital illustration for a TCF CFR A2 listening scene. Match the approved attached references in painting technique only: progressive soft volumes, fine discreet contours, natural warm colours, detailed materials, believable anatomy and gentle expressions. Do not copy reference people, faces, furniture, studio equipment or arrangements. A coherent single painted scene, not a collage. Native output EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE; no square or 3:2, no cropping or resampling to conceal a wrong format. Complete main subjects with margins: all relevant hands, heads, feet and required objects in frame. No readable text, letters, numbers, price, amount, date, day, month, calendar, timetable, brand, national flag, watermark or speech bubble. Do not illustrate proposals or uncertain claims as proven outcomes. Use the source transcript to preserve roles, intentions, object counts and actions. The transcript is context, never lettering to put on the picture. In a generic passenger seating area chosen only as a plausible travel illustration, an adult woman without glasses has politely started to rise from a seat while another adult shows a plain ticket. She holds her own plain ticket beside it and looks apologetically at the person. BOTH TICKETS must be visible in separate hands, entirely blank, with no numbers, printed seat codes or prices. The other person makes a reassuring open-handed gesture. Show the mistaken seat and courteous checking action; no arguing, pointing accusation, guard, penalty or conflict. No glasses worn by the woman, no invented station or destination. Both faces and hands fully framed, not a close-up of two isolated tickets.  Character plan: Voyageuse adulte à peau claire, cheveux courts argentés, veste bleu pâle, sans lunettes ; autre adulte à peau brune, cheveux noirs courts et veste moutarde. Exact source transcript: Madame, cette place est réservée. Ah bon ? Oui, regardez mon billet. Place numéro 22. Oh, excusez-moi. Je n’ai pas mes lunettes… Ah oui j’ai le numéro 28. Ce n’est pas grave Madame, vous êtes tout excusée.",
+      "prompt_is_summary": false,
+      "visual_acceptance": [
+        "Deux billets distincts visibles sans écrire 22 ou 28.",
+        "Voyageuse sans ses lunettes ; aucune inférence d’âge exact.",
+        "Vérification courtoise, pas de conflit ou d’amende."
+      ],
+      "publication_requirements": [
+        "Image réellement générée, fichier présent et examiné visuellement avec la transcription.",
+        "Paysage natif 4:3 et éléments de la réponse exacts ; aucune correction numérique du contenu.",
+        "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
+        "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
+        "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
+      ]
+    }
+  ]
+}
