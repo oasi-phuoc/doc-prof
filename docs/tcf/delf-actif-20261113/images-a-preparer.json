@@ -8,12 +8,12 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 228,
+      "active_reviewed_trio": 231,
       "keep_text_calendar_or_duration": 139,
       "needs_context_review": 1021,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73,
-      "candidate_visual_review": 142
+      "candidate_visual_review": 139
     },
     "by_level": {
       "A0-A1": {
@@ -25,8 +25,8 @@
         "candidate_visual_review": 34
       },
       "A1-A2": {
-        "candidate_visual_review": 75,
-        "active_reviewed_trio": 101,
+        "candidate_visual_review": 72,
+        "active_reviewed_trio": 104,
         "needs_context_review": 363,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -50556,8 +50556,8 @@
       "semantic_sha256": "1559349d977df9413c48c64455d65b8749b95062f4740534e2399316e42fbfc6",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
       "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -50593,13 +50593,36 @@
           "id": "c",
           "label": "Le cuir",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/extension573-cuir-matiere.png",
+              "sha256": "2c22a0e4e299c390b56a4ec6569517d49ef4284e1cd0257cb1b7d235a9c7a562",
+              "label": "Cuir",
+              "visual_review_required": true
+            }
+          ],
           "asset": "53dcfb9e570d80cf",
           "brief": "Représenter entièrement « Le cuir » pour « Quelle matière le vendeur conseille-t-il pour la saison ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-coton.webp",
+          "sha256": "7afd864e0295c5b2d4382554a28f2ee44b85508eb8c00fd313a0b8a33bd781f5"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-laine.webp",
+          "sha256": "10040f7874d82e7e47f1b2ac2c85003c8c7f0258620bf3dc64e4e9c4e04b505d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cuir-matiere.png",
+          "sha256": "2c22a0e4e299c390b56a4ec6569517d49ef4284e1cd0257cb1b7d235a9c7a562"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -50610,7 +50633,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-matieres-accessoires-biscuits-20261114.json",
+        "reason": "Le vendeur conseille le coton pour la saison ; les pulls légers en laine arriveront le mois suivant.",
+        "note": "Coton avec tissu et capsules, laine avec pelotes et maille, cuir brun avec grain et revers visibles ; la matière est représentée sans confondre un vêtement avec sa composition."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-032-04#1",
@@ -58412,8 +58441,8 @@
       "semantic_sha256": "fd42977f08ca2247a7529a6b94112ee75f9fe7caf5a1003bcaab410e94c2fea2",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-02-01.mp3",
       "audio_sha256": "626d0c0f3229de7ea951a4eadf3833feda4f8989058812ba5e6202b795911252",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -58460,8 +58489,24 @@
           "brief": "Représenter entièrement « Une ceinture » pour « Quel accessoire vestimentaire est proposé comme cadeau ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-foulard-soie.png",
+          "sha256": "426e158f7ea7ac9312fa488951354a43c32c736f24ad9c8cadae7ce80db274fa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cravate.webp",
+          "sha256": "94027d04782c64696a71654e9e2bca6a2b511ec340db72ab46887061ac8a6db1"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+          "sha256": "61cb61ccb19380cd2ffd164693317fdbaf12c17591c376d0af05c8b079215c7d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -58472,7 +58517,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-matieres-accessoires-biscuits-20261114.json",
+        "reason": "L’annonce propose un foulard comme accessoire à offrir, avec parfum ou fleurs dans les autres catégories.",
+        "note": "Foulard carré léger satiné, cravate à nœud et ceinture à boucle ; trois accessoires distincts, sans personne ni prix."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-02-01#4",
@@ -64121,8 +64172,8 @@
       "semantic_sha256": "819598a3494bac0661bb2387892b397eee53c55f12b859cef67fc27727ca39c6",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-03.mp3",
       "audio_sha256": "ca13afa2c591e1f5661b6716c52d260d03e870e7d261d9f37151a506cecbaa7f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -64163,8 +64214,24 @@
           "brief": "Représenter entièrement « Des céréales » pour « Quel produit la dame demande-t-elle au jeune homme de prendre ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-deux-paquets-biscuits-jaunes.png",
+          "sha256": "94226ea7f0601cbfa06aad2f8ed48667d4d369130c073660aa6d32f1b038ea33"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+          "sha256": "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cereales.webp",
+          "sha256": "ebb73c4710617ae2647b2f5968b54255ae4645cfb4b31f34d8760667c35ce499"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -64175,7 +64242,13 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "date": "2026-11-14",
+        "register": "docs/tcf/revue-trios-matieres-accessoires-biscuits-20261114.json",
+        "reason": "La dame demande deux paquets jaunes de biscuits de la même marque, placés trop haut.",
+        "note": "Deux paquets jaunes identiques avec biscuits visibles, assiette de pâtes et bol de céréales ; catégorie, couleur et quantité du produit demandé conservées, sans marque écrite."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-04-03#2",
@@ -110907,7 +110980,14 @@
     {
       "id": "53dcfb9e570d80cf",
       "label": "Le cuir",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/extension573-cuir-matiere.png",
+          "sha256": "2c22a0e4e299c390b56a4ec6569517d49ef4284e1cd0257cb1b7d235a9c7a562",
+          "label": "Cuir",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-032-03#5",

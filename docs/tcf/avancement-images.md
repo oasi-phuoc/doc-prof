@@ -8,6 +8,8 @@
 
 État : **228 trios DELF Actif actifs** (118 A1, 101 A2, neuf B1), **142 candidats concrets** encore à vérifier et 1 021 questions en contexte. Les **370 trios historiques** restent suivis séparément. Contrôles des 346 supports DELF Actif, des 763 décisions historiques, de la banque, du rendu QCM (2 225 variantes), de la galerie (6 543 images) et TypeScript réussis. Aucune nouvelle écoute humaine n’est attestée.
 
+Suite A2 du 14 novembre : **trois trios** supplémentaires, trois nouveaux PNG natifs 4:3 et six réemplois. Foulard de soie distinct d’une cravate, cuir distinct du coton et de la laine, deux paquets jaunes de biscuits avec contenu visible. **231 trios DELF Actif actifs**, 139 candidats concrets restants. Les textes, choix, corrigés, transcriptions et MP3 sont conservés, avec comparaison des six banques ([registre](revue-trios-matieres-accessoires-biscuits-20261114.json)). Les contrôles des images, import audio, banque, catalogue et TypeScript passent : 2 228 variantes QCM image et 6 546 images dans la galerie.
+
 ## Reprise du 13 novembre 2026 — nouveaux audios inclus
 
 La génération des images adaptées est ajoutée aux tâches des 346 nouveaux supports DELF Actif, soit 1 663 questions. Le [plan complémentaire](delf-actif-20261113/images-a-preparer.md) distingue les trios actifs, les candidats à vérifier et les réponses maintenues en texte. Ce lot complète le reliquat historique sans les confondre.

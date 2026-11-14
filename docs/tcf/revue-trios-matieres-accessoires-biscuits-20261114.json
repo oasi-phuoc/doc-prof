@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "19f1ac2d85aed750a07de41d9e157a9867b03c6b",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "verification": {
+    "baseline_commit": "19f1ac2d85aed750a07de41d9e157a9867b03c6b",
+    "compared_all_six_banks": true,
+    "question_changes": 0,
+    "source_changes": 0,
+    "answer_changes": 0,
+    "added_image_forms_total": 3
+  },
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a2-032-03#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Monsieur, avez-vous des pulls légers en laine ? Je regrette, ils vont arriver le mois prochain. Nous sommes encore en été. Alors en coton ? C’est pour mettre à la montagne. Et bien pour la saison, le coton est l’idéal.",
+      "source_sha256": "6953c0dee17833b8b035a83e602096df612e31ba327d512c660a540899c49848",
+      "semantic_sha256": "1559349d977df9413c48c64455d65b8749b95062f4740534e2399316e42fbfc6",
+      "question": {
+        "enonce": "Quelle matière le vendeur conseille-t-il pour la saison ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le coton",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La laine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le cuir",
+            "correct": false
+          }
+        ],
+        "written_model": "Le coton"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+      "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
+      "image_ids": [
+        "vocab-coton",
+        "vocab-laine",
+        "extension573-cuir-matiere"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-coton.webp",
+        "/lib/images/tcf/qcm-audit/vocab-laine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cuir-matiere.png"
+      ],
+      "image_sha256": [
+        "7afd864e0295c5b2d4382554a28f2ee44b85508eb8c00fd313a0b8a33bd781f5",
+        "10040f7874d82e7e47f1b2ac2c85003c8c7f0258620bf3dc64e4e9c4e04b505d",
+        "2c22a0e4e299c390b56a4ec6569517d49ef4284e1cd0257cb1b7d235a9c7a562"
+      ],
+      "reason": "Le vendeur conseille le coton pour la saison ; les pulls légers en laine arriveront le mois suivant.",
+      "visual_review": "Coton avec tissu et capsules, laine avec pelotes et maille, cuir brun avec grain et revers visibles ; la matière est représentée sans confondre un vêtement avec sa composition."
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-02-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Jeunes et moins jeunes vous vous demandez quand souhaiter bonne fête à votre maman ? Et bien c’est demain. Il vous reste du temps, si vous voulez, pour acheter un parfum, un bouquet de fleurs ou encore un foulard.",
+      "source_sha256": "d377dff0a8429a796093c1498bb50baac1054ff5268f4fcfc8b12074821a1ba3",
+      "semantic_sha256": "fd42977f08ca2247a7529a6b94112ee75f9fe7caf5a1003bcaab410e94c2fea2",
+      "question": {
+        "enonce": "Quel accessoire vestimentaire est proposé comme cadeau ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un foulard",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une cravate",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une ceinture",
+            "correct": false
+          }
+        ],
+        "written_model": "Un foulard"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-02-01.mp3",
+      "audio_sha256": "626d0c0f3229de7ea951a4eadf3833feda4f8989058812ba5e6202b795911252",
+      "image_ids": [
+        "extension573-foulard-soie",
+        "vocab-cravate",
+        "co306-ceinture-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-foulard-soie.png",
+        "/lib/images/tcf/qcm-audit/vocab-cravate.webp",
+        "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp"
+      ],
+      "image_sha256": [
+        "426e158f7ea7ac9312fa488951354a43c32c736f24ad9c8cadae7ce80db274fa",
+        "94027d04782c64696a71654e9e2bca6a2b511ec340db72ab46887061ac8a6db1",
+        "61cb61ccb19380cd2ffd164693317fdbaf12c17591c376d0af05c8b079215c7d"
+      ],
+      "reason": "L’annonce propose un foulard comme accessoire à offrir, avec parfum ou fleurs dans les autres catégories.",
+      "visual_review": "Foulard carré léger satiné, cravate à nœud et ceinture à boucle ; trois accessoires distincts, sans personne ni prix."
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-04-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour jeune homme, vous pourriez me prendre ces paquets de biscuits, ils sont trop en hauteur pour moi. Mais bien sûr, vous voulez deux paquets jaunes ? Oui, deux de la même marque. Tenez !",
+      "source_sha256": "72a2fa6047b2793b8c0b00b6a4490f1c016b69de498397c7d3852df1d7a7b9e5",
+      "semantic_sha256": "819598a3494bac0661bb2387892b397eee53c55f12b859cef67fc27727ca39c6",
+      "question": {
+        "enonce": "Quel produit la dame demande-t-elle au jeune homme de prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des biscuits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des pâtes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des céréales",
+            "correct": false
+          }
+        ],
+        "written_model": "Des biscuits"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-03.mp3",
+      "audio_sha256": "ca13afa2c591e1f5661b6716c52d260d03e870e7d261d9f37151a506cecbaa7f",
+      "image_ids": [
+        "extension573-deux-paquets-biscuits-jaunes",
+        "co306-pates-legumes-dessine",
+        "vocab-cereales"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-deux-paquets-biscuits-jaunes.png",
+        "/lib/images/tcf/qcm-audit/co306-pates-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-cereales.webp"
+      ],
+      "image_sha256": [
+        "94226ea7f0601cbfa06aad2f8ed48667d4d369130c073660aa6d32f1b038ea33",
+        "f6ff7c29d2e968e976f099ba11d2d38f912412fa62e98cc146134c4145d3eb3c",
+        "ebb73c4710617ae2647b2f5968b54255ae4645cfb4b31f34d8760667c35ce499"
+      ],
+      "reason": "La dame demande deux paquets jaunes de biscuits de la même marque, placés trop haut.",
+      "visual_review": "Deux paquets jaunes identiques avec biscuits visibles, assiette de pâtes et bol de céréales ; catégorie, couleur et quantité du produit demandé conservées, sans marque écrite."
+    }
+  ]
+}
