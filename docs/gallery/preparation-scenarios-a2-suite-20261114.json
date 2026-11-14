@@ -3,10 +3,10 @@
   "date": "2026-11-14",
   "scope": "Suite de six scènes CO CFR A2 DELF Actif ; préparations distinctes des images effectivement disponibles.",
   "baseline_commit": "a6b636ad",
-  "status": "generation_blocked_by_quota",
-  "generated_images": 0,
-  "published_images": 0,
-  "new_audio_bindings": 0,
+  "status": "partially_completed_after_quota_reset",
+  "generated_images": 3,
+  "published_images": 3,
+  "new_audio_bindings": 3,
   "prepared_scenes": 6,
   "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
   "quota_observation": {
@@ -20,7 +20,8 @@
     "attempted_scene": "scenario-bagage-porte-bagages",
     "attempted_reference_paths": [
       "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-    ]
+    ],
+    "historical_observation_only": true
   },
   "items": [
     {
@@ -39,7 +40,7 @@
       "themes": [
         "deplacements"
       ],
-      "status": "blocked_by_image_quota",
+      "status": "generated_reviewed_bound",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bagage-porte-bagages.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -97,7 +98,26 @@
         "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
+      "generated_sha256": "a2fe163b847ea8004ad1ec4b99576fef23c6fef7eb672041d3d2d6ae4f2f28c4",
+      "generation_register": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Aidant appelé jeune homme ; propriétaire dit je suis petit, accord masculin. Aucune fragilité médicale ou vieillesse déduite de sa petite taille.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune homme et propriétaire masculin de petite taille",
+            "quote": "Jeune homme, je peux vous demander de m’aider ?"
+          },
+          {
+            "role": "propriétaire masculin",
+            "quote": "Mon sac de voyage est lourd. Je suis petit."
+          }
+        ]
+      },
+      "current_visual_review": "Deux personnages masculins : jeune homme aidant et propriétaire de petite taille, conforme à je suis petit. Sac encore tenu des deux mains pendant son placement en hauteur, pas de personne âgée ou handicap médical inventé."
     },
     {
       "priority": 2,
@@ -115,7 +135,7 @@
       "themes": [
         "deplacements"
       ],
-      "status": "prepared_not_generated",
+      "status": "generated_reviewed_bound",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ceder-sa-place.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -164,7 +184,22 @@
         "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+      "generated_sha256": "c38ea79d862d0c7cb57f7005e9a5cf3fab44332217de813b50cd2bdffc4d609f",
+      "generation_register": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Jeune femme appelée mademoiselle et femme plus âgée appelée Madame, deux rôles explicitement féminins.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "deux femmes",
+            "quote": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame."
+          }
+        ]
+      },
+      "current_visual_review": "Jeune femme et femme plus âgée, explicitement mademoiselle et Madame dans la source. Siège libéré et geste d’invitation visibles ; pas de simple attente côte à côte ni de personne déjà assise ailleurs."
     },
     {
       "priority": 3,
@@ -240,7 +275,9 @@
         "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
-      ]
+      ],
+      "character_plan_status": "unconfirmed_roles_not_specified_in_source",
+      "gender_review_required": "La transcription ne documente pas le genre de chaque interlocuteur. Le plan de personnages du brief ne vaut pas confirmation ; vérifier avant activation ou conserver les interlocuteurs non documentés hors cadre."
     },
     {
       "priority": 4,
@@ -316,7 +353,9 @@
         "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
-      ]
+      ],
+      "character_plan_status": "unconfirmed_roles_not_specified_in_source",
+      "gender_review_required": "La transcription ne documente pas le genre de chaque interlocuteur. Le plan de personnages du brief ne vaut pas confirmation ; vérifier avant activation ou conserver les interlocuteurs non documentés hors cadre."
     },
     {
       "priority": 5,
@@ -383,7 +422,9 @@
         "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
-      ]
+      ],
+      "character_plan_status": "unconfirmed_roles_not_specified_in_source",
+      "gender_review_required": "La transcription ne documente pas le genre de chaque interlocuteur. Le plan de personnages du brief ne vaut pas confirmation ; vérifier avant activation ou conserver les interlocuteurs non documentés hors cadre."
     },
     {
       "priority": 6,
@@ -401,7 +442,7 @@
       "themes": [
         "deplacements"
       ],
-      "status": "prepared_not_generated",
+      "status": "generated_reviewed_bound",
       "planned_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
       "planned_catalogue_types": [
         "Scénario"
@@ -459,7 +500,30 @@
         "Références, dimensions, empreinte SHA-256 et note de contrôle dans le registre de génération.",
         "Liaison de scénario au texte exact seulement après examen ; ne pas modifier une réponse QCM pour la faire correspondre au dessin.",
         "Réindexer les galeries image et audio, vérifier les tirages de scénarios et les médias dans Chromium."
-      ]
+      ],
+      "generated_path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
+      "generated_sha256": "e244aa7b8eb64b8a68f7d866b02cee53d594f09c5713b5eae08923c6a8881a50",
+      "generation_register": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "gender_review": {
+        "status": "documented_roles_match",
+        "basis": "Voyageuse explicitement appelée Madame ; autre voyageur hors champ, billet seul montré depuis son point de vue. Aucun genre, numéro de place ou montant ajouté.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "voyageuse femme",
+            "quote": "Madame, cette place est réservée."
+          },
+          {
+            "role": "absence de lunettes",
+            "quote": "Je n’ai pas mes lunettes…"
+          }
+        ]
+      },
+      "current_visual_review": "Voyageuse femme conforme à Madame se levant après une erreur, sans lunettes. Deux billets distincts sans numéro ni montant ; autre voyageur hors cadre, seul son billet apparaît depuis le point de vue du spectateur."
     }
-  ]
+  ],
+  "remaining_prepared_scenes": 3,
+  "current_scenario_sources": 81,
+  "current_pending_scenes": 36,
+  "completion_register": "docs/tcf/generation-scenarios-priorite-20261114.json"
 }

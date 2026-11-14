@@ -4,14 +4,14 @@ La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.m
 
 **Priorité demandée : générer les scènes avant les trios, en commençant par A1 puis A2.** Aucun nouveau trio QCM n’est ajouté pendant cette reprise.
 
-**96 dialogues** conviennent à une association de scènes. **30 sont liés à une scène disponible** ; **66 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **51 pistes**, contre 21 auparavant.
+**96 dialogues** conviennent à une association de scènes. **60 sont liés à une scène disponible** ; **36 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **81 pistes**, contre 21 auparavant.
 
 | Nouveaux supports | Candidats | Avec scène disponible | À terminer |
 |---|---:|---:|---:|
-| A1 | 41 | 19 | 22 |
-| A2 | 39 | 10 | 29 |
+| A1 | 41 | 31 | 10 |
+| A2 | 39 | 28 | 11 |
 | B1 | 16 | 1 | 15 |
-| Total | 96 | 30 | 66 |
+| Total | 96 | 60 | 36 |
 
 Les **250 autres supports** gardent leurs formats de compréhension : 188 messages, annonces ou prises de position, 18 suites de phrases ou consignes, quatre échanges essentiellement temporels, cinq descriptions ou questionnaires et 35 documents longs. Cette catégorie ne signifie pas que leur transcription est incorrecte.
 
@@ -19,23 +19,28 @@ Les tags **court, moyen et long** suivent la durée ou la catégorie pédagogiqu
 
 Le premier lot comportait [sept PNG A1/A2](generation-scenarios-20261114.json) servant à huit liaisons, et dix liaisons par réemploi. Ce lot est conservé.
 
-La [reprise prioritaire](generation-scenarios-priorite-20261114.json) produit **20 nouveaux PNG A1 natifs 1 448 × 1 086** et repère un réemploi. **Douze scènes sont activées** après contrôle des rôles documentés : nouveau professeur, cahier oublié, arrivée en retard, aide à l’exposé, demande de chemin, certificat de scolarité, rangement des tapis, course sur piste, révision sans calculatrice, récréation avec blousons, remise du cahier de Dania et nouvelle camarade Anissa.
+La [reprise prioritaire](generation-scenarios-priorite-20261114.json) compte **46 nouveaux PNG natifs 1 448 × 1 086 : 32 A1 et 14 A2**, ainsi que quatre images distinctes de la banque repérées pour réemploi. **42 nouvelles liaisons** sont activées : 38 avec un PNG généré et quatre par réemploi de scènes de transport sans personnage. Les deux dialogues utilisant le même arrêt de bus ne peuvent pas être tirés ensemble.
 
-**Neuf autres images sont préparées sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Elles attendent une vérification des personnes dans les voix de l’audio. Elles ne sont pas comptées comme scènes disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
+Les scènes A1 couvrent notamment les échanges scolaires, les sorties préparées, l’aide et le sport. Les scènes A2 ajoutent la décoration, le siège cédé, le bagage, les vêtements, la visite de ville, la place réservée, les fleurs, la monnaie, les renseignements en magasin, le refus du père, le projet de promenade en voiture, les remerciements après une visite et Claudine prête pour l’interrogation. Une proposition, une visite future ou une permission refusée n’est pas dessinée comme une activité déjà réalisée.
+
+**Neuf autres usages sont préparés sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Ils sont inclus dans les 36 scènes à terminer et ne sont pas comptés comme disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
+
+Le [recontrôle des anciennes scènes](recontrole-genres-scenes-20261114.md) couvre **39 liaisons et 33 images**. L’inversion du coureur est corrigée par un PNG supplémentaire, distinct des 46 images prioritaires. Les anciennes recettes chargent également cette correction. **29 liaisons historiques gardent une réserve sur les personnes**, faute d’indication complète dans leur transcription ; elles ne sont pas présentées comme confirmées par écoute.
 
 **Contrôle demandé sur les personnes :** vérifier les rôles, les destinataires de « Monsieur » et « Madame », les accords et les personnages nommés. L’apparence ou une estimation de hauteur de voix ne prouvent pas une identité de genre. Les cas non documentés restent en attente ; un enseignant peut rester hors cadre quand la source ne précise pas son genre. Les élèves figurants d’un groupe ne reçoivent pas arbitrairement la voix d’un locuteur précis. Aucune écoute humaine n’est attestée.
 
 Les personnages varient en âge, carnation, genre, coiffure et morphologie, avec fauteuil roulant, appareil auditif et vêtements variés, sans stéréotypes. Ces choix illustratifs ne sont pas des informations à déduire des audios. Le rendu suit le commit **48a753d8**, avec paysage exact **4:3**, sujets utiles entiers et octets PNG conservés sans recadrage ni conversion.
 
-La [comparaison des six banques](verification-scenes-priorite-20261114.json) confirme : **zéro nouveau trio, question, réponse, transcription ou MP3 modifié**. Les **277 trios DELF Actif actifs**, **469 candidatures restantes** et **370 trios historiques** sont conservés pendant la priorité aux scènes.
+La [comparaison des six banques](verification-scenes-priorite-20261114.json) confirme : **zéro nouveau trio, question, réponse, transcription ou MP3 modifié**. Seule l’URL de l’image du coureur change dans la banque A1. Les **277 trios DELF Actif actifs**, **469 candidatures restantes** et **370 trios historiques** sont conservés pendant la priorité aux scènes.
 
-Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les scènes activées sont liées aux audios du sélecteur. Galerie : **6 641 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
+Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie : **6 668 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
 
-Les contrôles couvrent les empreintes, les rôles documentés et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le rapport [Chromium prioritaire](scenarios-priorite-20261114-browser.json) complète celui du [premier lot](scenarios-audio-20261114-browser.json).
+Les contrôles couvrent les empreintes, les rôles documentés, les 39 recontrôles et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le [contrôle Chromium prioritaire](scenarios-priorite-20261114-browser.json) charge 36 images sur six pages A1/A2, dont 21 PNG distincts du lot, sans erreur. Le [test des anciennes recettes](scenarios-genres-20261114-browser.json) contrôle aussi le coureur corrigé.
 
 ```sh
 node scripts/check-tcf-association-images.mjs
 node scripts/check-tcf-bank.mjs
 python3 scripts/check-delf-actif-context-review.py
 node tests/audio-replacement/scenarios-browser.mjs --priority
+node tests/audio-replacement/scenarios-browser.mjs --gender-review
 ```
