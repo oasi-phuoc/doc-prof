@@ -7,7 +7,7 @@ Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserv
 | Élément existant | Utilisable / réutilisable | Limites connues |
 |---|---|---|
 | Générateur et fiches v1 | Recettes, banques, rendu imprimable et navigation réutilisés | Huit erreurs de génération repérées dans l’inventaire ; aucun remaniement de banque fait pour les masquer |
-| Conversion vers le jeu | 739 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases courtes manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
+| Conversion vers le jeu | 746 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases de deux à douze éléments manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
 | Modes Classe et Solo | Vote collectif, protections enseignant ; états et minuteurs conservés par écran, nouvelles tentatives et essais archivés ; Solo automatique | Mécaniques avancées encore à étendre |
 | Compétition | Code de salle, 30 mascottes sans pseudo, scores serveur, classement et reprise dans l’onglet ; défi local sur un appareil commun après préparation complète ; duels avec vies, attaque propre à chaque mascotte et tournoi par équipes tirées au sort | Code vérifié avec le moteur Cloudflare ; activation du Worker de production à faire par l’administrateur ; appareils séparés non synchronisables sans réseau ; démarrage à froid hors ligne non couvert |
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias ; transcription CO facultative après les corrections, avec suspension du battement Solo pendant la lecture | Préchargement manuel des images, audios et 30 mascottes en Classe et Solo ; page ouverte jouable sans réseau ; démarrage à froid et rechargement hors ligne encore ouverts |
@@ -21,7 +21,7 @@ Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserv
 
 ## Couverture observée
 
-L’inventaire courant trouve 739 variantes avec au moins une activité : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 83 adaptations vérifiées, 104 uniquement guidées et 34 mixtes. Répartition : soutien FR 229, alphabétisation 213, grammaire 152, TCF CFR 10, TCF CSC 9, TPF 9, algèbre 25, Gattegno 26, TPM 14, géométrie 24, TCM CFR 9, TCM CSC 13 et Jeux 6. Les 1 411 autres variantes demandent des adaptateurs ou une correction de génération. Le jeu signale ces incompatibilités dans la préparation.
+L’inventaire courant trouve 746 variantes avec au moins une activité : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 83 adaptations vérifiées, 111 uniquement guidées et 34 mixtes. Répartition : soutien FR 231, alphabétisation 216, grammaire 152, TCF CFR 10, TCF CSC 9, TPF 9, algèbre 25, Gattegno 28, TPM 14, géométrie 24, TCM CFR 9, TCM CSC 13 et Jeux 6. Les 1 404 autres variantes demandent des adaptateurs ou une correction de génération. Le jeu signale ces incompatibilités dans la préparation.
 
 Les sources déjà prises en charge et leurs limites sont décrites dans l’[audit de compatibilité](audit-compatibilite.md). L’inventaire conserve les configurations et items témoins pour étendre chaque famille avec des tests fiables. Le moteur, les médias, les cartes, les minuteurs, le plan de réponses et la persistance constituent le socle à garder pour ces extensions.
 
@@ -30,6 +30,8 @@ Les sources déjà prises en charge et leurs limites sont décrites dans l’[au
 La [revue des six PR](../maintenance/pr-review-2026-11-10.md) identifie cinq travaux déjà intégrés et une PR 51 contenant encore un patch distinct (banques et rendu de famille / grammaire). Ce contenu est une piste de réutilisation à examiner par fichier ; il n’est pas assimilé à une implémentation achevée du jeu. La fermeture des anciennes PR n’a pas été exécutée par cette session, faute d’accès à l’API GitHub.
 
 ## Vérifications récentes
+
+Les [phrases de deux à douze éléments](adr-0049-phrases-douze-elements.md) conservent leur contexte complet et une appréciation humaine. Le parcours dédié couvre les grandes phrases et les interrogations avec liaison, les gestes tactiles, l’alternative par deux appuis, le clavier, l’annulation, le verrou, le lecteur neutre, le plein écran et la reprise. Les 397 tests passent et le témoin A4 reste identique. Les [preuves du lot](quality-long-word-order-results.json) distinguent les contrôles exécutés des 62 étapes disponibles.
 
 Les [interrogations Gattegno](../gattegno/questions-interrogatives.md) varient les mots interrogatifs et les inversions. Les accords, la négation, la reprise du sujet et les liaisons restent cohérents dans les six formats. Le classement utilise les catégories des nouveaux éléments, y compris la locution adverbiale « est-ce que », et la compétition transporte les mots neutres avec leurs liaisons. Les [preuves du lot](../gattegno/quality-interrogatives-results.json) couvrent 392 tests et les contrôles ciblés ; le nombre d’étapes disponibles est maintenant de 61.
 

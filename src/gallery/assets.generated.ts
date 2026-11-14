@@ -103,163 +103,171 @@ import asset100 from "/docs/interactive/screenshots/loading-game-1366.png?url"
 import asset101 from "/docs/interactive/screenshots/loading-game-390.png?url"
 import asset102 from "/docs/interactive/screenshots/loading-start-1366.png?url"
 import asset103 from "/docs/interactive/screenshots/loading-start-390.png?url"
-import asset104 from "/docs/interactive/screenshots/loto-1366.png?url"
-import asset105 from "/docs/interactive/screenshots/loto-360.png?url"
-import asset106 from "/docs/interactive/screenshots/loto-390.png?url"
-import asset107 from "/docs/interactive/screenshots/mascot-attacks-1366.png?url"
-import asset108 from "/docs/interactive/screenshots/mascot-attacks-360.png?url"
-import asset109 from "/docs/interactive/screenshots/mascot-attacks-390.png?url"
-import asset110 from "/docs/interactive/screenshots/mascots-menu-1366.png?url"
-import asset111 from "/docs/interactive/screenshots/mascots-menu-360.png?url"
-import asset112 from "/docs/interactive/screenshots/mascots-menu-390.png?url"
-import asset113 from "/docs/interactive/screenshots/mascottes-zodiaque.webp?url"
-import asset114 from "/docs/interactive/screenshots/matching-solo-summary.png?url"
-import asset115 from "/docs/interactive/screenshots/matching-used-1366.png?url"
-import asset116 from "/docs/interactive/screenshots/matching-used-360.png?url"
-import asset117 from "/docs/interactive/screenshots/matching-used-390.png?url"
-import asset118 from "/docs/interactive/screenshots/mobile-paired-360.png?url"
-import asset119 from "/docs/interactive/screenshots/mobile-paired-390.png?url"
-import asset120 from "/docs/interactive/screenshots/mobile-paired-700.png?url"
-import asset121 from "/docs/interactive/screenshots/mobile-question-mascot-360.png?url"
-import asset122 from "/docs/interactive/screenshots/mobile-question-mascot-390.png?url"
-import asset123 from "/docs/interactive/screenshots/mobile-question-mascot-430.png?url"
-import asset124 from "/docs/interactive/screenshots/mobile-question-mascot-700.png?url"
-import asset125 from "/docs/interactive/screenshots/mobile-thinking-360.png?url"
-import asset126 from "/docs/interactive/screenshots/mobile-thinking-390.png?url"
-import asset127 from "/docs/interactive/screenshots/mobile-thinking-700.png?url"
-import asset128 from "/docs/interactive/screenshots/mobile-timeout-mascot-360.png?url"
-import asset129 from "/docs/interactive/screenshots/mobile-timeout-mascot-390.png?url"
-import asset130 from "/docs/interactive/screenshots/mobile-timeout-mascot-430.png?url"
-import asset131 from "/docs/interactive/screenshots/mobile-timeout-mascot-700.png?url"
-import asset132 from "/docs/interactive/screenshots/navigation-retry-1366.png?url"
-import asset133 from "/docs/interactive/screenshots/navigation-retry-390.png?url"
-import asset134 from "/docs/interactive/screenshots/numeracy-1366.png?url"
-import asset135 from "/docs/interactive/screenshots/numeracy-390.png?url"
-import asset136 from "/docs/interactive/screenshots/ordering-1366.png?url"
-import asset137 from "/docs/interactive/screenshots/ordering-390.png?url"
-import asset138 from "/docs/gattegno/screenshots/phrases-images-1366.png?url"
-import asset139 from "/docs/gattegno/screenshots/phrases-images-360.png?url"
-import asset140 from "/docs/gattegno/screenshots/phrases-images-390.png?url"
-import asset141 from "/docs/gattegno/screenshots/phrases-images-a4.png?url"
-import asset142 from "/docs/interactive/screenshots/place-value-1366.png?url"
-import asset143 from "/docs/interactive/screenshots/place-value-390.png?url"
-import asset144 from "/docs/interactive/screenshots/polygons-1366.png?url"
-import asset145 from "/docs/interactive/screenshots/polygons-360.png?url"
-import asset146 from "/docs/interactive/screenshots/polygons-390.png?url"
-import asset147 from "/docs/interactive/screenshots/presets-mobile.png?url"
-import asset148 from "/docs/interactive/screenshots/printable-pairs-1366.png?url"
-import asset149 from "/docs/interactive/screenshots/printable-pairs-360.png?url"
-import asset150 from "/docs/interactive/screenshots/printable-pairs-390.png?url"
-import asset151 from "/docs/tcm-csc/screenshots/problemes-corriges.png?url"
-import asset152 from "/src/assets/react.svg?url"
-import asset153 from "/docs/interactive/screenshots/readability-1366.png?url"
-import asset154 from "/docs/interactive/screenshots/readability-1920.png?url"
-import asset155 from "/docs/interactive/screenshots/readability-360.png?url"
-import asset156 from "/docs/interactive/screenshots/readability-390.png?url"
-import asset157 from "/docs/interactive/screenshots/recognition-1366.png?url"
-import asset158 from "/docs/interactive/screenshots/recognition-360.png?url"
-import asset159 from "/docs/interactive/screenshots/recognition-390.png?url"
-import asset160 from "/scripts/assets/ce-font/reference.png?url"
-import asset161 from "/docs/tcm-csc/screenshots/reproduction.png?url"
-import asset162 from "/docs/interactive/screenshots/riddles-1366.png?url"
-import asset163 from "/docs/interactive/screenshots/riddles-360.png?url"
-import asset164 from "/docs/interactive/screenshots/riddles-390.png?url"
-import asset165 from "/docs/interactive/screenshots/solo-correct-mobile.png?url"
-import asset166 from "/docs/interactive/screenshots/solo-incorrect-mobile.png?url"
-import asset167 from "/docs/interactive/screenshots/solo-summary-1366.png?url"
-import asset168 from "/docs/interactive/screenshots/solo-summary-1920.png?url"
-import asset169 from "/docs/interactive/screenshots/solo-summary-390.png?url"
-import asset170 from "/docs/interactive/screenshots/sound-check-1366.png?url"
-import asset171 from "/docs/interactive/screenshots/sound-check-390.png?url"
-import asset172 from "/docs/tcf/ce-art-candidates/tcf-a1-s1-ce-3.webp?url"
-import asset173 from "/docs/tcf/ce-art-candidates/tcf-a1-s1-ce-4.webp?url"
-import asset174 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-1.webp?url"
-import asset175 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-2.webp?url"
-import asset176 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-3.webp?url"
-import asset177 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-4.webp?url"
-import asset178 from "/docs/tcf/ce-art-candidates/tcf-a1-s3-ce-2.webp?url"
-import asset179 from "/docs/tcf/ce-art-candidates/tcf-a1-s3-ce-4.webp?url"
-import asset180 from "/docs/tcf/ce-art-candidates/tcf-a1-s4-ce-1.webp?url"
-import asset181 from "/docs/tcf/ce-art-candidates/tcf-a1-s4-ce-3.webp?url"
-import asset182 from "/docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-1.webp?url"
-import asset183 from "/docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-3.webp?url"
-import asset184 from "/docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-4.webp?url"
-import asset185 from "/docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-1.webp?url"
-import asset186 from "/docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-3.webp?url"
-import asset187 from "/docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-4.webp?url"
-import asset188 from "/docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-3.webp?url"
-import asset189 from "/docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-4.webp?url"
-import asset190 from "/docs/tcf/ce-art-candidates/tcf-a1p-s3-ce-1.webp?url"
-import asset191 from "/docs/interactive/screenshots/teacher-console-1366.png?url"
-import asset192 from "/docs/interactive/screenshots/teacher-console-360.png?url"
-import asset193 from "/docs/interactive/screenshots/teacher-console-390.png?url"
-import asset194 from "/docs/interactive/screenshots/teacher-console-projection-1366.png?url"
-import asset195 from "/docs/interactive/screenshots/teacher-console-projection-360.png?url"
-import asset196 from "/docs/interactive/screenshots/teacher-console-projection-390.png?url"
-import asset197 from "/docs/interactive/screenshots/teacher-protections-1366.png?url"
-import asset198 from "/docs/interactive/screenshots/teacher-protections-360.png?url"
-import asset199 from "/docs/interactive/screenshots/teacher-protections-390.png?url"
-import asset200 from "/docs/interactive/screenshots/teacher-protections-paired.png?url"
-import asset201 from "/docs/interactive/screenshots/transcript-1366.png?url"
-import asset202 from "/docs/interactive/screenshots/transcript-360.png?url"
-import asset203 from "/docs/interactive/screenshots/transcript-390.png?url"
-import asset204 from "/docs/interactive/screenshots/trapezoids-1366.png?url"
-import asset205 from "/docs/interactive/screenshots/trapezoids-360.png?url"
-import asset206 from "/docs/interactive/screenshots/trapezoids-390.png?url"
-import asset207 from "/docs/interactive/screenshots/triangles-1366.png?url"
-import asset208 from "/docs/interactive/screenshots/triangles-360.png?url"
-import asset209 from "/docs/interactive/screenshots/triangles-390.png?url"
-import asset210 from "/src/assets/vite.svg?url"
-import asset211 from "/docs/interactive/screenshots/word-classification-1366.png?url"
-import asset212 from "/docs/interactive/screenshots/word-classification-360.png?url"
-import asset213 from "/docs/interactive/screenshots/word-classification-390.png?url"
-import asset214 from "/docs/interactive/screenshots/word-classification-local-1366.png?url"
-import asset215 from "/docs/interactive/screenshots/word-classification-local-360.png?url"
-import asset216 from "/docs/interactive/screenshots/word-classification-local-390.png?url"
-import asset217 from "/docs/interactive/screenshots/word-drag-1366.png?url"
-import asset218 from "/docs/interactive/screenshots/word-drag-360.png?url"
-import asset219 from "/docs/interactive/screenshots/word-drag-390.png?url"
-import asset220 from "/docs/interactive/screenshots/word-order-1366.png?url"
-import asset221 from "/docs/interactive/screenshots/word-order-390.png?url"
-import asset222 from "/docs/interactive/screenshots/written-arithmetic-1366.png?url"
-import asset223 from "/docs/interactive/screenshots/written-arithmetic-390.png?url"
-import asset224 from "/docs/interactive/screenshots/01-setup-1280.png?url"
-import asset225 from "/docs/interactive/screenshots/01-setup-1366.png?url"
-import asset226 from "/docs/interactive/screenshots/01-setup-1920.png?url"
-import asset227 from "/docs/interactive/screenshots/02-thinking-1280.png?url"
-import asset228 from "/docs/interactive/screenshots/02-thinking-1366.png?url"
-import asset229 from "/docs/interactive/screenshots/02-thinking-1920.png?url"
-import asset230 from "/docs/interactive/screenshots/03-reveal-1280.png?url"
-import asset231 from "/docs/interactive/screenshots/03-reveal-1366.png?url"
-import asset232 from "/docs/interactive/screenshots/03-reveal-1920.png?url"
-import asset233 from "/docs/interactive/screenshots/04-geometry-1280.png?url"
-import asset234 from "/docs/interactive/screenshots/04-geometry-1366.png?url"
-import asset235 from "/docs/interactive/screenshots/04-geometry-1920.png?url"
-import asset236 from "/docs/interactive/screenshots/05-audio-1280.png?url"
-import asset237 from "/docs/interactive/screenshots/05-audio-1366.png?url"
-import asset238 from "/docs/interactive/screenshots/05-audio-1920.png?url"
-import asset239 from "/docs/interactive/screenshots/06-oral-1280.png?url"
-import asset240 from "/docs/interactive/screenshots/06-oral-1366.png?url"
-import asset241 from "/docs/interactive/screenshots/06-oral-1920.png?url"
-import asset242 from "/docs/interactive/screenshots/07-summary-1280.png?url"
-import asset243 from "/docs/interactive/screenshots/07-summary-1366.png?url"
-import asset244 from "/docs/interactive/screenshots/07-summary-1920.png?url"
-import asset245 from "/docs/interactive/screenshots/08-classroom-setup-1280.png?url"
-import asset246 from "/docs/interactive/screenshots/08-classroom-setup-1366.png?url"
-import asset247 from "/docs/interactive/screenshots/08-classroom-setup-1920.png?url"
-import asset248 from "/docs/interactive/screenshots/09-reading-1280.png?url"
-import asset249 from "/docs/interactive/screenshots/09-reading-1366.png?url"
-import asset250 from "/docs/interactive/screenshots/09-reading-1920.png?url"
-import asset251 from "/docs/interactive/screenshots/10-image-correction-1280.png?url"
-import asset252 from "/docs/interactive/screenshots/10-image-correction-1366.png?url"
-import asset253 from "/docs/interactive/screenshots/10-image-correction-1920.png?url"
-import asset254 from "/docs/interactive/screenshots/11-paired-audio-1280.png?url"
-import asset255 from "/docs/interactive/screenshots/11-paired-audio-1366.png?url"
-import asset256 from "/docs/interactive/screenshots/11-paired-audio-1920.png?url"
-import asset257 from "/docs/interactive/screenshots/12-paired-correction-1280.png?url"
-import asset258 from "/docs/interactive/screenshots/12-paired-correction-1366.png?url"
-import asset259 from "/docs/interactive/screenshots/12-paired-correction-1920.png?url"
-import asset260 from "/docs/interactive/screenshots/13-media-missing.png?url"
+import asset104 from "/docs/interactive/screenshots/long-word-order-1366.png?url"
+import asset105 from "/docs/interactive/screenshots/long-word-order-1920.png?url"
+import asset106 from "/docs/interactive/screenshots/long-word-order-360.png?url"
+import asset107 from "/docs/interactive/screenshots/long-word-order-390.png?url"
+import asset108 from "/docs/interactive/screenshots/long-word-order-review-1366.png?url"
+import asset109 from "/docs/interactive/screenshots/long-word-order-review-1920.png?url"
+import asset110 from "/docs/interactive/screenshots/long-word-order-review-360.png?url"
+import asset111 from "/docs/interactive/screenshots/long-word-order-review-390.png?url"
+import asset112 from "/docs/interactive/screenshots/loto-1366.png?url"
+import asset113 from "/docs/interactive/screenshots/loto-360.png?url"
+import asset114 from "/docs/interactive/screenshots/loto-390.png?url"
+import asset115 from "/docs/interactive/screenshots/mascot-attacks-1366.png?url"
+import asset116 from "/docs/interactive/screenshots/mascot-attacks-360.png?url"
+import asset117 from "/docs/interactive/screenshots/mascot-attacks-390.png?url"
+import asset118 from "/docs/interactive/screenshots/mascots-menu-1366.png?url"
+import asset119 from "/docs/interactive/screenshots/mascots-menu-360.png?url"
+import asset120 from "/docs/interactive/screenshots/mascots-menu-390.png?url"
+import asset121 from "/docs/interactive/screenshots/mascottes-zodiaque.webp?url"
+import asset122 from "/docs/interactive/screenshots/matching-solo-summary.png?url"
+import asset123 from "/docs/interactive/screenshots/matching-used-1366.png?url"
+import asset124 from "/docs/interactive/screenshots/matching-used-360.png?url"
+import asset125 from "/docs/interactive/screenshots/matching-used-390.png?url"
+import asset126 from "/docs/interactive/screenshots/mobile-paired-360.png?url"
+import asset127 from "/docs/interactive/screenshots/mobile-paired-390.png?url"
+import asset128 from "/docs/interactive/screenshots/mobile-paired-700.png?url"
+import asset129 from "/docs/interactive/screenshots/mobile-question-mascot-360.png?url"
+import asset130 from "/docs/interactive/screenshots/mobile-question-mascot-390.png?url"
+import asset131 from "/docs/interactive/screenshots/mobile-question-mascot-430.png?url"
+import asset132 from "/docs/interactive/screenshots/mobile-question-mascot-700.png?url"
+import asset133 from "/docs/interactive/screenshots/mobile-thinking-360.png?url"
+import asset134 from "/docs/interactive/screenshots/mobile-thinking-390.png?url"
+import asset135 from "/docs/interactive/screenshots/mobile-thinking-700.png?url"
+import asset136 from "/docs/interactive/screenshots/mobile-timeout-mascot-360.png?url"
+import asset137 from "/docs/interactive/screenshots/mobile-timeout-mascot-390.png?url"
+import asset138 from "/docs/interactive/screenshots/mobile-timeout-mascot-430.png?url"
+import asset139 from "/docs/interactive/screenshots/mobile-timeout-mascot-700.png?url"
+import asset140 from "/docs/interactive/screenshots/navigation-retry-1366.png?url"
+import asset141 from "/docs/interactive/screenshots/navigation-retry-390.png?url"
+import asset142 from "/docs/interactive/screenshots/numeracy-1366.png?url"
+import asset143 from "/docs/interactive/screenshots/numeracy-390.png?url"
+import asset144 from "/docs/interactive/screenshots/ordering-1366.png?url"
+import asset145 from "/docs/interactive/screenshots/ordering-390.png?url"
+import asset146 from "/docs/gattegno/screenshots/phrases-images-1366.png?url"
+import asset147 from "/docs/gattegno/screenshots/phrases-images-360.png?url"
+import asset148 from "/docs/gattegno/screenshots/phrases-images-390.png?url"
+import asset149 from "/docs/gattegno/screenshots/phrases-images-a4.png?url"
+import asset150 from "/docs/interactive/screenshots/place-value-1366.png?url"
+import asset151 from "/docs/interactive/screenshots/place-value-390.png?url"
+import asset152 from "/docs/interactive/screenshots/polygons-1366.png?url"
+import asset153 from "/docs/interactive/screenshots/polygons-360.png?url"
+import asset154 from "/docs/interactive/screenshots/polygons-390.png?url"
+import asset155 from "/docs/interactive/screenshots/presets-mobile.png?url"
+import asset156 from "/docs/interactive/screenshots/printable-pairs-1366.png?url"
+import asset157 from "/docs/interactive/screenshots/printable-pairs-360.png?url"
+import asset158 from "/docs/interactive/screenshots/printable-pairs-390.png?url"
+import asset159 from "/docs/tcm-csc/screenshots/problemes-corriges.png?url"
+import asset160 from "/src/assets/react.svg?url"
+import asset161 from "/docs/interactive/screenshots/readability-1366.png?url"
+import asset162 from "/docs/interactive/screenshots/readability-1920.png?url"
+import asset163 from "/docs/interactive/screenshots/readability-360.png?url"
+import asset164 from "/docs/interactive/screenshots/readability-390.png?url"
+import asset165 from "/docs/interactive/screenshots/recognition-1366.png?url"
+import asset166 from "/docs/interactive/screenshots/recognition-360.png?url"
+import asset167 from "/docs/interactive/screenshots/recognition-390.png?url"
+import asset168 from "/scripts/assets/ce-font/reference.png?url"
+import asset169 from "/docs/tcm-csc/screenshots/reproduction.png?url"
+import asset170 from "/docs/interactive/screenshots/riddles-1366.png?url"
+import asset171 from "/docs/interactive/screenshots/riddles-360.png?url"
+import asset172 from "/docs/interactive/screenshots/riddles-390.png?url"
+import asset173 from "/docs/interactive/screenshots/solo-correct-mobile.png?url"
+import asset174 from "/docs/interactive/screenshots/solo-incorrect-mobile.png?url"
+import asset175 from "/docs/interactive/screenshots/solo-summary-1366.png?url"
+import asset176 from "/docs/interactive/screenshots/solo-summary-1920.png?url"
+import asset177 from "/docs/interactive/screenshots/solo-summary-390.png?url"
+import asset178 from "/docs/interactive/screenshots/sound-check-1366.png?url"
+import asset179 from "/docs/interactive/screenshots/sound-check-390.png?url"
+import asset180 from "/docs/tcf/ce-art-candidates/tcf-a1-s1-ce-3.webp?url"
+import asset181 from "/docs/tcf/ce-art-candidates/tcf-a1-s1-ce-4.webp?url"
+import asset182 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-1.webp?url"
+import asset183 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-2.webp?url"
+import asset184 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-3.webp?url"
+import asset185 from "/docs/tcf/ce-art-candidates/tcf-a1-s2-ce-4.webp?url"
+import asset186 from "/docs/tcf/ce-art-candidates/tcf-a1-s3-ce-2.webp?url"
+import asset187 from "/docs/tcf/ce-art-candidates/tcf-a1-s3-ce-4.webp?url"
+import asset188 from "/docs/tcf/ce-art-candidates/tcf-a1-s4-ce-1.webp?url"
+import asset189 from "/docs/tcf/ce-art-candidates/tcf-a1-s4-ce-3.webp?url"
+import asset190 from "/docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-1.webp?url"
+import asset191 from "/docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-3.webp?url"
+import asset192 from "/docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-4.webp?url"
+import asset193 from "/docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-1.webp?url"
+import asset194 from "/docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-3.webp?url"
+import asset195 from "/docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-4.webp?url"
+import asset196 from "/docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-3.webp?url"
+import asset197 from "/docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-4.webp?url"
+import asset198 from "/docs/tcf/ce-art-candidates/tcf-a1p-s3-ce-1.webp?url"
+import asset199 from "/docs/interactive/screenshots/teacher-console-1366.png?url"
+import asset200 from "/docs/interactive/screenshots/teacher-console-360.png?url"
+import asset201 from "/docs/interactive/screenshots/teacher-console-390.png?url"
+import asset202 from "/docs/interactive/screenshots/teacher-console-projection-1366.png?url"
+import asset203 from "/docs/interactive/screenshots/teacher-console-projection-360.png?url"
+import asset204 from "/docs/interactive/screenshots/teacher-console-projection-390.png?url"
+import asset205 from "/docs/interactive/screenshots/teacher-protections-1366.png?url"
+import asset206 from "/docs/interactive/screenshots/teacher-protections-360.png?url"
+import asset207 from "/docs/interactive/screenshots/teacher-protections-390.png?url"
+import asset208 from "/docs/interactive/screenshots/teacher-protections-paired.png?url"
+import asset209 from "/docs/interactive/screenshots/transcript-1366.png?url"
+import asset210 from "/docs/interactive/screenshots/transcript-360.png?url"
+import asset211 from "/docs/interactive/screenshots/transcript-390.png?url"
+import asset212 from "/docs/interactive/screenshots/trapezoids-1366.png?url"
+import asset213 from "/docs/interactive/screenshots/trapezoids-360.png?url"
+import asset214 from "/docs/interactive/screenshots/trapezoids-390.png?url"
+import asset215 from "/docs/interactive/screenshots/triangles-1366.png?url"
+import asset216 from "/docs/interactive/screenshots/triangles-360.png?url"
+import asset217 from "/docs/interactive/screenshots/triangles-390.png?url"
+import asset218 from "/src/assets/vite.svg?url"
+import asset219 from "/docs/interactive/screenshots/word-classification-1366.png?url"
+import asset220 from "/docs/interactive/screenshots/word-classification-360.png?url"
+import asset221 from "/docs/interactive/screenshots/word-classification-390.png?url"
+import asset222 from "/docs/interactive/screenshots/word-classification-local-1366.png?url"
+import asset223 from "/docs/interactive/screenshots/word-classification-local-360.png?url"
+import asset224 from "/docs/interactive/screenshots/word-classification-local-390.png?url"
+import asset225 from "/docs/interactive/screenshots/word-drag-1366.png?url"
+import asset226 from "/docs/interactive/screenshots/word-drag-360.png?url"
+import asset227 from "/docs/interactive/screenshots/word-drag-390.png?url"
+import asset228 from "/docs/interactive/screenshots/word-order-1366.png?url"
+import asset229 from "/docs/interactive/screenshots/word-order-390.png?url"
+import asset230 from "/docs/interactive/screenshots/written-arithmetic-1366.png?url"
+import asset231 from "/docs/interactive/screenshots/written-arithmetic-390.png?url"
+import asset232 from "/docs/interactive/screenshots/01-setup-1280.png?url"
+import asset233 from "/docs/interactive/screenshots/01-setup-1366.png?url"
+import asset234 from "/docs/interactive/screenshots/01-setup-1920.png?url"
+import asset235 from "/docs/interactive/screenshots/02-thinking-1280.png?url"
+import asset236 from "/docs/interactive/screenshots/02-thinking-1366.png?url"
+import asset237 from "/docs/interactive/screenshots/02-thinking-1920.png?url"
+import asset238 from "/docs/interactive/screenshots/03-reveal-1280.png?url"
+import asset239 from "/docs/interactive/screenshots/03-reveal-1366.png?url"
+import asset240 from "/docs/interactive/screenshots/03-reveal-1920.png?url"
+import asset241 from "/docs/interactive/screenshots/04-geometry-1280.png?url"
+import asset242 from "/docs/interactive/screenshots/04-geometry-1366.png?url"
+import asset243 from "/docs/interactive/screenshots/04-geometry-1920.png?url"
+import asset244 from "/docs/interactive/screenshots/05-audio-1280.png?url"
+import asset245 from "/docs/interactive/screenshots/05-audio-1366.png?url"
+import asset246 from "/docs/interactive/screenshots/05-audio-1920.png?url"
+import asset247 from "/docs/interactive/screenshots/06-oral-1280.png?url"
+import asset248 from "/docs/interactive/screenshots/06-oral-1366.png?url"
+import asset249 from "/docs/interactive/screenshots/06-oral-1920.png?url"
+import asset250 from "/docs/interactive/screenshots/07-summary-1280.png?url"
+import asset251 from "/docs/interactive/screenshots/07-summary-1366.png?url"
+import asset252 from "/docs/interactive/screenshots/07-summary-1920.png?url"
+import asset253 from "/docs/interactive/screenshots/08-classroom-setup-1280.png?url"
+import asset254 from "/docs/interactive/screenshots/08-classroom-setup-1366.png?url"
+import asset255 from "/docs/interactive/screenshots/08-classroom-setup-1920.png?url"
+import asset256 from "/docs/interactive/screenshots/09-reading-1280.png?url"
+import asset257 from "/docs/interactive/screenshots/09-reading-1366.png?url"
+import asset258 from "/docs/interactive/screenshots/09-reading-1920.png?url"
+import asset259 from "/docs/interactive/screenshots/10-image-correction-1280.png?url"
+import asset260 from "/docs/interactive/screenshots/10-image-correction-1366.png?url"
+import asset261 from "/docs/interactive/screenshots/10-image-correction-1920.png?url"
+import asset262 from "/docs/interactive/screenshots/11-paired-audio-1280.png?url"
+import asset263 from "/docs/interactive/screenshots/11-paired-audio-1366.png?url"
+import asset264 from "/docs/interactive/screenshots/11-paired-audio-1920.png?url"
+import asset265 from "/docs/interactive/screenshots/12-paired-correction-1280.png?url"
+import asset266 from "/docs/interactive/screenshots/12-paired-correction-1366.png?url"
+import asset267 from "/docs/interactive/screenshots/12-paired-correction-1920.png?url"
+import asset268 from "/docs/interactive/screenshots/13-media-missing.png?url"
 export const galleryAssetUrls: Record<string, string> = {
   "docs/interactive/screenshots/a4-baseline.png": asset0,
   "docs/interactive/screenshots/a4-prototype.png": asset1,
@@ -365,161 +373,169 @@ export const galleryAssetUrls: Record<string, string> = {
   "docs/interactive/screenshots/loading-game-390.png": asset101,
   "docs/interactive/screenshots/loading-start-1366.png": asset102,
   "docs/interactive/screenshots/loading-start-390.png": asset103,
-  "docs/interactive/screenshots/loto-1366.png": asset104,
-  "docs/interactive/screenshots/loto-360.png": asset105,
-  "docs/interactive/screenshots/loto-390.png": asset106,
-  "docs/interactive/screenshots/mascot-attacks-1366.png": asset107,
-  "docs/interactive/screenshots/mascot-attacks-360.png": asset108,
-  "docs/interactive/screenshots/mascot-attacks-390.png": asset109,
-  "docs/interactive/screenshots/mascots-menu-1366.png": asset110,
-  "docs/interactive/screenshots/mascots-menu-360.png": asset111,
-  "docs/interactive/screenshots/mascots-menu-390.png": asset112,
-  "docs/interactive/screenshots/mascottes-zodiaque.webp": asset113,
-  "docs/interactive/screenshots/matching-solo-summary.png": asset114,
-  "docs/interactive/screenshots/matching-used-1366.png": asset115,
-  "docs/interactive/screenshots/matching-used-360.png": asset116,
-  "docs/interactive/screenshots/matching-used-390.png": asset117,
-  "docs/interactive/screenshots/mobile-paired-360.png": asset118,
-  "docs/interactive/screenshots/mobile-paired-390.png": asset119,
-  "docs/interactive/screenshots/mobile-paired-700.png": asset120,
-  "docs/interactive/screenshots/mobile-question-mascot-360.png": asset121,
-  "docs/interactive/screenshots/mobile-question-mascot-390.png": asset122,
-  "docs/interactive/screenshots/mobile-question-mascot-430.png": asset123,
-  "docs/interactive/screenshots/mobile-question-mascot-700.png": asset124,
-  "docs/interactive/screenshots/mobile-thinking-360.png": asset125,
-  "docs/interactive/screenshots/mobile-thinking-390.png": asset126,
-  "docs/interactive/screenshots/mobile-thinking-700.png": asset127,
-  "docs/interactive/screenshots/mobile-timeout-mascot-360.png": asset128,
-  "docs/interactive/screenshots/mobile-timeout-mascot-390.png": asset129,
-  "docs/interactive/screenshots/mobile-timeout-mascot-430.png": asset130,
-  "docs/interactive/screenshots/mobile-timeout-mascot-700.png": asset131,
-  "docs/interactive/screenshots/navigation-retry-1366.png": asset132,
-  "docs/interactive/screenshots/navigation-retry-390.png": asset133,
-  "docs/interactive/screenshots/numeracy-1366.png": asset134,
-  "docs/interactive/screenshots/numeracy-390.png": asset135,
-  "docs/interactive/screenshots/ordering-1366.png": asset136,
-  "docs/interactive/screenshots/ordering-390.png": asset137,
-  "docs/gattegno/screenshots/phrases-images-1366.png": asset138,
-  "docs/gattegno/screenshots/phrases-images-360.png": asset139,
-  "docs/gattegno/screenshots/phrases-images-390.png": asset140,
-  "docs/gattegno/screenshots/phrases-images-a4.png": asset141,
-  "docs/interactive/screenshots/place-value-1366.png": asset142,
-  "docs/interactive/screenshots/place-value-390.png": asset143,
-  "docs/interactive/screenshots/polygons-1366.png": asset144,
-  "docs/interactive/screenshots/polygons-360.png": asset145,
-  "docs/interactive/screenshots/polygons-390.png": asset146,
-  "docs/interactive/screenshots/presets-mobile.png": asset147,
-  "docs/interactive/screenshots/printable-pairs-1366.png": asset148,
-  "docs/interactive/screenshots/printable-pairs-360.png": asset149,
-  "docs/interactive/screenshots/printable-pairs-390.png": asset150,
-  "docs/tcm-csc/screenshots/problemes-corriges.png": asset151,
-  "src/assets/react.svg": asset152,
-  "docs/interactive/screenshots/readability-1366.png": asset153,
-  "docs/interactive/screenshots/readability-1920.png": asset154,
-  "docs/interactive/screenshots/readability-360.png": asset155,
-  "docs/interactive/screenshots/readability-390.png": asset156,
-  "docs/interactive/screenshots/recognition-1366.png": asset157,
-  "docs/interactive/screenshots/recognition-360.png": asset158,
-  "docs/interactive/screenshots/recognition-390.png": asset159,
-  "scripts/assets/ce-font/reference.png": asset160,
-  "docs/tcm-csc/screenshots/reproduction.png": asset161,
-  "docs/interactive/screenshots/riddles-1366.png": asset162,
-  "docs/interactive/screenshots/riddles-360.png": asset163,
-  "docs/interactive/screenshots/riddles-390.png": asset164,
-  "docs/interactive/screenshots/solo-correct-mobile.png": asset165,
-  "docs/interactive/screenshots/solo-incorrect-mobile.png": asset166,
-  "docs/interactive/screenshots/solo-summary-1366.png": asset167,
-  "docs/interactive/screenshots/solo-summary-1920.png": asset168,
-  "docs/interactive/screenshots/solo-summary-390.png": asset169,
-  "docs/interactive/screenshots/sound-check-1366.png": asset170,
-  "docs/interactive/screenshots/sound-check-390.png": asset171,
-  "docs/tcf/ce-art-candidates/tcf-a1-s1-ce-3.webp": asset172,
-  "docs/tcf/ce-art-candidates/tcf-a1-s1-ce-4.webp": asset173,
-  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-1.webp": asset174,
-  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-2.webp": asset175,
-  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-3.webp": asset176,
-  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-4.webp": asset177,
-  "docs/tcf/ce-art-candidates/tcf-a1-s3-ce-2.webp": asset178,
-  "docs/tcf/ce-art-candidates/tcf-a1-s3-ce-4.webp": asset179,
-  "docs/tcf/ce-art-candidates/tcf-a1-s4-ce-1.webp": asset180,
-  "docs/tcf/ce-art-candidates/tcf-a1-s4-ce-3.webp": asset181,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-1.webp": asset182,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-3.webp": asset183,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-4.webp": asset184,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-1.webp": asset185,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-3.webp": asset186,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-4.webp": asset187,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-3.webp": asset188,
-  "docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-4.webp": asset189,
-  "docs/tcf/ce-art-candidates/tcf-a1p-s3-ce-1.webp": asset190,
-  "docs/interactive/screenshots/teacher-console-1366.png": asset191,
-  "docs/interactive/screenshots/teacher-console-360.png": asset192,
-  "docs/interactive/screenshots/teacher-console-390.png": asset193,
-  "docs/interactive/screenshots/teacher-console-projection-1366.png": asset194,
-  "docs/interactive/screenshots/teacher-console-projection-360.png": asset195,
-  "docs/interactive/screenshots/teacher-console-projection-390.png": asset196,
-  "docs/interactive/screenshots/teacher-protections-1366.png": asset197,
-  "docs/interactive/screenshots/teacher-protections-360.png": asset198,
-  "docs/interactive/screenshots/teacher-protections-390.png": asset199,
-  "docs/interactive/screenshots/teacher-protections-paired.png": asset200,
-  "docs/interactive/screenshots/transcript-1366.png": asset201,
-  "docs/interactive/screenshots/transcript-360.png": asset202,
-  "docs/interactive/screenshots/transcript-390.png": asset203,
-  "docs/interactive/screenshots/trapezoids-1366.png": asset204,
-  "docs/interactive/screenshots/trapezoids-360.png": asset205,
-  "docs/interactive/screenshots/trapezoids-390.png": asset206,
-  "docs/interactive/screenshots/triangles-1366.png": asset207,
-  "docs/interactive/screenshots/triangles-360.png": asset208,
-  "docs/interactive/screenshots/triangles-390.png": asset209,
-  "src/assets/vite.svg": asset210,
-  "docs/interactive/screenshots/word-classification-1366.png": asset211,
-  "docs/interactive/screenshots/word-classification-360.png": asset212,
-  "docs/interactive/screenshots/word-classification-390.png": asset213,
-  "docs/interactive/screenshots/word-classification-local-1366.png": asset214,
-  "docs/interactive/screenshots/word-classification-local-360.png": asset215,
-  "docs/interactive/screenshots/word-classification-local-390.png": asset216,
-  "docs/interactive/screenshots/word-drag-1366.png": asset217,
-  "docs/interactive/screenshots/word-drag-360.png": asset218,
-  "docs/interactive/screenshots/word-drag-390.png": asset219,
-  "docs/interactive/screenshots/word-order-1366.png": asset220,
-  "docs/interactive/screenshots/word-order-390.png": asset221,
-  "docs/interactive/screenshots/written-arithmetic-1366.png": asset222,
-  "docs/interactive/screenshots/written-arithmetic-390.png": asset223,
-  "docs/interactive/screenshots/01-setup-1280.png": asset224,
-  "docs/interactive/screenshots/01-setup-1366.png": asset225,
-  "docs/interactive/screenshots/01-setup-1920.png": asset226,
-  "docs/interactive/screenshots/02-thinking-1280.png": asset227,
-  "docs/interactive/screenshots/02-thinking-1366.png": asset228,
-  "docs/interactive/screenshots/02-thinking-1920.png": asset229,
-  "docs/interactive/screenshots/03-reveal-1280.png": asset230,
-  "docs/interactive/screenshots/03-reveal-1366.png": asset231,
-  "docs/interactive/screenshots/03-reveal-1920.png": asset232,
-  "docs/interactive/screenshots/04-geometry-1280.png": asset233,
-  "docs/interactive/screenshots/04-geometry-1366.png": asset234,
-  "docs/interactive/screenshots/04-geometry-1920.png": asset235,
-  "docs/interactive/screenshots/05-audio-1280.png": asset236,
-  "docs/interactive/screenshots/05-audio-1366.png": asset237,
-  "docs/interactive/screenshots/05-audio-1920.png": asset238,
-  "docs/interactive/screenshots/06-oral-1280.png": asset239,
-  "docs/interactive/screenshots/06-oral-1366.png": asset240,
-  "docs/interactive/screenshots/06-oral-1920.png": asset241,
-  "docs/interactive/screenshots/07-summary-1280.png": asset242,
-  "docs/interactive/screenshots/07-summary-1366.png": asset243,
-  "docs/interactive/screenshots/07-summary-1920.png": asset244,
-  "docs/interactive/screenshots/08-classroom-setup-1280.png": asset245,
-  "docs/interactive/screenshots/08-classroom-setup-1366.png": asset246,
-  "docs/interactive/screenshots/08-classroom-setup-1920.png": asset247,
-  "docs/interactive/screenshots/09-reading-1280.png": asset248,
-  "docs/interactive/screenshots/09-reading-1366.png": asset249,
-  "docs/interactive/screenshots/09-reading-1920.png": asset250,
-  "docs/interactive/screenshots/10-image-correction-1280.png": asset251,
-  "docs/interactive/screenshots/10-image-correction-1366.png": asset252,
-  "docs/interactive/screenshots/10-image-correction-1920.png": asset253,
-  "docs/interactive/screenshots/11-paired-audio-1280.png": asset254,
-  "docs/interactive/screenshots/11-paired-audio-1366.png": asset255,
-  "docs/interactive/screenshots/11-paired-audio-1920.png": asset256,
-  "docs/interactive/screenshots/12-paired-correction-1280.png": asset257,
-  "docs/interactive/screenshots/12-paired-correction-1366.png": asset258,
-  "docs/interactive/screenshots/12-paired-correction-1920.png": asset259,
-  "docs/interactive/screenshots/13-media-missing.png": asset260,
+  "docs/interactive/screenshots/long-word-order-1366.png": asset104,
+  "docs/interactive/screenshots/long-word-order-1920.png": asset105,
+  "docs/interactive/screenshots/long-word-order-360.png": asset106,
+  "docs/interactive/screenshots/long-word-order-390.png": asset107,
+  "docs/interactive/screenshots/long-word-order-review-1366.png": asset108,
+  "docs/interactive/screenshots/long-word-order-review-1920.png": asset109,
+  "docs/interactive/screenshots/long-word-order-review-360.png": asset110,
+  "docs/interactive/screenshots/long-word-order-review-390.png": asset111,
+  "docs/interactive/screenshots/loto-1366.png": asset112,
+  "docs/interactive/screenshots/loto-360.png": asset113,
+  "docs/interactive/screenshots/loto-390.png": asset114,
+  "docs/interactive/screenshots/mascot-attacks-1366.png": asset115,
+  "docs/interactive/screenshots/mascot-attacks-360.png": asset116,
+  "docs/interactive/screenshots/mascot-attacks-390.png": asset117,
+  "docs/interactive/screenshots/mascots-menu-1366.png": asset118,
+  "docs/interactive/screenshots/mascots-menu-360.png": asset119,
+  "docs/interactive/screenshots/mascots-menu-390.png": asset120,
+  "docs/interactive/screenshots/mascottes-zodiaque.webp": asset121,
+  "docs/interactive/screenshots/matching-solo-summary.png": asset122,
+  "docs/interactive/screenshots/matching-used-1366.png": asset123,
+  "docs/interactive/screenshots/matching-used-360.png": asset124,
+  "docs/interactive/screenshots/matching-used-390.png": asset125,
+  "docs/interactive/screenshots/mobile-paired-360.png": asset126,
+  "docs/interactive/screenshots/mobile-paired-390.png": asset127,
+  "docs/interactive/screenshots/mobile-paired-700.png": asset128,
+  "docs/interactive/screenshots/mobile-question-mascot-360.png": asset129,
+  "docs/interactive/screenshots/mobile-question-mascot-390.png": asset130,
+  "docs/interactive/screenshots/mobile-question-mascot-430.png": asset131,
+  "docs/interactive/screenshots/mobile-question-mascot-700.png": asset132,
+  "docs/interactive/screenshots/mobile-thinking-360.png": asset133,
+  "docs/interactive/screenshots/mobile-thinking-390.png": asset134,
+  "docs/interactive/screenshots/mobile-thinking-700.png": asset135,
+  "docs/interactive/screenshots/mobile-timeout-mascot-360.png": asset136,
+  "docs/interactive/screenshots/mobile-timeout-mascot-390.png": asset137,
+  "docs/interactive/screenshots/mobile-timeout-mascot-430.png": asset138,
+  "docs/interactive/screenshots/mobile-timeout-mascot-700.png": asset139,
+  "docs/interactive/screenshots/navigation-retry-1366.png": asset140,
+  "docs/interactive/screenshots/navigation-retry-390.png": asset141,
+  "docs/interactive/screenshots/numeracy-1366.png": asset142,
+  "docs/interactive/screenshots/numeracy-390.png": asset143,
+  "docs/interactive/screenshots/ordering-1366.png": asset144,
+  "docs/interactive/screenshots/ordering-390.png": asset145,
+  "docs/gattegno/screenshots/phrases-images-1366.png": asset146,
+  "docs/gattegno/screenshots/phrases-images-360.png": asset147,
+  "docs/gattegno/screenshots/phrases-images-390.png": asset148,
+  "docs/gattegno/screenshots/phrases-images-a4.png": asset149,
+  "docs/interactive/screenshots/place-value-1366.png": asset150,
+  "docs/interactive/screenshots/place-value-390.png": asset151,
+  "docs/interactive/screenshots/polygons-1366.png": asset152,
+  "docs/interactive/screenshots/polygons-360.png": asset153,
+  "docs/interactive/screenshots/polygons-390.png": asset154,
+  "docs/interactive/screenshots/presets-mobile.png": asset155,
+  "docs/interactive/screenshots/printable-pairs-1366.png": asset156,
+  "docs/interactive/screenshots/printable-pairs-360.png": asset157,
+  "docs/interactive/screenshots/printable-pairs-390.png": asset158,
+  "docs/tcm-csc/screenshots/problemes-corriges.png": asset159,
+  "src/assets/react.svg": asset160,
+  "docs/interactive/screenshots/readability-1366.png": asset161,
+  "docs/interactive/screenshots/readability-1920.png": asset162,
+  "docs/interactive/screenshots/readability-360.png": asset163,
+  "docs/interactive/screenshots/readability-390.png": asset164,
+  "docs/interactive/screenshots/recognition-1366.png": asset165,
+  "docs/interactive/screenshots/recognition-360.png": asset166,
+  "docs/interactive/screenshots/recognition-390.png": asset167,
+  "scripts/assets/ce-font/reference.png": asset168,
+  "docs/tcm-csc/screenshots/reproduction.png": asset169,
+  "docs/interactive/screenshots/riddles-1366.png": asset170,
+  "docs/interactive/screenshots/riddles-360.png": asset171,
+  "docs/interactive/screenshots/riddles-390.png": asset172,
+  "docs/interactive/screenshots/solo-correct-mobile.png": asset173,
+  "docs/interactive/screenshots/solo-incorrect-mobile.png": asset174,
+  "docs/interactive/screenshots/solo-summary-1366.png": asset175,
+  "docs/interactive/screenshots/solo-summary-1920.png": asset176,
+  "docs/interactive/screenshots/solo-summary-390.png": asset177,
+  "docs/interactive/screenshots/sound-check-1366.png": asset178,
+  "docs/interactive/screenshots/sound-check-390.png": asset179,
+  "docs/tcf/ce-art-candidates/tcf-a1-s1-ce-3.webp": asset180,
+  "docs/tcf/ce-art-candidates/tcf-a1-s1-ce-4.webp": asset181,
+  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-1.webp": asset182,
+  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-2.webp": asset183,
+  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-3.webp": asset184,
+  "docs/tcf/ce-art-candidates/tcf-a1-s2-ce-4.webp": asset185,
+  "docs/tcf/ce-art-candidates/tcf-a1-s3-ce-2.webp": asset186,
+  "docs/tcf/ce-art-candidates/tcf-a1-s3-ce-4.webp": asset187,
+  "docs/tcf/ce-art-candidates/tcf-a1-s4-ce-1.webp": asset188,
+  "docs/tcf/ce-art-candidates/tcf-a1-s4-ce-3.webp": asset189,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-1.webp": asset190,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-3.webp": asset191,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s1-ce-4.webp": asset192,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-1.webp": asset193,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-3.webp": asset194,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s2-ce-4.webp": asset195,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-3.webp": asset196,
+  "docs/tcf/ce-art-candidates/tcf-a1j-s3-ce-4.webp": asset197,
+  "docs/tcf/ce-art-candidates/tcf-a1p-s3-ce-1.webp": asset198,
+  "docs/interactive/screenshots/teacher-console-1366.png": asset199,
+  "docs/interactive/screenshots/teacher-console-360.png": asset200,
+  "docs/interactive/screenshots/teacher-console-390.png": asset201,
+  "docs/interactive/screenshots/teacher-console-projection-1366.png": asset202,
+  "docs/interactive/screenshots/teacher-console-projection-360.png": asset203,
+  "docs/interactive/screenshots/teacher-console-projection-390.png": asset204,
+  "docs/interactive/screenshots/teacher-protections-1366.png": asset205,
+  "docs/interactive/screenshots/teacher-protections-360.png": asset206,
+  "docs/interactive/screenshots/teacher-protections-390.png": asset207,
+  "docs/interactive/screenshots/teacher-protections-paired.png": asset208,
+  "docs/interactive/screenshots/transcript-1366.png": asset209,
+  "docs/interactive/screenshots/transcript-360.png": asset210,
+  "docs/interactive/screenshots/transcript-390.png": asset211,
+  "docs/interactive/screenshots/trapezoids-1366.png": asset212,
+  "docs/interactive/screenshots/trapezoids-360.png": asset213,
+  "docs/interactive/screenshots/trapezoids-390.png": asset214,
+  "docs/interactive/screenshots/triangles-1366.png": asset215,
+  "docs/interactive/screenshots/triangles-360.png": asset216,
+  "docs/interactive/screenshots/triangles-390.png": asset217,
+  "src/assets/vite.svg": asset218,
+  "docs/interactive/screenshots/word-classification-1366.png": asset219,
+  "docs/interactive/screenshots/word-classification-360.png": asset220,
+  "docs/interactive/screenshots/word-classification-390.png": asset221,
+  "docs/interactive/screenshots/word-classification-local-1366.png": asset222,
+  "docs/interactive/screenshots/word-classification-local-360.png": asset223,
+  "docs/interactive/screenshots/word-classification-local-390.png": asset224,
+  "docs/interactive/screenshots/word-drag-1366.png": asset225,
+  "docs/interactive/screenshots/word-drag-360.png": asset226,
+  "docs/interactive/screenshots/word-drag-390.png": asset227,
+  "docs/interactive/screenshots/word-order-1366.png": asset228,
+  "docs/interactive/screenshots/word-order-390.png": asset229,
+  "docs/interactive/screenshots/written-arithmetic-1366.png": asset230,
+  "docs/interactive/screenshots/written-arithmetic-390.png": asset231,
+  "docs/interactive/screenshots/01-setup-1280.png": asset232,
+  "docs/interactive/screenshots/01-setup-1366.png": asset233,
+  "docs/interactive/screenshots/01-setup-1920.png": asset234,
+  "docs/interactive/screenshots/02-thinking-1280.png": asset235,
+  "docs/interactive/screenshots/02-thinking-1366.png": asset236,
+  "docs/interactive/screenshots/02-thinking-1920.png": asset237,
+  "docs/interactive/screenshots/03-reveal-1280.png": asset238,
+  "docs/interactive/screenshots/03-reveal-1366.png": asset239,
+  "docs/interactive/screenshots/03-reveal-1920.png": asset240,
+  "docs/interactive/screenshots/04-geometry-1280.png": asset241,
+  "docs/interactive/screenshots/04-geometry-1366.png": asset242,
+  "docs/interactive/screenshots/04-geometry-1920.png": asset243,
+  "docs/interactive/screenshots/05-audio-1280.png": asset244,
+  "docs/interactive/screenshots/05-audio-1366.png": asset245,
+  "docs/interactive/screenshots/05-audio-1920.png": asset246,
+  "docs/interactive/screenshots/06-oral-1280.png": asset247,
+  "docs/interactive/screenshots/06-oral-1366.png": asset248,
+  "docs/interactive/screenshots/06-oral-1920.png": asset249,
+  "docs/interactive/screenshots/07-summary-1280.png": asset250,
+  "docs/interactive/screenshots/07-summary-1366.png": asset251,
+  "docs/interactive/screenshots/07-summary-1920.png": asset252,
+  "docs/interactive/screenshots/08-classroom-setup-1280.png": asset253,
+  "docs/interactive/screenshots/08-classroom-setup-1366.png": asset254,
+  "docs/interactive/screenshots/08-classroom-setup-1920.png": asset255,
+  "docs/interactive/screenshots/09-reading-1280.png": asset256,
+  "docs/interactive/screenshots/09-reading-1366.png": asset257,
+  "docs/interactive/screenshots/09-reading-1920.png": asset258,
+  "docs/interactive/screenshots/10-image-correction-1280.png": asset259,
+  "docs/interactive/screenshots/10-image-correction-1366.png": asset260,
+  "docs/interactive/screenshots/10-image-correction-1920.png": asset261,
+  "docs/interactive/screenshots/11-paired-audio-1280.png": asset262,
+  "docs/interactive/screenshots/11-paired-audio-1366.png": asset263,
+  "docs/interactive/screenshots/11-paired-audio-1920.png": asset264,
+  "docs/interactive/screenshots/12-paired-correction-1280.png": asset265,
+  "docs/interactive/screenshots/12-paired-correction-1366.png": asset266,
+  "docs/interactive/screenshots/12-paired-correction-1920.png": asset267,
+  "docs/interactive/screenshots/13-media-missing.png": asset268,
 }
