@@ -4,6 +4,7 @@ import type { Game, PlayMode, Session, RoundRuntime } from './types'
 import { copyRuntime, sequenceLength } from './round-runtime'
 import { maxListensFor } from './listening'
 import {validWordPlacements} from './word-sorting'
+import {validWordDrop} from './word-drop'
 
 export type SessionCheckpoint = { state: Session; lastEventId?: string }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
@@ -49,7 +50,7 @@ function validAttempt(game: Game, value: unknown, mode: PlayMode, ids = game.que
 
 function validRuntime(game: Game, id: string, value: unknown, mode: PlayMode): value is RoundRuntime {
   const round = roundsFor(game).find((round) => round.id === id)
-  if (!round || !object(value) || Object.keys(value).some((key) => !['phase', 'selections', 'revealedAt', 'attempt', 'hintsShown', 'imageOrders', 'wordSorts', 'audioComplete', 'audioOverride', 'audioListens', 'extraListens'].includes(key)) ||
+  if (!round || !object(value) || Object.keys(value).some((key) => !['phase', 'selections', 'revealedAt', 'attempt', 'hintsShown', 'imageOrders', 'wordSorts', 'wordDrops', 'audioComplete', 'audioOverride', 'audioListens', 'extraListens'].includes(key)) ||
     !['thinking', 'cards-up', 'selected', 'discussion', 'revealed'].includes(value.phase as string) || !object(value.selections) || !object(value.hintsShown) || !object(value.imageOrders) ||
     typeof value.attempt !== 'number' || !Number.isInteger(value.attempt) || value.attempt < 0 || value.attempt > 5000 ||
     typeof value.audioComplete !== 'boolean' || typeof value.audioOverride !== 'boolean' || !round.audio && (value.audioComplete || value.audioOverride) ||
@@ -60,6 +61,7 @@ function validRuntime(game: Game, id: string, value: unknown, mode: PlayMode): v
   if (Object.entries(value.hintsShown).some(([id, count]) => typeof count !== 'number' || !Number.isInteger(count) || count < 0 || !questions.some((q) => q.id === id && count <= (q.hints?.length ?? 0)))) return false
   if (Object.entries(value.imageOrders).some(([id, order]) => !questions.some((q) => q.id === id && q.mode === 'sequence' && Array.isArray(order) && order.length === sequenceLength(q) && new Set(order).size === order.length && order.every((n) => Number.isInteger(n) && n >= 0 && n < sequenceLength(q))))) return false
   if(value.wordSorts!==undefined&&(!object(value.wordSorts)||Object.entries(value.wordSorts).some(([id,placements])=>!questions.some(q=>q.id===id&&validWordPlacements(q,placements)))))return false
+  if(value.wordDrops!==undefined&&(mode!=='class'||!object(value.wordDrops)||Object.entries(value.wordDrops).some(([id,choice])=>!questions.some(q=>q.id===id&&validWordDrop(q,choice)))))return false
   return true
 }
 

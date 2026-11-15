@@ -361,6 +361,7 @@ export function convertRecipe(
               if (item.grammarImages!==undefined) q.grammarImages=item.grammarImages
               if (item.grammarCountryGender!==undefined) q.grammarCountryGender=item.grammarCountryGender
               if (item.words) q.words = item.words
+              if (item.wordBlank) q.wordBlank = item.wordBlank
               if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'
               add(q, item.model, item.correctId)

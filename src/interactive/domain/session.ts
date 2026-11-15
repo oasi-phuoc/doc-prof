@@ -4,6 +4,7 @@ import { validateManualVote } from './votes'
 import { retractionRemaining } from './teacher'
 import { captureRound, navigateToRound, runtimeFor, sequenceLength } from './round-runtime'
 import {validWordPlacements} from './word-sorting'
+import {validWordDrop,isWordDropQuestion} from './word-drop'
 import { canListen, maxListensFor } from './listening'
 import { usedMatchingChoices } from './matching'
 
@@ -82,6 +83,13 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
       const q=questions.find(entry=>entry.id===action.questionId)
       if(!q||state.phase==='revealed'||!validWordPlacements(q,action.placements))return state
       return updateRuntime({...runtime,wordSorts:{...runtime.wordSorts,[q.id]:[...action.placements]}})
+    }
+    case 'WORD_DROP_SET': {
+      const q=questions.find(entry=>entry.id===action.questionId)
+      if(state.mode!=='class'||state.phase==='revealed'||!q||!isWordDropQuestion(q)||action.choiceId!==null&&!validWordDrop(q,action.choiceId))return state
+      const next={...runtime.wordDrops}
+      if(action.choiceId===null)delete next[q.id];else next[q.id]=action.choiceId
+      return updateRuntime({...runtime,wordDrops:next})
     }
     case 'AUDIO_STATE':
       return action.roundId !== roundId || !roundsFor(game)[state.index]?.audio || !['started', 'ended', 'override'].includes(action.status) ? state : updateRuntime({ ...runtime, audioComplete: action.status === 'ended', audioOverride: action.status === 'override' })

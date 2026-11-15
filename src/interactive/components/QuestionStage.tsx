@@ -16,6 +16,9 @@ import { NumberSequenceView } from './NumberSequenceView'
 import { WordClassificationView } from './WordClassificationView'
 import { ImageSequence } from './ImageSequence'
 import { WordSequence } from './WordSequence'
+import {useWordDrop} from './useWordDrop'
+import {WordBlankPrompt} from './WordBlankPrompt'
+import {SequenceDragGhost} from './SequenceDragGhost'
 import {WordSortingBoard} from './WordSortingBoard'
 import {sortingSentence} from '../domain/word-sorting'
 import {PhraseImageRow} from '@/components/math/PhraseImageRow'
@@ -42,6 +45,8 @@ export function QuestionStage({
   wordPlacements,
   onWordPlacements,
   sortingTargets,
+  wordDrop,
+  onWordDrop,
   attempt=0,
   interactionsDisabled = false,
   unavailableChoiceIds = [],
@@ -52,6 +57,8 @@ export function QuestionStage({
   wordPlacements?: (string|null)[]
   onWordPlacements?: (placements:(string|null)[])=>void
   sortingTargets?: string[]
+  wordDrop?: string
+  onWordDrop?: (choiceId:string|null)=>void
   attempt?: number
   interactionsDisabled?: boolean
   unavailableChoiceIds?: string[]
@@ -65,7 +72,11 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const drop=useWordDrop({question:q,canSelect,disabled:interactionsDisabled||phase==='revealed',onSelect,onPropose:onWordDrop})
+  const proposed=q.choices.find(choice=>choice.id===(selected??wordDrop))
+  const pending=q.choices.find(choice=>choice.id===drop.pending)
+  const dragged=drop.drag?q.choices[drop.drag.source]:undefined
   const [reading, setReading] = useState<number | 'question' | null>(null)
   const showCorrection =
     phase === 'revealed' &&
@@ -80,8 +91,9 @@ export function QuestionStage({
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
           )}
-          <span className="ci-question-prompt"><GrammarCountryPrompt text={q.prompt} gender={q.grammarCountryGender}/></span>
+          <span className="ci-question-prompt">{drop.available?<WordBlankPrompt question={q} target={drop.target} value={proposed?.text} pending={pending?.text} hover={drop.drag?.target===0?dragged?.text:undefined} disabled={drop.blocked||!pending&&!proposed} onDeposit={drop.deposit} onEscape={drop.escape}/>:<GrammarCountryPrompt text={q.prompt} gender={q.grammarCountryGender}/>}</span>
         </h1>
+        {drop.available&&phase!=='revealed'&&<p className="ci-word-drop-help">{canSelect?'Glissez une carte, ou touchez-la.':'Glissez une carte, ou touchez-la puis le blanc.'}</p>}
         {q.matchingGroup && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}
         {q.context && (q.figure && q.context.length <= 240
           ? <section className="ci-context ci-figure-context" aria-label="Mesures de la figure"><p>{q.context}</p></section>
@@ -128,6 +140,7 @@ export function QuestionStage({
             const slot = slotOffset + i
             const palette = PALETTE[slot]!
             const chosen = selected === choice.id
+            const prepared=drop.available&&drop.pending===choice.id
             const used = unavailableChoiceIds.includes(choice.id)
             const correctAnswer = showCorrection && choice.id === correctChoiceId
             const verdict =
@@ -139,17 +152,19 @@ export function QuestionStage({
             return (
               <div key={choice.id} className="ci-answer-wrap">
               <button
-                className={`ci-answer${chosen ? ' ci-chosen' : ''}${used ? ' ci-answer-used' : ''}${verdict ? ` ci-answer-${verdict}` : ''}${showCorrection ? correctAnswer ? ' ci-answer-key' : ' ci-answer-muted' : ''}`}
+                className={`ci-answer${chosen ? ' ci-chosen' : ''}${used ? ' ci-answer-used' : ''}${verdict ? ` ci-answer-${verdict}` : ''}${showCorrection ? correctAnswer ? ' ci-answer-key' : ' ci-answer-muted' : ''}${drop.available?' ci-word-drop-source':''}${prepared?' ci-word-drop-pending':''}${drop.drag?.source===i?' ci-word-drop-dragging':''}`}
+                {...(drop.available?drop.pointerProps(i):{})}
                 style={
                   {
                     '--card-color': colors[slot],
                     '--card-ink': inkForColor(colors[slot]!),
                   } as CSSProperties
                 }
-                disabled={!canSelect || used}
+                disabled={(drop.available?drop.blocked:!canSelect) || used}
                 aria-label={used ? `${palette.letter}. ${choice.text} · déjà associé` : undefined}
-                aria-pressed={chosen}
-                onClick={() => onSelect(choice.id)}
+                aria-pressed={drop.pending!==null?prepared:chosen}
+                onClick={() => drop.available?drop.choose(choice.id):onSelect(choice.id)}
+                onKeyDown={drop.available?event=>{if(event.key==='Escape'){event.preventDefault();drop.escape()}}:undefined}
               >
                 <CardBadge letter={palette.letter} shape={shapes[slot]!} />
                 <span className="ci-answer-content">
@@ -194,6 +209,7 @@ export function QuestionStage({
         </section>
       )}
       {report.manualScroll && !q.wordSorting && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
+      {drop.available&&<><span className="ci-sr-only" role="status">{drop.announcement}</span><SequenceDragGhost drag={drop.drag}>{dragged&&drop.drag&&<div className="ci-word-drop-ghost" style={{background:colors[slotOffset+drop.drag.source],color:inkForColor(colors[slotOffset+drop.drag.source]!)}}><b>{PALETTE[slotOffset+drop.drag.source]!.letter}</b><span>{dragged.text}</span></div>}</SequenceDragGhost></>}
       {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )

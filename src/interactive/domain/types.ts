@@ -36,6 +36,8 @@ export type Question = {
   numberSequence?: NumberSequence
   wordClassification?: WordClassification
   wordSorting?: WordSorting
+  /** One explicit source blank; no expected answer in this display metadata. */
+  wordBlank?: {before:string;after:string}
   matchingGroup?: MatchingGroup
   audio?: string
   /** Ordered source clips forming one recording and one listening allowance. */
@@ -89,6 +91,7 @@ export type RoundRuntime = {
   hintsShown: Record<string, number>
   imageOrders: Record<string, number[]>
   wordSorts?: Record<string, (string | null)[]>
+  wordDrops?: Record<string,string>
   audioComplete: boolean
   audioOverride: boolean
   audioListens?: number
@@ -136,6 +139,7 @@ export type Action = (
   | { type: 'HINT_SHOW'; questionId: string }
   | { type: 'IMAGE_ORDER_SET'; questionId: string; order: number[] }
   | { type: 'WORD_SORT_SET'; questionId: string; placements: (string | null)[] }
+  | { type: 'WORD_DROP_SET'; questionId: string; choiceId: string | null }
   | { type: 'AUDIO_STATE'; roundId: string; status: 'started' | 'ended' | 'override' }
   | { type: 'AUDIO_LISTEN_STARTED' | 'AUDIO_EXTRA_LISTEN_GRANTED'; roundId: string }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }

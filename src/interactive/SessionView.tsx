@@ -461,7 +461,7 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions[0]?.wordBlank ? ' ci-word-drop-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">
@@ -517,6 +517,7 @@ function PlayingRound({
                   aria-label={`${reveal ? 'Correction' : 'Question'} ${i + 1} : ${q.prompt}`}
                 >
                   <QuestionStage
+                    key={`${q.id}:${runtime.attempt}`}
                     q={q}
                     canSelect={solo && state.phase === 'thinking' && !suspended}
                     phase={state.phase}
@@ -530,6 +531,8 @@ function PlayingRound({
                     }
                     imageOrder={runtime.imageOrders[q.id]}
                     wordPlacements={runtime.wordSorts?.[q.id]}
+                    wordDrop={runtime.wordDrops?.[q.id]}
+                    onWordDrop={choiceId=>dispatch({type:'WORD_DROP_SET',questionId:q.id,choiceId})}
                     attempt={runtime.attempt}
                     onWordPlacements={placements=>dispatch({type:'WORD_SORT_SET',questionId:q.id,placements})}
                     sortingTargets={reveal?game.corrections[q.id]?.sortingTargets:undefined}

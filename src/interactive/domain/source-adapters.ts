@@ -5,8 +5,9 @@ import { hash } from './seeds'
 import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 import { grammarReadingChild } from '@/grammaire/curriculum/items'
 import { grammarScenarioChild, grammarScenarioContext } from '@/grammaire/curriculum/scenario'
+import {sourceWordBlank} from './word-drop'
 
-type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; wordBlank?: Question['wordBlank']; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
 type Result = { items: Adaptation[]; issues: string[] }
 const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
 const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
@@ -43,7 +44,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       const reply={...common,prompt:`${role.label} : ${turn.text}`,model:turn.text.replace('___',child.answers[0]!)+'\n'+child.explanation}
       if(child.response==='gap')return {items:[{...reply,choices:[],mode:'oral',teacherLed:true}],issues:[]}
       const options=q.scenarioOptions![child.id]!,correct=options.find(o=>child.answers.includes(o.text))!
-      return {items:[{...reply,choices:options,correctId:correct.id,choiceOrderPolicy:'fixed'}],issues:[]}
+      return {items:[{...reply,choices:options,wordBlank:sourceWordBlank(reply.prompt,options),correctId:correct.id,choiceOrderPolicy:'fixed'}],issues:[]}
     }
     if (u.kind==='reading') {
       const child=grammarReadingChild(q)
@@ -58,11 +59,11 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       model:'Exemple de réponse — d’autres formulations sont possibles.\n'+model+'\nRepères enseignant :\n'+u.rubric.map(r=>'□ '+r.label).join('\n')}],issues:[]}
     if (u.kind==='completion' && q.presentation==='choice') {
       const correct=q.options!.find(option=>u.answers.includes(option.text))!
-      return {items:[{...imageSupport,part:0,prompt,instruction:'',choices:q.options!,correctId:correct.id,choiceOrderPolicy:'fixed',
+      return {items:[{...imageSupport,part:0,prompt,instruction:'',choices:q.options!,wordBlank:sourceWordBlank(prompt,q.options!),correctId:correct.id,choiceOrderPolicy:'fixed',
         model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
     }
     if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({...imageSupport,part,prompt:pair.left,
-      instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,correctId:pair.id,choiceOrderPolicy:'fixed' as const,
+      instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,wordBlank:sourceWordBlank(pair.left,q.rightOptions!),correctId:pair.id,choiceOrderPolicy:'fixed' as const,
       model:pair.left.replace('___',pair.right)})),issues:[]}
     if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
       choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
@@ -144,7 +145,8 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       if (seen.has(identity)) return
       seen.add(identity)
       const teacherLed = choices.length < 2 || ambiguous && item.vocabMatchMode !== 'syllables'
-      items.push({ part, prompt, instruction: 'Choisissez la proposition qui complète ou correspond à l’élément affiché.', choices: teacherLed ? [] : capChoices(choices, correctId, `${exerciseType}:${part}`), ...(teacherLed ? {} : { correctId }), model: teacherLed ? [...new Set(pairs.filter((other) => textKey(other.left) === textKey(pair.left)).map((other) => other.right))].join(' / ') : pair.right, images: item.vocabMatchMode === 'image' ? [pair.left] : [], ...(teacherLed ? { mode: 'oral', teacherLed: true } : {}) })
+      const retained=teacherLed?[]:capChoices(choices,correctId,`${exerciseType}:${part}`)
+      items.push({ part, prompt, instruction: 'Choisissez la proposition qui complète ou correspond à l’élément affiché.', choices:retained,...(item.vocabMatchMode==='syllables'&&!teacherLed?{wordBlank:sourceWordBlank(prompt,retained)}:{}), ...(teacherLed ? {} : { correctId }), model: teacherLed ? [...new Set(pairs.filter((other) => textKey(other.left) === textKey(pair.left)).map((other) => other.right))].join(' / ') : pair.right, images: item.vocabMatchMode === 'image' ? [pair.left] : [], ...(teacherLed ? { mode: 'oral', teacherLed: true } : {}) })
       if (teacherLed) issues.push(`Paire ${part + 1} : association à guider sans verdict automatique.`)
     })
     issues.push('L’association est proposée en micro-questions indépendantes ; aucune réponse déjà utilisée n’est retirée automatiquement. Les mots à compléter montrent le mot source complet.')

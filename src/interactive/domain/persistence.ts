@@ -39,7 +39,7 @@ export type Resume = { record: SavedSession; state: Session }
 /** Hash the resolved plan and answer key, but never store them. Optional review
  * text must not invalidate a journal made before transcripts were available. */
 export async function planIdentity(game: Game): Promise<string> {
-  const plan = { ...game, corrections: Object.fromEntries(Object.entries(game.corrections).map(([id, correction]) => {
+  const plan = { ...game, questions:game.questions.map(({wordBlank:_,...question})=>question), corrections: Object.fromEntries(Object.entries(game.corrections).map(([id, correction]) => {
     const answer = { ...correction }
     delete answer.transcript
     delete answer.classificationCategory
@@ -73,6 +73,7 @@ function validAction(value: unknown): value is Action {
   if (type === 'HINT_SHOW') return keys.length === 2 && typeof value.questionId === 'string'
   if (type === 'IMAGE_ORDER_SET') return keys.length === 3 && typeof value.questionId === 'string' && Array.isArray(value.order) && value.order.length <= 100 && value.order.every((n) => typeof n === 'number' && Number.isInteger(n))
   if (type === 'WORD_SORT_SET') return keys.length === 3 && typeof value.questionId === 'string' && Array.isArray(value.placements) && value.placements.length <= 64 && Array.from(value.placements).every(category => category === null || typeof category === 'string' && category.length <= 80)
+  if (type === 'WORD_DROP_SET') return keys.length === 3 && typeof value.questionId === 'string' && (value.choiceId===null||typeof value.choiceId==='string'&&value.choiceId.length<=120)
   if (type === 'AUDIO_STATE') return keys.length === 3 && typeof value.roundId === 'string' && ['started', 'ended', 'override'].includes(value.status as string)
   if (type === 'AUDIO_LISTEN_STARTED' || type === 'AUDIO_EXTRA_LISTEN_GRANTED') return keys.length === 2 && typeof value.roundId === 'string'
   return keys.length === 1 && typeof type === 'string' && ['TIMEOUT', 'CARDS_UP', 'DISCUSS', 'REVEAL', 'FINISH', 'NEXT', 'PREVIOUS', 'SKIP', 'PAUSE', 'RESUME'].includes(type)
