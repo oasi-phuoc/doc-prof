@@ -7,6 +7,13 @@ useDefault = true
 id = "generic-api-key"
 
 [[rules.allowlists]]
+description = "Deux identifiants publics exacts de scènes TCF, reliés aux PNG et empreintes vérifiés dans le rapport du 15 novembre."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/corrections-interlocuteurs-20261115\.json$''']
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"(?:dialogue-b1-travail-invitation-deux-interlocuteurs|dialogue-b1-elsa-projet-sortie-deux-interlocuteurs)"?$''']
+
+[[rules.allowlists]]
 description = "Empreintes SHA-256 de vocabulaires de modèles audio dans les six rapports de reconnaissance vérifiés (ADR 0019)."
 condition = "AND"
 paths = ['''(^|/)docs/tcf/remplacement-audio/(?:bascule-preuves-reconnaissances-20261105|correction-debut-allo-brigitte-20261112|adjudications-contextuelles-20261112|corrections-4-editions-20261111|verification-numero-radio-cinema-20261112|validation-87-20261111)\.json$''']

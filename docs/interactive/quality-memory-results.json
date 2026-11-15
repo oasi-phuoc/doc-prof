@@ -5,7 +5,8 @@
   "fullUnitSuite": {
     "tests": 461,
     "passed": 461,
-    "failed": 0
+    "failed": 0,
+    "timing": "Before the parallel TCF-image main update; session engine and Mémory implementation unchanged after integration."
   },
   "newDomainTests": 10,
   "sourceConfigurations": 100,
@@ -64,12 +65,12 @@
     "gitleaks": "passed"
   },
   "gzipBytes": {
-    "landing": 121892,
-    "calibration": 142251,
-    "diagnostic": 144403,
-    "competition": 203008,
-    "teacherConsole": 165362,
-    "game": 3042573
+    "landing": 121908,
+    "calibration": 142289,
+    "diagnostic": 144434,
+    "competition": 203046,
+    "teacherConsole": 165401,
+    "game": 3043472
   },
   "limits": [
     "Memory is optional and initially limited to verified unique image-word pairs in two source families.",
@@ -79,5 +80,14 @@
     "Online synchronized memory boards, cold-start offline, other pair sources and complete Loto M12 rules remain open.",
     "Physical ENI and phone testing remains open; native Chromium uses CDP touch, real mouse and keyboard."
   ],
-  "associationRegression": "memory-associations-regression-results.json"
+  "associationRegression": "memory-associations-regression-results.json",
+  "integratedMainCommit": "ba1853910a9b9d7f2fe6f8c3bdaee5a9bb7918fe",
+  "integrationChecks": {
+    "targetedDomainTests": 18,
+    "passed": 18,
+    "failed": 0,
+    "build": "passed",
+    "bundleBudgets": "passed",
+    "gitleaks": "passed; only two exact public TCF image identifiers allowed in one exact report; random key and api_key canaries still detected"
+  }
 }

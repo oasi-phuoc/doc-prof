@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-15",
+  "scope": "Deux identifiants publics de fichiers PNG dans le rapport TCF intégré depuis main. Les noms correspondent aux fichiers existants et leurs empreintes sont vérifiées sur leurs octets.",
+  "reviewed": [
+    {
+      "file": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "sceneId": "dialogue-b1-travail-invitation-deux-interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
+      "sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e"
+    },
+    {
+      "file": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "sceneId": "dialogue-b1-elsa-projet-sortie-deux-interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
+      "sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db"
+    }
+  ],
+  "realSecretDetection": "L’autotest ajoute une valeur aléatoire au champ key et une clé générique au champ api_key dans ce même rapport ; les deux doivent être détectées. Aucune exception de répertoire ni de propriété key en général."
+}
