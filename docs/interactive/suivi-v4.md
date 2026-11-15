@@ -65,3 +65,7 @@ Le trophée Compétition propose désormais un [duel et un tournoi par équipes]
 - Les fermetures des PR 42, 43, 44, 45 et 52 sont autorisées et justifiées, mais nécessitent l’accès réseau à `api.github.com`. La PR 51 est conservée. Voir `docs/maintenance/pr-review-2026-11-10.md`.
 - Le propriétaire a publié l’environnement cloud puis chargé un nouveau brouillon. La reprise utilise cet environnement ; les commits applicatifs ne modifient et ne publient pas sa configuration.
 - Le test ENI réel, la comparaison avec les cartes physiques et le pilote de classe ne peuvent pas être attestés par les seuls tests Chromium.
+
+## Affichage de jeu épuré et paysage
+
+L’[ADR 0053](adr-0053-jeu-epure-et-paysage.md) applique les commandes regroupées aux modes Classe, Solo et compétition, les barres latérales du duel et les trente nouvelles expressions énervées. Le cahier des animations reçu ensuite reste un chantier distinct : 90 chorégraphies, 60 auras et 120 nouveaux états illustrés.

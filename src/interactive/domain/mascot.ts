@@ -35,17 +35,26 @@ export const MASCOTS = [
   { id: 'kitsune', label: 'Kitsune', sheet: atlas('spirits', 5) },
 ] as const
 export type MascotKind = typeof MASCOTS[number]['id']
-export const MASCOT_POSES = ['thinking', 'cards-up', 'discussion', 'correct', 'incorrect', 'pause'] as const
+export const BASE_MASCOT_POSES = ['thinking', 'cards-up', 'discussion', 'correct', 'incorrect', 'pause'] as const
+export const MASCOT_POSES = [...BASE_MASCOT_POSES,'angry'] as const
 export type MascotPose = typeof MASCOT_POSES[number]
-export const MASCOT_IMAGES = [...new Set(MASCOTS.map(mascot => mascot.sheet.src))]
+export const ANGRY_MASCOT_IMAGES = ['/lib/images/interactive/mascots-angry-classic.png','/lib/images/interactive/mascots-angry-extended.png'] as const
+export const MASCOT_IMAGES = [...new Set([...MASCOTS.map(mascot => mascot.sheet.src),...ANGRY_MASCOT_IMAGES])]
+export function angryMascotFrame(kind:MascotKind) {
+  const index=Math.max(0,MASCOTS.findIndex(mascot=>mascot.id===kind)),classic=index<6
+  return {src:ANGRY_MASCOT_IMAGES[classic?0:1],columns:classic?3:6,rows:classic?2:4,offset:classic?index:index-6}
+}
 
 export function mascotStyle(kind: MascotKind, resolve: (source: string) => string = source => source): CSSProperties {
   const {sheet} = MASCOTS.find(mascot => mascot.id === kind) ?? MASCOTS[0]
   const style: Record<string,string> = { '--ci-mascot-image': `url('${resolve(sheet.src)}')`, '--ci-mascot-size': `${sheet.columns * 100}% ${sheet.rows * 100}%` }
-  for (const [index,pose] of MASCOT_POSES.entries()) {
+  for (const [index,pose] of BASE_MASCOT_POSES.entries()) {
     const frame = sheet.offset + index
     style[`--ci-${pose}-x`] = `${(frame % sheet.columns) * 100 / (sheet.columns - 1)}%`
     style[`--ci-${pose}-y`] = `${Math.floor(frame / sheet.columns) * 100 / (sheet.rows - 1)}%`
   }
+  const angry=angryMascotFrame(kind)
+  style['--ci-angry-image']=`url('${resolve(angry.src)}')`;style['--ci-angry-size']=`${angry.columns*100}% ${angry.rows*100}%`
+  style['--ci-angry-x']=`${angry.offset%angry.columns*100/(angry.columns-1)}%`;style['--ci-angry-y']=`${Math.floor(angry.offset/angry.columns)*100/(angry.rows-1)}%`
   return style as CSSProperties
 }

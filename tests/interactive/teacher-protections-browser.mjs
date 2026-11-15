@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -6,7 +7,7 @@ import { skipQuestion } from './browser-actions.mjs'
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function holdPointer(page, duration) {
   const box = await button(page, 'Enseignant : révéler').boundingBox()
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2)

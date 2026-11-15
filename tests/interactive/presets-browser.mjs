@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -14,7 +15,7 @@ const original = structuredClone(recipe)
 const saved = { id: 'preset-template', name: 'Ma fiche de calcul', domains: ['algèbre'], recipe, createdAt: '2026-11-11T00:00:00Z', updatedAt: '2026-11-11T00:00:00Z' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function rows(page) { return page.evaluate(async () => { const { requestLocal } = await import('/src/interactive/storage.ts'); return requestLocal('presets-local', 'readonly', (store) => store.getAll()) }) }
 async function ready(page, url = `${base}/interactif/${saved.id}`) { await page.goto(url); await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 }); await page.locator('.ci-presets').waitFor() }
 try {

@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -26,7 +27,7 @@ const saved={id:'word-classification',name:'Tri Gattegno',recipe,domains:['gatte
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[]
 let readingChecks=0
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const card=(page,text)=>page.locator('.ci-answer').filter({has:page.locator('.ci-answer-content').getByText(text,{exact:true})})
 async function setup(width=390,height=844){
   const context=await browser.newContext({viewport:{width,height}})
@@ -93,7 +94,7 @@ try{
     await page.screenshot({path:`docs/interactive/screenshots/word-classification-${width}.png`,fullPage:true})
     await page.reload();await button(page,'Reprendre la séance').click();await checkWord(page,1)
     assert.deepEqual(await page.locator('.ci-answer-content').allTextContents(),labels)
-    await page.getByRole('button',{name:/^Choisir une question ·/}).click()
+    await gameControl(page,/^Choisir une question ·/).click()
     await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').first().click()
     await checkWord(page,0);await page.locator('.ci-answer-key').waitFor()
     results.push({viewport:`${width}x${height}`,class:'one neutral source element highlighted in its complete phrase; fixed category cards; no pupil selection; correction only in the cards',resume:'word position, category slots and revealed state retained after reload and navigation',axeViolations:0})

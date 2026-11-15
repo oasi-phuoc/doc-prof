@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -19,7 +20,7 @@ const original = structuredClone(recipe), text = first.support.transcription.tri
 const saved = { id: 'transcripts-source', name: 'Relecture des écoutes', recipe, domains: ['tcf-csc'], createdAt: '2026-11-13T00:00:00Z', updatedAt: '2026-11-13T00:00:00Z' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = [], methods = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const review = page => button(page, 'Lire la transcription')
 const dialog = page => page.getByRole('dialog', { name: 'Transcription de l’écoute', exact: true })
 const option = page => page.getByRole('checkbox', { name: 'Proposer la transcription après les réponses', exact: true })
@@ -96,7 +97,7 @@ try {
     await button(page, 'Reprendre la séance').click()
     await review(page).waitFor(); await noText(page)
     // A new attempt must remove access, even after a restored correction.
-    await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+    await gameControl(page,/^Choisir une question ·/).click()
     await button(page, 'Réessayer cette question').click()
     await button(page, 'Nouvelle tentative').click()
     assert.equal(await review(page).count(), 0); await noText(page)

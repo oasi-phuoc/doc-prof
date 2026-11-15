@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -20,7 +21,7 @@ const recipe={...demoRecipe(),libreMode:false,pages:[first,second].map((ex,index
 const original=structuredClone(recipe),saved={id:'competition-transcripts',name:'Écoutes en compétition',recipe,domains:['tcf-csc'],createdAt:'2026-11-13T00:00:00Z',updatedAt:'2026-11-13T00:00:00Z'}
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[],contexts=[]
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const review=page=>button(page,'Lire la transcription')
 const dialog=page=>page.getByRole('dialog',{name:'Transcription de l’écoute',exact:true})
 async function context(width=390,height=844){
@@ -124,7 +125,7 @@ try{
   await learners[0].page.reload();await learners[0].page.getByRole('heading',{name:'Pause',exact:true}).waitFor()
   await noText(learners[0].page);assert.equal((await wire(learners[0].page,code)).transcript,text)
   await review(learners[0].page).click()
-  await host.page.locator('.ci-competition-host-controls').getByRole('button',{name:'Reprendre',exact:true}).click()
+  await gameControl(host.page.locator('.ci-competition-host-controls'),'Reprendre').click()
   await button(host.page,'Question suivante').click()
   await learners[0].page.locator('.ci-competition-round-head').filter({hasText:'Question 3 / 3'}).waitFor()
   await noText(learners[0].page);assert.equal((await wire(learners[0].page,code)).transcript,undefined)
@@ -171,7 +172,7 @@ try{
     await closeReading(page);await page.getByRole('heading',{name:'Pause',exact:true}).waitFor()
     const journal=await page.evaluate(()=>Object.keys(sessionStorage).filter(key=>key.startsWith('clairfle.competition.local.')).map(key=>sessionStorage.getItem(key))[0])
     assert.ok(!journal.includes(text));assert.ok(!journal.includes('readingAt'));assert.ok(!journal.includes('correctChoiceId'))
-    await page.locator('.ci-competition-host-controls').getByRole('button',{name:'Reprendre',exact:true}).click()
+    await gameControl(page.locator('.ci-competition-host-controls'),'Reprendre').click()
     await button(page,'Question suivante').click();await page.getByRole('heading',{name:'À toi !',exact:true}).waitFor()
     assert.equal(await review(page).count(),0);await noText(page)
     results.push({local:`${width}x${height}`,offline:'two mascots complete the shared recording with network disabled after full media preparation',privacy:'handoff and first correction hide the text; last correction permits review',pause:'twelve seconds of reading cannot advance; explicit resume preserves control',journal:'no transcript, reading window or answer key stored',axeViolations:0})

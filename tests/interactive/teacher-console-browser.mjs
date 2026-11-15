@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { setTimeout as delay } from 'node:timers/promises'
@@ -24,7 +25,7 @@ const saved = { id: 'teacher-console-fixture', name: 'Récit et calculs', domain
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const errors = [], methods = [], results = []
 let activeProjection, activeConsole
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function openConsole(page, context, width, height) {
   const created = context.waitForEvent('page')
   await button(page, 'Ouvrir la console enseignant').click()

@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -22,7 +23,7 @@ const fixture = JSON.parse(await readFile('docs/interactive/demo-fixture.json', 
 const recording = await readFile(`public${fixture.questions.find((q) => q.audio).audio}`)
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const errors = [], methods = [], results = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const answer = (page, text) => page.locator('.ci-answer').filter({ has: page.locator('.ci-answer-content > span').filter({ hasText: new RegExp(`^${text}$`) }) })
 async function listen(page, index) {
   const audio = page.locator('audio')

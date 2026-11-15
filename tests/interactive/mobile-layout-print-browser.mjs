@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -38,13 +39,13 @@ try {
     assert.ok(title.size >= 28 && title.weight >= 700 && title.frame >= 2)
     await fits(page, width, height)
     await page.screenshot({ path: `docs/interactive/screenshots/mobile-question-mascot-${width}.png` })
-    await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+    await gameControl(page,'Régler le minuteur').click()
     await page.getByRole('spinbutton', { name: 'Temps de réflexion (secondes)', exact: true }).fill('5')
     await page.getByRole('spinbutton', { name: 'Temps entre les questions (secondes)', exact: true }).fill('10')
     await page.getByRole('button', { name: 'Fermer les réglages', exact: true }).click()
     await page.clock.install()
     await page.clock.pauseAt(new Date(Date.now() + 1000))
-    await page.getByRole('button', { name: 'Mode de jeu', exact: true }).click()
+    await gameControl(page,'Mode de jeu').click()
     await page.locator('.ci-solo-session .ci-controls').waitFor()
     await page.clock.runFor(5100)
     await page.locator('.ci-reveal').waitFor()

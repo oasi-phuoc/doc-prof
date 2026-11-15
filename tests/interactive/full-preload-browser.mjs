@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,stat,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -38,7 +39,7 @@ assert.ok(normalized)
 const runKey=`clairfle.interactive.run.v1.saved-${hash(canonicalJson({recipe:normalized,sourceId:saved.id}))}`
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[]
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const preload=page=>page.getByRole('region',{name:'Précharger la séance',exact:true})
 const status=page=>preload(page).getByRole('status')
 async function setup(width=390,height=844){

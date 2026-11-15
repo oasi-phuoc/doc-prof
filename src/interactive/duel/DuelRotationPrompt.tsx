@@ -1,0 +1,3 @@
+export function DuelRotationPrompt({onPortrait,onBack}:{onPortrait:()=>void;onBack:()=>void}) {
+  return <section className="ci-duel-rotate" role="status"><svg viewBox="0 0 120 100" aria-hidden="true" data-ci-motion><rect x="35" y="8" width="50" height="80" rx="9" fill="none" stroke="currentColor" strokeWidth="5"/><path d="M15 34Q5 76 37 90M10 39l5-12 12 5M105 68q10-43-22-57m28 52-5 12-12-5" fill="none" stroke="currentColor" strokeWidth="4"/></svg><h2>Tournez votre téléphone</h2><p>Le jeu reprend en paysage dès que l’écran est tourné.</p><button className="ci-primary" onClick={onPortrait}>Jouer en portrait</button><button onClick={onBack}>Retour</button></section>
+}

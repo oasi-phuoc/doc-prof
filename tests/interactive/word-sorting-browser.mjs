@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -18,7 +19,7 @@ const recipe={...demoRecipe(),seed:84,libreMode:true,pages:[{...defaultPage('gat
 const saved={id:'word-sorting',name:'Tri dans les colonnes',recipe,domains:['gattegno'],createdAt:'2026-11-14T00:00:00Z',updatedAt:'2026-11-14T00:00:00Z'}
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[];let activePage
-const button=(page,name)=>page.getByRole('button',{name,exact:true}),word=(page,index)=>page.locator(`[data-ci-sort-word="${index}"]`)
+const button=(page,name)=>gameControl(page,name),word=(page,index)=>page.locator(`[data-ci-sort-word="${index}"]`)
 const option=page=>page.getByRole('checkbox',{name:/^Trier les mots dans des colonnes/})
 const bucket=(page,index)=>page.locator(`[data-ci-sort-destination="${index}"]`)
 async function setup(width,height,mode='class',timed=false){
@@ -32,7 +33,7 @@ async function setup(width,height,mode='class',timed=false){
 async function placements(page){return page.locator('.ci-sort-word').evaluateAll(nodes=>nodes.map(node=>({source:Number(node.dataset.ciSortWord),target:Number(node.closest('[data-ci-sort-destination]').dataset.ciSortDestination)})).sort((a,b)=>a.source-b.source).map(row=>row.target))}
 async function expectPlacements(page,expected){await page.waitForFunction(expected=>JSON.stringify([...document.querySelectorAll('.ci-sort-word')].map(node=>({source:Number(node.dataset.ciSortWord),target:Number(node.closest('[data-ci-sort-destination]').dataset.ciSortDestination)})).sort((a,b)=>a.source-b.source).map(row=>row.target))===JSON.stringify(expected),expected)}
 async function tapPlace(page,index,label,touch){if(touch)await word(page,index).tap();else await word(page,index).click();await word(page,index).and(page.locator('[aria-pressed="true"]')).waitFor();const destination=button(page,`Déposer dans ${label}`);if(touch)await destination.tap();else await destination.click()}
-async function navigate(page,index){await page.getByRole('button',{name:/^Choisir une question ·/}).click();await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(index).click();await page.locator(index===2?'.ci-answer-grid':'.ci-word-sorting').waitFor()}
+async function navigate(page,index){await gameControl(page,/^Choisir une question ·/).click();await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(index).click();await page.locator(index===2?'.ci-answer-grid':'.ci-word-sorting').waitFor()}
 async function fit(page){await page.waitForFunction(()=>{const footer=document.querySelector('.ci-controls');return footer&&footer.getBoundingClientRect().bottom<=innerHeight+1&&document.documentElement.scrollWidth<=innerWidth});for(const control of await page.locator('.ci-sort-word,.ci-sort-destination,.ci-sort-tools .ci-icon-button').all()){const box=await control.boundingBox();assert.ok(box.width>=44&&box.height>=44)}}
 async function axe(page){const report=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();assert.deepEqual(report.violations.map(v=>({id:v.id,nodes:v.nodes.map(node=>node.target)})),[])}
 async function drag(page,index,target,touch,finish='drop'){
@@ -88,7 +89,7 @@ try{
     await button(page,'Lire le classement').click();const modelReader=page.getByRole('dialog',{name:'Classement attendu',exact:true});await modelReader.waitFor();assert.ok((await modelReader.innerText()).includes('5. la → Déterminants'));await page.keyboard.press('Escape');await modelReader.waitFor({state:'detached'});assert.equal(await button(page,'Lire le classement').evaluate(n=>n===document.activeElement),true)
     await page.screenshot({path:`docs/interactive/screenshots/word-sorting-review-${width}.png`})
     await waitForBrowserValue(page,async()=>{const{requestLocal}=await import('/src/interactive/storage.ts');return(await requestLocal('sessions','readonly',store=>store.getAll())).some(record=>record.events.some(event=>event.action.type==='WORD_SORT_SET')&&record.events.some(event=>event.action.type==='ASSESS'))})
-    await page.getByRole('button',{name:/^Choisir une question ·/}).click();await button(page,'Réessayer cette question').click();await button(page,'Nouvelle tentative').click();await page.locator('.ci-word-sorting').waitFor();await expectPlacements(page,[-1,-1,-1,-1,-1,-1]);assert.equal(await button(page,'Annuler le classement').isDisabled(),true)
+    await gameControl(page,/^Choisir une question ·/).click();await button(page,'Réessayer cette question').click();await button(page,'Nouvelle tentative').click();await page.locator('.ci-word-sorting').waitFor();await expectPlacements(page,[-1,-1,-1,-1,-1,-1]);assert.equal(await button(page,'Annuler le classement').isDisabled(),true)
     results.push({class:`${width}x${height}`,preparation:'Optional whole-phrase columns preserve selected phrases and saved local presets; legacy word cards remain available.',source:'Repeated la retains separate pronoun and determiner targets; all thirteen elements and nine categories remain available in the longer phrase.',gestures:width<=700?'Native Chromium touch, tap then category, keyboard, undo and outside cancellation work offline.':'Native mouse, click then category, keyboard, undo and outside cancellation work offline.',resume:'Placements survive lock, question navigation, preparation and connected reload.',correction:'Expected tags are absent before reveal; partial 4/6 result and one missing element appear after deliberate reveal; human appreciation is saved.',axeViolations:0})
     await context.close()
   }

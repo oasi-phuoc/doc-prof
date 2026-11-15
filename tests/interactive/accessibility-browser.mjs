@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -5,7 +6,7 @@ import AxeBuilder from '@axe-core/playwright'
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const reports = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function audit(page, state, width) {
   await page.bringToFront()
   await page.evaluate(() => document.fonts.ready)
@@ -75,7 +76,7 @@ try {
     await page.locator('.ci-launch:enabled').waitFor()
     if (await button(page, 'Mode de jeu').getAttribute('aria-pressed') === 'true') await button(page, 'Mode de jeu').click()
     await page.locator('.ci-launch').click()
-    await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+    await gameControl(page,/^Choisir une question ·/).click()
     await page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').last().click()
     await page.locator('.ci-image-zoom').first().click()
     await page.getByRole('dialog', { name: /^Image agrandie :/ }).waitFor()

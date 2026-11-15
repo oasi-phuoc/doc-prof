@@ -1,12 +1,13 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function navigate(page, index) {
-  await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+  await gameControl(page,/^Choisir une question ·/).click()
   await page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').nth(index).click()
 }
 async function reveal(page) {
@@ -47,7 +48,7 @@ try {
     assert.equal(await page.locator('.ci-answer-key').count(), 0)
     await navigate(page, 0)
     assert.equal(await page.locator('.ci-answer-key').count(), 1)
-    await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+    await gameControl(page,/^Choisir une question ·/).click()
     const nav = page.getByRole('dialog', { name: 'Choisir une question', exact: true })
     const box = await nav.boundingBox()
     assert.ok(box.x >= 0 && box.y >= 0 && box.x + box.width <= width && box.y + box.height <= height)
@@ -59,7 +60,7 @@ try {
     assert.notDeepEqual(await page.locator('.ci-answer-content > span').allTextContents(), initialOrder)
     await reveal(page)
     assert.notEqual(await page.locator('.ci-answer-key .ci-card-badge b').innerText(), initialLetter)
-    await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+    await gameControl(page,/^Choisir une question ·/).click()
     const lastIndex = await nav.locator('li').count() - 1
     await nav.locator('li button').last().click()
     await page.locator('.ci-sequence').waitFor()

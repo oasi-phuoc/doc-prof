@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
-import { IconButton } from './Icons'
+import { Icon, IconButton } from './Icons'
+import '../clean-play.css'
 import { Mascot } from './Mascot'
 import { MASCOTS, type MascotKind } from '../domain/mascot'
 import type { PlayMode } from '../domain/types'
@@ -27,20 +28,22 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
 }) {
   const locked = !!session?.teacherLocked
   const [panel, setPanel] = useState<'mascot' | 'timer' | null>(null)
+  const [optionsOpen,setOptionsOpen]=useState(false)
+  const optionsTrigger=useRef<HTMLButtonElement>(null)
   const tools = useRef<HTMLElement>(null)
   const trigger = useRef<HTMLButtonElement | null>(null)
-  const closePanel = () => { setPanel(null); trigger.current?.focus() }
+  const closePanel = () => { setPanel(null);if(playing){setOptionsOpen(false);optionsTrigger.current?.focus()}else trigger.current?.focus() }
   useEffect(() => {
-    if (!panel) return
+    if (!panel&&!optionsOpen) return
     const outside = (event: PointerEvent) => {
-      if (event.target instanceof Node && !tools.current?.contains(event.target)) setPanel(null)
+      if (event.target instanceof Node && !tools.current?.contains(event.target)){setPanel(null);setOptionsOpen(false)}
     }
     if (panel === 'mascot') tools.current?.querySelector<HTMLButtonElement>('.ci-mascot-pick[aria-pressed="true"]')?.focus()
     document.addEventListener('pointerdown', outside)
     return () => document.removeEventListener('pointerdown', outside)
-  }, [panel])
+  }, [panel,optionsOpen])
   return (
-    <header className="ci-header ci-no-print" data-ci-toolbar>
+    <header className={`ci-header ci-no-print${playing?' ci-clean-header':''}`} data-ci-toolbar>
       <div className="ci-header-start">
         <a href="/generateur" className="brand" aria-label="ClairFLE" aria-disabled={locked || undefined} tabIndex={locked ? -1 : undefined} onClick={(event) => { if (locked) event.preventDefault() }}>
           <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
@@ -48,15 +51,14 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
         </a>
         {!playing && <a className="ci-primary ci-create-link" href="/generateur">Créer des fiches</a>}
       </div>
-      {session && <>
-        {session.onNavigate ? <button className="ci-progress" type="button" aria-label={`Choisir une question · ${session.progress}`} disabled={locked || session.paused} onClick={session.onNavigate}>{session.progress}</button> : <p className="ci-progress">{session.progress}</p>}
-        <div className="ci-toolbar ci-session-actions" aria-label="Commandes de la séance">
-          <IconButton icon="skip" label="Passer" disabled={locked || !session.canSkip || session.paused} onClick={session.onSkip} />
-          <IconButton icon={session.paused ? 'play' : 'pause'} label={session.paused ? 'Reprendre' : 'Pause'} disabled={locked} onClick={session.onPause} />
-        </div>
-        <div className="ci-header-audio" inert={locked} aria-disabled={locked || undefined}>{session.audio}</div>
-      </>}
+      {session&&<><p className="ci-progress ci-sr-only">{session.progress}</p><div className="ci-header-audio" inert={locked} aria-disabled={locked || undefined}>{session.audio}</div></>}
       <nav ref={tools} onKeyDown={(event) => { if (event.key === 'Escape' && panel) { event.stopPropagation(); closePanel() } }} className="ci-toolbar ci-header-tools" aria-label="Affichage et navigation">
+        {playing&&<button ref={optionsTrigger} type="button" className="ci-icon-button" aria-label="Options du jeu" disabled={locked} aria-expanded={optionsOpen} onClick={()=>{setPanel(null);setOptionsOpen(!optionsOpen)}}><Icon name="options"/></button>}
+        {<IconButton data-ci-fullscreen icon="expand" label={fullscreen?'Quitter le plein écran':'Plein écran'} aria-pressed={fullscreen} onClick={()=>{setPanel(null);setOptionsOpen(false);onFullscreen()}}/>}
+        <div className={playing?'ci-game-options':'ci-toolbar'} hidden={playing&&!optionsOpen} onKeyDown={event=>{if(event.key==='Escape'&&!panel){event.stopPropagation();setOptionsOpen(false);optionsTrigger.current?.focus()}}}>
+        {session?.onNavigate&&<button className="ci-question-navigation ci-icon-button" type="button" aria-label={`Choisir une question · ${session.progress}`} disabled={locked||session.paused} onClick={()=>{setOptionsOpen(false);session.onNavigate?.()}}><Icon name="folder"/></button>}
+        {session&&<IconButton icon="skip" label="Passer" disabled={locked||!session.canSkip||session.paused} onClick={()=>{setOptionsOpen(false);session.onSkip()}}/>}
+        {session&&(mode==='class'||session.paused)&&<IconButton icon={session.paused?'play':'pause'} label={session.paused?'Reprendre':'Pause'} disabled={locked} onClick={()=>{setOptionsOpen(false);session.onPause()}}/>}
         <IconButton icon="contrast" label="Contraste" disabled={locked} aria-pressed={contrast} onClick={onContrast} />
         <IconButton icon={mode === 'class' ? 'users' : 'user'} label="Mode de jeu" disabled={locked} aria-description={`Mode actuel : ${mode === 'class' ? 'Classe' : 'Solo'}`} aria-pressed={mode === 'solo'} onClick={() => { setPanel(null); onMode(mode === 'class' ? 'solo' : 'class') }} />
         {!playing && onCompetition && <IconButton icon="trophy" label="Compétition" onClick={onCompetition} />}
@@ -77,9 +79,9 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
           </div>}
         </div>
         {session?.onConsole && <IconButton icon="console" label="Ouvrir la console enseignant" disabled={locked} onClick={() => { setPanel(null); session.onConsole?.() }} />}
-        <IconButton data-ci-fullscreen icon="expand" label={fullscreen ? 'Quitter le plein écran' : 'Plein écran'} aria-pressed={fullscreen} onClick={() => { setPanel(null); onFullscreen() }} />
         <IconButton icon="folder" label="Mes fiches" disabled={locked} onClick={onFiches} />
         {session && <IconButton icon="exit" label="Quitter la séance" disabled={locked} onClick={session.onExit} />}
+        </div>
       </nav>
     </header>
   )

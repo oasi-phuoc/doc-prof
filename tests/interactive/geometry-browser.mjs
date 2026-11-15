@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -29,7 +30,7 @@ const original = structuredClone(recipe)
 const saved = { id: 'geometry-source', name: 'Carrés et rectangles', domains: ['géométrie'], recipe, createdAt: '2026-11-12T00:00:00Z', updatedAt: '2026-11-12T00:00:00Z' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = [], methods = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const card = (page, value) => page.locator('.ci-answer').filter({ has: page.getByText(value, { exact: true }) })
 async function setup(width, height) {
   const context = await browser.newContext({ viewport: { width, height } })
@@ -43,7 +44,7 @@ async function setup(width, height) {
   return { context, page }
 }
 async function navigate(page, prompt) {
-  await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+  await gameControl(page,/^Choisir une question ·/).click()
   await page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').filter({ hasText: prompt }).click()
   await page.waitForFunction(() => document.querySelector('.ci-round-question')?.dataset.ciReadability !== undefined)
 }

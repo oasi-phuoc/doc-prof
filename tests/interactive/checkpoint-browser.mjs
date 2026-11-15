@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
@@ -60,7 +61,7 @@ try {
   await page.getByRole('button', { name: 'Enseignant : révéler', exact: true }).click()
   await page.locator('.ci-reveal').waitFor()
   await page.getByRole('button', { name: 'Question suivante', exact: true }).click()
-  while (await page.getByRole('button', { name: 'Passer', exact: true }).count()) await skipQuestion(page)
+  while (await gameControl(page,'Passer').count()) await skipQuestion(page)
   await page.locator('.ci-summary').waitFor()
   await page.getByRole('textbox', { name: 'Observations', exact: true }).fill('Reprendre les retenues au prochain cours.')
   await page.getByRole('textbox', { name: 'Observations', exact: true }).blur()

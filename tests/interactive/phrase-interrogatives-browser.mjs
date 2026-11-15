@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -42,7 +43,7 @@ const original = structuredClone(recipe), converted = convertRecipe(recipe)
 const linked = converted.questions.findIndex(q => q.wordClassification?.joins?.includes('-t-') && q.wordClassification.tokens[q.wordClassification.target] === 'il')
 assert.ok(linked >= 0)
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
-const button = (page,name) => page.getByRole('button',{name,exact:true})
+const button = (page,name) => gameControl(page,name)
 const results = [], errors = [], methods = []
 let activePage
 async function axe(page, selector) {
@@ -104,7 +105,7 @@ try {
     assert.equal(await page.locator('.ci-answer-key').count(),0)
     await button(page,'Signal : levez vos cartes').click();await button(page,'Discuter').click();await button(page,'Enseignant : révéler').click()
     assert.match(await page.locator('.ci-answer-key').innerText(),/Adverbes/)
-    await page.getByRole('button',{name:/^Choisir une question ·/}).click()
+    await gameControl(page,/^Choisir une question ·/).click()
     await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(linked).click()
     await page.locator('.ci-classification-sentence').filter({hasText:'Mange-t-il'}).waitFor()
     assert.equal(await page.locator('.ci-classification-target').innerText(),'il')

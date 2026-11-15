@@ -624,6 +624,7 @@ function PlayingRound({
             )}
             {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
             <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
+            {solo&&!state.paused&&<IconButton className="ci-solo-pause" icon="pause" label="Pause" onClick={()=>dispatch({type:'PAUSE'})}/>}
             {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript || !!readingModel} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
@@ -646,5 +647,5 @@ function BetweenQuestionsTimer({ seconds, roundId, attempt, initialClock, suspen
     onElapsed: onNext,
     onRemaining: (remainingMs) => onClock({ roundId, phase: 'revealed', durationMs, remainingMs, attempt }),
   })
-  return <p role="timer" aria-live="off" aria-label="Temps avant la question suivante">Question suivante dans {Math.ceil(remaining / 1000)} s</p>
+  return <p role="timer" aria-live="off" aria-label="Temps avant la question suivante">{Math.ceil(remaining / 1000)} s</p>
 }

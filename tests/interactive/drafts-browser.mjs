@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -80,13 +81,13 @@ try {
   assert.ok(Date.now() - (await rows(page, 'drafts')).find((row) => row.draftId === id).lastOpenedAt < 10000)
   await page.locator('.ci-launch').click()
   await page.getByRole('button', { name: 'Signal : levez vos cartes', exact: true }).click()
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   await page.reload()
   await page.getByRole('button', { name: /Reprendre la séance/ }).click()
   await page.getByRole('button', { name: 'Discuter', exact: true }).waitFor()
   assert.equal(await page.locator('.ci-answer-key, .ci-answer-muted').count(), 0)
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   results.push({ launch: 'real generator action creates a random draft URL and an exact snapshot', migration: 'database 1 → 4 retains sessions and adds drafts/settings/presets-local and session indexes', reload: 'direct address with no history restores identical questions and renews lastOpenedAt', session: 'collective voting phase resumes without revealing answers' })
 

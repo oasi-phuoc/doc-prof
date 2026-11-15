@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -8,7 +9,7 @@ const server = await createServer({ cacheDir: '/tmp/clairfle-csc-browser-vite', 
 await server.listen()
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const errors = [], results = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const preview = (page) => page.locator('.sheet-stage:not(.print-only-sheets) .worksheet-sheet:visible').first()
 function zipEntries(buffer) {
   const entries = []; let offset = 0

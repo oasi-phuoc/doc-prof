@@ -6,7 +6,7 @@ import {createElement} from 'react'
 import {renderToStaticMarkup} from 'react-dom/server'
 const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom'})
 try{
-  const {MASCOTS,MASCOT_IMAGES,MASCOT_POSES,mascotStyle}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
+  const {MASCOTS,MASCOT_IMAGES,BASE_MASCOT_POSES,angryMascotFrame,mascotStyle}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
   const {COMPETITION_AVATARS,validAvatar}=await vite.ssrLoadModule('/src/interactive/competition/avatars.ts')
   const {ATTACK_EFFECTS,MISTAKE_EFFECTS,DEFAULT_EFFECTS,impactFor,trajectory,attackTrajectory,validEffects}=await vite.ssrLoadModule('/src/interactive/duel/effects.ts')
   const {SIGNATURE_ATTACKS,signatureAttack,attackSequence}=await vite.ssrLoadModule('/src/interactive/duel/signature-attacks.ts')
@@ -20,12 +20,12 @@ try{
     for(const id of ['panda','fox','tanuki','otter','koala','turtle','axolotl','tiger','leopard','crane','cat','koi','rat','ox','rabbit','dragon','snake','horse','goat','monkey','rooster','dog','boar'])assert.equal(validAvatar(id),true,id)
     for(const invalid of ['custom nickname','untrusted','<script>'])assert.equal(validAvatar(invalid),false)
   })
-  await test('all 180 poses occupy distinct in-bounds cells across ten real sprite sheets, with all new atlases physically divided into six rows and columns',async()=>{
-    assert.equal(MASCOT_IMAGES.length,10);assert.equal(MASCOT_POSES.length,6)
+  await test('all 180 original poses retain their cells, while thirty new angry poses occupy distinct validated cells in two generated atlases',async()=>{
+    assert.equal(MASCOT_IMAGES.length,12);assert.equal(BASE_MASCOT_POSES.length,6)
     const frames=new Set()
     for(const mascot of MASCOTS){
       const style=mascotStyle(mascot.id)
-      for(const pose of MASCOT_POSES){
+      for(const pose of BASE_MASCOT_POSES){
         const x=parseFloat(style[`--ci-${pose}-x`]),y=parseFloat(style[`--ci-${pose}-y`])
         assert.ok(x>=0&&x<=100&&y>=0&&y<=100)
         frames.add([mascot.sheet.src,x,y].join(':'))
@@ -35,8 +35,9 @@ try{
     assert.equal(frames.size,180)
     for(const src of MASCOT_IMAGES){
       const file=await readFile('public'+src);assert.ok(file.length>50000)
-      if(src.endsWith('.png')){assert.equal(file.subarray(1,4).toString(),'PNG');assert.equal(file.readUInt32BE(16)%6,0);assert.equal(file.readUInt32BE(20)%6,0)}
+      if(src.endsWith('.png')){assert.equal(file.subarray(1,4).toString(),'PNG');const angry=src.includes('angry'),columns=angry&&src.includes('classic')?3:6,rows=angry?src.includes('classic')?2:4:6;assert.equal(file.readUInt32BE(16)%columns,0);assert.equal(file.readUInt32BE(20)%rows,0)}
     }
+    const angryCells=new Set();for(const mascot of MASCOTS){const frame=angryMascotFrame(mascot.id),style=mascotStyle(mascot.id);assert.ok(frame.offset>=0&&frame.offset<frame.columns*frame.rows);assert.ok(style['--ci-angry-image'].includes(frame.src));angryCells.add([frame.src,frame.offset].join(':'))}assert.equal(angryCells.size,30)
     assert.ok(mascotStyle('kitsune',src=>'blob:https://class.test/'+src.split('/').at(-1))['--ci-mascot-image'].includes('blob:'))
   })
   await test('legacy effect fields remain strictly validated when reading an old journal',()=>{

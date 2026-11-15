@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-15",
+  "scope": "Jeu épuré dans tous les modes, barres latérales avec chiffres seuls, paysage avec repli, trente dessins énervés",
+  "fullUnitSuite": {
+    "tests": 426,
+    "passed": 426,
+    "failed": 0
+  },
+  "browserStagesPassed": [
+    "duel-landscape-browser",
+    "word-drop-browser",
+    "duel-browser",
+    "mascots-effects-browser",
+    "competition-browser",
+    "teacher-console-browser",
+    "a4-regression"
+  ],
+  "viewports": [
+    "1366x768",
+    "390x844",
+    "360x640",
+    "844x390"
+  ],
+  "axeViolations": 0,
+  "liveApiWrites": 0,
+  "frontendTypes": "passed",
+  "lint": "passed with pre-existing warnings",
+  "build": "passed",
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121848,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 142177,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144321,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 195005,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 158122,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3027843,
+      "maximumGzip": 3145728
+    }
+  },
+  "a4": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 3703
+  },
+  "allWorkflowStagesRun": false,
+  "physicalPhonesTested": false,
+  "artwork": {
+    "angryPoses": 30,
+    "newAtlases": [
+      "mascots-angry-classic.png",
+      "mascots-angry-extended.png"
+    ],
+    "generation": "Original imagegen drawings; six historic frames preserved."
+  },
+  "nextWork": "Full videogame VFX specification received after this UI increment; ninety new choreographies, sixty themed auras and 120 health/outcome drawings are not claimed by this report."
+}

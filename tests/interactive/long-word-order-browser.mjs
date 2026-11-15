@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -26,7 +27,7 @@ const before=structuredClone(recipe),saved={id:'long-word-order',name:'Phrases l
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[]
 let activePage
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const zones=page=>page.locator('.ci-word-sequence > button')
 const positions=page=>zones(page).evaluateAll(nodes=>nodes.map(node=>Number(node.dataset.ciSourceIndex)))
 async function expectPositions(page,expected){await page.waitForFunction(expected=>JSON.stringify([...document.querySelectorAll('.ci-word-sequence > button')].map(node=>Number(node.dataset.ciSourceIndex)))===JSON.stringify(expected),expected)}
@@ -38,7 +39,7 @@ async function fit(page){
     return c.bottom<=innerHeight+1&&[...zones,undo].every(node=>{const b=node.getBoundingClientRect();return b.width>=44&&b.height>=44&&b.left>=-1&&b.right<=innerWidth+1&&b.top>=area.top-1&&b.bottom<=area.bottom+1&&b.bottom<=innerHeight+1})
   },{},{timeout:10000})
 }
-async function navigate(page,index){await page.getByRole('button',{name:/^Choisir une question ·/}).click();await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(index).click();await zones(page).first().waitFor({state:index===2?'detached':'visible'})}
+async function navigate(page,index){await gameControl(page,/^Choisir une question ·/).click();await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(index).click();await zones(page).first().waitFor({state:index===2?'detached':'visible'})}
 async function axe(page){const report=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();assert.deepEqual(report.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[])}
 try{
   await mkdir('docs/interactive/screenshots',{recursive:true})

@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
@@ -47,7 +48,7 @@ try {
       const box = await element.boundingBox()
       assert.ok(box.x >= 0 && box.y >= 0 && box.x + box.width <= width + 1 && box.y + box.height <= height + 1, `Manual sharing pushed game off screen: ${JSON.stringify(box)}`)
     }
-    await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+    await gameControl(page,'Quitter la séance').click()
     await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
     await page.reload()
     await page.getByRole('button', { name: /Reprendre la séance/ }).click()
@@ -56,7 +57,7 @@ try {
     await page.getByRole('button', { name: 'Discuter', exact: true }).click()
     await page.getByRole('button', { name: 'Enseignant : révéler', exact: true }).click()
     await page.getByRole('button', { name: 'Question suivante', exact: true }).click()
-    while (await page.getByRole('button', { name: 'Passer', exact: true }).count()) await skipQuestion(page)
+    while (await gameControl(page,'Passer').count()) await skipQuestion(page)
     await page.locator('.ci-summary').waitFor()
     assert.equal(await page.locator('.ci-vote-summary').count(), 1, 'Questions with no counts must have no numeric placeholder')
     assert.match(await page.locator('.ci-vote-summary').innerText(), /D’après votre comptage : \d vote\(s\) sur 7/)

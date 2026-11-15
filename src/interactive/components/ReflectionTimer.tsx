@@ -34,7 +34,7 @@ export function ReflectionTimer({
       <output
         aria-label="Temps de réflexion restant"
         aria-live="off"
-        className="ci-timer-value"
+        className={`ci-timer-value${settings.enabled?'':' ci-sr-only'}`}
       >
         {settings.enabled
           ? `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`

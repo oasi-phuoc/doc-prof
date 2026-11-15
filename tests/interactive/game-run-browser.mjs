@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
@@ -49,7 +50,7 @@ try {
   const first = await prompts()
   validAdditions(first)
   await page.getByRole('spinbutton', { name: 'Temps de réflexion (secondes)', exact: true }).fill('20')
-  await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+  await gameControl(page,'Régler le minuteur').click()
   await page.getByRole('spinbutton', { name: 'Temps entre les questions (secondes)', exact: true }).fill('7')
   await page.getByRole('button', { name: 'Fermer les réglages', exact: true }).click()
   await page.locator('.ci-launch').click()
@@ -61,7 +62,7 @@ try {
   await page.locator('.ci-summary').waitFor()
   await page.getByRole('button', { name: 'Nouvelle partie', exact: true }).click()
   await page.locator('.ci-progress').filter({ hasText: 'Question 1 / 10' }).waitFor()
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   const second = await prompts()
   validAdditions(second)
@@ -77,15 +78,15 @@ try {
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   await page.getByRole('button', { name: /Reprendre la séance/ }).click()
   await page.locator('.ci-progress').filter({ hasText: 'Question 1 / 10' }).waitFor()
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: 'Nouvelle partie', exact: true }).click()
   await page.locator('.ci-progress').filter({ hasText: 'Question 1 / 10' }).waitFor()
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   const third = await prompts()
   validAdditions(third)
   assert.notDeepEqual(third, second)
-  await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+  await gameControl(page,'Régler le minuteur').click()
   assert.equal(await page.getByRole('spinbutton', { name: 'Temps entre les questions (secondes)', exact: true }).inputValue(), '7')
   await page.getByRole('button', { name: 'Fermer les réglages', exact: true }).click()
   assert.ok(methods.length >= 2)

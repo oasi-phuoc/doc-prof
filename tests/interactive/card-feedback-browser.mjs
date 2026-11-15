@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
@@ -41,7 +42,7 @@ try {
     assert.equal(await page.locator('.ci-correction-status').count(), 0)
     await page.clock.install()
     await page.clock.pauseAt(new Date(Date.now() + 1000))
-    await page.getByRole('button', { name: 'Mode de jeu', exact: true }).click()
+    await gameControl(page,'Mode de jeu').click()
     await page.locator('.ci-solo-session .ci-answer:enabled').first().waitFor()
     assert.equal(await page.locator('.ci-answer-key, .ci-answer-muted').count(), 0)
     await page.locator('.ci-answer').filter({ hasNotText: /1.?559/ }).first().click()

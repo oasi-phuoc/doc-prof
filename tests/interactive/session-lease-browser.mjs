@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { writeFile } from 'node:fs/promises'
@@ -42,7 +43,7 @@ try {
     await second.getByRole('button', { name: 'Enseignant : révéler', exact: true }).click()
     await first.getByRole('button', { name: 'Réessayer', exact: true }).click()
     await first.locator('.ci-session-busy').waitFor()
-    await second.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+    await gameControl(second,'Quitter la séance').click()
     await second.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
     await first.getByRole('button', { name: 'Réessayer', exact: true }).click()
     await first.locator('.ci-reveal').waitFor()

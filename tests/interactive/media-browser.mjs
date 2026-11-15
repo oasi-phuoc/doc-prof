@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
@@ -247,7 +248,7 @@ try {
   await skipQuestion(page)
   await runtimeImageErrors(page)
   assert.equal(await page.locator('.ci-answer:visible').count(), 4)
-  await page.getByRole('button', { name: 'Quitter la séance' }).click()
+  await gameControl(page,'Quitter la séance').click()
   results.push({
     invalidMime:
       'HTML fallback excluded; explicit keep preserves runtime error and skip fallback',

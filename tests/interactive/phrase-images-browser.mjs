@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,readFile,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -19,7 +20,7 @@ for(let seed=1;seed<300;seed++){const item=buildPage(recipe.pages[0],seed).block
 const original=structuredClone(recipe)
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],requests=[]
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const preview=page=>page.locator('.sheet-stage:not(.print-only-sheets) .worksheet-sheet:visible').first()
 const rows=page=>preview(page).locator('.phrase-images-block')
 async function pictures(page){for(const image of await preview(page).locator('.phrase-image-clue > img').all())assert.ok(await image.evaluate(async image=>{await image.decode();return image.naturalWidth>0}))}

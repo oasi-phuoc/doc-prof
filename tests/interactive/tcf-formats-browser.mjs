@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -10,7 +11,7 @@ const { buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generat
 const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const preview = (page) => page.locator('.sheet-stage:not(.print-only-sheets) .worksheet-sheet:visible').first()
 async function currentExercise(page, index) { return page.evaluate((index) => window.history.state.clairfleFiche.recipe.pages[index].tcfExercise, index) }
 async function marks(sheet) {

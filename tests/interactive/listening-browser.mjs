@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -16,7 +17,7 @@ wav.write('RIFF', 0); wav.writeUInt32LE(wav.length - 8, 4); wav.write('WAVEfmt '
 for (let i = 0; i < frames; i++) wav.writeInt16LE(Math.round(Math.sin(i * 2 * Math.PI * 220 / rate) * 500), 44 + i * 2)
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], methods = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function setup(width = 390) {
   const context = await browser.newContext({ viewport: { width, height: width === 390 ? 844 : 768 } })
   await context.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
@@ -63,7 +64,7 @@ try {
   await play(page)
   assert.equal(await page.locator('audio').evaluate((audio) => audio.paused), true)
   await button(page, 'Signal : levez vos cartes').click(); await button(page, 'Discuter').click()
-  await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+  await gameControl(page,/^Choisir une question ·/).click()
   await button(page, 'Réessayer cette question').click()
   await button(page, 'Nouvelle tentative').click()
   await count(page, 0)

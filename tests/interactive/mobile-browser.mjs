@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
@@ -24,13 +25,13 @@ try {
     const options = await page.locator('.ci-header-tools').boundingBox()
     assert.ok(options.y >= brand.y + brand.height)
     for (const label of ['Contraste', 'Plein écran', 'Mes fiches']) {
-      const bounds = await page.getByRole('button', { name: label, exact: true }).boundingBox()
+      const bounds = await gameControl(page,label).boundingBox()
       assert.ok(bounds.x >= 0 && bounds.x + bounds.width <= width)
     }
     const names = ['Esprit feuille', 'Hibou', 'Pieuvre', 'Hérisson', 'Lapin lunaire', 'Dragon']
     const ids = ['leaf', 'owl', 'octopus', 'hedgehog', 'rabbit', 'dragon']
     for (let index = 0; index < names.length; index++) {
-      await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
+      await gameControl(page,'Mascotte').click()
       const gallery = page.getByRole('dialog', { name: 'Choisir la mascotte' })
       assert.equal(await gallery.getByRole('button').count(), 30)
       assert.equal((await gallery.innerText()).trim(), '')
@@ -56,12 +57,12 @@ try {
     const sprite = await page.locator('.ci-phase-art .ci-mascot-sprite').evaluate((el) => getComputedStyle(el).backgroundImage)
     assert.match(sprite, /dragon-mascot/)
     await page.screenshot({ path: `${output}/mobile-thinking-${width}.png`, fullPage: true })
-    await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
+    await gameControl(page,'Mascotte').click()
     await page.getByRole('dialog', { name: 'Choisir la mascotte' }).getByRole('button', { name: 'Hibou', exact: true }).click()
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     await page.reload()
     await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor({ timeout: 120000 })
-    await page.getByRole('button', { name: 'Mascotte', exact: true }).click()
+    await gameControl(page,'Mascotte').click()
     assert.equal(await page.getByRole('dialog', { name: 'Choisir la mascotte' }).getByRole('button', { name: 'Hibou', exact: true }).getAttribute('aria-pressed'), 'true')
     await page.keyboard.press('Escape')
     await page.evaluate((recipe) => {

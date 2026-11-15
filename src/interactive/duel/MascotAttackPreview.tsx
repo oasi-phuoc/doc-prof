@@ -21,7 +21,7 @@ export function MascotAttackPreview({left,right}:{left:CompetitionAvatar;right:C
     <div className="ci-effect-demo" ref={demo}>{(['left','right'] as const).map((side,index)=>{
       const avatar=side==='left'?left:right
       return <div key={side} data-demo-side={side}>
-        <CompetitionPortrait avatarId={avatar} seat={index+1} outcome={preview?.impact.target===side?false:preview?.impact.kind==='attack'&&preview.impact.from===side?true:undefined}/>
+        <CompetitionPortrait avatarId={avatar} seat={index+1} powerLevel={multiplier} outcome={preview?.impact.target===side?false:preview?.impact.kind==='attack'&&preview.impact.from===side?true:undefined}/>
         <b>Joueur {index+1}</b>
         <svg className="ci-signature-sample" aria-hidden="true" viewBox="-64 -64 128 128"><SignatureAttackArt mascot={avatar}/></svg>
         <span className="ci-signature-name">{signatureAttack(avatar).label}</span>

@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,readFile,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -22,7 +23,7 @@ const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROM
 const results=[],errors=[],methods=[]
 const viewports=[[390,844],[1366,768],[360,640]].filter(([width])=>!process.env.GUIDED_ORAL_TEST_WIDTH||width===Number(process.env.GUIDED_ORAL_TEST_WIDTH))
 assert.ok(viewports.length,'A supported guided oral viewport is required')
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const scenes=page=>page.locator('.ci-sequence .ci-image-zoom > img').evaluateAll(images=>images.map(image=>image.alt))
 async function setup(width,height,mode='class',fixture=saved){
   const context=await browser.newContext({viewport:{width,height},acceptDownloads:true,hasTouch:width<=700})
@@ -45,7 +46,7 @@ async function setup(width,height,mode='class',fixture=saved){
 }
 async function preload(page){await button(page,'Précharger toute la séance').click();await page.getByRole('status').filter({hasText:'Prêt à jouer sans connexion'}).waitFor()}
 async function axe(page){const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();assert.deepEqual(scan.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[])}
-async function navigate(page,index){await page.getByRole('button',{name:/^Choisir une question ·/}).click();await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(index).click()}
+async function navigate(page,index){await gameControl(page,/^Choisir une question ·/).click();await page.getByRole('dialog',{name:'Choisir une question',exact:true}).locator('li button').nth(index).click()}
 async function pictures(page){const images=await page.locator('.ci-sequence .ci-image-zoom > img,.ci-oral-gallery .ci-image-zoom > img').all();assert.ok(images.length);for(const image of images)assert.ok(await image.evaluate(async image=>{await image.decode();return image.naturalWidth>0&&image.src.startsWith('blob:')}))}
 async function fits(page){
   const vp=page.viewportSize();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false)

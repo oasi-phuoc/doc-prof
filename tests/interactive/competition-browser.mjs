@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -12,7 +13,7 @@ await vite.listen()
 const service = await serveCompetition(vite, { origin: base, teacherKey })
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 async function setup(page) {
   await page.context().addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
   await page.goto(`${base}/interactif/demo`)
@@ -107,7 +108,7 @@ try {
   await button(resume, 'Reprendre le défi local').click()
   await resume.getByRole('heading', { name: 'Pause', exact: true }).waitFor()
   assert.equal(await resume.locator('.ci-answer').count(), 0)
-  await resume.locator('.ci-competition-pause').getByRole('button', { name: 'Reprendre', exact: true }).click()
+  await gameControl(resume.locator('.ci-competition-pause'),'Reprendre').click()
   await resume.locator('.ci-answer:enabled').first().click()
   await resume.locator('.ci-answer-key').waitFor()
   const resumedJournal = await resume.evaluate((key) => JSON.parse(sessionStorage.getItem(key)), localKey)

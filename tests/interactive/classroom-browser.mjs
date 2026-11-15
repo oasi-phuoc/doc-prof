@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
@@ -249,14 +250,14 @@ try {
     }
     const menuControls = [
       page.locator('.ci-progress'),
-      page.getByRole('button', { name: 'Passer', exact: true }),
+      gameControl(page,'Passer'),
       page.getByRole('button', { name: 'Pause', exact: true }),
       page.locator('.ci-header audio'),
-      page.getByRole('button', { name: 'Contraste', exact: true }),
-      page.getByRole('button', { name: 'Régler le minuteur', exact: true }),
+      gameControl(page,'Contraste'),
+      gameControl(page,'Régler le minuteur'),
       page.getByRole('button', { name: 'Plein écran', exact: true }),
-      page.getByRole('button', { name: 'Mes fiches', exact: true }),
-      page.getByRole('button', { name: 'Quitter la séance', exact: true }),
+      gameControl(page,'Mes fiches'),
+      gameControl(page,'Quitter la séance'),
     ]
     const menuBoxes = await Promise.all(
       menuControls.map((control) => control.boundingBox()),
@@ -282,8 +283,7 @@ try {
     assert.equal(await page.locator('.ci-timer-value').innerText(), '0:29')
     await fit(page, height)
     await page.screenshot({ path: `${output}/11-paired-audio-${width}.png` })
-    await page
-      .getByRole('button', { name: 'Régler le minuteur', exact: true })
+    await gameControl(page,'Régler le minuteur')
       .click()
     await page
       .getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' })
@@ -291,7 +291,7 @@ try {
     await page
       .getByRole('button', { name: 'Fermer les réglages', exact: true })
       .click()
-    await page.getByRole('button', { name: 'Régler le minuteur' }).click()
+    await gameControl(page,'Régler le minuteur').click()
     await page
       .getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' })
       .press('Enter')
@@ -336,7 +336,7 @@ try {
       .click()
     assert.equal(await page.locator('.ci-answer:enabled').count(), 0)
     assert.equal(await page.locator('.ci-controls').isVisible(), true)
-    await page.getByRole('button', { name: 'Quitter la séance' }).click()
+    await gameControl(page,'Quitter la séance').click()
     await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
     const savedJournals = await page.evaluate(async () => {
       const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })
@@ -404,7 +404,7 @@ try {
     ),
     false,
   )
-  await page.getByRole('button', { name: 'Contraste', exact: true }).click()
+  await gameControl(page,'Contraste').click()
   assert.ok(
     (await page.locator('.ci-app').getAttribute('class')).includes(
       'ci-high-contrast',

@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -21,12 +22,12 @@ recipe.printCorrections = true
 recipe.institutional = { ...recipe.institutional, course: 'Français' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const preview = (page) => page.locator('.sheet-stage:not(.print-only-sheets) .worksheet-sheet:visible').first()
 async function select(page, label, value) {
-  await page.getByRole('button', { name: label, exact: true }).click()
+  await gameControl(page,label).click()
   await page.getByRole('option', { name: value, exact: true }).click()
-  await page.getByRole('button', { name: label, exact: true }).getByText(value, { exact: true }).waitFor()
+  await gameControl(page,label).getByText(value, { exact: true }).waitFor()
   // The historical colour fixture chooses its format explicitly; S-V-C is now first.
   if(label==='Thème'){await button(page,'Type d’exercice').click();await page.getByRole('option',{name:/^Colorier /}).click()}
 }

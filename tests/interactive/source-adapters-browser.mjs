@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -28,9 +29,9 @@ const fixture = JSON.parse(await readFile('docs/interactive/demo-fixture.json', 
 const audio = await readFile(`public${fixture.questions.find((q) => q.audio).audio}`)
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], methods = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const words = (page) => page.locator('.ci-word-sequence > button > b').allTextContents()
-async function navigate(page, prompt) { await page.getByRole('button', { name: /^Choisir une question ·/ }).click(); await page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').filter({ hasText: prompt }).click() }
+async function navigate(page, prompt) { await gameControl(page,/^Choisir une question ·/).click(); await page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').filter({ hasText: prompt }).click() }
 async function reveal(page, open = false) { await button(page, open ? 'Commencer l’échange' : 'Signal : levez vos cartes').click(); await button(page, 'Discuter').click(); await button(page, 'Enseignant : révéler').click() }
 try {
   for (const [width, height] of [[390, 844], [1366, 768]]) {

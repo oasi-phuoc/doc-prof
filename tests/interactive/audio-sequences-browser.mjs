@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -22,7 +23,7 @@ recipe.pages = [{ ...recipe.pages[0], count: 4, libreInstruction: 'Il y a 2 éco
 const original = structuredClone(recipe), saved = { id: 'audio-sequence-source', name: 'Nombres et calculs oraux', domains: ['algèbre'], recipe, createdAt: '2026-11-11T00:00:00Z', updatedAt: '2026-11-11T00:00:00Z' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = [], methods = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const count = (page, n, max = 2) => page.locator('.ci-audio-caption [role="status"]').filter({ hasText: `Écoute ${n} / ${max}` }).waitFor()
 async function ready(page) { await page.waitForFunction(() => { const a = document.querySelector('audio'); return a?.src.startsWith('blob:') && a.duration > 0 }); return page.locator('audio') }
 async function play(page) { const audio = await ready(page); await audio.evaluate(async (audio) => { audio.muted = true; audio.playbackRate = 16; await audio.play() }); await page.waitForFunction(() => document.querySelector('audio')?.ended) }
@@ -120,7 +121,7 @@ try {
   await rapid.context.route('**/nombre/1.mp3', async (route) => { entered(); await new Promise((resolve) => { release = resolve }); await route.continue().catch(() => {}) })
   await rapid.page.locator('.ci-launch').click()
   try { await Promise.race([requested, new Promise((_, reject) => { timeout = setTimeout(() => reject(new Error('Delayed suffix was not requested')), 10000) })]) } finally { clearTimeout(timeout) }
-  await rapid.page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+  await gameControl(rapid.page,/^Choisir une question ·/).click()
   await rapid.page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').nth(1).click()
   await ready(rapid.page); await count(rapid.page, 0)
   const currentUrl = await rapid.page.locator('audio').getAttribute('src')

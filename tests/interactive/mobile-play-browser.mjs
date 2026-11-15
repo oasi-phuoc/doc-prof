@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
@@ -21,14 +22,14 @@ try {
     await page.context().addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
     await page.goto(`${base}/interactif/demo`)
     await page.getByRole('button', { name: /Commencer la séance/ }).waitFor({ timeout: 120000 })
-    const mode = page.getByRole('button', { name: 'Mode de jeu', exact: true })
+    const mode = gameControl(page,'Mode de jeu')
     assert.equal(await mode.getAttribute('aria-pressed'), 'false')
     await mode.click()
     assert.equal(await mode.getAttribute('aria-pressed'), 'true')
     assert.equal(await page.getByRole('dialog', { name: 'Choisir le mode de jeu' }).count(), 0)
     await mode.click()
     assert.equal(await mode.getAttribute('aria-pressed'), 'false')
-    await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+    await gameControl(page,'Régler le minuteur').click()
     const settings = page.getByRole('dialog', { name: 'Réglages du minuteur' })
     const bounds = await settings.boundingBox()
     assert.ok(bounds.x >= 0 && bounds.y >= 0 && bounds.x + bounds.width <= width && bounds.y + bounds.height <= height)
@@ -58,7 +59,7 @@ try {
     assert.match(await page.locator('.ci-progress').innerText(), /Question 1 /)
     await page.clock.runFor(200)
     await page.locator('.ci-progress').filter({ hasText: /Question 2 / }).waitFor()
-    await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+    await gameControl(page,'Régler le minuteur').click()
     await page.getByRole('spinbutton', { name: 'Temps entre les questions (secondes)', exact: true }).fill('10')
     await page.getByRole('button', { name: 'Fermer les réglages', exact: true }).click()
     await page.locator('.ci-answer').filter({ hasNotText: /83/ }).first().click()
@@ -77,10 +78,10 @@ try {
     assert.equal(await page.locator('audio').isVisible(), true)
     await fits(page)
     await page.getByRole('button', { name: 'Quitter le plein écran', exact: true }).click()
-    await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+    await gameControl(page,'Quitter la séance').click()
     await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
     assert.equal(await page.getByRole('link', { name: 'Créer des fiches', exact: true }).count(), 1)
-    await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+    await gameControl(page,'Régler le minuteur').click()
     assert.equal(await page.getByRole('spinbutton', { name: 'Temps entre les questions (secondes)', exact: true }).inputValue(), '10')
     assert.deepEqual(errors, [])
     results.push({ viewport: `${width}x${height}`, toggle: 'class/solo pushbutton without menu', timerPanel: 'fully inside viewport', feedback: '1 and 10 seconds executed', gameFit: 'question, six cards, timer and controls on screen', immersive: 'fullscreen button only; same audio player retained', createFiches: 'preparation only', errors })

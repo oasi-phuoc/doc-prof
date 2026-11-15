@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { readFile, writeFile } from 'node:fs/promises'
@@ -43,7 +44,7 @@ try {
   await page.getByRole('button', { name: /Commencer la séance/ }).click()
   await page.locator('.ci-controls').waitFor()
   assert.equal(await page.locator('.ci-reveal').count(), 0)
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   const stored = await page.evaluate(async () => {
     const db = await new Promise((resolve) => { const request = indexedDB.open('clairfle-interactive'); request.onsuccess = () => resolve(request.result) })

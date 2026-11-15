@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -14,7 +15,7 @@ const original = structuredClone(recipe)
 const saved = { id: 'archive-template', name: 'Mes bilans de calcul', domains: ['algèbre'], recipe, createdAt: '2026-11-11T00:00:00Z', updatedAt: '2026-11-11T00:00:00Z' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], methods = [], errors = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const row = (page, id) => page.locator(`.ci-archive-list > li[data-session-id="${id}"]`)
 async function setup() {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 } })

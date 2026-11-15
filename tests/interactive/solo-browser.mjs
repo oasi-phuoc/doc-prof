@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { mkdir, writeFile } from 'node:fs/promises'
@@ -13,9 +14,9 @@ try {
     await page.context().addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
     await page.goto(`${base}/interactif/demo`)
     await page.getByRole('button', { name: /Commencer la séance/ }).waitFor({ timeout: 120000 })
-    assert.equal(await page.getByRole('button', { name: 'Mode de jeu', exact: true }).getAttribute('aria-pressed'), 'false')
-    await page.getByRole('button', { name: 'Mode de jeu', exact: true }).click()
-    assert.equal(await page.getByRole('button', { name: 'Mode de jeu', exact: true }).getAttribute('aria-pressed'), 'true')
+    assert.equal(await gameControl(page,'Mode de jeu').getAttribute('aria-pressed'), 'false')
+    await gameControl(page,'Mode de jeu').click()
+    assert.equal(await gameControl(page,'Mode de jeu').getAttribute('aria-pressed'), 'true')
     assert.equal(await page.getByRole('dialog', { name: 'Choisir le mode de jeu' }).count(), 0)
     await page.getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' }).fill('5')
     await page.clock.install()

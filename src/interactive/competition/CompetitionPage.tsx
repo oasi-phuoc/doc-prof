@@ -60,7 +60,7 @@ function RoomGame({ view, host, local = false, busy = false, now, command, answe
     {host && <button className="ci-primary ci-competition-start" disabled={!view.players.length || busy} onClick={() => command('start')}>Commencer la compétition</button>}
   </main>
   if (view.phase === 'finished') return <main className="ci-container ci-competition-finished"><h1 tabIndex={-1}>Bravo à tous !</h1><p>{view.title}</p><Scores view={view} /><p>Les égalités gardent le même rang.</p></main>
-  if (view.phase === 'handoff' && turn) return <main className="ci-container ci-competition-handoff"><h1 tabIndex={-1}>À toi !</h1><CompetitionPortrait avatarId={turn.avatarId} seat={turn.seat} /><p>Passez l’appareil à cette mascotte.</p><p>Question {view.index + 1} / {view.total}</p><button className="ci-primary" onClick={() => command('begin-turn')}>Je suis prêt</button></main>
+  if (view.phase === 'handoff' && turn) return <main className="ci-container ci-competition-handoff"><h1 tabIndex={-1}>À toi !</h1><CompetitionPortrait avatarId={turn.avatarId} seat={turn.seat} /><p>Passez l’appareil à cette mascotte.</p><p className="ci-handoff-progress">Question {view.index + 1} / {view.total}</p><button className="ci-primary" onClick={() => command('begin-turn')}>Je suis prêt</button></main>
   return <main className="ci-competition-main">
     <div className="ci-competition-round-head"><span>Question {view.index + 1} / {view.total}</span><span>{view.answered} / {view.players.length} réponse(s)</span></div>
     {view.paused ? <section className="ci-competition-pause"><h1 tabIndex={-1}>Pause</h1><p>Le temps et les réponses sont suspendus.</p>{host && <button className="ci-primary" onClick={() => command('resume')}>Reprendre</button>}</section> : <>

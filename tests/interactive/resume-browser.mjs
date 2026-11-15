@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { writeFile } from 'node:fs/promises'
@@ -32,7 +33,7 @@ try {
   await page.context().addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
   await page.goto(`${base}/interactif/demo`)
   await page.getByRole('button', { name: /Commencer la séance/ }).waitFor({ timeout: 120000 })
-  await page.getByRole('button', { name: 'Mode de jeu', exact: true }).click()
+  await gameControl(page,'Mode de jeu').click()
   await page.getByRole('spinbutton', { name: 'Temps de réflexion (secondes)' }).fill('5')
   await page.clock.install()
   await page.clock.pauseAt(new Date(Date.now() + 1000))
@@ -41,7 +42,7 @@ try {
   await page.clock.runFor(2100)
   assert.equal(await page.locator('.ci-timer-value').innerText(), '0:03')
   await page.getByRole('button', { name: 'Pause', exact: true }).click()
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   const thinking = await savedClock(page, 'thinking')
   await page.reload()
@@ -49,7 +50,7 @@ try {
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 30000 })
   assert.match(await page.locator('.ci-launch').innerText(), /Reprendre la séance/, await page.locator('body').innerText())
   await page.clock.pauseAt(new Date((await page.evaluate(() => Date.now())) + 100))
-  assert.equal(await page.getByRole('button', { name: 'Mode de jeu', exact: true }).getAttribute('aria-description'), 'Mode actuel : Solo')
+  assert.equal(await gameControl(page,'Mode de jeu').getAttribute('aria-description'), 'Mode actuel : Solo')
   await page.getByRole('button', { name: /Reprendre la séance/ }).click()
   await page.locator('.ci-pause').waitFor()
   assert.equal(await page.locator('.ci-timer-value').innerText(), '0:03')
@@ -61,7 +62,7 @@ try {
   assert.match(await page.locator('.ci-correction-status').innerText(), /Temps écoulé/)
   await page.clock.runFor(2100)
   await page.getByRole('button', { name: 'Pause', exact: true }).click()
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.getByRole('button', { name: /Reprendre la séance/ }).waitFor()
   const correction = await savedClock(page, 'revealed')
   await page.reload()

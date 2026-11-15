@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -20,7 +21,7 @@ const original = structuredClone(recipe)
 const saved = { id: 'numeracy-source', name: 'Comparaisons et suites', domains: ['algèbre'], recipe, createdAt: '2026-11-11T00:00:00Z', updatedAt: '2026-11-11T00:00:00Z' }
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const results = [], errors = [], methods = []
-const button = (page, name) => page.getByRole('button', { name, exact: true })
+const button = (page, name) => gameControl(page,name)
 const decimalMask = ['□', '□', '0,75', '1,1', '□', '□']
 const terms = (page) => page.locator('.ci-question .ci-number-sequence b').allTextContents()
 async function setup(width, height) {
@@ -35,7 +36,7 @@ async function setup(width, height) {
   return { context, page }
 }
 async function navigate(page, prompt) {
-  await page.getByRole('button', { name: /^Choisir une question ·/ }).click()
+  await gameControl(page,/^Choisir une question ·/).click()
   await page.getByRole('dialog', { name: 'Choisir une question', exact: true }).locator('li button').filter({ hasText: prompt }).first().click()
   await page.waitForFunction(() => document.querySelector('.ci-round-question')?.dataset.ciReadability !== undefined)
 }

@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -17,7 +18,7 @@ const makeFiche=(id,item,config)=>({id,name:id,domains:['gattegno'],recipe:{...d
 const fiches=[makeFiche('duel-numeric',numeric,defaultPage('algèbre')),makeFiche('duel-words',phrase,{...defaultPage('gattegno'),topic:'phrase-simple',exerciseType:'phrase-simple-colorier'})]
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
 const results=[],errors=[],methods=[];let activePage
-const button=(page,name)=>page.getByRole('button',{name,exact:true})
+const button=(page,name)=>gameControl(page,name)
 const side=(page,value)=>page.locator(`.ci-duel-player[data-side="${value}"]`)
 const answer=(page,value,text)=>side(page,value).locator('.ci-duel-answer').filter({has:page.locator('.ci-duel-answer-content').getByText(text,{exact:true})})
 const hp=async page=>(await page.locator('.ci-duel-hp').allTextContents()).map(text=>Number(text.replace(/\D/g,'')))
@@ -53,8 +54,9 @@ async function fits(page){
   }
   for(const player of await page.locator('.ci-duel-player').all()){
     const portrait=await player.locator('.ci-competition-portrait').boundingBox(),zone=await player.boundingBox(),health=await player.locator('.ci-duel-health-row').boundingBox(),cards=await player.locator('.ci-duel-cards').boundingBox()
-    assert.equal(Math.round(portrait.width),vp.width<=700?144:276);assert.equal(Math.round(portrait.height),vp.width<=700?144:276)
-    assert.ok(Math.abs(portrait.x+portrait.width/2-zone.x-zone.width/2)<1);assert.ok(health.y>=portrait.y+portrait.height-1);assert.ok(cards.y>=health.y+health.height-1)
+    const expected=vp.width<=700?Math.min(144,zone.width-38):276;assert.ok(Math.abs(portrait.width-expected)<1);assert.ok(Math.abs(portrait.height-expected)<1)
+    const right=await player.getAttribute('data-side')==='right';assert.ok(right?health.x>=portrait.x+portrait.width-1:health.x+health.width<=portrait.x+1);assert.ok(health.y>=portrait.y-1&&health.y+health.height<=portrait.y+portrait.height+1);assert.ok(cards.y>=portrait.y+portrait.height-1)
+    const text=await player.locator('.ci-duel-hp').boundingBox();assert.ok(text.x>=health.x&&text.x+text.width<=health.x+health.width&&text.y>=health.y&&text.y+text.height<=health.y+health.height)
     assert.ok(!(await player.locator('.ci-duel-fighter').innerText()).includes('victoire'))
   }
 }
@@ -101,7 +103,7 @@ try{
     assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),'right')
     assert.equal(await side(page,'right').locator('.ci-duel-answer-key').count(),1)
     assert.equal(await side(page,'right').locator('.ci-duel-answer-muted').count(),5)
-    await next(page,first);assert.equal(await page.locator('.ci-duel-critical').innerText(),'Critique ×2 · 20 %')
+    await next(page,first);assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'2');assert.equal(await page.locator('[data-power-aura="2"]').count(),2)
     const second=await id(page);await answer(page,'left','5').click()
     assert.deepEqual(await hp(page),[80,90]);assert.equal(await page.locator('.ci-mistake-object').count(),6)
     assert.equal(await page.locator('.ci-duel-flight').count(),0)
@@ -118,7 +120,7 @@ try{
     await button(page,'Quitter le plein écran').click()
     await button(page,'Contraste').click();await axe(page);await button(page,'Contraste').click()
     if(width===360){
-      assert.equal(await page.locator('.ci-duel-super-critical').innerText(),'Super critique ×3 · 30 %')
+      assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'3');assert.equal(await page.locator('[data-power-aura="3"]').count(),2)
       let previous=await id(page);await answer(page,'left','5').click();assert.deepEqual(await hp(page),[50,90]);assert.equal(await page.locator('.ci-mistake-object').count(),9);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-super-nova').count(),1)
       assert.equal(await side(page,'left').locator('.ci-competition-portrait').evaluate(node=>getComputedStyle(node).animationName),'ci-duel-ultra-hurt')
       await next(page,previous);previous=await id(page);await answer(page,'right','4').click();assert.deepEqual(await hp(page),[20,90]);assert.ok(await page.locator('.ci-duel-flight').count()>=7);assert.equal(await page.locator('.ci-super-ring').count(),3);assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),'left')

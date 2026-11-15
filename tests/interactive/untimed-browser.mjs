@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
@@ -7,7 +8,7 @@ try {
   await page.context().addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
   await page.goto(`${base}/interactif/demo`)
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
-  await page.getByRole('button', { name: 'Mode de jeu', exact: true }).click()
+  await gameControl(page,'Mode de jeu').click()
   const enabled = page.getByRole('checkbox', { name: 'Activer le minuteur', exact: true })
   assert.equal(await enabled.isEnabled(), true)
   await enabled.uncheck()
@@ -26,7 +27,7 @@ try {
   assert.equal(await page.locator('.ci-round-question .ci-explanation, .ci-round-question .ci-model-answer').count(), 0)
   await page.clock.runFor(5100)
   await page.locator('.ci-progress').filter({ hasText: 'Question 2 /' }).waitFor()
-  await page.getByRole('button', { name: 'Régler le minuteur', exact: true }).click()
+  await gameControl(page,'Régler le minuteur').click()
   assert.equal(await enabled.isEnabled(), true)
   assert.equal(await enabled.isChecked(), false)
   await enabled.check()
@@ -40,7 +41,7 @@ try {
   await page.locator('.ci-answer').first().click()
   await page.locator('.ci-reveal').waitFor()
   assert.equal(await page.locator('.ci-round-question .ci-explanation, .ci-round-question .ci-model-answer').count(), 0, 'Geometry must not repeat the answer below the cards')
-  await page.getByRole('button', { name: 'Quitter la séance', exact: true }).click()
+  await gameControl(page,'Quitter la séance').click()
   await page.locator('.ci-launch:enabled').waitFor()
   await enabled.uncheck()
   await page.getByRole('button', { name: 'Tout désélectionner', exact: true }).click()

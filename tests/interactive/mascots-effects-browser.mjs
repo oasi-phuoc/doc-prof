@@ -1,3 +1,4 @@
+import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import {mkdir,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
@@ -15,7 +16,7 @@ const {signatureAttack,attackSequence}=await vite.ssrLoadModule('/src/interactiv
 const recipe={...demoRecipe(),pages:[{...demoRecipe().pages[0],count:1,libreItems:[{layout:'select',prompt:'2 + 2 = ?',options:['4','5','6','7','8','9'],answer:'4'}]}]}
 const saved={id:'mascot-effects',name:'Mascottes et animations',recipe,domains:['algèbre'],createdAt:'2026-11-13T00:00:00Z',updatedAt:'2026-11-13T00:00:00Z'}
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
-const button=(page,name)=>page.getByRole('button',{name,exact:true}),results=[],errors=[],methods=[]
+const button=(page,name)=>gameControl(page,name),results=[],errors=[],methods=[]
 async function setup(width,height){
   const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'})
   await context.addCookies([{name:'clairfle-fiche-access',value:'admin',url:base}])
@@ -78,6 +79,11 @@ try{
       assert.equal(motion.name,`ci-attack-${attack.motion}`);assert.equal(motion.duration,attack.duration)
       assert.ok(Math.abs(motion.endX-motion.dx)<.01&&Math.abs(motion.endY-motion.dy)<.01)
       motions.push({...motion,mascot:mascot.id})
+      await previews.getByRole('checkbox',{name:'Prévisualiser un super critique ×3',exact:true}).check()
+      const angry=previews.locator('[data-demo-side="left"] .ci-mascot-angry');await angry.waitFor()
+      assert.ok((await angry.evaluate(node=>getComputedStyle(node).backgroundImage)).includes('mascots-angry-'))
+      const angryStyle=mascotStyle(mascot.id),position=await angry.evaluate(node=>[getComputedStyle(node).backgroundPositionX,getComputedStyle(node).backgroundPositionY]);assert.deepEqual(position,[angryStyle['--ci-angry-x'],angryStyle['--ci-angry-y']].map(value=>`${Number(parseFloat(value).toFixed(4))}%`))
+      await previews.getByRole('checkbox',{name:'Prévisualiser un super critique ×3',exact:true}).uncheck()
       const reserved=await right.getByRole('button',{pressed:true}).getAttribute('aria-label'),replacement=MASCOTS.find(avatar=>avatar.id!==mascot.id&&avatar.label!==reserved)
       await left.getByRole('button',{name:replacement.label,exact:true}).click()
       await right.getByRole('button',{name:mascot.label,exact:true}).click()

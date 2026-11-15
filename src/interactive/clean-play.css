@@ -1,0 +1,25 @@
+.ci-game-options[hidden] { display: none; }
+.ci-header-tools > .ci-toolbar { display: contents; }
+.ci-game-options { position: absolute; right: 0; top: 100%; z-index: 60; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; width: min(420px,calc(100vw - 16px)); padding: 12px; background: var(--ci-paper,#fff); border: 1px solid var(--ci-line,#dce0e8); border-radius: 16px; box-shadow: 0 8px 28px #18223824; }
+.ci-game-options .ci-header-option,.ci-game-options .ci-header-timer-settings { position: static; }
+.ci-game-options .ci-toolbar-options,.ci-game-options .ci-timer-options { top: calc(100% + 6px); right: 0; left: auto; max-width: min(420px,calc(100vw - 16px)); }
+.ci-app .ci-clean-header { position: relative; z-index: 40; min-height: 52px; padding: 4px 8px; gap: 8px; background: transparent; border: 0; flex-wrap: nowrap; }
+.ci-clean-header .ci-header-start,.ci-clean-header .ci-competition-heading { display: none !important; }
+.ci-app .ci-clean-header .ci-header-tools { position: relative; margin-left: auto; width: auto; flex: 0 0 auto; gap: 6px; order: 1; }
+.ci-app .ci-clean-header .ci-icon-button { width: 44px; height: 44px; min-height: 44px; padding: 9px; }
+.ci-app .ci-clean-header .ci-header-audio { flex: 1; min-width: 0; margin: 0; order: 0; }
+.ci-clean-header .ci-header-audio:empty { display: none; }
+.ci-clean-header .ci-header-audio audio { height: 32px; }
+.ci-clean-header .ci-header-audio .ci-audio { padding: 0; margin: 0; }
+.ci-playing .ci-controls > p[role='status'],.ci-playing .ci-classification-progress,.ci-competition-playing .ci-classification-progress,.ci-playing .ci-word-drop-help,.ci-competition-playing .ci-word-drop-help { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.ci-competition-round-head,.ci-competition-handoff .ci-handoff-progress { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.ci-competition-status > div { display: flex; flex: 1; align-items: center; justify-content: center; }
+.ci-competition-status > div > p,.ci-competition-status > div > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.ci-competition-status .ci-competition-clock { text-align: center; margin: auto; }
+.ci-playing .ci-solo-session .ci-controls { justify-content: center; }
+.ci-playing .ci-solo-session .ci-controls > .ci-solo-pause { position: absolute; left: 0; }
+.ci-playing .ci-solo-session .ci-controls > [role='timer'] { margin: auto; text-align: center; font-size: 22px; font-weight: 800; }
+.ci-app.ci-playing > .ci-header.ci-clean-header,.ci-app.ci-competition-playing > .ci-header.ci-clean-header { flex-wrap: nowrap; min-height: 52px; }
+.ci-app.ci-playing > .ci-header.ci-clean-header .ci-header-tools,.ci-app.ci-competition-playing > .ci-header.ci-clean-header .ci-header-tools { flex: 0 0 auto; width: auto; gap: 6px; order: 1; }
+.ci-app.ci-playing > .ci-header.ci-clean-header .ci-header-audio { flex: 1 1 auto; order: 0; min-width: 0; }
+.ci-app .ci-controls .ci-control-start { display: flex; width: auto; gap: 4px; flex: 0 0 auto; }
