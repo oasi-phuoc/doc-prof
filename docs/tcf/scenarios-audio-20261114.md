@@ -1,6 +1,6 @@
 # Catégories audio et scénarios — 14 novembre 2026
 
-**Reprise des interlocuteurs :** un dialogue doit montrer ses deux interlocuteurs. Le choix antérieur de laisser une personne hors cadre est abandonné. Une première scène mère/Bastien est corrigée ; trois nouveaux rendus à une seule personne restent hors des liaisons actives. Le [registre de reprise](reprise-interlocuteurs-scenes-20261114.md) signale 27 liaisons à reprendre et 62 à recompter. Ces scènes ne sont pas déclarées conformes à la nouvelle règle, même si leur liaison technique existait déjà. Aucune écoute directe des voix n’a été effectuée.
+**Reprise du 15 novembre : sept PNG à deux interlocuteurs entiers.** Quatre cadrages remplacent les scènes existantes et fonctionnent aussi dans les anciennes fiches ; trois images B1 sont préparées sans activation, avec leurs personnes à confirmer. Le [registre de reprise](reprise-interlocuteurs-scenes-20261114.md) compte **25 liaisons connues à reprendre (22 images)** et **57 décomptes détaillés à terminer**. Les 87 liaisons existantes ne sont pas toutes déclarées conformes au nouveau critère. Les réserves de voix sont conservées, sans nouvelle écoute directe. [Rapport et reste à faire](reprise-dialogues-cadrages-20261115.md).
 
 La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.md) et ses 41 corrections sont terminées. Le classement porte sur les **346 nouveaux supports DELF Actif** ; il ne constitue pas une nouvelle écoute humaine.
 
@@ -29,9 +29,9 @@ Les lots complémentaires récupérés sur `main` ajoutent **40 PNG et leurs pre
 
 La [suite B1](generation-scenarios-b1-suite-20261114.json) ajoute **quatre PNG originaux et quatre liaisons** : vêtements de pluie conseillés par la mère, désaccord dans une file avec la dame en veste blanche, cycliste témoin auprès d’un agent, enquête sur les boîtes à livres. Les personnages et objets utiles sont entiers, les rôles sont cités dans la transcription et les projets ne sont pas représentés comme accomplis.
 
-La [suite complémentaire B1](generation-scenarios-b1-complement-20261114.json) ajoute quatre visuels : le contrôle routier montre deux interlocuteurs et est lié ; enseignante, personne débordée et Elsa restent préparés sans activation, car leur second interlocuteur manque. La [reprise mère/Bastien](correction-interlocuteurs-pluie-20261114.json) remplace également la première image de la mère seule, sans ajouter une nouvelle piste.
+La [suite complémentaire B1](generation-scenarios-b1-complement-20261114.json) ajoute quatre visuels : le contrôle routier montre deux interlocuteurs et est lié ; enseignante, personne débordée et Elsa ont désormais une reprise à deux interlocuteurs préparée sans activation, avec concordance à confirmer. La [reprise mère/Bastien](correction-interlocuteurs-pluie-20261114.json) remplace également la première image de la mère seule, sans ajouter une nouvelle piste.
 
-Au total, **20 scènes A1/A2 ont une image préparée en attente de confirmation des personnes** ; **sept scènes B1 restent à créer et trois sont à reprendre pour ajouter un interlocuteur**. Ces 30 scènes ne sont pas comptées comme disponibles.
+Au total, **20 scènes A1/A2 ont une image préparée en attente de confirmation des personnes** ; **sept scènes B1 restent à créer et trois reprises à deux interlocuteurs restent à confirmer**. Ces 30 scènes ne sont pas comptées comme disponibles.
 
 **Neuf autres usages de ce lot sont préparés sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Ils sont inclus dans les 30 scènes à terminer et ne sont pas comptés comme disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
 
@@ -45,7 +45,7 @@ Le contrôle de la fiche imprimable a aussi révélé une dernière rangée masq
 
 La [comparaison des six banques](verification-scenes-priorite-20261114.json) confirme : **zéro nouveau trio, question, réponse, transcription ou MP3 modifié**. Seule l’URL de l’image du coureur change dans la banque A1. Les **277 trios DELF Actif actifs**, **469 candidatures restantes** et **370 trios historiques** sont conservés pendant la priorité aux scènes.
 
-Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie : **6 956 images** ; catalogue audio : 8 801 fichiers, 6 634 questions et 14 856 formats de réponse.
+Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie actuelle : **6 718 images** ; catalogue audio : 8 801 fichiers  6 734 questions et 15 056 formats de réponse.
 
 Les contrôles couvrent les empreintes, les rôles documentés, les 39 recontrôles et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le [contrôle Chromium prioritaire](scenarios-priorite-20261114-browser.json) charge 36 images sur six pages A1/A2, dont 21 PNG distincts du lot, sans erreur. Le [test des anciennes recettes](scenarios-genres-20261114-browser.json) contrôle aussi le coureur corrigé ; le [contrôle B1](scenarios-b1-suite-20261114-browser.json) couvre les quatre nouvelles scènes.
 
@@ -57,3 +57,5 @@ node tests/audio-replacement/scenarios-browser.mjs --priority
 node tests/audio-replacement/scenarios-browser.mjs --gender-review
 node tests/audio-replacement/scenarios-browser.mjs --b1-suite
 ```
+
+Les [sept reprises du 15 novembre](reprise-dialogues-cadrages-20261115.md) ajoutent quatre corrections de cadrage et trois préparations B1, sans nouvelle liaison audio. Le [contrôle des anciennes recettes](scenarios-interlocuteurs-20261115-browser.json) couvre les quatre redirections et les six cadres visibles.

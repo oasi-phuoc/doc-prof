@@ -161,6 +161,7 @@ try {
   const b1Suite = read('docs/tcf/generation-scenarios-b1-suite-20261114.json')
   const b1Complement = read('docs/tcf/generation-scenarios-b1-complement-20261114.json')
   const interlocutorCorrection = read('docs/tcf/correction-interlocuteurs-pluie-20261114.json')
+  const framingCorrections = read('docs/tcf/corrections-interlocuteurs-20261115.json')
   const expansions = [priority, suite, a1Complement, a2Complement, a2Final, b1Suite, b1Complement, interlocutorCorrection]
   for (const asset of interlocutorCorrection.images) {
     assert.equal(asset.scene_review.visible_interlocutors, 2)
@@ -188,7 +189,7 @@ try {
     assert.equal(source.audioSha256, binding.audio_sha256)
     assert.equal(source.sourceSha256, binding.source_sha256)
   }
-  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length), review.summary.new_original_pngs)
+  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length) + framingCorrections.images.length, review.summary.new_original_pngs)
   assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
   assert.equal(suite.images.length, suite.summary.original_pngs)
   assert.equal(suite.summary.new_scenario_audio_bindings + suite.summary.awaiting_gender_confirmation, suite.summary.prepared_scene_uses)
@@ -212,7 +213,7 @@ try {
   assert.equal(drawAssociationCompose('A1-A2', createRng(923), { audioSlots: busSources.map(source => source.audio) }), null, 'The reused bus scene cannot compete with itself')
   const suitePreparation = read('docs/gallery/preparation-scenarios-a2-suite-20261114.json')
   assert.equal(suitePreparation.generated_images, suite.images.length)
-  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images)]) {
+  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images), ...framingCorrections.images]) {
     const bytes = readFileSync(`public${asset.path}`)
     assert.equal(sha(bytes), asset.sha256)
     assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
@@ -222,6 +223,36 @@ try {
     assert.equal(approved.get(asset.path).style_review.reference_commit, '48a753d8d6bd095e41968b39da88dbcb331fee11')
     assert.ok(asset.visual_review)
     for (const reference of asset.reference_images ?? []) assert.equal(sha(readFileSync(`public${reference.path}`)), reference.sha256)
+  }
+  assert.equal(framingCorrections.human_audio_listening_performed, false)
+  assert.equal(framingCorrections.voice_gender_validated, false)
+  assert.equal(framingCorrections.summary.new_scenario_audio_bindings, 0)
+  for (const asset of framingCorrections.images) {
+    assert.equal(sha(readFileSync(`public${asset.previous_image}`)), asset.previous_image_sha256)
+    assert.equal(asset.scene_review.visible_interlocutors, 2)
+    assert.equal(asset.scene_review.full_body_visible, true)
+    for (const binding of asset.bindings) {
+      const source = catalog.sources.find(s => s.audio === binding.audio)
+      assert.equal(sha(binding.transcription), binding.source_sha256)
+      assert.equal(sha(readFileSync(`public${binding.audio}`)), binding.audio_sha256)
+      if (asset.binding_action === 'replace_existing_scene') {
+        assert.equal(source.image, asset.path)
+        assert.equal(source.imageSha256, asset.sha256)
+        assert.equal(source.transcription, binding.transcription)
+        assert.equal(source.genderAudit.voice_confirmation_pending, asset.preserves_existing_voice_reserve)
+        assert.equal(tcfImageSrc(asset.previous_image), asset.path)
+        assert.equal(tcfImageSrc(`${asset.previous_image}?revision=3#scene`), `${asset.path}?revision=3#scene`)
+      } else {
+        assert.equal(asset.binding_action, 'replace_prepared_scene')
+        assert.equal(source, undefined, 'The newly visible person must not lift an unresolved voice reserve')
+        const support = review.supports.find(s => s.audio === binding.audio)
+        assert.equal(support.decision, 'eligible_scene_pending')
+        assert.equal(support.preparedImage, asset.path)
+        assert.equal(support.preparedImageSha256, asset.sha256)
+        assert.equal(support.genderReview.status, 'needs_voice_review')
+        assert.ok(support.alternativeSceneImages.some(previous => previous.path === asset.previous_image))
+      }
+    }
   }
   for (const asset of expansions.flatMap(b => [...b.images, ...b.reuses])) {
     assert.equal(sha(readFileSync(`public${asset.path}`)), asset.sha256)

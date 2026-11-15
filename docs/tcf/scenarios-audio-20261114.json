@@ -44,7 +44,7 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 102,
+    "new_original_pngs": 109,
     "new_scene_image_uses": 46,
     "priority_scene_reuses": 4,
     "priority_prepared_scene_uses": 51,
@@ -64,7 +64,8 @@
       "corrections_installed": 1
     },
     "prepared_scenes_awaiting_gender_confirmation": 23,
-    "remaining_without_prepared_image": 7
+    "remaining_without_prepared_image": 7,
+    "interlocutor_replacement_pngs_20261115": 7
   },
   "supports": [
     {
@@ -6115,7 +6116,7 @@
       "image": null,
       "genderReview": {
         "status": "needs_voice_review",
-        "basis": "Elsa explicitement décrite prête et ma chérie ; partenaire hors cadre. Accord sur une sortie future sans heure dessinée ni séance déjà commencée. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+        "basis": "Les deux interlocuteurs sont désormais visibles. Le second rôle et son genre ne sont pas entièrement documentés ; voix non écoutées. La scène reste préparée sans activation.",
         "audio_listening_performed": false,
         "evidence": [
           {
@@ -6124,10 +6125,39 @@
           }
         ]
       },
-      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
-      "preparedImageSha256": "18d10dbac87d8dece38cfc885feb32e878d288215f238dfae9027651b57572c0",
-      "pendingReason": "Deux interlocuteurs doivent être visibles. Image à une seule personne à reprendre ; contrôle de la voix du second interlocuteur non effectué.",
-      "preparationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
+      "preparedImage": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
+      "preparedImageSha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
+      "pendingReason": "Les deux interlocuteurs sont visibles ; leur concordance sonore, le second rôle et son genre restent à confirmer. Liaison audio non activée.",
+      "preparationRegister": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+          "sha256": "18d10dbac87d8dece38cfc885feb32e878d288215f238dfae9027651b57572c0",
+          "register": "docs/tcf/generation-scenarios-b1-complement-20261114.json",
+          "gender_review": {
+            "status": "needs_voice_review",
+            "basis": "Elsa explicitement décrite prête et ma chérie ; partenaire hors cadre. Accord sur une sortie future sans heure dessinée ni séance déjà commencée. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+            "audio_listening_performed": false,
+            "evidence": [
+              {
+                "role": "Elsa femme",
+                "quote": "Essaie d’être prête ma chérie."
+              }
+            ]
+          },
+          "source_sha256": "d0c91465c44566d9303777a4dce6e3a9065f1177a210c581f5efdf8a38641ff0",
+          "audio_sha256": "42a712e8378bc42bd9f8ab202320302e65d0827def675f9302594fbaa993e59a"
+        }
+      ],
+      "sceneReview": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "source_role_assignment": "second_person_requires_confirmation",
+        "audio_listening_performed": false
+      },
+      "visualReview": "Elsa et son interlocuteur préparent une sortie future dans une même scène, entiers et en interaction. Aucun départ ou accueil du véhicule déjà réalisé, pas d’horaire lisible. Genre du partenaire et canal exact de l’échange non établis ; préparation seulement."
     },
     {
       "exercise": "tcf-delf-actif-b1-001-05",
@@ -6816,7 +6846,7 @@
       "image": null,
       "genderReview": {
         "status": "needs_voice_review",
-        "basis": "Enseignante explicitement appelée madame ; élèves hors cadre. Révision avant le contrôle, aucune note ou quantité de pages inventée dans l’image. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+        "basis": "Les deux interlocuteurs sont désormais visibles. Le second rôle et son genre ne sont pas entièrement documentés ; voix non écoutées. La scène reste préparée sans activation.",
         "audio_listening_performed": false,
         "evidence": [
           {
@@ -6825,10 +6855,39 @@
           }
         ]
       },
-      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
-      "preparedImageSha256": "c0959560db6b99032f056c3a513d6792f8330e2df4a6a3feedd45b889a7752aa",
-      "pendingReason": "Deux interlocuteurs doivent être visibles. Image à une seule personne à reprendre ; contrôle de la voix du second interlocuteur non effectué.",
-      "preparationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
+      "preparedImage": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-revisions-deux-interlocuteurs.png",
+      "preparedImageSha256": "1ea19b92a4f5228e25ec837e447416a8311248f7d655c44d3500465dfd6af0f1",
+      "pendingReason": "Les deux interlocuteurs sont visibles ; leur concordance sonore, le second rôle et son genre restent à confirmer. Liaison audio non activée.",
+      "preparationRegister": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
+          "sha256": "c0959560db6b99032f056c3a513d6792f8330e2df4a6a3feedd45b889a7752aa",
+          "register": "docs/tcf/generation-scenarios-b1-complement-20261114.json",
+          "gender_review": {
+            "status": "needs_voice_review",
+            "basis": "Enseignante explicitement appelée madame ; élèves hors cadre. Révision avant le contrôle, aucune note ou quantité de pages inventée dans l’image. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+            "audio_listening_performed": false,
+            "evidence": [
+              {
+                "role": "enseignante femme",
+                "quote": "Mais madame, ce n’est pas possible."
+              }
+            ]
+          },
+          "source_sha256": "d245a2de70bc1ec6f5f36a45c5b598d6f28778ec393a4e8827f21529eac87a27",
+          "audio_sha256": "534d75004bf38cb1b147e5cc3ff32884872020a8d6ee57f8cbc39e9e27ec5c23"
+        }
+      ],
+      "sceneReview": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "source_role_assignment": "second_person_requires_confirmation",
+        "audio_listening_performed": false
+      },
+      "visualReview": "Enseignante et élève se répondant, personnages entiers devant un tableau vierge. Objection sur les révisions avant le contrôle, pas de copie notée ou trente pages prétendument comptées. Genre de l’élève non établi ; image préparée sans activation."
     },
     {
       "exercise": "tcf-delf-actif-b1-032-02",
@@ -6912,7 +6971,7 @@
       "image": null,
       "genderReview": {
         "status": "needs_voice_review",
-        "basis": "Locuteur au masculin débordé ; auteur de l’invitation hors cadre. Visites attendues, aucune visite déjà arrivée ni métier précis inventé. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+        "basis": "Les deux interlocuteurs sont désormais visibles. Le second rôle et son genre ne sont pas entièrement documentés ; voix non écoutées. La scène reste préparée sans activation.",
         "audio_listening_performed": false,
         "evidence": [
           {
@@ -6921,10 +6980,39 @@
           }
         ]
       },
-      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
-      "preparedImageSha256": "04605f1c7d0aef02236cc8dda52fb4c6ae2c8eb9e0537ff6757a6015367f3af0",
-      "pendingReason": "Deux interlocuteurs doivent être visibles. Image à une seule personne à reprendre ; contrôle de la voix du second interlocuteur non effectué.",
-      "preparationRegister": "docs/tcf/generation-scenarios-b1-complement-20261114.json"
+      "preparedImage": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
+      "preparedImageSha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
+      "pendingReason": "Les deux interlocuteurs sont visibles ; leur concordance sonore, le second rôle et son genre restent à confirmer. Liaison audio non activée.",
+      "preparationRegister": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+          "sha256": "04605f1c7d0aef02236cc8dda52fb4c6ae2c8eb9e0537ff6757a6015367f3af0",
+          "register": "docs/tcf/generation-scenarios-b1-complement-20261114.json",
+          "gender_review": {
+            "status": "needs_voice_review",
+            "basis": "Locuteur au masculin débordé ; auteur de l’invitation hors cadre. Visites attendues, aucune visite déjà arrivée ni métier précis inventé. Le personnage visible est documenté, mais le second interlocuteur manque ; son rôle et sa voix restent à vérifier avant une nouvelle image à deux personnes.",
+            "audio_listening_performed": false,
+            "evidence": [
+              {
+                "role": "homme débordé",
+                "quote": "Je suis débordé de travail, de plus j’attends des visites et pfff ! Je n’en peux plus !"
+              }
+            ]
+          },
+          "source_sha256": "d5eb4147c0a2a58c0bb29fdf64271138384dcfbcb36f2e15ee119626d2cfd1bb",
+          "audio_sha256": "2f7299b649d6b9554e365cb5ac08ebed7cf75739d4336beacf94ae26c965879b"
+        }
+      ],
+      "sceneReview": {
+        "status": "two_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "source_role_assignment": "second_person_requires_confirmation",
+        "audio_listening_performed": false
+      },
+      "visualReview": "Homme débordé refusant poliment l’invitation d’une autre personne visible, papiers sans métier précis. Aucun autre visiteur déjà arrivé ; les visites attendues restent futures. Genre de la personne qui invite à vérifier ; liaison non activée."
     },
     {
       "exercise": "tcf-delf-actif-b1-032-06",

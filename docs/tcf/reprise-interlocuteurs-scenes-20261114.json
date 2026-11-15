@@ -12,11 +12,14 @@
   "summary": {
     "sources_examined_for_rework": 90,
     "corrected_images": 1,
-    "full_recount_pending": 62,
-    "new_single_person_images_withheld": 3,
+    "full_recount_pending": 57,
+    "new_single_person_images_withheld": 0,
     "active_source_count": 87,
-    "confirmed_scene_bindings_to_rework": 27,
-    "distinct_images_to_rework": 24
+    "confirmed_scene_bindings_to_rework": 25,
+    "distinct_images_to_rework": 22,
+    "corrected_framing_bindings": 4,
+    "prepared_two_interlocutor_images": 3,
+    "audio_listening_performed": false
   },
   "sources": [
     {
@@ -25,10 +28,15 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
       "audio_sha256": "d43633d49f744deb0b45f5dc62336e85704b869e1b49b7b34b6e5b8fab72aa02",
       "source_sha256": "f70d9a8332e185cbc551ea1ee610e26b3bce86982748d6135b41c86fadc4cb30",
-      "image": "/lib/images/tcf/co/scenes/restaurant/boire-le-jus-d-une-amie.webp",
-      "image_sha256": "d533081b4109c8db299cea7b15c8a006aebadf35b221e977fd35d3bc683e1a48",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-jus-orange-personnages-entiers.png",
+      "image_sha256": "65651c9c451d904da68e0b7d8e39ffdb8ab453d2b709c329e354315cf7fee7c7",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "corrected_framing_existing_binding",
+      "previous_image": "/lib/images/tcf/co/scenes/restaurant/boire-le-jus-d-une-amie.webp",
+      "previous_image_sha256": "d533081b4109c8db299cea7b15c8a006aebadf35b221e977fd35d3bc683e1a48",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "visible_interlocutors": 2,
+      "full_body_visible": true
     },
     {
       "exercise": "tcf-a1-s3-co-4",
@@ -36,10 +44,15 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
       "audio_sha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0",
       "source_sha256": "3a25ff0cdc2dee37d9588f2f36ddeb5542afe17cadc61e59f48f67dccaf55ddc",
-      "image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
-      "image_sha256": "3bce6bb7152859207371a99d92456051ede757787e362ff5903b4bcdb1c13074",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "image_sha256": "1a298ce0fcb6996e415b9ea78e776b7e03c2aa76d202e758c5db426a8922a1e2",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "corrected_framing_existing_binding",
+      "previous_image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+      "previous_image_sha256": "3bce6bb7152859207371a99d92456051ede757787e362ff5903b4bcdb1c13074",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "visible_interlocutors": 2,
+      "full_body_visible": true
     },
     {
       "exercise": "tcf-a1-s3-co-4",
@@ -73,10 +86,15 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-2.mp3",
       "audio_sha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c",
       "source_sha256": "56a222ad6eaa3d636da7779a2ce684ce3f68f316a8a16d88a31c5809d31413c7",
-      "image": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
-      "image_sha256": "5c82ed14203a03eb94e9ab36ff5678adca13d1e677e159c4f36c51be9bcaf144",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-salle-italien-personnages-entiers.png",
+      "image_sha256": "b2ca7b06be2fed3dbbf3c9b41918f599d1dc97c31e09df3106a150f79da5b792",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "corrected_framing_existing_binding",
+      "previous_image": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+      "previous_image_sha256": "5c82ed14203a03eb94e9ab36ff5678adca13d1e677e159c4f36c51be9bcaf144",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "visible_interlocutors": 2,
+      "full_body_visible": true
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -84,10 +102,15 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
       "audio_sha256": "12cc35ffbe6b7b371d7e193ec4b51a94dd592636ec4d13f9cfebdb5bed421d6a",
       "source_sha256": "7162486a286eb805fd9f75f919670632cb3069d2635a17f791d35f2be69abdb7",
-      "image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
-      "image_sha256": "e87f6f4307b190cf394c7de8f35518ac46331ce60e4527a7b32176ec72dfb274",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-collegues-accueil-personnages-entiers.png",
+      "image_sha256": "ff8f107f1b7542cf08c05e8f0a29524a0b669216a3f7378e4a2db3e0df16e0fb",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "corrected_framing_existing_binding",
+      "previous_image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+      "previous_image_sha256": "e87f6f4307b190cf394c7de8f35518ac46331ce60e4527a7b32176ec72dfb274",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "visible_interlocutors": 2,
+      "full_body_visible": true
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -654,7 +677,9 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png",
       "image_sha256": "465d2c0fee8b14c5d40eab92faac6e1d29682a947c15c67bbdfcd309209250df",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_interlocutor_rework",
+      "reason": "Le professeur parle dans la transcription mais seuls les élèves regardant le film sont visibles. Les autres élèves ne remplacent pas l’interlocuteur enseignant.",
+      "visual_count_basis": "Inspection de la scène et lecture de la transcription ; aucune écoute des voix."
     },
     {
       "exercise": "tcf-delf-actif-a2-032-01",
@@ -1036,12 +1061,16 @@
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-01.mp3",
       "audio_sha256": "534d75004bf38cb1b147e5cc3ff32884872020a8d6ee57f8cbc39e9e27ec5c23",
       "source_sha256": "d245a2de70bc1ec6f5f36a45c5b598d6f28778ec393a4e8827f21529eac87a27",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
-      "image_sha256": "c0959560db6b99032f056c3a513d6792f8330e2df4a6a3feedd45b889a7752aa",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-revisions-deux-interlocuteurs.png",
+      "image_sha256": "1ea19b92a4f5228e25ec837e447416a8311248f7d655c44d3500465dfd6af0f1",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
-      "visible_interlocutors": 1,
-      "published_before_current_request": false
+      "status": "prepared_two_interlocutors_voice_review_pending",
+      "visible_interlocutors": 2,
+      "published_before_current_request": false,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
+      "previous_image_sha256": "c0959560db6b99032f056c3a513d6792f8330e2df4a6a3feedd45b889a7752aa",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "full_body_visible": true
     },
     {
       "exercise": "tcf-delf-actif-b1-032-05",
@@ -1049,12 +1078,16 @@
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-05.mp3",
       "audio_sha256": "2f7299b649d6b9554e365cb5ac08ebed7cf75739d4336beacf94ae26c965879b",
       "source_sha256": "d5eb4147c0a2a58c0bb29fdf64271138384dcfbcb36f2e15ee119626d2cfd1bb",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
-      "image_sha256": "04605f1c7d0aef02236cc8dda52fb4c6ae2c8eb9e0537ff6757a6015367f3af0",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
+      "image_sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
-      "visible_interlocutors": 1,
-      "published_before_current_request": false
+      "status": "prepared_two_interlocutors_voice_review_pending",
+      "visible_interlocutors": 2,
+      "published_before_current_request": false,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+      "previous_image_sha256": "04605f1c7d0aef02236cc8dda52fb4c6ae2c8eb9e0537ff6757a6015367f3af0",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "full_body_visible": true
     },
     {
       "exercise": "tcf-delf-actif-b1-001-04",
@@ -1062,12 +1095,16 @@
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-04.mp3",
       "audio_sha256": "42a712e8378bc42bd9f8ab202320302e65d0827def675f9302594fbaa993e59a",
       "source_sha256": "d0c91465c44566d9303777a4dce6e3a9065f1177a210c581f5efdf8a38641ff0",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
-      "image_sha256": "18d10dbac87d8dece38cfc885feb32e878d288215f238dfae9027651b57572c0",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
+      "image_sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
-      "visible_interlocutors": 1,
-      "published_before_current_request": false
+      "status": "prepared_two_interlocutors_voice_review_pending",
+      "visible_interlocutors": 2,
+      "published_before_current_request": false,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+      "previous_image_sha256": "18d10dbac87d8dece38cfc885feb32e878d288215f238dfae9027651b57572c0",
+      "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
+      "full_body_visible": true
     }
   ]
 }

@@ -4,6 +4,8 @@
  * - chemin relatif (`vocabulaire/fruits/pomme.webp`) : sous `public/lib/images|audio/`.
  * Les anciens chemins PO et objets CO sont redirigés vers leur nouveau dossier.
  */
+import scenarioImageReplacements from './scenario-image-replacements.json'
+
 export const TCF_IMAGE_DIR = '/lib/images/'
 export const TCF_AUDIO_DIR = '/lib/audio/'
 
@@ -17,7 +19,7 @@ function resolve(src: string, dir: string): string {
 export function tcfImageSrc(src: string | null | undefined): string {
   if (!src) return ''
   // Les fiches déjà enregistrées peuvent encore contenir l'ancien dossier PO.
-  return resolve(src, TCF_IMAGE_DIR).replace(
+  const resolved = resolve(src, TCF_IMAGE_DIR).replace(
     // Cette série a été remise dans l'ordre narratif. Les anciennes fiches
     // doivent retrouver la même scène malgré la nouvelle numérotation.
     /^\/lib\/images\/comprehension\/po-a1\/pause-cafe-travail-([134])\.webp(?=$|[?#])/,
@@ -39,6 +41,11 @@ export function tcfImageSrc(src: string | null | undefined): string {
     // y compris sur une fiche enregistrée avec la première image de la mère seule.
     /^\/lib\/images\/tcf\/co\/scenes\/delf-actif\/scenario-b1-conseil-vetements-pluie\.png(?=$|[?#])/,
     '/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png',
+  )
+  // Les corrections de cadrage s'appliquent aussi aux anciennes recettes,
+  // sans modifier les paramètres ni l'ancre de leur adresse image.
+  return resolved.replace(/^([^?#]+)([?#].*)?$/, (_match, path: string, suffix = '') =>
+    `${(scenarioImageReplacements as Record<string, string>)[path] ?? path}${suffix}`,
   )
 }
 

@@ -1,0 +1,274 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "97f200bb3636d894f27372a67730f8e29135cab5",
+  "scope": "Quatre cadrages de liaisons existantes remplacés et trois scènes B1 préparées à deux interlocuteurs ; aucun nouveau lien audio, aucune réserve de voix levée.",
+  "summary": {
+    "original_pngs": 7,
+    "replaced_existing_bindings": 4,
+    "replaced_prepared_images": 3,
+    "new_scenario_audio_bindings": 0,
+    "existing_bindings_with_retained_voice_reserve": 3,
+    "new_pending_person_bindings": 3,
+    "generation_calls": 7,
+    "rejected_generations": 0,
+    "active_sources": 87,
+    "pending_scenes": 30,
+    "pending_with_prepared_image": 23,
+    "without_prepared_image": 7
+  },
+  "images": [
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-jus-orange-personnages-entiers.png",
+      "sha256": "65651c9c451d904da68e0b7d8e39ffdb8ab453d2b709c329e354315cf7fee7c7",
+      "source_png": "/workspace/generated_images/exec-6328744b-8f74-46a8-abf9-fafcba97b36b.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/restaurant/boire-le-jus-d-une-amie.webp",
+      "previous_image_preserved": true,
+      "binding_action": "replace_existing_scene"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "sha256": "1a298ce0fcb6996e415b9ea78e776b7e03c2aa76d202e758c5db426a8922a1e2",
+      "source_png": "/workspace/generated_images/exec-4007c429-ad73-4663-927e-b210852d1f0a.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+      "previous_image_preserved": true,
+      "binding_action": "replace_existing_scene"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-salle-italien-personnages-entiers.png",
+      "sha256": "b2ca7b06be2fed3dbbf3c9b41918f599d1dc97c31e09df3106a150f79da5b792",
+      "source_png": "/workspace/generated_images/exec-b9c9eaa8-2634-4283-9208-c25d156443bc.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+      "previous_image_preserved": true,
+      "binding_action": "replace_existing_scene"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-collegues-accueil-personnages-entiers.png",
+      "sha256": "ff8f107f1b7542cf08c05e8f0a29524a0b669216a3f7378e4a2db3e0df16e0fb",
+      "source_png": "/workspace/generated_images/exec-a22bca61-231a-45be-b3d8-cc9c405b76ec.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+      "previous_image_preserved": true,
+      "binding_action": "replace_existing_scene"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-revisions-deux-interlocuteurs.png",
+      "sha256": "1ea19b92a4f5228e25ec837e447416a8311248f7d655c44d3500465dfd6af0f1",
+      "source_png": "/workspace/generated_images/exec-c911d4e8-a1b8-4c94-9097-c80379796e31.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
+      "previous_image_preserved": true,
+      "binding_action": "replace_prepared_scene"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
+      "sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
+      "source_png": "/workspace/generated_images/exec-dafa493d-ba93-4b8f-92b0-2334c248bc08.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+      "previous_image_preserved": true,
+      "binding_action": "replace_prepared_scene"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
+      "sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
+      "source_png": "/workspace/generated_images/exec-e3177149-a5ec-48b6-b86f-3b8a993f4c0c.png",
+      "original_png_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+      "previous_image_preserved": true,
+      "binding_action": "replace_prepared_scene"
+    }
+  ],
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256_before": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "sha256_after": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "image_url_changes": 0,
+      "other_fields_identical": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256_before": "8d2883d6133803f724487c6e53e28ffdc1028de5275ce003fa0ccf40c01e8c1c",
+      "sha256_after": "1c3801cd9e214a4a1564e5784b2ad491a93898d989c74b771a6f619003160890",
+      "image_url_changes": 4,
+      "other_fields_identical": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256_before": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "sha256_after": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "image_url_changes": 0,
+      "other_fields_identical": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256_before": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "sha256_after": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "image_url_changes": 0,
+      "other_fields_identical": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256_before": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "sha256_after": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "image_url_changes": 0,
+      "other_fields_identical": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256_before": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "sha256_after": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "image_url_changes": 0,
+      "other_fields_identical": true
+    }
+  ],
+  "bank_image_url_changes": [
+    {
+      "json_path": [
+        26,
+        "situations",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/co/scenes/restaurant/boire-le-jus-d-une-amie.webp",
+      "after": "/lib/images/tcf/co/scenes/reprises/dialogue-jus-orange-personnages-entiers.png"
+    },
+    {
+      "json_path": [
+        26,
+        "situations",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+      "after": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png"
+    },
+    {
+      "json_path": [
+        31,
+        "situations",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+      "after": "/lib/images/tcf/co/scenes/reprises/dialogue-salle-italien-personnages-entiers.png"
+    },
+    {
+      "json_path": [
+        31,
+        "situations",
+        1,
+        "image"
+      ],
+      "before": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+      "after": "/lib/images/tcf/co/scenes/reprises/dialogue-collegues-accueil-personnages-entiers.png"
+    }
+  ],
+  "other_bank_fields_changed": 0,
+  "new_qcm_trios": 0,
+  "new_audio_bindings": 0,
+  "existing_audio_bindings_preserved": 87,
+  "audio_files_modified": 0,
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "existing_voice_reserves_preserved": true,
+  "checks": {
+    "scenario_draws": 600,
+    "catalogue_tests": 13,
+    "typescript": true,
+    "production_build": true,
+    "bank_check": true,
+    "context_reviews": 1021,
+    "browser": {
+      "report": "docs/tcf/scenarios-interlocuteurs-20261115-browser.json",
+      "pages": 2,
+      "association_images": 12,
+      "gallery_images": 7,
+      "errors": [],
+      "clipped_frames": [],
+      "old_recipe_replacements": 4
+    }
+  },
+  "remaining_scenarios": [
+    {
+      "level": "A1",
+      "candidates": 41,
+      "bound": 31,
+      "pending": 10,
+      "prepared": 10,
+      "without_prepared_image": 0
+    },
+    {
+      "level": "A2",
+      "candidates": 39,
+      "bound": 29,
+      "pending": 10,
+      "prepared": 10,
+      "without_prepared_image": 0
+    },
+    {
+      "level": "B1",
+      "candidates": 16,
+      "bound": 6,
+      "pending": 10,
+      "prepared": 3,
+      "without_prepared_image": 7
+    }
+  ],
+  "remaining_interlocutor_work": {
+    "sources_examined_for_rework": 90,
+    "corrected_images": 1,
+    "full_recount_pending": 57,
+    "new_single_person_images_withheld": 0,
+    "active_source_count": 87,
+    "confirmed_scene_bindings_to_rework": 25,
+    "distinct_images_to_rework": 22,
+    "corrected_framing_bindings": 4,
+    "prepared_two_interlocutor_images": 3,
+    "audio_listening_performed": false
+  },
+  "catalogues": {
+    "images": 6718,
+    "audio_files": 8801,
+    "questions": 6734,
+    "response_formats": 15056
+  },
+  "upstream_progress": {
+    "grammar_co_questions": 100,
+    "grammar_co_supports": 19,
+    "remaining_grammar_co_supports": 233,
+    "remaining_grammar_situations_to_illustrate": 148
+  },
+  "validated_at_upstream": "97f200bb3636d894f27372a67730f8e29135cab5"
+}
