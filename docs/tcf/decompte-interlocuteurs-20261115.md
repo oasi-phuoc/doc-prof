@@ -1,5 +1,7 @@
 # Décompte visuel des 57 liaisons — 15 novembre 2026
 
+**Suite après validation directe :** deux cas de ce décompte (Léna et Anissa) sont corrigés ; le visiteur de la guide reste à reprendre. Les colonnes ci-dessous conservent le constat initial, avec corrections et empreintes nouvelles dans le [registre JSON](decompte-interlocuteurs-20261115.json). [État courant](validation-directe-scenes-20261115.md).
+
 Les 57 décomptes sont terminés : trois interlocuteurs manquants supplémentaires, 21 cadrages à reprendre et 33 liaisons dont les interlocuteurs visibles et le cadrage ont été examinés. Aucune écoute ni confirmation du genre des voix ; les réserves restent conservées. [Rapport général et reste à faire](scenes-b1-final-20261115.md).
 
 | Source / dialogue | Interlocuteurs visibles, minimum | Résultat | Observation |

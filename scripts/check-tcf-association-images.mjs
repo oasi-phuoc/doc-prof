@@ -163,6 +163,19 @@ try {
   const b1Final = read('docs/tcf/generation-scenarios-b1-final-20261115.json')
   const interlocutorCorrection = read('docs/tcf/correction-interlocuteurs-pluie-20261114.json')
   const framingCorrections = read('docs/tcf/corrections-interlocuteurs-20261115.json')
+  const directReview = read('docs/tcf/validation-directe-scenes-20261115.json')
+  const userAccepted = (source, image = source?.image) => {
+    if (!source) return false
+    const accepted = directReview.sources.find(row => row.audio === source.audio && row.exercise === source.exercise && row.dialogue === source.dialogue && row.image === image)
+    if (!accepted) return false
+    assert.equal(source.editorialReview.status, 'user_accepted')
+    assert.equal(source.editorialReview.audio_listening_performed, false)
+    assert.equal(accepted.image_sha256, source.imageSha256)
+    assert.equal(accepted.source_sha256, source.sourceSha256)
+    assert.equal(accepted.audio_sha256, source.audioSha256)
+    assert.equal(accepted.transcription, source.transcription)
+    return true
+  }
   const expansions = [priority, suite, a1Complement, a2Complement, a2Final, b1Suite, b1Complement, interlocutorCorrection, b1Final]
   for (const asset of interlocutorCorrection.images) {
     assert.equal(asset.scene_review.visible_interlocutors, 2)
@@ -178,7 +191,7 @@ try {
   const readyAudios = new Set(expansions.flatMap(batch => [...batch.images, ...batch.reuses])
     .filter(asset => readyStatuses.includes(asset.gender_review.status))
     .flatMap(asset => asset.bindings.map(binding => review.supports.find(r => r.exercise === binding.exercise).audio)))
-  assert.equal(new Set([...genderAudit.sources.map(s => s.audio), ...readyAudios]).size, catalog.sources.length)
+  assert.equal(new Set([...genderAudit.sources.map(s => s.audio), ...readyAudios, ...directReview.sources.map(s => s.audio)]).size, catalog.sources.length)
   const consolidation = read('docs/tcf/consolidation-scenes-20261114.json')
   assert.equal(consolidation.summary.active_scenario_sources, catalog.sources.length)
   assert.equal(consolidation.summary.remaining_scenes, review.summary.scenario_pending)
@@ -190,7 +203,7 @@ try {
     assert.equal(source.audioSha256, binding.audio_sha256)
     assert.equal(source.sourceSha256, binding.source_sha256)
   }
-  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length) + framingCorrections.images.length, review.summary.new_original_pngs)
+  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length) + framingCorrections.images.length + directReview.images.length, review.summary.new_original_pngs)
   assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
   assert.equal(suite.images.length, suite.summary.original_pngs)
   assert.equal(suite.summary.new_scenario_audio_bindings + suite.summary.awaiting_gender_confirmation, suite.summary.prepared_scene_uses)
@@ -229,9 +242,10 @@ try {
     assert.equal(source.transcription, row.transcription)
     assert.equal(source.sourceSha256, row.source_sha256)
     assert.equal(sha(readFileSync(`public${row.audio}`)), row.audio_sha256)
-    assert.equal(source.image, row.image)
+    assert.equal(source.image, row.corrected_image ?? row.image)
     assert.equal(sha(readFileSync(`public${row.image}`)), row.image_sha256)
-    assert.equal(record.status, row.status)
+    if (row.corrected_image) assert.equal(sha(readFileSync(`public${row.corrected_image}`)), row.corrected_image_sha256)
+    assert.equal(record.status, row.current_status ?? row.status)
     assert.equal(row.visual_review.audio_listening_performed, false)
     assert.equal(row.visual_review.voice_gender_validated, false)
     assert.equal(row.visual_review.exact_voice_count_confirmed, false)
@@ -245,7 +259,7 @@ try {
   assert.equal(drawAssociationCompose('A1-A2', createRng(923), { audioSlots: busSources.map(source => source.audio) }), null, 'The reused bus scene cannot compete with itself')
   const suitePreparation = read('docs/gallery/preparation-scenarios-a2-suite-20261114.json')
   assert.equal(suitePreparation.generated_images, suite.images.length)
-  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images), ...framingCorrections.images]) {
+  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images), ...framingCorrections.images, ...directReview.images]) {
     const bytes = readFileSync(`public${asset.path}`)
     assert.equal(sha(bytes), asset.sha256)
     assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
@@ -276,11 +290,16 @@ try {
         assert.equal(tcfImageSrc(`${asset.previous_image}?revision=3#scene`), `${asset.path}?revision=3#scene`)
       } else {
         assert.equal(asset.binding_action, 'replace_prepared_scene')
-        assert.equal(source, undefined, 'The newly visible person must not lift an unresolved voice reserve')
         const support = review.supports.find(s => s.audio === binding.audio)
-        assert.equal(support.decision, 'eligible_scene_pending')
-        assert.equal(support.preparedImage, asset.path)
-        assert.equal(support.preparedImageSha256, asset.sha256)
+        if (userAccepted(source, asset.path)) {
+          assert.equal(support.decision, 'eligible_bound_scene')
+          assert.equal(source.genderReview.status, 'needs_voice_review', 'Editorial acceptance is distinct from voice confirmation')
+        } else {
+          assert.equal(source, undefined, 'An unaccepted recording keeps its scene pending')
+          assert.equal(support.decision, 'eligible_scene_pending')
+          assert.equal(support.preparedImage, asset.path)
+          assert.equal(support.preparedImageSha256, asset.sha256)
+        }
         assert.equal(support.genderReview.status, 'needs_voice_review')
         assert.ok(support.alternativeSceneImages.some(previous => previous.path === asset.previous_image))
       }
@@ -300,10 +319,11 @@ try {
       for (const evidence of asset.gender_review.evidence) assert.ok(binding.transcription.includes(evidence.quote))
       if (!['documented_roles_match', 'no_visible_character'].includes(asset.gender_review.status)) {
         assert.equal(asset.gender_review.status, 'needs_voice_review')
-        assert.notEqual(source?.image, asset.path, 'An unresolved image must not activate, even when another version is approved')
+        const accepted = userAccepted(source, asset.path)
+        if (!accepted) assert.notEqual(source?.image, asset.path, 'A scene without editorial acceptance must remain unselected')
         const prepared = reviewed.preparedImage === asset.path && reviewed.preparedImageSha256 === asset.sha256
         const retained = reviewed.alternativeSceneImages?.some(candidate => candidate.path === asset.path && candidate.sha256 === asset.sha256)
-        assert.ok(prepared || retained, 'Unconfirmed variants remain traceable')
+        assert.ok(prepared || retained || accepted, 'Approved selections and other variants remain traceable')
         if (!source) assert.equal(reviewed.decision, 'eligible_scene_pending')
         continue
       }
@@ -314,7 +334,26 @@ try {
       assert.equal(source.transcription, binding.transcription)
       assert.equal(source.sourceSha256, binding.source_sha256)
       assert.equal(source.audioSha256, binding.audio_sha256)
-      assert.ok(['documented_roles_match', 'no_visible_character'].includes(source.genderReview.status))
+      assert.ok(['documented_roles_match', 'no_visible_character'].includes(source.genderReview.status) || userAccepted(source))
+    }
+  }
+  assert.equal(directReview.human_audio_listening_performed, false)
+  assert.equal(directReview.voice_gender_validated, false)
+  assert.equal(directReview.sources.filter(row => row.action === 'activate_prepared').length, directReview.summary.activated_prepared_scenes)
+  assert.equal(directReview.sources.filter(row => row.action === 'replace_existing').length, directReview.summary.replaced_existing_bindings)
+  assert.equal(review.summary.scenario_pending, 0)
+  for (const accepted of directReview.sources) {
+    const source = catalog.sources.find(row => row.audio === accepted.audio)
+    assert.ok(userAccepted(source, accepted.image))
+    assert.equal(sha(readFileSync(`public${accepted.image}`)), accepted.image_sha256)
+    assert.ok(accepted.scene_review.visible_interlocutors >= 2)
+    assert.equal(accepted.scene_review.full_body_visible, true)
+    assert.equal(sha(readFileSync(`public${accepted.previous_image}`)), accepted.previous_image_sha256)
+    for (const level of ['A0-A1', 'A1-A2', 'A2-B1']) {
+      const pinned = drawAssociationCompose(level, createRng(923), { audioSlots: [accepted.audio] })
+      assert.ok(pinned, `Accepted source remains selectable: ${accepted.exercise}`)
+      assert.equal(pinned.support.audios[0], accepted.audio)
+      assert.equal(pinned.situations.find(scene => scene.dialogue === 1).image, accepted.image)
     }
   }
   // Keep this guard once the last pending scene has been illustrated too.

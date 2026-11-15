@@ -1,23 +1,27 @@
 # Catégories audio et scénarios — 14 novembre 2026
 
-**Suite du 15 novembre : sept nouvelles images B1 préparées ; aucun des 96 dialogues candidats ne reste sans image liée ou préparée.** Les **57 décomptes détaillés sont terminés** et ajoutent trois interlocuteurs manquants. Reste visuel courant : **28 liaisons avec interlocuteurs à reprendre (25 images)** et **21 cadrages à reprendre**. Les **30 scènes non liées ont toutes une image préparée**, en attente de confirmation ; les 87 liaisons existantes ne sont pas toutes déclarées conformes. Aucune nouvelle liaison ou écoute des voix. [Rapport et reste à faire](scenes-b1-final-20261115.md), [décompte](decompte-interlocuteurs-20261115.md).
+**Validation directe du 15 novembre : les 30 scènes préparées sont activées.** Les 96 dialogues candidats sont liés, soit **117 pistes avec les 21 historiques**. Six nouveaux PNG et huit réemplois corrigent 11 liaisons existantes. Reste courant : **17 reprises d’interlocuteurs (14 images)** et **21 cadrages (18 images)**. Les notes de concordance sont non bloquantes, sans prétendre à une écoute des voix. [Validation et reste à faire](validation-directe-scenes-20261115.md).
 
 La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.md) et ses 41 corrections sont terminées. Le classement porte sur les **346 nouveaux supports DELF Actif** ; il ne constitue pas une nouvelle écoute humaine.
 
 **Priorité demandée : générer les scènes avant les trios, en commençant par A1 puis A2.** Aucun nouveau trio QCM n’est ajouté pendant cette reprise.
 
-**96 dialogues** conviennent à une association de scènes. **66 sont liés à une scène disponible** ; **30 attendent encore une validation ou une illustration**. Avec les 21 dialogues historiques, le tirage dispose de **87 pistes**, contre 21 auparavant.
+**96 dialogues** conviennent à une association de scènes. **96 sont liés à une scène disponible** ; **aucun n’attend d’activation**. Avec les 21 dialogues historiques, le tirage dispose de **117 pistes**, contre 21 auparavant.
 
 | Nouveaux supports | Candidats | Avec scène disponible | À terminer |
 |---|---:|---:|---:|
-| A1 | 41 | 31 | 10 |
-| A2 | 39 | 29 | 10 |
-| B1 | 16 | 6 | 10 |
-| Total | 96 | 66 | 30 |
+| A1 | 41 | 41 | 0 |
+| A2 | 39 | 39 | 0 |
+| B1 | 16 | 16 | 0 |
+| Total | 96 | 96 | 0 |
 
 Les **250 autres supports** gardent leurs formats de compréhension : 188 messages, annonces ou prises de position, 18 suites de phrases ou consignes, quatre échanges essentiellement temporels, cinq descriptions ou questionnaires et 35 documents longs. Cette catégorie ne signifie pas que leur transcription est incorrecte.
 
 Les tags **court, moyen et long** suivent la durée ou la catégorie pédagogique documentée. **Scénario est un tag supplémentaire** : une situation cohérente et une scène liée au texte exact sont nécessaires. La sélection manuelle reporte ensemble audio, transcription et image. Deux scènes interchangeables ne sont pas tirées ensemble ; un changement de transcription invalide la liaison. Les deux leurres restent dans les thèmes entendus avec leurs concepts absents des transcriptions.
+
+## Historique des lots avant la validation directe
+
+Les paragraphes suivants conservent l’état des contrôles antérieurs. La validation directe ci-dessus remplace leurs attentes d’activation.
 
 Le premier lot comportait [sept PNG A1/A2](generation-scenarios-20261114.json) servant à huit liaisons, et dix liaisons par réemploi. Ce lot est conservé.
 

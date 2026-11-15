@@ -1,8 +1,12 @@
 # Avancement des illustrations CE / CO
 
-**Suite du 15 novembre : sept nouvelles images B1 préparées ; aucun des 96 dialogues candidats ne reste sans image liée ou préparée.** Les **57 décomptes détaillés sont terminés** et ajoutent trois interlocuteurs manquants. Reste visuel courant : **28 liaisons avec interlocuteurs à reprendre (25 images)** et **21 cadrages à reprendre**. Les **30 scènes non liées ont toutes une image préparée**, en attente de confirmation ; les 87 liaisons existantes ne sont pas toutes déclarées conformes. Aucune nouvelle liaison ou écoute des voix. [Rapport et reste à faire](scenes-b1-final-20261115.md), [décompte](decompte-interlocuteurs-20261115.md).
+**Validation directe du 15 novembre : les 30 scènes préparées sont activées.** Les 96 dialogues candidats sont liés, soit **117 pistes avec les 21 historiques**. Six nouveaux PNG et huit réemplois corrigent 11 liaisons existantes. Reste courant : **17 reprises d’interlocuteurs (14 images)** et **21 cadrages (18 images)**. Les notes de concordance sont non bloquantes, sans prétendre à une écoute des voix. [Validation et reste à faire](validation-directe-scenes-20261115.md).
 
 > État actuel : voir le [bilan du cahier des charges du 11 novembre 2026](bilan-cahier-des-charges-20261111.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+
+## Validation directe du 15 novembre 2026
+
+Les trente scènes sont actives. Les 41 sélections concernées sont contrôlées dans les tirages et la galerie : 13 tests, 600 tirages et compilation réussis. Galerie actuelle : **6 731 images**. Les détails et réserves restent consultables dans le [registre](validation-directe-scenes-20261115.json) et la [preuve](verification-validation-directe-20261115.json).
 
 ## Reprise du 14 novembre 2026
 

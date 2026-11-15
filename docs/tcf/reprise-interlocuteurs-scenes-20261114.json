@@ -10,21 +10,23 @@
     "automatic_transcription_runtime_available": false
   },
   "summary": {
-    "sources_examined_for_rework": 90,
+    "sources_examined_for_rework": 117,
     "corrected_images": 1,
     "full_recount_pending": 0,
     "new_single_person_images_withheld": 0,
-    "active_source_count": 87,
-    "confirmed_scene_bindings_to_rework": 28,
-    "distinct_images_to_rework": 25,
+    "active_source_count": 117,
+    "confirmed_scene_bindings_to_rework": 17,
+    "distinct_images_to_rework": 14,
     "corrected_framing_bindings": 4,
-    "prepared_two_interlocutor_images": 3,
+    "prepared_two_interlocutor_images": 0,
     "audio_listening_performed": false,
     "framing_rework_bindings": 21,
     "framing_confirmation_pending": 0,
     "visually_counted_bindings": 33,
     "detailed_recounts_completed_20261115": 57,
-    "contextual_rework_bindings": 3
+    "contextual_rework_bindings": 3,
+    "user_accepted_prepared_scenes": 30,
+    "user_accepted_corrected_interlocutors": 11
   },
   "sources": [
     {
@@ -517,22 +519,31 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-02.mp3",
       "audio_sha256": "f7a6fe7e28b11817b3da12d6e176138c51e9c8471f4602068c176bfe610a4f68",
       "source_sha256": "9865c1c98ba1634e4cea27ef68d70cc0cc4da0da022e6769f13f4be856aa29f0",
-      "image": "/lib/images/tcf/co/scenes/ecole/26-ecole-oublier-livre-mathematiques.webp",
-      "image_sha256": "7af5b36b6f34894a8b31f4f8070dcbae5cca26f3ffab388824369a837830ea95",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-lena-livre-oublie-enseignante.png",
+      "image_sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visual_review": {
-        "visible_main_interlocutors_minimum": 1,
+        "visible_main_interlocutors_minimum": 2,
         "minimum_required_interlocutors": 2,
-        "whole_body_framing": false,
-        "background_people_not_assigned_to_voices": true,
-        "exact_voice_count_confirmed": false,
-        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
-        "note": "Le texte met en présence l’enseignante appelée Madame et Léna sans livre. L’image montre deux élèves se partageant un manuel : l’enseignante manque ; l’élève qui prête le livre ne la remplace pas.",
+        "whole_body_framing": true,
+        "note": "Léna explique à l’enseignante appelée Madame que son livre manque. Sac ouvert vide, propre livre de l’enseignante sur le côté ; aucun camarade ne prête un livre à la place de la réponse de l’enseignante. Deux interlocuteurs entiers.",
         "audio_listening_performed": false,
-        "voice_gender_validated": false
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
       },
-      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json",
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
+        "source_sha256": "9865c1c98ba1634e4cea27ef68d70cc0cc4da0da022e6769f13f4be856aa29f0",
+        "audio_sha256": "f7a6fe7e28b11817b3da12d6e176138c51e9c8471f4602068c176bfe610a4f68",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-033-02",
@@ -1114,22 +1125,31 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-02.mp3",
       "audio_sha256": "8218fd8125a86a5a3eac8cd30f2f111cdb94b9b4029816706d09ff9a6c0d198b",
       "source_sha256": "ee4d95b47ab51a17bc3d47f80f18361fd98b497138fca2394e4c21202fbd0f39",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png",
-      "image_sha256": "09ddb7ddec1b1c50d5b342fde8df729c3f9abe9d563cb9a8158f353330f7b9ca",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-anissa-presentee-par-enseignante.png",
+      "image_sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visual_review": {
-        "visible_main_interlocutors_minimum": 1,
+        "visible_main_interlocutors_minimum": 2,
         "minimum_required_interlocutors": 2,
-        "whole_body_framing": false,
-        "background_people_not_assigned_to_voices": true,
-        "exact_voice_count_confirmed": false,
-        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
-        "note": "Le dialogue fait parler la personne qui présente Anissa et Anissa elle-même. La scène montre Anissa et Sarah ; le prompt de génération confirme que l’enseignant est hors cadre. Sarah est une camarade mentionnée et ne remplace pas cet interlocuteur.",
+        "whole_body_framing": true,
+        "note": "La personne qui présente Anissa est visible et lui parle ; Anissa se présente. Sarah, assise près de la chaise libre, reste un tiers silencieux. Trois personnes en pied dont les deux véritables interlocuteurs.",
         "audio_listening_performed": false,
-        "voice_gender_validated": false
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
       },
-      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json",
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
+        "source_sha256": "ee4d95b47ab51a17bc3d47f80f18361fd98b497138fca2394e4c21202fbd0f39",
+        "audio_sha256": "8218fd8125a86a5a3eac8cd30f2f111cdb94b9b4029816706d09ff9a6c0d198b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-033-04",
@@ -1254,12 +1274,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3",
       "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
       "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png",
-      "image_sha256": "465d2c0fee8b14c5d40eab92faac6e1d29682a947c15c67bbdfcd309209250df",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+      "image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "reason": "Le professeur parle dans la transcription mais seuls les élèves regardant le film sont visibles. Les autres élèves ne remplacent pas l’interlocuteur enseignant.",
-      "visual_count_basis": "Inspection de la scène et lecture de la transcription ; aucune écoute des voix."
+      "visual_count_basis": "Inspection de la scène et lecture de la transcription ; aucune écoute des voix.",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "L’enseignant et l’élève discutent avant la suite prévue du film. Projecteur au repos et écran vierge ; pas de film ou exposé déjà en cours, pas de fausse scène Lupin. Les deux interlocuteurs sont présents en entier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+        "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+        "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-032-01",
@@ -1525,14 +1565,34 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
       "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
       "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png",
-      "image_sha256": "7a1219d7d21e62dda7f19cb601d83f9fa15ee01693a98c4a1d5dc555b9b7c85d",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-rentrer-dejeuner-maison.png",
+      "image_sha256": "71906481aca55feedad83b88860b48a12ace9b9269f325244c352b54ea6c7a8e",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 0,
       "published_before_current_request": true,
       "note": "La mère est un tiers mentionné : les deux élèves qui dialoguent ne sont pas montrés. Reprendre les véritables locuteurs.",
-      "visible_people": 1
+      "visible_people": 1,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux élèves au premier plan parlent du déjeuner à la maison ; la mère visible en retrait reste un tiers mentionné et ne remplace aucun des locuteurs. Pas de repas au self déjà choisi.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "71906481aca55feedad83b88860b48a12ace9b9269f325244c352b54ea6c7a8e",
+        "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+        "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-01",
@@ -1540,12 +1600,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
       "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
       "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png",
-      "image_sha256": "a0870125023408689752a8424d83383d6164f5741966336beae898b636949f55",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige.png",
+      "image_sha256": "03443634d2cd1b134025e73ba8a117b417e678942c29f96b426289fee04eaa8b",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 1,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Photo-portrait remise à un membre du personnel homme, dossier ouvert sans texte. Pas de carte d’identité, certificat, piste de ski ou départ déjà réalisé. La photo représente le personnage dessiné, sans attester le genre du jeune de l’audio.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "03443634d2cd1b134025e73ba8a117b417e678942c29f96b426289fee04eaa8b",
+        "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+        "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-050-04-04",
@@ -1553,12 +1633,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
       "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
       "source_sha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
-      "image_sha256": "b654f423a271ba708fe9cbf0745db7c7b1162499388d46727a6a0e8bfd34fe28",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "image_sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 1,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Diego tient son abdomen et marche avec une autre personne vers la porte de l’infirmerie, repérée par un pictogramme de lit et une croix verte. Pas de diagnostic, médecin, médicament ou consultation déjà menée. Personne accompagnante à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+        "source_sha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+        "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-02",
@@ -1566,12 +1666,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-02.mp3",
       "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a",
       "source_sha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-devant.png",
-      "image_sha256": "8db3d2f5b54cacd9613e3f69fc2fcc9af07f89a30ba09c2d3afd5ace8692920f",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "image_sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 1,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Élève avançant vers un bureau vide au premier rang, professeur homme qui l’y invite. Aucune lunette déjà reçue ou portée ; tableau vierge. Genre de l’élève à vérifier avant liaison.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+        "source_sha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
+        "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-04",
@@ -1579,12 +1699,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
       "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
       "source_sha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu-roles-documentes.png",
-      "image_sha256": "6570088ab7a8d45a56835dc158ffbfcb34ec53fe74efb34ba15f5934f5dc9444",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "image_sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 1,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Le coin d’un seul blouson bleu est soulevé pour révéler le sac bordeaux sur le banc du vestiaire. Enseignante indiquant la cachette ; mains, pieds et objets utiles entiers. Genre du jeune interlocuteur non confirmé, liaison en attente.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+        "source_sha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+        "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-031-01",
@@ -1615,12 +1755,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
       "audio_sha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
       "source_sha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
-      "image_sha256": "e244aa7b8eb64b8a68f7d866b02cee53d594f09c5713b5eae08923c6a8881a50",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "image_sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 1,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Voyageuse sans lunettes se levant à côté du siège, son billet et celui de l’autre personne visibles, chacun entièrement vierge. Vérification courtoise, personnages entiers, aucun numéro de place ni amende ; les figurants ne sont pas des locuteurs identifiés.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+        "source_sha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+        "audio_sha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-030-04",
@@ -1628,12 +1788,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
       "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
       "source_sha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
-      "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-      "image_sha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "image_sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 0,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Conversation à la sortie de la gare, train à quai et chemin piéton vers un lycée générique. Aucun bus ou horaire ; la distance précise reste une information audio. Personnages entiers, genres à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+        "source_sha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+        "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-01",
@@ -1641,12 +1821,32 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
       "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
       "source_sha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
-      "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-      "image_sha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "image_sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
       "audio_listening_performed": false,
-      "status": "needs_interlocutor_rework",
+      "status": "user_accepted_corrected_interlocutors",
       "visible_interlocutors": 0,
-      "published_before_current_request": true
+      "published_before_current_request": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Projet de visite depuis la jetée, bateau entièrement cadré et îles proches génériques. Personne à bord, aucun billet acheté ou horaire ; fauteuil entier avec repose-pieds. Reprise par génération du bateau initialement coupé ; genres à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+        "source_sha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+        "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-b1-001-01",
@@ -1764,13 +1964,33 @@
       "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-revisions-deux-interlocuteurs.png",
       "image_sha256": "1ea19b92a4f5228e25ec837e447416a8311248f7d655c44d3500465dfd6af0f1",
       "audio_listening_performed": false,
-      "status": "prepared_two_interlocutors_voice_review_pending",
+      "status": "user_accepted_prepared_scene",
       "visible_interlocutors": 2,
       "published_before_current_request": false,
       "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
       "previous_image_sha256": "c0959560db6b99032f056c3a513d6792f8330e2df4a6a3feedd45b889a7752aa",
       "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
-      "full_body_visible": true
+      "full_body_visible": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Enseignante et élève se répondant, personnages entiers devant un tableau vierge. Objection sur les révisions avant le contrôle, pas de copie notée ou trente pages prétendument comptées. Genre de l’élève non établi ; image préparée sans activation.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "1ea19b92a4f5228e25ec837e447416a8311248f7d655c44d3500465dfd6af0f1",
+        "source_sha256": "d245a2de70bc1ec6f5f36a45c5b598d6f28778ec393a4e8827f21529eac87a27",
+        "audio_sha256": "534d75004bf38cb1b147e5cc3ff32884872020a8d6ee57f8cbc39e9e27ec5c23",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-b1-032-05",
@@ -1781,13 +2001,33 @@
       "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
       "image_sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
       "audio_listening_performed": false,
-      "status": "prepared_two_interlocutors_voice_review_pending",
+      "status": "user_accepted_prepared_scene",
       "visible_interlocutors": 2,
       "published_before_current_request": false,
       "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
       "previous_image_sha256": "04605f1c7d0aef02236cc8dda52fb4c6ae2c8eb9e0537ff6757a6015367f3af0",
       "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
-      "full_body_visible": true
+      "full_body_visible": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Homme débordé refusant poliment l’invitation d’une autre personne visible, papiers sans métier précis. Aucun autre visiteur déjà arrivé ; les visites attendues restent futures. Genre de la personne qui invite à vérifier ; liaison non activée.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
+        "source_sha256": "d5eb4147c0a2a58c0bb29fdf64271138384dcfbcb36f2e15ee119626d2cfd1bb",
+        "audio_sha256": "2f7299b649d6b9554e365cb5ac08ebed7cf75739d4336beacf94ae26c965879b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "exercise": "tcf-delf-actif-b1-001-04",
@@ -1798,13 +2038,870 @@
       "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
       "image_sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
       "audio_listening_performed": false,
-      "status": "prepared_two_interlocutors_voice_review_pending",
+      "status": "user_accepted_prepared_scene",
       "visible_interlocutors": 2,
       "published_before_current_request": false,
       "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
       "previous_image_sha256": "18d10dbac87d8dece38cfc885feb32e878d288215f238dfae9027651b57572c0",
       "correction_register": "docs/tcf/corrections-interlocuteurs-20261115.json",
-      "full_body_visible": true
+      "full_body_visible": true,
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Elsa et son interlocuteur préparent une sortie future dans une même scène, entiers et en interaction. Aucun départ ou accueil du véhicule déjà réalisé, pas d’horaire lisible. Genre du partenaire et canal exact de l’échange non établis ; préparation seulement.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
+        "source_sha256": "d0c91465c44566d9303777a4dce6e3a9065f1177a210c581f5efdf8a38641ff0",
+        "audio_sha256": "42a712e8378bc42bd9f8ab202320302e65d0827def675f9302594fbaa993e59a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-019-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
+      "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
+      "source_sha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-proposer-dejeuner-deux-personnes.png",
+      "image_sha256": "6a67850d8df971c9a8d62187b3d66a8cad4cee96cc77ae3196197bda8a0f70d0",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Invitation à déjeuner entre deux personnes en pied devant une table vide et deux chaises ; aucun repas, horaire, restaurant réservé ou téléphone imposé. Le second interlocuteur est désormais visible.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "6a67850d8df971c9a8d62187b3d66a8cad4cee96cc77ae3196197bda8a0f70d0",
+        "source_sha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+        "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-029-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+      "audio_sha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+      "source_sha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "image_sha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Invitation entre deux adolescents au bord du terrain ; ballon ovale et poteaux en H, aucun ballon rond ni match déjà joué. Appareil auditif discret comme choix illustratif inclusif ; aucune nationalité déduite des visages.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+        "source_sha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+        "audio_sha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-030-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+      "source_sha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "image_sha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Élève indiquant son ventre douloureux à une enseignante ; conseil avant une éventuelle consultation, aucun médecin, médicament ou diagnostic ajouté.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+        "source_sha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+        "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
+      "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
+      "source_sha256": "c00afe476616420f42ad11be304ddbdfabb2ebbe32c77c2d12d849c8d2a62a2e",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "image_sha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Bibliothécaire femme, élève et livre à couverture de volcan dans le rayon à panneau orange ; revues sur le présentoir près de l’entrée. Aucun volcan nommé, texte de classement ou autre couleur présentée comme la réponse.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+        "source_sha256": "c00afe476616420f42ad11be304ddbdfabb2ebbe32c77c2d12d849c8d2a62a2e",
+        "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+      "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+      "source_sha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-musique-lecture-deux-personnes.png",
+      "image_sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux personnes échangent ; livre ouvert sur les genoux et casque relié au lecteur posé à côté. La personne répond au lieu de lire ou d’écouter isolément ; quatre chaussures et les deux activités sont visibles.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+        "source_sha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+        "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+      "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+      "source_sha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preference-jeu-ordinateur-deux-personnes.png",
+      "image_sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux interlocuteurs se parlent près d’un ordinateur complet, tour, écran, clavier et souris. Jeu générique sans titre ; aucune télévision ou console préférée à tort. Personnages et quatre chaussures entiers.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+        "source_sha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+        "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+      "source_sha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "image_sha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Groupe d’amis en balade : vélo avec cycliste et marcheurs, deux vélos entièrement dans le cadre. Les magasins rejetés par la source ne sont pas représentés comme activité choisie.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+        "source_sha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+        "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+      "source_sha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "image_sha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Service de poisson avec riz blanc distinct sur l’assiette ; sauce proposée dans une petite cruche, sans sauce versée ni légumes substitués au riz. Personnel et élève distincts et cadrage entier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+        "source_sha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+        "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
+      "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
+      "source_sha256": "1603bc74a0f51c1680f940facd9c888be7fc3c065872e7e87ef5dd7ffe1eae08",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "image_sha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Prêt d’un compas de géométrie à deux branches, pointe et crayon visibles ; ni boussole ni autre matériel substitué. Deux élèves, mains et chaussures dans le cadre. Le foulard est un choix illustratif et ne prouve aucune nationalité.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+        "source_sha256": "1603bc74a0f51c1680f940facd9c888be7fc3c065872e7e87ef5dd7ffe1eae08",
+        "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+      "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+      "source_sha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "image_sha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Débutant hésitant et camarade rassurante devant la barre horizontale, les deux poteaux et le tapis épais du saut en hauteur. Aucun saut maîtrisé déjà réussi, ni football ou basket substitué.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+        "source_sha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+        "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-02.mp3",
+      "audio_sha256": "7218f1d01fc05b0fe5051ef5153f1e98f3296498418ecb889c2ea18834d5357a",
+      "source_sha256": "5c25b12798e2063f4f0d4a87b5a7a037297a9ce27fbb72cc33a01c7d570f806d",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "image_sha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Départ du domicile après le séjour, valise entière et remerciements amicaux, sans destination, nationalité, transport ou relation amoureuse ajoutés. Genres des deux interlocuteurs non confirmés, liaison en attente.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+        "source_sha256": "5c25b12798e2063f4f0d4a87b5a7a037297a9ce27fbb72cc33a01c7d570f806d",
+        "audio_sha256": "7218f1d01fc05b0fe5051ef5153f1e98f3296498418ecb889c2ea18834d5357a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+      "audio_sha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+      "source_sha256": "839b6f7e4d77e9c7ce53ec6c600650f6c47b09151e6e117b3caf1425a2004f53",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "image_sha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Discussion à domicile devant une boule de pâte et deux fromages, sans pizza cuite, repas servi, légumes, viande ou cuisine professionnelle. Aucun geste de cuisson déjà réalisé. Genres des interlocuteurs à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+        "source_sha256": "839b6f7e4d77e9c7ce53ec6c600650f6c47b09151e6e117b3caf1425a2004f53",
+        "audio_sha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
+      "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
+      "source_sha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "image_sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Demande de renseignements avant la visite, guide fermé et façade reprise de la référence Versailles du catalogue. Aucun intérieur prétendu documenté : la liste des salles et œuvres reste dans le texte audio. Personnes à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+        "source_sha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+        "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+      "source_sha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "image_sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Conseil devant le rayon de plantes d’un supermarché, avec produits alimentaires en arrière-plan. Aucune plante tenue ou payée, cadeau remis ou ouverture future affirmée. Mère hors cadre, genres des interlocuteurs à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+        "source_sha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+        "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+      "source_sha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "image_sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Laisse confiée à une autre personne devant une porte de pâtisserie ouverte ; chien entier dehors, gâteaux en vitrine et achat encore projeté. Aucun gâteau acheté, argent ou chien dans le magasin.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+        "source_sha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+        "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+      "source_sha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "image_sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux adultes, un flacon avec pictogramme de cheveux et un tube avec pictogramme de dent. Cheveux frisés visibles et geste hésitant de la personne qui répond ; pas de pharmacien, blouse, recommandation prouvée ou produit supplémentaire.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+        "source_sha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+        "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+      "source_sha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "image_sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux téléphones distincts seulement sur une table de démonstration ; cliente désignant un modèle et membre du personnel qui renseigne. Cadrage repris pour montrer les deux personnages et leurs chaussures, aucun prix, chiffre ou vente accomplie.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+        "source_sha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+        "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-02.mp3",
+      "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
+      "source_sha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "image_sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Invitation devant un menu uniquement illustré : appareil à raclette, poêlons, fromage fondu, pommes de terre et cornichons. Aucun caquelon à fondue ni repas servi aux personnages ; genres à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+        "source_sha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+        "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-03.mp3",
+      "audio_sha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007",
+      "source_sha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "image_sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Discussion indécise devant un téléviseur éteint, télécommande au repos, rideaux fermés. Aucune prévision ou activité de lendemain inventée ; genres des deux interlocuteurs à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+        "source_sha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+        "audio_sha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+      "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
+      "source_sha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "image_sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Demande au pied du téléphérique, cabine fermée entière suspendue aux câbles vers la montagne. Aucun télésiège, trajet déjà effectué, route concurrente ou horaire écrit. Personnes à vérifier.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+        "source_sha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+        "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+      "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
+      "source_sha256": "98f3f12cafc4da3dc1a9dd0219d6e5e408835a1dd8d4e446a901d9098206ddcd",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "image_sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 3,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Trois interlocuteurs choisissent dans leurs menus illustrés : poisson, bifteck avec légumes sans poisson, puis moussaka en portion gratinée à couches d’aubergine. Aucun plat servi, allergie représentée par une réaction ou origine nationale déduite. Six chaussures visibles, genres non entièrement documentés.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+        "source_sha256": "98f3f12cafc4da3dc1a9dd0219d6e5e408835a1dd8d4e446a901d9098206ddcd",
+        "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-05",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+      "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
+      "source_sha256": "8653100a56c2661e02372df1d21149865c0d35d968b777607c8d5bdd37327b47",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-projet-visite-mamie.png",
+      "image_sha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Grand-mère et jeune interlocutrice discutant du projet de visite ; pas de repas, patinage, embrassade d’arrivée ou activité de club déjà en cours. Le salon est un cadre illustratif et le genre de la jeune personne reste à confirmer.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
+        "source_sha256": "8653100a56c2661e02372df1d21149865c0d35d968b777607c8d5bdd37327b47",
+        "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
+      "audio_sha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c",
+      "source_sha256": "d554e2979edde95afdf705d70ce51469b4e5c7bb031fffbac40cf85dbd41ce3a",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conversation-nouvelle-trottinette.png",
+      "image_sha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux amis discutant d’une trottinette complète, à l’arrêt, après l’achat. Deux roues, plateau et guidon visibles ; modèle classique sans motorisation affirmée, pas de conduite sur chaussée ou nouvel achat en cours. Personnes à confirmer.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+        "source_sha256": "d554e2979edde95afdf705d70ce51469b4e5c7bb031fffbac40cf85dbd41ce3a",
+        "audio_sha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-03.mp3",
+      "audio_sha256": "68cb58d3e374ac26dd92e2b0a898cccfc0fd8bb84eae78fb11650ded0ed1ead6",
+      "source_sha256": "ff88f309c55bc0a671ed61bd1dcd3b0f52ace938ea6db968b4c142888e90f642",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "image_sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux personnes autour du cahier inachevé, en conversation après le contrôle médical évoqué. Aucun hôpital, examen médical en cours, diagnostic, devoir terminé ou note ajoutée. Les interlocuteurs et leurs chaussures sont entiers.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+        "source_sha256": "ff88f309c55bc0a671ed61bd1dcd3b0f52ace938ea6db968b4c142888e90f642",
+        "audio_sha256": "68cb58d3e374ac26dd92e2b0a898cccfc0fd8bb84eae78fb11650ded0ed1ead6",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-04.mp3",
+      "audio_sha256": "25a04543a14088ff22a434c340bc0538eafb711b6a09718dce18e72de7d06cbf",
+      "source_sha256": "456c0798321a0ae01177769570058a2ba398f2ad5ce916b96c4b22fc66718679",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-sortie-revisions.png",
+      "image_sha256": "4535a44c221b2d0dc279145bdb91751fac5551b090e8a16267ac1c743c661ba0",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux personnes discutent de la sortie et du travail encore demandé. L’un rappelle les révisions, l’autre explique ses résultats d’examen blanc sans note chiffrée. Aucun examen final réussi, lien familial affirmé ou sortie déjà autorisée.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "4535a44c221b2d0dc279145bdb91751fac5551b090e8a16267ac1c743c661ba0",
+        "source_sha256": "456c0798321a0ae01177769570058a2ba398f2ad5ce916b96c4b22fc66718679",
+        "audio_sha256": "25a04543a14088ff22a434c340bc0538eafb711b6a09718dce18e72de7d06cbf",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-038-01-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-01-01.mp3",
+      "audio_sha256": "3aad2d6f8fefeb0f069575a0c70e1be37f6600301a0d8d3e8a546dd19f30e9f7",
+      "source_sha256": "6f0b4754d5a15cf937bf343e893883649ec336f98813e3bf3be3a6b624d3d6ea",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "image_sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Vincent explique le projet citoyen à Thomas près de grandes pièces de puzzle en bois et de pinceaux. Les matériaux et l’échelle illustrent le projet ; aucune carte d’Europe prétendument exacte, rémunération ou inscription de Thomas déjà accomplie. Toutes les pièces sont entières après reprise du premier cadrage.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+        "source_sha256": "6f0b4754d5a15cf937bf343e893883649ec336f98813e3bf3be3a6b624d3d6ea",
+        "audio_sha256": "3aad2d6f8fefeb0f069575a0c70e1be37f6600301a0d8d3e8a546dd19f30e9f7",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-040-01-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+      "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
+      "source_sha256": "858cbae71dbfbc9b05e8f4e8c010d658412fb9aa51f401bc8173a2c252f39874",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "image_sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
+      "status": "user_accepted_prepared_scene",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "note": "Deux personnes au téléphone dans une coupe illustrative de deux espaces domestiques séparés. Chacune et son téléphone sont entiers. Carnet vierge et ruban inutilisé suggèrent la recherche du cadeau ; aucun article décidé, acheté ou remis, date ou Patrick visible. Le plan des logements est une convention graphique.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "exact_voice_count_confirmed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
+        "source_sha256": "858cbae71dbfbc9b05e8f4e8c010d658412fb9aa51f401bc8173a2c252f39874",
+        "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "audio_listening_performed": false
     }
   ]
 }

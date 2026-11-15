@@ -17260,7 +17260,14 @@
       },
       "gallery_themes": [],
       "style_references": [],
-      "reference_images": []
+      "reference_images": [],
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "co834-metro-dessine",
@@ -17848,7 +17855,14 @@
       },
       "gallery_themes": [],
       "style_references": [],
-      "reference_images": []
+      "reference_images": [],
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "co834-couleur-bleu-dessinee",
@@ -62831,7 +62845,14 @@
       "gallery_types": [],
       "gallery_themes": [],
       "style_references": [],
-      "reference_images": []
+      "reference_images": [],
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-lena-livre-oublie-enseignante.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "retained-20261107-b67400302760",
@@ -96685,7 +96706,14 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-preference-jeu-ordinateur-deux-personnes.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "activate_prepared"
+        }
+      ]
     },
     {
       "id": "qcm-a1-faire-magasins",
@@ -97146,7 +97174,9 @@
         "Scénario"
       ],
       "gallery_themes": [
-        "Sports"
+        "Sports",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97169,6 +97199,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+        "source_sha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+        "audio_sha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97290,7 +97331,9 @@
       ],
       "gallery_themes": [
         "Santé et corps",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97313,6 +97356,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+        "source_sha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+        "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97335,7 +97389,9 @@
       ],
       "gallery_themes": [
         "Loisirs et culture",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97358,6 +97414,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+        "source_sha256": "c00afe476616420f42ad11be304ddbdfabb2ebbe32c77c2d12d849c8d2a62a2e",
+        "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97429,7 +97496,9 @@
         "Scénario"
       ],
       "gallery_themes": [
-        "Alimentation et boissons"
+        "Alimentation et boissons",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97452,6 +97521,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+        "source_sha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+        "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97473,7 +97553,9 @@
         "Scénario"
       ],
       "gallery_themes": [
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97496,6 +97578,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+        "source_sha256": "1603bc74a0f51c1680f940facd9c888be7fc3c065872e7e87ef5dd7ffe1eae08",
+        "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97540,7 +97633,14 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-musique-lecture-deux-personnes.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "activate_prepared"
+        }
+      ]
     },
     {
       "id": "scenario-velo-et-promenade-amis",
@@ -97562,7 +97662,9 @@
       ],
       "gallery_themes": [
         "Sports",
-        "Transports et voyages"
+        "Transports et voyages",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97585,6 +97687,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+        "source_sha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+        "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97657,7 +97770,9 @@
       ],
       "gallery_themes": [
         "Sports",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -97680,6 +97795,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+        "source_sha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+        "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -97880,7 +98006,14 @@
             "quote": "Anissa, va t’assoir à côté de Sarah."
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-anissa-presentee-par-enseignante.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-bagage-porte-bagages",
@@ -98018,8 +98151,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Ville et services"
+        "Ville et services",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98045,6 +98179,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+        "source_sha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+        "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98067,8 +98212,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Ville et services"
+        "Ville et services",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98094,6 +98240,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+        "source_sha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+        "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98116,8 +98273,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Ville et services"
+        "Ville et services",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98143,6 +98301,17 @@
         "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+        "source_sha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+        "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98165,8 +98334,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Transports et voyages"
+        "Transports et voyages",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98197,6 +98367,17 @@
             "quote": "Madame, cette place est réservée."
           }
         ]
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+        "source_sha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+        "audio_sha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98638,8 +98819,9 @@
       ],
       "gallery_themes": [
         "CO CFR A1",
-        "Scènes préparées — personnes à vérifier",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98670,6 +98852,17 @@
             "quote": "Madame, mon sac n’est plus au vestiaire !"
           }
         ]
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+        "source_sha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+        "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98693,8 +98886,9 @@
       ],
       "gallery_themes": [
         "CO CFR A1",
-        "Scènes préparées — personnes à vérifier",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98725,6 +98919,17 @@
             "quote": "Bonjour Monsieur."
           }
         ]
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "03443634d2cd1b134025e73ba8a117b417e678942c29f96b426289fee04eaa8b",
+        "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+        "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98748,8 +98953,9 @@
       ],
       "gallery_themes": [
         "CO CFR A1",
-        "Scènes préparées — personnes à vérifier",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98780,6 +98986,17 @@
             "quote": "Monsieur, je peux changer de place ?"
           }
         ]
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+        "source_sha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
+        "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98803,9 +99020,10 @@
       ],
       "gallery_themes": [
         "CO CFR A1",
-        "Scènes préparées — personnes à vérifier",
         "Santé et corps",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98840,6 +99058,17 @@
             "quote": "J’ai mal au ventre"
           }
         ]
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+        "source_sha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+        "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98863,8 +99092,9 @@
       ],
       "gallery_themes": [
         "CO CFR A1",
-        "Scènes préparées — personnes à vérifier",
-        "Alimentation et boissons"
+        "Alimentation et boissons",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -98895,6 +99125,17 @@
             "quote": "Ma mère est en vacances, elle vient me chercher"
           }
         ]
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "71906481aca55feedad83b88860b48a12ace9b9269f325244c352b54ea6c7a8e",
+        "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+        "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -98945,7 +99186,14 @@
         "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-proposer-dejeuner-deux-personnes.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "activate_prepared"
+        }
+      ]
     },
     {
       "id": "scenario-commander-roses-blanches",
@@ -99537,8 +99785,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Transports et voyages"
+        "Transports et voyages",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99564,6 +99813,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+        "source_sha256": "5c25b12798e2063f4f0d4a87b5a7a037297a9ce27fbb72cc33a01c7d570f806d",
+        "audio_sha256": "7218f1d01fc05b0fe5051ef5153f1e98f3296498418ecb889c2ea18834d5357a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99587,8 +99847,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Alimentation et boissons"
+        "Alimentation et boissons",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99614,6 +99875,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+        "source_sha256": "839b6f7e4d77e9c7ce53ec6c600650f6c47b09151e6e117b3caf1425a2004f53",
+        "audio_sha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99637,9 +99909,10 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
         "Transports et voyages",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99665,6 +99938,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+        "source_sha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+        "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99688,8 +99972,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Loisirs et culture"
+        "Loisirs et culture",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99716,6 +100001,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+        "source_sha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+        "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99739,8 +100035,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Ville et services"
+        "Ville et services",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99766,6 +100063,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+        "source_sha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+        "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99848,8 +100156,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Alimentation et boissons"
+        "Alimentation et boissons",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99875,6 +100184,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+        "source_sha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+        "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99898,8 +100218,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Loisirs et culture"
+        "Loisirs et culture",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99925,6 +100246,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+        "source_sha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+        "audio_sha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99948,9 +100280,10 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
         "Transports et voyages",
-        "Sports et loisirs"
+        "Sports et loisirs",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -99976,6 +100309,17 @@
         "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+        "source_sha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+        "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -99999,8 +100343,9 @@
       ],
       "gallery_themes": [
         "CO CFR A2",
-        "Scènes préparées — personnes à vérifier",
-        "Transports et voyages"
+        "Transports et voyages",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -100038,7 +100383,18 @@
           "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
           "role": "style"
         }
-      ]
+      ],
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+        "source_sha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+        "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "id": "scenario-remerciements-retour-visite-iles",
@@ -100409,7 +100765,14 @@
             "quote": "Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00."
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-rentrer-dejeuner-maison.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-photo-dossier-classe-neige-roles-documentes",
@@ -100458,7 +100821,14 @@
             "quote": "Bonjour Monsieur. Voici ma photo pour mon dossier."
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-diego-vers-infirmerie",
@@ -100512,7 +100882,14 @@
             "quote": "Viens on va à l’infirmerie. Je t’accompagne."
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-changer-place-devant",
@@ -100565,7 +100942,14 @@
             "quote": "Oui, mets-toi devant."
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-sac-sous-blouson-bleu-roles-documentes",
@@ -100618,7 +101002,14 @@
             "quote": "Regarde sous le blouson bleu. Ah oui, le voilà."
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-preparer-visite-matisse",
@@ -100718,7 +101109,14 @@
             "quote": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ?"
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-a2-decoration-mere-fille",
@@ -101021,7 +101419,14 @@
             "quote": "Je n’ai pas mes lunettes…"
           }
         ]
-      }
+      },
+      "scenario_replacements": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+          "register": "docs/tcf/validation-directe-scenes-20261115.json",
+          "action": "replace_existing"
+        }
+      ]
     },
     {
       "id": "scenario-coureur-homme-motive",
@@ -102224,8 +102629,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102266,7 +102672,18 @@
         "source_role_assignment": "second_person_requires_confirmation",
         "audio_listening_performed": false
       },
-      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png"
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "1ea19b92a4f5228e25ec837e447416a8311248f7d655c44d3500465dfd6af0f1",
+        "source_sha256": "d245a2de70bc1ec6f5f36a45c5b598d6f28778ec393a4e8827f21529eac87a27",
+        "audio_sha256": "534d75004bf38cb1b147e5cc3ff32884872020a8d6ee57f8cbc39e9e27ec5c23",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "id": "dialogue-b1-travail-invitation-deux-interlocuteurs",
@@ -102288,8 +102705,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "Travail et métiers"
+        "Travail et métiers",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102330,7 +102748,18 @@
         "source_role_assignment": "second_person_requires_confirmation",
         "audio_listening_performed": false
       },
-      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png"
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
+        "source_sha256": "d5eb4147c0a2a58c0bb29fdf64271138384dcfbcb36f2e15ee119626d2cfd1bb",
+        "audio_sha256": "2f7299b649d6b9554e365cb5ac08ebed7cf75739d4336beacf94ae26c965879b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "id": "dialogue-b1-elsa-projet-sortie-deux-interlocuteurs",
@@ -102352,8 +102781,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "Loisirs et culture"
+        "Loisirs et culture",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102394,7 +102824,18 @@
         "source_role_assignment": "second_person_requires_confirmation",
         "audio_listening_performed": false
       },
-      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png"
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
+        "source_sha256": "d0c91465c44566d9303777a4dce6e3a9065f1177a210c581f5efdf8a38641ff0",
+        "audio_sha256": "42a712e8378bc42bd9f8ab202320302e65d0827def675f9302594fbaa993e59a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
     },
     {
       "id": "scenario-b1-choix-plats-trois-interlocuteurs",
@@ -102417,8 +102858,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "Alimentation et boissons"
+        "Alimentation et boissons",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102452,6 +102894,17 @@
         "minimum_visible_interlocutors": 3,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+        "source_sha256": "98f3f12cafc4da3dc1a9dd0219d6e5e408835a1dd8d4e446a901d9098206ddcd",
+        "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -102475,8 +102928,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "Transports et voyages"
+        "Transports et voyages",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102515,6 +102969,17 @@
         "minimum_visible_interlocutors": 2,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
+        "source_sha256": "8653100a56c2661e02372df1d21149865c0d35d968b777607c8d5bdd37327b47",
+        "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -102538,8 +103003,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "Transports et voyages"
+        "Transports et voyages",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102573,6 +103039,17 @@
         "minimum_visible_interlocutors": 2,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+        "source_sha256": "d554e2979edde95afdf705d70ce51469b4e5c7bb031fffbac40cf85dbd41ce3a",
+        "audio_sha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -102596,9 +103073,10 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
         "École et formation",
-        "Santé et corps"
+        "Santé et corps",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102632,6 +103110,17 @@
         "minimum_visible_interlocutors": 2,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+        "source_sha256": "ff88f309c55bc0a671ed61bd1dcd3b0f52ace938ea6db968b4c142888e90f642",
+        "audio_sha256": "68cb58d3e374ac26dd92e2b0a898cccfc0fd8bb84eae78fb11650ded0ed1ead6",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -102655,8 +103144,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102690,6 +103180,17 @@
         "minimum_visible_interlocutors": 2,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "4535a44c221b2d0dc279145bdb91751fac5551b090e8a16267ac1c743c661ba0",
+        "source_sha256": "456c0798321a0ae01177769570058a2ba398f2ad5ce916b96c4b22fc66718679",
+        "audio_sha256": "25a04543a14088ff22a434c340bc0538eafb711b6a09718dce18e72de7d06cbf",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -102713,9 +103214,10 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
         "Travail et métiers",
-        "École et formation"
+        "École et formation",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102758,6 +103260,17 @@
         "minimum_visible_interlocutors": 2,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+        "source_sha256": "6f0b4754d5a15cf937bf343e893883649ec336f98813e3bf3be3a6b624d3d6ea",
+        "audio_sha256": "3aad2d6f8fefeb0f069575a0c70e1be37f6600301a0d8d3e8a546dd19f30e9f7",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     },
     {
@@ -102781,8 +103294,9 @@
       ],
       "gallery_themes": [
         "CO CFR B1",
-        "Scènes préparées — personnes à vérifier",
-        "Ville et services"
+        "Ville et services",
+        "Situations CO",
+        "Scènes validées directement"
       ],
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
       "style_references": [
@@ -102825,6 +103339,442 @@
         "minimum_visible_interlocutors": 2,
         "full_body_visible": true,
         "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
+        "source_sha256": "858cbae71dbfbc9b05e8f4e8c010d658412fb9aa51f401bc8173a2c252f39874",
+        "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "id": "dialogue-proposer-dejeuner-deux-personnes",
+      "label": "Proposer un déjeuner — deux interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-proposer-dejeuner-deux-personnes.png",
+      "prompt": "Create ONE coherent educational illustration in the approved TCF painting style from the last two attached images. Warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours, believable anatomy and materials. No photo, 3D render, heavy cartoon contours or flat vector art. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY view with all MAIN SPEAKERS present, facing/interacting with each other, full heads and hands and ALL shoes inside generous margins, open visible floor. No speaker hidden outside the frame, no mentioned third person substituting a speaker. Small furniture offset to the side must not conceal their lower bodies. Plain undecorated footwear with NO swoosh, tick, star, stripe, side symbol, logo or lettering. No legible text, number, price, date, weekday/month, clock, watch, calendar, brand, flag, watermark, speech bubble or collage. Keep actions at the stage specified in the audio, never make a proposal look completed. The user accepts immediate editorial validation of generic illustrated characters and may change them later; do not claim that the actual voices were heard or that unspecified genders were proven. EDIT the first attached scene, preserving the young adult with medium-brown skin, short dark curls, coral overshirt, cream T-shirt, charcoal trousers and plain cream shoes, and the empty round table with TWO empty chairs. REMOVE the smartphone: the audio does not establish a phone call. ADD the real second interlocutor, depicted as an adult woman around 30 with fair freckled skin, short copper-red bob, soft sage jumper, navy trousers and plain brown shoes. Both stand side by side at a conversational angle beside the table, looking at each other; first person makes a friendly open inviting gesture, second responds thoughtfully. This is proposing a FUTURE lunch and future pickup, not lunch already served, an arriving pickup or a restaurant reservation. Table empty, no food, menu, tickets, money, clock or written day. EXACTLY TWO main people, both complete head to shoes. Generic indoor conversation context, no special relationship or channel invented as fact. Exact transcript for context ONLY, never text to draw: Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart.",
+      "source_png": "/workspace/generated_images/exec-85f5094e-8ac0-4ed8-a19b-90175d7e712c.png",
+      "source_sha256": "6a67850d8df971c9a8d62187b3d66a8cad4cee96cc77ae3196197bda8a0f70d0",
+      "sha256": "6a67850d8df971c9a8d62187b3d66a8cad4cee96cc77ae3196197bda8a0f70d0",
+      "bytes": 2244323,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "validation-directe-20261115",
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "CO CFR A1",
+        "Situations CO",
+        "Scènes validées directement"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Invitation à déjeuner entre deux personnes en pied devant une table vide et deux chaises ; aucun repas, horaire, restaurant réservé ou téléphone imposé. Le second interlocuteur est désormais visible.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "scenario_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scenario_scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "6a67850d8df971c9a8d62187b3d66a8cad4cee96cc77ae3196197bda8a0f70d0",
+        "source_sha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+        "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "id": "dialogue-musique-lecture-deux-personnes",
+      "label": "Musique et lecture — deux interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-musique-lecture-deux-personnes.png",
+      "prompt": "Create ONE coherent educational illustration in the approved TCF painting style from the last two attached images. Warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours, believable anatomy and materials. No photo, 3D render, heavy cartoon contours or flat vector art. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY view with all MAIN SPEAKERS present, facing/interacting with each other, full heads and hands and ALL shoes inside generous margins, open visible floor. No speaker hidden outside the frame, no mentioned third person substituting a speaker. Small furniture offset to the side must not conceal their lower bodies. Plain undecorated footwear with NO swoosh, tick, star, stripe, side symbol, logo or lettering. No legible text, number, price, date, weekday/month, clock, watch, calendar, brand, flag, watermark, speech bubble or collage. Keep actions at the stage specified in the audio, never make a proposal look completed. The user accepts immediate editorial validation of generic illustrated characters and may change them later; do not claim that the actual voices were heard or that unspecified genders were proven. EDIT the first attached image: retain its adult woman with light olive skin, short dark curls streaked with silver, round glasses, burgundy blouse, olive trousers, plain black canvas shoes, armchair, book and small unlabelled music player. ADD a second adult interlocutor, depicted as a man around 40 with dark brown skin, closely shaved head, a broad build, pale blue shirt, beige trousers and plain dark shoes. Put him on a separate small armchair angled toward her. She has the book resting OPEN on her lap and headphones resting around her neck or on the side table, NOT covering her ears while talking. They LOOK AT EACH OTHER and discuss her LIKING BOTH MUSIC AND READING, not watch television or buy a book. Small player connected to the headphones visible as music context. Both people complete with all four shoes, both chairs and side table naturally inside a wider view. No readable book text, title or music notation. Exact transcript for context ONLY, never text to draw: Vous écoutez souvent de la musique ? Oui j’aime beaucoup. Et vous n’aimez pas la lecture ? Si, j’aime bien lire des livres.",
+      "source_png": "/workspace/generated_images/exec-bf7d37fd-12a4-4420-9902-782a01d25312.png",
+      "source_sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+      "sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+      "bytes": 3001694,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "validation-directe-20261115",
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "CO CFR A1",
+        "Situations CO",
+        "Scènes validées directement"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux personnes échangent ; livre ouvert sur les genoux et casque relié au lecteur posé à côté. La personne répond au lieu de lire ou d’écouter isolément ; quatre chaussures et les deux activités sont visibles.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "scenario_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scenario_scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+        "source_sha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+        "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "id": "dialogue-preference-jeu-ordinateur-deux-personnes",
+      "label": "Le jeu sur ordinateur — deux interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-preference-jeu-ordinateur-deux-personnes.png",
+      "prompt": "Create ONE coherent educational illustration in the approved TCF painting style from the last two attached images. Warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours, believable anatomy and materials. No photo, 3D render, heavy cartoon contours or flat vector art. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY view with all MAIN SPEAKERS present, facing/interacting with each other, full heads and hands and ALL shoes inside generous margins, open visible floor. No speaker hidden outside the frame, no mentioned third person substituting a speaker. Small furniture offset to the side must not conceal their lower bodies. Plain undecorated footwear with NO swoosh, tick, star, stripe, side symbol, logo or lettering. No legible text, number, price, date, weekday/month, clock, watch, calendar, brand, flag, watermark, speech bubble or collage. Keep actions at the stage specified in the audio, never make a proposal look completed. The user accepts immediate editorial validation of generic illustrated characters and may change them later; do not claim that the actual voices were heard or that unspecified genders were proven. EDIT the first attached scene, preserving the older adult woman with dark brown skin, short natural silver curls, glasses, teal cardigan, cream blouse, dark trousers and plain cream shoes. She sits at the computer workstation; ADD the real second interlocutor, depicted as an older adult man with fair skin, short white hair, light stubble, muted rust cardigan, pale shirt, navy trousers and plain brown shoes, seated on a small chair angled toward her. They are TALKING to EACH OTHER about her preference for playing on the COMPUTER rather than television. She gestures toward the computer and looks at him, not silently playing and ignoring him. The complete desktop computer tower, monitor, keyboard and mouse visible on a SMALL open desk offset to one side; screen can show a simple generic coloured puzzle game with no known character, title or text. No television, standalone console, purchase or invented family relation. Exactly TWO people both complete head through ALL FOUR shoes with clear margins and visible floor; no desk hiding lower bodies. Exact transcript for context ONLY, never text to draw: Le soir vous regardez la télé ? Pas tous les soirs. Je n’aime pas tellement. Je préfère jouer à l’ordinateur.",
+      "source_png": "/workspace/generated_images/exec-f6796d2b-9be4-4675-953c-4c25c28e8546.png",
+      "source_sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+      "sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+      "bytes": 2788098,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "validation-directe-20261115",
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "CO CFR A1",
+        "Situations CO",
+        "Scènes validées directement"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux interlocuteurs se parlent près d’un ordinateur complet, tour, écran, clavier et souris. Jeu générique sans titre ; aucune télévision ou console préférée à tort. Personnages et quatre chaussures entiers.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "scenario_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scenario_scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+        "source_sha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+        "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "id": "dialogue-lena-livre-oublie-enseignante",
+      "label": "Léna sans livre — dialogue avec l’enseignante",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-lena-livre-oublie-enseignante.png",
+      "prompt": "Create ONE coherent educational illustration in the approved TCF painting style from the last two attached images. Warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours, believable anatomy and materials. No photo, 3D render, heavy cartoon contours or flat vector art. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY view with all MAIN SPEAKERS present, facing/interacting with each other, full heads and hands and ALL shoes inside generous margins, open visible floor. No speaker hidden outside the frame, no mentioned third person substituting a speaker. Small furniture offset to the side must not conceal their lower bodies. Plain undecorated footwear with NO swoosh, tick, star, stripe, side symbol, logo or lettering. No legible text, number, price, date, weekday/month, clock, watch, calendar, brand, flag, watermark, speech bubble or collage. Keep actions at the stage specified in the audio, never make a proposal look completed. The user accepts immediate editorial validation of generic illustrated characters and may change them later; do not claim that the actual voices were heard or that unspecified genders were proven. NEW composition, not copying the people in style references. EXACTLY TWO main speakers in a classroom: a clearly adult FEMALE teacher around 50 with fair freckled skin, a soft stocky build, short silver curls, dusty teal blouse, charcoal trousers and plain brown shoes; and teenage Léna, depicted as a girl with medium-brown skin, long black hair in a loose braid, muted plum jumper, tan trousers and plain cream shoes. Teacher is explicitly Madame, she stands beside a small side desk with her OWN open plain textbook, inviting Léna to begin reading. Léna faces her apologetically, showing an OPEN schoolbag on a small bench to indicate her textbook is missing; hands open, no textbook being lent to her, received or found. This is 'Madame, je n’ai pas mon livre', not a boy lending his book, punishment, completed exercise or medical scene. No other pupil substitutes the teacher. Both full bodies, all hands and shoes in frame; plain blank board, no readable page number or written exercise. Keep whole teacher's book and open bag visible. Exact transcript for context ONLY, never text to draw: Bonjour à tous. Un peu de silence s’il vous plaît. Ouvrez le livre à la page 16. Léna tu peux commencer ? Madame, je n’ai pas mon livre.",
+      "source_png": "/workspace/generated_images/exec-6255d806-75ee-4f64-b33d-d3ca5c1e896b.png",
+      "source_sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
+      "sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
+      "bytes": 2140237,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "validation-directe-20261115",
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "CO CFR A1",
+        "Situations CO",
+        "Scènes validées directement"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Léna explique à l’enseignante appelée Madame que son livre manque. Sac ouvert vide, propre livre de l’enseignante sur le côté ; aucun camarade ne prête un livre à la place de la réponse de l’enseignante. Deux interlocuteurs entiers.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "scenario_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scenario_scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
+        "source_sha256": "9865c1c98ba1634e4cea27ef68d70cc0cc4da0da022e6769f13f4be856aa29f0",
+        "audio_sha256": "f7a6fe7e28b11817b3da12d6e176138c51e9c8471f4602068c176bfe610a4f68",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "id": "dialogue-anissa-presentee-par-enseignante",
+      "label": "La présentation d’Anissa — enseignante visible",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-anissa-presentee-par-enseignante.png",
+      "prompt": "Create ONE coherent educational illustration in the approved TCF painting style from the last two attached images. Warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours, believable anatomy and materials. No photo, 3D render, heavy cartoon contours or flat vector art. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY view with all MAIN SPEAKERS present, facing/interacting with each other, full heads and hands and ALL shoes inside generous margins, open visible floor. No speaker hidden outside the frame, no mentioned third person substituting a speaker. Small furniture offset to the side must not conceal their lower bodies. Plain undecorated footwear with NO swoosh, tick, star, stripe, side symbol, logo or lettering. No legible text, number, price, date, weekday/month, clock, watch, calendar, brand, flag, watermark, speech bubble or collage. Keep actions at the stage specified in the audio, never make a proposal look completed. The user accepts immediate editorial validation of generic illustrated characters and may change them later; do not claim that the actual voices were heard or that unspecified genders were proven. NEW composition showing the actual TWO speakers, plus ONE silent classmate explicitly mentioned. Adult teacher depicted as a woman around 45 with dark brown skin, short natural hair, muted ochre blouse, navy trousers and plain dark shoes stands on the LEFT, warmly introducing the new pupil with an open hand. ANISSA is a teenage GIRL in the centre-right with light olive skin, dark hair in a loose bun, pale lavender blouse, dark jeans and plain cream shoes, a small backpack over one shoulder; she introduces herself with a hand lightly to her chest, facing the teacher and class. SARAH is a teenage classmate with fair freckled skin, a soft broad build, short wavy copper hair, sage sweater, navy trousers and plain brown shoes, seated silently next to an EMPTY chair that the teacher gently indicates. Sarah is a mentioned classmate, NOT a substitute for the teacher's speaking role. Exactly THREE foreground people, all full bodies and SIX shoes entirely visible with margin, small desks moved behind them or far to the side. Teacher and Anissa look engaged in the same conversation. No one already asserting a nationality from appearance, no flag, map, written names, country costume or readable lesson. Teacher's gender is an accepted illustrative choice, not a claim about the actual voice. Exact transcript for context ONLY, never text to draw: Je vous présente votre nouvelle camarade. Bonjour, tu veux te présenter ? Bonjour je m’appelle Anissa, j’arrive du Maroc et j’habite votre ville. Anissa, va t’assoir à côté de Sarah.",
+      "source_png": "/workspace/generated_images/exec-84264ff6-b59e-4a20-89de-be9bcfefe3b0.png",
+      "source_sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
+      "sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
+      "bytes": 2299062,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "validation-directe-20261115",
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "CO CFR A1",
+        "Situations CO",
+        "Scènes validées directement"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "La personne qui présente Anissa est visible et lui parle ; Anissa se présente. Sarah, assise près de la chaise libre, reste un tiers silencieux. Trois personnes en pied dont les deux véritables interlocuteurs.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "scenario_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "nouvelle élève féminine",
+            "quote": "Je vous présente votre nouvelle camarade."
+          },
+          {
+            "role": "Anissa et Sarah",
+            "quote": "Anissa, va t’assoir à côté de Sarah."
+          }
+        ]
+      },
+      "scenario_scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 3,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
+        "source_sha256": "ee4d95b47ab51a17bc3d47f80f18361fd98b497138fca2394e4c21202fbd0f39",
+        "audio_sha256": "8218fd8125a86a5a3eac8cd30f2f111cdb94b9b4029816706d09ff9a6c0d198b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "id": "dialogue-film-en-classe-enseignant-visible",
+      "label": "Le film en classe — enseignant et élève",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+      "prompt": "Create ONE coherent educational illustration in the approved TCF painting style from the last two attached images. Warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours, believable anatomy and materials. No photo, 3D render, heavy cartoon contours or flat vector art. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY view with all MAIN SPEAKERS present, facing/interacting with each other, full heads and hands and ALL shoes inside generous margins, open visible floor. No speaker hidden outside the frame, no mentioned third person substituting a speaker. Small furniture offset to the side must not conceal their lower bodies. Plain undecorated footwear with NO swoosh, tick, star, stripe, side symbol, logo or lettering. No legible text, number, price, date, weekday/month, clock, watch, calendar, brand, flag, watermark, speech bubble or collage. Keep actions at the stage specified in the audio, never make a proposal look completed. The user accepts immediate editorial validation of generic illustrated characters and may change them later; do not claim that the actual voices were heard or that unspecified genders were proven. NEW composition in a school classroom BEFORE the planned continuation of a film. EXACTLY TWO main speakers: an adult teacher depicted as a man around 55, light olive skin, short grey hair, clean-shaven face, plain dusty blue cardigan, cream shirt, charcoal trousers and plain brown shoes; and a teenage pupil depicted as a girl with dark brown skin, short natural curls, round glasses, pale ochre jumper, navy trousers and plain cream shoes. They face one another in the open classroom aisle. Pupil asks an interested question about finishing the film; teacher calmly answers with an open hand toward a BLANK projection screen and an idle projector on a small table to the rear. The screen is dark/off or plain blank, no film already running, no invented Lupin scene, character, poster, name or book title. A single plain CLOSED notebook on a side desk can evoke the pupil's later presentation, but she is not presenting now. The teacher who gives instructions is physically PRESENT, not just a group of pupils watching. Both complete from head to all shoes, whole main hands, enough floor and margins. No legible text, time or classroom number. Exact transcript for context ONLY, never text to draw: Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+      "source_png": "/workspace/generated_images/exec-9699bba6-3b1d-413c-89a5-bcd88e34a04e.png",
+      "source_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+      "sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+      "bytes": 2209714,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "co",
+      "batch": "validation-directe-20261115",
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "CO CFR A1",
+        "Situations CO",
+        "Scènes validées directement"
+      ],
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "L’enseignant et l’élève discutent avant la suite prévue du film. Projecteur au repos et écran vierge ; pas de film ou exposé déjà en cours, pas de fausse scène Lupin. Les deux interlocuteurs sont présents en entier.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "scenario_gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "groupe de classe, professeur hors champ",
+            "quote": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ?"
+          }
+        ]
+      },
+      "scenario_scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorial_review": {
+        "status": "user_accepted",
+        "register": "docs/tcf/validation-directe-scenes-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+        "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+        "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+        "audio_listening_performed": false,
+        "reserves_retained": true
       }
     }
   ]

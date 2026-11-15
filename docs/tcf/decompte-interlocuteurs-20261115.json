@@ -12,7 +12,8 @@
     "framing_confirmation_pending": 0,
     "visually_counted_bindings": 33,
     "remaining_detailed_recounts": 0,
-    "contextual_rework_bindings": 3
+    "contextual_rework_bindings": 3,
+    "later_interlocutor_corrections": 2
   },
   "sources": [
     {
@@ -404,7 +405,11 @@
         "note": "Le texte met en présence l’enseignante appelée Madame et Léna sans livre. L’image montre deux élèves se partageant un manuel : l’enseignante manque ; l’élève qui prête le livre ne la remplace pas.",
         "audio_listening_performed": false,
         "voice_gender_validated": false
-      }
+      },
+      "corrected_image": "/lib/images/tcf/co/scenes/reprises/dialogue-lena-livre-oublie-enseignante.png",
+      "corrected_image_sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
+      "correction_register": "docs/tcf/validation-directe-scenes-20261115.json",
+      "current_status": "user_accepted_corrected_interlocutors"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-02",
@@ -990,7 +995,11 @@
         "voice_gender_validated": false
       },
       "generation_note_evidence": "Nouvelle camarade Anissa accueillie par Sarah avec une chaise libre à côté. Accord féminin et prénoms respectés ; enseignant volontairement hors cadre car son genre n’est pas précisé. Aucun drapeau ou cliché de nationalité.",
-      "generation_prompt_sha256": "d5078976e64a2505c654f631f1cec8b7af72b94565700db1ebb6fe974f22dbef"
+      "generation_prompt_sha256": "d5078976e64a2505c654f631f1cec8b7af72b94565700db1ebb6fe974f22dbef",
+      "corrected_image": "/lib/images/tcf/co/scenes/reprises/dialogue-anissa-presentee-par-enseignante.png",
+      "corrected_image_sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
+      "correction_register": "docs/tcf/validation-directe-scenes-20261115.json",
+      "current_status": "user_accepted_corrected_interlocutors"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-04",

@@ -1,0 +1,802 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "eb1b920cd091a1959ce1250b29f022c653b1b1b8",
+  "user_instruction": "Continue valide directement les scène et je les changerai au besoin",
+  "scope": "Validation directe demandée par l’utilisateur : trente scènes activées, huit réemplois corrigeant les interlocuteurs et six nouveaux PNG dont trois corrections d’enseignants manquants. Réserves de voix conservées comme notes non bloquantes.",
+  "summary": {
+    "activated_prepared_scenes": 30,
+    "replaced_existing_bindings": 11,
+    "new_original_pngs": 6,
+    "reused_corrections": 8,
+    "total_active_sources": 117,
+    "delf_bound": 96,
+    "pending_scenes": 0,
+    "remaining_interlocutor_rework": 17,
+    "remaining_framing_rework": 21,
+    "generation_calls": 6,
+    "rejected_generations": 0
+  },
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "editorial_reserves_non_blocking": true,
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "1c3801cd9e214a4a1564e5784b2ad491a93898d989c74b771a6f619003160890",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "identical_to_baseline": true
+    }
+  ],
+  "original_87_audio_sources_and_transcriptions_preserved": true,
+  "new_qcm_trios": 0,
+  "questions_modified": 0,
+  "answers_modified": 0,
+  "transcriptions_modified": 0,
+  "audio_files_modified": 0,
+  "new_native_pngs": [
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-proposer-dejeuner-deux-personnes.png",
+      "sha256": "6a67850d8df971c9a8d62187b3d66a8cad4cee96cc77ae3196197bda8a0f70d0",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-musique-lecture-deux-personnes.png",
+      "sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-preference-jeu-ordinateur-deux-personnes.png",
+      "sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-lena-livre-oublie-enseignante.png",
+      "sha256": "3294b8d266a39cc48f9dc8676894b76f3248faab5fad659706ffd7ace892e57b",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-anissa-presentee-par-enseignante.png",
+      "sha256": "9fdf3d8e1f9dd608b3e9e9f9683a41fb7fd10c09d0800436884c8b1f7b0bef38",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+      "sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    }
+  ],
+  "reused_corrections": [
+    {
+      "key": "scenario-rentrer-dejeuner-maison",
+      "label": "Déjeuner à la maison",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-rentrer-dejeuner-maison.png",
+      "sha256": "71906481aca55feedad83b88860b48a12ace9b9269f325244c352b54ea6c7a8e",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png",
+      "previous_image_sha256": "7a1219d7d21e62dda7f19cb601d83f9fa15ee01693a98c4a1d5dc555b9b7c85d",
+      "visual_review": "Deux élèves au premier plan parlent du déjeuner à la maison ; la mère visible en retrait reste un tiers mentionné et ne remplace aucun des locuteurs. Pas de repas au self déjà choisi.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "mère mentionnée, non locutrice",
+            "quote": "Ma mère est en vacances, elle vient me chercher"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 3,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+          "transcription": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+          "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+          "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4"
+        }
+      ]
+    },
+    {
+      "key": "scenario-photo-dossier-classe-neige",
+      "label": "Le dossier de classe de neige",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige.png",
+      "sha256": "03443634d2cd1b134025e73ba8a117b417e678942c29f96b426289fee04eaa8b",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png",
+      "previous_image_sha256": "a0870125023408689752a8424d83383d6164f5741966336beae898b636949f55",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Photo-portrait remise à un membre du personnel homme, dossier ouvert sans texte. Pas de carte d’identité, certificat, piste de ski ou départ déjà réalisé. La photo représente le personnage dessiné, sans attester le genre du jeune de l’audio.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "membre du personnel homme",
+            "quote": "Bonjour Monsieur."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
+          "transcription": "Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+          "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+          "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8"
+        }
+      ]
+    },
+    {
+      "key": "scenario-accompagner-diego-infirmerie",
+      "label": "Diego à l’infirmerie",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+      "previous_image_sha256": "b654f423a271ba708fe9cbf0745db7c7b1162499388d46727a6a0e8bfd34fe28",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Diego tient son abdomen et marche avec une autre personne vers la porte de l’infirmerie, repérée par un pictogramme de lit et une croix verte. Pas de diagnostic, médecin, médicament ou consultation déjà menée. Personne accompagnante à vérifier.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "élève nommé Diego",
+            "quote": "Diego, comment ça va"
+          },
+          {
+            "role": "douleur au ventre",
+            "quote": "J’ai mal au ventre"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-050-04-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-050-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
+          "transcription": "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne.",
+          "source_sha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+          "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53"
+        }
+      ]
+    },
+    {
+      "key": "scenario-changer-place-vers-avant",
+      "label": "Changer de place",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-devant.png",
+      "previous_image_sha256": "8db3d2f5b54cacd9613e3f69fc2fcc9af07f89a30ba09c2d3afd5ace8692920f",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Élève avançant vers un bureau vide au premier rang, professeur homme qui l’y invite. Aucune lunette déjà reçue ou portée ; tableau vierge. Genre de l’élève à vérifier avant liaison.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "professeur homme",
+            "quote": "Monsieur, je peux changer de place ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-02"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-02.mp3",
+          "transcription": "Monsieur, je peux changer de place ? Pour aujourd’hui ou définitivement ? Pour aujourd’hui, mes lunettes arrivent demain Oui, mets-toi devant.",
+          "source_sha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
+          "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a"
+        }
+      ]
+    },
+    {
+      "key": "scenario-sac-sous-blouson-bleu",
+      "label": "Le sac au vestiaire",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu-roles-documentes.png",
+      "previous_image_sha256": "6570088ab7a8d45a56835dc158ffbfcb34ec53fe74efb34ba15f5934f5dc9444",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Le coin d’un seul blouson bleu est soulevé pour révéler le sac bordeaux sur le banc du vestiaire. Enseignante indiquant la cachette ; mains, pieds et objets utiles entiers. Genre du jeune interlocuteur non confirmé, liaison en attente.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "enseignante",
+            "quote": "Madame, mon sac n’est plus au vestiaire !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+          "transcription": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+          "source_sha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+          "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704"
+        }
+      ]
+    },
+    {
+      "key": "scenario-erreur-place-reservee",
+      "label": "L’erreur de place réservée",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
+      "previous_image_sha256": "e244aa7b8eb64b8a68f7d866b02cee53d594f09c5713b5eae08923c6a8881a50",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Voyageuse sans lunettes se levant à côté du siège, son billet et celui de l’autre personne visibles, chacun entièrement vierge. Vérification courtoise, personnages entiers, aucun numéro de place ni amende ; les figurants ne sont pas des locuteurs identifiés.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "voyageuse féminine",
+            "quote": "Madame, cette place est réservée."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-033-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-033-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
+          "transcription": "Madame, cette place est réservée. Ah bon ? Oui, regardez mon billet. Place numéro 22. Oh, excusez-moi. Je n’ai pas mes lunettes… Ah oui j’ai le numéro 28. Ce n’est pas grave Madame, vous êtes tout excusée.",
+          "source_sha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+          "audio_sha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9"
+        }
+      ]
+    },
+    {
+      "key": "scenario-train-marche-vers-lycee",
+      "label": "Le trajet jusqu’au lycée",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+      "previous_image_sha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Conversation à la sortie de la gare, train à quai et chemin piéton vers un lycée générique. Aucun bus ou horaire ; la distance précise reste une information audio. Personnages entiers, genres à vérifier.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-030-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-030-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
+          "transcription": "Pour aller au lycée, tu utilises le train ou le bus ? Je prends toujours le train. Mais la gare est loin du lycée ! Oui c’est vrai ! Mais je marche vite et j’arrive à l’heure.",
+          "source_sha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+          "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20"
+        }
+      ]
+    },
+    {
+      "key": "scenario-projet-bateau-visiter-iles",
+      "label": "Une visite des îles",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "width": 1448,
+      "height": 1086,
+      "existing_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+      "previous_image_sha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+      "visual_review": "Réemploi de la version conservée à deux interlocuteurs en interaction, entiers ; Projet de visite depuis la jetée, bateau entièrement cadré et îles proches génériques. Personne à bord, aucun billet acheté ou horaire ; fauteuil entier avec repose-pieds. Reprise par génération du bateau initialement coupé ; genres à vérifier.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-046-04-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-046-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
+          "transcription": "Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+          "source_sha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+          "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "scenario_draws": 600,
+    "selected_scene_manual_draws_all_levels": 123,
+    "scenario_audio_sources": 117,
+    "catalogue_tests": 13,
+    "context_reviews": 1021,
+    "typescript": true,
+    "production_build": true,
+    "browser": {
+      "report": "docs/tcf/validation-directe-20261115-browser.json",
+      "pages": 11,
+      "association_images": 66,
+      "selected_audio_scenes": 41,
+      "gallery_images": 41,
+      "errors": [],
+      "clipped_frames": []
+    }
+  },
+  "remaining_visual_work": {
+    "sources_examined_for_rework": 117,
+    "corrected_images": 1,
+    "full_recount_pending": 0,
+    "new_single_person_images_withheld": 0,
+    "active_source_count": 117,
+    "confirmed_scene_bindings_to_rework": 17,
+    "distinct_images_to_rework": 14,
+    "corrected_framing_bindings": 4,
+    "prepared_two_interlocutor_images": 0,
+    "audio_listening_performed": false,
+    "framing_rework_bindings": 21,
+    "framing_confirmation_pending": 0,
+    "visually_counted_bindings": 33,
+    "detailed_recounts_completed_20261115": 57,
+    "contextual_rework_bindings": 3,
+    "user_accepted_prepared_scenes": 30,
+    "user_accepted_corrected_interlocutors": 11
+  },
+  "remaining_visual_scenes": [
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+      "image": "/lib/images/tcf/co/bg/piscine.webp",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+      "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
+      "status": "needs_framing_rework",
+      "note": "Le patient demande son rendez-vous et la personne à l’accueil lui répond ; les patients assis derrière sont des figurants."
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+      "status": "needs_framing_rework",
+      "note": "Une personne montre le sac, l’autre le commente ; deux interlocutrices visibles autour du sac, sans genre prouvé par le mot joli qui qualifie le sac."
+    },
+    {
+      "exercise": "tcf-a1-s4-co-4",
+      "dialogue": 5,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-5.mp3",
+      "image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
+      "status": "needs_framing_rework",
+      "note": "Une lectrice demande un roman et l’employée lui répond ; les autres lecteurs ne sont pas comptés."
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
+      "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
+      "status": "needs_framing_rework",
+      "note": "Le parent appelé papa accompagne les devoirs de l’enfant. Le masculin du père ne prouve pas celui de l’enfant."
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3",
+      "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
+      "status": "needs_framing_rework",
+      "note": "Les deux élèves au premier plan discutent de la professeure portant des livres. Madame Vega est le tiers désigné, pas un substitut à l’un des deux élèves."
+    },
+    {
+      "exercise": "tcf-a1-tpa-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3",
+      "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
+      "status": "needs_framing_rework",
+      "note": "Deux personnes échangent dans la cuisine. La préférence pour préparer ses repas ne prouve pas une identité de genre ou un lien familial."
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
+      "status": "needs_framing_rework",
+      "note": "Kate montre des souvenirs de voyage à une autre personne. Les clients du café ne sont pas comptés ; les photos illustrent un voyage passé."
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 2,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
+      "status": "needs_framing_rework",
+      "note": "Les deux personnes discutent devant le commerce ; le panneau d’heure ne représente pas un troisième interlocuteur."
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
+      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+      "status": "needs_framing_rework",
+      "note": "Une personne propose la sortie et présente ses billets, l’autre répond ; pas de gardien du musée compté comme locuteur."
+    },
+    {
+      "exercise": "tcf-a2-sa-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
+      "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
+      "status": "needs_framing_rework",
+      "note": "Les deux personnes dans le bus se parlent de Thomas. Thomas et Sophie sont des tiers mentionnés, pas les personnes à substituer aux locuteurs."
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-1.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
+      "status": "needs_framing_rework",
+      "note": "Deux personnes comparent les sacs vert et noir. La couleur porte sur les objets, aucun genre de voix n’en est déduit."
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
+      "status": "needs_framing_rework",
+      "note": "La personne qui a raté sa crème et celle qui propose de montrer sont visibles. Aucun cuisinier supplémentaire n’est requis."
+    },
+    {
+      "exercise": "tcf-a2-sb-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+      "status": "needs_framing_rework",
+      "note": "Emma reçoit les félicitations d’Alex. Contente documente Emma ; le prénom Alex ne suffit pas à confirmer le genre de l’autre voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+      "image": "/lib/images/tcf/co/bg/piscine.webp",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-032-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
+      "status": "needs_framing_rework",
+      "note": "Deux élèves échangent autour du dictionnaire ; les autres élèves sont des figurants. Le professeur n’est pas locuteur dans cet échange."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+      "image": "/lib/images/tcf/co/bg/piscine.webp",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-02.mp3",
+      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "status": "needs_framing_rework",
+      "note": "Le voyageur demande sa voie et l’employé appelé Monsieur répond. Le guichet n’est pas une preuve d’achat : l’échange est un renseignement."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-02.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+      "status": "needs_framing_rework",
+      "note": "L’employé homme et l’adolescente appelée mademoiselle sont visibles au guichet. Âge, tarif et destination ne sont pas des identités à inférer du dessin."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-02.mp3",
+      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "status": "needs_framing_rework",
+      "note": "Le demandeur et l’employé appelé monsieur échangent sur les départs du bateau. Même image que d’autres renseignements, contrôlée avec ce texte précis."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-04.mp3",
+      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "status": "needs_framing_rework",
+      "note": "Le demandeur et l’employé appelé monsieur discutent d’une réduction de groupe. Les cinq membres du groupe ne sont pas cinq locuteurs annoncés."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-047-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
+      "status": "needs_framing_rework",
+      "note": "La vendeuse appelée madame et le client appelé jeune homme sont présents. La sœur, destinataire du bijou, ne remplace aucun locuteur."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
+      "status": "needs_framing_rework",
+      "note": "La personne demandant le paquet et l’employée appelée Madame sont visibles. Le jeune homme destinataire ne constitue pas à lui seul un locuteur supplémentaire."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-033-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+      "status": "needs_framing_rework",
+      "note": "Demandeuse et employé au guichet répondent à la question de réduction. Les dix personnes du groupe ne sont pas dix voix dans cet échange."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
+      "status": "needs_interlocutor_rework",
+      "note": "La guide est appelée Madame et reçoit les remerciements d’un visiteur. Le prompt et la note existants placent expressément le visiteur hors cadre ; le groupe figurant ne le remplace pas. Un interlocuteur manque malgré plusieurs personnes visibles."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-02.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-030-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-04.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-04.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "status": "needs_interlocutor_rework",
+      "note": null
+    }
+  ],
+  "catalogues": {
+    "images": 6731,
+    "audio_files": 8801,
+    "questions": 6734,
+    "response_formats": 15056
+  },
+  "validated_at_upstream": "a5adf36d2a9977c181429b85bd54f01e625110ff"
+}
