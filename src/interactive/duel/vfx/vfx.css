@@ -1,0 +1,8 @@
+.ci-vfx-canvas { position: fixed; inset: 0; width: 100vw; height: 100dvh; z-index: 22; pointer-events: none; }
+.ci-vfx-fallback { position: absolute; left: 42%; top: 28%; width: 16%; aspect-ratio: 1; border: 5px solid #d19aef; border-radius: 50%; pointer-events: none; animation: ci-vfx-fallback .8s ease-out both; }
+@keyframes ci-vfx-fallback { from { transform: scale(.2); opacity: .8; } to { transform: scale(1.4); opacity: 0; } }
+.ci-duel-arena[data-paused] * { animation-play-state: paused !important; }
+.ci-duel-arena[data-paused] .ci-duel-question,.ci-duel-arena[data-paused] .ci-duel-sides { visibility: hidden; }
+.ci-duel-arena[data-paused] .ci-vfx-canvas { visibility: hidden; }
+.ci-duel-arena .ci-duel-pause { position: absolute; z-index: 24; left: 0; right: 0; top: 25%; }
+.ci-duel-impact-message { position: absolute; bottom: 4rem; left: 10%; right: 10%; text-align: center; font-size: 1rem; font-weight: 700; pointer-events: none; }

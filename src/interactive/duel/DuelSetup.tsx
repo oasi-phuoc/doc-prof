@@ -14,6 +14,7 @@ import { DuelGame } from './DuelGame'
 import './duel.css'
 import type { MediaResolver } from '../media/prepared-context'
 import { MascotAttackPreview } from './MascotAttackPreview'
+import {COMBAT_ATLASES} from './combat-portraits'
 
 type Props = { quiz: CompetitionQuiz; mode: DuelMode; timer: TimerSettings; colors: string[]; shapes: ShapeId[]; onExit: () => void; onNewPart?: () => void }
 const randomSeed = () => crypto.getRandomValues(new Uint32Array(1))[0]!
@@ -43,6 +44,7 @@ export default function DuelSetup(props: Props) {
     <div className="ci-duel-timer"><label><input type="checkbox" checked={timer.enabled} onChange={event => setTimer({ ...timer, enabled: event.target.checked })} />Activer le minuteur du duel</label>
       <label>Temps par question (secondes)<input type="number" min="5" max="600" value={timer.seconds} onChange={event => setTimer({ ...timer, seconds: validSeconds(Number(event.target.value)) })} /></label>
       <label>Temps de correction (secondes)<input type="number" min="1" max="10" value={timer.feedbackSeconds} onChange={event => setTimer({ ...timer, feedbackSeconds: validFeedbackSeconds(Number(event.target.value)) })} /></label>
+      <p>La correction laisse toujours le temps à l’animation de se terminer.</p>
     </div>
     <div className="ci-toolbar">{hasDuel(props.quiz.id, props.mode) && <button className="ci-primary" onClick={() => setRequest({ config: valid ? config : { ...config, left: ['panda'], right: ['fox'] }, timer, resume: true })}>Reprendre la partie</button>}
       <button className="ci-primary" disabled={!valid} onClick={() => hasDuel(props.quiz.id, props.mode) && props.onNewPart ? restart() : setRequest({ config, timer, resume: false })}>{hasDuel(props.quiz.id, props.mode) ? 'Nouvelle partie' : 'Préparer la partie'}</button>
@@ -56,7 +58,7 @@ function PreparedDuel(props: Props & { config: DuelConfig; timer: TimerSettings;
     void (async () => {
       const source = parseCompetitionQuiz({ ...props.quiz, items: props.quiz.items.map(({ question, correctChoiceId }) => ({ question, correctChoiceId })) }, [location.origin])
       const planId = await duelPlanId(source)
-      const media = await prepareLocalCompetition(source, controller.signal); release = media.dispose
+      const media = await prepareLocalCompetition(source, controller.signal,COMBAT_ATLASES); release = media.dispose
       if (controller.signal.aborted) media.dispose()
       else setPrepared({ quiz: media.quiz, artwork: media.artwork, planId })
     })().catch((reason: unknown) => { if (!controller.signal.aborted) setError(reason instanceof Error ? reason.message : 'Préparation impossible.') })

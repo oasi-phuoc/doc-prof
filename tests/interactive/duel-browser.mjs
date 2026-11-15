@@ -21,7 +21,7 @@ const results=[],errors=[],methods=[];let activePage
 const button=(page,name)=>gameControl(page,name)
 const side=(page,value)=>page.locator(`.ci-duel-player[data-side="${value}"]`)
 const answer=(page,value,text)=>side(page,value).locator('.ci-duel-answer').filter({has:page.locator('.ci-duel-answer-content').getByText(text,{exact:true})})
-const hp=async page=>(await page.locator('.ci-duel-hp').allTextContents()).map(text=>Number(text.replace(/\D/g,'')))
+const hp=async page=>{if(await page.locator('.ci-duel-feedback:not([data-paused])').count())await page.waitForFunction(()=>{const n=document.querySelector('.ci-vfx-canvas');return !n||Number(n.dataset.elapsed)>=Number(n.dataset.contact)+110});return(await page.locator('.ci-duel-hp').allTextContents()).map(text=>Number(text.replace(/\D/g,'')))}
 const id=page=>page.locator('.ci-duel-arena').getAttribute('data-duel-round')
 async function setup(fiche,width=390,height=844){
   const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'})
@@ -98,20 +98,20 @@ try{
       const find=(side,text)=>[...document.querySelectorAll(`.ci-duel-player[data-side="${side}"] .ci-duel-answer`)].find(node=>node.querySelector('.ci-duel-answer-content').textContent===text)
       find('left','4').click();find('right','5').click()
     })
-    assert.deepEqual(await hp(page),[100,90]);assert.equal(await page.locator('.ci-duel-flight').count(),1)
-    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-attacker'),'left')
-    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),'right')
+    assert.deepEqual(await hp(page),[100,90]);assert.equal(await page.locator('.ci-vfx-canvas').count(),1)
+    assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-attacker'),'left')
+    assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-direction'),'right')
     assert.equal(await side(page,'right').locator('.ci-duel-answer-key').count(),1)
     assert.equal(await side(page,'right').locator('.ci-duel-answer-muted').count(),5)
-    await next(page,first);assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'2');assert.equal(await page.locator('[data-power-aura="2"]').count(),2)
+    await next(page,first);assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'2');assert.equal(await page.locator('.ci-vfx-canvas[data-multiplier="2"]').count(),1)
     const second=await id(page);await answer(page,'left','5').click()
-    assert.deepEqual(await hp(page),[80,90]);assert.equal(await page.locator('.ci-mistake-object').count(),6)
+    assert.deepEqual(await hp(page),[80,90]);assert.equal(await page.locator('.ci-vfx-canvas[data-local]').count(),1)
     assert.equal(await page.locator('.ci-duel-flight').count(),0)
-    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-impact-kind'),'mistake')
-    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-attacker'),null)
-    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-victim'),'left')
+    assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-impact-kind'),'mistake')
+    assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-attacker'),null)
+    assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-victim'),'left')
     assert.equal(await side(page,'left').locator('.ci-competition-portrait').evaluate(node=>getComputedStyle(node).animationName),'ci-duel-super-hurt')
-    assert.ok((await page.locator('.ci-mistake-object').evaluateAll(nodes=>nodes.map(node=>getComputedStyle(node).animationName))).every(name=>name==='ci-duel-fall'))
+    assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-effect'),'panda')
     await page.waitForTimeout(200) // Capture the falling objects during the critical mistake.
     await page.screenshot({path:`docs/interactive/screenshots/duel-critical-${width}.png`})
     await next(page,second);await axe(page)
@@ -120,10 +120,10 @@ try{
     await button(page,'Quitter le plein écran').click()
     await button(page,'Contraste').click();await axe(page);await button(page,'Contraste').click()
     if(width===360){
-      assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'3');assert.equal(await page.locator('[data-power-aura="3"]').count(),2)
-      let previous=await id(page);await answer(page,'left','5').click();assert.deepEqual(await hp(page),[50,90]);assert.equal(await page.locator('.ci-mistake-object').count(),9);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-super-nova').count(),1)
+      assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'3');assert.equal(await page.locator('.ci-vfx-canvas[data-multiplier="3"]').count(),1)
+      let previous=await id(page);await answer(page,'left','5').click();assert.deepEqual(await hp(page),[50,90]);assert.equal(await page.locator('.ci-vfx-canvas[data-local]').count(),1);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-vfx-canvas[data-multiplier="3"]').count(),1)
       assert.equal(await side(page,'left').locator('.ci-competition-portrait').evaluate(node=>getComputedStyle(node).animationName),'ci-duel-ultra-hurt')
-      await next(page,previous);previous=await id(page);await answer(page,'right','4').click();assert.deepEqual(await hp(page),[20,90]);assert.ok(await page.locator('.ci-duel-flight').count()>=7);assert.equal(await page.locator('.ci-super-ring').count(),3);assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),'left')
+      await next(page,previous);previous=await id(page);await answer(page,'right','4').click();assert.deepEqual(await hp(page),[20,90]);assert.equal(await page.locator('.ci-vfx-canvas[data-local]').count(),1);assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-direction'),'local');assert.equal(await side(page,'left').locator('[data-combat-state="critical-tired"]').count(),1)
       await page.waitForTimeout(250);await page.screenshot({path:'docs/interactive/screenshots/duel-super-critical-v2-360.png'});await next(page,previous)
     }
     if(width===1366){
@@ -155,7 +155,7 @@ try{
       assert.equal((await page.evaluate(()=>Object.keys(sessionStorage).filter(key=>key.startsWith('clairfle.duel.duel.')).length)),2)
       results.push({duel:'first simultaneous click wins; normal correct answer deals 10%; critical wrong answer deals 20% to oneself; repeated questions continue to zero; one winner',resume:'exit through all setup screens retains source quiz, seed, 80/90 health and progress',restart:'explicit new game renews the source session and creates a separate empty journal; the previous completed duel is preserved',journal:'replayed actions only, without question bodies, private keys or score snapshots'})
     }
-    results.push({viewport:`${width}x${height}`,cards:'two players and health bars fit; touch targets at least 44 px; only correct cards retain color',animation:'directional curved attack on a correct answer; critical mistake drops six objects on oneself with stronger hurt; active with reduced-motion preference',fullscreen:'only exit-fullscreen remains in the header',axeViolations:0})
+    results.push({viewport:`${width}x${height}`,cards:'two players and health bars fit; touch targets at least 44 px; only correct cards retain color',animation:'directional curved attack on a correct answer; critical mistake uses its own local signature, with a reaction synchronized to contact; active with reduced-motion preference',fullscreen:'only exit-fullscreen remains in the header',axeViolations:0})
     await context.close()
   }
   for(const [width,height]of [[390,844],[1366,768],[360,640]].filter(([width])=>!process.env.DUEL_TEST_WIDTH||width===Number(process.env.DUEL_TEST_WIDTH))){
@@ -192,7 +192,7 @@ try{
         const label={determinant:'Déterminants',nom:'Noms',pronom:'Pronoms',verbe:'Verbes'}[tokens[position].category]
         const damage=Number(await page.locator('[data-damage]').getAttribute('data-damage'))
         await answer(page,'left',label).click();targetHP=Math.max(0,targetHP-damage);assert.equal((await hp(page))[1],targetHP)
-        assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-effect'),expected[pairIndex].left.avatarId)
+        assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-effect'),expected[pairIndex].left.avatarId)
         if(targetHP)await next(page,old)
       }
       assert.equal(targetHP,0)
@@ -207,10 +207,10 @@ try{
     await page.getByRole('checkbox',{name:'Activer le minuteur du duel',exact:true}).check();await page.getByRole('spinbutton',{name:'Temps par question (secondes)',exact:true}).fill('5');await page.getByRole('spinbutton',{name:'Temps de correction (secondes)',exact:true}).fill('1')
     await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));await button(page,'Préparer la partie').click();await button(page,'Commencer le duel').click()
     for(let turn=0;turn<10;turn++){
-      await page.clock.runFor(5000);await page.locator('.ci-duel-feedback').waitFor();assert.deepEqual(await hp(page),[90-turn*10,90-turn*10]);assert.equal(await page.locator('.ci-duel-hurt').count(),2);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-duel-impact[data-impact-kind="mistake"]').count(),2)
+      await page.clock.runFor(5000);await page.clock.runFor(450);await page.locator('.ci-duel-feedback').waitFor();assert.deepEqual(await hp(page),[90-turn*10,90-turn*10]);assert.equal(await page.locator('.ci-duel-hurt').count(),2);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-vfx-canvas[data-impact-kind="timeout"]').count(),1)
       assert.match(await page.locator('.ci-duel-controls [role="status"]').innerText(),/les deux joueurs perdent 10/)
       if(turn===0)await page.screenshot({path:'docs/interactive/screenshots/duel-timeout-v2-390.png'})
-      await page.clock.runFor(1000)
+      await page.clock.runFor(550)
     }
     await page.getByRole('heading',{name:'Match nul !',exact:true}).waitFor();assert.equal(await page.locator('.ci-duel-final-score').count(),0);assert.match(await page.locator('.ci-duel-results').innerText(),/Match nul/)
     results.push({timedDuel:'390x844',timeout:'Both fighters lose exactly ten percent on every unanswered question, with two local hurt reactions and no opposing attack; ten timeouts end in a draw.'});await context.close()

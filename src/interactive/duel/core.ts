@@ -4,6 +4,7 @@ import { validAvatar, type CompetitionAvatar } from '../competition/avatars'
 import type { CompetitionQuiz } from '../competition/core'
 import type { TimerSettings } from '../domain/settings'
 import { validEffects, type DuelEffects } from './effects'
+import {feedbackDuration} from './vfx/catalog'
 
 export type Side = 'left' | 'right'
 export type DuelMode = 'duel' | 'teams'
@@ -14,7 +15,7 @@ export type DuelPhase = 'ready' | 'question' | 'feedback' | 'finished'
 export type DamageMultiplier = 1 | 2 | 3
 export type DuelResolution = { at: number; side?: Side; choiceId?: string; correct?: boolean; victim?: Side; damage: number; critical: boolean; multiplier?: DamageMultiplier; timeout?: boolean; winner?: Side; draw?: true }
 export type DuelState = {
-  version: 2; quizId: string; config: DuelConfig; timer: TimerSettings; pairs: DuelPair[];
+  version: 2|3; quizId: string; config: DuelConfig; timer: TimerSettings; pairs: DuelPair[];
   pairIndex: number; turn: number; phase: DuelPhase; hp: Record<Side, number>; wins: Record<Side, number>;
   results: { pairIndex: number; winner?: Side; draw?: true; hp: Record<Side, number> }[];
   resolution?: DuelResolution; paused: boolean; deadline?: number; remainingMs?: number;
@@ -69,10 +70,10 @@ export function duelRound(quiz: CompetitionQuiz, state: DuelState) {
   const multiplier:DamageMultiplier=roll<SUPER_CRITICAL_CHANCE?3:roll<SUPER_CRITICAL_CHANCE+CRITICAL_CHANCE?2:1
   return { id: duelRoundId(state), item, critical:multiplier>1, multiplier, damage:10*multiplier }
 }
-export function createDuel(quiz: CompetitionQuiz, config: DuelConfig, timer: TimerSettings, at: number): DuelState {
+export function createDuel(quiz: CompetitionQuiz, config: DuelConfig, timer: TimerSettings, at: number,version:2|3=3): DuelState {
   if (!Number.isFinite(at) || at < 0 || !quiz.items.length || quiz.items.length > 100 || quiz.items.some(item => !item.question.choices.some(choice => choice.id === item.correctChoiceId))) throw new Error('Le duel demande des questions à réponse vérifiée.')
   const checked = parseDuelConfig(config)
-  return { version: 2, quizId: quiz.id, config: checked, timer: parseDuelTimer(timer), pairs: duelPairs(checked), pairIndex: 0, turn: 0, phase: 'ready', hp: { left: 100, right: 100 }, wins: { left: 0, right: 0 }, results: [], paused: false, createdAt: at, revision: 0 }
+  return { version, quizId: quiz.id, config: checked, timer: parseDuelTimer(timer), pairs: duelPairs(checked), pairIndex: 0, turn: 0, phase: 'ready', hp: { left: 100, right: 100 }, wins: { left: 0, right: 0 }, results: [], paused: false, createdAt: at, revision: 0 }
 }
 export function isDuelAction(value: unknown): value is DuelAction {
   if (!object(value) || typeof value.type !== 'string') return false
@@ -88,7 +89,9 @@ function beginQuestion(state: DuelState, at: number) {
   state.deadline = state.timer.enabled ? at + state.timer.seconds * 1000 : undefined
 }
 function feedback(state: DuelState, resolution: DuelResolution, at: number) {
-  state.phase = 'feedback'; state.resolution = resolution; state.deadline = at + state.timer.feedbackSeconds * 1000; state.paused = false; delete state.remainingMs
+  const id=state.pairs[state.pairIndex]![resolution.side??'left'].avatarId
+  const duration=state.version===2?state.timer.feedbackSeconds*1000:feedbackDuration(state.timer.feedbackSeconds,id,resolution.multiplier??1,resolution.timeout)
+  state.phase = 'feedback'; state.resolution = resolution; state.deadline = at + duration; state.paused = false; delete state.remainingMs
 }
 function advance(state: DuelState, at: number) {
   if (state.resolution?.winner||state.resolution?.draw) {

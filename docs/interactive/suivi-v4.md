@@ -69,3 +69,9 @@ Le trophée Compétition propose désormais un [duel et un tournoi par équipes]
 ## Affichage de jeu épuré et paysage
 
 L’[ADR 0053](adr-0053-jeu-epure-et-paysage.md) applique les commandes regroupées aux modes Classe, Solo et compétition, les barres latérales du duel et les trente nouvelles expressions énervées. Le cahier des animations reçu ensuite reste un chantier distinct : 90 chorégraphies, 60 auras et 120 nouveaux états illustrés.
+
+## Refonte cinématique des attaques et états de combat
+
+L’[ADR 0054](adr-0054-effets-cinematiques-et-etats-de-combat.md) remplace le rendu des attaques par le moteur Canvas2D commun au jeu et aux aperçus : trente signatures aux trois niveaux, soixante auras persistantes, erreurs thématiques locales, véritables nouveaux dessins de fatigue, grande fatigue, victoire et KO pour les trente personnages. Le ×3 peut grandir au centre de la victime, conformément à la précision du propriétaire. Les bilans gardent les portraits gagnants et perdants. Les nouveaux journaux version 3 laissent finir les effets ; les versions 2 restent rejouées avec leurs délais historiques.
+
+La [galerie de revue](vfx-proofs/index.html) contient planches et films. Le [rapport qualité](quality-cinematic-vfx-results.json) précise les contrôles réellement exécutés, la fluidité mesurée sous Chromium et les essais physiques Android/iOS/ENI encore ouverts. Le duel reste un jeu sur écran commun préparé à l’avance ; ce lot n’ajoute ni synchronisation entre appareils sans réseau ni démarrage à froid hors ligne.

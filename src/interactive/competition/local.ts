@@ -35,10 +35,10 @@ export function readLocalCompetition(quiz: CompetitionQuiz, settings: Competitio
 export function writeLocalCompetition(journal: LocalCompetitionJournal) { try { sessionStorage.setItem(key(journal.quizId), JSON.stringify(journal)); return true } catch { return false } }
 
 /** Full blobs, including the avatar sheet, stay available after network loss. */
-export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: AbortSignal): Promise<{ quiz: CompetitionQuiz; artwork: MediaResolver; dispose: () => void }> {
-  const sources = new Set([...MASCOT_IMAGES.map(src=>new URL(src,location.origin).href), ...quiz.items.flatMap(({ question: q }) => [...q.images, ...(q.audio ? [q.audio] : []), ...(q.audioParts ?? []), ...q.choices.flatMap((choice) => choice.image ? [choice.image] : [])])].filter((source) => !source.startsWith('data:') && !source.startsWith('blob:')))
-  const urls = new Map<string, string>(); let total = 0
-  const dispose = () => { for (const value of urls.values()) URL.revokeObjectURL(value) }
+export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: AbortSignal,extraArtwork:readonly string[]=[]): Promise<{ quiz: CompetitionQuiz; artwork: MediaResolver; dispose: () => void }> {
+  const sources = new Set([...[...MASCOT_IMAGES,...extraArtwork].map(src=>new URL(src,location.origin).href), ...quiz.items.flatMap(({ question: q }) => [...q.images, ...(q.audio ? [q.audio] : []), ...(q.audioParts ?? []), ...q.choices.flatMap((choice) => choice.image ? [choice.image] : [])])].filter((source) => !source.startsWith('data:') && !source.startsWith('blob:')))
+  const urls = new Map<string, string>(),decodedArtwork:HTMLImageElement[]=[]; let total = 0
+  const dispose = () => { for(const image of decodedArtwork)image.src='';decodedArtwork.length=0;for (const value of urls.values()) URL.revokeObjectURL(value) }
   try {
     for (const source of sources) {
       if (signal.aborted) throw new DOMException('Annulé', 'AbortError')
@@ -48,6 +48,19 @@ export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: Abo
       if (blob.size > 32 * 1024 * 1024 || total > 128 * 1024 * 1024) throw new CompetitionError('Cette sélection contient trop de médias pour le défi local. Réduisez le nombre de questions.')
       urls.set(source, URL.createObjectURL(blob))
     }
+    // Combat drawings are decoded before the first timer, including their unseen states.
+    // The original network URLs will not be needed when a threshold is crossed offline.
+    await Promise.all(extraArtwork.map(source=>new Promise<void>((resolve,reject)=>{
+      const image=new Image(),timer=setTimeout(()=>finish(new Error('Une mascotte ne peut pas être décodée.')),15000)
+      let settled=false
+      const abort=()=>finish(new DOMException('Annulé','AbortError'))
+      const finish=(error?:Error)=>{if(settled)return;settled=true;clearTimeout(timer);signal.removeEventListener('abort',abort);image.onload=null;image.onerror=null;if(error)reject(error);else{decodedArtwork.push(image);resolve()}}
+      signal.addEventListener('abort',abort,{once:true})
+      if(signal.aborted){abort();return}
+      image.onload=()=>{void (typeof image.decode==='function'?image.decode():Promise.resolve()).then(()=>finish(),()=>finish(new Error('Une mascotte ne peut pas être décodée.')))}
+      image.onerror=()=>finish(new Error('Une mascotte ne peut pas être chargée.'))
+      image.src=urls.get(new URL(source,location.origin).href)!
+    })))
     const copy = structuredClone(quiz), media = (source: string) => urls.get(source) ?? source
     for (const item of copy.items) { const q = item.question; q.images = q.images.map(media); if (q.audio) q.audio = media(q.audio); if (q.audioParts) q.audioParts = q.audioParts.map(media); q.choices = q.choices.map((choice) => ({ ...choice, ...(choice.image ? { image: media(choice.image) } : {}) })) }
     return { quiz: copy, artwork: source=>media(new URL(source,location.origin).href), dispose }

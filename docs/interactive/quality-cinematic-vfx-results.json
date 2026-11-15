@@ -1,0 +1,213 @@
+{
+  "date": "2026-11-15",
+  "scope": "Refonte des signatures, auras et portraits de combat selon le cahier fourni et les précisions du propriétaire",
+  "previousDelivery": "facde267",
+  "counts": {
+    "mascots": 30,
+    "attackCompositions": 90,
+    "persistentAuras": 60,
+    "newHealthAndOutcomeDrawings": 120,
+    "newRGBAAtlases": 5
+  },
+  "renderer": "Canvas2D; one overlay and one RAF for the active duel, shared by game and previews; no new rendering dependency",
+  "tripleRule": "Victim-local; centre-growing and rotating compositions allowed, especially Kitsune. No inter-player flight in triple mode.",
+  "wrongAnswer": "The mistaken fighter’s own local signature; no opposing attack.",
+  "fullUnitSuite": {
+    "tests": 433,
+    "passed": 433,
+    "failed": 0,
+    "note": "Full suite passed during the VFX increment; subsequent quality and orientation refinements are covered by the final focused and native runs below."
+  },
+  "finalFocusedUnitSuite": {
+    "tests": 35,
+    "passed": 35,
+    "failed": 0
+  },
+  "browserStagesPassed": [
+    "duel-browser",
+    "duel-landscape-browser",
+    "mascots-effects-browser",
+    "vfx-lifecycle-browser",
+    "vfx-browser",
+    "a4-regression"
+  ],
+  "workflowStagesAvailable": 67,
+  "allWorkflowStagesRun": false,
+  "viewports": [
+    "1366x768",
+    "390x844",
+    "360x640",
+    "844x390"
+  ],
+  "axeViolations": 0,
+  "liveApiWrites": 0,
+  "resume": "Version 3 cinematic deadlines; version 2 historic deadlines and settings preserved; actual v2 triple contact verified before its one-second deadline.",
+  "lifecycle": {
+    "results": [
+      {
+        "case": "triple pause/resize/resume",
+        "frozenPixelFrame": true,
+        "healthWaitsForContact": true,
+        "damageAppliedOnce": 30,
+        "canvasRemovedOnExit": true
+      },
+      {
+        "case": "legacy-v2",
+        "tripleContactVisibleBeforeHistoricOneSecondDeadline": true,
+        "journalVersionAndTeacherSettingPreserved": true
+      },
+      {
+        "case": "missing",
+        "fallback": true,
+        "answerAndAutomaticNextStillWork": true
+      },
+      {
+        "case": "throwing",
+        "fallback": true,
+        "answerAndAutomaticNextStillWork": true
+      }
+    ],
+    "errors": [],
+    "liveApiWrites": 0
+  },
+  "artwork": "120 distinct physical RGBA cells verified for dimensions, content, hashes, transparent corners and exact identity/state mapping; originals copied without raster editing.",
+  "preload": "Five health atlases fetched and decoded before play; decoded image references and blob URLs retained until disposal. Offline team matches and health transitions verified.",
+  "proofs": {
+    "gallery": "vfx-proofs/index.html",
+    "attackSampleRatios": [
+      0,
+      0.2,
+      0.5,
+      0.8,
+      0.95
+    ],
+    "auraSampleTimesMs": [
+      1000,
+      25000,
+      61000,
+      97000,
+      115000
+    ],
+    "contactSheets": 30,
+    "materialFilms": [
+      "goat.webm",
+      "axolotl.webm",
+      "kitsune.webm",
+      "koi.webm"
+    ],
+    "liveScreenshots": [
+      "screenshots/duel-vfx-normal-844.png",
+      "screenshots/duel-vfx-power2-844.png",
+      "screenshots/duel-vfx-power3-844.png",
+      "screenshots/duel-vfx-portrait-360.png",
+      "screenshots/duel-vfx-water-390.png",
+      "screenshots/duel-vfx-fire-390.png"
+    ]
+  },
+  "rasterQuality": "VFX DPI starts capped at 1.5 on small screens, 2 elsewhere; high frame latency lowers raster resolution, then particle density if required; motion remains enabled. DOM text and mascot resolution unaffected.",
+  "benchmarks": [
+    {
+      "width": 1366,
+      "height": 768,
+      "dpr": 1,
+      "density": 1,
+      "frames": 195,
+      "drawP95": 3.600000001490116,
+      "frameP95": 33.29999999999973,
+      "drawMean": 2.0559139783263847,
+      "renderer": "Canvas2D Chromium software/headless, not physical phone hardware"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "dpr": 1.5,
+      "density": 1,
+      "frames": 210,
+      "drawP95": 3.5,
+      "frameP95": 16.700000000000273,
+      "drawMean": 2.3313432835709693,
+      "renderer": "Canvas2D Chromium software/headless, not physical phone hardware"
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "dpr": 1.5,
+      "density": 1,
+      "frames": 209,
+      "drawP95": 4.600000001490116,
+      "frameP95": 16.799999999999955,
+      "drawMean": 2.6140000000968575,
+      "renderer": "Canvas2D Chromium software/headless, not physical phone hardware"
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "dpr": 1,
+      "density": 1,
+      "frames": 193,
+      "drawP95": 2.400000002235174,
+      "frameP95": 16.800000000000182,
+      "drawMean": 1.4951086957007647,
+      "renderer": "Canvas2D Chromium software/headless, not physical phone hardware"
+    }
+  ],
+  "a4": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "limits": [
+    "Chromium headless measurements and viewport/DPI emulation; no physical Android, iOS or ENI validation.",
+    "Visual sheets reviewed by Codex; artistic acceptance by the owner remains a visual judgement.",
+    "Warm offline shared-screen play after preparation; cold-start offline and remote duels are outside this increment.",
+    "No external deployment or cloud configuration publication.",
+    "Capture-run frame intervals include occasional desktop outliers above 16.7 ms; sustained 60 fps on physical ENI hardware is not certified by these headless measurements."
+  ],
+  "build": "passed, including frontend TypeScript",
+  "lint": "passed with pre-existing warnings outside this increment",
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121800,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 142123,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144267,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 195186,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 158067,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3027782,
+      "maximumGzip": 3145728
+    }
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 3770
+  }
+}

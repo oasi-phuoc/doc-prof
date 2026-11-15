@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "case": "triple pause/resize/resume",
+      "frozenPixelFrame": true,
+      "healthWaitsForContact": true,
+      "damageAppliedOnce": 30,
+      "canvasRemovedOnExit": true
+    },
+    {
+      "case": "legacy-v2",
+      "tripleContactVisibleBeforeHistoricOneSecondDeadline": true,
+      "journalVersionAndTeacherSettingPreserved": true
+    },
+    {
+      "case": "missing",
+      "fallback": true,
+      "answerAndAutomaticNextStillWork": true
+    },
+    {
+      "case": "throwing",
+      "fallback": true,
+      "answerAndAutomaticNextStillWork": true
+    }
+  ],
+  "errors": [],
+  "liveApiWrites": 0
+}

@@ -74,13 +74,13 @@ try{
     assert.equal(new Set(geometry).size,30)
     assert.ok(geometry.every(svg=>!/<(?:image|script|foreignObject)\b/.test(svg)&&!svg.includes('href=')))
   })
-  await test('correct answers always use the responding mascot; wrong answers produce only local falling objects, with deterministic automatic variety',()=>{
+  await test('correct answers always use the responding mascot; wrong answers retain legacy fallback metadata and the owner signature for the new local renderer',()=>{
     const mistakes=new Set()
     for(const mascot of MASCOTS)for(const side of ['left','right'])for(const multiplier of [1,2,3]){
       const critical=multiplier>1,other=side==='left'?'right':'left',damage=multiplier*10
       const fighters={left:{avatarId:mascot.id,seat:1},right:{avatarId:mascot.id,seat:1}}
       const good=impactFor({at:1000,side,victim:other,correct:true,damage,critical,multiplier},fighters,'round')
-      assert.deepEqual(good,{kind:'attack',style:mascot.id,from:side,target:other,critical,multiplier,variation:'round'})
+      assert.deepEqual(good,{kind:'attack',style:mascot.id,from:side,target:other,critical,multiplier,variation:'round',mascot:mascot.id})
       for(let turn=0;turn<20;turn++){
         const resolution={at:1000,side,victim:side,correct:false,damage,critical,multiplier}
         const bad=impactFor(resolution,fighters,`seed:pair:${turn}`)

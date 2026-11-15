@@ -7,7 +7,7 @@ import {SuperCriticalSpecials} from './SuperCriticalSpecials'
 import './effects.css'
 
 export function DuelImpact({impact,points}:{impact:Impact;points:FighterPoints}) {
-  if(impact.kind==='timeout')return <>{(['left','right'] as const).map(side=><DuelImpact key={side} impact={{...impact,kind:'mistake',target:side}} points={points}/>)}</>
+  if(impact.kind==='timeout')return <>{(['left','right'] as const).map(side=><DuelImpact key={side} impact={{...impact,kind:'mistake',target:side,mascot:'leaf'}} points={points}/>)}</>
   const target=points[impact.target],path=impact.kind==='attack'?trajectory(points[impact.from],target):undefined
   const signature=impact.kind==='attack'?signatureAttack(impact.style):undefined
   const sequence=impact.kind==='attack'?attackSequence(impact.style,impact.multiplier).map(hit=>({...hit,path:attackTrajectory(points[impact.from],target,`${impact.variation}:${impact.style}`,hit.index)})):[]

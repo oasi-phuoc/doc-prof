@@ -1,0 +1,17 @@
+.ci-combat-state { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; clip-path: inset(3%); transform-origin: 50% 85%; animation: ci-combat-breathe 3.8s ease-in-out infinite; }
+.ci-combat-state > img { position: absolute; max-width: none; width: 400%; height: 600%; left: calc(var(--combat-column) * -100%); top: calc(var(--combat-row) * -100%); user-select: none; }
+.ci-combat-state[data-state='critical-tired'] { animation-name: ci-combat-exhausted; animation-duration: 2.3s; }
+.ci-combat-state[data-state='victory'] { animation: ci-combat-victory 1s cubic-bezier(.2,.7,.3,1) both, ci-combat-breathe 3.8s 1s ease-in-out infinite; }
+.ci-combat-state[data-state='victory'][data-species='crane'],.ci-combat-state[data-state='victory'][data-species='owl'] { animation-name: ci-combat-wings,ci-combat-breathe; }
+.ci-combat-state[data-state='victory'][data-species='koi'],.ci-combat-state[data-state='victory'][data-species='axolotl'],.ci-combat-state[data-state='victory'][data-species='otter'] { animation-name: ci-combat-swim,ci-combat-breathe; }
+.ci-combat-state[data-state='victory'][data-species='monkey'],.ci-combat-state[data-state='victory'][data-species='penguin'] { animation-name: ci-combat-spin,ci-combat-breathe; }
+.ci-combat-state[data-state='defeat'] { animation: ci-combat-defeat .85s ease-out both; }
+.ci-combat-hit { animation: ci-combat-hit .42s ease-out both; }
+@keyframes ci-combat-breathe { 0%,100% { transform: scale(1,.98); } 50% { transform: scale(.99,1.01) translateY(1px); } }
+@keyframes ci-combat-exhausted { 0%,100% { transform: translateY(2px) scale(1,.96); } 45% { transform: translateY(0) scale(.99,1); } 50%,55% { transform: translateX(1px) scale(.99,1); } }
+@keyframes ci-combat-victory { 0% { transform: scale(.86) translateY(8px); } 40% { transform: scale(1.06) translateY(-12px) rotate(-4deg); } 70% { transform: translateY(0) rotate(3deg); } 100% { transform: none; } }
+@keyframes ci-combat-wings { 0% { transform: scale(.8,.9); } 40% { transform: scale(1.08,1.04) translateY(-7px); } 65% { transform: scale(.98,1.02); } 100% { transform: none; } }
+@keyframes ci-combat-swim { 0% { transform: translateY(10px) rotate(-10deg); } 45% { transform: translateY(-10px) rotate(9deg); } 100% { transform: none; } }
+@keyframes ci-combat-spin { 0% { transform: rotate(-14deg) scale(.9); } 40% { transform: translateY(-8px) rotate(10deg); } 75% { transform: rotate(-4deg); } 100% { transform: none; } }
+@keyframes ci-combat-defeat { 0% { transform: translateY(-5px) rotate(-3deg); } 50% { transform: translateY(4px) scale(1.02,.96); } 100% { transform: none; } }
+@keyframes ci-combat-hit { 15%,45% { transform: translateX(-5px) rotate(-3deg); } 30%,60% { transform: translateX(4px) rotate(3deg); } 100% { transform: none; } }
