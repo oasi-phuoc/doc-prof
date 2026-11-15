@@ -1,6 +1,6 @@
 # Catégories audio et scénarios — 14 novembre 2026
 
-**Reprise du 15 novembre : sept PNG à deux interlocuteurs entiers.** Quatre cadrages remplacent les scènes existantes et fonctionnent aussi dans les anciennes fiches ; trois images B1 sont préparées sans activation, avec leurs personnes à confirmer. Le [registre de reprise](reprise-interlocuteurs-scenes-20261114.md) compte **25 liaisons connues à reprendre (22 images)** et **57 décomptes détaillés à terminer**. Les 87 liaisons existantes ne sont pas toutes déclarées conformes au nouveau critère. Les réserves de voix sont conservées, sans nouvelle écoute directe. [Rapport et reste à faire](reprise-dialogues-cadrages-20261115.md).
+**Suite du 15 novembre : sept nouvelles images B1 préparées ; aucun des 96 dialogues candidats ne reste sans image liée ou préparée.** Les **57 décomptes détaillés sont terminés** et ajoutent trois interlocuteurs manquants. Reste visuel courant : **28 liaisons avec interlocuteurs à reprendre (25 images)** et **21 cadrages à reprendre**. Les **30 scènes non liées ont toutes une image préparée**, en attente de confirmation ; les 87 liaisons existantes ne sont pas toutes déclarées conformes. Aucune nouvelle liaison ou écoute des voix. [Rapport et reste à faire](scenes-b1-final-20261115.md), [décompte](decompte-interlocuteurs-20261115.md).
 
 La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.md) et ses 41 corrections sont terminées. Le classement porte sur les **346 nouveaux supports DELF Actif** ; il ne constitue pas une nouvelle écoute humaine.
 
@@ -31,7 +31,7 @@ La [suite B1](generation-scenarios-b1-suite-20261114.json) ajoute **quatre PNG o
 
 La [suite complémentaire B1](generation-scenarios-b1-complement-20261114.json) ajoute quatre visuels : le contrôle routier montre deux interlocuteurs et est lié ; enseignante, personne débordée et Elsa ont désormais une reprise à deux interlocuteurs préparée sans activation, avec concordance à confirmer. La [reprise mère/Bastien](correction-interlocuteurs-pluie-20261114.json) remplace également la première image de la mère seule, sans ajouter une nouvelle piste.
 
-Au total, **20 scènes A1/A2 ont une image préparée en attente de confirmation des personnes** ; **sept scènes B1 restent à créer et trois reprises à deux interlocuteurs restent à confirmer**. Ces 30 scènes ne sont pas comptées comme disponibles.
+Au total, **20 scènes A1/A2 ont une image préparée en attente de confirmation des personnes** ; **dix scènes B1 ont une image préparée à confirmer**. Ces 30 scènes ne sont pas comptées comme disponibles.
 
 **Neuf autres usages de ce lot sont préparés sans activation**, car la transcription ne confirme pas toutes les personnes représentées : invitation au rugby, conseil pour un mal de ventre, bibliothèque, poisson avec riz, prêt du compas, musique et lecture, vélo et promenade, saut en hauteur et réemploi du jeu sur ordinateur. Ils sont inclus dans les 30 scènes à terminer et ne sont pas comptés comme disponibles. Le registre distingue cette attente de la conformité graphique et conserve les images, prompts et empreintes.
 
@@ -45,7 +45,7 @@ Le contrôle de la fiche imprimable a aussi révélé une dernière rangée masq
 
 La [comparaison des six banques](verification-scenes-priorite-20261114.json) confirme : **zéro nouveau trio, question, réponse, transcription ou MP3 modifié**. Seule l’URL de l’image du coureur change dans la banque A1. Les **277 trios DELF Actif actifs**, **469 candidatures restantes** et **370 trios historiques** sont conservés pendant la priorité aux scènes.
 
-Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie actuelle : **6 718 images** ; catalogue audio : 8 801 fichiers  6 734 questions et 15 056 formats de réponse.
+Le [registre de classement](scenarios-audio-20261114.json) conserve les 346 sources et les motifs individuels. Les images sont indexées dans la galerie et seules les nouvelles scènes activées sont liées aux audios du sélecteur. Galerie actuelle : **6 725 images** ; catalogue audio : 8 801 fichiers  6 734 questions et 15 056 formats de réponse.
 
 Les contrôles couvrent les empreintes, les rôles documentés, les 39 recontrôles et l’exclusion des neuf attentes, 600 tirages déterministes avec leurres thématiques, la sélection manuelle, les catalogues, TypeScript et les 1 021 décisions de contexte. Le [contrôle Chromium prioritaire](scenarios-priorite-20261114-browser.json) charge 36 images sur six pages A1/A2, dont 21 PNG distincts du lot, sans erreur. Le [test des anciennes recettes](scenarios-genres-20261114-browser.json) contrôle aussi le coureur corrigé ; le [contrôle B1](scenarios-b1-suite-20261114-browser.json) couvre les quatre nouvelles scènes.
 
@@ -59,3 +59,5 @@ node tests/audio-replacement/scenarios-browser.mjs --b1-suite
 ```
 
 Les [sept reprises du 15 novembre](reprise-dialogues-cadrages-20261115.md) ajoutent quatre corrections de cadrage et trois préparations B1, sans nouvelle liaison audio. Le [contrôle des anciennes recettes](scenarios-interlocuteurs-20261115-browser.json) couvre les quatre redirections et les six cadres visibles.
+
+La [fin des images B1](scenes-b1-final-20261115.md) prépare les sept derniers PNG sans nouvelle liaison audio : les trente attentes ont désormais une image. Le [décompte des 57 liaisons](decompte-interlocuteurs-20261115.md) est terminé ; les réserves de personnes et de cadrage sont consignées séparément.

@@ -1,0 +1,417 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "bd11349f153ba281abe534824c4f0dc5555a057f",
+  "scope": "Sept dernières préparations B1 et décompte visuel détaillé des 57 liaisons restantes ; aucune nouvelle liaison audio.",
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "summary": {
+    "original_pngs": 7,
+    "reused_images": 0,
+    "prepared_scene_uses": 7,
+    "new_scenario_audio_bindings": 0,
+    "awaiting_gender_confirmation": 7,
+    "total_bound_scenario_sources": 87,
+    "remaining_scenes": 30,
+    "pending_with_prepared_image": 30,
+    "remaining_without_prepared_image": 0,
+    "generation_calls": 8,
+    "rejected_generations": 1
+  },
+  "native_pngs": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+      "source_png": "/workspace/generated_images/exec-053534d8-b687-4a62-9db7-9d6e113e0771.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 3,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-projet-visite-mamie.png",
+      "sha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
+      "source_png": "/workspace/generated_images/exec-dc0a3e5d-5f38-4930-a711-e8920c4e27d5.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conversation-nouvelle-trottinette.png",
+      "sha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+      "source_png": "/workspace/generated_images/exec-6c6f6180-d3e3-40bc-824d-b3fb7366157f.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+      "source_png": "/workspace/generated_images/exec-3c7b2aa0-e548-4794-9a58-6fffe3564d0b.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-sortie-revisions.png",
+      "sha256": "4535a44c221b2d0dc279145bdb91751fac5551b090e8a16267ac1c743c661ba0",
+      "source_png": "/workspace/generated_images/exec-c422a391-b390-4377-8913-60f6c6e36d15.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+      "source_png": "/workspace/generated_images/exec-2b9b6539-6ab9-4901-bdf6-956b3efb9a90.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
+      "source_png": "/workspace/generated_images/exec-2dd9d807-66bc-49dc-83cc-a0a1f54009b5.png",
+      "original_bytes_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "visible_interlocutors": 2,
+      "full_body_visible": true,
+      "audio_binding_active": false
+    }
+  ],
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "1c3801cd9e214a4a1564e5784b2ad491a93898d989c74b771a6f619003160890",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "f6fd2f2cbd31c9de610b143f6cdc3e4a7c2dcce1a497934c939d15ae8a2c2335",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "identical_to_baseline": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "identical_to_baseline": true
+    }
+  ],
+  "active_scenario_catalogue_identical_to_baseline": true,
+  "new_audio_bindings": 0,
+  "new_qcm_trios": 0,
+  "questions_modified": 0,
+  "answers_modified": 0,
+  "transcriptions_modified": 0,
+  "audio_files_modified": 0,
+  "checks": {
+    "scenario_draws": 600,
+    "catalogue_tests": 13,
+    "typescript": true,
+    "production_build": true,
+    "context_reviews": 1021,
+    "recount_source_and_image_hashes_checked": 57,
+    "browser": {
+      "report": "docs/tcf/scenarios-b1-final-20261115-browser.json",
+      "association_pages": 1,
+      "loaded_association_images": 6,
+      "gallery_images": 7,
+      "errors": [],
+      "clipped_frames": [],
+      "pending_scenes_excluded": true
+    }
+  },
+  "remaining_by_level": [
+    {
+      "level": "A1",
+      "candidates": 41,
+      "bound": 31,
+      "pending": 10,
+      "prepared": 10,
+      "without_image": 0
+    },
+    {
+      "level": "A2",
+      "candidates": 39,
+      "bound": 29,
+      "pending": 10,
+      "prepared": 10,
+      "without_image": 0
+    },
+    {
+      "level": "B1",
+      "candidates": 16,
+      "bound": 6,
+      "pending": 10,
+      "prepared": 10,
+      "without_image": 0
+    }
+  ],
+  "remaining_visual_work": {
+    "sources_examined_for_rework": 90,
+    "corrected_images": 1,
+    "full_recount_pending": 0,
+    "new_single_person_images_withheld": 0,
+    "active_source_count": 87,
+    "confirmed_scene_bindings_to_rework": 28,
+    "distinct_images_to_rework": 25,
+    "corrected_framing_bindings": 4,
+    "prepared_two_interlocutor_images": 3,
+    "audio_listening_performed": false,
+    "framing_rework_bindings": 21,
+    "framing_confirmation_pending": 0,
+    "visually_counted_bindings": 33,
+    "detailed_recounts_completed_20261115": 57,
+    "contextual_rework_bindings": 3
+  },
+  "pending_sources": [
+    {
+      "exercise": "tcf-delf-actif-a1-019-03",
+      "title": "Le déjeuner du samedi",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png",
+      "pending_reason": "La transcription ne confirme pas tous les interlocuteurs représentés ; image préparée au catalogue, liaison audio en attente de vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-029-01",
+      "title": "L’entraînement de rugby",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-030-02",
+      "title": "Le mal de ventre",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-01",
+      "title": "Des livres sur les volcans",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-02",
+      "title": "La musique et la lecture",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-03",
+      "title": "Le jeu sur ordinateur",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+      "prepared_image": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-04",
+      "title": "Les sorties avec les copains",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-01",
+      "title": "Le poisson et son accompagnement",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-02",
+      "title": "Le compas emprunté",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-03",
+      "title": "Découvrir le saut en hauteur",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés : image préparée, liaison non activée en attendant vérification des personnes de l’audio."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-02",
+      "title": "La fin des vacances",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-03",
+      "title": "La pizza de ce soir",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; aucun prénom ou apparence ne remplace cette vérification. Image préparée, liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-01",
+      "title": "L’intérieur de Versailles",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-03",
+      "title": "La plante pour un anniversaire",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-03",
+      "title": "Le chien devant la pâtisserie",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-02",
+      "title": "Le shampoing et le dentifrice",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-04",
+      "title": "Choisir un nouveau téléphone",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "pending_reason": "La transcription ne confirme pas tous les rôles féminins ou masculins représentés. Image disponible au catalogue, liaison audio en attente de vérification des personnes du dialogue ; aucune identité déduite de l’apparence ou de la hauteur de voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-02",
+      "title": "La raclette au restaurant",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-03",
+      "title": "Attendre la météo",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-04",
+      "title": "Le téléphérique",
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "pending_reason": "La transcription ne confirme pas tous les genres représentés ; image préparée sans liaison audio. Aucun prénom ou apparence ne remplace la vérification des personnes."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-02",
+      "title": "Le choix des plats",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-04",
+      "title": "Le départ pour la séance",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
+      "pending_reason": "Les deux interlocuteurs sont visibles ; leur concordance sonore, le second rôle et son genre restent à confirmer. Liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-05",
+      "title": "La visite à Mamie",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-projet-visite-mamie.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-01",
+      "title": "Réviser pour demain",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-revisions-deux-interlocuteurs.png",
+      "pending_reason": "Les deux interlocuteurs sont visibles ; leur concordance sonore, le second rôle et son genre restent à confirmer. Liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-02",
+      "title": "Une nouvelle trottinette",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conversation-nouvelle-trottinette.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-03",
+      "title": "Un exercice non fait",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-03.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-04",
+      "title": "Une sortie après les révisions",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-04.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-sortie-revisions.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-05",
+      "title": "Trop de choses à faire",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-05.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
+      "pending_reason": "Les deux interlocuteurs sont visibles ; leur concordance sonore, le second rôle et son genre restent à confirmer. Liaison audio non activée."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-038-01-01",
+      "title": "Les loisirs citoyens",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-01-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-040-01-01",
+      "title": "Choisir un cadeau pour Patrick",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+      "prepared_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "pending_reason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
+    }
+  ],
+  "catalogues": {
+    "images": 6725,
+    "audio_files": 8801,
+    "questions": 6734,
+    "response_formats": 15056
+  },
+  "validated_at_upstream": "bd11349f153ba281abe534824c4f0dc5555a057f"
+}

@@ -1,6 +1,8 @@
 # Reprise des interlocuteurs visibles — 14 novembre 2026
 
-**Mise à jour du 15 novembre :** quatre cadrages corrigés sont installés ; trois B1 montrent désormais leurs deux interlocuteurs et restent préparés avec concordance à confirmer. La scène du film ajoute un enseignant manquant à la file. État courant : **25 liaisons connues à reprendre (22 images)** et **57 décomptes détaillés à terminer**. Le registre conserve aussi la première correction mère/Bastien. [Rapport et vérifications](reprise-dialogues-cadrages-20261115.md).
+**Mise à jour du 15 novembre :** quatre cadrages corrigés sont installés ; trois B1 montrent désormais leurs deux interlocuteurs et restent préparés avec concordance à confirmer. La scène du film ajoute un enseignant manquant à la file. État à la fin du premier lot du 15 novembre : 25 liaisons connues à reprendre (22 images) et 57 décomptes détaillés à terminer. Le registre conserve aussi la première correction mère/Bastien. [Rapport et vérifications](reprise-dialogues-cadrages-20261115.md).
+
+**Dernier état du 15 novembre :** les 57 décomptes détaillés sont terminés. Trois cas manquants s’ajoutent : enseignante de Léna, personne présentant Anissa et visiteur remerciant la guide. Reste courant : **28 reprises d’interlocuteurs (25 images)** et **21 reprises de cadrage**, avec trois réserves contextuelles de remise de billet incluses dans ces cadrages. Les voix restent à confirmer selon leur suivi. [Décompte détaillé](decompte-interlocuteurs-20261115.md), [rapport B1 et reste à faire](scenes-b1-final-20261115.md).
 
 Le choix de laisser un interlocuteur hors cadre pour ne pas inventer son genre ne répond pas à la demande : **un dialogue doit montrer les personnes qui parlent, avec au moins deux interlocuteurs visibles**. Un tiers mentionné ou des figurants ne remplacent pas un locuteur. Cette règle remplace l’option précédente du hors-cadre.
 

@@ -12,14 +12,19 @@
   "summary": {
     "sources_examined_for_rework": 90,
     "corrected_images": 1,
-    "full_recount_pending": 57,
+    "full_recount_pending": 0,
     "new_single_person_images_withheld": 0,
     "active_source_count": 87,
-    "confirmed_scene_bindings_to_rework": 25,
-    "distinct_images_to_rework": 22,
+    "confirmed_scene_bindings_to_rework": 28,
+    "distinct_images_to_rework": 25,
     "corrected_framing_bindings": 4,
     "prepared_two_interlocutor_images": 3,
-    "audio_listening_performed": false
+    "audio_listening_performed": false,
+    "framing_rework_bindings": 21,
+    "framing_confirmation_pending": 0,
+    "visually_counted_bindings": 33,
+    "detailed_recounts_completed_20261115": 57,
+    "contextual_rework_bindings": 3
   },
   "sources": [
     {
@@ -121,7 +126,19 @@
       "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
       "image_sha256": "78f31af347a5cfe534770c9075a5a1ea431a341ff17733edcc024579b6313edd",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le patient demande son rendez-vous et la personne à l’accueil lui répond ; les patients assis derrière sont des figurants.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -132,7 +149,19 @@
       "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
       "image_sha256": "20dc499d40f2bdcf44a22a7cfbb072658793f918480ec76e1d48924a3a0d8417",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Une personne montre le sac, l’autre le commente ; deux interlocutrices visibles autour du sac, sans genre prouvé par le mot joli qui qualifie le sac.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -143,7 +172,19 @@
       "image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
       "image_sha256": "c97639e38f0913ee3a2dfc4679fa6226c118ac19e63f659a9fe06cd5ec3bde62",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Une lectrice demande un roman et l’employée lui répond ; les autres lecteurs ne sont pas comptés.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -154,7 +195,19 @@
       "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
       "image_sha256": "d1b838165f98b39ee20e63bd86e37f4954484cebf88d84904fe3d560740dc580",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le parent appelé papa accompagne les devoirs de l’enfant. Le masculin du père ne prouve pas celui de l’enfant.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -165,7 +218,19 @@
       "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
       "image_sha256": "8be5f2e25dd245d726f915c353d19fad4d2586bfe8a30b469599062b6e830b74",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Les deux élèves au premier plan discutent de la professeure portant des livres. Madame Vega est le tiers désigné, pas un substitut à l’un des deux élèves.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -176,7 +241,19 @@
       "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
       "image_sha256": "19d04f2278aa315cb36f49275634e7b973f9b4583a4ab1a6241b0d1cc100e5cd",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Deux personnes échangent dans la cuisine. La préférence pour préparer ses repas ne prouve pas une identité de genre ou un lien familial.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -187,7 +264,19 @@
       "image": "/lib/images/tcf/co/scenes/bibliotheque/aller-a-la-bibliotheque.webp",
       "image_sha256": "39d6f6d4aa9f16a11854c6d87dc1b93d5dd2279f17158794878373c1a00b87f6",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Deux élèves se parlent sur le trajet vers la bibliothèque. Aucun autre usager n’est compté.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -198,7 +287,19 @@
       "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
       "image_sha256": "b6c76e7146f626c05bbf68d46a35c74372bcf03887139ea4f413e11d795eebca",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Kate montre des souvenirs de voyage à une autre personne. Les clients du café ne sont pas comptés ; les photos illustrent un voyage passé.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -209,7 +310,19 @@
       "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
       "image_sha256": "b16eb48c2469d1b1b5ae6bf931a27e186e2e7ffdbf37aca20e0e7b4405de05d7",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Les deux personnes discutent devant le commerce ; le panneau d’heure ne représente pas un troisième interlocuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -220,7 +333,19 @@
       "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
       "image_sha256": "abfba3ff9352f1546a4d8e149a35f7581a7c1ea2000c809400b1a22237bf13ce",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Une personne propose la sortie et présente ses billets, l’autre répond ; pas de gardien du musée compté comme locuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -231,7 +356,19 @@
       "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
       "image_sha256": "837834bd7ef3d15b5cfc4a384e78c87efcd0fb347a49009cb99f32583253c28d",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Les deux personnes dans le bus se parlent de Thomas. Thomas et Sophie sont des tiers mentionnés, pas les personnes à substituer aux locuteurs.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -242,7 +379,19 @@
       "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
       "image_sha256": "7ab9859b528dda0dedabbe15d2083edabf6de18cfb7572427681c203c6f20737",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Deux personnes comparent les sacs vert et noir. La couleur porte sur les objets, aucun genre de voix n’en est déduit.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -253,7 +402,19 @@
       "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-55.png",
       "image_sha256": "036275321ba9818afbc9c0608f72618cb3200ab6613822567f4e49e0c383e89a",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Deux personnes discutent du nouvel aspirateur, dont une en fauteuil roulant. La présence du fauteuil ne sert pas à attribuer une voix.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -264,7 +425,19 @@
       "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
       "image_sha256": "142fba11e56bc88a813c10d79f3c56a4ff22584f8f48bf085f95757f2d76776a",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La personne qui a raté sa crème et celle qui propose de montrer sont visibles. Aucun cuisinier supplémentaire n’est requis.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -275,7 +448,19 @@
       "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
       "image_sha256": "b8f5e7144d6b5ef0636f07d99a30c038435b635b9db44918c51a5a118b0f0cbe",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Emma reçoit les félicitations d’Alex. Contente documente Emma ; le prénom Alex ne suffit pas à confirmer le genre de l’autre voix.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-03",
@@ -299,7 +484,19 @@
       "image": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
       "image_sha256": "0986fdc5a5b4f90b6e45aeba0711ce8e374bc2596e465a847f6472c6c1fc18f8",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Deux élèves échangent autour du dictionnaire ; les autres élèves sont des figurants. Le professeur n’est pas locuteur dans cet échange.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-044-01",
@@ -323,7 +520,19 @@
       "image": "/lib/images/tcf/co/scenes/ecole/26-ecole-oublier-livre-mathematiques.webp",
       "image_sha256": "7af5b36b6f34894a8b31f4f8070dcbae5cca26f3ffab388824369a837830ea95",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_interlocutor_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 1,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le texte met en présence l’enseignante appelée Madame et Léna sans livre. L’image montre deux élèves se partageant un manuel : l’enseignante manque ; l’élève qui prête le livre ne la remplace pas.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-02",
@@ -334,7 +543,21 @@
       "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
       "image_sha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le voyageur demande sa voie et l’employé appelé Monsieur répond. Le guichet n’est pas une preuve d’achat : l’échange est un renseignement.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "contextual_rework_needed": true,
+        "contextual_rework_reason": "La scène remet un billet entre client et employé ; la source demande une voie, des horaires ou un tarif sans achat confirmé. Reprendre ce geste en simple conversation de renseignements."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-02",
@@ -345,7 +568,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
       "image_sha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’employé homme et l’adolescente appelée mademoiselle sont visibles au guichet. Âge, tarif et destination ne sont pas des identités à inférer du dessin.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-04",
@@ -369,7 +604,19 @@
       "image": "/lib/images/tcf/catalogue/actions/montrer-le-chemin.webp",
       "image_sha256": "12ea782368c2849f6404e217a2ca83179e743d78dd59572cb9adfe13e02b6f6d",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Deux personnes discutent du trajet au musée ; les passants lointains ne sont pas comptés.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-02",
@@ -380,7 +627,21 @@
       "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
       "image_sha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le demandeur et l’employé appelé monsieur échangent sur les départs du bateau. Même image que d’autres renseignements, contrôlée avec ce texte précis.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "contextual_rework_needed": true,
+        "contextual_rework_reason": "La scène remet un billet entre client et employé ; la source demande une voie, des horaires ou un tarif sans achat confirmé. Reprendre ce geste en simple conversation de renseignements."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-04",
@@ -391,7 +652,21 @@
       "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
       "image_sha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le demandeur et l’employé appelé monsieur discutent d’une réduction de groupe. Les cinq membres du groupe ne sont pas cinq locuteurs annoncés.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "contextual_rework_needed": true,
+        "contextual_rework_reason": "La scène remet un billet entre client et employé ; la source demande une voie, des horaires ou un tarif sans achat confirmé. Reprendre ce geste en simple conversation de renseignements."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-002-02",
@@ -402,7 +677,19 @@
       "image": "/lib/images/tcf/catalogue/actions/montrer-le-chemin.webp",
       "image_sha256": "12ea782368c2849f6404e217a2ca83179e743d78dd59572cb9adfe13e02b6f6d",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La personne cherchant une rue et celle qui lui indique le bus sont visibles. Le numéro de ligne reste une information de la source.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-051-04-02",
@@ -413,7 +700,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
       "image_sha256": "a91f979d83709c8750dcfca7889b1844e9834ae6b65c3280fb9da58d0a51a4cf",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’élève demande sa salle à l’adulte appelé Monsieur. Madame Faure est une enseignante mentionnée, pas l’interlocuteur d’accueil.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-047-01",
@@ -424,7 +723,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
       "image_sha256": "b5ab2063353ad68c8dc808c4fef96543e12de096a40003e045d5ec47ac6a1b04",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La vendeuse appelée madame et le client appelé jeune homme sont présents. La sœur, destinataire du bijou, ne remplace aucun locuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-048-01",
@@ -435,7 +746,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pharmacie-jambe.png",
       "image_sha256": "96654467ca9892db988af1addf76fc283553b0529ddf271fdf619cd9da2f4b24",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le professionnel appelé Monsieur et le cycliste appelé jeune homme échangent autour de la jambe et des produits. Aucun témoin de chute ajouté au décompte.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-044-04-03",
@@ -446,7 +769,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-biscuits-jaunes.png",
       "image_sha256": "0352a5970f404ebd403c4ce535e25600b886ec26d0f2d74a10b49d17e3130288",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La personne demandant les biscuits et le jeune homme qui aide sont visibles. Le fauteuil ne définit pas le genre de la personne demandeuse.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-045-04-01",
@@ -457,7 +792,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
       "image_sha256": "4d5525763fc7293c4f35c50c01b1ef9dd45ccf34fd65ee87118e9cd32beec2fb",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Les deux personnes qui choisissent et prêtent les anoraks sont visibles. La mère mentionnée ne doit pas être comptée parmi les locuteurs.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-032-02",
@@ -468,7 +815,20 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
       "image_sha256": "c47471cf578667e8ef8d9f54053eeead248c804560c3679d3304f7fc7074f1ef",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La personne demandant le paquet et l’employée appelée Madame sont visibles. Le jeune homme destinataire ne constitue pas à lui seul un locuteur supplémentaire.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "role_assignment_reserve": "Le jeune homme est le destinataire mentionné du cadeau. Le texte ne prouve pas qu’il s’agit du client qui parle ; réserve de la relecture antérieure conservée."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-01",
@@ -479,7 +839,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
       "image_sha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_framing_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Demandeuse et employé au guichet répondent à la question de réduction. Les dix personnes du groupe ne sont pas dix voix dans cet échange.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-02",
@@ -490,7 +862,20 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouveau-professeur.png",
       "image_sha256": "ecc4523f25dc8c7c2f7df11b94c925d5793f840b6ebab095da19bd422314f1a0",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le nouveau professeur appelé Monsieur et des élèves qui le saluent sont représentés. Le groupe ne confirme pas le nombre exact de voix ni leur genre individuel.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "framing_followup": "Inspection individuelle du PNG natif : les personnages principaux tiennent dans le cadre de la tête aux chaussures ; mobilier et autres élèves ne prouvent pas la distribution exacte des voix."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-03",
@@ -501,7 +886,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
       "image_sha256": "37e4b974a8c70c2d158e78f1a60cccecda07917401959d7f3095bf30f748be83",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Les deux élèves se parlent pendant la recherche du cahier. Désolée qualifie la personne qui a oublié ; aucun autre élève n’est compté.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-04",
@@ -512,7 +909,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-retard-professeur.png",
       "image_sha256": "ffd25c9be6020e7657176ec8fff3869bd840849332d434c5d27446d1d6346e34",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le professeur appelé monsieur répond à Nicolas devant l’entrée de classe. Les élèves assis derrière sont des figurants.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-06",
@@ -523,7 +932,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
       "image_sha256": "f31d384ceb6143c76ecf050ee5ce6fb0a8a0609fd6c33a0071f1469bfd59f630",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’élève Nina et l’enseignante appelée madame travaillent sur le projet d’exposé. Le fauteuil ne sert pas de preuve sur la voix.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-05",
@@ -534,7 +955,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
       "image_sha256": "773cfa399c324d71adbd9d36fa3e14bbf807151c5d6ee0a3ca7900b9ae6b259e",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La personne appelée jeune homme demande son chemin à la personne appelée madame ; deux interlocuteurs en interaction.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-030-03",
@@ -545,7 +978,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-certificat-scolarite.png",
       "image_sha256": "bc29b596515fa8e326b47e095baf8b29a21db6ac047ceea01c61ad1a079c828b",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’élève demande un certificat à la personne appelée Madame. La famille est mentionnée et ne remplace aucun interlocuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-04",
@@ -556,7 +1001,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-ranger-tapis-gym.png",
       "image_sha256": "d009ba69afeab10fddf4e29bdc7972deb6bd86d6494219c13e9d0f90a78227ae",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée Madame et l’élève Tonin rangent le matériel. Les deux personnages principaux sont visibles.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-050-04-01",
@@ -567,7 +1024,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-course-piste.png",
       "image_sha256": "2f51178dc4ac36bf176911e1d38d9057a46527d57a139261bf4db8be51efb92c",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée madame donne les consignes et un élève du groupe lui pose une question. Les autres élèves ne sont pas attribués à une voix précise.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-02",
@@ -578,7 +1047,20 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
       "image_sha256": "685495633d0af3dd38da283ab3100a416f1f01778b762350696412a3c8faf05f",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignant appelé Monsieur et les élèves qui demandent la calculatrice sont présents. Une classe représentée ne prouve pas la composition vocale exacte.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "framing_followup": "Inspection individuelle du PNG natif : les personnages principaux tiennent dans le cadre de la tête aux chaussures ; mobilier et autres élèves ne prouvent pas la distribution exacte des voix."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-01",
@@ -589,7 +1071,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-recreation-blousons-froid.png",
       "image_sha256": "d790f09dc13f004a3253fd375652248ca85633f5f1da81b7d07e9e6c685b244a",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée madame et le groupe d’élèves échangent sur la récréation. Aucun personnage du groupe n’est identifié sur la seule apparence à la voix qui demande à rester.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-050-04-03",
@@ -600,7 +1094,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png",
       "image_sha256": "ce501acd3390edeca99c17403188154b721379146a11beab5c8d19a9c97bc220",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée madame demande son cahier à Dania, qui le lui présente. Deux interlocutrices visibles ; aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-02",
@@ -611,7 +1117,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png",
       "image_sha256": "09ddb7ddec1b1c50d5b342fde8df729c3f9abe9d563cb9a8158f353330f7b9ca",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_interlocutor_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 1,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le dialogue fait parler la personne qui présente Anissa et Anissa elle-même. La scène montre Anissa et Sarah ; le prompt de génération confirme que l’enseignant est hors cadre. Sarah est une camarade mentionnée et ne remplace pas cet interlocuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-04",
@@ -622,7 +1140,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
       "image_sha256": "a2fe163b847ea8004ad1ec4b99576fef23c6fef7eb672041d3d2d6ae4f2f28c4",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le jeune homme aide le voyageur qui se dit petit à placer son sac. Les autres voyageurs assis ne sont pas les interlocuteurs de cet échange.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-035-01",
@@ -633,7 +1163,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
       "image_sha256": "c38ea79d862d0c7cb57f7005e9a5cf3fab44332217de813b50cd2bdffc4d609f",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La jeune femme appelée mademoiselle et la voyageuse appelée Madame échangent après la place cédée. La grand-mère évoquée est un tiers.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-049-04-03",
@@ -644,7 +1186,20 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-augmenter-volume-classe-roles-documentes.png",
       "image_sha256": "5413fb72df7a59935d4c3a750204eb9cf000f09c9e8c12c86d68974d820699f3",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le professeur appelé Monsieur règle l’enceinte et un élève du groupe indique le problème de volume. Les autres élèves ne deviennent pas automatiquement des voix du dialogue.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "framing_followup": "Inspection individuelle du PNG natif : les personnages principaux tiennent dans le cadre de la tête aux chaussures ; mobilier et autres élèves ne prouvent pas la distribution exacte des voix."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-030-04",
@@ -655,7 +1210,20 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-matisse.png",
       "image_sha256": "d6a8e930d693abdd7c7a234e43c9e7f80aa401c8c56efc33991ed7097336f698",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée Madame répond à une question d’élève avant la future visite. Le groupe et le portfolio ne prouvent pas le genre de l’élève qui parle.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false,
+        "framing_followup": "Inspection individuelle du PNG natif : les personnages principaux tiennent dans le cadre de la tête aux chaussures ; mobilier et autres élèves ne prouvent pas la distribution exacte des voix."
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-051-04-04",
@@ -666,7 +1234,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
       "image_sha256": "af0cf3503256add3ea5c135d434ce4ddc857ae9e3af80a72de537ca899c50fc8",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignant appelé Monsieur répond à un élève avant le départ prévu. Les camarades supplémentaires sont des figurants, la tour n’est pas un interlocuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-04",
@@ -716,7 +1296,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
       "image_sha256": "aef61242ec6e26385d2ec7f1f0fd2e8d3eb6c24e3401bab3994037871e240c2f",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "needs_interlocutor_rework",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 1,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": false,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La guide est appelée Madame et reçoit les remerciements d’un visiteur. Le prompt et la note existants placent expressément le visiteur hors cadre ; le groupe figurant ne le remplace pas. Un interlocuteur manque malgré plusieurs personnes visibles.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-035-02",
@@ -740,7 +1332,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-inviter-enseignante-repas-classe.png",
       "image_sha256": "f3fe07c86841d813d4f321f893777318dd8619af24dc6d42ca14969989090a0a",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante invitée et l’élève qui formule l’invitation sont représentés ; les autres élèves ne sont pas assignés à des voix particulières.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-030-03",
@@ -855,7 +1459,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-osman-correction-tableau.png",
       "image_sha256": "08aa9796be6d61db4ea424fa0c2b02fae1df9f41a0d180d16e50115cefa54854",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée madame et Osman près du tableau sont présents ; les élèves assis ne sont pas comptés comme locuteurs de cet échange.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-052-04-03",
@@ -866,7 +1482,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-resultats-mateo.png",
       "image_sha256": "27bdf99d6d82cb4b0a5dea178f15432993222b23185083129dac45c2f6f56a48",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’enseignante appelée Madame et Mateo discutent de ses résultats. Le prénom ne remplace pas une vérification de la voix.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-051-04-01",
@@ -877,7 +1505,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-rencontre-luca-tessa.png",
       "image_sha256": "0072bc6c0beef0264f6fcd48d483931a1c2c5c54b9a9b3b592c87c8fd8b58d38",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Luca et Tessa échangent près du banc. Américaine documente Tessa ; le genre de Luca n’est pas confirmé par son prénom.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-030-01",
@@ -955,7 +1595,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-decoration-mere-fille.png",
       "image_sha256": "3cf14e8e5dcc40b906c9b352da507dd46048d469da8a69b8a567f9beb2c6e2fd",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "La mère appelée maman et Mélanie échangent sur l’aide à la décoration. Le prénom de Mélanie ne prouve pas son genre.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-03",
@@ -1020,7 +1672,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-desaccord-file-guichet.png",
       "image_sha256": "f4e5401a4d4c09e4da19052f2c597ae282767915be312ffcb6f3f58cb2ceee20",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’homme arrivé avant et la femme qui conteste sont les deux locuteurs principaux. La dame en veste blanche au guichet est le tiers désigné, non un troisième locuteur.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-002-03",
@@ -1031,7 +1695,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-temoin-accident-velo.png",
       "image_sha256": "7213eb4362da3bb249a5c780ed1c13f1413890fe4d6d612ef687fb2000841f9d",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le jeune homme cycliste témoigne auprès de l’agent appelé Monsieur. Les personnes de l’accident raconté ne sont pas les locuteurs de cet entretien.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-041-01-01",
@@ -1042,7 +1718,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enquete-boites-livres.png",
       "image_sha256": "7309a3ad87b33c11bcfc42cb6f6445eb230e87139f8714baa7d541d62a058261",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "Le stagiaire appelé jeune homme interroge la femme appelée Madame. Les enfants et personnes âgées cités sont des bénéficiaires possibles, pas des locuteurs présents.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-012-01",
@@ -1053,7 +1741,19 @@
       "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
       "image_sha256": "4d75e304c3e0c3175c9acf9508ea0db8da49fa4af28d2c0c3a5fc34fcc0b4a48",
       "audio_listening_performed": false,
-      "status": "full_interlocutor_recount_pending"
+      "status": "interlocutors_visually_counted",
+      "visual_review": {
+        "visible_main_interlocutors_minimum": 2,
+        "minimum_required_interlocutors": 2,
+        "whole_body_framing": true,
+        "background_people_not_assigned_to_voices": true,
+        "exact_voice_count_confirmed": false,
+        "review_method": "Lecture de la transcription complète et inspection visuelle ; prompts existants relus pour les interlocuteurs expressément hors cadre.",
+        "note": "L’agent appelé Monsieur et le jeune conducteur sont présents. Les grands-parents et l’ambulance évoqués ne remplacent pas les deux personnes contrôlant le dialogue.",
+        "audio_listening_performed": false,
+        "voice_gender_validated": false
+      },
+      "recount_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-032-01",

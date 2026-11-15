@@ -44,7 +44,7 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 109,
+    "new_original_pngs": 116,
     "new_scene_image_uses": 46,
     "priority_scene_reuses": 4,
     "priority_prepared_scene_uses": 51,
@@ -63,9 +63,10 @@
       "confirmed_image_mismatches": 1,
       "corrections_installed": 1
     },
-    "prepared_scenes_awaiting_gender_confirmation": 23,
-    "remaining_without_prepared_image": 7,
-    "interlocutor_replacement_pngs_20261115": 7
+    "prepared_scenes_awaiting_gender_confirmation": 30,
+    "remaining_without_prepared_image": 0,
+    "interlocutor_replacement_pngs_20261115": 7,
+    "b1_final_prepared_scene_uses": 7
   },
   "supports": [
     {
@@ -6055,7 +6056,25 @@
       "evidenceQuote": "un bifteck et des légumes",
       "reason": "Choix de repas à trois, poisson, viande/légumes et moussaka ; respecter les trois interlocuteurs et ne pas substituer un menu de deux personnes.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "preparedImageSha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 3,
+        "minimum_visible_interlocutors": 3,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Trois interlocuteurs choisissent dans leurs menus illustrés : poisson, bifteck avec légumes sans poisson, puis moussaka en portion gratinée à couches d’aubergine. Aucun plat servi, allergie représentée par une réaction ou origine nationale déduite. Six chaussures visibles, genres non entièrement documentés.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-001-03",
@@ -6177,7 +6196,30 @@
       "evidenceQuote": "au club de troisième âge",
       "reason": "Projet de visite à la grand-mère au club ; ne pas réutiliser sans contrôle la scène où elle attend un déjeuner chez elle.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-projet-visite-mamie.png",
+      "preparedImageSha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "grand-mère interpellée",
+            "quote": "Mamie, je passerai"
+          }
+        ]
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Grand-mère et jeune interlocutrice discutant du projet de visite ; pas de repas, patinage, embrassade d’arrivée ou activité de club déjà en cours. Le salon est un cadre illustratif et le genre de la jeune personne reste à confirmer.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-002-01",
@@ -6907,7 +6949,25 @@
       "evidenceQuote": "acheté une trottinette",
       "reason": "Discussion d’une nouvelle trottinette ; ne pas représenter automatiquement une conduite sur chaussée, lieu non dit.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conversation-nouvelle-trottinette.png",
+      "preparedImageSha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Deux amis discutant d’une trottinette complète, à l’arrêt, après l’achat. Deux roues, plateau et guidon visibles ; modèle classique sans motorisation affirmée, pas de conduite sur chaussée ou nouvel achat en cours. Personnes à confirmer.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-032-03",
@@ -6928,7 +6988,25 @@
       "evidenceQuote": "pour un contrôle médical",
       "reason": "Exercice non fait pour cause de contrôle médical ; distinguer justification après la visite et consultation en cours.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "preparedImageSha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Deux personnes autour du cahier inachevé, en conversation après le contrôle médical évoqué. Aucun hôpital, examen médical en cours, diagnostic, devoir terminé ou note ajoutée. Les interlocuteurs et leurs chaussures sont entiers.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-032-04",
@@ -6948,7 +7026,25 @@
       "evidenceQuote": "travailler encore pour réussir ton examen",
       "reason": "Discussion sur sortie et révisions ; pas de note chiffrée ni parent de genre inventé.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-sortie-revisions.png",
+      "preparedImageSha256": "4535a44c221b2d0dc279145bdb91751fac5551b090e8a16267ac1c743c661ba0",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Deux personnes discutent de la sortie et du travail encore demandé. L’un rappelle les révisions, l’autre explique ses résultats d’examen blanc sans note chiffrée. Aucun examen final réussi, lien familial affirmé ou sortie déjà autorisée.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-032-05",
@@ -7159,7 +7255,34 @@
       "evidenceQuote": "un jeu collectif géant et en bois",
       "reason": "Discussion d’un projet citoyen et d’un puzzle collectif en bois ; dialogue long, une illustration complète du projet reste à préparer.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "preparedImageSha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Vincent au masculin",
+            "quote": "j’en ai assez de rester seul"
+          },
+          {
+            "role": "inscription du premier interlocuteur",
+            "quote": "je me suis inscrit"
+          }
+        ]
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Vincent explique le projet citoyen à Thomas près de grandes pièces de puzzle en bois et de pinceaux. Les matériaux et l’échelle illustrent le projet ; aucune carte d’Europe prétendument exacte, rémunération ou inscription de Thomas déjà accomplie. Toutes les pièces sont entières après reprise du premier cadrage.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-038-02-01",
@@ -7249,7 +7372,34 @@
       "evidenceQuote": "un accessoire pour sa moto",
       "reason": "Amies cherchant un cadeau et envisageant un accessoire moto ; pas de montre comme décision finale, la personne en possède déjà une.",
       "decision": "eligible_scene_pending",
-      "image": null
+      "image": null,
+      "preparedImage": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "preparedImageSha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
+      "preparationRegister": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "accord féminin d’une interlocutrice",
+            "quote": "Tu en es sûre ?"
+          },
+          {
+            "role": "appel explicite",
+            "quote": "Je t’appelle parce que"
+          }
+        ]
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "visualReview": "Deux personnes au téléphone dans une coupe illustrative de deux espaces domestiques séparés. Chacune et son téléphone sont entiers. Carnet vierge et ruban inutilisé suggèrent la recherche du cadeau ; aucun article décidé, acheté ou remis, date ou Patrick visible. Le plan des logements est une convention graphique.",
+      "pendingReason": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix."
     },
     {
       "exercise": "tcf-delf-actif-b1-040-02-01",

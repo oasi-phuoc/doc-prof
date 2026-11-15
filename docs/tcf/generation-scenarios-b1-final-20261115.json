@@ -1,0 +1,479 @@
+{
+  "date": "2026-11-15",
+  "scope": "Sept dernières situations B1 sans image, toutes préparées au catalogue avec interlocuteurs visibles ; aucune nouvelle liaison audio avant confirmation des personnes.",
+  "baseline_commit": "bd11349f153ba281abe534824c4f0dc5555a057f",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "summary": {
+    "original_pngs": 7,
+    "reused_images": 0,
+    "prepared_scene_uses": 7,
+    "new_scenario_audio_bindings": 0,
+    "awaiting_gender_confirmation": 7,
+    "total_bound_scenario_sources": 87,
+    "remaining_scenes": 30,
+    "pending_with_prepared_image": 30,
+    "remaining_without_prepared_image": 0,
+    "generation_calls": 8,
+    "rejected_generations": 1
+  },
+  "images": [
+    {
+      "key": "scenario-b1-choix-plats-trois-interlocuteurs",
+      "label": "Le choix des plats — trois interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-053534d8-b687-4a62-9db7-9d6e113e0771.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY THREE adult friends are choosing food at a modest restaurant, talking to EACH OTHER with open menus, no waiter. First adult man: warm brown skin, short dark curls, clean-shaven face, pale sage overshirt and dark trousers. Second adult man: fair freckled skin, a broad build, short auburn hair, plain navy jumper and tan trousers. Third adult woman: light olive skin, short silver pixie haircut, muted terracotta blouse and dark teal trousers. Their depicted genders are not validated by the names Alain and Martin; preserve pending status. Use a SMALL ROUND PEDESTAL TABLE with chairs diagonally arranged, enough open floor to see all SIX shoes and complete figures. Each person holds an unlabelled MENU with ONLY A SMALL PICTORIAL FOOD illustration, never words: first menu a fish dish, second menu a steak with vegetables and NO FISH, third menu a rectangular baked MOUSSAKA portion with aubergine layers and creamy top, not pizza or a generic cake. The illustration is printed on the menu, NOT an actual served meal. Table has only three water glasses, no served fish, meat or casserole, no cooking, allergy symptoms or restaurant payment. Do not infer any country or ethnicity from the speaker's reference to origins. One coherent scene, no three detached panels. Exact source transcript for semantic context ONLY, never writing to draw: Qu’est-ce que tu prends Alain ? Moi, s’il y a du poisson, c’est déjà choisi. Et toi Martin, qu’est-ce que tu prends ?? Pour moi pas de poisson avec mes allergies, un bifteck et des légumes ça sera très bien. Moi, je ne peux pas renoncer à la moussaka, vous savez bien mes origines.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Trois interlocuteurs choisissent dans leurs menus illustrés : poisson, bifteck avec légumes sans poisson, puis moussaka en portion gratinée à couches d’aubergine. Aucun plat servi, allergie représentée par une réaction ou origine nationale déduite. Six chaussures visibles, genres non entièrement documentés.",
+      "representation_limitations": null,
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 3,
+        "minimum_visible_interlocutors": 3,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-001-02"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-001-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+          "transcription": "Qu’est-ce que tu prends Alain ? Moi, s’il y a du poisson, c’est déjà choisi. Et toi Martin, qu’est-ce que tu prends ?? Pour moi pas de poisson avec mes allergies, un bifteck et des légumes ça sera très bien. Moi, je ne peux pas renoncer à la moussaka, vous savez bien mes origines.",
+          "source_sha256": "98f3f12cafc4da3dc1a9dd0219d6e5e408835a1dd8d4e446a901d9098206ddcd",
+          "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc"
+        }
+      ]
+    },
+    {
+      "key": "scenario-b1-projet-visite-mamie",
+      "label": "Prévoir la visite à Mamie",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-projet-visite-mamie.png",
+      "sha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-dc0a3e5d-5f38-4930-a711-e8920c4e27d5.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY TWO people discuss arranging a FUTURE short visit: an elderly GRANDMOTHER around 75 with fair skin, a stocky build, short soft white waves, muted lilac cardigan, cream blouse, dark trousers and plain brown shoes; her adolescent grandchild depicted as a girl around 17 with dark brown skin, shoulder-length natural black curls, pale ochre sweatshirt, dark blue trousers and plain cream shoes. They are in an ordinary neutral sitting-room with an empty armchair and a SMALL plain notebook on a side table. They stand at a comfortable distance, looking at each other, grandmother making an open planning gesture and grandchild responding thoughtfully. The location and grandchild's depicted gender are illustrative choices, not established facts from audio; keep the link pending. NO arriving greeting, hug or kiss, lunch table, meal, completed visit, ice skating activity already underway, club event already happening or group of friends already visiting. No exact hour, weekday, duration, calendar or schedule. This illustrates the conversation planning the visit, not the promised afternoon meeting itself. Both full bodies, all four shoes and both pairs of hands clearly visible with margin. Exact source transcript for semantic context ONLY, never writing to draw: Mamie, je passerai te faire un petit coucou cet après-midi avant d’aller à la patinoire. À quelle heure viens-tu ? Tu sais que le mercredi je retrouve mes amies au club de troisième âge. Je passerai vers 15h30, tu y seras ? C’est très bien, nous resterons ensemble une demi-heure.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Grand-mère et jeune interlocutrice discutant du projet de visite ; pas de repas, patinage, embrassade d’arrivée ou activité de club déjà en cours. Le salon est un cadre illustratif et le genre de la jeune personne reste à confirmer.",
+      "representation_limitations": "Le lieu et le canal exact de cette discussion ne sont pas donnés. La composition illustre la préparation de la visite, sans prétendre documenter la rencontre future ou le genre du petit-enfant.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "grand-mère interpellée",
+            "quote": "Mamie, je passerai"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-001-05"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-001-05",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+          "transcription": "Mamie, je passerai te faire un petit coucou cet après-midi avant d’aller à la patinoire. À quelle heure viens-tu ? Tu sais que le mercredi je retrouve mes amies au club de troisième âge. Je passerai vers 15h30, tu y seras ? C’est très bien, nous resterons ensemble une demi-heure.",
+          "source_sha256": "8653100a56c2661e02372df1d21149865c0d35d968b777607c8d5bdd37327b47",
+          "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba"
+        }
+      ]
+    },
+    {
+      "key": "scenario-b1-conversation-nouvelle-trottinette",
+      "label": "La nouvelle trottinette — deux amis",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conversation-nouvelle-trottinette.png",
+      "sha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-6c6f6180-d3e3-40bc-824d-b3fb7366157f.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY TWO adult friends talk beside a newly acquired classic NON-ELECTRIC kick SCOOTER, stationary on a quiet pedestrian pavement. Its owner is depicted as a man around 30 with medium-brown skin, a tall slim build, loosely tied black locs, a pale blue casual shirt, charcoal trousers and plain brown shoes. The friend is depicted as a woman around 40 with fair skin, short straight chestnut bob, muted plum jacket, cream trousers and plain dark shoes. Owner lightly holds the handlebar and smiles, friend makes a mildly teasing conversational open-hand gesture, never aggression. Show the ENTIRE SCOOTER: BOTH small wheels, whole deck, stem, handlebar and grips fully inside the frame with clear margin. No one is riding, no speed, road traffic, motor, battery, charging or confirmed electric model. The source simply says trottinette. No shop counter or payment being made now, since purchase already happened. Source does not establish their genders or precise relationship; these choices remain pending person verification. Entire people head to all four shoes, whole scooter and visible ground in one scene. Exact source transcript for semantic context ONLY, never writing to draw: Je me suis acheté une trottinette. Il ne manquait que toi sur les trottoirs avec ta trottinette.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Deux amis discutant d’une trottinette complète, à l’arrêt, après l’achat. Deux roues, plateau et guidon visibles ; modèle classique sans motorisation affirmée, pas de conduite sur chaussée ou nouvel achat en cours. Personnes à confirmer.",
+      "representation_limitations": null,
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-032-02"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-032-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
+          "transcription": "Je me suis acheté une trottinette. Il ne manquait que toi sur les trottoirs avec ta trottinette.",
+          "source_sha256": "d554e2979edde95afdf705d70ce51469b4e5c7bb031fffbac40cf85dbd41ce3a",
+          "audio_sha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c"
+        }
+      ]
+    },
+    {
+      "key": "scenario-b1-expliquer-exercice-non-fait",
+      "label": "Expliquer l’exercice non fait",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-3c7b2aa0-e548-4794-9a58-6fffe3564d0b.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY TWO teenage learners discuss an unfinished exercise AFTER a medical check-up on a previous day. One teenager depicted as a boy, light olive skin, short wavy dark hair, muted rust cardigan, cream T-shirt, navy trousers and plain brown shoes; the other depicted as a girl, warm brown skin, a loose single black braid, sage jumper, tan trousers and plain cream shoes. They stand in a quiet GENERIC STUDY AREA by a very SMALL side table with an OPEN exercise notebook. One notebook page is visibly blank except faint non-readable ruled lines, no solved answers or grade. The first person explains with a hand toward the uncompleted work and a calm apologetic open gesture; the other listens with an understanding questioning hand. Do NOT draw them at a hospital, medical exam in progress, doctor, medicine, injury, diagnostic symbol or medical record invented. The hospital check-up is a past explanation, not the current scene. No one is currently completing or grading the exercise. No teacher badge, family relation, diagnosis or genders claimed as source facts; all depicted roles beyond fellow learners remain subject to confirmation. Entire figures and all shoes visible in the open floor area. Exact source transcript for semantic context ONLY, never writing to draw: Tu n’as pas fait cet exercice ? Non, hier j’étais à l’hôpital pour un contrôle médical et je n’ai pas pu travailler.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Deux personnes autour du cahier inachevé, en conversation après le contrôle médical évoqué. Aucun hôpital, examen médical en cours, diagnostic, devoir terminé ou note ajoutée. Les interlocuteurs et leurs chaussures sont entiers.",
+      "representation_limitations": null,
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-032-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-032-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-03.mp3",
+          "transcription": "Tu n’as pas fait cet exercice ? Non, hier j’étais à l’hôpital pour un contrôle médical et je n’ai pas pu travailler.",
+          "source_sha256": "ff88f309c55bc0a671ed61bd1dcd3b0f52ace938ea6db968b4c142888e90f642",
+          "audio_sha256": "68cb58d3e374ac26dd92e2b0a898cccfc0fd8bb84eae78fb11650ded0ed1ead6"
+        }
+      ]
+    },
+    {
+      "key": "scenario-b1-discuter-sortie-revisions",
+      "label": "Discuter la sortie et les révisions",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-sortie-revisions.png",
+      "sha256": "4535a44c221b2d0dc279145bdb91751fac5551b090e8a16267ac1c743c661ba0",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-c422a391-b390-4377-8913-60f6c6e36d15.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY TWO people discuss permission to go out while revision is still expected. First an adult around 45 depicted as a woman, fair freckled skin, long dark hair streaked with grey in a loose braid, warm teal blouse, charcoal trousers and plain dark shoes; second a young adult learner around 20 depicted as a man, medium-brown skin, short black natural curls, muted mustard jumper, navy trousers and plain brown shoes. They face each other beside a SMALL study desk placed behind them and off to the side. Adult gently raises a firm open palm refusing or postponing the outing and indicates the exercise books; learner responds confidently with a reassuring hand to the chest and other open palm, explaining recent good mock-exam results and completed morning study. Do not show a numerical grade, star, final diploma or real exam already passed. The relationship is not explicitly given, so do NOT claim mother/son, father/child, teacher/student or romantic relation. Source does not confirm their genders. Keep scene pending. No outing already allowed, departure through open door, bowling, party, clock, day or timetable. Plain unlabelled books, all main figures and four shoes comfortably in frame. Exact source transcript for semantic context ONLY, never writing to draw: Tu ne peux pas sortir car tu dois travailler encore pour réussir ton examen. Mais non, je viens d’avoir une très bonne note à mon examen blanc, j’ai travaillé ce matin, je t’assure que je le ferai même demain !",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Deux personnes discutent de la sortie et du travail encore demandé. L’un rappelle les révisions, l’autre explique ses résultats d’examen blanc sans note chiffrée. Aucun examen final réussi, lien familial affirmé ou sortie déjà autorisée.",
+      "representation_limitations": null,
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-032-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-032-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-04.mp3",
+          "transcription": "Tu ne peux pas sortir car tu dois travailler encore pour réussir ton examen. Mais non, je viens d’avoir une très bonne note à mon examen blanc, j’ai travaillé ce matin, je t’assure que je le ferai même demain !",
+          "source_sha256": "456c0798321a0ae01177769570058a2ba398f2ad5ce916b96c4b22fc66718679",
+          "audio_sha256": "25a04543a14088ff22a434c340bc0538eafb711b6a09718dce18e72de7d06cbf"
+        }
+      ]
+    },
+    {
+      "key": "scenario-b1-discuter-loisirs-citoyens",
+      "label": "Discuter des loisirs citoyens",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-2b9b6539-6ab9-4901-bdf6-956b3efb9a90.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "EDIT THE FIRST IMAGE only to widen and balance the COMPOSITION. Keep the same two teenage speakers, same softly painted TCF style, expressions, clothes, giant wooden jigsaw pieces and plain paintbrush pot. Move the complete workbench and ALL the big wooden puzzle pieces fully INSIDE the frame: every piece's entire outline, all knobs and notches clearly visible with a generous empty margin to the right, no wooden puzzle piece cut by any edge. Make the workbench smaller and move it slightly back, show ALL four workbench legs and both boys entirely head through ALL four shoes with margins. The boys remain talking to each other, neither is working, painting, being paid or travelling now. Generic leafy community courtyard, no detailed invented map of Europe, flags, text, numbers, clocks, logos or shoe symbols. ONE coherent naturally recomposed image, no inset or collage, EXACT native 1448 x 1086, 4:3 LANDSCAPE. Second attached image is approved STYLE only. Source dialogue context: Vincent, tu vas faire quoi pendant ces prochaines vacances scolaires ? Tu sais, Thomas, j’en ai assez de rester seul à la maison. Alors, je me suis inscrit pour prendre part aux activités de loisirs citoyens. « Loisirs citoyens » … qu’est-ce que c’est ? Tu t’en vas avec des citoyens ? Non, je t’explique. C’est une activité qui permet de monter des projets dont bénéficient les enfants des centres de loisirs. Je ne comprends pas… En fait, c’est pour des jeunes de notre âge, qui veulent effectuer un acte de citoyenneté, c'est-à-dire faire quelque chose pour les autres. Pendant les vacances, nous allons travailler 5 demi- journées par semaine. Travailler gratuitement ? Pas tout à fait. En contrepartie on nous donne des chèques cadeaux ou on nous offre un séjour de 2 jours à la montagne par exemple. C’est chouette ça ! Ça nous permet de travailler, de s’assumer et de comprendre que l’argent se mérite et de plus on prend part à la vie de groupe. Ça a l’air super ! Et les projets portent sur quoi ? Dernièrement on a fait un Puzzle Europe pour des centres aérés, c’est un jeu collectif géant et en bois pour familiariser les collégiens de façon ludique à la mobilité internationale. Génial cette idée ! Je comprends que tu y ailles volontiers. Tu fais une bonne action, tu es en plein air et c’est convivial. Oui, je voulais travailler et surtout ne pas rester toute la journée à la maison. J’aime bien bricoler et peindre donc ça m’a plu. C’est le top ! C’est vraiment super. Comment je peux faire pour prendre part moi aussi à ces activités? Rien de plus facile. Il suffit d’aller au Bureau Information Jeunesse pour remplir un dossier.",
+      "initial_prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY TWO teenagers discuss a civic volunteer project, not a new enrolment or reward already being received. Vincent is depicted as a teenage BOY with dark brown skin, short tightly curled black hair, warm green shirt, beige trousers and plain brown shoes, enthusiastically explaining with an open hand. Thomas is depicted as another teenage boy with light olive skin, shoulder-length wavy chestnut hair tied back, dusty coral overshirt, charcoal trousers and plain dark shoes, listening with interest and asking how to join. Vincent's masculine words seul and inscrit are documented; Thomas's depicted gender is not proven by his name, so keep link pending. They stand beside an outdoor community craft workbench in a generic leafy courtyard. The bench carries SEVERAL VERY LARGE THICK WOODEN JIGSAW PUZZLE PIECES with visible interlocking knobs, wood grain and a couple of simple paintbrushes in an unlabelled pot. This is context for the recently discussed completed giant wooden project, not showing Thomas already working, enrolled or paid. No one is painting or sawing now. Do NOT invent a detailed supposedly accurate map of Europe or country boundaries: the jigsaw materials and large scale illustrate the project, while its geographic subject remains in audio. No regular chessboard, tiny cardboard puzzle, national flags, map text, gift vouchers, monetary rewards, mountain stay already taking place or children being used to replace the two speakers. Full boys and all shoes visible with workbench safely to the side. Exact source transcript for semantic context ONLY, never writing to draw: Vincent, tu vas faire quoi pendant ces prochaines vacances scolaires ? Tu sais, Thomas, j’en ai assez de rester seul à la maison. Alors, je me suis inscrit pour prendre part aux activités de loisirs citoyens. « Loisirs citoyens » … qu’est-ce que c’est ? Tu t’en vas avec des citoyens ? Non, je t’explique. C’est une activité qui permet de monter des projets dont bénéficient les enfants des centres de loisirs. Je ne comprends pas… En fait, c’est pour des jeunes de notre âge, qui veulent effectuer un acte de citoyenneté, c'est-à-dire faire quelque chose pour les autres. Pendant les vacances, nous allons travailler 5 demi- journées par semaine. Travailler gratuitement ? Pas tout à fait. En contrepartie on nous donne des chèques cadeaux ou on nous offre un séjour de 2 jours à la montagne par exemple. C’est chouette ça ! Ça nous permet de travailler, de s’assumer et de comprendre que l’argent se mérite et de plus on prend part à la vie de groupe. Ça a l’air super ! Et les projets portent sur quoi ? Dernièrement on a fait un Puzzle Europe pour des centres aérés, c’est un jeu collectif géant et en bois pour familiariser les collégiens de façon ludique à la mobilité internationale. Génial cette idée ! Je comprends que tu y ailles volontiers. Tu fais une bonne action, tu es en plein air et c’est convivial. Oui, je voulais travailler et surtout ne pas rester toute la journée à la maison. J’aime bien bricoler et peindre donc ça m’a plu. C’est le top ! C’est vraiment super. Comment je peux faire pour prendre part moi aussi à ces activités? Rien de plus facile. Il suffit d’aller au Bureau Information Jeunesse pour remplir un dossier.",
+      "prompt_is_summary": false,
+      "visual_review": "Vincent explique le projet citoyen à Thomas près de grandes pièces de puzzle en bois et de pinceaux. Les matériaux et l’échelle illustrent le projet ; aucune carte d’Europe prétendument exacte, rémunération ou inscription de Thomas déjà accomplie. Toutes les pièces sont entières après reprise du premier cadrage.",
+      "representation_limitations": "Le sujet géographique Europe reste dans l’audio. La scène illustre la conversation et le matériau du puzzle géant, sans carte politique inventée.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Vincent au masculin",
+            "quote": "j’en ai assez de rester seul"
+          },
+          {
+            "role": "inscription du premier interlocuteur",
+            "quote": "je me suis inscrit"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-038-01-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-038-01-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-01-01.mp3",
+          "transcription": "Vincent, tu vas faire quoi pendant ces prochaines vacances scolaires ? Tu sais, Thomas, j’en ai assez de rester seul à la maison. Alors, je me suis inscrit pour prendre part aux activités de loisirs citoyens. « Loisirs citoyens » … qu’est-ce que c’est ? Tu t’en vas avec des citoyens ? Non, je t’explique. C’est une activité qui permet de monter des projets dont bénéficient les enfants des centres de loisirs. Je ne comprends pas… En fait, c’est pour des jeunes de notre âge, qui veulent effectuer un acte de citoyenneté, c'est-à-dire faire quelque chose pour les autres. Pendant les vacances, nous allons travailler 5 demi- journées par semaine. Travailler gratuitement ? Pas tout à fait. En contrepartie on nous donne des chèques cadeaux ou on nous offre un séjour de 2 jours à la montagne par exemple. C’est chouette ça ! Ça nous permet de travailler, de s’assumer et de comprendre que l’argent se mérite et de plus on prend part à la vie de groupe. Ça a l’air super ! Et les projets portent sur quoi ? Dernièrement on a fait un Puzzle Europe pour des centres aérés, c’est un jeu collectif géant et en bois pour familiariser les collégiens de façon ludique à la mobilité internationale. Génial cette idée ! Je comprends que tu y ailles volontiers. Tu fais une bonne action, tu es en plein air et c’est convivial. Oui, je voulais travailler et surtout ne pas rester toute la journée à la maison. J’aime bien bricoler et peindre donc ça m’a plu. C’est le top ! C’est vraiment super. Comment je peux faire pour prendre part moi aussi à ces activités? Rien de plus facile. Il suffit d’aller au Bureau Information Jeunesse pour remplir un dossier.",
+          "source_sha256": "6f0b4754d5a15cf937bf343e893883649ec336f98813e3bf3be3a6b624d3d6ea",
+          "audio_sha256": "3aad2d6f8fefeb0f069575a0c70e1be37f6600301a0d8d3e8a546dd19f30e9f7"
+        }
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-adb64b88-d324-471c-9110-411713b2b252.png",
+      "edit_source_sha256": "e87412a5b1540c56092154c5fcf002024736059f9c866d96d8397d970f77afea",
+      "edit_reference_images": [
+        {
+          "path": "/workspace/generated_images/exec-adb64b88-d324-471c-9110-411713b2b252.png",
+          "sha256": "e87412a5b1540c56092154c5fcf002024736059f9c866d96d8397d970f77afea",
+          "role": "edit_source"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        }
+      ]
+    },
+    {
+      "key": "scenario-b1-appel-choix-cadeau-patrick",
+      "label": "L’appel pour choisir le cadeau de Patrick",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-2dd9d807-66bc-49dc-83cc-a0a1f54009b5.png",
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE coherent educational illustration in the approved TCF style. Attached references supply ONLY art direction: warm softly painted semi-realistic digital illustration, gently modelled volumes, fine discreet contours, natural warm colours and believable anatomy/materials. No photograph, no 3D render, heavy black cartoon contours or flat vector. NEW faces, hairstyles, builds and clothes distinct from the reference people and other scenes. Native EXACTLY 1448 x 1086 pixels, 4:3 LANDSCAPE. WIDE FULL-BODY composition: ALL MAIN INTERLOCUTORS present and interacting, complete heads, hands, all legs and ALL SHOES comfortably inside generous margins, visible floor. No person talking to an unseen interlocutor or to the viewer, no mentioned third person replacing a speaker. Small offset tables must not hide the main people's lower bodies. All footwear plain undecorated and unbranded: NO swoosh, tick, star, stripe, side symbol or lettering. No readable text, numbers, prices, monetary amount, date, day/month name, clock, watch, calendar, timetable, brand, logo, flag, watermark, speech bubble or collage. Preserve the timing: proposal is not completion, remembered activity is not a new action already undertaken. Unspecified genders and communication channels remain illustrative choices awaiting verification, never claimed as established by this image. EXACTLY TWO adult women have a PHONE CONVERSATION about choosing a FUTURE birthday gift for Patrick. Show BOTH REAL CALLERS, each with a plain smartphone held to her EAR and looking thoughtful. Depict them using ONE COHERENT ARCHITECTURAL CUTAWAY illustration of two SEPARATE domestic rooms separated by a central interior wall, continuous painted floor and consistent perspective. This is a conventional illustration to show remote callers, NOT a claim of their actual home layout or distance. No borders, inset, split-screen boxes, collage or characters face-to-face in the same room. Left caller depicted with light olive skin, long black hair in a low braid, dusty blue blouse, dark green trousers and plain cream shoes. Right caller depicted with fair freckled skin, a stocky build, short wavy auburn hair, muted plum cardigan, cream trousers and plain brown shoes. Both fully visible head to all FOUR shoes, ALL phone and hands inside generous margins; small furniture off to the sides. A plain unlabelled notebook and unused loose ribbon coil on a SMALL side table suggest gift brainstorming, no gift is wrapped, bought or delivered. No tablet, smartwatch, bracelet, motorcycle accessory chosen as final gift, birthday person visible, date, age, readable note, opened shop or completed motorcycle shopping trip. The source confirms a phone call, one feminine adjective sûre, but not every caller's gender from names alone; this tableau remains pending person confirmation. The cutaway makes the channel clear while showing both speakers; it does not invent a video call. Exact source transcript for semantic context ONLY, never writing to draw: Allô Barbara. Ah, Céline quel plaisir de t’entendre… Je ne te dérange pas ? Pas du tout ! Je t’appelle parce que ça va bientôt être l’anniversaire de Patrick. Tu t’en souviens ? Ah, c’est vrai je n’y pensais plus! C’est le 26 non ? C’est bien ça. Il est né le 26 avril. Qu’allons-nous lui offrir cette année, toi qui as toujours des idées fabuleuses ? Et bien cette fois je n’en ai pas la moindre idée. Les choix sont limités pour un garçon de son âge. C’est vrai mais il faut bien trouver quelque chose ? Et si on lui offrait une tablette. Non c’est le cadeau qu’il va recevoir de sa sœur. Tu en es sûre ? C’est elle qui me l’a dit, elle l’a déjà acheté. Pas de chance pour nous ! Je réfléchis… attends… pourquoi pas alors une montre connectée ? Il en a une ! Alors, écoute, un bracelet. Tu as vu la vitrine de la nouvelle bijouterie avenue du Général De Gaulle ? Il y a des très jolis bracelets pour jeunes avec une plaque en argent où on peut faire graver son prénom. Ça pourrait être une idée mais réfléchissons encore un peu… tu ne penses pas qu’un accessoire pour sa moto serait préférable ? Peut-être, surtout qu’il ne va pas tarder à l’utiliser avec la belle saison qui arrive. Allons voir alors chez Moto shop. Ils ont un grand choix et tous les jeunes s’attardent devant les vitrines. Ils doivent avoir des accessoires pour tous les budgets. Oui je pense ! Je sais qu’ils font souvent des promotions et donc nous pourrions trouver quelque chose. On y va demain si tu veux ? D’accord, je téléphone pour savoir si c’est ouvert non-stop et je passe te chercher chez toi.",
+      "initial_prompt": null,
+      "prompt_is_summary": false,
+      "visual_review": "Deux personnes au téléphone dans une coupe illustrative de deux espaces domestiques séparés. Chacune et son téléphone sont entiers. Carnet vierge et ruban inutilisé suggèrent la recherche du cadeau ; aucun article décidé, acheté ou remis, date ou Patrick visible. Le plan des logements est une convention graphique.",
+      "representation_limitations": "La coupe des deux pièces rend les interlocuteurs distants visibles dans une seule illustration. Elle ne documente ni leur adresse réelle, ni la distance entre eux, ni un appel vidéo.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Tous les interlocuteurs sont dessinés, mais la transcription ne documente pas entièrement leurs genres et certains choix de représentation. Image préparée sans nouvelle liaison audio ; aucune écoute directe des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "accord féminin d’une interlocutrice",
+            "quote": "Tu en es sûre ?"
+          },
+          {
+            "role": "appel explicite",
+            "quote": "Je t’appelle parce que"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-b1-040-01-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-040-01-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+          "transcription": "Allô Barbara. Ah, Céline quel plaisir de t’entendre… Je ne te dérange pas ? Pas du tout ! Je t’appelle parce que ça va bientôt être l’anniversaire de Patrick. Tu t’en souviens ? Ah, c’est vrai je n’y pensais plus! C’est le 26 non ? C’est bien ça. Il est né le 26 avril. Qu’allons-nous lui offrir cette année, toi qui as toujours des idées fabuleuses ? Et bien cette fois je n’en ai pas la moindre idée. Les choix sont limités pour un garçon de son âge. C’est vrai mais il faut bien trouver quelque chose ? Et si on lui offrait une tablette. Non c’est le cadeau qu’il va recevoir de sa sœur. Tu en es sûre ? C’est elle qui me l’a dit, elle l’a déjà acheté. Pas de chance pour nous ! Je réfléchis… attends… pourquoi pas alors une montre connectée ? Il en a une ! Alors, écoute, un bracelet. Tu as vu la vitrine de la nouvelle bijouterie avenue du Général De Gaulle ? Il y a des très jolis bracelets pour jeunes avec une plaque en argent où on peut faire graver son prénom. Ça pourrait être une idée mais réfléchissons encore un peu… tu ne penses pas qu’un accessoire pour sa moto serait préférable ? Peut-être, surtout qu’il ne va pas tarder à l’utiliser avec la belle saison qui arrive. Allons voir alors chez Moto shop. Ils ont un grand choix et tous les jeunes s’attardent devant les vitrines. Ils doivent avoir des accessoires pour tous les budgets. Oui je pense ! Je sais qu’ils font souvent des promotions et donc nous pourrions trouver quelque chose. On y va demain si tu veux ? D’accord, je téléphone pour savoir si c’est ouvert non-stop et je passe te chercher chez toi.",
+          "source_sha256": "858cbae71dbfbc9b05e8f4e8c010d658412fb9aa51f401bc8173a2c252f39874",
+          "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0"
+        }
+      ]
+    }
+  ],
+  "reuses": [],
+  "rejected_generations": [
+    {
+      "key": "scenario-b1-discuter-loisirs-citoyens",
+      "source_png": "/workspace/generated_images/exec-adb64b88-d324-471c-9110-411713b2b252.png",
+      "sha256": "e87412a5b1540c56092154c5fcf002024736059f9c866d96d8397d970f77afea",
+      "reason": "Une pièce de puzzle est coupée au bord droit du premier cadrage.",
+      "status": "not_integrated",
+      "replacement": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png"
+    }
+  ],
+  "candidate_reuse_review": [
+    {
+      "path": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-4.webp",
+      "decision": "rejected",
+      "reason": "Grand-mère seule au téléphone attendant le déjeuner ; ni les deux interlocuteurs ni la préparation de la visite au club.",
+      "sha256": "3b56f3566e1d67dbeaeaf3434bf97a6337fe47bfefbcd9de11d22f8756652932",
+      "reviewed_visually": true
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+      "decision": "rejected",
+      "reason": "Objet isolé : les deux interlocuteurs du dialogue manquent.",
+      "sha256": "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6",
+      "reviewed_visually": true
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/audit-context-echecs-puzzle.webp",
+      "decision": "rejected",
+      "reason": "Échecs et petit puzzle : pas le projet citoyen de puzzle collectif géant en bois.",
+      "sha256": "138cfbfc96d8bed85ce4cbeae1bda63471f3cbaee9ef21d8543c6728d5c7764a",
+      "reviewed_visually": true
+    }
+  ]
+}
