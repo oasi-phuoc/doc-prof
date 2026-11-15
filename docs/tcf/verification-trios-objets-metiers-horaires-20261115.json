@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "c5b047aa7f300c5276723ee141e84bce26b480ea",
+  "compared_all_six_banks": true,
+  "source_changes": 0,
+  "question_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "added_image_forms": 23,
+  "corrected_existing_image_forms": 2,
+  "new_original_pngs": 19,
+  "imagegen_originals": 8,
+  "calculated_clocks": 11,
+  "clock_model": "tcf-common-20261106",
+  "new_clock_pixels_match_common_renderer": true,
+  "reused_image_usages_in_new_trios": 50,
+  "reused_distinct_images_in_new_trios": 43,
+  "unchanged_banks": [
+    "src/tcf/content/a0-a1/ce.json",
+    "src/tcf/content/a2-b1/ce.json",
+    "src/tcf/content/a2-b1/co.json"
+  ],
+  "changes": [
+    {
+      "key": "tcf-ss-a1-s22-co-1#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ss-a1-s49-co-2#2",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-06#4",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-79#11",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-014-01#2",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-04#2",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-02#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-031-01#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-01#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-037-01#3",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#2",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#3",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#4",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#5",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#6",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-05-01#5",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-04-01#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-a2p-s1-ce-1#2",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-011#6",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-065#8",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-063#2",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-068#1",
+      "kind": "added_image_form",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-ss-a2-s24-co-4#10",
+      "kind": "image_choice_correction",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-ss-a2-s48-co-4#12",
+      "kind": "image_choice_correction",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    }
+  ],
+  "checks": {
+    "review_763": "passed",
+    "delf_actif_image_tracking": "passed",
+    "delf_actif_context_reviews": "1021 passed",
+    "bank": "1355 exercises / 1371 audios",
+    "qcm_rendering": "2297 variants / 12 shuffle cases",
+    "catalogue_unit_tests": "13 passed",
+    "clock_geometry_tests": "6 passed",
+    "typecheck": "passed",
+    "production_build": "passed",
+    "browser": "10 vues ordinateur/mobile, 20 affichages de questions, 60 images ; aucune erreur navigateur"
+  },
+  "legacy_validator_limitation": {
+    "status": "historical_snapshot_incompatible_before_this_batch",
+    "script": "scripts/check_tcf_context_review.py",
+    "failing_dependency": "scripts/tcf_main_integration.py:41",
+    "historical_local_exercises": 387,
+    "historical_remote_exercises": 387,
+    "baseline_exercises": 507,
+    "current_exercises": 507,
+    "baseline_has_same_key_mismatch": true,
+    "reason": "Le vérificateur historique impose l’égalité des exercices du 7 novembre avec la banque actuelle ; les ajouts ultérieurs, dont DELF Actif, la rendent fausse avant ce lot. La comparaison exhaustive de ce lot est liée au commit c5b047aa, et les suivis actuels des 763 décisions et des 346 supports sont vérifiés séparément."
+  }
+}

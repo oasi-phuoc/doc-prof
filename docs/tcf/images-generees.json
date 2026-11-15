@@ -31335,7 +31335,7 @@
     },
     {
       "id": "co306-carte-cantine-dessine",
-      "label": "Une carte de cantine",
+      "label": "Un plateau-repas de cantine",
       "path": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
       "prompt": "Illustration pédagogique numérique DESSINÉE ET PEINTE semi-réaliste, format PAYSAGE EXACT 4:3, 1448 pixels de large et 1086 de haut. Contours fins discrets, modelé doux, matériaux détaillés par la peinture, couleurs naturelles chaleureuses. Fond crème uni et ombre légère pour les objets, sans décor parasite. Objets entiers avec marge sur les QUATRE côtés. Pas de photo, rendu 3D ou gros contours noirs. Aucune personne. Aucun montant, prix, date, jour, mois, horaire, chiffre, numéro ou donnée personnelle. Les seuls mots autorisés sont ceux demandés explicitement, petits et intégrés naturellement à l’objet. Une seule carte de cantine scolaire plastifiée horizontale à coins arrondis, couleur orange doux avec grand pictogramme d’ASSIETTE ENTRE UNE FOURCHETTE ET UNE CUILLÈRE, et le petit mot CANTINE. Quelques traits abstraits non lisibles en bas ; aucun nom, photographie, numéro, code-barres ou date. Pas de livre ou transport.",
       "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
@@ -31353,7 +31353,7 @@
       ],
       "source_png": "/workspace/generated_images/exec-e4de8132-d946-45ed-a819-5ff5c8490047.png",
       "status": "visually_reviewed",
-      "review_note": "Carte de cantine à pictogramme assiette, fourchette et cuillère ; titre CANTINE relu, aucune information chiffrée. Contrôle du concept entier, natif paysage exact 4:3, aucune date ou somme.",
+      "review_note": "Relecture du 15 novembre : plateau-repas orange, assiette et couverts ; ne représente pas une carte. Ancien libellé corrigé, deux usages carte remplacés sans modifier les sources.",
       "style_review": {
         "status": "aligned",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
@@ -31370,9 +31370,18 @@
       "bytes": 48950,
       "domain": "co",
       "batch": "active-audios-834",
-      "gallery_types": [],
-      "gallery_themes": [],
-      "reference_images": []
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Repas à la cantine",
+        "Style TCF validé"
+      ],
+      "reference_images": [],
+      "do_not_reuse_as": [
+        "Une carte de cantine",
+        "Sa carte de cantine"
+      ]
     },
     {
       "id": "co306-carte-transport-dessine",
@@ -106481,6 +106490,969 @@
         "full_body_visible": true,
         "audio_listening_performed": false
       }
+    },
+    {
+      "id": "qcm-a1-carnet-prendre-notes",
+      "label": "Un carnet pour prendre des notes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-carnet-prendre-notes.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One compact open spiral-bound NOTEBOOK for writing personal notes. Blank cream paper with subtle horizontal ruling, blue flexible cover visible under the pages, one ordinary pen resting beside it. This is a notebook for recording tasks and events, NOT a school report, grade book, calendar or correspondence booklet. Entire notebook and pen isolated on warm cream background, soft contact shadow.",
+      "source_png": "/workspace/generated_images/exec-dac371a3-2bf7-480c-9d6d-6f3497072958.png",
+      "source_sha256": "e0afa37887d2c07758defd6fbe3f1ea43bfbf1c51d3b5770379fde4b33b55b78",
+      "sha256": "e0afa37887d2c07758defd6fbe3f1ea43bfbf1c51d3b5770379fde4b33b55b78",
+      "bytes": 1702797,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Carnet ouvert vierge avec lignes et stylo, sans notes scolaires ni texte ; objets entiers sur crème, volumes peints doux.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-calendrier-mural-vierge",
+      "label": "Un calendrier mural",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One WALL CALENDAR hanging from a tiny wall hook, on a plain cream wall. Spiral binding at top, one small generic decorative leaf motif above a large clearly rectangular seven-column grid of blank calendar boxes. Show the entire calendar sheet and spiral. Absolutely NO text, numbers, month names, day names or dates in any grid cell. It must look like a wall calendar with unfilled cells rather than a notebook, screen or timetable. Soft natural shadow cast onto cream wall.",
+      "source_png": "/workspace/generated_images/exec-b70bccbe-0a4a-4f16-9fdd-3a0456902f58.png",
+      "source_sha256": "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+      "sha256": "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+      "bytes": 1800684,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Calendrier suspendu à une attache réelle ; grille de sept colonnes vide, sans jour, mois ni date. Objet entier sur mur crème.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-disque-musique-seul",
+      "label": "Un disque de musique",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One single silver optical music CD disc with delicate iridescent reflection, center hole clearly visible, resting at a shallow angle on a warm cream background with a soft contact shadow. Exactly ONE disc, entirely visible. No sleeve, second disc, video clapper, music note, letters, graphics or inscriptions. Fine painted material detail, no photographic rendering.",
+      "source_png": "/workspace/generated_images/exec-df054c3f-2620-4f05-9848-01e62ef88ed8.png",
+      "source_sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+      "sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+      "bytes": 1668335,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Un seul disque optique de musique, trou central et reflets visibles ; aucun second disque ni accessoire parasite.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Objets du quotidien",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-plusieurs-paires-chaussures",
+      "label": "Des paires de chaussures",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. Exactly THREE DISTINCT PAIRS of ordinary adult SHOES, six shoes total, neatly separated: a pair of brown lace-up leather shoes, a pair of plain navy fabric sneakers with cream soles, a pair of burgundy low ankle boots. Arrange the three pairs in a natural loose arc on warm cream background, each pair clearly matched and both shoes fully visible. No other clothing, hats or bags. This illustrates the category plural pairs of shoes, NOT a numerical count exercise. No logos, side stripe, tick or branding; fine painted leather and fabric, gentle contact shadows.",
+      "source_png": "/workspace/generated_images/exec-d2f8b848-c8c2-4c3a-9daa-d4c20a8a0ba1.png",
+      "source_sha256": "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+      "sha256": "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+      "bytes": 1903560,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Trois paires distinctes et entières, six chaussures, sans logo ; illustre la catégorie plurielle sans prétendre compter les vingt et une paires du support.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Objets du quotidien",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-volcans",
+      "label": "Les volcans",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One coherent natural landscape showing TWO volcanic cones, the foreground one with a visible summit crater, a small warm orange lava flow down one slope and a gentle ash plume; the smaller second cone is farther away. Whole mountain forms visible with generous margins and a calm warm sky. Distinctly VOLCANOES rather than snowy alpine mountains. No people, signs, buildings or labels, no eruption disaster or suffering. Paint all the scene with the same soft semi-realistic treatment and fine natural detail as the references.",
+      "source_png": "/workspace/generated_images/exec-c1c0c27c-16f8-4b35-8200-cdcaaf4ace1d.png",
+      "source_sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+      "sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+      "bytes": 2584216,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Deux cônes volcaniques, cratère et lave visibles ; paysage peint, sans catastrophe ni ajout de lieu précis.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Paysages naturels",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-oceans",
+      "label": "Les océans",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-oceans.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One coherent peaceful OPEN OCEAN seascape, broad blue-green water with soft swells, gentle white foam in the near foreground, a clear low horizon and warm pale sky. The SEA itself is the subject; no beach resort, boats, buildings, mountains, people, map, globe, chart or text. Soft painterly natural light and fine semi-realistic water texture matching the references. Landscape fills the frame without a border.",
+      "source_png": "/workspace/generated_images/exec-ea14f981-c38d-4498-8617-ab4fce72376b.png",
+      "source_sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+      "sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+      "bytes": 2074325,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Pleine mer, horizon et vagues ; paysage cohérent, sans carte ni destination inventée.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Paysages naturels",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-camera-surveillance",
+      "label": "Une caméra de surveillance",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-camera-surveillance.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One single recognizable modern SECURITY SURVEILLANCE CAMERA, a plain off-white weatherproof bullet CCTV camera with short wall-mount arm secured by a visible small mount plate on a neutral cream wall. Dark circular lens and tiny infrared dots on the front, slight three-quarter angle. Entire camera and mounting hardware visible, physically attached to wall, natural cast shadow. No person, photographer equipment, screen, extra camera, lettering, logo or recording text. It must be clearly a wall-mounted surveillance camera, not a handheld camcorder.",
+      "source_png": "/workspace/generated_images/exec-c91f4f12-8845-4e6a-800b-fd5f247a17e9.png",
+      "source_sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+      "sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+      "bytes": 1887064,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Caméra de surveillance fixée au mur, objectif et support entiers ; différente de l’appareil photo et de la tablette.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Objets du quotidien",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-carte-cantine",
+      "label": "Une carte de cantine",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One actual plastic SCHOOL CANTEEN ACCESS CARD lying on a warm cream surface, entirely visible at a slight angle. Orange card, a small generic illustrated student portrait on the left, a small clear plate-with-fork-and-spoon pictogram on the right, a narrow black magnetic stripe near the top, and two subtle short blank horizontal information lines. This is the CARD itself, NOT a real meal tray or a plate. No readable text, letters, names, numbers, dates, barcode, price, brand or flag. Soft contact shadow, realistic painted plastic edges and small portrait, same fine soft style as reference images.",
+      "source_png": "/workspace/generated_images/exec-42721360-3df7-4475-b727-c3192580939a.png",
+      "source_sha256": "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
+      "sha256": "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
+      "bytes": 1776809,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Véritable carte plastique de cantine avec portrait et pictogramme de repas, sans texte ni date ; ne montre pas un plateau-repas.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1038",
+      "label": "10 h 38",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1038.png",
+      "source_sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+      "sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+      "bytes": 1138377,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "10:38",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+        "hour": 10,
+        "minute": 38,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+        "angles_degrees": [
+          319.0,
+          228
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1018",
+      "label": "10 h 18",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1018.png",
+      "source_sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+      "sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+      "bytes": 1138243,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "10:18",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+        "hour": 10,
+        "minute": 18,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+        "angles_degrees": [
+          309.0,
+          108
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1138",
+      "label": "11 h 38",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1138.png",
+      "source_sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+      "sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+      "bytes": 1136484,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "11:38",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png",
+        "hour": 11,
+        "minute": 38,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+        "angles_degrees": [
+          349.0,
+          228
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2255",
+      "label": "22 h 55",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2255.png",
+      "source_sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+      "sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+      "bytes": 1136268,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "22:55",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+        "hour": 22,
+        "minute": 55,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+        "angles_degrees": [
+          327.5,
+          330
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2155",
+      "label": "21 h 55",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2155.png",
+      "source_sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+      "sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+      "bytes": 1138437,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "21:55",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+        "hour": 21,
+        "minute": 55,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+        "angles_degrees": [
+          297.5,
+          330
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2215",
+      "label": "22 h 15",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2215.png",
+      "source_sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+      "sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+      "bytes": 1130457,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "22:15",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png",
+        "hour": 22,
+        "minute": 15,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+        "angles_degrees": [
+          307.5,
+          90
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-0710",
+      "label": "07 h 10",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-0710.png",
+      "source_sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+      "sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+      "bytes": 1137561,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "07:10",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+        "hour": 7,
+        "minute": 10,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+        "angles_degrees": [
+          215.0,
+          60
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-0750",
+      "label": "07 h 50",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-0750.png",
+      "source_sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+      "sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+      "bytes": 1137516,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "07:50",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png",
+        "hour": 7,
+        "minute": 50,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+        "angles_degrees": [
+          235.0,
+          300
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-0845",
+      "label": "08 h 45",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-0845.png",
+      "source_sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "bytes": 1126524,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "08:45",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png",
+        "hour": 8,
+        "minute": 45,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+        "angles_degrees": [
+          262.5,
+          270
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1915",
+      "label": "19 h 15",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1915.png",
+      "source_sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+      "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+      "bytes": 1129503,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "19:15",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+        "hour": 19,
+        "minute": 15,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+        "angles_degrees": [
+          217.5,
+          90
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2045",
+      "label": "20 h 45",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2045.png",
+      "source_sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "bytes": 1126524,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "20:45",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+        "hour": 20,
+        "minute": 45,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+        "angles_degrees": [
+          262.5,
+          270
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
     }
   ]
 }

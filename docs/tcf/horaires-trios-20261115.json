@@ -1,0 +1,168 @@
+{
+  "date": "2026-11-15",
+  "authorization": "Cadran peint commun et aiguilles calculées approuvés explicitement par l’utilisateur.",
+  "base": "/lib/images/tcf/clock-assets/cadran-vierge-commun-20261106.webp",
+  "base_sha256": "ad927003b87c842fc42c7414e6bc3160ebf2833c3c62df60c76dfb7bdc6a1ef8",
+  "hand_model": {
+    "hour_length": 245,
+    "minute_length": 365,
+    "hour_width": 26,
+    "minute_width": 17,
+    "tail": 13,
+    "pivot_radius": 19,
+    "color": "#20201e"
+  },
+  "formulas": {
+    "hour": "30*(hour%12)+0.5*minute",
+    "minute": "6*minute"
+  },
+  "visual_review": {
+    "status": "completed",
+    "method": "Inspection individuelle de la planche des onze cadrans, puis vérification des heures des vingt-quatre choix."
+  },
+  "images": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+      "hour": 10,
+      "minute": 38,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+      "angles_degrees": [
+        319.0,
+        228
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+      "hour": 10,
+      "minute": 18,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+      "angles_degrees": [
+        309.0,
+        108
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png",
+      "hour": 11,
+      "minute": 38,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+      "angles_degrees": [
+        349.0,
+        228
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+      "hour": 22,
+      "minute": 55,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+      "angles_degrees": [
+        327.5,
+        330
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+      "hour": 21,
+      "minute": 55,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+      "angles_degrees": [
+        297.5,
+        330
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png",
+      "hour": 22,
+      "minute": 15,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+      "angles_degrees": [
+        307.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+      "hour": 7,
+      "minute": 10,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+      "angles_degrees": [
+        215.0,
+        60
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png",
+      "hour": 7,
+      "minute": 50,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+      "angles_degrees": [
+        235.0,
+        300
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png",
+      "hour": 8,
+      "minute": 45,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "angles_degrees": [
+        262.5,
+        270
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+      "hour": 19,
+      "minute": 15,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+      "angles_degrees": [
+        217.5,
+        90
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+      "hour": 20,
+      "minute": 45,
+      "width": 1280,
+      "height": 960,
+      "before_sha256": null,
+      "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "angles_degrees": [
+        262.5,
+        270
+      ]
+    }
+  ]
+}

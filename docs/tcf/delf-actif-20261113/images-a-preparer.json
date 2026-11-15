@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 277,
+      "active_reviewed_trio": 291,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 469,
+      "candidate_visual_review": 455,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 162,
+        "active_reviewed_trio": 176,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 100,
+        "candidate_visual_review": 86,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -9030,8 +9030,8 @@
       "semantic_sha256": "5cf85ab8d9c1521ef20f85df2fef9aad8ff26ece9d293ba53a860164d77971ac",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-014-01.mp3",
       "audio_sha256": "fa3a3f1e08faf5652cdd82616700df1be0c2132162ebcb889bf8acbb65e104d3",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -9058,8 +9058,24 @@
           "brief": "Représenter entièrement « À 11 h 38 » pour « À quelle heure le train part-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-014-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+          "sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+          "sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png",
+          "sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -9070,7 +9086,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-014-01#3",
@@ -10670,8 +10690,8 @@
       "semantic_sha256": "c0cdcd671590a568618ea621cfff5a5066790911b6b896859bcbe7853a8f5b37",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-04.mp3",
       "audio_sha256": "89f1b13a2e77ce01a68b9c1f1e25fd7b45a8d98b62204a568eee38c9a51dd667",
-      "status": "candidate_visual_review",
-      "reason": "Trois horaires précis à représenter. Vérifier notamment que les cadrans distinguent toutes les heures, y compris matin/soir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -10698,8 +10718,24 @@
           "brief": "Représenter entièrement « À 22 h 15 » pour « À quelle heure commence-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-018-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+          "sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+          "sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png",
+          "sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -10710,7 +10746,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-018-04#3",
@@ -16572,8 +16612,8 @@
       "semantic_sha256": "c4c585fc27f133df460e54e99bde418ddcb9e0e45ed111738a72c3875035d2c7",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
       "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
-      "status": "candidate_visual_review",
-      "reason": "Douleurs au ventre, à la tête et à la gorge, gestes et zones corporelles distincts ; ne pas inventer un diagnostic.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -16607,8 +16647,24 @@
           "brief": "Représenter entièrement « À la gorge » pour « Où l’élève a-t-il mal ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Douleurs au ventre, à la tête et à la gorge, gestes et zones corporelles distincts ; ne pas inventer un diagnostic."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp",
+          "sha256": "1b59129edb1a0b50c181fa3749703cf161f1dd7df5cb38ded504164241e99ca2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+          "sha256": "5044660ae9e50443c7d9fb496967c62c2bc6fbf9a07270bc2c2ae14386b114e8"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/maladies/mal-a-la-gorge.webp",
+          "sha256": "030d94e740daf77ce0df7629ad8f361523a38fb7880dc97b879a1083dc234159"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -16626,6 +16682,10 @@
         "evidence_quote": "mal au ventre",
         "semantic_sha256": "c4c585fc27f133df460e54e99bde418ddcb9e0e45ed111738a72c3875035d2c7",
         "note": "Douleurs au ventre, à la tête et à la gorge, gestes et zones corporelles distincts ; ne pas inventer un diagnostic."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Ventre tenu, main à la tête et examen de la gorge ; trois zones séparées, aucune image à plusieurs douleurs."
       }
     },
     {
@@ -17229,14 +17289,21 @@
       "semantic_sha256": "652def0159c04f083f60053d3e76d96556e84b79e4ef1d5c82787d94d6144f11",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
       "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Les volcans",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+              "sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+              "label": "Les volcans",
+              "visual_review_required": true
+            }
+          ],
           "asset": "38e02dad0d36be83",
           "brief": "Représenter entièrement « Les volcans » pour « Sur quel sujet l’élève prépare-t-il un exposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -17244,7 +17311,14 @@
           "id": "b",
           "label": "Les océans",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-oceans.png",
+              "sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+              "label": "Les océans",
+              "visual_review_required": true
+            }
+          ],
           "asset": "232cd836c3dc72a6",
           "brief": "Représenter entièrement « Les océans » pour « Sur quel sujet l’élève prépare-t-il un exposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -17257,8 +17331,24 @@
           "brief": "Représenter entièrement « Les forêts » pour « Sur quel sujet l’élève prépare-t-il un exposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+          "sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-oceans.png",
+          "sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+          "sha256": "aeeed7ab78e592299cbba947a3b510d8e6f9077ce2eae9fa1b60f7057109b35f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -17269,7 +17359,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Paysages de volcans avec cratère et lave, pleine mer et forêt ; ne pas illustrer cette question de sujet par une scène de bibliothèque."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-031-01#2",
@@ -18109,8 +18203,8 @@
       "semantic_sha256": "35f74678bf5e753b2fb479230186ab884cb440ab22178774477685248097dd62",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-01.mp3",
       "audio_sha256": "f8c90f69b8abaae26e8152bf47b46b491d33a9b3052bf2df65c8cf2407aabf38",
-      "status": "candidate_visual_review",
-      "reason": "Blouson, maillot et bonnet entiers ; ne pas représenter tous les vêtements ensemble dans un choix.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -18137,8 +18231,24 @@
           "brief": "Représenter entièrement « Leur bonnet » pour « Quel vêtement les élèves doivent-ils prendre ? ». Vérifier la transcription du support tcf-delf-actif-a1-032-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Blouson, maillot et bonnet entiers ; ne pas représenter tous les vêtements ensemble dans un choix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-blouson-bleu.png",
+          "sha256": "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+          "sha256": "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-bonnet.webp",
+          "sha256": "18ded0938f6848b5e76f051abb158478b89ac22a63570e227d7f6a84fa1cbbc2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -18156,6 +18266,10 @@
         "evidence_quote": "Prenez vos blousons",
         "semantic_sha256": "35f74678bf5e753b2fb479230186ab884cb440ab22178774477685248097dd62",
         "note": "Blouson, maillot et bonnet entiers ; ne pas représenter tous les vêtements ensemble dans un choix."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Blouson fermé zippé, maillot de bain une pièce et bonnet en laine ; un vêtement entier par choix. Le bleu du blouson est illustratif, aucune couleur n’est exigée."
       }
     },
     {
@@ -21183,8 +21297,8 @@
       "semantic_sha256": "4b4667f319e291a4096e98a9bf4ce637bc60fd0c813df98c0f1dae04abb1d86b",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-037-01.mp3",
       "audio_sha256": "6dedbe11f268f6a2d22781005ded7ce9c87b49876fa0b41e5931662ac1109a33",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -21205,7 +21319,14 @@
           "id": "b",
           "label": "Une caméra de surveillance",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-camera-surveillance.png",
+              "sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+              "label": "Une caméra de surveillance",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6a05bd687d28fec8",
           "brief": "Représenter entièrement « Une caméra de surveillance » pour « Quel appareil faut-il apporter pour photographier les animaux ? ». Vérifier la transcription du support tcf-delf-actif-a1-037-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -21218,8 +21339,24 @@
           "brief": "Représenter entièrement « Une tablette » pour « Quel appareil faut-il apporter pour photographier les animaux ? ». Vérifier la transcription du support tcf-delf-actif-a1-037-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+          "sha256": "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-camera-surveillance.png",
+          "sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp",
+          "sha256": "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21230,7 +21367,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Appareil photo à objectif, caméra de surveillance fixée au mur et tablette ; le caméscope professionnel est rejeté car il ne prouve pas la surveillance."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-037-01#4",
@@ -22932,8 +23073,8 @@
       "semantic_sha256": "bf10bdfe2b0b32cae3aff1a7594babc44d74daa320b563e568ee27199bf6f278",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
       "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
-      "status": "candidate_visual_review",
-      "reason": "Cadrans 7 h 10, 7 h 30 et 7 h 50 distincts ; position de la petite aiguille cohérente avec les minutes.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -22960,8 +23101,24 @@
           "brief": "Représenter entièrement « 7 h 50 » pour « Quelle est la première heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 7 h 10, 7 h 30 et 7 h 50 distincts ; position de la petite aiguille cohérente avec les minutes."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+          "sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+          "sha256": "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png",
+          "sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22979,6 +23136,10 @@
         "evidence_quote": "sept heures dix",
         "semantic_sha256": "bf10bdfe2b0b32cae3aff1a7594babc44d74daa320b563e568ee27199bf6f278",
         "note": "Cadrans 7 h 10, 7 h 30 et 7 h 50 distincts ; position de la petite aiguille cohérente avec les minutes."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
       }
     },
     {
@@ -22992,8 +23153,8 @@
       "semantic_sha256": "9ae5786ca7896e8765254b41c6af3b6ac0c815d6733870b06dc76cfbc6d22dda",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
       "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
-      "status": "candidate_visual_review",
-      "reason": "Cadrans 8 h 30, 8 h 15 et 8 h 45 ; il s’agit de la deuxième annonce, pas de la première.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -23020,8 +23181,24 @@
           "brief": "Représenter entièrement « 8 h 45 » pour « Quelle est la deuxième heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 8 h 30, 8 h 15 et 8 h 45 ; il s’agit de la deuxième annonce, pas de la première."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+          "sha256": "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-0815.webp",
+          "sha256": "92e21437a5ddf67b060ec8347b23ea2ec6ec2318489debba0dd4525647d0f00a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png",
+          "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -23039,6 +23216,10 @@
         "evidence_quote": "huit heures trente",
         "semantic_sha256": "9ae5786ca7896e8765254b41c6af3b6ac0c815d6733870b06dc76cfbc6d22dda",
         "note": "Cadrans 8 h 30, 8 h 15 et 8 h 45 ; il s’agit de la deuxième annonce, pas de la première."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
       }
     },
     {
@@ -23052,8 +23233,8 @@
       "semantic_sha256": "a045cbd1f332b122501706244c31f280514724f05c1d6c915226b865c3360ef9",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
       "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
-      "status": "candidate_visual_review",
-      "reason": "Cadrans 12 h 30, 12 h 15 et 13 h 30, aucune paire identique sur douze heures.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -23087,8 +23268,24 @@
           "brief": "Représenter entièrement « 13 h 30 » pour « Quelle est la troisième heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 12 h 30, 12 h 15 et 13 h 30, aucune paire identique sur douze heures."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+          "sha256": "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1215.webp",
+          "sha256": "33527ca7238a4555052a08361af2ba6a7810dfdbd7d3c709dd4f2b25bf618813"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp",
+          "sha256": "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -23106,6 +23303,10 @@
         "evidence_quote": "midi et demi",
         "semantic_sha256": "a045cbd1f332b122501706244c31f280514724f05c1d6c915226b865c3360ef9",
         "note": "Cadrans 12 h 30, 12 h 15 et 13 h 30, aucune paire identique sur douze heures."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
       }
     },
     {
@@ -23119,8 +23320,8 @@
       "semantic_sha256": "11ef0fbfbe9fb47adebd3c1bf5f371ee14ad5030baa440fece80699fdc397782",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
       "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
-      "status": "candidate_visual_review",
-      "reason": "Cadrans 16 h 15, 16 h 30 et 16 h 45 ; conserver la bonne heure de la quatrième annonce.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -23154,8 +23355,24 @@
           "brief": "Représenter entièrement « 16 h 45 » pour « Quelle est la quatrième heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 16 h 15, 16 h 30 et 16 h 45 ; conserver la bonne heure de la quatrième annonce."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1615.webp",
+          "sha256": "e434a5119ed9b1abaf770edc8fcdc325a06ab37c07b021daf61323373ec67962"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+          "sha256": "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1645.webp",
+          "sha256": "550944f70049bb33d5803946d58c92f79816c65527033d2138998f876bcae7ff"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -23173,6 +23390,10 @@
         "evidence_quote": "seize heures quinze",
         "semantic_sha256": "11ef0fbfbe9fb47adebd3c1bf5f371ee14ad5030baa440fece80699fdc397782",
         "note": "Cadrans 16 h 15, 16 h 30 et 16 h 45 ; conserver la bonne heure de la quatrième annonce."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
       }
     },
     {
@@ -23186,8 +23407,8 @@
       "semantic_sha256": "b904a4bc3dd967da14e069b03c631d83826caa49c47b89fb4723325733fb3895",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
       "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
-      "status": "candidate_visual_review",
-      "reason": "Cadrans 19 h 45, 19 h 15 et 20 h 45 ; minutes et heures doivent rester distinctes.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -23208,7 +23429,14 @@
           "id": "b",
           "label": "19 h 15",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+              "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+              "label": "19 h 15",
+              "visual_review_required": true
+            }
+          ],
           "asset": "95462fd702424cd7",
           "brief": "Représenter entièrement « 19 h 15 » pour « Quelle est la cinquième heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 19 h 45, 19 h 15 et 20 h 45 ; minutes et heures doivent rester distinctes."
         },
@@ -23216,13 +23444,36 @@
           "id": "c",
           "label": "20 h 45",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+              "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+              "label": "20 h 45",
+              "visual_review_required": true
+            }
+          ],
           "asset": "50d3f462b3429df4",
           "brief": "Représenter entièrement « 20 h 45 » pour « Quelle est la cinquième heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 19 h 45, 19 h 15 et 20 h 45 ; minutes et heures doivent rester distinctes."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-1945.webp",
+          "sha256": "477998ab41855ea82fc544a491f72d8098b957197ab5c379757d61a400576e7a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+          "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+          "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -23240,6 +23491,10 @@
         "evidence_quote": "dix-neuf heures quarante-cinq",
         "semantic_sha256": "b904a4bc3dd967da14e069b03c631d83826caa49c47b89fb4723325733fb3895",
         "note": "Cadrans 19 h 45, 19 h 15 et 20 h 45 ; minutes et heures doivent rester distinctes."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
       }
     },
     {
@@ -23253,8 +23508,8 @@
       "semantic_sha256": "89b754eb711abdf256facee7dd0a81260ea863107df47ead2e3d5b96995dcaa4",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
       "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
-      "status": "candidate_visual_review",
-      "reason": "Cadrans 22, 20 et 23 heures distincts sur douze heures ; aucune distinction matin/soir n’est demandée entre des cadrans identiques.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -23281,8 +23536,24 @@
           "brief": "Représenter entièrement « 23 heures » pour « Quelle est la dernière heure annoncée ? ». Vérifier la transcription du support tcf-delf-actif-a1-042 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Cadrans 22, 20 et 23 heures distincts sur douze heures ; aucune distinction matin/soir n’est demandée entre des cadrans identiques."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp",
+          "sha256": "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+          "sha256": "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-horloge-2300.webp",
+          "sha256": "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -23300,6 +23571,10 @@
         "evidence_quote": "vingt-deux heures",
         "semantic_sha256": "89b754eb711abdf256facee7dd0a81260ea863107df47ead2e3d5b96995dcaa4",
         "note": "Cadrans 22, 20 et 23 heures distincts sur douze heures ; aucune distinction matin/soir n’est demandée entre des cadrans identiques."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date."
       }
     },
     {
@@ -31068,8 +31343,8 @@
       "semantic_sha256": "6d22a47015cb1f2a306d87f0080dcb2aaa45106715a98c613e6b728bda8c1332",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-05-01.mp3",
       "audio_sha256": "435ac1a2d835a5295f4e43e9f35f0b96c49842fdbba9988765b5a230abdac648",
-      "status": "candidate_visual_review",
-      "reason": "Passeport, carte de cantine et permis de conduire avec fonction visible, sans identité, nationalité, date ou numéro inventés.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -31096,8 +31371,24 @@
           "brief": "Représenter entièrement « Son permis de conduire » pour « Quel document Rony ne doit-il surtout pas oublier ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Passeport, carte de cantine et permis de conduire avec fonction visible, sans identité, nationalité, date ou numéro inventés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+          "sha256": "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
+          "sha256": "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+          "sha256": "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -31115,6 +31406,10 @@
         "evidence_quote": "n’oublie pas ton passeport",
         "semantic_sha256": "6d22a47015cb1f2a306d87f0080dcb2aaa45106715a98c613e6b728bda8c1332",
         "note": "Passeport, carte de cantine et permis de conduire avec fonction visible, sans identité, nationalité, date ou numéro inventés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Passeport, véritable carte plastique de cantine et permis de conduire. Le plateau-repas orange est rejeté comme image de carte."
       }
     },
     {
@@ -34469,8 +34764,8 @@
       "semantic_sha256": "a3c9f404b19aa7c9942c5e9cd153bd052a107fdbba2d0c00ed93d9fa5dc32df5",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
       "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
-      "status": "candidate_visual_review",
-      "reason": "Photo d’identité anonyme, carte d’identité et certificat médical avec indices de fonction ; pas de vraie identité ou date ajoutée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34518,8 +34813,24 @@
           "brief": "Représenter entièrement « Un certificat médical » pour « Quel document le jeune donne-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Photo d’identité anonyme, carte d’identité et certificat médical avec indices de fonction ; pas de vraie identité ou date ajoutée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-photo-imprimee.webp",
+          "sha256": "93d4872a6d6549d8a2c6af28d81da587f472ed235863de85ff0e9d82ae65155c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+          "sha256": "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-certificat-medical.webp",
+          "sha256": "01503a392c6b4e3b49bdef0783b9483b63c4adc4ae0348c7d36b78179ba5d0a1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34537,6 +34848,10 @@
         "evidence_quote": "Voici ma photo pour mon dossier",
         "semantic_sha256": "a3c9f404b19aa7c9942c5e9cd153bd052a107fdbba2d0c00ed93d9fa5dc32df5",
         "note": "Photo d’identité anonyme, carte d’identité et certificat médical avec indices de fonction ; pas de vraie identité ou date ajoutée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Photo imprimée seule, carte d’identité et certificat médical ; documents entiers et distincts. Un portrait imprimé reste bien une photo, sans document d’identité ajouté."
       }
     },
     {
@@ -34617,7 +34932,14 @@
           "id": "a",
           "label": "De changer de place",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+              "sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+              "label": "Changer de place",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e57cf8140587111c",
           "brief": "Représenter entièrement « De changer de place » pour « Que demande l’élève ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-04-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Changer de place, sortir plus tôt et changer de classe sont des demandes ; le plus tôt et la différence place/classe ne sont pas prouvés par une image isolée."
         },
@@ -35472,6 +35794,12 @@
               "path": "/lib/images/tcf/qcm-audit/4b22b570e1e4.webp",
               "sha256": "34f9cf448164ccd528d35505111be49a1b6d0ecb263841931314feb96f4c0360",
               "label": "Un CD",
+              "visual_review_required": true
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png",
+              "sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+              "label": "Un disque de musique",
               "visual_review_required": true
             }
           ],
@@ -37700,6 +38028,12 @@
               "path": "/lib/images/tcf/qcm-audit/4b22b570e1e4.webp",
               "sha256": "34f9cf448164ccd528d35505111be49a1b6d0ecb263841931314feb96f4c0360",
               "label": "Un CD",
+              "visual_review_required": true
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png",
+              "sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+              "label": "Un disque de musique",
               "visual_review_required": true
             }
           ],
@@ -73440,7 +73774,14 @@
           "id": "a",
           "label": "Le téléphérique",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+              "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+              "label": "Le téléphérique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "942df1a4f7a47abc",
           "brief": "Représenter entièrement « Le téléphérique » pour « Quel moyen permet de monter en haut de la montagne ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -116283,7 +116624,14 @@
     {
       "id": "38e02dad0d36be83",
       "label": "Les volcans",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+          "sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+          "label": "Les volcans",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-031-01#1",
@@ -116294,7 +116642,14 @@
     {
       "id": "232cd836c3dc72a6",
       "label": "Les océans",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-oceans.png",
+          "sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+          "label": "Les océans",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-031-01#1",
@@ -117901,7 +118256,14 @@
     {
       "id": "6a05bd687d28fec8",
       "label": "Une caméra de surveillance",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-camera-surveillance.png",
+          "sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+          "label": "Une caméra de surveillance",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-037-01#3",
@@ -118489,7 +118851,14 @@
     {
       "id": "95462fd702424cd7",
       "label": "19 h 15",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+          "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+          "label": "19 h 15",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-042#5",
@@ -118500,7 +118869,14 @@
     {
       "id": "50d3f462b3429df4",
       "label": "20 h 45",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+          "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+          "label": "20 h 45",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-042#5",
@@ -121349,6 +121725,12 @@
           "path": "/lib/images/tcf/qcm-audit/4b22b570e1e4.webp",
           "sha256": "34f9cf448164ccd528d35505111be49a1b6d0ecb263841931314feb96f4c0360",
           "label": "Un CD",
+          "visual_review_required": true
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png",
+          "sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+          "label": "Un disque de musique",
           "visual_review_required": true
         }
       ],
@@ -128093,7 +128475,14 @@
     {
       "id": "942df1a4f7a47abc",
       "label": "Le téléphérique",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+          "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+          "label": "Le téléphérique",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-045-04-04#1",

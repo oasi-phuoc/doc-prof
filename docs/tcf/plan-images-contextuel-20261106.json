@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1898,
+    "reviewed_trio": 1907,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 370,
+    "reviewed_763_artwork_pending": 361,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -67419,19 +67419,31 @@
         "Au dos",
         "Au ventre"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "bb12f087c10280d7e4c609deb6c8228092d2693ddb2951ebcaa5bdb7591eaa68",
       "semantic_before_sha256": "950e5831aee045c95cc7ef8a082b5f74f769d1540f95fe9d9def360ce82f9460",
       "semantic_after_sha256": "950e5831aee045c95cc7ef8a082b5f74f769d1540f95fe9d9def360ce82f9460",
       "audio": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-3.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/maladies/mal-a-la-gorge.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+        "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp"
+      ],
+      "target_sha256": [
+        "030d94e740daf77ce0df7629ad8f361523a38fb7880dc97b879a1083dc234159",
+        "4e1c1c273413abe8133d1dbb58e94c1412cc73ac5f5c183f944015cc02c7a397",
+        "1b59129edb1a0b50c181fa3749703cf161f1dd7df5cb38ded504164241e99ca2"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Le patient répond d’abord « J’ai mal à la gorge ». Il cite ensuite la tête et nie le ventre ; la question demande explicitement le début.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le patient répond d’abord « J’ai mal à la gorge ». Il cite ensuite la tête et nie le ventre ; la question demande explicitement le début.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Gorge examinée, main au bas du dos et main au ventre ; ne pas réutiliser les images à deux douleurs simultanées."
+      }
     },
     {
       "key": "tcf-ss-a1-s22-co-1#2",
@@ -85939,19 +85951,31 @@
         "Un calendrier mural",
         "Un ordinateur"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "a9d1567eecd4165ee4d9d2e861ae57cdea461dce3efab577bca6785ea334cd87",
       "semantic_before_sha256": "9d75325375d2ac69b9f99b219797eb3b42e70096b909e720aa9a500359e7c2fc",
       "semantic_after_sha256": "9d75325375d2ac69b9f99b219797eb3b42e70096b909e720aa9a500359e7c2fc",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/pour-nouveau-projet-dois.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-carnet-prendre-notes.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "target_sha256": [
+        "e0afa37887d2c07758defd6fbe3f1ea43bfbf1c51d3b5770379fde4b33b55b78",
+        "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La personne va acheter un carnet, des stylos et une règle pour noter les événements et les tâches.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La personne va acheter un carnet, des stylos et une règle pour noter les événements et les tâches.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Carnet vierge à écrire, calendrier mural à grille vide et ordinateur entier. Le carnet portant des notes scolaires est écarté pour ce contexte."
+      }
     },
     {
       "key": "tcf-ss-a1-s49-co-2#3",
@@ -93511,19 +93535,31 @@
         "Des sacs",
         "Des chapeaux"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "ce3c649134f85e198ad0c621530cb2f6505edec627eae8a6d555ee9d485d000c",
       "semantic_before_sha256": "4166f16395db22edae93a17a3b8d5c4f1173ea11e4570576e765c74e7d714bb0",
       "semantic_after_sha256": "4166f16395db22edae93a17a3b8d5c4f1173ea11e4570576e765c74e7d714bb0",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_06-2.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+        "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png"
+      ],
+      "target_sha256": [
+        "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+        "e0af73edfac463a23866a28a53151daa56b4b8354661605175a33b6cae3aeaee",
+        "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le support annonce vingt et une paires de chaussures. La question distingue la catégorie au pluriel, elle ne demande pas de compter les vingt et une paires.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le support annonce vingt et une paires de chaussures. La question distingue la catégorie au pluriel, elle ne demande pas de compter les vingt et une paires.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Trois paires de chaussures, trois sacs et trois chapeaux ; objets entiers, catégories plurielles. Une seule paire est écartée."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-06#5",
@@ -109391,19 +109427,31 @@
         "Un billet de concert",
         "Un disque"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "cf003ba83d34fce290b1a2bde99f177ddc96b6c6f7e81a662e6925e85e7ba3a6",
       "semantic_before_sha256": "bc7237591739f628bd43e5f458fbd9d5fcc4bcf76cb0d01d856af1390c7788f2",
       "semantic_after_sha256": "bc7237591739f628bd43e5f458fbd9d5fcc4bcf76cb0d01d856af1390c7788f2",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-4.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png"
+      ],
+      "target_sha256": [
+        "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77",
+        "05e1302b6cdb4bfc13876e375789b222aad9b90b67346e71d38b291f51f52818",
+        "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "La première question du support évoque l’instrument joué ; ni le billet ni le disque n’y sont nommés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La première question du support évoque l’instrument joué ; ni le billet ni le disque n’y sont nommés.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Une guitare représente un exemple de la catégorie instrument, sans affirmer que cet instrument précis est cité. Billet unique devant une scène de concert et disque unique ; pluriels écartés."
+      }
     },
     {
       "key": "delf-a1-2022-co-79#12",
@@ -120196,19 +120244,31 @@
         "Médecin",
         "Journaliste"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
       "semantic_before_sha256": "36061c8fbf8bd0144a825d358cb6150c6c30f26e7e4ee5655a545673c4a9e091",
       "semantic_after_sha256": "36061c8fbf8bd0144a825d358cb6150c6c30f26e7e4ee5655a545673c4a9e091",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/avocate.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp"
+      ],
+      "target_sha256": [
+        "0973a83529df9dcf5f2dd35f7f38ae4e6d6555f7882d2e43d2eb948a8c03115d",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+        "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Le document 2 présente Monica comme avocate à Bruxelles.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le document 2 présente Monica comme avocate à Bruxelles.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Avocate avec dossier et livres juridiques, médecin avec stéthoscope en consultation, journaliste avec micro et caméra. Illustrations de métiers, pas portraits des personnages fictifs du texte."
+      }
     },
     {
       "key": "tcf-a2p-s1-ce-1#3",
@@ -127131,19 +127191,31 @@
         "Danseuse",
         "Écrivaine"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "5e6728eaa7a79fae094b672b2051b20931d9546cf99f62f35e302136bf558df8",
       "semantic_before_sha256": "6e0ce48f1745e3a770ef04dceeb3e84dbc14e49d7722d8da57a260210532f2f4",
       "semantic_after_sha256": "6e0ce48f1745e3a770ef04dceeb3e84dbc14e49d7722d8da57a260210532f2f4",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/actrice.webp",
+        "/lib/images/tcf/catalogue/metiers/danseuse.webp",
+        "/lib/images/tcf/catalogue/metiers/ecrivaine.webp"
+      ],
+      "target_sha256": [
+        "b164f121fe5bcec3094023160575cf0b116c84058bc8ee7410a336bbe49df821",
+        "fe66e840df372f86d74cce7153508404ac26ae906f5f7820aefb865016fffb3f",
+        "628763855535c88f3b779e4afb471facfcbaa86b32ee48a743c6af7b2bb946e5"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le texte fourni présente explicitement Christine Daaé comme actrice ; le corrigé reste lié à cette formulation.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le texte fourni présente explicitement Christine Daaé comme actrice ; le corrigé reste lié à cette formulation.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Actrice interprétant un script sur un plateau, danseuse à la barre et écrivaine à son manuscrit ; métiers distincts, sans prétendre représenter Christine."
+      }
     },
     {
       "key": "delf-a2j-ce-011#7",
@@ -138023,19 +138095,31 @@
         "Médecin",
         "Avocate"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "7423b566818415bd2e964b6af084d034dfa3d07301aaa3cfd3ac5ba1808a67ff",
       "semantic_before_sha256": "c3b3d6ea0c8baa2d72739c3f4e6193656f3d53f3a790bc1923b88c677552afce",
       "semantic_after_sha256": "c3b3d6ea0c8baa2d72739c3f4e6193656f3d53f3a790bc1923b88c677552afce",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/vocab-ingenieure.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/catalogue/metiers/avocate.webp"
+      ],
+      "target_sha256": [
+        "f00b31c9cd18a068b367a8418a5fde83ca98528ad1fc9e5d39a4f89f2e5ba37c",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+        "0973a83529df9dcf5f2dd35f7f38ae4e6d6555f7882d2e43d2eb948a8c03115d"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le descriptif « Les Génies » appelle Lisa la première femme ingénieure.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le descriptif « Les Génies » appelle Lisa la première femme ingénieure.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Ingénieure avec plan et casque sur chantier, médecin en consultation et avocate au bureau ; activité professionnelle entière représentée, pas identité des personnes nommées."
+      }
     },
     {
       "key": "delf-a2j-ce-066#1",
@@ -152530,19 +152614,31 @@
         "Journaliste",
         "Professeur"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
       "semantic_before_sha256": "c6adcff91707f7f19ef0dfdaf9ce9f852f2423a8e1168f6ccbd554060dd31ab9",
       "semantic_after_sha256": "c6adcff91707f7f19ef0dfdaf9ce9f852f2423a8e1168f6ccbd554060dd31ab9",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/agent-immobilier.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeur.webp"
+      ],
+      "target_sha256": [
+        "f6c8e61a37c477c875c57c04a7540267336457dd71ee18ff0fd1505d0f9744c4",
+        "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10",
+        "0f0155e9a59dafb28ef9fe1d5cd22ba0c34f5db594cf81b3abbe46b0fbe1d395"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Thomas a quitté la restauration et travaille désormais comme agent immobilier ; il vend surtout des maisons.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Thomas a quitté la restauration et travaille désormais comme agent immobilier ; il vend surtout des maisons.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Agent présentant des maisons, journaliste en reportage, professeur devant sa classe ; images de catégories professionnelles, sans attribuer les apparences à Thomas."
+      }
     },
     {
       "key": "delf-a2r-ce-063#3",
@@ -153734,19 +153830,31 @@
         "Journaliste",
         "Professeure"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "8e505c31d453b5b9ebf8225f217afb58e1f4444121eb06995d05c9a5ee09ec7e",
       "semantic_before_sha256": "6a214b4e6318941c27ef3925c824f9af3baa1758082b3f395ac7824777f960d3",
       "semantic_after_sha256": "6a214b4e6318941c27ef3925c824f9af3baa1758082b3f395ac7824777f960d3",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/actrice.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+      ],
+      "target_sha256": [
+        "b164f121fe5bcec3094023160575cf0b116c84058bc8ee7410a336bbe49df821",
+        "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10",
+        "fcbd6cedfea88cb4ecbf2ead9e1d96bc10b0d3b08c6fa0b85293f641b6abde32"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Léa Morand était connue comme actrice avant d’être aussi chanteuse.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Léa Morand était connue comme actrice avant d’être aussi chanteuse.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Plateau de tournage avec jeu de scène, reportage avec micro et enseignement devant une classe ; la bonne image illustre le métier antérieur demandé."
+      }
     },
     {
       "key": "delf-a2r-ce-068#2",
@@ -169492,18 +169600,18 @@
         "Une carte de transport"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
       "semantic_before_sha256": "43b5b09799b36e41d499442b529c2f2743ea93d302eb4f3a4f80819a5de955d5",
       "semantic_after_sha256": "43b5b09799b36e41d499442b529c2f2743ea93d302eb4f3a4f80819a5de955d5",
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
         "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
         "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
       ],
       "target_sha256": [
-        "f3a8aa61c89b60724136cfde7cd8bee24918b3c45031db47dd9944555b8dd398",
+        "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
         "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929",
         "4817395e118594a1168a68d265de7029664cf48eca3cd576606de1040761c884"
       ],
@@ -169513,7 +169621,11 @@
         "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Document entier avec portrait et pictogramme de repas ; l’ancienne illustration montre une assiette et des couverts, pas une carte. Les autres documents du trio conservent leur sens."
+      }
     },
     {
       "key": "tcf-ss-a2-s24-co-4#11",
@@ -172502,7 +172614,7 @@
         "Sa carte de cantine"
       ],
       "status": "reviewed_trio",
-      "method": "individual_763_candidate_review",
+      "method": "individual_visual_review_20261115",
       "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
       "semantic_before_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
       "semantic_after_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
@@ -172510,19 +172622,23 @@
       "targets": [
         "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
         "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
-        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png"
       ],
       "target_sha256": [
         "555b2ed9c4b7bd1e1f65c4fcd9333542a1d576e7dad1dbbbffc31d9c1a4549af",
         "e9b4c1b022cdb1de98501b57be0b9d10a93f32cfe7495d669bb16bfc90019dac",
-        "f3a8aa61c89b60724136cfde7cd8bee24918b3c45031db47dd9944555b8dd398"
+        "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1"
       ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps. Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3.",
+      "reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
       "review_763_decision": "active_reviewed_trio",
-      "review_763_reason": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps. Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3.",
-      "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be"
+      "review_763_reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
+      "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json",
+        "note": "Document entier avec portrait et pictogramme de repas ; l’ancienne illustration montre une assiette et des couverts, pas une carte. Les autres documents du trio conservent leur sens."
+      }
     },
     {
       "key": "tcf-ss-a2-s48-co-4#13",

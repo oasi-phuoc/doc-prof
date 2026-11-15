@@ -1,0 +1,2287 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "c5b047aa7f300c5276723ee141e84bce26b480ea",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 23,
+    "corrected_existing_trios": 2,
+    "new_images": 19,
+    "imagegen_originals": 8,
+    "calculated_clock_originals": 11,
+    "reused_image_usages_in_new_trios": 50,
+    "added_by_level": {
+      "A0-A1": 18,
+      "A1-A2": 5
+    }
+  },
+  "new_images": [
+    {
+      "id": "qcm-a1-carnet-prendre-notes",
+      "label": "Un carnet pour prendre des notes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-carnet-prendre-notes.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One compact open spiral-bound NOTEBOOK for writing personal notes. Blank cream paper with subtle horizontal ruling, blue flexible cover visible under the pages, one ordinary pen resting beside it. This is a notebook for recording tasks and events, NOT a school report, grade book, calendar or correspondence booklet. Entire notebook and pen isolated on warm cream background, soft contact shadow.",
+      "source_png": "/workspace/generated_images/exec-dac371a3-2bf7-480c-9d6d-6f3497072958.png",
+      "source_sha256": "e0afa37887d2c07758defd6fbe3f1ea43bfbf1c51d3b5770379fde4b33b55b78",
+      "sha256": "e0afa37887d2c07758defd6fbe3f1ea43bfbf1c51d3b5770379fde4b33b55b78",
+      "bytes": 1702797,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Carnet ouvert vierge avec lignes et stylo, sans notes scolaires ni texte ; objets entiers sur crème, volumes peints doux.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-calendrier-mural-vierge",
+      "label": "Un calendrier mural",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One WALL CALENDAR hanging from a tiny wall hook, on a plain cream wall. Spiral binding at top, one small generic decorative leaf motif above a large clearly rectangular seven-column grid of blank calendar boxes. Show the entire calendar sheet and spiral. Absolutely NO text, numbers, month names, day names or dates in any grid cell. It must look like a wall calendar with unfilled cells rather than a notebook, screen or timetable. Soft natural shadow cast onto cream wall.",
+      "source_png": "/workspace/generated_images/exec-b70bccbe-0a4a-4f16-9fdd-3a0456902f58.png",
+      "source_sha256": "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+      "sha256": "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+      "bytes": 1800684,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Calendrier suspendu à une attache réelle ; grille de sept colonnes vide, sans jour, mois ni date. Objet entier sur mur crème.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-disque-musique-seul",
+      "label": "Un disque de musique",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One single silver optical music CD disc with delicate iridescent reflection, center hole clearly visible, resting at a shallow angle on a warm cream background with a soft contact shadow. Exactly ONE disc, entirely visible. No sleeve, second disc, video clapper, music note, letters, graphics or inscriptions. Fine painted material detail, no photographic rendering.",
+      "source_png": "/workspace/generated_images/exec-df054c3f-2620-4f05-9848-01e62ef88ed8.png",
+      "source_sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+      "sha256": "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d",
+      "bytes": 1668335,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Un seul disque optique de musique, trou central et reflets visibles ; aucun second disque ni accessoire parasite.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Objets du quotidien",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-plusieurs-paires-chaussures",
+      "label": "Des paires de chaussures",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. Exactly THREE DISTINCT PAIRS of ordinary adult SHOES, six shoes total, neatly separated: a pair of brown lace-up leather shoes, a pair of plain navy fabric sneakers with cream soles, a pair of burgundy low ankle boots. Arrange the three pairs in a natural loose arc on warm cream background, each pair clearly matched and both shoes fully visible. No other clothing, hats or bags. This illustrates the category plural pairs of shoes, NOT a numerical count exercise. No logos, side stripe, tick or branding; fine painted leather and fabric, gentle contact shadows.",
+      "source_png": "/workspace/generated_images/exec-d2f8b848-c8c2-4c3a-9daa-d4c20a8a0ba1.png",
+      "source_sha256": "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+      "sha256": "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+      "bytes": 1903560,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Trois paires distinctes et entières, six chaussures, sans logo ; illustre la catégorie plurielle sans prétendre compter les vingt et une paires du support.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Objets du quotidien",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-volcans",
+      "label": "Les volcans",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One coherent natural landscape showing TWO volcanic cones, the foreground one with a visible summit crater, a small warm orange lava flow down one slope and a gentle ash plume; the smaller second cone is farther away. Whole mountain forms visible with generous margins and a calm warm sky. Distinctly VOLCANOES rather than snowy alpine mountains. No people, signs, buildings or labels, no eruption disaster or suffering. Paint all the scene with the same soft semi-realistic treatment and fine natural detail as the references.",
+      "source_png": "/workspace/generated_images/exec-c1c0c27c-16f8-4b35-8200-cdcaaf4ace1d.png",
+      "source_sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+      "sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+      "bytes": 2584216,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Deux cônes volcaniques, cratère et lave visibles ; paysage peint, sans catastrophe ni ajout de lieu précis.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Paysages naturels",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-oceans",
+      "label": "Les océans",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-oceans.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One coherent peaceful OPEN OCEAN seascape, broad blue-green water with soft swells, gentle white foam in the near foreground, a clear low horizon and warm pale sky. The SEA itself is the subject; no beach resort, boats, buildings, mountains, people, map, globe, chart or text. Soft painterly natural light and fine semi-realistic water texture matching the references. Landscape fills the frame without a border.",
+      "source_png": "/workspace/generated_images/exec-ea14f981-c38d-4498-8617-ab4fce72376b.png",
+      "source_sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+      "sha256": "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+      "bytes": 2074325,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Pleine mer, horizon et vagues ; paysage cohérent, sans carte ni destination inventée.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Paysages naturels",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-camera-surveillance",
+      "label": "Une caméra de surveillance",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-camera-surveillance.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One single recognizable modern SECURITY SURVEILLANCE CAMERA, a plain off-white weatherproof bullet CCTV camera with short wall-mount arm secured by a visible small mount plate on a neutral cream wall. Dark circular lens and tiny infrared dots on the front, slight three-quarter angle. Entire camera and mounting hardware visible, physically attached to wall, natural cast shadow. No person, photographer equipment, screen, extra camera, lettering, logo or recording text. It must be clearly a wall-mounted surveillance camera, not a handheld camcorder.",
+      "source_png": "/workspace/generated_images/exec-c91f4f12-8845-4e6a-800b-fd5f247a17e9.png",
+      "source_sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+      "sha256": "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+      "bytes": 1887064,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Caméra de surveillance fixée au mur, objectif et support entiers ; différente de l’appareil photo et de la tablette.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Objets du quotidien",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-carte-cantine",
+      "label": "Une carte de cantine",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 landscape educational TCF illustration. Use the two attached approved images as PAINTING STYLE references only: detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural colours, believable materials. No photography, 3D, flat vector, heavy cartoon outlines or graphic frame. Complete subjects with generous empty margins, no cropped objects. No readable words, letters, numbers, amounts, dates, days, months, logo or watermark. This is a single answer image, not an atlas or collage. One actual plastic SCHOOL CANTEEN ACCESS CARD lying on a warm cream surface, entirely visible at a slight angle. Orange card, a small generic illustrated student portrait on the left, a small clear plate-with-fork-and-spoon pictogram on the right, a narrow black magnetic stripe near the top, and two subtle short blank horizontal information lines. This is the CARD itself, NOT a real meal tray or a plate. No readable text, letters, names, numbers, dates, barcode, price, brand or flag. Soft contact shadow, realistic painted plastic edges and small portrait, same fine soft style as reference images.",
+      "source_png": "/workspace/generated_images/exec-42721360-3df7-4475-b727-c3192580939a.png",
+      "source_sha256": "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
+      "sha256": "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
+      "bytes": 1776809,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Véritable carte plastique de cantine avec portrait et pictogramme de repas, sans texte ni date ; ne montre pas un plateau-repas.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1038",
+      "label": "10 h 38",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1038.png",
+      "source_sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+      "sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+      "bytes": 1138377,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "10:38",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+        "hour": 10,
+        "minute": 38,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+        "angles_degrees": [
+          319.0,
+          228
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1018",
+      "label": "10 h 18",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1018.png",
+      "source_sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+      "sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+      "bytes": 1138243,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "10:18",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+        "hour": 10,
+        "minute": 18,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+        "angles_degrees": [
+          309.0,
+          108
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1138",
+      "label": "11 h 38",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1138.png",
+      "source_sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+      "sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+      "bytes": 1136484,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "11:38",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png",
+        "hour": 11,
+        "minute": 38,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540",
+        "angles_degrees": [
+          349.0,
+          228
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2255",
+      "label": "22 h 55",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2255.png",
+      "source_sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+      "sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+      "bytes": 1136268,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "22:55",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+        "hour": 22,
+        "minute": 55,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+        "angles_degrees": [
+          327.5,
+          330
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2155",
+      "label": "21 h 55",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2155.png",
+      "source_sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+      "sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+      "bytes": 1138437,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "21:55",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+        "hour": 21,
+        "minute": 55,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+        "angles_degrees": [
+          297.5,
+          330
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2215",
+      "label": "22 h 15",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2215.png",
+      "source_sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+      "sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+      "bytes": 1130457,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "22:15",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png",
+        "hour": 22,
+        "minute": 15,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1",
+        "angles_degrees": [
+          307.5,
+          90
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-0710",
+      "label": "07 h 10",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-0710.png",
+      "source_sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+      "sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+      "bytes": 1137561,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "07:10",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+        "hour": 7,
+        "minute": 10,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+        "angles_degrees": [
+          215.0,
+          60
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-0750",
+      "label": "07 h 50",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-0750.png",
+      "source_sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+      "sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+      "bytes": 1137516,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "07:50",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png",
+        "hour": 7,
+        "minute": 50,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde",
+        "angles_degrees": [
+          235.0,
+          300
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-0845",
+      "label": "08 h 45",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-0845.png",
+      "source_sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "bytes": 1126524,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "08:45",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png",
+        "hour": 8,
+        "minute": 45,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+        "angles_degrees": [
+          262.5,
+          270
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-1915",
+      "label": "19 h 15",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-1915.png",
+      "source_sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+      "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+      "bytes": 1129503,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "19:15",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+        "hour": 19,
+        "minute": 15,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+        "angles_degrees": [
+          217.5,
+          90
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-horloge-2045",
+      "label": "20 h 45",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+      "prompt": "Cadran peint commun, chiffres et aiguilles calculés ; méthode approuvée par l’utilisateur le 6 novembre 2026. Même modèle tcf-common-20261106.",
+      "source_png": "/workspace/generated_images/tcf-uniform-clocks/qcm-a1-horloge-2045.png",
+      "source_sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+      "bytes": 1126524,
+      "width": 1280,
+      "height": 960,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-objets-metiers-horaires-20261115",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1800-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cadran entier et deux aiguilles identiques au modèle commun ; angles horaires et minutes calculés, inspectés sur planche puis comparés au libellé du choix.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "clock_time": "20:45",
+      "original_bytes_preserved": true,
+      "clock_face": "analog",
+      "clock_hands_model": "tcf-common-20261106",
+      "generation_method": "painted-base-with-calculated-hands-user-approved",
+      "clock_render": {
+        "path": "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png",
+        "hour": 20,
+        "minute": 45,
+        "width": 1280,
+        "height": 960,
+        "before_sha256": null,
+        "sha256": "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457",
+        "angles_degrees": [
+          262.5,
+          270
+        ]
+      },
+      "gallery_types": [
+        "Heure et horloge"
+      ],
+      "gallery_themes": [
+        "Heures et horloges",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+      "reason": "Plateau-repas et non carte plastique."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
+      "reason": "Notes scolaires, inadaptées au carnet personnel de tâches ; conservé pour le contexte scolaire du carnet de notes."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/revue-20261107-cb154ae236.webp",
+      "reason": "Caméscope professionnel et non caméra de surveillance."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-chaussures-paire-dessine.webp",
+      "reason": "Une seule paire, alors que les réponses sont au pluriel."
+    }
+  ],
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s22-co-1#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- Vous avez mal où ?\n- J'ai mal à la gorge.\n- Vous toussez ?\n- Oui, je tousse beaucoup.\n- Et vous vous sentez comment ?\n- J'ai froid, j'ai chaud et j'ai très soif…\n- Vous avez mal au ventre ?\n- Non, j'ai mal à la tête et je n'ai pas faim…\n- Je pense que vous avez de la fièvre.\nVous êtes fatigué, vous avez besoin de repos.\n- Mais qu'est-ce que j'ai ?\nUn rhume ?\n- Non !\nC'est la grippe !\n- Qu'est-ce que je dois faire, docteur ?\n- Pour commencer, je vous conseille de rester à la maison et de vous reposer.",
+      "source_sha256": "bb12f087c10280d7e4c609deb6c8228092d2693ddb2951ebcaa5bdb7591eaa68",
+      "semantic_sha256": "950e5831aee045c95cc7ef8a082b5f74f769d1540f95fe9d9def360ce82f9460",
+      "question": {
+        "enonce": "Où le patient dit-il avoir mal au début ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la gorge",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au dos",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au ventre",
+            "correct": false
+          }
+        ],
+        "written_model": "À la gorge"
+      },
+      "audio": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-3.mp3",
+      "audio_sha256": "d9ff2333274351a00fa7087559f26aea2be635953060febf7a7ae1b199a7d5fa",
+      "image_ids": [
+        "catalogue-20261113-maladie-mal-a-la-gorge",
+        "co306-mal-dos-dessine",
+        "catalogue-20261113-maladie-mal-au-ventre"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/maladies/mal-a-la-gorge.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+        "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp"
+      ],
+      "image_sha256": [
+        "030d94e740daf77ce0df7629ad8f361523a38fb7880dc97b879a1083dc234159",
+        "4e1c1c273413abe8133d1dbb58e94c1412cc73ac5f5c183f944015cc02c7a397",
+        "1b59129edb1a0b50c181fa3749703cf161f1dd7df5cb38ded504164241e99ca2"
+      ],
+      "reason": "Le patient répond d’abord « J’ai mal à la gorge ». Il cite ensuite la tête et nie le ventre ; la question demande explicitement le début.",
+      "visual_review": "Gorge examinée, main au bas du dos et main au ventre ; ne pas réutiliser les images à deux douleurs simultanées.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a1-s49-co-2#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour ce nouveau projet, je dois être organisé.\nJe vais acheter un carnet, des stylos de couleurs et une règle.\nJ'aimerais noter tous les événements importants ainsi que les tâches à réaliser.\nIl faut que tout soit parfait !\nJe vais coller des images du résultat final sur les murs de mon bureau.",
+      "source_sha256": "a9d1567eecd4165ee4d9d2e861ae57cdea461dce3efab577bca6785ea334cd87",
+      "semantic_sha256": "9d75325375d2ac69b9f99b219797eb3b42e70096b909e720aa9a500359e7c2fc",
+      "question": {
+        "enonce": "Sur quel objet veut-elle noter les informations ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un carnet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un calendrier mural",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un ordinateur",
+            "correct": false
+          }
+        ],
+        "written_model": "Un carnet"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/pour-nouveau-projet-dois.mp3",
+      "audio_sha256": "1e0400a9161eadd0dbe68a20d186b12a50105018dcec37121c9a6839d262aef8",
+      "image_ids": [
+        "qcm-a1-carnet-prendre-notes",
+        "qcm-a1-calendrier-mural-vierge",
+        "co834-ordinateur-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-carnet-prendre-notes.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "image_sha256": [
+        "e0afa37887d2c07758defd6fbe3f1ea43bfbf1c51d3b5770379fde4b33b55b78",
+        "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+      ],
+      "reason": "La personne va acheter un carnet, des stylos et une règle pour noter les événements et les tâches.",
+      "visual_review": "Carnet vierge à écrire, calendrier mural à grille vide et ordinateur entier. Le carnet portant des notes scolaires est écarté pour ce contexte.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-06#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "J’ai vingt et une paires de chaussures. C’est beaucoup !",
+      "source_sha256": "ce3c649134f85e198ad0c621530cb2f6505edec627eae8a6d555ee9d485d000c",
+      "semantic_sha256": "4166f16395db22edae93a17a3b8d5c4f1173ea11e4570576e765c74e7d714bb0",
+      "question": {
+        "enonce": "Quel objet la personne possède-t-elle en grand nombre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des paires de chaussures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des sacs",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des chapeaux",
+            "correct": false
+          }
+        ],
+        "written_model": "Des paires de chaussures"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_06-2.mp3",
+      "audio_sha256": "0d2d856fa5f704f9d3b6a4b72abd7e10bb6db74861a477bbb9d31c1a219e2a61",
+      "image_ids": [
+        "qcm-a1-plusieurs-paires-chaussures",
+        "extension573-sacs-pluriel",
+        "extension573-chapeaux-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+        "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png"
+      ],
+      "image_sha256": [
+        "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+        "e0af73edfac463a23866a28a53151daa56b4b8354661605175a33b6cae3aeaee",
+        "a4bdbf4f30f9f215eb4749d2c7c654ca9346c407786ef1765dd10999c960eec2"
+      ],
+      "reason": "Le support annonce vingt et une paires de chaussures. La question distingue la catégorie au pluriel, elle ne demande pas de compter les vingt et une paires.",
+      "visual_review": "Trois paires de chaussures, trois sacs et trois chapeaux ; objets entiers, catégories plurielles. Une seule paire est écartée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-79#11",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Quel instrument est-ce que vous jouez ? / Quel type de musique écoutez-vous ? / Est-ce que vous écoutez la radio ?",
+      "source_sha256": "cf003ba83d34fce290b1a2bde99f177ddc96b6c6f7e81a662e6925e85e7ba3a6",
+      "semantic_sha256": "bc7237591739f628bd43e5f458fbd9d5fcc4bcf76cb0d01d856af1390c7788f2",
+      "question": {
+        "enonce": "Quel objet lié à la musique est évoqué ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un instrument",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un billet de concert",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un disque",
+            "correct": false
+          }
+        ],
+        "written_model": "Un instrument"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-4.mp3",
+      "audio_sha256": "163f1209f5ebf46057a27fcf8dc87d4588c8204484cdcc5ef38cd801ecb3ab0f",
+      "image_ids": [
+        "co834-guitare-dessine",
+        "co306-place-concert-dessine",
+        "qcm-a1-disque-musique-seul"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png"
+      ],
+      "image_sha256": [
+        "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77",
+        "05e1302b6cdb4bfc13876e375789b222aad9b90b67346e71d38b291f51f52818",
+        "9ff4fef28c80db44f377f9211c4f8151197f7550577bb02ce2391c4eea60168d"
+      ],
+      "reason": "La première question du support évoque l’instrument joué ; ni le billet ni le disque n’y sont nommés.",
+      "visual_review": "Une guitare représente un exemple de la catégorie instrument, sans affirmer que cet instrument précis est cité. Billet unique devant une scène de concert et disque unique ; pluriels écartés.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-014-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Le TGV numéro 3440, à destination de Nice-Ville de 10h38, va partir. Il est sans arrêt jusqu’à la gare de Toulon. Attention, seulement les voyageurs munis du billet peuvent monter dans les voitures. Dans ce train un service de restauration est à votre service.",
+      "source_sha256": "0f49aa742436dc116151a6ee435583620a00188ec2df5e40f7b552d4b2a233a0",
+      "semantic_sha256": "5cf85ab8d9c1521ef20f85df2fef9aad8ff26ece9d293ba53a860164d77971ac",
+      "question": {
+        "enonce": "À quelle heure le train part-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 10 h 38",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 10 h 18",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 11 h 38",
+            "correct": false
+          }
+        ],
+        "written_model": "À 10 h 38"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-014-01.mp3",
+      "audio_sha256": "fa3a3f1e08faf5652cdd82616700df1be0c2132162ebcb889bf8acbb65e104d3",
+      "image_ids": [
+        "qcm-a1-horloge-1038",
+        "qcm-a1-horloge-1018",
+        "qcm-a1-horloge-1138"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1038.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1018.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1138.png"
+      ],
+      "image_sha256": [
+        "bee170d02f40bc1d7901264ce2f2ee49d982ba42e58fc717715e2c9c00e9cd3e",
+        "6be7879589997b842ae6c8514d571576fe59153984ea77e337601183334f13ef",
+        "bb400635c268c3b4c53bc58912a95f352c61cda46731c15d9b53cd6e587ee540"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : départ du TGV à 10 h 38.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-018-04#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Le téléfilm commence à 22 heures cinquante-cinq. C’est trop tard. À cette heure-là je suis couché.",
+      "source_sha256": "a03f32f3247164f2119733d903c1da92d080b55a848f0b7b7bf56e311f97cabb",
+      "semantic_sha256": "c0cdcd671590a568618ea621cfff5a5066790911b6b896859bcbe7853a8f5b37",
+      "question": {
+        "enonce": "À quelle heure commence-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À 22 h 55",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À 21 h 55",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À 22 h 15",
+            "correct": false
+          }
+        ],
+        "written_model": "À 22 h 55"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-018-04.mp3",
+      "audio_sha256": "89f1b13a2e77ce01a68b9c1f1e25fd7b45a8d98b62204a568eee38c9a51dd667",
+      "image_ids": [
+        "qcm-a1-horloge-2255",
+        "qcm-a1-horloge-2155",
+        "qcm-a1-horloge-2215"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2255.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2155.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2215.png"
+      ],
+      "image_sha256": [
+        "4aa6f3a0eba857b2ed4b0d7d94b0388578550f153506e8422c654be5e09f97a2",
+        "52a7ad70fa0d9c4b3458154223df7e8e332838cd5fbf89a5a5ed33dac768bbfa",
+        "599f879954cb2f20840a852022f898dbd5bdab0af82123bc7279ffaa69307ef1"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : téléfilm à 22 h 55.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Aujourd’hui encore tu as mal au ventre ? Oui madame, hier déjà, et aujourd’hui j’ai encore mal. Et bien je te conseille d’aller voir ton médecin.",
+      "source_sha256": "9907cd3659c5b00705e2260aadf6914eaabb8bf61a5615487104f53e231e44cc",
+      "semantic_sha256": "c4c585fc27f133df460e54e99bde418ddcb9e0e45ed111738a72c3875035d2c7",
+      "question": {
+        "enonce": "Où l’élève a-t-il mal ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au ventre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la tête",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la gorge",
+            "correct": false
+          }
+        ],
+        "written_model": "Au ventre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+      "image_ids": [
+        "catalogue-20261113-maladie-mal-au-ventre",
+        "co306-mal-tete-dessine",
+        "catalogue-20261113-maladie-mal-a-la-gorge"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-tete-dessine.webp",
+        "/lib/images/tcf/catalogue/maladies/mal-a-la-gorge.webp"
+      ],
+      "image_sha256": [
+        "1b59129edb1a0b50c181fa3749703cf161f1dd7df5cb38ded504164241e99ca2",
+        "5044660ae9e50443c7d9fb496967c62c2bc6fbf9a07270bc2c2ae14386b114e8",
+        "030d94e740daf77ce0df7629ad8f361523a38fb7880dc97b879a1083dc234159"
+      ],
+      "reason": "L’élève dit avoir mal au ventre depuis la veille et être allé aux toilettes.",
+      "visual_review": "Ventre tenu, main à la tête et examen de la gorge ; trois zones séparées, aucune image à plusieurs douleurs.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-031-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Que cherches-tu ? Je dois préparer un exposé sur les volcans madame. Nous avons des livres de sciences dans le rayon orange et des revues sur le présentoir à l’entrée.",
+      "source_sha256": "063f07ff56f56ee6e5730618deb60b929ec1b688ac13c08003609654af8a60f4",
+      "semantic_sha256": "652def0159c04f083f60053d3e76d96556e84b79e4ef1d5c82787d94d6144f11",
+      "question": {
+        "enonce": "Sur quel sujet l’élève prépare-t-il un exposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les volcans",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les océans",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les forêts",
+            "correct": false
+          }
+        ],
+        "written_model": "Les volcans"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
+      "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
+      "image_ids": [
+        "qcm-a1-volcans",
+        "qcm-a1-oceans",
+        "co306-foret-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-oceans.png",
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp"
+      ],
+      "image_sha256": [
+        "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346",
+        "7943e36c22ce3f607f344fad0c88963b76abd864b17d84eec3832de15951c338",
+        "aeeed7ab78e592299cbba947a3b510d8e6f9077ce2eae9fa1b60f7057109b35f"
+      ],
+      "reason": "L’élève prépare un exposé sur les volcans et cherche des documents à la bibliothèque.",
+      "visual_review": "Paysages de volcans avec cratère et lave, pleine mer et forêt ; ne pas illustrer cette question de sujet par une scène de bibliothèque.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Prenez vos blousons et sortez dans la cour ! Mais madame il fait froid aujourd’hui. On peut rester en classe ? Non, ce n’est pas possible vous devez prendre l’air.",
+      "source_sha256": "c4faa3a459bbde26b5797bd5fcc148c7c3e82289746ea74ae8e19e6a356b76f9",
+      "semantic_sha256": "35f74678bf5e753b2fb479230186ab884cb440ab22178774477685248097dd62",
+      "question": {
+        "enonce": "Quel vêtement les élèves doivent-ils prendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Leur blouson",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Leur maillot",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Leur bonnet",
+            "correct": false
+          }
+        ],
+        "written_model": "Leur blouson"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-01.mp3",
+      "audio_sha256": "f8c90f69b8abaae26e8152bf47b46b491d33a9b3052bf2df65c8cf2407aabf38",
+      "image_ids": [
+        "extension573-blouson-bleu",
+        "vocab-maillot-une-piece",
+        "vocab-bonnet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-blouson-bleu.png",
+        "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bonnet.webp"
+      ],
+      "image_sha256": [
+        "91f4176f16bb71372120f06921ae86cfb24e0effd98af237e60b8a87a73b133f",
+        "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82",
+        "18ded0938f6848b5e76f051abb158478b89ac22a63570e227d7f6a84fa1cbbc2"
+      ],
+      "reason": "L’enseignante demande de prendre les blousons avant de sortir dans la cour malgré le froid.",
+      "visual_review": "Blouson fermé zippé, maillot de bain une pièce et bonnet en laine ; un vêtement entier par choix. Le bleu du blouson est illustratif, aucune couleur n’est exigée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-037-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Dimanche on va faire une randonnée à la montagne. Apporte tes chaussures de marche et ta casquette. Peux-tu apporter aussi ton appareil photo pour photographier les animaux ? Les portables sont interdits, on ne peut pas déranger les animaux. On vient te chercher avec mes parents à 7h30 et on rentre le soir.",
+      "source_sha256": "d52023f020b6f7081031c7c673230b907d4ed7cf74082fd440a06834c6ecc503",
+      "semantic_sha256": "4b4667f319e291a4096e98a9bf4ce637bc60fd0c813df98c0f1dae04abb1d86b",
+      "question": {
+        "enonce": "Quel appareil faut-il apporter pour photographier les animaux ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un appareil photo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une caméra de surveillance",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une tablette",
+            "correct": false
+          }
+        ],
+        "written_model": "Un appareil photo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-037-01.mp3",
+      "audio_sha256": "6dedbe11f268f6a2d22781005ded7ce9c87b49876fa0b41e5931662ac1109a33",
+      "image_ids": [
+        "co834-appareil-photo-dessine",
+        "qcm-a1-camera-surveillance",
+        "co834-tablette-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-camera-surveillance.png",
+        "/lib/images/tcf/qcm-audit/co834-tablette-dessinee.webp"
+      ],
+      "image_sha256": [
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "6a331ce34e4063e30883197a3fe1337b6f252f71795a4dea0f0c97e4751f9964",
+        "30088a6b6f16d236e81df2edd8d413d5d0540da5507b9b30866e7b0d8447f032"
+      ],
+      "reason": "L’appareil photo est demandé pour photographier les animaux ; les portables sont interdits.",
+      "visual_review": "Appareil photo à objectif, caméra de surveillance fixée au mur et tablette ; le caméscope professionnel est rejeté car il ne prouve pas la surveillance.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Il est sept heures dix.\nIl est huit heures trente.\nIl est midi et demi.\nIl est seize heures quinze.\nIl est dix-neuf heures quarante-cinq\nIl est vingt-deux heures",
+      "source_sha256": "dc18cf8a96ae5547d12e0907d5a9ce3427e4d4d67d36aad8978678824f24bfd4",
+      "semantic_sha256": "bf10bdfe2b0b32cae3aff1a7594babc44d74daa320b563e568ee27199bf6f278",
+      "question": {
+        "enonce": "Quelle est la première heure annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "7 h 10",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "7 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "7 h 50",
+            "correct": false
+          }
+        ],
+        "written_model": "7 h 10"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
+      "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
+      "image_ids": [
+        "qcm-a1-horloge-0710",
+        "vocab-horloge-0730",
+        "qcm-a1-horloge-0750"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0710.png",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0730.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0750.png"
+      ],
+      "image_sha256": [
+        "55a6630c810bc44003d78fbc90fffa618e72cbbef1499e6a7d3e3a55e4aa419a",
+        "513b6b33bc42475659b325bbffe2c1a02e06a306a0b3df08a45e39bd94555182",
+        "3b05bc7785086bb70a21de7502d01c618335f6d5384aeac0beebb87458674fde"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : la position de la question correspond à l’ordre des six heures prononcées.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Il est sept heures dix.\nIl est huit heures trente.\nIl est midi et demi.\nIl est seize heures quinze.\nIl est dix-neuf heures quarante-cinq\nIl est vingt-deux heures",
+      "source_sha256": "dc18cf8a96ae5547d12e0907d5a9ce3427e4d4d67d36aad8978678824f24bfd4",
+      "semantic_sha256": "9ae5786ca7896e8765254b41c6af3b6ac0c815d6733870b06dc76cfbc6d22dda",
+      "question": {
+        "enonce": "Quelle est la deuxième heure annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "8 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "8 h 15",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "8 h 45",
+            "correct": false
+          }
+        ],
+        "written_model": "8 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
+      "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
+      "image_ids": [
+        "vocab-horloge-0830",
+        "vocab-horloge-0815",
+        "qcm-a1-horloge-0845"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0830.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-0815.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-0845.png"
+      ],
+      "image_sha256": [
+        "34e22c9ac3a9311c3fc802f9a9085c0762420efaa6de098f2d54a6715b5d3e68",
+        "92e21437a5ddf67b060ec8347b23ea2ec6ec2318489debba0dd4525647d0f00a",
+        "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : la position de la question correspond à l’ordre des six heures prononcées.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Il est sept heures dix.\nIl est huit heures trente.\nIl est midi et demi.\nIl est seize heures quinze.\nIl est dix-neuf heures quarante-cinq\nIl est vingt-deux heures",
+      "source_sha256": "dc18cf8a96ae5547d12e0907d5a9ce3427e4d4d67d36aad8978678824f24bfd4",
+      "semantic_sha256": "a045cbd1f332b122501706244c31f280514724f05c1d6c915226b865c3360ef9",
+      "question": {
+        "enonce": "Quelle est la troisième heure annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "12 h 30",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "12 h 15",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "13 h 30",
+            "correct": false
+          }
+        ],
+        "written_model": "12 h 30"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
+      "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
+      "image_ids": [
+        "co834-horloge-1230-dessinee",
+        "vocab-horloge-1215",
+        "co834-horloge-1330-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-1230-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1215.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1330-dessinee.webp"
+      ],
+      "image_sha256": [
+        "59d586168e7fd5c437f218cd4ae9a79c82ff952a76bb7838769768068fcb62ee",
+        "33527ca7238a4555052a08361af2ba6a7810dfdbd7d3c709dd4f2b25bf618813",
+        "5a4e4bfe42a0837d78b5f051e12593c37c4a1e698f5287f3cb45da7222905927"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : la position de la question correspond à l’ordre des six heures prononcées.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Il est sept heures dix.\nIl est huit heures trente.\nIl est midi et demi.\nIl est seize heures quinze.\nIl est dix-neuf heures quarante-cinq\nIl est vingt-deux heures",
+      "source_sha256": "dc18cf8a96ae5547d12e0907d5a9ce3427e4d4d67d36aad8978678824f24bfd4",
+      "semantic_sha256": "11ef0fbfbe9fb47adebd3c1bf5f371ee14ad5030baa440fece80699fdc397782",
+      "question": {
+        "enonce": "Quelle est la quatrième heure annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "16 h 15",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "16 h 30",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "16 h 45",
+            "correct": false
+          }
+        ],
+        "written_model": "16 h 15"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
+      "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
+      "image_ids": [
+        "vocab-horloge-1615",
+        "co834-horloge-1630-dessinee",
+        "vocab-horloge-1645"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1615.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-1630-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1645.webp"
+      ],
+      "image_sha256": [
+        "e434a5119ed9b1abaf770edc8fcdc325a06ab37c07b021daf61323373ec67962",
+        "83ca308f537697a47945d7fb7b5cf2ba96564a286a6301039c4efc1001924ee5",
+        "550944f70049bb33d5803946d58c92f79816c65527033d2138998f876bcae7ff"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : la position de la question correspond à l’ordre des six heures prononcées.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Il est sept heures dix.\nIl est huit heures trente.\nIl est midi et demi.\nIl est seize heures quinze.\nIl est dix-neuf heures quarante-cinq\nIl est vingt-deux heures",
+      "source_sha256": "dc18cf8a96ae5547d12e0907d5a9ce3427e4d4d67d36aad8978678824f24bfd4",
+      "semantic_sha256": "b904a4bc3dd967da14e069b03c631d83826caa49c47b89fb4723325733fb3895",
+      "question": {
+        "enonce": "Quelle est la cinquième heure annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "19 h 45",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "19 h 15",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "20 h 45",
+            "correct": false
+          }
+        ],
+        "written_model": "19 h 45"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
+      "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
+      "image_ids": [
+        "vocab-horloge-1945",
+        "qcm-a1-horloge-1915",
+        "qcm-a1-horloge-2045"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-horloge-1945.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-1915.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-horloge-2045.png"
+      ],
+      "image_sha256": [
+        "477998ab41855ea82fc544a491f72d8098b957197ab5c379757d61a400576e7a",
+        "b0d5e1a64936e19c7730833e2efea2365cb63bbe4f5bf4daa02bd0639ecdedd6",
+        "f16fa1fa07b9555002b66c4b0a359d2f1795c4055e6c22c0d85dcbb70bcf3457"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : la position de la question correspond à l’ordre des six heures prononcées.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-042#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Il est sept heures dix.\nIl est huit heures trente.\nIl est midi et demi.\nIl est seize heures quinze.\nIl est dix-neuf heures quarante-cinq\nIl est vingt-deux heures",
+      "source_sha256": "dc18cf8a96ae5547d12e0907d5a9ce3427e4d4d67d36aad8978678824f24bfd4",
+      "semantic_sha256": "89b754eb711abdf256facee7dd0a81260ea863107df47ead2e3d5b96995dcaa4",
+      "question": {
+        "enonce": "Quelle est la dernière heure annoncée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "22 heures",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "20 heures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "23 heures",
+            "correct": false
+          }
+        ],
+        "written_model": "22 heures"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-042.mp3",
+      "audio_sha256": "9281394016dcb55b0ecfedd1388cc224816146feef51b45cbae4c9adcf30d5ce",
+      "image_ids": [
+        "co834-horloge-2200-dessinee",
+        "co834-horloge-2000-dessinee",
+        "vocab-horloge-2300"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-horloge-2200-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-horloge-2000-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-horloge-2300.webp"
+      ],
+      "image_sha256": [
+        "0c1601218e9bc381c274da62d6567ffe4b0523fd73dcdd0e7708ba43b308bdf7",
+        "49641e5cf472668b45e0f691d0f413b1dcb148375092fa1ab3fb026d163a6cd2",
+        "68753f195e6283f8304bbfb75e3866de92204c3bbb7f227f739140e696549594"
+      ],
+      "reason": "Horaire relu dans l’annonce complète : la position de la question correspond à l’ordre des six heures prononcées.",
+      "visual_review": "Trois cadrans analogiques avec les mêmes aiguilles calculées ; heure, minute, angle et distinction des trois faces contrôlés. Le contexte indique le matin ou le soir, sans remplacer l’heure par une durée ni ajouter de date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-05-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Rony, pour le voyage au Mont Saint-Michel apporte des serviettes et un maillot de bain. Tu as besoin d’un cahier pour prendre des notes pendant les visites. Quand on rentre au Liban nous devons écrire un article pour notre collège. Moi j’apporte mon appareil photo. Mais surtout n’oublie pas ton passeport.",
+      "source_sha256": "fd8aafd9157ffd59a7b6ea9f669a6602aa3facff8175cde9906b9ae0db367be5",
+      "semantic_sha256": "6d22a47015cb1f2a306d87f0080dcb2aaa45106715a98c613e6b728bda8c1332",
+      "question": {
+        "enonce": "Quel document Rony ne doit-il surtout pas oublier ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son passeport",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Sa carte de cantine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son permis de conduire",
+            "correct": false
+          }
+        ],
+        "written_model": "Son passeport"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-05-01.mp3",
+      "audio_sha256": "435ac1a2d835a5295f4e43e9f35f0b96c49842fdbba9988765b5a230abdac648",
+      "image_ids": [
+        "co306-passeport-dessine",
+        "qcm-a1-carte-cantine",
+        "audit-context-permis-conduire"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
+      "image_sha256": [
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+      ],
+      "reason": "Rony doit surtout ne pas oublier son passeport pour le voyage.",
+      "visual_review": "Passeport, véritable carte plastique de cantine et permis de conduire. Le plateau-repas orange est rejeté comme image de carte.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-04-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+      "source_sha256": "23c37d34962070986e9b1e64b84b5d1d03194ed3a9ae0b7843020876e580f72c",
+      "semantic_sha256": "a3c9f404b19aa7c9942c5e9cd153bd052a107fdbba2d0c00ed93d9fa5dc32df5",
+      "question": {
+        "enonce": "Quel document le jeune donne-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une photo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une carte d’identité",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un certificat médical",
+            "correct": false
+          }
+        ],
+        "written_model": "Une photo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
+      "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
+      "image_ids": [
+        "vocab-photo-imprimee",
+        "vocab-carte-identite",
+        "extension573-certificat-medical"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-photo-imprimee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/extension573-certificat-medical.webp"
+      ],
+      "image_sha256": [
+        "93d4872a6d6549d8a2c6af28d81da587f472ed235863de85ff0e9d82ae65155c",
+        "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f",
+        "01503a392c6b4e3b49bdef0783b9483b63c4adc4ae0348c7d36b78179ba5d0a1"
+      ],
+      "reason": "Le jeune remet sa photo pour le dossier de classe de neige.",
+      "visual_review": "Photo imprimée seule, carte d’identité et certificat médical ; documents entiers et distincts. Un portrait imprimé reste bien une photo, sans document d’identité ajouté.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2p-s1-ce-1#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Document 1 — Mars 2199\nUne équipe de chercheurs va sur la planète Mars pour construire une ville, mais, sur cette planète, il y a un danger.\n\nDocument 2 — Jules et Monica\nMonica, avocate à Bruxelles, tombe amoureuse de Jules, le serveur de son café. Vont-ils pouvoir vivre leur amour ?\n\nDocument 3 — Le grand voyage\nC’est les vacances. Trois amis de 15 ans décident de partir en voyage en train pour découvrir la France.\n\nDocument 4 — SOS éléphants\nDes vétérinaires expliquent comment les activités humaines mettent en danger les grands éléphants d’Afrique.\n\nDocument 5 — La folie des étudiants\nDernière année d’études pour les étudiants en droit de l’université de Montréal. Un film drôle pour tous les âges.\n\nDocument 6 — Les deux soldats\n1915, guerre entre la France et l’Allemagne. Un soldat français et un soldat allemand se rencontrent et deviennent amis.",
+      "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
+      "semantic_sha256": "36061c8fbf8bd0144a825d358cb6150c6c30f26e7e4ee5655a545673c4a9e091",
+      "question": {
+        "enonce": "Document 2 — Quel métier Monica exerce-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Avocate",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Médecin",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Journaliste",
+            "correct": false
+          }
+        ],
+        "written_model": "Avocate"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-avocate",
+        "co834-medecin-dessine",
+        "co57-journaliste"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/avocate.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp"
+      ],
+      "image_sha256": [
+        "0973a83529df9dcf5f2dd35f7f38ae4e6d6555f7882d2e43d2eb948a8c03115d",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+        "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10"
+      ],
+      "reason": "Le document 2 présente Monica comme avocate à Bruxelles.",
+      "visual_review": "Avocate avec dossier et livres juridiques, médecin avec stéthoscope en consultation, journaliste avec micro et caméra. Illustrations de métiers, pas portraits des personnages fictifs du texte.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-011#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Le Roi Lion — Tous les animaux d’Afrique célèbrent la naissance du lion Simba, fils du roi Mufasa. Un jour, Simba sera roi, mais Scar, le frère de Mufasa, veut le pouvoir.\n\nLe Fantôme de l’Opéra — Revivez à Genève cette célèbre histoire d’amour : un homme masqué, le « fantôme de l’opéra », aime passionnément l’actrice Christine Daaé.\n\nCats — Une fois par an, les chats Jellicle se réunissent pour un grand bal et s’affrontent en danse et en chant pour gagner la vie éternelle.",
+      "source_sha256": "5e6728eaa7a79fae094b672b2051b20931d9546cf99f62f35e302136bf558df8",
+      "semantic_sha256": "6e0ce48f1745e3a770ef04dceeb3e84dbc14e49d7722d8da57a260210532f2f4",
+      "question": {
+        "enonce": "Quel métier Christine Daaé exerce-t-elle selon le texte ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Actrice",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Danseuse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Écrivaine",
+            "correct": false
+          }
+        ],
+        "written_model": "Actrice"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-actrice",
+        "catalogue-20261113-metier-danseuse",
+        "catalogue-20261113-metier-ecrivaine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/actrice.webp",
+        "/lib/images/tcf/catalogue/metiers/danseuse.webp",
+        "/lib/images/tcf/catalogue/metiers/ecrivaine.webp"
+      ],
+      "image_sha256": [
+        "b164f121fe5bcec3094023160575cf0b116c84058bc8ee7410a336bbe49df821",
+        "fe66e840df372f86d74cce7153508404ac26ae906f5f7820aefb865016fffb3f",
+        "628763855535c88f3b779e4afb471facfcbaa86b32ee48a743c6af7b2bb946e5"
+      ],
+      "reason": "Le texte fourni présente explicitement Christine Daaé comme actrice ; le corrigé reste lié à cette formulation.",
+      "visual_review": "Actrice interprétant un script sur un plateau, danseuse à la barre et écrivaine à son manuscrit ; métiers distincts, sans prétendre représenter Christine.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-065#8",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Les Monstres (horreur) — Dans la forêt derrière chez lui, Henri découvre des animaux étranges qui se transforment la nuit.\n\nLa Terre (documentaire) — Comment protéger notre planète ? Ce documentaire montre de nombreux gestes faciles à faire chez soi.\n\nLes Génies (biographique) — La vie de trois femmes exceptionnelles : Sarah, génie des maths, Rachel, championne d’informatique, et Lisa, première femme ingénieure.",
+      "source_sha256": "7423b566818415bd2e964b6af084d034dfa3d07301aaa3cfd3ac5ba1808a67ff",
+      "semantic_sha256": "c3b3d6ea0c8baa2d72739c3f4e6193656f3d53f3a790bc1923b88c677552afce",
+      "question": {
+        "enonce": "Quel métier Lisa exerce-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Ingénieure",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Médecin",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Avocate",
+            "correct": false
+          }
+        ],
+        "written_model": "Ingénieure"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "vocab-ingenieure",
+        "co834-medecin-dessine",
+        "catalogue-20261113-metier-avocate"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ingenieure.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/catalogue/metiers/avocate.webp"
+      ],
+      "image_sha256": [
+        "f00b31c9cd18a068b367a8418a5fde83ca98528ad1fc9e5d39a4f89f2e5ba37c",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+        "0973a83529df9dcf5f2dd35f7f38ae4e6d6555f7882d2e43d2eb948a8c03115d"
+      ],
+      "reason": "Le descriptif « Les Génies » appelle Lisa la première femme ingénieure.",
+      "visual_review": "Ingénieure avec plan et casque sur chantier, médecin en consultation et avocate au bureau ; activité professionnelle entière représentée, pas identité des personnes nommées.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-063#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Dans notre rubrique du jour, Thomas nous explique son changement de travail.\nAvant de devenir agent immobilier, Thomas travaillait dans la restauration. Passionné par l’émission d’un agent immobilier très connu, qu’il regardait tous les jours à 17 h, il a décidé de changer de métier. Il a déposé son CV dans les agences immobilières de son quartier. Il n’a pas eu besoin de longues études : une agence l’a engagé et formé.\nAujourd’hui, Thomas ne travaille plus en centre-ville, mais dans un village près de Sion. Il vend surtout des maisons. Beaucoup de familles recherchent une maison avec jardin, alors que les couples préfèrent souvent vivre en ville. Mais il y a un inconvénient à habiter à la campagne : il y a peu de transports en commun, et la voiture est nécessaire pour se déplacer.",
+      "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
+      "semantic_sha256": "c6adcff91707f7f19ef0dfdaf9ce9f852f2423a8e1168f6ccbd554060dd31ab9",
+      "question": {
+        "enonce": "Quel métier exerce-t-il désormais ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Agent immobilier",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Journaliste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Professeur",
+            "correct": false
+          }
+        ],
+        "written_model": "Agent immobilier"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-agent-immobilier",
+        "co57-journaliste",
+        "vocab-professeur"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/agent-immobilier.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeur.webp"
+      ],
+      "image_sha256": [
+        "f6c8e61a37c477c875c57c04a7540267336457dd71ee18ff0fd1505d0f9744c4",
+        "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10",
+        "0f0155e9a59dafb28ef9fe1d5cd22ba0c34f5db594cf81b3abbe46b0fbe1d395"
+      ],
+      "reason": "Thomas a quitté la restauration et travaille désormais comme agent immobilier ; il vend surtout des maisons.",
+      "visual_review": "Agent présentant des maisons, journaliste en reportage, professeur devant sa classe ; images de catégories professionnelles, sans attribuer les apparences à Thomas.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-068#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "On connaissait Léa Morand comme actrice. La voici maintenant aussi chanteuse ! Depuis plusieurs années, elle jouait de la guitare et écrivait des chansons en anglais. Avec l’aide d’un artiste suisse, elle vient de sortir son premier album, de style pop-folk, qui s’appelle « Rivages ». Cet album a reçu de très bonnes critiques dans les médias.\nLéa a réussi à charmer le public lausannois pendant son premier concert, avec sa jolie voix et sa présence sur scène.\nElle va donner encore 22 concerts partout en Suisse entre avril et juillet, par exemple :\n• Le 28 avril à Fribourg\n• Le 10 mai à Neuchâtel\n• Le 5 juin à Sion\n• Les 8 et 9 juillet à Nyon\n• Le 24 juillet à Lugano\nPour voir d’autres dates ou acheter des places de concert, consultez le site de la chanteuse.",
+      "source_sha256": "8e505c31d453b5b9ebf8225f217afb58e1f4444121eb06995d05c9a5ee09ec7e",
+      "semantic_sha256": "6a214b4e6318941c27ef3925c824f9af3baa1758082b3f395ac7824777f960d3",
+      "question": {
+        "enonce": "Quel métier Léa Morand exerçait-elle avant d’être aussi chanteuse ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Actrice",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Journaliste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Professeure",
+            "correct": false
+          }
+        ],
+        "written_model": "Actrice"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-actrice",
+        "co57-journaliste",
+        "vocab-professeure"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/actrice.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+      ],
+      "image_sha256": [
+        "b164f121fe5bcec3094023160575cf0b116c84058bc8ee7410a336bbe49df821",
+        "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10",
+        "fcbd6cedfea88cb4ecbf2ead9e1d96bc10b0d3b08c6fa0b85293f641b6abde32"
+      ],
+      "reason": "Léa Morand était connue comme actrice avant d’être aussi chanteuse.",
+      "visual_review": "Plateau de tournage avec jeu de scène, reportage avec micro et enseignement devant une classe ; la bonne image illustre le métier antérieur demandé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s24-co-4#10",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Camille, pour avoir ta carte de cantine, tu dois aller au secretariat.\nEt combien je dois payer ?\nTu dois payer 50 euros et présenter ta carte d'identité.\nMerci.",
+      "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
+      "semantic_sha256": "43b5b09799b36e41d499442b529c2f2743ea93d302eb4f3a4f80819a5de955d5",
+      "question": {
+        "enonce": "Quel document Camille souhaite-t-elle obtenir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une carte de cantine",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une carte de bibliothèque",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une carte de transport",
+            "correct": false
+          }
+        ],
+        "written_model": "Une carte de cantine"
+      },
+      "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-4.mp3",
+      "audio_sha256": "d5897d13daa66ed42d1d30ea67b99a9a65be6461308f678b6b7be1c858f456a8",
+      "image_ids": [
+        "qcm-a1-carte-cantine",
+        "co306-carte-bibliotheque-dessine",
+        "co306-carte-transport-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+      ],
+      "image_sha256": [
+        "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1",
+        "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929",
+        "4817395e118594a1168a68d265de7029664cf48eca3cd576606de1040761c884"
+      ],
+      "reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
+      "visual_review": "Document entier avec portrait et pictogramme de repas ; l’ancienne illustration montre une assiette et des couverts, pas une carte. Les autres documents du trio conservent leur sens.",
+      "change_kind": "image_choice_correction",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-carte-transport-dessine.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a2-s48-co-4#12",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Je ne trouve pas mon emploi du temps.\nTu peux me dire à quelle heure est le cours d'histoire aujourd'hui ?\nC'est à midi.\nEt le cours de musique ?\nÀ 14h30.\nSuper !\nMerci !",
+      "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
+      "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
+      "question": {
+        "enonce": "Quel document l'élève ne trouve-t-il pas ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son emploi du temps",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son carnet de notes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sa carte de cantine",
+            "correct": false
+          }
+        ],
+        "written_model": "Son emploi du temps"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-3-4.mp3",
+      "audio_sha256": "99a0b19c1b8da23d25965aeee8f2f25c15a016630469e94e60abfa13ed25c1c5",
+      "image_ids": [
+        "extension573-emploi-temps",
+        "extension573-carnet-notes",
+        "qcm-a1-carte-cantine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
+        "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png"
+      ],
+      "image_sha256": [
+        "555b2ed9c4b7bd1e1f65c4fcd9333542a1d576e7dad1dbbbffc31d9c1a4549af",
+        "e9b4c1b022cdb1de98501b57be0b9d10a93f32cfe7495d669bb16bfc90019dac",
+        "150c7030adc7c5e67dafab9b1a26e32f5f220e4abc39c48afe6ae2169177f5a1"
+      ],
+      "reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
+      "visual_review": "Document entier avec portrait et pictogramme de repas ; l’ancienne illustration montre une assiette et des couverts, pas une carte. Les autres documents du trio conservent leur sens.",
+      "change_kind": "image_choice_correction",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+          }
+        ]
+      }
+    }
+  ]
+}

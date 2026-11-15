@@ -29030,13 +29030,32 @@
           },
           {
             "id": "c",
-            "image": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png"
           }
         ]
       },
       "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
       "reason": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps. Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3.",
-      "review_ledger": "docs/tcf/revue-763-20261107.json"
+      "review_ledger": "docs/tcf/revue-763-20261107.json",
+      "before_correction_20261115": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+          }
+        ]
+      },
+      "correction_register_20261115": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json"
     },
     {
       "bank": "src/tcf/content/a1-a2/co.json",
@@ -29796,6 +29815,322 @@
       "source_sha256": "676b4eee8a977281ccf1485044f5fc11925ed52e8d523257b6c852f43e721a7f",
       "reason": "Clément dit aller chez lui pour faire ses devoirs, dans une autre conversation de cette piste. Domicile illustré par un salon privé générique, compatible avec maison ou appartement, sans nom, adresse, portrait ou plan inventé. Bibliothèque avec rayonnages et lecteurs ; salle de sport avec appareils ; café intérieur avec comptoir. Les lieux publics du trio se distinguent du logement. La question ne compare jamais deux propriétaires ou deux domiciles nommés.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s22-co-1",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/maladies/mal-a-la-gorge.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp"
+          }
+        ]
+      },
+      "source_sha256": "bb12f087c10280d7e4c609deb6c8228092d2693ddb2951ebcaa5bdb7591eaa68",
+      "reason": "Le patient répond d’abord « J’ai mal à la gorge ». Il cite ensuite la tête et nie le ventre ; la question demande explicitement le début.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s49-co-2",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-carnet-prendre-notes.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "a9d1567eecd4165ee4d9d2e861ae57cdea461dce3efab577bca6785ea334cd87",
+      "reason": "La personne va acheter un carnet, des stylos et une règle pour noter les événements et les tâches.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-06",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png"
+          }
+        ]
+      },
+      "source_sha256": "ce3c649134f85e198ad0c621530cb2f6505edec627eae8a6d555ee9d485d000c",
+      "reason": "Le support annonce vingt et une paires de chaussures. La question distingue la catégorie au pluriel, elle ne demande pas de compter les vingt et une paires.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-79",
+      "question": 11,
+      "node": [
+        "questions",
+        10,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png"
+          }
+        ]
+      },
+      "source_sha256": "cf003ba83d34fce290b1a2bde99f177ddc96b6c6f7e81a662e6925e85e7ba3a6",
+      "reason": "La première question du support évoque l’instrument joué ; ni le billet ni le disque n’y sont nommés.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2p-s1-ce-1",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/avocate.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co57-journaliste.webp"
+          }
+        ]
+      },
+      "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
+      "reason": "Le document 2 présente Monica comme avocate à Bruxelles.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-011",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/actrice.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/catalogue/metiers/danseuse.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/metiers/ecrivaine.webp"
+          }
+        ]
+      },
+      "source_sha256": "5e6728eaa7a79fae094b672b2051b20931d9546cf99f62f35e302136bf558df8",
+      "reason": "Le texte fourni présente explicitement Christine Daaé comme actrice ; le corrigé reste lié à cette formulation.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-065",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-ingenieure.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/metiers/avocate.webp"
+          }
+        ]
+      },
+      "source_sha256": "7423b566818415bd2e964b6af084d034dfa3d07301aaa3cfd3ac5ba1808a67ff",
+      "reason": "Le descriptif « Les Génies » appelle Lisa la première femme ingénieure.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-063",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/agent-immobilier.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co57-journaliste.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-professeur.webp"
+          }
+        ]
+      },
+      "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
+      "reason": "Thomas a quitté la restauration et travaille désormais comme agent immobilier ; il vend surtout des maisons.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-068",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/actrice.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co57-journaliste.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+          }
+        ]
+      },
+      "source_sha256": "8e505c31d453b5b9ebf8225f217afb58e1f4444121eb06995d05c9a5ee09ec7e",
+      "reason": "Léa Morand était connue comme actrice avant d’être aussi chanteuse.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s24-co-4",
+      "question": 10,
+      "node": [
+        "questions",
+        9,
+        "formes",
+        "qcm_image",
+        "choix",
+        0,
+        "image"
+      ],
+      "before": "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp",
+      "after": "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png",
+      "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
+      "reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
+      "review_register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json"
     }
   ]
 }

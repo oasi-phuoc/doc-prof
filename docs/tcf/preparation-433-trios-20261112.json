@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 63,
-    "initial_pending": 370,
+    "activated_since_baseline": 72,
+    "initial_pending": 361,
     "additional_pending": 0,
-    "total_pending": 370,
+    "total_pending": 361,
     "pending_by_level": {
-      "A0-A1": 148,
-      "A1-A2": 199,
+      "A0-A1": 144,
+      "A1-A2": 194,
       "A2-B1": 23
     }
   },
@@ -3658,8 +3658,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_79-4.mp3",
       "source_sha256": "cf003ba83d34fce290b1a2bde99f177ddc96b6c6f7e81a662e6925e85e7ba3a6",
       "semantic_sha256": "bc7237591739f628bd43e5f458fbd9d5fcc4bcf76cb0d01d856af1390c7788f2",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La première question du support évoque l’instrument joué ; ni le billet ni le disque n’y sont nommés.",
       "choices": [
         {
           "id": "a",
@@ -3683,7 +3683,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-disque-musique-seul.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -3692,7 +3696,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4266,14 +4270,20 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_06-2.mp3",
       "source_sha256": "ce3c649134f85e198ad0c621530cb2f6505edec627eae8a6d555ee9d485d000c",
       "semantic_sha256": "4166f16395db22edae93a17a3b8d5c4f1173ea11e4570576e765c74e7d714bb0",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le support annonce vingt et une paires de chaussures. La question distingue la catégorie au pluriel, elle ne demande pas de compter les vingt et une paires.",
       "choices": [
         {
           "id": "a",
           "label": "Des paires de chaussures",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+              "sha256": "40855cd1de7f4ab6ec9c8bcf657d27039d1b584c34dceb90f71b1ff3322773d8",
+              "label": "Des paires de chaussures"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -4303,7 +4313,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-plusieurs-paires-chaussures.png",
+        "/lib/images/tcf/qcm-audit/extension573-sacs-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-chapeaux-pluriel.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4312,7 +4326,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -6925,8 +6939,8 @@
       "audio": "/lib/audio/tcf/co/maison/vous-avez-mal-ou-3.mp3",
       "source_sha256": "bb12f087c10280d7e4c609deb6c8228092d2693ddb2951ebcaa5bdb7591eaa68",
       "semantic_sha256": "950e5831aee045c95cc7ef8a082b5f74f769d1540f95fe9d9def360ce82f9460",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le patient répond d’abord « J’ai mal à la gorge ». Il cite ensuite la tête et nie le ventre ; la question demande explicitement le début.",
       "choices": [
         {
           "id": "a",
@@ -6956,7 +6970,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/maladies/mal-a-la-gorge.webp",
+        "/lib/images/tcf/qcm-audit/co306-mal-dos-dessine.webp",
+        "/lib/images/tcf/catalogue/maladies/mal-au-ventre.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6965,7 +6983,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -9604,8 +9622,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/pour-nouveau-projet-dois.mp3",
       "source_sha256": "a9d1567eecd4165ee4d9d2e861ae57cdea461dce3efab577bca6785ea334cd87",
       "semantic_sha256": "9d75325375d2ac69b9f99b219797eb3b42e70096b909e720aa9a500359e7c2fc",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La personne va acheter un carnet, des stylos et une règle pour noter les événements et les tâches.",
       "choices": [
         {
           "id": "a",
@@ -9618,7 +9636,13 @@
           "id": "b",
           "label": "Un calendrier mural",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png",
+              "sha256": "13102fd860052f4729e8126b535fa6c78701a12379016fd6315cb7846c7c66f3",
+              "label": "Un calendrier mural"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -9635,7 +9659,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-carnet-prendre-notes.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-calendrier-mural-vierge.png",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -9644,7 +9672,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -10720,6 +10748,11 @@
               "path": "/lib/images/tcf/qcm-audit/extension573-architecte-atelier.png",
               "sha256": "dc3ace93e42962803312028f29c4d3a8e455d205555a5549f053970aa62bb5c1",
               "label": "Architecte"
+            },
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/architecte.webp",
+              "sha256": "0f59ab12dc1d820fd9fe7b9641577b7b8e1259ebe97e1092f4333a8065075b99",
+              "label": "architecte"
             }
           ],
           "generation_jobs": []
@@ -10838,6 +10871,11 @@
               "path": "/lib/images/tcf/qcm-audit/extension573-technicien-laboratoire.png",
               "sha256": "aa18ba8aaa99c4a0fdfb35167aa69daa5d7b1bfb74fe354c6bb28cc8fc21307a",
               "label": "Technicien de laboratoire"
+            },
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/technicien-de-laboratoire.webp",
+              "sha256": "235425784d13e94ccf9e5df2d68b01894667bfaa65c8598b73fb24c9ff14a006",
+              "label": "technicien de laboratoire"
             }
           ],
           "generation_jobs": []
@@ -11181,32 +11219,54 @@
       "audio": null,
       "source_sha256": "5e6728eaa7a79fae094b672b2051b20931d9546cf99f62f35e302136bf558df8",
       "semantic_sha256": "6e0ce48f1745e3a770ef04dceeb3e84dbc14e49d7722d8da57a260210532f2f4",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le texte fourni présente explicitement Christine Daaé comme actrice ; le corrigé reste lié à cette formulation.",
       "choices": [
         {
           "id": "a",
           "label": "Actrice",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/actrice.webp",
+              "sha256": "b164f121fe5bcec3094023160575cf0b116c84058bc8ee7410a336bbe49df821",
+              "label": "actrice"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Danseuse",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/danseuse.webp",
+              "sha256": "fe66e840df372f86d74cce7153508404ac26ae906f5f7820aefb865016fffb3f",
+              "label": "danseuse"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Écrivaine",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/ecrivaine.webp",
+              "sha256": "628763855535c88f3b779e4afb471facfcbaa86b32ee48a743c6af7b2bb946e5",
+              "label": "écrivaine"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/actrice.webp",
+        "/lib/images/tcf/catalogue/metiers/danseuse.webp",
+        "/lib/images/tcf/catalogue/metiers/ecrivaine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -11215,7 +11275,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -12822,8 +12882,8 @@
       "audio": null,
       "source_sha256": "7423b566818415bd2e964b6af084d034dfa3d07301aaa3cfd3ac5ba1808a67ff",
       "semantic_sha256": "c3b3d6ea0c8baa2d72739c3f4e6193656f3d53f3a790bc1923b88c677552afce",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le descriptif « Les Génies » appelle Lisa la première femme ingénieure.",
       "choices": [
         {
           "id": "a",
@@ -12855,11 +12915,21 @@
           "id": "c",
           "label": "Avocate",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/avocate.webp",
+              "sha256": "0973a83529df9dcf5f2dd35f7f38ae4e6d6555f7882d2e43d2eb948a8c03115d",
+              "label": "avocate"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/vocab-ingenieure.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/catalogue/metiers/avocate.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -12868,7 +12938,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -14829,14 +14899,20 @@
       "audio": null,
       "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
       "semantic_sha256": "c6adcff91707f7f19ef0dfdaf9ce9f852f2423a8e1168f6ccbd554060dd31ab9",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Thomas a quitté la restauration et travaille désormais comme agent immobilier ; il vend surtout des maisons.",
       "choices": [
         {
           "id": "a",
           "label": "Agent immobilier",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/agent-immobilier.webp",
+              "sha256": "f6c8e61a37c477c875c57c04a7540267336457dd71ee18ff0fd1505d0f9744c4",
+              "label": "agent immobilier"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -14866,7 +14942,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/agent-immobilier.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeur.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14875,7 +14955,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15237,14 +15317,20 @@
       "audio": null,
       "source_sha256": "8e505c31d453b5b9ebf8225f217afb58e1f4444121eb06995d05c9a5ee09ec7e",
       "semantic_sha256": "6a214b4e6318941c27ef3925c824f9af3baa1758082b3f395ac7824777f960d3",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Léa Morand était connue comme actrice avant d’être aussi chanteuse.",
       "choices": [
         {
           "id": "a",
           "label": "Actrice",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/actrice.webp",
+              "sha256": "b164f121fe5bcec3094023160575cf0b116c84058bc8ee7410a336bbe49df821",
+              "label": "actrice"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -15274,7 +15360,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/actrice.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeure.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -15283,7 +15373,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15700,7 +15790,13 @@
           "id": "a",
           "label": "Couturière",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/couturiere.webp",
+              "sha256": "3ca9512ef628a84e535de20be87e3bfd0ff6b78d23406ba323d9ac337e368187",
+              "label": "couturière"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-couturiere",
@@ -15712,7 +15808,13 @@
           "id": "b",
           "label": "Bibliothécaire",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/bibliothecaire.webp",
+              "sha256": "3da971f5f9c933af74938b63fec40f8fabac8ef54d73ce126302be41bc707a39",
+              "label": "bibliothécaire"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -15895,7 +15997,13 @@
           "id": "a",
           "label": "Guide touristique",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+              "sha256": "d6cbbe007f631f4e5f1b97b4575ae368ed47b767d5fc29a4524424a1d9d4f503",
+              "label": "guide touristique"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-guide-touristique",
@@ -16655,14 +16763,20 @@
       "audio": null,
       "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
       "semantic_sha256": "36061c8fbf8bd0144a825d358cb6150c6c30f26e7e4ee5655a545673c4a9e091",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le document 2 présente Monica comme avocate à Bruxelles.",
       "choices": [
         {
           "id": "a",
           "label": "Avocate",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/avocate.webp",
+              "sha256": "0973a83529df9dcf5f2dd35f7f38ae4e6d6555f7882d2e43d2eb948a8c03115d",
+              "label": "avocate"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -16692,7 +16806,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/avocate.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-journaliste.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16701,7 +16819,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -17027,7 +17145,13 @@
           "id": "b",
           "label": "Restaurateur",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/restaurateur.webp",
+              "sha256": "a1d7608715fec46bfb04a9aa8748338d14740fe1dc3e0ab6afc769482a3e5c30",
+              "label": "restaurateur"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-restaurateur",
@@ -17039,7 +17163,13 @@
           "id": "c",
           "label": "Photographe",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/photographe.webp",
+              "sha256": "b5e977be3d66a1848c6ebf2042707a41c12a4feec9efc24c21df2a17b54032e7",
+              "label": "photographe"
+            }
+          ],
           "generation_jobs": []
         }
       ],
@@ -20983,7 +21113,7 @@
       "source_sha256": "9bbf3221a7cbdaa3795f1b92cbc56cd7bec4376e61b408bf371c61b6bc6ef39b",
       "semantic_sha256": "0164ea5485daf32c54bb1e926dd22242f27a134e57c9962b858d1b5c1f64a1be",
       "current_status": "active_reviewed_trio",
-      "decision": "L'élève dit Je ne trouve pas mon emploi du temps puis demande les horaires d'histoire et de musique. Carnet de notes et carte de cantine ne sont jamais nommés dans l'échange. Les trois choix sont des documents scolaires distincts ; la seule bonne réponse reste l'emploi du temps. Emploi du temps existant à grille sans jours ni horaires, nouveau carnet relié à appréciations scolaires et carte orange CANTINE avec assiette et couverts. Trois formats de documents distincts, aucun montant, date ou mois ; style peint sur crème et exact 4:3.",
+      "decision": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
       "choices": [
         {
           "id": "a",
@@ -21022,7 +21152,7 @@
       "active_images": [
         "/lib/images/tcf/qcm-audit/extension573-emploi-temps.webp",
         "/lib/images/tcf/qcm-audit/extension573-carnet-notes.png",
-        "/lib/images/tcf/qcm-audit/co306-carte-cantine-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-a1-carte-cantine.png"
       ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
@@ -23006,7 +23136,13 @@
           "id": "b",
           "label": "Professeur de musique",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/professeur-de-musique.webp",
+              "sha256": "18797647dfb39c749e9ab50093f72e2d526d74304488d627b3aa50fe546ea79e",
+              "label": "professeur de musique"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -23681,14 +23817,26 @@
           "id": "a",
           "label": "Rappeur",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/rappeur.webp",
+              "sha256": "899ef04364a749727ae6e6f609c7a2c3ba6ffaaf7ee533d19acd4d4a59becea3",
+              "label": "rappeur"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Chef d'orchestre",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/chef-d-orchestre.webp",
+              "sha256": "ace3b2e2026c8a494c6814aa9e359944fcb02be67d6e3afffcf7e0454e7dd8e2",
+              "label": "chef d’orchestre"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -23734,7 +23882,13 @@
           "id": "a",
           "label": "Pizzaiolo",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/pizzaiolo.webp",
+              "sha256": "51423b6e9207a36eddecb935c151cc0e82bcf9d9a49d400dccfa4138f52f7f43",
+              "label": "pizzaiolo"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-pizzaiolo",
@@ -23746,7 +23900,13 @@
           "id": "b",
           "label": "Critique littéraire",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/critique-litteraire.webp",
+              "sha256": "39dd2077d2772236552f60132f5b0efb2f782abeac8878d40f2a37603b3267b4",
+              "label": "critique littéraire"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-critique-litteraire",
@@ -23758,7 +23918,13 @@
           "id": "c",
           "label": "Éditeur",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/catalogue/metiers/editeur.webp",
+              "sha256": "cc7c803ab73d30ac6949a743eab2ae0796b671511788b72871f4511b681fe4e3",
+              "label": "éditeur"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-editeur",
