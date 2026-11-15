@@ -8,7 +8,7 @@ const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'c
 try{
   const {MASCOTS,MASCOT_IMAGES,MASCOT_POSES,mascotStyle}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
   const {COMPETITION_AVATARS,validAvatar}=await vite.ssrLoadModule('/src/interactive/competition/avatars.ts')
-  const {ATTACK_EFFECTS,MISTAKE_EFFECTS,DEFAULT_EFFECTS,impactFor,trajectory,validEffects}=await vite.ssrLoadModule('/src/interactive/duel/effects.ts')
+  const {ATTACK_EFFECTS,MISTAKE_EFFECTS,DEFAULT_EFFECTS,impactFor,trajectory,attackTrajectory,validEffects}=await vite.ssrLoadModule('/src/interactive/duel/effects.ts')
   const {SIGNATURE_ATTACKS,signatureAttack,attackSequence}=await vite.ssrLoadModule('/src/interactive/duel/signature-attacks.ts')
   const {SignatureAttackArt}=await vite.ssrLoadModule('/src/interactive/duel/SignatureAttackArt.tsx')
   const {createDuel,stepDuel,duelRoundId,parseDuelConfig}=await vite.ssrLoadModule('/src/interactive/duel/core.ts')
@@ -75,13 +75,13 @@ try{
   })
   await test('correct answers always use the responding mascot; wrong answers produce only local falling objects, with deterministic automatic variety',()=>{
     const mistakes=new Set()
-    for(const mascot of MASCOTS)for(const side of ['left','right'])for(const critical of [false,true]){
-      const other=side==='left'?'right':'left',damage=critical?20:10
+    for(const mascot of MASCOTS)for(const side of ['left','right'])for(const multiplier of [1,2,3]){
+      const critical=multiplier>1,other=side==='left'?'right':'left',damage=multiplier*10
       const fighters={left:{avatarId:mascot.id,seat:1},right:{avatarId:mascot.id,seat:1}}
-      const good=impactFor({at:1000,side,victim:other,correct:true,damage,critical},fighters,'round')
-      assert.deepEqual(good,{kind:'attack',style:mascot.id,from:side,target:other,critical})
+      const good=impactFor({at:1000,side,victim:other,correct:true,damage,critical,multiplier},fighters,'round')
+      assert.deepEqual(good,{kind:'attack',style:mascot.id,from:side,target:other,critical,multiplier,variation:'round'})
       for(let turn=0;turn<20;turn++){
-        const resolution={at:1000,side,victim:side,correct:false,damage,critical}
+        const resolution={at:1000,side,victim:side,correct:false,damage,critical,multiplier}
         const bad=impactFor(resolution,fighters,`seed:pair:${turn}`)
         assert.equal(bad.kind,'mistake');assert.equal(bad.target,side);assert.equal(Object.hasOwn(bad,'from'),false)
         assert.ok(MISTAKE_EFFECTS.some(effect=>effect.id===bad.style));assert.deepEqual(impactFor(resolution,fighters,`seed:pair:${turn}`),bad)
@@ -98,7 +98,36 @@ try{
     assert.equal(trajectory(top,bottom).direction,'down');assert.equal(trajectory(bottom,top).direction,'up')
     assert.equal(trajectory(top,bottom).dy,-trajectory(bottom,top).dy)
   })
-  await test('old journals with or without former effect settings retain their results, while the mascot now determines the attack',async()=>{
+  await test('triple signatures add seven to nine hits and a distinct nova, while triple errors remain local falling objects',async()=>{
+    const {DuelImpact}=await vite.ssrLoadModule('/src/interactive/duel/DuelImpact.tsx')
+    const points={left:{x:100,y:250},right:{x:800,y:250}},fighters={left:{avatarId:'koi',seat:1},right:{avatarId:'kitsune',seat:1}}
+    for(const mascot of MASCOTS){
+      const hits=attackSequence(mascot.id,3);assert.ok(hits.length>=7&&hits.length<=9)
+      assert.ok(hits.every(hit=>hit.delay+hit.duration<=1000&&hit.impactDelay+340<=1000))
+    }
+    for(const side of ['left','right']){
+      const other=side==='left'?'right':'left',resolution={at:1000,side,victim:other,correct:true,damage:30,critical:true,multiplier:3}
+      const normal=renderToStaticMarkup(createElement(DuelImpact,{impact:impactFor({...resolution,multiplier:2,damage:20},fighters,'round'),points}))
+      const triple=renderToStaticMarkup(createElement(DuelImpact,{impact:impactFor(resolution,fighters,'round'),points}))
+      assert.ok(!normal.includes('ci-super-nova'));assert.ok(triple.includes('ci-super-nova'));assert.equal((triple.match(/class="ci-super-ring"/g)||[]).length,3)
+      const mistake=renderToStaticMarkup(createElement(DuelImpact,{impact:impactFor({...resolution,correct:false,victim:side},fighters,'round'),points}))
+      assert.equal((mistake.match(/class="ci-mistake-object"/g)||[]).length,9);assert.ok(!mistake.includes('ci-duel-flight'));assert.ok(mistake.includes(`data-victim="${side}"`));assert.ok(!mistake.includes('data-attacker='))
+    }
+    const timeout=renderToStaticMarkup(createElement(DuelImpact,{impact:impactFor({at:1000,damage:10,critical:false,multiplier:1,timeout:true},fighters,'round'),points}))
+    assert.ok(timeout.includes('data-victim="left"')&&timeout.includes('data-victim="right"'));assert.ok(!timeout.includes('data-attacker='))
+  })
+  await test('attack lanes vary above and below the fighters and between combo hits, remain reproducible and reverse with the attacker',()=>{
+    const left={x:100,y:300,radius:72},right={x:800,y:300,radius:72},lanes=[]
+    for(let turn=0;turn<40;turn++){
+      const lane=attackTrajectory(left,right,`round:${turn}`);lanes.push(lane)
+      assert.equal(lane.direction,'right');assert.ok(Math.abs(lane.origin.y-left.y)<=left.radius*.35);assert.ok(Math.abs(lane.target.y-right.y)<=right.radius*.35)
+      assert.deepEqual(attackTrajectory(left,right,`round:${turn}`),lane)
+      assert.equal(attackTrajectory(right,left,`round:${turn}`).direction,'left')
+      assert.notDeepEqual(attackTrajectory(left,right,`round:${turn}`,1),lane)
+    }
+    assert.ok(lanes.some(lane=>lane.bendY>0)&&lanes.some(lane=>lane.bendY<0));assert.ok(new Set(lanes.map(lane=>lane.origin.y)).size>20)
+  })
+  await test('current journals with or without legacy effect settings retain their results and mascot-specific attacks',async()=>{
     const previous=globalThis.sessionStorage,values=new Map();globalThis.sessionStorage={getItem:key=>values.get(key)??null}
     try{
       const quiz={id:'effects-source',title:'Calcul',items:[{question:{id:'q',prompt:'2 + 2 = ?',images:[],choices:[{id:'yes',text:'4'},{id:'no',text:'5'}]},correctChoiceId:'yes'}]},timer={enabled:false,seconds:5,feedbackSeconds:1},planId=await duelPlanId(quiz)

@@ -39,8 +39,9 @@ export const SIGNATURE_ATTACKS = {
 export const signatureAttack = (mascot: MascotKind): Signature => SIGNATURE_ATTACKS[mascot]
 
 /** All visible hits fit the shortest correction; grading remains a single hit. */
-export function attackSequence(mascot: MascotKind, critical: boolean) {
-  const signature=signatureAttack(mascot),count=critical?signature.criticalHits:1
-  const gap=critical?80:0,duration=critical?Math.min(signature.duration,900-(count-1)*gap):signature.duration
+export function attackSequence(mascot: MascotKind, level: boolean|1|2|3) {
+  const multiplier=typeof level==='boolean'?level?2:1:level,critical=multiplier>1
+  const signature=signatureAttack(mascot),count=multiplier===3?signature.criticalHits+4:critical?signature.criticalHits:1
+  const gap=multiplier===3?45:critical?80:0,duration=critical?Math.min(signature.duration,(multiplier===3?850:900)-(count-1)*gap):signature.duration
   return Array.from({length:count},(_,index)=>({index,delay:index*gap,duration,impactDelay:index*gap+Math.round(duration*.58)}))
 }

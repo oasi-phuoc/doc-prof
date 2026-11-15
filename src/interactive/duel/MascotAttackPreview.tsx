@@ -5,15 +5,15 @@ import { DuelImpact } from './DuelImpact'
 import { SignatureAttackArt } from './SignatureAttackArt'
 import { signatureAttack } from './signature-attacks'
 import { impactFor, measureFighters, type FighterPoints, type Impact } from './effects'
-import type { Side } from './core'
+import type { DamageMultiplier, Side } from './core'
 
 export function MascotAttackPreview({left,right}:{left:CompetitionAvatar;right:CompetitionAvatar}) {
-  const [critical,setCritical]=useState(false)
+  const [multiplier,setMultiplier]=useState<DamageMultiplier>(1),serial=useRef(0)
   const [preview,setPreview]=useState<{id:number;impact:Impact;points:FighterPoints}|null>(null)
   const demo=useRef<HTMLDivElement>(null)
   const play=(side:Side)=>{
     const points=measureFighters(demo.current?.querySelector('[data-demo-side="left"] .ci-competition-portrait'),demo.current?.querySelector('[data-demo-side="right"] .ci-competition-portrait'))
-    const impact=impactFor({at:0,side,victim:side==='left'?'right':'left',correct:true,damage:critical?20:10,critical},{left:{avatarId:left,seat:1},right:{avatarId:right,seat:1}},'preview')
+    const impact=impactFor({at:0,side,victim:side==='left'?'right':'left',correct:true,damage:multiplier*10,critical:multiplier>1,multiplier},{left:{avatarId:left,seat:1},right:{avatarId:right,seat:1}},`preview:${serial.current++}`)
     if(points&&impact)setPreview(previous=>({id:(previous?.id??0)+1,impact,points}))
   }
   return <section className="ci-panel ci-mascot-attacks" aria-label="Attaques des mascottes"><h2>Attaques des mascottes</h2>
@@ -28,7 +28,8 @@ export function MascotAttackPreview({left,right}:{left:CompetitionAvatar;right:C
         <button onClick={()=>play(side)} aria-label={`Attaque du joueur ${index+1}`}>Voir l’attaque</button>
       </div>
     })}</div>
-    <label><input type="checkbox" checked={critical} onChange={event=>setCritical(event.target.checked)}/>Prévisualiser un critique</label>
+    <label><input type="checkbox" checked={multiplier===2} onChange={event=>setMultiplier(event.target.checked?2:1)}/>Prévisualiser un critique</label>
+    <label><input type="checkbox" checked={multiplier===3} onChange={event=>setMultiplier(event.target.checked?3:1)}/>Prévisualiser un super critique ×3</label>
     {preview&&<DuelImpact key={preview.id} impact={preview.impact} points={preview.points}/>}
   </section>
 }

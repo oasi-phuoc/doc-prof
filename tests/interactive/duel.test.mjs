@@ -5,7 +5,7 @@ const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'c
 const previous=globalThis.sessionStorage,stored=new Map()
 globalThis.sessionStorage={getItem:key=>stored.get(key)??null,setItem:(key,value)=>stored.set(key,String(value))}
 try{
-  const {createDuel,stepDuel,duelRound,duelRoundId,duelPairs,parseDuelConfig,isDuelAction,DUEL_LIFETIME}=await vite.ssrLoadModule('/src/interactive/duel/core.ts')
+  const {createDuel,stepDuel,duelRound,duelRoundId,duelPairs,nextDuelSeed,parseDuelConfig,isDuelAction,DUEL_LIFETIME}=await vite.ssrLoadModule('/src/interactive/duel/core.ts')
   const {newDuelRun,readDuel,writeDuel,duelPlanId}=await vite.ssrLoadModule('/src/interactive/duel/storage.ts')
   const {hasDuel,duelStorageKey}=await vite.ssrLoadModule('/src/interactive/duel/storage-key.ts')
   const quiz={id:'duel-source',title:'Calcul',items:[{question:{id:'q1',prompt:'2 + 2 = ?',images:[],choices:[{id:'yes',text:'4'},{id:'no',text:'5'}]},correctChoiceId:'yes'}]}
@@ -13,19 +13,19 @@ try{
   const fresh=(seed=42,mode='duel',more={})=>createDuel(quiz,{...config,seed,mode,...more},timer,1000)
   const start=state=>stepDuel(quiz,state,{type:'start',pairIndex:state.pairIndex},1010)
   const hit=(state,side='left',correct=true,at=1020)=>stepDuel(quiz,state,{type:'answer',roundId:duelRoundId(state),side,choiceId:correct?'yes':'no'},at)
-  const seedFor=critical=>{for(let seed=0;seed<1000;seed++)if(duelRound(quiz,fresh(seed)).critical===critical)return seed;throw new Error('Missing deterministic branch')}
+  const seedFor=multiplier=>{for(let seed=0;seed<1000;seed++)if(duelRound(quiz,fresh(seed)).multiplier===multiplier)return seed;throw new Error('Missing deterministic branch')}
 
-  await test('normal and critical hits apply 10 or 20 percent to the opponent on a correct answer and to oneself on an error',()=>{
-    for(const critical of [false,true])for(const side of ['left','right'])for(const correct of [false,true]){
-      const state=start(fresh(seedFor(critical))),before=structuredClone(state),next=hit(state,side,correct)
-      const victim=correct?(side==='left'?'right':'left'):side,damage=critical?20:10
+  await test('normal, double and triple hits apply 10, 20 or 30 percent to the opponent on a correct answer and to oneself on an error',()=>{
+    for(const multiplier of [1,2,3])for(const side of ['left','right'])for(const correct of [false,true]){
+      const state=start(fresh(seedFor(multiplier))),before=structuredClone(state),next=hit(state,side,correct)
+      const victim=correct?(side==='left'?'right':'left'):side,damage=multiplier*10
       assert.equal(next.hp[victim],100-damage);assert.equal(next.hp[victim==='left'?'right':'left'],100)
-      assert.equal(next.resolution.critical,critical);assert.equal(next.resolution.damage,damage);assert.equal(next.resolution.victim,victim)
+      assert.equal(next.resolution.critical,multiplier>1);assert.equal(next.resolution.damage,damage);assert.equal(next.resolution.victim,victim)
       assert.equal(next.phase,'feedback');assert.deepEqual(state,before)
     }
   })
   await test('the first valid click resolves the turn exactly once and stale clicks cannot strike the next question',()=>{
-    const state=start(fresh(seedFor(false))),first=hit(state)
+    const state=start(fresh(seedFor(1))),first=hit(state)
     assert.equal(hit(first,'right',false,1020),first)
     assert.equal(hit(first,'left',true,1030),first)
     const next=stepDuel(quiz,first,{type:'tick'},first.deadline)
@@ -34,25 +34,25 @@ try{
     assert.equal(stale,next);assert.deepEqual(stale.hp,{left:100,right:90})
     assert.throws(()=>stepDuel(quiz,next,{type:'answer',roundId:duelRoundId(next),side:'left',choiceId:'forged'},3000),/proposée/)
   })
-  await test('critical rolls are deterministic, independent of answer speed and distributed around one question in four',()=>{
-    let criticals=0
+  await test('critical rolls are deterministic, independent of answer speed and distributed as 65 percent normal, 25 percent double and 10 percent triple',()=>{
+    const counts={1:0,2:0,3:0}
     for(let seed=0;seed<2000;seed++){
       const state=start(fresh(seed)),round=duelRound(quiz,state)
-      criticals+=Number(round.critical)
+      counts[round.multiplier]++
       assert.deepEqual(duelRound(quiz,state),round)
       assert.equal(hit(state,'left',true,1020).resolution.damage,hit(state,'right',false,2000).resolution.damage)
     }
-    assert.ok(criticals>380&&criticals<620,`${criticals}/2000`)
+    assert.ok(counts[1]>1180&&counts[1]<1420,JSON.stringify(counts));assert.ok(counts[2]>380&&counts[2]<620,JSON.stringify(counts));assert.ok(counts[3]>120&&counts[3]<280,JSON.stringify(counts))
   })
   await test('a quiz repeats in shuffled cycles until knockout, clamps health at zero and records the winner once',()=>{
-    let state=start(fresh(seedFor(true))),at=1100,turns=0
+    let state=start(fresh(seedFor(2))),at=1100,turns=0
     while(state.phase!=='finished'){
       assert.equal(duelRound(quiz,state).item.correctChoiceId,'yes')
       state=hit(state,'left',true,at);turns++
       assert.ok(state.hp.right>=0)
       state=stepDuel(quiz,state,{type:'tick'},state.deadline);at=state.createdAt+turns*1100+100
     }
-    assert.ok(turns>=5&&turns<=10);assert.equal(state.hp.right,0);assert.equal(state.hp.left,100)
+    assert.ok(turns>=4&&turns<=10);assert.equal(state.hp.right,0);assert.equal(state.hp.left,100)
     assert.deepEqual(state.wins,{left:1,right:0});assert.equal(state.results.length,1);assert.equal(state.results[0].winner,'left')
     assert.equal(stepDuel(quiz,state,{type:'tick'},at),state)
   })
@@ -76,7 +76,7 @@ try{
     const orders=new Set(Array.from({length:12},(_,seed)=>JSON.stringify(duelPairs({...cfg,seed}))))
     assert.ok(orders.size>1)
   })
-  await test('timeout causes no damage, pause preserves remaining time and late pause requests do not suspend a new turn',()=>{
+  await test('timeout removes ten percent from both fighters, pause preserves remaining time and late pause requests do not suspend a new turn',()=>{
     let state=createDuel(quiz,config,{...timer,enabled:true},1000)
     state=stepDuel(quiz,state,{type:'start',pairIndex:0},1100)
     state=stepDuel(quiz,state,{type:'pause',roundId:duelRoundId(state),phase:'question'},2100)
@@ -87,7 +87,7 @@ try{
     state=stepDuel(quiz,state,{type:'resume',roundId:duelRoundId(state),phase:'question'},20000)
     assert.equal(state.deadline,24000)
     state=stepDuel(quiz,state,{type:'tick'},24000)
-    assert.deepEqual(state.hp,{left:100,right:100});assert.equal(state.resolution.damage,0)
+    assert.deepEqual(state.hp,{left:90,right:90});assert.equal(state.resolution.damage,10);assert.equal(state.resolution.timeout,true)
     const id=duelRoundId(state)
     state=stepDuel(quiz,state,{type:'pause',roundId:id,phase:'feedback'},25000)
     assert.equal(state.phase,'question');assert.equal(state.paused,false)
@@ -126,9 +126,58 @@ try{
     const mismatch=readDuel(changed,await duelPlanId(changed),config,timer,2000)
     assert.equal(mismatch.writable,false);assert.equal(stored.get(duelStorageKey(quiz.id,'duel')),raw)
   })
-  await test('unknown, forged and expired journals are preserved and cannot supply health or critical damage',async()=>{
+  await test('unique rosters reserve all thirty mascots and reject reuse within or between the teams',async()=>{
+    const {COMPETITION_AVATARS}=await vite.ssrLoadModule('/src/interactive/competition/avatars.ts'),ids=COMPETITION_AVATARS.map(avatar=>avatar.id)
+    assert.equal(parseDuelConfig({...config,mode:'teams',left:ids.slice(0,15),right:ids.slice(15)}).left.length,15)
+    for(const more of [{left:['panda'],right:['panda']},{mode:'teams',left:['panda','panda'],right:['fox','koala']},{mode:'teams',left:['panda','fox'],right:['fox','tiger']}])assert.throws(()=>parseDuelConfig({...config,...more}),/différente/)
+  })
+  await test('a new setup seed changes the schedule, and remaining matches can be reshuffled without replaying a completed pair',()=>{
+    const cfg={...config,mode:'teams',left:['panda','koala','fox'],right:['tiger','otter','koi']},seed=nextDuelSeed(cfg,cfg.seed)
+    assert.notEqual(seed,cfg.seed);assert.notDeepEqual(duelPairs({...cfg,seed}),duelPairs(cfg))
+    let state=createDuel(quiz,cfg,timer,1000),at=1100
+    state=stepDuel(quiz,state,{type:'start',pairIndex:0},at++)
+    while(state.phase==='question'){state=hit(state,'left',true,at);at=state.deadline;state=stepDuel(quiz,state,{type:'tick'},at);at++}
+    const before=structuredClone(state),action={type:'reshuffle',pairIndex:1,seed}
+    state=stepDuel(quiz,state,action,at)
+    assert.equal(state.pairIndex,1);assert.equal(state.phase,'ready');assert.deepEqual(state.pairs[0],before.pairs[0]);assert.deepEqual(state.results,before.results);assert.deepEqual(state.wins,before.wins)
+    assert.notDeepEqual(state.pairs.slice(1),before.pairs.slice(1))
+    for(const side of ['left','right'])assert.deepEqual(state.pairs.map(pair=>pair[side].seat).sort(),[1,2,3])
+    assert.equal(stepDuel(quiz,state,{...action,pairIndex:0,seed:seed+1},at),state)
+    const playing=stepDuel(quiz,state,{type:'start',pairIndex:1},at+1)
+    assert.equal(stepDuel(quiz,playing,{...action,seed:seed+1},at+2),playing)
+  })
+  await test('timeout damage stays ten percent on a triple question; late and repeated actions cannot apply it twice',()=>{
+    let state=createDuel(quiz,{...config,seed:seedFor(3)},{...timer,enabled:true},1000)
+    state=stepDuel(quiz,state,{type:'start',pairIndex:0},1100);assert.equal(duelRound(quiz,state).multiplier,3)
+    state=hit(state,'left',true,state.deadline)
+    assert.deepEqual(state.hp,{left:90,right:90});assert.equal(state.resolution.multiplier,1);assert.equal(state.resolution.timeout,true);assert.equal(state.resolution.side,undefined)
+    assert.equal(stepDuel(quiz,state,{type:'tick'},state.resolution.at+1),state)
+  })
+  await test('simultaneous timeout knockout finishes as a draw without awarding either team a win',()=>{
+    let state=createDuel(quiz,config,{...timer,enabled:true},1000)
+    state=stepDuel(quiz,state,{type:'start',pairIndex:0},1100)
+    for(let turn=0;turn<10;turn++){
+      state=stepDuel(quiz,state,{type:'tick'},state.deadline)
+      assert.deepEqual(state.hp,{left:90-turn*10,right:90-turn*10})
+      state=stepDuel(quiz,state,{type:'tick'},state.deadline)
+    }
+    assert.equal(state.phase,'finished');assert.equal(state.results.length,1);assert.equal(state.results[0].draw,true);assert.equal(state.results[0].winner,undefined);assert.deepEqual(state.wins,{left:0,right:0})
+  })
+  await test('asymmetric timeout knockout awards the surviving fighter once, and reshuffle events replay their exact schedule',async()=>{
+    const cfg={...config,mode:'teams',seed:seedFor(1),left:['panda','koala','fox'],right:['tiger','otter','koi']},timed={...timer,enabled:true},planId=await duelPlanId(quiz),run=newDuelRun(quiz,planId,cfg,timed,1000)
+    let state=run.state;const events=[]
+    const act=(action,at)=>{state=stepDuel(quiz,state,action,at);events.push({action,at})}
+    act({type:'start',pairIndex:0},1100);act({type:'answer',roundId:duelRoundId(state),side:'left',choiceId:'yes'},1200);act({type:'tick'},state.deadline)
+    for(let turn=0;turn<9;turn++){act({type:'tick'},state.deadline);act({type:'tick'},state.deadline)}
+    assert.equal(state.phase,'ready');assert.equal(state.pairIndex,1);assert.equal(state.results[0].winner,'left');assert.deepEqual(state.wins,{left:1,right:0})
+    act({type:'reshuffle',pairIndex:1,seed:99},events.at(-1).at+1)
+    const record={...run.journal,events};assert.equal(writeDuel(record),true)
+    const resumed=readDuel(quiz,planId,cfg,timed,events.at(-1).at+1)
+    assert.equal(resumed.warning,'');assert.deepEqual(resumed.state,state)
+  })
+  await test('unknown, old-rule, forged and expired journals are preserved and cannot supply health or critical damage',async()=>{
     const planId=await duelPlanId(quiz),run=newDuelRun(quiz,planId,config,timer,1000),key=duelStorageKey(quiz.id,'duel')
-    for(const change of [v=>{v.version=99},v=>{v.hp={left:900,right:0}},v=>{v.config.left=['untrusted']},v=>{v.events=[{at:1010,action:{type:'answer',roundId:duelRoundId(run.state),side:'left',choiceId:'yes',damage:100}}]},v=>{v.events=[{at:1001,action:{type:'tick'}},{at:1000,action:{type:'tick'}}]}]){
+    for(const change of [v=>{v.version=99},v=>{v.version=1},v=>{v.hp={left:900,right:0}},v=>{v.config.left=['untrusted']},v=>{v.events=[{at:1010,action:{type:'answer',roundId:duelRoundId(run.state),side:'left',choiceId:'yes',damage:100}}]},v=>{v.events=[{at:1001,action:{type:'tick'}},{at:1000,action:{type:'tick'}}]}]){
       const value=structuredClone(run.journal);change(value);const raw=JSON.stringify(value);stored.set(key,raw)
       assert.equal(readDuel(quiz,planId,config,timer,2000).writable,false);assert.equal(stored.get(key),raw)
     }

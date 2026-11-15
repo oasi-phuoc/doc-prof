@@ -1,5 +1,6 @@
-import type { DuelPair, DuelResolution, Side } from './core'
+import type { DamageMultiplier, DuelPair, DuelResolution, Side } from './core'
 import { hash } from '../domain/seeds'
+import {createRng} from '@/math/rng'
 
 /** Accepted only when reading journals created before mascot-specific attacks. */
 export const ATTACK_EFFECTS = [
@@ -23,21 +24,31 @@ export function validEffects(value: unknown): value is DuelEffects {
   const v=value as Record<string,unknown>
   return Object.keys(v).every(key=>['attack','mistake'].includes(key))&&ATTACK_EFFECTS.some(effect=>effect.id===v.attack)&&MISTAKE_EFFECTS.some(effect=>effect.id===v.mistake)
 }
-export type Point = {x:number;y:number}
+export type Point = {x:number;y:number;radius?:number}
 export type FighterPoints = Record<Side,Point>
 export function measureFighters(left:{getBoundingClientRect:()=>{x:number;y:number;width:number;height:number}}|null|undefined,right:{getBoundingClientRect:()=>{x:number;y:number;width:number;height:number}}|null|undefined):FighterPoints|null {
   if(!left||!right)return null
   const a=left.getBoundingClientRect(),b=right.getBoundingClientRect()
-  return {left:{x:a.x+a.width/2,y:a.y+a.height/2},right:{x:b.x+b.width/2,y:b.y+b.height/2}}
+  return {left:{x:a.x+a.width/2,y:a.y+a.height/2,radius:Math.min(a.width,a.height)/2},right:{x:b.x+b.width/2,y:b.y+b.height/2,radius:Math.min(b.width,b.height)/2}}
 }
 export function trajectory(from:Point,to:Point) {
   const dx=to.x-from.x,dy=to.y-from.y
   return {dx,dy,angle:Math.atan2(dy,dx),direction:Math.abs(dx)>=Math.abs(dy)?dx>=0?'right':'left':dy>=0?'down':'up'}
 }
+/** Each hit chooses its own height and curve while staying aimed at its fighter. */
+export function attackTrajectory(from:Point,to:Point,roundKey:string,index=0) {
+  const random=createRng(hash(`${roundKey}:${index}:trajectory`)),base=trajectory(from,to),length=Math.hypot(base.dx,base.dy)||1
+  const nx=-base.dy/length,ny=base.dx/length,startOffset=(random()-.5)*(from.radius??72)*.7,endOffset=(random()-.5)*(to.radius??72)*.7
+  const origin={x:from.x+nx*startOffset,y:from.y+ny*startOffset},target={x:to.x+nx*endOffset,y:to.y+ny*endOffset}
+  const bend=(random()<.5?-1:1)*Math.min(145,length*.28)*(.35+random()*.65)
+  return {...trajectory(origin,target),origin,target,bendX:nx*bend,bendY:ny*bend}
+}
 export function impactFor(resolution:DuelResolution|undefined,fighters:DuelPair,roundKey:string) {
+  if(resolution?.timeout&&resolution.damage)return {kind:'timeout' as const,style:'cloud' as const,target:'left' as Side,critical:false,multiplier:1 as DamageMultiplier,variation:roundKey}
   if(!resolution?.damage||!resolution.side||!resolution.victim)return null
+  const multiplier=resolution.multiplier??(resolution.critical?2:1),common={critical:multiplier>1,multiplier,variation:roundKey}
   return resolution.correct
-    ? {kind:'attack' as const,style:fighters[resolution.side].avatarId,from:resolution.side,target:resolution.victim,critical:resolution.critical}
-    : {kind:'mistake' as const,style:MISTAKE_EFFECTS[hash(`${roundKey}:${resolution.side}:${fighters[resolution.side].avatarId}`)%MISTAKE_EFFECTS.length]!.id,target:resolution.side,critical:resolution.critical}
+    ? {kind:'attack' as const,style:fighters[resolution.side].avatarId,from:resolution.side,target:resolution.victim,...common}
+    : {kind:'mistake' as const,style:MISTAKE_EFFECTS[hash(`${roundKey}:${resolution.side}:${fighters[resolution.side].avatarId}`)%MISTAKE_EFFECTS.length]!.id,target:resolution.side,...common}
 }
 export type Impact = NonNullable<ReturnType<typeof impactFor>>

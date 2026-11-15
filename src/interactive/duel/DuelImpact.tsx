@@ -1,27 +1,26 @@
 import type { CSSProperties } from 'react'
-import { trajectory, type FighterPoints, type Impact, type MistakeEffect } from './effects'
+import { attackTrajectory, trajectory, type FighterPoints, type Impact, type MistakeEffect } from './effects'
 import { SignatureAttackArt } from './SignatureAttackArt'
 import { attackSequence, signatureAttack } from './signature-attacks'
 import { CriticalSpecials } from './CriticalSpecials'
+import {SuperCriticalSpecials} from './SuperCriticalSpecials'
 import './effects.css'
 
 export function DuelImpact({impact,points}:{impact:Impact;points:FighterPoints}) {
+  if(impact.kind==='timeout')return <>{(['left','right'] as const).map(side=><DuelImpact key={side} impact={{...impact,kind:'mistake',target:side}} points={points}/>)}</>
   const target=points[impact.target],path=impact.kind==='attack'?trajectory(points[impact.from],target):undefined
   const signature=impact.kind==='attack'?signatureAttack(impact.style):undefined
-  const sequence=impact.kind==='attack'?attackSequence(impact.style,impact.critical):[]
-  const length=path?Math.hypot(path.dx,path.dy)||1:1,bend=path?Math.min(60,length*.24)*(signature?.bend??1):0
-  // Portrait fighters share the left edge: bend inward so the coup stays visible.
-  const normal=path&&path.dy>0?-1:1
-  const bendX=path?-path.dy/length*bend*normal:0,bendY=path?path.dx/length*bend*normal:0
+  const sequence=impact.kind==='attack'?attackSequence(impact.style,impact.multiplier).map(hit=>({...hit,path:attackTrajectory(points[impact.from],target,`${impact.variation}:${impact.style}`,hit.index)})):[]
   const css={'--ci-hit-x':`${target.x}px`,'--ci-hit-y':`${target.y}px`,'--ci-critical-color':signature?.color,'--ci-critical-accent':signature?.accent} as CSSProperties
-  return <div className={`ci-duel-impact${impact.critical?' ci-duel-critical-impact':''}`} data-impact-kind={impact.kind} data-effect={impact.style} data-victim={impact.target} data-direction={path?.direction} data-attacker={impact.kind==='attack'?impact.from:undefined} style={css} aria-hidden="true">
+  return <div className={`ci-duel-impact${impact.critical?' ci-duel-critical-impact':''}${impact.multiplier===3?' ci-duel-super-impact':''}`} data-impact-kind={impact.kind} data-effect={impact.style} data-victim={impact.target} data-multiplier={impact.multiplier} data-direction={path?.direction} data-attacker={impact.kind==='attack'?impact.from:undefined} style={css} aria-hidden="true">
     {impact.kind==='attack'&&path?<>
-      {sequence.map(hit=><div key={hit.index} className={`ci-duel-flight ci-attack-${signature!.motion}`} data-ci-motion data-attack-mascot={impact.style} style={{left:points[impact.from].x,top:points[impact.from].y,'--ci-dx':`${path.dx}px`,'--ci-dy':`${path.dy}px`,'--ci-bend-x':`${bendX}px`,'--ci-bend-y':`${bendY}px`,'--ci-hit-scale':signature!.scale,animationDuration:`${hit.duration}ms`,animationDelay:`${hit.delay}ms`} as CSSProperties}><svg viewBox="-64 -64 128 128" style={{rotate:`${path.angle+(impact.critical?(hit.index%3-1)*.12:0)}rad`}}><SignatureAttackArt mascot={impact.style}/></svg></div>)}
-      {sequence.map(hit=><div key={hit.index} className="ci-duel-hit-burst" data-ci-motion style={{animationDelay:`${hit.impactDelay}ms`}}><Burst/></div>)}
-      {impact.critical&&<CriticalSpecials mascot={impact.style} origin={points[impact.from]} target={target}/>}
+      {sequence.map(hit=><div key={hit.index} className={`ci-duel-flight ci-attack-${signature!.motion}`} data-ci-motion data-attack-mascot={impact.style} style={{left:hit.path.origin.x,top:hit.path.origin.y,'--ci-dx':`${hit.path.dx}px`,'--ci-dy':`${hit.path.dy}px`,'--ci-bend-x':`${hit.path.bendX*signature!.bend}px`,'--ci-bend-y':`${hit.path.bendY*signature!.bend}px`,'--ci-hit-scale':signature!.scale,animationDuration:`${hit.duration}ms`,animationDelay:`${hit.delay}ms`} as CSSProperties}><svg viewBox="-64 -64 128 128" style={{rotate:`${hit.path.angle+(impact.critical?(hit.index%3-1)*.12:0)}rad`}}><SignatureAttackArt mascot={impact.style}/></svg></div>)}
+      {sequence.map(hit=><div key={hit.index} className="ci-duel-hit-burst" data-ci-motion style={{'--ci-hit-x':`${hit.path.target.x}px`,'--ci-hit-y':`${hit.path.target.y}px`,animationDelay:`${hit.impactDelay}ms`} as CSSProperties}><Burst/></div>)}
+      {impact.multiplier===3?<SuperCriticalSpecials mascot={impact.style} origin={points[impact.from]} target={target}/>:impact.critical&&<CriticalSpecials mascot={impact.style} origin={points[impact.from]} target={target}/>}
     </>:impact.kind==='mistake'?<>
-      {Array.from({length:impact.critical?6:3},(_,index)=><div className="ci-mistake-object" data-ci-motion key={index} style={{left:target.x+((index%3)-1)*27,top:target.y-12,'--ci-fall-turn':`${(index%2?1:-1)*(30+index*9)}deg`,animationDelay:`${index*65}ms`} as CSSProperties}><svg viewBox="-32 -32 64 64"><MistakeArt style={impact.style}/></svg></div>)}
+      {Array.from({length:impact.multiplier*3},(_,index)=><div className="ci-mistake-object" data-ci-motion key={index} style={{left:target.x+((index%3)-1)*27,top:target.y-12,'--ci-fall-turn':`${(index%2?1:-1)*(30+index*9)}deg`,animationDelay:`${index*(impact.multiplier===3?45:65)}ms`} as CSSProperties}><svg viewBox="-32 -32 64 64"><MistakeArt style={impact.style}/></svg></div>)}
       <div className="ci-duel-hit-burst ci-duel-mistake-burst" data-ci-motion><Burst/></div>
+      {impact.multiplier===3&&<SuperCriticalSpecials target={target}/>}
     </>:null}
   </div>
 }

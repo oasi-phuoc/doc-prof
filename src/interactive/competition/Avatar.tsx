@@ -9,6 +9,7 @@ export function CompetitionPortrait({ avatarId, seat, outcome }: { avatarId: Com
     {outcome === false && <span className="ci-competition-tears" aria-hidden="true" data-ci-motion />}
   </span>
 }
-export function CompetitionAvatarPicker({ selected, onSelect }: { selected: CompetitionAvatar; onSelect: (id: CompetitionAvatar) => void }) {
-  return <div className="ci-competition-avatars" role="group" aria-label="Choisir ta mascotte">{COMPETITION_AVATARS.map((avatar) => <button type="button" key={avatar.id} aria-label={avatar.label} aria-pressed={selected === avatar.id} onClick={() => onSelect(avatar.id)}><CompetitionPortrait avatarId={avatar.id} /></button>)}</div>
+export function CompetitionAvatarPicker({ selected, onSelect, excluded=[] }: { selected?: CompetitionAvatar; onSelect: (id: CompetitionAvatar) => void; excluded?:readonly CompetitionAvatar[] }) {
+  const available=COMPETITION_AVATARS.filter(avatar=>!excluded.includes(avatar.id))
+  return <div className="ci-competition-avatars" role="group" aria-label="Choisir ta mascotte">{available.map((avatar) => <button type="button" key={avatar.id} aria-label={avatar.label} aria-pressed={selected === avatar.id} onClick={() => onSelect(avatar.id)}><CompetitionPortrait avatarId={avatar.id} /></button>)}{!available.length&&<p role="status">Toutes les mascottes sont déjà choisies.</p>}</div>
 }

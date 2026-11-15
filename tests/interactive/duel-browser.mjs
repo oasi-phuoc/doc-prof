@@ -16,7 +16,7 @@ const phrase={layout:'phrase-color',tokens,answer:tokens.map(token=>token.catego
 const makeFiche=(id,item,config)=>({id,name:id,domains:['gattegno'],recipe:{...demoRecipe(),libreMode:true,pages:[{...config,count:1,columns:1,extraBlocks:undefined,libreItems:[item]}]},createdAt:'2026-11-13T00:00:00Z',updatedAt:'2026-11-13T00:00:00Z'})
 const fiches=[makeFiche('duel-numeric',numeric,defaultPage('algèbre')),makeFiche('duel-words',phrase,{...defaultPage('gattegno'),topic:'phrase-simple',exerciseType:'phrase-simple-colorier'})]
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']})
-const results=[],errors=[],methods=[]
+const results=[],errors=[],methods=[];let activePage
 const button=(page,name)=>page.getByRole('button',{name,exact:true})
 const side=(page,value)=>page.locator(`.ci-duel-player[data-side="${value}"]`)
 const answer=(page,value,text)=>side(page,value).locator('.ci-duel-answer').filter({has:page.locator('.ci-duel-answer-content').getByText(text,{exact:true})})
@@ -30,7 +30,7 @@ async function setup(fiche,width=390,height=844){
     localStorage.setItem('clairfle.interactive.timer.v1',JSON.stringify({enabled:false,seconds:5,feedbackSeconds:1}))
   })
   await context.route('**/__test_api/fiches',route=>{methods.push(route.request().method());return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({fiches})})})
-  const page=await context.newPage();page.setDefaultTimeout(30000);page.on('pageerror',error=>errors.push(error.message))
+  const page=await context.newPage();activePage=page;page.setDefaultTimeout(30000);page.on('pageerror',error=>errors.push(error.message))
   console.log(`Duel fixture ${fiche} ${width}x${height}`)
   await page.goto(`${base}/interactif/${fiche}`);await page.locator('.ci-launch:enabled').waitFor({timeout:120000})
   await button(page,'Compétition').click()
@@ -51,6 +51,12 @@ async function fits(page){
     const box=await node.boundingBox();assert.ok(box&&box.x>=-1&&box.y>=-1&&box.x+box.width<=vp.width+1&&box.y+box.height<=vp.height+1,JSON.stringify({vp,box}))
     if(await node.evaluate(el=>el.matches('.ci-duel-answer')))assert.ok(box.height>=44,JSON.stringify(box))
   }
+  for(const player of await page.locator('.ci-duel-player').all()){
+    const portrait=await player.locator('.ci-competition-portrait').boundingBox(),zone=await player.boundingBox(),health=await player.locator('.ci-duel-health-row').boundingBox(),cards=await player.locator('.ci-duel-cards').boundingBox()
+    assert.equal(Math.round(portrait.width),vp.width<=700?144:276);assert.equal(Math.round(portrait.height),vp.width<=700?144:276)
+    assert.ok(Math.abs(portrait.x+portrait.width/2-zone.x-zone.width/2)<1);assert.ok(health.y>=portrait.y+portrait.height-1);assert.ok(cards.y>=health.y+health.height-1)
+    assert.ok(!(await player.locator('.ci-duel-fighter').innerText()).includes('victoire'))
+  }
 }
 async function axe(page){
   const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()
@@ -64,21 +70,26 @@ async function knownCriticalSeed(page){
     const {createDuel,duelRound}=await import('/src/interactive/duel/core.ts')
     const key=Object.keys(sessionStorage).find(key=>key.startsWith('clairfle.duel.duel.')),record=JSON.parse(sessionStorage.getItem(key))
     const quiz={id:record.quizId,title:'Seed fixture',items:[{question:{id:'q',prompt:'?',images:[],choices:[{id:'yes',text:'Oui'},{id:'no',text:'Non'}]},correctChoiceId:'yes'}]}
-    for(let seed=1;seed<=1000;seed++){
+    for(let seed=1;seed<=20000;seed++){
       const state=createDuel(quiz,{...record.config,seed},record.timer,record.createdAt)
-      if(!duelRound(quiz,state).critical&&duelRound(quiz,{...state,turn:1}).critical){record.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(record));return seed}
+      if(!duelRound(quiz,state).critical&&duelRound(quiz,{...state,turn:1}).multiplier===2&&duelRound(quiz,{...state,turn:2}).multiplier===3&&duelRound(quiz,{...state,turn:3}).multiplier===3){record.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(record));return seed}
     }
     throw new Error('A deterministic normal/critical test seed is required.')
   })
 }
 try{
   await mkdir('docs/interactive/screenshots',{recursive:true})
-  for(const [width,height]of [[390,844],[1366,768],[360,640]]){
+  for(const [width,height]of [[390,844],[1366,768],[360,640]].filter(([width])=>!process.env.DUEL_TEST_WIDTH||width===Number(process.env.DUEL_TEST_WIDTH))){
     const {page,context}=await setup('duel-numeric',width,height)
-    await button(page,'Préparer un duel').click();await prepare(page)
+    await button(page,'Préparer un duel').click()
+    const leftPicker=page.getByRole('region',{name:'Équipe 1',exact:true}),rightPicker=page.getByRole('region',{name:'Équipe 2',exact:true})
+    assert.equal(await leftPicker.getByRole('button',{name:'Renard',exact:true}).count(),0);assert.equal(await rightPicker.getByRole('button',{name:'Panda',exact:true}).count(),0)
+    await leftPicker.getByRole('button',{name:'Hibou',exact:true}).click();assert.equal(await rightPicker.getByRole('button',{name:'Hibou',exact:true}).count(),0);assert.equal(await rightPicker.getByRole('button',{name:'Panda',exact:true}).count(),1)
+    await leftPicker.getByRole('button',{name:'Panda',exact:true}).click();await prepare(page)
     const seed=await knownCriticalSeed(page)
     await button(page,'Quitter la compétition').click();await button(page,'Reprendre la partie').click();await button(page,'Commencer le duel').click()
     await page.locator('.ci-duel-answer:enabled').first().waitFor();assert.deepEqual(await hp(page),[100,100]);await fits(page)
+    await page.screenshot({path:`docs/interactive/screenshots/duel-arena-v2-${width}.png`})
     assert.equal(await page.locator('.ci-duel-critical').count(),0)
     const first=await id(page)
     await page.evaluate(()=>{
@@ -87,10 +98,10 @@ try{
     })
     assert.deepEqual(await hp(page),[100,90]);assert.equal(await page.locator('.ci-duel-flight').count(),1)
     assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-attacker'),'left')
-    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),width<=700?'down':'right')
+    assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),'right')
     assert.equal(await side(page,'right').locator('.ci-duel-answer-key').count(),1)
     assert.equal(await side(page,'right').locator('.ci-duel-answer-muted').count(),5)
-    await next(page,first);assert.equal(await page.locator('.ci-duel-critical').innerText(),'Critique ! 20 %')
+    await next(page,first);assert.equal(await page.locator('.ci-duel-critical').innerText(),'Critique ×2 · 20 %')
     const second=await id(page);await answer(page,'left','5').click()
     assert.deepEqual(await hp(page),[80,90]);assert.equal(await page.locator('.ci-mistake-object').count(),6)
     assert.equal(await page.locator('.ci-duel-flight').count(),0)
@@ -106,8 +117,15 @@ try{
     assert.equal(await page.locator('.ci-header button:visible').count(),1)
     await button(page,'Quitter le plein écran').click()
     await button(page,'Contraste').click();await axe(page);await button(page,'Contraste').click()
+    if(width===360){
+      assert.equal(await page.locator('.ci-duel-super-critical').innerText(),'Super critique ×3 · 30 %')
+      let previous=await id(page);await answer(page,'left','5').click();assert.deepEqual(await hp(page),[50,90]);assert.equal(await page.locator('.ci-mistake-object').count(),9);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-super-nova').count(),1)
+      assert.equal(await side(page,'left').locator('.ci-competition-portrait').evaluate(node=>getComputedStyle(node).animationName),'ci-duel-ultra-hurt')
+      await next(page,previous);previous=await id(page);await answer(page,'right','4').click();assert.deepEqual(await hp(page),[20,90]);assert.ok(await page.locator('.ci-duel-flight').count()>=7);assert.equal(await page.locator('.ci-super-ring').count(),3);assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-direction'),'left')
+      await page.waitForTimeout(250);await page.screenshot({path:'docs/interactive/screenshots/duel-super-critical-v2-360.png'});await next(page,previous)
+    }
     if(width===1366){
-      const old=await id(page),damage=await page.locator('.ci-duel-critical').count()?20:10
+      const old=await id(page),damage=Number(await page.locator('[data-damage]').getAttribute('data-damage'))
       const index=(await side(page,'right').locator('.ci-duel-answer-content').allTextContents()).indexOf('4')
       await page.keyboard.press(String(index+1));assert.deepEqual(await hp(page),[80-damage,90]);await next(page,old)
     }
@@ -119,13 +137,13 @@ try{
       assert.deepEqual(await hp(page),[80,90]);assert.ok((await id(page)).startsWith(`${seed}:`))
       let right=90
       for(let turn=0;right>0&&turn<12;turn++){
-        await answer(page,'left','4').waitFor();const old=await id(page),damage=await page.locator('.ci-duel-critical').count()?20:10
+        await answer(page,'left','4').waitFor();const old=await id(page),damage=Number(await page.locator('[data-damage]').getAttribute('data-damage'))
         await answer(page,'left','4').click();right=Math.max(0,right-damage);assert.deepEqual(await hp(page),[80,right])
         if(right)await next(page,old)
       }
       assert.equal(right,0);await page.getByRole('heading',{name:/Panda 1 remporte le duel !/}).waitFor()
-      assert.deepEqual((await page.locator('.ci-duel-final-score b').allTextContents()).map(Number),[1,0])
-      const {key:previousKey,data}=await journal(page);assert.equal(data.events.filter(event=>event.action.type==='answer').length>=7,true)
+      assert.equal(await page.locator('.ci-duel-final-score').count(),0);assert.ok((await page.locator('.ci-duel-results').innerText()).includes('Panda 1'))
+      const {key:previousKey,data}=await journal(page);assert.equal(data.events.filter(event=>event.action.type==='answer').length>=5,true)
       for(const forbidden of ['correctChoiceId','question','hp','wins','tokens'])assert.equal(Object.hasOwn(data,forbidden),false)
       assert.ok(!JSON.stringify(data).includes('correctChoiceId'))
       await button(page,'Nouvelle partie').click();await page.getByRole('heading',{name:'Jouer en compétition',exact:true}).waitFor()
@@ -138,15 +156,19 @@ try{
     results.push({viewport:`${width}x${height}`,cards:'two players and health bars fit; touch targets at least 44 px; only correct cards retain color',animation:'directional curved attack on a correct answer; critical mistake drops six objects on oneself with stronger hurt; active with reduced-motion preference',fullscreen:'only exit-fullscreen remains in the header',axeViolations:0})
     await context.close()
   }
-  for(const [width,height]of [[390,844],[1366,768],[360,640]]){
+  for(const [width,height]of [[390,844],[1366,768],[360,640]].filter(([width])=>!process.env.DUEL_TEST_WIDTH||width===Number(process.env.DUEL_TEST_WIDTH))){
     const {page,context}=await setup('duel-words',width,height)
     await button(page,'Créer les équipes').click()
     const left=page.getByRole('region',{name:'Équipe 1',exact:true}),right=page.getByRole('region',{name:'Équipe 2',exact:true})
     await left.getByRole('button',{name:'Ajouter à l’équipe 1',exact:true}).click()
+    assert.equal(await left.getByRole('button',{name:'Panda',exact:true}).count(),0);assert.equal(await right.getByRole('button',{name:'Panda',exact:true}).count(),0)
     assert.equal(await button(page,'Préparer la partie').isEnabled(),false)
     await left.getByRole('button',{name:'Koala',exact:true}).click();await left.getByRole('button',{name:'Ajouter à l’équipe 1',exact:true}).click()
     await right.getByRole('button',{name:'Ajouter à l’équipe 2',exact:true}).click();await right.getByRole('button',{name:'Tigre',exact:true}).click();await right.getByRole('button',{name:'Ajouter à l’équipe 2',exact:true}).click()
     assert.equal(await page.locator('.ci-duel-pair-preview li').count(),2)
+    const initial=await page.locator('.ci-duel-pair-preview .ci-competition-avatar').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('aria-label')))
+    await button(page,'Randomiser les matchs').click()
+    assert.notDeepEqual(await page.locator('.ci-duel-pair-preview .ci-competition-avatar').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('aria-label'))),initial)
     const preview=await page.locator('.ci-duel-pair-preview li').allTextContents()
     const previewAvatars=await page.locator('.ci-duel-pair-preview .ci-competition-avatar').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('aria-label')))
     await prepare(page)
@@ -166,7 +188,7 @@ try{
         const old=await id(page),target=await page.locator('.ci-classification-target').innerText(),position=Number((await page.locator('.ci-classification-progress').innerText()).match(/Élément (\d+)/)[1])-1
         assert.equal(target,tokens[position].text)
         const label={determinant:'Déterminants',nom:'Noms',pronom:'Pronoms',verbe:'Verbes'}[tokens[position].category]
-        const damage=await page.locator('.ci-duel-critical').count()?20:10
+        const damage=Number(await page.locator('[data-damage]').getAttribute('data-damage'))
         await answer(page,'left',label).click();targetHP=Math.max(0,targetHP-damage);assert.equal((await hp(page))[1],targetHP)
         assert.equal(await page.locator('.ci-duel-impact').getAttribute('data-effect'),expected[pairIndex].left.avatarId)
         if(targetHP)await next(page,old)
@@ -178,7 +200,20 @@ try{
     results.push({teams:`${width}x${height}`,pairing:'equal rosters required; fixed seed draws every seat once; preview and called order retained; 100% health at each new pair',source:'Gattegno sentence and current word stay neutral; repeated categories remain usable',offline:'network disabled after preparation, two complete duels then team winner 2–0',preview})
     await context.close()
   }
+  if(!process.env.DUEL_TEST_WIDTH||process.env.DUEL_TEST_WIDTH==='390'){
+    const {page,context}=await setup('duel-numeric',390,844);await button(page,'Préparer un duel').click()
+    await page.getByRole('checkbox',{name:'Activer le minuteur du duel',exact:true}).check();await page.getByRole('spinbutton',{name:'Temps par question (secondes)',exact:true}).fill('5');await page.getByRole('spinbutton',{name:'Temps de correction (secondes)',exact:true}).fill('1')
+    await page.clock.install();await page.clock.pauseAt(new Date(Date.now()+1000));await button(page,'Préparer la partie').click();await button(page,'Commencer le duel').click()
+    for(let turn=0;turn<10;turn++){
+      await page.clock.runFor(5000);await page.locator('.ci-duel-feedback').waitFor();assert.deepEqual(await hp(page),[90-turn*10,90-turn*10]);assert.equal(await page.locator('.ci-duel-hurt').count(),2);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-duel-impact[data-impact-kind="mistake"]').count(),2)
+      assert.match(await page.locator('.ci-duel-controls [role="status"]').innerText(),/les deux joueurs perdent 10/)
+      if(turn===0)await page.screenshot({path:'docs/interactive/screenshots/duel-timeout-v2-390.png'})
+      await page.clock.runFor(1000)
+    }
+    await page.getByRole('heading',{name:'Match nul !',exact:true}).waitFor();assert.equal(await page.locator('.ci-duel-final-score').count(),0);assert.match(await page.locator('.ci-duel-results').innerText(),/Match nul/)
+    results.push({timedDuel:'390x844',timeout:'Both fighters lose exactly ten percent on every unanswered question, with two local hurt reactions and no opposing attack; ten timeouts end in a draw.'});await context.close()
+  }
   assert.ok(methods.length&&methods.every(method=>method==='GET'));assert.deepEqual(errors,[])
   await writeFile('docs/interactive/duel-results.json',JSON.stringify({results,errors,serverWritesToFicheApi:0,network:'shared screen, local play after media preparation; no production deployment'},null,2)+'\n')
   console.log(JSON.stringify(results,null,2))
-}finally{await browser.close();await vite.close()}
+}catch(error){if(activePage&&!activePage.isClosed()){console.error((await activePage.locator('body').innerText()).slice(-1800));await activePage.screenshot({path:'/tmp/clairfle-duel-v2-failure.png',fullPage:true})}throw error}finally{await browser.close();await vite.close()}

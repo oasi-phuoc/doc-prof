@@ -11,6 +11,15 @@
 .ci-attack-shockwave { animation-name: ci-attack-shockwave; }
 .ci-duel-flight svg { width: 100%; height: 100%; filter: drop-shadow(0 2px 2px #26314733); }
 .ci-duel-critical-impact .ci-duel-flight { width: 140px; height: 140px; margin: -70px; }
+.ci-duel-super-impact .ci-duel-flight { width: 160px; height: 160px; margin: -80px; }
+.ci-super-specials { position: fixed; inset: 0; pointer-events: none; color: var(--ci-super-color); }
+.ci-super-specials svg { width: 100%; height: 100%; }
+.ci-super-charge { position: fixed; width: 180px; height: 180px; margin: -90px; animation: ci-super-charge .75s ease-out both; filter: drop-shadow(0 0 9px var(--ci-super-accent)); }
+.ci-super-nova { position: fixed; width: 230px; height: 230px; margin: -115px; animation: ci-super-nova .9s ease-in-out both; filter: drop-shadow(0 0 10px var(--ci-super-accent)) drop-shadow(0 0 16px var(--ci-super-color)); }
+.ci-super-ring { position: fixed; width: 180px; height: 180px; margin: -90px; animation: ci-super-ring .44s ease-out both; filter: drop-shadow(0 0 7px var(--ci-super-accent)); }
+@keyframes ci-super-charge { 0% { transform: scale(.25) rotate(-100deg); opacity: 0; } 35% { transform: scale(1) rotate(0deg); opacity: 1; } 100% { transform: scale(.15) rotate(130deg); opacity: 0; } }
+@keyframes ci-super-nova { 0% { transform: scale(1.2) rotate(-150deg); opacity: 0; } 30% { transform: scale(.35) rotate(-30deg); opacity: .6; } 60% { transform: scale(1) rotate(30deg); opacity: 1; } 100% { transform: scale(1.4) rotate(110deg); opacity: 0; } }
+@keyframes ci-super-ring { 0% { transform: scale(.2); opacity: 0; } 20% { opacity: 1; } 100% { transform: scale(1.45); opacity: 0; } }
 .ci-duel-critical-impact .ci-duel-flight svg { filter: drop-shadow(0 0 5px var(--ci-critical-accent)) drop-shadow(0 0 12px var(--ci-critical-color)); }
 .ci-duel-critical-impact .ci-duel-hit-burst svg { filter: drop-shadow(0 0 7px var(--ci-critical-accent,#ffdf8c)); }
 .ci-critical-specials { position: fixed; inset: 0; pointer-events: none; }

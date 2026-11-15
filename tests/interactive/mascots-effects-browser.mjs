@@ -52,13 +52,14 @@ try{
     await button(page,'Compétition').click();await button(page,'Préparer un duel').click()
     await page.getByRole('heading',{name:'Préparer le duel',exact:true}).waitFor()
     const left=page.getByRole('region',{name:'Équipe 1',exact:true}),right=page.getByRole('region',{name:'Équipe 2',exact:true})
-    assert.equal(await left.getByRole('group',{name:'Choisir ta mascotte'}).getByRole('button').count(),30)
+    assert.equal(await left.getByRole('group',{name:'Choisir ta mascotte'}).getByRole('button').count(),29)
     const previews=page.getByRole('region',{name:'Attaques des mascottes',exact:true})
     assert.equal(await page.locator('.ci-effect-options').count(),0)
     assert.equal(await page.getByRole('group',{name:'Animations d’attaque',exact:true}).count(),0)
     const motions=[]
     for(const mascot of MASCOTS){
       const attack=signatureAttack(mascot.id)
+      if(!await left.getByRole('button',{name:mascot.label,exact:true}).count()){const occupied=await left.getByRole('button',{pressed:true}).getAttribute('aria-label'),substitute=MASCOTS.find(avatar=>avatar.id!==mascot.id&&avatar.label!==occupied);await right.getByRole('button',{name:substitute.label,exact:true}).click()}
       await left.getByRole('button',{name:mascot.label,exact:true}).click()
       assert.equal(await previews.locator('[data-demo-side="left"] .ci-signature-name').innerText(),attack.label)
       await previews.getByRole('button',{name:'Attaque du joueur 1',exact:true}).click()
@@ -77,6 +78,8 @@ try{
       assert.equal(motion.name,`ci-attack-${attack.motion}`);assert.equal(motion.duration,attack.duration)
       assert.ok(Math.abs(motion.endX-motion.dx)<.01&&Math.abs(motion.endY-motion.dy)<.01)
       motions.push({...motion,mascot:mascot.id})
+      const reserved=await right.getByRole('button',{pressed:true}).getAttribute('aria-label'),replacement=MASCOTS.find(avatar=>avatar.id!==mascot.id&&avatar.label!==reserved)
+      await left.getByRole('button',{name:replacement.label,exact:true}).click()
       await right.getByRole('button',{name:mascot.label,exact:true}).click()
       await previews.getByRole('button',{name:'Attaque du joueur 2',exact:true}).click()
       assert.equal(await impact.getAttribute('data-direction'),'left');assert.equal(await impact.getAttribute('data-attacker'),'right')
@@ -97,6 +100,11 @@ try{
     await previews.getByRole('button',{name:'Attaque du joueur 1',exact:true}).click()
     assert.equal(await page.locator('.ci-duel-flight').count(),attackSequence('koi',true).length)
     await axe(page);await previews.screenshot({path:`docs/interactive/screenshots/mascot-attacks-${width}.png`})
+    await previews.getByRole('checkbox',{name:'Prévisualiser un super critique ×3',exact:true}).check();await previews.getByRole('button',{name:'Attaque du joueur 2',exact:true}).click()
+    assert.equal(await page.locator('.ci-duel-flight').count(),9);assert.equal(await page.locator('.ci-super-nova').count(),1);assert.equal(await page.locator('.ci-super-ring').count(),3)
+    const lanes=await page.locator('.ci-duel-flight').evaluateAll(nodes=>nodes.map(node=>[node.style.top,node.style.getPropertyValue('--ci-bend-y')].join(':')));assert.ok(new Set(lanes).size>1)
+    assert.notEqual(await page.locator('.ci-super-nova').evaluate(node=>getComputedStyle(node).animationName),'none')
+    await page.waitForTimeout(250);await previews.screenshot({path:`docs/interactive/screenshots/mascot-super-critical-v2-${width}.png`})
     await page.getByRole('spinbutton',{name:'Temps de correction (secondes)',exact:true}).fill('1')
     await button(page,'Préparer la partie').click();await button(page,'Commencer le duel').waitFor()
     await page.evaluate(async()=>{
@@ -105,7 +113,7 @@ try{
       const quiz={id:record.quizId,title:'Critical fixture',items:[{question:{id:'q',prompt:'?',images:[],choices:[{id:'yes',text:'Oui'},{id:'no',text:'Non'}]},correctChoiceId:'yes'}]}
       for(let seed=1;seed<=1000;seed++){
         const state=createDuel(quiz,{...record.config,seed},record.timer,record.createdAt)
-        if(!duelRound(quiz,state).critical&&duelRound(quiz,{...state,turn:1}).critical&&duelRound(quiz,{...state,turn:2}).critical){record.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(record));return}
+        if(!duelRound(quiz,state).critical&&duelRound(quiz,{...state,turn:1}).multiplier===2&&duelRound(quiz,{...state,turn:2}).multiplier===2){record.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(record));return}
       }
       throw new Error('Need one normal turn followed by two critical signature attacks.')
     })
@@ -123,19 +131,19 @@ try{
     await answer(page,'left','4').click()
     assert.equal(await page.locator('.ci-duel-flight').count(),4);assert.equal(await page.locator('.ci-critical-spark').count(),20)
     assert.deepEqual((await page.locator('.ci-duel-hp').allTextContents()).map(text=>Number(text.replace(/\D/g,''))),[90,80])
-    assert.equal(await hit.getAttribute('data-effect'),'koi');assert.equal(await hit.getAttribute('data-attacker'),'left');assert.equal(await hit.getAttribute('data-direction'),width<=700?'down':'right')
+    assert.equal(await hit.getAttribute('data-effect'),'koi');assert.equal(await hit.getAttribute('data-attacker'),'left');assert.equal(await hit.getAttribute('data-direction'),'right')
     await page.waitForTimeout(200);await page.screenshot({path:`docs/interactive/screenshots/duel-water-${width}.png`})
     await next(page,old)
     await answer(page,'right','4').click()
     assert.equal(await page.locator('.ci-duel-flight').count(),5);assert.equal(await page.locator('.ci-critical-spark').count(),20)
     assert.deepEqual((await page.locator('.ci-duel-hp').allTextContents()).map(text=>Number(text.replace(/\D/g,''))),[70,80])
-    assert.equal(await hit.getAttribute('data-effect'),'kitsune');assert.equal(await hit.getAttribute('data-attacker'),'right');assert.equal(await hit.getAttribute('data-victim'),'left');assert.equal(await hit.getAttribute('data-direction'),width<=700?'up':'left')
+    assert.equal(await hit.getAttribute('data-effect'),'kitsune');assert.equal(await hit.getAttribute('data-attacker'),'right');assert.equal(await hit.getAttribute('data-victim'),'left');assert.equal(await hit.getAttribute('data-direction'),'left')
     await page.waitForTimeout(200);await page.screenshot({path:`docs/interactive/screenshots/duel-fire-${width}.png`})
     await button(page,'Quitter la compétition').click();await context.setOffline(false);await button(page,'Reprendre la partie').click()
     await page.getByRole('heading',{name:'Duel en pause',exact:true}).waitFor()
     const saved=await page.evaluate(()=>JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage).find(key=>key.startsWith('clairfle.duel.duel.')))))
     assert.equal(saved.config.effects,undefined);assert.deepEqual(saved.config.left,['koi']);assert.deepEqual(saved.config.right,['kitsune'])
-    results.push({viewport:`${width}x${height}`,mascots:'30 shared animated mascots, with image-only selection retained',previews:'Each of the thirty chosen mascots automatically provides its own named attack and distinct intermediate motion; both directions reach the correct target; no attack selector or effect setting',attackMotions:motions.map(({mascot,name,duration})=>({mascot,name,duration})),duel:'Offline Koi sends a water jet from left to right (down on portrait phones); Kitsune sends a fire tornado in the reverse direction; errors drop automatically selected objects only on the mistaken player',critical:'Mascot-specific three-to-five-hit sequence, glowing attack, two auras and twenty themed sparkles; all finish inside the minimum one-second correction',resume:'Koi and Kitsune identities survive replay; the new journal has no configurable effects',axeViolations:0})
+    results.push({viewport:`${width}x${height}`,mascots:'30 shared animated mascots, with image-only selection retained',previews:'Each of the thirty chosen mascots automatically provides its own named attack and distinct intermediate motion; both directions reach the correct target; no attack selector or effect setting',attackMotions:motions.map(({mascot,name,duration})=>({mascot,name,duration})),duel:'Offline Koi sends a water jet from left to right on phones and desktop; Kitsune sends a fire tornado in the reverse direction; errors drop automatically selected objects only on the mistaken player',critical:'Mascot-specific three-to-five-hit sequence, glowing attack, two auras and twenty themed sparkles; all finish inside the minimum one-second correction',resume:'Koi and Kitsune identities survive replay; the new journal has no configurable effects',axeViolations:0})
     await context.close()
   }
   assert.ok(methods.length&&methods.every(method=>method==='GET'));assert.deepEqual(errors,[])
