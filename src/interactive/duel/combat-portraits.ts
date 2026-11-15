@@ -1,4 +1,6 @@
 import {MASCOTS,type MascotKind} from '../domain/mascot'
+import type {Power} from './vfx/catalog'
+import {COMBAT_CROPS,COMBAT_MASKS} from './combat-crops.generated'
 export const COMBAT_STATES=['tired','critical-tired','victory','defeat'] as const
 export type CombatPortraitState='normal'|typeof COMBAT_STATES[number]
 export type MatchOutcome='ongoing'|'winner'|'loser'|'draw-ko'
@@ -9,7 +11,12 @@ export function portraitForHp(hp:number,outcome:MatchOutcome='ongoing'):CombatPo
   if(hp<=20)return 'critical-tired'
   return hp<=50?'tired':'normal'
 }
+export function combatPoseForHp(hp:number,outcome:MatchOutcome='ongoing',level:Power=1):CombatPortraitState|'angry'{
+  const state=portraitForHp(hp,outcome)
+  return level>1&&state!=='victory'&&state!=='defeat'?'angry':state
+}
 export function combatFrame(id:MascotKind,state:Exclude<CombatPortraitState,'normal'>){
   const index=Math.max(0,MASCOTS.findIndex(mascot=>mascot.id===id))
-  return{src:COMBAT_ATLASES[Math.floor(index/6)]!,column:COMBAT_STATES.indexOf(state),row:index%6,columns:4,rows:6}
+  const column=COMBAT_STATES.indexOf(state)
+  return{src:COMBAT_ATLASES[Math.floor(index/6)]!,column,row:index%6,columns:4,rows:6,crop:COMBAT_CROPS[index*4+column]!,mask:COMBAT_MASKS[index*4+column]!}
 }

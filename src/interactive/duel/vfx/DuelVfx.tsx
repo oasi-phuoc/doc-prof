@@ -6,6 +6,7 @@ import {contactTime,signatureFor,type Power} from './catalog'
 import {makeScene,sampleAura,sampleScene} from './model'
 import {paintFrame} from './renderer'
 import {renderScale,adaptQuality} from './quality'
+import {createFrameScheduler} from './frame-scheduler'
 import './vfx.css'
 
 type Props={left:MascotKind;right:MascotKind;level:Power;questionKey:string;impact?:Impact|null;elapsedMs:number;paused?:boolean;aura:boolean;selector?:string;seekMs?:number;speed?:number;simplified?:boolean}
@@ -18,8 +19,8 @@ export function DuelVfx(props:Props){
     let context:CanvasRenderingContext2D|null=null
     try{context=node.getContext('2d',{alpha:true})}catch{ /* harmless fallback below */ }
     if(!context){setFailed(true);return}
-    const c=context;let raf=0,disposed=false,points:FighterPoints|null=null,last=performance.now(),auraTime=savedAura.current,sceneTime=latest.current.elapsedMs,sceneKey='',previousElapsed=sceneTime,previousProps=latest.current,frames=0,density=1
-    let drawFrame:((stamp:number)=>void)|undefined
+    const c=context;let disposed=false,points:FighterPoints|null=null,last=performance.now(),auraTime=savedAura.current,sceneTime=latest.current.elapsedMs,sceneKey='',previousElapsed=sceneTime,previousProps=latest.current,frames=0,density=1
+    let scheduler:ReturnType<typeof createFrameScheduler>|undefined
     const costs:number[]=[],intervals:number[]=[]
     let viewport={width:innerWidth,height:innerHeight},clip={top:0,bottom:innerHeight},protectedBars:DOMRect[]=[],dpr=renderScale(innerWidth,innerHeight,devicePixelRatio||1)
     const measure=()=>{
@@ -30,7 +31,7 @@ export function DuelVfx(props:Props){
       const question=document.querySelector('.ci-duel-question')?.getBoundingClientRect(),cards=document.querySelector('.ci-duel-cards')?.getBoundingClientRect()
       clip={top:question?.bottom??0,bottom:cards?.top??innerHeight}
       protectedBars=Array.from(document.querySelectorAll('.ci-duel-health-row'),bar=>bar.getBoundingClientRect())
-      if(drawFrame){cancelAnimationFrame(raf);raf=requestAnimationFrame(drawFrame)}
+      scheduler?.request()
     }
     measure();const observer=new ResizeObserver(measure);observer.observe(document.documentElement)
     document.querySelectorAll('.ci-duel-player,.ci-effect-demo').forEach(element=>observer.observe(element))
@@ -57,7 +58,7 @@ export function DuelVfx(props:Props){
           }
           c.restore()
         }
-      }catch{setFailed(true);return}
+      }catch{scheduler?.stop();setFailed(true);return}
       if(frames++>8){costs.push(performance.now()-start);intervals.push(dt);if(costs.length>180){costs.shift();intervals.shift()}}
       if(frames%45===0&&costs.length){
         const sorted=[...costs].sort((a,b)=>a-b),p95=sorted[Math.floor(sorted.length*.95)]!
@@ -66,11 +67,11 @@ export function DuelVfx(props:Props){
         node.dataset.drawP95=p95.toFixed(2);node.dataset.frameP95=frameP95.toFixed(2);node.dataset.density=density.toFixed(2);node.dataset.dpr=String(dpr)
       }
       node.dataset.elapsed=Math.round(time).toString();node.dataset.frames=frames.toString()
-      if(!p.paused&&p.seekMs===undefined)raf=requestAnimationFrame(draw)
+      return !p.paused&&p.seekMs===undefined
     }
-    drawFrame=draw
-    raf=requestAnimationFrame(draw)
-    return()=>{disposed=true;cancelAnimationFrame(raf);observer.disconnect();window.removeEventListener('resize',measure);window.removeEventListener('scroll',measure,true);c.clearRect(0,0,viewport.width,viewport.height)}
+    scheduler=createFrameScheduler(draw)
+    scheduler.request()
+    return()=>{disposed=true;scheduler?.stop();observer.disconnect();window.removeEventListener('resize',measure);window.removeEventListener('scroll',measure,true);c.clearRect(0,0,viewport.width,viewport.height)}
   },[props.selector,props.seekMs,props.paused,failed])
   const hit=props.impact,id=hit&&hit.kind!=='timeout'?hit.mascot:props.left
   if(failed)return <span className="ci-vfx-fallback" style={{borderColor:signatureFor(id).color}} aria-hidden="true" data-vfx-fallback data-theme={id}/>

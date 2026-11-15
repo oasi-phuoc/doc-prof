@@ -123,7 +123,7 @@ try{
       assert.equal(await page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'3');assert.equal(await page.locator('.ci-vfx-canvas[data-multiplier="3"]').count(),1)
       let previous=await id(page);await answer(page,'left','5').click();assert.deepEqual(await hp(page),[50,90]);assert.equal(await page.locator('.ci-vfx-canvas[data-local]').count(),1);assert.equal(await page.locator('.ci-duel-flight').count(),0);assert.equal(await page.locator('.ci-vfx-canvas[data-multiplier="3"]').count(),1)
       assert.equal(await side(page,'left').locator('.ci-competition-portrait').evaluate(node=>getComputedStyle(node).animationName),'ci-duel-ultra-hurt')
-      await next(page,previous);previous=await id(page);await answer(page,'right','4').click();assert.deepEqual(await hp(page),[20,90]);assert.equal(await page.locator('.ci-vfx-canvas[data-local]').count(),1);assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-direction'),'local');assert.equal(await side(page,'left').locator('[data-combat-state="critical-tired"]').count(),1)
+      await next(page,previous);previous=await id(page);await answer(page,'right','4').click();assert.deepEqual(await hp(page),[20,90]);assert.equal(await page.locator('.ci-vfx-canvas[data-local]').count(),1);assert.equal(await page.locator('.ci-vfx-canvas').getAttribute('data-direction'),'local');assert.equal(await side(page,'left').locator('.ci-mascot-angry').count(),1)
       await page.waitForTimeout(250);await page.screenshot({path:'docs/interactive/screenshots/duel-super-critical-v2-360.png'});await next(page,previous)
     }
     if(width===1366){

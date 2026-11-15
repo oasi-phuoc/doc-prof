@@ -5,7 +5,7 @@ import {chromium} from 'playwright'
 import {gameControl} from './browser-actions.mjs'
 const base='http://127.0.0.1:5197'
 process.env.VITE_FICHES_API_URL=base+'/__test_api'
-const vite=await createServer({cacheDir:'/tmp/clairfle-vfx-lifecycle',server:{host:'127.0.0.1',port:5197,strictPort:true}});await vite.listen()
+const vite=await createServer({cacheDir:'/tmp/clairfle-vfx-lifecycle',server:{host:'127.0.0.1',port:5197,strictPort:true,hmr:false}});await vite.listen()
 const {demoRecipe}=await vite.ssrLoadModule('/src/interactive/demo.ts')
 const recipe={...demoRecipe(),pages:[{...demoRecipe().pages[0],count:1,libreItems:[{layout:'select',prompt:'2 + 2 = ?',options:['4','5','6','7','8','9'],answer:'4'}]}]}
 const saved={id:'vfx-lifecycle',name:'Cycles des effets',recipe,domains:['algèbre'],createdAt:'2026-11-15T00:00:00Z',updatedAt:'2026-11-15T00:00:00Z'}
@@ -34,6 +34,33 @@ try{
  assert.deepEqual(await page.locator('.ci-duel-hp').allTextContents(),['100','70'])
  await button(page,'Quitter la compétition').click();assert.equal(await page.locator('.ci-duel-arena .ci-vfx-canvas').count(),0);assert.equal(await page.locator('.ci-mascot-attacks .ci-vfx-canvas').count(),1)
  results.push({case:'triple pause/resize/resume',frozenPixelFrame:true,healthWaitsForContact:true,damageAppliedOnce:30,canvasRemovedOnExit:true});await context.close()
+ const low=await setup();const lowSequence=await low.page.evaluate(async()=>{
+  const {createDuel,duelRound}=await import('/src/interactive/duel/core.ts'),key=Object.keys(sessionStorage).find(s=>s.startsWith('clairfle.duel.duel.')),j=JSON.parse(sessionStorage.getItem(key)),quiz={id:j.quizId,items:[{question:{id:'q',choices:[{id:'yes'}]},correctChoiceId:'yes'}]}
+  j.config.left=['rabbit'];j.timer.feedbackSeconds=5
+  for(let seed=0;seed<1000;seed++){
+   const state=createDuel(quiz,{...j.config,seed},j.timer,j.createdAt),prefix=[];let sum=0
+   for(let turn=0;turn<8;turn++){
+    const level=duelRound(quiz,{...state,turn}).multiplier;sum+=level;prefix.push(level)
+    if(sum>8)break
+    if(sum===8){const next=[0,1,2].map(n=>duelRound(quiz,{...state,turn:turn+1+n}).multiplier);if(next[0]>1&&next[1]>1&&next[0]!==next[1]&&next[2]===1){j.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(j));return{prefix,critical:next.slice(0,2)}}break}
+   }
+  }
+  throw new Error('No fatigue/critical sequence')
+ })
+ await button(low.page,'Quitter la compétition').click();await low.page.clock.install();await low.page.clock.pauseAt(new Date(Date.now()+1000));await button(low.page,'Reprendre la partie').click();await button(low.page,'Commencer le duel').click()
+ const left=low.page.locator('.ci-duel-player[data-side="left"]'),wrong=left.locator('.ci-duel-answer').filter({has:low.page.locator('.ci-duel-answer-content').getByText('5',{exact:true})})
+ let hp=100
+ for(const level of lowSequence.prefix){assert.equal(await left.locator('.ci-mascot-angry').count(),level>1?1:0);await wrong.click();await low.page.clock.runFor(2500);hp-=level*10;assert.equal(await left.locator('.ci-duel-hp').innerText(),String(hp));await low.page.clock.runFor(2500)}
+ assert.equal(hp,20)
+ for(const level of lowSequence.critical){
+  assert.equal(await low.page.locator('.ci-duel-arena').getAttribute('data-multiplier'),String(level));assert.equal(await left.locator('.ci-mascot-angry').count(),1);await answer(low.page).click()
+  const during=level===3?1800:1100;await low.page.clock.runFor(during);assert.equal(await left.locator('.ci-mascot-angry').count(),1);await low.page.clock.runFor(2400-during)
+  assert.equal(await left.locator('[data-combat-state="critical-tired"]').count(),1);assert.equal(await low.page.locator('[data-power-aura]').count(),0)
+  if(level===3)await low.page.screenshot({path:'docs/interactive/screenshots/mascot-rabbit-tired-clean-corners-390.png'})
+  await low.page.clock.runFor(2600)
+ }
+ assert.equal(await low.page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'1');assert.equal(await left.locator('[data-combat-state="critical-tired"]').count(),1);await low.page.clock.resume()
+ results.push({case:'critical energy at low HP',mascot:'rabbit',hp20AngryDuringBothLevels:true,angryUntilAttackEnds:true,returnsToFatigueAfterward:true,cleanBodyContour:true});await low.context.close()
  const legacy=await setup();await legacy.page.evaluate(async()=>{const {createDuel,duelRound}=await import('/src/interactive/duel/core.ts');const key=Object.keys(sessionStorage).find(s=>s.startsWith('clairfle.duel.duel.')),j=JSON.parse(sessionStorage.getItem(key)),quiz={id:j.quizId,items:[{question:{id:'q',choices:[{id:'yes'}]},correctChoiceId:'yes'}]};j.version=2;for(let seed=0;seed<1000;seed++)if(duelRound(quiz,createDuel(quiz,{...j.config,seed},j.timer,j.createdAt,2)).multiplier===3){j.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(j));return}})
  await button(legacy.page,'Quitter la compétition').click();await button(legacy.page,'Reprendre la partie').click();await button(legacy.page,'Commencer le duel').click();await answer(legacy.page).click()
  await legacy.page.waitForFunction(()=>document.querySelectorAll('.ci-duel-hp')[1]?.textContent==='70');assert.equal(await legacy.page.locator('.ci-duel-feedback').count(),1)

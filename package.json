@@ -79,7 +79,9 @@
     "test:audio-catalog": "node --test tests/audio-catalog/catalog.test.mjs",
     "test:audio-catalog:browser": "node tests/audio-catalog/browser.mjs",
     "test:interactive:vfx": "node tests/interactive/vfx-browser.mjs",
-    "test:interactive:vfx-lifecycle": "node tests/interactive/vfx-lifecycle-browser.mjs"
+    "test:interactive:vfx-lifecycle": "node tests/interactive/vfx-lifecycle-browser.mjs",
+    "test:interactive:mascot-energy": "node tests/interactive/mascot-energy-browser.mjs",
+    "mascots:combat-masks": "node scripts/mascot-combat-crops.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

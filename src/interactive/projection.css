@@ -672,15 +672,15 @@
   display: inline-grid;
   place-items: center;
   aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: #fff;
+  border-radius: 0;
+  background-color: transparent;
   overflow: hidden;
 }
 .ci-mascot-sprite {
   display: block;
   width: 86%;
   height: 86%;
-  background-image: var(--ci-mascot-image, url('/lib/images/interactive/leaf-mascot.webp'));
+  background-image: var(--ci-mascot-image, url('/lib/images/interactive/leaf-mascot-transparent.png'));
   background-size: var(--ci-mascot-size, 300% 200%);
   background-repeat: no-repeat;
 }
@@ -694,10 +694,10 @@
 @keyframes ci-mascot-angry { from { transform: translateY(1px) rotate(-1deg); } to { transform: translateY(-2px) rotate(1deg); } }
 .ci-app .ci-result-face { width: 100%; height: 100%; }
 .ci-app .ci-pause-mascot { width: 140px; }
-.ci-app[data-mascot='owl'] { --ci-mascot-image: url('/lib/images/interactive/owl-mascot.webp'); }
-.ci-app[data-mascot='octopus'] { --ci-mascot-image: url('/lib/images/interactive/octopus-mascot.webp'); }
-.ci-app[data-mascot='hedgehog'] { --ci-mascot-image: url('/lib/images/interactive/hedgehog-mascot.webp'); }
-.ci-app[data-mascot='rabbit'] { --ci-mascot-image: url('/lib/images/interactive/rabbit-mascot.webp'); }
+.ci-app[data-mascot='owl'] { --ci-mascot-image: url('/lib/images/interactive/owl-mascot-transparent.png'); }
+.ci-app[data-mascot='octopus'] { --ci-mascot-image: url('/lib/images/interactive/octopus-mascot-transparent.png'); }
+.ci-app[data-mascot='hedgehog'] { --ci-mascot-image: url('/lib/images/interactive/hedgehog-mascot-transparent.png'); }
+.ci-app[data-mascot='rabbit'] { --ci-mascot-image: url('/lib/images/interactive/rabbit-mascot-transparent.png'); }
 .ci-app .ci-numbered-heading .ci-question-prompt { text-align: left; }
 /* Keep audio and all options reachable on compact desktop/tablet screens. */
 @media screen and (min-width: 701px) and (max-width: 1400px) {
@@ -737,7 +737,7 @@
   .ci-app .ci-solo-session.ci-is-revealed .ci-round-questions { grid-row: 3; }
 }
 
-.ci-app[data-mascot='dragon'] { --ci-mascot-image: url('/lib/images/interactive/dragon-mascot.webp'); }
+.ci-app[data-mascot='dragon'] { --ci-mascot-image: url('/lib/images/interactive/dragon-mascot-transparent.png'); }
 
 /* Mascot motion is always enabled, including under reduced-motion device settings. */
 .ci-mascot-sprite { transform-origin: 50% 70%; }

@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 
-const oldSheet = (id: string) => ({ src: `/lib/images/interactive/${id}-mascot.webp`, columns: 3, rows: 2, offset: 0 })
-const atlas = (name: string, row: number) => ({ src: `/lib/images/interactive/mascots-${name}.png`, columns: 6, rows: 6, offset: row * 6 })
+const oldSheet = (id: string) => ({ src: `/lib/images/interactive/${id}-mascot-transparent.png`, columns: 3, rows: 2, offset: 0 })
+const atlas = (name: string, row: number) => ({ src: `/lib/images/interactive/mascots-${name}-transparent.png`, columns: 6, rows: 6, offset: row * 6 })
 export const MASCOTS = [
   { id: 'leaf', label: 'Esprit feuille', sheet: oldSheet('leaf') },
   { id: 'owl', label: 'Hibou', sheet: oldSheet('owl') },
@@ -38,7 +38,7 @@ export type MascotKind = typeof MASCOTS[number]['id']
 export const BASE_MASCOT_POSES = ['thinking', 'cards-up', 'discussion', 'correct', 'incorrect', 'pause'] as const
 export const MASCOT_POSES = [...BASE_MASCOT_POSES,'angry'] as const
 export type MascotPose = typeof MASCOT_POSES[number]
-export const ANGRY_MASCOT_IMAGES = ['/lib/images/interactive/mascots-angry-classic.png','/lib/images/interactive/mascots-angry-extended.png'] as const
+export const ANGRY_MASCOT_IMAGES = ['/lib/images/interactive/mascots-angry-classic-transparent.png','/lib/images/interactive/mascots-angry-extended-transparent.png'] as const
 export const MASCOT_IMAGES = [...new Set([...MASCOTS.map(mascot => mascot.sheet.src),...ANGRY_MASCOT_IMAGES])]
 export function angryMascotFrame(kind:MascotKind) {
   const index=Math.max(0,MASCOTS.findIndex(mascot=>mascot.id===kind)),classic=index<6

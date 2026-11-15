@@ -68,7 +68,7 @@ try{
   }
   assert.equal(fingerprints.size,60)
  })
- await test('HP and match result have explicit priority over any critical energy',()=>{
+ await test('base HP poses retain fatigue thresholds and match outcomes retain victory and KO priority',()=>{
   for(const [hp,expected] of [[100,'normal'],[51,'normal'],[50,'tired'],[21,'tired'],[20,'critical-tired'],[1,'critical-tired'],[0,'defeat']])assert.equal(portraitForHp(hp),expected)
   assert.equal(portraitForHp(10,'winner'),'victory');assert.equal(portraitForHp(100,'loser'),'defeat');assert.equal(portraitForHp(0,'draw-ko'),'defeat')
  })

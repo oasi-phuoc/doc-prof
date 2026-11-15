@@ -21,7 +21,7 @@ export function MascotAttackPreview({left,right}:{left:CompetitionAvatar;right:C
     <div className="ci-effect-demo">{(['left','right'] as const).map((side,index)=>{
       const avatar=side==='left'?left:right
       return <div key={side} data-demo-side={side}>
-        <CombatPortrait avatarId={avatar} hp={victim===side&&elapsed>=contact?Math.max(0,hp-level*10):hp} level={playing?1:level} hit={playing&&victim===side&&elapsed>=contact&&elapsed<contact+420}/>
+        <CombatPortrait avatarId={avatar} hp={victim===side&&elapsed>=contact?Math.max(0,hp-level*10):hp} level={playing||!preview?level:1} hit={playing&&victim===side&&elapsed>=contact&&elapsed<contact+420}/>
         <b>Joueur {index+1}</b><span className="ci-signature-name">{signatureFor(avatar)[level===1?'normal':level===2?'double':'triple']}</span>
         <button onClick={()=>play(side)} aria-label={`Attaque du joueur ${index+1}`}>Voir l’attaque</button>
         <button onClick={()=>play(side,false)} aria-label={`Erreur du joueur ${index+1}`}>Voir une erreur</button>

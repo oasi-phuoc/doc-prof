@@ -7,7 +7,7 @@ import AxeBuilder from '@axe-core/playwright'
 
 const base='http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL=base+'/__test_api'
-const vite=await createServer({cacheDir:'/tmp/clairfle-mascots-effects',server:{host:'127.0.0.1',port:5182,strictPort:true}})
+const vite=await createServer({cacheDir:'/tmp/clairfle-mascots-effects',server:{host:'127.0.0.1',port:5182,strictPort:true,hmr:false}})
 await vite.listen()
 const {demoRecipe}=await vite.ssrLoadModule('/src/interactive/demo.ts')
 const {MASCOTS,mascotStyle}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
@@ -66,8 +66,13 @@ try{
       const impact=page.locator('.ci-vfx-canvas')
       assert.equal(await impact.getAttribute('data-effect'),mascot.id);assert.equal(await impact.getAttribute('data-direction'),'right')
       await previews.getByText('Atelier d’animation',{exact:true}).click()
-      await previews.getByRole('slider',{name:'Instant de l’animation',exact:true}).evaluate(node=>{Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(node,'350');node.dispatchEvent(new Event('input',{bubbles:true}));node.dispatchEvent(new Event('change',{bubbles:true}))})
+      await previews.getByRole('slider',{name:'Instant de l’animation',exact:true}).evaluate(node=>{
+        // Move away first: a running 50 ms clock can already show 350, which
+        // correctly makes React ignore an unchanged native input value.
+        for(const value of ['349','350']){Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(node,value);node.dispatchEvent(new Event('input',{bubbles:true}));node.dispatchEvent(new Event('change',{bubbles:true}))}
+      })
       await page.waitForFunction(()=>document.querySelector('.ci-vfx-canvas')?.dataset.elapsed==='350')
+      if(mascot.id==='leaf'){await page.waitForTimeout(150);assert.equal(await impact.getAttribute('data-elapsed'),'350')}
       await previews.locator('.ci-effect-demo').scrollIntoViewIfNeeded();await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))
       const fingerprint=await impact.evaluate(async node=>{const data=node.getContext('2d').getImageData(0,0,node.width,node.height).data;if(!data.some((v,i)=>i%4===3&&v>0))throw new Error('Preview frame is outside viewport or empty');const bytes=new TextEncoder().encode(node.toDataURL());return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('')})
       motions.push({mascot:mascot.id,name:attack.normal,duration:attack.durations[0],fingerprint})

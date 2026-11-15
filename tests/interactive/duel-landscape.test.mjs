@@ -14,9 +14,9 @@ try{
     for(const mascot of MASCOTS){
       const render=powerLevel=>renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:mascot.id,powerLevel}))
       const normal=render(1),double=render(2),triple=render(3)
-      assert.ok(!normal.includes('data-power-aura='));assert.ok(double.includes('data-power-aura="2"'));assert.ok(!double.includes('class="ci-mascot-sprite ci-mascot-angry"'))
+      assert.ok(!normal.includes('data-power-aura='));assert.ok(double.includes('data-power-aura="2"'));assert.ok(double.includes('class="ci-mascot-sprite ci-mascot-angry"'))
       assert.ok(triple.includes('data-power-aura="3"'));assert.ok(triple.includes('class="ci-mascot-sprite ci-mascot-angry"'));assert.ok(triple.includes('ci-power-lightning'))
-      const hurt=renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:mascot.id,powerLevel:3,outcome:false}));assert.ok(hurt.includes('ci-mascot-incorrect'));assert.ok(hurt.includes('ci-competition-tears'))
+      const hurt=renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:mascot.id,powerLevel:3,outcome:false}));assert.ok(hurt.includes('ci-mascot-angry'));assert.ok(!hurt.includes('ci-competition-tears'))
     }
   })
   await test('calculation presentation omits only the redundant result question while source text and other question forms remain intact',()=>{

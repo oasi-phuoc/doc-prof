@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-15T12:20:46.322Z",
+  "baseCommit": "8a8ca01bdda4d3d28df75d31510d1eccefe6976d",
+  "scope": "Transparent sprites, isolated combat contours, temporary critical anger, additional animated energy envelope in each attack palette, and coalesced animation scheduling.",
+  "counts": {
+    "mascots": 30,
+    "transparentAtlases": 12,
+    "isolatedHealthFrames": 120,
+    "criticalSamples": 60,
+    "restoredFatigueSamples": 60
+  },
+  "fullUnitSuite": {
+    "tests": 441,
+    "passed": 441,
+    "failed": 0
+  },
+  "browserStagesPassed": [
+    "duel-browser",
+    "duel-landscape-browser",
+    "mascots-effects-browser",
+    "vfx-lifecycle-browser",
+    "mascot-energy-browser",
+    "a4-regression"
+  ],
+  "workflowStagesAvailable": 68,
+  "allWorkflowStagesRun": false,
+  "viewports": [
+    "1366x768",
+    "390x844",
+    "360x640",
+    "844x390"
+  ],
+  "axeViolations": 0,
+  "liveApiWrites": 0,
+  "palette": "Double follows signature.color and signature.light; triple blends the same colours for a brighter tint. The SVG flame envelope adds to existing signature particles.",
+  "criticalPose": "At 20 HP and below, both critical levels show actual angry artwork until the scene finishes, then restore the HP-based pose. Victory and KO retain priority.",
+  "nativeLowHp": {
+    "case": "critical energy at low HP",
+    "mascot": "rabbit",
+    "hp20AngryDuringBothLevels": true,
+    "angryUntilAttackEnds": true,
+    "returnsToFatigueAfterward": true,
+    "cleanBodyContour": true
+  },
+  "previewViewports": [
+    "390x844",
+    "1366x768",
+    "360x640"
+  ],
+  "offline": "Koi and Kitsune, both attack directions and self-damage verified on all three preview/game viewports; replay retains identities. Existing duel test also completes two offline team matches.",
+  "lifecycle": [
+    {
+      "case": "triple pause/resize/resume",
+      "frozenPixelFrame": true,
+      "healthWaitsForContact": true,
+      "damageAppliedOnce": 30,
+      "canvasRemovedOnExit": true
+    },
+    {
+      "case": "critical energy at low HP",
+      "mascot": "rabbit",
+      "hp20AngryDuringBothLevels": true,
+      "angryUntilAttackEnds": true,
+      "returnsToFatigueAfterward": true,
+      "cleanBodyContour": true
+    },
+    {
+      "case": "legacy-v2",
+      "tripleContactVisibleBeforeHistoricOneSecondDeadline": true,
+      "journalVersionAndTeacherSettingPreserved": true
+    },
+    {
+      "case": "missing",
+      "fallback": true,
+      "answerAndAutomaticNextStillWork": true
+    },
+    {
+      "case": "throwing",
+      "fallback": true,
+      "answerAndAutomaticNextStillWork": true
+    }
+  ],
+  "artwork": "Twelve image-generation RGBA originals, copied unchanged; 120 metadata-only CSS body contours remove neighbouring atlas fragments.",
+  "proofs": "mascot-energy-proofs/index.html",
+  "a4": {
+    "identicalScreenshot": true,
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810"
+  },
+  "checks": {
+    "productionBuild": "passed",
+    "typecheck": "passed as part of production build",
+    "lint": "passed; 85 existing warnings",
+    "budgets": "passed within unchanged thresholds",
+    "secrets": "Gitleaks passed with no findings in its documented change scope"
+  },
+  "onlineRooms": "Activation instructions verified against the Cloudflare Worker and Vercel environment lookup; no external deployment performed.",
+  "limits": "Chromium emulation and visual review; physical Android, iOS and classroom display verification remain open."
+}

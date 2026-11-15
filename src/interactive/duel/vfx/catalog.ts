@@ -38,7 +38,9 @@ export const SIGNATURES:readonly Signature[]=[
   signature('kitsune','fire','#ef7038','#fff2b2','spirale de feu vivant','deux courants de feu tressés','tornade de feu grandissante',9.2),
 ]
 export const signatureFor=(id:MascotKind)=>SIGNATURES.find(item=>item.id===id)??SIGNATURES[0]!
-export const SUPER_AURA_COLORS:Record<MascotKind,string>={leaf:'#49d69c',owl:'#7aa9f5',octopus:'#ce59dd',hedgehog:'#e8ba56',rabbit:'#c694f0',dragon:'#fb3e68',rat:'#f0c663',ox:'#d4ad66',tiger:'#ef7147',snake:'#73e3b4',horse:'#b9a3ff',goat:'#b8b9eb',monkey:'#ef9e40',rooster:'#ef8243',dog:'#ec9c98',boar:'#a9756e',panda:'#4ed5a7',fox:'#d784ec',tanuki:'#b0d675',otter:'#6ee3e7',koala:'#74dabd',turtle:'#5edac6',axolotl:'#e5a5f6',leopard:'#c4c9fa',crane:'#e4c6f4',cat:'#f1b094',koi:'#65dce8','red-panda':'#ed867e',penguin:'#afc9f9',kitsune:'#c68cf6'}
+/** Triple energy stays in the attack's colour family, with its own brighter tint. */
+const energyTint=(color:string,light:string)=>'#'+[1,3,5].map(at=>Math.round(parseInt(color.slice(at,at+2),16)*.78+parseInt(light.slice(at,at+2),16)*.22).toString(16).padStart(2,'0')).join('')
+export const SUPER_AURA_COLORS=Object.fromEntries(SIGNATURES.map(s=>[s.id,energyTint(s.color,s.light)])) as Record<MascotKind,string>
 export const sceneDuration=(id:MascotKind,level:Power,timeout=false)=>timeout?700:signatureFor(id).durations[level-1]!
 export const contactTime=(id:MascotKind,level:Power,local=false)=>sceneDuration(id,level)*(local?.62:level===3?.68:level===2?.69:.63)
 export const feedbackDuration=(requestedSeconds:number,id:MascotKind,level:Power,timeout=false)=>Math.max(requestedSeconds*1000,sceneDuration(id,level,timeout)+140)

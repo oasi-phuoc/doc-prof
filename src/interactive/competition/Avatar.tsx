@@ -6,10 +6,10 @@ export function CompetitionPortrait({ avatarId, seat, outcome, powerLevel=1,aura
   const index = COMPETITION_AVATARS.findIndex((avatar) => avatar.id === avatarId)
   const label = COMPETITION_AVATARS[index]?.label ?? 'Mascotte'
   return <span data-ci-motion data-power={powerLevel} className={`ci-competition-portrait${powerLevel>1?` ci-powered-portrait ci-power-${powerLevel}`:''}${outcome === true ? ' ci-competition-win' : outcome === false ? ' ci-competition-miss' : ''}`}>
-    {aura&&<PowerAura level={powerLevel}/>}
-    <span role="img" aria-label={`${label}${seat ? ` · joueur ${seat}` : ''}`} data-ci-motion className="ci-competition-avatar"><Mascot kind={avatarId} pose={outcome===false?'incorrect':powerLevel===3?'angry':outcome===true?'correct':'thinking'} label={label} decorative /></span>
+    {aura&&<PowerAura level={powerLevel} mascot={avatarId}/>}
+    <span role="img" aria-label={`${label}${seat ? ` · joueur ${seat}` : ''}`} data-ci-motion className="ci-competition-avatar"><Mascot kind={avatarId} pose={powerLevel>1?'angry':outcome===false?'incorrect':outcome===true?'correct':'thinking'} label={label} decorative /></span>
     {seat !== undefined && <b className="ci-competition-seat" aria-hidden="true">{seat}</b>}
-    {outcome === false && <span className="ci-competition-tears" aria-hidden="true" data-ci-motion />}
+    {outcome === false && powerLevel===1 && <span className="ci-competition-tears" aria-hidden="true" data-ci-motion />}
   </span>
 }
 export function CompetitionAvatarPicker({ selected, onSelect, excluded=[] }: { selected?: CompetitionAvatar; onSelect: (id: CompetitionAvatar) => void; excluded?:readonly CompetitionAvatar[] }) {

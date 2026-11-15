@@ -15,7 +15,7 @@
 .ci-duel-final-score { max-width: 650px; margin: 30px auto; }
 .ci-duel-final-score b { font-size: 60px; font-variant-numeric: tabular-nums; }
 .ci-duel-results { text-align: left; width: fit-content; margin: 20px auto; }
-.ci-duel-arena { flex: 1; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 10px; padding: 10px 20px; position: relative; }
+.ci-duel-arena { overflow: clip; flex: 1; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 10px; padding: 10px 20px; position: relative; }
 .ci-duel-question { position: relative; z-index: 2; max-height: 30dvh; overflow: auto; text-align: center; padding: 0 4px; background: var(--ci-bg,#f6f7fb); }
 .ci-duel-question h1 { font-size: clamp(24px, 3vw, 38px); font-weight: 850; line-height: 1.2; margin: 5px 0; }
 .ci-duel-round-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; font-size: 14px; }

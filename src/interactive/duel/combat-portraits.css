@@ -1,4 +1,4 @@
-.ci-combat-state { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; clip-path: inset(3%); transform-origin: 50% 85%; animation: ci-combat-breathe 3.8s ease-in-out infinite; }
+.ci-combat-state { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; clip-path: var(--combat-clip,inset(3%)); transform-origin: 50% 85%; animation: ci-combat-breathe 3.8s ease-in-out infinite; }
 .ci-combat-state > img { position: absolute; max-width: none; width: 400%; height: 600%; left: calc(var(--combat-column) * -100%); top: calc(var(--combat-row) * -100%); user-select: none; }
 .ci-combat-state[data-state='critical-tired'] { animation-name: ci-combat-exhausted; animation-duration: 2.3s; }
 .ci-combat-state[data-state='victory'] { animation: ci-combat-victory 1s cubic-bezier(.2,.7,.3,1) both, ci-combat-breathe 3.8s 1s ease-in-out infinite; }

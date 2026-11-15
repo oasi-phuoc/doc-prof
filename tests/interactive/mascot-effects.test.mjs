@@ -35,7 +35,7 @@ try{
     assert.equal(frames.size,180)
     for(const src of MASCOT_IMAGES){
       const file=await readFile('public'+src);assert.ok(file.length>50000)
-      if(src.endsWith('.png')){assert.equal(file.subarray(1,4).toString(),'PNG');const angry=src.includes('angry'),columns=angry&&src.includes('classic')?3:6,rows=angry?src.includes('classic')?2:4:6;assert.equal(file.readUInt32BE(16)%columns,0);assert.equal(file.readUInt32BE(20)%rows,0)}
+      if(src.endsWith('.png')){assert.equal(file.subarray(1,4).toString(),'PNG');const frame=MASCOTS.find(m=>m.sheet.src===src)?.sheet??(src.includes('classic')?{columns:3,rows:2}:{columns:6,rows:4}),columns=frame.columns,rows=frame.rows;assert.equal(file.readUInt32BE(16)%columns,0);assert.equal(file.readUInt32BE(20)%rows,0)}
     }
     const angryCells=new Set();for(const mascot of MASCOTS){const frame=angryMascotFrame(mascot.id),style=mascotStyle(mascot.id);assert.ok(frame.offset>=0&&frame.offset<frame.columns*frame.rows);assert.ok(style['--ci-angry-image'].includes(frame.src));angryCells.add([frame.src,frame.offset].join(':'))}assert.equal(angryCells.size,30)
     assert.ok(mascotStyle('kitsune',src=>'blob:https://class.test/'+src.split('/').at(-1))['--ci-mascot-image'].includes('blob:'))

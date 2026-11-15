@@ -24,23 +24,26 @@ Gardez la page ouverte pour continuer sans connexion. Un démarrage à froid ent
 
 ## Duel et équipes sur le même écran
 
-Choisissez **Préparer un duel**, puis une mascotte pour chaque côté. Chaque joueur commence à 100 % de vie. Le premier clic décide : juste, l’adversaire perd 10 % ; faux, le joueur perd lui-même 10 %. Les questions **Critique !** infligent 20 % et arrivent au hasard, environ une fois sur quatre. Les formes animées et la réaction de la mascotte indiquent le coup. Le premier à 0 % perd. Chaque mascotte possède son attaque automatique : jet d’eau pour la carpe koï, tourbillon de flammes pour le kitsune, nuage d’encre pour la pieuvre, par exemple. Choisissez les mascottes ; leur aperçu montre leur attaque et permet de l’essayer, ainsi que son critique. Le critique enchaîne trois à cinq coups avec des lueurs, des auras et des particules dans les couleurs de la mascotte, pour un seul dégât de 20 %. Un coup juste vise l’adversaire dans le bon sens. Une erreur fait tomber sur soi des objets choisis automatiquement. À la reprise, les mêmes mascottes retrouvent leurs attaques.
+Choisissez **Préparer un duel**, puis une mascotte différente pour chaque côté. Chaque joueur commence à 100 points de vie. Le premier clic décide : juste, l’adversaire perd 10 points ; faux, le joueur perd lui-même 10 points. Les critiques ×2 infligent 20 points avec une probabilité de 25 % ; les critiques ×3 infligent 30 points avec une probabilité de 10 %. Les autres questions infligent 10 points. Le premier à zéro perd.
 
-Le minuteur est facultatif ; sans clic à la fin du temps, personne ne perd de vie. Réglez la correction de 1 à 10 secondes : les questions s’enchaînent automatiquement, en répétant la série sélectionnée jusqu’à une victoire. Les cartes restent tactiles ; au clavier, utilisez A–F pour le côté gauche et 1–6 pour le côté droit. Sur téléphone les deux zones sont l’une sous l’autre.
+Chaque mascotte possède trois compositions d’attaque automatiques : eau pour la carpe koï, flammes pour le kitsune, encre pour la pieuvre, par exemple. Leur aperçu permet d’essayer chaque niveau et une erreur. Les critiques ajoutent une enveloppe d’énergie animée autour du personnage, dans les couleurs de sa signature ; le ×3 est plus grand et accompagné d’éclairs. Même à faible vie, le personnage prend sa pose énervée pendant le critique, puis retrouve sa fatigue après l’attaque. Les coups normaux et doubles suivent des trajectoires variables vers l’adversaire ; le triple se forme dans son espace. Une erreur déclenche la signature de son propre auteur sur lui-même, sans attaque de l’adversaire. Les dégâts ne sont appliqués qu’une fois, quel que soit le nombre de mouvements animés.
 
-**Créer les équipes** permet d’ajouter le même nombre de mascottes de chaque côté. Les binômes et leur ordre sont tirés au sort au départ. Après chaque duel, les deux mascottes suivantes sont appelées avec 100 % de vie ; **Commencer le duel** lance leur rencontre. L’équipe qui a le plus de victoires gagne. Le tournoi peut finir à égalité.
+Le minuteur est facultatif ; sans clic à la fin du temps, les deux joueurs perdent 10 points, sans critique. Un double KO donne un match nul. Réglez la correction de 1 à 10 secondes : les questions s’enchaînent automatiquement, en répétant la série sélectionnée jusqu’à une victoire. La durée d’une animation peut prolonger une correction trop courte, sans modifier le réglage choisi. Les cartes restent tactiles ; au clavier, utilisez A–F pour le côté gauche et 1–6 pour le côté droit. Sur téléphone, le plein écran tente de passer en paysage si le navigateur l’autorise ; sinon une invitation propose de tourner l’appareil. Les deux camps gardent une disposition côte à côte, avec les barres de vie sur les côtés et les nombres seuls dans les barres.
+
+**Créer les équipes** permet d’ajouter le même nombre de mascottes de chaque côté, sans répéter une identité. Les binômes et leur ordre sont tirés au sort au départ. **Randomiser les matchs** renouvelle les rencontres avant le départ ; **Randomiser les matchs restants** renouvelle celles qui restent à jouer. Après chaque duel, les deux mascottes suivantes sont appelées avec 100 points de vie ; **Commencer le duel** lance leur rencontre. L’équipe qui a le plus de victoires gagne. Le tournoi peut finir à égalité.
 
 Après la préparation complète, les duels peuvent continuer sans réseau sur l’écran commun. Quitter met la partie en pause ; **Reprendre la partie** retrouve les vies et l’ordre du tirage dans le même onglet, pendant 24 heures au maximum, avec une connexion pour recharger les médias. **Nouvelle partie** revient au choix de compétition, renouvelle la graine des exercices générés en conservant la sélection et les paramètres, puis permet un nouveau tirage des binômes et des critiques. Les questions écrites manuellement gardent leur contenu. Ces duels locaux n’utilisent pas de code de salle. Voir les [règles et limites](adr-0043-duels-par-equipes.md).
 
 ## Activation par l’administrateur
 
-Le code des salles est prêt et testé localement avec le vrai moteur Cloudflare. Aucun déploiement Cloudflare n’a été effectué depuis cet environnement : aucun accès Cloudflare n’y est configuré et son API n’est pas accessible. Tant que le serveur n’est pas activé, l’interface l’indique et laisse le défi local disponible.
+Le code des salles est prêt et testé localement avec le moteur Cloudflare. Ce lot ne déploie pas le service externe. Tant que le serveur n’est pas activé, l’interface l’indique et laisse le défi local disponible.
 
 Sur une machine autorisée à administrer le Worker existant :
 
 ```sh
 cd api/fiches
 npm ci --no-audit --no-fund
+npx wrangler login
 npx wrangler secret put COMPETITION_HOST_KEY
 npm run deploy
 ```
@@ -49,7 +52,15 @@ Saisir une nouvelle clé aléatoire d’au moins 16 caractères (32 ou davantage
 
 Avant le déploiement, vérifier que `COMPETITION_ORIGINS` dans `api/fiches/wrangler.toml` contient les origines exactes du site autorisé, séparées par des virgules, sans chemin final. La valeur actuelle autorise `https://doc-prof.vercel.app`. La liaison `COMPETITION_ROOMS` et la migration SQLite `competition-v1` créent le stockage des salles ; conserver les liaisons D1 et les secrets déjà utilisés pour les fiches. Aucune migration de table de fiches n’est requise pour ce mode.
 
-Le site utilise par défaut `VITE_FICHES_API_URL` suivi de `/competition`. Pour un serveur distinct, configurer `VITE_COMPETITION_API_URL` avec l’URL complète se terminant par `/competition`, puis reconstruire le site. Cette URL est publique et ne doit contenir aucune clé. Le point `GET /competition/status`, appelé depuis une origine autorisée, ne signale les salles disponibles que lorsque la configuration serveur est complète.
+Dans Vercel, **Settings → Environment Variables**, ajouter `VITE_COMPETITION_API_URL` avec l’URL complète du Worker se terminant par `/competition`. Pour le Worker indiqué dans `.env.example`, la valeur est :
+
+```text
+https://clairfle-fiches.phuoc-van.workers.dev/competition
+```
+
+Si Wrangler affiche une autre adresse pour le Worker existant, utiliser cette adresse avec `/competition`. Reconstruire et redéployer ensuite le site dans Vercel pour intégrer la variable publique. Sans variable dédiée, le site utilise `VITE_FICHES_API_URL` suivi de `/competition`. Cette URL ne doit contenir aucune clé. Le point `GET /competition/status`, appelé depuis une origine autorisée, ne signale les salles disponibles que lorsque la configuration serveur est complète.
+
+Après activation, ouvrir une fiche, toucher le trophée **Compétition**, puis **Salle en ligne**. L’enseignant saisit la clé privée pour créer une salle ; les élèves rejoignent avec le code ou le QR et choisissent une mascotte. Un accès Internet est nécessaire pour synchroniser des appareils distincts.
 
 Pour vérifier le code avant activation :
 

@@ -4,6 +4,8 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 ## Priorités P0
 
+Complément du 15 novembre : la [transparence et l’énergie des mascottes](adr-0055-transparence-et-energie-des-mascottes.md) ajoutent douze planches RGBA, des contours corporels pour les 120 états de santé et une enveloppe d’énergie supplémentaire assortie à chaque attaque. Les critiques imposent temporairement la pose énervée même à faible vie, puis restaurent la fatigue. Le ×3 agrandit l’enveloppe et ajoute des éclairs. Le guide précise aussi les étapes Cloudflare et Vercel pour activer les salles ; aucun service externe n’est déployé par ce lot.
+
 Complément du 15 novembre : les [duels à mascottes uniques](adr-0052-duels-critiques-et-mascottes-uniques.md) réservent les identités entre les deux camps, ajoutent les critiques ×2 (25 %) et ×3 (10 %), une nova distincte, des trajectoires variables et des personnages trois fois plus grands avec vie dessous. Le tirage peut être renouvelé avant le départ et entre les rencontres restantes. Une expiration retire 10 % aux deux joueurs ; un double KO donne un match nul. Les contrôles exécutés figurent dans le [relevé du lot](quality-duel-v2-results.json).
 
 Complément du 15 novembre : les [mots à déposer dans les blancs](adr-0051-mots-dans-les-blancs.md) ajoutent une zone de dépôt aux complétions grammaticales et syllabiques explicitement vérifiées. En Classe, la proposition reste collective et la correction dépend de l’enseignant ; en Solo, le dépôt valide immédiatement la réponse et conserve l’avancement automatique. Les propositions sont reprises après rechargement. Les 413 tests passent ; les [preuves du lot](quality-word-drop-results.json) distinguent les contrôles exécutés des 64 étapes disponibles.
