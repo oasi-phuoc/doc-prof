@@ -81433,49 +81433,49 @@
               "support": {
                 "nb_dialogues": 4,
                 "audios": [
-                  "/lib/audio/tcf/co/delf-actif-a1/a1-029-06.mp3",
-                  "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
-                  "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3",
-                  "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-02.mp3"
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-031-02.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3"
                 ],
                 "transcription": [
-                  "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé. Alors dis-moi ton sujet!",
-                  "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
-                  "Qui est la femme avec tous les livres là-bas ?\nC'est madame Vega, la nouvelle professeur de français.",
-                  "Bonjour Monsieur. Bonjour à toi. Je peux t’aider ? Je cherche la salle de Mme Faure, la prof de français. Je viens d’arriver d’Allemagne."
+                  "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme. C’est juste à côté du gymnase, à 100 mètres.",
+                  "Alors prenez votre cahier. Ce matin nous préparons l’interrogation de la semaine prochaine. Monsieur on peut utiliser la calculatrice ? Non pas aujourd’hui. Les calculs sont faciles à faire.",
+                  "Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+                  "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne."
                 ]
               },
               "questions": [],
               "situations": [
                 {
-                  "id": "d2",
-                  "image": "/lib/images/tcf/co/bg/piscine.webp",
-                  "dialogue": 2
-                },
-                {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
-                  "dialogue": null
-                },
-                {
-                  "id": "d1",
-                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
-                  "dialogue": 1
-                },
-                {
-                  "id": "d4",
-                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
-                  "dialogue": 4
-                },
-                {
                   "id": "d3",
-                  "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
                   "dialogue": 3
                 },
                 {
                   "id": "l1",
                   "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
                   "dialogue": null
+                },
+                {
+                  "id": "d1",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
+                  "dialogue": 1
+                },
+                {
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+                  "dialogue": null
+                },
+                {
+                  "id": "d4",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+                  "dialogue": 4
+                },
+                {
+                  "id": "d2",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+                  "dialogue": 2
                 }
               ],
               "consigne_supplementaire": null
@@ -81493,37 +81493,37 @@
             "situations": [
               {
                 "lettre": "A",
-                "image": "/lib/images/tcf/co/bg/piscine.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3"
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
+                "dialogue": 3,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3"
               },
               {
                 "lettre": "B",
-                "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
+                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
                 "dialogue": null
               },
               {
                 "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
                 "dialogue": 1,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-029-06.mp3"
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3"
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
-                "dialogue": 4,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-02.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+                "dialogue": null
               },
               {
                 "lettre": "E",
-                "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
-                "dialogue": 3,
-                "audioSrc": "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3"
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+                "dialogue": 4,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3"
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-031-02.mp3"
               }
             ]
           },
@@ -81592,49 +81592,49 @@
               "support": {
                 "nb_dialogues": 4,
                 "audios": [
-                  "/lib/audio/tcf/co/delf-actif-a1/a1-029-06.mp3",
-                  "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
-                  "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3",
-                  "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-02.mp3"
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-031-02.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3"
                 ],
                 "transcription": [
-                  "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé. Alors dis-moi ton sujet!",
-                  "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
-                  "Qui est la femme avec tous les livres là-bas ?\nC'est madame Vega, la nouvelle professeur de français.",
-                  "Bonjour Monsieur. Bonjour à toi. Je peux t’aider ? Je cherche la salle de Mme Faure, la prof de français. Je viens d’arriver d’Allemagne."
+                  "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme. C’est juste à côté du gymnase, à 100 mètres.",
+                  "Alors prenez votre cahier. Ce matin nous préparons l’interrogation de la semaine prochaine. Monsieur on peut utiliser la calculatrice ? Non pas aujourd’hui. Les calculs sont faciles à faire.",
+                  "Demain on va monter en haut de la tour Eiffel pour voir Paris d’en haut ! À quelle heure on part Monsieur ? 14h30. N’oubliez pas de prendre un pull.",
+                  "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne."
                 ]
               },
               "questions": [],
               "situations": [
                 {
-                  "id": "d2",
-                  "image": "/lib/images/tcf/co/bg/piscine.webp",
-                  "dialogue": 2
-                },
-                {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
-                  "dialogue": null
-                },
-                {
-                  "id": "d1",
-                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
-                  "dialogue": 1
-                },
-                {
-                  "id": "d4",
-                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
-                  "dialogue": 4
-                },
-                {
                   "id": "d3",
-                  "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
                   "dialogue": 3
                 },
                 {
                   "id": "l1",
                   "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
                   "dialogue": null
+                },
+                {
+                  "id": "d1",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
+                  "dialogue": 1
+                },
+                {
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+                  "dialogue": null
+                },
+                {
+                  "id": "d4",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+                  "dialogue": 4
+                },
+                {
+                  "id": "d2",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+                  "dialogue": 2
                 }
               ],
               "consigne_supplementaire": null
@@ -81652,37 +81652,37 @@
             "situations": [
               {
                 "lettre": "A",
-                "image": "/lib/images/tcf/co/bg/piscine.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3"
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
+                "dialogue": 3,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3"
               },
               {
                 "lettre": "B",
-                "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
+                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
                 "dialogue": null
               },
               {
                 "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
                 "dialogue": 1,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-029-06.mp3"
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3"
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
-                "dialogue": 4,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-02.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+                "dialogue": null
               },
               {
                 "lettre": "E",
-                "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
-                "dialogue": 3,
-                "audioSrc": "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3"
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+                "dialogue": 4,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3"
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a1/a1-031-02.mp3"
               }
             ]
           },
@@ -81751,49 +81751,49 @@
               "support": {
                 "nb_dialogues": 4,
                 "audios": [
-                  "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
-                  "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
-                  "/lib/audio/tcf/co/delf-actif-a2/a2-033-01.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a2/a2-035-01.mp3",
+                  "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
                   "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3"
                 ],
                 "transcription": [
-                  "Alors Emma, tes examens, tu as reçu les résultats ? Oui Alex, j'ai réussi, je suis trop contente ! Bravo, toutes mes félicitations, tu as bien travaillé ! Merci, c'est gentil.",
-                  "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
-                  "Je voudrais un renseignement. Nous sommes 10 et nous voulons aller à Lyon. Y a-t-il une réduction ? Vous avez moins de 15 ans ? Oui. Vous avez 2 billets gratuits alors. Je vous remercie, je reviens acheter les billets.",
+                  "Pardon monsieur. Vous êtes ouverts demain matin ? Demain non ! C’est le 11 novembre. Et pour avoir de la pâtisserie ? Tous les supermarchés sont fermés sauf les pâtisseries du centre-ville qui sont ouvertes jusqu’à 13h00.",
+                  "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame. Ça fait plaisir de rencontrer des jeunes comme vous ! Je laisse toujours ma place à ma grand-mère. Vous êtes mignonne !",
+                  "Je vous fais un paquet cadeau pour ce jeune homme ? Oui s’il vous plaît ! C’est un cadeau d’anniversaire. Alors je mets ce papier bleu clair avec ce ruban bleu foncé. Oh ! que c’est beau ! je vous remercie Madame.",
                   "Tu as deux anoraks ? Oui, ma mère exagère toujours. Mais non ! Tu peux me prêter l’anorak que tu ne mets pas ? Le mien est trop léger. Prends le bleu. Moi je prends le vert."
                 ]
               },
               "questions": [],
               "situations": [
                 {
-                  "id": "d1",
-                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
-                  "dialogue": 1
-                },
-                {
-                  "id": "d2",
-                  "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
-                  "dialogue": 2
-                },
-                {
-                  "id": "d3",
-                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
-                  "dialogue": 3
-                },
-                {
-                  "id": "l2",
-                  "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
-                  "dialogue": null
-                },
-                {
-                  "id": "l1",
-                  "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-                  "dialogue": null
-                },
-                {
                   "id": "d4",
                   "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
                   "dialogue": 4
+                },
+                {
+                  "id": "d1",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+                  "dialogue": 1
+                },
+                {
+                  "id": "d3",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
+                  "dialogue": 3
+                },
+                {
+                  "id": "l1",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-58.png",
+                  "dialogue": null
+                },
+                {
+                  "id": "d2",
+                  "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+                  "dialogue": 2
+                },
+                {
+                  "id": "l2",
+                  "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+                  "dialogue": null
                 }
               ],
               "consigne_supplementaire": null
@@ -81811,37 +81811,37 @@
             "situations": [
               {
                 "lettre": "A",
-                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
-                "dialogue": 1,
-                "audioSrc": "/lib/audio/tcf/co/magasins/les-achats-4.mp3"
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
+                "dialogue": 4,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3"
               },
               {
                 "lettre": "B",
-                "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
-                "dialogue": 2,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3"
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+                "dialogue": 1,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3"
               },
               {
                 "lettre": "C",
-                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
                 "dialogue": 3,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-033-01.mp3"
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3"
               },
               {
                 "lettre": "D",
-                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-58.png",
                 "dialogue": null
               },
               {
                 "lettre": "E",
-                "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-                "dialogue": null
+                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+                "dialogue": 2,
+                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-035-01.mp3"
               },
               {
                 "lettre": "F",
-                "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
-                "dialogue": 4,
-                "audioSrc": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3"
+                "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+                "dialogue": null
               }
             ]
           },

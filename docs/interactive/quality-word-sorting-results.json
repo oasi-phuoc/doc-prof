@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-14",
+  "scope": "M08 : tri grammatical guidé d’une phrase entière dans des colonnes, facultatif dans la préparation",
+  "previousDelivery": "2c40672e",
+  "featureCommit": "658b4433",
+  "fullUnitSuite": {
+    "tests": 405,
+    "passed": 405,
+    "failed": 0,
+    "scope": "Initial M08 implementation; 28 targeted tests rerun after the main image merge and restoration of the reviewed boat clue."
+  },
+  "focusedUnitSuite": {
+    "tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "realSourceConfigurations": 420
+  },
+  "browserStagesPassed": [
+    "word-sorting-browser",
+    "word-classification-browser",
+    "source-adapters-browser",
+    "teacher-console-browser",
+    "a4-regression"
+  ],
+  "viewports": [
+    "1366x900",
+    "390x844",
+    "360x640"
+  ],
+  "browserProof": "word-sorting-results.json",
+  "privacy": "Neutral source occurrences and public category labels only before reveal; expected categories stay private.",
+  "correction": "Partial per-element result after reveal, with proposed choices and complete expected classification; human appreciation remains unscored.",
+  "compatibility": "Legacy word-card fingerprints and settings remain valid; whole-phrase layout is optional.",
+  "resume": "Chosen categories survive question navigation and connected saved-session reload; malformed placements and stale rounds are rejected.",
+  "offline": "Prepared open page remains manipulable without network; cold start remains open.",
+  "liveApiWrites": 0,
+  "axeViolations": 0,
+  "workflowStagesAvailable": 63,
+  "allWorkflowStagesRun": false,
+  "inventory": {
+    "variants": 2150,
+    "playableDefaultVariants": 746,
+    "generationErrors": 8,
+    "scope": "One sample per variant at default difficulty; optional columns do not add catalogue types."
+  },
+  "frontendTypes": "passed",
+  "apiTypes": "passed",
+  "lint": "passed with existing warnings outside this increment",
+  "limits": [
+    "Whole-phrase sorting is teacher-led and excluded from scored room and duel payloads; word cards retain existing automatic scoring.",
+    "Dense boards use an accessible scroll area and a full reader; all 64 source elements need not fit on one phone screen.",
+    "Other sorting sources, cold offline start and physical ENI validation remain open.",
+    "No external deployment or cloud environment configuration publication.",
+    "Le jeu complet inclut encore les banques et du code partagé. Son plafond provisoire de 3 Mio dépasse la proposition V4 de 200 Ko ; découpage par domaine et mesures ENI restent ouverts."
+  ],
+  "sourceRecipe": "unchanged in all browser fixtures",
+  "mergedMain": "af1069ba",
+  "postMergeUnitSuite": {
+    "tests": 28,
+    "passed": 28,
+    "failed": 0,
+    "scope": "Word sorting, source picture writing and all interrogative formats after restoring the reviewed nominal boat clue."
+  },
+  "postMergeSmallScreen": "passed, including reset of the local undo when starting a new attempt",
+  "build": "passed after merging current main and preserving reviewed nominal image",
+  "secrets": "Gitleaks: no findings; exact public scene identifiers reviewed against existing image hashes, while synthetic key and api_key canaries stay detected in all three scene reports.",
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121841,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 141922,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144071,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 191028,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 157829,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3024955,
+      "maximumGzip": 3145728
+    }
+  },
+  "a4": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "testedAfterMerge": "91ac118e",
+  "retryFix": "f0ab5500",
+  "nominalImageFix": "cdd0622a",
+  "publicSceneScannerReview": "revue-identifiants-scenes-20261114.json",
+  "resumedBuildVerified": "2026-11-15"
+}
