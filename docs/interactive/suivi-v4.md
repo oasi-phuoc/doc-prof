@@ -4,6 +4,8 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 ## Priorités P0
 
+Complément du 15 novembre : les [duels à mascottes uniques](adr-0052-duels-critiques-et-mascottes-uniques.md) réservent les identités entre les deux camps, ajoutent les critiques ×2 (25 %) et ×3 (10 %), une nova distincte, des trajectoires variables et des personnages trois fois plus grands avec vie dessous. Le tirage peut être renouvelé avant le départ et entre les rencontres restantes. Une expiration retire 10 % aux deux joueurs ; un double KO donne un match nul. Les contrôles exécutés figurent dans le [relevé du lot](quality-duel-v2-results.json).
+
 Complément du 15 novembre : les [mots à déposer dans les blancs](adr-0051-mots-dans-les-blancs.md) ajoutent une zone de dépôt aux complétions grammaticales et syllabiques explicitement vérifiées. En Classe, la proposition reste collective et la correction dépend de l’enseignant ; en Solo, le dépôt valide immédiatement la réponse et conserve l’avancement automatique. Les propositions sont reprises après rechargement. Les 413 tests passent ; les [preuves du lot](quality-word-drop-results.json) distinguent les contrôles exécutés des 64 étapes disponibles.
 
 Complément du 14 novembre : le [tri Gattegno dans des colonnes](adr-0050-tri-en-colonnes.md) est proposé en option dans la préparation, avec une activité par phrase. Les mots répétés, toutes les catégories et le contexte sont conservés ; déplacement, annulation, classement proposé, correction partielle et appréciation humaine sont sauvegardés. Les 405 tests passent. Les [preuves du lot](quality-word-sorting-results.json) distinguent les parcours exécutés des 63 étapes disponibles.

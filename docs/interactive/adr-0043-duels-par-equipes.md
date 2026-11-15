@@ -1,5 +1,7 @@
 # ADR 0043 — Duels avec vies et tournoi par équipes
 
+Les mascottes uniques, les critiques ×2/×3, les pénalités d’expiration et le nouveau tirage des matchs sont actualisés dans l’[ADR 0052](adr-0052-duels-critiques-et-mascottes-uniques.md). Le présent document conserve les règles du premier lot.
+
 La demande du propriétaire ajoute deux choix au trophée Compétition : **Duel à deux** et **Duels par équipes**, sur un écran commun. Chaque joueur choisit une mascotte existante, identifiée par un numéro automatique. Aucun nom ou pseudo n’est demandé.
 
 ## Règles

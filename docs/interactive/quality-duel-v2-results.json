@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-15",
+  "scope": "Duels locaux : mascottes uniques, critiques ×2/×3, dégâts partagés à l’expiration, tirage renouvelable et arène agrandie",
+  "previousDelivery": "76e00bca",
+  "focusedUnitSuite": {
+    "duelTests": 15,
+    "effectsTests": 11,
+    "passed": 26,
+    "failed": 0
+  },
+  "criticalRates": {
+    "normal": 0.65,
+    "double": 0.25,
+    "triple": 0.1,
+    "exclusive": true
+  },
+  "damage": {
+    "normal": 10,
+    "double": 20,
+    "triple": 30,
+    "timeoutPerFighter": 10
+  },
+  "rosters": "Une identité par joueur sur l’ensemble des deux camps ; trente mascottes, quinze joueurs par équipe au maximum ; retirer un membre libère son identité.",
+  "pairing": "Tirage initial aléatoire, nouveau tirage en préparation et mélange des seules rencontres restantes entre deux duels ; résultats achevés et participations conservés.",
+  "layout": "Personnages centrés hors des cadres de réponses, trois fois plus grands (276 px / 144 px), avec barre de vie dessous ; deux zones côte à côte sur téléphone.",
+  "effects": "Hauteur, point visé et courbe varient par question et par coup ; ×3 ajoute sept à neuf coups et une nova orbitale distincte ; neuf objets locaux sur erreur ×3.",
+  "timeout": "Perte de dix pour cent pour chaque joueur sans attaque adverse, même pendant une question ×3 ; double KO déclaré nul sans victoire inventée.",
+  "resume": "Journal version 2 rejoué depuis les actions, y compris les nouveaux tirages ; journaux version 1 conservés sans être réinterprétés selon les nouvelles règles.",
+  "browserStagesPassed": [
+    "duel-browser",
+    "mascots-effects-browser",
+    "a4-regression"
+  ],
+  "browserProof": [
+    "duel-results.json",
+    "mascots-effects-results.json"
+  ],
+  "viewports": [
+    "1366x768",
+    "390x844",
+    "360x640"
+  ],
+  "axeViolations": 0,
+  "liveApiWrites": 0,
+  "workflowStagesAvailable": 64,
+  "allWorkflowStagesRun": false,
+  "limits": [
+    "Les nouvelles règles demandent une nouvelle partie pour les anciens journaux de duel version 1 ; l’ancien journal reste conservé.",
+    "Duel sur écran commun, page préparée utilisable sans réseau ; démarrage à froid et validation physique ENI encore ouverts.",
+    "Pas de déploiement externe ni de publication de configuration cloud."
+  ],
+  "fullUnitSuite": {
+    "tests": 420,
+    "passed": 420,
+    "failed": 0
+  },
+  "frontendTypes": "passed",
+  "lint": "passed with existing warnings outside this increment",
+  "nativeAnimations": "All thirty signatures verified in both directions under the reduced-motion system preference; triple preview, varying lanes, live triple damage and local self-damage verified.",
+  "sourceRecipe": "unchanged in the duel and mascot browser fixtures",
+  "featureCommit": "a6da987b",
+  "build": "passed, including frontend TypeScript compilation",
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121836,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 141922,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144066,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 192653,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 157841,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3026794,
+      "maximumGzip": 3145728
+    }
+  },
+  "a4": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 3687
+  }
+}

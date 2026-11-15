@@ -1,5 +1,7 @@
 # ADR 0046 — Une attaque automatique par mascotte
 
+L’[ADR 0052](adr-0052-duels-critiques-et-mascottes-uniques.md) complète ces signatures avec les trajectoires variables, la nova ×3 et les réactions aux expirations. Les règles de dégâts ci-dessous décrivent le lot initial.
+
 La demande du propriétaire remplace le sélecteur de dix coups : chaque mascotte doit avoir sa propre attaque. Le choix de mascotte détermine désormais l’effet, sa couleur, son mouvement, son amplitude et son rythme. La carpe koï envoie un **jet d’eau** ; le kitsune produit un **tourbillon de flammes**. Les trente identités possèdent un motif SVG distinct, sans arme ni téléchargement supplémentaire.
 
 ## Préparation et duel

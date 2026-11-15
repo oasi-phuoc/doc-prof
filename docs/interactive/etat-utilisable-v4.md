@@ -33,6 +33,8 @@ La [revue des six PR](../maintenance/pr-review-2026-11-10.md) identifie cinq tra
 
 ## Vérifications récentes
 
+Les [duels révisés](adr-0052-duels-critiques-et-mascottes-uniques.md) ajoutent les mascottes uniques, un nouveau tirage des rencontres restantes, les critiques ×2/×3 et les pénalités partagées à l’expiration. Les personnages sont centrés hors des cadres de réponses, avec la vie dessous ; les attaques changent de hauteur et de courbe. Le [relevé qualité](quality-duel-v2-results.json) précise les contrôles de ce lot.
+
 Les [mots à déposer dans les blancs](adr-0051-mots-dans-les-blancs.md) conservent la phrase, ses choix et sa clé source. Les 413 tests incluent huit contrôles dédiés et 450 blancs explicites issus de 97 banques ; leur statut pédagogique reste inchangé. La proposition Classe est indépendante du score et la sélection Solo garde sa correction automatique. Les [preuves du lot](quality-word-drop-results.json) consignent les parcours exécutés ; l’orchestrateur propose 64 étapes disponibles.
 
 Le [tri en colonnes](adr-0050-tri-en-colonnes.md) ajoute une présentation facultative des sept familles Gattegno. Les 405 tests incluent 420 configurations sources, la compatibilité des anciennes séances, la validation des placements et les préréglages. Les [preuves du lot](quality-word-sorting-results.json) précisent les parcours exécutés ; l’orchestrateur propose 63 étapes. L’inventaire conserve 746 variantes convertibles dans le parcours par défaut.
