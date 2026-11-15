@@ -5,23 +5,25 @@ import { sourcePosition, positionOf } from './source-position'
 export { positionOf } from './source-position'
 import type { Game } from './types'
 import {wordSortingGame} from './word-sorting'
+import {memoryGame} from './memory-conversion'
 
-export type PlanOptions = { orderMode: 'source' | 'shuffled' | 'custom'; customOrder: string[]; maxChoices: 2 | 3 | 4 | 5 | 6; numericOrder: boolean; wordSorting?: boolean }
+export type PlanOptions = { orderMode: 'source' | 'shuffled' | 'custom'; customOrder: string[]; maxChoices: 2 | 3 | 4 | 5 | 6; numericOrder: boolean; wordSorting?: boolean;memory?:boolean }
 export const DEFAULT_PLAN_OPTIONS: PlanOptions = { orderMode: 'source', customOrder: [], maxChoices: 6, numericOrder: false }
 export function readPlanOptions(raw: unknown): PlanOptions {
   if (raw === undefined) return { ...DEFAULT_PLAN_OPTIONS, customOrder: [] }
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) throw new Error('Options de préparation invalides.')
   const value = raw as Record<string, unknown>
-  if (Object.keys(value).some((key) => !['orderMode', 'customOrder', 'maxChoices', 'numericOrder','wordSorting'].includes(key)) || value.wordSorting!==undefined&&typeof value.wordSorting!=='boolean' || !['source', 'shuffled', 'custom'].includes(value.orderMode as string) || ![2, 3, 4, 5, 6].includes(value.maxChoices as number) || typeof value.numericOrder !== 'boolean' ||
+  if (Object.keys(value).some((key) => !['orderMode', 'customOrder', 'maxChoices', 'numericOrder','wordSorting','memory'].includes(key)) || value.memory!==undefined&&typeof value.memory!=='boolean' || value.wordSorting!==undefined&&typeof value.wordSorting!=='boolean' || !['source', 'shuffled', 'custom'].includes(value.orderMode as string) || ![2, 3, 4, 5, 6].includes(value.maxChoices as number) || typeof value.numericOrder !== 'boolean' ||
     !Array.isArray(value.customOrder) || value.customOrder.length > 5000 || new Set(value.customOrder).size !== value.customOrder.length || value.customOrder.some((id) => typeof id !== 'string' || !sourcePosition.test(id))) throw new Error('Options de préparation invalides.')
-  return { orderMode: value.orderMode as PlanOptions['orderMode'], customOrder: [...value.customOrder] as string[], maxChoices: value.maxChoices as PlanOptions['maxChoices'], numericOrder: value.numericOrder,...(value.wordSorting?{wordSorting:true}:{}) }
+  return { orderMode: value.orderMode as PlanOptions['orderMode'], customOrder: [...value.customOrder] as string[], maxChoices: value.maxChoices as PlanOptions['maxChoices'], numericOrder: value.numericOrder,...(value.wordSorting?{wordSorting:true}:{}),...(value.memory?{memory:true}:{}) }
 }
 
 /** Changes only order and verified source choices; never manufactures an option. */
 export function applyPlanOptions(game: Game, options: PlanOptions): Game {
   if(options.wordSorting)game=wordSortingGame(game)
-  const {wordSorting,...base}=options
-  const effective = { ...base, customOrder: options.orderMode === 'custom' ? options.customOrder : [],...(wordSorting?{wordSorting:true}:{}) }
+  if(options.memory)game=memoryGame(game)
+  const {wordSorting,memory,...base}=options
+  const effective = { ...base, customOrder: options.orderMode === 'custom' ? options.customOrder : [],...(wordSorting?{wordSorting:true}:{}),...(memory?{memory:true}:{}) }
   if (canonicalJson(effective) === canonicalJson(DEFAULT_PLAN_OPTIONS)) return game
   const issues = [...game.issues]
   let questions = game.questions.map((q) => {

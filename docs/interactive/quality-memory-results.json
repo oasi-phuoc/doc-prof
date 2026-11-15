@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-15T17:01:35.564603+00:00",
+  "baseCommit": "97f200bb3636d894f27372a67730f8e29135cab5",
+  "scope": "M11 flipped image-word memory boards from verified Vocabulaire and Mémory banks; Class teacher validation, Solo automatic completion, persisted board state and bounded counters.",
+  "fullUnitSuite": {
+    "tests": 461,
+    "passed": 461,
+    "failed": 0
+  },
+  "newDomainTests": 10,
+  "sourceConfigurations": 100,
+  "browserStagesPassed": [
+    "memory-browser",
+    "printable-pairs-browser (390x844, Class/Solo/local competition)",
+    "a4-regression"
+  ],
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 70,
+  "native": [
+    {
+      "viewport": "390x844",
+      "input": "Real CDP touch, mouse and scoped A–F keyboard",
+      "class": "Neutral flip before teacher check; wrong pair, cancellation, found pairs, lock, navigation, reload, reveal and reshuffled retry",
+      "offline": "Full preload then native flips/checks with network disabled",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "input": "Mouse and scoped A–F keyboard",
+      "class": "Neutral flip before teacher check; wrong pair, cancellation, found pairs, lock, navigation, reload, reveal and reshuffled retry",
+      "offline": "Full preload then native flips/checks with network disabled",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "360x640",
+      "input": "Real CDP touch, mouse and scoped A–F keyboard",
+      "class": "Neutral flip before teacher check; wrong pair, cancellation, found pairs, lock, navigation, reload, reveal and reshuffled retry",
+      "offline": "Full preload then native flips/checks with network disabled",
+      "axeViolations": 0
+    },
+    {
+      "solo": "Automatic pair validation; whole-board completion with earlier mistakes is true; pause freezes reflection; configured two-second feedback advances; incomplete timeout is false"
+    },
+    {
+      "untimedSolo": "Six successive A–F keyboard flips complete the board without a reflection timer; the feedback timer remains available"
+    }
+  ],
+  "liveApiWrites": 0,
+  "browserErrors": [],
+  "a4": {
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "identicalScreenshot": true,
+    "draftLaunch": "passed"
+  },
+  "checks": {
+    "typescript": "passed",
+    "workerTypes": "passed",
+    "build": "passed",
+    "lint": {
+      "errors": 0,
+      "preexistingWarnings": 85
+    },
+    "bundleBudgets": "passed",
+    "gitleaks": "passed"
+  },
+  "gzipBytes": {
+    "landing": 121892,
+    "calibration": 142251,
+    "diagnostic": 144403,
+    "competition": 203008,
+    "teacherConsole": 165362,
+    "game": 3042573
+  },
+  "limits": [
+    "Memory is optional and initially limited to verified unique image-word pairs in two source families.",
+    "Each board has two or three pairs, without discarding source pairs. The reflection timer covers the whole board.",
+    "A wrong pair remains visible until the next unmatched card is flipped.",
+    "Found pairs complete the Solo board even if prior guesses were wrong; guesses and errors are shown separately.",
+    "Online synchronized memory boards, cold-start offline, other pair sources and complete Loto M12 rules remain open.",
+    "Physical ENI and phone testing remains open; native Chromium uses CDP touch, real mouse and keyboard."
+  ],
+  "associationRegression": "memory-associations-regression-results.json"
+}

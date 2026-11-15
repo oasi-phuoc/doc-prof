@@ -122,7 +122,7 @@ export default function TeacherConsolePage() {
               {question.answer && <div className="ci-console-answer" style={{ backgroundColor: question.answer.color, color: inkForColor(question.answer.color) }} aria-label={`Bonne réponse : carte ${question.answer.letter}`}>
                 <CardBadge letter={question.answer.letter} shape={question.answer.shape}/><div><strong>Bonne réponse · carte {question.answer.letter}</strong><p>{question.answer.text}</p>{question.answer.image && <SafeImage src={question.answer.image} alt="Illustration de la bonne réponse"/>}</div>
               </div>}
-              <h3>{question.mode === 'choice' ? 'Corrigé' : 'Exemple ou pistes de réponse'}</h3>
+              <h3>{question.mode==='memory'?'Paires attendues':question.mode === 'choice' ? 'Corrigé' : 'Exemple ou pistes de réponse'}</h3>
               <p className="ci-console-model">{question.model}</p>
               {question.mode !== 'choice' && <div className="ci-console-assessment" role="group" aria-label={`Appréciation : ${question.prompt}`}>
                 <button disabled={!allowed('assess')} aria-pressed={question.assessment === 'acquired'} onClick={() => send({ name: 'assess', questionId: question.id, value: 'acquired' })}>Acquis</button>

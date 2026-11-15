@@ -25,7 +25,7 @@ export type ConsoleView = { available: boolean; blocked: boolean; guard: Toolbar
 export type ConsoleQuestion = {
   id: string; prompt: string; instruction: string; context?: string; model: string; transcript?: string
   answer?: { letter: string; text: string; color: string; shape: ShapeId; image?: string }
-  hints: string[]; shownHints: number; mode: 'choice' | 'oral' | 'sequence' | 'sorting'; assessment?: 'acquired' | 'retry'
+  hints: string[]; shownHints: number; mode: 'choice' | 'oral' | 'sequence' | 'sorting' | 'memory'; assessment?: 'acquired' | 'retry'
 }
 export type ConsoleSnapshot = {
   protocol: typeof CONSOLE_PROTOCOL; type: 'snapshot'; session: string; revision: number

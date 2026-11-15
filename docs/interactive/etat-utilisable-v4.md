@@ -1,5 +1,7 @@
 # État utilisable et réutilisation — V4
 
+Le [Mémory M11 avec cartes retournées](adr-0058-memory-cartes-retournees.md) complète les banques Vocabulaire et Mémory : quatre ou six cartes, validation enseignante en Classe, vérification automatique en Solo, reprise des paires et nouvelle tentative mélangée. L’option se règle dans la préparation.
+
 Vérification du 15 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
 
 Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserve ses 19 513 constructions distinctes dans douze domaines. Les sept thèmes proposent désormais six formats, avec **S-V-C** avant les pastilles et **Écrire une phrase en images** avant la production écrite. Les formes de phrase et la voix se règlent indépendamment ; l’option colonnes est retirée de Gattegno. Les [preuves du lot](../gattegno/quality-phrases-images-results.json) couvrent les fiches, les corrigés et le jeu guidé sur ordinateur et mobile. Les illustrations encore manquantes restent recensées.

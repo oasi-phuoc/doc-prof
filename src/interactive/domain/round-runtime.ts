@@ -4,11 +4,13 @@ import { assignChoicePositions, choiceOrderPolicy } from './slots'
 import { deriveSeed, hash } from './seeds'
 import type { Game, Question, RoundRuntime, Session } from './types'
 import {copyImageAnnotations} from './image-annotations'
+import {copyMemoryBoards} from './memory'
+import {memoryAttempt} from './memory-conversion'
 
 export const sequenceLength = (question: Question) => question.words?.length ?? question.images.length
 
 export function copyRuntime(value: RoundRuntime): RoundRuntime {
-  return { ...value, selections: { ...value.selections },...(value.wordDrops?{wordDrops:{...value.wordDrops}}:{}), hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])),...(value.wordSorts?{wordSorts:Object.fromEntries(Object.entries(value.wordSorts).map(([id,placements])=>[id,[...placements]]))}:{}),...(value.imageAnnotations?{imageAnnotations:Object.fromEntries(Object.entries(value.imageAnnotations).map(([id,images])=>[id,copyImageAnnotations(images)]))}:{}) }
+  return { ...value,...(value.memoryBoards?{memoryBoards:copyMemoryBoards(value.memoryBoards)}:{}), selections: { ...value.selections },...(value.wordDrops?{wordDrops:{...value.wordDrops}}:{}), hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])),...(value.wordSorts?{wordSorts:Object.fromEntries(Object.entries(value.wordSorts).map(([id,placements])=>[id,[...placements]]))}:{}),...(value.imageAnnotations?{imageAnnotations:Object.fromEntries(Object.entries(value.imageAnnotations).map(([id,images])=>[id,copyImageAnnotations(images)]))}:{}) }
 }
 
 export function runtimeFor(game: Game, state: Session, index = state.index): RoundRuntime {
@@ -42,6 +44,7 @@ export function questionsForAttempt(game: Game, index: number, attempt: number) 
   const sourceKey = roundsFor(game)[index]!.id
   const next = assignChoicePositions({ ...game, seed: deriveSeed({ originalSeed: seed, sourceKey, purpose: 'replay', attempt }) }, questions)
   return next.map((q, i) => {
+    if(q.mode==='memory')return memoryAttempt(q,seed,attempt)
     if (q.mode !== 'choice' || choiceOrderPolicy(q) !== 'shuffle') return q
     const original = questions[i]!
     const correctId = game.corrections[q.id]!.choiceId

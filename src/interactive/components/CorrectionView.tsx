@@ -13,7 +13,9 @@ export function CorrectionView({
   number,
   collective = false,
   disabled = false,
+  automaticCorrect,
 }: {
+  automaticCorrect?:boolean
   collective?: boolean
   disabled?: boolean
   question: Question
@@ -47,6 +49,7 @@ export function CorrectionView({
       )
     return null
   }
+  if(question.mode==='memory')return placement==='right'&&!collective&&automaticCorrect!==undefined?<div className="ci-correction-status" role="status"><ResultFeedback correct={automaticCorrect}/><b>{automaticCorrect?'Toutes les paires sont retrouvées !':'Temps écoulé'}</b></div>:null
   if (placement !== 'model') return null
   const readableModel=correction.text.length>240||!!question.wordSorting
   return (

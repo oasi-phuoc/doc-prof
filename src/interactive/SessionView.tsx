@@ -6,6 +6,7 @@ import type { Action, Game, Session } from './domain/types'
 import type { ShapeId } from './domain/palette'
 import { Mascot } from './components/Mascot'
 import { QuestionStage } from './components/QuestionStage'
+import {MemoryBoard} from './components/MemoryBoard'
 import { QuestionNavigator } from './components/QuestionNavigator'
 import { questionsForAttempt, runtimeFor } from './domain/round-runtime'
 import { CorrectionView } from './components/CorrectionView'
@@ -464,7 +465,7 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions[0]?.wordBlank ? ' ci-word-drop-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions[0]?.wordBlank ? ' ci-word-drop-session' : ''}${questions[0]?.mode==='memory'?' ci-memory-session':''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">
@@ -532,6 +533,7 @@ function PlayingRound({
                     correctChoiceId={
                       reveal ? game.corrections[q.id]?.choiceId : undefined
                     }
+                    memoryContent={q.mode==='memory'?<MemoryBoard question={q} runtime={runtime.memoryBoards?.[q.id]} mode={state.mode} revealed={reveal} disabled={blocked} colors={colors} shapes={shapes} pairs={reveal?game.corrections[q.id]?.memoryPairs:undefined} onFlip={cardId=>dispatch({type:'MEMORY_FLIP',questionId:q.id,cardId,attempt:runtime.attempt,roundId})} onCheck={()=>dispatch({type:'MEMORY_CHECK',questionId:q.id,attempt:runtime.attempt,roundId})} onCancel={()=>dispatch({type:'MEMORY_CANCEL',questionId:q.id,attempt:runtime.attempt,roundId})}/>:undefined}
                     imageOrder={runtime.imageOrders[q.id]}
                     wordPlacements={runtime.wordSorts?.[q.id]}
                     wordDrop={runtime.wordDrops?.[q.id]}
@@ -548,7 +550,7 @@ function PlayingRound({
                     }
                   />
                   {!solo && state.manualVotes[q.id]?.shared && <ManualVoteView question={q} vote={state.manualVotes[q.id]!} offset={i * 3} />}
-                  {reveal && q.mode !== 'choice' && (
+                  {reveal && q.mode !== 'choice' && q.mode!=='memory' && (
                     <CorrectionView
                       placement="model"
                       question={q}
@@ -579,6 +581,7 @@ function PlayingRound({
                   <CorrectionView
                     key={q.id}
                     collective={!solo}
+                    automaticCorrect={state.history.find(attempt=>attempt.questionId===q.id)?.correct}
                     placement="right"
                     number={questions.length === 2 ? i + 1 : undefined}
                     question={q}
@@ -629,7 +632,7 @@ function PlayingRound({
             {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
             <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
             {solo&&!state.paused&&<IconButton className="ci-solo-pause" icon="pause" label="Pause" onClick={()=>dispatch({type:'PAUSE'})}/>}
-            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript || !!readingModel || annotationOpen} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript || !!readingModel || annotationOpen} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'memory' ? <p className="ci-sr-only">Retrouve toutes les paires pour continuer.</p> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
         {readingTranscript && transcript && !suspended && !locked && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingTranscript(false)} />}

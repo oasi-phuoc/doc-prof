@@ -10,6 +10,7 @@ import { deriveSeed } from './domain/seeds'
 import { canonicalJson, hash } from './domain/seeds'
 import { applyPlanOptions, readPlanOptions, type PlanOptions } from './domain/plan-options'
 import {sortingSelection} from './domain/word-sorting'
+import {memorySelection} from './domain/memory-conversion'
 import { PresetPanel } from './components/PresetPanel'
 import { SessionArchive } from './components/SessionArchive'
 import { presetOptions, type LocalPreset } from './presets'
@@ -217,10 +218,16 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const changeSelection = (next: string[] | null) => { clearPreparedSession(); setSelected(next) }
   const changePlanOptions = (options: PlanOptions) => {
     clearPreparedSession()
+    let nextSelection=selection
     if(game&&!!options.wordSorting!==!!source?.options.wordSorting){
-      if(selection!==null)setSelected(sortingSelection(selection,game.questions,!!options.wordSorting))
+      if(nextSelection!==null)nextSelection=sortingSelection(nextSelection,game.questions,!!options.wordSorting)
       options={...options,customOrder:sortingSelection(options.customOrder,game.questions,!!options.wordSorting)}
     }
+    if(game&&!!options.memory!==!!source?.options.memory){
+      if(nextSelection!==null)nextSelection=memorySelection(nextSelection,game,!!options.memory)
+      options={...options,customOrder:memorySelection(options.customOrder,game,!!options.memory)}
+    }
+    if(nextSelection!==selection)setSelected(nextSelection)
     setSource((source) => source ? { ...source, options: readPlanOptions(options), presetId: undefined } : source)
   }
   const applyPreset = (preset: LocalPreset) => {

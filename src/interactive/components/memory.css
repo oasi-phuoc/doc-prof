@@ -1,0 +1,30 @@
+.ci-app .ci-memory { display: flex; flex-direction: column; gap: 10px; min-height: 0; height: 100%; }
+.ci-app .ci-memory-progress { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 15px; font-weight: 700; }
+.ci-app .ci-memory-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); grid-auto-rows: minmax(110px,1fr); gap: 12px; flex: 1; min-height: 0; }
+.ci-app .ci-memory-count-4 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.ci-app button.ci-memory-card { position: relative; min-width: 0; min-height: 110px; padding: 14px; display: flex; flex-direction: column; border: 3px solid var(--memory-ink); color: var(--memory-ink); background: var(--memory-color); opacity: 1; overflow: hidden; }
+.ci-app button.ci-memory-card:hover:not(:disabled) { background: var(--memory-color); filter: brightness(.96); }
+.ci-app .ci-memory-card .ci-card-badge { flex-direction: row; gap: 6px; font-size: 22px; padding: 0; align-self: flex-start; }
+.ci-app .ci-memory-card .ci-shape { width: 18px; height: 18px; }
+.ci-app .ci-memory-face { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; width: 100%; font-size: clamp(20px,2.5vw,34px); overflow-wrap: anywhere; }
+.ci-app .ci-memory-open .ci-memory-face { animation: ci-memory-flip .18s ease-out; }
+@keyframes ci-memory-flip { from { transform: rotateY(75deg); opacity: .3; } to { transform: rotateY(0); opacity: 1; } }
+.ci-app .ci-memory-face img { display: block; max-width: 100%; width: auto; height: 100%; max-height: 180px; min-height: 0; object-fit: contain; border-radius: 8px; }
+.ci-app .ci-memory-back { font-size: clamp(32px,5vw,64px); line-height: 1; flex: 1; display: grid; place-content: center; }
+.ci-app button.ci-memory-open { background: var(--ci-paper); color: var(--ci-ink); }
+.ci-app button.ci-memory-found { border-color: #13733d; box-shadow: inset 0 0 0 2px #13733d; }
+.ci-app button.ci-memory-miss { border-style: dashed; }
+.ci-app .ci-memory-mark { align-self: flex-end; font-size: 14px; color: #126333; background: #e0f5e6; border-radius: 5px; padding: 1px 5px; }
+.ci-app .ci-memory-status { margin: 0; font-size: 15px; line-height: 1.3; }
+.ci-app .ci-memory-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.ci-app .ci-memory-actions button { min-height: 44px; padding: 7px 12px; }
+.ci-app.ci-playing .ci-memory-session .ci-manual { padding: 8px; }
+@media screen and (max-width:700px) {
+ .ci-app .ci-memory { gap: 6px; }
+ .ci-app .ci-memory-grid { gap: 6px; grid-auto-rows: minmax(90px,1fr); }
+ .ci-app button.ci-memory-card { min-height: 90px; padding: 6px; border-width: 2px; gap: 3px; }
+ .ci-app .ci-memory-card .ci-card-badge { font-size: 18px; }
+ .ci-app .ci-memory-face { font-size: 20px; }
+ .ci-app .ci-memory-face img { max-height: 100px; }
+ .ci-app .ci-memory-progress,.ci-app .ci-memory-status { font-size: 13px; }
+}

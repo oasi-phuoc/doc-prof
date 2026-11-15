@@ -1,11 +1,12 @@
 import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
-import type { Game, PlayMode, Session, RoundRuntime } from './types'
+import type { Game, PlayMode, Session, RoundRuntime, MemoryRuntime } from './types'
 import { copyRuntime, sequenceLength } from './round-runtime'
 import { maxListensFor } from './listening'
 import {validWordPlacements} from './word-sorting'
 import {validWordDrop} from './word-drop'
 import {validImageAnnotations} from './image-annotations'
+import {copyMemoryBoards,memoryComplete,validMemoryRuntime} from './memory'
 
 export type SessionCheckpoint = { state: Session; lastEventId?: string }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
@@ -31,27 +32,29 @@ export function copySession(state: Session): Session {
     ...('revealedAt' in state ? { revealedAt: state.revealedAt } : {}),
     ...(state.revealRetractions ? { revealRetractions: { ...state.revealRetractions } } : {}),
     ...(state.roundStates ? { roundStates: Object.fromEntries(Object.entries(state.roundStates).map(([id, runtime]) => [id, copyRuntime(runtime)])) } : {}),
-    ...(state.previousAttempts ? { previousAttempts: state.previousAttempts.map((attempt) => ({ ...attempt, results: attempt.results.map((result) => ({ ...result })), manualVotes: copyVotes(attempt.manualVotes), teacherMarks: { ...attempt.teacherMarks } })) } : {}) }
+    ...(state.previousAttempts ? { previousAttempts: state.previousAttempts.map((attempt) => ({ ...attempt, ...(attempt.memoryBoards?{memoryBoards:copyMemoryBoards(attempt.memoryBoards)}:{}), results: attempt.results.map((result) => ({ ...result })), manualVotes: copyVotes(attempt.manualVotes), teacherMarks: { ...attempt.teacherMarks } })) } : {}) }
 }
 
-function validAttempt(game: Game, value: unknown, mode: PlayMode, ids = game.questions.map((q) => q.id)): boolean {
+function validAttempt(game: Game, value: unknown, mode: PlayMode, ids = game.questions.map((q) => q.id), memories: Record<string,unknown> = {}): boolean {
   if (!object(value) || Object.keys(value).some((key) => !['questionId', 'selected', 'correct', 'skipped', 'manual'].includes(key)) || typeof value.questionId !== 'string' || !ids.includes(value.questionId)) return false
   const question = game.questions.find((q) => q.id === value.questionId)
   if (question && !value.skipped) {
     const correctId = game.corrections[question.id]?.choiceId
-    const expected = mode === 'solo' && question.mode === 'choice' && correctId ? value.selected === correctId : undefined
+    const board=memories[question.id]
+    if(board!==undefined&&!validMemoryRuntime(game,question,board,mode))return false
+    const expected = mode==='solo'&&question.mode==='memory'?memoryComplete(question,board as MemoryRuntime|undefined):mode === 'solo' && question.mode === 'choice' && correctId ? value.selected === correctId : undefined
     if (value.correct !== expected) return false
   }
   return !!question && !(value.selected !== undefined && (mode !== 'solo' || !question.choices.some((choice) => choice.id === value.selected)) ||
-    value.correct !== undefined && (typeof value.correct !== 'boolean' || mode !== 'solo' || question.mode !== 'choice') ||
+    value.correct !== undefined && (typeof value.correct !== 'boolean' || mode !== 'solo' || !['choice','memory'].includes(question.mode)) ||
     value.skipped !== undefined && typeof value.skipped !== 'boolean' ||
-    value.manual !== undefined && (question.mode === 'choice' || !['acquired', 'retry'].includes(value.manual as string)) ||
+    value.manual !== undefined && (question.mode === 'choice' || question.mode==='memory'&&mode==='solo' || !['acquired', 'retry'].includes(value.manual as string)) ||
     value.skipped && (value.selected !== undefined || value.correct !== undefined || value.manual !== undefined))
 }
 
 function validRuntime(game: Game, id: string, value: unknown, mode: PlayMode): value is RoundRuntime {
   const round = roundsFor(game).find((round) => round.id === id)
-  if (!round || !object(value) || Object.keys(value).some((key) => !['phase', 'selections', 'revealedAt', 'attempt', 'hintsShown', 'imageOrders', 'wordSorts', 'wordDrops', 'imageAnnotations', 'audioComplete', 'audioOverride', 'audioListens', 'extraListens'].includes(key)) ||
+  if (!round || !object(value) || Object.keys(value).some((key) => !['phase', 'selections', 'revealedAt', 'attempt', 'hintsShown', 'imageOrders', 'wordSorts', 'wordDrops', 'imageAnnotations', 'memoryBoards', 'audioComplete', 'audioOverride', 'audioListens', 'extraListens'].includes(key)) ||
     !['thinking', 'cards-up', 'selected', 'discussion', 'revealed'].includes(value.phase as string) || !object(value.selections) || !object(value.hintsShown) || !object(value.imageOrders) ||
     typeof value.attempt !== 'number' || !Number.isInteger(value.attempt) || value.attempt < 0 || value.attempt > 5000 ||
     typeof value.audioComplete !== 'boolean' || typeof value.audioOverride !== 'boolean' || !round.audio && (value.audioComplete || value.audioOverride) ||
@@ -64,7 +67,12 @@ function validRuntime(game: Game, id: string, value: unknown, mode: PlayMode): v
   if(value.wordSorts!==undefined&&(!object(value.wordSorts)||Object.entries(value.wordSorts).some(([id,placements])=>!questions.some(q=>q.id===id&&validWordPlacements(q,placements)))))return false
   if(value.wordDrops!==undefined&&(mode!=='class'||!object(value.wordDrops)||Object.entries(value.wordDrops).some(([id,choice])=>!questions.some(q=>q.id===id&&validWordDrop(q,choice)))))return false
   if(value.imageAnnotations!==undefined&&(!object(value.imageAnnotations)||Object.entries(value.imageAnnotations).some(([id,images])=>!questions.some(q=>q.id===id&&validImageAnnotations(q,images)))))return false
+  if(!validMemories(game,questions,value.memoryBoards,mode))return false
   return true
+}
+
+function validMemories(game:Game,questions:Game['questions'],value:unknown,mode:PlayMode):boolean {
+ return value===undefined||object(value)&&Object.entries(value).every(([id,board])=>questions.some(q=>q.id===id&&validMemoryRuntime(game,q,board,mode)))
 }
 
 function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
@@ -74,6 +82,8 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
     typeof raw.paused !== 'boolean' || typeof raw.finished !== 'boolean' || typeof raw.note !== 'string' || raw.note.length > 2000 ||
     !object(raw.selections) || !object(raw.manualVotes) || !object(raw.teacherMarks) || !Array.isArray(raw.history) || raw.history.length > game.questions.length) return false
   const current = questionsForRound(game, raw.index)
+  const memories:Record<string,unknown>={}
+  if(object(raw.roundStates))for(const value of Object.values(raw.roundStates))if(object(value)&&object(value.memoryBoards))Object.assign(memories,value.memoryBoards)
   const history = raw.history
   const selections = raw.selections
   if (raw.teacherLocked !== undefined && (typeof raw.teacherLocked !== 'boolean' || mode !== 'class' || raw.finished && raw.teacherLocked) ||
@@ -84,7 +94,7 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
     mode === 'class' && (Object.keys(selections).length > 0 || raw.selected !== undefined)) return false
   const seen = new Set<string>()
   for (const attempt of history) {
-    if (!object(attempt) || typeof attempt.questionId !== 'string' || seen.has(attempt.questionId) || !validAttempt(game, attempt, mode)) return false
+    if (!object(attempt) || typeof attempt.questionId !== 'string' || seen.has(attempt.questionId) || !validAttempt(game, attempt, mode, undefined, memories)) return false
     seen.add(attempt.questionId)
   }
   if (raw.finished && (raw.index !== roundsFor(game).length - 1 || raw.phase !== 'thinking' || raw.paused || seen.size !== game.questions.length)) return false
@@ -111,9 +121,9 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
     if (!Array.isArray(raw.previousAttempts) || raw.previousAttempts.length > 5000 || mode !== 'class') return false
     const previousByRound = new Map<string, number>()
     for (const attempt of raw.previousAttempts) {
-      if (!object(attempt) || Object.keys(attempt).some((key) => !['roundId', 'attempt', 'results', 'manualVotes', 'teacherMarks', 'audioListens', 'extraListens'].includes(key)) || typeof attempt.roundId !== 'string' || attempt.attempt !== (previousByRound.get(attempt.roundId) ?? 0) || !Array.isArray(attempt.results) || !object(attempt.manualVotes) || !object(attempt.teacherMarks)) return false
+      if (!object(attempt) || Object.keys(attempt).some((key) => !['roundId', 'attempt', 'results', 'manualVotes', 'teacherMarks', 'audioListens', 'extraListens', 'memoryBoards'].includes(key)) || typeof attempt.roundId !== 'string' || attempt.attempt !== (previousByRound.get(attempt.roundId) ?? 0) || !Array.isArray(attempt.results) || !object(attempt.manualVotes) || !object(attempt.teacherMarks)) return false
       const round = roundsFor(game).find((round) => round.id === attempt.roundId)
-      if (!round || !validListening(attempt, game.questions.filter((q) => round.questionIds.includes(q.id)), mode, !!round.audio) || attempt.results.length > round.questionIds.length || !attempt.results.every((result) => validAttempt(game, result, mode, round.questionIds)) || new Set(attempt.results.map((a) => a.questionId)).size !== attempt.results.length ||
+      if (!round || !validMemories(game,game.questions.filter(q=>round.questionIds.includes(q.id)),attempt.memoryBoards,mode) || !validListening(attempt, game.questions.filter((q) => round.questionIds.includes(q.id)), mode, !!round.audio) || attempt.results.length > round.questionIds.length || !attempt.results.every((result) => validAttempt(game, result, mode, round.questionIds, object(attempt.memoryBoards)?attempt.memoryBoards:{})) || new Set(attempt.results.map((a) => a.questionId)).size !== attempt.results.length ||
         Object.entries(attempt.manualVotes).some(([id, vote]) => { if (!round.questionIds.includes(id)) return true; const checked = validateManualVote(game.questions.find((q) => q.id === id)!, vote); return !checked.ok || !checked.vote }) ||
         Object.entries(attempt.teacherMarks).some(([id, mark]) => !round.questionIds.includes(id) || !['success', 'review', 'unassessed'].includes(mark as string))) return false
       previousByRound.set(attempt.roundId, (attempt.attempt as number) + 1)

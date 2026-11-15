@@ -82,7 +82,8 @@
     "test:interactive:vfx-lifecycle": "node tests/interactive/vfx-lifecycle-browser.mjs",
     "test:interactive:mascot-energy": "node tests/interactive/mascot-energy-browser.mjs",
     "mascots:combat-masks": "node scripts/mascot-combat-crops.mjs",
-    "test:interactive:annotations": "node tests/interactive/image-annotations-browser.mjs"
+    "test:interactive:annotations": "node tests/interactive/image-annotations-browser.mjs",
+    "test:interactive:memory": "node tests/interactive/memory-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -16,6 +16,9 @@ export type NumberSequence = { terms: Array<string | null>; target: number; hint
 export type WordClassification = { tokens: string[]; target: number; prefix?:string; ending?:string; joins?:(''|'-'|'-t-')[] }
 export type WordSorting = { sentence: Omit<WordClassification, 'target'>; categories: { id: string; label: string }[] }
 export type MatchingGroup = { groupId: string; number: number; total: number }
+export type MemoryCard={id:string;image?:string;text?:string}
+export type MemoryBoardData={cards:MemoryCard[];sourceKeys:string[];group:number;total:number}
+export type MemoryRuntime={open:string[];found:string[];turns:number;misses:number;checked:boolean}
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
   id: string
@@ -40,6 +43,7 @@ export type Question = {
   /** One explicit source blank; no expected answer in this display metadata. */
   wordBlank?: {before:string;after:string}
   matchingGroup?: MatchingGroup
+  memoryBoard?: MemoryBoardData
   audio?: string
   /** Ordered source clips forming one recording and one listening allowance. */
   audioParts?: string[]
@@ -53,13 +57,13 @@ export type Question = {
   grammarCountryGender?: 'masculin' | 'féminin' | 'pluriel'
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
-  mode: 'choice' | 'oral' | 'sequence' | 'sorting'
+  mode: 'choice' | 'oral' | 'sequence' | 'sorting' | 'memory'
   choices: Choice[]
   choiceOrderPolicy?: ChoiceOrderPolicy
   compatibility: Exclude<Compatibility, 'unsupported'>
   hints?: string[]
 }
-export type Correction = { choiceId?: string; text: string; transcript?: string; classificationCategory?: { id: string; label: string }; sortingTargets?: string[] }
+export type Correction = { choiceId?: string; text: string; transcript?: string; classificationCategory?: { id: string; label: string }; sortingTargets?: string[];memoryPairs?:[string,string][] }
 export type Issue = { source: string; reason: string }
 export type Game = {
   id: string
@@ -94,6 +98,7 @@ export type RoundRuntime = {
   wordSorts?: Record<string, (string | null)[]>
   wordDrops?: Record<string,string>
   imageAnnotations?: Record<string,ImageAnnotations>
+  memoryBoards?: Record<string,MemoryRuntime>
   audioComplete: boolean
   audioOverride: boolean
   audioListens?: number
@@ -107,6 +112,7 @@ export type PreviousAttempt = {
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
   audioListens?: number
   extraListens?: number
+  memoryBoards?: Record<string,MemoryRuntime>
 }
 export type Session = {
   gameId: string
@@ -144,6 +150,8 @@ export type Action = (
   | { type: 'WORD_DROP_SET'; questionId: string; choiceId: string | null }
   | { type: 'IMAGE_ANNOTATION_ADD'; questionId: string; imageIndex: number; attempt: number; stroke: ImageStroke }
   | { type: 'IMAGE_ANNOTATION_UNDO' | 'IMAGE_ANNOTATION_CLEAR'; questionId: string; imageIndex: number; attempt: number }
+  | {type:'MEMORY_FLIP';questionId:string;cardId:string;attempt:number}
+  | {type:'MEMORY_CHECK'|'MEMORY_CANCEL';questionId:string;attempt:number}
   | { type: 'AUDIO_STATE'; roundId: string; status: 'started' | 'ended' | 'override' }
   | { type: 'AUDIO_LISTEN_STARTED' | 'AUDIO_EXTRA_LISTEN_GRANTED'; roundId: string }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }

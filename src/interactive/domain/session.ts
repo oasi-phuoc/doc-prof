@@ -8,6 +8,7 @@ import {validWordDrop,isWordDropQuestion} from './word-drop'
 import { canListen, maxListensFor } from './listening'
 import { usedMatchingChoices } from './matching'
 import {annotationImage,copyImageStroke,MAX_IMAGE_STROKES,validImageStroke} from './image-annotations'
+import {emptyMemory,flipMemoryCard,checkMemoryPair,memoryComplete,copyMemoryBoards,validMemoryQuestion} from './memory'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return captureRound(game, {
@@ -68,6 +69,17 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
   const runtime = runtimeFor(game, state)
   const updateRuntime = (next: typeof runtime) => ({ ...state, roundStates: { ...state.roundStates, [roundId]: next } })
   switch (action.type) {
+    case 'MEMORY_FLIP':
+    case 'MEMORY_CHECK':
+    case 'MEMORY_CANCEL': {
+      const q=questions.find(entry=>entry.id===action.questionId)
+      if(!q||!validMemoryQuestion(game,q)||state.phase==='revealed'||action.roundId!==roundId||action.attempt!==runtime.attempt)return state
+      const board=runtime.memoryBoards?.[q.id]??emptyMemory()
+      const next=action.type==='MEMORY_FLIP'?flipMemoryCard(game,q,board,action.cardId,state.mode):action.type==='MEMORY_CHECK'&&state.mode==='class'?checkMemoryPair(game,q,board):action.type==='MEMORY_CANCEL'&&!board.checked&&board.open.length?{...board,open:[]}:board
+      if(next===board)return state
+      const updated=updateRuntime({...runtime,memoryBoards:{...runtime.memoryBoards,[q.id]:next}})
+      return state.mode==='solo'&&memoryComplete(q,next)?revealRound(game,updated):updated
+    }
     case 'NAVIGATE':
       return navigateToRound(game, state, action.index)
     case 'HINT_SHOW': {
@@ -116,7 +128,7 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
     case 'RETRY_QUESTION': {
       if (state.mode !== 'class' || action.roundId !== roundId || !['discussion', 'revealed'].includes(state.phase) || (state.previousAttempts?.length ?? 0) >= 5000) return state
       const ids = new Set(questions.map((q) => q.id))
-      const previous = { roundId, attempt: runtime.attempt, results: state.history.filter((a) => ids.has(a.questionId)).map((a) => ({ ...a })), manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => ids.has(id)).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => ids.has(id))), ...(runtime.audioListens !== undefined ? { audioListens: runtime.audioListens, extraListens: runtime.extraListens ?? 0 } : {}) }
+      const previous = { ...(runtime.memoryBoards?{memoryBoards:copyMemoryBoards(runtime.memoryBoards)}:{}), roundId, attempt: runtime.attempt, results: state.history.filter((a) => ids.has(a.questionId)).map((a) => ({ ...a })), manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => ids.has(id)).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => ids.has(id))), ...(runtime.audioListens !== undefined ? { audioListens: runtime.audioListens, extraListens: runtime.extraListens ?? 0 } : {}) }
       return { ...state, phase: 'thinking', selections: {}, selected: undefined, revealedAt: undefined,
         history: state.history.filter((a) => !ids.has(a.questionId)),
         manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => !ids.has(id))), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => !ids.has(id))),
@@ -172,7 +184,7 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
         revealRetractions: retractions }
     }
     case 'ASSESS':
-      return state.phase === 'revealed' && question.mode !== 'choice'
+      return state.phase === 'revealed' && question.mode !== 'choice' && !(question.mode==='memory'&&state.mode==='solo')
         ? {
             ...state,
             history: state.history.map((a) =>
@@ -219,7 +231,7 @@ function revealRound(game: Game, state: Session, at?: number): Session {
     const correctId = game.corrections[q.id]?.choiceId
     return {
       questionId: q.id, selected,
-      correct: state.mode === 'solo' && q.mode === 'choice' && correctId ? selected === correctId : undefined,
+      correct: state.mode==='solo'&&q.mode==='memory'?memoryComplete(q,runtimeFor(game,state).memoryBoards?.[q.id]):state.mode === 'solo' && q.mode === 'choice' && correctId ? selected === correctId : undefined,
     }
   })
   return { ...state, phase: 'revealed', revealedAt: state.mode === 'class' && at !== undefined && Number.isFinite(at) && at >= 0 ? at : undefined, history: [...state.history.filter((a) => !questions.some((q) => q.id === a.questionId)), ...attempts] }

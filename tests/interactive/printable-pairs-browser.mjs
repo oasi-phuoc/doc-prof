@@ -8,7 +8,7 @@ import AxeBuilder from '@axe-core/playwright'
 
 const base='http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL=base+'/__test_api'
-const server=await createServer({cacheDir:'/tmp/clairfle-printable-pairs-browser',server:{host:'127.0.0.1',port:5182,strictPort:true}})
+const server=await createServer({cacheDir:'/tmp/clairfle-printable-pairs-browser',server:{host:'127.0.0.1',port:5182,strictPort:true,hmr:false}})
 await server.listen()
 const {demoRecipe}=await server.ssrLoadModule('/src/interactive/demo.ts')
 const {defaultPage}=await server.ssrLoadModule('/src/math/catalog.ts')
@@ -104,7 +104,7 @@ try {
   await navigate(page,1);assert.deepEqual(await page.locator('.ci-answer-content').allTextContents(),slots)
   await navigate(page,8);await picture(page,8);await reveal(page,8);await fits(page,width,height)
   await navigate(page,9);assert.equal(await page.locator('.ci-answer').count(),4);await picture(page,9);await reveal(page,9);await fits(page,width,height)
-  await button(page,'Quitter la séance').click();await page.locator('.ci-launch:enabled').waitFor();await page.reload();await button(page,'Reprendre la séance').click();await page.locator('.ci-answer-key').waitFor()
+  await button(page,'Quitter la séance').click();await page.locator('.ci-launch:enabled').waitFor();await page.reload();await page.locator('.ci-launch:enabled').waitFor({timeout:120000});assert.match(await page.locator('.ci-launch').innerText(),/Reprendre la séance/);await page.locator('.ci-launch').click();await page.locator('.ci-answer-key').waitFor()
   await picture(page,9);assert.equal(await page.locator('.ci-answer-key .ci-answer-content').innerText(),key(9));await fits(page,width,height)
   await navigate(page,2);assert.equal(await page.locator('.ci-answer-used').count(),2);await navigate(page,9)
   await page.screenshot({path:`docs/interactive/screenshots/printable-pairs-${width}.png`})

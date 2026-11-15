@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from 'react'
+import { useState, type ReactNode, type CSSProperties } from 'react'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
 import {
   PALETTE,
@@ -53,7 +53,9 @@ export function QuestionStage({
   interactionsDisabled = false,
   unavailableChoiceIds = [],
   imageAnnotations,
+  memoryContent,
 }: {
+  memoryContent?:ReactNode
   canSelect?: boolean
   imageOrder?: number[]
   onImageOrder?: (order: number[]) => void
@@ -76,7 +78,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
   const drop=useWordDrop({question:q,canSelect,disabled:interactionsDisabled||phase==='revealed',onSelect,onPropose:onWordDrop})
   const proposed=q.choices.find(choice=>choice.id===(selected??wordDrop))
   const pending=q.choices.find(choice=>choice.id===drop.pending)
@@ -118,7 +120,7 @@ export function QuestionStage({
             <GeometryFigure type={q.figure.type} dims={q.figure.dims} />
           </div>
         )}
-        {q.mode !== 'sequence' && q.mode !== 'oral' && !!q.images.length && (
+        {q.mode !== 'memory' && q.mode !== 'sequence' && q.mode !== 'oral' && !!q.images.length && (
           <div className="ci-stimulus-images">
             {q.images.map((image, i) => (
               <SafeImage
@@ -200,7 +202,7 @@ export function QuestionStage({
         </div>
       ) : (
         <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
-          {q.wordSorting?<WordSortingBoard key={`${q.id}:${attempt}`} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
+          {q.mode==='memory'?memoryContent:q.wordSorting?<WordSortingBoard key={`${q.id}:${attempt}`} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
             q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} review={phase==='revealed'} onRead={()=>setReading('question')}/> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} annotations={imageAnnotations} />
           ) : q.mode==='oral'&&q.images.length ? (
             <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom annotations={imageAnnotations?.(index)}/>)}</div>
@@ -212,9 +214,9 @@ export function QuestionStage({
           )}
         </section>
       )}
-      {report.manualScroll && !q.wordSorting && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
+      {report.manualScroll && !q.wordSorting && q.mode!=='memory' && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
       {drop.available&&<><span className="ci-sr-only" role="status">{drop.announcement}</span><SequenceDragGhost drag={drop.drag}>{dragged&&drop.drag&&<div className="ci-word-drop-ghost" style={{background:colors[slotOffset+drop.drag.source],color:inkForColor(colors[slotOffset+drop.drag.source]!)}}><b>{PALETTE[slotOffset+drop.drag.source]!.letter}</b><span>{dragged.text}</span></div>}</SequenceDragGhost></>}
-      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
+      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.mode==='memory'&&phase!=='revealed'?[]:q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }
