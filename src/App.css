@@ -6413,3 +6413,7 @@ textarea.pill-input,
 .ci-question .grammar-support-image img { max-height: 240px; }
 .grammar-rubric { list-style: none; padding: 0; margin: 0; }
 .grammar-rubric li { margin: 2mm 0; }
+
+.audio-picker-modal{border:0;border-radius:18px;padding:0;max-width:94vw;max-height:90vh;background:white}
+.audio-picker-modal::backdrop,dialog:has(progress)::backdrop{background:#20163488}
+.audio-picker-modal .tcf-vocab-picker{max-height:85vh}

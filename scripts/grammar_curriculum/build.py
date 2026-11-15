@@ -39,11 +39,12 @@ report={
  'protectedBanksCompleted':len(PROTECTED),'protectedBankItems':sum(len(x['items']) for x in PROTECTED),
  'communicativeThemes':len(ALL),'variantsPerCommunicationType':10,'newCommunicationTypes':3*len(ALL),
  'communicationVariants':3*sum(len(x['variants']) for x in ALL),'readingQuestions':sum(len(v['questions']) for x in ALL for v in x['variants']),
- 'imagesGenerated':len(ILLUSTRATIONS),
+ 'imagesGenerated':sum(not image.get('reused',False) for image in ILLUSTRATIONS.values()),
+ 'imagesReused':sum(bool(image.get('reused')) for image in ILLUSTRATIONS.values()),
  'coverage':[{'subId':l['subId'],'label':l['label'],'items':len(l['items'])} for l in LESSONS],
  'communication':[{'subId':g['subId'],'goal':g['goal'],'ce':len(g['variants']),'pe':len(g['variants']),'po':len(g['variants'])} for g in ALL],
 }
 DOC=ROOT/'docs/grammaire';DOC.mkdir(exist_ok=True)
 (DOC/'audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-(DOC/'images-a-preparer.json').write_text(json.dumps([{'id':v['id'],'description':v['imageDescription'],'status':'générée et validée' if v.get('image') else 'à générer ultérieurement','usedByExercise':bool(v.get('image')),**({'image':v['image']} if v.get('image') else {})} for g in ALL for v in g['variants']],ensure_ascii=False,indent=2)+'\n')
+(DOC/'images-a-preparer.json').write_text(json.dumps([{'id':v['id'],'description':v['imageDescription'],'status':('réemployée et vérifiée' if ILLUSTRATIONS.get(v['id'],{}).get('reused') else 'générée et validée') if v.get('image') else 'à générer ultérieurement','usedByExercise':bool(v.get('image')),**({'image':v['image']} if v.get('image') else {})} for g in ALL for v in g['variants']],ensure_ascii=False,indent=2)+'\n')
 print(f"{len(LESSONS)} banques de 50 phrases ; {len(PROTECTED)} banques d’introduction complétées ; {report['communicationVariants']} variantes CE/PE/PO.")

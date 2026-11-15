@@ -84,6 +84,46 @@ export function encodeWav(buffer: AudioBuffer): Blob {
   return new Blob([ab], { type: 'audio/wav' })
 }
 
+export async function encodeWavCancellable(buffer: AudioBuffer, signal?: AbortSignal): Promise<Blob> {
+  const numChannels = buffer.numberOfChannels
+  const sampleRate = buffer.sampleRate
+  const samples = buffer.length
+  const bytesPerSample = 2
+  const blockAlign = numChannels * bytesPerSample
+  const dataSize = samples * blockAlign
+  const ab = new ArrayBuffer(44 + dataSize)
+  const view = new DataView(ab)
+  writeString(view, 0, 'RIFF')
+  view.setUint32(4, 36 + dataSize, true)
+  writeString(view, 8, 'WAVE')
+  writeString(view, 12, 'fmt ')
+  view.setUint32(16, 16, true)
+  view.setUint16(20, 1, true)
+  view.setUint16(22, numChannels, true)
+  view.setUint32(24, sampleRate, true)
+  view.setUint32(28, sampleRate * blockAlign, true)
+  view.setUint16(32, blockAlign, true)
+  view.setUint16(34, bytesPerSample * 8, true)
+  writeString(view, 36, 'data')
+  view.setUint32(40, dataSize, true)
+
+  const channels: Float32Array[] = []
+  for (let c = 0; c < numChannels; c++) channels.push(buffer.getChannelData(c))
+  let offset = 44
+  for (let i = 0; i < samples; i++) {
+    if (i % 65536 === 0) {
+      await new Promise(resolve => setTimeout(resolve, 0))
+      signal?.throwIfAborted()
+    }
+    for (let c = 0; c < numChannels; c++) {
+      const sample = Math.max(-1, Math.min(1, channels[c]![i]!))
+      view.setInt16(offset, sample < 0 ? sample * 0x8000 : sample * 0x7fff, true)
+      offset += 2
+    }
+  }
+  return new Blob([ab], { type: 'audio/wav' })
+}
+
 function createAudioContext(): AudioContext {
   const AC =
     window.AudioContext ||
@@ -95,16 +135,19 @@ function createAudioContext(): AudioContext {
  * Concatène des fichiers audio (MP3 TTS) en un seul WAV continu.
  * Évite le collage binaire MP3 qui fait avancer / reculer la barre de progression.
  */
-export async function concatMp3(urls: string[]): Promise<Blob> {
+export async function concatMp3(urls: string[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
+  options.signal?.throwIfAborted()
   if (urls.length === 0) return new Blob([], { type: 'audio/wav' })
   if (urls.length === 1) {
-    const res = await fetch(urls[0]!)
+    const res = await fetch(urls[0]!, { signal: options.signal })
     if (!res.ok) throw new Error(`Audio introuvable : ${urls[0]}`)
     const ab = await res.arrayBuffer()
     const ctx = createAudioContext()
     try {
       const decoded = await ctx.decodeAudioData(ab.slice(0))
-      return encodeWav(decoded)
+      options.signal?.throwIfAborted()
+      options.onProgress?.(1, 1)
+      return await encodeWavCancellable(decoded, options.signal)
     } finally {
       await ctx.close().catch(() => undefined)
     }
@@ -114,10 +157,12 @@ export async function concatMp3(urls: string[]): Promise<Blob> {
   try {
     const decoded: AudioBuffer[] = []
     for (const url of urls) {
-      const res = await fetch(url)
+      const res = await fetch(url, { signal: options.signal })
       if (!res.ok) throw new Error(`Audio introuvable : ${url}`)
       const ab = await res.arrayBuffer()
       decoded.push(await ctx.decodeAudioData(ab.slice(0)))
+      options.signal?.throwIfAborted()
+      options.onProgress?.(decoded.length, urls.length)
     }
     const sampleRate = decoded[0]!.sampleRate
     const numChannels = Math.max(...decoded.map((b) => b.numberOfChannels))
@@ -138,7 +183,9 @@ export async function concatMp3(urls: string[]): Promise<Blob> {
       }
       offset += buf.length
     }
-    return encodeWav(out)
+    await new Promise(resolve => setTimeout(resolve, 0))
+    options.signal?.throwIfAborted()
+    return await encodeWavCancellable(out, options.signal)
   } finally {
     await ctx.close().catch(() => undefined)
   }
@@ -151,6 +198,7 @@ export async function concatMp3(urls: string[]): Promise<Blob> {
 export async function concatPlaylistsWithGap(
   playlists: readonly (readonly string[])[],
   gapUrl = SILENCE_6S_AUDIO,
+  options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {},
 ): Promise<Blob> {
   const urls: string[] = []
   for (let i = 0; i < playlists.length; i++) {
@@ -158,7 +206,7 @@ export async function concatPlaylistsWithGap(
     if (i < playlists.length - 1) urls.push(gapUrl)
   }
   if (urls.length === 0) return new Blob([], { type: 'audio/wav' })
-  return concatMp3(urls)
+  return concatMp3(urls, options)
 }
 
 async function downloadBlob(blob: Blob, filename: string) {
@@ -219,6 +267,7 @@ export function groupTcmCfrPlaylists(
  */
 export async function downloadTcmCfrAudios(
   playlists: readonly (readonly string[] | TcmCfrAudioPlaylist)[],
+  options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {},
 ): Promise<number> {
   const groups = groupTcmCfrPlaylists(playlists)
   if (groups.length === 0) return 0
@@ -226,22 +275,25 @@ export async function downloadTcmCfrAudios(
   const files: { name: string; blob: Blob }[] = []
   for (const group of groups) {
     try {
-      const blob = await concatPlaylistsWithGap(group.parts)
+      const blob = await concatPlaylistsWithGap(group.parts, undefined, { ...options, onProgress: (done, total) => options.onProgress?.(files.length + done / total, groups.length) })
       files.push({
         name: tcmCfrAudioDownloadName({ kind: group.kind, exerciseNo: group.exerciseNo }),
         blob,
       })
     } catch {
-      // Un type manquant n’empêche pas l’autre (ex. `fois.mp3` illisible).
+      options.signal?.throwIfAborted()
+      throw new Error("Impossible de préparer toutes les pistes audio.")
     }
   }
+  options.signal?.throwIfAborted()
   if (files.length === 0) return 0
   if (files.length === 1) {
     await downloadBlob(files[0]!.blob, files[0]!.name)
     return 1
   }
 
-  const zip = await zipStoreBlob(files.map((file) => ({ name: file.name, data: file.blob })))
+  const zip = await zipStoreBlob(files.map((file) => ({ name: file.name, data: file.blob })), undefined, options.signal)
+  options.signal?.throwIfAborted()
   await downloadBlob(zip, tcmCfrAudioZipDownloadName())
   return files.length
 }

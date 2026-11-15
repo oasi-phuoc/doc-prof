@@ -65,7 +65,7 @@ export async function downloadSoutienMotsAudio(opts: {
   exerciseNo: number
   /** Consigne audio (défaut type 1). */
   consigneSrc?: string
-}): Promise<number> {
+}, options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<number> {
   const wordAudios = opts.words
     .map((w) => soutienAudioFor(w))
     .filter((src): src is string => Boolean(src))
@@ -76,7 +76,8 @@ export async function downloadSoutienMotsAudio(opts: {
   for (const audio of wordAudios) {
     urls.push(SILENCE_6S_AUDIO, audio)
   }
-  const blob = await concatMp3(urls)
+  const blob = await concatMp3(urls, options)
+  options.signal?.throwIfAborted()
   await downloadBlob(
     blob,
     soutienAudioDownloadName({
@@ -94,12 +95,12 @@ export async function downloadSoutienCompleterAudio(opts: {
   themeLabel: string
   letterLabel: string
   exerciseNo: number
-}): Promise<number> {
+}, options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<number> {
   return downloadSoutienMotsAudio({
     words: opts.words,
     themeLabel: opts.themeLabel,
     letterLabel: opts.letterLabel,
     exerciseNo: opts.exerciseNo,
     consigneSrc: SOUTIEN_COMPLETER_CONSIGNE_AUDIO,
-  })
+  }, options)
 }

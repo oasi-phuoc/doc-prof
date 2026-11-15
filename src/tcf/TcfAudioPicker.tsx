@@ -144,6 +144,11 @@ export function TcfAudioPicker({
   const [scenario, setScenario] = useState('')
   const [niveau, setNiveau] = useState('')
   const [tag, setTag] = useState('')
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  useEffect(() => {
+    if (open && !dialogRef.current?.open) dialogRef.current?.showModal()
+    return () => dialogRef.current?.close()
+  }, [open])
   const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
@@ -220,7 +225,7 @@ export function TcfAudioPicker({
   if (!open) return null
 
   return (
-    <div className="tcf-vocab-picker-backdrop" role="presentation" onClick={onClose}>
+    <dialog ref={dialogRef} className="audio-picker-modal" aria-label="Choisir un audio" onCancel={event => { event.preventDefault(); onClose() }}>
       <div
         className="tcf-vocab-picker"
         role="dialog"
@@ -301,6 +306,6 @@ export function TcfAudioPicker({
           {hits.length === 0 ? <li className="tcf-vocab-picker-empty">Aucun audio ne correspond.</li> : null}
         </ul>
       </div>
-    </div>
+    </dialog>
   )
 }

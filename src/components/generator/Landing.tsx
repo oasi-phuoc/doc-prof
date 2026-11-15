@@ -3,7 +3,7 @@ import { Header } from '@/components/generator/Header'
 export function Landing({ onCreate }: { onCreate: () => void }) {
   return (
     <div className="landing-page">
-      <Header onCreate={onCreate} />
+      <Header onCreate={onCreate} showCreate={false} />
       <main id="top">
         <section className="hero landing-hero no-print">
           <div className="hero-copy">

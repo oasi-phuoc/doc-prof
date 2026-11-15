@@ -197,6 +197,7 @@ export function TcfTaggedExercisePicker({
               onChange({
                 tcfQuestionCount: next >= bankCap ? undefined : next,
                 tcfExercise: undefined,
+                contentSeed: Date.now() % 1_000_000_000,
               })
             }}
           />

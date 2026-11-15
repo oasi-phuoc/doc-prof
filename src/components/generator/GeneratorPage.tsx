@@ -1,3 +1,4 @@
+import { AudioProgressDialog } from '@/components/AudioProgressDialog'
 import { openInteractive } from '@/interactive/navigation'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { waitForGrammarPrintImages } from '@/components/grammar/print-media'
@@ -581,6 +582,7 @@ export function GeneratorPage({
         } as CSSProperties
       }
     >
+      <AudioProgressDialog progress={audio.audioProgress} onCancel={audio.cancelAudio} />
       <Header
         onCreate={() => undefined}
         generator

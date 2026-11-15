@@ -49,11 +49,11 @@ try {
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
   assert((await page.locator('.gallery-card-body > p').allTextContents()).every(t => t.includes('Scénario')))
-  await page.getByLabel('Collection', { exact: true }).selectOption('TCF')
-  assert((await page.locator('.gallery-card-body > p').allTextContents()).every(t => t.includes('TCF')))
+  assert.equal(await page.locator('.gallery-filters select').count(), 1)
+  assert.equal(await page.getByLabel('Collection', { exact: true }).count(), 0)
+  assert.equal(await page.getByLabel('Thème', { exact: true }).count(), 0)
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
-  await page.getByLabel('Thème', { exact: true }).selectOption('Style TCF validé')
-  for (const type of ['Action', 'Animal', 'Végétal', 'Métier', 'Maladie']) {
+  for (const type of ['Action', 'Animal', 'Végétal', 'Métier', 'Logique', 'Heure et horloge', 'Pays et nationalité', 'Partie du corps', 'Maladie']) {
     await page.getByLabel('Type d’image', { exact: true }).selectOption(type)
     assert(await page.locator('.gallery-card').count() > 0, `${type} doit contenir des images contrôlées`)
     assert((await page.locator('.gallery-card-body > p').allTextContents()).every(t => t.includes(type)))
@@ -61,17 +61,16 @@ try {
       const image = document.querySelector('.gallery-card img')
       return image?.complete && image.naturalWidth > 0
     })
-    assert((await page.locator('.gallery-card img').evaluateAll(images => images.map(i => i.src))).every(src => src.includes('/lib/images/tcf/')))
   }
   await page.getByLabel('Rechercher une image', { exact: true }).fill("mal a l'epaule")
   assert.equal(await page.locator('.gallery-card').count(), 1)
   assert.match(await page.locator('.gallery-card h2').textContent(), /épaule/)
   assert(!await page.getByLabel('Type d’image', { exact: true }).locator('option').allTextContents().then(values => values.includes('Animal et végétal')))
-  results.push('Les cinq types TCF, le thème du style validé et la recherche des douleurs avec apostrophe simple affichent des images disponibles.')
+  results.push('Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.')
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
-  await page.getByLabel('Thème', { exact: true }).selectOption('CO CFR A2')
+  await page.getByLabel('Rechercher une image', { exact: true }).fill('CO CFR A2')
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
-  assert.equal(await page.locator('.gallery-card').count(), 13)
+  assert(await page.locator('.gallery-card').count() >= 13)
   await page.waitForFunction(() => {
     const visible = [...document.querySelectorAll('.gallery-card img')].filter(image => {
       const rect = image.getBoundingClientRect()
@@ -87,18 +86,18 @@ try {
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
   await page.getByLabel('Rechercher une image', { exact: true }).fill('extension573-cadeau')
   assert.equal(await page.locator('.gallery-card').count(), 3)
-  await page.getByLabel('Thème', { exact: true }).selectOption('Loisirs et culture')
+  await page.getByLabel('Type d’image', { exact: true }).selectOption('Objet')
   assert.equal(await page.locator('.gallery-card').count(), 3)
-  const [group] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: /Télécharger ce thème/ }).click()])
+  const [group] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: /Télécharger ce type/ }).click()])
   await group.saveAs(output + '/theme.zip')
   assert.equal(execFileSync('python3', ['-c', 'import zipfile,sys; z=zipfile.ZipFile(sys.argv[1]); assert z.testzip() is None; print(len(z.namelist()))', output + '/theme.zip']).toString().trim(), '3')
-  results.push('Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP de thème vérifiés.')
+  results.push('Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.')
   // Validate the File System Access path without opening an OS picker.
   await page.evaluate(() => {
     window.galleryZipParts = []
     window.showSaveFilePicker = async () => ({ createWritable: async () => ({ write: async chunk => window.galleryZipParts.push(Array.from(new Uint8Array(await new Blob([chunk]).arrayBuffer()))), close: async () => { window.galleryZipClosed = true }, abort: async () => { window.galleryZipAborted = true } }) })
   })
-  await page.getByRole('button', { name: /Télécharger ce thème/ }).click()
+  await page.getByRole('button', { name: /Télécharger ce type/ }).click()
   await page.waitForFunction(() => window.galleryZipClosed === true)
   const disk = await page.evaluate(() => window.galleryZipParts.flat())
   writeFileSync(output + '/stream.zip', Buffer.from(disk))
@@ -106,7 +105,7 @@ try {
   results.push('ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.')
   await page.evaluate(() => { window.showSaveFilePicker = undefined })
   await page.route('**/extension573-cadeau-art-chocolats.png', route => route.fulfill({ status: 404, body: 'missing' }))
-  await page.getByRole('button', { name: /Télécharger ce thème/ }).click()
+  await page.getByRole('button', { name: /Télécharger ce type/ }).click()
   await page.getByRole('alert').waitFor()
   assert((await page.getByRole('alert').textContent()).includes('Impossible de télécharger'))
   await page.unroute('**/extension573-cadeau-art-chocolats.png')
@@ -114,7 +113,7 @@ try {
   let release
   const pending = new Promise(resolve => { release = resolve })
   await page.route('**/extension573-cadeau-art-chocolats.png', async route => { await pending; await route.abort().catch(() => undefined) })
-  await page.getByRole('button', { name: /Télécharger ce thème/ }).click()
+  await page.getByRole('button', { name: /Télécharger ce type/ }).click()
   await page.getByRole('button', { name: 'Annuler', exact: true }).click()
   await page.getByRole('status').filter({ hasText: 'Téléchargement annulé.' }).waitFor()
   release()

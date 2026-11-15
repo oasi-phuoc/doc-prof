@@ -3,7 +3,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000001fac8210888a8f71ad10c7e9",
       "filename": "piste005.mp3",
@@ -18,12 +18,256 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 005",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste005.mp3",
         "transcription": "Leçon 1, page 11. Entre amis. Document A.\nBonjour. Moi, c'est Paolo. Et vous, vous vous appelez comment ? Je m'appelle Nicole. Tu peux dire tu. Enchanté, Nicole. Tu as un prénom français. Tu es française, non ? Non, je suis allemande. Et toi ? Je suis italien. Et tu as quel âge ? J'ai 25 ans. Moi, j'ai 35 ans. Quelle est ta profession ? Je suis journaliste. Voici ma carte de visite. Voici ma carte aussi. Merci. C'est ton numéro de portable sur la carte ? Non. Mon portable, c'est le 06 18 14 33 11. Euh. Tu peux répéter, s'il te plaît ?"
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Pourquoi Paolo pense-t-il d’abord que Nicole est française ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Elle a un prénom français",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Elle habite à Paris"
+            },
+            {
+              "id": "c",
+              "texte": "Elle travaille en France"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Elle a un prénom français"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité de Nicole ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Allemande",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Française"
+            },
+            {
+              "id": "c",
+              "texte": "Italienne"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Allemande"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité de Paolo ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Italienne",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Allemande"
+            },
+            {
+              "id": "c",
+              "texte": "Espagnole"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Italienne"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge Paolo a-t-il ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "25 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "35 ans"
+            },
+            {
+              "id": "c",
+              "texte": "45 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "25 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge Nicole a-t-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "35 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "25 ans"
+            },
+            {
+              "id": "c",
+              "texte": "45 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "35 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle profession Nicole exerce-t-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Journaliste",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Professeure"
+            },
+            {
+              "id": "c",
+              "texte": "Médecin"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Journaliste"
+            }
+          }
+        },
+        {
+          "enonce": "Quel document les deux personnes échangent-elles ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Leur carte de visite",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Leur passeport"
+            },
+            {
+              "id": "c",
+              "texte": "Leur carte d’étudiant"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Leur carte de visite"
+            }
+          }
+        },
+        {
+          "enonce": "Quel numéro Paolo donne-t-il oralement ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Son numéro de portable",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Son numéro de passeport"
+            },
+            {
+              "id": "c",
+              "texte": "Son numéro de bureau"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Son numéro de portable"
+            }
+          }
+        },
+        {
+          "enonce": "Que Nicole demande-t-elle à Paolo à la fin ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "De répéter son numéro",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "De lui écrire une lettre"
+            },
+            {
+              "id": "c",
+              "texte": "De l’accompagner à la gare"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "De répéter son numéro"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -36,7 +280,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_0000000089a481f4b5ac2177f7cf91a0",
       "filename": "piste011.mp3",
@@ -51,12 +295,229 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 011",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste011.mp3",
         "transcription": "Page 15. Exercice 1.\nBonjour à tous. Je suis votre professeur. Je m'appelle Naël Kervelek. Naël N A E L C'est mon prénom. Et Kervelek, K, E, R, V, E, L, E, K. C'est mon nom. Je suis français et j'ai 34 ans. Monsieur, vous pouvez répéter, s'il vous plaît."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Quel est le prénom du professeur ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Naël",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Noël"
+            },
+            {
+              "id": "c",
+              "texte": "Noé"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Naël"
+            }
+          }
+        },
+        {
+          "enonce": "Quel est son nom de famille ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Kervelek",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Kermelec"
+            },
+            {
+              "id": "c",
+              "texte": "Kervelen"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Kervelek"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est sa nationalité ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Française",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Italienne"
+            },
+            {
+              "id": "c",
+              "texte": "Allemande"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Française"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge a-t-il ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "34 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "24 ans"
+            },
+            {
+              "id": "c",
+              "texte": "44 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "34 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Que lui demande un élève ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "De répéter",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "De partir"
+            },
+            {
+              "id": "c",
+              "texte": "D’écrire un exercice"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "De répéter"
+            }
+          }
+        },
+        {
+          "enonce": "Quel métier Naël Kervelek exerce-t-il ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Professeur",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Médecin"
+            },
+            {
+              "id": "c",
+              "texte": "Journaliste"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Professeur"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle formule le professeur utilise-t-il pour saluer le groupe ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Bonjour à tous",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Au revoir à tous"
+            },
+            {
+              "id": "c",
+              "texte": "À bientôt à tous"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Bonjour à tous"
+            }
+          }
+        },
+        {
+          "enonce": "Quel mot l’élève emploie-t-il pour s’adresser au professeur ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Monsieur",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Madame"
+            },
+            {
+              "id": "c",
+              "texte": "Camarade"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Monsieur"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -69,7 +530,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_0000000003648243b9dbe119d8176cce",
       "filename": "piste012.mp3",
@@ -84,12 +545,148 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 012",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste012.mp3",
         "transcription": "Page 15. Exercice 2.\nBonjour Vous êtes bien au 01 39 10 22 50 Bienvenue chez Lucie et Thomas Laissez votre nom Prénom et un numéro de téléphone, s'il vous plaît."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Chez qui le message de répondeur est-il enregistré ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Lucie et Thomas",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Alice et Pierre"
+            },
+            {
+              "id": "c",
+              "texte": "Marie et Julien"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Lucie et Thomas"
+            }
+          }
+        },
+        {
+          "enonce": "Quel type d’enregistrement entend-on ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un message de répondeur",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une annonce de gare"
+            },
+            {
+              "id": "c",
+              "texte": "Un bulletin météo"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un message de répondeur"
+            }
+          }
+        },
+        {
+          "enonce": "Quelles informations sur son identité faut-il laisser ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Son nom et son prénom",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Son adresse et son âge"
+            },
+            {
+              "id": "c",
+              "texte": "Sa profession et sa nationalité"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Son nom et son prénom"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle information faut-il laisser en plus du nom et du prénom ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un numéro de téléphone",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une adresse postale"
+            },
+            {
+              "id": "c",
+              "texte": "Une adresse électronique"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un numéro de téléphone"
+            }
+          }
+        },
+        {
+          "enonce": "Quel numéro est annoncé ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "01 39 10 22 50",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "01 39 12 20 50"
+            },
+            {
+              "id": "c",
+              "texte": "01 39 10 50 22"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "01 39 10 22 50"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -102,7 +699,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000411c82118b665536ef956e92",
       "filename": "piste013.mp3",
@@ -117,12 +714,148 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 013",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste013.mp3",
         "transcription": "Page 15. Exercice 3.\nBonjour monsieur. C’est pour un passeport. Votre nom de famille, s’il vous plaît ? Zola. Z O L A. Mais tu es Dominique, non ? Oui. Ah, Jacques ! Jacques Zola ! Tu es l’ami de Camille, non ? Salut, ça va ?"
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Pour quel document l’homme fait-il une démarche ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un passeport",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une carte de visite"
+            },
+            {
+              "id": "c",
+              "texte": "Une carte de bibliothèque"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un passeport"
+            }
+          }
+        },
+        {
+          "enonce": "Quel est son nom de famille ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Zola",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Hugo"
+            },
+            {
+              "id": "c",
+              "texte": "Cocteau"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Zola"
+            }
+          }
+        },
+        {
+          "enonce": "Quel est son prénom ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Jacques",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Paolo"
+            },
+            {
+              "id": "c",
+              "texte": "Thomas"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Jacques"
+            }
+          }
+        },
+        {
+          "enonce": "Quel lien l’unit à Camille ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "C’est son ami",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "C’est son frère"
+            },
+            {
+              "id": "c",
+              "texte": "C’est son voisin"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "C’est son ami"
+            }
+          }
+        },
+        {
+          "enonce": "Comment Jacques est-il salué après avoir été reconnu ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Salut, ça va ?",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Bonsoir monsieur"
+            },
+            {
+              "id": "c",
+              "texte": "Au revoir monsieur"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Salut, ça va ?"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -135,7 +868,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000a15881f4a286764cbf7d7e4c",
       "filename": "piste014.mp3",
@@ -150,12 +883,175 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 014",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste014.mp3",
         "transcription": "Page quinze. Exercice quatre. Et voici deux amis, Annie et Nadine. Annie Schultz, vous avez trente-sept ans, vous êtes suisse. Et vous êtes vendeuse. Et vous, Nadine Gatineau, vous êtes pharmacienne, vous êtes belge, et vous avez 42 ans. C'est bien ça ?"
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Quel âge a Annie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "37 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "27 ans"
+            },
+            {
+              "id": "c",
+              "texte": "42 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "37 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité d’Annie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Suisse",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Belge"
+            },
+            {
+              "id": "c",
+              "texte": "Française"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Suisse"
+            }
+          }
+        },
+        {
+          "enonce": "Quel métier exerce Annie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Vendeuse",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Pharmacienne"
+            },
+            {
+              "id": "c",
+              "texte": "Professeure"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Vendeuse"
+            }
+          }
+        },
+        {
+          "enonce": "Quel métier exerce Nadine ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Pharmacienne",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Vendeuse"
+            },
+            {
+              "id": "c",
+              "texte": "Journaliste"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Pharmacienne"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité de Nadine ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Belge",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Suisse"
+            },
+            {
+              "id": "c",
+              "texte": "Italienne"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Belge"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge a Nadine ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "42 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "37 ans"
+            },
+            {
+              "id": "c",
+              "texte": "32 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "42 ans"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -168,7 +1064,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000de38820a8d363ac578821acb",
       "filename": "piste015.mp3",
@@ -183,12 +1079,175 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 015",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste015.mp3",
         "transcription": "Page 15. Exercice 5.\nMais c’est Sophie ! Sophie, bonjour ! Non, moi, c’est Nina. Pardon, madame. Tu peux dire Nina, pas madame. J’ai 25 ans. Et Sophie, c’est ma sœur. Ah, enchanté, Nina. Moi, c’est Felipe. Enchantée, Felipe. Tu es l’ami brésilien de ma sœur ? Oui, je suis étudiant avec elle. Super ! Et toi, tu es étudiante aussi ? Non, moi, je travaille déjà. Je suis ingénieure."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Comment s’appelle la femme qui parle avec Felipe ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Nina",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Sophie"
+            },
+            {
+              "id": "c",
+              "texte": "Nicole"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Nina"
+            }
+          }
+        },
+        {
+          "enonce": "Quel lien y a-t-il entre Nina et Sophie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Elles sont sœurs",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Elles sont voisines"
+            },
+            {
+              "id": "c",
+              "texte": "Elles sont collègues"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Elles sont sœurs"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge a Nina ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "25 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "35 ans"
+            },
+            {
+              "id": "c",
+              "texte": "20 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "25 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité de Felipe ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Brésilienne",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Italienne"
+            },
+            {
+              "id": "c",
+              "texte": "Française"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Brésilienne"
+            }
+          }
+        },
+        {
+          "enonce": "Que fait Felipe ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il est étudiant",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Il est professeur"
+            },
+            {
+              "id": "c",
+              "texte": "Il est ingénieur"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il est étudiant"
+            }
+          }
+        },
+        {
+          "enonce": "Quel métier exerce Nina ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Ingénieure",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Journaliste"
+            },
+            {
+              "id": "c",
+              "texte": "Pharmacienne"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Ingénieure"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -201,7 +1260,7 @@
     "theme": "presenter",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000d05881f4b9f02207bbc2a4e7",
       "filename": "piste227.mp3",
@@ -216,12 +1275,175 @@
       "type_exercice": "complet",
       "theme": "Se présenter",
       "scene": "Se présenter — Piste 227",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/presenter/piste227.mp3",
         "transcription": "Page 132. Bilan 1. Se présenter et présenter. Mais regarde, Léa. L'homme grand et blond là-bas. C'est notre ami Yann. Mais oui, c'est Yann. Il est avec une jeune femme rousse. C'est sa sœur ? Mais non, c'est sa femme. Yann est marié et ils ont un fils. Sacha. Sa femme s'appelle comment ? Rosa. Rosa. Elle est espagnole ? Non. Elle est brésilienne. Et leur fils, il a quel âge ? Il est petit. Il a un an. Pour notre apéro samedi. On invite Yann et sa femme, d'accord ? Ah oui, volontiers. Yann ?"
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Comment est décrit Yann ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Grand et blond",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Petit et blond"
+            },
+            {
+              "id": "c",
+              "texte": "Grand et brun"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Grand et blond"
+            }
+          }
+        },
+        {
+          "enonce": "Qui est la femme avec Yann ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Sa femme",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Sa sœur"
+            },
+            {
+              "id": "c",
+              "texte": "Sa collègue"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Sa femme"
+            }
+          }
+        },
+        {
+          "enonce": "Comment s’appelle la femme de Yann ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Rosa",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Léa"
+            },
+            {
+              "id": "c",
+              "texte": "Sacha"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Rosa"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité de Rosa ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Brésilienne",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Espagnole"
+            },
+            {
+              "id": "c",
+              "texte": "Française"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Brésilienne"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge a leur fils ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un an",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Deux ans"
+            },
+            {
+              "id": "c",
+              "texte": "Trois ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un an"
+            }
+          }
+        },
+        {
+          "enonce": "À quoi les amis veulent-ils inviter Yann et Rosa ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À un apéritif",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "À un mariage"
+            },
+            {
+              "id": "c",
+              "texte": "À un concert"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "À un apéritif"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -234,7 +1456,7 @@
     "theme": "famille",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000001830824687fbfd60aad2d5ce",
       "filename": "piste016.mp3",
@@ -249,12 +1471,148 @@
       "type_exercice": "complet",
       "theme": "Parler de sa famille",
       "scene": "Parler de sa famille — Piste 016",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/famille/piste016.mp3",
         "transcription": "Leçon 2 page 17 En famille Document A.\nRegarde ! J'ai une photo du mariage de ma sœur. Le mariage de ta sœur Sonia ? Ou de ta sœur Marie ? De Sonia. Marie est célibataire. Et toi, ta famille ? - Tu as une sœur ou un frère ? - Non, nous sommes trois. Mon père, ma mère et moi. - Regarde la photo. Voici mes parents. - Et lui, c'est qui ? - C'est mon frère, Simon. - Et la petite femme blonde, c'est... - C'est Sandra, la femme de Simon. Ton frère a des enfants ? Oui, regarde. Voici leurs enfants. Andrea, Élisa. Alors tes parents sont déjà grands-parents ? Oui. Ce sont de jeunes grands-parents."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "De quel événement les deux personnes regardent-elles une photo ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un mariage",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un anniversaire"
+            },
+            {
+              "id": "c",
+              "texte": "Une naissance"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un mariage"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle sœur s’est mariée ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Sonia",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Marie"
+            },
+            {
+              "id": "c",
+              "texte": "Sandra"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Sonia"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la situation de Marie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Elle est célibataire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Elle est mariée"
+            },
+            {
+              "id": "c",
+              "texte": "Elle est veuve"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Elle est célibataire"
+            }
+          }
+        },
+        {
+          "enonce": "Quel lien y a-t-il entre Sandra et Simon ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Ils sont mariés",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Ils sont frère et sœur"
+            },
+            {
+              "id": "c",
+              "texte": "Ils sont voisins"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Ils sont mariés"
+            }
+          }
+        },
+        {
+          "enonce": "Comment s’appellent les enfants de Simon et Sandra ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Andrea et Élisa",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Sonia et Marie"
+            },
+            {
+              "id": "c",
+              "texte": "Simon et Sandra"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Andrea et Élisa"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -267,7 +1625,7 @@
     "theme": "famille",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000003d3082469938e17e57e3ae7b",
       "filename": "piste022.mp3",
@@ -282,12 +1640,148 @@
       "type_exercice": "complet",
       "theme": "Parler de sa famille",
       "scene": "Parler de sa famille — Piste 022",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/famille/piste022.mp3",
         "transcription": "Page 21. Exercice 1.\nPapa, Maman Voici mon ami Fabien. Il est étudiant dans mon université. Fabien, voici mes parents. Simon et Flavie. Et le grand brun là ? C'est mon frère Sébastien."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Qui est Fabien ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un ami",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un professeur"
+            },
+            {
+              "id": "c",
+              "texte": "Un voisin"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un ami"
+            }
+          }
+        },
+        {
+          "enonce": "Que fait Fabien ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il est étudiant",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Il est médecin"
+            },
+            {
+              "id": "c",
+              "texte": "Il est vendeur"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il est étudiant"
+            }
+          }
+        },
+        {
+          "enonce": "Comment s’appellent les parents ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Simon et Flavie",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Fabien et Flavie"
+            },
+            {
+              "id": "c",
+              "texte": "Simon et Sonia"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Simon et Flavie"
+            }
+          }
+        },
+        {
+          "enonce": "Qui est Sébastien ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Le frère de la personne qui parle",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Le père de Fabien"
+            },
+            {
+              "id": "c",
+              "texte": "Un professeur"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Le frère de la personne qui parle"
+            }
+          }
+        },
+        {
+          "enonce": "Comment est décrit Sébastien ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Grand et brun",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Petit et brun"
+            },
+            {
+              "id": "c",
+              "texte": "Grand et blond"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Grand et brun"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -300,7 +1794,7 @@
     "theme": "famille",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000542482468dee6adf1685ae43",
       "filename": "piste023.mp3",
@@ -315,12 +1809,148 @@
       "type_exercice": "complet",
       "theme": "Parler de sa famille",
       "scene": "Parler de sa famille — Piste 023",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/famille/piste023.mp3",
         "transcription": "Page 21. Exercice 2.\nRegarde. Voici la photo d'anniversaire de mes 18 ans. La jeune fille blonde, c'est moi. Et voici papa. Ton papy. Le petit roux, c'est mon frère Thomas. Il est veuf."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "À quelle occasion la photo a-t-elle été prise ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un anniversaire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un mariage"
+            },
+            {
+              "id": "c",
+              "texte": "Une remise de diplôme"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un anniversaire"
+            }
+          }
+        },
+        {
+          "enonce": "Quel anniversaire la personne fêtait-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Ses 18 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Ses 16 ans"
+            },
+            {
+              "id": "c",
+              "texte": "Ses 20 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Ses 18 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Comment était la personne qui raconte sur cette photo ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Une jeune fille blonde",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une jeune fille brune"
+            },
+            {
+              "id": "c",
+              "texte": "Une jeune fille rousse"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Une jeune fille blonde"
+            }
+          }
+        },
+        {
+          "enonce": "Qui est Thomas pour la personne qui parle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Son frère",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Son père"
+            },
+            {
+              "id": "c",
+              "texte": "Son fils"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Son frère"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la situation de Thomas ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il est veuf",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Il est célibataire"
+            },
+            {
+              "id": "c",
+              "texte": "Il est divorcé"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il est veuf"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -333,7 +1963,7 @@
     "theme": "famille",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000005a888243a814eea756ffe74b",
       "filename": "piste024.mp3",
@@ -348,12 +1978,94 @@
       "type_exercice": "complet",
       "theme": "Parler de sa famille",
       "scene": "Parler de sa famille — Piste 024",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/famille/piste024.mp3",
         "transcription": "Page 21. Exercice 3.\nEn général, les familles françaises ont un ou deux enfants. Les parents sont jeunes, ils ont entre 30 et 35 ans, et sont souvent mariés ou pacsés. Mais ils peuvent aussi être séparés ou divorcés."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Selon l’enregistrement, combien d’enfants les familles françaises ont-elles en général ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un ou deux",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Trois ou quatre"
+            },
+            {
+              "id": "c",
+              "texte": "Cinq ou six"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un ou deux"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge ont les parents décrits dans l’enregistrement ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Entre 30 et 35 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Entre 20 et 25 ans"
+            },
+            {
+              "id": "c",
+              "texte": "Entre 40 et 45 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Entre 30 et 35 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Selon le document, quelle est souvent la situation des parents ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Ils sont mariés ou pacsés",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Ils sont tous célibataires"
+            },
+            {
+              "id": "c",
+              "texte": "Ils sont tous veufs"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Ils sont mariés ou pacsés"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -366,7 +2078,7 @@
     "theme": "famille",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000007fe881f48e6c02913de9834b",
       "filename": "piste025.mp3",
@@ -381,12 +2093,121 @@
       "type_exercice": "complet",
       "theme": "Parler de sa famille",
       "scene": "Parler de sa famille — Piste 025",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/famille/piste025.mp3",
         "transcription": "Page 21. Exercice 4.\nAllô Lori ? Non, je suis sa mère. Pardon, madame. Bonjour. Je suis une amie de Lori. Je m'appelle Laura. Bonjour Laura. J'appelle ma fille."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "À qui Laura souhaite-t-elle parler ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À Lori",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "À la mère de Lori"
+            },
+            {
+              "id": "c",
+              "texte": "À une professeure"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "À Lori"
+            }
+          }
+        },
+        {
+          "enonce": "Qui répond au téléphone ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La mère de Lori",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Lori"
+            },
+            {
+              "id": "c",
+              "texte": "Une amie de Laura"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La mère de Lori"
+            }
+          }
+        },
+        {
+          "enonce": "Quel lien y a-t-il entre Laura et Lori ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Elles sont amies",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Elles sont sœurs"
+            },
+            {
+              "id": "c",
+              "texte": "Elles sont cousines"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Elles sont amies"
+            }
+          }
+        },
+        {
+          "enonce": "Que va faire la mère à la fin ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Appeler sa fille",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Raccrocher immédiatement"
+            },
+            {
+              "id": "c",
+              "texte": "Donner un numéro"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Appeler sa fille"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -399,7 +2220,7 @@
     "theme": "famille",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000003e5c81f999577d20a8e173ab",
       "filename": "piste026.mp3",
@@ -414,12 +2235,202 @@
       "type_exercice": "complet",
       "theme": "Parler de sa famille",
       "scene": "Parler de sa famille — Piste 026",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/famille/piste026.mp3",
         "transcription": "Page 21. Exercice 5.\nLéa J'ai une question Qui c'est la jeune femme brune là-bas Mais Agnès regarde bien c'est Nathalie Ma sœur Elle a quel âge ta sœur ? Elle a 30 ans Elle est en couple Oui Elle est mariée Ah bon ? Son mari s'appelle comment ? John. Il est là, regarde. Le grand homme roux. Lui. Il est français ? Non. John est anglais. Il est cuisinier. Il est très sympa. Il a un frère ? Non. Il a une sœur. Megan. Elle. Elle est pacsée et elle a deux enfants, un fils et une fille."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Qui est Nathalie pour Léa ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Sa sœur",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Sa mère"
+            },
+            {
+              "id": "c",
+              "texte": "Sa cousine"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Sa sœur"
+            }
+          }
+        },
+        {
+          "enonce": "Quel âge a Nathalie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "30 ans",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "20 ans"
+            },
+            {
+              "id": "c",
+              "texte": "40 ans"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "30 ans"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la situation de Nathalie ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Elle est mariée",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Elle est célibataire"
+            },
+            {
+              "id": "c",
+              "texte": "Elle est veuve"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Elle est mariée"
+            }
+          }
+        },
+        {
+          "enonce": "Comment s’appelle son mari ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "John",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Simon"
+            },
+            {
+              "id": "c",
+              "texte": "Thomas"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "John"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle est la nationalité de John ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Anglaise",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Française"
+            },
+            {
+              "id": "c",
+              "texte": "Américaine"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Anglaise"
+            }
+          }
+        },
+        {
+          "enonce": "Quel métier exerce John ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Cuisinier",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Professeur"
+            },
+            {
+              "id": "c",
+              "texte": "Médecin"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Cuisinier"
+            }
+          }
+        },
+        {
+          "enonce": "Combien d’enfants Megan a-t-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Deux",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un"
+            },
+            {
+              "id": "c",
+              "texte": "Trois"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Deux"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -432,7 +2443,7 @@
     "theme": "fetes",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_000000001e788246ab6dc2c13d6eea4f",
       "filename": "piste027.mp3",
@@ -447,12 +2458,148 @@
       "type_exercice": "complet",
       "theme": "Fêtes",
       "scene": "Fêtes — Piste 027",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/fetes/piste027.mp3",
         "transcription": "Leçon 3, page 23, c'est la fête. Document A.\nBonjour, Madame Bugier. Comment ça va ? Bonjour, Thomas. Moi, ça va. Et votre famille ? Bien, merci. La fête des voisins, c'est bientôt, non ? Non. La fête des voisins est en juin. Mais j'organise un apéro samedi. Je vous invite, vous et votre femme. Vous êtes libre ? Samedi 28. Moi je suis libre, mais ma femme ne peut pas. Elle travaille le week-end. Dommage. C'est à quelle heure ? On commence à 7 heures. C'est un buffet. J'apporte quelque chose ? Une salade ? Une quiche à partager ? Des chips ? Une boisson ? Quelque chose pour le dessert peut-être. Une salade de fruits ? Super. À samedi alors. À samedi."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Quand a lieu la fête des voisins, selon Madame Bugier ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "En juin",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "En mars"
+            },
+            {
+              "id": "c",
+              "texte": "En septembre"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "En juin"
+            }
+          }
+        },
+        {
+          "enonce": "Quel événement Madame Bugier organise-t-elle samedi ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un apéro",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un mariage"
+            },
+            {
+              "id": "c",
+              "texte": "Un concert"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un apéro"
+            }
+          }
+        },
+        {
+          "enonce": "Pourquoi la femme de Thomas ne peut-elle pas venir ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Elle travaille le week-end",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Elle est malade"
+            },
+            {
+              "id": "c",
+              "texte": "Elle part en vacances"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Elle travaille le week-end"
+            }
+          }
+        },
+        {
+          "enonce": "À quelle heure commence le buffet ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À 7 heures",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "À 5 heures"
+            },
+            {
+              "id": "c",
+              "texte": "À 9 heures"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "À 7 heures"
+            }
+          }
+        },
+        {
+          "enonce": "Quel dessert Thomas propose-t-il finalement ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Une salade de fruits",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un gâteau au chocolat"
+            },
+            {
+              "id": "c",
+              "texte": "Une tarte aux pommes"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Une salade de fruits"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -465,7 +2612,7 @@
     "theme": "fetes",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000be3481f4b4b9f3981e6ffb7a",
       "filename": "piste033.mp3",
@@ -480,12 +2627,94 @@
       "type_exercice": "complet",
       "theme": "Fêtes",
       "scene": "Fêtes — Piste 033",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/fetes/piste033.mp3",
         "transcription": "Page 27. Exercice 1.\nAujourd'hui, nous parlons de la fête des voisins. Cette année, les Français sont invités à organiser la fête le vendredi 29 mai. Pour le buffet, les voisins apportent des plats chauds ou froids à partager."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "De quelle fête parle le document ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La fête des voisins",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "La fête de la musique"
+            },
+            {
+              "id": "c",
+              "texte": "La fête nationale"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La fête des voisins"
+            }
+          }
+        },
+        {
+          "enonce": "Quel jour les Français sont-ils invités à organiser la fête cette année-là ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Le vendredi 29 mai",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Le samedi 30 mai"
+            },
+            {
+              "id": "c",
+              "texte": "Le dimanche 31 mai"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Le vendredi 29 mai"
+            }
+          }
+        },
+        {
+          "enonce": "Que doivent apporter les voisins pour le buffet ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Des plats à partager",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Des cadeaux pour les enfants"
+            },
+            {
+              "id": "c",
+              "texte": "Des jeux de société"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Des plats à partager"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -498,7 +2727,7 @@
     "theme": "fetes",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000e658821091872e5332df542c",
       "filename": "piste034.mp3",
@@ -513,12 +2742,148 @@
       "type_exercice": "complet",
       "theme": "Fêtes",
       "scene": "Fêtes — Piste 034",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/fetes/piste034.mp3",
         "transcription": "Page 27. Exercice 2.\nBonjour Nicolas Le dimanche 14 octobre nous organisons une fête d'anniversaire pour notre fille C'est un apéro avec des amis et des voisins Nous t'invitons avec Sarah On commence à 7h30"
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Qui est le destinataire de cette invitation ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Nicolas",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Thomas"
+            },
+            {
+              "id": "c",
+              "texte": "Marc"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Nicolas"
+            }
+          }
+        },
+        {
+          "enonce": "Pour qui la fête d’anniversaire est-elle organisée ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Pour la fille des organisateurs",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Pour leur voisin"
+            },
+            {
+              "id": "c",
+              "texte": "Pour leur fils"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Pour la fille des organisateurs"
+            }
+          }
+        },
+        {
+          "enonce": "Quand la fête est-elle prévue ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Le dimanche 14 octobre",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Le samedi 13 octobre"
+            },
+            {
+              "id": "c",
+              "texte": "Le lundi 15 octobre"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Le dimanche 14 octobre"
+            }
+          }
+        },
+        {
+          "enonce": "Avec qui Nicolas est-il invité ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Avec Sarah",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Avec Roxane"
+            },
+            {
+              "id": "c",
+              "texte": "Avec Sylvie"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Avec Sarah"
+            }
+          }
+        },
+        {
+          "enonce": "À quelle heure la fête commence-t-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À 7 h 30",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "À 6 h 30"
+            },
+            {
+              "id": "c",
+              "texte": "À 8 h 30"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "À 7 h 30"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -531,7 +2896,7 @@
     "theme": "fetes",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000041c81f4abca81fb1842eb2b",
       "filename": "piste035.mp3",
@@ -546,12 +2911,94 @@
       "type_exercice": "complet",
       "theme": "Fêtes",
       "scene": "Fêtes — Piste 035",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/fetes/piste035.mp3",
         "transcription": "Page 27. Exercice 3.\nAh ! Roxane, pour notre pique-nique, j'ai besoin de serviettes et d'assiettes. D'accord, Tim. J'apporte aussi des chips et des boissons. Je prépare une salade et Rémi une pizza."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Quel événement les personnes préparent-elles ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un pique-nique",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un mariage"
+            },
+            {
+              "id": "c",
+              "texte": "Un spectacle"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un pique-nique"
+            }
+          }
+        },
+        {
+          "enonce": "De quels objets Tim a-t-il besoin ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "De serviettes et d’assiettes",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "De bougies et de fleurs"
+            },
+            {
+              "id": "c",
+              "texte": "De chaises et de coussins"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "De serviettes et d’assiettes"
+            }
+          }
+        },
+        {
+          "enonce": "Qui prépare une pizza ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Rémi",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Tim"
+            },
+            {
+              "id": "c",
+              "texte": "Roxane"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Rémi"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -564,7 +3011,7 @@
     "theme": "fetes",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000ef7c8243b9a259844f5d9180",
       "filename": "piste036.mp3",
@@ -579,12 +3026,121 @@
       "type_exercice": "complet",
       "theme": "Fêtes",
       "scene": "Fêtes — Piste 036",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/fetes/piste036.mp3",
         "transcription": "Page 27. Exercice 4.\nBonjour Marc. Tu es libre jeudi ? J'organise un apéro chez moi. Je t'invite avec mes amies Christelle et Laurane. Désolé, Maud. Je ne suis pas libre jeudi. Dommage. Et vendredi, tu peux venir ? Ah oui, vendredi volontiers !"
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Quel événement Maud organise-t-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un apéro",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une sortie au cinéma"
+            },
+            {
+              "id": "c",
+              "texte": "Un pique-nique"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un apéro"
+            }
+          }
+        },
+        {
+          "enonce": "Où l’événement doit-il avoir lieu ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Chez Maud",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Chez Marc"
+            },
+            {
+              "id": "c",
+              "texte": "Au restaurant"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Chez Maud"
+            }
+          }
+        },
+        {
+          "enonce": "Pourquoi Marc refuse-t-il la première invitation ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il n’est pas libre jeudi",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Il n’aime pas les apéros"
+            },
+            {
+              "id": "c",
+              "texte": "Il ne connaît pas Maud"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il n’est pas libre jeudi"
+            }
+          }
+        },
+        {
+          "enonce": "Quel jour Marc accepte-t-il de venir ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Vendredi",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Jeudi"
+            },
+            {
+              "id": "c",
+              "texte": "Dimanche"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Vendredi"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",
@@ -597,7 +3153,7 @@
     "theme": "fetes",
     "level": "A1",
     "audioChecked": true,
-    "status": "transcribed",
+    "status": "complete",
     "source": {
       "uploadId": "file_00000000811881f49306b9d2bdb362e1",
       "filename": "piste037.mp3",
@@ -612,12 +3168,175 @@
       "type_exercice": "complet",
       "theme": "Fêtes",
       "scene": "Fêtes — Piste 037",
-      "consigne": "Écoutez l’enregistrement.",
+      "consigne": "Écoutez l’enregistrement, puis répondez aux questions.",
       "support": {
         "audio": "/lib/audio/grammaire/co/fetes/piste037.mp3",
         "transcription": "Page 27. Exercice 5.\nOuf C'est bon pour ma fête dimanche. D'accord. Tu invites qui ? Mon amie Sylvie et son mari. Notre voisine Angela avec sa sœur. Et mon frère ? Oui, bien sûr. Ton frère et aussi son amie Céline. Ils apportent des boissons. Tu as besoin de quelque chose ? Je prépare une pizza. Une pizza ? Oui, super. Et pour le dessert ? Angela apporte une salade de fruits. On commence la fête à quelle heure ? À 20h. Super."
       },
-      "questions": []
+      "questions": [
+        {
+          "enonce": "Quel jour la fête aura-t-elle lieu ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Dimanche",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Vendredi"
+            },
+            {
+              "id": "c",
+              "texte": "Samedi"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Dimanche"
+            }
+          }
+        },
+        {
+          "enonce": "Avec qui Angela est-elle invitée ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Avec sa sœur",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Avec sa mère"
+            },
+            {
+              "id": "c",
+              "texte": "Avec sa fille"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Avec sa sœur"
+            }
+          }
+        },
+        {
+          "enonce": "Que doivent apporter le frère et Céline ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Des boissons",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Des assiettes"
+            },
+            {
+              "id": "c",
+              "texte": "Des fleurs"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Des boissons"
+            }
+          }
+        },
+        {
+          "enonce": "Quel plat la personne propose-t-elle de préparer ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Une pizza",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une quiche"
+            },
+            {
+              "id": "c",
+              "texte": "Une soupe"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Une pizza"
+            }
+          }
+        },
+        {
+          "enonce": "Qui apporte une salade de fruits ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Angela",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Sylvie"
+            },
+            {
+              "id": "c",
+              "texte": "Céline"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Angela"
+            }
+          }
+        },
+        {
+          "enonce": "À quelle heure la fête commence-t-elle ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À 20 heures",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "À 18 heures"
+            },
+            {
+              "id": "c",
+              "texte": "À 19 heures"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "À 20 heures"
+            }
+          }
+        }
+      ]
     },
     "transcriptionReview": {
       "status": "automatic_cross_check_and_text_review",

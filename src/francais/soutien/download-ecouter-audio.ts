@@ -89,7 +89,7 @@ export async function downloadSoutienEcouterAudio(opts: {
   exerciseNo: number
   /** Consigne MP3 (défaut type 6/7). */
   consigneSrc?: string
-}): Promise<number> {
+}, options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<number> {
   const entries = opts.words
     .map((w, i) => {
       const fromSheet = opts.audioSrcs?.[i]?.trim()
@@ -112,7 +112,8 @@ export async function downloadSoutienEcouterAudio(opts: {
   }
   urls.push(SOUTIEN_SILENCE_6S)
 
-  const blob = await concatMp3(urls)
+  const blob = await concatMp3(urls, options)
+  options.signal?.throwIfAborted()
   await downloadBlob(
     blob,
     soutienAudioDownloadName({

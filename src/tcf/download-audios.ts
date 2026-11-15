@@ -241,8 +241,8 @@ export function listTcfAudioDownloadFiles(
   return files
 }
 
-async function fetchAudioBlob(url: string): Promise<Blob> {
-  const res = await fetch(url)
+async function fetchAudioBlob(url: string, signal?: AbortSignal): Promise<Blob> {
+  const res = await fetch(url, { signal })
   if (!res.ok) throw new Error(`Audio introuvable : ${url}`)
   return res.blob()
 }
@@ -276,7 +276,11 @@ export async function downloadTcfAudios(
     niveau?: string
     date?: Date
   },
+  options: { signal?: AbortSignal; onProgress?: (value: number, label: string) => void } = {},
 ): Promise<{ count: number; base: string }> {
+  const { signal, onProgress } = options
+  signal?.throwIfAborted()
+  let completed = 0
   const prefix = opts.prefix ?? 'TCF'
   const date = 'date' in opts ? opts.date : undefined
   const jobs: TcfAudioJob[] =
@@ -298,6 +302,8 @@ export async function downloadTcfAudios(
   const usedNames = new Set<string>()
 
   for (const job of jobs) {
+    signal?.throwIfAborted()
+    onProgress?.(completed / jobs.length * 90, "Compilation des audios…")
     const urls = tcfJobPlaylistUrls(job)
     if (urls.length === 0) continue
     const grouped = tcfJobUsesGroupedPlaylist(job)
@@ -319,7 +325,7 @@ export async function downloadTcfAudios(
     usedNames.add(name)
     try {
       if (grouped) {
-        packed.push({ name, blob: await concatMp3(urls) })
+        packed.push({ name, blob: await concatMp3(urls, { signal, onProgress: (done, total) => onProgress?.((completed + done / total * 0.8) / jobs.length * 90, 'Chargement et assemblage des pistes…') }) })
       } else {
         // Hors modèle CSC : un fichier par ref (comportement historique).
         const rawFiles = tcfAudioDownloadUrls(job.audioRefs)
@@ -340,23 +346,29 @@ export async function downloadTcfAudios(
           }
           usedNames.add(partName)
           try {
-            packed.push({ name: partName, blob: await fetchAudioBlob(url) })
+            packed.push({ name: partName, blob: await fetchAudioBlob(url, signal) })
           } catch {
-            // Fichier manquant : on continue.
+            signal?.throwIfAborted()
+            throw new Error("Une piste audio est introuvable.")
           }
         }
       }
     } catch {
-      // Échec concat / fichier manquant : on continue les autres exercices.
+      signal?.throwIfAborted()
+      throw new Error("Impossible de compiler les audios. Vérifiez la connexion et réessayez.")
     }
+    completed++
   }
 
+  signal?.throwIfAborted()
+  onProgress?.(95, "Préparation du téléchargement…")
   if (packed.length === 0) return { count: 0, base }
   if (packed.length === 1) {
     await downloadBlob(packed[0]!.blob, packed[0]!.name)
     return { count: 1, base: packed[0]!.name }
   }
-  const zip = await zipStoreBlob(packed.map((file) => ({ name: file.name, data: file.blob })))
+  const zip = await zipStoreBlob(packed.map((file) => ({ name: file.name, data: file.blob })), undefined, signal)
+  signal?.throwIfAborted()
   await downloadBlob(zip, base)
   return { count: packed.length, base }
 }

@@ -356,7 +356,7 @@ export function ResultPanel({
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
                       <path
                         fill="currentColor"
-                        d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.42L11 13.59V4a1 1 0 0 1 1-1zM5 18a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1z"
+                        d="M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 6 0v-4a3 3 0 0 0-4-2.83V12a7 7 0 0 1 14 0v-.83A3 3 0 0 0 15 14v4a3 3 0 0 0 6 0v-6a9 9 0 0 0-9-9zM5 14a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0zm12 0a1 1 0 0 1 2 0v4a1 1 0 0 1-2 0z"
                       />
                     </svg>
                   </button>

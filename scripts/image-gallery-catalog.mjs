@@ -46,7 +46,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   const coSources = new Map()
   const curated = read(root, 'docs/gallery/classement-tcf-20261113.json', {})
   const classifications = new Map((curated.images ?? []).map(image => [image.path, image]))
-  const replaced = new Set((curated.replacements ?? []).map(image => image.original))
+  const replacementSources = new Map((curated.replacements ?? []).map(image => [image.path, image.original]))
   const add = (src, data) => {
     if (typeof src !== 'string' || !src.startsWith('/')) return
     const previous = metadata.get(src) ?? { labels: [], themes: [], types: [], terms: [] }
@@ -121,7 +121,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     associationScenes.add(reuse.path)
     add(reuse.path, { types: ['Scénario'], labels: [reuse.label], themes: ['CO CFR A2', 'Situations CO'], terms: [reuse.source_id, text] })
   }
-  return files.map(file => {
+  return files.filter(file => !['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))).map(file => {
     const src = file.startsWith('public/') ? '/' + file.slice(7) : '/' + file
     const meta = metadata.get(src) ?? { labels: [], themes: [], types: [], terms: [] }
     const stem = path.basename(file, path.extname(file)).replace(/^(?:extension573|co\d+|co-personnages-\d+|vocab)-/, '').replace(/-dessine[es]?$/, '')
@@ -129,8 +129,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     if (/^\d+$/.test(label) && file.includes('/logique/')) label = `${pretty(file.split('/logique/')[1].split('/')[0])} — ${label}`
     const collection = file.startsWith('docs/') || file.startsWith('scripts/') || file.startsWith('tmp/') ? 'Documentation et captures' : file.includes('/vocabulaire/') ? 'Vocabulaire' : file.includes('/tcf/') ? 'TCF' : file.includes('/gattegno/') ? 'Gattegno' : file.includes('/grammaire/') ? 'Grammaire' : file.includes('/logique/') ? 'Logique' : file.includes('/jeux/') || file.includes('/interactive/') ? 'Jeux et interactif' : 'Identité visuelle'
     let types = [...meta.types]
-    if (collection === 'Documentation et captures') types = ['Capture et référence']
-    else if (/logo|favicon|icons?\.|react.svg|vite.svg/.test(file)) types = ['Logo et icône']
+    if (/logo|favicon|icons?\.|react.svg|vite.svg/.test(file)) types = ['Illustration']
     else if (/\/logique\/|\/formes\/|\/couleurs\/|\/nombres-mesures\//.test(file)) types = ['Forme et symbole']
     else if (/\/actions\//.test(file)) types = ['Action']
     else if (/\/po\/|\/scenes\/|\/communication\//.test(file)) types.push('Scénario')
@@ -163,12 +162,17 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
       if (classification.label) label = classification.label
     }
     if (associationScenes.has(src)) types.push('Scénario')
-    // Originals remain individually downloadable; the Action filter shows the
-    // reviewed TCF replacement once it exists, rather than both style versions.
-    if (replaced.has(src)) types = ['Version antérieure']
     types = types.filter(type => type !== 'Animal et végétal')
     if (!types.length) types.push('Illustration')
-    if (!replaced.has(src) && /\/vocabulaire\/sante\//.test(file) && /^(?:allergie|blessure|brulure|coupure|douleur|fievre|fracture|grippe|infection|mal de tete|mal de ventre|malade|nausee|rhume|toux|vomissement|vertige)$/.test(norm(label))) types = ['Maladie']
+    if (/\/vocabulaire\/sante\//.test(file) && /^(?:allergie|blessure|brulure|coupure|douleur|fievre|fracture|grippe|infection|mal de tete|mal de ventre|malade|nausee|rhume|toux|vomissement|vertige)$/.test(norm(label))) types = ['Maladie']
+    const origin = replacementSources.get(src) ?? src
+    const sourcePaths = [file, origin, ...meta.terms.filter(term => term.startsWith('/'))].join(' ')
+    if (/\/logique\//.test(file)) types = ['Logique']
+    else if (/\/pays\/|\/presenter\/(?!portrait-)|nationalit|drapeau/.test(norm(sourcePaths))) types = ['Pays et nationalité']
+    else if (/\/corps\//.test(origin)) types = ['Partie du corps']
+    else if (/(?:horloges?|cadrans?|pendules?|reveils?|clocks?|montres?)(?:[-_. /]|$)/.test(norm(file))) types = ['Heure et horloge']
+    types = types.filter(type => !['Version antérieure', 'Logo et icône', 'Capture et référence'].includes(type))
+    if (!types.length) types.push('Illustration')
     const themes = new Set(meta.themes)
     if (file.includes('/vocabulaire/')) themes.add(pretty(file.split('/vocabulaire/')[1].split('/')[0]))
     const subject = norm([label, ...meta.labels, ...meta.themes, file].join(' '))

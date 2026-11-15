@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto'
 import { buildGalleryCatalog, repositoryImages } from '../../scripts/image-gallery-catalog.mjs'
 
 test('all repository images appear once, including documents, logos and source assets', () => {
-  const files = repositoryImages(process.cwd()), catalog = buildGalleryCatalog(process.cwd(), files)
+  const files = repositoryImages(process.cwd()).filter(file => !/^(docs|scripts|tmp)\//.test(file)), catalog = buildGalleryCatalog(process.cwd(), files)
   assert(catalog.length > 5700)
   assert.equal(catalog.length, files.length)
   assert.equal(new Set(catalog.map(i => i.id)).size, files.length)
@@ -14,7 +14,7 @@ test('all repository images appear once, including documents, logos and source a
     assert.equal(image.bytes, statSync(image.id).size)
     assert(image.src.startsWith('/'))
   }
-  assert(catalog.some(i => i.id.startsWith('docs/')))
+  assert(!catalog.some(i => /^(docs|scripts|tmp)\//.test(i.id)))
   assert(catalog.some(i => i.id.startsWith('src/')))
   assert(catalog.some(i => i.id.includes('logos/')))
   assert.equal(catalog.find(i => i.id.endsWith('/extension573-the-feuilles.png')).label, 'Des feuilles de thé')
@@ -59,7 +59,8 @@ test('gallery replacements require approved images and retain the original bytes
   for (const replacement of classes.replacements) {
     assert.equal(hash(replacement.original), replacement.original_sha256)
     assert.equal(hash(replacement.path), replacement.sha256)
-    assert(catalog.get(replacement.original).types.includes('Version antérieure'))
+    assert(catalog.has(replacement.original))
+    assert(!catalog.get(replacement.original).types.includes('Version antérieure'))
   }
 })
 
@@ -82,4 +83,18 @@ test('CFR A2 situation scenes and a reviewed context reuse are searchable as sce
     assert(catalogue.get(reuse.path).types.includes('Métier'))
   }
   assert(!catalogue.get('/lib/images/tcf/qcm-audit/co834-sac-vert-dessine.webp').types.includes('Scénario'), 'a QCM object is not promoted to a whole scene')
+})
+
+test('gallery uses the requested content categories and keeps originals and logos', () => {
+  const catalog = buildGalleryCatalog(process.cwd())
+  const find = suffix => catalog.find(image => image.id.endsWith(suffix))
+  const forbidden = ['Version antérieure', 'Logo et icône', 'Capture et référence']
+  assert(catalog.every(image => image.types.every(type => !forbidden.includes(type))))
+  assert(catalog.filter(image => image.id.includes('/logique/')).every(image => image.types.length === 1 && image.types[0] === 'Logique'))
+  assert.deepEqual(find('/pays/suisse.webp').types, ['Pays et nationalité'])
+  assert.deepEqual(find('/presenter/portugaise.webp').types, ['Pays et nationalité'])
+  assert.deepEqual(find('/corps/bras.webp').types, ['Partie du corps'])
+  assert.deepEqual(find('/maladies/grippe.webp').types, ['Maladie'])
+  assert.deepEqual(find('/co306-horloge-0806-dessinee.webp').types, ['Heure et horloge'])
+  assert(catalog.some(image => image.id.includes('logos/')))
 })

@@ -37,7 +37,8 @@ import {
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { resolveAlphaSelection } from '@/alphabetisation/themes'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import type { AudioProgress } from '@/components/AudioProgressDialog'
 import { downloadCscAudios } from '@/tcm-csc/audio'
 
 export type UseGeneratorAudioParams = {
@@ -65,11 +66,33 @@ export function useGeneratorAudio({
   domain,
   soutienType1Words,
 }: UseGeneratorAudioParams) {
+  const [audioProgress, setAudioProgress] = useState<AudioProgress | null>(null)
+  const audioController = useRef<AbortController | null>(null)
+  useEffect(() => () => audioController.current?.abort(), [])
+  function cancelAudio() {
+    audioController.current?.abort()
+    audioController.current = null
+    setAudioProgress(null)
+  }
+  async function runAudio(work: (options: { signal: AbortSignal; onProgress: (done: number, total: number) => void }) => Promise<unknown>) {
+    if (audioController.current) return
+    const controller = new AbortController()
+    audioController.current = controller
+    setAudioProgress({ value: 0, label: 'Compilation des audios…' })
+    try {
+      const result = await work({ signal: controller.signal, onProgress: (done, total) => {
+        if (!controller.signal.aborted) setAudioProgress({ value: done / total * 90, label: 'Chargement et compilation des pistes…' })
+      } })
+      if (!controller.signal.aborted) setAudioProgress({ finished: true, value: 100, label: result === 0 ? 'Aucun audio disponible.' : 'Compilation terminée. Le fichier a été transmis au navigateur pour téléchargement.' })
+    } catch (error) {
+      if (!controller.signal.aborted) setAudioProgress({ finished: true, label: error instanceof Error ? error.message : 'Impossible de préparer les audios.' })
+    } finally { if (audioController.current === controller) audioController.current = null }
+  }
   const [cscAudioBusy, setCscAudioBusy] = useState(false), [cscAudioError, setCscAudioError] = useState('')
   async function downloadActiveTcmCscAudios() {
     if (cscAudioBusy) return
     setCscAudioBusy(true); setCscAudioError('')
-    try { await downloadCscAudios(worksheets) }
+    try { await runAudio(options => downloadCscAudios(worksheets, options)) }
     catch { setCscAudioError('Un audio n’a pas pu être préparé. Vérifiez la connexion et réessayez le téléchargement.') }
     finally { setCscAudioBusy(false) }
   }
@@ -92,6 +115,7 @@ export function useGeneratorAudio({
   }
 
   async function downloadActiveTcfAudios() {
+    if (audioController.current) return
     const prefix = tcfAudioFamilyPrefix(domain)
     let jobs = collectTcfAudioJobs(worksheets)
     if (jobs.length === 0) {
@@ -114,14 +138,23 @@ export function useGeneratorAudio({
         },
       ]
     }
+    const controller = new AbortController()
+    audioController.current = controller
+    setAudioProgress({ value: 0, label: 'Préparation des pistes…' })
     try {
-      await downloadTcfAudios({
+      const result = await downloadTcfAudios({
         jobs,
         prefix,
         niveau: jobs[0]?.niveau ?? tcfNiveau,
-      })
-    } catch {
-      // Échec réseau / fichier manquant : silencieux (l’enseignant·e voit l’absence de téléchargement).
+      }, { signal: controller.signal, onProgress: (value, label) => {
+        if (!controller.signal.aborted) setAudioProgress({ value, label })
+      } })
+      if (!controller.signal.aborted) setAudioProgress({ value: 100, finished: true,
+        label: result.count ? 'Compilation terminée. Le fichier a été transmis au navigateur pour téléchargement.' : 'Aucun audio disponible.' })
+    } catch (error) {
+      if (!controller.signal.aborted) setAudioProgress({ finished: true, label: error instanceof Error ? error.message : 'La préparation audio a échoué.' })
+    } finally {
+      if (audioController.current === controller) audioController.current = null
     }
   }
 
@@ -151,7 +184,7 @@ export function useGeneratorAudio({
     const playlists = currentTcmCfrAudioPlaylists()
     if (playlists.length === 0) return
     try {
-      await downloadTcmCfrAudios(playlists)
+      await runAudio(options => downloadTcmCfrAudios(playlists, options))
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -209,7 +242,7 @@ export function useGeneratorAudio({
     if (words.length === 0) return
     const meta = soutienAudioFileMeta()
     try {
-      await downloadSoutienMotsAudio({ words, ...meta })
+      await runAudio(options => downloadSoutienMotsAudio({ words, ...meta }, options))
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -234,7 +267,7 @@ export function useGeneratorAudio({
     if (words.length === 0) return
     const meta = soutienAudioFileMeta()
     try {
-      await downloadSoutienCompleterAudio({ words, ...meta })
+      await runAudio(options => downloadSoutienCompleterAudio({ words, ...meta }, options))
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -285,13 +318,13 @@ export function useGeneratorAudio({
     /** Types 6–8 : annoncer le son après la consigne ; type 9 = phrases seules. */
     const withSon = kind !== 'lettres-phrase'
     try {
-      await downloadSoutienEcouterAudio({
+      await runAudio(options => downloadSoutienEcouterAudio({
         words,
         audioSrcs,
         phoneme: withSon ? bank?.sound : undefined,
         consigneSrc,
         ...meta,
-      })
+      }, options))
     } catch {
       // Échec réseau / fichier manquant : silencieux.
     }
@@ -309,6 +342,7 @@ export function useGeneratorAudio({
   }
 
   return {
+    audioProgress, cancelAudio,
     downloadActiveTcmCscAudios, cscAudioBusy, cscAudioError,
     downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios,

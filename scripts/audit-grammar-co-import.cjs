@@ -44,8 +44,14 @@ for(const theme of GRAMMAR_CO_THEMES){
   }
   for(const entry of entries){
    const audio=entry.exercise.support.audio
-   check(entry.status==='transcribed'&&entry.audioChecked,'source checked and transcribed')
-   check(entry.exercise.questions.length===0,'no questions added')
+   check(['transcribed','complete'].includes(entry.status)&&entry.audioChecked,'source checked and transcribed')
+   for(const question of entry.exercise.questions){
+    check(question.enonce.trim().length>0,'question wording');
+    check(question.type_reponse==='qcm_texte'&&question.choix.length===3,'three text choices');
+    check(question.choix.filter(choice=>choice.correct).length===1,'one correct answer');
+    check(new Set(question.choix.map(choice=>choice.texte)).size===3,'distinct choices');
+    check(question.formes?.lignes?.reponse_modele===question.choix.find(choice=>choice.correct).texte,'line answer agrees with QCM');
+   }
    check(entry.exercise.support.transcription.length>0&&entry.transcriptionReview?.sourceSha256===entry.source.sha256,'transcription bound to original source '+level)
    check(entry.exercise.niveau===(level==='A1'?'A0-A1':'A1-A2'),'TCF renderer level')
    check(audio.startsWith('/lib/audio/grammaire/co/'+theme.id+'/')&&(level!=='A2'||audio.includes('/a2/')),'correct folder, A2 separated')
@@ -62,11 +68,12 @@ for(const theme of GRAMMAR_CO_THEMES){
    check(source.audio===audio&&source.sha256===hash&&source.level===level,'inventory link and level')
    const config={...recipe,grammarCoLevel:level,grammarCoAudioId:entry.exercise.id}
    const page=buildPage(config,37)
-   check(page.blocks[0].items.length===1,'audio support only')
+   check(page.blocks[0].items[0].tcf?.kind==='support','audio support rendered first');
+   check(page.blocks[0].items[0].tcf.exercise.questions.length===Math.min(config.count,entry.exercise.questions.length),'selected question count rendered')
    const support=page.blocks[0].items[0].tcf
    check(support.kind==='support'&&support.exercise.support.audio===audio,'selected recording rendered')
    check(support.exercise.support.transcription===entry.exercise.support.transcription,'correct transcript rendered with selected recording')
-   check(page.blocks[0].bankQuestionCap===0&&isAudioOnlyGrammarCo(typeId,level,entry.exercise.id),'no question count before questions exist')
+   check(page.blocks[0].bankQuestionCap===entry.exercise.questions.length&&isAudioOnlyGrammarCo(typeId,level,entry.exercise.id)===(entry.exercise.questions.length===0),'capacity and audio-only state follow selected recording')
    check(blockFromPage(config).grammarCoAudioId===entry.exercise.id,'selected recording copied')
    const next=applyType(type,config)
    check(next.grammarCoLevel===level&&next.grammarCoAudioId===entry.exercise.id,'settings retained for same type')
@@ -87,4 +94,4 @@ for(const [a1Available,a2Available]of [[true,false],[false,true],[true,true]]){
  const html=renderToStaticMarkup(React.createElement(GrammarCoLevelControl,{value:a1Available?'A1':'A2',a1Available,a2Available,onChange:()=>{}}))
  check((html.match(/<button/g)||[]).length===2&&(html.match(/disabled/g)||[]).length===Number(!a1Available)+Number(!a2Available),'only available levels enabled')
 }
-console.log(`${checks} contrôles réussis ; ${report.a1_sources} transcriptions A1 et ${report.a2_sources} transcriptions A2 ; ${GRAMMAR_CO_THEMES.length} thèmes ; originaux conservés ; aucune question ajoutée.`)
+console.log(`${checks} contrôles réussis ; ${report.a1_sources} transcriptions A1 et ${report.a2_sources} transcriptions A2 ; ${GRAMMAR_CO_THEMES.length} thèmes ; originaux conservés ; questions et capacités vérifiées.`)

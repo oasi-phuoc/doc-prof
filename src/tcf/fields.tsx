@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { AudioProgressDialog } from '@/components/AudioProgressDialog'
 import { useRef, useState } from 'react'
 import { GAME_IMAGE_ACCEPT, readGameImageFile } from '@/jeux/image'
 import { tcfAudioDisplayName, type TcfAudioEntry } from './audio-bank'
@@ -210,6 +212,17 @@ export function AudioField({
   onPickFromBank?: (entry: TcfAudioEntry) => void
 }) {
   const [pickerOpen, setPickerOpen] = useState(false)
+  const [pickerLoading, setPickerLoading] = useState(false)
+  useEffect(() => {
+    if (!pickerLoading) return
+    let timer: ReturnType<typeof setTimeout>
+    const frame = requestAnimationFrame(() => { timer = setTimeout(() => {
+      setPickerOpen(true)
+      setPickerLoading(false)
+    }, 0) })
+    return () => { cancelAnimationFrame(frame); clearTimeout(timer) }
+  }, [pickerLoading])
+  const openPicker = () => setPickerLoading(true)
   const src = tcfAudioSrc(value)
   const canPick = (bankEntries?.length ?? 0) > 0
   const displayName = tcfAudioDisplayName(value, bankEntries)
@@ -229,23 +242,24 @@ export function AudioField({
             if (!canPick) onChange(event.target.value)
           }}
           onClick={() => {
-            if (canPick) setPickerOpen(true)
+            if (canPick) openPicker()
           }}
           onFocus={(event) => {
             if (canPick) {
               event.target.blur()
-              setPickerOpen(true)
+              openPicker()
             }
           }}
         />
         {canPick ? (
-          <button type="button" className="tcf-btn" onClick={() => setPickerOpen(true)}>
+          <button type="button" className="tcf-btn" onClick={() => openPicker()}>
             Choisir
           </button>
         ) : null}
       </div>
       {src ? <audio className="tcf-audio-player" controls preload="none" src={src} /> : null}
-      {canPick ? (
+      <AudioProgressDialog progress={pickerLoading ? { label: "Chargement des audios disponibles…" } : null} onCancel={() => setPickerLoading(false)} />
+      {canPick && pickerOpen ? (
         <TcfAudioPicker
           open={pickerOpen}
           entries={[...bankEntries!]}

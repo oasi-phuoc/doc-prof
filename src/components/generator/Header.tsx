@@ -38,6 +38,7 @@ export function Header({
         ) : null}
       </div>
       <div className="topbar-right">
+        {generator && <>
         <a href="/audios" className={`topbar-icon-btn${window.location.pathname === '/audios' ? ' active' : ''}`} aria-label="Catalogue des audios" title="Catalogue des audios" aria-current={window.location.pathname === '/audios' ? 'page' : undefined} onClick={event=>{if(event.button||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();navigateTo('/audios');window.dispatchEvent(new PopStateEvent('popstate'))}}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M4 14v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="12" width="4" height="8" rx="2"/><rect x="17" y="12" width="4" height="8" rx="2"/></svg></a>
         <a
           href="/images"
@@ -54,6 +55,7 @@ export function Header({
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m3 17 5-5 4 4 3-3 6 6" /></svg>
         </a>
+        </>}
         {rightSlot}
         {endSlot}
       </div>

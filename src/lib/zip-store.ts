@@ -74,6 +74,7 @@ async function toBytes(data: ZipStoreEntry['data']): Promise<Uint8Array<ArrayBuf
 export async function zipStoreBlob(
   entries: readonly ZipStoreEntry[],
   date = new Date(),
+  signal?: AbortSignal,
 ): Promise<Blob> {
   const { time, date: dosDate } = dosDateTime(date)
   const locals: Uint8Array[] = []
@@ -81,12 +82,26 @@ export async function zipStoreBlob(
   let offset = 0
   let count = 0
 
+  signal?.throwIfAborted()
   for (const entry of entries) {
+    signal?.throwIfAborted()
     const name = entry.name.replace(/\\/g, '/').replace(/^\/+/, '')
     if (!name) continue
     const data = await toBytes(entry.data)
     const nameBytes = new TextEncoder().encode(name)
-    const crc = crc32(data)
+    let crc: number
+    if (!signal) crc = crc32(data)
+    else {
+      let c = 0xffffffff
+      for (let i = 0; i < data.length; i++) {
+        if (i % 1048576 === 0) {
+          await new Promise(resolve => setTimeout(resolve, 0))
+          signal.throwIfAborted()
+        }
+        c = CRC_TABLE[(c ^ data[i]!) & 0xff]! ^ (c >>> 8)
+      }
+      crc = (c ^ 0xffffffff) >>> 0
+    }
     const local = concatBytes([
       u32(0x04034b50),
       u16(20),

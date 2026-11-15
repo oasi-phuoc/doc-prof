@@ -1,4 +1,4 @@
-import { encodeWav } from '@/tcm-cfr/audio-nombres'
+import { encodeWavCancellable } from '@/tcm-cfr/audio-nombres'
 import { CSC_DENISE_DIRECTORY } from './denise-recordings'
 
 export const CSC_TCF_BEEP = '/lib/audio/tcf/consignes/bip-d-annonce.mp3'
@@ -34,13 +34,13 @@ export function audibleCscSamples(samples: Float32Array): Float32Array {
   return samples.slice(start, end)
 }
 
-export async function renderCscDeniseAudio(sequence: readonly CscAudioSegment[]): Promise<Blob> {
+export async function renderCscDeniseAudio(sequence: readonly CscAudioSegment[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
   const context = new AudioContext({ sampleRate: 24000 })
   try {
     const clips = new Map<string, Float32Array>()
     for (const segment of sequence) {
       if (segment.kind !== 'clip' || clips.has(segment.src)) continue
-      const response = await fetch(segment.src)
+      const response = await fetch(segment.src, { signal: options.signal })
       if (!response.ok) throw new Error(`Audio TCM CSC indisponible : ${segment.src}`)
       const decoded = await context.decodeAudioData(await response.arrayBuffer())
       const mono = new Float32Array(decoded.length)
@@ -48,7 +48,9 @@ export async function renderCscDeniseAudio(sequence: readonly CscAudioSegment[])
         const channel = decoded.getChannelData(c)
         for (let i = 0; i < mono.length; i++) mono[i] = mono[i]! + channel[i]! / decoded.numberOfChannels
       }
+      options.signal?.throwIfAborted()
       clips.set(segment.src, audibleCscSamples(mono))
+      options.onProgress?.(clips.size, new Set(sequence.flatMap(s => s.kind === "clip" ? [s.src] : [])).size)
     }
     const length = sequence.reduce((count, segment) => count + (segment.kind === 'silence' ? Math.round(segment.seconds * context.sampleRate) : clips.get(segment.src)!.length), 0)
     const output = context.createBuffer(1, length, context.sampleRate), samples = output.getChannelData(0)
@@ -57,6 +59,6 @@ export async function renderCscDeniseAudio(sequence: readonly CscAudioSegment[])
       if (segment.kind === 'silence') offset += Math.round(segment.seconds * context.sampleRate)
       else { const data = clips.get(segment.src)!; samples.set(data, offset); offset += data.length }
     }
-    return encodeWav(output)
+    return await encodeWavCancellable(output, options.signal)
   } finally { await context.close().catch(() => undefined) }
 }

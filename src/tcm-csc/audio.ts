@@ -35,15 +35,20 @@ export function cscAudioGroups(sheets: WorksheetPage[]) {
     return parts.length ? [{ number, parts, name: `TCM-CSC_EXERCICE-${String(number).padStart(2, '0')}_${['NOMBRES', 'CALCULS', 'ENTOURER'][number - 1]}.wav` }] : []
   })
 }
-export async function buildCscAudioZip(sheets: WorksheetPage[]): Promise<Blob> {
+export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
   const groups = cscAudioGroups(sheets)
   if (!groups.length) throw new Error('Aucun audio CSC n’est présent dans cette fiche.')
   const files = []
-  for (const group of groups) files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.number, group.parts)) : await concatPlaylistsWithGap(group.parts) })
-  return zipStoreBlob(files)
+  for (const group of groups) {
+    const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
+    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.number, group.parts), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, groupOptions) })
+  }
+  return zipStoreBlob(files, undefined, options.signal)
 }
-export async function downloadCscAudios(sheets: WorksheetPage[]) {
-  const blob = await buildCscAudioZip(sheets), url = URL.createObjectURL(blob)
+export async function downloadCscAudios(sheets: WorksheetPage[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}) {
+  const blob = await buildCscAudioZip(sheets, options)
+  options.signal?.throwIfAborted()
+  const url = URL.createObjectURL(blob)
   try { const link = document.createElement('a'); link.href = url; link.download = 'TCM-CSC_AUDIOS.zip'; document.body.append(link); link.click(); link.remove() }
   finally { setTimeout(() => URL.revokeObjectURL(url), 10_000) }
 }
