@@ -5,7 +5,7 @@ import { downloadImage, downloadImageZip } from './download'
 import './gallery.css'
 
 const PAGE_SIZE = 48
-export function ImageGalleryPage({ onOpenGenerator, onLogout }: { onOpenGenerator: () => void; onLogout: () => void }) {
+export function ImageGalleryPage({ onOpenGenerator, onOpenFiches }: { onOpenGenerator: () => void; onOpenFiches: () => void }) {
   const [query, setQuery] = useState(''), [type, setType] = useState('')
   const [page, setPage] = useState(1), [selected, setSelected] = useState<Set<string>>(new Set()), [preview, setPreview] = useState<GalleryImage>()
   const [progress, setProgress] = useState<{ done: number; total: number }>(), [message, setMessage] = useState(''), [error, setError] = useState('')
@@ -37,7 +37,7 @@ export function ImageGalleryPage({ onOpenGenerator, onLogout }: { onOpenGenerato
     } finally { controller.current = null; setProgress(undefined) }
   }
   return <div className="app-shell gallery-page">
-    <Header generator showCreate onCreate={onOpenGenerator} endSlot={<button type="button" className="topbar-icon-btn is-logout" aria-label="Se déconnecter" title="Se déconnecter" onClick={onLogout}><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10 4v2H6v12h4v2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4zm7.6 5.4L15 7l-1.4 1.4 2.6 2.6H10v2h6.2l-2.6 2.6L15 17l2.6-2.6L20.2 12l-2.6-2.6z"/></svg></button>} />
+    <Header generator showCreate onCreate={onOpenGenerator} rightSlot={<button type="button" className="topbar-text-btn" onClick={onOpenFiches}>Catalogue des fiches</button>} />
     <main className="gallery-main" id="gallery-main">
       <header className="gallery-intro"><p className="eyebrow">Banque d’images</p><h1>Galerie d’images</h1><p>Recherchez une image, filtrez par type et téléchargez vos choix, seuls ou en groupe.</p><span>{galleryImages.length.toLocaleString('fr')} images · fichiers d’origine</span></header>
       <section className="gallery-filters" aria-label="Rechercher et filtrer les images">

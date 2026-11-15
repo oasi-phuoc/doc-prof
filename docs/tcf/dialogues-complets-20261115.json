@@ -1,0 +1,1851 @@
+{
+  "date": "2026-11-15",
+  "scope": "Correction des dix-sept liaisons avec interlocuteur manquant. Les deux interlocuteurs sont visibles et en entier ; chaque scène est relue avec son texte exact. Validation directe autorisée et réserves de voix non bloquantes.",
+  "user_instruction": "Continue valide directement les scène et je les changerai au besoin",
+  "policy": "user_accepted_editorial_scenes",
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "baseline": {
+    "commit": "ca348ebae6061b5c497f0a826ae51e1ab6bd08f4",
+    "sources": 117,
+    "missing_interlocutor_bindings": 17,
+    "distinct_previous_images": 14,
+    "native_pngs": 122
+  },
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "activated_prepared_scenes": 0,
+    "replaced_existing_bindings": 17,
+    "new_original_pngs": 17,
+    "total_active_sources": 117,
+    "delf_bound": 96,
+    "pending_scenes": 0,
+    "remaining_interlocutor_rework": 0,
+    "remaining_framing_rework": 21,
+    "generation_calls": 18,
+    "rejected_generations": 1
+  },
+  "images": [
+    {
+      "key": "dialogue-projet-piscine-meteo",
+      "label": "La piscine envisagée après la météo",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-piscine-meteo.png",
+      "sha256": "ec2ceebedb00f4bc802ffd54b9a0bdb4827c9ea9771c819d050c5d4912a3b41e",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-eaa7bb58-8951-4ce5-816c-877fd51a9a0b.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "previous_image_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. NEW composition: two adult friends on a sunny plain home terrace, no family relationship asserted. An adult woman about 40 with fair freckled skin, chin-length copper bob, pale sage blouse, dark blue trousers and plain cream shoes has just mentioned the warm forecast. Her male friend about 35 with dark brown skin, short coiled hair, mustard overshirt, cream shirt, charcoal trousers and plain brown shoes responds enthusiastically while placing goggles and a plain swimming cap in an OPEN sports bag on a small side bench. Both in ordinary dry everyday clothes, facing one another. The props clearly show his FUTURE intention to go swimming, not already being in a pool, buying tickets, or someone swimming now. No thermometer, degree value, weather bulletin text, tropical holiday or sunbathing. All four shoes visible. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux adultes discutent de la météo sur une terrasse ; le matériel est en préparation dans le sac de natation. La piscine reste une sortie envisagée, sans nage déjà en cours ni température écrite.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-a1-s3-co-4"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 3,
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+          "transcription": "Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
+          "source_sha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+          "audio_sha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-coureur-motive-ami",
+      "label": "Le coureur motivé et son ami",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png",
+      "sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-8bf2339c-1e39-42d0-b8ca-bc681e0e9281.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "previous_image_sha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+          "sha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first scene: retain the male runner with medium olive skin, short dark hair, royal blue plain sports shirt, charcoal running trousers and plain grey shoes, the park path and bench. ADD his actual conversational partner: an adult woman about 45 with dark brown skin, short natural greying curls, muted rust sweatshirt, navy walking trousers and plain cream shoes. Put both STANDING completely upright at a conversational angle with all four feet on the path. He gestures confidently before his planned run; she expresses friendly surprised concern with an open palm. No running already completed, injury, race, mileage sign or distance numeral. Remove any shoe branding. Exactly two entire people, not an isolated runner stretching. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+      "prompt_is_summary": false,
+      "visual_review": "Le coureur masculin motivé et son interlocutrice se répondent sur le chemin du parc, avant la course projetée. Deux personnes entières ; aucun kilométrage ni course accomplie.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-a1-s3-co-4"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 4,
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+          "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+          "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+          "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-fin-entrainement-piscine",
+      "label": "La fin de l’entraînement à la piscine",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-fin-entrainement-piscine.png",
+      "sha256": "039d6465f2a7b78b49e25c0be9bcf0f72f7a0799b093034bb5742583c8c1ff7c",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-cbb8451c-b34c-4452-a95b-fc44816c69cc.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "previous_image_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. NEW full-body poolside conversation. Exactly TWO foreground speakers: adult FEMALE swimming teacher about 50, light olive skin, short silver curls, plain coral polo, navy knee-length sports shorts and plain cream pool shoes; and teenage pupil depicted as a boy with dark brown skin, short coiled hair, plain teal swim shorts and a dry cream towel over his shoulders, standing in plain pool sandals. Both completely on the wide dry deck NEXT TO the pool, never submerged. The teacher announces the END of TODAY'S practice with an open hand away from the pool; the pupil asks about coming back for future practice. Pool lanes and neutral swimming equipment behind. No swimming competition already happening, no podium, medal, numbered lane, calendar, written day, score or extra voice attributed to background swimmers. All four feet visible. Teacher is explicitly Madame; pupil appearance is editorial. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+      "prompt_is_summary": false,
+      "visual_review": "La professeure appelée Madame et son élève parlent au bord du bassin à la fin de la séance. Tous deux sont hors de l’eau et entièrement visibles ; les futures séances ne sont pas représentées comme déjà réalisées.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+          "transcription": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+          "source_sha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
+          "audio_sha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-loisir-natation-samedi",
+      "label": "Parler de son loisir de natation",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-loisir-natation-samedi.png",
+      "sha256": "9ad66dd211c92de923879f12f7e7fd4ace7e2119b1f17fdf450c62e6cd53e8cd",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-47c88231-fd82-4e75-bc0a-ec686e51731d.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "previous_image_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. NEW full-body scene of TWO adults talking beside the entrance of an ordinary indoor swimming facility. Depict the person who likes swimming as a woman about 60 with medium-brown skin, short silver hair, round glasses, muted lavender cardigan, cream shirt, navy trousers and plain dark shoes, carrying a soft swimming bag with towel and goggles visible. Her interviewer/friend is depicted as a man about 45 with fair skin, dark wavy hair, a broad build, muted green shirt, tan trousers and plain brown shoes. They LOOK AT EACH OTHER and talk about her REGULAR liking for swimming, not a completed lesson, getting into the water now or swimming on a drawn Saturday. Through the window a small empty pool is visible, no lesson, teacher or race. Both dry and normally dressed, no literal sleeping bed, late wake-up clock or day. All four shoes inside margin. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+      "prompt_is_summary": false,
+      "visual_review": "La personne qui apprécie la natation et son interlocuteur discutent de ce loisir régulier. Sac avec serviette et lunettes, bassin en contexte ; aucun samedi ou horaire écrit, ni entraîneur ajouté.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+          "transcription": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+          "source_sha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
+          "audio_sha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-horaires-exposition-musee",
+      "label": "Demander les horaires de l’exposition",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-horaires-exposition-musee.png",
+      "sha256": "71ffb5870030ad03262162d042829fbc0860f4cc502737f988473e0f5c49a246",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-5d70123c-1fe5-4833-ade3-dd7b2cffa451.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "previous_image_sha256": "45b7d869883cb324424c1bf47b7756342fe5f20ac59ad34e27fc9be0cbad8b54",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. NEW scene in a calm museum entrance hall: TWO complete adults talking, male museum attendant explicitly addressed Monsieur, about 55 with medium-brown skin, short salt-and-pepper hair, olive blazer, cream shirt, charcoal trousers and plain black shoes; visitor depicted as a woman about 35 with fair skin, auburn hair in a low bun, pale blue blouse, burgundy trousers and plain brown shoes. They face one another in open floor space beside a small offset welcome stand, NO counter hiding legs. Visitor asks opening hours, attendant explains with open hand toward the gallery entrance. A few softly rendered abstract colourful paintings in the background establish an art exhibition, no copied famous artwork, written Matisse, artist portrait, sign, opening schedule, price, weekday, ticket exchange or purchase. Both full body, all four shoes. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+      "prompt_is_summary": false,
+      "visual_review": "L’agent masculin du musée et la visiteuse échangent sur les horaires devant la galerie. Pas d’horaires écrits, d’achat de billet ou de reproduction supposée de Matisse ; les deux corps sont visibles.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-034-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-034-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+          "transcription": "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+          "source_sha256": "817e9b475c792f55be16bc944f087e4442b2dbacc7bc683ef39ded01805db3ad",
+          "audio_sha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-commande-roses-fleuriste-cliente",
+      "label": "Commander des roses à la fleuriste",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-commande-roses-fleuriste-cliente.png",
+      "sha256": "b040217a48a3ef5bb3efb65fcc083e04058b0c6adfb841a7557da15bd99a2f32",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-c9e0821c-0a38-4629-9f0f-b7153cfb36bb.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
+      "previous_image_sha256": "c2160f8c16161890d170a100abee0e1ae2461350b50835595142b2b23e919f30",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
+          "sha256": "c2160f8c16161890d170a100abee0e1ae2461350b50835595142b2b23e919f30",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached florist scene: retain the female florist with fair skin, short curly copper hair, burgundy blouse, muted green apron, dark trousers and plain dark shoes, and white roses in the flower shop. ADD the customer depicted as an adult woman around 40 with dark brown skin, shoulder-length natural twists, pale ochre jacket, cream top, navy trousers and plain brown shoes. Move both to open aisle beside a SMALL low side table, facing each other and completely visible, no shop counter covering legs. They discuss ordering WHITE roses for future delivery to an absent friend; customer holds a plain small address paper toward the florist, with NO readable text. Unarranged white roses in buckets, no completed bouquet being received or birthday party already happening. No recipient in scene, birthday age, written address, number, payment or red roses. Preserve request stage; exact quantity remains in audio rather than invented printed number. All four shoes. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie. Oui, vous voulez combien de roses ? Elle fête ses 18 ans, alors 18 roses… Vous me laissez son adresse ? La voici.",
+      "prompt_is_summary": false,
+      "visual_review": "La fleuriste appelée Madame et sa cliente discutent d’une commande de roses blanches et de l’adresse de livraison. Les fleurs restent à préparer ; pas de destinataire présente, de bouquet livré ni de nombre imprimé.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "fleuriste femme",
+            "quote": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-032-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-032-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+          "transcription": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie. Oui, vous voulez combien de roses ? Elle fête ses 18 ans, alors 18 roses… Vous me laissez son adresse ? La voici.",
+          "source_sha256": "e23cab572380665012a69d406e0da49a79416b837321c3e5949274e4a8fbb121",
+          "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-conseil-pull-coton-client",
+      "label": "Choisir un pull léger en coton",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-conseil-pull-coton-client.png",
+      "sha256": "263949b4678375889419747bdae4408700886751e969167f5c691f4d93ca6598",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-d6d31669-d485-45c6-a394-6bf031da6f3a.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+      "previous_image_sha256": "f13b3c12b5520ecebbd5d3f69be96ef44c0fe374269aef9138f1f9d114e0af3a",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+          "sha256": "f13b3c12b5520ecebbd5d3f69be96ef44c0fe374269aef9138f1f9d114e0af3a",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached clothes shop scene: keep the male seller with medium olive skin, short dark hair, dark navy jacket, burgundy shirt, tan trousers and plain dark shoes. He holds ONE lightweight plain pale sage cotton pullover on a hanger while speaking. ADD customer depicted as a woman around 50 with fair skin, short silver pixie haircut, broad build, muted terracotta blouse, navy trousers and plain cream shoes. Both standing full length in open shop aisle and looking at each other; shelves offset. He RECOMMENDS COTTON for a future mountain stay, not wool already available, sale completed or person already hiking. Make pullover cotton with smooth fine fabric, no thick wool cable knit. No mountains drawn inside shop, shopping bags indicating purchase, receipt, price or calendar. All four shoes. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Bonjour Monsieur, avez-vous des pulls légers en laine ? Je regrette, ils vont arriver le mois prochain. Nous sommes encore en été. Alors en coton ? C’est pour mettre à la montagne. Et bien pour la saison, le coton est l’idéal.",
+      "prompt_is_summary": false,
+      "visual_review": "Le vendeur appelé Monsieur conseille un pull léger en coton à la cliente. Aucun pull de laine présenté comme disponible ni départ à la montagne déjà effectué ; les deux interlocuteurs sont en pied.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "vendeur homme",
+            "quote": "Bonjour Monsieur, avez-vous des pulls légers en laine ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-032-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-032-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+          "transcription": "Bonjour Monsieur, avez-vous des pulls légers en laine ? Je regrette, ils vont arriver le mois prochain. Nous sommes encore en été. Alors en coton ? C’est pour mettre à la montagne. Et bien pour la saison, le coton est l’idéal.",
+          "source_sha256": "c1939fe2eb1191aed3c2a9f7e851572ba662867625667dac3824f294e00de9b3",
+          "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-remercier-guide-visiteur-visible",
+      "label": "Remercier la guide après la visite",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-remercier-guide-visiteur-visible.png",
+      "sha256": "ae457707c7d46dd976c1a0b323de914e8cdfd78c6a7807295e8a05e2fd873ff3",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-378e9c09-19a4-4eae-869b-2d6f7971377e.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
+      "previous_image_sha256": "aef61242ec6e26385d2ec7f1f0fd2e8d3eb6c24e3401bab3994037871e240c2f",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
+          "sha256": "aef61242ec6e26385d2ec7f1f0fd2e8d3eb6c24e3401bab3994037871e240c2f",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached town-tour scene: keep the adult FEMALE guide with fair skin, short curly chestnut hair, sage green jacket, cream top, pale beige trousers, plain brown shoes and thin tour folder. ADD the actual VISITOR who thanks her as a main foreground interlocutor, depicted as an older man with dark brown skin, short silver hair, stocky build, pale blue shirt, charcoal trousers and plain dark shoes. Put them near each other turned towards each other with warm grateful open-hand gestures AFTER a town visit. Preserve a European old-town square backdrop, but no named city, location text or nationality. Remove the large tour group or keep only tiny indistinct distant passersby; none substitutes the thanking visitor. Exactly two foreground speakers with all four shoes and whole folder visible. Do not portray guide speaking out of frame or visitor as silent background. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Madame, quelle belle visite ! Cette ville mérite d’être visitée, c’est vrai. Je veux vous faire tous mes compliments pour vos descriptions claires et riches. C’est gentil ! Je vous remercie infiniment de m’avoir fait découvrir cette ville très intéressante .",
+      "prompt_is_summary": false,
+      "visual_review": "La guide appelée Madame et le visiteur qui la remercie se font face après la visite de la ville. Le visiteur est un interlocuteur de premier plan ; un groupe de figurants ne le remplace plus.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "guide femme",
+            "quote": "Madame, quelle belle visite !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-034-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-034-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-03.mp3",
+          "transcription": "Madame, quelle belle visite ! Cette ville mérite d’être visitée, c’est vrai. Je veux vous faire tous mes compliments pour vos descriptions claires et riches. C’est gentil ! Je vous remercie infiniment de m’avoir fait découvrir cette ville très intéressante .",
+          "source_sha256": "04e0447253668218318a65689652c74d58b478bd37a57cece82ecdcc9648e5f3",
+          "audio_sha256": "fdbde90da607b9d8223810db79b2ecc1963b6a13eeeaa5d1c34fe67ab2fddc9e"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-aide-monnaie-deux-personnes",
+      "label": "Demander de la monnaie devant une machine",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-aide-monnaie-deux-personnes.png",
+      "sha256": "677b9bb1e2e64a5fbb54b86a5330b3c37bea4f7091869e0842869d0d0a0fbe61",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-22d478a7-3b04-4dee-b26e-5d556e3cebd0.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+      "previous_image_sha256": "563a0beddefec17313fab4d50d615f4bbb655039d0ccccb7173cb59b1daac509",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+          "sha256": "563a0beddefec17313fab4d50d615f4bbb655039d0ccccb7173cb59b1daac509",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached machine scene: retain adult male helper with medium olive skin, dark short hair, dark moustache, muted rust overshirt, light shirt, charcoal trousers and plain brown shoes. ADD the person requesting change, depicted as an older woman with fair skin, short wavy silver hair, muted plum cardigan, cream blouse, tan trousers and plain dark shoes. Both full body, facing each other beside the SAME complete generic vending/ticket machine. He offers THREE plain unmarked coins on his open palm, she makes a grateful responding gesture holding a single plain blank banknote, not already receiving a ticket or drink. Coins have no visible denomination, currency or numerals. Machine has blank unlabelled display, no false change outlet or logo. Small objects fully in frame. All four shoes, enough open floor; no body behind machine. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît. Cette machine ne rend pas la monnaie. J’ai deux pièces de 2 euros et une pièce de 1 euro. C’est déjà bien. Merci Monsieur. Je vous en prie.",
+      "prompt_is_summary": false,
+      "visual_review": "La demandeuse et l’homme qui lui propose trois pièces sont visibles devant la machine. Pièces et billet sans montant lisible ; aucun billet de transport ou produit déjà remis.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "aidant homme",
+            "quote": "Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-035-02"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-035-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-02.mp3",
+          "transcription": "Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît. Cette machine ne rend pas la monnaie. J’ai deux pièces de 2 euros et une pièce de 1 euro. C’est déjà bien. Merci Monsieur. Je vous en prie.",
+          "source_sha256": "fad07588b5194eef8d96a849d6eb3a728a0aa5955fedd5ea7ea2e34972546bfa",
+          "audio_sha256": "6edcba0b7c40032802648be948faa3b2701a24e55c7a4924f9b7b745a3aa0a31"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-claudine-camarade-interrogation",
+      "label": "Claudine rend service à sa camarade",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-claudine-camarade-interrogation.png",
+      "sha256": "44e714b397d83df5d4bb905115255a8f15f8f0b655d7de46ac795857e5d40074",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-e89b2c13-551c-4d4b-b4fc-0f022fc4c8f8.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
+      "previous_image_sha256": "6150f45f2f08e2bfdd9a94cc747d8182ccd0b41a490b1f7cd55a7dc5734c5b00",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
+          "sha256": "6150f45f2f08e2bfdd9a94cc747d8182ccd0b41a490b1f7cd55a7dc5734c5b00",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached classroom scene, retaining teenage Claudine as a girl with dark brown skin, shoulder-length dark curls, burgundy cardigan, cream top, tan trousers and plain cream shoes. ADD the ACTUAL friend thanking her, depicted as a teenage girl with fair freckled skin, short copper-brown bob, muted teal jumper, navy trousers and plain brown shoes. They stand face to face in open classroom aisle beside an offset small desk and plain closed notebook. Claudine modestly gestures to herself to say she is prepared to be questioned IN THE FUTURE instead of her friend; friend expresses relief and gratitude. Remove raised-hand-to-unseen-teacher pose: this is a conversation between classmates, not an examination already underway. No teacher substitutes the grateful friend, no marked paper, grade, book text or classroom number. All four shoes and hands clear. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête. Tu me rends un grand service. Tu es super, merci.",
+      "prompt_is_summary": false,
+      "visual_review": "Claudine, prête à être interrogée, répond à sa camarade qui la remercie. Deux élèves en interaction, sans enseignant substitué à la camarade et sans interrogation déjà en cours.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Claudine, élève prête à répondre",
+            "quote": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-030-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-030-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-03.mp3",
+          "transcription": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête. Tu me rends un grand service. Tu es super, merci.",
+          "source_sha256": "d1825e4858c747db79268ac406b2e9566e92c541d3ee8787d7f84ba1f61f3dd3",
+          "audio_sha256": "0a0705237eb3f43cef77617ff0db7f8be650bd589e1371b4f345f81a02e516a7"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-pere-refuse-sortie-enfant-visible",
+      "label": "Le père refuse la sortie au bowling",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-pere-refuse-sortie-enfant-visible.png",
+      "sha256": "f354e4338d486fe9a4897cfdf643d345f64366b9614e5144eb6a001d45dba1fa",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-cdef45b9-93e2-4eaa-9564-63d16d721298.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
+      "previous_image_sha256": "f61771bae236c8db373d314a8421720970b6bf82d0d1cf73c165027681dfaa6c",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
+          "sha256": "f61771bae236c8db373d314a8421720970b6bf82d0d1cf73c165027681dfaa6c",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached home scene: retain adult FATHER with medium olive skin, short dark hair streaked grey, stubble, muted burgundy checked shirt, charcoal trousers and plain grey shoes, making a FIRM but calm open-palm refusal. ADD the teen asking him, depicted as a girl with medium-brown skin, dark hair in a ponytail, dusty blue sweatshirt, tan trousers and plain cream shoes, facing her father, explaining with open hands. Both complete in the entry/living room BEFORE a proposed bowling trip. Teen is NOT already outside or bowling. Mathieu is only a mentioned friend, absent; no third main person, bowling game, trophy, calendar or written Thursday. No aggression, physical contact or caricatured anger. All four shoes and full hands visible. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Papa, ce soir je sors avec Mathieu, nous allons au bowling ! Absolument pas ! il est hors de question de sortir le jeudi maintenant ! Mais papa, il y a un tournoi... Je te dis non ! Un point c’est tout !",
+      "prompt_is_summary": false,
+      "visual_review": "Le père et son enfant se parlent à la maison avant la sortie au bowling refusée. Le père est ferme sans violence ; Mathieu reste un tiers mentionné et la sortie n’a pas commencé.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "père homme",
+            "quote": "Papa, ce soir je sors avec Mathieu, nous allons au bowling !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-031-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-031-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+          "transcription": "Papa, ce soir je sors avec Mathieu, nous allons au bowling ! Absolument pas ! il est hors de question de sortir le jeudi maintenant ! Mais papa, il y a un tournoi... Je te dis non ! Un point c’est tout !",
+          "source_sha256": "58da669b458862df4dd2256a5dd0a2e63128dc6888004132d408ff64b1cb3aa0",
+          "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-horaires-magasin-client-visible",
+      "label": "Demander les horaires du magasin",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-horaires-magasin-client-visible.png",
+      "sha256": "018fed65249b1d14d836b99dcc3deded381eec48dc6d8236bf7310f146ba988b",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-f561d14e-d184-4c02-a5ea-f05859882dc0.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+      "previous_image_sha256": "e13716a6598abebf32fe60de606fd9ef092b4fb08d65f74945ea436a752f905e",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+          "sha256": "e13716a6598abebf32fe60de606fd9ef092b4fb08d65f74945ea436a752f905e",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached gift-shop scene: retain older MALE shopkeeper with dark brown skin, short grey hair, glasses, ochre overshirt, dark polo, charcoal trousers and plain dark shoes, by gift-shop entrance. ADD an adult customer depicted as a woman about 35 with light olive skin, short dark wavy hair, broad build, muted lavender blouse, navy trousers and plain cream shoes. They face and answer each other in open floor space near the door, both whole. Shopkeeper explains tomorrow's opening hours; customer plans to RETURN TOMORROW for an absent person's birthday present. Gift objects stay on shelves, no wrapped gift already purchased/handed over, no birthday party, unreadable door notice rather than timetable, no clock, date or written hours. All four shoes and whole doorway inside margins. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ? Demain c’est samedi, notre magasin est ouvert non-stop de 9h00 à 19h00. Oh ! Super ! Alors à demain pour un cadeau d’anniversaire. Très bien, à demain !",
+      "prompt_is_summary": false,
+      "visual_review": "Le commerçant appelé Monsieur répond à la cliente sur les horaires du lendemain. Le cadeau reste sur les rayons : ni achat déjà accompli, ni horaires, date ou prix écrits.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "employé homme",
+            "quote": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-032-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-032-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-04.mp3",
+          "transcription": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ? Demain c’est samedi, notre magasin est ouvert non-stop de 9h00 à 19h00. Oh ! Super ! Alors à demain pour un cadeau d’anniversaire. Très bien, à demain !",
+          "source_sha256": "5715836d1eda3d251efc434e43383bbf14b23160bf8a8d5705c3cec37c09f813",
+          "audio_sha256": "61037682fafbe1c2be98163bc0feb99b3b982d4b4213375845de7c90fd442727"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-renseignement-patisserie-client",
+      "label": "Se renseigner sur les pâtisseries ouvertes",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-patisserie-client.png",
+      "sha256": "0d7e36be46d0dcf447013452e28bc03a5c115636a5e98da6bcd1337993515e96",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-0bd52920-ce68-442b-b48b-043336817840.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+      "previous_image_sha256": "f5fc86d93f014c07e59f9707beffed5af0e214f19e914e0ca33d299e546fc38f",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+          "sha256": "f5fc86d93f014c07e59f9707beffed5af0e214f19e914e0ca33d299e546fc38f",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached bakery scene: retain older MALE shopkeeper with fair skin, short grey hair, pale blue shirt, plain dark apron, charcoal trousers and plain brown shoes. ADD customer depicted as an adult woman around 45 with dark brown skin, short natural curls, soft broad build, muted sage blouse, burgundy trousers and plain cream shoes. Both whole in open area NEXT TO the pastry counter, never hidden behind it, looking at each other. Shopkeeper explains that this shop will be CLOSED tomorrow and points generally toward distant town-centre shops as an alternative. Do not depict a completed pastry purchase, staff serving an already open holiday shop, queues, an exact location, readable closing sign or dates. Pastries remain in display, no food in customer hands. All four shoes. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Pardon monsieur. Vous êtes ouverts demain matin ? Demain non ! C’est le 11 novembre. Et pour avoir de la pâtisserie ? Tous les supermarchés sont fermés sauf les pâtisseries du centre-ville qui sont ouvertes jusqu’à 13h00.",
+      "prompt_is_summary": false,
+      "visual_review": "Le commerçant appelé monsieur et sa cliente discutent près de la pâtisserie. Il indique une alternative en ville pour le lendemain ; aucun achat ou horaire affiché et aucune date illustrée.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "employé homme",
+            "quote": "Pardon monsieur. Vous êtes ouverts demain matin ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-044-04-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-044-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+          "transcription": "Pardon monsieur. Vous êtes ouverts demain matin ? Demain non ! C’est le 11 novembre. Et pour avoir de la pâtisserie ? Tous les supermarchés sont fermés sauf les pâtisseries du centre-ville qui sont ouvertes jusqu’à 13h00.",
+          "source_sha256": "4f7032ed96487d098296a68d2a9ca7a64ec4782e0e8b86e2378400b9a8c07142",
+          "audio_sha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-projet-voiture-deux-amis",
+      "label": "Proposer un tour avec la voiture du père",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-voiture-deux-amis.png",
+      "sha256": "86e9524abdb772c8a265b971010fb4b270110d28395160b8b1faa1b030be5578",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-35546c25-85d5-497f-ae15-3ad2034c115a.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+      "previous_image_sha256": "227b4bda9dd40101536474c8dece66eec50018ff7742dbd4ea04c32980bcedbb",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+          "sha256": "227b4bda9dd40101536474c8dece66eec50018ff7742dbd4ea04c32980bcedbb",
+          "role": "content"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached parked-car scene: retain MALE speaker, young adult with fair freckled skin, curly copper hair, muted green sweater, tan trousers and plain cream shoes, gesturing toward his FATHER'S new red sports car. ADD actual conversational friend depicted as a young adult woman with dark brown skin, short braids, dusty blue jacket, cream top, charcoal trousers and plain brown shoes. Both standing beside the parked unbranded car, facing each other, completely in frame. He is happy and PROPOSES a future drive to the seaside tomorrow; car remains PARKED, doors closed, nobody driving, no seaside already reached. Father is mentioned, not physically required, and no dealership purchase or car keys being sold. Entire red car within margins as well as all four shoes. No license numbers or logos. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+      "prompt_is_summary": false,
+      "visual_review": "Le jeune homme content et son amie envisagent un tour avec la voiture du père. La voiture rouge entière reste garée ; pas de père substitué à l’ami, de trajet accompli ou de bord de mer déjà atteint.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune homme content",
+            "quote": "Oui, tu dois être content, parce que tu adores les voitures sport. Très content."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-01"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+          "transcription": "Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+          "source_sha256": "77a369b285bfd1b25e793d8b1d3f3871991e6b7efc44998bfbe6b149e0e3b529",
+          "audio_sha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-retour-iles-deux-amies",
+      "label": "Remercier son amie après la journée aux îles",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-retour-iles-deux-amies.png",
+      "sha256": "6c634c48209707cc4dbfb367574699ddc3ae9c239517d86b586b6e30225c84c3",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-ad6a9838-217f-470b-babb-988601f65dfb.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+      "previous_image_sha256": "54b106ef50711658034efa50b654c44f9996b722a0d3856b5e3a1dde874edada",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "EDIT the first attached image. Preserve the same TWO WOMEN, their faces, hair, outfits, warm painted semi-realistic TCF style and full-body conversation after the island trip. Both women must still be complete head through all four feet and hands with generous floor and frame margins. Correct ONE framing defect: the passenger BOAT behind them is cropped by the right edge. Move that boat farther into the water and make it SMALLER so its ENTIRE bow, stern, hull, roof, mast, railings and mooring are INSIDE the image with a clear water margin on BOTH ends, no part touching any image boundary. Prefer the small boat in the distant gap between the women's upper bodies, not a huge boat spilling off the right. Both women look at each other warmly, the invited curly-haired woman thanks the silver-haired woman AFTER their visit, not before a future departure. Ordinary dry clothes, no one boarding, swimming or sunbathing now. Keep the islands and quiet harbour context. No invented third speaker, text, numerals, prices, timetable, clock, brand or watermark. Last two attachments are approved TCF PAINTING STYLE references only. ONE coherent illustration, no collage. Native EXACTLY 1448 x 1086 pixels, 4:3 landscape. Original transcript for meaning only, never text to draw: Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "prompt_is_summary": false,
+      "visual_review": "La personne invitée remercie son amie après la journée aux îles. Les deux personnes sont présentes au port ; bateau amarré entier, sans nouvelle traversée ni baignade en cours.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "femme remerciant après la visite",
+            "quote": "Tu es contente ? Oui vraiment, très contente. Merci encore !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-046-04-03"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-046-04-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+          "transcription": "Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+          "source_sha256": "1e3ef2a790c9922947df4f447c3a51b3804a9f74c7b28ad00ae2280cc4b9f663",
+          "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5"
+        }
+      ],
+      "generated_reference_images": [
+        {
+          "source_png": "/workspace/generated_images/exec-6c2d78cc-9c24-4613-825e-590a9a50b4dc.png",
+          "sha256": "61e55854ad285f28f7602add16c7583f5866820e96da9a10665da88f2011c561",
+          "role": "content_generated"
+        }
+      ],
+      "generation_history": [
+        {
+          "source_png": "/workspace/generated_images/exec-6c2d78cc-9c24-4613-825e-590a9a50b4dc.png",
+          "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached harbour scene: retain the invited adult WOMAN with medium-brown skin, short dark curly hair, olive blouse, loose burgundy trousers and plain tan sandals, expressing warm gratitude. ADD her actual inviting friend, depicted as an older woman with fair skin, a soft broad build, short silver bob, muted navy cardigan, cream shirt, tan trousers and plain brown shoes. They face each other AFTER their completed day visiting islands, at a harbour path, with a small whole passenger boat safely moored behind and distant low islands. Both in ordinary dry casual clothes, no one swimming or sunbathing now, no new departure already happening, no price, timetable or labels. Entire people, all four feet and hands, boat fully visible. Invited person is explicitly feminine; the inviter's appearance is an accepted editorial choice. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+          "reference_images": [
+            "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+            "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+            "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+          ],
+          "decision": "rejected",
+          "reason": "Le bateau de contexte est rogné sur le bord droit ; reprendre la composition en conservant les deux interlocutrices entières.",
+          "sha256": "61e55854ad285f28f7602add16c7583f5866820e96da9a10665da88f2011c561"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-renseignement-ligne-stade",
+      "label": "Demander quelle ligne va au stade",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-ligne-stade.png",
+      "sha256": "dc9f334386bd25c8cfbdc715dc15526dae2b3ad61158b67c777a7e3a50d33dd0",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-a9b679ab-e4cb-4e44-b137-c5220cd3e7ed.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "previous_image_sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. NEW street scene beside a TRAM STOP, not aboard a bus. TWO actual adult speakers completely visible: asker depicted as a young man with light olive skin, curly black hair, pale cream overshirt, navy trousers and plain brown shoes; helpful local depicted as an older woman with dark brown skin, short silver hair, muted teal jacket, tan trousers and plain dark shoes. Both face each other on a wide pavement, she calmly points generally toward another nearby bus stop while explaining that THIS TRAM does not go to the stadium. A small section of a tram with clearly visible track and overhead wire in distant background establishes tram context; a modest neutral bus-stop icon away from them establishes the future alternative. No readable route number, destination, scoreboard, stadium already reached, walking time or boarding the wrong tram. They remain discussing and WAITING, all four shoes visible, no other main speaker. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux personnes se parlent à l’arrêt du tram ; l’une explique qu’une autre ligne est nécessaire pour le stade. Pas d’arrivée au stade ni de numéro inventé ; la personne reste en attente.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-02"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+          "transcription": "Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+          "source_sha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+          "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-train-absent-prendre-bus",
+      "label": "Trouver un bus quand le train ne circule pas",
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-train-absent-prendre-bus.png",
+      "sha256": "6bc8fdafd565d32a202725fb22ada4b02fd18aab1c17a9bb163160f619f8d179",
+      "width": 1448,
+      "height": 1086,
+      "source_png": "/workspace/generated_images/exec-b7e8dc8d-e2c1-47d8-a98c-0294a1512a10.png",
+      "source_bytes_preserved": true,
+      "previous_image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "previous_image_sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "reference_images": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+          "role": "style"
+        }
+      ],
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. NEW full-body scene of TWO adults conversing OUTSIDE a modest railway station near a bus stop. Asker depicted as an older woman with fair skin, short wavy silver hair, burgundy jacket, pale blouse, charcoal trousers and plain cream shoes; helpful friend depicted as an adult man around 40 with dark brown skin, short natural hair, pale ochre shirt, navy trousers and plain brown shoes. He points toward a nearby EMPTY bus-stop shelter, explaining the bus alternative because the local train does not run that day. Railway tracks and a simple station canopy in background, NO train departing now, bus not boarding, destination not reached. Asker listens thoughtfully holding a small plain travel bag by her side. No readable Vichy, Sunday, route number, timetable, clock or ticket purchase. Exactly two main speakers, both whole with all four shoes, clear margins. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+      "prompt_is_summary": false,
+      "visual_review": "Deux personnes recherchent une alternative au train local devant une gare. L’interlocuteur indique l’arrêt de bus ; pas de train local circulant ce jour-là, d’embarquement déjà réalisé ni d’horaire écrit.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-04"
+      ],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-04.mp3",
+          "transcription": "Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+          "source_sha256": "3b3232d68f1fe52ab2e8d6ec72b712dd78417f66e118657d7d306f9be792d90a",
+          "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb"
+        }
+      ]
+    }
+  ],
+  "reuses": [],
+  "sources": [
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 3,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+      "transcription": "Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
+      "source_sha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+      "audio_sha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-piscine-meteo.png",
+      "image_sha256": "ec2ceebedb00f4bc802ffd54b9a0bdb4827c9ea9771c819d050c5d4912a3b41e",
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "previous_image_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Deux adultes discutent de la météo sur une terrasse ; le matériel est en préparation dans le sac de natation. La piscine reste une sortie envisagée, sans nage déjà en cours ni température écrite.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ec2ceebedb00f4bc802ffd54b9a0bdb4827c9ea9771c819d050c5d4912a3b41e",
+        "source_sha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+        "audio_sha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+      "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+      "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png",
+      "image_sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "previous_image_sha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Le coureur masculin motivé et son interlocutrice se répondent sur le chemin du parc, avant la course projetée. Deux personnes entières ; aucun kilométrage ni course accomplie.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+        "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+        "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+      "transcription": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+      "source_sha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
+      "audio_sha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-fin-entrainement-piscine.png",
+      "image_sha256": "039d6465f2a7b78b49e25c0be9bcf0f72f7a0799b093034bb5742583c8c1ff7c",
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "previous_image_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "La professeure appelée Madame et son élève parlent au bord du bassin à la fin de la séance. Tous deux sont hors de l’eau et entièrement visibles ; les futures séances ne sont pas représentées comme déjà réalisées.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "039d6465f2a7b78b49e25c0be9bcf0f72f7a0799b093034bb5742583c8c1ff7c",
+        "source_sha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
+        "audio_sha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+      "transcription": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+      "source_sha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
+      "audio_sha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-loisir-natation-samedi.png",
+      "image_sha256": "9ad66dd211c92de923879f12f7e7fd4ace7e2119b1f17fdf450c62e6cd53e8cd",
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "previous_image_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "La personne qui apprécie la natation et son interlocuteur discutent de ce loisir régulier. Sac avec serviette et lunettes, bassin en contexte ; aucun samedi ou horaire écrit, ni entraîneur ajouté.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "9ad66dd211c92de923879f12f7e7fd4ace7e2119b1f17fdf450c62e6cd53e8cd",
+        "source_sha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
+        "audio_sha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "transcription": "Bonjour Monsieur, de quelle heure à quelle heure ouvre l’exposition Matisse ? Elle ouvre du mardi au samedi de 10h00 à 19h00. Le musée est fermé le lundi. Et le dimanche ? Le dimanche, le musée ferme à 20h00.",
+      "source_sha256": "817e9b475c792f55be16bc944f087e4442b2dbacc7bc683ef39ded01805db3ad",
+      "audio_sha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-horaires-exposition-musee.png",
+      "image_sha256": "71ffb5870030ad03262162d042829fbc0860f4cc502737f988473e0f5c49a246",
+      "previous_image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "previous_image_sha256": "45b7d869883cb324424c1bf47b7756342fe5f20ac59ad34e27fc9be0cbad8b54",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "L’agent masculin du musée et la visiteuse échangent sur les horaires devant la galerie. Pas d’horaires écrits, d’achat de billet ou de reproduction supposée de Matisse ; les deux corps sont visibles.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "71ffb5870030ad03262162d042829fbc0860f4cc502737f988473e0f5c49a246",
+        "source_sha256": "817e9b475c792f55be16bc944f087e4442b2dbacc7bc683ef39ded01805db3ad",
+        "audio_sha256": "7b63009bb6b00e56899b6602c77af02e26c50fbc4a9ab23a68b86c793473bee8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+      "transcription": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie. Oui, vous voulez combien de roses ? Elle fête ses 18 ans, alors 18 roses… Vous me laissez son adresse ? La voici.",
+      "source_sha256": "e23cab572380665012a69d406e0da49a79416b837321c3e5949274e4a8fbb121",
+      "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-commande-roses-fleuriste-cliente.png",
+      "image_sha256": "b040217a48a3ef5bb3efb65fcc083e04058b0c6adfb841a7557da15bd99a2f32",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
+      "previous_image_sha256": "c2160f8c16161890d170a100abee0e1ae2461350b50835595142b2b23e919f30",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "La fleuriste appelée Madame et sa cliente discutent d’une commande de roses blanches et de l’adresse de livraison. Les fleurs restent à préparer ; pas de destinataire présente, de bouquet livré ni de nombre imprimé.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "fleuriste femme",
+            "quote": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "b040217a48a3ef5bb3efb65fcc083e04058b0c6adfb841a7557da15bd99a2f32",
+        "source_sha256": "e23cab572380665012a69d406e0da49a79416b837321c3e5949274e4a8fbb121",
+        "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+      "transcription": "Bonjour Monsieur, avez-vous des pulls légers en laine ? Je regrette, ils vont arriver le mois prochain. Nous sommes encore en été. Alors en coton ? C’est pour mettre à la montagne. Et bien pour la saison, le coton est l’idéal.",
+      "source_sha256": "c1939fe2eb1191aed3c2a9f7e851572ba662867625667dac3824f294e00de9b3",
+      "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-conseil-pull-coton-client.png",
+      "image_sha256": "263949b4678375889419747bdae4408700886751e969167f5c691f4d93ca6598",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+      "previous_image_sha256": "f13b3c12b5520ecebbd5d3f69be96ef44c0fe374269aef9138f1f9d114e0af3a",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Le vendeur appelé Monsieur conseille un pull léger en coton à la cliente. Aucun pull de laine présenté comme disponible ni départ à la montagne déjà effectué ; les deux interlocuteurs sont en pied.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "vendeur homme",
+            "quote": "Bonjour Monsieur, avez-vous des pulls légers en laine ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "263949b4678375889419747bdae4408700886751e969167f5c691f4d93ca6598",
+        "source_sha256": "c1939fe2eb1191aed3c2a9f7e851572ba662867625667dac3824f294e00de9b3",
+        "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-03.mp3",
+      "transcription": "Madame, quelle belle visite ! Cette ville mérite d’être visitée, c’est vrai. Je veux vous faire tous mes compliments pour vos descriptions claires et riches. C’est gentil ! Je vous remercie infiniment de m’avoir fait découvrir cette ville très intéressante .",
+      "source_sha256": "04e0447253668218318a65689652c74d58b478bd37a57cece82ecdcc9648e5f3",
+      "audio_sha256": "fdbde90da607b9d8223810db79b2ecc1963b6a13eeeaa5d1c34fe67ab2fddc9e",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-remercier-guide-visiteur-visible.png",
+      "image_sha256": "ae457707c7d46dd976c1a0b323de914e8cdfd78c6a7807295e8a05e2fd873ff3",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
+      "previous_image_sha256": "aef61242ec6e26385d2ec7f1f0fd2e8d3eb6c24e3401bab3994037871e240c2f",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "La guide appelée Madame et le visiteur qui la remercie se font face après la visite de la ville. Le visiteur est un interlocuteur de premier plan ; un groupe de figurants ne le remplace plus.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "guide femme",
+            "quote": "Madame, quelle belle visite !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ae457707c7d46dd976c1a0b323de914e8cdfd78c6a7807295e8a05e2fd873ff3",
+        "source_sha256": "04e0447253668218318a65689652c74d58b478bd37a57cece82ecdcc9648e5f3",
+        "audio_sha256": "fdbde90da607b9d8223810db79b2ecc1963b6a13eeeaa5d1c34fe67ab2fddc9e",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-02.mp3",
+      "transcription": "Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît. Cette machine ne rend pas la monnaie. J’ai deux pièces de 2 euros et une pièce de 1 euro. C’est déjà bien. Merci Monsieur. Je vous en prie.",
+      "source_sha256": "fad07588b5194eef8d96a849d6eb3a728a0aa5955fedd5ea7ea2e34972546bfa",
+      "audio_sha256": "6edcba0b7c40032802648be948faa3b2701a24e55c7a4924f9b7b745a3aa0a31",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-aide-monnaie-deux-personnes.png",
+      "image_sha256": "677b9bb1e2e64a5fbb54b86a5330b3c37bea4f7091869e0842869d0d0a0fbe61",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+      "previous_image_sha256": "563a0beddefec17313fab4d50d615f4bbb655039d0ccccb7173cb59b1daac509",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "La demandeuse et l’homme qui lui propose trois pièces sont visibles devant la machine. Pièces et billet sans montant lisible ; aucun billet de transport ou produit déjà remis.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "aidant homme",
+            "quote": "Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "677b9bb1e2e64a5fbb54b86a5330b3c37bea4f7091869e0842869d0d0a0fbe61",
+        "source_sha256": "fad07588b5194eef8d96a849d6eb3a728a0aa5955fedd5ea7ea2e34972546bfa",
+        "audio_sha256": "6edcba0b7c40032802648be948faa3b2701a24e55c7a4924f9b7b745a3aa0a31",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-030-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-03.mp3",
+      "transcription": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête. Tu me rends un grand service. Tu es super, merci.",
+      "source_sha256": "d1825e4858c747db79268ac406b2e9566e92c541d3ee8787d7f84ba1f61f3dd3",
+      "audio_sha256": "0a0705237eb3f43cef77617ff0db7f8be650bd589e1371b4f345f81a02e516a7",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-claudine-camarade-interrogation.png",
+      "image_sha256": "44e714b397d83df5d4bb905115255a8f15f8f0b655d7de46ac795857e5d40074",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
+      "previous_image_sha256": "6150f45f2f08e2bfdd9a94cc747d8182ccd0b41a490b1f7cd55a7dc5734c5b00",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Claudine, prête à être interrogée, répond à sa camarade qui la remercie. Deux élèves en interaction, sans enseignant substitué à la camarade et sans interrogation déjà en cours.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "Claudine, élève prête à répondre",
+            "quote": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "44e714b397d83df5d4bb905115255a8f15f8f0b655d7de46ac795857e5d40074",
+        "source_sha256": "d1825e4858c747db79268ac406b2e9566e92c541d3ee8787d7f84ba1f61f3dd3",
+        "audio_sha256": "0a0705237eb3f43cef77617ff0db7f8be650bd589e1371b4f345f81a02e516a7",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+      "transcription": "Papa, ce soir je sors avec Mathieu, nous allons au bowling ! Absolument pas ! il est hors de question de sortir le jeudi maintenant ! Mais papa, il y a un tournoi... Je te dis non ! Un point c’est tout !",
+      "source_sha256": "58da669b458862df4dd2256a5dd0a2e63128dc6888004132d408ff64b1cb3aa0",
+      "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-pere-refuse-sortie-enfant-visible.png",
+      "image_sha256": "f354e4338d486fe9a4897cfdf643d345f64366b9614e5144eb6a001d45dba1fa",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
+      "previous_image_sha256": "f61771bae236c8db373d314a8421720970b6bf82d0d1cf73c165027681dfaa6c",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Le père et son enfant se parlent à la maison avant la sortie au bowling refusée. Le père est ferme sans violence ; Mathieu reste un tiers mentionné et la sortie n’a pas commencé.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "père homme",
+            "quote": "Papa, ce soir je sors avec Mathieu, nous allons au bowling !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "f354e4338d486fe9a4897cfdf643d345f64366b9614e5144eb6a001d45dba1fa",
+        "source_sha256": "58da669b458862df4dd2256a5dd0a2e63128dc6888004132d408ff64b1cb3aa0",
+        "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-04.mp3",
+      "transcription": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ? Demain c’est samedi, notre magasin est ouvert non-stop de 9h00 à 19h00. Oh ! Super ! Alors à demain pour un cadeau d’anniversaire. Très bien, à demain !",
+      "source_sha256": "5715836d1eda3d251efc434e43383bbf14b23160bf8a8d5705c3cec37c09f813",
+      "audio_sha256": "61037682fafbe1c2be98163bc0feb99b3b982d4b4213375845de7c90fd442727",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-horaires-magasin-client-visible.png",
+      "image_sha256": "018fed65249b1d14d836b99dcc3deded381eec48dc6d8236bf7310f146ba988b",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+      "previous_image_sha256": "e13716a6598abebf32fe60de606fd9ef092b4fb08d65f74945ea436a752f905e",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Le commerçant appelé Monsieur répond à la cliente sur les horaires du lendemain. Le cadeau reste sur les rayons : ni achat déjà accompli, ni horaires, date ou prix écrits.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "employé homme",
+            "quote": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "018fed65249b1d14d836b99dcc3deded381eec48dc6d8236bf7310f146ba988b",
+        "source_sha256": "5715836d1eda3d251efc434e43383bbf14b23160bf8a8d5705c3cec37c09f813",
+        "audio_sha256": "61037682fafbe1c2be98163bc0feb99b3b982d4b4213375845de7c90fd442727",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+      "transcription": "Pardon monsieur. Vous êtes ouverts demain matin ? Demain non ! C’est le 11 novembre. Et pour avoir de la pâtisserie ? Tous les supermarchés sont fermés sauf les pâtisseries du centre-ville qui sont ouvertes jusqu’à 13h00.",
+      "source_sha256": "4f7032ed96487d098296a68d2a9ca7a64ec4782e0e8b86e2378400b9a8c07142",
+      "audio_sha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-patisserie-client.png",
+      "image_sha256": "0d7e36be46d0dcf447013452e28bc03a5c115636a5e98da6bcd1337993515e96",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+      "previous_image_sha256": "f5fc86d93f014c07e59f9707beffed5af0e214f19e914e0ca33d299e546fc38f",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Le commerçant appelé monsieur et sa cliente discutent près de la pâtisserie. Il indique une alternative en ville pour le lendemain ; aucun achat ou horaire affiché et aucune date illustrée.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "employé homme",
+            "quote": "Pardon monsieur. Vous êtes ouverts demain matin ?"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0d7e36be46d0dcf447013452e28bc03a5c115636a5e98da6bcd1337993515e96",
+        "source_sha256": "4f7032ed96487d098296a68d2a9ca7a64ec4782e0e8b86e2378400b9a8c07142",
+        "audio_sha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+      "transcription": "Tu as vu la nouvelle voiture de mon père ? Oui, tu dois être content, parce que tu adores les voitures sport. Très content. Ça te dirait d’aller faire un tour demain jusqu’au bord de mer ? D’accord.",
+      "source_sha256": "77a369b285bfd1b25e793d8b1d3f3871991e6b7efc44998bfbe6b149e0e3b529",
+      "audio_sha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-voiture-deux-amis.png",
+      "image_sha256": "86e9524abdb772c8a265b971010fb4b270110d28395160b8b1faa1b030be5578",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+      "previous_image_sha256": "227b4bda9dd40101536474c8dece66eec50018ff7742dbd4ea04c32980bcedbb",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Le jeune homme content et son amie envisagent un tour avec la voiture du père. La voiture rouge entière reste garée ; pas de père substitué à l’ami, de trajet accompli ou de bord de mer déjà atteint.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "jeune homme content",
+            "quote": "Oui, tu dois être content, parce que tu adores les voitures sport. Très content."
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "86e9524abdb772c8a265b971010fb4b270110d28395160b8b1faa1b030be5578",
+        "source_sha256": "77a369b285bfd1b25e793d8b1d3f3871991e6b7efc44998bfbe6b149e0e3b529",
+        "audio_sha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+      "transcription": "Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "source_sha256": "1e3ef2a790c9922947df4f447c3a51b3804a9f74c7b28ad00ae2280cc4b9f663",
+      "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-retour-iles-deux-amies.png",
+      "image_sha256": "6c634c48209707cc4dbfb367574699ddc3ae9c239517d86b586b6e30225c84c3",
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+      "previous_image_sha256": "54b106ef50711658034efa50b654c44f9996b722a0d3856b5e3a1dde874edada",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "La personne invitée remercie son amie après la journée aux îles. Les deux personnes sont présentes au port ; bateau amarré entier, sans nouvelle traversée ni baignade en cours.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": [
+          {
+            "role": "femme remerciant après la visite",
+            "quote": "Tu es contente ? Oui vraiment, très contente. Merci encore !"
+          }
+        ]
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "6c634c48209707cc4dbfb367574699ddc3ae9c239517d86b586b6e30225c84c3",
+        "source_sha256": "1e3ef2a790c9922947df4f447c3a51b3804a9f74c7b28ad00ae2280cc4b9f663",
+        "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+      "transcription": "Excusez-moi, vous savez si ce tram passe par le stade ? Non, pour le stade vous devez prendre le 32. Et le stade est loin d’ici ? Oui, il y a plus d’une demi-heure de marche. Ah ! je vais attendre le 32 alors.",
+      "source_sha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+      "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-ligne-stade.png",
+      "image_sha256": "dc9f334386bd25c8cfbdc715dc15526dae2b3ad61158b67c777a7e3a50d33dd0",
+      "previous_image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "previous_image_sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Deux personnes se parlent à l’arrêt du tram ; l’une explique qu’une autre ligne est nécessaire pour le stade. Pas d’arrivée au stade ni de numéro inventé ; la personne reste en attente.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "dc9f334386bd25c8cfbdc715dc15526dae2b3ad61158b67c777a7e3a50d33dd0",
+        "source_sha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+        "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-04.mp3",
+      "transcription": "Tu sais à quelle heure part le train pour Vichy ? Mais c’est un train local, il n’y a pas ce train le dimanche. Et pour aller à Vichy, alors ? Prends le bus de 10h50, l’arrêt est là-bas.",
+      "source_sha256": "3b3232d68f1fe52ab2e8d6ec72b712dd78417f66e118657d7d306f9be792d90a",
+      "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-train-absent-prendre-bus.png",
+      "image_sha256": "6bc8fdafd565d32a202725fb22ada4b02fd18aab1c17a9bb163160f619f8d179",
+      "previous_image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "previous_image_sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+      "action": "replace_missing_interlocutors",
+      "visual_review": "Deux personnes recherchent une alternative au train local devant une gare. L’interlocuteur indique l’arrêt de bus ; pas de train local circulant ce jour-là, d’embarquement déjà réalisé ni d’horaire écrit.",
+      "gender_review": {
+        "status": "needs_voice_review",
+        "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/dialogues-complets-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "6bc8fdafd565d32a202725fb22ada4b02fd18aab1c17a9bb163160f619f8d179",
+        "source_sha256": "3b3232d68f1fe52ab2e8d6ec72b712dd78417f66e118657d7d306f9be792d90a",
+        "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    }
+  ],
+  "bank_changes": [
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 3,
+      "previous_image": "/lib/images/tcf/co/bg/piscine.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-piscine-meteo.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png"
+    }
+  ],
+  "global_image_aliases_added": 0,
+  "generation_rejections": [
+    {
+      "image": "dialogue-retour-iles-deux-amies",
+      "source_png": "/workspace/generated_images/exec-6c2d78cc-9c24-4613-825e-590a9a50b4dc.png",
+      "prompt": "Create ONE educational illustration in the approved TCF semi-realistic digital PAINTING style of the last two attached references. Detailed soft painterly volumes, subtle fine contours, warm natural colours, realistic materials and anatomy. Not a photo, 3D render, flat vector or heavy-outlined cartoon. Native EXACTLY 1448 x 1086 pixels, landscape 4:3. WIDE FULL BODY composition: BOTH ACTUAL MAIN SPEAKERS visible and interacting in the SAME scene, each complete from head through ALL shoes/feet, all hands visible, generous clear margins and floor. No person hidden outside frame or behind a counter, and no background or mentioned third person substituting a speaker. Furniture must be low, small or offset so all legs remain visible. Plain unbranded footwear: no logos, ticks, stars, stripes or lettering. No readable words, numerals, date, day, month, price, timetable, clock, watch, brand, watermark, speech bubble, collage or flag. Keep the action at its precise stage in the transcript: a proposed outing is not already completed. Characters whose appearance is unspecified are illustrative editorial choices, not claims about real audio voices. The first attachment, when present, supplies existing CONTEXT and the established principal character only; use the last two attachments for PAINTING STYLE, not for copying their people. EDIT the first attached harbour scene: retain the invited adult WOMAN with medium-brown skin, short dark curly hair, olive blouse, loose burgundy trousers and plain tan sandals, expressing warm gratitude. ADD her actual inviting friend, depicted as an older woman with fair skin, a soft broad build, short silver bob, muted navy cardigan, cream shirt, tan trousers and plain brown shoes. They face each other AFTER their completed day visiting islands, at a harbour path, with a small whole passenger boat safely moored behind and distant low islands. Both in ordinary dry casual clothes, no one swimming or sunbathing now, no new departure already happening, no price, timetable or labels. Entire people, all four feet and hands, boat fully visible. Invited person is explicitly feminine; the inviter's appearance is an accepted editorial choice. Exact transcript for contextual meaning ONLY; do not draw any of its words or numbers: Super cette journée aux îles, n’est-ce pas ! Prendre le bateau, nager, se faire bronzer, visiter l’île… Oh oui ! Je te remercie de m’avoir invitée. Tu es contente ? Oui vraiment, très contente. Merci encore !",
+      "reference_images": [
+        "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "decision": "rejected",
+      "reason": "Le bateau de contexte est rogné sur le bord droit ; reprendre la composition en conservant les deux interlocutrices entières.",
+      "sha256": "61e55854ad285f28f7602add16c7583f5866820e96da9a10665da88f2011c561"
+    }
+  ]
+}

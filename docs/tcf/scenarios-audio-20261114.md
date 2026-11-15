@@ -1,6 +1,6 @@
 # Catégories audio et scénarios — 14 novembre 2026
 
-**Validation directe du 15 novembre : les 30 scènes préparées sont activées.** Les 96 dialogues candidats sont liés, soit **117 pistes avec les 21 historiques**. Six nouveaux PNG et huit réemplois corrigent 11 liaisons existantes. Reste courant : **17 reprises d’interlocuteurs (14 images)** et **21 cadrages (18 images)**. Les notes de concordance sont non bloquantes, sans prétendre à une écoute des voix. [Validation et reste à faire](validation-directe-scenes-20261115.md).
+**Suite du 15 novembre : les 17 liaisons avec interlocuteur manquant sont corrigées et actives.** Dix-sept nouveaux PNG montrent les deux personnes en entier ; les 117 pistes restent disponibles. Il ne reste aucun interlocuteur manquant signalé dans ce registre. Restent **21 cadrages (18 images)**, dont trois gestes de remise de billet à corriger. Les réserves sur les voix sont conservées comme notes non bloquantes. [Rapport et reste à faire](dialogues-complets-20261115.md).
 
 La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.md) et ses 41 corrections sont terminées. Le classement porte sur les **346 nouveaux supports DELF Actif** ; il ne constitue pas une nouvelle écoute humaine.
 
@@ -18,6 +18,8 @@ La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.m
 Les **250 autres supports** gardent leurs formats de compréhension : 188 messages, annonces ou prises de position, 18 suites de phrases ou consignes, quatre échanges essentiellement temporels, cinq descriptions ou questionnaires et 35 documents longs. Cette catégorie ne signifie pas que leur transcription est incorrecte.
 
 Les tags **court, moyen et long** suivent la durée ou la catégorie pédagogique documentée. **Scénario est un tag supplémentaire** : une situation cohérente et une scène liée au texte exact sont nécessaires. La sélection manuelle reporte ensemble audio, transcription et image. Deux scènes interchangeables ne sont pas tirées ensemble ; un changement de transcription invalide la liaison. Les deux leurres restent dans les thèmes entendus avec leurs concepts absents des transcriptions.
+
+Les [17 dernières liaisons avec interlocuteur manquant](dialogues-complets-20261115.md) sont corrigées et actives. Les deux situations historiques concernées reçoivent les nouveaux chemins image dans la banque A1 ; les audios, transcriptions et réponses sont conservés.
 
 ## Historique des lots avant la validation directe
 

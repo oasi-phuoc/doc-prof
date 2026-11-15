@@ -1,5 +1,7 @@
 # Validation directe des scènes — 15 novembre 2026
 
+> Suite du lot : les 17 interlocuteurs manquants sont corrigés. Le [rapport actuel](dialogues-complets-20261115.md) conserve les 21 cadrages restants ; les compteurs ci-dessous décrivent le lot des trente activations avant ces corrections.
+
 **Les 30 scènes préparées sont activées**, conformément à la demande : « Continue valide directement les scène et je les changerai au besoin ». Les **96 dialogues candidats DELF Actif sont tous liés à une scène** ; les 21 pistes historiques portent le catalogue à **117 pistes disponibles pour les associations de scènes**. Il ne reste aucune scène en attente d’activation pour le seul motif de la confirmation des voix.
 
 La validation est éditoriale. Les réserves de personnes et de concordance sont conservées comme notes non bloquantes ; aucune nouvelle écoute des voix ni identité de genre confirmée par écoute n’est déclarée. Les images restent modifiables selon les besoins. La consigne est inscrite dans [la référence graphique](style-images.md).

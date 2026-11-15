@@ -1,8 +1,12 @@
 # Avancement des illustrations CE / CO
 
-**Validation directe du 15 novembre : les 30 scènes préparées sont activées.** Les 96 dialogues candidats sont liés, soit **117 pistes avec les 21 historiques**. Six nouveaux PNG et huit réemplois corrigent 11 liaisons existantes. Reste courant : **17 reprises d’interlocuteurs (14 images)** et **21 cadrages (18 images)**. Les notes de concordance sont non bloquantes, sans prétendre à une écoute des voix. [Validation et reste à faire](validation-directe-scenes-20261115.md).
+**Suite du 15 novembre : les 17 liaisons avec interlocuteur manquant sont corrigées et actives.** Dix-sept nouveaux PNG montrent les deux personnes en entier ; les 117 pistes restent disponibles. Il ne reste aucun interlocuteur manquant signalé dans ce registre. Restent **21 cadrages (18 images)**, dont trois gestes de remise de billet à corriger. Les réserves sur les voix sont conservées comme notes non bloquantes. [Rapport et reste à faire](dialogues-complets-20261115.md).
 
 > État actuel : voir le [bilan du cahier des charges du 11 novembre 2026](bilan-cahier-des-charges-20261111.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+
+## Correction des interlocuteurs manquants — 15 novembre 2026
+
+Les 17 liaisons restantes sont corrigées par 17 PNG natifs ; aucune scène ne reste signalée pour interlocuteur manquant. Restent 21 cadrages sur 18 images. Galerie actuelle : **6 748 images**. [Registre](dialogues-complets-20261115.json), [contrôles](verification-dialogues-complets-20261115.json) et [rapport](dialogues-complets-20261115.md).
 
 ## Validation directe du 15 novembre 2026
 

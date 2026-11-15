@@ -1,6 +1,6 @@
 # Reprise des interlocuteurs visibles — 14 novembre 2026
 
-**Validation directe du 15 novembre : les 30 scènes préparées sont activées.** Les 96 dialogues candidats sont liés, soit **117 pistes avec les 21 historiques**. Six nouveaux PNG et huit réemplois corrigent 11 liaisons existantes. Reste courant : **17 reprises d’interlocuteurs (14 images)** et **21 cadrages (18 images)**. Les notes de concordance sont non bloquantes, sans prétendre à une écoute des voix. [Validation et reste à faire](validation-directe-scenes-20261115.md).
+**Suite du 15 novembre : les 17 liaisons avec interlocuteur manquant sont corrigées et actives.** Dix-sept nouveaux PNG montrent les deux personnes en entier ; les 117 pistes restent disponibles. Il ne reste aucun interlocuteur manquant signalé dans ce registre. Restent **21 cadrages (18 images)**, dont trois gestes de remise de billet à corriger. Les réserves sur les voix sont conservées comme notes non bloquantes. [Rapport et reste à faire](dialogues-complets-20261115.md).
 
 **Historique du premier lot du 15 novembre :** quatre cadrages corrigés sont installés ; trois B1 montrent désormais leurs deux interlocuteurs et restent préparés avec concordance à confirmer. La scène du film ajoute un enseignant manquant à la file. État à la fin de ce premier lot : 25 liaisons connues à reprendre (22 images) et 57 décomptes détaillés à terminer. Le registre conserve aussi la première correction mère/Bastien. [Rapport et vérifications](reprise-dialogues-cadrages-20261115.md).
 

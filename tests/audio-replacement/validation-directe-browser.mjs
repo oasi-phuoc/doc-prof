@@ -1,10 +1,14 @@
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
+import { basename } from 'node:path'
 import { createServer } from 'vite'
 import { chromium } from 'playwright'
 
 const read = async path => JSON.parse(await readFile(path, 'utf8'))
-const direct = await read('docs/tcf/validation-directe-scenes-20261115.json')
+const registerPath = process.argv[2] ?? 'docs/tcf/validation-directe-scenes-20261115.json'
+const reportPath = process.argv[3] ?? 'docs/tcf/validation-directe-20261115-browser.json'
+const screenshotPrefix = `/tmp/${basename(reportPath, '.json').replace(/-browser$/, '')}`
+const direct = await read(registerPath)
 const library = new Map((await read('docs/tcf/images-generees.json')).images.map(image => [image.path, image]))
 const gallery = new Map((await read('src/gallery/catalog.generated.json')).map(image => [image.src, image]))
 const base = 'http://127.0.0.1:5194'
@@ -59,7 +63,7 @@ try {
     }))
     assert.deepEqual(clippedFrames, [])
     results.push({ audios: config.tcfAudioSlots, images: expected, loaded: expected.length, clipped_frames: clippedFrames })
-    if (index < 2) await stage.screenshot({ path: `/tmp/validation-directe-20261115-page-${index + 1}.png` })
+    if (index < 2) await stage.screenshot({ path: `${screenshotPrefix}-page-${index + 1}.png` })
   }
   for (const source of direct.sources) assert(results.some(result => result.audios.includes(source.audio) && result.images.includes(source.image)), source.exercise)
   await page.goto(`${base}/images`, { waitUntil: 'networkidle' })
@@ -75,10 +79,10 @@ try {
     await image.waitFor(); await image.evaluate(node => node.decode())
     assert.deepEqual(await image.evaluate(node => [node.naturalWidth, node.naturalHeight]), [asset.width, asset.height])
   }
-  await page.screenshot({ path: '/tmp/validation-directe-20261115-gallery.png' })
+  await page.screenshot({ path: `${screenshotPrefix}-gallery.png` })
   assert.deepEqual(errors, [])
-  const report = { date: '2026-11-15', results, selected_audio_scenes: direct.sources.length, activated_scenes: direct.summary.activated_prepared_scenes, gallery_images: assets.length, errors, human_audio_listening_performed: false }
-  await writeFile('docs/tcf/validation-directe-20261115-browser.json', JSON.stringify(report, null, 2) + '\n')
+  const report = { date: '2026-11-15', register: registerPath, results, selected_audio_scenes: direct.sources.length, activated_scenes: direct.summary.activated_prepared_scenes, gallery_images: assets.length, errors, human_audio_listening_performed: false }
+  await writeFile(reportPath, JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify({ pages: pages.length, selected_audio_scenes: direct.sources.length, association_images: results.reduce((n, result) => n + result.loaded, 0), gallery_images: assets.length, errors }))
   await context.close()
 } finally { await browser?.close(); await server.close() }
