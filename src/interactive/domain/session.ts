@@ -7,6 +7,7 @@ import {validWordPlacements} from './word-sorting'
 import {validWordDrop,isWordDropQuestion} from './word-drop'
 import { canListen, maxListensFor } from './listening'
 import { usedMatchingChoices } from './matching'
+import {annotationImage,copyImageStroke,MAX_IMAGE_STROKES,validImageStroke} from './image-annotations'
 
 export function startSession(game: Game, mode: PlayMode = 'class'): Session {
   return captureRound(game, {
@@ -90,6 +91,16 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
       const next={...runtime.wordDrops}
       if(action.choiceId===null)delete next[q.id];else next[q.id]=action.choiceId
       return updateRuntime({...runtime,wordDrops:next})
+    }
+    case 'IMAGE_ANNOTATION_ADD':
+    case 'IMAGE_ANNOTATION_UNDO':
+    case 'IMAGE_ANNOTATION_CLEAR': {
+      const q=questions.find(entry=>entry.id===action.questionId)
+      if(!q||!annotationImage(q,action.imageIndex)||action.attempt!==runtime.attempt)return state
+      const images=runtime.imageAnnotations?.[q.id]??{},strokes=images[action.imageIndex]??[]
+      if(action.type==='IMAGE_ANNOTATION_ADD'&&(!validImageStroke(action.stroke)||strokes.length>=MAX_IMAGE_STROKES)||action.type!=='IMAGE_ANNOTATION_ADD'&&!strokes.length)return state
+      const next=action.type==='IMAGE_ANNOTATION_ADD'?[...strokes,copyImageStroke(action.stroke)]:action.type==='IMAGE_ANNOTATION_UNDO'?strokes.slice(0,-1):[]
+      return updateRuntime({...runtime,imageAnnotations:{...runtime.imageAnnotations,[q.id]:{...images,[action.imageIndex]:next}}})
     }
     case 'AUDIO_STATE':
       return action.roundId !== roundId || !roundsFor(game)[state.index]?.audio || !['started', 'ended', 'override'].includes(action.status) ? state : updateRuntime({ ...runtime, audioComplete: action.status === 'ended', audioOverride: action.status === 'override' })

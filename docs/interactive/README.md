@@ -16,7 +16,9 @@ La préparation peut être enregistrée dans un [préréglage local](adr-0011-pr
 
 En Solo, le choix déclenche la correction puis la question suivante après un battement réglable de 1 à 10 secondes (5 par défaut). Le minuteur est facultatif ; s’il est activé, son expiration compte comme une réponse incorrecte. Les productions ouvertes gardent un modèle et une appréciation humaine.
 
-L’icône trophée ouvre la [compétition](guide-competition.md) : code de salle, douze nouvelles mascottes sans nom ni pseudo, scores et classement. Les salles Internet nécessitent l’activation du Worker décrite dans le guide ; le défi sur un appareil commun continue sans réseau après préparation complète des médias. Des appareils sans aucun lien entre eux ne peuvent pas partager une salle synchronisée.
+Les images des activités d’oral s’annotent dans leur agrandissement : stylo, surligneur, cadre et ovale, avec quatre couleurs, annulation et effacement. Les tracés restent attachés aux images après déplacement ou reprise ; la visionneuse suspend les minuteurs. Le doigt, la souris et une commande au clavier sont disponibles. Voir [les annotations](adr-0057-annotations-des-images-orales.md).
+
+L’icône trophée ouvre la [compétition](guide-competition.md) : code de salle, trente mascottes sans nom ni pseudo, scores et classement. Les salles Internet nécessitent l’activation du Worker décrite dans le guide ; le défi sur un appareil commun continue sans réseau après préparation complète des médias. Des appareils sans aucun lien entre eux ne peuvent pas partager une salle synchronisée.
 
 Depuis le générateur : **Jouer avec la classe**, puis **Commencer la séance**. Depuis la bibliothèque : **Jouer**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.
 

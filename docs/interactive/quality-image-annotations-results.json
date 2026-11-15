@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-15T13:56:38.035Z",
+  "baseCommit": "208eb2c03230b89442a4b19d15097011fd32c178",
+  "scope": "M14 image annotations: bounded vector geometry, source-image identity, persistent session actions and paused timers.",
+  "fullUnitSuite": {
+    "tests": 451,
+    "passed": 451,
+    "failed": 0
+  },
+  "newDomainTests": 5,
+  "browserStagesPassed": [
+    "image-annotations-browser",
+    "guided-oral-browser",
+    "a4-regression"
+  ],
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 69,
+  "viewports": [
+    "390x844",
+    "1366x768",
+    "360x640"
+  ],
+  "native": [
+    {
+      "viewport": "390x844",
+      "input": "Real CDP touch drawing and cancellation, plus mouse and keyboard",
+      "tools": "Pen, highlighter, rectangle, ellipse; four colours; per-image undo and clearing",
+      "persistence": "Committed vectors survive picture reorder, other questions, reload and explicit resume; no blob URLs in the journal",
+      "protection": "Teacher lock keeps images viewable but annotations read-only",
+      "zoom": "Normalized geometry doubles correctly when zoom changes from 1 to 2",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "input": "Mouse, keyboard and Escape cancellation",
+      "tools": "Pen, highlighter, rectangle, ellipse; four colours; per-image undo and clearing",
+      "persistence": "Committed vectors survive picture reorder, other questions, reload and explicit resume; no blob URLs in the journal",
+      "protection": "Teacher lock keeps images viewable but annotations read-only",
+      "zoom": "Normalized geometry doubles correctly when zoom changes from 1 to 2",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "360x640",
+      "input": "Real CDP touch drawing and cancellation, plus mouse and keyboard",
+      "tools": "Pen, highlighter, rectangle, ellipse; four colours; per-image undo and clearing",
+      "persistence": "Committed vectors survive picture reorder, other questions, reload and explicit resume; no blob URLs in the journal",
+      "protection": "Teacher lock keeps images viewable but annotations read-only",
+      "zoom": "Normalized geometry doubles correctly when zoom changes from 1 to 2",
+      "axeViolations": 0
+    },
+    {
+      "solo": "Both thinking and automatic-next timers freeze while an annotated image is open, then resume; the oral activity stays ungraded. A failed image also closes the editor and allows the clock to continue."
+    }
+  ],
+  "axeViolations": 0,
+  "liveApiWrites": 0,
+  "geometry": "Four tools and four colours; maximum 48 strokes per image and 160 integer points per stroke in a 0–1000 frame. Original media bytes are unchanged.",
+  "sourceIdentity": "Annotations follow original image indexes when scenes are reordered; repeated pictures remain separate positions.",
+  "persistence": "Incremental add/undo/clear events and compacted checkpoints; deep copying and strict validation; stale screen and attempt rejected; no image bytes, temporary blob URLs or private model in annotation data.",
+  "teacherAuthority": "Pause and lock forbid edits. Enlarged viewing remains available with lock. Console progression and audio suspend during annotation. Oral activities retain human assessment.",
+  "offline": "Editor code is part of the already loaded components; no extra chunk is fetched on the first offline enlargement after full preparation.",
+  "a4": {
+    "identicalScreenshot": true,
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810"
+  },
+  "checks": {
+    "productionBuild": "passed",
+    "appAndApiTypes": "passed",
+    "lint": "passed with existing warnings and no new warnings in annotation files",
+    "routeBudgets": "passed without increasing thresholds",
+    "secrets": "Gitleaks 8.30.1 passed with no findings in its documented change scope; scanner rules unchanged."
+  },
+  "competitionGzipBytes": 202755,
+  "competitionBudgetBytes": 204800,
+  "proofs": "annotation-proofs/index.html",
+  "remaining": "Physical ENI and phone tests; cold offline start; remote annotation synchronization; predictions only when an explicit verified source question exists.",
+  "externalDeployment": false
+}

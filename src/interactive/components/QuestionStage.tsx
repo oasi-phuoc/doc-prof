@@ -28,6 +28,7 @@ import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 import { GrammarCountryPrompt } from '@/components/grammar/GrammarCountryPrompt'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
+import type {ImageAnnotationControls} from './ImageAnnotationEditor'
 
 /** Only public question data enters this projection component. */
 export function QuestionStage({
@@ -51,6 +52,7 @@ export function QuestionStage({
   attempt=0,
   interactionsDisabled = false,
   unavailableChoiceIds = [],
+  imageAnnotations,
 }: {
   canSelect?: boolean
   imageOrder?: number[]
@@ -63,6 +65,7 @@ export function QuestionStage({
   attempt?: number
   interactionsDisabled?: boolean
   unavailableChoiceIds?: string[]
+  imageAnnotations?: (index:number)=>ImageAnnotationControls|undefined
   q: Question
   phase: Phase
   selected?: string
@@ -198,9 +201,9 @@ export function QuestionStage({
       ) : (
         <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
           {q.wordSorting?<WordSortingBoard key={`${q.id}:${attempt}`} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
-            q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} review={phase==='revealed'} onRead={()=>setReading('question')}/> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} />
+            q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} review={phase==='revealed'} onRead={()=>setReading('question')}/> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} annotations={imageAnnotations} />
           ) : q.mode==='oral'&&q.images.length ? (
-            <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom/>)}</div>
+            <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom annotations={imageAnnotations?.(index)}/>)}</div>
           ) : (
             <p>
               Échange oral ou production libre. L’enseignant guide l’activité et

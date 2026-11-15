@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "viewport": "390x844",
+      "input": "Real CDP touch drawing and cancellation, plus mouse and keyboard",
+      "tools": "Pen, highlighter, rectangle, ellipse; four colours; per-image undo and clearing",
+      "persistence": "Committed vectors survive picture reorder, other questions, reload and explicit resume; no blob URLs in the journal",
+      "protection": "Teacher lock keeps images viewable but annotations read-only",
+      "zoom": "Normalized geometry doubles correctly when zoom changes from 1 to 2",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "input": "Mouse, keyboard and Escape cancellation",
+      "tools": "Pen, highlighter, rectangle, ellipse; four colours; per-image undo and clearing",
+      "persistence": "Committed vectors survive picture reorder, other questions, reload and explicit resume; no blob URLs in the journal",
+      "protection": "Teacher lock keeps images viewable but annotations read-only",
+      "zoom": "Normalized geometry doubles correctly when zoom changes from 1 to 2",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "360x640",
+      "input": "Real CDP touch drawing and cancellation, plus mouse and keyboard",
+      "tools": "Pen, highlighter, rectangle, ellipse; four colours; per-image undo and clearing",
+      "persistence": "Committed vectors survive picture reorder, other questions, reload and explicit resume; no blob URLs in the journal",
+      "protection": "Teacher lock keeps images viewable but annotations read-only",
+      "zoom": "Normalized geometry doubles correctly when zoom changes from 1 to 2",
+      "axeViolations": 0
+    },
+    {
+      "solo": "Both thinking and automatic-next timers freeze while an annotated image is open, then resume; the oral activity stays ungraded. A failed image also closes the editor and allows the clock to continue."
+    }
+  ],
+  "errors": [],
+  "liveApiWrites": 0
+}

@@ -1,6 +1,7 @@
 import type { Figure, FigureDims, PhraseImageClue } from '@/math/types'
 import type { ManualVote } from './votes'
 import type { GrammarImageSupport } from '@/grammaire/curriculum/types'
+import type {ImageStroke,ImageAnnotations} from './image-annotations'
 
 export type PlayMode = 'class' | 'solo'
 export type ChoiceOrderPolicy = 'shuffle' | 'fixed' | 'ascending' | 'pin-last'
@@ -92,6 +93,7 @@ export type RoundRuntime = {
   imageOrders: Record<string, number[]>
   wordSorts?: Record<string, (string | null)[]>
   wordDrops?: Record<string,string>
+  imageAnnotations?: Record<string,ImageAnnotations>
   audioComplete: boolean
   audioOverride: boolean
   audioListens?: number
@@ -140,6 +142,8 @@ export type Action = (
   | { type: 'IMAGE_ORDER_SET'; questionId: string; order: number[] }
   | { type: 'WORD_SORT_SET'; questionId: string; placements: (string | null)[] }
   | { type: 'WORD_DROP_SET'; questionId: string; choiceId: string | null }
+  | { type: 'IMAGE_ANNOTATION_ADD'; questionId: string; imageIndex: number; attempt: number; stroke: ImageStroke }
+  | { type: 'IMAGE_ANNOTATION_UNDO' | 'IMAGE_ANNOTATION_CLEAR'; questionId: string; imageIndex: number; attempt: number }
   | { type: 'AUDIO_STATE'; roundId: string; status: 'started' | 'ended' | 'override' }
   | { type: 'AUDIO_LISTEN_STARTED' | 'AUDIO_EXTRA_LISTEN_GRANTED'; roundId: string }
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }

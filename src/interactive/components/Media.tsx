@@ -5,29 +5,39 @@ import { canListen, ListeningPass } from '../domain/listening'
 import { useAudioSequence } from '../media/useAudioSequence'
 import { usePreparedMedia } from '../media/prepared-context'
 import { LoadingScreen } from '@/components/LoadingScreen'
+import {AnnotationPreview} from './AnnotationArtwork'
+import ImageAnnotationEditor,{type ImageAnnotationControls} from './ImageAnnotationEditor'
 
 export function SafeImage({
   src,
   alt,
   zoom = false,
   retryable = true,
+  annotations,
 }: {
   src: string
   alt: string
   zoom?: boolean
   retryable?: boolean
+  annotations?: ImageAnnotationControls
 }) {
   const [attempt, setAttempt] = useState(0)
   const [failed, setFailed] = useState(false)
   const [open, setOpen] = useState(false)
   const [scale, setScale] = useState(1)
+  const [size,setSize]=useState({width:1000,height:1000})
   const dialog = useRef<HTMLDialogElement>(null)
+  const opener=useRef<HTMLButtonElement>(null),notify=useRef(annotations?.onOpenChange)
+  useEffect(()=>{notify.current=annotations?.onOpenChange},[annotations?.onOpenChange])
   const resolve = usePreparedMedia()
   const allowedSrc = browserMediaUrl(resolve(src))
   useEffect(() => {
-    if (open) dialog.current?.showModal()
-    else dialog.current?.close()
+    const node=dialog.current,returnTo=opener.current
+    if(!open){node?.close();return}
+    node?.showModal()
+    return()=>{node?.close();notify.current?.(false);if(returnTo?.isConnected)returnTo.focus({preventScroll:true})}
   }, [open])
+  const close=()=>{setOpen(false);notify.current?.(false)}
   if (failed || !allowedSrc)
     return (
       <span className="ci-media-error" role="status">
@@ -49,21 +59,27 @@ export function SafeImage({
       key={`${src}:${attempt}`}
       src={allowedSrc}
       alt={alt}
-      onError={() => setFailed(true)}
+      onError={() => {close();setFailed(true)}}
+      onLoad={annotations?event=>setSize({width:event.currentTarget.naturalWidth,height:event.currentTarget.naturalHeight}):undefined}
     />
   )
   return (
     <>
       {zoom ? (
         <button
+          ref={opener}
           className="ci-image-zoom"
           aria-label={`Agrandir : ${alt}`}
+          aria-haspopup="dialog"
+          style={annotations?{position:'relative'}:undefined}
           onClick={() => {
             setScale(1)
             setOpen(true)
+            notify.current?.(true)
           }}
         >
           {img}
+          {annotations&&<AnnotationPreview strokes={annotations.strokes} width={size.width} height={size.height}/>}
         </button>
       ) : (
         img
@@ -71,10 +87,10 @@ export function SafeImage({
       {zoom && (
         <dialog
           ref={dialog}
-          className="ci-image-dialog"
+          className={`ci-image-dialog${annotations?' ci-annotation-dialog':''}`}
           aria-label={`Image agrandie : ${alt}`}
-          onCancel={() => setOpen(false)}
-          onClose={() => setOpen(false)}
+          onCancel={event=>{event.preventDefault();close()}}
+          onClose={close}
         >
           <div className="ci-toolbar">
             <span>{alt}</span>
@@ -93,10 +109,10 @@ export function SafeImage({
             <IconButton
               icon="close"
               label="Fermer l’image"
-              onClick={() => setOpen(false)}
+              onClick={close}
             />
           </div>
-          <div
+          {open&&annotations?<ImageAnnotationEditor src={allowedSrc} alt={alt} size={size} scale={scale} annotations={annotations} onImageError={()=>{close();setFailed(true)}}/>:<div
             className="ci-image-pan"
             tabIndex={0}
             aria-label="Image agrandie, utilisez les flèches pour vous déplacer"
@@ -104,9 +120,9 @@ export function SafeImage({
             <img
               src={allowedSrc}
               alt={alt}
-              style={{ width: `${scale * 100}%` }}
+              style={{ width: `${scale * 100}%`,height:'auto',maxHeight:'none',maxWidth:'none' }}
             />
-          </div>
+          </div>}
         </dialog>
       )}
     </>

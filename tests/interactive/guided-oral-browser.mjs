@@ -9,7 +9,7 @@ import {dragSequence} from './sequence-drag-actions.mjs'
 
 const base='http://127.0.0.1:5182'
 process.env.VITE_FICHES_API_URL=base+'/__test_api'
-const vite=await createServer({cacheDir:'/tmp/clairfle-guided-oral-browser',server:{host:'127.0.0.1',port:5182,strictPort:true}})
+const vite=await createServer({cacheDir:'/tmp/clairfle-guided-oral-browser',server:{host:'127.0.0.1',port:5182,strictPort:true,hmr:false}})
 await vite.listen()
 const {demoRecipe}=await vite.ssrLoadModule('/src/interactive/demo.ts')
 const {defaultPage}=await vite.ssrLoadModule('/src/math/catalog.ts')

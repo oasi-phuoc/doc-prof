@@ -6,6 +6,7 @@ import { canonicalJson } from './seeds'
 import { copySession, readCheckpoint, type SessionCheckpoint } from './checkpoint'
 import { openInteractiveDatabase as openDatabase } from '../storage'
 import { readSessionSource, type SessionSource } from './source'
+import {validImageStroke} from './image-annotations'
 
 const STORE = 'sessions'
 const TTL = 7 * 24 * 60 * 60 * 1000
@@ -74,6 +75,8 @@ function validAction(value: unknown): value is Action {
   if (type === 'IMAGE_ORDER_SET') return keys.length === 3 && typeof value.questionId === 'string' && Array.isArray(value.order) && value.order.length <= 100 && value.order.every((n) => typeof n === 'number' && Number.isInteger(n))
   if (type === 'WORD_SORT_SET') return keys.length === 3 && typeof value.questionId === 'string' && Array.isArray(value.placements) && value.placements.length <= 64 && Array.from(value.placements).every(category => category === null || typeof category === 'string' && category.length <= 80)
   if (type === 'WORD_DROP_SET') return keys.length === 3 && typeof value.questionId === 'string' && (value.choiceId===null||typeof value.choiceId==='string'&&value.choiceId.length<=120)
+  if(type==='IMAGE_ANNOTATION_ADD')return keys.length===5&&keys.every(key=>['type','questionId','imageIndex','attempt','stroke'].includes(key))&&typeof value.questionId==='string'&&Number.isInteger(value.imageIndex)&&Number(value.imageIndex)>=0&&Number(value.imageIndex)<4&&Number.isInteger(value.attempt)&&Number(value.attempt)>=0&&Number(value.attempt)<=5000&&validImageStroke(value.stroke)
+  if(type==='IMAGE_ANNOTATION_UNDO'||type==='IMAGE_ANNOTATION_CLEAR')return keys.length===4&&keys.every(key=>['type','questionId','imageIndex','attempt'].includes(key))&&typeof value.questionId==='string'&&Number.isInteger(value.imageIndex)&&Number(value.imageIndex)>=0&&Number(value.imageIndex)<4&&Number.isInteger(value.attempt)&&Number(value.attempt)>=0&&Number(value.attempt)<=5000
   if (type === 'AUDIO_STATE') return keys.length === 3 && typeof value.roundId === 'string' && ['started', 'ended', 'override'].includes(value.status as string)
   if (type === 'AUDIO_LISTEN_STARTED' || type === 'AUDIO_EXTRA_LISTEN_GRANTED') return keys.length === 2 && typeof value.roundId === 'string'
   return keys.length === 1 && typeof type === 'string' && ['TIMEOUT', 'CARDS_UP', 'DISCUSS', 'REVEAL', 'FINISH', 'NEXT', 'PREVIOUS', 'SKIP', 'PAUSE', 'RESUME'].includes(type)

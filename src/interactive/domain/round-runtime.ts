@@ -3,11 +3,12 @@ import { questionsForRound, roundsFor } from './plan'
 import { assignChoicePositions, choiceOrderPolicy } from './slots'
 import { deriveSeed, hash } from './seeds'
 import type { Game, Question, RoundRuntime, Session } from './types'
+import {copyImageAnnotations} from './image-annotations'
 
 export const sequenceLength = (question: Question) => question.words?.length ?? question.images.length
 
 export function copyRuntime(value: RoundRuntime): RoundRuntime {
-  return { ...value, selections: { ...value.selections },...(value.wordDrops?{wordDrops:{...value.wordDrops}}:{}), hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])),...(value.wordSorts?{wordSorts:Object.fromEntries(Object.entries(value.wordSorts).map(([id,placements])=>[id,[...placements]]))}:{}) }
+  return { ...value, selections: { ...value.selections },...(value.wordDrops?{wordDrops:{...value.wordDrops}}:{}), hintsShown: { ...value.hintsShown }, imageOrders: Object.fromEntries(Object.entries(value.imageOrders).map(([id, order]) => [id, [...order]])),...(value.wordSorts?{wordSorts:Object.fromEntries(Object.entries(value.wordSorts).map(([id,placements])=>[id,[...placements]]))}:{}),...(value.imageAnnotations?{imageAnnotations:Object.fromEntries(Object.entries(value.imageAnnotations).map(([id,images])=>[id,copyImageAnnotations(images)]))}:{}) }
 }
 
 export function runtimeFor(game: Game, state: Session, index = state.index): RoundRuntime {

@@ -37,6 +37,7 @@ import type { MediaManager } from './media/manager'
 import { acquireSessionLease, type SessionLease } from './session-lease'
 import type { SessionSource } from './domain/source'
 import { useTeacherConsole, type TeacherConsoleBridge } from './teacher-console/useTeacherConsole'
+import {annotationQuestion} from './domain/image-annotations'
 
 export function SessionView(props: Omit<Parameters<typeof ActiveSessionView>[0], 'resume' | 'initialWarning' | 'ownership' | 'registerDrain'>) {
   const [attempt, setAttempt] = useState({ number: 0, takeover: false })
@@ -389,16 +390,18 @@ function PlayingRound({
   const [navigating, setNavigating] = useState(false)
   const [readingTranscript, setReadingTranscript] = useState(false)
   const [readingModel, setReadingModel] = useState<string|null>(null)
+  const [annotationOpen,setAnnotationOpen]=useState(false)
   const modelQuestion=state.phase==='revealed'?questions.find(question=>question.id===readingModel&&question.mode!=='choice'):undefined
   const transcript = showTranscripts ? reviewTranscript(game, state) : undefined
   const controls = useRef<HTMLElement>(null)
   const locked = !!state.teacherLocked
-  const blocked = suspended || locked || confirmation !== null || navigating || readingTranscript || !!readingModel
+  const annotationBlocked = suspended || locked || confirmation !== null || navigating || readingTranscript || !!readingModel
+  const blocked = annotationBlocked || annotationOpen
   const reveal = state.phase === 'revealed'
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
   const guidedOral=questions.length===1&&((questions[0]?.mode==='sequence'&&!questions[0].words)||(questions[0]?.mode==='oral'&&questions[0].images.length>0))
-  const consoleBlocked = confirmation !== null || navigating || counting || readingTranscript || !!readingModel
+  const consoleBlocked = confirmation !== null || navigating || counting || readingTranscript || !!readingModel || annotationOpen
   useLayoutEffect(() => { teacherConsole.setBlocked(consoleBlocked); return () => teacherConsole.setBlocked(true) }, [teacherConsole, consoleBlocked])
   // A withdrawn or suspended review must stay closed when controls return.
   if (readingTranscript && (!transcript || suspended || locked || confirmation !== null || navigating)) setReadingTranscript(false)
@@ -496,7 +499,7 @@ function PlayingRound({
                 <ReflectionTimer
                   key={`${runtime.attempt}:${solo ? 0 : playback}:${timer.seconds}`}
                   settings={timer}
-                  running={!suspended && confirmation === null && !navigating}
+                  running={!suspended && confirmation === null && !navigating && !annotationOpen}
                   controlsDisabled={locked}
                   waitingForAudio={
                     !solo && !!audio && !runtime.audioComplete && audioStatus !== 'ended' && !runtime.audioOverride
@@ -537,6 +540,7 @@ function PlayingRound({
                     onWordPlacements={placements=>dispatch({type:'WORD_SORT_SET',questionId:q.id,placements})}
                     sortingTargets={reveal?game.corrections[q.id]?.sortingTargets:undefined}
                     interactionsDisabled={blocked}
+                    imageAnnotations={annotationQuestion(q)?imageIndex=>({strokes:runtime.imageAnnotations?.[q.id]?.[imageIndex]??[],disabled:annotationBlocked,onAdd:stroke=>dispatch({type:'IMAGE_ANNOTATION_ADD',questionId:q.id,imageIndex,attempt:runtime.attempt,stroke}),onUndo:()=>dispatch({type:'IMAGE_ANNOTATION_UNDO',questionId:q.id,imageIndex,attempt:runtime.attempt}),onClear:()=>dispatch({type:'IMAGE_ANNOTATION_CLEAR',questionId:q.id,imageIndex,attempt:runtime.attempt}),onOpenChange:setAnnotationOpen}):undefined}
                     unavailableChoiceIds={usedMatchingChoices(game,state,q)}
                     onImageOrder={(order) => dispatch({ type: 'IMAGE_ORDER_SET', questionId: q.id, order })}
                     onSelect={(choiceId) =>
@@ -625,7 +629,7 @@ function PlayingRound({
             {!solo && <div className="ci-control-end">{reveal && state.revealedAt !== undefined && <RetractRevealButton key={state.revealedAt} revealedAt={state.revealedAt} disabled={blocked} onRetract={() => dispatch({ type: 'UNREVEAL', roundId })} />}
             <IconButton className="ci-teacher-action" icon="finish" label="Terminer la séance" disabled={locked} onClick={() => setConfirmation('finish')} /></div>}
             {solo&&!state.paused&&<IconButton className="ci-solo-pause" icon="pause" label="Pause" onClick={()=>dispatch({type:'PAUSE'})}/>}
-            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript || !!readingModel} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
+            {solo && (reveal ? <BetweenQuestionsTimer key={timer.feedbackSeconds} seconds={timer.feedbackSeconds} roundId={roundId} attempt={runtime.attempt} initialClock={initialClock} suspended={suspended || readingTranscript || !!readingModel || annotationOpen} onClock={onClock} onNext={() => dispatch({ type: 'NEXT' })} /> : questions[0]?.mode === 'choice' ? <p role="status">{timer.enabled ? 'Choisis une réponse avant la fin du temps.' : 'Choisis une réponse à ton rythme.'}</p> : <><p role="status">{timer.enabled ? 'Activité ouverte : compare ta réponse au modèle à la fin du temps.' : 'Activité ouverte : prépare ta réponse, puis compare-la au modèle.'}</p>{!timer.enabled && <button className="ci-primary" onClick={() => dispatch({ type: 'TIMEOUT' })}>Voir le modèle</button>}</>)}
           </footer>
         </div>
         {readingTranscript && transcript && !suspended && !locked && <TextReadingDialog title="Transcription de l’écoute" text={transcript} onClose={() => setReadingTranscript(false)} />}
