@@ -12,7 +12,12 @@ export function useWordDrop({question,canSelect,disabled,onSelect,onPropose}:{qu
   if(blocked&&pending!==null)setPending(null)
   if(blocked&&drag)setDrag(null)
   useEffect(()=>{if(!blocked)return;const current=gesture.current;gesture.current=null;if(current?.capture.hasPointerCapture(current.pointerId))current.capture.releasePointerCapture(current.pointerId)},[blocked])
-  useEffect(()=>{if(!available)return;window.addEventListener('blur',cancel);return()=>{window.removeEventListener('blur',cancel);const current=gesture.current;if(current?.capture.hasPointerCapture(current.pointerId))current.capture.releasePointerCapture(current.pointerId)}},[available,cancel])
+  useEffect(()=>{
+    if(!available)return
+    const escape=(event:KeyboardEvent)=>{if(event.key==='Escape'&&gesture.current){event.preventDefault();cancel();setPending(null);setAnnouncement('Déplacement annulé.')}}
+    window.addEventListener('blur',cancel);window.addEventListener('keydown',escape)
+    return()=>{window.removeEventListener('blur',cancel);window.removeEventListener('keydown',escape);const current=gesture.current;if(current?.capture.hasPointerCapture(current.pointerId))current.capture.releasePointerCapture(current.pointerId)}
+  },[available,cancel])
   const choose=(id:string)=>{
     if(blocked)return
     if(canSelect){onSelect(id);return}
