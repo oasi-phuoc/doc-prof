@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { CatalogMenu, SettingsIcon } from './CatalogNavigation'
 import {
   THEME_COLORS,
   THEME_TONES,
@@ -362,21 +363,16 @@ function AccountMenu({
       <button
         type="button"
         className={`topbar-icon-btn${open ? ' active' : ''}`}
-        aria-label="Menu"
-        title="Menu"
+        aria-label="Paramètres"
+        title="Paramètres"
         aria-expanded={open}
         aria-haspopup="menu"
         onClick={() => setOpen((value) => !value)}
       >
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-          <path
-            fill="currentColor"
-            d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
-          />
-        </svg>
+        <SettingsIcon />
       </button>
       {open ? (
-        <div className="topbar-account-menu" role="menu" aria-label="Menu">
+        <div className="topbar-account-menu" role="menu" aria-label="Paramètres">
           <p className="settings-menu-heading">Paramètres</p>
           <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} />
           <ColorSection themeColor={themeColor} onChange={onThemeColor} />
@@ -490,6 +486,7 @@ export function TopbarTools({
           />
         </svg>
       </IconBtn>
+      <CatalogMenu />
       <AccountMenu
         themeColor={themeColor}
         onThemeColor={onThemeColor}

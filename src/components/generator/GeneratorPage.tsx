@@ -76,10 +76,8 @@ import type {
 
 export function GeneratorPage({
   onLogout,
-  onOpenFiches,
 }: {
   onLogout: () => void
-  onOpenFiches: () => void
 }) {
   const accessAccount = readAccessAccount()
   const allowedDomains = useMemo(() => domainsForAccount(accessAccount), [accessAccount])
@@ -589,20 +587,6 @@ export function GeneratorPage({
         afterBrand={<button type="button" className="button small" onClick={playWithClass}>Jouer avec la classe</button>}
         rightSlot={
           <>
-            <button
-              className="topbar-icon-btn"
-              type="button"
-              aria-label="Fiches enregistrées"
-              title="Fiches enregistrées"
-              onClick={onOpenFiches}
-            >
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-                <path
-                  fill="currentColor"
-                  d="M4 4h6l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h16V8H4z"
-                />
-              </svg>
-            </button>
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}

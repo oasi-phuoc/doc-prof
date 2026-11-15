@@ -29,3 +29,7 @@ La reprise ciblée du 7 novembre 2026 est préparée dans [co-character-refresh.
 ## Validation directe demandée le 15 novembre 2026
 
 L’utilisateur demande : « Continue valide directement les scène et je les changerai au besoin ». Les scènes illustratives sont donc activées directement après contrôle du contexte, du style et des interlocuteurs visibles. Les réserves de personnes et de concordance restent des notes éditoriales non bloquantes ; elles ne sont pas présentées comme des voix écoutées ou des identités confirmées. Cette consigne remplace la mise en attente systématique des images préparées pour ce seul motif. Le registre de validation relie chaque activation à ses images, sources et empreintes. Les critères graphiques, les interlocuteurs visibles et les textes/réponses conservés restent applicables.
+
+## Cohérence des scènes — corrections du 15 novembre 2026
+
+Dans un couloir, placer les élèves assis sur un banc contre le mur et conserver un passage dégagé ; ne pas poser des chaises isolées au milieu du passage. Vérifier les appuis réels des objets : casserole posée sur une table ou un plan de travail, prise crédible sur le manche et fouet dans la préparation. Le cadrage en entier ne justifie ni mobilier impossible ni objets flottants. Les versions corrigées sont tracées dans [le registre des cadrages](cadrages-finaux-20261115.json).

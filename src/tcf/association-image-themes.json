@@ -233,8 +233,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
       "transcription": "Bonjour, j'ai rendez-vous avec le docteur Charpentier à 11h00. Vous pouvez vous asseoir. Le docteur va vous voir dans quelques minutes.",
       "sourceSha256": "da151f141f0a013b0bb9fdfcc0c4a02e138ac58ecaaf134b2cda8a86302c7b60",
-      "image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
-      "imageSha256": "78f31af347a5cfe534770c9075a5a1ea431a341ff17733edcc024579b6313edd",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-accueil-medical-en-pied.png",
+      "imageSha256": "ba2b0e51face57d14f3a89f48daf6c3735b378c702486f95bdb1ebfc6b8b7a8e",
       "themes": [
         "sante"
       ],
@@ -244,8 +244,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Aucun titre ou accord ne précise le genre de l’accueil ou du patient dans ce dialogue. Aucun écart documentaire démontré ; voix à vérifier. Le médecin de l’affiche ne représente pas le docteur Charpentier."
-      }
+        "note": "Patient et personne de l’accueil visibles en entier, à côté du bureau décalé ; rendez-vous et attente avant la consultation, sans docteur supplémentaire, horloge ou heure écrite. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Aucun titre ou accord ne précise le genre de l’accueil ou du patient dans ce dialogue. Aucun écart documentaire démontré ; voix à vérifier. Le médecin de l’affiche ne représente pas le docteur Charpentier.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Patient et personne de l’accueil visibles en entier, à côté du bureau décalé ; rendez-vous et attente avant la consultation, sans docteur supplémentaire, horloge ou heure écrite.",
+      "visualReview": "Patient et personne de l’accueil visibles en entier, à côté du bureau décalé ; rendez-vous et attente avant la consultation, sans docteur supplémentaire, horloge ou heure écrite.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ba2b0e51face57d14f3a89f48daf6c3735b378c702486f95bdb1ebfc6b8b7a8e",
+        "source_sha256": "da151f141f0a013b0bb9fdfcc0c4a02e138ac58ecaaf134b2cda8a86302c7b60",
+        "audio_sha256": "493003ddc30ec3ddaf585484a19a35261f1c8676a091f2829001e59e919d5381",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -253,8 +286,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
       "transcription": "Tu as vu mon nouveau sac ?\n— Oui, il est joli !\n— Joli et pratique : je peux mettre beaucoup de choses à l’intérieur.",
       "sourceSha256": "5117f1ce4bc20758817854e5d764196bd99b8c43b9dd68da5d085a9624238bd6",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
-      "imageSha256": "20dc499d40f2bdcf44a22a7cfbb072658793f918480ec76e1d48924a3a0d8417",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png",
+      "imageSha256": "7532c3f752880822d86a132817f34129af3650c6e8a512bc3cb0765df9c21032",
       "themes": [
         "achats"
       ],
@@ -264,8 +297,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Aucun genre des deux interlocuteurs n’est donné dans les paroles. Pas de contradiction documentaire démontrée ; les voix restent à vérifier."
-      }
+        "note": "Les deux amies sont entières autour du sac à dos ouvert ; sac, bretelles et contenu visibles pour évoquer sa capacité, sans achat ni prix ajouté. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Aucun genre des deux interlocuteurs n’est donné dans les paroles. Pas de contradiction documentaire démontrée ; les voix restent à vérifier.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Les deux amies sont entières autour du sac à dos ouvert ; sac, bretelles et contenu visibles pour évoquer sa capacité, sans achat ni prix ajouté.",
+      "visualReview": "Les deux amies sont entières autour du sac à dos ouvert ; sac, bretelles et contenu visibles pour évoquer sa capacité, sans achat ni prix ajouté.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "7532c3f752880822d86a132817f34129af3650c6e8a512bc3cb0765df9c21032",
+        "source_sha256": "5117f1ce4bc20758817854e5d764196bd99b8c43b9dd68da5d085a9624238bd6",
+        "audio_sha256": "95a691f7c9c339dba48ad47499f1eba1c349e4dd8c55df3ff625b8fe7a1c2716",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -273,8 +339,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-5.mp3",
       "transcription": "Je peux prendre un roman ?\nJe veux lire un nouveau livre.\n— Bien sûr, prends deux livres si tu veux.",
       "sourceSha256": "be6615ff3c157194cbfc90fc65285c0e221e83bddedb89064fc443c4d04077fd",
-      "image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
-      "imageSha256": "c97639e38f0913ee3a2dfc4679fa6226c118ac19e63f659a9fe06cd5ec3bde62",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png",
+      "imageSha256": "af7e44de48d44fc13e169c72693e341912f8e1df5fc5b5efb95b20cdac197760",
       "themes": [
         "lecture",
         "culture"
@@ -285,8 +351,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Le texte permet de demander et emprunter des livres sans préciser le genre des personnes ; voix à vérifier."
-      }
+        "note": "Lectrice et employée sont entières dans l’allée ; le second livre reste une possibilité proposée. Les lecteurs de fond sont des figurants, sans titre ni nombre écrit. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Le texte permet de demander et emprunter des livres sans préciser le genre des personnes ; voix à vérifier.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Lectrice et employée sont entières dans l’allée ; le second livre reste une possibilité proposée. Les lecteurs de fond sont des figurants, sans titre ni nombre écrit.",
+      "visualReview": "Lectrice et employée sont entières dans l’allée ; le second livre reste une possibilité proposée. Les lecteurs de fond sont des figurants, sans titre ni nombre écrit.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "af7e44de48d44fc13e169c72693e341912f8e1df5fc5b5efb95b20cdac197760",
+        "source_sha256": "be6615ff3c157194cbfc90fc65285c0e221e83bddedb89064fc443c4d04077fd",
+        "audio_sha256": "41101c21ae1f5c63b3bba46e9086e414265868f95bbfae1d9426adbc5ef16dc3",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -294,8 +393,8 @@
       "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
       "transcription": "Papa, est-ce que tu peux m'aider avec mes devoirs ?\nD'accord.\nQu'est-ce que tu fais ?\nCe sont des exercices de mathématiques.",
       "sourceSha256": "e18fba59cb7f5d6073f945a4a8d688bce95c7d142570cd915016538cdc0e4919",
-      "image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
-      "imageSha256": "d1b838165f98b39ee20e63bd86e37f4954484cebf88d84904fe3d560740dc580",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-devoirs-papa-en-pied.png",
+      "imageSha256": "681b693c724c9f11b9ab82bd3064d6cfb91d423946a49928fb4b9e106af4fe92",
       "themes": [
         "education"
       ],
@@ -305,8 +404,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Père homme conforme à Papa ; le genre de l’enfant n’est pas précisé dans les paroles."
-      }
+        "note": "Le père et l’enfant sont entièrement visibles sur leurs chaises, table de côté et quatre chaussures présentes. Aide aux exercices de maths, sans note, formule ou devoir déclaré terminé. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Père homme conforme à Papa ; le genre de l’enfant n’est pas précisé dans les paroles.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Le père et l’enfant sont entièrement visibles sur leurs chaises, table de côté et quatre chaussures présentes. Aide aux exercices de maths, sans note, formule ou devoir déclaré terminé.",
+      "visualReview": "Le père et l’enfant sont entièrement visibles sur leurs chaises, table de côté et quatre chaussures présentes. Aide aux exercices de maths, sans note, formule ou devoir déclaré terminé.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "681b693c724c9f11b9ab82bd3064d6cfb91d423946a49928fb4b9e106af4fe92",
+        "source_sha256": "e18fba59cb7f5d6073f945a4a8d688bce95c7d142570cd915016538cdc0e4919",
+        "audio_sha256": "201c5e8ee81e2d33ef47ec13bf8e01fcd47a1e286c216dcc8b8ecf723719659e",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -314,8 +446,8 @@
       "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3",
       "transcription": "Qui est la femme avec tous les livres là-bas ?\nC'est madame Vega, la nouvelle professeur de français.",
       "sourceSha256": "d74ffb5ec6df22617a139f3dba72c4d401e2d4e95c66156073387793fbe4dfb9",
-      "image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
-      "imageSha256": "8be5f2e25dd245d726f915c353d19fad4d2586bfe8a30b469599062b6e830b74",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-madame-vega-trois-personnes-entieres.png",
+      "imageSha256": "1dcc718ebb9a50756d671368b268be49c9895d1559df2dd98ff9b8630201b928",
       "themes": [
         "education"
       ],
@@ -325,8 +457,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "documented_match",
         "voice_confirmation_pending": false,
-        "note": "Le personnage montré avec les livres est bien féminin. Les observateurs ne sont pas identifiés par genre dans le dialogue et restent des élèves figurants."
-      }
+        "note": "Les deux élèves sont sur un banc contre le mur, avec le passage du couloir dégagé. Madame Vega portant ses livres reste la personne désignée, distincte des deux locuteurs ; les trois personnes et leurs six chaussures sont entières. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Le personnage montré avec les livres est bien féminin. Les observateurs ne sont pas identifiés par genre dans le dialogue et restent des élèves figurants.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Les deux élèves sont sur un banc contre le mur, avec le passage du couloir dégagé. Madame Vega portant ses livres reste la personne désignée, distincte des deux locuteurs ; les trois personnes et leurs six chaussures sont entières.",
+      "visualReview": "Les deux élèves sont sur un banc contre le mur, avec le passage du couloir dégagé. Madame Vega portant ses livres reste la personne désignée, distincte des deux locuteurs ; les trois personnes et leurs six chaussures sont entières.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 3,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "1dcc718ebb9a50756d671368b268be49c9895d1559df2dd98ff9b8630201b928",
+        "source_sha256": "d74ffb5ec6df22617a139f3dba72c4d401e2d4e95c66156073387793fbe4dfb9",
+        "audio_sha256": "bb6d6c4d81c628153d20cd30c6340d38e982ada8e05a7553a9b523dfb54018bc",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -334,8 +499,8 @@
       "audio": "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3",
       "transcription": "Je n'aime pas le restaurant de l'université.\nOù est-ce que tu manges alors ?\nJe préfère me préparer mes repas.",
       "sourceSha256": "e6e8cd4a97f7ad5ea55025f2b6354050c5b8cf92bf4dc3c655badcb5ce7e7479",
-      "image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
-      "imageSha256": "19d04f2278aa315cb36f49275634e7b973f9b4583a4ab1a6241b0d1cc100e5cd",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preparer-ses-repas-en-pied.png",
+      "imageSha256": "cfe274be60c93522297b7ad58ca1bb4fafda42c47034ae65c53ecdfce5dd21c4",
       "themes": [
         "alimentation"
       ],
@@ -345,8 +510,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "La personne qui préfère préparer ses repas et son interlocuteur ne sont pas genrés dans le texte. La répartition de voix reste à confirmer."
-      }
+        "note": "Deux personnes entières discutent en préparant un repas chez elles ; table décalée et quatre chaussures visibles, sans lien familial ou amoureux affirmé, ni service au restaurant. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "La personne qui préfère préparer ses repas et son interlocuteur ne sont pas genrés dans le texte. La répartition de voix reste à confirmer.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Deux personnes entières discutent en préparant un repas chez elles ; table décalée et quatre chaussures visibles, sans lien familial ou amoureux affirmé, ni service au restaurant.",
+      "visualReview": "Deux personnes entières discutent en préparant un repas chez elles ; table décalée et quatre chaussures visibles, sans lien familial ou amoureux affirmé, ni service au restaurant.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "cfe274be60c93522297b7ad58ca1bb4fafda42c47034ae65c53ecdfce5dd21c4",
+        "source_sha256": "e6e8cd4a97f7ad5ea55025f2b6354050c5b8cf92bf4dc3c655badcb5ce7e7479",
+        "audio_sha256": "be9a78a1683bd6f44524bf5ecaa2fb626722d43c760db25be9b868f64b70b863",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a1-tpa-co-4",
@@ -368,6 +566,14 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Personnage Éric nommé et représenté au masculin ; genre de la personne qui lui pose la question non précisé par les paroles."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -376,8 +582,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
       "transcription": "Kate, alors ton voyage en Guyane c'était comment ?\nGénial, j'ai fait tout ce que je voulais et pris plein de photos.\nSuper et la météo ?\nBonne ?\nOui, j'ai eu du soleil tout le temps.",
       "sourceSha256": "938b2a2ac2a207c45b5837c311ee4b9493b8e4e30e6290c1b7e8ec62a35ed7f1",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
-      "imageSha256": "b6c76e7146f626c05bbf68d46a35c74372bcf03887139ea4f413e11d795eebca",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-kate-photos-voyage-en-pied.png",
+      "imageSha256": "da1a142a0bf88f9ebd70123c852a8b940cd7e0af0c6f64bb556d4ed5d3242348",
       "themes": [
         "deplacements"
       ],
@@ -387,8 +593,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Kate nommée et représentée au féminin ; autre interlocutrice non genrée par les paroles. Aucun genre réel des voix certifié."
-      }
+        "note": "Kate et son amie sont entières sur leurs sièges ; photographie de voyage sur le téléphone, scène de retour au café et non séjour actuel. Quatre chaussures et table de côté. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Kate nommée et représentée au féminin ; autre interlocutrice non genrée par les paroles. Aucun genre réel des voix certifié.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Kate et son amie sont entières sur leurs sièges ; photographie de voyage sur le téléphone, scène de retour au café et non séjour actuel. Quatre chaussures et table de côté.",
+      "visualReview": "Kate et son amie sont entières sur leurs sièges ; photographie de voyage sur le téléphone, scène de retour au café et non séjour actuel. Quatre chaussures et table de côté.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "da1a142a0bf88f9ebd70123c852a8b940cd7e0af0c6f64bb556d4ed5d3242348",
+        "source_sha256": "938b2a2ac2a207c45b5837c311ee4b9493b8e4e30e6290c1b7e8ec62a35ed7f1",
+        "audio_sha256": "2e929d5bbff3713c4ea0de73189b8697b2c93a6a09d6db8a6284b5d9b66ceff5",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -396,8 +635,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3",
       "transcription": "Je ne comprends pas, le magasin de journaux était fermé à midi. C'est normal, il ouvre seulement l'après-midi cette semaine. Et tu sais à quelle heure ? À 15h je crois, vérifie sur internet. D'accord.",
       "sourceSha256": "7e1ad745a1aad5587c0dedd904ea3e94bc9afb176d30e69e54aaf61b1aa2f1dc",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
-      "imageSha256": "b16eb48c2469d1b1b5ae6bf931a27e186e2e7ffdbf37aca20e0e7b4405de05d7",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-kiosque-ferme-en-pied.png",
+      "imageSha256": "92c81603f770617d4e4d69a3848333e261b9eb541f0af69d2ce44c5413886c43",
       "themes": [
         "achats"
       ],
@@ -407,8 +646,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Les deux interlocuteurs ne sont pas genrés par les paroles ; distribution des voix à confirmer."
-      }
+        "note": "Deux personnes entières discutent devant le kiosque fermé ; consultation du téléphone, sans panneau d’heure, date, achat ni réouverture déjà réalisée. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Les deux interlocuteurs ne sont pas genrés par les paroles ; distribution des voix à confirmer.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Deux personnes entières discutent devant le kiosque fermé ; consultation du téléphone, sans panneau d’heure, date, achat ni réouverture déjà réalisée.",
+      "visualReview": "Deux personnes entières discutent devant le kiosque fermé ; consultation du téléphone, sans panneau d’heure, date, achat ni réouverture déjà réalisée.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "92c81603f770617d4e4d69a3848333e261b9eb541f0af69d2ce44c5413886c43",
+        "source_sha256": "7e1ad745a1aad5587c0dedd904ea3e94bc9afb176d30e69e54aaf61b1aa2f1dc",
+        "audio_sha256": "516eb7eb22c059ce95f708de26d2714bd9e6837e8225689cafd50c5f0507230d",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -416,8 +688,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
       "transcription": "Salut Marc, ça va ? Tu fais quoi samedi ? Rien je crois. Je suis libre. Pourquoi ? Ça te dit de venir avec moi au Musée d'Histoire ? J'ai deux billets. D'accord.",
       "sourceSha256": "c8a8fffc0012e06ac846d32c7bb010cb6907e1bbf1f9d5cb6183419e599ce0d8",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
-      "imageSha256": "abfba3ff9352f1546a4d8e149a35f7581a7c1ea2000c809400b1a22237bf13ce",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png",
+      "imageSha256": "48418332a67073a02ad3223195a510606d6ad17fa5bad0e3383998e7ee73eba5",
       "themes": [
         "culture"
       ],
@@ -427,8 +699,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Marc est nommé et représenté au masculin ; l’autre interlocuteur n’est pas genré dans le texte. Le projet d’invitation n’ajoute pas de genre confirmé pour cet autre personnage."
-      }
+        "note": "Deux personnes entières échangent autour des deux billets ; invitation future devant le musée, sans entrée déjà effectuée, gardien supplémentaire, date ou prix lisible. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Marc est nommé et représenté au masculin ; l’autre interlocuteur n’est pas genré dans le texte. Le projet d’invitation n’ajoute pas de genre confirmé pour cet autre personnage.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Deux personnes entières échangent autour des deux billets ; invitation future devant le musée, sans entrée déjà effectuée, gardien supplémentaire, date ou prix lisible.",
+      "visualReview": "Deux personnes entières échangent autour des deux billets ; invitation future devant le musée, sans entrée déjà effectuée, gardien supplémentaire, date ou prix lisible.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "48418332a67073a02ad3223195a510606d6ad17fa5bad0e3383998e7ee73eba5",
+        "source_sha256": "c8a8fffc0012e06ac846d32c7bb010cb6907e1bbf1f9d5cb6183419e599ce0d8",
+        "audio_sha256": "007508ac6092f98712b196c0a7c39263167e5aa33cdfe2814daf0f99c386d71a",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a2-sa-co-4",
@@ -436,8 +741,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
       "transcription": "Aujourd'hui, dans le bus, j'ai croisé Thomas.\nC'est qui ?\nLe frère de Sophie.\nIl a déménagé à Lyon pour ses études.\nIl est très sympa.\nInvite-le à la maison si tu veux.",
       "sourceSha256": "3a9b2301bd726e4ebc912dd55319034d9542b6d754e5a3c9e774a2636f1d95a7",
-      "image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
-      "imageSha256": "837834bd7ef3d15b5cfc4a384e78c87efcd0fb347a49009cb99f32583253c28d",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-parler-thomas-bus-en-pied.png",
+      "imageSha256": "aebb4904657395aac03eaf43ad87610dd10e0e584f6421466f39b25d4699cd9f",
       "themes": [
         "deplacements"
       ],
@@ -447,8 +752,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Thomas est masculin comme frère et il ; les deux personnes qui parlent de lui ne sont pas genrées par les paroles."
-      }
+        "note": "Les deux interlocutrices sont entières dans le bus et leurs quatre chaussures sont visibles ; Thomas et Sophie restent des tiers mentionnés, sans personnage ajouté à leur place. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Thomas est masculin comme frère et il ; les deux personnes qui parlent de lui ne sont pas genrées par les paroles.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Les deux interlocutrices sont entières dans le bus et leurs quatre chaussures sont visibles ; Thomas et Sophie restent des tiers mentionnés, sans personnage ajouté à leur place.",
+      "visualReview": "Les deux interlocutrices sont entières dans le bus et leurs quatre chaussures sont visibles ; Thomas et Sophie restent des tiers mentionnés, sans personnage ajouté à leur place.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "aebb4904657395aac03eaf43ad87610dd10e0e584f6421466f39b25d4699cd9f",
+        "source_sha256": "3a9b2301bd726e4ebc912dd55319034d9542b6d754e5a3c9e774a2636f1d95a7",
+        "audio_sha256": "a69d5b9ebfc64ebf5b0311b2238990bc789792943ebcc0c75265721386aa1a03",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -456,8 +794,8 @@
       "audio": "/lib/audio/tcf/co/magasins/les-achats-1.mp3",
       "transcription": "Alors, tu prends quoi ? Le sac vert ou le sac noir ? Le noir ne me plaît pas trop. Je crois que j'aime mieux le vert. C'est un bon choix. Merci.",
       "sourceSha256": "6df1a4427fba93513c256a7e5c9f0b10bebec6dad7e5a855e61369831549926b",
-      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
-      "imageSha256": "7ab9859b528dda0dedabbe15d2083edabf6de18cfb7572427681c203c6f20737",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-choisir-sac-vert-en-pied.png",
+      "imageSha256": "ef2c6923a3c9f8b123efadc8489bf2126ee98abcdeb38b9f215209e223b88f9e",
       "themes": [
         "achats"
       ],
@@ -467,8 +805,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "La préférence pour le sac vert ne donne aucun genre des interlocuteurs ; voix à confirmer."
-      }
+        "note": "Deux personnes entières comparent les deux sacs complets de même forme, vert et noir ; geste vers le vert, sans caisse, prix ou préférence inversée. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "La préférence pour le sac vert ne donne aucun genre des interlocuteurs ; voix à confirmer.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Deux personnes entières comparent les deux sacs complets de même forme, vert et noir ; geste vers le vert, sans caisse, prix ou préférence inversée.",
+      "visualReview": "Deux personnes entières comparent les deux sacs complets de même forme, vert et noir ; geste vers le vert, sans caisse, prix ou préférence inversée.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "ef2c6923a3c9f8b123efadc8489bf2126ee98abcdeb38b9f215209e223b88f9e",
+        "source_sha256": "6df1a4427fba93513c256a7e5c9f0b10bebec6dad7e5a855e61369831549926b",
+        "audio_sha256": "650f399abf3a064386e54d0f2e652e26d100844731cd2e42535621c756cc664f",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -488,6 +859,14 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Les deux interlocuteurs ne sont pas genrés dans la transcription. Voix à confirmer avant de certifier leur répartition."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -496,8 +875,8 @@
       "audio": "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
       "transcription": "La cuisine, c'est vraiment trop difficile pour moi. Qu'est-ce qui se passe ? Je peux faire quelque chose ? J'ai raté ma crème au chocolat. Attends, je te montre. C'est très facile.",
       "sourceSha256": "bed4b1483d357dae16182fb80b82c6765f2473c082ae85c47543574723f9b64f",
-      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
-      "imageSha256": "142fba11e56bc88a813c10d79f3c56a4ff22584f8f48bf085f95757f2d76776a",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-montrer-creme-chocolat-en-pied.png",
+      "imageSha256": "e9f81f7e725f0698a96102bca66e2b0e287cfd43b53e0abdec24f68f0c17e99a",
       "themes": [
         "alimentation"
       ],
@@ -507,8 +886,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Ni la personne qui a raté la crème ni la personne aidante ne sont genrées dans le dialogue. Répartition vocale à confirmer."
-      }
+        "note": "Deux personnes entières autour de la démonstration de crème au chocolat. La casserole repose sur une vraie table, une main tient le manche et l’autre le fouet ; ustensiles et ingrédients ont un appui réel. Pas de dessert déjà servi ni de troisième cuisinier. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Ni la personne qui a raté la crème ni la personne aidante ne sont genrées dans le dialogue. Répartition vocale à confirmer.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Deux personnes entières autour de la démonstration de crème au chocolat. La casserole repose sur une vraie table, une main tient le manche et l’autre le fouet ; ustensiles et ingrédients ont un appui réel. Pas de dessert déjà servi ni de troisième cuisinier.",
+      "visualReview": "Deux personnes entières autour de la démonstration de crème au chocolat. La casserole repose sur une vraie table, une main tient le manche et l’autre le fouet ; ustensiles et ingrédients ont un appui réel. Pas de dessert déjà servi ni de troisième cuisinier.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "e9f81f7e725f0698a96102bca66e2b0e287cfd43b53e0abdec24f68f0c17e99a",
+        "source_sha256": "bed4b1483d357dae16182fb80b82c6765f2473c082ae85c47543574723f9b64f",
+        "audio_sha256": "00c821f26b83b0761222cb5a1d8180f1a83446fdc1f4e75074963b6306454928",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-a2-sb-co-4",
@@ -516,8 +928,8 @@
       "audio": "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
       "transcription": "Alors Emma, tes examens, tu as reçu les résultats ? Oui Alex, j'ai réussi, je suis trop contente ! Bravo, toutes mes félicitations, tu as bien travaillé ! Merci, c'est gentil.",
       "sourceSha256": "6fcefb3ac1825d1b7721caf58667a9d4a85ea99686ace0d3e49c6102526e5bd3",
-      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
-      "imageSha256": "b8f5e7144d6b5ef0636f07d99a30c038435b635b9db44918c51a5a118b0f0cbe",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-emma-resultats-en-pied.png",
+      "imageSha256": "d1061b66dbcf10035fe48f08c03ce98530224b80ba36e36310748137b4b943a0",
       "themes": [
         "education"
       ],
@@ -527,8 +939,41 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Emma et l’accord contente concordent ; Alex est un prénom mixte et le genre de la personne qui félicite reste à confirmer dans la voix."
-      }
+        "note": "Emma et Alex sont entiers et se font face ; félicitations pour les examens réussis, feuille sans résultat lisible, aucun cadeau, voyage ou diplôme cérémoniel inventé. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Emma et l’accord contente concordent ; Alex est un prénom mixte et le genre de la personne qui félicite reste à confirmer dans la voix.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "review": "Emma et Alex sont entiers et se font face ; félicitations pour les examens réussis, feuille sans résultat lisible, aucun cadeau, voyage ou diplôme cérémoniel inventé.",
+      "visualReview": "Emma et Alex sont entiers et se font face ; félicitations pour les examens réussis, feuille sans résultat lisible, aucun cadeau, voyage ou diplôme cérémoniel inventé.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "d1061b66dbcf10035fe48f08c03ce98530224b80ba36e36310748137b4b943a0",
+        "source_sha256": "6fcefb3ac1825d1b7721caf58667a9d4a85ea99686ace0d3e49c6102526e5bd3",
+        "audio_sha256": "9d49d58032c6b75a07166f226dd0b51205df2ec067a08c868856f66189f44868",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-031-03",
@@ -591,20 +1036,52 @@
       "audioSha256": "d6cbe9f6e679993156ee6f8252091733f070c945309bda7ef3c599be70be3f42",
       "transcription": "Tu as un dictionnaire pour le cours d’anglais de demain ? Tiens, je te donne mon dictionnaire. Il est un peu vieux. Oh, mais ça ne fait rien. Merci.",
       "sourceSha256": "fc61a92a96f997e31c04c3bcbf617ca7bd801c4609b3370be6726109d445e184",
-      "image": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
-      "imageSha256": "0986fdc5a5b4f90b6e45aeba0711ce8e374bc2596e465a847f6472c6c1fc18f8",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preter-dictionnaire-en-pied.png",
+      "imageSha256": "54189873e11609e81b78f5389276bc3d7459190a572f16d94dd49b4968ea5836",
       "themes": [
         "education"
       ],
       "sceneKey": "classe-livres",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Dictionnaire explicitement identifiable remis entre camarades ; la scène ne prétend pas établir les conditions d’un prêt ni leur identité.",
+      "review": "Les deux élèves sont entiers pendant le prêt du dictionnaire usé ; livre complet sans titre lisible, cours d’anglais encore futur et aucun professeur substitué au camarade.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Le masculin de il est un peu vieux concerne le dictionnaire, pas les personnes. Aucun genre de prêteur ou emprunteur n’est donné ; voix à confirmer."
-      }
+        "note": "Les deux élèves sont entiers pendant le prêt du dictionnaire usé ; livre complet sans titre lisible, cours d’anglais encore futur et aucun professeur substitué au camarade. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Le masculin de il est un peu vieux concerne le dictionnaire, pas les personnes. Aucun genre de prêteur ou emprunteur n’est donné ; voix à confirmer.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Les deux élèves sont entiers pendant le prêt du dictionnaire usé ; livre complet sans titre lisible, cours d’anglais encore futur et aucun professeur substitué au camarade.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "54189873e11609e81b78f5389276bc3d7459190a572f16d94dd49b4968ea5836",
+        "source_sha256": "fc61a92a96f997e31c04c3bcbf617ca7bd801c4609b3370be6726109d445e184",
+        "audio_sha256": "d6cbe9f6e679993156ee6f8252091733f070c945309bda7ef3c599be70be3f42",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-044-01",
@@ -714,20 +1191,52 @@
       "audioSha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09",
       "transcription": "Pardon Monsieur, vous pouvez me dire d’où part le train pour Avignon ? Il vient d’être déplacé, il part de la voie C. Je vais être en retard alors. Non, il a 10 minutes de retard. Tant mieux ! Merci Monsieur.",
       "sourceSha256": "ec1965601793366bc9635844f18d53260f792f69710587e748cf58ff0c2943ae",
-      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
-      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-train-en-pied.png",
+      "imageSha256": "1de9114afe17dda3bb0d0857bb0e4f47e9f9b8dabd6a7bc13aa5044419879b13",
       "themes": [
         "deplacements"
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Échange de renseignement à un guichet auprès d’un homme ; pas de code de voie, heure, montant ou achat final attribué au dessin générique.",
+      "review": "Voyageuse et employé appelé Monsieur sont entiers et discutent d’une voie de départ ; main ouverte indiquant la direction, aucun billet remis, achat, horaire ou lettre de voie dessiné.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Employé homme conforme à Monsieur ; genre de la personne qui demande le départ non précisé dans les paroles."
-      }
+        "note": "Voyageuse et employé appelé Monsieur sont entiers et discutent d’une voie de départ ; main ouverte indiquant la direction, aucun billet remis, achat, horaire ou lettre de voie dessiné. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Employé homme conforme à Monsieur ; genre de la personne qui demande le départ non précisé dans les paroles.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Voyageuse et employé appelé Monsieur sont entiers et discutent d’une voie de départ ; main ouverte indiquant la direction, aucun billet remis, achat, horaire ou lettre de voie dessiné.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "1de9114afe17dda3bb0d0857bb0e4f47e9f9b8dabd6a7bc13aa5044419879b13",
+        "source_sha256": "ec1965601793366bc9635844f18d53260f792f69710587e748cf58ff0c2943ae",
+        "audio_sha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-02",
@@ -736,21 +1245,53 @@
       "audioSha256": "8a4d524e7a185df655da47af501f123ee920ad0b43feaf69689c1fe3018e813c",
       "transcription": "Bonjour Monsieur, les excursions organisées par votre bureau pour visiter les îles de Lérins m’intéressent. Oui, ces excursions sont quotidiennes. Bien, mais combien coûte le billet pour des jeunes de 13 ans ? Alors… tarif adolescent : 12 euros 50 mademoiselle.",
       "sourceSha256": "f4f70a3f683ded253acbc40f83a3309005414f6b10b06a89c3ba305eae4047fc",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
-      "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-jeunes-en-pied.png",
+      "imageSha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
       "themes": [
         "deplacements",
         "culture"
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "review": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "documented_match",
         "voice_confirmation_pending": false,
-        "note": "La fille et le préposé homme correspondent à mademoiselle et Monsieur ; âge exact laissé à l’oral."
-      }
+        "note": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "La fille et le préposé homme correspondent à mademoiselle et Monsieur ; âge exact laissé à l’oral.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+        "source_sha256": "f4f70a3f683ded253acbc40f83a3309005414f6b10b06a89c3ba305eae4047fc",
+        "audio_sha256": "8a4d524e7a185df655da47af501f123ee920ad0b43feaf69689c1fe3018e813c",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-04",
@@ -826,6 +1367,14 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Le texte ne donne le genre d’aucun interlocuteur. Répartition vocale à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -835,20 +1384,52 @@
       "audioSha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
       "transcription": "Pardon monsieur, à quelle heure part le premier bateau pour les îles l’après-midi ? Le premier à 14h00 et il y a un aller toutes les heures jusqu’à 19h00. Et le retour ? Le premier à 14h30 et le dernier à 18h30.",
       "sourceSha256": "3887e8ce560e362fa7d868ff53f5222a94b6b7212c1d1aea315378237d37f3b8",
-      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
-      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-bateaux-en-pied.png",
+      "imageSha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
       "themes": [
         "deplacements"
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Renseignement de transport auprès d’un homme à un guichet ; aucune heure, destination ou somme ajoutée.",
+      "review": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Employé homme conforme à monsieur ; genre de la personne demandant les horaires non précisé."
-      }
+        "note": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Employé homme conforme à monsieur ; genre de la personne demandant les horaires non précisé.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+        "source_sha256": "3887e8ce560e362fa7d868ff53f5222a94b6b7212c1d1aea315378237d37f3b8",
+        "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-04",
@@ -857,20 +1438,52 @@
       "audioSha256": "2d0ec84f7dd1054cdf4bfcb0439ac2a067747ce8fd7dfc87cbfe096916d671ab",
       "transcription": "Bonjour monsieur, quel est le prix d’un billet pour les îles ? Un aller-retour, c’est 12 € par personne. Y a-t-il des réductions ? Nous sommes un groupe de 5. Pour un groupe de 5 vous avez un billet gratuit.",
       "sourceSha256": "12f7aa937ab9a8bfd80fe92a348e26a5f1a00754c59368180163a6c11441d662",
-      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
-      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-bateaux-en-pied.png",
+      "imageSha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
       "themes": [
         "deplacements"
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Billetterie générique avec un préposé homme ; ne pas représenter le prix ni supposer que la cliente est seule plutôt que membre du groupe.",
+      "review": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Employé homme conforme à monsieur ; genre de la personne demandant les prix non précisé."
-      }
+        "note": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Employé homme conforme à monsieur ; genre de la personne demandant les prix non précisé.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+        "source_sha256": "12f7aa937ab9a8bfd80fe92a348e26a5f1a00754c59368180163a6c11441d662",
+        "audio_sha256": "2d0ec84f7dd1054cdf4bfcb0439ac2a067747ce8fd7dfc87cbfe096916d671ab",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-002-02",
@@ -892,6 +1505,14 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "L’orientation et le bus ne donnent pas le genre des personnes. Répartition vocale à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -914,6 +1535,14 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Le membre du personnel est homme conformément à Monsieur. Mme Faure est une professeure citée mais absente de l’image. Le genre de la personne nouvellement arrivée n’est pas donné dans la transcription."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -928,15 +1557,47 @@
       ],
       "sceneKey": "bijouterie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
-      "imageSha256": "b5ab2063353ad68c8dc808c4fef96543e12de096a40003e045d5ec47ac6a1b04",
-      "review": "Vendeuse et jeune client distincts, pendentif argenté en forme de tour Eiffel lisible dans son écrin ; aucun prix, monnaie ou âge écrit. Le décor ne prétend pas être un magasin réel identifié.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-bijouterie-pendentif-en-pied.png",
+      "imageSha256": "a9fb1d1d40905ae5fac72129452dc60e151886b13d6881e2a309395d881f7a8a",
+      "review": "Jeune homme et vendeuse appelée Madame sont entiers à côté de la vitrine ; pendentif argenté en forme de tour Eiffel et paquet, sans sœur substituée au client ni montant affiché.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "documented_match",
         "voice_confirmation_pending": false,
-        "note": "Les deux rôles représentés correspondent aux titres explicitement échangés. La sœur destinataire du cadeau n’est pas montrée."
-      }
+        "note": "Jeune homme et vendeuse appelée Madame sont entiers à côté de la vitrine ; pendentif argenté en forme de tour Eiffel et paquet, sans sœur substituée au client ni montant affiché. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Les deux rôles représentés correspondent aux titres explicitement échangés. La sœur destinataire du cadeau n’est pas montrée.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Jeune homme et vendeuse appelée Madame sont entiers à côté de la vitrine ; pendentif argenté en forme de tour Eiffel et paquet, sans sœur substituée au client ni montant affiché.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "a9fb1d1d40905ae5fac72129452dc60e151886b13d6881e2a309395d881f7a8a",
+        "source_sha256": "a591a9f9290c66703b663b57a79e05e72309bbf1242e202e2cf15853b50c1809",
+        "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-048-01",
@@ -959,6 +1620,14 @@
         "status": "documented_match",
         "voice_confirmation_pending": false,
         "note": "Pharmacien homme et client jeune homme correspondent aux titres explicitement échangés ; aucun changement nécessaire."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -982,6 +1651,14 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Aidant masculin conforme à jeune homme. Le genre de la personne qui demande de l’aide n’est pas précisé, et sa petite portée ne prouve pas un fauteuil : ce dernier reste un choix illustratif inclusif, pas une information de l’audio."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1004,6 +1681,14 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Ma mère est une personne citée, pas un des deux interlocuteurs. Le texte ne donne pas le genre du prêteur ou de la personne qui emprunte ; voix à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1018,15 +1703,47 @@
       ],
       "sceneKey": "emballage-cadeau",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
-      "imageSha256": "c47471cf578667e8ef8d9f54053eeead248c804560c3679d3304f7fc7074f1ef",
-      "review": "Un paquet à papier bleu clair et ruban bleu foncé ; vendeuse nouvelle terminant le nœud et jeune client, aucune date, montant, marque ou contenu de cadeau ajouté.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-paquet-bleu-en-pied.png",
+      "imageSha256": "6f78bc0f773a7776f039411e2b959a23ad11fb7aeb6f69547db1898d33b836ab",
+      "review": "Employée et client sont entiers autour du paquet en papier bleu clair avec ruban bleu foncé ; boîte et ruban complets. Le destinataire mentionné n’est pas automatiquement identifié au client.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
-        "note": "Vendeuse femme conforme à Madame ; le jeune homme est cité comme destinataire du cadeau. Il n’est pas certain que cette mention identifie le locuteur client : ce rôle reste à confirmer avec la voix."
-      }
+        "note": "Employée et client sont entiers autour du paquet en papier bleu clair avec ruban bleu foncé ; boîte et ruban complets. Le destinataire mentionné n’est pas automatiquement identifié au client. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Vendeuse femme conforme à Madame ; le jeune homme est cité comme destinataire du cadeau. Il n’est pas certain que cette mention identifie le locuteur client : ce rôle reste à confirmer avec la voix.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Employée et client sont entiers autour du paquet en papier bleu clair avec ruban bleu foncé ; boîte et ruban complets. Le destinataire mentionné n’est pas automatiquement identifié au client.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "6f78bc0f773a7776f039411e2b959a23ad11fb7aeb6f69547db1898d33b836ab",
+        "source_sha256": "d7524ab43b527fda038da3b0aa6460a533c67e5c16418095740677afe43cfef3",
+        "audio_sha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-01",
@@ -1040,15 +1757,47 @@
       ],
       "sceneKey": "renseignement-transport",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
-      "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
-      "review": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-jeunes-en-pied.png",
+      "imageSha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+      "review": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
-        "note": "Cette autre source partage l’image mais ne donne aucun titre ou accord de genre : ne pas lui transférer la preuve mademoiselle de l’autre audio. Distribution des voix à confirmer."
-      }
+        "note": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "previous_note": "Cette autre source partage l’image mais ne donne aucun titre ou accord de genre : ne pas lui transférer la preuve mademoiselle de l’autre audio. Distribution des voix à confirmer.",
+        "status_origin": "historical_baseline_audit",
+        "current_visual_status": "all_main_interlocutors_visible",
+        "voice_review_non_blocking": true,
+        "later_correction_register": "docs/tcf/cadrages-finaux-20261115.json"
+      },
+      "visualReview": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée.",
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+        "source_sha256": "0ca54bb2765879343c7d358e56e46b92441414e9342cedb32dc1f225ede183ad",
+        "audio_sha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-029-02",
@@ -1075,6 +1824,14 @@
             "quote": "Bonjour, je suis votre nouveau professeur de Français. Bonjour Monsieur."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1106,6 +1863,14 @@
             "quote": "Désolée … j’oublie toujours ton cahier."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1133,6 +1898,14 @@
             "quote": "Bonjour monsieur. Bonjour Nicolas."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1160,6 +1933,14 @@
             "quote": "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1188,6 +1969,14 @@
             "quote": "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1215,6 +2004,14 @@
             "quote": "Bonjour Madame. Ma famille a besoin d’un certificat de scolarité au collège. À quel nom ? Carlos Garcia."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1243,6 +2040,14 @@
             "quote": "Madame je m’occupe des tapis ? Très bien Tonin."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1271,6 +2076,14 @@
             "quote": "Et après on va faire quoi madame ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1298,6 +2111,14 @@
             "quote": "Monsieur on peut utiliser la calculatrice ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1325,6 +2146,14 @@
             "quote": "Mais madame il fait froid aujourd’hui."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1352,6 +2181,14 @@
             "quote": "Dania ? Oui, Madame."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1433,6 +2270,14 @@
             "quote": "Mon sac de voyage est lourd. Je suis petit."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1460,6 +2305,14 @@
             "quote": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1487,6 +2340,14 @@
             "quote": "Non Monsieur. Vous pouvez augmenter le volume ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1515,6 +2376,14 @@
             "quote": "Madame c’est la semaine prochaine qu’on va visiter l’exposition de Matisse ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1543,6 +2412,14 @@
             "quote": "À quelle heure on part Monsieur ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -1811,6 +2688,14 @@
             "quote": "Vous êtes invitée à ce repas"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2206,6 +3091,14 @@
             "quote": "Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame !"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2233,6 +3126,14 @@
             "quote": "Mateo je dois te parler 2 minutes. Oui Madame."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2261,6 +3162,14 @@
             "quote": "Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2523,6 +3432,14 @@
             "quote": "Oh, Mélanie, heureusement que tu es là. Je peux te demander un service ? Bien sûr maman."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2691,7 +3608,10 @@
         "roles": [
           "mère",
           "Bastien"
-        ]
+        ],
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/correction-interlocuteurs-pluie-20261114.json"
       }
     },
     {
@@ -2723,6 +3643,14 @@
             "quote": "Devant moi il y avait cette dame avec la veste blanche qui est maintenant au guichet."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2754,6 +3682,14 @@
             "quote": "Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2782,6 +3718,14 @@
             "quote": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -2810,6 +3754,14 @@
             "quote": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visually_counted",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "review_register": "docs/tcf/decompte-interlocuteurs-20261115.json"
       }
     },
     {
@@ -4068,196 +5020,1774 @@
   ],
   "decoys": [
     {
-      "id": "fruits",
-      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-58.png",
-      "sha256": "8e9b24c07c875e9caef4e36a68bcfe0295ee803f56172e237ebf1b71910e12e8",
+      "id": "audio-jus-orange",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-jus-orange-personnages-entiers.png",
+      "sha256": "65651c9c451d904da68e0b7d8e39ffdb8ab453d2b709c329e354315cf7fee7c7",
       "themes": [
         "alimentation"
       ],
+      "sceneKey": "jus-orange",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
+      "sourceExercise": "tcf-a1-s3-co-4",
+      "sourceDialogue": 1,
+      "sourceSha256": "f70d9a8332e185cbc551ea1ee610e26b3bce86982748d6135b41c86fadc4cb30",
+      "audioSha256": "d43633d49f744deb0b45f5dc62336e85704b869e1b49b7b34b6e5b8fab72aa02",
       "absentTerms": [
-        "fruit",
-        "fruits",
-        "salade",
-        "banane",
-        "bananes",
-        "kiwi",
-        "kiwis",
-        "orange",
-        "oranges"
+        "jus",
+        "orange"
       ],
-      "review": "Préparer une salade de fruits ; distinct de la crème au chocolat.",
-      "sceneKey": "salade-fruits"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "bouilloire",
-      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
-      "sha256": "e8c64aa7f91f1844332b013f0555df716dbd57ddececc3a3ad286431d2a6c680",
+      "id": "audio-aide-rayon",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "sha256": "1a298ce0fcb6996e415b9ea78e776b7e03c2aa76d202e758c5db426a8922a1e2",
+      "themes": [
+        "achats",
+        "alimentation"
+      ],
+      "sceneKey": "aide-rayon",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "sourceExercise": "tcf-a1-s3-co-4",
+      "sourceDialogue": 2,
+      "sourceSha256": "3a25ff0cdc2dee37d9588f2f36ddeb5542afe17cadc61e59f48f67dccaf55ddc",
+      "audioSha256": "4ba1e47d3ff1fbca5ac97c6c3a9b3352362dfbc0a880193fcf2a5f4caaa4fbd0",
+      "absentTerms": [
+        "rayon",
+        "yaourt",
+        "yaourts"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-piscine",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-piscine-meteo.png",
+      "sha256": "ec2ceebedb00f4bc802ffd54b9a0bdb4827c9ea9771c819d050c5d4912a3b41e",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "piscine",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+      "sourceExercise": "tcf-a1-s3-co-4",
+      "sourceDialogue": 3,
+      "sourceSha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+      "audioSha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+      "absentTerms": [
+        "piscine",
+        "nager",
+        "natation"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-course-parc",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png",
+      "sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "course-parc",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "sourceExercise": "tcf-a1-s3-co-4",
+      "sourceDialogue": 4,
+      "sourceSha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+      "audioSha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "absentTerms": [
+        "courir",
+        "course",
+        "parc"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-couloir-ecole",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-salle-italien-personnages-entiers.png",
+      "sha256": "b2ca7b06be2fed3dbbf3c9b41918f599d1dc97c31e09df3106a150f79da5b792",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "couloir-ecole",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-2.mp3",
+      "sourceExercise": "tcf-a1-s4-co-4",
+      "sourceDialogue": 2,
+      "sourceSha256": "56a222ad6eaa3d636da7779a2ce684ce3f68f316a8a16d88a31c5809d31413c7",
+      "audioSha256": "02d9f4798bdf13bef2e48de784f138face70a9766a1dd38479bd58ad6b1b1c0c",
+      "absentTerms": [
+        "cours",
+        "classe",
+        "école",
+        "salle"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-faire-connaissance-travail",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-collegues-accueil-personnages-entiers.png",
+      "sha256": "ff8f107f1b7542cf08c05e8f0a29524a0b669216a3f7378e4a2db3e0df16e0fb",
+      "themes": [
+        "travail"
+      ],
+      "sceneKey": "faire-connaissance-travail",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-4.mp3",
+      "sourceExercise": "tcf-a1-s4-co-4",
+      "sourceDialogue": 4,
+      "sourceSha256": "7162486a286eb805fd9f75f919670632cb3069d2635a17f791d35f2be69abdb7",
+      "audioSha256": "12cc35ffbe6b7b371d7e193ec4b51a94dd592636ec4d13f9cfebdb5bed421d6a",
+      "absentTerms": [
+        "secrétaire",
+        "comptable"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-accueil-medical",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-accueil-medical-en-pied.png",
+      "sha256": "ba2b0e51face57d14f3a89f48daf6c3735b378c702486f95bdb1ebfc6b8b7a8e",
+      "themes": [
+        "sante"
+      ],
+      "sceneKey": "accueil-medical",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-3.mp3",
+      "sourceExercise": "tcf-a1-s4-co-4",
+      "sourceDialogue": 3,
+      "sourceSha256": "da151f141f0a013b0bb9fdfcc0c4a02e138ac58ecaaf134b2cda8a86302c7b60",
+      "audioSha256": "493003ddc30ec3ddaf585484a19a35261f1c8676a091f2829001e59e919d5381",
+      "absentTerms": [
+        "docteur",
+        "médecin",
+        "rendez-vous"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-montrer-sac",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png",
+      "sha256": "7532c3f752880822d86a132817f34129af3650c6e8a512bc3cb0765df9c21032",
       "themes": [
         "achats"
       ],
+      "sceneKey": "montrer-sac",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+      "sourceExercise": "tcf-a1-s4-co-4",
+      "sourceDialogue": 1,
+      "sourceSha256": "5117f1ce4bc20758817854e5d764196bd99b8c43b9dd68da5d085a9624238bd6",
+      "audioSha256": "95a691f7c9c339dba48ad47499f1eba1c349e4dd8c55df3ff625b8fe7a1c2716",
       "absentTerms": [
-        "bouilloire",
-        "bouilloires"
+        "sac",
+        "pratique"
       ],
-      "review": "Choisir une bouilloire ; distinct de montrer un aspirateur ou un sac.",
-      "sceneKey": "bouilloire"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "cafe",
-      "image": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
-      "sha256": "a79ac547f0d09397040dac89d2ac8d592c8881758f7a319b3b8d878e087c151b",
+      "id": "audio-bibliotheque",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png",
+      "sha256": "af7e44de48d44fc13e169c72693e341912f8e1df5fc5b5efb95b20cdac197760",
       "themes": [
-        "alimentation"
+        "lecture",
+        "culture"
       ],
+      "sceneKey": "bibliotheque",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-5.mp3",
+      "sourceExercise": "tcf-a1-s4-co-4",
+      "sourceDialogue": 5,
+      "sourceSha256": "be6615ff3c157194cbfc90fc65285c0e221e83bddedb89064fc443c4d04077fd",
+      "audioSha256": "41101c21ae1f5c63b3bba46e9086e414265868f95bbfae1d9426adbc5ef16dc3",
       "absentTerms": [
-        "café",
-        "cafés",
-        "cafe",
-        "cafes"
+        "bibliothèque",
+        "livre",
+        "livres",
+        "roman",
+        "lecture"
       ],
-      "review": "Trois amis autour de cafés ; distinct du jus d’orange pris par erreur.",
-      "sceneKey": "cafe"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "tableau",
-      "image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
-      "sha256": "f8fdad5f1ac23c37c791deabd5213fde0ed1b0928fb1093d50ab06edacc489df",
+      "id": "audio-devoirs-maison",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-devoirs-papa-en-pied.png",
+      "sha256": "681b693c724c9f11b9ab82bd3064d6cfb91d423946a49928fb4b9e106af4fe92",
       "themes": [
         "education"
       ],
+      "sceneKey": "devoirs-maison",
+      "sourceAudio": "/lib/audio/tcf/co/ecole/les-etudes-2-2.mp3",
+      "sourceExercise": "tcf-a1-tpa-co-4",
+      "sourceDialogue": 2,
+      "sourceSha256": "e18fba59cb7f5d6073f945a4a8d688bce95c7d142570cd915016538cdc0e4919",
+      "audioSha256": "201c5e8ee81e2d33ef47ec13bf8e01fcd47a1e286c216dcc8b8ecf723719659e",
       "absentTerms": [
-        "tableau",
-        "tableaux",
-        "fleur",
-        "fleurs",
-        "botanique"
-      ],
-      "review": "Un élève dessine une fleur au tableau ; ni professeur portant des livres ni demande de salle.",
-      "sceneKey": "tableau-classe"
-    },
-    {
-      "id": "devoirs-seul",
-      "image": "/lib/images/tcf/qcm-audit/vocab-faire-devoirs-seul.webp",
-      "sha256": "a6d52c7126050a1e171f8f5a37ba5e1751546a2a8a603a37ebae6d59c2955335",
-      "themes": [
-        "education"
-      ],
-      "absentTerms": [
-        "devoir",
         "devoirs",
         "exercice",
         "exercices",
-        "mathématiques",
-        "maths",
-        "géométrie"
+        "mathématiques"
       ],
-      "review": "Un enfant fait seul des exercices ; exclu dès que des devoirs ou exercices sont cités.",
-      "sceneKey": "devoirs-seul"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "velo",
-      "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
-      "sha256": "eb5898791c1e6e7ae2dde57a638e0767f35f961116d3e950261312b52f0b90db",
+      "id": "audio-classe-livres",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-madame-vega-trois-personnes-entieres.png",
+      "sha256": "1dcc718ebb9a50756d671368b268be49c9895d1559df2dd98ff9b8630201b928",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-livres",
+      "sourceAudio": "/lib/audio/tcf/co/ecole/les-etudes-2-4.mp3",
+      "sourceExercise": "tcf-a1-tpa-co-4",
+      "sourceDialogue": 4,
+      "sourceSha256": "d74ffb5ec6df22617a139f3dba72c4d401e2d4e95c66156073387793fbe4dfb9",
+      "audioSha256": "bb6d6c4d81c628153d20cd30c6340d38e982ada8e05a7553a9b523dfb54018bc",
+      "absentTerms": [
+        "livre",
+        "livres",
+        "dictionnaire"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-preparer-repas",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preparer-ses-repas-en-pied.png",
+      "sha256": "cfe274be60c93522297b7ad58ca1bb4fafda42c47034ae65c53ecdfce5dd21c4",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "preparer-repas",
+      "sourceAudio": "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3",
+      "sourceExercise": "tcf-a1-tpa-co-4",
+      "sourceDialogue": 1,
+      "sourceSha256": "e6e8cd4a97f7ad5ea55025f2b6354050c5b8cf92bf4dc3c655badcb5ce7e7479",
+      "audioSha256": "be9a78a1683bd6f44524bf5ecaa2fb626722d43c760db25be9b868f64b70b863",
+      "absentTerms": [
+        "repas",
+        "préparer",
+        "cuisine"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-retour-vacances",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-kate-photos-voyage-en-pied.png",
+      "sha256": "da1a142a0bf88f9ebd70123c852a8b940cd7e0af0c6f64bb556d4ed5d3242348",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "retour-vacances",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-1.mp3",
+      "sourceExercise": "tcf-a2-sa-co-4",
+      "sourceDialogue": 1,
+      "sourceSha256": "938b2a2ac2a207c45b5837c311ee4b9493b8e4e30e6290c1b7e8ec62a35ed7f1",
+      "audioSha256": "2e929d5bbff3713c4ea0de73189b8697b2c93a6a09d6db8a6284b5d9b66ceff5",
+      "absentTerms": [
+        "voyage",
+        "vacances",
+        "photo",
+        "photos"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-horaires-magasin",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-kiosque-ferme-en-pied.png",
+      "sha256": "92c81603f770617d4e4d69a3848333e261b9eb541f0af69d2ce44c5413886c43",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "horaires-magasin",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-2.mp3",
+      "sourceExercise": "tcf-a2-sa-co-4",
+      "sourceDialogue": 2,
+      "sourceSha256": "7e1ad745a1aad5587c0dedd904ea3e94bc9afb176d30e69e54aaf61b1aa2f1dc",
+      "audioSha256": "516eb7eb22c059ce95f708de26d2714bd9e6837e8225689cafd50c5f0507230d",
+      "absentTerms": [
+        "magasin",
+        "ouvert",
+        "fermé",
+        "journaux"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-musee",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png",
+      "sha256": "48418332a67073a02ad3223195a510606d6ad17fa5bad0e3383998e7ee73eba5",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "musee",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-3.mp3",
+      "sourceExercise": "tcf-a2-sa-co-4",
+      "sourceDialogue": 3,
+      "sourceSha256": "c8a8fffc0012e06ac846d32c7bb010cb6907e1bbf1f9d5cb6183419e599ce0d8",
+      "audioSha256": "007508ac6092f98712b196c0a7c39263167e5aa33cdfe2814daf0f99c386d71a",
+      "absentTerms": [
+        "musée",
+        "Matisse",
+        "exposition"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-bus-rencontre",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-parler-thomas-bus-en-pied.png",
+      "sha256": "aebb4904657395aac03eaf43ad87610dd10e0e584f6421466f39b25d4699cd9f",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "bus-rencontre",
+      "sourceAudio": "/lib/audio/tcf/co/vie-quotidienne/les-nouvelles-4.mp3",
+      "sourceExercise": "tcf-a2-sa-co-4",
+      "sourceDialogue": 4,
+      "sourceSha256": "3a9b2301bd726e4ebc912dd55319034d9542b6d754e5a3c9e774a2636f1d95a7",
+      "audioSha256": "a69d5b9ebfc64ebf5b0311b2238990bc789792943ebcc0c75265721386aa1a03",
+      "absentTerms": [
+        "bus",
+        "Thomas",
+        "Sophie"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-vetements",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-choisir-sac-vert-en-pied.png",
+      "sha256": "ef2c6923a3c9f8b123efadc8489bf2126ee98abcdeb38b9f215209e223b88f9e",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "vetements",
+      "sourceAudio": "/lib/audio/tcf/co/magasins/les-achats-1.mp3",
+      "sourceExercise": "tcf-a2-sb-co-4",
+      "sourceDialogue": 1,
+      "sourceSha256": "6df1a4427fba93513c256a7e5c9f0b10bebec6dad7e5a855e61369831549926b",
+      "audioSha256": "650f399abf3a064386e54d0f2e652e26d100844731cd2e42535621c756cc664f",
+      "absentTerms": [
+        "sac",
+        "pull",
+        "laine",
+        "coton"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-aspirateur",
+      "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-55.png",
+      "sha256": "036275321ba9818afbc9c0608f72618cb3200ab6613822567f4e49e0c383e89a",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "aspirateur",
+      "sourceAudio": "/lib/audio/tcf/co/magasins/les-achats-2.mp3",
+      "sourceExercise": "tcf-a2-sb-co-4",
+      "sourceDialogue": 2,
+      "sourceSha256": "17997ba387cb857b85373528a9bae8596bbc37000bb1c3a67e50403ad4c84273",
+      "audioSha256": "2ec59a570c9ac9bf2a83b8d3cbfe9d1189b34c910da55f1467de9514505313f3",
+      "absentTerms": [
+        "aspirateur"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-creme-chocolat",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-montrer-creme-chocolat-en-pied.png",
+      "sha256": "e9f81f7e725f0698a96102bca66e2b0e287cfd43b53e0abdec24f68f0c17e99a",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "creme-chocolat",
+      "sourceAudio": "/lib/audio/tcf/co/magasins/les-achats-3.mp3",
+      "sourceExercise": "tcf-a2-sb-co-4",
+      "sourceDialogue": 3,
+      "sourceSha256": "bed4b1483d357dae16182fb80b82c6765f2473c082ae85c47543574723f9b64f",
+      "audioSha256": "00c821f26b83b0761222cb5a1d8180f1a83446fdc1f4e75074963b6306454928",
+      "absentTerms": [
+        "crème",
+        "chocolat"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-resultats-reussite",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-emma-resultats-en-pied.png",
+      "sha256": "d1061b66dbcf10035fe48f08c03ce98530224b80ba36e36310748137b4b943a0",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "resultats-reussite",
+      "sourceAudio": "/lib/audio/tcf/co/magasins/les-achats-4.mp3",
+      "sourceExercise": "tcf-a2-sb-co-4",
+      "sourceDialogue": 4,
+      "sourceSha256": "6fcefb3ac1825d1b7721caf58667a9d4a85ea99686ace0d3e49c6102526e5bd3",
+      "audioSha256": "9d49d58032c6b75a07166f226dd0b51205df2ec067a08c868856f66189f44868",
+      "absentTerms": [
+        "examen",
+        "examens",
+        "résultats",
+        "réussi"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-renseignement-transport",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-train-en-pied.png",
+      "sha256": "1de9114afe17dda3bb0d0857bb0e4f47e9f9b8dabd6a7bc13aa5044419879b13",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "renseignement-transport",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-033-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "ec1965601793366bc9635844f18d53260f792f69710587e748cf58ff0c2943ae",
+      "audioSha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09",
+      "absentTerms": [
+        "train",
+        "bateau",
+        "billet",
+        "billets",
+        "gare",
+        "tarif"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-bijouterie",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-bijouterie-pendentif-en-pied.png",
+      "sha256": "a9fb1d1d40905ae5fac72129452dc60e151886b13d6881e2a309395d881f7a8a",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "bijouterie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-047-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "a591a9f9290c66703b663b57a79e05e72309bbf1242e202e2cf15853b50c1809",
+      "audioSha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+      "absentTerms": [
+        "bijou",
+        "bijoux",
+        "pendentif",
+        "bracelet"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-pharmacie",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pharmacie-jambe.png",
+      "sha256": "96654467ca9892db988af1addf76fc283553b0529ddf271fdf619cd9da2f4b24",
+      "themes": [
+        "sante",
+        "achats"
+      ],
+      "sceneKey": "pharmacie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-048-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-048-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "ac7fde2698e73f0b59ed2d211bf1c6ce4e9fae835c293ef07f78d9ec97b02e12",
+      "audioSha256": "8c6a3f8ffc8e45de35f595136eff9130a20aad2a599a75d305d4cfe9f10cbca5",
+      "absentTerms": [
+        "pharmacie",
+        "médicament",
+        "ordonnance"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-pret-anorak",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
+      "sha256": "4d5525763fc7293c4f35c50c01b1ef9dd45ccf34fd65ee87118e9cd32beec2fb",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "pret-anorak",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-045-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "2b0bf32229d108923a87a9f4a097f60e096a8a6d2d3d9d8e3186bba58151f8f1",
+      "audioSha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
+      "absentTerms": [
+        "anorak",
+        "manteau",
+        "froid"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-emballage-cadeau",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-paquet-bleu-en-pied.png",
+      "sha256": "6f78bc0f773a7776f039411e2b959a23ad11fb7aeb6f69547db1898d33b836ab",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "emballage-cadeau",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-032-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "d7524ab43b527fda038da3b0aa6460a533c67e5c16418095740677afe43cfef3",
+      "audioSha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
+      "absentTerms": [
+        "cadeau",
+        "paquet",
+        "ruban"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-classe-cours",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouveau-professeur.png",
+      "sha256": "ecc4523f25dc8c7c2f7df11b94c925d5793f840b6ebab095da19bd422314f1a0",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-cours",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-029-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "f30f5fc3725d259691939de8387e4394ce384ff986b4b23b01a7d5eefcbc9d00",
+      "audioSha256": "8836a82693b6496e37816726c4d327991a623caf0ee345371b2a31615c89bd47",
+      "absentTerms": [
+        "cours",
+        "classe",
+        "professeur",
+        "film",
+        "contrôle"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-demander-chemin",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
+      "sha256": "773cfa399c324d71adbd9d36fa3e14bbf807151c5d6ee0a3ca7900b9ae6b259e",
+      "themes": [
+        "deplacements",
+        "culture"
+      ],
+      "sceneKey": "demander-chemin",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-029-05",
+      "sourceDialogue": 1,
+      "sourceSha256": "7a9ae264770b9cb69d9956eb74a3c10b446224dc3684d2eb3b44625a7c59b18f",
+      "audioSha256": "83eb8a2f70fd1c3500af917ae5f6ffa653d21a2306dfda1f25255f8b15dbc9b5",
+      "absentTerms": [
+        "chemin",
+        "direction"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-secretariat-scolaire",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-certificat-scolarite.png",
+      "sha256": "bc29b596515fa8e326b47e095baf8b29a21db6ac047ceea01c61ad1a079c828b",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "secretariat-scolaire",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-030-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "c6cdfb9a93abc4c97d7827932fff41823d7308cc6f606906c2010c3c81e927c4",
+      "audioSha256": "229b48df2151df3641d1c40e922ae831b53dd74b5f6fc38e78e1f69ef4e09090",
+      "absentTerms": [
+        "secrétariat",
+        "dossier",
+        "photo"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-gymnase",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-ranger-tapis-gym.png",
+      "sha256": "d009ba69afeab10fddf4e29bdc7972deb6bd86d6494219c13e9d0f90a78227ae",
+      "themes": [
+        "sport",
+        "education"
+      ],
+      "sceneKey": "gymnase",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-032-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "71a99f9bd4df08a6477fc2f2bea7b78396c4281c52ea5c997d4752396ca76d32",
+      "audioSha256": "7f241b9e20bc40c14c59b5ca31294662b84598c34d581a474754adf6fc99daf0",
+      "absentTerms": [
+        "gymnase",
+        "sport"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-course-piste",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-course-piste.png",
+      "sha256": "2f51178dc4ac36bf176911e1d38d9057a46527d57a139261bf4db8be51efb92c",
+      "themes": [
+        "sport",
+        "education"
+      ],
+      "sceneKey": "course-piste",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-050-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "6b77260f1c7010dfb29035144dd14c89a65bed332f4ece46852a161ebc6619df",
+      "audioSha256": "f234fb7ac3bd72458b7ba8eb3f485b6db17c84e830e05f5d0d5ef9f8c195e722",
+      "absentTerms": [
+        "courir",
+        "course",
+        "course à pied"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-recreation",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-recreation-blousons-froid.png",
+      "sha256": "d790f09dc13f004a3253fd375652248ca85633f5f1da81b7d07e9e6c685b244a",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "recreation",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-032-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "13f3dbc6de3a994ecd54c0e1d8c5893f6f5ebc824ade3c686896f49a90184d9b",
+      "audioSha256": "f8c90f69b8abaae26e8152bf47b46b491d33a9b3052bf2df65c8cf2407aabf38",
+      "absentTerms": [
+        "récréation",
+        "cour"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-bagage-rangement",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
+      "sha256": "a2fe163b847ea8004ad1ec4b99576fef23c6fef7eb672041d3d2d6ae4f2f28c4",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "bagage-rangement",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-033-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "628b48905b3c5d617133d359902731213de80ecd45e55fbc0b27a97a16f5dfea",
+      "audioSha256": "d6ad22b441806709dff2ddb9c01b4a6ca96879fc0d2dec983733cd30d3202238",
+      "absentTerms": [
+        "sac",
+        "bagage",
+        "blouson"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-ceder-place",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+      "sha256": "c38ea79d862d0c7cb57f7005e9a5cf3fab44332217de813b50cd2bdffc4d609f",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "ceder-place",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-035-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "4d6d29af13d5a177d3a790e57d2d4391493bb3c47881adbdbdbc1f303f903292",
+      "audioSha256": "17e98e5d85f0eaa0731fd2d87b894623cb5a625fcfb48ca44bb5a50695fd6093",
+      "absentTerms": [
+        "place",
+        "asseoir"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-visite-tour-eiffel",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
+      "sha256": "af0cf3503256add3ea5c135d434ce4ddc857ae9e3af80a72de537ca899c50fc8",
+      "themes": [
+        "culture",
+        "deplacements"
+      ],
+      "sceneKey": "visite-tour-eiffel",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-051-04-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "ff0227d733dc670becafc8616d2474c6d4201950ec190443e20b4abfcc49f07e",
+      "audioSha256": "b01d7025770c35d9b8bf2315175057daf6d4bf1e1dae4d5c9d9186b518fbda84",
+      "absentTerms": [
+        "tour Eiffel",
+        "visite"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-fleuriste",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-commande-roses-fleuriste-cliente.png",
+      "sha256": "b040217a48a3ef5bb3efb65fcc083e04058b0c6adfb841a7557da15bd99a2f32",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "fleuriste",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-032-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "e23cab572380665012a69d406e0da49a79416b837321c3e5949274e4a8fbb121",
+      "audioSha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
+      "absentTerms": [
+        "rose",
+        "roses",
+        "bouquet"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-visite-ville",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-remercier-guide-visiteur-visible.png",
+      "sha256": "ae457707c7d46dd976c1a0b323de914e8cdfd78c6a7807295e8a05e2fd873ff3",
+      "themes": [
+        "culture",
+        "deplacements"
+      ],
+      "sceneKey": "visite-ville",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-034-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "04e0447253668218318a65689652c74d58b478bd37a57cece82ecdcc9648e5f3",
+      "audioSha256": "fdbde90da607b9d8223810db79b2ecc1963b6a13eeeaa5d1c34fe67ab2fddc9e",
+      "absentTerms": [
+        "visite",
+        "guide",
+        "ville"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-monnaie",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-aide-monnaie-deux-personnes.png",
+      "sha256": "677b9bb1e2e64a5fbb54b86a5330b3c37bea4f7091869e0842869d0d0a0fbe61",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "monnaie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-035-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "fad07588b5194eef8d96a849d6eb3a728a0aa5955fedd5ea7ea2e34972546bfa",
+      "audioSha256": "6edcba0b7c40032802648be948faa3b2701a24e55c7a4924f9b7b745a3aa0a31",
+      "absentTerms": [
+        "monnaie",
+        "machine",
+        "pièce",
+        "pièces"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-invitation-repas",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-inviter-enseignante-repas-classe.png",
+      "sha256": "f3fe07c86841d813d4f321f893777318dd8619af24dc6d42ca14969989090a0a",
+      "themes": [
+        "alimentation",
+        "education"
+      ],
+      "sceneKey": "invitation-repas",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-030-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "5cb517efc2ba83f6e0aebecc003d9d5ea767caa48efaa5241a74e4df95a0709b",
+      "audioSha256": "979dc92796938f30e882749387da0ac5a562ac7458478bf068e02db85ab25d81",
+      "absentTerms": [
+        "déjeuner",
+        "repas",
+        "manger"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-refus-sortie",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-pere-refuse-sortie-enfant-visible.png",
+      "sha256": "f354e4338d486fe9a4897cfdf643d345f64366b9614e5144eb6a001d45dba1fa",
+      "themes": [
+        "loisirs"
+      ],
+      "sceneKey": "refus-sortie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-031-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "58da669b458862df4dd2256a5dd0a2e63128dc6888004132d408ff64b1cb3aa0",
+      "audioSha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
+      "absentTerms": [
+        "sortir",
+        "sortie",
+        "bowling"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-patisserie",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-patisserie-client.png",
+      "sha256": "0d7e36be46d0dcf447013452e28bc03a5c115636a5e98da6bcd1337993515e96",
+      "themes": [
+        "achats",
+        "alimentation"
+      ],
+      "sceneKey": "patisserie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-044-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "4f7032ed96487d098296a68d2a9ca7a64ec4782e0e8b86e2378400b9a8c07142",
+      "audioSha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8",
+      "absentTerms": [
+        "pâtisserie",
+        "pâtisseries"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-voiture",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-projet-voiture-deux-amis.png",
+      "sha256": "86e9524abdb772c8a265b971010fb4b270110d28395160b8b1faa1b030be5578",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "voiture",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-043-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "77a369b285bfd1b25e793d8b1d3f3871991e6b7efc44998bfbe6b149e0e3b529",
+      "audioSha256": "d1ecde18ed0bfb2aef004ad1fdf564c61bf0a0d881860858cf7bc032b49a0d4b",
+      "absentTerms": [
+        "voiture",
+        "voitures"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-retour-iles",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-retour-iles-deux-amies.png",
+      "sha256": "6c634c48209707cc4dbfb367574699ddc3ae9c239517d86b586b6e30225c84c3",
+      "themes": [
+        "deplacements",
+        "culture"
+      ],
+      "sceneKey": "retour-iles",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-046-04-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "1e3ef2a790c9922947df4f447c3a51b3804a9f74c7b28ad00ae2280cc4b9f663",
+      "audioSha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
+      "absentTerms": [
+        "bateau",
+        "île",
+        "îles",
+        "bronzer"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-arret-bus",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-ligne-stade.png",
+      "sha256": "dc9f334386bd25c8cfbdc715dc15526dae2b3ad61158b67c777a7e3a50d33dd0",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "arret-bus",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-043-04-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "e1519112ec653dcf88ee6d84c66b82e69c0fe9877d731f01586622de4ebea2b6",
+      "audioSha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485",
+      "absentTerms": [
+        "bus",
+        "tram",
+        "stade",
+        "Vichy"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-faire-connaissance",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-rencontre-luca-tessa.png",
+      "sha256": "0072bc6c0beef0264f6fcd48d483931a1c2c5c54b9a9b3b592c87c8fd8b58d38",
+      "themes": [
+        "education",
+        "travail"
+      ],
+      "sceneKey": "faire-connaissance",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-051-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "43fc4e31e8618455f09231bf536cc62f50a2df2c1fb96fa47c6005627a6fdad2",
+      "audioSha256": "5507e96758e466b130da77d158bd305f87015b8aa5532b0ef18531a7ae30a98e",
+      "absentTerms": [
+        "présenter",
+        "Anissa",
+        "nouvelle élève"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-infirmerie",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+      "themes": [
+        "sante",
+        "education"
+      ],
+      "sceneKey": "infirmerie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-050-04-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+      "audioSha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
+      "absentTerms": [
+        "infirmerie",
+        "Diego"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-vestiaire",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "vestiaire",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-052-04-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+      "audioSha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+      "absentTerms": [
+        "vestiaire",
+        "sac"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-decoration-maison",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-decoration-mere-fille.png",
+      "sha256": "3cf14e8e5dcc40b906c9b352da507dd46048d469da8a69b8a567f9beb2c6e2fd",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "decoration-maison",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-031-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "bb34ca71ca754b4f0222bfc455081acde5e49cf87e93b01a63c842621b40276c",
+      "audioSha256": "217297adccfd72a352430de30dae4ff38d82970dec705ba5af14ebff6507fb46",
+      "absentTerms": [
+        "décoration",
+        "décorer",
+        "maison"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-place-reservee",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "place-reservee",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-033-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+      "audioSha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
+      "absentTerms": [
+        "place",
+        "réservée",
+        "billet"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-trajet-train",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "themes": [
+        "deplacements",
+        "education"
+      ],
+      "sceneKey": "trajet-train",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-030-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+      "audioSha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
+      "absentTerms": [
+        "train",
+        "lycée"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-bateau-iles",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "bateau-iles",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-046-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+      "audioSha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
+      "absentTerms": [
+        "bateau",
+        "îles"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-vetements-pluie",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "sha256": "5875fef2dd4ffca283583d079c6d0eaca84b51d9615dfcdbaf007aae7251e2cb",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "vetements-pluie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-01.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-001-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "99915c194064416b2192534a623cb7801c56de720ffd9f01ba7593c8646588f1",
+      "audioSha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71",
+      "absentTerms": [
+        "pluie",
+        "Bastien",
+        "vêtement",
+        "vêtements"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-file-attente",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-desaccord-file-guichet.png",
+      "sha256": "f4e5401a4d4c09e4da19052f2c597ae282767915be312ffcb6f3f58cb2ceee20",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "file-attente",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-03.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-001-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "155dd88a5b10c70f85c6c03aeabba8e32e3ef5cce1b3cee38a3c343c98efdfb7",
+      "audioSha256": "e7380ce87dd03c19e5657a152cbd2a97e9863ea98513e9711bfded47f2319803",
+      "absentTerms": [
+        "file",
+        "queue",
+        "attendre"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-temoin-accident",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-temoin-accident-velo.png",
+      "sha256": "7213eb4362da3bb249a5c780ed1c13f1413890fe4d6d612ef687fb2000841f9d",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "temoin-accident",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-002-03.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-002-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "f759f5288e71c204e69fedd3a34a1a5bc038b8476dd67f4197aa3f9e89681f6a",
+      "audioSha256": "99cf11b5dd7634f0a4daee38da6c06ee36ba735e9b032473fe1a63cb6167c2a8",
+      "absentTerms": [
+        "accident",
+        "témoin"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-projet-boites-livres",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enquete-boites-livres.png",
+      "sha256": "7309a3ad87b33c11bcfc42cb6f6445eb230e87139f8714baa7d541d62a058261",
+      "themes": [
+        "lecture",
+        "culture"
+      ],
+      "sceneKey": "projet-boites-livres",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-041-01-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "d08518263851b36d3c53dfabc48771aa0e83846f9a68b1140c931a38f20ffc20",
+      "audioSha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019",
+      "absentTerms": [
+        "livre",
+        "livres",
+        "boîte"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-controle-routier",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
+      "sha256": "4d75e304c3e0c3175c9acf9508ea0db8da49fa4af28d2c0c3a5fc34fcc0b4a48",
+      "themes": [
+        "deplacements",
+        "sante"
+      ],
+      "sceneKey": "controle-routier",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-012-01.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-012-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "30a277807b5fa3c19eab379bd3f79006fccbe52d5ea52fafd520589d22555c5b",
+      "audioSha256": "e9a392b12402424af73372c2afcc85a06ede28a452974c0ec683e53fcd3ab2f1",
+      "absentTerms": [
+        "police",
+        "papiers",
+        "permis"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-rugby",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "sha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "rugby",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-029-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+      "audioSha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+      "absentTerms": [
+        "rugby"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-mal-ventre",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "sha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+      "themes": [
+        "sante",
+        "education"
+      ],
+      "sceneKey": "mal-ventre",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-030-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+      "audioSha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+      "absentTerms": [
+        "ventre",
+        "malade"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-loisirs-lecture-musique",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-musique-lecture-deux-personnes.png",
+      "sha256": "2ad25517da79178fcbeed1ade79dd07cfed4fe5cce107d8713a80a373d01f684",
+      "themes": [
+        "culture",
+        "lecture"
+      ],
+      "sceneKey": "loisirs-lecture-musique",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-044-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+      "audioSha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+      "absentTerms": [
+        "musique",
+        "lecture",
+        "lire"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-jeux-ordinateur",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preference-jeu-ordinateur-deux-personnes.png",
+      "sha256": "d78e5b3b2e7c29bbde202e8ef2bd4b86013cd1028d6274c07d077f9cf28254ac",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "jeux-ordinateur",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-044-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+      "audioSha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+      "absentTerms": [
+        "ordinateur",
+        "jeu",
+        "jeux"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-velo-promenade",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "sha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+      "themes": [
+        "sport",
+        "deplacements"
+      ],
+      "sceneKey": "velo-promenade",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-044-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+      "audioSha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+      "absentTerms": [
+        "vélo",
+        "promenade"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-service-repas",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "sha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "service-repas",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-049-04-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+      "audioSha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+      "absentTerms": [
+        "poisson",
+        "riz",
+        "restaurant"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-saut-hauteur",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "sha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+      "themes": [
+        "sport",
+        "education"
+      ],
+      "sceneKey": "saut-hauteur",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a1-051-04-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+      "audioSha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+      "absentTerms": [
+        "saut",
+        "hauteur"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-depart-vacances",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "sha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "depart-vacances",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-031-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "5c25b12798e2063f4f0d4a87b5a7a037297a9ce27fbb72cc33a01c7d570f806d",
+      "audioSha256": "7218f1d01fc05b0fe5051ef5153f1e98f3296498418ecb889c2ea18834d5357a",
+      "absentTerms": [
+        "vacances",
+        "départ"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-cuisine-pizza",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "sha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "cuisine-pizza",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-031-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "839b6f7e4d77e9c7ce53ec6c600650f6c47b09151e6e117b3caf1425a2004f53",
+      "audioSha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+      "absentTerms": [
+        "pizza"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-visite-versailles",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "visite-versailles",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-034-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+      "audioSha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
+      "absentTerms": [
+        "Versailles",
+        "château"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-plante-supermarche",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "plante-supermarche",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-035-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+      "audioSha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+      "absentTerms": [
+        "plante",
+        "fleurs"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-chien-patisserie",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "chien-patisserie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-043-04-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+      "audioSha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+      "absentTerms": [
+        "chien"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-produits-hygiene",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "produits-hygiene",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-044-04-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+      "audioSha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+      "absentTerms": [
+        "shampoing",
+        "dentifrice"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-telephonie",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "telephonie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-044-04-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+      "audioSha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+      "absentTerms": [
+        "téléphone",
+        "portable"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-restaurant-raclette",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "restaurant-raclette",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-02.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-045-04-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+      "audioSha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
+      "absentTerms": [
+        "restaurant",
+        "raclette"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-prevision-meteo",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "themes": [
+        "loisirs"
+      ],
+      "sceneKey": "prevision-meteo",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-03.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-045-04-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+      "audioSha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007",
+      "absentTerms": [
+        "météo",
+        "pluie",
+        "temps"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-telepherique",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
       "themes": [
         "deplacements",
         "sport"
       ],
+      "sceneKey": "telepherique",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+      "sourceExercise": "tcf-delf-actif-a2-045-04-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+      "audioSha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
       "absentTerms": [
-        "vélo",
-        "vélos",
-        "bicyclette",
-        "bicyclettes",
-        "roue",
-        "roues",
-        "pneu",
-        "pneus"
+        "téléphérique"
       ],
-      "review": "Réparation d’une roue de vélo ; distinct des voyages, du bus, de la course et de la piscine.",
-      "sceneKey": "velo-reparer"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "cinema",
-      "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
-      "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+      "id": "audio-choix-repas",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "choix-repas",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-001-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "98f3f12cafc4da3dc1a9dd0219d6e5e408835a1dd8d4e446a901d9098206ddcd",
+      "audioSha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
+      "absentTerms": [
+        "repas",
+        "restaurant",
+        "manger"
+      ],
+      "visibleInterlocutors": 3,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-rendez-vous-sortie",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
+      "sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db",
       "themes": [
         "culture"
       ],
+      "sceneKey": "rendez-vous-sortie",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-04.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-001-04",
+      "sourceDialogue": 1,
+      "sourceSha256": "d0c91465c44566d9303777a4dce6e3a9065f1177a210c581f5efdf8a38641ff0",
+      "audioSha256": "42a712e8378bc42bd9f8ab202320302e65d0827def675f9302594fbaa993e59a",
       "absentTerms": [
-        "cinéma",
-        "film",
-        "films",
-        "écran",
-        "projection"
+        "rendez-vous",
+        "sortie",
+        "cinéma"
       ],
-      "review": "Des spectateurs regardent un film ; distinct du musée, des livres ou de la bibliothèque.",
-      "sceneKey": "cinema"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "pharmacie",
-      "image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
-      "sha256": "620870f481022e883cabb486221196bed0137eadd45c47c808c55d9fd847b388",
+      "id": "audio-visite-personne-agee",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-projet-visite-mamie.png",
+      "sha256": "981d32ed8216364267d8675c4c6c8bec5aa8a986956d0f8a221057c2466f43ee",
       "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "visite-personne-agee",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-001-05",
+      "sourceDialogue": 1,
+      "sourceSha256": "8653100a56c2661e02372df1d21149865c0d35d968b777607c8d5bdd37327b47",
+      "audioSha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
+      "absentTerms": [
+        "Mamie",
+        "grand-mère"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-trottinette",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-conversation-nouvelle-trottinette.png",
+      "sha256": "ad557a99a4a155c0ea377793c98169470bba8f08d1e78eaf21c5e6f8b55221ce",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "trottinette",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-032-02",
+      "sourceDialogue": 1,
+      "sourceSha256": "d554e2979edde95afdf705d70ce51469b4e5c7bb031fffbac40cf85dbd41ce3a",
+      "audioSha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c",
+      "absentTerms": [
+        "trottinette"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-travail-explique",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b",
+      "themes": [
+        "education",
         "sante"
       ],
+      "sceneKey": "travail-explique",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-03.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-032-03",
+      "sourceDialogue": 1,
+      "sourceSha256": "ff88f309c55bc0a671ed61bd1dcd3b0f52ace938ea6db968b4c142888e90f642",
+      "audioSha256": "68cb58d3e374ac26dd92e2b0a898cccfc0fd8bb84eae78fb11650ded0ed1ead6",
       "absentTerms": [
-        "pharmacie",
-        "pharmacien",
-        "pharmacienne",
-        "médicament",
-        "médicaments",
-        "ordonnance"
+        "travail",
+        "travailler"
       ],
-      "review": "Une pharmacienne prend une boîte dans un rayon ; distinct d’attendre dans une salle médicale.",
-      "sceneKey": "pharmacie"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "bibliotheque",
-      "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
-      "sceneKey": "bibliotheque",
+      "id": "audio-indisponibilite",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
+      "sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
       "themes": [
-        "culture",
-        "lecture",
+        "travail"
+      ],
+      "sceneKey": "indisponibilite",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-05.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-032-05",
+      "sourceDialogue": 1,
+      "sourceSha256": "d5eb4147c0a2a58c0bb29fdf64271138384dcfbcb36f2e15ee119626d2cfd1bb",
+      "audioSha256": "2f7299b649d6b9554e365cb5ac08ebed7cf75739d4336beacf94ae26c965879b",
+      "absentTerms": [
+        "travail",
+        "occupé",
+        "débordé"
+      ],
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
+    },
+    {
+      "id": "audio-loisirs-citoyens",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5",
+      "themes": [
+        "travail",
         "education"
       ],
+      "sceneKey": "loisirs-citoyens",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-01-01.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-038-01-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "6f0b4754d5a15cf937bf343e893883649ec336f98813e3bf3be3a6b624d3d6ea",
+      "audioSha256": "3aad2d6f8fefeb0f069575a0c70e1be37f6600301a0d8d3e8a546dd19f30e9f7",
       "absentTerms": [
-        "bibliothèque",
-        "bibliothèques",
-        "livre",
-        "livres",
-        "lecture",
-        "lire",
-        "roman",
-        "romans",
-        "revue",
-        "revues"
+        "citoyen",
+        "citoyens",
+        "association"
       ],
-      "review": "Lecture en bibliothèque, image réexaminée ; exclue si livres, lecture ou bibliothèque sont entendus, ou si une autre scène de bibliothèque est retenue.",
-      "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     },
     {
-      "id": "musee",
-      "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
-      "sceneKey": "musee",
+      "id": "audio-choix-cadeau",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81",
       "themes": [
-        "culture"
+        "achats"
       ],
+      "sceneKey": "choix-cadeau",
+      "sourceAudio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+      "sourceExercise": "tcf-delf-actif-b1-040-01-01",
+      "sourceDialogue": 1,
+      "sourceSha256": "858cbae71dbfbc9b05e8f4e8c010d658412fb9aa51f401bc8173a2c252f39874",
+      "audioSha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
       "absentTerms": [
-        "musée",
-        "musées",
-        "exposition",
-        "expositions",
-        "tableau",
-        "tableaux",
-        "peinture",
-        "peintures",
-        "visite",
-        "visiter",
-        "visité",
-        "Versailles",
-        "Matisse"
+        "cadeau",
+        "anniversaire"
       ],
-      "review": "Entrée générique de musée, sans artiste ni monument identifié ; exclue dès qu’une visite ou exposition est entendue et si une scène de musée est retenue.",
-      "sha256": "45b7d869883cb324424c1bf47b7756342fe5f20ac59ad34e27fc9be0cbad8b54"
+      "visibleInterlocutors": 2,
+      "fullBodyVisible": true,
+      "review": "Scène liée à un autre audio de scénario du catalogue, jamais une illustration indépendante ; audio, image, clé de scène et concepts entendus exclus à chaque tirage."
     }
-  ]
+  ],
+  "decoyPolicy": {
+    "register": "docs/tcf/leurres-audios-scenarios-20261115.json",
+    "source": "reviewed_scenario_audio",
+    "exclude_selected_audio": true,
+    "exclude_selected_image": true,
+    "exclude_selected_scene_key": true,
+    "minimum_visible_interlocutors": 2,
+    "one_representative_per_scene_key": true
+  }
 }

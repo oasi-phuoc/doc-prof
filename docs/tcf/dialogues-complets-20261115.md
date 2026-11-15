@@ -1,5 +1,7 @@
 # Interlocuteurs manquants corrigés — 15 novembre 2026
 
+> Suite : les 21 cadrages restants sont corrigés, les leurres proviennent d’autres audios et les catalogues sont regroupés dans un menu à icône. [Rapport actuel](cadrages-finaux-20261115.md). Les compteurs ci-dessous décrivent l’état du lot précédent.
+
 **Les 17 liaisons signalées pour interlocuteur manquant sont corrigées et activées.** Chaque nouvelle image montre les deux interlocuteurs en interaction et en entier. Il reste **21 cadrages à reprendre, sur 18 images distinctes**, dont les trois gestes de remise de billet à remplacer par un simple renseignement.
 
 Les **117 pistes de scènes**, dont les **96 dialogues DELF Actif**, restent disponibles. La validation directe suit la consigne utilisateur : « Continue valide directement les scène et je les changerai au besoin ». Les réserves de concordance restent des notes non bloquantes ; aucune nouvelle écoute des voix n’est déclarée.

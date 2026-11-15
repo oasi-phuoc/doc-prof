@@ -40,7 +40,7 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 139,
+    "new_original_pngs": 158,
     "new_scene_image_uses": 46,
     "priority_scene_reuses": 4,
     "priority_prepared_scene_uses": 51,
@@ -65,7 +65,9 @@
     "b1_final_prepared_scene_uses": 7,
     "user_accepted_prepared_scenes": 30,
     "editorial_reserves_non_blocking": true,
-    "complete_dialogue_corrections_20261115": 17
+    "complete_dialogue_corrections_20261115": 17,
+    "final_framing_corrections_20261115": 21,
+    "user_accepted_scene_bindings": 79
   },
   "supports": [
     {
@@ -1587,14 +1589,50 @@
       "evidenceQuote": "je te donne mon dictionnaire",
       "reason": "Remise d’un dictionnaire entre camarades ; ne pas transformer le geste en prêt contractuel ou en livre d’un autre genre.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
-      "imageSha256": "0986fdc5a5b4f90b6e45aeba0711ce8e374bc2596e465a847f6472c6c1fc18f8",
-      "visualReview": "Dictionnaire explicitement identifiable remis entre camarades ; la scène ne prétend pas établir les conditions d’un prêt ni leur identité.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preter-dictionnaire-en-pied.png",
+      "imageSha256": "54189873e11609e81b78f5389276bc3d7459190a572f16d94dd49b4968ea5836",
+      "visualReview": "Les deux élèves sont entiers pendant le prêt du dictionnaire usé ; livre complet sans titre lisible, cours d’anglais encore futur et aucun professeur substitué au camarade.",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "note": "Le masculin de il est un peu vieux concerne le dictionnaire, pas les personnes. Aucun genre de prêteur ou emprunteur n’est donné ; voix à confirmer."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
+          "sha256": "0986fdc5a5b4f90b6e45aeba0711ce8e374bc2596e465a847f6472c6c1fc18f8",
+          "register": "docs/tcf/scenarios-audio-20261114.json",
+          "gender_review": {},
+          "source_sha256": "fc61a92a96f997e31c04c3bcbf617ca7bd801c4609b3370be6726109d445e184",
+          "audio_sha256": "d6cbe9f6e679993156ee6f8252091733f070c945309bda7ef3c599be70be3f42"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "54189873e11609e81b78f5389276bc3d7459190a572f16d94dd49b4968ea5836",
+        "source_sha256": "fc61a92a96f997e31c04c3bcbf617ca7bd801c4609b3370be6726109d445e184",
+        "audio_sha256": "d6cbe9f6e679993156ee6f8252091733f070c945309bda7ef3c599be70be3f42",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-032-04",
@@ -2136,15 +2174,51 @@
       "evidenceQuote": "un pendentif avec la tour Eiffel",
       "reason": "Achat d’un bijou à une vendeuse, pendentif argenté en forme de tour Eiffel ; ni prix ni montant sur l’image. Dialogue long mais transaction unique.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
-      "imageSha256": "b5ab2063353ad68c8dc808c4fef96543e12de096a40003e045d5ec47ac6a1b04",
-      "visualReview": "Vendeuse et jeune client distincts, pendentif argenté en forme de tour Eiffel lisible dans son écrin ; aucun prix, monnaie ou âge écrit. Le décor ne prétend pas être un magasin réel identifié.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-bijouterie-pendentif-en-pied.png",
+      "imageSha256": "a9fb1d1d40905ae5fac72129452dc60e151886b13d6881e2a309395d881f7a8a",
+      "visualReview": "Jeune homme et vendeuse appelée Madame sont entiers à côté de la vitrine ; pendentif argenté en forme de tour Eiffel et paquet, sans sœur substituée au client ni montant affiché.",
       "generationRegister": "docs/tcf/generation-scenarios-20261114.json",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "documented_match",
         "note": "Les deux rôles représentés correspondent aux titres explicitement échangés. La sœur destinataire du cadeau n’est pas montrée."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
+          "sha256": "b5ab2063353ad68c8dc808c4fef96543e12de096a40003e045d5ec47ac6a1b04",
+          "register": "docs/tcf/generation-scenarios-20261114.json",
+          "gender_review": {},
+          "source_sha256": "a591a9f9290c66703b663b57a79e05e72309bbf1242e202e2cf15853b50c1809",
+          "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "a9fb1d1d40905ae5fac72129452dc60e151886b13d6881e2a309395d881f7a8a",
+        "source_sha256": "a591a9f9290c66703b663b57a79e05e72309bbf1242e202e2cf15853b50c1809",
+        "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a1-048-01",
@@ -4875,15 +4949,51 @@
       "evidenceQuote": "ce papier bleu clair avec ce ruban bleu foncé",
       "reason": "Vendeuse réalisant un paquet cadeau bleu clair à ruban bleu foncé ; pas de bleu uniforme ni de couleur opposée.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
-      "imageSha256": "c47471cf578667e8ef8d9f54053eeead248c804560c3679d3304f7fc7074f1ef",
-      "visualReview": "Un paquet à papier bleu clair et ruban bleu foncé ; vendeuse nouvelle terminant le nœud et jeune client, aucune date, montant, marque ou contenu de cadeau ajouté.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-paquet-bleu-en-pied.png",
+      "imageSha256": "6f78bc0f773a7776f039411e2b959a23ad11fb7aeb6f69547db1898d33b836ab",
+      "visualReview": "Employée et client sont entiers autour du paquet en papier bleu clair avec ruban bleu foncé ; boîte et ruban complets. Le destinataire mentionné n’est pas automatiquement identifié au client.",
       "generationRegister": "docs/tcf/generation-scenarios-20261114.json",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "note": "Vendeuse femme conforme à Madame ; le jeune homme est cité comme destinataire du cadeau. Il n’est pas certain que cette mention identifie le locuteur client : ce rôle reste à confirmer avec la voix."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
+          "sha256": "c47471cf578667e8ef8d9f54053eeead248c804560c3679d3304f7fc7074f1ef",
+          "register": "docs/tcf/generation-scenarios-20261114.json",
+          "gender_review": {},
+          "source_sha256": "d7524ab43b527fda038da3b0aa6460a533c67e5c16418095740677afe43cfef3",
+          "audio_sha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "6f78bc0f773a7776f039411e2b959a23ad11fb7aeb6f69547db1898d33b836ab",
+        "source_sha256": "d7524ab43b527fda038da3b0aa6460a533c67e5c16418095740677afe43cfef3",
+        "audio_sha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-032-03",
@@ -5087,15 +5197,51 @@
       "evidenceQuote": "Vous avez moins de 15 ans",
       "reason": "Jeune de moins de quinze ans demandant un tarif de groupe ; ne pas utiliser la scène d’une cliente adulte ni écrire un prix.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
-      "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
-      "visualReview": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-jeunes-en-pied.png",
+      "imageSha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+      "visualReview": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée.",
       "generationRegister": "docs/tcf/generation-scenarios-20261114.json",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "roles_not_specified",
         "note": "Cette autre source partage l’image mais ne donne aucun titre ou accord de genre : ne pas lui transférer la preuve mademoiselle de l’autre audio. Distribution des voix à confirmer."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+          "sha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
+          "register": "docs/tcf/generation-scenarios-20261114.json",
+          "gender_review": {},
+          "source_sha256": "0ca54bb2765879343c7d358e56e46b92441414e9342cedb32dc1f225ede183ad",
+          "audio_sha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+        "source_sha256": "0ca54bb2765879343c7d358e56e46b92441414e9342cedb32dc1f225ede183ad",
+        "audio_sha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-02",
@@ -5115,14 +5261,50 @@
       "evidenceQuote": "d’où part le train pour Avignon",
       "reason": "Renseignement sur le départ d’un train auprès d’un homme ; scène générique de guichet, sans attribuer un autre numéro ou annoncer un achat.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
-      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
-      "visualReview": "Échange de renseignement à un guichet auprès d’un homme ; pas de code de voie, heure, montant ou achat final attribué au dessin générique.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-train-en-pied.png",
+      "imageSha256": "1de9114afe17dda3bb0d0857bb0e4f47e9f9b8dabd6a7bc13aa5044419879b13",
+      "visualReview": "Voyageuse et employé appelé Monsieur sont entiers et discutent d’une voie de départ ; main ouverte indiquant la direction, aucun billet remis, achat, horaire ou lettre de voie dessiné.",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "note": "Employé homme conforme à Monsieur ; genre de la personne qui demande le départ non précisé dans les paroles."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+          "sha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+          "register": "docs/tcf/scenarios-audio-20261114.json",
+          "gender_review": {},
+          "source_sha256": "ec1965601793366bc9635844f18d53260f792f69710587e748cf58ff0c2943ae",
+          "audio_sha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "1de9114afe17dda3bb0d0857bb0e4f47e9f9b8dabd6a7bc13aa5044419879b13",
+        "source_sha256": "ec1965601793366bc9635844f18d53260f792f69710587e748cf58ff0c2943ae",
+        "audio_sha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-033-03",
@@ -5346,15 +5528,51 @@
       "evidenceQuote": "les excursions organisées par votre bureau",
       "reason": "Cliente renseignée par un homme sur des excursions ; guichet générique sans image attribuée aux îles de Lérins et sans prix.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
-      "imageSha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
-      "visualReview": "Jeune adolescente et préposé homme, gestes de renseignement sans achat achevé ; ni horaire, prix, destination ou mode de transport imposé. L’âge exact reste une information orale, jamais prouvée par l’apparence du personnage.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-jeunes-en-pied.png",
+      "imageSha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+      "visualReview": "Adolescente et employé masculin sont entiers dans un bureau de renseignements ; scène compatible avec les deux demandes de réduction. Aucun billet acheté, montant, groupe de figurants ou destination imposée.",
       "generationRegister": "docs/tcf/generation-scenarios-20261114.json",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "documented_match",
         "note": "La fille et le préposé homme correspondent à mademoiselle et Monsieur ; âge exact laissé à l’oral."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+          "sha256": "d56cf5f341cb85e7e60c98bb54837f52e7bc080567a90ad49d235b5e14550aa1",
+          "register": "docs/tcf/generation-scenarios-20261114.json",
+          "gender_review": {},
+          "source_sha256": "f4f70a3f683ded253acbc40f83a3309005414f6b10b06a89c3ba305eae4047fc",
+          "audio_sha256": "8a4d524e7a185df655da47af501f123ee920ad0b43feaf69689c1fe3018e813c"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+        "source_sha256": "f4f70a3f683ded253acbc40f83a3309005414f6b10b06a89c3ba305eae4047fc",
+        "audio_sha256": "8a4d524e7a185df655da47af501f123ee920ad0b43feaf69689c1fe3018e813c",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-034-03",
@@ -7143,14 +7361,50 @@
       "evidenceQuote": "part le premier bateau pour les îles",
       "reason": "Renseignement sur horaires de bateau à un homme ; pas d’heure ou de destination ajoutée au dessin de guichet.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
-      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
-      "visualReview": "Renseignement de transport auprès d’un homme à un guichet ; aucune heure, destination ou somme ajoutée.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-bateaux-en-pied.png",
+      "imageSha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+      "visualReview": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé.",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "note": "Employé homme conforme à monsieur ; genre de la personne demandant les horaires non précisé."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+          "sha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+          "register": "docs/tcf/scenarios-audio-20261114.json",
+          "gender_review": {},
+          "source_sha256": "3887e8ce560e362fa7d868ff53f5222a94b6b7212c1d1aea315378237d37f3b8",
+          "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+        "source_sha256": "3887e8ce560e362fa7d868ff53f5222a94b6b7212c1d1aea315378237d37f3b8",
+        "audio_sha256": "0b3c8574ba64b510402f31de1eed568190c286016ec482c61bf574a3a388a6e1",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-046-04-03",
@@ -7267,14 +7521,50 @@
       "evidenceQuote": "quel est le prix d’un billet pour les îles",
       "reason": "Demande d’un billet et d’un avantage de groupe ; guichet générique sans prix ni réduction représentés.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
-      "imageSha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
-      "visualReview": "Billetterie générique avec un préposé homme ; ne pas représenter le prix ni supposer que la cliente est seule plutôt que membre du groupe.",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-bateaux-en-pied.png",
+      "imageSha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+      "visualReview": "Visiteuse et employé appelé monsieur sont entiers dans une scène commune de renseignements maritimes. Aucun billet remis, achat, tarif ou horaire écrit ; bateau de contexte amarré, entier et sans départ réalisé.",
       "previousGenderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "partial_documented_match",
         "note": "Employé homme conforme à monsieur ; genre de la personne demandant les prix non précisé."
-      }
+      },
+      "alternativeSceneImages": [
+        {
+          "path": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+          "sha256": "e4cc8b271161f0a27c048f391eea7daca86ac2bce6328bd4b72951cf3c58c990",
+          "register": "docs/tcf/scenarios-audio-20261114.json",
+          "gender_review": {},
+          "source_sha256": "12f7aa937ab9a8bfd80fe92a348e26a5f1a00754c59368180163a6c11441d662",
+          "audio_sha256": "2d0ec84f7dd1054cdf4bfcb0439ac2a067747ce8fd7dfc87cbfe096916d671ab"
+        }
+      ],
+      "genderReview": {
+        "status": "needs_voice_review",
+        "basis": "Cadrage et contexte vérifiés avec le texte ; apparences non établies conservées comme choix éditoriaux acceptés directement. Réserves non bloquantes, sans écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": []
+      },
+      "sceneReview": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false
+      },
+      "editorialReview": {
+        "status": "user_accepted",
+        "register": "docs/tcf/cadrages-finaux-20261115.json",
+        "date": "2026-11-15",
+        "instruction": "Continue valide directement les scène et je les changerai au besoin",
+        "image_sha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+        "source_sha256": "12f7aa937ab9a8bfd80fe92a348e26a5f1a00754c59368180163a6c11441d662",
+        "audio_sha256": "2d0ec84f7dd1054cdf4bfcb0439ac2a067747ce8fd7dfc87cbfe096916d671ab",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      },
+      "imageCorrectionRegister": "docs/tcf/cadrages-finaux-20261115.json"
     },
     {
       "exercise": "tcf-delf-actif-b1-001-01",
@@ -8935,7 +9225,8 @@
     "docs/tcf/generation-scenarios-b1-suite-20261114.json",
     "docs/tcf/generation-scenarios-b1-complement-20261114.json",
     "docs/tcf/correction-interlocuteurs-pluie-20261114.json",
-    "docs/tcf/dialogues-complets-20261115.json"
+    "docs/tcf/dialogues-complets-20261115.json",
+    "docs/tcf/cadrages-finaux-20261115.json"
   ],
   "previous_scenes_gender_audit": "docs/tcf/recontrole-genres-scenes-20261114.json",
   "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json",

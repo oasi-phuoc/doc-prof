@@ -1,6 +1,6 @@
 # Reprise des interlocuteurs visibles — 14 novembre 2026
 
-**Suite du 15 novembre : les 17 liaisons avec interlocuteur manquant sont corrigées et actives.** Dix-sept nouveaux PNG montrent les deux personnes en entier ; les 117 pistes restent disponibles. Il ne reste aucun interlocuteur manquant signalé dans ce registre. Restent **21 cadrages (18 images)**, dont trois gestes de remise de billet à corriger. Les réserves sur les voix sont conservées comme notes non bloquantes. [Rapport et reste à faire](dialogues-complets-20261115.md).
+**Suite du 15 novembre : les 21 cadrages et les trois gestes de guichet signalés sont corrigés.** Dix-neuf PNG natifs couvrent les 21 liaisons ; les 117 pistes restent disponibles. Les leurres viennent désormais d’autres audios de scénario non sélectionnés, avec 80 clés candidates. Le registre ne signale plus d’interlocuteur manquant ni de cadrage restant. Le bouton à icône « Catalogue » regroupe les trois catalogues à gauche de « Paramètres ». [Rapport et reste à faire](cadrages-finaux-20261115.md).
 
 **Historique du premier lot du 15 novembre :** quatre cadrages corrigés sont installés ; trois B1 montrent désormais leurs deux interlocuteurs et restent préparés avec concordance à confirmer. La scène du film ajoute un enseignant manquant à la file. État à la fin de ce premier lot : 25 liaisons connues à reprendre (22 images) et 57 décomptes détaillés à terminer. Le registre conserve aussi la première correction mère/Bastien. [Rapport et vérifications](reprise-dialogues-cadrages-20261115.md).
 

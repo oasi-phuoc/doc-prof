@@ -1,0 +1,478 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "b55b3a6253ec25aa0ebddd756a7790427e9cd0ee",
+  "summary": {
+    "activated_prepared_scenes": 0,
+    "replaced_existing_bindings": 21,
+    "new_original_pngs": 19,
+    "additional_compatible_uses": 2,
+    "total_active_sources": 117,
+    "delf_bound": 96,
+    "pending_scenes": 0,
+    "remaining_interlocutor_rework": 0,
+    "remaining_framing_rework": 0,
+    "remaining_contextual_rework": 0,
+    "bank_image_urls_changed": 14,
+    "global_aliases_added": 17,
+    "generation_calls": 21,
+    "rejected_generations": 2
+  },
+  "decoys": {
+    "audio_scene_sources": 117,
+    "distinct_scene_key_candidates": 80,
+    "retired_independent_decoys": 10,
+    "fixed_association_decoys_replaced": 9,
+    "existing_visual_reviews_reused": 33,
+    "previous_correction_metadata_completed": 1,
+    "new_images_generated_for_decoys": 0
+  },
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "editorial_reserves_non_blocking": true,
+  "questions_modified": 0,
+  "answers_modified": 0,
+  "transcriptions_modified": 0,
+  "audio_files_modified": 0,
+  "new_qcm_trios": 0,
+  "all_117_original_audio_sources_and_transcriptions_preserved": true,
+  "banks": [
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "8d52e39472281d81cf7f023cc109c8a5923df61cfc432224e7d4f9296b29cec9",
+      "changed_image_urls": 0,
+      "all_other_fields_unchanged": true
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "ddaf5275f6b2dc64b8ec3326c33ee03cb424383fbd3b5f2283c68ee6d65f704b",
+      "changed_image_urls": 12,
+      "all_other_fields_unchanged": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "f29a128c7b16adac1c066a6645f6782af01652a765f94f383a9a1fec9d44d53d",
+      "changed_image_urls": 0,
+      "all_other_fields_unchanged": true
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "374e770b24188d6aa40e164a5e542c8d548561ead23ff719a2fe8a1f8bde60ad",
+      "changed_image_urls": 11,
+      "all_other_fields_unchanged": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/ce.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "changed_image_urls": 0,
+      "all_other_fields_unchanged": true
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "59d75cfc9141d5c13c032e174f9304d4ec16151aad4bdb64ad60f8b549f8b7a0",
+      "changed_image_urls": 0,
+      "all_other_fields_unchanged": true
+    }
+  ],
+  "bank_changes": [
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s4-co-4",
+      "pointer": "/31/situations/2/image",
+      "previous_image": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-accueil-medical-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s4-co-4",
+      "pointer": "/31/situations/3/image",
+      "previous_image": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s4-co-4",
+      "pointer": "/31/situations/5/image",
+      "previous_image": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-4",
+      "pointer": "/35/situations/0/image",
+      "previous_image": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-devoirs-papa-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-4",
+      "pointer": "/35/situations/1/image",
+      "previous_image": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-madame-vega-trois-personnes-entieres.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-4",
+      "pointer": "/35/situations/2/image",
+      "previous_image": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preparer-ses-repas-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-ecole-preter-le-dictionnaire-co-4",
+      "pointer": "/273/support/image",
+      "previous_image": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preter-dictionnaire-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-4",
+      "pointer": "/17/situations/0/image",
+      "previous_image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-kate-photos-voyage-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-4",
+      "pointer": "/17/situations/1/image",
+      "previous_image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-kiosque-ferme-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-4",
+      "pointer": "/17/situations/2/image",
+      "previous_image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-4",
+      "pointer": "/17/situations/3/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-parler-thomas-bus-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "pointer": "/21/situations/0/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-choisir-sac-vert-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "pointer": "/21/situations/2/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-montrer-creme-chocolat-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "pointer": "/21/situations/3/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-emma-resultats-en-pied.png"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s3-co-4",
+      "pointer": "/26/situations/3/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+      "source_exercise": "tcf-a1-s4-co-4",
+      "source_dialogue": 1
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s3-co-4",
+      "pointer": "/26/situations/5/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/vocab-cafe-entre-amis.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-preparer-ses-repas-en-pied.png",
+      "source_audio": "/lib/audio/tcf/co/ecole/les-etudes-2-1.mp3",
+      "source_exercise": "tcf-a1-tpa-co-4",
+      "source_dialogue": 1
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s4-co-4",
+      "pointer": "/31/situations/4/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co834-pharmacie-dessinee.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "source_exercise": "tcf-a1-s3-co-4",
+      "source_dialogue": 2
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-4",
+      "pointer": "/35/situations/3/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/vocab-eleve-tableau.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-jus-orange-personnages-entiers.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
+      "source_exercise": "tcf-a1-s3-co-4",
+      "source_dialogue": 1
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpa-co-4",
+      "pointer": "/35/situations/4/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-58.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "source_exercise": "tcf-a1-s3-co-4",
+      "source_dialogue": 2
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-4",
+      "pointer": "/17/situations/4/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "source_exercise": "tcf-a1-s3-co-4",
+      "source_dialogue": 2
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-4",
+      "pointer": "/17/situations/5/image",
+      "previous_image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-2-1.mp3",
+      "source_exercise": "tcf-a1-s4-co-4",
+      "source_dialogue": 1
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "pointer": "/21/situations/4/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-58.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-jus-orange-personnages-entiers.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
+      "source_exercise": "tcf-a1-s3-co-4",
+      "source_dialogue": 1
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sb-co-4",
+      "pointer": "/21/situations/5/image",
+      "previous_image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-59.png",
+      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-rayon-yaourts-personnages-entiers.png",
+      "source_audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-2.mp3",
+      "source_exercise": "tcf-a1-s3-co-4",
+      "source_dialogue": 2
+    }
+  ],
+  "original_scene_files_preserved": true,
+  "new_native_pngs": [
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-accueil-medical-en-pied.png",
+      "sha256": "ba2b0e51face57d14f3a89f48daf6c3735b378c702486f95bdb1ebfc6b8b7a8e",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png",
+      "sha256": "7532c3f752880822d86a132817f34129af3650c6e8a512bc3cb0765df9c21032",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png",
+      "sha256": "af7e44de48d44fc13e169c72693e341912f8e1df5fc5b5efb95b20cdac197760",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-devoirs-papa-en-pied.png",
+      "sha256": "681b693c724c9f11b9ab82bd3064d6cfb91d423946a49928fb4b9e106af4fe92",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-madame-vega-trois-personnes-entieres.png",
+      "sha256": "1dcc718ebb9a50756d671368b268be49c9895d1559df2dd98ff9b8630201b928",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-preparer-ses-repas-en-pied.png",
+      "sha256": "cfe274be60c93522297b7ad58ca1bb4fafda42c47034ae65c53ecdfce5dd21c4",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-kate-photos-voyage-en-pied.png",
+      "sha256": "da1a142a0bf88f9ebd70123c852a8b940cd7e0af0c6f64bb556d4ed5d3242348",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-kiosque-ferme-en-pied.png",
+      "sha256": "92c81603f770617d4e4d69a3848333e261b9eb541f0af69d2ce44c5413886c43",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png",
+      "sha256": "48418332a67073a02ad3223195a510606d6ad17fa5bad0e3383998e7ee73eba5",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-parler-thomas-bus-en-pied.png",
+      "sha256": "aebb4904657395aac03eaf43ad87610dd10e0e584f6421466f39b25d4699cd9f",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-choisir-sac-vert-en-pied.png",
+      "sha256": "ef2c6923a3c9f8b123efadc8489bf2126ee98abcdeb38b9f215209e223b88f9e",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-montrer-creme-chocolat-en-pied.png",
+      "sha256": "e9f81f7e725f0698a96102bca66e2b0e287cfd43b53e0abdec24f68f0c17e99a",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-emma-resultats-en-pied.png",
+      "sha256": "d1061b66dbcf10035fe48f08c03ce98530224b80ba36e36310748137b4b943a0",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-preter-dictionnaire-en-pied.png",
+      "sha256": "54189873e11609e81b78f5389276bc3d7459190a572f16d94dd49b4968ea5836",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-train-en-pied.png",
+      "sha256": "1de9114afe17dda3bb0d0857bb0e4f47e9f9b8dabd6a7bc13aa5044419879b13",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-bateaux-en-pied.png",
+      "sha256": "2a2823b65a4be5a349ebe114dbff9a13032a0b4ecb59dd0910776de3a8ae2f8f",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-jeunes-en-pied.png",
+      "sha256": "0ceed995e9be92c26da2e79a7ce644a126c99ce47feeb97b554c8115f060e6bf",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-bijouterie-pendentif-en-pied.png",
+      "sha256": "a9fb1d1d40905ae5fac72129452dc60e151886b13d6881e2a309395d881f7a8a",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-paquet-bleu-en-pied.png",
+      "sha256": "6f78bc0f773a7776f039411e2b959a23ad11fb7aeb6f69547db1898d33b836ab",
+      "width": 1448,
+      "height": 1086,
+      "original_bytes_preserved": true
+    }
+  ],
+  "image_aliases": {
+    "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-accueil-medical-en-pied.png",
+    "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-nouveau-sac-en-pied.png",
+    "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png",
+    "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-devoirs-papa-en-pied.png",
+    "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-madame-vega-trois-personnes-entieres.png",
+    "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-preparer-ses-repas-en-pied.png",
+    "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-kate-photos-voyage-en-pied.png",
+    "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-kiosque-ferme-en-pied.png",
+    "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png",
+    "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-parler-thomas-bus-en-pied.png",
+    "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png": "/lib/images/tcf/co/scenes/reprises/dialogue-choisir-sac-vert-en-pied.png",
+    "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png": "/lib/images/tcf/co/scenes/reprises/dialogue-montrer-creme-chocolat-en-pied.png",
+    "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png": "/lib/images/tcf/co/scenes/reprises/dialogue-emma-resultats-en-pied.png",
+    "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp": "/lib/images/tcf/co/scenes/reprises/dialogue-preter-dictionnaire-en-pied.png",
+    "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png": "/lib/images/tcf/co/scenes/reprises/dialogue-renseignement-jeunes-en-pied.png",
+    "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png": "/lib/images/tcf/co/scenes/reprises/dialogue-bijouterie-pendentif-en-pied.png",
+    "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png": "/lib/images/tcf/co/scenes/reprises/dialogue-paquet-bleu-en-pied.png"
+  },
+  "checks": {
+    "scenario_draws": 600,
+    "selected_scene_manual_draws_all_levels": 237,
+    "catalogue_tests": 13,
+    "context_reviews": 1021,
+    "typescript": true,
+    "production_build": true,
+    "browser": {
+      "report": "docs/tcf/cadrages-finaux-20261115-browser.json",
+      "pages": 8,
+      "association_images": 48,
+      "selected_audio_scenes": 21,
+      "gallery_images": 19,
+      "decoy_audio_sources_checked": 16,
+      "errors": []
+    },
+    "navigation": {
+      "report": "docs/tcf/catalogue-menu-20261115-browser.json",
+      "headers": 8,
+      "navigations": 24,
+      "viewports": [
+        1440,
+        390
+      ],
+      "catalogue_left_of_settings": true,
+      "errors": []
+    }
+  },
+  "remaining_visual_work": {
+    "sources_examined_for_rework": 117,
+    "corrected_images": 1,
+    "full_recount_pending": 0,
+    "new_single_person_images_withheld": 0,
+    "active_source_count": 117,
+    "confirmed_scene_bindings_to_rework": 0,
+    "distinct_images_to_rework": 0,
+    "corrected_framing_bindings": 25,
+    "prepared_two_interlocutor_images": 0,
+    "audio_listening_performed": false,
+    "framing_rework_bindings": 0,
+    "framing_confirmation_pending": 0,
+    "visually_counted_bindings": 33,
+    "detailed_recounts_completed_20261115": 57,
+    "contextual_rework_bindings": 0,
+    "user_accepted_prepared_scenes": 30,
+    "user_accepted_corrected_interlocutors": 28,
+    "missing_interlocutor_bindings_corrected_this_batch": 17,
+    "user_accepted_corrected_framing": 21,
+    "final_framing_image_count": 19
+  },
+  "catalogues": {
+    "images": 6767,
+    "audio_files": 8801,
+    "questions": 6734,
+    "response_formats": 15056
+  },
+  "validated_at_upstream": "b55b3a6253ec25aa0ebddd756a7790427e9cd0ee"
+}

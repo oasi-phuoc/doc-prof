@@ -5,7 +5,7 @@ import { downloadImage, downloadImageZip } from './download'
 import './gallery.css'
 
 const PAGE_SIZE = 48
-export function ImageGalleryPage({ onOpenGenerator, onOpenFiches }: { onOpenGenerator: () => void; onOpenFiches: () => void }) {
+export function ImageGalleryPage({ onOpenGenerator }: { onOpenGenerator: () => void }) {
   const [query, setQuery] = useState(''), [type, setType] = useState('')
   const [page, setPage] = useState(1), [selected, setSelected] = useState<Set<string>>(new Set()), [preview, setPreview] = useState<GalleryImage>()
   const [progress, setProgress] = useState<{ done: number; total: number }>(), [message, setMessage] = useState(''), [error, setError] = useState('')
@@ -37,7 +37,7 @@ export function ImageGalleryPage({ onOpenGenerator, onOpenFiches }: { onOpenGene
     } finally { controller.current = null; setProgress(undefined) }
   }
   return <div className="app-shell gallery-page">
-    <Header generator showCreate onCreate={onOpenGenerator} rightSlot={<button type="button" className="topbar-text-btn" onClick={onOpenFiches}>Catalogue des fiches</button>} />
+    <Header generator showCreate onCreate={onOpenGenerator} />
     <main className="gallery-main" id="gallery-main">
       <header className="gallery-intro"><p className="eyebrow">Banque d’images</p><h1>Galerie d’images</h1><p>Recherchez une image, filtrez par type et téléchargez vos choix, seuls ou en groupe.</p><span>{galleryImages.length.toLocaleString('fr')} images · fichiers d’origine</span></header>
       <section className="gallery-filters" aria-label="Rechercher et filtrer les images">

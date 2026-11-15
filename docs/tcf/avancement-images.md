@@ -1,8 +1,12 @@
 # Avancement des illustrations CE / CO
 
-**Suite du 15 novembre : les 17 liaisons avec interlocuteur manquant sont corrigées et actives.** Dix-sept nouveaux PNG montrent les deux personnes en entier ; les 117 pistes restent disponibles. Il ne reste aucun interlocuteur manquant signalé dans ce registre. Restent **21 cadrages (18 images)**, dont trois gestes de remise de billet à corriger. Les réserves sur les voix sont conservées comme notes non bloquantes. [Rapport et reste à faire](dialogues-complets-20261115.md).
+**Suite du 15 novembre : les 21 cadrages et les trois gestes de guichet signalés sont corrigés.** Dix-neuf PNG natifs couvrent les 21 liaisons ; les 117 pistes restent disponibles. Les leurres viennent désormais d’autres audios de scénario non sélectionnés, avec 80 clés candidates. Le registre ne signale plus d’interlocuteur manquant ni de cadrage restant. Le bouton à icône « Catalogue » regroupe les trois catalogues à gauche de « Paramètres ». [Rapport et reste à faire](cadrages-finaux-20261115.md).
 
 > État actuel : voir le [bilan du cahier des charges du 11 novembre 2026](bilan-cahier-des-charges-20261111.md). Les compteurs historiques ci-dessous sont conservés pour la traçabilité.
+
+## Cadrages terminés et leurres issus des audios — 15 novembre 2026
+
+Les 21 cadrages et trois gestes de guichet sont corrigés. Les 80 candidats leurres proviennent exclusivement d’autres audios de scénario ; 19 PNG intégrés, galerie à 6 767 images. Le nouveau menu à icône regroupe les trois catalogues. [Rapport](cadrages-finaux-20261115.md) et [preuves](verification-cadrages-finaux-20261115.json).
 
 ## Correction des interlocuteurs manquants — 15 novembre 2026
 

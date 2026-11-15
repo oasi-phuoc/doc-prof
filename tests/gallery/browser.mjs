@@ -128,7 +128,8 @@ try {
   }
   await page.getByRole('button', { name: 'Créer une fiche', exact: true }).click()
   await page.waitForURL('**/generateur')
-  await page.getByRole('link', { name: 'Galerie d’images', exact: true }).click()
+  await page.getByRole('button', { name: 'Catalogue', exact: true }).click()
+  await page.getByRole('menuitem', { name: 'Catalogue des images', exact: true }).click()
   await page.waitForURL('**/images')
   await page.getByRole('heading', { name: 'Galerie d’images', exact: true }).waitFor()
   assert.deepEqual(errors, [])

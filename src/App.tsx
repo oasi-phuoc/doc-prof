@@ -52,11 +52,6 @@ export default function App() {
     setRoute('generator')
   }
 
-  const showFiches = () => {
-    navigateTo('/fiches')
-    setRoute('fiches')
-  }
-
   const logout = () => {
     clearAccessAccount()
     clearAccessPassword()
@@ -70,9 +65,9 @@ export default function App() {
   if (route === 'fiches') {
     return <Suspense fallback={<LoadingScreen title="Ouverture des fiches" description="Votre bibliothèque se prépare." />}><SavedFichesPage onOpenGenerator={showGenerator} onLogout={logout} /></Suspense>
   }
-  if (route === 'images') return <Suspense fallback={<LoadingScreen title="Ouverture de la galerie" description="Les images se préparent…" />}><ImageGalleryPage onOpenGenerator={showGenerator} onOpenFiches={showFiches} /></Suspense>
-  if (route === 'audios') return <Suspense fallback={<LoadingScreen title="Ouverture du catalogue audio" description="Les pistes et leurs documents se préparent…" />}><AudioCatalogPage onOpenGenerator={showGenerator} onOpenFiches={showFiches}/></Suspense>
-  if (route === 'generator') return <Suspense fallback={<LoadingScreen title="Ouverture du créateur de fiches" description="Votre espace de création arrive…" />}><GeneratorPage onLogout={logout} onOpenFiches={showFiches} /></Suspense>
+  if (route === 'images') return <Suspense fallback={<LoadingScreen title="Ouverture de la galerie" description="Les images se préparent…" />}><ImageGalleryPage onOpenGenerator={showGenerator} /></Suspense>
+  if (route === 'audios') return <Suspense fallback={<LoadingScreen title="Ouverture du catalogue audio" description="Les pistes et leurs documents se préparent…" />}><AudioCatalogPage onOpenGenerator={showGenerator}/></Suspense>
+  if (route === 'generator') return <Suspense fallback={<LoadingScreen title="Ouverture du créateur de fiches" description="Votre espace de création arrive…" />}><GeneratorPage onLogout={logout} /></Suspense>
   if (route === 'access') return <AccessPage onSuccess={openGenerator} />
   return <Landing onCreate={goAccess} />
 }

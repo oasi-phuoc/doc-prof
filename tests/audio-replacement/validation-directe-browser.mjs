@@ -11,6 +11,7 @@ const screenshotPrefix = `/tmp/${basename(reportPath, '.json').replace(/-browser
 const direct = await read(registerPath)
 const library = new Map((await read('docs/tcf/images-generees.json')).images.map(image => [image.path, image]))
 const gallery = new Map((await read('src/gallery/catalog.generated.json')).map(image => [image.src, image]))
+const scenarioCatalog = await read('src/tcf/association-image-themes.json')
 const base = 'http://127.0.0.1:5194'
 const server = await createServer({ cacheDir: '/tmp/tcf-direct-validation-browser', server: { host: '127.0.0.1', port: 5194, strictPort: true } })
 await server.listen()
@@ -62,7 +63,15 @@ try {
       return frame.bottom > body.bottom + 1 || frame.left < body.left - 1 || frame.right > body.right + 1 ? [index] : []
     }))
     assert.deepEqual(clippedFrames, [])
-    results.push({ audios: config.tcfAudioSlots, images: expected, loaded: expected.length, clipped_frames: clippedFrames })
+    const decoyAudioSources = config.tcfExercise.situations.filter(scene => scene.dialogue == null).map(scene => {
+      const origin = scenarioCatalog.decoys.find(candidate => candidate.image === scene.image)
+      assert.ok(origin, 'Every displayed decoy belongs to another scenario recording')
+      assert.ok(!config.tcfAudioSlots.includes(origin.sourceAudio))
+      assert.ok(origin.visibleInterlocutors >= 2 && origin.fullBodyVisible)
+      return { image: scene.image, audio: origin.sourceAudio, exercise: origin.sourceExercise, dialogue: origin.sourceDialogue }
+    })
+    assert.equal(decoyAudioSources.length, 2)
+    results.push({ audios: config.tcfAudioSlots, images: expected, loaded: expected.length, clipped_frames: clippedFrames, decoy_audio_sources: decoyAudioSources })
     if (index < 2) await stage.screenshot({ path: `${screenshotPrefix}-page-${index + 1}.png` })
   }
   for (const source of direct.sources) assert(results.some(result => result.audios.includes(source.audio) && result.images.includes(source.image)), source.exercise)

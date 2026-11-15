@@ -1,6 +1,6 @@
 # Catégories audio et scénarios — 14 novembre 2026
 
-**Suite du 15 novembre : les 17 liaisons avec interlocuteur manquant sont corrigées et actives.** Dix-sept nouveaux PNG montrent les deux personnes en entier ; les 117 pistes restent disponibles. Il ne reste aucun interlocuteur manquant signalé dans ce registre. Restent **21 cadrages (18 images)**, dont trois gestes de remise de billet à corriger. Les réserves sur les voix sont conservées comme notes non bloquantes. [Rapport et reste à faire](dialogues-complets-20261115.md).
+**Suite du 15 novembre : les 21 cadrages et les trois gestes de guichet signalés sont corrigés.** Dix-neuf PNG natifs couvrent les 21 liaisons ; les 117 pistes restent disponibles. Les leurres viennent désormais d’autres audios de scénario non sélectionnés, avec 80 clés candidates. Le registre ne signale plus d’interlocuteur manquant ni de cadrage restant. Le bouton à icône « Catalogue » regroupe les trois catalogues à gauche de « Paramètres ». [Rapport et reste à faire](cadrages-finaux-20261115.md).
 
 La relecture des [1 021 questions](delf-actif-20261113/revue-contexte-20261114.md) et ses 41 corrections sont terminées. Le classement porte sur les **346 nouveaux supports DELF Actif** ; il ne constitue pas une nouvelle écoute humaine.
 

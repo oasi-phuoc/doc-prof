@@ -22,18 +22,25 @@ export function associationSceneKey(source: SourceScene): string | undefined {
   return catalog.sources.find((row) => row.audio === source.audio && row.image === source.image && row.transcription === source.transcription)?.sceneKey
 }
 
-/** Whole scenes from the heard themes, with their distinguishing concepts absent. */
+/** Scenes bound to other scenario recordings, with distinct heard concepts. */
 export function associationThemedDecoyImages(sources: readonly SourceScene[]): string[] {
   const themes = sources.map(associationSceneThemes)
   if (!sources.length || themes.some((group) => !group.length)) return []
   const heardThemes = new Set(themes.flat())
   const heardImages = new Set(sources.map((source) => source.image))
+  const heardAudios = new Set(sources.map((source) => source.audio))
   const heardScenes = new Set(sources.map((source) => catalog.sources.find((row) => row.audio === source.audio && row.image === source.image && row.transcription === source.transcription)?.sceneKey))
   const transcript = words(sources.map((source) => source.transcription).join(' '))
-  return catalog.decoys.filter((decoy) =>
-    !heardImages.has(decoy.image)
+  return catalog.decoys.filter((decoy) => {
+    const origin = catalog.sources.find((row) => row.audio === decoy.sourceAudio
+      && row.exercise === decoy.sourceExercise && row.dialogue === decoy.sourceDialogue
+      && row.image === decoy.image && row.imageSha256 === decoy.sha256
+      && row.sourceSha256 === decoy.sourceSha256 && row.audioSha256 === decoy.audioSha256)
+    return origin && origin.sceneReview.visible_interlocutors >= 2 && origin.sceneReview.full_body_visible
+    && !heardAudios.has(origin.audio)
+    && !heardImages.has(decoy.image)
     && !heardScenes.has(decoy.sceneKey)
     && decoy.themes.some((theme) => heardThemes.has(theme))
-    && !decoy.absentTerms.some((term) => transcript.includes(words(term))),
-  ).map((decoy) => decoy.image)
+    && !decoy.absentTerms.some((term) => transcript.includes(words(term)))
+  }).map((decoy) => decoy.image)
 }

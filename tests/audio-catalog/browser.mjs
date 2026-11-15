@@ -41,8 +41,8 @@ try{
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));let mediaRequests=0;page.on('request',r=>{if(r.url().includes('/lib/audio/'))mediaRequests++})
  await page.goto(base+'/audios');await page.getByRole('heading',{name:'Catalogue des audios',exact:true}).waitFor({timeout:120000})
  assert.equal(await page.locator('.audio-card').count(),24);assert.equal(mediaRequests,0,'The list does not preload recordings')
- const audioLink=page.getByRole('link',{name:'Catalogue des audios',exact:true}),imageLink=page.getByRole('link',{name:'Galerie d’images',exact:true})
- assert.ok((await audioLink.boundingBox()).x<(await imageLink.boundingBox()).x)
+ const catalogueButton=page.getByRole('button',{name:'Catalogue',exact:true}),settingsButton=page.getByRole('button',{name:'Paramètres',exact:true})
+ assert.ok((await catalogueButton.boundingBox()).x<(await settingsButton.boundingBox()).x)
  await page.getByLabel('Rechercher un audio',{exact:true}).fill(selected[0].id);assert.equal(await page.locator('.audio-card').count(),1)
  const player=page.locator('.audio-card audio');await player.evaluate(node=>node.play());await page.waitForFunction(()=>document.querySelector('.audio-card audio').currentTime>.1);await player.evaluate(node=>node.pause())
  const [single]=await Promise.all([page.waitForEvent('download'),button(page,'Télécharger l’audio').click()]);const singlePath=output+'/'+single.suggestedFilename();await single.saveAs(singlePath);assert.deepEqual(await readFile(singlePath),await readFile('public'+selected[0].src))
@@ -79,13 +79,13 @@ print(json.dumps(z.namelist()))`,output+'/selection.zip'],{encoding:'utf8'}));re
  await button(page,'Télécharger le Word').click();await button(page,'Annuler').click();await page.getByRole('status').filter({hasText:'Téléchargement annulé.'}).waitFor();release();await page.unroute('**'+firstImage)
  for(const width of [1440,390]){
   await page.setViewportSize({width,height:950});await page.evaluate(()=>scrollTo(0,0));assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false)
-  assert.ok((await audioLink.boundingBox()).x<(await imageLink.boundingBox()).x)
+  assert.ok((await catalogueButton.boundingBox()).x<(await settingsButton.boundingBox()).x)
   const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();assert.deepEqual(scan.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)})),[])
   await page.screenshot({path:`docs/audio-catalog/screenshots/catalogue-${width}.png`})
  }
- await imageLink.click();await page.waitForURL('**/images');await page.getByRole('heading',{name:'Galerie d’images',exact:true}).waitFor();assert.equal(await page.locator('.gallery-card').count(),48)
- await page.getByRole('link',{name:'Catalogue des audios',exact:true}).click();await page.waitForURL('**/audios');await page.getByRole('heading',{name:'Catalogue des audios',exact:true}).waitFor()
+ await catalogueButton.click();await page.getByRole('menuitem',{name:'Catalogue des images',exact:true}).click();await page.waitForURL('**/images');await page.getByRole('heading',{name:'Galerie d’images',exact:true}).waitFor();assert.equal(await page.locator('.gallery-card').count(),48)
+ await page.getByRole('button',{name:'Catalogue',exact:true}).click();await page.getByRole('menuitem',{name:'Catalogue des audios',exact:true}).click();await page.waitForURL('**/audios');await page.getByRole('heading',{name:'Catalogue des audios',exact:true}).waitFor()
  assert.deepEqual(errors,[]);await context.close()
- results.push({auth:'anonymous route protected',navigation:'audio button left of image button; both catalogues accessible',playback:'real recording decoded and played',singleAudio:'original bytes retained',word:'all prepared questions and response forms, transcripts, tables, letters, checkboxes and embedded pictures',filters:'combined collection, level and prepared-content filters; persistent selection and empty state',failures:'HTML image fallback rejected, cancellation preserved selection',viewports:['1440x1000','390x950'],axe:'passed',errors})
+ results.push({auth:'anonymous route protected',navigation:'catalogue icon left of settings; image and audio catalogues accessible from its menu',playback:'real recording decoded and played',singleAudio:'original bytes retained',word:'all prepared questions and response forms, transcripts, tables, letters, checkboxes and embedded pictures',filters:'combined collection, level and prepared-content filters; persistent selection and empty state',failures:'HTML image fallback rejected, cancellation preserved selection',viewports:['1440x1000','390x950'],axe:'passed',errors})
  await writeFile('docs/audio-catalog/browser-results.json',JSON.stringify(results,null,2)+'\n');console.log(JSON.stringify(results,null,2))
 }finally{await browser.close();await server.close()}
