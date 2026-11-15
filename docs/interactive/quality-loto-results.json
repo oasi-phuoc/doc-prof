@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-15T18:25:14.482054+00:00",
+  "baseCommit": "bd11349f153ba281abe534824c4f0dc5555a057f",
+  "integratedMainCommit": "eb1b920cd091a1959ce1250b29f022c653b1b1b8",
+  "scope": "Optional M12 collective Loto: verified caller pairs, fixed A–F cases, seeded draws, horizontal-line or whole-board goals, explicit Class marks, automatic correct Solo marks and existing session persistence.",
+  "fullUnitSuite": {
+    "tests": 469,
+    "passed": 469,
+    "failed": 0
+  },
+  "newDomainTests": 8,
+  "finalTargetedDomainTests": {
+    "tests": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "sourceConfigurations": 200,
+  "browserStagesPassed": [
+    "loto-browser",
+    "a4-regression"
+  ],
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 71,
+  "native": [
+    {
+      "viewport": "390x844",
+      "class": "No automatic marks: reveal then explicit teacher validation. Fixed case letters, whole-grid selection, horizontal line goal, keyboard, lock, independent grids, reload and Loto summary.",
+      "input": "Real CDP touch, mouse and keyboard",
+      "offline": "Complete media preload then native play with network disabled",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "class": "No automatic marks: reveal then explicit teacher validation. Fixed case letters, whole-grid selection, horizontal line goal, keyboard, lock, independent grids, reload and Loto summary.",
+      "input": "Mouse and keyboard",
+      "offline": "Complete media preload then native play with network disabled",
+      "axeViolations": 0
+    },
+    {
+      "viewport": "360x640",
+      "class": "No automatic marks: reveal then explicit teacher validation. Fixed case letters, whole-grid selection, horizontal line goal, keyboard, lock, independent grids, reload and Loto summary.",
+      "input": "Real CDP touch, mouse and keyboard",
+      "offline": "Complete media preload then native play with network disabled",
+      "axeViolations": 0
+    },
+    {
+      "solo": "Correct answer checks only its cell; wrong answer and timeout add none. Pause freezes reflection; two-second feedback advances all draws. Full-board summary reports 4/6 and 3/3, with correct goal outcomes."
+    },
+    {
+      "untimed": "Solo reflection timer can be disabled; answer validation and feedback remain automatic."
+    }
+  ],
+  "wordReadability": "Native Range measurements require each full word to remain inside its case, including the real compound corbeille de fruits.",
+  "soloViewport": "360x640 with reflection enabled and disabled",
+  "browserErrors": [],
+  "liveApiWrites": 0,
+  "a4": {
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "identicalScreenshot": true,
+    "draftLaunch": "passed"
+  },
+  "checks": {
+    "typescript": "passed",
+    "workerTypes": "passed",
+    "build": "passed after integration",
+    "lint": {
+      "errors": 0,
+      "preexistingWarnings": 85
+    },
+    "bundleBudgets": "passed after integration",
+    "gitleaks": "passed, including key/api_key canaries for the four public TCF scene identifiers introduced by the parallel image report"
+  },
+  "limits": [
+    "Interactive grids have two to six source words, distinct from the printed pupil-grid combinations.",
+    "Only verified unique caller image-word pairs with labels of at most 24 characters become Loto grids; other source questions remain available.",
+    "Achieving the objective retains subsequent draws; the teacher can finish the session explicitly.",
+    "Online synchronized Loto, larger boards, cold-start offline and physical ENI/phone testing remain open."
+  ],
+  "gzipBytes": {
+    "landing": 121902,
+    "calibration": 142271,
+    "diagnostic": 144416,
+    "competition": 203062,
+    "teacherConsole": 165524,
+    "game": 3046223
+  }
+}

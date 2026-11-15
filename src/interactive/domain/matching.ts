@@ -17,7 +17,7 @@ export function usedMatchingChoices(game: Game, state: Session, question: Questi
 export function matchingSummary(game: Game, state: Session) {
   const groups = new Map<string, { groupId: string; number: number; total: number; title: string; size: number; completed: number; correct: number }>()
   for (const question of game.questions) {
-    if (!question.matchingGroup) continue
+    if (!question.matchingGroup||question.lotoBoard) continue
     const group = groups.get(question.matchingGroup.groupId) ?? { ...question.matchingGroup, title: question.title, size: 0, completed: 0, correct: 0 }
     const attempt = state.history.find(attempt => attempt.questionId === question.id)
     group.size++

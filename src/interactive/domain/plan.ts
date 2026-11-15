@@ -30,12 +30,14 @@ export function excludeQuestions(
   game: Game,
   excluded: ReadonlySet<string>,
 ): Game {
-  const questions = game.questions.filter((q) => !excluded.has(q.id))
+  const excludedBoards=new Set(game.questions.filter(q=>excluded.has(q.id)&&q.lotoBoard).map(q=>q.lotoBoard!.groupId))
+  const questions = game.questions.filter((q) => !excluded.has(q.id)&&(!q.lotoBoard||!excludedBoards.has(q.lotoBoard.groupId)))
   if (questions.length === game.questions.length) return game
+  const kept=new Set(questions.map(q=>q.id))
   const rounds = roundsFor(game)
     .map((round) => ({
       ...round,
-      questionIds: round.questionIds.filter((id) => !excluded.has(id)),
+      questionIds: round.questionIds.filter((id) => kept.has(id)),
     }))
     .filter((round) => round.questionIds.length)
   return {
@@ -43,6 +45,7 @@ export function excludeQuestions(
     id: `${game.id}-media-${hash(JSON.stringify(rounds))}`,
     questions,
     rounds,
+    ...(excludedBoards.size?{issues:[...game.issues,{source:'Loto',reason:'Une image indisponible écarte tous les tirages de sa grille pour conserver un objectif réalisable.'}]}:{}),
     corrections: Object.fromEntries(
       questions.map((q) => [q.id, game.corrections[q.id]!]),
     ),
@@ -58,7 +61,8 @@ export function prepareGame(
   selected = game.questions.map((q) => q.id),
   mode: PlayMode = 'class',
 ): Game {
-  const source = game.questions.filter((q) => selected.includes(q.id))
+  const selectedBoards=new Set(game.questions.filter(q=>selected.includes(q.id)&&q.lotoBoard).map(q=>q.lotoBoard!.groupId))
+  const source = game.questions.filter((q) => selected.includes(q.id)||!!q.lotoBoard&&selectedBoards.has(q.lotoBoard.groupId))
   const audioGroups = new Map<string, Question[]>()
   for (const q of source) {
     const recording = audioGroup(q)

@@ -16,6 +16,8 @@ La préparation peut être enregistrée dans un [préréglage local](adr-0011-pr
 
 En Solo, le choix déclenche la correction puis la question suivante après un battement réglable de 1 à 10 secondes (5 par défaut). Le minuteur est facultatif ; s’il est activé, son expiration compte comme une réponse incorrecte. Les productions ouvertes gardent un modèle et une appréciation humaine.
 
+Le [Loto collectif](adr-0059-loto-collectif.md) se choisit dans la préparation des fiches Loto, avec les objectifs « Une ligne » ou « Grille complète ». Les tirages sont mélangés, les lettres restent fixes et le bilan conserve les cases cochées. En Classe, l’enseignant valide explicitement ; en Solo, seules les bonnes réponses cochent les cases.
+
 Le [Mémory avec cartes retournées](adr-0058-memory-cartes-retournees.md) se choisit dans la préparation de Vocabulaire et Mémory : quatre ou six cartes A–F par plateau, validation collective par l’enseignant en Classe, vérification et avancement automatiques en Solo. Les paires trouvées et les compteurs se retrouvent après reprise ; une nouvelle tentative mélange les cartes.
 
 Les images des activités d’oral s’annotent dans leur agrandissement : stylo, surligneur, cadre et ovale, avec quatre couleurs, annulation et effacement. Les tracés restent attachés aux images après déplacement ou reprise ; la visionneuse suspend les minuteurs. Le doigt, la souris et une commande au clavier sont disponibles. Voir [les annotations](adr-0057-annotations-des-images-orales.md).

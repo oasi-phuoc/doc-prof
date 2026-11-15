@@ -11,6 +11,7 @@ import { canonicalJson, hash } from './domain/seeds'
 import { applyPlanOptions, readPlanOptions, type PlanOptions } from './domain/plan-options'
 import {sortingSelection} from './domain/word-sorting'
 import {memorySelection} from './domain/memory-conversion'
+import {lotoSelection} from './domain/loto'
 import { PresetPanel } from './components/PresetPanel'
 import { SessionArchive } from './components/SessionArchive'
 import { presetOptions, type LocalPreset } from './presets'
@@ -180,7 +181,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     },
     [source, forbidden],
   )
-  const selectedSources = useMemo(() => selection ?? game?.questions.map(questionSourceKey) ?? [], [selection, game])
+  const selectedSources = useMemo(() => game?lotoSelection(selection??game.questions.map(questionSourceKey),game):[], [selection, game])
   const selected = useMemo(() => game?.questions.filter((question) => selectedSources.includes(questionSourceKey(question))).map((question) => question.id) ?? [], [selectedSources, game])
   const selectedGame = useMemo(
     () => (game ? prepareGame(game, selected, mode) : null),
@@ -447,7 +448,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                                 Page {page + 1}
                               </label>
                             </legend>
-                            {pageQuestions.map((q) => (
+                            {pageQuestions.filter((q,index)=>!q.lotoBoard||pageQuestions.findIndex(other=>other.lotoBoard?.groupId===q.lotoBoard!.groupId)===index).map((q) => (
                               <label key={q.id}>
                                 <input
                                   type="checkbox"
@@ -455,17 +456,17 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                                   onChange={(e) =>
                                     changeSelection(
                                       e.target.checked
-                                        ? [...selectedSources, questionSourceKey(q)]
-                                        : selectedSources.filter((key) => key !== questionSourceKey(q)),
+                                        ? [...new Set([...selectedSources,...(q.lotoBoard?.sourceKeys??[questionSourceKey(q)])])]
+                                        : selectedSources.filter((key) => !(q.lotoBoard?.sourceKeys??[questionSourceKey(q)]).includes(key)),
                                     )
                                   }
                                 />
                                 <span>
                                   <b>
-                                    {game.questions.indexOf(q) + 1}. {q.prompt}
+                                    {q.lotoBoard?`Loto · grille ${q.lotoBoard.number}/${q.lotoBoard.total}`:`${game.questions.indexOf(q) + 1}. ${q.prompt}`}
                                   </b>
                                   <small>
-                                    {q.mode === 'choice'
+                                    {q.lotoBoard?`${q.lotoBoard.cells.length} cases · tous les tirages de cette grille`:q.mode === 'choice'
                                       ? `${q.choices.length} choix${q.choices.some((c) => c.image) ? ' en images' : ''}`
                                       : 'Évaluation par l’enseignant'}
                                     {q.audio ? ' · audio' : ''}

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-15",
-  "scope": "Deux identifiants publics de fichiers PNG dans le rapport TCF intégré depuis main. Les noms correspondent aux fichiers existants et leurs empreintes sont vérifiées sur leurs octets.",
+  "scope": "Six identifiants publics de fichiers PNG dans les deux rapports TCF du 15 novembre intégrés depuis main. Les noms correspondent aux fichiers existants et leurs empreintes sont vérifiées sur leurs octets.",
   "reviewed": [
     {
       "file": "docs/tcf/corrections-interlocuteurs-20261115.json",
@@ -13,7 +13,31 @@
       "sceneId": "dialogue-b1-elsa-projet-sortie-deux-interlocuteurs",
       "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-elsa-projet-sortie-deux-interlocuteurs.png",
       "sha256": "4b3f85e4f7cd28475281982e1c440743e64f9f90bdbf5a1a3e5a2b24e4d3b2db"
+    },
+    {
+      "file": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "sceneId": "scenario-b1-choix-plats-trois-interlocuteurs",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-choix-plats-trois-interlocuteurs.png",
+      "sha256": "d144148dc5d87856276337d37ca6e7b28245b225a5c4337045f78c9450eb28e2"
+    },
+    {
+      "file": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "sceneId": "scenario-b1-expliquer-exercice-non-fait",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-expliquer-exercice-non-fait.png",
+      "sha256": "af537276543afb404157b3ab8f5bd002aad237723c4dfe11a34228296dc2c21b"
+    },
+    {
+      "file": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "sceneId": "scenario-b1-discuter-loisirs-citoyens",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-discuter-loisirs-citoyens.png",
+      "sha256": "af825704d9ea3e17e6a42ae109dca02b45a8da9eb73212deedd9ab605d1220a5"
+    },
+    {
+      "file": "docs/tcf/generation-scenarios-b1-final-20261115.json",
+      "sceneId": "scenario-b1-appel-choix-cadeau-patrick",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-appel-choix-cadeau-patrick.png",
+      "sha256": "fbc285ec162e751b1ebf2f7f74eaa78b4374e0c8cb3d60f5d987fd3fceef5a81"
     }
   ],
-  "realSecretDetection": "L’autotest ajoute une valeur aléatoire au champ key et une clé générique au champ api_key dans ce même rapport ; les deux doivent être détectées. Aucune exception de répertoire ni de propriété key en général."
+  "realSecretDetection": "L’autotest ajoute une valeur aléatoire au champ key et une clé générique au champ api_key dans chacun de ces rapports ; les deux doivent être détectées. Aucune exception de répertoire ni de propriété key en général."
 }

@@ -37,3 +37,10 @@ paths = [
 ]
 regexTarget = "match"
 regexes = ['''^key"\s*:\s*"(?:scene\-b1\-deborde\-travail|scene\-b1\-elsa\-rendezvous|scene\-b1\-pluie\-deux\-interlocuteurs|scene\-prio\-a2\-claudine\-interro|scene\-prio\-a2\-decoration\-mere|scene\-prio\-a2\-horaires\-cadeaux|scene\-prio\-a2\-pere\-refus\-bowling|scene\-prio\-a2\-remerciements\-iles|scene\-prio\-a2\-vendeur\-coton|scene\-prio\-a2\-voiture\-pere)"?$''' ]
+
+[[rules.allowlists]]
+description = "Quatre identifiants publics exacts des dernières scènes B1, reliés aux PNG et empreintes vérifiés le 15 novembre."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/generation-scenarios-b1-final-20261115\.json$''']
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"(?:scenario\-b1\-choix\-plats\-trois\-interlocuteurs|scenario\-b1\-expliquer\-exercice\-non\-fait|scenario\-b1\-discuter\-loisirs\-citoyens|scenario\-b1\-appel\-choix\-cadeau\-patrick)"?$''']

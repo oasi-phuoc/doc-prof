@@ -19,6 +19,8 @@ export type MatchingGroup = { groupId: string; number: number; total: number }
 export type MemoryCard={id:string;image?:string;text?:string}
 export type MemoryBoardData={cards:MemoryCard[];sourceKeys:string[];group:number;total:number}
 export type MemoryRuntime={open:string[];found:string[];turns:number;misses:number;checked:boolean}
+export type LotoGoal='line'|'board'
+export type LotoBoardData={groupId:string;number:number;total:number;columns:2|3;goal:LotoGoal;sourceKeys:string[];cells:{id:string;text:string}[]}
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
   id: string
@@ -44,6 +46,7 @@ export type Question = {
   wordBlank?: {before:string;after:string}
   matchingGroup?: MatchingGroup
   memoryBoard?: MemoryBoardData
+  lotoBoard?: LotoBoardData
   audio?: string
   /** Ordered source clips forming one recording and one listening allowance. */
   audioParts?: string[]

@@ -54,7 +54,9 @@ export function QuestionStage({
   unavailableChoiceIds = [],
   imageAnnotations,
   memoryContent,
+  lotoContent,
 }: {
+  lotoContent?:ReactNode
   memoryContent?:ReactNode
   canSelect?: boolean
   imageOrder?: number[]
@@ -78,7 +80,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.lotoBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
   const drop=useWordDrop({question:q,canSelect,disabled:interactionsDisabled||phase==='revealed',onSelect,onPropose:onWordDrop})
   const proposed=q.choices.find(choice=>choice.id===(selected??wordDrop))
   const pending=q.choices.find(choice=>choice.id===drop.pending)
@@ -100,7 +102,7 @@ export function QuestionStage({
           <span className="ci-question-prompt">{drop.available?<WordBlankPrompt question={q} target={drop.target} value={proposed?.text} pending={pending?.text} hover={drop.drag?.target===0?dragged?.text:undefined} disabled={drop.blocked||!pending&&!proposed} onDeposit={drop.deposit} onEscape={drop.escape}/>:<GrammarCountryPrompt text={playPrompt(q.prompt)} gender={q.grammarCountryGender}/>}</span>
         </h1>
         {drop.available&&phase!=='revealed'&&<p className="ci-word-drop-help">{canSelect?'Glissez une carte, ou touchez-la.':'Glissez une carte, ou touchez-la puis le blanc.'}</p>}
-        {q.matchingGroup && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}
+        {q.matchingGroup && !q.lotoBoard && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}
         {q.context && (q.figure && q.context.length <= 240
           ? <section className="ci-context ci-figure-context" aria-label="Mesures de la figure"><p>{q.context}</p></section>
           : <ReadingDocument text={q.context} />)}
@@ -135,7 +137,7 @@ export function QuestionStage({
         </div>
         {report.questionScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la question et le document</span></button>}
       </section>
-      {q.mode === 'choice' ? (
+      {q.lotoBoard?lotoContent:q.mode === 'choice' ? (
         <div
           className={`ci-answer-grid ci-count-${q.choices.length}`}
           role="group"

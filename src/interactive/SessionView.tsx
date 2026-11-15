@@ -7,6 +7,8 @@ import type { ShapeId } from './domain/palette'
 import { Mascot } from './components/Mascot'
 import { QuestionStage } from './components/QuestionStage'
 import {MemoryBoard} from './components/MemoryBoard'
+import {LotoBoard} from './components/LotoBoard'
+import {lotoProgress,lotoSummary,lotoGoalLabel} from './domain/loto'
 import { QuestionNavigator } from './components/QuestionNavigator'
 import { questionsForAttempt, runtimeFor } from './domain/round-runtime'
 import { CorrectionView } from './components/CorrectionView'
@@ -232,6 +234,7 @@ function ActiveSessionView({
   }, [game, state.index, state.finished, state.paused, hidden, mediaManager])
   if (state.finished) {
     const associations=matchingSummary(game,state)
+    const lotos=lotoSummary(game,state)
     const finish = (callback: () => void) => {
       flushClock()
       void writes.current.then(callback).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING))
@@ -256,6 +259,7 @@ function ActiveSessionView({
             {state.mode === 'solo' ? 'Ce bilan décrit tes réponses. Une absence de réponse dans le temps compte comme fausse. Les activités ouvertes ne sont pas notées automatiquement.' : 'Ce bilan décrit les activités travaillées collectivement. Les éventuels comptages sont saisis par l’enseignant. Aucun résultat individuel n’est déduit des cartes de la classe.'}
           </p>
           {!!associations.length && <section className="ci-panel ci-matching-summary" aria-label="Bilan des associations"><h2>Associations image–mot</h2>{associations.map(group=><p key={group.groupId}><b>{group.title}</b> · Groupe {group.number}/{group.total} · {state.mode==='solo'?`${group.correct} ${group.correct>1?'paires réussies':'paire réussie'} sur ${group.size}`:`${group.completed} ${group.completed>1?'paires abordées':'paire abordée'} sur ${group.size}`}</p>)}</section>}
+          {!!lotos.length&&<section className="ci-panel ci-loto-summary" aria-label="Bilan du Loto"><h2>Loto</h2>{lotos.map(board=><p key={board.groupId}><b>Grille {board.number}/{board.total}</b> · {board.marked.length}/{board.size} cases cochées · {lotoGoalLabel(board.goal)} : {board.met?'objectif atteint':'objectif à poursuivre'}</p>)}</section>}
           <div className="ci-panel ci-summary-questions">
             {game.questions.map((original) => {
               const position = rounds.findIndex((round) => round.questionIds.includes(original.id))
@@ -465,7 +469,7 @@ function PlayingRound({
         }}
       />
       <main
-        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions[0]?.wordBlank ? ' ci-word-drop-session' : ''}${questions[0]?.mode==='memory'?' ci-memory-session':''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
+        className={`ci-session${solo ? ' ci-solo-session' : ''}${reveal ? ' ci-is-revealed' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${guidedOral?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions[0]?.wordBlank ? ' ci-word-drop-session' : ''}${questions[0]?.mode==='memory'?' ci-memory-session':''}${questions[0]?.lotoBoard?' ci-loto-session':''}${questions.length === 2 ? ' ci-dual-session' : ''}`}
       >
         {state.paused && (
           <section className="ci-pause">
@@ -533,6 +537,7 @@ function PlayingRound({
                     correctChoiceId={
                       reveal ? game.corrections[q.id]?.choiceId : undefined
                     }
+                    lotoContent={q.lotoBoard?<LotoBoard question={q} phase={state.phase} mode={state.mode} {...lotoProgress(game,state,q)} correctChoiceId={reveal?game.corrections[q.id]?.choiceId:undefined} selected={state.selections[q.id]} disabled={blocked} colors={colors} shapes={shapes} onSelect={choiceId=>dispatch({type:'SELECT',questionId:q.id,choiceId})} onMark={checked=>dispatch({type:'TEACHER_MARK_SET',questionId:q.id,value:checked?'success':'unassessed'})}/>:undefined}
                     memoryContent={q.mode==='memory'?<MemoryBoard question={q} runtime={runtime.memoryBoards?.[q.id]} mode={state.mode} revealed={reveal} disabled={blocked} colors={colors} shapes={shapes} pairs={reveal?game.corrections[q.id]?.memoryPairs:undefined} onFlip={cardId=>dispatch({type:'MEMORY_FLIP',questionId:q.id,cardId,attempt:runtime.attempt,roundId})} onCheck={()=>dispatch({type:'MEMORY_CHECK',questionId:q.id,attempt:runtime.attempt,roundId})} onCancel={()=>dispatch({type:'MEMORY_CANCEL',questionId:q.id,attempt:runtime.attempt,roundId})}/>:undefined}
                     imageOrder={runtime.imageOrders[q.id]}
                     wordPlacements={runtime.wordSorts?.[q.id]}

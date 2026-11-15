@@ -1,5 +1,7 @@
 # État utilisable et réutilisation — V4
 
+Le [Loto collectif M12](adr-0059-loto-collectif.md) propose des tirages mélangés et les objectifs « Une ligne » ou « Grille complète », avec validation enseignante en Classe, cases justes automatiques en Solo et reprise sauvegardée. L’option se règle dans la préparation de Loto.
+
 Le [Mémory M11 avec cartes retournées](adr-0058-memory-cartes-retournees.md) complète les banques Vocabulaire et Mémory : quatre ou six cartes, validation enseignante en Classe, vérification automatique en Solo, reprise des paires et nouvelle tentative mélangée. L’option se règle dans la préparation.
 
 Vérification du 15 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
