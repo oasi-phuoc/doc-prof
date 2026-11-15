@@ -1,6 +1,6 @@
 # État utilisable et réutilisation — V4
 
-Vérification du 14 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
+Vérification du 15 novembre 2026 sur le code actuel, avec suites de domaine et parcours Chromium. Le cahier V4 décrit encore des travaux à terminer ; cet état couvre les fonctions effectivement présentes.
 
 Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserve ses 19 513 constructions distinctes dans douze domaines. Les sept thèmes proposent désormais six formats, avec **S-V-C** avant les pastilles et **Écrire une phrase en images** avant la production écrite. Les formes de phrase et la voix se règlent indépendamment ; l’option colonnes est retirée de Gattegno. Les [preuves du lot](../gattegno/quality-phrases-images-results.json) couvrent les fiches, les corrigés et le jeu guidé sur ordinateur et mobile. Les illustrations encore manquantes restent recensées.
 
@@ -12,6 +12,7 @@ Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserv
 | Compétition | Code de salle, 30 mascottes sans pseudo, scores serveur, classement et reprise dans l’onglet ; défi local sur un appareil commun après préparation complète ; duels avec vies, attaque propre à chaque mascotte et tournoi par équipes tirées au sort | Code vérifié avec le moteur Cloudflare ; activation du Worker de production à faire par l’administrateur ; appareils séparés non synchronisables sans réseau ; démarrage à froid hors ligne non couvert |
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias ; transcription CO facultative après les corrections, avec suspension du battement Solo pendant la lecture | Préchargement manuel des images, audios et 30 mascottes en Classe et Solo ; page ouverte jouable sans réseau ; démarrage à froid et rechargement hors ligne encore ouverts |
 | Tri Gattegno en colonnes | Option de préparation, phrase entière, mots répétés distingués, toutes les catégories, gestes tactiles, clavier, annulation et reprise ; correction partielle après révélation | Tableau guidé avec appréciation humaine ; la compétition à score utilise encore les questions mot par mot |
+| Mots dans les blancs | Complétions grammaticales et syllabiques explicites ; dépôt tactile ou souris, clavier et appuis ; proposition facultative en Classe, validation immédiate en Solo et reprise de la proposition | Un seul blanc et deux à six choix source textuels courts ; autres trous et QCM ordinaires gardent les cartes ; ADR 0051 |
 | Oral guidé | Une à quatre images, zoom, rôles et relances progressives ; modèle complet après révélation, lecture suspendant le battement Solo et appréciation humaine | Annotation et évaluation automatique de l’ordre restent ouvertes |
 | Interface mobile | Question en gras et encadrée, mascotte agrandie sous les cartes, menu par icônes, immersion ; écrans de chargement animés et centrés dès le HTML initial | Validation physique sur ENI encore nécessaire |
 | Cartes et corrigé enseignant | Six carrés A4 en deux colonnes et trois lignes, recto verso aligné sans légende ; feuille enseignant autonome avec plan identique | Assistant de comparaison disponible ; validation matérielle encore nécessaire |
@@ -31,6 +32,8 @@ Les sources déjà prises en charge et leurs limites sont décrites dans l’[au
 La [revue des six PR](../maintenance/pr-review-2026-11-10.md) identifie cinq travaux déjà intégrés et une PR 51 contenant encore un patch distinct (banques et rendu de famille / grammaire). Ce contenu est une piste de réutilisation à examiner par fichier ; il n’est pas assimilé à une implémentation achevée du jeu. La fermeture des anciennes PR n’a pas été exécutée par cette session, faute d’accès à l’API GitHub.
 
 ## Vérifications récentes
+
+Les [mots à déposer dans les blancs](adr-0051-mots-dans-les-blancs.md) conservent la phrase, ses choix et sa clé source. Les 413 tests incluent huit contrôles dédiés et 450 blancs explicites issus de 97 banques ; leur statut pédagogique reste inchangé. La proposition Classe est indépendante du score et la sélection Solo garde sa correction automatique. Les [preuves du lot](quality-word-drop-results.json) consignent les parcours exécutés ; l’orchestrateur propose 64 étapes disponibles.
 
 Le [tri en colonnes](adr-0050-tri-en-colonnes.md) ajoute une présentation facultative des sept familles Gattegno. Les 405 tests incluent 420 configurations sources, la compatibilité des anciennes séances, la validation des placements et les préréglages. Les [preuves du lot](quality-word-sorting-results.json) précisent les parcours exécutés ; l’orchestrateur propose 63 étapes. L’inventaire conserve 746 variantes convertibles dans le parcours par défaut.
 

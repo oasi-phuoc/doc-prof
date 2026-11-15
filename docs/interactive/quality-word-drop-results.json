@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-15",
+  "scope": "M05 : déposer un mot ou une syllabe dans le blanc explicite d’une phrase source, en Classe et Solo",
+  "previousDelivery": "6ce7eb78",
+  "fullUnitSuite": {
+    "tests": 413,
+    "passed": 413,
+    "failed": 0,
+    "scope": "Domaine et persistance M05 ; corrections finales des gestes vérifiées par Chromium et la compilation."
+  },
+  "focusedUnitSuite": {
+    "tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "explicitSourceGaps": 450,
+    "curriculumBanks": 97,
+    "seeds": [
+      1,
+      47
+    ]
+  },
+  "sourceReview": "Les contrôles structurels ne changent pas le statut de relecture pédagogique des banques grammaticales.",
+  "browserProof": "word-drop-results.json",
+  "privacy": "Le blanc et les choix publics ne contiennent aucune clé ajoutée ; la proposition Classe n’est ni une sélection d’élève ni un verdict.",
+  "correction": "La bonne carte reste en couleur, les alternatives sont grises ; le blanc conserve la proposition et aucun corrigé en double n’est ajouté sous les cartes.",
+  "compatibility": "Métadonnée dérivée exclue de l’empreinte ; séances anciennes conservées, cartes ordinaires et compétition inchangées.",
+  "resume": "Propositions séparées par question, vérifiées par le moteur et les instantanés ; nouvelle tentative réinitialisée.",
+  "workflowStagesAvailable": 64,
+  "allWorkflowStagesRun": false,
+  "frontendTypes": "passed",
+  "apiTypes": "passed",
+  "lint": "passed with existing warnings outside this increment",
+  "limits": [
+    "Un seul blanc explicite et deux à six choix textuels courts ; aucun blanc inféré depuis un QCM ordinaire.",
+    "Les salles et duels conservent la sélection par cartes, sans geste de dépôt partagé entre appareils.",
+    "Page ouverte préchargée utilisable sans réseau ; démarrage à froid et essai physique ENI encore ouverts.",
+    "Le jeu complet garde ses banques partagées et son plafond provisoire de 3 Mio ; le découpage par domaine reste ouvert.",
+    "Aucun déploiement externe ni publication de configuration cloud."
+  ],
+  "featureCommit": "e7bf91b8",
+  "gestureFix": "3c977554",
+  "browserStagesPassed": [
+    "word-drop-browser",
+    "source-adapters-browser",
+    "word-sorting-browser",
+    "teacher-console-browser",
+    "a4-regression"
+  ],
+  "viewports": [
+    "1366x900",
+    "390x844",
+    "360x640"
+  ],
+  "axeViolations": 0,
+  "liveApiWrites": 0,
+  "sourceRecipe": "unchanged in all browser fixtures",
+  "offline": "Prepared open page remains manipulable without network; cold start remains open.",
+  "nativeTouch": "Verified on 390x844 and 360x640, including fitted card content, two taps, keyboard, Escape, touch cancellation and outside release.",
+  "build": "passed, including frontend TypeScript compilation",
+  "routeBudgets": {
+    "landing": {
+      "gzip": 121839,
+      "maximumGzip": 153600
+    },
+    "calibration": {
+      "gzip": 141924,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 144070,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 192610,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 157845,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3026793,
+      "maximumGzip": 3145728
+    }
+  },
+  "a4": {
+    "identicalScreenshot": true,
+    "dimensions": [
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      },
+      {
+        "width": "793.688px",
+        "height": "1122.52px",
+        "overflow": "hidden"
+      }
+    ],
+    "draftLaunch": "passed",
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "fonts": "same pinned fonts; baseline Google CSS response served from local assets",
+    "viewport": "1366x1000"
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 3676,
+    "scope": "Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence."
+  },
+  "inventory": {
+    "variants": 2150,
+    "playableDefaultVariants": 746,
+    "generationErrors": 8,
+    "scope": "Couverture structurelle du parcours par défaut inchangée ; le dépôt ajoute une présentation aux sources déjà convertibles."
+  }
+}
