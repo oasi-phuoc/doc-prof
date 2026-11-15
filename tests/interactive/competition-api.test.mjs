@@ -31,6 +31,27 @@ try {
     const { code, token } = created.body
     return { ...h, code, host: token }
   }
+  await test('teacher authorization can create subsequent rooms but cannot act as a room or learner capability',async()=>{
+    const h=harness(),created=await h.request('/rooms','POST',{quiz,settings},teacherKey),access=created.body.teacherAccess
+    assert.equal(created.status,201);assert.match(access.token,/^teacher-v1\./);assert.ok(!JSON.stringify(access).includes(teacherKey))
+    const next=await h.request('/rooms','POST',{quiz,settings},access.token)
+    assert.equal(next.status,201);assert.notEqual(next.body.code,created.body.code);assert.deepEqual(next.body.teacherAccess,access)
+    const learner=(await h.request(`/rooms/${created.body.code}/join`,'POST',{avatarId:'fox'})).body
+    assert.equal(learner.teacherAccess,undefined);assert.ok(!JSON.stringify(learner).includes(access.token))
+    assert.equal((await h.request('/rooms','POST',{quiz,settings},learner.token)).status,401)
+    assert.equal((await h.request('/rooms','POST',{quiz,settings},created.body.token)).status,401)
+    assert.equal((await h.request(`/rooms/${created.body.code}`,'GET',undefined,access.token)).status,401)
+    const changed=access.token.slice(0,-1)+(access.token.endsWith('a')?'b':'a')
+    assert.equal((await h.request('/rooms','POST',{quiz,settings},changed)).status,401)
+  })
+  await test('root rotation, another allowed origin and grant expiry each require renewed teacher authentication',async()=>{
+    const h=harness(),created=await h.request('/rooms','POST',{quiz,settings},teacherKey),access=created.body.teacherAccess,at=now
+    h.env.COMPETITION_HOST_KEY=teacherKey+'-rotated'
+    assert.equal((await h.request('/rooms','POST',{quiz,settings},access.token)).status,401);h.env.COMPETITION_HOST_KEY=teacherKey
+    h.env.COMPETITION_ORIGINS+=',https://other.example'
+    assert.equal((await h.request('/rooms','POST',{quiz,settings},access.token,'https://other.example')).status,401)
+    try{now=access.expiresAt;assert.equal((await h.request('/rooms','POST',{quiz,settings},access.token)).status,401)}finally{now=at}
+  })
   await test('creation requires a server-only teacher key, rejects foreign origins and fails closed without configuration', async () => {
     const h = harness()
     assert.equal((await h.request('/rooms', 'POST', { quiz, settings })).status, 401)

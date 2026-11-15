@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-15T12:41:49.172Z",
+  "baseCommit": "e77097545215d14b9949da55f05f8af334952392",
+  "scope": "Built-in public API address and reusable teacher authorization for creating online rooms.",
+  "configuration": "Explicit VITE_COMPETITION_API_URL remains first priority, then VITE_FICHES_API_URL/competition, then the built-in public endpoint. The owner has already configured the dedicated Vercel URL.",
+  "credentials": "Root key stays a server secret; no new private value is bundled or kept in browser storage. A 30-day HMAC-signed creation capability is bound to the permitted origin, a creation-only signature scope, expiry and key rotation. Its expiry does not slide.",
+  "focusedUnitSuite": {
+    "tests": 37,
+    "passed": 37,
+    "failed": 0,
+    "command": "node --test --test-concurrency=1 tests/interactive/competition-*.test.mjs"
+  },
+  "browser": {
+    "teacherAccess": "First creation exchanges the teacher key for a 30-day signed grant; another tab creates a room without a key; raw key absent from both stores; explicit forgetting updates other tabs and real HTTP 401 restores the form."
+  },
+  "worker": "A signed 30-day room-creation grant survives a new workerd process, creates another room without resending the root key, retains its original expiry and cannot read a room as a host capability.",
+  "regressions": "Existing online teacher/two-learner scoring, durable restart, local offline games and transcript checks retained. Real workerd still verifies large quizzes and private source answers.",
+  "checks": {
+    "productionBuild": "passed",
+    "appTypecheck": "passed",
+    "apiTypecheck": "passed",
+    "lint": "passed with existing warnings",
+    "budgets": "passed within unchanged thresholds",
+    "secretScan": "Gitleaks 8.30.1 passed with unchanged scanner rules and no findings in its documented change scope."
+  },
+  "publicEndpointProbe": {
+    "status": "unverified",
+    "reason": "The execution environment proxy refused the CONNECT tunnel with HTTP 403 before any response from the Worker; not evidence that the production room API is unavailable."
+  },
+  "productionDeployment": false,
+  "liveRoomWrites": 0,
+  "guide": "guide-competition.md",
+  "deviceClock": "Browser retention accepts a five-minute issue-time skew; the Worker signature and time checks keep zero tolerance. Future, expired and overlong grants remain rejected server-side."
+}

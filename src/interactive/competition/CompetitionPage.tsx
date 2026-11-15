@@ -11,10 +11,11 @@ import { CompetitionAvatarPicker, CompetitionPortrait } from './Avatar'
 import { CompetitionArt } from './artwork'
 import type { CompetitionAvatar } from './avatars'
 import { competitionQuiz, competitionStep, competitionView, type CompetitionAction, type CompetitionQuiz, type CompetitionSettings, type RoomView } from './core'
-import { answerRoom, competitionAvailable, createRoom, joinRoom, readRoom, readRoomCapability, roomCommand, saveRoomCapability, type RoomCapability } from './client'
+import { answerRoom, competitionAvailable, createRoom, joinRoom, readRoom, readRoomCapability, roomCommand, saveRoomCapability, savedTeacherAccess, forgetTeacherAccess, type RoomCapability } from './client'
 import { newLocalCompetition, prepareLocalCompetition, readLocalCompetition, writeLocalCompetition } from './local'
 import { hasLocalCompetition } from './storage-key'
 import { CompetitionShell } from './CompetitionShell'
+import { TEACHER_STORAGE_NAME } from './teacher-access'
 import './competition.css'
 const DuelSetup = lazy(() => import('../duel/DuelSetup'))
 
@@ -149,6 +150,12 @@ export function CompetitionSetup({ game, timer, colors, shapes, showTranscripts:
   const hasTranscripts = game.questions.some(q => q.audio && game.corrections[q.id]?.transcript)
   const quiz = useMemo(() => competitionQuiz(game, location.origin, hasTranscripts && showTranscripts), [game, hasTranscripts, showTranscripts])
   const [kind, setKind] = useState<'setup' | 'local' | 'duel' | 'teams'>('setup'), [speedPoints, setSpeedPoints] = useState(true), [teacherKey, setTeacherKey] = useState(''), [busy, setBusy] = useState(false), [error, setError] = useState('')
+  const [teacherAccess, setTeacherAccess] = useState(savedTeacherAccess)
+  useEffect(() => {
+    const refresh = (event: StorageEvent) => { if (event.key === TEACHER_STORAGE_NAME || event.key === null) setTeacherAccess(savedTeacherAccess()) }
+    window.addEventListener('storage', refresh)
+    return () => window.removeEventListener('storage', refresh)
+  }, [])
   const settings = useMemo(() => ({ ...timer, speedPoints, ...(hasTranscripts ? { showTranscripts } : {}) }), [timer, speedPoints, hasTranscripts, showTranscripts])
   const [availability, setAvailability] = useState<boolean | null>(null)
   useEffect(() => { const controller = new AbortController(); void competitionAvailable(controller.signal).then((ready) => { if (!controller.signal.aborted) setAvailability(ready) }); return () => controller.abort() }, [])
@@ -156,7 +163,7 @@ export function CompetitionSetup({ game, timer, colors, shapes, showTranscripts:
   if (kind === 'duel' || kind === 'teams') return <Suspense fallback={<LoadingScreen title="Préparation du duel" />}><DuelSetup quiz={quiz} timer={timer} colors={colors} shapes={shapes} mode={kind} onExit={() => setKind('setup')} onNewPart={onNewPart} /></Suspense>
   const online = () => {
     setBusy(true); setError('')
-    void createRoom(quiz, settings, colors, shapes, teacherKey).then((reply) => { saveRoomCapability({ code: reply.code, token: reply.token, role: 'host', returnTo: location.pathname + location.search }); setTeacherKey(''); navigate(`/interactif/salle/${reply.code}`) }, (reason: unknown) => setError(reason instanceof Error ? reason.message : 'Création impossible.')).finally(() => setBusy(false))
+    void createRoom(quiz, settings, colors, shapes, teacherKey || savedTeacherAccess()?.token || '').then((reply) => { saveRoomCapability({ code: reply.code, token: reply.token, role: 'host', returnTo: location.pathname + location.search }); setTeacherKey(''); navigate(`/interactif/salle/${reply.code}`) }, (reason: unknown) => { setTeacherAccess(savedTeacherAccess()); setError(reason instanceof Error ? reason.message : 'Création impossible.') }).finally(() => setBusy(false))
   }
   return <CompetitionShell onExit={onExit}><main className="ci-container ci-competition-setup"><h1>Jouer en compétition</h1><p>{quiz.title} · {quiz.items.length} question(s)</p>
     {quiz.items.length !== game.questions.length && <p role="status">Les activités guidées restent dans les modes Classe et Solo. La compétition utilise les questions à réponse vérifiable.</p>}
@@ -165,7 +172,7 @@ export function CompetitionSetup({ game, timer, colors, shapes, showTranscripts:
     {hasTranscripts && <div className="ci-competition-transcript-setting"><label><input type="checkbox" checked={showTranscripts} onChange={event => setShowTranscripts(event.target.checked)} />Proposer la transcription après les réponses</label><p>Disponible après toutes les questions d’une écoute. L’enseignant peut ouvrir le texte pour mettre la correction en pause, puis reprendre la partie.</p></div>}
     <p>{timer.enabled ? `${timer.seconds} secondes par question` : 'Sans limite de temps'} · {timer.feedbackSeconds} seconde(s) de correction.</p>
     <div className="ci-competition-modes"><section className="ci-panel"><h2>Salle en ligne</h2><p>Chaque élève rejoint la salle sur son appareil, avec le code et une mascotte. Les réponses et scores sont synchronisés par le serveur.</p>
-      {availability ? <><label>Accès enseignant aux salles<input type="password" autoComplete="off" value={teacherKey} onChange={(event) => setTeacherKey(event.target.value)} /></label><button className="ci-primary" disabled={busy || !teacherKey || !quiz.items.length} onClick={online}>{busy ? 'Création de la salle…' : 'Créer la salle'}</button></> : <p role="status">{availability === null ? 'Vérification des salles…' : 'Les salles en ligne ne sont pas encore activées sur ce site.'}</p>}
+      {availability ? <>{teacherAccess ? <div><p role="status">Accès enseignant actif sur cet appareil.</p><button disabled={busy} onClick={() => { forgetTeacherAccess(); setTeacherAccess(null); setTeacherKey(''); setError('') }}>Oublier mon accès enseignant</button></div> : <><label>Accès enseignant aux salles<input type="password" autoComplete="off" value={teacherKey} onChange={(event) => setTeacherKey(event.target.value)} /></label><p>À saisir une seule fois sur cet appareil. Votre accès sera conservé pendant 30 jours.</p></>}<button className="ci-primary" disabled={busy || !teacherKey && !teacherAccess || !quiz.items.length} onClick={online}>{busy ? 'Création de la salle…' : 'Créer la salle'}</button></> : <p role="status">{availability === null ? 'Vérification des salles…' : 'Les salles en ligne ne sont pas encore activées sur ce site.'}</p>}
     </section><section className="ci-panel"><h2>Sur cet appareil</h2><p>Sans réseau entre les appareils : choisissez vos mascottes et passez-vous cet appareil à tour de rôle. Les médias sont chargés avant le départ.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('local')}>{hasLocalCompetition(quiz.id) ? 'Reprendre le défi local' : 'Préparer le défi local'}</button></section>
     <section className="ci-panel"><h2>Duel à deux</h2><p>Deux côtés du même écran, 100 % de vie chacun. Le premier clic inflige 10 % à l’adversaire si la réponse est juste, à soi-même si elle est fausse. Un critique double les dégâts.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('duel')}>Préparer un duel</button></section>
     <section className="ci-panel"><h2>Duels par équipes</h2><p>Deux équipes coopèrent. Les binômes sont tirés au sort au départ, puis appelés à tour de rôle. L’équipe qui remporte le plus de duels gagne.</p><button className="ci-primary" disabled={!quiz.items.length || busy} onClick={() => setKind('teams')}>Créer les équipes</button></section></div>

@@ -10,7 +10,9 @@ La liste des participants s’affiche avant le départ. L’enseignant peut reti
 
 Une bonne réponse rapporte de 500 à 1 000 points avec le bonus de rapidité, ou 1 000 points sans bonus ou sans minuteur. Une réponse fausse ou le temps écoulé rapporte zéro. Les égalités gardent le même rang. Le temps et les points sont calculés par le serveur. Une interruption Internet suspend l’envoi des réponses sur l’appareil concerné ; la page tente de se reconnecter, mais le temps de la salle continue tant que l’enseignant ne la met pas en pause.
 
-Un rechargement dans le même onglet retrouve l’accès à la salle. La clé enseignant n’est pas mémorisée ; seule une autorisation limitée à cette salle et à ce rôle reste dans l’onglet. Les salles et leurs accès expirent au plus tard deux heures après leur création. Fermer l’onglet peut faire perdre cet accès.
+À la première création sur un appareil, l’enseignant saisit sa clé. Un accès signé, valable 30 jours, permet ensuite de créer les parties suivantes directement depuis ClairFLE, y compris après fermeture ou dans un autre onglet du même navigateur. La clé privée elle-même n’est pas mémorisée. **Oublier mon accès enseignant** efface cet accès de l’appareil ; le formulaire revient aussi si l’autorisation expire ou si la clé serveur change. Chaque appareil ou profil de navigateur doit être autorisé séparément. Si le stockage du navigateur est indisponible, la création reste possible mais l’accès ne peut pas être conservé.
+
+L’accès à une salle précise reste distinct : un rechargement dans le même onglet retrouve son autorisation enseignant ou élève. Les salles et leurs accès expirent au plus tard deux heures après leur création. Fermer l’onglet peut faire perdre l’accès à cette salle, même si l’appareil peut encore en créer une nouvelle.
 
 Si l’option **Proposer la transcription après les réponses** est activée, l’icône livre apparaît après la dernière question liée à une écoute. L’enseignant peut ouvrir le texte pour mettre la correction en pause, puis fermer la lecture et choisir **Reprendre**. Les élèves peuvent lire le texte publié sur leur appareil ; leur lecture n’arrête pas la salle et se ferme quand la question suivante arrive. Le même réglage est disponible pour le défi local.
 
@@ -52,15 +54,15 @@ Saisir une nouvelle clé aléatoire d’au moins 16 caractères (32 ou davantage
 
 Avant le déploiement, vérifier que `COMPETITION_ORIGINS` dans `api/fiches/wrangler.toml` contient les origines exactes du site autorisé, séparées par des virgules, sans chemin final. La valeur actuelle autorise `https://doc-prof.vercel.app`. La liaison `COMPETITION_ROOMS` et la migration SQLite `competition-v1` créent le stockage des salles ; conserver les liaisons D1 et les secrets déjà utilisés pour les fiches. Aucune migration de table de fiches n’est requise pour ce mode.
 
-Dans Vercel, **Settings → Environment Variables**, ajouter `VITE_COMPETITION_API_URL` avec l’URL complète du Worker se terminant par `/competition`. Pour le Worker indiqué dans `.env.example`, la valeur est :
+L’adresse publique du Worker existant est déjà intégrée au code. Aucune nouvelle variable Vercel n’est nécessaire pour utiliser cette adresse :
 
 ```text
 https://clairfle-fiches.phuoc-van.workers.dev/competition
 ```
 
-Si Wrangler affiche une autre adresse pour le Worker existant, utiliser cette adresse avec `/competition`. Reconstruire et redéployer ensuite le site dans Vercel pour intégrer la variable publique. Sans variable dédiée, le site utilise `VITE_FICHES_API_URL` suivi de `/competition`. Cette URL ne doit contenir aucune clé. Le point `GET /competition/status`, appelé depuis une origine autorisée, ne signale les salles disponibles que lorsque la configuration serveur est complète.
+Si une variable est déjà définie, elle garde la priorité : `VITE_COMPETITION_API_URL`, puis `VITE_FICHES_API_URL` suivi de `/competition`, puis l’adresse intégrée. Si Wrangler affiche une autre adresse pour le Worker existant, renseigner `VITE_COMPETITION_API_URL` dans **Vercel → Settings → Environment Variables** avec cette adresse et `/competition`, puis reconstruire et redéployer le site. Ces URL sont publiques et ne doivent contenir aucune clé. Le point `GET /competition/status`, appelé depuis une origine autorisée, ne signale les salles disponibles que lorsque la configuration serveur est complète.
 
-Après activation, ouvrir une fiche, toucher le trophée **Compétition**, puis **Salle en ligne**. L’enseignant saisit la clé privée pour créer une salle ; les élèves rejoignent avec le code ou le QR et choisissent une mascotte. Un accès Internet est nécessaire pour synchroniser des appareils distincts.
+Après cette activation initiale, ouvrir une fiche, toucher le trophée **Compétition**, puis **Salle en ligne**. L’enseignant saisit sa clé une première fois sur l’appareil ; les créations suivantes utilisent l’accès conservé pendant 30 jours. Les élèves rejoignent avec le code ou le QR et choisissent une mascotte. Un accès Internet est nécessaire pour synchroniser des appareils distincts. Le Worker doit être déployé dans sa nouvelle version pour émettre ces accès ; un ancien serveur continue d’accepter la clé, mais demande encore sa saisie à chaque création.
 
 Pour vérifier le code avant activation :
 

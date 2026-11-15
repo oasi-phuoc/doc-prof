@@ -28,6 +28,8 @@ try {
   const settings = { enabled: false, seconds: 30, feedbackSeconds: 10, speedPoints: true }
   const created = await request('/rooms', { quiz, settings }, teacherKey)
   assert.equal(created.status, 201, created.body.error)
+  assert.match(created.body.teacherAccess.token,/^teacher-v1\./)
+  assert.ok(!JSON.stringify(created.body).includes(teacherKey))
   const { code, token: host } = created.body
   const first = (await request(`/rooms/${code}/join`, { avatarId: 'leaf' })).body
   const second = (await request(`/rooms/${code}/join`, { avatarId: 'kitsune' })).body
@@ -84,6 +86,10 @@ try {
   await runtime.dispose(); runtime = new Miniflare(convertV4MiniflareOptions(options))
   const restored = await request(`/rooms/${code}`, undefined, first.token)
   assert.equal(restored.status, 200); assert.equal(restored.body.view.paused, true)
+  const anotherRoom=await request('/rooms',{quiz,settings},created.body.teacherAccess.token)
+  assert.equal(anotherRoom.status,201,anotherRoom.body.error);assert.notEqual(anotherRoom.body.code,code)
+  assert.deepEqual(anotherRoom.body.teacherAccess,created.body.teacherAccess)
+  assert.equal((await request(`/rooms/${anotherRoom.body.code}`,undefined,created.body.teacherAccess.token)).status,401)
   assert.equal(restored.body.view.correctChoiceId, 'c0'); assert.deepEqual(restored.body.view.players.map((player) => player.score), [1000, 0])
   assert.deepEqual(restored.body.view.players.map(player=>player.avatarId), ['leaf','kitsune'])
   const resumedMatching=(await request(`/rooms/${matchingCode}`,undefined,learner)).body.view
@@ -107,6 +113,7 @@ try {
   report.transcripts='Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.'
   report.wordClassification='Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading.'
   report.mascots='The common Leaf and new Kitsune identities join the real Worker, remain in the public roster and keep their scores after restart; no name or nickname supplied.'
+  report.teacherAccess='A signed 30-day room-creation grant survives a new workerd process, creates another room without resending the root key, retains its original expiry and cannot read a room as a host capability.'
   await writeFile('docs/interactive/competition-worker-results.json', JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report, null, 2))
 } finally { await runtime?.dispose(); await rm(temporary, { recursive: true, force: true }) }

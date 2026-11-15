@@ -1,6 +1,7 @@
 import { CompetitionError, competitionStep, competitionView, createCompetition, parseCompetitionQuiz, parseCompetitionSettings, type CompetitionRoom } from '../../../src/interactive/competition/core'
 import { validAvatar } from '../../../src/interactive/competition/avatars'
 import type { ShapeId } from '../../../src/interactive/domain/palette'
+import { issueTeacherAccess, verifyTeacherAccess } from './competition-teacher-access'
 
 export interface CompetitionStorage {
   get<T>(key: string): Promise<T | undefined>
@@ -61,8 +62,10 @@ export async function handleCompetitionRequest(request: Request, env: Competitio
       if (!permission.ok) return respond(permission)
     }
     if (parts.length === 1 && request.method === 'POST') {
-      const provided = bearer(request)
-      if (!provided || !equal(await digest(provided), await digest(env.COMPETITION_HOST_KEY))) throw new CompetitionError('L’accès enseignant aux salles est refusé.', 401)
+      const provided = bearer(request), site = origin ?? allowed[0]!
+      const rootAccess = !!provided && equal(await digest(provided), await digest(env.COMPETITION_HOST_KEY))
+      const teacherAccess = rootAccess ? null : await verifyTeacherAccess(provided, env.COMPETITION_HOST_KEY, site)
+      if (!rootAccess && !teacherAccess) throw new CompetitionError('L’accès enseignant aux salles est refusé. Saisissez de nouveau votre clé.', 401)
       const data = await body(request)
       if (!only(data, ['quiz', 'settings', 'colors', 'shapes'])) throw new CompetitionError('Champs de salle invalides.', 400)
       // Only this authenticated path can initialize a room object.
@@ -70,7 +73,11 @@ export async function handleCompetitionRequest(request: Request, env: Competitio
         const bytes = crypto.getRandomValues(new Uint32Array(1)), code = String(100_000 + bytes[0]! % 900_000)
         const stub = env.COMPETITION_ROOMS.get(env.COMPETITION_ROOMS.idFromName(code))
         const response = await stub.fetch(new Request(`https://room/create/${code}`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Room-Origin': origin ?? allowed[0]! }, body: JSON.stringify(data) }))
-        if (response.status !== 409) return respond(response)
+        if (response.status !== 409) {
+          if (!response.ok) return respond(response)
+          const reply = await response.json()
+          return respond(json(response.status, { ...reply as Record<string, unknown>, teacherAccess: teacherAccess ?? await issueTeacherAccess(env.COMPETITION_HOST_KEY, site) }))
+        }
       }
       throw new CompetitionError('Impossible de créer une salle pour le moment. Réessayez.', 503)
     }

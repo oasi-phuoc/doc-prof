@@ -8,7 +8,7 @@ import { serveCompetition } from './competition-server.mjs'
 
 const base = 'http://127.0.0.1:5182', apiBase = 'http://127.0.0.1:5193', teacherKey = `fixture-only-${crypto.randomUUID()}`
 process.env.VITE_COMPETITION_API_URL = `${apiBase}/competition`
-const vite = await createServer({ cacheDir: '/tmp/clairfle-competition-browser-vite', server: { host: '127.0.0.1', port: 5182, strictPort: true } })
+const vite = await createServer({ cacheDir: '/tmp/clairfle-competition-browser-vite', server: { host: '127.0.0.1', port: 5182, strictPort: true, hmr: false } })
 await vite.listen()
 const service = await serveCompetition(vite, { origin: base, teacherKey })
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
@@ -88,6 +88,29 @@ try {
   await host.getByRole('heading', { name: 'Bravo à tous !', exact: true }).waitFor()
   results.push({ online: 'real Worker router and room objects over HTTP; host and two independent browsers; public join without account or name; 30 mascot choices and QR', grading: 'server score, hidden key until reveal, one submitted answer, six-card correction and durable restart', accessibility: 'axe join screens pass; phone answer cards and controls fit', source: 'two selected worksheet questions kept' })
   for (const learner of learners) await learner.context.close()
+  const cached=await host.evaluate(()=>JSON.parse(localStorage.getItem('clairfle.competition.teacher.v1')))
+  assert.match(cached.token,/^teacher-v1\./)
+  assert.equal(await host.evaluate(secret=>[...Object.values(localStorage),...Object.values(sessionStorage)].some(value=>value.includes(secret)),teacherKey),false)
+  const again=await hostContext.newPage();again.on('pageerror',error=>errors.push(error.message));await setup(again)
+  assert.equal(await again.getByLabel('Accès enseignant aux salles',{exact:true}).count(),0)
+  await again.getByText('Accès enseignant actif sur cet appareil.',{exact:true}).waitFor()
+  const newRoomRequest=again.waitForRequest(request=>request.method()==='POST'&&request.url()===apiBase+'/competition/rooms')
+  await button(again,'Créer la salle').click();await again.locator('.ci-competition-code').waitFor()
+  assert.equal((await newRoomRequest).headers().authorization,`Bearer ${cached.token}`)
+  assert.notEqual((await again.locator('.ci-competition-code').innerText()).trim(),code)
+  await setup(again)
+  const otherTab=await hostContext.newPage();otherTab.on('pageerror',error=>errors.push(error.message));await setup(otherTab)
+  await otherTab.getByText('Accès enseignant actif sur cet appareil.',{exact:true}).waitFor()
+  await button(again,'Oublier mon accès enseignant').click();await again.getByLabel('Accès enseignant aux salles',{exact:true}).waitFor()
+  await otherTab.getByLabel('Accès enseignant aux salles',{exact:true}).waitFor();await otherTab.close()
+  assert.equal(await again.evaluate(()=>localStorage.getItem('clairfle.competition.teacher.v1')),null)
+  // An altered/rotated grant is rejected by the real router, then the UI
+  // forgets it and restores the teacher form rather than trapping the user.
+  await again.evaluate(cached=>{cached.token=cached.token.slice(0,-1)+(cached.token.endsWith('a')?'b':'a');localStorage.setItem('clairfle.competition.teacher.v1',JSON.stringify(cached))},cached)
+  await setup(again);await again.getByText('Accès enseignant actif sur cet appareil.',{exact:true}).waitFor();await button(again,'Créer la salle').click()
+  await again.getByRole('alert').filter({hasText:'Saisissez de nouveau votre clé'}).waitFor();await again.getByLabel('Accès enseignant aux salles',{exact:true}).waitFor()
+  assert.equal(await again.evaluate(()=>localStorage.getItem('clairfle.competition.teacher.v1')),null)
+  results.push({teacherAccess:'First creation exchanges the teacher key for a 30-day signed grant; another tab creates a room without a key; raw key absent from both stores; explicit forgetting updates other tabs and real HTTP 401 restores the form.'})
   await hostContext.close()
 
   const resumeContext = await browser.newContext({ viewport: { width: 390, height: 844 } }), resume = await resumeContext.newPage()
