@@ -11,27 +11,35 @@ export type TranscriptionEntry = {
 
 /** Texte de transcription normalisé pour le corrigé (Documents / Dialogues). */
 export function formatExerciseTranscription(ex: TcfExercise): string | null {
+  const parts = exerciseTranscriptionParts(ex)
+  return parts.length ? parts.map((part) => part.formattedText).join('\n\n') : null
+}
+
+type TranscriptionPart = { text: string; formattedText: string; label?: string }
+
+/** Une transcription par piste, avec la numérotation d’origine des documents. */
+function exerciseTranscriptionParts(ex: TcfExercise): TranscriptionPart[] {
   const support = 'support' in ex ? ex.support : undefined
-  if (!support || !('transcription' in support)) return null
+  if (!support || !('transcription' in support)) return []
   const raw = support.transcription
-  if (raw == null) return null
+  if (raw == null) return []
 
   if (Array.isArray(raw)) {
-    const lines = raw
-      .map((t, i) => {
+    return raw
+      .map((t, i): TranscriptionPart | null => {
         const s = String(t ?? '').trim()
-        if (!s) return ''
-        if (ex.type_exercice === 'association_images') {
-          return /^(Dialogue|Message)\s+\d+/i.test(s) ? s : `Dialogue ${i + 1} — ${s}`
-        }
-        return /^Document\s+\d+/i.test(s) ? s : `Document ${i + 1} — ${s}`
+        if (!s) return null
+        const existing = ex.type_exercice === 'association_images'
+          ? /^(Dialogue|Message)\s+\d+/i.exec(s)
+          : /^Document\s+\d+/i.exec(s)
+        const label = existing?.[0] ?? `${ex.type_exercice === 'association_images' ? 'Dialogue' : 'Document'} ${i + 1}`
+        return { text: s, label, formattedText: existing ? s : `${label} — ${s}` }
       })
-      .filter(Boolean)
-    return lines.length ? lines.join('\n\n') : null
+      .filter((part): part is TranscriptionPart => part !== null)
   }
 
   const s = String(raw).trim()
-  return s || null
+  return s ? [{ text: s, formattedText: s }] : []
 }
 
 function entryTitle(ex: TcfExercise): string {
@@ -45,7 +53,7 @@ function entryTitle(ex: TcfExercise): string {
   return ''
 }
 
-/** Parcourt les fiches et ramasse une entrée par exercice audio avec transcription. */
+/** Une entrée par piste ; un exercice réparti sur plusieurs feuilles reste unique. */
 export function collectWorksheetTranscriptions(sheets: WorksheetPage[]): TranscriptionEntry[] {
   const out: TranscriptionEntry[] = []
   const seen = new Set<string>()
@@ -55,16 +63,18 @@ export function collectWorksheetTranscriptions(sheets: WorksheetPage[]): Transcr
         const tcf = item.tcf
         if (!tcf || tcf.kind !== 'support') continue
         const ex = tcf.exercise
-        const text = formatExerciseTranscription(ex)
-        if (!text) continue
+        const parts = exerciseTranscriptionParts(ex)
+        if (parts.length === 0) continue
         const key = `${ex.id}::${block.exerciseIndex}`
         if (seen.has(key)) continue
         seen.add(key)
-        out.push({
-          exerciseNo: block.exerciseIndex,
-          title: entryTitle(ex),
-          text,
-        })
+        for (const part of parts) {
+          out.push({
+            exerciseNo: block.exerciseIndex,
+            title: [entryTitle(ex), part.label].filter(Boolean).join(' — '),
+            text: part.text,
+          })
+        }
       }
     }
   }
@@ -72,37 +82,31 @@ export function collectWorksheetTranscriptions(sheets: WorksheetPage[]): Transcr
 }
 
 /**
- * Découpe les transcriptions en paquets pour des A4 (estimation caractères).
- * Une entrée trop longue peut seule occuper plusieurs pages.
+ * Chaque dialogue/document commence sur une page A4 distincte.
+ * Un texte long peut continuer sur ses propres pages, sans autre dialogue.
  */
 export function paginateTranscriptions(
   entries: TranscriptionEntry[],
   charsPerPage = 2400,
 ): TranscriptionEntry[][] {
-  if (entries.length === 0) return []
-  const pages: TranscriptionEntry[][] = []
-  let current: TranscriptionEntry[] = []
-  let used = 0
-
-  const flush = () => {
-    if (current.length) pages.push(current)
-    current = []
-    used = 0
-  }
-
   const overhead = (e: TranscriptionEntry) => 80 + e.title.length
+  return entries.flatMap((entry) =>
+    splitLongEntry(entry, charsPerPage - overhead(entry)).map((chunk) => [chunk]),
+  )
+}
 
-  for (const entry of entries) {
-    const chunks = splitLongEntry(entry, charsPerPage - overhead(entry))
-    for (const chunk of chunks) {
-      const cost = overhead(chunk) + chunk.text.length
-      if (current.length > 0 && used + cost > charsPerPage) flush()
-      current.push(chunk)
-      used += cost
-    }
+/** Couper un paragraphe aux espaces conserve les mots d’une page à l’autre. */
+function splitParagraph(text: string, limit: number): string[] {
+  const parts: string[] = []
+  let rest = text.trim()
+  while (rest.length > limit) {
+    const boundary = rest.slice(0, limit + 1).search(/\s+\S*$/)
+    const cut = boundary > 0 ? boundary : limit
+    parts.push(rest.slice(0, cut).trim())
+    rest = rest.slice(cut).trimStart()
   }
-  flush()
-  return pages
+  if (rest) parts.push(rest)
+  return parts
 }
 
 function splitLongEntry(entry: TranscriptionEntry, maxChars: number): TranscriptionEntry[] {
@@ -127,26 +131,25 @@ function splitLongEntry(entry: TranscriptionEntry, maxChars: number): Transcript
     if (next.length > limit && buf) {
       push()
       if (p.length > limit) {
-        // Paragraphe trop long : coupe brute.
-        for (let i = 0; i < p.length; i += limit) {
+        for (const text of splitParagraph(p, limit)) {
           parts.push({
             exerciseNo: entry.exerciseNo,
             title: `${entry.title || `Exercice ${entry.exerciseNo}`} (suite)`,
-            text: p.slice(i, i + limit).trim(),
+            text,
           })
         }
       } else {
         buf = p
       }
     } else if (next.length > limit) {
-      for (let i = 0; i < next.length; i += limit) {
+      for (const [i, text] of splitParagraph(next, limit).entries()) {
         parts.push({
           exerciseNo: entry.exerciseNo,
           title:
             i === 0
               ? entry.title
               : `${entry.title || `Exercice ${entry.exerciseNo}`} (suite)`,
-          text: next.slice(i, i + limit).trim(),
+          text,
         })
       }
       buf = ''

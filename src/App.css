@@ -4779,7 +4779,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-exemples{margin:2px 0 0;padding:4px 10px 4px 2em;font-size:.88em}
 .tcf-exemples.is-two-cols{columns:2;column-gap:8mm}
 .tcf-exemples.is-two-cols li{break-inside:avoid}
-.tcf-entretien-questions{columns:2;column-gap:10mm}
+.tcf-entretien-questions{
+  columns:1;margin:3mm 0 0;padding-left:2em;list-style:decimal outside;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+.tcf-entretien-questions li{padding-left:.35em;margin-bottom:2mm;break-inside:avoid}
+.tcf-entretien-questions li::marker{font-weight:800;color:var(--purple);font-variant-numeric:tabular-nums}
 .tcf-interaction .tcf-text{margin:2px 0}
 .tcf-interaction-sheet .sheet-body{display:flex;flex-direction:column;gap:4mm;min-height:0}
 .tcf-interaction-sheet .tcf-text{margin:0}
