@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1926,
+    "reviewed_trio": 1940,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 342,
+    "reviewed_763_artwork_pending": 328,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -6996,19 +6996,27 @@
         "Dans les ateliers",
         "Dans la salle de pause"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "semantic_before_sha256": "14e87d1e6cbc87c7575b81e55179e3eb439ed939b9bd6a4a6850798331ee88c6",
       "semantic_after_sha256": "14e87d1e6cbc87c7575b81e55179e3eb439ed939b9bd6a4a6850798331ee88c6",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/salle-de-reunion.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-ateliers-entreprise.png",
+        "/lib/images/tcf/co/bg/salle-de-pause.webp"
+      ],
+      "target_sha256": [
+        "85a7c475d59b43ed07216d158fd2c0c0af7772fb37d6a04b46fc3ece5b0031dd",
+        "fe21215971f242bc8b34374711ca7b9137b539b13711325779579df70b325853",
+        "8b105f1a0e7d9915f94931bc74be723763ee44bb6e94b41cc070bd6cfa13bd8d"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le programme prévoit la présentation de l’entreprise de 9 h à 10 h dans la grande salle de réunion ; la salle de pause et les ateliers sont visités plus tard.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le programme prévoit la présentation de l’entreprise de 9 h à 10 h dans la grande salle de réunion ; la salle de pause et les ateliers sont visités plus tard.",
       "before_upstream_integration": {
         "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
         "semantic_before_sha256": "14e87d1e6cbc87c7575b81e55179e3eb439ed939b9bd6a4a6850798331ee88c6",
@@ -7019,6 +7027,10 @@
           "Dans les ateliers",
           "Dans la salle de pause"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Salle de réunion avec table et écran, atelier industriel avec établis et machines, salle de pause avec espace café et canapés. Les activités du programme restent distinctes ; aucun atelier artistique n’est substitué à l’atelier de l’entreprise."
       }
     },
     {
@@ -7192,19 +7204,27 @@
         "À la cantine",
         "Dans la salle de pause"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "5df020ad517f6e201d827535e8ad1d9f5c40b707d39a1648c4b50cf8f9b7e8a4",
       "semantic_before_sha256": "22d7069b82e0d7929f648324f3852905247d26ae7ab851b8fc20e3d3d53622fb",
       "semantic_after_sha256": "22d7069b82e0d7929f648324f3852905247d26ae7ab851b8fc20e3d3d53622fb",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/co/bg/salle-de-pause.webp"
+      ],
+      "target_sha256": [
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "8b105f1a0e7d9915f94931bc74be723763ee44bb6e94b41cc070bd6cfa13bd8d"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le déjeuner des visiteurs a lieu de 12 h à 14 h au Restaurant des Alpes ; le café du matin est servi dans la salle de pause.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le déjeuner des visiteurs a lieu de 12 h à 14 h au Restaurant des Alpes ; le café du matin est servi dans la salle de pause.",
       "before_upstream_integration": {
         "source_sha256": "39a1a9a390b40ad3b65df42a832839c419a68cee94862f9b587a785dd4a2b61d",
         "semantic_before_sha256": "254b09420f344046ac51ff5866cb97f11149dd2f03e3deb7900a08e3ed60ba58",
@@ -7215,6 +7235,10 @@
           "À la cantine",
           "Dans la salle de pause"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Restaurant avec tables dressées, cantine avec comptoir de service et salle de pause avec espace café. Catégories de lieux : le dessin ne prétend pas reproduire l’établissement réel nommé Restaurant des Alpes."
       }
     },
     {
@@ -39853,19 +39877,31 @@
         "Au sommet d'une montagne",
         "Dans une salle de concert"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "9c15e71ebdd85f36e009a99124ac0338b65192ce9602c0cdce3fd704218e636e",
       "semantic_before_sha256": "0aa9add48cb5033a593e99cc1dffb278f1eb249f5b475c422f0c04fc5b10bdb1",
       "semantic_after_sha256": "0aa9add48cb5033a593e99cc1dffb278f1eb249f5b475c422f0c04fc5b10bdb1",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co57-parc-attractions.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-sommet-montagne.png",
+        "/lib/images/tcf/qcm-audit/co57-salle-concert.webp"
+      ],
+      "target_sha256": [
+        "28be68e5ee976beb823fe3cfa691eb7bbad77feffb46a09542e82a0d36d4d3ff",
+        "a5c311934ec132d89d2ff084f1ae49321c22017abe8e498ac0df5aa6896e8287",
+        "614a38bd25c16282b4356bd3c0e856130a90a6ef1d50f8ab9aa4af48eb4027cd"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Dans le résumé du film, Jack veut absolument aller dans un parc d’attractions ; le désir de voir les montagnes appartient à Tom.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Dans le résumé du film, Jack veut absolument aller dans un parc d’attractions ; le désir de voir les montagnes appartient à Tom.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Parc d’attractions avec manèges, point de vue au sommet d’une montagne et salle de concert. Les envies des deux personnages ne sont pas confondues. Le panorama de glaciers est écarté pour montrer le sommet lui-même."
+      }
     },
     {
       "key": "delf-a1s-ce-039#1",
@@ -54904,20 +54940,32 @@
         "À la bibliothèque municipale",
         "À l’école du centre"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "80e22c783052bb1fd46c1c757b545c2ca836a3aa158ee695571b42067197fcc3",
       "semantic_before_sha256": "5116be8ae963c6a506d99678b871f275b74a724113de3e265856e863b55fb53f",
       "semantic_after_sha256": "5116be8ae963c6a506d99678b871f275b74a724113de3e265856e863b55fb53f",
       "audio": "/lib/audio/tcf/co/magasins/demain-venez-participer-grande.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
+      "target_sha256": [
+        "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
-      "semantic_sha256": "5116be8ae963c6a506d99678b871f275b74a724113de3e265856e863b55fb53f"
+      "reason": "La fête de la lecture annoncée a lieu à la Librairie du Parc, où l’achat de livres permet de recevoir un stylo.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La fête de la lecture annoncée a lieu à la Librairie du Parc, où l’achat de livres permet de recevoir un stylo.",
+      "semantic_sha256": "5116be8ae963c6a506d99678b871f275b74a724113de3e265856e863b55fb53f",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Librairie avec rayonnages et panier d’achat, bibliothèque avec tables de lecture et école. Le commerce est distingué du prêt de livres ; la façade portant « Librairie municipale » est écartée car elle ne reprend pas le nom du support. Aucun bâtiment n’est présenté comme la reproduction d’une adresse réelle."
+      }
     },
     {
       "key": "tcf-ss-a1-s2-co-3#2",
@@ -55219,19 +55267,31 @@
         "Au restaurant",
         "Au parc"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "34f4637c581f39974e327e03a778cc2ebda218502abbbfdea9ab0c3d4f114ecb",
       "semantic_before_sha256": "a8809d14ca38d6c5491c30a0a575858d75a50407b599aa47ce96970db373d897",
       "semantic_after_sha256": "a8809d14ca38d6c5491c30a0a575858d75a50407b599aa47ce96970db373d897",
       "audio": "/lib/audio/tcf/co/fetes/22-invitation-apéro-à-la-maison.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Maud organise un apéro chez elle. Marc n’est pas libre jeudi mais accepte de venir vendredi.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Maud organise un apéro chez elle. Marc n’est pas libre jeudi mais accepte de venir vendredi.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Domicile, restaurant et parc public, trois catégories de lieux distinctes. Pas de portrait de Maud ni d’adresse inventée ; le changement de jour ne modifie pas le lieu."
+      }
     },
     {
       "key": "tcf-ss-a1-s3-co-1#3",
@@ -70876,19 +70936,31 @@
         "À la cantine",
         "Chez les voisins"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "41e3f3dfd307e0c636d4622e61c9643fa1cb064d5975768726612fcf5c591fbc",
       "semantic_before_sha256": "5b0c6cea01123beee82c08b45ffc6e2da05a762b477fed67674ed5c3550857e7",
       "semantic_after_sha256": "5b0c6cea01123beee82c08b45ffc6e2da05a762b477fed67674ed5c3550857e7",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/d-habitude-fais-quoi-week-1.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+      ],
+      "target_sha256": [
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Charlotte explique que sa famille dîne au restaurant le week-end ; le repas avec les amis du dimanche est une autre habitude.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Charlotte explique que sa famille dîne au restaurant le week-end ; le repas avec les amis du dimanche est une autre habitude.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Restaurant avec tables dressées, cantine et domicile. La maison illustre la catégorie de réponse chez les voisins sans prétendre montrer leurs personnes ni leur logement réel."
+      }
     },
     {
       "key": "tcf-ss-a1-s26-co-4#5",
@@ -105417,19 +105489,31 @@
         "Devant la gare",
         "Chez Hugo"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "07aaaa28a86c05cea8bccea90b9804a1e9784b684ae6dfbe8bcbec9ee895de60",
       "semantic_before_sha256": "e8704acfe1c7a8be73c9bf5535865e3ebb0930c47b0e662d2f02a4cbdf2908cf",
       "semantic_after_sha256": "e8704acfe1c7a8be73c9bf5535865e3ebb0930c47b0e662d2f02a4cbdf2908cf",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_59.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+      ],
+      "target_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Hugo propose le cinéma mardi soir et donne rendez-vous à 18 h 30 devant le cinéma, avec possibilité de venir avec Carmen.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Hugo propose le cinéma mardi soir et donne rendez-vous à 18 h 30 devant le cinéma, avec possibilité de venir avec Carmen.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Façade de cinéma, façade de gare avec parvis et domicile. Les lieux de rendez-vous extérieurs ne sont pas remplacés par une salle de projection ou un quai ; les personnages de l’image du cinéma ne sont pas présentés comme Hugo ou ses amis."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-59#8",
@@ -105819,19 +105903,31 @@
         "Devant la gare",
         "Devant le cinéma"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "6cb6c173e52970563c779082d7500c7f7a0844456a06fe39649aefc8831cea5c",
       "semantic_before_sha256": "b7abd9d5721bd96616180e3f438c4a6b6f889d74da2a4cc092b68f26ca83eb8f",
       "semantic_after_sha256": "b7abd9d5721bd96616180e3f438c4a6b6f889d74da2a4cc092b68f26ca83eb8f",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_61.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Fabiola propose de se retrouver chez elle à 13 h 30 avant d’aller à la plage. Le rendez-vous initial n’est donc pas à la plage.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Fabiola propose de se retrouver chez elle à 13 h 30 avant d’aller à la plage. Le rendez-vous initial n’est donc pas à la plage.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Domicile, parvis de gare et entrée de cinéma. Les illustrations désignent les lieux de réponse sans inventer le logement de Fabiola ; le rendez-vous est distingué de la sortie suivante."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-61#5",
@@ -125765,19 +125861,31 @@
         "L’escalade",
         "Le poney"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
       "semantic_before_sha256": "af63c8d7c2b51666214d2638dcc7cd77b0d96081860180f1bcc3e2e8e926aeec",
       "semantic_after_sha256": "af63c8d7c2b51666214d2638dcc7cd77b0d96081860180f1bcc3e2e8e926aeec",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-faire-du-poney.png"
+      ],
+      "target_sha256": [
+        "b23ae0662d4547cc07235f6ce2f4189f10e0acd4caefb8e197caefc1073dfae0",
+        "4f5aadc5f4d766ef5cc7e50a9845d7b70ea9f9abdbb638eba86ec10cb78dfe06",
+        "5939a49ef0c6387c42073489d1d85eedba98c0e5ba1c5dbebda0a9fe8fc4199e"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le stage 2 propose notamment VTT, escalade et poney. Le VTT est l’activité pratiquée avec un vélo.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le stage 2 propose notamment VTT, escalade et poney. Le VTT est l’activité pratiquée avec un vélo.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "VTT en montagne avec cycliste et vélo entiers, escalade sur paroi et enfant montant un petit poney. Un cheval de sport adulte seul est écarté ; l’activité de poney est réellement illustrée. Les gestes, pieds et équipements principaux restent dans le cadre."
+      }
     },
     {
       "key": "delf-a2j-ce-003#7",
@@ -125859,19 +125967,31 @@
         "Dans un laboratoire",
         "Dans un théâtre"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "7c33888911b303e49966f27f52aa2d0edbc35c00d79e9f8138fc0ae62f6e2f3d",
       "semantic_before_sha256": "59d91c0af6c34aadf1be6fe7eafe7539fd79292a805b736b13d9445c3a7f6422",
       "semantic_after_sha256": "59d91c0af6c34aadf1be6fe7eafe7539fd79292a805b736b13d9445c3a7f6422",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co57-parc-naturel.webp",
+        "/lib/images/tcf/qcm-audit/extension573-laboratoire.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+      ],
+      "target_sha256": [
+        "f6681463caef39e50c9140717fc45bfb23677df2487d2f9795232decafb4e778",
+        "62dea1d0afafd73b370548e43388783bd7d300999a88b69c6619f5145b0ef711",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Le stage 3 est un séjour en plein air pour découvrir les paysages, plantes et animaux ; l’astronomie est abordée dans le stage suivant.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le stage 3 est un séjour en plein air pour découvrir les paysages, plantes et animaux ; l’astronomie est abordée dans le stage suivant.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Paysage naturel extérieur, laboratoire avec matériel et façade de théâtre. Trois milieux distincts ; aucun participant dessiné n’est présenté comme un élève précis du stage."
+      }
     },
     {
       "key": "delf-a2j-ce-004#3",
@@ -127615,19 +127735,31 @@
         "Chanteur d’opéra",
         "Acteur de cinéma"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "6dbe33b5932cd57fc737fd7955fc8a0992e68d515be8a6405978d7a96ffadcf2",
       "semantic_before_sha256": "296a7f058bb75ef15c48c6424b308b301821cd6ba6f2c02487ef983d27f928d7",
       "semantic_after_sha256": "296a7f058bb75ef15c48c6424b308b301821cd6ba6f2c02487ef983d27f928d7",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/danseur.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-chanteur-opera.png",
+        "/lib/images/tcf/catalogue/metiers/acteur.webp"
+      ],
+      "target_sha256": [
+        "18250c2ffd86e5edfb3901ae9e3e3895154afbf89e337dca74619df434d31672",
+        "58b33962d4208171a94bebd5a41958d48152e98da3283031a8f61bdd3c40881e",
+        "a7e824f89e9b15de8251cdc27cd555703b7020a1da3428ad558c23b96e2abac9"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le résumé de Billy Elliot indique que Billy, 11 ans, rêve de devenir danseur de ballet, malgré l’opposition de son père.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le résumé de Billy Elliot indique que Billy, 11 ans, rêve de devenir danseur de ballet, malgré l’opposition de son père.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Danseur de ballet, chanteur d’opéra sur scène avec fosse d’orchestre et acteur devant une caméra de tournage. Ce sont des illustrations des trois métiers, pas des portraits de Billy ou des interprètes du film. Le chant d’opéra n’est pas représenté par un concert pop."
+      }
     },
     {
       "key": "delf-a2j-ce-013#1",
@@ -127640,19 +127772,31 @@
         "À la bibliothèque",
         "Au cinéma"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "39f12a4cbebed0d4ff4124651ce150505092e136ed8b7cec5e437635ba89c0a9",
       "semantic_before_sha256": "2682fc26c531c67b6332e2736d4793a74c5c6fd302ca79644efe08791c9027b4",
       "semantic_after_sha256": "2682fc26c531c67b6332e2736d4793a74c5c6fd302ca79644efe08791c9027b4",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "target_sha256": [
+        "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "L’activité 1 propose football, handball et volley-ball au stade Bellot, tous les jours de 10 h à 19 h.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’activité 1 propose football, handball et volley-ball au stade Bellot, tous les jours de 10 h à 19 h.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Stade avec match et terrain, bibliothèque et façade de cinéma. Les catégories de lieux restent lisibles ; le stade dessiné n’est pas présenté comme une reproduction du stade Bellot."
+      }
     },
     {
       "key": "delf-a2j-ce-013#2",
@@ -130728,19 +130872,31 @@
         "À l’école",
         "À la cafétéria"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "398a81c49a0127ef5dae5a27335c4d7d6dbd52dcdde7d36338282f2775084e2e",
       "semantic_before_sha256": "8254580764dcbe9b299da232667bb5d3c62c7a4ed74e598b6b1946feaaae6038",
       "semantic_after_sha256": "8254580764dcbe9b299da232667bb5d3c62c7a4ed74e598b6b1946feaaae6038",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-cafeteria.webp"
+      ],
+      "target_sha256": [
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "64274004140d29ad0a90c3e51903d2f2a04a20506c7a3de9443484d8addd6014"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Monsieur Didon annonce le spectacle au théâtre de l’Étoile. L’école accueille les répétitions et la cafétéria la fête après le rangement.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Monsieur Didon annonce le spectacle au théâtre de l’Étoile. L’école accueille les répétitions et la cafétéria la fête après le rangement.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Façade de théâtre, école et cafétéria avec comptoir et service. Le lieu du spectacle est distingué des répétitions et de l’après-spectacle. Aucun nom d’établissement réel n’est ajouté aux images."
+      }
     },
     {
       "key": "delf-a2j-ce-028#3",
@@ -134046,19 +134202,31 @@
         "Au magasin de vêtements",
         "Au terrain de sport"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "44fbd1ad58e37c184be0efeedc503d4c4791ac10a23d217f8316e419390b124c",
       "semantic_before_sha256": "3741af423e63dea8666b3cdf9fd926888bf27354800f9211f6331797dfcb99ec",
       "semantic_after_sha256": "3741af423e63dea8666b3cdf9fd926888bf27354800f9211f6331797dfcb99ec",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png"
+      ],
+      "target_sha256": [
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8",
+        "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La consigne contre le gaspillage demande de se servir uniquement la quantité nécessaire au restaurant scolaire.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La consigne contre le gaspillage demande de se servir uniquement la quantité nécessaire au restaurant scolaire.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Cantine avec comptoir et tables, magasin de vêtements et terrain de sport avec match. La cantine n’est pas réduite à un plateau et le rayon vêtements n’est pas représenté par des habits isolés."
+      }
     },
     {
       "key": "delf-a2j-ce-044#7",

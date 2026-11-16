@@ -1,0 +1,156 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "23dde64074300d0e7c681239a2538896ef49da95",
+  "compared_all_six_banks": true,
+  "added_image_forms": 16,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 6,
+  "new_image_usages": 8,
+  "reused_image_usages": 40,
+  "reused_distinct_images": 24,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "tcf-a1-s3-ce-3#3",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "tcf-a1-s3-ce-3#8",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "delf-a1s-ce-038#10",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "tcf-ss-a1-s2-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ss-a1-s3-co-1#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ss-a1-s26-co-4#4",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-59#7",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-61#4",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-007-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-011-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a2j-ce-003#6",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-004#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-012#8",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-013#1",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-028#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-044#6",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    }
+  ],
+  "checks": [
+    {
+      "name": "revue763",
+      "chunk_id": "7e07f6",
+      "wall_time_seconds": 3.0881e-05,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 323 trios actifs, 112 textes conservés, 328 trios à préparer.\n"
+    },
+    {
+      "name": "delf-images",
+      "chunk_id": "0d8e47",
+      "wall_time_seconds": 0.000266223,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 327 trios actifs liés à leur relecture, images et MP3 vérifiés.\n"
+    },
+    {
+      "name": "delf-context",
+      "chunk_id": "2a045a",
+      "wall_time_seconds": 2.6958e-05,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n"
+    },
+    {
+      "name": "qcm-images",
+      "chunk_id": "1ed2f8",
+      "wall_time_seconds": 2.4496e-05,
+      "exit_code": 0,
+      "original_token_count": 17,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2366 bank variants\n"
+    },
+    {
+      "name": "tcf-bank",
+      "chunk_id": "21e8dc",
+      "wall_time_seconds": 3.0238e-05,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n"
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 30,
+    "question_views": 32,
+    "image_views": 96,
+    "errors": []
+  },
+  "additional_checks": {
+    "catalogue_tests": {
+      "command": "node --test --test-reporter=tap --test-concurrency=1 tests/gallery/catalog.test.mjs tests/audio-catalog/catalog.test.mjs",
+      "passed": 13,
+      "failed": 0
+    },
+    "typecheck": {
+      "command": "npx tsc -b",
+      "exit_code": 0
+    },
+    "production_build": {
+      "command": "npx vite build --manifest",
+      "exit_code": 0
+    },
+    "loading_budgets": {
+      "command": "node scripts/interactive-budgets.mjs",
+      "exit_code": 0,
+      "game_gzip_bytes": 3130685,
+      "game_maximum_gzip_bytes": 3145728
+    }
+  }
+}

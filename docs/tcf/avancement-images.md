@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Dernière suite du 16 novembre : seize trios supplémentaires, six PNG natifs et quarante réemplois.** Quatorze trios historiques et deux DELF Actif ; restent **328 historiques** et **419 candidats DELF Actif**, avec **327 trios DELF Actif actifs**. Les vues extérieures de gare et de pharmacie respectent les rendez-vous « devant ». [Rapport actuel et reste à faire](trios-loisirs-lieux-20261116.md).
+
 **Dernière correction du 16 novembre : gestes de natation et de ski nautique repris, et huit trios A1 ajoutés.** Cinq PNG natifs et dix-neuf réemplois ; restent **342 trios historiques**. DELF Actif conserve **325 trios actifs et 421 candidats**. Vingt vues navigateur vérifient les deux corrections et les huit nouveaux trios. [Rapport actuel et reste à faire](correction-gestes-et-trios-lieux-20261116.md).
 
 **Dernier lot du 16 novembre : quinze trios ajoutés, six PNG originaux et 39 réemplois.** Restent **350 trios historiques** ; DELF Actif compte **325 trios actifs et 421 candidats à vérifier**. Sports, repas, transports, métiers, lieux et objets ont leur source relue et leurs trois images vérifiées. [Rapport et reste à faire](trios-sports-repas-20261116.md).

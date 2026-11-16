@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 325,
+      "active_reviewed_trio": 327,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 421,
+      "candidate_visual_review": 419,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 191,
+        "active_reviewed_trio": 193,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 71,
+        "candidate_visual_review": 69,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -4550,7 +4550,14 @@
           "id": "b",
           "label": "Devant la gare",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+              "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+              "label": "Devant la gare",
+              "visual_review_required": true
+            }
+          ],
           "asset": "540146d1dca14844",
           "brief": "Représenter entièrement « Devant la gare » pour « Où les amis ont-ils rendez-vous ? ». Vérifier la transcription du support tcf-delf-actif-a1-002-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Abribus, gare et collège doivent être identifiables ; le bus sert au rendez-vous même si le déplacement prévu est à vélo."
         },
@@ -6211,8 +6218,8 @@
       "semantic_sha256": "d435be4fa9b2eee8871e680e9d30210989ac02455c653ba49f75e8d3284aa1f8",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-007-01.mp3",
       "audio_sha256": "0ca7443e88e1a2641d970d6e7c1afddde51b3f4ee80dd730d89fe737f7790dbf",
-      "status": "candidate_visual_review",
-      "reason": "Façades de théâtre, pharmacie et gare ; le lieu du rendez-vous est distinct du magasin de danse à visiter.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -6226,7 +6233,14 @@
           "id": "b",
           "label": "Devant la pharmacie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+              "sha256": "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9",
+              "label": "Devant la pharmacie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "19d5b6238c215c60",
           "brief": "Représenter entièrement « Devant la pharmacie » pour « Où le rendez-vous est-il fixé ? ». Vérifier la transcription du support tcf-delf-actif-a1-007-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Façades de théâtre, pharmacie et gare ; le lieu du rendez-vous est distinct du magasin de danse à visiter."
         },
@@ -6234,13 +6248,36 @@
           "id": "c",
           "label": "Devant la gare",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+              "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+              "label": "Devant la gare",
+              "visual_review_required": true
+            }
+          ],
           "asset": "540146d1dca14844",
           "brief": "Représenter entièrement « Devant la gare » pour « Où le rendez-vous est-il fixé ? ». Vérifier la transcription du support tcf-delf-actif-a1-007-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Façades de théâtre, pharmacie et gare ; le lieu du rendez-vous est distinct du magasin de danse à visiter."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+          "sha256": "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+          "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -6258,6 +6295,10 @@
         "evidence_quote": "devant le théâtre",
         "semantic_sha256": "d435be4fa9b2eee8871e680e9d30210989ac02455c653ba49f75e8d3284aa1f8",
         "note": "Façades de théâtre, pharmacie et gare ; le lieu du rendez-vous est distinct du magasin de danse à visiter."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Trois entrées vues de l’extérieur : théâtre, pharmacie et gare avec parvis. La pharmacie intérieure et les quais intérieurs sont écartés pour respecter « devant ». Aucun passant n’est présenté comme Inès ou la personne qui appelle."
       }
     },
     {
@@ -7762,8 +7803,8 @@
       "semantic_sha256": "a8fbd83b3fc13e35c83949095b3614a7af4b93c715673ddd9708c8c50c15e7fd",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-03.mp3",
       "audio_sha256": "35777cb92f7f35d2840a4c40d54a9aa33c07174752cae5f8a2de8e5fd42e5bbc",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -7804,8 +7845,24 @@
           "brief": "Représenter entièrement « Le musée » pour « Quel service est fermé ? ». Vérifier la transcription du support tcf-delf-actif-a1-011-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "sha256": "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -7816,7 +7873,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-loisirs-lieux-20261116.json",
+        "note": "Mairie, bibliothèque et musée identifiables. Les images désignent les services proposés et ne font pas office de panneaux d’ouverture ; aucun horaire ni statut des deux distracteurs n’est inventé."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-011-03#2",
@@ -14210,7 +14271,14 @@
           "id": "a",
           "label": "Devant la pharmacie",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+              "sha256": "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9",
+              "label": "Devant la pharmacie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "19d5b6238c215c60",
           "brief": "Représenter entièrement « Devant la pharmacie » pour « Où le rendez-vous est-il prévu ? ». Vérifier la transcription du support tcf-delf-actif-a1-025-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Pharmacie, boulangerie et bibliothèque ; le nom de la rue n’est pas l’objet des trois choix."
         },
@@ -113399,7 +113467,14 @@
     {
       "id": "540146d1dca14844",
       "label": "Devant la gare",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+          "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+          "label": "Devant la gare",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-002-01#5",
@@ -114451,7 +114526,14 @@
     {
       "id": "19d5b6238c215c60",
       "label": "Devant la pharmacie",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+          "sha256": "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9",
+          "label": "Devant la pharmacie",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-007-01#4",
