@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 291,
+      "active_reviewed_trio": 306,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 455,
+      "candidate_visual_review": 440,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 176,
+        "active_reviewed_trio": 191,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 86,
+        "candidate_visual_review": 71,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -9163,8 +9163,8 @@
       "semantic_sha256": "4cf4ff26df75d55777800e9d0a73aed537803a03c8975df213ba2af68406050d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-014-01.mp3",
       "audio_sha256": "fa3a3f1e08faf5652cdd82616700df1be0c2132162ebcb889bf8acbb65e104d3",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -9205,8 +9205,24 @@
           "brief": "Représenter entièrement « Une carte de bibliothèque » pour « Quel document faut-il pour monter ? ». Vérifier la transcription du support tcf-delf-actif-a1-014-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+          "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+          "sha256": "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+          "sha256": "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -9217,7 +9233,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Billet de train avec pictogramme ferroviaire, passeport et carte de bibliothèque entiers. Un billet de concert est écarté malgré le libellé générique « Un billet »."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-014-01#5",
@@ -9622,14 +9642,21 @@
       "semantic_sha256": "e516834c1d14230ade62b2cc16eb3a5fe5c3164493acf6ae392a1658cc307c6f",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-016-01.mp3",
       "audio_sha256": "590610a2fc93822dafebf1283f361763880ad6e67e7078c82eb14b48f2d5d01a",
-      "status": "candidate_visual_review",
-      "reason": "Bouteilles plastiques, boîtes métalliques et cartons sont des catégories de déchets distinctes ; pluriels visibles.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Les bouteilles en plastique",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-bouteilles-plastique.png",
+              "sha256": "0a29a1cfb663af06fc558b22e5508d4dd69f34d4a9d1f17d3f627e27c1fc5749",
+              "label": "Les bouteilles en plastique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "b9eb15bf953f0e19",
           "brief": "Représenter entièrement « Les bouteilles en plastique » pour « Quel déchet peut-on ainsi réduire ? ». Vérifier la transcription du support tcf-delf-actif-a1-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bouteilles plastiques, boîtes métalliques et cartons sont des catégories de déchets distinctes ; pluriels visibles."
         },
@@ -9637,7 +9664,14 @@
           "id": "b",
           "label": "Les boîtes en métal",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-boites-metal.png",
+              "sha256": "4d62b41d9065ea75912897aee8283a0c8ea91ea4f3350ee7f40d026e26792ccd",
+              "label": "Les boîtes en métal",
+              "visual_review_required": true
+            }
+          ],
           "asset": "c9b622e46cc2bb37",
           "brief": "Représenter entièrement « Les boîtes en métal » pour « Quel déchet peut-on ainsi réduire ? ». Vérifier la transcription du support tcf-delf-actif-a1-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bouteilles plastiques, boîtes métalliques et cartons sont des catégories de déchets distinctes ; pluriels visibles."
         },
@@ -9657,8 +9691,24 @@
           "brief": "Représenter entièrement « Les cartons » pour « Quel déchet peut-on ainsi réduire ? ». Vérifier la transcription du support tcf-delf-actif-a1-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bouteilles plastiques, boîtes métalliques et cartons sont des catégories de déchets distinctes ; pluriels visibles."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bouteilles-plastique.png",
+          "sha256": "0a29a1cfb663af06fc558b22e5508d4dd69f34d4a9d1f17d3f627e27c1fc5749"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-boites-metal.png",
+          "sha256": "4d62b41d9065ea75912897aee8283a0c8ea91ea4f3350ee7f40d026e26792ccd"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cartons-pluriel.png",
+          "sha256": "88b6b858914063a9e53dd5937996ea10ea410165e876a0220cb70547f70b06c0"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -9676,6 +9726,10 @@
         "evidence_quote": "bouteilles en plastique",
         "semantic_sha256": "e516834c1d14230ade62b2cc16eb3a5fe5c3164493acf6ae392a1658cc307c6f",
         "note": "Bouteilles plastiques, boîtes métalliques et cartons sont des catégories de déchets distinctes ; pluriels visibles."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Bouteilles PET nervurées, dont une déformée, boîtes métalliques et cartons. Pluriel de catégorie, aucun nombre demandé ; les anciennes bouteilles de verre sont rejetées."
       }
     },
     {
@@ -14354,8 +14408,8 @@
       "semantic_sha256": "e9062e2201dbceb2d6399119ff2bc349a45c597664f369eea8da223827ba664e",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
       "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
-      "status": "candidate_visual_review",
-      "reason": "Titres de bus, train et métro avec indices de transport distincts ; sans tarif, date, jour ni code arbitraire.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -14403,8 +14457,24 @@
           "brief": "Représenter entièrement « Un ticket de métro » pour « Quel titre de transport doit-elle acheter ? ». Vérifier la transcription du support tcf-delf-actif-a1-026-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Titres de bus, train et métro avec indices de transport distincts ; sans tarif, date, jour ni code arbitraire."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+          "sha256": "e469daf0c6fce7710af80ad5007d391edff13672bb3fae220bb84630732cb8a1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+          "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp",
+          "sha256": "60cf0dec3cfff53395821094d0e2c8c5810461e009c6760d8ec51240a3eb7096"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -14422,6 +14492,10 @@
         "evidence_quote": "un ticket de bus",
         "semantic_sha256": "e9062e2201dbceb2d6399119ff2bc349a45c597664f369eea8da223827ba664e",
         "note": "Titres de bus, train et métro avec indices de transport distincts ; sans tarif, date, jour ni code arbitraire."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Un seul titre par choix : pictogrammes de bus, train et métro. Pas de date, montant ni destination arbitraire ajoutés."
       }
     },
     {
@@ -16759,8 +16833,8 @@
       "semantic_sha256": "59de96604b85d93aa42cb5fbf5b49e89bdd5f302ca64e70048ecf6e6215a6659",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
       "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
-      "status": "candidate_visual_review",
-      "reason": "Consultation médicale, consultation dentaire et entraînement sportif ; activités professionnelles distinctes, personnages génériques.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -16782,13 +16856,36 @@
           "id": "c",
           "label": "Son entraîneur",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-entraineur-sport.png",
+              "sha256": "f4e827fb3eedaa04e68a73c1af0a333d1f10c1f917395248ca794a92faf3a2d1",
+              "label": "Un entraîneur de sport",
+              "visual_review_required": true
+            }
+          ],
           "asset": "c0ff6fceee2fcbc8",
           "brief": "Représenter entièrement « Son entraîneur » pour « Qui lui conseille-t-on de consulter ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Consultation médicale, consultation dentaire et entraînement sportif ; activités professionnelles distinctes, personnages génériques."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+          "sha256": "263259c27dc2075d7f20ff27f98718823b126a1f997cf8c3cf405a4c4ebee17a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-entraineur-sport.png",
+          "sha256": "f4e827fb3eedaa04e68a73c1af0a333d1f10c1f917395248ca794a92faf3a2d1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -16806,6 +16903,10 @@
         "evidence_quote": "aller voir ton médecin",
         "semantic_sha256": "59de96604b85d93aa42cb5fbf5b49e89bdd5f302ca64e70048ecf6e6215a6659",
         "note": "Consultation médicale, consultation dentaire et entraînement sportif ; activités professionnelles distinctes, personnages génériques."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Consultation médicale avec stéthoscope, soin dentaire et entraînement sportif avec deux personnes en interaction ; la seule personne faisant de la gym ne suffit pas à représenter l’entraîneur."
       }
     },
     {
@@ -18283,14 +18384,21 @@
       "semantic_sha256": "fdabcb2de8c13ab4a0e54d571265673500ff26adde95d1f6641d783c140a0172",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-01.mp3",
       "audio_sha256": "f8c90f69b8abaae26e8152bf47b46b491d33a9b3052bf2df65c8cf2407aabf38",
-      "status": "candidate_visual_review",
-      "reason": "Froid, chaleur et pluie ; indices météorologiques distincts, sans montant ni date.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Il fait froid",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+              "sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e",
+              "label": "Il fait froid",
+              "visual_review_required": true
+            }
+          ],
           "asset": "7029ee3b577bd1fb",
           "brief": "Représenter entièrement « Il fait froid » pour « Quel temps fait-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-032-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Froid, chaleur et pluie ; indices météorologiques distincts, sans montant ni date."
         },
@@ -18311,8 +18419,24 @@
           "brief": "Représenter entièrement « Il pleut » pour « Quel temps fait-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-032-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Froid, chaleur et pluie ; indices météorologiques distincts, sans montant ni date."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+          "sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+          "sha256": "ed196465ce44a198fba5dd12cd806752b480d93901370a0c8fcd06bbed948c2e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-pluie-dessinee.webp",
+          "sha256": "6ccb6b5096ecf702d59c15fed580cc96029d45435a1c31b6fd6d693d56fdd6f1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -18330,6 +18454,10 @@
         "evidence_quote": "il fait froid aujourd’hui",
         "semantic_sha256": "fdabcb2de8c13ab4a0e54d571265673500ff26adde95d1f6641d783c140a0172",
         "note": "Froid, chaleur et pluie ; indices météorologiques distincts, sans montant ni date."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Froid montré par les vêtements, la posture et le souffle sur sol sec ; chaleur en plein soleil et pluie distinctes. La composition pluie et froid est rejetée pour ne pas confondre deux choix."
       }
     },
     {
@@ -19243,14 +19371,21 @@
       "semantic_sha256": "fc1365c1d7d68c588cf0c2d51e5c78fb94d7b3a45ddd45661aed9c12984144ed",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-02.mp3",
       "audio_sha256": "5ab939ee4dc04ce99a557ba3d148b9a0c450788f607e61dad71ff4b54ce1f6ba",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Des skis",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+              "sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+              "label": "Des skis",
+              "visual_review_required": true
+            }
+          ],
           "asset": "7394c931cbf28546",
           "brief": "Représenter entièrement « Des skis » pour « Quel matériel peut-on acheter ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -19285,8 +19420,24 @@
           "brief": "Représenter entièrement « Des raquettes » pour « Quel matériel peut-on acheter ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+          "sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+          "sha256": "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-raquettes.webp",
+          "sha256": "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19297,7 +19448,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Skis, vélos et raquettes représentés au pluriel, objets entiers. Pas de personne en train de skier à la place du matériel demandé ; les quantités ne sont pas l’objet de la question."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-033-02#2",
@@ -19480,8 +19635,8 @@
       "semantic_sha256": "e011a436f772a2060c5c223bbdcbc696445c6b815d488378645b240855a72d55",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-03.mp3",
       "audio_sha256": "e0de017d39fb8d894dfc1c1440f2c779ce06c9e2f58c8bf4f27ac9bd185d235d",
-      "status": "candidate_visual_review",
-      "reason": "Trois domaines d’intérêt à représenter par des activités de musique, sport et cuisine ; ne pas attribuer un goût d’après le visage.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -19508,8 +19663,24 @@
           "brief": "Représenter entièrement « Aux amateurs de cuisine » pour « À quels amateurs le message s’adresse-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois domaines d’intérêt à représenter par des activités de musique, sport et cuisine ; ne pas attribuer un goût d’après le visage."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+          "sha256": "1dcfa221a99ebccd9cfb60113a80decd6f9d51bcf85b112c225dd4351901bec4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+          "sha256": "adcf49233bb429f177fb5985655d0c24b73677caed21214f94b3583874e0bad2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19527,6 +19698,10 @@
         "evidence_quote": "Pour les amateurs de musique",
         "semantic_sha256": "e011a436f772a2060c5c223bbdcbc696445c6b815d488378645b240855a72d55",
         "note": "Trois domaines d’intérêt à représenter par des activités de musique, sport et cuisine ; ne pas attribuer un goût d’après le visage."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Groupes jouant de la musique, pratiquant du sport et suivant un cours de cuisine ; catégories d’amateurs. L’image ne prétend pas décrire les guitares précises en promotion ni le locuteur."
       }
     },
     {
@@ -20275,14 +20450,21 @@
       "semantic_sha256": "08198bf1f8c066384a3b40c3e8522305efaac96c14fb4d8a4837763c81810d43",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
       "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Des pâtes à la bolognaise",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png",
+              "sha256": "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50",
+              "label": "Des pâtes à la bolognaise",
+              "visual_review_required": true
+            }
+          ],
           "asset": "fdd1fdc30e575dc5",
           "brief": "Représenter entièrement « Des pâtes à la bolognaise » pour « Quel plat doit-il préparer pour le dîner ? ». Vérifier la transcription du support tcf-delf-actif-a1-034-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -20305,13 +20487,36 @@
           "id": "c",
           "label": "Une tarte au fromage",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-tarte-fromage.png",
+              "sha256": "8d3a0c953a16923c6e53218a2a97dae8119ec760f10b9f48d598dc1bc44393e6",
+              "label": "Une tarte au fromage",
+              "visual_review_required": true
+            }
+          ],
           "asset": "4b6022cdb7cfd8d5",
           "brief": "Représenter entièrement « Une tarte au fromage » pour « Quel plat doit-il préparer pour le dîner ? ». Vérifier la transcription du support tcf-delf-actif-a1-034-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png",
+          "sha256": "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+          "sha256": "850075bad1f18cb1ef930844529d34ff3b11a85f09f7fbb2d68241def12d60ca"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tarte-fromage.png",
+          "sha256": "8d3a0c953a16923c6e53218a2a97dae8119ec760f10b9f48d598dc1bc44393e6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -20322,7 +20527,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Viande hachée visible dans la sauce, soupe de légumes et tarte salée au fromage ; les pâtes à la tomate seules et celles au fromage sont rejetées pour les deux réponses différentes."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-034-01#5",
@@ -26307,8 +26516,8 @@
       "semantic_sha256": "39df7cbc97587500bfe69e4e904c052c7f3c45837f42df3162db7afca0579735",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
       "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -26337,13 +26546,36 @@
           "id": "c",
           "label": "Une boîte à chaussures",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-boite-chaussures.png",
+              "sha256": "d364f6fa8da86b4d563af52913cacfc9cb32bc920efd764e5eb5682c337f021d",
+              "label": "Une boîte à chaussures",
+              "visual_review_required": true
+            }
+          ],
           "asset": "64cb53080819464f",
           "brief": "Représenter entièrement « Une boîte à chaussures » pour « Quel emballage le client accepte-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-047-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-cadeau.webp",
+          "sha256": "40c84c495c9e833e3eafb59fb6e4437192b7929524d59f3d54b5a6b6ab70e7d2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-enveloppe.webp",
+          "sha256": "6d5fb6b2471cf5d78816c90e96cc1d9c5b11f46b3338fb5e4e7d0deea5d88997"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-boite-chaussures.png",
+          "sha256": "d364f6fa8da86b4d563af52913cacfc9cb32bc920efd764e5eb5682c337f021d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -26354,7 +26586,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Boîte emballée avec ruban, enveloppe fermée et boîte à chaussures ouverte avec sa paire ; trois types d’emballage complets. Aucune couleur ni dimension précise n’est imposée par la question."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-048-01#1",
@@ -29087,8 +29323,8 @@
       "semantic_sha256": "8c3e9c0b199c90ccd99548bbb8d59229048ae3497e6cbcbb22170dd648d1b598",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-05-01.mp3",
       "audio_sha256": "5833ee84e92947999ad267d4e08f3bfedf95d5a76febb7e73a29aabc2e844dc7",
-      "status": "candidate_visual_review",
-      "reason": "Maillot, bonnet de bain et combinaison sont distinguables ; ne pas ajouter tous les accessoires dans une seule image.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -29129,8 +29365,24 @@
           "brief": "Représenter entièrement « Une combinaison » pour « Quel vêtement de baignade la personne emporte-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Maillot, bonnet de bain et combinaison sont distinguables ; ne pas ajouter tous les accessoires dans une seule image."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+          "sha256": "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/07b2c36cc965.webp",
+          "sha256": "8918d804763e27073a4b920eeab5ab9933fffcfaf67442ed114219f6520aec08"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-combinaison-baignade.png",
+          "sha256": "e3030f9785d41fe45d705768bcc92567f71655474cf7a35321e8587ab4b6ac12"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -29148,6 +29400,10 @@
         "evidence_quote": "mon maillot de bain",
         "semantic_sha256": "8c3e9c0b199c90ccd99548bbb8d59229048ae3497e6cbcbb22170dd648d1b598",
         "note": "Maillot, bonnet de bain et combinaison sont distinguables ; ne pas ajouter tous les accessoires dans une seule image."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Maillot, bonnet de bain et combinaison aquatique en néoprène ; la combinaison de ski avec bonnet est rejetée dans ce contexte de baignade."
       }
     },
     {
@@ -29853,8 +30109,8 @@
       "semantic_sha256": "b78cd9995c6ed0f6ab99022673deb05209dc7d15ddaab0b2adcd180ba94f410d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-02-01.mp3",
       "audio_sha256": "574f5eb3935646bbae31593e77695f994617490fa111dd4abf3f22b4951bbe03",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -29868,7 +30124,14 @@
           "id": "b",
           "label": "Des skis",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+              "sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+              "label": "Des skis",
+              "visual_review_required": true
+            }
+          ],
           "asset": "7394c931cbf28546",
           "brief": "Représenter entièrement « Des skis » pour « Quel matériel fait l’objet d’une offre exceptionnelle ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -29881,8 +30144,24 @@
           "brief": "Représenter entièrement « Des ballons de football » pour « Quel matériel fait l’objet d’une offre exceptionnelle ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-raquettes.webp",
+          "sha256": "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+          "sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-ballons-football.webp",
+          "sha256": "843d52ba1cc4a2a21bf61d539092cc86e32b5382e977157d65dedc081e8798f5"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -29893,7 +30172,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Raquettes, skis et ballons de football au pluriel ; pas de ballons de fête. Le montant et le mois de promotion restent dans leurs questions texte séparées."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-050-02-01#4",
@@ -32083,14 +32366,21 @@
       "semantic_sha256": "0f3cd6b1adbe6595345bf37ccc617f7dc48b9165e49482a082a5715ca1919753",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-02-01.mp3",
       "audio_sha256": "b007f2d704f6cdefb54bba5b47632261db5b1d5e65ad00aaacae069faaf4d006",
-      "status": "candidate_visual_review",
-      "reason": "Vélo électrique avec batterie et moteur visibles, scooter et trottinette ; ne pas utiliser un vélo de ville sans motorisation.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Un vélo électrique",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+              "sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+              "label": "Un vélo électrique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "d6fe4419f2f353b2",
           "brief": "Représenter entièrement « Un vélo électrique » pour « Quel véhicule peut-on gagner au jeu ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Vélo électrique avec batterie et moteur visibles, scooter et trottinette ; ne pas utiliser un vélo de ville sans motorisation."
         },
@@ -32125,8 +32415,24 @@
           "brief": "Représenter entièrement « Une trottinette » pour « Quel véhicule peut-on gagner au jeu ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Vélo électrique avec batterie et moteur visibles, scooter et trottinette ; ne pas utiliser un vélo de ville sans motorisation."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+          "sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+          "sha256": "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+          "sha256": "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32144,6 +32450,10 @@
         "evidence_quote": "gagner un vélo électrique",
         "semantic_sha256": "0f3cd6b1adbe6595345bf37ccc617f7dc48b9165e49482a082a5715ca1919753",
         "note": "Vélo électrique avec batterie et moteur visibles, scooter et trottinette ; ne pas utiliser un vélo de ville sans motorisation."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Batterie et moteur visibles sur le vélo entier, distinct d’un scooter motorisé et d’une trottinette ordinaire. Un vélo classique ne prouve pas l’assistance électrique."
       }
     },
     {
@@ -33882,14 +34192,21 @@
       "semantic_sha256": "4a377d2c3a9361ec4f8983bf88f772831d838f9cc8fd7235e3182b37d08220b4",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-01-01.mp3",
       "audio_sha256": "4accfbbc1fcf2bfd06d47cc764a32a3614e8b341e57540759ff79e9890e8b7fc",
-      "status": "candidate_visual_review",
-      "reason": "Support de téléphone fixé au vélo, casque audio et jeu de société ; ne pas remplacer le support par un simple téléphone ou un vélo.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Un support de téléphone pour vélo",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+              "sha256": "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00",
+              "label": "Un support de téléphone pour vélo",
+              "visual_review_required": true
+            }
+          ],
           "asset": "688231cfa68cd5c1",
           "brief": "Représenter entièrement « Un support de téléphone pour vélo » pour « Quel cadeau est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Support de téléphone fixé au vélo, casque audio et jeu de société ; ne pas remplacer le support par un simple téléphone ou un vélo."
         },
@@ -33917,8 +34234,24 @@
           "brief": "Représenter entièrement « Un jeu de société » pour « Quel cadeau est proposé ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Support de téléphone fixé au vélo, casque audio et jeu de société ; ne pas remplacer le support par un simple téléphone ou un vélo."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+          "sha256": "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp",
+          "sha256": "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-jeu-societe.png",
+          "sha256": "952185d1618f78d792eb8a352affdf72a247e146155a9499aef91b3e2bebbf95"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -33936,6 +34269,10 @@
         "evidence_quote": "un support téléphone pour son vélo",
         "semantic_sha256": "4a377d2c3a9361ec4f8983bf88f772831d838f9cc8fd7235e3182b37d08220b4",
         "note": "Support de téléphone fixé au vélo, casque audio et jeu de société ; ne pas remplacer le support par un simple téléphone ou un vélo."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Support fixé au guidon et téléphone maintenu par quatre coins, casque audio et jeu de société. Le seul téléphone isolé est écarté car il ne représente pas l’accessoire demandé."
       }
     },
     {
@@ -34024,8 +34361,8 @@
       "semantic_sha256": "8c2aad63077ae2a8b9d535f9931625db5f46e13aceacddf57e7027f74e895186",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-01-01.mp3",
       "audio_sha256": "4accfbbc1fcf2bfd06d47cc764a32a3614e8b341e57540759ff79e9890e8b7fc",
-      "status": "candidate_visual_review",
-      "reason": "Appel téléphonique, courriel et déplacement à la mairie ; conserver la demande de confirmation sans nom ou coordonnées inventés.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34054,13 +34391,36 @@
           "id": "c",
           "label": "Passer à la mairie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png",
+              "sha256": "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756",
+              "label": "Se rendre à la mairie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "9e2394d17ba86cbd",
           "brief": "Représenter entièrement « Passer à la mairie » pour « Que doit faire Lola pour confirmer ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Appel téléphonique, courriel et déplacement à la mairie ; conserver la demande de confirmation sans nom ou coordonnées inventés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+          "sha256": "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+          "sha256": "a21dccc672e341ebefb64fd0deed379de3782823cc40a059c1a76e8d1a6a845c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png",
+          "sha256": "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34078,6 +34438,10 @@
         "evidence_quote": "Appelle-moi pour confirmer",
         "semantic_sha256": "8c2aad63077ae2a8b9d535f9931625db5f46e13aceacddf57e7027f74e895186",
         "note": "Appel téléphonique, courriel et déplacement à la mairie ; conserver la demande de confirmation sans nom ou coordonnées inventés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Images approuvées par l’utilisateur : téléphone avec icône d’appel et enveloppe ouverte avec @ ; le troisième choix montre le déplacement en personne vers la mairie. La simple façade sans action est écartée."
       }
     },
     {
@@ -35869,8 +36233,8 @@
       "semantic_sha256": "d77d7ff018cdfb57615bced41f46de207e7dfaba214a098ab4a766ff4892386e",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-05-01.mp3",
       "audio_sha256": "ee2fbc9175429a3711d29794e46a38372dcc54dee2d34c7e05930c0144af1240",
-      "status": "candidate_visual_review",
-      "reason": "DVD, affiches et projecteur ; les DVD sont pour les soirées cinéma, la musique est sur la clé USB de Clara.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -35884,7 +36248,14 @@
           "id": "b",
           "label": "Des affiches",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-affiches-pluriel.png",
+              "sha256": "81c8ed745ec760f439981413053a4b7522bda1ae4f839f8444c57ab4b51fa9ff",
+              "label": "Des affiches",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6fdf7e9cb258e023",
           "brief": "Représenter entièrement « Des affiches » pour « Qu’apporte Carlos pour les soirées cinéma ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : DVD, affiches et projecteur ; les DVD sont pour les soirées cinéma, la musique est sur la clé USB de Clara."
         },
@@ -35892,13 +36263,36 @@
           "id": "c",
           "label": "Un projecteur",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-projecteur.png",
+              "sha256": "3c3d081034cb86e671d3da7e5c87f5a6afcb8f0c2b67c06227f8eeabcdc2a152",
+              "label": "Un projecteur",
+              "visual_review_required": true
+            }
+          ],
           "asset": "265f7b330cf68719",
           "brief": "Représenter entièrement « Un projecteur » pour « Qu’apporte Carlos pour les soirées cinéma ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-05-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : DVD, affiches et projecteur ; les DVD sont pour les soirées cinéma, la musique est sur la clé USB de Clara."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-compter-3-dvd.webp",
+          "sha256": "cdef44f53380e2611b0a18f3f3feff1d8688f7b6ca24fb45962d76fe954db82c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-affiches-pluriel.png",
+          "sha256": "81c8ed745ec760f439981413053a4b7522bda1ae4f839f8444c57ab4b51fa9ff"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-projecteur.png",
+          "sha256": "3c3d081034cb86e671d3da7e5c87f5a6afcb8f0c2b67c06227f8eeabcdc2a152"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -35916,6 +36310,10 @@
         "evidence_quote": "Carlos lui, apporte ses DVD",
         "semantic_sha256": "d77d7ff018cdfb57615bced41f46de207e7dfaba214a098ab4a766ff4892386e",
         "note": "DVD, affiches et projecteur ; les DVD sont pour les soirées cinéma, la musique est sur la clé USB de Clara."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Disques optiques au pluriel dans le contexte cinéma, trois grandes affiches physiques et un projecteur vidéo. Il ne s’agit pas de compter les trois DVD dessinés ; la question porte sur le type de support."
       }
     },
     {
@@ -51236,7 +51634,14 @@
           "id": "b",
           "label": "Il fait froid",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+              "sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e",
+              "label": "Il fait froid",
+              "visual_review_required": true
+            }
+          ],
           "asset": "7029ee3b577bd1fb",
           "brief": "Représenter entièrement « Il fait froid » pour « Pourquoi la personne fait-elle cette demande ? ». Vérifier la transcription du support tcf-delf-actif-a2-027 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Chaleur, froid et pluie : indices météorologiques et corporels distincts, sans température chiffrée inventée."
         },
@@ -104665,7 +105070,14 @@
           "id": "c",
           "label": "Un vélo électrique",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+              "sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+              "label": "Un vélo électrique",
+              "visual_review_required": true
+            }
+          ],
           "asset": "d6fe4419f2f353b2",
           "brief": "Représenter entièrement « Un vélo électrique » pour « Quel objet le groupe a-t-il fabriqué récemment ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -114503,7 +114915,14 @@
     {
       "id": "b9eb15bf953f0e19",
       "label": "Les bouteilles en plastique",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bouteilles-plastique.png",
+          "sha256": "0a29a1cfb663af06fc558b22e5508d4dd69f34d4a9d1f17d3f627e27c1fc5749",
+          "label": "Les bouteilles en plastique",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-016-01#2",
@@ -114514,7 +114933,14 @@
     {
       "id": "c9b622e46cc2bb37",
       "label": "Les boîtes en métal",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-boites-metal.png",
+          "sha256": "4d62b41d9065ea75912897aee8283a0c8ea91ea4f3350ee7f40d026e26792ccd",
+          "label": "Les boîtes en métal",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-016-01#2",
@@ -116533,7 +116959,14 @@
     {
       "id": "c0ff6fceee2fcbc8",
       "label": "Son entraîneur",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-entraineur-sport.png",
+          "sha256": "f4e827fb3eedaa04e68a73c1af0a333d1f10c1f917395248ca794a92faf3a2d1",
+          "label": "Un entraîneur de sport",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-030-02#3",
@@ -117029,7 +117462,14 @@
     {
       "id": "7029ee3b577bd1fb",
       "label": "Il fait froid",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+          "sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e",
+          "label": "Il fait froid",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-032-01#2",
@@ -117428,7 +117868,14 @@
     {
       "id": "7394c931cbf28546",
       "label": "Des skis",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+          "sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+          "label": "Des skis",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-033-02#1",
@@ -117963,7 +118410,14 @@
     {
       "id": "fdd1fdc30e575dc5",
       "label": "Des pâtes à la bolognaise",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png",
+          "sha256": "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50",
+          "label": "Des pâtes à la bolognaise",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-034-01#4",
@@ -117992,7 +118446,14 @@
     {
       "id": "4b6022cdb7cfd8d5",
       "label": "Une tarte au fromage",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-tarte-fromage.png",
+          "sha256": "8d3a0c953a16923c6e53218a2a97dae8119ec760f10b9f48d598dc1bc44393e6",
+          "label": "Une tarte au fromage",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-034-01#4",
@@ -119713,7 +120174,14 @@
     {
       "id": "64cb53080819464f",
       "label": "Une boîte à chaussures",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-boite-chaussures.png",
+          "sha256": "d364f6fa8da86b4d563af52913cacfc9cb32bc920efd764e5eb5682c337f021d",
+          "label": "Une boîte à chaussures",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-047-01#10",
@@ -121031,7 +121499,14 @@
     {
       "id": "d6fe4419f2f353b2",
       "label": "Un vélo électrique",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+          "sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+          "label": "Un vélo électrique",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-051-02-01#5",
@@ -121322,7 +121797,14 @@
     {
       "id": "688231cfa68cd5c1",
       "label": "Un support de téléphone pour vélo",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+          "sha256": "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00",
+          "label": "Un support de téléphone pour vélo",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-01-01#3",
@@ -121395,7 +121877,14 @@
     {
       "id": "9e2394d17ba86cbd",
       "label": "Passer à la mairie",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png",
+          "sha256": "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756",
+          "label": "Se rendre à la mairie",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-01-01#5",
@@ -121766,7 +122255,14 @@
     {
       "id": "6fdf7e9cb258e023",
       "label": "Des affiches",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-affiches-pluriel.png",
+          "sha256": "81c8ed745ec760f439981413053a4b7522bda1ae4f839f8444c57ab4b51fa9ff",
+          "label": "Des affiches",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-05-01#5",
@@ -121777,7 +122273,14 @@
     {
       "id": "265f7b330cf68719",
       "label": "Un projecteur",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-projecteur.png",
+          "sha256": "3c3d081034cb86e671d3da7e5c87f5a6afcb8f0c2b67c06227f8eeabcdc2a152",
+          "label": "Un projecteur",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-05-01#5",

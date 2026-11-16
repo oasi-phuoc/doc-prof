@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "fef634ad3e4b5189c621fa9c19a2221987e357af",
+  "compared_all_six_banks": true,
+  "added_image_forms": 21,
+  "corrected_existing_image_forms": 0,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 18,
+  "new_image_usages": 19,
+  "reused_image_usages": 44,
+  "reused_distinct_images": 41,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "rejected_generations": 2,
+  "unchanged_banks": [
+    "src/tcf/content/a1-a2/co.json",
+    "src/tcf/content/a2-b1/ce.json",
+    "src/tcf/content/a2-b1/co.json"
+  ],
+  "changes": [
+    {
+      "key": "delf-a1v-ce-060#8",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-014-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-016-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-026-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-02#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-03#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-034-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-047-01#10",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-05-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-02-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-02-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-05-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-a2p-s1-ce-1#3",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-a2p-s4-ce-2#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-a2-sa-ce-1#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "tcf-a2-sa-ce-4#7",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "kind": "added_image_form"
+    },
+    {
+      "key": "delf-a2r-ce-045#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "kind": "added_image_form"
+    }
+  ],
+  "checks": {
+    "review_763": "passed",
+    "delf_actif_image_tracking": "passed",
+    "delf_actif_context_reviews": "1021 passed",
+    "bank": "1355 exercises / 1371 audios",
+    "qcm_rendering": "2318 variants / 12 shuffle cases",
+    "catalogue_unit_tests": "13 passed",
+    "typecheck": "passed",
+    "production_build": "passed"
+  },
+  "browser_summary": {
+    "views": 40,
+    "question_views": 42,
+    "image_views": 126,
+    "errors": []
+  }
+}

@@ -1,0 +1,1880 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "fef634ad3e4b5189c621fa9c19a2221987e357af",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 21,
+    "added_historical_trios": 6,
+    "added_delf_actif_trios": 15,
+    "new_images": 18,
+    "imagegen_calls": 20,
+    "rejected_generations": 2,
+    "new_image_usages": 19,
+    "reused_image_usages": 44,
+    "reused_distinct_images": 41,
+    "added_by_level": {
+      "A0-A1": 16,
+      "A1-A2": 5
+    },
+    "historical_pending": 355
+  },
+  "new_images": [
+    {
+      "id": "qcm-a1-entraineur-sport",
+      "label": "Un entraîneur de sport",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-entraineur-sport.png",
+      "prompt": "EDIT the FIRST attached image. Preserve its warm soft semi-realistic TCF painting style, both entire people, all four shoes, wheelchair wheels and footrest, the arm warm-up gestures and the whole athletics background. Remove the clipboard completely from the coach’s hip: no clipboard, folder, paper or bag may float or hang at the waist. Reconstruct the teal tracksuit fabric naturally where it was. Both of the coach’s hands remain occupied demonstrating the shoulder stretch; keep the small whistle on its real neck cord. No new objects. The last two images are approved painting-style references only, do not copy their people. Preserve native EXACT 1448 x 1086, 4:3 landscape, complete people with all feet and wheels visible, fine discreet contours and natural colours, no words, dates, numbers, branding or watermark.",
+      "source_png": "/workspace/generated_images/exec-c078baba-5ac7-40f9-83d5-b37d01ba09c8.png",
+      "source_sha256": "f4e827fb3eedaa04e68a73c1af0a333d1f10c1f917395248ca794a92faf3a2d1",
+      "sha256": "f4e827fb3eedaa04e68a73c1af0a333d1f10c1f917395248ca794a92faf3a2d1",
+      "bytes": 2867058,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Entraîneur et sportive en fauteuil en interaction lors d’un échauffement ; quatre chaussures et roues entières. Sifflet tenu par son cordon. Première version au porte-documents sans appui écartée, accessoire supprimé dans la reprise.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Métier"
+      ],
+      "gallery_themes": [
+        "Sport",
+        "Style TCF validé"
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-31030cae-35b7-427e-b7f6-35b5321c7c2a.png",
+      "edit_source_sha256": "9a5ceb0857ea2478820f8b5730a3c996ebfe4c4b4e296ec70d4eb78df28d3228"
+    },
+    {
+      "id": "qcm-a1-froid-sans-pluie",
+      "label": "Il fait froid",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. All primary people ENTIRE from head to feet with all shoes visible and room below them; furniture offset so legs remain visible. Distinct fictitious faces, natural diversity, no nationality inferred from appearance, no scene from the style examples. One teenage boy with light warm brown skin, short straight dark hair, an ochre padded jacket, navy trousers, simple gloves and unbranded brown shoes stands outdoors on a DRY path next to a leafless tree and a low park bench, in cold muted overcast light. He hunches his shoulders slightly and holds his gloved hands together close to his chest, visibly shivering in cold air; a small subtle breath mist is visible near his mouth. A cold scene without rain, falling snow, snowdrifts, puddles, umbrella, visible thermometer, clock or written temperature. Entire body, both feet clearly grounded, no cropped limbs.",
+      "source_png": "/workspace/generated_images/exec-5d2e9b2b-2c6c-44d6-bf19-2ee3d25ccc60.png",
+      "source_sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e",
+      "sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e",
+      "bytes": 2748525,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Personne entière grelottant, souffle visible et végétation hivernale sur sol sec ; aucun phénomène de pluie ni neige ajouté. Froid distinct de la chaleur et de la pluie.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "Météo",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-skis-pluriel",
+      "label": "Des skis",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. FOUR individual alpine SKIS arranged as TWO DISTINCT PAIRS, all four skis entirely visible from curved tips to flat tails. One pair blue, the other muted red, simple realistic foot bindings fitted at the middle of each ski. Place both pairs diagonally side by side, naturally separated on the cream surface. No poles, boots, person, snow scene, racket or bicycle; the subject is the plural category skis, not an exact numerical answer. No logos or printed markings.",
+      "source_png": "/workspace/generated_images/exec-00e13461-1714-4dd7-b7da-e64e52c3b87d.png",
+      "source_sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+      "sha256": "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+      "bytes": 2022425,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Deux paires, quatre skis entiers avec leurs fixations, couleurs distinctes, sans équipement parasite. Le pluriel désigne une catégorie ; aucun compte n’est demandé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Sports",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-pates-bolognaise",
+      "label": "Des pâtes à la bolognaise",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One entire shallow ivory plate of spaghetti with clearly visible rich reddish-brown BOLOGNESE meat ragù: fine crumbled minced meat throughout the tomato sauce, gently textured and lightly steaming. Spaghetti visible around and under the sauce. One small parsley garnish only. No meatballs, no vegetables-only tomato sauce, no cheese slab, side dish, cutlery, napkin, glass or extra ingredient objects. Entire plate visible with broad margins, detailed softly painted food.",
+      "source_png": "/workspace/generated_images/exec-770b1ff7-1fdc-4426-9ab1-b2b4b29a3543.png",
+      "source_sha256": "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50",
+      "sha256": "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50",
+      "bytes": 1918504,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Assiette entière de spaghetti, sauce tomate et viande hachée visibles ; bolognaise distincte des pâtes à la tomate seules et des boulettes.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Aliments et repas",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-tarte-fromage",
+      "label": "Une tarte au fromage",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-tarte-fromage.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One whole SAVOURY CHEESE TART on a simple ivory plate, with golden flaky pastry rim and a lightly gratinéed melted cheese top. A single triangular slice is cut out and rests beside the tart on the same plate, revealing creamy savoury cheese filling and pastry base. One small plain wedge of firm pale yellow cheese beside the plate identifies the ingredient. No sugar, fruit, berries, chocolate, icing, ham, meat or dessert decorations. Whole tart, slice, cheese and plate fully visible; no words, flags, markings or brands.",
+      "source_png": "/workspace/generated_images/exec-62204e08-353c-4c16-ae49-de130499c29b.png",
+      "source_sha256": "8d3a0c953a16923c6e53218a2a97dae8119ec760f10b9f48d598dc1bc44393e6",
+      "sha256": "8d3a0c953a16923c6e53218a2a97dae8119ec760f10b9f48d598dc1bc44393e6",
+      "bytes": 2198420,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Tarte salée gratinée, part et garniture au fromage visibles ; petit morceau de fromage pour reconnaître la composition. Aucune décoration de dessert sucré.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Aliments et repas",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-boite-chaussures",
+      "label": "Une boîte à chaussures",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-boite-chaussures.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One recognisable rectangular cardboard SHOE BOX, open with its fitted flat lid placed next to it, and one pair of simple plain white adult fabric shoes nestled naturally inside. All box corners, lid and shoes entirely visible. Ordinary shoe-shop packaging without ribbon, bow, gift wrap, tag, label, lettering, logo or stripes on the shoes. This must look like a shoe box rather than a gift parcel or envelope.",
+      "source_png": "/workspace/generated_images/exec-ee195847-940c-4335-99bd-b6ce04cb10c0.png",
+      "source_sha256": "d364f6fa8da86b4d563af52913cacfc9cb32bc920efd764e5eb5682c337f021d",
+      "sha256": "d364f6fa8da86b4d563af52913cacfc9cb32bc920efd764e5eb5682c337f021d",
+      "bytes": 1970682,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Boîte à chaussures ouverte avec son couvercle et une paire de chaussures ; objets entiers, sans ruban ni emballage cadeau.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Emballages",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-combinaison-baignade",
+      "label": "Une combinaison de baignade",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-combinaison-baignade.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One complete long-sleeved full-leg NEOPRENE WETSUIT for swimming or surfing, laid naturally flat and slightly shaped, with black neoprene panels, muted turquoise side panels, a short front chest zipper, fitted ankles and wrists. Entire suit from neckline to both sleeve cuffs and both ankle cuffs, generous margins. No person, mannequin, hood, boots, flippers, snorkel or ski accessories. Must be recognisably thin fitted aquatic neoprene, not bulky ski overalls or a swimsuit.",
+      "source_png": "/workspace/generated_images/exec-5bdd2b76-73e7-4ca4-9b47-4229ff9cb145.png",
+      "source_sha256": "e3030f9785d41fe45d705768bcc92567f71655474cf7a35321e8587ab4b6ac12",
+      "sha256": "e3030f9785d41fe45d705768bcc92567f71655474cf7a35321e8587ab4b6ac12",
+      "bytes": 1660449,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Combinaison aquatique ajustée en néoprène, manches et jambes longues, entière. Contexte de baignade conservé ; ancienne combinaison de ski avec bonnet écartée.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Vêtements de baignade",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-velo-electrique",
+      "label": "Un vélo électrique",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One complete credible ELECTRIC BICYCLE with a muted dark green frame, two entirely visible spoked wheels, ordinary pedals, handlebar, saddle, chain and rear derailleur. A substantial plain black removable BATTERY is visibly fitted along the down tube and a small rounded motor housing is integrated around the pedal crank. Clear side three-quarter view so the real battery and pedal-assisted motor are recognisable. Both wheels, handlebar and all components fully in frame, no physically impossible extra tubes or duplicate pedals. No person, charging cable, brand, words, printed lightning icon or glowing effects.",
+      "source_png": "/workspace/generated_images/exec-f648a355-e6f2-4cfd-bd45-abb816202f33.png",
+      "source_sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+      "sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+      "bytes": 2241824,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Vélo entier, roues, pédales, batterie fixée au tube et moteur au pédalier visibles ; assistance électrique physiquement représentée.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Véhicules",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-support-telephone-velo",
+      "label": "Un support de téléphone pour vélo",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One actual BICYCLE SMARTPHONE HOLDER mounted correctly at the centre of one complete isolated bicycle handlebar assembly. Show the ENTIRE handlebar with both rubber grips, two brake levers, a short complete stem and the circular clamp below the mount. A smartphone with a plain pale blue blank screen is securely held upright by four visible rubber corner grips above the mounting clamp. The holder and its physical attachment to the bar must be clearly recognisable. All handlebar and holder components entirely visible, no cropped shaft, hand, person, full bicycle, extra smartphone, app icon, letter or number.",
+      "source_png": "/workspace/generated_images/exec-d9c4e93f-5a1e-49bf-b053-e902a4de3fa4.png",
+      "source_sha256": "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00",
+      "sha256": "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00",
+      "bytes": 1636497,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Support maintenant les quatre coins du téléphone et fixé au guidon par une pince visible ; guidon, poignées et leviers entiers. Écran vierge ; pas de simple téléphone isolé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Accessoires de vélo",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-aller-mairie",
+      "label": "Se rendre à la mairie",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. All primary people ENTIRE from head to feet with all shoes visible and room below them; furniture offset so legs remain visible. Distinct fictitious faces, natural diversity, no nationality inferred from appearance, no scene from the style examples. One adult woman with warm olive skin, short silver hair, a muted yellow coat, dark trousers and plain dark shoes walks naturally from left to right TOWARDS the entrance of a small town HALL building. Both feet visible in a physically natural walking stride on the dry paving. Show the whole modest civic building, main front door, a short accessible ramp and a simple pediment; a small realistic stone plaque next to the door may carry the single word MAIRIE, and absolutely no other readable text, date or number. It must show GOING IN PERSON to the town hall, no phone or letter in her hands, no telephone call, payment, ticket transaction, travel luggage, flags or other main speaker. A quiet coherent scene in the soft TCF painting style.",
+      "source_png": "/workspace/generated_images/exec-30d7d77a-92cc-49df-bc0b-c65bfbd1ce6d.png",
+      "source_sha256": "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756",
+      "sha256": "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756",
+      "bytes": 2852387,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Personne entière marchant vers l’entrée de la mairie, rampe et plaque de façade visibles. Déplacement en personne, sans appel, courriel ni transaction. La petite plaque MAIRIE identifie le lieu.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "Démarches et communications",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-affiches-pluriel",
+      "label": "Des affiches",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-affiches-pluriel.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. Exactly three LARGE PAPER POSTERS pinned by tiny unobtrusive clips on a neutral cream wall, each poster entire and physically separate. One shows a simple painted theatre mask composition, one a guitar with stage spotlight, one a landscape with a small cinema clapper silhouette. Big unframed flat poster sheets with subtle curled lower corners and realistic contact shadows. Image-only poster artwork with NO readable words, letters, numbers, prices, dates, logos, names or credits. Not postcards, folded cards, books or screens. A coherent view of three physical posters, not an atlas or multi-panel educational collage.",
+      "source_png": "/workspace/generated_images/exec-48304e1f-5f23-487d-95e4-a89479ec5726.png",
+      "source_sha256": "81c8ed745ec760f439981413053a4b7522bda1ae4f839f8444c57ab4b51fa9ff",
+      "sha256": "81c8ed745ec760f439981413053a4b7522bda1ae4f839f8444c57ab4b51fa9ff",
+      "bytes": 2012705,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Trois grandes affiches en papier attachées au mur, coins et ombres visibles, sans mots, dates ni prix ; affiches distinctes de cartes postales et de livres.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Affiches et cinéma",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-projecteur",
+      "label": "Un projecteur",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-projecteur.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One complete compact home cinema VIDEO PROJECTOR on a cream surface, in soft three-quarter front view. A white rectangular projector housing, one clearly visible round glass projection lens on the front, a dark ventilation grille on the side, discreet blank top buttons and four small grounded feet. No screen, image projection beam, film reel, camera body, television, second appliance, wires cut by the frame, printed words, symbols, logo, price or number. Entire housing and feet visible, credible softly painted plastic and glass.",
+      "source_png": "/workspace/generated_images/exec-947524e3-8a14-4187-8f59-43b43e48449a.png",
+      "source_sha256": "3c3d081034cb86e671d3da7e5c87f5a6afcb8f0c2b67c06227f8eeabcdc2a152",
+      "sha256": "3c3d081034cb86e671d3da7e5c87f5a6afcb8f0c2b67c06227f8eeabcdc2a152",
+      "bytes": 1553672,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Projecteur vidéo entier avec objectif, aération et pieds, posé sur crème ; distinct d’un appareil photo, d’une tablette ou d’un téléviseur.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Cinéma",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-ski-de-fond",
+      "label": "Le ski de fond",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-ski-de-fond.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. All primary people ENTIRE from head to feet with all shoes visible and room below them; furniture offset so legs remain visible. Distinct fictitious faces, natural diversity, no nationality inferred from appearance, no scene from the style examples. One adult woman with dark brown skin, short tightly curled hair under a simple plum knit cap, muted teal fitted Nordic skiing jacket, dark trousers and plain CROSS-COUNTRY SKI BOOTS practices CLASSIC CROSS-COUNTRY SKIING on a nearly level prepared trail beside snow-covered fir trees. Two narrow long cross-country skis run parallel in visible twin tracks, and two long ski poles angle naturally behind her; her trailing heel is visibly lifted from its ski binding while the toe remains attached. Entire woman, both skis from tips to tails, boots and both poles including tips visible with generous margins. This is level Nordic skiing with a walking-gliding stride, NOT downhill alpine skiing, not ice skating, no steep slope, lift, sign, flag, logo, printed number or impossible equipment.",
+      "source_png": "/workspace/generated_images/exec-be5612ff-b7b9-4a66-b01f-1b1b719056cd.png",
+      "source_sha256": "1831bfacfb14dcf8534cf272761c22d88e681e8de533fb84e0764515f9dfbe81",
+      "sha256": "1831bfacfb14dcf8534cf272761c22d88e681e8de533fb84e0764515f9dfbe81",
+      "bytes": 2734180,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Ski de fond classique sur piste plate, skis fins parallèles, talon arrière libre, deux bâtons et personne entière. Pas de descente alpine ni de patins.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Scénario"
+      ],
+      "gallery_themes": [
+        "Sports",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-mini-frigo",
+      "label": "Un mini-frigo",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-mini-frigo.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One compact cube-shaped HOTEL MINI-FRIDGE, low and small, standing on four subtle grounded feet. Its door opens naturally to one side so a small chilled compartment with a single short shelf and a few small juice bottles is visible. Bottles have only tiny generic orange or apple fruit illustrations with NO text or numbers. The proportions are clearly a miniature room refrigerator rather than a tall kitchen refrigerator, microwave or dishwasher. Whole appliance including door edges and feet visible with generous margins, physically plausible hinges and shelf, no extra appliance, plug cord, brand, letters, date or display digits.",
+      "source_png": "/workspace/generated_images/exec-8ab9f97a-7bcf-4722-bbc6-e80cd0156b7c.png",
+      "source_sha256": "92a153835dd084923a09d0c44fd2d80dbd2576c75f694a9490d95bc5b2d5da9d",
+      "sha256": "92a153835dd084923a09d0c44fd2d80dbd2576c75f694a9490d95bc5b2d5da9d",
+      "bytes": 1891696,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Petit réfrigérateur cubique, porte, charnières, étagère et boissons visibles, sans chiffres ni prix. Taille et proportions d’un mini-frigo de chambre.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Équipements et logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-lave-vaisselle",
+      "label": "Un lave-vaisselle",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-lave-vaisselle.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. One complete ordinary freestanding white DISHWASHER, front door folded down correctly on its lower hinges. The lower wire rack slides partly out along the door and contains several upright ordinary ceramic dinner plates; the upper rack inside holds a few cups. Entire appliance, open door and racks in the frame with generous cream margins, believable gravity and continuous supporting rails. A tiny blank top control strip has no digits, lettering or logo. No person, sink, washing machine drum, kitchen room, random food, extra appliance or wire cut off by the frame.",
+      "source_png": "/workspace/generated_images/exec-3853f580-06a6-4e79-a7e9-f80762ac2bc7.png",
+      "source_sha256": "32d7b6521917a394402bf840589fc76f410794b275a8cdc3d01421664785e7af",
+      "sha256": "32d7b6521917a394402bf840589fc76f410794b275a8cdc3d01421664785e7af",
+      "bytes": 1564727,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Lave-vaisselle entier, porte basse ouverte et paniers guidés par leurs rails ; assiettes et tasses visibles. Appuis crédibles et distinction avec le lave-linge.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Équipements et logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-bouteilles-plastique",
+      "label": "Les bouteilles en plastique",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-bouteilles-plastique.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. THREE empty clear PET PLASTIC WATER BOTTLES in a small group on cream background. Distinct thin transparent flexible plastic with horizontal ribbing, simple blue screw caps, and one bottle slightly dented to make the plastic material obvious. Whole bottles and caps visible, no labels, readable text, printed recycling symbol, numbers, liquid, glass bottle, metal can, box or person. Softly painted transparent material with gentle contact shadows. Plural category, no numerical answer.",
+      "source_png": "/workspace/generated_images/exec-6778add2-9cd6-4cc1-bc48-4401b48aebca.png",
+      "source_sha256": "0a29a1cfb663af06fc558b22e5508d4dd69f34d4a9d1f17d3f627e27c1fc5749",
+      "sha256": "0a29a1cfb663af06fc558b22e5508d4dd69f34d4a9d1f17d3f627e27c1fc5749",
+      "bytes": 1747273,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Trois bouteilles en plastique PET transparent nervuré, dont une déformée ; matériau distinct du verre de l’ancienne image. Objets entiers, sans étiquette ni marque.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Déchets et recyclage",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-boites-metal",
+      "label": "Les boîtes en métal",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-boites-metal.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. Objects isolated on warm cream background, gentle contact shadows, fine painted material texture. THREE empty recognisable TIN FOOD CANS made of silver metal, with cylindrical ribbed sides, rolled rims and one partially lifted metal pull-tab lid. One upright open can has an empty dark silver interior, a second stands closed, a third rests naturally on its side. Entire cans and lids within the frame, warm cream surface and gentle contact shadows. No beverage bottles, plastic, cardboard, food spilling out, person, labels, words, printed symbols, numbers or brand. Fine softly painted metallic texture.",
+      "source_png": "/workspace/generated_images/exec-5b3f53ba-397b-4185-9690-b2e3484a5d2b.png",
+      "source_sha256": "4d62b41d9065ea75912897aee8283a0c8ea91ea4f3350ee7f40d026e26792ccd",
+      "sha256": "4d62b41d9065ea75912897aee8283a0c8ea91ea4f3350ee7f40d026e26792ccd",
+      "bytes": 1965569,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+      ],
+      "review_note": "Trois boîtes de conserve en métal argenté, parois nervurées et languettes ; boîtes entières, une ouverte, sans aliments, étiquette ni date.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+          "/lib/images/tcf/qcm-audit/co834-chemises-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Déchets et recyclage",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-ministre",
+      "label": "Un ministre",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-ministre.png",
+      "prompt": "EDIT the FIRST attached image, retaining the entire fictitious minister and his three officials, the whole shoes and feet, actual supported table, low lectern, natural gestures, warm soft semi-realistic TCF painting and EXACT 1448 x 1086 landscape 4:3 composition. Clarify that this is a MINISTRY cabinet briefing, not an ordinary private business meeting: add ONE small realistic brass office plaque to the wooden wall behind the standing minister, well clear of his face, reading exactly MINISTÈRE DU TOURISME, in two discreet lines. The office plaque is part of the real room, not a floating caption or poster; no other words, numbers, dates, prices, flags, logos or identity names. Keep the illustration of the minister and his officials as the main subject, never replace them with text. All body proportions, fingers, feet and objects remain credible. Last two attachments are approved STYLE references only, never copy their people.",
+      "source_png": "/workspace/generated_images/exec-cc50deda-e719-428a-a1ec-1d92aa6838b0.png",
+      "source_sha256": "d0bad5784f1c2c0e05b860706cc70559018be59a9d728dff17414c0d3a9aaf04",
+      "sha256": "d0bad5784f1c2c0e05b860706cc70559018be59a9d728dff17414c0d3a9aaf04",
+      "bytes": 2541407,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sport-objets-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Ministre fictif et trois membres d’une réunion gouvernementale ; personnes et chaussures entières, table et pupitre posés. Plaque murale MINISTÈRE DU TOURISME pour lever l’ambiguïté de la première réunion générique. Ce n’est pas un portrait du ministre cité dans la source.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Métier"
+      ],
+      "gallery_themes": [
+        "Administration et métiers",
+        "Style TCF validé"
+      ],
+      "edit_source_png": "/workspace/generated_images/exec-2e8d3be3-c5be-4ca0-b077-c4d9a7d318e8.png",
+      "edit_source_sha256": "4f08d988fb95717f5be4c2a7e266dccc72635e3118c0912fbfd3e12e33251e75"
+    }
+  ],
+  "rejected_generations": [
+    {
+      "id": "qcm-a1-entraineur-sport",
+      "source": "/workspace/generated_images/exec-31030cae-35b7-427e-b7f6-35b5321c7c2a.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. All primary people ENTIRE from head to feet with all shoes visible and room below them; furniture offset so legs remain visible. Distinct fictitious faces, natural diversity, no nationality inferred from appearance, no scene from the style examples. An adult male sports COACH with warm medium brown skin, short greying curls and a neat beard, wearing a plain teal tracksuit with a whistle on a cord and holding a small blank coaching clipboard, calmly demonstrates an arm warm-up to a young adult woman athlete with pale skin and short dark hair in a manually propelled SPORTS WHEELCHAIR. Both face and interact with one another at the edge of a simple athletics training area. Her feet and both plain shoes rest naturally on the visible footrest, both wheels and the coach’s two feet are entire. This is visibly COACHING, not one person exercising alone, a doctor consultation or a sports-shop transaction. Keep movement and anatomy physically plausible, no text, clock face or number.",
+      "reason": "Porte-documents sans appui crédible à la hanche ; première version écartée.",
+      "sha256": "9a5ceb0857ea2478820f8b5730a3c996ebfe4c4b4e296ec70d4eb78df28d3228",
+      "integrated": false
+    },
+    {
+      "id": "qcm-a2-ministre",
+      "source": "/workspace/generated_images/exec-2e8d3be3-c5be-4ca0-b077-c4d9a7d318e8.png",
+      "prompt": "Create ONE native EXACT 1448 x 1086 pixel 4:3 LANDSCAPE TCF educational illustration. Use the attached approved images for PAINTING STYLE ONLY, never copy their people or composition. Detailed warm semi-realistic digital painting, soft modelled volumes, fine discreet contours, natural warm colours and believable materials/anatomy. No photograph, 3D render, vector, flat cartoon, heavy outlines or graphic border. A coherent single scene, no collage, atlas or multiple panels. Complete subjects and generous margins, never cut a main object, hand, foot, shoe or head. No readable words, numbers, prices, dates, days, months, branding, flags or watermark, except a small realistic location plaque explicitly requested below. All primary people ENTIRE from head to feet with all shoes visible and room below them; furniture offset so legs remain visible. Distinct fictitious faces, natural diversity, no nationality inferred from appearance, no scene from the style examples. One fictitious adult male government MINISTER, with pale warm skin, short greying curly hair, round glasses, a navy formal suit and a muted green tie, addresses a small semicircle of three adult officials in a restrained wood-panelled government meeting chamber. The minister stands ENTIRELY visible behind and to one side of a low narrow wooden lectern that does NOT conceal his legs or either shoe; he holds a plain blank policy folder and gestures calmly. The officials sit to one side at a low conference table, leaving the main figure and feet clear. Formal governmental briefing, not a classroom, tourist guided walk, courtroom or veterinary consultation. No flags, national emblems, propaganda, real politician resemblance, readable words, titles, letters, dates, money, number, lectern logo or brand.",
+      "reason": "Réunion générique, fonction ministérielle insuffisamment identifiable ; première version écartée.",
+      "sha256": "4f08d988fb95717f5be4c2a7e266dccc72635e3118c0912fbfd3e12e33251e75",
+      "integrated": false
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "id": "co306-pluie-froid-dessine",
+      "reason": "Pluie ajoutée au froid ; mélange deux choix météo."
+    },
+    {
+      "id": "co306-bouteilles-pluriel-dessine",
+      "reason": "Bouteilles de verre au lieu du plastique nommé dans la source."
+    },
+    {
+      "id": "co306-bonnet-combinaison-ski-dessine",
+      "reason": "Équipement de ski au lieu d’une combinaison aquatique."
+    },
+    {
+      "id": "co306-professeure-sport-dessine",
+      "reason": "Personne s’exerçant seule, fonction d’entraîneur non établie."
+    },
+    {
+      "id": "abf45c70332d",
+      "reason": "Pâtes à la tomate seules, viande de la bolognaise non représentée."
+    },
+    {
+      "id": "co306-cartes-affiches-dessine",
+      "reason": "Cartes et affiches réunies, au lieu des affiches seules."
+    }
+  ],
+  "trios": [
+    {
+      "key": "delf-a1v-ce-060#8",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Bonjour,\nJe vous confirme votre réservation pour un week-end de deux nuits à Val-d’Or, un petit village de montagne. Vous dormez dans un chalet près de la forêt.\nLe samedi matin, vous faites une randonnée jusqu’au lac. À midi, un pique-nique est prévu au bord de l’eau. Le dimanche, vous visitez la fromagerie du village, où l’on fabrique le célèbre fromage de Val-d’Or. Si vous aimez le ski de fond, vous pouvez en faire gratuitement samedi après-midi.\nN’hésitez pas à me contacter pour plus de renseignements.\nCordialement,\nCamille Favre\nVoyages Suisses",
+      "source_sha256": "365b7650ddaa2c63e7d9d1dab8d669e2e45ffb719195f47d16ecf0b17f3f8961",
+      "semantic_sha256": "ece764c10cf148a1b6837f8ed28c1166d6f860a508b9569872e46f9b3697162d",
+      "question": {
+        "enonce": "Quel sport peut-on pratiquer gratuitement samedi après-midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le ski de fond",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le ski alpin",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le patinage",
+            "correct": false
+          }
+        ],
+        "written_model": "Le ski de fond"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a1-ski-de-fond",
+        "co834-ski-dessine",
+        "revue-20261107-ea2a2daf84"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-ski-de-fond.png",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-ea2a2daf84.webp"
+      ],
+      "image_sha256": [
+        "1831bfacfb14dcf8534cf272761c22d88e681e8de533fb84e0764515f9dfbe81",
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316",
+        "963cd39dff0881dcbae0ccc0b1d68ff471666eaf942e55e7bb2b62b8f0694e5f"
+      ],
+      "reason": "Le message propose le ski de fond gratuitement le samedi après-midi.",
+      "visual_review": "Ski de fond sur terrain plat, talon libre et skis fins, face à la descente alpine et au patinage sur glace. La composition ski ou patinage est rejetée : il faut une activité entière par choix.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-014-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Le TGV numéro 3440, à destination de Nice-Ville de 10h38, va partir. Il est sans arrêt jusqu’à la gare de Toulon. Attention, seulement les voyageurs munis du billet peuvent monter dans les voitures. Dans ce train un service de restauration est à votre service.",
+      "source_sha256": "0f49aa742436dc116151a6ee435583620a00188ec2df5e40f7b552d4b2a233a0",
+      "semantic_sha256": "4cf4ff26df75d55777800e9d0a73aed537803a03c8975df213ba2af68406050d",
+      "question": {
+        "enonce": "Quel document faut-il pour monter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un billet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un passeport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une carte de bibliothèque",
+            "correct": false
+          }
+        ],
+        "written_model": "Un billet"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-014-01.mp3",
+      "audio_sha256": "fa3a3f1e08faf5652cdd82616700df1be0c2132162ebcb889bf8acbb65e104d3",
+      "image_ids": [
+        "audit-context-billet-train",
+        "co306-passeport-dessine",
+        "co306-carte-bibliotheque-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp"
+      ],
+      "image_sha256": [
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929"
+      ],
+      "reason": "L’annonce exige un billet pour monter dans le TGV à destination de Nice-Ville.",
+      "visual_review": "Billet de train avec pictogramme ferroviaire, passeport et carte de bibliothèque entiers. Un billet de concert est écarté malgré le libellé générique « Un billet ».",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-016-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Boire de l’eau du robinet, ce sont des milliers de bouteilles en plastique en moins dans la nature ! En plus d’être écologique, elle est moins chère, plus pratique et bonne pour la santé. Elle coûte 0,03 centimes par litre, contre environ 30 centimes pour l’eau minérale.",
+      "source_sha256": "85ed4c734fe16fa92f54f121395caadabef1adf01fe3a53d0172ad8d54564830",
+      "semantic_sha256": "e516834c1d14230ade62b2cc16eb3a5fe5c3164493acf6ae392a1658cc307c6f",
+      "question": {
+        "enonce": "Quel déchet peut-on ainsi réduire ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les bouteilles en plastique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les boîtes en métal",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les cartons",
+            "correct": false
+          }
+        ],
+        "written_model": "Les bouteilles en plastique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-016-01.mp3",
+      "audio_sha256": "590610a2fc93822dafebf1283f361763880ad6e67e7078c82eb14b48f2d5d01a",
+      "image_ids": [
+        "qcm-a1-bouteilles-plastique",
+        "qcm-a1-boites-metal",
+        "extension573-cartons-pluriel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bouteilles-plastique.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-boites-metal.png",
+        "/lib/images/tcf/qcm-audit/extension573-cartons-pluriel.png"
+      ],
+      "image_sha256": [
+        "0a29a1cfb663af06fc558b22e5508d4dd69f34d4a9d1f17d3f627e27c1fc5749",
+        "4d62b41d9065ea75912897aee8283a0c8ea91ea4f3350ee7f40d026e26792ccd",
+        "88b6b858914063a9e53dd5937996ea10ea410165e876a0220cb70547f70b06c0"
+      ],
+      "reason": "Boire l’eau du robinet permet de réduire les bouteilles en plastique dans la nature.",
+      "visual_review": "Bouteilles PET nervurées, dont une déformée, boîtes métalliques et cartons. Pluriel de catégorie, aucun nombre demandé ; les anciennes bouteilles de verre sont rejetées.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-026-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Justine. Je ne trouve plus mon portefeuille. Peux-tu m’aider ? Je dois acheter un ticket de bus pour rentrer chez moi ce soir à 18h00 et je n’ai pas d’argent. Tu me prêtes 1€ cet après- midi à 16h00 quand on est en salle de sport ?",
+      "source_sha256": "881566ef5a6f40a455f38f4c6262f05c7434966a697c1a22dee40f41145ab9c0",
+      "semantic_sha256": "e9062e2201dbceb2d6399119ff2bc349a45c597664f369eea8da223827ba664e",
+      "question": {
+        "enonce": "Quel titre de transport doit-elle acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un ticket de bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un billet de train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un ticket de métro",
+            "correct": false
+          }
+        ],
+        "written_model": "Un ticket de bus"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-026-01.mp3",
+      "audio_sha256": "805f360ad93efdb149d20ad765ca297850f3875c9dda4f8237e12a971fe1977b",
+      "image_ids": [
+        "co306-ticket-bus-dessine",
+        "audit-context-billet-train",
+        "extension573-ticket-metro"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+      ],
+      "image_sha256": [
+        "e469daf0c6fce7710af80ad5007d391edff13672bb3fae220bb84630732cb8a1",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+        "60cf0dec3cfff53395821094d0e2c8c5810461e009c6760d8ec51240a3eb7096"
+      ],
+      "reason": "Justine ne trouve plus son portefeuille et doit acheter un ticket de bus pour rentrer.",
+      "visual_review": "Un seul titre par choix : pictogrammes de bus, train et métro. Pas de date, montant ni destination arbitraire ajoutés.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-02#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Aujourd’hui encore tu as mal au ventre ? Oui madame, hier déjà, et aujourd’hui j’ai encore mal. Et bien je te conseille d’aller voir ton médecin.",
+      "source_sha256": "9907cd3659c5b00705e2260aadf6914eaabb8bf61a5615487104f53e231e44cc",
+      "semantic_sha256": "59de96604b85d93aa42cb5fbf5b49e89bdd5f302ca64e70048ecf6e6215a6659",
+      "question": {
+        "enonce": "Qui lui conseille-t-on de consulter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son médecin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son dentiste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son entraîneur",
+            "correct": false
+          }
+        ],
+        "written_model": "Son médecin"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+      "image_ids": [
+        "co834-medecin-dessine",
+        "co834-dentiste-dessine",
+        "qcm-a1-entraineur-sport"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-entraineur-sport.png"
+      ],
+      "image_sha256": [
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+        "263259c27dc2075d7f20ff27f98718823b126a1f997cf8c3cf405a4c4ebee17a",
+        "f4e827fb3eedaa04e68a73c1af0a333d1f10c1f917395248ca794a92faf3a2d1"
+      ],
+      "reason": "Après les douleurs au ventre, l’enseignante conseille explicitement d’aller voir son médecin.",
+      "visual_review": "Consultation médicale avec stéthoscope, soin dentaire et entraînement sportif avec deux personnes en interaction ; la seule personne faisant de la gym ne suffit pas à représenter l’entraîneur.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Prenez vos blousons et sortez dans la cour ! Mais madame il fait froid aujourd’hui. On peut rester en classe ? Non, ce n’est pas possible vous devez prendre l’air.",
+      "source_sha256": "c4faa3a459bbde26b5797bd5fcc148c7c3e82289746ea74ae8e19e6a356b76f9",
+      "semantic_sha256": "fdabcb2de8c13ab4a0e54d571265673500ff26adde95d1f6641d783c140a0172",
+      "question": {
+        "enonce": "Quel temps fait-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Il fait froid",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Il fait chaud",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Il pleut",
+            "correct": false
+          }
+        ],
+        "written_model": "Il fait froid"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-01.mp3",
+      "audio_sha256": "f8c90f69b8abaae26e8152bf47b46b491d33a9b3052bf2df65c8cf2407aabf38",
+      "image_ids": [
+        "qcm-a1-froid-sans-pluie",
+        "co306-soleil-chaleur-dessine",
+        "co834-pluie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+        "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-pluie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e",
+        "ed196465ce44a198fba5dd12cd806752b480d93901370a0c8fcd06bbed948c2e",
+        "6ccb6b5096ecf702d59c15fed580cc96029d45435a1c31b6fd6d693d56fdd6f1"
+      ],
+      "reason": "L’élève dit « il fait froid aujourd’hui » lorsque la professeure demande de sortir dans la cour.",
+      "visual_review": "Froid montré par les vêtements, la posture et le souffle sur sol sec ; chaleur en plein soleil et pluie distinctes. La composition pluie et froid est rejetée pour ne pas confondre deux choix.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Dans notre magasin des vendeurs sont à votre service pour vous aider à choisir vos skis.",
+      "source_sha256": "852bffdf960dd2552fbd66879d005465930a98a9a109567ece5dcf2ae935ed67",
+      "semantic_sha256": "fc1365c1d7d68c588cf0c2d51e5c78fb94d7b3a45ddd45661aed9c12984144ed",
+      "question": {
+        "enonce": "Quel matériel peut-on acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des skis",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des vélos",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des raquettes",
+            "correct": false
+          }
+        ],
+        "written_model": "Des skis"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-02.mp3",
+      "audio_sha256": "5ab939ee4dc04ce99a557ba3d148b9a0c450788f607e61dad71ff4b54ce1f6ba",
+      "image_ids": [
+        "qcm-a1-skis-pluriel",
+        "vocab-velos",
+        "vocab-raquettes"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquettes.webp"
+      ],
+      "image_sha256": [
+        "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34"
+      ],
+      "reason": "Les vendeurs du magasin peuvent aider à choisir les skis.",
+      "visual_review": "Skis, vélos et raquettes représentés au pluriel, objets entiers. Pas de personne en train de skier à la place du matériel demandé ; les quantités ne sont pas l’objet de la question.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-03#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour les amateurs de musique nous offrons des guitares électriques à des prix exceptionnels !",
+      "source_sha256": "4e20904d0b18c11b34873a24e5410fe39b25d9ecc46c1657429e919d969bba86",
+      "semantic_sha256": "e011a436f772a2060c5c223bbdcbc696445c6b815d488378645b240855a72d55",
+      "question": {
+        "enonce": "À quels amateurs le message s’adresse-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Aux amateurs de musique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Aux amateurs de sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Aux amateurs de cuisine",
+            "correct": false
+          }
+        ],
+        "written_model": "Aux amateurs de musique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-03.mp3",
+      "audio_sha256": "e0de017d39fb8d894dfc1c1440f2c779ce06c9e2f58c8bf4f27ac9bd185d235d",
+      "image_ids": [
+        "co834-club-musique-dessine",
+        "co834-cours-gym-dessine",
+        "co306-cours-cuisine-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-gym-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp"
+      ],
+      "image_sha256": [
+        "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+        "1dcfa221a99ebccd9cfb60113a80decd6f9d51bcf85b112c225dd4351901bec4",
+        "adcf49233bb429f177fb5985655d0c24b73677caed21214f94b3583874e0bad2"
+      ],
+      "reason": "L’annonce dit « Pour les amateurs de musique » avant l’offre de guitares électriques.",
+      "visual_review": "Groupes jouant de la musique, pratiquant du sport et suivant un cours de cuisine ; catégories d’amateurs. L’image ne prétend pas décrire les guitares précises en promotion ni le locuteur.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-034-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Paulo, tu dois être encore en cours mais je te rappelle de passer au supermarché pour prendre de l’eau minérale, des pâtes italiennes, un paquet de café et du beurre. Pour le dîner tu nous prépares des pâtes à la bolognaise comme dans ton pays ? Je rentre à la maison vers 19h00. À plus tard.",
+      "source_sha256": "dae59714596879ae662568a53a5740ac3236208adcb3a7d776f55e0ba687bee8",
+      "semantic_sha256": "08198bf1f8c066384a3b40c3e8522305efaac96c14fb4d8a4837763c81810d43",
+      "question": {
+        "enonce": "Quel plat doit-il préparer pour le dîner ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pâtes à la bolognaise",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une soupe de légumes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une tarte au fromage",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pâtes à la bolognaise"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-034-01.mp3",
+      "audio_sha256": "164886553a55646e4ce47251c599181b673370dd3001468aee1719fef104cdda",
+      "image_ids": [
+        "qcm-a1-pates-bolognaise",
+        "co306-soupe-legumes-dessine",
+        "qcm-a1-tarte-fromage"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png",
+        "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-tarte-fromage.png"
+      ],
+      "image_sha256": [
+        "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50",
+        "850075bad1f18cb1ef930844529d34ff3b11a85f09f7fbb2d68241def12d60ca",
+        "8d3a0c953a16923c6e53218a2a97dae8119ec760f10b9f48d598dc1bc44393e6"
+      ],
+      "reason": "Le message demande à Paulo de préparer des pâtes à la bolognaise pour le dîner.",
+      "visual_review": "Viande hachée visible dans la sauce, soupe de légumes et tarte salée au fromage ; les pâtes à la tomate seules et celles au fromage sont rejetées pour les deux réponses différentes.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-047-01#10",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour madame, Bonjour jeune homme. Vous désirez ? Je voudrais un bijou pour ma sœur, s’il vous plaît. Quel âge a-t-elle ? Elle a 16 ans et elle aime les bracelets. Voici un beau bracelet. Il est beau mais il coûte combien ? Il est à 30 €. Oh, mais c’est cher ! Vous avez des bijoux moins chers ? J’ai des pendentifs. Vous avez un pendentif avec la tour Eiffel ? Oui, voici un pendentif. Il est en argent ? Oui, il est en argent. Il coûte combien ? Ce modèle est à 15 €. Très bien, je prends ce modèle. Vous voulez un paquet cadeau ? Oui merci, voici 20 €. Merci, alors 5 € à vous et votre paquet jeune homme. Merci madame et au revoir.",
+      "source_sha256": "451b119319631afb6fe4969604f0490647e999cd5a97c55dc24f2594a2b23b24",
+      "semantic_sha256": "39df7cbc97587500bfe69e4e904c052c7f3c45837f42df3162db7afca0579735",
+      "question": {
+        "enonce": "Quel emballage le client accepte-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un paquet cadeau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une enveloppe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une boîte à chaussures",
+            "correct": false
+          }
+        ],
+        "written_model": "Un paquet cadeau"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
+      "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
+      "image_ids": [
+        "vocab-cadeau",
+        "vocab-enveloppe",
+        "qcm-a1-boite-chaussures"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-cadeau.webp",
+        "/lib/images/tcf/qcm-audit/vocab-enveloppe.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-boite-chaussures.png"
+      ],
+      "image_sha256": [
+        "40c84c495c9e833e3eafb59fb6e4437192b7929524d59f3d54b5a6b6ab70e7d2",
+        "6d5fb6b2471cf5d78816c90e96cc1d9c5b11f46b3338fb5e4e7d0deea5d88997",
+        "d364f6fa8da86b4d563af52913cacfc9cb32bc920efd764e5eb5682c337f021d"
+      ],
+      "reason": "Après l’achat du pendentif, le client accepte le paquet cadeau proposé par la vendeuse.",
+      "visual_review": "Boîte emballée avec ruban, enveloppe fermée et boîte à chaussures ouverte avec sa paire ; trois types d’emballage complets. Aucune couleur ni dimension précise n’est imposée par la question.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-05-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut Pamela, enfin le départ pour les vacances… c’est pour demain. Tu vas enfin connaître la Côte d’Azur ! C’est une région magnifique. On annonce de belles journées. Ta valise est prête ? Moi j’apporte mon maillot de bain, des tee shirts, un short et mes lunettes de soleil. À demain !",
+      "source_sha256": "2843e17a5cc855b1516aca432bfd212b376bfd575240649a6b60aa6fe64cdb2d",
+      "semantic_sha256": "8c3e9c0b199c90ccd99548bbb8d59229048ae3497e6cbcbb22170dd648d1b598",
+      "question": {
+        "enonce": "Quel vêtement de baignade la personne emporte-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un maillot de bain",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un bonnet de bain",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une combinaison",
+            "correct": false
+          }
+        ],
+        "written_model": "Un maillot de bain"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-05-01.mp3",
+      "audio_sha256": "5833ee84e92947999ad267d4e08f3bfedf95d5a76febb7e73a29aabc2e844dc7",
+      "image_ids": [
+        "vocab-maillot-une-piece",
+        "07b2c36cc965",
+        "qcm-a1-combinaison-baignade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
+        "/lib/images/tcf/qcm-audit/07b2c36cc965.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-combinaison-baignade.png"
+      ],
+      "image_sha256": [
+        "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82",
+        "8918d804763e27073a4b920eeab5ab9933fffcfaf67442ed114219f6520aec08",
+        "e3030f9785d41fe45d705768bcc92567f71655474cf7a35321e8587ab4b6ac12"
+      ],
+      "reason": "Pour les vacances sur la Côte d’Azur, la personne annonce qu’elle emporte son maillot de bain.",
+      "visual_review": "Maillot, bonnet de bain et combinaison aquatique en néoprène ; la combinaison de ski avec bonnet est rejetée dans ce contexte de baignade.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-02-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Pour vos activités sportives le magasin Sports et Loisirs vous propose du matériel et des équipements en promotion à moins 10 % pour tout le mois de septembre. Cette semaine une offre exceptionnelle : des raquettes de tennis à 60 €. Venez découvrir les casques de vélo au troisième étage.",
+      "source_sha256": "f91654aa5009690f442da2a3a8af8ad3d0ffc2a9ba9eb5895261587cc8212444",
+      "semantic_sha256": "b78cd9995c6ed0f6ab99022673deb05209dc7d15ddaab0b2adcd180ba94f410d",
+      "question": {
+        "enonce": "Quel matériel fait l’objet d’une offre exceptionnelle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des raquettes de tennis",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des skis",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des ballons de football",
+            "correct": false
+          }
+        ],
+        "written_model": "Des raquettes de tennis"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-02-01.mp3",
+      "audio_sha256": "574f5eb3935646bbae31593e77695f994617490fa111dd4abf3f22b4951bbe03",
+      "image_ids": [
+        "vocab-raquettes",
+        "qcm-a1-skis-pluriel",
+        "vocab-ballons-football"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-raquettes.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+        "/lib/images/tcf/qcm-audit/vocab-ballons-football.webp"
+      ],
+      "image_sha256": [
+        "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34",
+        "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+        "843d52ba1cc4a2a21bf61d539092cc86e32b5382e977157d65dedc081e8798f5"
+      ],
+      "reason": "L’offre exceptionnelle concerne les raquettes de tennis ; les skis et ballons sont les deux autres réponses.",
+      "visual_review": "Raquettes, skis et ballons de football au pluriel ; pas de ballons de fête. Le montant et le mois de promotion restent dans leurs questions texte séparées.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-02-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Des soldes monstres vous attendent de lundi à samedi au rayon vêtements au deuxième étage. Grand choix de jeans à 40% de réduction, de pulls de toutes les couleurs à 20 €. Ne perdez pas cette occasion ! Participez avec votre ticket d’achat au grand jeu pour gagner un vélo électrique.",
+      "source_sha256": "186a269e5436d014cbbd596f01d59e3fa053b4a214a587a2052ecd28e0781bb0",
+      "semantic_sha256": "0f3cd6b1adbe6595345bf37ccc617f7dc48b9165e49482a082a5715ca1919753",
+      "question": {
+        "enonce": "Quel véhicule peut-on gagner au jeu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo électrique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un scooter",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une trottinette",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo électrique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-02-01.mp3",
+      "audio_sha256": "b007f2d704f6cdefb54bba5b47632261db5b1d5e65ad00aaacae069faaf4d006",
+      "image_ids": [
+        "qcm-a1-velo-electrique",
+        "vocab-scooter",
+        "vocab-trottinette"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+        "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+      ],
+      "image_sha256": [
+        "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+        "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+      ],
+      "reason": "Le jeu organisé avec le ticket d’achat permet de gagner un vélo électrique.",
+      "visual_review": "Batterie et moteur visibles sur le vélo entier, distinct d’un scooter motorisé et d’une trottinette ordinaire. Un vélo classique ne prouve pas l’assistance électrique.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Lola, Tu es libre mercredi après-midi ? C’est l’anniversaire de Louis et samedi il organise une fête chez lui. Tu viens avec moi acheter un cadeau ? Qu’en dis-tu d’un support téléphone pour son vélo ? Rendez-vous à 16h00 chez moi. Appelle-moi pour confirmer.",
+      "source_sha256": "144bedf3de0f064fcd8340d9f9be956aa5b8bc0286c946020294884bce9d63bf",
+      "semantic_sha256": "4a377d2c3a9361ec4f8983bf88f772831d838f9cc8fd7235e3182b37d08220b4",
+      "question": {
+        "enonce": "Quel cadeau est proposé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un support de téléphone pour vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un casque de musique",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un jeu de société",
+            "correct": false
+          }
+        ],
+        "written_model": "Un support de téléphone pour vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-01-01.mp3",
+      "audio_sha256": "4accfbbc1fcf2bfd06d47cc764a32a3614e8b341e57540759ff79e9890e8b7fc",
+      "image_ids": [
+        "qcm-a1-support-telephone-velo",
+        "vocab-casque-audio",
+        "extension573-jeu-societe"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+        "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp",
+        "/lib/images/tcf/qcm-audit/extension573-jeu-societe.png"
+      ],
+      "image_sha256": [
+        "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00",
+        "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60",
+        "952185d1618f78d792eb8a352affdf72a247e146155a9499aef91b3e2bebbf95"
+      ],
+      "reason": "Le cadeau envisagé pour Louis est un support de téléphone pour son vélo.",
+      "visual_review": "Support fixé au guidon et téléphone maintenu par quatre coins, casque audio et jeu de société. Le seul téléphone isolé est écarté car il ne représente pas l’accessoire demandé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Lola, Tu es libre mercredi après-midi ? C’est l’anniversaire de Louis et samedi il organise une fête chez lui. Tu viens avec moi acheter un cadeau ? Qu’en dis-tu d’un support téléphone pour son vélo ? Rendez-vous à 16h00 chez moi. Appelle-moi pour confirmer.",
+      "source_sha256": "144bedf3de0f064fcd8340d9f9be956aa5b8bc0286c946020294884bce9d63bf",
+      "semantic_sha256": "8c2aad63077ae2a8b9d535f9931625db5f46e13aceacddf57e7027f74e895186",
+      "question": {
+        "enonce": "Que doit faire Lola pour confirmer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Téléphoner",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Envoyer un courriel",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Passer à la mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Téléphoner"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-01-01.mp3",
+      "audio_sha256": "4accfbbc1fcf2bfd06d47cc764a32a3614e8b341e57540759ff79e9890e8b7fc",
+      "image_ids": [
+        "communication-appeler",
+        "communication-courriel",
+        "qcm-a1-aller-mairie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+        "/lib/images/tcf/qcm-audit/communication-courriel.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png"
+      ],
+      "image_sha256": [
+        "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe",
+        "a21dccc672e341ebefb64fd0deed379de3782823cc40a059c1a76e8d1a6a845c",
+        "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756"
+      ],
+      "reason": "Le message se termine par « Appelle-moi pour confirmer ».",
+      "visual_review": "Images approuvées par l’utilisateur : téléphone avec icône d’appel et enveloppe ouverte avec @ ; le troisième choix montre le déplacement en personne vers la mairie. La simple façade sans action est écartée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-05-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Clara, quand tu viens chez moi en Savoie pendant les vacances d’hiver, apporte ton jeu de cartes et ta clé USB avec de la musique. Carlos lui, apporte ses DVD pour nos soirées cinéma. On va jouer aussi avec mon nouveau jeu vidéo. On va passer de super vacances.",
+      "source_sha256": "e2f6727a56b7c3ee6e275a3499b6d6e03e9226c8cf870cbcb09b4068dab2e44e",
+      "semantic_sha256": "d77d7ff018cdfb57615bced41f46de207e7dfaba214a098ab4a766ff4892386e",
+      "question": {
+        "enonce": "Qu’apporte Carlos pour les soirées cinéma ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des DVD",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des affiches",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un projecteur",
+            "correct": false
+          }
+        ],
+        "written_model": "Des DVD"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-05-01.mp3",
+      "audio_sha256": "ee2fbc9175429a3711d29794e46a38372dcc54dee2d34c7e05930c0144af1240",
+      "image_ids": [
+        "audit-context-compter-3-dvd",
+        "qcm-a1-affiches-pluriel",
+        "qcm-a1-projecteur"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-compter-3-dvd.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-affiches-pluriel.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-projecteur.png"
+      ],
+      "image_sha256": [
+        "cdef44f53380e2611b0a18f3f3feff1d8688f7b6ca24fb45962d76fe954db82c",
+        "81c8ed745ec760f439981413053a4b7522bda1ae4f839f8444c57ab4b51fa9ff",
+        "3c3d081034cb86e671d3da7e5c87f5a6afcb8f0c2b67c06227f8eeabcdc2a152"
+      ],
+      "reason": "Carlos apporte ses DVD pour les soirées cinéma.",
+      "visual_review": "Disques optiques au pluriel dans le contexte cinéma, trois grandes affiches physiques et un projecteur vidéo. Il ne s’agit pas de compter les trois DVD dessinés ; la question porte sur le type de support.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2p-s1-ce-1#3",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Document 1 — Mars 2199\nUne équipe de chercheurs va sur la planète Mars pour construire une ville, mais, sur cette planète, il y a un danger.\n\nDocument 2 — Jules et Monica\nMonica, avocate à Bruxelles, tombe amoureuse de Jules, le serveur de son café. Vont-ils pouvoir vivre leur amour ?\n\nDocument 3 — Le grand voyage\nC’est les vacances. Trois amis de 15 ans décident de partir en voyage en train pour découvrir la France.\n\nDocument 4 — SOS éléphants\nDes vétérinaires expliquent comment les activités humaines mettent en danger les grands éléphants d’Afrique.\n\nDocument 5 — La folie des étudiants\nDernière année d’études pour les étudiants en droit de l’université de Montréal. Un film drôle pour tous les âges.\n\nDocument 6 — Les deux soldats\n1915, guerre entre la France et l’Allemagne. Un soldat français et un soldat allemand se rencontrent et deviennent amis.",
+      "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
+      "semantic_sha256": "ea1b906596c4049dfafd53b01ad194be530495e86e4a814e12d26b9167b5534a",
+      "question": {
+        "enonce": "Document 2 — Quel métier Jules exerce-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Serveur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Professeur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Chauffeur",
+            "correct": false
+          }
+        ],
+        "written_model": "Serveur"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "vocab-serveur",
+        "vocab-professeur",
+        "catalogue-20261113-metier-chauffeur-de-bus"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-serveur.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeur.webp",
+        "/lib/images/tcf/catalogue/metiers/chauffeur-de-bus.webp"
+      ],
+      "image_sha256": [
+        "d223498e35e7590405f6a05e005897f6154f02e61cd4b7771a069007001d9fee",
+        "0f0155e9a59dafb28ef9fe1d5cd22ba0c34f5db594cf81b3abbe46b0fbe1d395",
+        "b020562fc5615061d9d19b8db3be3a62583b11db1f6aee66a86e927684ec0ae7"
+      ],
+      "reason": "Dans le document 2, Jules est présenté comme le serveur du café de Monica.",
+      "visual_review": "Serveur avec plateau au restaurant, professeur devant la classe et chauffeur de bus à son poste de conduite. Exemples de professions ; le chauffeur de bus n’est pas attribué à Jules et aucune identité fictive n’est déduite des portraits.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2p-s4-ce-2#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Madame, Monsieur,\nC’est avec grand plaisir que je vous envoie ce message pour vous décrire votre voyage à Paris en notre compagnie.\nÀ votre arrivée, le 7 juin prochain, nous allons vous accueillir à l’aéroport pour vous conduire à votre hôtel. Puis, du 8 au 17 juin, vous allez visiter la capitale de notre pays accompagnés de notre guide, Hervé, qui va vous faire découvrir les musées, les rues, les boutiques mais aussi les restaurants de Paris.\nN’oubliez pas votre appareil photo !\nLes températures en ce moment à Paris sont comprises entre 20 et 24 degrés. Un climat délicieux.\nÀ très bientôt.\nL’équipe de voyagemalin.com",
+      "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
+      "semantic_sha256": "8618d0ceb2978ab55817d23d7191ed84c5010fe990e54429b4cdd7d444179f5f",
+      "question": {
+        "enonce": "Quel métier Hervé exerce-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Guide",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Restaurateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Photographe",
+            "correct": false
+          }
+        ],
+        "written_model": "Guide"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-guide-touristique",
+        "catalogue-20261113-metier-restaurateur",
+        "catalogue-20261113-metier-photographe"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+        "/lib/images/tcf/catalogue/metiers/restaurateur.webp",
+        "/lib/images/tcf/catalogue/metiers/photographe.webp"
+      ],
+      "image_sha256": [
+        "d6cbbe007f631f4e5f1b97b4575ae368ed47b767d5fc29a4524424a1d9d4f503",
+        "a1d7608715fec46bfb04a9aa8748338d14740fe1dc3e0ab6afc769482a3e5c30",
+        "b5e977be3d66a1848c6ebf2042707a41c12a4feec9efc24c21df2a17b54032e7"
+      ],
+      "reason": "Hervé est explicitement le guide qui accompagnera les visiteurs dans Paris.",
+      "visual_review": "Guide montrant un lieu à des visiteurs, restaurateur préparant un plat en cuisine et photographe en studio ; métiers distincts. Les images illustrent des professions, sans prétendre représenter Hervé ni une étape précise du voyage.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2-sa-ce-1#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Document 1 — Danse\nCours de danse tous les lundis de 12 h 30 à 13 h 30. Débutants acceptés. Apportez une bouteille d’eau. Rendez-vous dans la salle B.\n\nDocument 2 — Club lecture\nChaque participant présente un livre en expliquant ce qu’il a aimé. Rendez-vous à 13 h dans la salle café tous les vendredis.\n\nDocument 3 — Course à pied\nVenez courir tous les midis de 12 h à 13 h. Plusieurs groupes de niveaux. Rendez-vous à côté du parking.\n\nDocument 4 — Apprenez à coudre\nSylvie, couturière à la retraite, vous propose d’apprendre à réparer vos vêtements. Tous les mercredis à 17 h 30, bureau B14.\n\nDocument 5 — Jeux de société\nLa bibliothèque organise des ateliers jeux tous les premiers lundis de chaque mois. Vous pourrez aussi emprunter des jeux.\n\nDocument 6 — Apprenez une langue étrangère\nDécouvrez le chinois avec Mei tous les jeudis à 13 h. Rendez-vous à l’accueil pour vous inscrire. Places limitées.\n\nLes personnes :\nA. Rabia adore jouer à des jeux avec ses amis.\nB. Paul veut aller en Chine cette année.\nC. Rami veut apprendre à nager.\nD. Jean adore courir dans la nature.\nE. Louisa aime faire du vélo et de la moto.\nF. Marie aime danser avec son mari.\nG. Hugo est passionné par la lecture.\nH. Rose veut apprendre à coudre.",
+      "source_sha256": "b6ac1e99dc70a8cab00edfbcb22109d7d5d96963f1481160e7c4c67aebe85bec",
+      "semantic_sha256": "de940c5c99ed83b43f4fd37cdd746eacbfaeb323931f0a30cd6cf0681b7f1616",
+      "question": {
+        "enonce": "Document 4 — Quel métier Sylvie exerçait-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Couturière",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Bibliothécaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Professeure de danse",
+            "correct": false
+          }
+        ],
+        "written_model": "Couturière"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-couturiere",
+        "catalogue-20261113-metier-bibliothecaire",
+        "catalogue-20261113-metier-professeur-de-danse"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/couturiere.webp",
+        "/lib/images/tcf/catalogue/metiers/bibliothecaire.webp",
+        "/lib/images/tcf/catalogue/metiers/professeur-de-danse.webp"
+      ],
+      "image_sha256": [
+        "3ca9512ef628a84e535de20be87e3bfd0ff6b78d23406ba323d9ac337e368187",
+        "3da971f5f9c933af74938b63fec40f8fabac8ef54d73ce126302be41bc707a39",
+        "adc869027b838feb044840c1a07e94206c32af9bc5ac6bc336c9ab674374ef4a"
+      ],
+      "reason": "Le document 4 présente Sylvie comme une couturière à la retraite proposant des cours de réparation des vêtements.",
+      "visual_review": "Couturière avec ciseaux et tissu, bibliothécaire avec livres et poste de prêt, professeure dirigeant un cours de danse. Catégories professionnelles, pas portraits de Sylvie ni affirmation sur son âge.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2-sa-ce-4#7",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Au Kenya, il y a de plus en plus d’éléphants. En 30 ans, leur nombre a doublé. Maintenant, il y a 34 000 éléphants. C’est une bonne nouvelle pour la nature.\n\nEn 2020, seulement 7 éléphants ont été tués. En 2019, il y en avait 34, et en 2018, 80. C’est grâce aux nouvelles lois du gouvernement. Le ministre du Tourisme a dit : « Si quelqu’un tue un animal ou vend de l’ivoire, il ira en prison pour toujours. »\n\nCette règle aide beaucoup. Il y a plus de bébés éléphants. Cela rend heureux Peter Ndovi, un guide touristique. Il travaille depuis 30 ans dans le parc national de Tsavo.",
+      "source_sha256": "d51add36a3490e9cb229f74216dce0590433218c7d916ad03e97699c5b6da514",
+      "semantic_sha256": "d2df423ed3b7162dc2cffb1048710d279934a905e84fe4a799e31f37103119f2",
+      "question": {
+        "enonce": "Quel métier Peter Ndovi exerce-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Guide touristique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vétérinaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Ministre",
+            "correct": false
+          }
+        ],
+        "written_model": "Guide touristique"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-metier-guide-touristique",
+        "vocab-veterinaire",
+        "qcm-a2-ministre"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+        "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-ministre.png"
+      ],
+      "image_sha256": [
+        "d6cbbe007f631f4e5f1b97b4575ae368ed47b767d5fc29a4524424a1d9d4f503",
+        "da1d94a2a1f818adb4a139593c359e2d88afbfa2cd519bf7de7d5dd00d916a1f",
+        "d0bad5784f1c2c0e05b860706cc70559018be59a9d728dff17414c0d3a9aaf04"
+      ],
+      "reason": "Le dernier paragraphe identifie Peter Ndovi comme guide touristique travaillant depuis trente ans au parc de Tsavo. Le ministre du Tourisme est une autre personne citée.",
+      "visual_review": "Guide avec visiteurs, vétérinaire examinant un chien et ministre fictif lors d’une réunion gouvernementale identifiée par une plaque de ministère. Les images montrent les professions ; la scène urbaine du guide ne prétend pas situer Peter ou le parc et aucun ministre réel n’est représenté.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-045#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Voici quelques informations utiles :\n• Dans votre chambre, vous avez un mini-frigo avec des jus de fruits et des boissons fraîches.\n• Les draps sont changés tous les trois jours. Les serviettes sont changées chaque jour.\n• La personne qui fait le ménage passe dans votre chambre le matin, entre 10 h et 12 h.\n• À la fin de votre séjour, laissez votre clé à la réception.",
+      "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
+      "semantic_sha256": "65331c5d6514e93a0e63bedb75478d4cb35d6e5195d2a2f8af4451c58cf2b6c7",
+      "question": {
+        "enonce": "Dans quel appareil trouve-t-on des boissons dans la chambre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un mini-frigo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un micro-ondes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un lave-vaisselle",
+            "correct": false
+          }
+        ],
+        "written_model": "Un mini-frigo"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-mini-frigo",
+        "vocab-micro-ondes",
+        "qcm-a2-lave-vaisselle"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-mini-frigo.png",
+        "/lib/images/tcf/qcm-audit/vocab-micro-ondes.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-lave-vaisselle.png"
+      ],
+      "image_sha256": [
+        "92a153835dd084923a09d0c44fd2d80dbd2576c75f694a9490d95bc5b2d5da9d",
+        "04e815ba8fd2c49a9e51d2b336e5faf52fa13319203017b14a2450449b427dd0",
+        "32d7b6521917a394402bf840589fc76f410794b275a8cdc3d01421664785e7af"
+      ],
+      "reason": "Le règlement indique que la chambre possède un mini-frigo avec jus et boissons fraîches.",
+      "visual_review": "Petit réfrigérateur cubique avec boissons et porte ouverte, micro-ondes et lave-vaisselle à paniers ; objets entiers. Un grand réfrigérateur domestique ne représente pas les dimensions demandées.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

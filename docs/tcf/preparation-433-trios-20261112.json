@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 72,
-    "initial_pending": 361,
+    "activated_since_baseline": 78,
+    "initial_pending": 355,
     "additional_pending": 0,
-    "total_pending": 361,
+    "total_pending": 355,
     "pending_by_level": {
-      "A0-A1": 144,
-      "A1-A2": 194,
+      "A0-A1": 143,
+      "A1-A2": 189,
       "A2-B1": 23
     }
   },
@@ -2864,14 +2864,20 @@
       "audio": null,
       "source_sha256": "365b7650ddaa2c63e7d9d1dab8d669e2e45ffb719195f47d16ecf0b17f3f8961",
       "semantic_sha256": "ece764c10cf148a1b6837f8ed28c1166d6f860a508b9569872e46f9b3697162d",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le message propose le ski de fond gratuitement le samedi après-midi.",
       "choices": [
         {
           "id": "a",
           "label": "Le ski de fond",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-ski-de-fond.png",
+              "sha256": "1831bfacfb14dcf8534cf272761c22d88e681e8de533fb84e0764515f9dfbe81",
+              "label": "Le ski de fond"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -2889,7 +2895,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-ski-de-fond.png",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-ea2a2daf84.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -2898,7 +2908,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -13987,14 +13997,20 @@
       "audio": null,
       "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
       "semantic_sha256": "65331c5d6514e93a0e63bedb75478d4cb35d6e5195d2a2f8af4451c58cf2b6c7",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le règlement indique que la chambre possède un mini-frigo avec jus et boissons fraîches.",
       "choices": [
         {
           "id": "a",
           "label": "Un mini-frigo",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-mini-frigo.png",
+              "sha256": "92a153835dd084923a09d0c44fd2d80dbd2576c75f694a9490d95bc5b2d5da9d",
+              "label": "Un mini-frigo"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -14014,11 +14030,21 @@
           "id": "c",
           "label": "Un lave-vaisselle",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-lave-vaisselle.png",
+              "sha256": "32d7b6521917a394402bf840589fc76f410794b275a8cdc3d01421664785e7af",
+              "label": "Un lave-vaisselle"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-mini-frigo.png",
+        "/lib/images/tcf/qcm-audit/vocab-micro-ondes.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-lave-vaisselle.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14027,7 +14053,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15783,8 +15809,8 @@
       "audio": null,
       "source_sha256": "b6ac1e99dc70a8cab00edfbcb22109d7d5d96963f1481160e7c4c67aebe85bec",
       "semantic_sha256": "de940c5c99ed83b43f4fd37cdd746eacbfaeb323931f0a30cd6cf0681b7f1616",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le document 4 présente Sylvie comme une couturière à la retraite proposant des cours de réparation des vêtements.",
       "choices": [
         {
           "id": "a",
@@ -15825,7 +15851,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/couturiere.webp",
+        "/lib/images/tcf/catalogue/metiers/bibliothecaire.webp",
+        "/lib/images/tcf/catalogue/metiers/professeur-de-danse.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -15834,7 +15864,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15990,8 +16020,8 @@
       "audio": null,
       "source_sha256": "d51add36a3490e9cb229f74216dce0590433218c7d916ad03e97699c5b6da514",
       "semantic_sha256": "d2df423ed3b7162dc2cffb1048710d279934a905e84fe4a799e31f37103119f2",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le dernier paragraphe identifie Peter Ndovi comme guide touristique travaillant depuis trente ans au parc de Tsavo. Le ministre du Tourisme est une autre personne citée.",
       "choices": [
         {
           "id": "a",
@@ -16028,11 +16058,21 @@
           "id": "c",
           "label": "Ministre",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-ministre.png",
+              "sha256": "d0bad5784f1c2c0e05b860706cc70559018be59a9d728dff17414c0d3a9aaf04",
+              "label": "Un ministre"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+        "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-ministre.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16041,7 +16081,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -16833,8 +16873,8 @@
       "audio": null,
       "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
       "semantic_sha256": "ea1b906596c4049dfafd53b01ad194be530495e86e4a814e12d26b9167b5534a",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Dans le document 2, Jules est présenté comme le serveur du café de Monica.",
       "choices": [
         {
           "id": "a",
@@ -16870,7 +16910,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/vocab-serveur.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeur.webp",
+        "/lib/images/tcf/catalogue/metiers/chauffeur-de-bus.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16879,7 +16923,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -17131,8 +17175,8 @@
       "audio": null,
       "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
       "semantic_sha256": "8618d0ceb2978ab55817d23d7191ed84c5010fe990e54429b4cdd7d444179f5f",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Hervé est explicitement le guide qui accompagnera les visiteurs dans Paris.",
       "choices": [
         {
           "id": "a",
@@ -17173,7 +17217,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+        "/lib/images/tcf/catalogue/metiers/restaurateur.webp",
+        "/lib/images/tcf/catalogue/metiers/photographe.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -17182,7 +17230,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -17887,7 +17935,13 @@
           "id": "c",
           "label": "Un vélo électrique",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+              "sha256": "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+              "label": "Un vélo électrique"
+            }
+          ],
           "generation_jobs": []
         }
       ],

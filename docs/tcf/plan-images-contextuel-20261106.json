@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1907,
+    "reviewed_trio": 1913,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 361,
+    "reviewed_763_artwork_pending": 355,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -28707,19 +28707,31 @@
         "Le ski alpin",
         "Le patinage"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "365b7650ddaa2c63e7d9d1dab8d669e2e45ffb719195f47d16ecf0b17f3f8961",
       "semantic_before_sha256": "ece764c10cf148a1b6837f8ed28c1166d6f860a508b9569872e46f9b3697162d",
       "semantic_after_sha256": "ece764c10cf148a1b6837f8ed28c1166d6f860a508b9569872e46f9b3697162d",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-ski-de-fond.png",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-ea2a2daf84.webp"
+      ],
+      "target_sha256": [
+        "1831bfacfb14dcf8534cf272761c22d88e681e8de533fb84e0764515f9dfbe81",
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316",
+        "963cd39dff0881dcbae0ccc0b1d68ff471666eaf942e55e7bb2b62b8f0694e5f"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le message propose le ski de fond gratuitement le samedi après-midi.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le message propose le ski de fond gratuitement le samedi après-midi.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Ski de fond sur terrain plat, talon libre et skis fins, face à la descente alpine et au patinage sur glace. La composition ski ou patinage est rejetée : il faut une activité entière par choix."
+      }
     },
     {
       "key": "delf-a1v-ce-061#1",
@@ -120281,19 +120293,31 @@
         "Professeur",
         "Chauffeur"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
       "semantic_before_sha256": "ea1b906596c4049dfafd53b01ad194be530495e86e4a814e12d26b9167b5534a",
       "semantic_after_sha256": "ea1b906596c4049dfafd53b01ad194be530495e86e4a814e12d26b9167b5534a",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/vocab-serveur.webp",
+        "/lib/images/tcf/qcm-audit/vocab-professeur.webp",
+        "/lib/images/tcf/catalogue/metiers/chauffeur-de-bus.webp"
+      ],
+      "target_sha256": [
+        "d223498e35e7590405f6a05e005897f6154f02e61cd4b7771a069007001d9fee",
+        "0f0155e9a59dafb28ef9fe1d5cd22ba0c34f5db594cf81b3abbe46b0fbe1d395",
+        "b020562fc5615061d9d19b8db3be3a62583b11db1f6aee66a86e927684ec0ae7"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Dans le document 2, Jules est présenté comme le serveur du café de Monica.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Dans le document 2, Jules est présenté comme le serveur du café de Monica.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Serveur avec plateau au restaurant, professeur devant la classe et chauffeur de bus à son poste de conduite. Exemples de professions ; le chauffeur de bus n’est pas attribué à Jules et aucune identité fictive n’est déduite des portraits."
+      }
     },
     {
       "key": "tcf-a2p-s1-ce-1#4",
@@ -122146,19 +122170,31 @@
         "Restaurateur",
         "Photographe"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
       "semantic_before_sha256": "8618d0ceb2978ab55817d23d7191ed84c5010fe990e54429b4cdd7d444179f5f",
       "semantic_after_sha256": "8618d0ceb2978ab55817d23d7191ed84c5010fe990e54429b4cdd7d444179f5f",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+        "/lib/images/tcf/catalogue/metiers/restaurateur.webp",
+        "/lib/images/tcf/catalogue/metiers/photographe.webp"
+      ],
+      "target_sha256": [
+        "d6cbbe007f631f4e5f1b97b4575ae368ed47b767d5fc29a4524424a1d9d4f503",
+        "a1d7608715fec46bfb04a9aa8748338d14740fe1dc3e0ab6afc769482a3e5c30",
+        "b5e977be3d66a1848c6ebf2042707a41c12a4feec9efc24c21df2a17b54032e7"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Hervé est explicitement le guide qui accompagnera les visiteurs dans Paris.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Hervé est explicitement le guide qui accompagnera les visiteurs dans Paris.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Guide montrant un lieu à des visiteurs, restaurateur préparant un plat en cuisine et photographe en studio ; métiers distincts. Les images illustrent des professions, sans prétendre représenter Hervé ni une étape précise du voyage."
+      }
     },
     {
       "key": "tcf-a2p-s4-ce-2#5",
@@ -122808,19 +122844,31 @@
         "Bibliothécaire",
         "Professeure de danse"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "b6ac1e99dc70a8cab00edfbcb22109d7d5d96963f1481160e7c4c67aebe85bec",
       "semantic_before_sha256": "de940c5c99ed83b43f4fd37cdd746eacbfaeb323931f0a30cd6cf0681b7f1616",
       "semantic_after_sha256": "de940c5c99ed83b43f4fd37cdd746eacbfaeb323931f0a30cd6cf0681b7f1616",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/couturiere.webp",
+        "/lib/images/tcf/catalogue/metiers/bibliothecaire.webp",
+        "/lib/images/tcf/catalogue/metiers/professeur-de-danse.webp"
+      ],
+      "target_sha256": [
+        "3ca9512ef628a84e535de20be87e3bfd0ff6b78d23406ba323d9ac337e368187",
+        "3da971f5f9c933af74938b63fec40f8fabac8ef54d73ce126302be41bc707a39",
+        "adc869027b838feb044840c1a07e94206c32af9bc5ac6bc336c9ab674374ef4a"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Le document 4 présente Sylvie comme une couturière à la retraite proposant des cours de réparation des vêtements.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le document 4 présente Sylvie comme une couturière à la retraite proposant des cours de réparation des vêtements.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Couturière avec ciseaux et tissu, bibliothécaire avec livres et poste de prêt, professeure dirigeant un cours de danse. Catégories professionnelles, pas portraits de Sylvie ni affirmation sur son âge."
+      }
     },
     {
       "key": "tcf-a2-sa-ce-1#7",
@@ -123418,19 +123466,31 @@
         "Vétérinaire",
         "Ministre"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "d51add36a3490e9cb229f74216dce0590433218c7d916ad03e97699c5b6da514",
       "semantic_before_sha256": "d2df423ed3b7162dc2cffb1048710d279934a905e84fe4a799e31f37103119f2",
       "semantic_after_sha256": "d2df423ed3b7162dc2cffb1048710d279934a905e84fe4a799e31f37103119f2",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+        "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-ministre.png"
+      ],
+      "target_sha256": [
+        "d6cbbe007f631f4e5f1b97b4575ae368ed47b767d5fc29a4524424a1d9d4f503",
+        "da1d94a2a1f818adb4a139593c359e2d88afbfa2cd519bf7de7d5dd00d916a1f",
+        "d0bad5784f1c2c0e05b860706cc70559018be59a9d728dff17414c0d3a9aaf04"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le dernier paragraphe identifie Peter Ndovi comme guide touristique travaillant depuis trente ans au parc de Tsavo. Le ministre du Tourisme est une autre personne citée.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le dernier paragraphe identifie Peter Ndovi comme guide touristique travaillant depuis trente ans au parc de Tsavo. Le ministre du Tourisme est une autre personne citée.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Guide avec visiteurs, vétérinaire examinant un chien et ministre fictif lors d’une réunion gouvernementale identifiée par une plaque de ministère. Les images montrent les professions ; la scène urbaine du guide ne prétend pas situer Peter ou le parc et aucun ministre réel n’est représenté."
+      }
     },
     {
       "key": "tcf-a2-sa-ce-4#8",
@@ -148321,19 +148381,31 @@
         "Un micro-ondes",
         "Un lave-vaisselle"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
       "semantic_before_sha256": "65331c5d6514e93a0e63bedb75478d4cb35d6e5195d2a2f8af4451c58cf2b6c7",
       "semantic_after_sha256": "65331c5d6514e93a0e63bedb75478d4cb35d6e5195d2a2f8af4451c58cf2b6c7",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-mini-frigo.png",
+        "/lib/images/tcf/qcm-audit/vocab-micro-ondes.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-lave-vaisselle.png"
+      ],
+      "target_sha256": [
+        "92a153835dd084923a09d0c44fd2d80dbd2576c75f694a9490d95bc5b2d5da9d",
+        "04e815ba8fd2c49a9e51d2b336e5faf52fa13319203017b14a2450449b427dd0",
+        "32d7b6521917a394402bf840589fc76f410794b275a8cdc3d01421664785e7af"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le règlement indique que la chambre possède un mini-frigo avec jus et boissons fraîches.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le règlement indique que la chambre possède un mini-frigo avec jus et boissons fraîches.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sport-objets-20261116.json",
+        "note": "Petit réfrigérateur cubique avec boissons et porte ouverte, micro-ondes et lave-vaisselle à paniers ; objets entiers. Un grand réfrigérateur domestique ne représente pas les dimensions demandées."
+      }
     },
     {
       "key": "delf-a2r-ce-045#2",

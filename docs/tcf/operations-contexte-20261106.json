@@ -30131,6 +30131,204 @@
       "source_sha256": "ebec6304943e2a5f04e2d36845397057591f97d04f154e4b36b5e335f7fe6e04",
       "reason": "La source demande une carte de cantine dans un contexte scolaire. La carte plastique remplace le plateau-repas, sans changer les deux autres choix ni le corrigé.",
       "review_register": "docs/tcf/revue-trios-objets-metiers-horaires-20261115.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-060",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-ski-de-fond.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/revue-20261107-ea2a2daf84.webp"
+          }
+        ]
+      },
+      "source_sha256": "365b7650ddaa2c63e7d9d1dab8d669e2e45ffb719195f47d16ecf0b17f3f8961",
+      "reason": "Le message propose le ski de fond gratuitement le samedi après-midi.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2p-s1-ce-1",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-serveur.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-professeur.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/metiers/chauffeur-de-bus.webp"
+          }
+        ]
+      },
+      "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
+      "reason": "Dans le document 2, Jules est présenté comme le serveur du café de Monica.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2p-s4-ce-2",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/catalogue/metiers/restaurateur.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/metiers/photographe.webp"
+          }
+        ]
+      },
+      "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
+      "reason": "Hervé est explicitement le guide qui accompagnera les visiteurs dans Paris.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2-sa-ce-1",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/couturiere.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/catalogue/metiers/bibliothecaire.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/metiers/professeur-de-danse.webp"
+          }
+        ]
+      },
+      "source_sha256": "b6ac1e99dc70a8cab00edfbcb22109d7d5d96963f1481160e7c4c67aebe85bec",
+      "reason": "Le document 4 présente Sylvie comme une couturière à la retraite proposant des cours de réparation des vêtements.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2-sa-ce-4",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/metiers/guide-touristique.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-veterinaire.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-ministre.png"
+          }
+        ]
+      },
+      "source_sha256": "d51add36a3490e9cb229f74216dce0590433218c7d916ad03e97699c5b6da514",
+      "reason": "Le dernier paragraphe identifie Peter Ndovi comme guide touristique travaillant depuis trente ans au parc de Tsavo. Le ministre du Tourisme est une autre personne citée.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-045",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-mini-frigo.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-micro-ondes.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-lave-vaisselle.png"
+          }
+        ]
+      },
+      "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
+      "reason": "Le règlement indique que la chambre possède un mini-frigo avec jus et boissons fraîches.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

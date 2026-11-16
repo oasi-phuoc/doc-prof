@@ -1,6 +1,6 @@
 # Avancement des illustrations CE / CO
 
-**Suite QCM du 15 novembre : 23 trios ajoutés, deux trios corrigés et 19 PNG originaux intégrés.** Le suivi historique passe à **361 trios restants** ; DELF Actif compte **291 trios actifs et 455 candidats à vérifier**. Les huit questions d’horaires utilisent le cadran et les aiguilles communs. [Rapport actuel et reste à faire](trios-objets-metiers-horaires-20261115.md).
+**Suite du 16 novembre : 21 trios QCM ajoutés, avec 18 PNG originaux et 44 réemplois.** Il reste **355 trios historiques** ; DELF Actif compte **306 trios actifs et 440 candidats à vérifier**. Sports, météo, repas, baignade, cadeaux, communications, recyclage et métiers suivent le style TCF validé. [Rapport actuel et reste à faire](trios-sport-objets-20261116.md).
 
 **Suite du 15 novembre : les 21 cadrages et les trois gestes de guichet signalés sont corrigés.** Dix-neuf PNG natifs couvrent les 21 liaisons ; les 117 pistes restent disponibles. Les leurres viennent désormais d’autres audios de scénario non sélectionnés, avec 80 clés candidates. Le registre ne signale plus d’interlocuteur manquant ni de cadrage restant. Le bouton à icône « Catalogue » regroupe les trois catalogues à gauche de « Paramètres ». [Rapport et reste à faire](cadrages-finaux-20261115.md).
 
