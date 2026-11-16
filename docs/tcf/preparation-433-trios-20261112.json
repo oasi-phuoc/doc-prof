@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 105,
-    "initial_pending": 328,
+    "activated_since_baseline": 119,
+    "initial_pending": 314,
     "additional_pending": 0,
-    "total_pending": 328,
+    "total_pending": 314,
     "pending_by_level": {
       "A0-A1": 127,
-      "A1-A2": 178,
+      "A1-A2": 164,
       "A2-B1": 23
     }
   },
@@ -12403,8 +12403,8 @@
       "audio": null,
       "source_sha256": "f78793ac09990f8f8e952749d00eccbbd2b9bf1e829de2a915aea6f09cf8cc82",
       "semantic_sha256": "d2ad95eac98fa898feced06f9c2ebbaa1d121a5ccc9bd0db6b35658f591f1552",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce situe les ateliers d’écologie dans les parcs de la ville, de juin à septembre.",
       "choices": [
         {
           "id": "a",
@@ -12428,7 +12428,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -12437,7 +12441,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -12665,8 +12669,8 @@
       "audio": null,
       "source_sha256": "13f0a224195b276d9630b1e4b73819b7198cc875584e6ce4c65f02a75dcfd193",
       "semantic_sha256": "0cc090aa983a9922a43c7501f50fd17970d8dcaa2ac582c2263ea4a1ab037599",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Jean dit aimer la ville mais souhaiter aussi vivre à la campagne, plus calme et plus belle.",
       "choices": [
         {
           "id": "a",
@@ -12690,7 +12694,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-ile.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -12699,7 +12707,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -13131,8 +13139,8 @@
       "audio": null,
       "source_sha256": "428ad89054e8cc9f575531d1e511edee73d5a413da312da68dbbe5842ebfa189",
       "semantic_sha256": "d816c1e3f54a003158dc65abbe610b84461e5d501b2cd4198c3d95739a9aa4fd",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Joachim fixe le rendez-vous devant le cinéma à 13 h 45 pour choisir le film.",
       "choices": [
         {
           "id": "a",
@@ -13174,7 +13182,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13183,7 +13195,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -13642,8 +13654,8 @@
       "audio": null,
       "source_sha256": "224ded834c8a1059e9f29647dd573fc67d0c1231ea690de853d9169d5f10454a",
       "semantic_sha256": "10b3e8356703943a2d1daa832f185e2f3f28003a7c486a9b5c7a2f7f4f7d164e",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Farid invite à consulter la programmation sur le site Internet du festival de musique de Nyon.",
       "choices": [
         {
           "id": "a",
@@ -13667,7 +13679,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-site-festivals.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13676,7 +13692,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -14024,8 +14040,8 @@
       "audio": null,
       "source_sha256": "a3fed3a8cb32408a1948068246dd4bd737ed2f9c56866ec0675e08635aa2f6d2",
       "semantic_sha256": "fbd557481dc2d26caa3a88fb0315d7a4ae3d96e40ff6eec6bbc4873d27e989cf",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La recette demande d’ajouter des pommes et des poires coupées en morceaux.",
       "choices": [
         {
           "id": "a",
@@ -14061,7 +14077,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/272abc0c5fc4.webp",
+        "/lib/images/tcf/qcm-audit/60817b5cd6f1.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14070,7 +14090,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15302,8 +15322,8 @@
       "audio": null,
       "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
       "semantic_sha256": "8d428bee288cb11d1bbb86191d03c33c8fb9f3fdc5436ecde6ea3259a1d70bc9",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’article distingue les familles recherchant des maisons avec jardin des couples qui préfèrent souvent vivre en ville.",
       "choices": [
         {
           "id": "a",
@@ -15327,7 +15347,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -15336,7 +15360,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15934,8 +15958,8 @@
       "audio": null,
       "source_sha256": "47ab5a11add1849892fa5fecfa1e04657e14debad0cca3d59b543aee58d09257",
       "semantic_sha256": "07f9299da11d10c773542121a5c3d64960d2663033fafa6b473a16d85a65b6e7",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La directrice explique que les familles peuvent prendre le temps de regarder et de choisir leurs fournitures à la maison.",
       "choices": [
         {
           "id": "a",
@@ -15965,7 +15989,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/co/bg/bureau-directeur.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -15974,7 +16002,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -16838,32 +16866,54 @@
       "audio": null,
       "source_sha256": "e88a39677441a80ccd55fd91be1152ad5ee31d4f091491c5f1a2b5463e479c78",
       "semantic_sha256": "542625ac057560a311dcb1418f11cb6cf9865afe7f3d5611604fabb5f02bd32c",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Dans le document 2, Anna demande d’acheter du beurre et des œufs. Le pain, le lait, les fruits et les céréales sont déjà disponibles.",
       "choices": [
         {
           "id": "a",
           "label": "Du beurre et des œufs",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+              "sha256": "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+              "label": "Du beurre et des œufs"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Du pain et du lait",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+              "sha256": "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+              "label": "Du pain et du lait"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Des fruits et des céréales",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png",
+              "sha256": "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311",
+              "label": "Des fruits et des céréales"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16872,7 +16922,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -17973,8 +18023,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-6.mp3",
       "source_sha256": "d1ad5ed982ed7efaab36fc4cca10da23f6629e1350d64cd7d811ebc663210294",
       "semantic_sha256": "47833ba2b405bf74e68d7687d9e90350d6c6cf3f10bc49a1e13b7acb53db2eea",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce invite les clients à goûter les gâteaux de saison près du rayon fruits et légumes.",
       "choices": [
         {
           "id": "a",
@@ -18010,7 +18060,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -18019,7 +18073,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -18608,8 +18662,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_25-1.mp3",
       "source_sha256": "c28cb10c73b0488b67ee78974a4e6d4ceea13d4a406e8f01fbb88cd441ef714c",
       "semantic_sha256": "8ce2bc1076f94b6046bd759761155f6ef5e751bb81b90da905237fb33d8220ed",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Les amis confirment le rendez-vous à 13 h 45 devant le Ciné Palace.",
       "choices": [
         {
           "id": "a",
@@ -18633,7 +18687,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -18642,7 +18700,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -19486,8 +19544,8 @@
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-6.mp3",
       "source_sha256": "f016ea30896ea1d391248d716d9860adcd920a6599832f9437b69db68a5b9cb6",
       "semantic_sha256": "44ba678d7db8958c6f14afdb7e87aabd530d41ca3b2bd0b4c273870250443e72",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’alerte rouge annonce une tempête et demande de rester chez soi ; l’école sera fermée.",
       "choices": [
         {
           "id": "a",
@@ -19517,7 +19575,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -19526,7 +19588,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -19628,8 +19690,8 @@
       "audio": "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
       "source_sha256": "2f3f6e5b6b27c6404f3cf0d5bafe69b39042a47604ac109d4a7e6d7a955e5a25",
       "semantic_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La personne organise sa fête d’anniversaire chez elle le mois suivant, le 28 mars à 20 h.",
       "choices": [
         {
           "id": "a",
@@ -19659,7 +19721,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -19668,7 +19734,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -20340,8 +20406,8 @@
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
       "source_sha256": "1b412b3071a20c791c82a606d7a47a2e28d6002d1d6b8ff4b5db32679d5278c6",
       "semantic_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Samia explique comment faire du sport chez soi avec un tapis, de l’eau et de la musique.",
       "choices": [
         {
           "id": "a",
@@ -20377,7 +20443,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/co/bg/ville.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20386,7 +20456,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -20488,8 +20558,8 @@
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
       "source_sha256": "8f8e194e4bf0aff7d8d30729ba7e0b8284b0d5b9503eb7a3982bd47fb1576209",
       "semantic_sha256": "83f064f47c05bc7f55c7e4348ed755b89f1ea0d6b5a6713a1ea2c3e6ef9b2cd1",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La personne qui demande l’aide en maths précise « tu viens chez moi » et l’autre accepte vers quatre heures.",
       "choices": [
         {
           "id": "a",
@@ -20530,7 +20600,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/cafe.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20539,7 +20613,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

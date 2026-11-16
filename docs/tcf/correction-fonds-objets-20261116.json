@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-16",
+  "user_request": "Le fond des images des objets n’est pas identique aux autres images ; le corriger.",
+  "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+  "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+  "reference_background": {
+    "median_rgb": [
+      253,
+      242,
+      225
+    ],
+    "stddev_rgb": [
+      0.265,
+      0.158,
+      0.865
+    ]
+  },
+  "sample_box": [
+    0,
+    0,
+    80,
+    80
+  ],
+  "measurement_scope": "Petit échantillon de fond vide et comparaison visuelle des trois illustrations ; pas une affirmation d’égalité pixel à pixel des images entières.",
+  "corrected_images": 3,
+  "changes": [
+    {
+      "id": "qcm-a2-beurre-oeufs",
+      "target": "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+      "before_source": "/workspace/generated_images/exec-95e21bd0-3222-4585-8bb3-c7697bda143c.png",
+      "before_sha256": "92bbcf7e53393453606efa57989f19a801bfd4824a155bdb488fbac2e5428908",
+      "before_background": {
+        "median_rgb": [
+          249,
+          217,
+          164
+        ],
+        "stddev_rgb": [
+          1.613,
+          3.249,
+          6.609
+        ]
+      },
+      "after_source": "/workspace/generated_images/exec-ed2ddbcb-4811-46d7-bfe7-0cdaffc10953.png",
+      "after_sha256": "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+      "after_background": {
+        "median_rgb": [
+          253,
+          242,
+          227
+        ],
+        "stddev_rgb": [
+          0.548,
+          0.57,
+          0.57
+        ]
+      },
+      "reason": "Fond jaune et texturé remplacé par le fond ivoire lisse de la référence validée.",
+      "original_attempt_integrated": false
+    },
+    {
+      "id": "qcm-a2-pain-lait",
+      "target": "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+      "before_source": "/workspace/generated_images/exec-b2cbb20d-5d26-4a0e-a1c4-fc74dc4fa8b3.png",
+      "before_sha256": "46bbff8c8068e229c7f6c7365df8bd90100f8a92b1d027116bf5d58b96da1cbc",
+      "before_background": {
+        "median_rgb": [
+          245,
+          218,
+          183
+        ],
+        "stddev_rgb": [
+          2.236,
+          2.89,
+          3.687
+        ]
+      },
+      "after_source": "/workspace/generated_images/exec-4a414725-53a3-478e-bf05-253e1c9aebae.png",
+      "after_sha256": "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+      "after_background": {
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "stddev_rgb": [
+          0.574,
+          0.576,
+          0.669
+        ]
+      },
+      "reason": "Fond jaune et texturé remplacé par le fond ivoire lisse de la référence validée.",
+      "original_attempt_integrated": false
+    },
+    {
+      "id": "qcm-a2-fruits-cereales",
+      "target": "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png",
+      "before_source": "/workspace/generated_images/exec-4434cf65-059c-46a9-b22d-bf7a5e9e5ca3.png",
+      "before_sha256": "6ad2c673752c9567335e7c387a45fbf339b940bf169cd47c5a35294cd800ecbd",
+      "before_background": {
+        "median_rgb": [
+          244,
+          208,
+          165
+        ],
+        "stddev_rgb": [
+          2.591,
+          4.756,
+          7.079
+        ]
+      },
+      "after_source": "/workspace/generated_images/exec-33c26154-46b4-494b-b370-90ecda046463.png",
+      "after_sha256": "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311",
+      "after_background": {
+        "median_rgb": [
+          253,
+          242,
+          226
+        ],
+        "stddev_rgb": [
+          0.559,
+          0.561,
+          0.609
+        ]
+      },
+      "reason": "Fond jaune et texturé remplacé par le fond ivoire lisse de la référence validée.",
+      "original_attempt_integrated": false
+    }
+  ]
+}

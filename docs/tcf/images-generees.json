@@ -109123,6 +109123,384 @@
         "Transports",
         "Style TCF validé"
       ]
+    },
+    {
+      "id": "qcm-a2-beurre-oeufs",
+      "label": "Du beurre et des œufs",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+      "prompt": "Edit IMAGE 1 (butter and three eggs). IMAGE 2 is the user's explicitly approved TCF OBJECT STYLE AND BACKGROUND REFERENCE; use its background, not its objects. Correct the background mismatch. Preserve exactly the butter on its dish and the THREE eggs, their identities, positions, quantities, proportions and fully visible framing. Replace ALL of image 1's yellow ochre textured paper background and tabletop with the SAME almost-uniform PALE WARM IVORY as image 2: approximately RGB 253,242,225 / #FDF2E1. The background must look smooth, nearly flat, matte and very light, with the same colour at every corner and through the free space around the objects. NO golden/yellow/beige cast, paper grain, canvas weave, visible brush strokes in the background, mottling, vignette, horizon line or dramatic gradient. Retain only very soft short contact shadows immediately under the butter dish and eggs, as in image 2. Keep the objects' softly painted semi-realistic fine modelling, natural colours and gentle daylight; no overexposure or loss of detail. Do NOT add or copy any glass, cup or drink from the reference. Exact contents remain ONE butter dish with butter and THREE whole eggs; no other objects. Final native EXACT 1448 x 1086 pixels landscape 4:3, all objects wholly within frame with margins, no text, labels, logos, panels, collage or watermark. Matching the reference's smooth pale ivory background is the primary goal.",
+      "source_png": "/workspace/generated_images/exec-ed2ddbcb-4811-46d7-bfe7-0cdaffc10953.png",
+      "source_sha256": "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+      "sha256": "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+      "bytes": 1445404,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Beurre sur son beurrier et trois œufs entiers. Fond ivoire lisse repris avec la référence validée ; première version jaune et texturée écartée.",
+      "style_review": {
+        "status": "aligned_after_redraw",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du fond après la correction de l’utilisateur ; première version non intégrée : /workspace/generated_images/exec-95e21bd0-3222-4585-8bb3-c7697bda143c.png",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ],
+      "background_review": {
+        "register": "docs/tcf/correction-fonds-objets-20261116.json",
+        "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "sample_box": [
+          0,
+          0,
+          80,
+          80
+        ],
+        "median_rgb": [
+          253,
+          242,
+          227
+        ],
+        "stddev_rgb": [
+          0.548,
+          0.57,
+          0.57
+        ]
+      }
+    },
+    {
+      "id": "qcm-a2-pain-lait",
+      "label": "Du pain et du lait",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+      "prompt": "Edit IMAGE 1 (one baguette and a carafe of milk). IMAGE 2 is the user's explicitly approved TCF OBJECT BACKGROUND REFERENCE. Change ONLY the background/surface and its illumination, preserving the exact objects, arrangement, proportions and complete framing of image 1. Replace all yellow ochre textured paper with the SAME smooth nearly-uniform PALE WARM IVORY background as image 2, approximately RGB 253,242,225 / #FDF2E1. Match the reference's very light matte background at the corners and throughout all empty space. NO paper grain, canvas texture, brushwork in the background, yellow/golden tint, mottling, vignette, horizon or visible gradient. Keep only soft short contact shadows immediately under the bread and carafe, like image 2. Preserve the bread's natural warm colour and the detailed softly painted glass and white milk, with gentle daylight and fine semi-realistic modelling. Do not copy any objects or beverages from image 2. Exact contents: ONE entire baguette and ONE plain carafe containing white milk, nothing else. Both ends of the baguette and the complete carafe, including opening and base, remain within the frame with comfortable margins. Native EXACT 1448 x 1086 pixels landscape 4:3. No text, labels, logos, panels, collage or watermark. Background coherence with image 2 is the main correction.",
+      "source_png": "/workspace/generated_images/exec-4a414725-53a3-478e-bf05-253e1c9aebae.png",
+      "source_sha256": "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+      "sha256": "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+      "bytes": 1648990,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Baguette et carafe de lait entières. Fond ivoire lisse repris avec la référence validée ; première version jaune et texturée écartée.",
+      "style_review": {
+        "status": "aligned_after_redraw",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du fond après la correction de l’utilisateur ; première version non intégrée : /workspace/generated_images/exec-b2cbb20d-5d26-4a0e-a1c4-fc74dc4fa8b3.png",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ],
+      "background_review": {
+        "register": "docs/tcf/correction-fonds-objets-20261116.json",
+        "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "sample_box": [
+          0,
+          0,
+          80,
+          80
+        ],
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "stddev_rgb": [
+          0.574,
+          0.576,
+          0.669
+        ]
+      }
+    },
+    {
+      "id": "qcm-a2-fruits-cereales",
+      "label": "Des fruits et des céréales",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png",
+      "prompt": "Edit IMAGE 1 (two apples, two bananas and one bowl of dry cereal). IMAGE 2 is the user's explicitly approved TCF OBJECT BACKGROUND REFERENCE. Preserve the exact food identities, quantities, positions, proportions and whole-object framing in image 1. Replace ALL of its yellow ochre textured paper background and tabletop with the SAME smooth nearly-uniform PALE WARM IVORY as image 2: approximately RGB 253,242,225 / #FDF2E1. Match the reference's very light matte colour at every corner and throughout empty space. NO paper grain, canvas texture, background brush strokes, yellow/golden tint, mottling, vignette, horizon line or visible gradient. Only soft short contact shadows directly beneath the fruit and bowl, as in image 2. Keep fine softly painted semi-realistic modelling and natural food colours. Do NOT add or copy any glasses, cups or beverages from image 2. Exact contents remain TWO apples, TWO whole bananas, ONE ordinary cream bowl of DRY rolled oats and golden cereal flakes, no milk, yoghurt, extra food, cut fruit or utensils. All objects entirely inside the frame with generous margins. Native EXACT 1448 x 1086 pixels landscape 4:3. No text, labels, numbers, logos, panels, collage or watermark. Harmonising the smooth pale ivory background with image 2 is the primary correction.",
+      "source_png": "/workspace/generated_images/exec-33c26154-46b4-494b-b370-90ecda046463.png",
+      "source_sha256": "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311",
+      "sha256": "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311",
+      "bytes": 1754739,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux pommes, deux bananes et un bol de céréales sèches. Fond ivoire lisse repris avec la référence validée ; aucun lait ajouté et première version jaune et texturée écartée.",
+      "style_review": {
+        "status": "aligned_after_redraw",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du fond après la correction de l’utilisateur ; première version non intégrée : /workspace/generated_images/exec-4434cf65-059c-46a9-b22d-bf7a5e9e5ca3.png",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ],
+      "background_review": {
+        "register": "docs/tcf/correction-fonds-objets-20261116.json",
+        "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "sample_box": [
+          0,
+          0,
+          80,
+          80
+        ],
+        "median_rgb": [
+          253,
+          242,
+          226
+        ],
+        "stddev_rgb": [
+          0.559,
+          0.561,
+          0.609
+        ]
+      }
+    },
+    {
+      "id": "qcm-a2-habiter-campagne",
+      "label": "Habiter à la campagne",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+      "prompt": "Create one French TCF examination illustration of living 'A LA CAMPAGNE'. A modest occupied-looking rural farmhouse with a small garden, a narrow country lane and several broad flat fields separated by hedges and soft deciduous trees. Low gentle terrain, open sky and distant farm buildings, no mountain peaks or high cliffs, no island, beach, sea or dense city. Show the whole main house and garden gate with generous margins, ordinary coherent architecture and believable perspective, no people or animals. The landscape should clearly suggest a quiet rural place to live, not an isolated object icon. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, natural restrained cream/wood/olive/navy colours and soft daylight, coherent with a warm French language teaching image bank. Not photograph, cartoon, CGI or vector icon. Native EXACT 1448 x 1086 pixels, landscape 4:3. One scene, no panels, collage, text, readable letters, numbers, signs, logos or watermark.",
+      "source_png": "/workspace/generated_images/exec-1e447ed2-9708-4395-99bc-f8fd0878dffd.png",
+      "source_sha256": "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+      "sha256": "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+      "bytes": 3359247,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Maison rurale, champs, haies et route de campagne sur terrain bas, sans montagnes ni mer. Catégorie de lieu de vie, pas le domicile d’un locuteur nommé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-habiter-ile",
+      "label": "Habiter sur une île",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-habiter-ile.png",
+      "prompt": "Create one French TCF examination illustration for living 'SUR UNE ILE'. A modest small inhabited island in a broad calm blue lake, seen from a gently elevated viewpoint so WATER visibly surrounds the entire island on ALL sides with a continuous clear ring of water in the frame. Three small ordinary cream houses with terracotta roofs among soft trees on the low island, one modest wooden jetty at the edge. The whole island and its shoreline completely inside the frame with comfortable water margins; no bridge, causeway, road to mainland, giant mountain, cliffs, tourist resort or tropical palm trees. Distant mainland is a very low soft line on the horizon. No people, readable signs, boats in foreground or extra islands. Plausible geography and perspective, calm natural light. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, restrained cream/wood/olive/navy palette and soft daylight matching a coherent warm French teaching image bank. Not photograph, CGI, cartoon or vector icon. Single scene native EXACT 1448 x 1086 pixels, landscape 4:3. No text, letters, numbers, labels, brands, logos, panels, collage or watermark.",
+      "source_png": "/workspace/generated_images/exec-997d1593-a214-437e-9867-0f9c96a3398b.png",
+      "source_sha256": "4bc09bfe539ca6cfbb07e17f44865a2ede4df6cd6584dfbb0d24a76bf268a92e",
+      "sha256": "4bc09bfe539ca6cfbb07e17f44865a2ede4df6cd6584dfbb0d24a76bf268a92e",
+      "bytes": 2537645,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Île habitée entière, entourée d’eau sur tous les côtés, sans pont ni presqu’île. Aucun nom de lieu ni domicile personnel attribué.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-habiter-montagne",
+      "label": "Habiter à la montagne",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png",
+      "prompt": "Create one French TCF examination illustration of living 'A LA MONTAGNE'. A small Alpine village with a few modest complete wooden chalets on a steep green mountain slope, evergreen trees and tall clearly visible rocky mountain peaks rising behind. A narrow village path and ordinary garden fences, plausible architecture and perspective. Show the main chalets entirely with comfortable margins and a recognisable high-mountain setting. Not a lowland farming plain, island, seaside resort, ski race or empty glacier panorama. No people, animals, signs, clocks, vehicles or equipment. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, restrained natural cream/wood/olive/navy colours and soft daylight coherent with a warm French language teaching image bank. Not photograph, CGI, cartoon or flat vector icon. One continuous scene native EXACT 1448 x 1086 pixels landscape 4:3, no text, readable letters, numbers, names, logos, panels, collage or watermark.",
+      "source_png": "/workspace/generated_images/exec-07f5aee5-6d69-4aea-a512-7e7314759d54.png",
+      "source_sha256": "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee",
+      "sha256": "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee",
+      "bytes": 3466945,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Village de chalets sur une pente avec hauts sommets rocheux et conifères. Le lieu de vie en montagne est distingué de la campagne et de l’île.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-patinoire-lieu",
+      "label": "La patinoire",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+      "prompt": "Create one French TCF examination illustration of 'LA PATINOIRE' as a clearly recognisable public indoor ICE-SKATING RINK. A broad smooth pale blue-white ice surface with faint skate traces and a slightly reflective icy sheen, surrounded by low cream safety boards with a modest navy rail and clear protective panels. A small entry gate, benches and ordinary changing-room doors outside the rink, simple high windows and timber roof beams. No swimming water, pool ladders, gym court, roller skates or snow-covered outdoor landscape. No people, advertisements, scoreboard, clocks, text, dates, numbers, logos or signs. Believable architecture and consistent perspective, main rink shape and surrounding boards visible with adequate margins. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, natural restrained cream/wood/navy colours and soft diffuse daylight matching a warm French teaching image bank. Not photograph, CGI, cartoon or vector icon. Single native EXACT 1448 x 1086 pixel landscape 4:3 scene, no collage, panels or watermark.",
+      "source_png": "/workspace/generated_images/exec-c042c34c-603c-4f4e-930f-bab60ddeb4da.png",
+      "source_sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+      "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+      "bytes": 2604262,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Surface de glace avec traces de patins, balustrades et portillon. Pas d’eau, d’échelle de piscine ou de terrain de gymnase.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Loisirs",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-bowling-lieu",
+      "label": "Le bowling",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-bowling-lieu.png",
+      "prompt": "Create one French TCF examination illustration of 'AU BOWLING': an ordinary modest indoor ten-pin bowling alley, no people. Clear view along two polished pale wood lanes, each with normal gutters and a triangular set of ten white bowling pins with two red neck stripes at the FAR end. Correct lane perspective with long straight wooden planks, pins standing upright in a realistic triangle, not floating or in a straight row. In the foreground beside the approach, a small ball return holding two ordinary bowling balls with three finger holes, both whole balls visible. Benches to the side, simple cream walls and muted navy details, soft indoor daylight. No nightclub lighting, screens, scoreboards, readable signs, clocks, text, numbers, logos or brands. Main pins and balls entirely within frame with comfortable margins. Soft semi-realistic painted editorial illustration with fine gentle visible brush texture, restrained cream/wood/navy colours, harmonious with a warm French language teaching image bank. Not photograph, CGI, cartoon or vector icon. Single continuous native EXACT 1448 x 1086 pixel landscape 4:3 scene, no panels, collage or watermark.",
+      "source_png": "/workspace/generated_images/exec-82e75e6d-cbdd-4f19-b9f9-3a6823697f2c.png",
+      "source_sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+      "sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+      "bytes": 2665171,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Pistes, gouttières, groupes de quilles debout et boules entières sur leur retour. Aucun personnage inventé ; le lieu souhaité est distingué de l’autorisation de sortie.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Loisirs",
+        "Style TCF validé"
+      ]
     }
   ]
 }

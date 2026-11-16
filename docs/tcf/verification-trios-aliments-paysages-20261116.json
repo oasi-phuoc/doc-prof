@@ -1,0 +1,161 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "e9201e79d2c02f5b3f6224ab60837b988945a040",
+  "compared_all_six_banks": true,
+  "added_image_forms": 16,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 8,
+  "new_image_usages": 10,
+  "reused_image_usages": 38,
+  "reused_distinct_images": 24,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "tcf-a2j-s1-ce-3#6",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-a2-s1-ce-4#7",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-039#3",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-052#4",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-066#8",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-031#9",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-042#5",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-063#9",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-a2j-s2-co-1#19",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-a2j-s2b-co-2#2",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-ss-a2-s21-co-3#8",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-ss-a2-s24-co-4#8",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "delf-a2-2021-co-ex4-25#4",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "delf-a2-2021-co-ex1-35#19",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-014-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-031-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "name": "revue763",
+      "chunk_id": "f668dd",
+      "wall_time_seconds": 1.6251e-05,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 337 trios actifs, 112 textes conservés, 314 trios à préparer.\n"
+    },
+    {
+      "name": "delf-images",
+      "chunk_id": "f55baa",
+      "wall_time_seconds": 1.7136e-05,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 329 trios actifs liés à leur relecture, images et MP3 vérifiés.\n"
+    },
+    {
+      "name": "delf-context",
+      "chunk_id": "58e49c",
+      "wall_time_seconds": 1.584e-05,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n"
+    },
+    {
+      "name": "qcm-images",
+      "chunk_id": "50ea17",
+      "wall_time_seconds": 1.9836e-05,
+      "exit_code": 0,
+      "original_token_count": 17,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2382 bank variants\n"
+    },
+    {
+      "name": "tcf-bank",
+      "chunk_id": "b12cce",
+      "wall_time_seconds": 1.6798e-05,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n"
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 32,
+    "question_views": 32,
+    "image_views": 96,
+    "errors": []
+  },
+  "additional_checks": {
+    "object_backgrounds": {
+      "corrected": 3,
+      "register": "docs/tcf/correction-fonds-objets-20261116.json",
+      "maximum_sample_median_channel_difference": 2
+    },
+    "catalogue_tests": {
+      "command": "node --test --test-reporter=tap --test-concurrency=1 tests/gallery/catalog.test.mjs tests/audio-catalog/catalog.test.mjs",
+      "passed": 13,
+      "failed": 0
+    },
+    "typecheck": {
+      "command": "npx tsc -b",
+      "exit_code": 0
+    },
+    "production_build": {
+      "command": "npx vite build --manifest",
+      "exit_code": 0
+    },
+    "loading_budgets": {
+      "command": "node scripts/interactive-budgets.mjs",
+      "exit_code": 0,
+      "game_gzip_bytes": 3131259,
+      "game_maximum_gzip_bytes": 3145728
+    }
+  }
+}

@@ -8,9 +8,9 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 327,
+      "active_reviewed_trio": 329,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 419,
+      "candidate_visual_review": 417,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
@@ -25,8 +25,8 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 225,
-        "active_reviewed_trio": 113,
+        "candidate_visual_review": 223,
+        "active_reviewed_trio": 115,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -47651,14 +47651,21 @@
       "semantic_sha256": "3f1bb9cb077e804f58cb1f9200d874ecdb114691a589c7bad241f8d5c71425f2",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-014-01.mp3",
       "audio_sha256": "5b5619f8a8bd5114723f96b80cf089bd578b06dd8e1d973f949d1b7331045b8f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "La patinoire",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+              "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+              "label": "La patinoire",
+              "visual_review_required": true
+            }
+          ],
           "asset": "3fdadad318f31d8b",
           "brief": "Représenter entièrement « La patinoire » pour « Pour quel lieu Benoît veut-il un abonnement ? ». Vérifier la transcription du support tcf-delf-actif-a2-014-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -47692,8 +47699,24 @@
           "brief": "Représenter entièrement « Le cinéma » pour « Pour quel lieu Benoît veut-il un abonnement ? ». Vérifier la transcription du support tcf-delf-actif-a2-014-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+          "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "sha256": "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47704,7 +47727,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Patinoire de glace, piscine et cinéma. Le lieu est illustré directement, pas par des patins ou un billet seul. Les horaires d’inscription ne sont pas remplacés par une ouverture inventée du bâtiment."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-014-01#2",
@@ -54136,14 +54163,21 @@
       "semantic_sha256": "de1b2f956ee07ed0fd91a564b827fd52308bb98dc547675191429a16bd2ce3ca",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
       "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Au bowling",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-bowling-lieu.png",
+              "sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+              "label": "Le bowling",
+              "visual_review_required": true
+            }
+          ],
           "asset": "5797ad6b10e96bee",
           "brief": "Représenter entièrement « Au bowling » pour « Où la fille veut-elle aller ? ». Vérifier la transcription du support tcf-delf-actif-a2-031-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -54177,8 +54211,24 @@
           "brief": "Représenter entièrement « À la piscine » pour « Où la fille veut-elle aller ? ». Vérifier la transcription du support tcf-delf-actif-a2-031-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-bowling-lieu.png",
+          "sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "sha256": "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54189,7 +54239,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Bowling avec pistes et quilles, cinéma et piscine. La question porte sur le souhait de la fille ; les images de lieux ne transforment pas ce souhait en sortie autorisée ou réalisée. La scène de discussion familiale n’est pas utilisée pour représenter le bowling lui-même."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-031-04#2",
@@ -80006,7 +80060,14 @@
           "id": "a",
           "label": "À la patinoire",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+              "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+              "label": "La patinoire",
+              "visual_review_required": true
+            }
+          ],
           "asset": "3fdadad318f31d8b",
           "brief": "Représenter entièrement « À la patinoire » pour « Où la petite-fille ira-t-elle après sa visite ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -125699,7 +125760,14 @@
     {
       "id": "3fdadad318f31d8b",
       "label": "La patinoire",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+          "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+          "label": "La patinoire",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-014-01#1",
@@ -126517,7 +126585,14 @@
     {
       "id": "5797ad6b10e96bee",
       "label": "Au bowling",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-bowling-lieu.png",
+          "sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+          "label": "Le bowling",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-031-04#1",

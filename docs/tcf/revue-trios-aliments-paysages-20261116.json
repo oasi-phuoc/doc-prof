@@ -1,0 +1,1217 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "e9201e79d2c02f5b3f6224ab60837b988945a040",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 16,
+    "added_historical_trios": 14,
+    "added_delf_actif_trios": 2,
+    "new_images": 8,
+    "imagegen_calls": 11,
+    "rejected_generations": 3,
+    "new_image_usages": 10,
+    "reused_image_usages": 38,
+    "reused_distinct_images": 24,
+    "added_by_level": {
+      "A1-A2": 16
+    },
+    "historical_pending": 314
+  },
+  "new_images": [
+    {
+      "id": "qcm-a2-beurre-oeufs",
+      "label": "Du beurre et des œufs",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+      "prompt": "Edit IMAGE 1 (butter and three eggs). IMAGE 2 is the user's explicitly approved TCF OBJECT STYLE AND BACKGROUND REFERENCE; use its background, not its objects. Correct the background mismatch. Preserve exactly the butter on its dish and the THREE eggs, their identities, positions, quantities, proportions and fully visible framing. Replace ALL of image 1's yellow ochre textured paper background and tabletop with the SAME almost-uniform PALE WARM IVORY as image 2: approximately RGB 253,242,225 / #FDF2E1. The background must look smooth, nearly flat, matte and very light, with the same colour at every corner and through the free space around the objects. NO golden/yellow/beige cast, paper grain, canvas weave, visible brush strokes in the background, mottling, vignette, horizon line or dramatic gradient. Retain only very soft short contact shadows immediately under the butter dish and eggs, as in image 2. Keep the objects' softly painted semi-realistic fine modelling, natural colours and gentle daylight; no overexposure or loss of detail. Do NOT add or copy any glass, cup or drink from the reference. Exact contents remain ONE butter dish with butter and THREE whole eggs; no other objects. Final native EXACT 1448 x 1086 pixels landscape 4:3, all objects wholly within frame with margins, no text, labels, logos, panels, collage or watermark. Matching the reference's smooth pale ivory background is the primary goal.",
+      "source_png": "/workspace/generated_images/exec-ed2ddbcb-4811-46d7-bfe7-0cdaffc10953.png",
+      "source_sha256": "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+      "sha256": "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+      "bytes": 1445404,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Beurre sur son beurrier et trois œufs entiers. Fond ivoire lisse repris avec la référence validée ; première version jaune et texturée écartée.",
+      "style_review": {
+        "status": "aligned_after_redraw",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du fond après la correction de l’utilisateur ; première version non intégrée : /workspace/generated_images/exec-95e21bd0-3222-4585-8bb3-c7697bda143c.png",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ],
+      "background_review": {
+        "register": "docs/tcf/correction-fonds-objets-20261116.json",
+        "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "sample_box": [
+          0,
+          0,
+          80,
+          80
+        ],
+        "median_rgb": [
+          253,
+          242,
+          227
+        ],
+        "stddev_rgb": [
+          0.548,
+          0.57,
+          0.57
+        ]
+      }
+    },
+    {
+      "id": "qcm-a2-pain-lait",
+      "label": "Du pain et du lait",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+      "prompt": "Edit IMAGE 1 (one baguette and a carafe of milk). IMAGE 2 is the user's explicitly approved TCF OBJECT BACKGROUND REFERENCE. Change ONLY the background/surface and its illumination, preserving the exact objects, arrangement, proportions and complete framing of image 1. Replace all yellow ochre textured paper with the SAME smooth nearly-uniform PALE WARM IVORY background as image 2, approximately RGB 253,242,225 / #FDF2E1. Match the reference's very light matte background at the corners and throughout all empty space. NO paper grain, canvas texture, brushwork in the background, yellow/golden tint, mottling, vignette, horizon or visible gradient. Keep only soft short contact shadows immediately under the bread and carafe, like image 2. Preserve the bread's natural warm colour and the detailed softly painted glass and white milk, with gentle daylight and fine semi-realistic modelling. Do not copy any objects or beverages from image 2. Exact contents: ONE entire baguette and ONE plain carafe containing white milk, nothing else. Both ends of the baguette and the complete carafe, including opening and base, remain within the frame with comfortable margins. Native EXACT 1448 x 1086 pixels landscape 4:3. No text, labels, logos, panels, collage or watermark. Background coherence with image 2 is the main correction.",
+      "source_png": "/workspace/generated_images/exec-4a414725-53a3-478e-bf05-253e1c9aebae.png",
+      "source_sha256": "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+      "sha256": "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+      "bytes": 1648990,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Baguette et carafe de lait entières. Fond ivoire lisse repris avec la référence validée ; première version jaune et texturée écartée.",
+      "style_review": {
+        "status": "aligned_after_redraw",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du fond après la correction de l’utilisateur ; première version non intégrée : /workspace/generated_images/exec-b2cbb20d-5d26-4a0e-a1c4-fc74dc4fa8b3.png",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ],
+      "background_review": {
+        "register": "docs/tcf/correction-fonds-objets-20261116.json",
+        "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "sample_box": [
+          0,
+          0,
+          80,
+          80
+        ],
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "stddev_rgb": [
+          0.574,
+          0.576,
+          0.669
+        ]
+      }
+    },
+    {
+      "id": "qcm-a2-fruits-cereales",
+      "label": "Des fruits et des céréales",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png",
+      "prompt": "Edit IMAGE 1 (two apples, two bananas and one bowl of dry cereal). IMAGE 2 is the user's explicitly approved TCF OBJECT BACKGROUND REFERENCE. Preserve the exact food identities, quantities, positions, proportions and whole-object framing in image 1. Replace ALL of its yellow ochre textured paper background and tabletop with the SAME smooth nearly-uniform PALE WARM IVORY as image 2: approximately RGB 253,242,225 / #FDF2E1. Match the reference's very light matte colour at every corner and throughout empty space. NO paper grain, canvas texture, background brush strokes, yellow/golden tint, mottling, vignette, horizon line or visible gradient. Only soft short contact shadows directly beneath the fruit and bowl, as in image 2. Keep fine softly painted semi-realistic modelling and natural food colours. Do NOT add or copy any glasses, cups or beverages from image 2. Exact contents remain TWO apples, TWO whole bananas, ONE ordinary cream bowl of DRY rolled oats and golden cereal flakes, no milk, yoghurt, extra food, cut fruit or utensils. All objects entirely inside the frame with generous margins. Native EXACT 1448 x 1086 pixels landscape 4:3. No text, labels, numbers, logos, panels, collage or watermark. Harmonising the smooth pale ivory background with image 2 is the primary correction.",
+      "source_png": "/workspace/generated_images/exec-33c26154-46b4-494b-b370-90ecda046463.png",
+      "source_sha256": "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311",
+      "sha256": "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311",
+      "bytes": 1754739,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux pommes, deux bananes et un bol de céréales sèches. Fond ivoire lisse repris avec la référence validée ; aucun lait ajouté et première version jaune et texturée écartée.",
+      "style_review": {
+        "status": "aligned_after_redraw",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du fond après la correction de l’utilisateur ; première version non intégrée : /workspace/generated_images/exec-4434cf65-059c-46a9-b22d-bf7a5e9e5ca3.png",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ],
+      "background_review": {
+        "register": "docs/tcf/correction-fonds-objets-20261116.json",
+        "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "reference_sha256": "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542",
+        "sample_box": [
+          0,
+          0,
+          80,
+          80
+        ],
+        "median_rgb": [
+          253,
+          242,
+          226
+        ],
+        "stddev_rgb": [
+          0.559,
+          0.561,
+          0.609
+        ]
+      }
+    },
+    {
+      "id": "qcm-a2-habiter-campagne",
+      "label": "Habiter à la campagne",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+      "prompt": "Create one French TCF examination illustration of living 'A LA CAMPAGNE'. A modest occupied-looking rural farmhouse with a small garden, a narrow country lane and several broad flat fields separated by hedges and soft deciduous trees. Low gentle terrain, open sky and distant farm buildings, no mountain peaks or high cliffs, no island, beach, sea or dense city. Show the whole main house and garden gate with generous margins, ordinary coherent architecture and believable perspective, no people or animals. The landscape should clearly suggest a quiet rural place to live, not an isolated object icon. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, natural restrained cream/wood/olive/navy colours and soft daylight, coherent with a warm French language teaching image bank. Not photograph, cartoon, CGI or vector icon. Native EXACT 1448 x 1086 pixels, landscape 4:3. One scene, no panels, collage, text, readable letters, numbers, signs, logos or watermark.",
+      "source_png": "/workspace/generated_images/exec-1e447ed2-9708-4395-99bc-f8fd0878dffd.png",
+      "source_sha256": "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+      "sha256": "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+      "bytes": 3359247,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Maison rurale, champs, haies et route de campagne sur terrain bas, sans montagnes ni mer. Catégorie de lieu de vie, pas le domicile d’un locuteur nommé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-habiter-ile",
+      "label": "Habiter sur une île",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-habiter-ile.png",
+      "prompt": "Create one French TCF examination illustration for living 'SUR UNE ILE'. A modest small inhabited island in a broad calm blue lake, seen from a gently elevated viewpoint so WATER visibly surrounds the entire island on ALL sides with a continuous clear ring of water in the frame. Three small ordinary cream houses with terracotta roofs among soft trees on the low island, one modest wooden jetty at the edge. The whole island and its shoreline completely inside the frame with comfortable water margins; no bridge, causeway, road to mainland, giant mountain, cliffs, tourist resort or tropical palm trees. Distant mainland is a very low soft line on the horizon. No people, readable signs, boats in foreground or extra islands. Plausible geography and perspective, calm natural light. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, restrained cream/wood/olive/navy palette and soft daylight matching a coherent warm French teaching image bank. Not photograph, CGI, cartoon or vector icon. Single scene native EXACT 1448 x 1086 pixels, landscape 4:3. No text, letters, numbers, labels, brands, logos, panels, collage or watermark.",
+      "source_png": "/workspace/generated_images/exec-997d1593-a214-437e-9867-0f9c96a3398b.png",
+      "source_sha256": "4bc09bfe539ca6cfbb07e17f44865a2ede4df6cd6584dfbb0d24a76bf268a92e",
+      "sha256": "4bc09bfe539ca6cfbb07e17f44865a2ede4df6cd6584dfbb0d24a76bf268a92e",
+      "bytes": 2537645,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Île habitée entière, entourée d’eau sur tous les côtés, sans pont ni presqu’île. Aucun nom de lieu ni domicile personnel attribué.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-habiter-montagne",
+      "label": "Habiter à la montagne",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png",
+      "prompt": "Create one French TCF examination illustration of living 'A LA MONTAGNE'. A small Alpine village with a few modest complete wooden chalets on a steep green mountain slope, evergreen trees and tall clearly visible rocky mountain peaks rising behind. A narrow village path and ordinary garden fences, plausible architecture and perspective. Show the main chalets entirely with comfortable margins and a recognisable high-mountain setting. Not a lowland farming plain, island, seaside resort, ski race or empty glacier panorama. No people, animals, signs, clocks, vehicles or equipment. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, restrained natural cream/wood/olive/navy colours and soft daylight coherent with a warm French language teaching image bank. Not photograph, CGI, cartoon or flat vector icon. One continuous scene native EXACT 1448 x 1086 pixels landscape 4:3, no text, readable letters, numbers, names, logos, panels, collage or watermark.",
+      "source_png": "/workspace/generated_images/exec-07f5aee5-6d69-4aea-a512-7e7314759d54.png",
+      "source_sha256": "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee",
+      "sha256": "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee",
+      "bytes": 3466945,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Village de chalets sur une pente avec hauts sommets rocheux et conifères. Le lieu de vie en montagne est distingué de la campagne et de l’île.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Logement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-patinoire-lieu",
+      "label": "La patinoire",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+      "prompt": "Create one French TCF examination illustration of 'LA PATINOIRE' as a clearly recognisable public indoor ICE-SKATING RINK. A broad smooth pale blue-white ice surface with faint skate traces and a slightly reflective icy sheen, surrounded by low cream safety boards with a modest navy rail and clear protective panels. A small entry gate, benches and ordinary changing-room doors outside the rink, simple high windows and timber roof beams. No swimming water, pool ladders, gym court, roller skates or snow-covered outdoor landscape. No people, advertisements, scoreboard, clocks, text, dates, numbers, logos or signs. Believable architecture and consistent perspective, main rink shape and surrounding boards visible with adequate margins. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, natural restrained cream/wood/navy colours and soft diffuse daylight matching a warm French teaching image bank. Not photograph, CGI, cartoon or vector icon. Single native EXACT 1448 x 1086 pixel landscape 4:3 scene, no collage, panels or watermark.",
+      "source_png": "/workspace/generated_images/exec-c042c34c-603c-4f4e-930f-bab60ddeb4da.png",
+      "source_sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+      "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+      "bytes": 2604262,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Surface de glace avec traces de patins, balustrades et portillon. Pas d’eau, d’échelle de piscine ou de terrain de gymnase.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Loisirs",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-bowling-lieu",
+      "label": "Le bowling",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-bowling-lieu.png",
+      "prompt": "Create one French TCF examination illustration of 'AU BOWLING': an ordinary modest indoor ten-pin bowling alley, no people. Clear view along two polished pale wood lanes, each with normal gutters and a triangular set of ten white bowling pins with two red neck stripes at the FAR end. Correct lane perspective with long straight wooden planks, pins standing upright in a realistic triangle, not floating or in a straight row. In the foreground beside the approach, a small ball return holding two ordinary bowling balls with three finger holes, both whole balls visible. Benches to the side, simple cream walls and muted navy details, soft indoor daylight. No nightclub lighting, screens, scoreboards, readable signs, clocks, text, numbers, logos or brands. Main pins and balls entirely within frame with comfortable margins. Soft semi-realistic painted editorial illustration with fine gentle visible brush texture, restrained cream/wood/navy colours, harmonious with a warm French language teaching image bank. Not photograph, CGI, cartoon or vector icon. Single continuous native EXACT 1448 x 1086 pixel landscape 4:3 scene, no panels, collage or watermark.",
+      "source_png": "/workspace/generated_images/exec-82e75e6d-cbdd-4f19-b9f9-3a6823697f2c.png",
+      "source_sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+      "sha256": "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+      "bytes": 2665171,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-aliments-paysages-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Pistes, gouttières, groupes de quilles debout et boules entières sur leur retour. Aucun personnage inventé ; le lieu souhaité est distingué de l’autorisation de sortie.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Loisirs",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-glaciers-sommets-dessine.webp",
+      "reason": "Panorama inhabité, pas un lieu de vie à la montagne."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+      "reason": "Boisson, pas le café comme lieu où travailler ensemble."
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/reprises/dialogue-pere-refuse-sortie-enfant-visible.png",
+      "reason": "Discussion au domicile, pas le bowling demandé comme lieu souhaité."
+    }
+  ],
+  "trios": [
+    {
+      "key": "tcf-a2j-s1-ce-3#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Document 1 — Règles dans la salle de bains…\n1. Ne pas laisser couler l’eau dans la douche pendant le savonnage et se rincer rapidement.\n2. Laisser la douche propre.\n3. Vider la poubelle chaque mercredi soir.\n4. Ne pas laisser traîner de vêtements sales.\n5. Ranger correctement les serviettes sur le radiateur pour les faire sécher. Quand une serviette est sale, la mettre dans la machine à laver au sous-sol. Des serviettes propres sont rangées dans le placard.\nMerci !\n\nDocument 2 — Bonjour,\nJe suis déjà partie au travail. Pour le petit-déjeuner, il y a du pain dans la boîte à côté du four et des céréales dans le placard. Le lait est dans le frigo. Il y a aussi des fruits, ils viennent du marché, ils sont très bons !\nPourriez-vous aller au supermarché pour acheter du beurre et des œufs ? Merci beaucoup ! Je passerai à la boulangerie pour prendre du pain avant de rentrer.\nBonne journée,\nAnna\n\nDocument 3 — Comment utiliser le four ?\n• Pour allumer le four, appuyer sur le bouton rouge en haut.\n• Choisir la température avec le bouton + ou –.\n• Choisir la position de cuisson avec le bouton blanc : « chaleur tournante », « traditionnel » ou « grill ».\n• Vous pouvez régler la minuterie (bouton « horloge ») pour définir un temps de cuisson. Il y a 2 options :\n– option « sonnerie » : le four sonne quand la minuterie arrive à zéro, mais la cuisson continue ;\n– option « arrêt » : le four s’arrête tout seul quand la minuterie arrive à zéro.",
+      "source_sha256": "e88a39677441a80ccd55fd91be1152ad5ee31d4f091491c5f1a2b5463e479c78",
+      "semantic_sha256": "542625ac057560a311dcb1418f11cb6cf9865afe7f3d5611604fabb5f02bd32c",
+      "question": {
+        "enonce": "Document 2 — Quels produits faut-il acheter au supermarché ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du beurre et des œufs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du pain et du lait",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des fruits et des céréales",
+            "correct": false
+          }
+        ],
+        "written_model": "Du beurre et des œufs"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-beurre-oeufs",
+        "qcm-a2-pain-lait",
+        "qcm-a2-fruits-cereales"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png"
+      ],
+      "image_sha256": [
+        "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+        "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+        "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311"
+      ],
+      "reason": "Dans le document 2, Anna demande d’acheter du beurre et des œufs. Le pain, le lait, les fruits et les céréales sont déjà disponibles.",
+      "visual_review": "Trois compositions complètes et distinctes, avec les deux catégories d’aliments de chaque choix. Le fond des trois premières versions, trop jaune et texturé, est corrigé avec la référence boissons validée avant intégration. Aucun aliment supplémentaire n’est ajouté aux paires.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2-s1-ce-4#7",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Comme chaque année, en France, la deuxième quinzaine d’août marque le début des courses pour la rentrée des écoliers français. Cette année, les commandes Internet de fournitures scolaires rencontrent un fort succès. Le magasin Bureau Vallée de Tours-Nord enregistre une hausse de ces commandes en ligne depuis le début du mois.\n\nFaire sa liste de fournitures scolaires en quelques clics et récupérer sa commande toute prête, c’est ce que propose le magasin. Une offre qui séduit de plus en plus de familles. C’est rapide et pratique.\n\nFernande Cerjak est la directrice de ce magasin spécialisé. Elle constate une hausse du nombre de commandes Internet cette année : « On a de plus en plus de commandes en ligne. Je pense que c’est plus simple pour les familles. Elles sont à la maison, elles peuvent prendre le temps de regarder et de choisir. »\n\nD’après France Bleu Touraine – Radio France, 19/08/2020.",
+      "source_sha256": "47ab5a11add1849892fa5fecfa1e04657e14debad0cca3d59b543aee58d09257",
+      "semantic_sha256": "07f9299da11d10c773542121a5c3d64960d2663033fafa6b473a16d85a65b6e7",
+      "question": {
+        "enonce": "Où les familles peuvent-elles choisir leurs fournitures ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la maison",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Uniquement à l’école",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Uniquement au bureau",
+            "correct": false
+          }
+        ],
+        "written_model": "À la maison"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-ecole-dessine",
+        "retained-20261107-7d0de26c5609"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/co/bg/bureau-directeur.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "b0276a477b142460d876df5732eb0b881dee0fc4e57167ae67c64d72f3af4b41"
+      ],
+      "reason": "La directrice explique que les familles peuvent prendre le temps de regarder et de choisir leurs fournitures à la maison.",
+      "visual_review": "Domicile, école et bureau professionnel. Le lieu de choix en ligne est distingué du magasin où récupérer la commande ; aucune adresse ni personne nommée n’est attribuée aux illustrations.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-039#3",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Bonjour,\nDe juin à septembre, des ateliers sur l’écologie sont proposés aux jeunes dans les parcs de la ville.\nPour t’inscrire : va sur www.ateliersecolos.com, choisis le thème et la date, remplis le formulaire et envoie-le à ecoatelierdete@fmail.com, puis attends la confirmation.\nMoi, je me suis inscrit à l’atelier sur la biodiversité du 25 juin !\nOscar",
+      "source_sha256": "f78793ac09990f8f8e952749d00eccbbd2b9bf1e829de2a915aea6f09cf8cc82",
+      "semantic_sha256": "d2ad95eac98fa898feced06f9c2ebbaa1d121a5ccc9bd0db6b35658f591f1552",
+      "question": {
+        "enonce": "Où les ateliers ont-ils lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Dans les parcs de la ville",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans les salles de cinéma",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans les gares",
+            "correct": false
+          }
+        ],
+        "written_model": "Dans les parcs de la ville"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "co306-parc-public-dessine",
+        "co834-seance-cinema-dessinee",
+        "co306-gare-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "image_sha256": [
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+      ],
+      "reason": "L’annonce situe les ateliers d’écologie dans les parcs de la ville, de juin à septembre.",
+      "visual_review": "Parc public, salle de cinéma et intérieur de gare. Les images identifient les catégories de lieux, sans représenter une séance d’atelier particulière ni prétendre montrer plusieurs adresses réelles.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-052#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Notre journaliste a posé la question à des jeunes.\nCédric : « J’aime la campagne : c’est tranquille, il y a des arbres et des fleurs, moins de pollution et un air pur. »\nLaura : « En ville, il y a beaucoup plus à faire et on gagne du temps pour aller à l’école ou dans les magasins. »\nJean : « La ville me plaît plus : tout est près de chez moi. Mais la campagne, c’est plus calme et plus beau, j’aimerais y vivre aussi. »\nMaëlle : « La campagne ! Je ne supporte pas la foule, il y a trop de monde en ville. »\nVincent : « La ville, pour les animations, le cinéma, le théâtre, les concerts. J’aimerais vivre à Zurich ou à Berlin. À la campagne il n’y a rien à faire, je le sais, j’y habite ! Mais c’est vrai qu’il y a moins de pollution et de stress. »",
+      "source_sha256": "13f0a224195b276d9630b1e4b73819b7198cc875584e6ce4c65f02a75dcfd193",
+      "semantic_sha256": "0cc090aa983a9922a43c7501f50fd17970d8dcaa2ac582c2263ea4a1ab037599",
+      "question": {
+        "enonce": "Où Jean aimerait-il aussi vivre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la campagne",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Sur une île",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la montagne",
+            "correct": false
+          }
+        ],
+        "written_model": "À la campagne"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-habiter-campagne",
+        "qcm-a2-habiter-ile",
+        "qcm-a2-habiter-montagne"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-ile.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png"
+      ],
+      "image_sha256": [
+        "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+        "4bc09bfe539ca6cfbb07e17f44865a2ede4df6cd6584dfbb0d24a76bf268a92e",
+        "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee"
+      ],
+      "reason": "Jean dit aimer la ville mais souhaiter aussi vivre à la campagne, plus calme et plus belle.",
+      "visual_review": "Lieu de vie rural, île habitée entourée d’eau et village de chalets en montagne. Ni sommet inhabité ni panorama de glaciers pour le logement en montagne ; ces décors ne prétendent pas représenter le domicile réel de Jean.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-066#8",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Salut !\nÇa te dirait d’aller au cinéma samedi avec mon cousin Arthur ?\nÀ 14 h, il y a la comédie « Gare Cornavin » avec Bob Lenoir, un super acteur. À 14 h 30, un film d’aventure, « Le Grand Voyage ». Et à 14 h 15, le dernier film de Gaël Thomas, « Garde à vous ! », un policier très bien mais un peu long : plus de 2 heures.\nOn se retrouve devant le cinéma à 13 h 45 pour décider ensemble ? Tu peux proposer à ton frère de venir s’il est libre.\nÀ bientôt !\nJoachim",
+      "source_sha256": "428ad89054e8cc9f575531d1e511edee73d5a413da312da68dbbe5842ebfa189",
+      "semantic_sha256": "d816c1e3f54a003158dc65abbe610b84461e5d501b2cd4198c3d95739a9aa4fd",
+      "question": {
+        "enonce": "Où faut-il retrouver Joachim ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant le cinéma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la gare",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant son école",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant le cinéma"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-cinema-facade",
+        "qcm-a1-gare-facade",
+        "co306-ecole-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
+      "image_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857"
+      ],
+      "reason": "Joachim fixe le rendez-vous devant le cinéma à 13 h 45 pour choisir le film.",
+      "visual_review": "Trois vues extérieures : cinéma, gare et école. « Gare Cornavin » est le titre d’un film proposé et non le lieu du rendez-vous ; les images ne prétendent pas montrer l’école précise de Joachim.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-031#9",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Salut !\nJe t’écris pour te demander si tu es intéressé(e) par un festival de musique avec Maud et moi. Ça s’appelle « Les Rives en musique » et c’est à Nyon. C’est organisé par la ville de Nyon. C’est vraiment intéressant, car il y a différents styles de musique : musique latine, rock, rap, musiques du monde.\nÇa commence le 8 juillet et ça dure 15 jours. Il faut choisir un jour et un artiste qui nous intéresse. Maud voudrait voir Lina Marcelli le 10. Moi, j’aimerais bien voir Marco Veni le 19.\nIl y a même des concerts pour les enfants. Si tu veux, tu peux regarder la programmation sur le site Internet du festival et emmener ta petite cousine !\nRéponds-moi vite !\nFarid",
+      "source_sha256": "224ded834c8a1059e9f29647dd573fc67d0c1231ea690de853d9169d5f10454a",
+      "semantic_sha256": "10b3e8356703943a2d1daa832f185e2f3f28003a7c486a9b5c7a2f7f4f7d164e",
+      "question": {
+        "enonce": "Où peut-on consulter le programme ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur le site Internet du festival",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Uniquement à la mairie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Uniquement dans le train",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur le site Internet du festival"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a1-site-festivals",
+        "co306-mairie-dessine",
+        "co834-train-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-site-festivals.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "image_sha256": [
+        "11257ad69626089696b93710df7e49ef5b69e7292ad8cf110abcda82d691b1bd",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+      ],
+      "reason": "Farid invite à consulter la programmation sur le site Internet du festival de musique de Nyon.",
+      "visual_review": "Navigateur avec articles de festivals, mairie et train. Le site illustré traite de musique, sans calendrier de réservation ni courriel ; aucun nom d’artiste, date ou événement réel n’est ajouté à l’écran.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-042#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Je suis très mauvaise en cuisine, mais je connais une excellente recette. Elle est très facile et surtout délicieuse.\n• Dans un saladier, mélanger de la farine, deux œufs et du sucre.\n• Ajouter des pommes et des poires coupées en morceaux.\n• Verser dans un moule et faire cuire 25 minutes à 180°.\nLe gâteau peut s’accompagner de glace.",
+      "source_sha256": "a3fed3a8cb32408a1948068246dd4bd737ed2f9c56866ec0675e08635aa2f6d2",
+      "semantic_sha256": "fbd557481dc2d26caa3a88fb0315d7a4ae3d96e40ff6eec6bbc4873d27e989cf",
+      "question": {
+        "enonce": "Quels fruits faut-il ajouter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pommes et des poires",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des oranges et des citrons",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des fraises et des framboises",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pommes et des poires"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "9dd6fb9363ec",
+        "272abc0c5fc4",
+        "60817b5cd6f1"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/272abc0c5fc4.webp",
+        "/lib/images/tcf/qcm-audit/60817b5cd6f1.webp"
+      ],
+      "image_sha256": [
+        "8d12afe0ea8d8b62e9abad89feab1c713e162cf749a4f2b7aea592dc75b30690",
+        "9a1f821b1628200bd28bb3c293566af9c642fed1bd1810e46e04c298cb1bdc0d",
+        "6fce0fec3f977de45e93a5ac8a2e48fdba5bc40cecbd1ab59cf6735c4d02193f"
+      ],
+      "reason": "La recette demande d’ajouter des pommes et des poires coupées en morceaux.",
+      "visual_review": "Les trois associations de fruits déjà disponibles sont réutilisées : pommes-poires, oranges-citrons et fraises-framboises. Elles identifient les fruits demandés, sans prétendre illustrer l’étape de découpe ni ajouter un ingrédient.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-063#9",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Dans notre rubrique du jour, Thomas nous explique son changement de travail.\nAvant de devenir agent immobilier, Thomas travaillait dans la restauration. Passionné par l’émission d’un agent immobilier très connu, qu’il regardait tous les jours à 17 h, il a décidé de changer de métier. Il a déposé son CV dans les agences immobilières de son quartier. Il n’a pas eu besoin de longues études : une agence l’a engagé et formé.\nAujourd’hui, Thomas ne travaille plus en centre-ville, mais dans un village près de Sion. Il vend surtout des maisons. Beaucoup de familles recherchent une maison avec jardin, alors que les couples préfèrent souvent vivre en ville. Mais il y a un inconvénient à habiter à la campagne : il y a peu de transports en commun, et la voiture est nécessaire pour se déplacer.",
+      "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
+      "semantic_sha256": "8d428bee288cb11d1bbb86191d03c33c8fb9f3fdc5436ecde6ea3259a1d70bc9",
+      "question": {
+        "enonce": "Où les couples préfèrent-ils souvent vivre selon l’article ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "En ville",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la campagne uniquement",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "En montagne uniquement",
+            "correct": false
+          }
+        ],
+        "written_model": "En ville"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "retained-20261107-2ea2762cc434",
+        "qcm-a2-habiter-campagne",
+        "qcm-a2-habiter-montagne"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png"
+      ],
+      "image_sha256": [
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c",
+        "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+        "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee"
+      ],
+      "reason": "L’article distingue les familles recherchant des maisons avec jardin des couples qui préfèrent souvent vivre en ville.",
+      "visual_review": "Centre-ville avec rue commerçante, habitat rural et chalets en montagne. La question porte sur la préférence des couples, pas sur le lieu où Thomas travaille aujourd’hui. Aucun taux, nom de ville ou logement réel n’est déduit des illustrations.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2j-s2-co-1#19",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Alerte rouge.\nUne tempête est prévue pour demain, avec beaucoup de vent et des pluies très fortes.\nVous devez rester chez vous.\nL’école sera fermée toute la journée.",
+      "source_sha256": "f016ea30896ea1d391248d716d9860adcd920a6599832f9437b69db68a5b9cb6",
+      "semantic_sha256": "44ba678d7db8958c6f14afdb7e87aabd530d41ca3b2bd0b4c273870250443e72",
+      "question": {
+        "enonce": "Où faut-il rester pendant la tempête ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez soi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans un parc",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sur la plage",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez soi"
+      },
+      "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-6.mp3",
+      "audio_sha256": "3a6dda510bc71d178a8e637b82e64e0cb40dd0ab191186443790fc98ef1ae6b9",
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-parc-public-dessine",
+        "co306-mer-plages-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+      ],
+      "reason": "L’alerte rouge annonce une tempête et demande de rester chez soi ; l’école sera fermée.",
+      "visual_review": "Domicile, parc et plage désignent les trois lieux proposés. Les décors génériques ne représentent pas une observation météorologique pendant la tempête et n’ajoutent pas une sortie au parc ou à la plage.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2j-s2b-co-2#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Le mois prochain, j'organise une fête chez moi. Tu fêtes ton anniversaire ? Oui, et tu es invité. C'est le 28 mars à 20h. Tu viendras ? Bien sûr ! Je serai là !",
+      "source_sha256": "2f3f6e5b6b27c6404f3cf0d5bafe69b39042a47604ac109d4a7e6d7a955e5a25",
+      "semantic_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2",
+      "question": {
+        "enonce": "Où la fête aura-t-elle lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez la personne qui invite",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au restaurant",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans une salle municipale",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez la personne qui invite"
+      },
+      "audio": "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
+      "audio_sha256": "cab9fef2d1543467bea8749a5afd1eb213f49c82ea007cbde5c5c97ae14054ba",
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-restaurant-dessine",
+        "co306-grande-salle-fetes-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "a648cf3001b4fd547a37bb5d9b7409f169078aaae887e6ca08e5ce85c07301ac"
+      ],
+      "reason": "La personne organise sa fête d’anniversaire chez elle le mois suivant, le 28 mars à 20 h.",
+      "visual_review": "Domicile, restaurant et salle municipale de fêtes. Les catégories de lieux restent distinctes ; l’image n’invente pas une adresse ni une scène de fête avec des personnes attribuées au dialogue.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s21-co-3#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Aujourd'hui, nous recevons Samia, professeure de sport. Elle va nous expliquer comment rester en forme en faisant du sport chez soi. Pas besoin de grand-chose. Un tapis de gym, une bouteille d'eau, de la musique, et c'est parti !",
+      "source_sha256": "1b412b3071a20c791c82a606d7a47a2e28d6002d1d6b8ff4b5db32679d5278c6",
+      "semantic_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856",
+      "question": {
+        "enonce": "Où propose-t-elle de faire du sport ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez soi",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À l’école",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans la rue",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez soi"
+      },
+      "audio": "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
+      "audio_sha256": "3863625a95d64cf842137dca042784c3a1e48d32796e708db08e504c6c20f222",
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-ecole-dessine",
+        "retained-20261107-2ea2762cc434"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/co/bg/ville.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+      ],
+      "reason": "Samia explique comment faire du sport chez soi avec un tapis, de l’eau et de la musique.",
+      "visual_review": "Domicile, école et rue en ville. La question demande le lieu conseillé ; les images de lieux ne transforment pas les passants ou les enfants de l’école en participants à la séance de sport.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s24-co-4#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Je n'arrive pas à faire cet exercice de maths. Si tu veux, je peux t'expliquer l'exercice cet après-midi. Oui, je veux bien. Mais tu viens chez moi, alors. D'accord. Je viens vers 4 h.",
+      "source_sha256": "8f8e194e4bf0aff7d8d30729ba7e0b8284b0d5b9503eb7a3982bd47fb1576209",
+      "semantic_sha256": "83f064f47c05bc7f55c7e4348ed755b89f1ea0d6b5a6713a1ea2c3e6ef9b2cd1",
+      "question": {
+        "enonce": "Où les personnes vont-elles travailler ensemble ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez la personne qui demande de l’aide",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la bibliothèque",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au café",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez la personne qui demande de l’aide"
+      },
+      "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
+      "audio_sha256": "f6f4dd9a87a8ce4f50f81696a8945f9f35463f17f7f5c138a3cc8cf12b6ac9b0",
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-bibliotheque-dessine",
+        "retained-20261107-856e85b22e12"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/cafe.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "6102ba6e8d84fc324ac014cde448f09c0ef5c6ba5fabddb72ebcfd1c99db267f"
+      ],
+      "reason": "La personne qui demande l’aide en maths précise « tu viens chez moi » et l’autre accepte vers quatre heures.",
+      "visual_review": "Domicile, bibliothèque et café, trois catégories de lieux. L’image du domicile ne prétend pas montrer les personnes du dialogue ni leur maison réelle ; le café est un lieu et non une tasse.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2-2021-co-ex4-25#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "– Tu es toujours d’accord pour aller voir un film cet après-midi ? – Oui, oui. On se retrouve à 13 h 45 devant le Ciné Palace.",
+      "source_sha256": "c28cb10c73b0488b67ee78974a4e6d4ceea13d4a406e8f01fbb88cd441ef714c",
+      "semantic_sha256": "8ce2bc1076f94b6046bd759761155f6ef5e751bb81b90da905237fb33d8220ed",
+      "question": {
+        "enonce": "Où doivent-ils se retrouver ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant le Ciné Palace",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À l'entrée de la gare",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant la mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant le Ciné Palace"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_25-1.mp3",
+      "audio_sha256": "80835df44c91c421da5dbdb25a4702f5c6f360756f4d157c494f1c1c3177d8b5",
+      "image_ids": [
+        "extension573-cinema-facade",
+        "qcm-a1-gare-facade",
+        "co306-mairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "reason": "Les amis confirment le rendez-vous à 13 h 45 devant le Ciné Palace.",
+      "visual_review": "Entrées de cinéma, de gare et de mairie, avec espace extérieur visible. Le cinéma générique illustre la catégorie de lieu, sans reproduire ni renommer un Ciné Palace réel.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2-2021-co-ex1-35#19",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Chers clients, votre supermarché est heureux de vous faire goûter ses gâteaux de saison. Votre pâtissier vous attend, près du rayon des fruits et légumes.",
+      "source_sha256": "d1ad5ed982ed7efaab36fc4cca10da23f6629e1350d64cd7d811ebc663210294",
+      "semantic_sha256": "47833ba2b405bf74e68d7687d9e90350d6c6cf3f10bc49a1e13b7acb53db2eea",
+      "question": {
+        "enonce": "Quels produits peut-on goûter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des gâteaux de saison",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des fromages",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des jus de fruits",
+            "correct": false
+          }
+        ],
+        "written_model": "Des gâteaux de saison"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-6.mp3",
+      "audio_sha256": "4572afc1589a830484f393f7bc916702f8e0993b93ef31fa2b992a15cbcfb1b3",
+      "image_ids": [
+        "co834-gateaux-dessines",
+        "co834-fromages-dessines",
+        "extension573-deux-jus-orange"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png"
+      ],
+      "image_sha256": [
+        "be46913f2ea811a999f22e150a4591807a7468de2785ff6a7e843687902c9dc1",
+        "c4cc7882be4af4a8adff154cc880905f38558fd41fa9bea7133d476bcff7b41d",
+        "09be3d3dca20c4c919d4db14175c5e7c488daaf59f31ae3fa68b2444d98eb025"
+      ],
+      "reason": "L’annonce invite les clients à goûter les gâteaux de saison près du rayon fruits et légumes.",
+      "visual_review": "Plusieurs gâteaux, plusieurs fromages et deux jus de fruits. Aucun gâteau n’est présenté comme une recette saisonnière précise et aucune saison n’est inventée ; la question demande la catégorie des produits à goûter.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-014-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Benoît, pour ton abonnement à la patinoire il te faut ta carte d’identité. Rappelle-toi pour les inscriptions de t’abonner demain mercredi de 14h00 à 17h00. Moi, ma maman va m’inscrire demain quand elle sort de son travail.",
+      "source_sha256": "6d805a4349175d2b61d4d70749e1817291ae6237c36b35aba3096dbc73c2b075",
+      "semantic_sha256": "3f1bb9cb077e804f58cb1f9200d874ecdb114691a589c7bad241f8d5c71425f2",
+      "question": {
+        "enonce": "Pour quel lieu Benoît veut-il un abonnement ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La patinoire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La piscine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le cinéma",
+            "correct": false
+          }
+        ],
+        "written_model": "La patinoire"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-014-01.mp3",
+      "audio_sha256": "5b5619f8a8bd5114723f96b80cf089bd578b06dd8e1d973f949d1b7331045b8f",
+      "image_ids": [
+        "qcm-a2-patinoire-lieu",
+        "co306-piscine-dessine",
+        "extension573-cinema-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "image_sha256": [
+        "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+        "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
+      "reason": "Le message rappelle à Benoît les documents et le créneau d’inscription pour son abonnement à la patinoire.",
+      "visual_review": "Patinoire de glace, piscine et cinéma. Le lieu est illustré directement, pas par des patins ou un billet seul. Les horaires d’inscription ne sont pas remplacés par une ouverture inventée du bâtiment.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-031-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Papa, ce soir je sors avec Mathieu, nous allons au bowling ! Absolument pas ! il est hors de question de sortir le jeudi maintenant ! Mais papa, il y a un tournoi... Je te dis non ! Un point c’est tout !",
+      "source_sha256": "7f372151a8655e001ed9c10f7b447882e1f9cf7eb1f19ee840b013c82e83ec03",
+      "semantic_sha256": "de1b2f956ee07ed0fd91a564b827fd52308bb98dc547675191429a16bd2ce3ca",
+      "question": {
+        "enonce": "Où la fille veut-elle aller ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au bowling",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au cinéma",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la piscine",
+            "correct": false
+          }
+        ],
+        "written_model": "Au bowling"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+      "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
+      "image_ids": [
+        "qcm-a2-bowling-lieu",
+        "extension573-cinema-facade",
+        "co306-piscine-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-bowling-lieu.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp"
+      ],
+      "image_sha256": [
+        "f76fc9d456b0e6038941e2fd2144a3642fe3447e94d2138fde3850f9f7c5d0db",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+      ],
+      "reason": "La fille souhaite aller au bowling avec Mathieu, mais son père refuse la sortie du jeudi.",
+      "visual_review": "Bowling avec pistes et quilles, cinéma et piscine. La question porte sur le souhait de la fille ; les images de lieux ne transforment pas ce souhait en sortie autorisée ou réalisée. La scène de discussion familiale n’est pas utilisée pour représenter le bowling lui-même.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

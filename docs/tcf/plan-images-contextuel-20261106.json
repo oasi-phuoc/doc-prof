@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1940,
+    "reviewed_trio": 1954,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 328,
+    "reviewed_763_artwork_pending": 314,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -118443,19 +118443,31 @@
         "Du pain et du lait",
         "Des fruits et des céréales"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "e88a39677441a80ccd55fd91be1152ad5ee31d4f091491c5f1a2b5463e479c78",
       "semantic_before_sha256": "542625ac057560a311dcb1418f11cb6cf9865afe7f3d5611604fabb5f02bd32c",
       "semantic_after_sha256": "542625ac057560a311dcb1418f11cb6cf9865afe7f3d5611604fabb5f02bd32c",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-beurre-oeufs.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-fruits-cereales.png"
+      ],
+      "target_sha256": [
+        "59d27619e9f1c8fdec9b72f74117033de66e2a18086bf412c65af4a1a143459e",
+        "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+        "357aac7359849ddaed4fdd5cdef041123e1537174dcecff462966a29bbb45311"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Dans le document 2, Anna demande d’acheter du beurre et des œufs. Le pain, le lait, les fruits et les céréales sont déjà disponibles.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Dans le document 2, Anna demande d’acheter du beurre et des œufs. Le pain, le lait, les fruits et les céréales sont déjà disponibles.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Trois compositions complètes et distinctes, avec les deux catégories d’aliments de chaque choix. Le fond des trois premières versions, trop jaune et texturé, est corrigé avec la référence boissons validée avant intégration. Aucun aliment supplémentaire n’est ajouté aux paires."
+      }
     },
     {
       "key": "tcf-a2j-s1-ce-3#7",
@@ -120377,19 +120389,31 @@
         "Uniquement à l’école",
         "Uniquement au bureau"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "47ab5a11add1849892fa5fecfa1e04657e14debad0cca3d59b543aee58d09257",
       "semantic_before_sha256": "07f9299da11d10c773542121a5c3d64960d2663033fafa6b473a16d85a65b6e7",
       "semantic_after_sha256": "07f9299da11d10c773542121a5c3d64960d2663033fafa6b473a16d85a65b6e7",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/co/bg/bureau-directeur.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "b0276a477b142460d876df5732eb0b881dee0fc4e57167ae67c64d72f3af4b41"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La directrice explique que les familles peuvent prendre le temps de regarder et de choisir leurs fournitures à la maison.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La directrice explique que les familles peuvent prendre le temps de regarder et de choisir leurs fournitures à la maison.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Domicile, école et bureau professionnel. Le lieu de choix en ligne est distingué du magasin où récupérer la commande ; aucune adresse ni personne nommée n’est attribuée aux illustrations."
+      }
     },
     {
       "key": "tcf-a2-s1-ce-4#8",
@@ -133084,19 +133108,31 @@
         "Dans les salles de cinéma",
         "Dans les gares"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "f78793ac09990f8f8e952749d00eccbbd2b9bf1e829de2a915aea6f09cf8cc82",
       "semantic_before_sha256": "d2ad95eac98fa898feced06f9c2ebbaa1d121a5ccc9bd0db6b35658f591f1552",
       "semantic_after_sha256": "d2ad95eac98fa898feced06f9c2ebbaa1d121a5ccc9bd0db6b35658f591f1552",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "target_sha256": [
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "L’annonce situe les ateliers d’écologie dans les parcs de la ville, de juin à septembre.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’annonce situe les ateliers d’écologie dans les parcs de la ville, de juin à septembre.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Parc public, salle de cinéma et intérieur de gare. Les images identifient les catégories de lieux, sans représenter une séance d’atelier particulière ni prétendre montrer plusieurs adresses réelles."
+      }
     },
     {
       "key": "delf-a2j-ce-039#4",
@@ -135754,19 +135790,31 @@
         "Sur une île",
         "À la montagne"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "13f0a224195b276d9630b1e4b73819b7198cc875584e6ce4c65f02a75dcfd193",
       "semantic_before_sha256": "0cc090aa983a9922a43c7501f50fd17970d8dcaa2ac582c2263ea4a1ab037599",
       "semantic_after_sha256": "0cc090aa983a9922a43c7501f50fd17970d8dcaa2ac582c2263ea4a1ab037599",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-ile.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png"
+      ],
+      "target_sha256": [
+        "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+        "4bc09bfe539ca6cfbb07e17f44865a2ede4df6cd6584dfbb0d24a76bf268a92e",
+        "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Jean dit aimer la ville mais souhaiter aussi vivre à la campagne, plus calme et plus belle.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Jean dit aimer la ville mais souhaiter aussi vivre à la campagne, plus calme et plus belle.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Lieu de vie rural, île habitée entourée d’eau et village de chalets en montagne. Ni sommet inhabité ni panorama de glaciers pour le logement en montagne ; ces décors ne prétendent pas représenter le domicile réel de Jean."
+      }
     },
     {
       "key": "delf-a2j-ce-052#5",
@@ -138653,19 +138701,31 @@
         "Devant la gare",
         "Devant son école"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "428ad89054e8cc9f575531d1e511edee73d5a413da312da68dbbe5842ebfa189",
       "semantic_before_sha256": "d816c1e3f54a003158dc65abbe610b84461e5d501b2cd4198c3d95739a9aa4fd",
       "semantic_after_sha256": "d816c1e3f54a003158dc65abbe610b84461e5d501b2cd4198c3d95739a9aa4fd",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
+      "target_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Joachim fixe le rendez-vous devant le cinéma à 13 h 45 pour choisir le film.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Joachim fixe le rendez-vous devant le cinéma à 13 h 45 pour choisir le film.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Trois vues extérieures : cinéma, gare et école. « Gare Cornavin » est le titre d’un film proposé et non le lieu du rendez-vous ; les images ne prétendent pas montrer l’école précise de Joachim."
+      }
     },
     {
       "key": "delf-a2j-ce-067#1",
@@ -145817,19 +145877,31 @@
         "Uniquement à la mairie",
         "Uniquement dans le train"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "224ded834c8a1059e9f29647dd573fc67d0c1231ea690de853d9169d5f10454a",
       "semantic_before_sha256": "10b3e8356703943a2d1daa832f185e2f3f28003a7c486a9b5c7a2f7f4f7d164e",
       "semantic_after_sha256": "10b3e8356703943a2d1daa832f185e2f3f28003a7c486a9b5c7a2f7f4f7d164e",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-site-festivals.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "target_sha256": [
+        "11257ad69626089696b93710df7e49ef5b69e7292ad8cf110abcda82d691b1bd",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Farid invite à consulter la programmation sur le site Internet du festival de musique de Nyon.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Farid invite à consulter la programmation sur le site Internet du festival de musique de Nyon.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Navigateur avec articles de festivals, mairie et train. Le site illustré traite de musique, sans calendrier de réservation ni courriel ; aucun nom d’artiste, date ou événement réel n’est ajouté à l’écran."
+      }
     },
     {
       "key": "delf-a2r-ce-032#1",
@@ -148134,19 +148206,31 @@
         "Des oranges et des citrons",
         "Des fraises et des framboises"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "a3fed3a8cb32408a1948068246dd4bd737ed2f9c56866ec0675e08635aa2f6d2",
       "semantic_before_sha256": "fbd557481dc2d26caa3a88fb0315d7a4ae3d96e40ff6eec6bbc4873d27e989cf",
       "semantic_after_sha256": "fbd557481dc2d26caa3a88fb0315d7a4ae3d96e40ff6eec6bbc4873d27e989cf",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/9dd6fb9363ec.webp",
+        "/lib/images/tcf/qcm-audit/272abc0c5fc4.webp",
+        "/lib/images/tcf/qcm-audit/60817b5cd6f1.webp"
+      ],
+      "target_sha256": [
+        "8d12afe0ea8d8b62e9abad89feab1c713e162cf749a4f2b7aea592dc75b30690",
+        "9a1f821b1628200bd28bb3c293566af9c642fed1bd1810e46e04c298cb1bdc0d",
+        "6fce0fec3f977de45e93a5ac8a2e48fdba5bc40cecbd1ab59cf6735c4d02193f"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La recette demande d’ajouter des pommes et des poires coupées en morceaux.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La recette demande d’ajouter des pommes et des poires coupées en morceaux.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Les trois associations de fruits déjà disponibles sont réutilisées : pommes-poires, oranges-citrons et fraises-framboises. Elles identifient les fruits demandés, sans prétendre illustrer l’étape de découpe ni ajouter un ingrédient."
+      }
     },
     {
       "key": "delf-a2r-ce-042#6",
@@ -153181,19 +153265,31 @@
         "À la campagne uniquement",
         "En montagne uniquement"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "4bd7959fa0f9fb7784ce84b457c02e9d1dfe42a1d43d2f7b7cfaa4ef070fb8d4",
       "semantic_before_sha256": "8d428bee288cb11d1bbb86191d03c33c8fb9f3fdc5436ecde6ea3259a1d70bc9",
       "semantic_after_sha256": "8d428bee288cb11d1bbb86191d03c33c8fb9f3fdc5436ecde6ea3259a1d70bc9",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-campagne.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-habiter-montagne.png"
+      ],
+      "target_sha256": [
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c",
+        "acc68cac1017d981b78c9d8595b2b1eba2b422207a4fdaf998a0918f1eb8fb36",
+        "8b138282b6cb4fc064aaf91ee1337e70f8729c4857bacff480f480e32db908ee"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "L’article distingue les familles recherchant des maisons avec jardin des couples qui préfèrent souvent vivre en ville.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’article distingue les familles recherchant des maisons avec jardin des couples qui préfèrent souvent vivre en ville.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Centre-ville avec rue commerçante, habitat rural et chalets en montagne. La question porte sur la préférence des couples, pas sur le lieu où Thomas travaille aujourd’hui. Aucun taux, nom de ville ou logement réel n’est déduit des illustrations."
+      }
     },
     {
       "key": "delf-a2r-ce-063#10",
@@ -157148,19 +157244,31 @@
         "Dans un parc",
         "Sur la plage"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "f016ea30896ea1d391248d716d9860adcd920a6599832f9437b69db68a5b9cb6",
       "semantic_before_sha256": "44ba678d7db8958c6f14afdb7e87aabd530d41ca3b2bd0b4c273870250443e72",
       "semantic_after_sha256": "44ba678d7db8958c6f14afdb7e87aabd530d41ca3b2bd0b4c273870250443e72",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-6.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mer-plages-dessine.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466",
+        "81a240394b5c1baae22b65aee7cee28b53a130f811bea908ee1a43415b0b6883"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "L’alerte rouge annonce une tempête et demande de rester chez soi ; l’école sera fermée.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’alerte rouge annonce une tempête et demande de rester chez soi ; l’école sera fermée.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Domicile, parc et plage désignent les trois lieux proposés. Les décors génériques ne représentent pas une observation météorologique pendant la tempête et n’ajoutent pas une sortie au parc ou à la plage."
+      }
     },
     {
       "key": "tcf-a2j-s2-co-1#20",
@@ -157969,20 +158077,32 @@
         "Au restaurant",
         "Dans une salle municipale"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "2f3f6e5b6b27c6404f3cf0d5bafe69b39042a47604ac109d4a7e6d7a955e5a25",
       "semantic_before_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2",
       "semantic_after_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2",
       "audio": "/lib/audio/tcf/co/fetes/25-invitation-fête-d-anniversaire.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "a648cf3001b4fd547a37bb5d9b7409f169078aaae887e6ca08e5ce85c07301ac"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
-      "semantic_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2"
+      "reason": "La personne organise sa fête d’anniversaire chez elle le mois suivant, le 28 mars à 20 h.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La personne organise sa fête d’anniversaire chez elle le mois suivant, le 28 mars à 20 h.",
+      "semantic_sha256": "7dcb0d64e69c10e8b23e02d28be69f53bc3b2bb0e635fe3f0ba9570aab06b0d2",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Domicile, restaurant et salle municipale de fêtes. Les catégories de lieux restent distinctes ; l’image n’invente pas une adresse ni une scène de fête avec des personnes attribuées au dialogue."
+      }
     },
     {
       "key": "tcf-a2j-s2b-co-2#3",
@@ -169187,20 +169307,32 @@
         "À l’école",
         "Dans la rue"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "1b412b3071a20c791c82a606d7a47a2e28d6002d1d6b8ff4b5db32679d5278c6",
       "semantic_before_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856",
       "semantic_after_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856",
       "audio": "/lib/audio/tcf/co/loisirs/loisirs-3-2.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/co/bg/ville.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
-      "semantic_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856"
+      "reason": "Samia explique comment faire du sport chez soi avec un tapis, de l’eau et de la musique.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Samia explique comment faire du sport chez soi avec un tapis, de l’eau et de la musique.",
+      "semantic_sha256": "31e75607609200f2c1d50303aeb96a014fa82cfb69e7edf58e71cce1b3742856",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Domicile, école et rue en ville. La question demande le lieu conseillé ; les images de lieux ne transforment pas les passants ou les enfants de l’école en participants à la séance de sport."
+      }
     },
     {
       "key": "tcf-ss-a2-s21-co-3#9",
@@ -169935,19 +170067,31 @@
         "À la bibliothèque",
         "Au café"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "8f8e194e4bf0aff7d8d30729ba7e0b8284b0d5b9503eb7a3982bd47fb1576209",
       "semantic_before_sha256": "83f064f47c05bc7f55c7e4348ed755b89f1ea0d6b5a6713a1ea2c3e6ef9b2cd1",
       "semantic_after_sha256": "83f064f47c05bc7f55c7e4348ed755b89f1ea0d6b5a6713a1ea2c3e6ef9b2cd1",
       "audio": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-3-3.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/cafe.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "6102ba6e8d84fc324ac014cde448f09c0ef5c6ba5fabddb72ebcfd1c99db267f"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La personne qui demande l’aide en maths précise « tu viens chez moi » et l’autre accepte vers quatre heures.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La personne qui demande l’aide en maths précise « tu viens chez moi » et l’autre accepte vers quatre heures.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Domicile, bibliothèque et café, trois catégories de lieux. L’image du domicile ne prétend pas montrer les personnes du dialogue ni leur maison réelle ; le café est un lieu et non une tasse."
+      }
     },
     {
       "key": "tcf-ss-a2-s24-co-4#9",
@@ -192280,19 +192424,31 @@
         "À l'entrée de la gare",
         "Devant la mairie"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "c28cb10c73b0488b67ee78974a4e6d4ceea13d4a406e8f01fbb88cd441ef714c",
       "semantic_before_sha256": "8ce2bc1076f94b6046bd759761155f6ef5e751bb81b90da905237fb33d8220ed",
       "semantic_after_sha256": "8ce2bc1076f94b6046bd759761155f6ef5e751bb81b90da905237fb33d8220ed",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_25-1.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "target_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Les amis confirment le rendez-vous à 13 h 45 devant le Ciné Palace.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Les amis confirment le rendez-vous à 13 h 45 devant le Ciné Palace.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Entrées de cinéma, de gare et de mairie, avec espace extérieur visible. Le cinéma générique illustre la catégorie de lieu, sans reproduire ni renommer un Ciné Palace réel."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex4-25#5",
@@ -195073,19 +195229,31 @@
         "Des fromages",
         "Des jus de fruits"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "d1ad5ed982ed7efaab36fc4cca10da23f6629e1350d64cd7d811ebc663210294",
       "semantic_before_sha256": "47833ba2b405bf74e68d7687d9e90350d6c6cf3f10bc49a1e13b7acb53db2eea",
       "semantic_after_sha256": "47833ba2b405bf74e68d7687d9e90350d6c6cf3f10bc49a1e13b7acb53db2eea",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_35-6.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co834-gateaux-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "/lib/images/tcf/qcm-audit/extension573-deux-jus-orange.png"
+      ],
+      "target_sha256": [
+        "be46913f2ea811a999f22e150a4591807a7468de2785ff6a7e843687902c9dc1",
+        "c4cc7882be4af4a8adff154cc880905f38558fd41fa9bea7133d476bcff7b41d",
+        "09be3d3dca20c4c919d4db14175c5e7c488daaf59f31ae3fa68b2444d98eb025"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "L’annonce invite les clients à goûter les gâteaux de saison près du rayon fruits et légumes.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’annonce invite les clients à goûter les gâteaux de saison près du rayon fruits et légumes.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-aliments-paysages-20261116.json",
+        "note": "Plusieurs gâteaux, plusieurs fromages et deux jus de fruits. Aucun gâteau n’est présenté comme une recette saisonnière précise et aucune saison n’est inventée ; la question demande la catégorie des produits à goûter."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex1-35#20",
