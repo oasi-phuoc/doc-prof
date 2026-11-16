@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-16T11:06:12.013Z",
+  "generatedAt": "2026-11-16T11:12:25.916Z",
   "scope": "Exact numeric fraction games, vertical fraction notation and smaller duel mascots with space for their full auras. No production service or environment configuration deployment.",
   "implementationBase": "a3b07611",
-  "integratedMain": "7bef7604",
-  "featureCommit": "e7f3a8fd",
+  "integratedMain": "2754e424",
+  "featureCommit": "301ca445",
   "unit": {
-    "uniquePassed": 64,
+    "uniquePassed": 71,
     "fullSuiteRun": false,
     "runs": [
       {
@@ -49,6 +49,15 @@
           "presets"
         ],
         "passed": 28
+      },
+      {
+        "stage": "after latest TCF banks and full-account access integration",
+        "files": [
+          "fractions",
+          "pools",
+          "fiches-access"
+        ],
+        "passed": 24
       }
     ],
     "realFractionConfigurations": 2100,
@@ -67,7 +76,8 @@
     ],
     "sourcePositions": 16,
     "newFractionTypes": 6,
-    "note": "Refreshing the inventory also reflects three previously implemented grammar types whose sources are now available."
+    "note": "Refreshing the inventory also reflects three previously implemented grammar types whose sources are now available.",
+    "certificationScope": "The three-seed/sixteen-position catalogue was built before the latest TCF bank update. The final pool tests check all offered levels against the merged generators; every configured pool is verified again before use."
   },
   "native": {
     "executed": [
@@ -136,7 +146,7 @@
     "auraLayout": "Mini and adult fourth-critical auras checked below the question; portrait widths reduced, all answer targets remain playable.",
     "battleRegression": "Normal, double, triple and fourth criticals, both directions, mistake implosion, low HP and persistent adult form; offline play, portrait fallback and landscape capability paths.",
     "artGallery": "Existing 480 mini casting/adult-state sprites reviewed by the battle fixture.",
-    "integrationScope": "Fraction and written arithmetic flows ran on integrated main after the final presentation change. Adult/mini battle layout checks ran before the upstream TCF print/transcription integration; the affected source tests, build and A4 check also ran after that integration.",
+    "integrationScope": "Final fraction and written arithmetic native flows ran after the presentation cleanup and TCF transcription integration, before the later TCF bank/access commit. The final pool, fraction and account-access tests, production build and API types ran after that latest commit. A4 was checked after the print/transcription integration; the later changes do not alter its arithmetic/geometry fixture.",
     "emptyResultMarkers": "Removed in Class, Solo, duel, competition, preparation, navigation, reports, teacher console and teacher sheet. Fraction equivalences become questions retaining both given numbers. Actual given equalities and missing operands remain usable."
   },
   "checks": {
@@ -152,31 +162,31 @@
       "status": "passed",
       "routes": {
         "landing": {
-          "gzip": 122312,
+          "gzip": 122340,
           "maximumGzip": 153600
         },
         "pool": {
-          "gzip": 159782,
+          "gzip": 159793,
           "maximumGzip": 204800
         },
         "calibration": {
-          "gzip": 142839,
+          "gzip": 142853,
           "maximumGzip": 204800
         },
         "diagnostic": {
-          "gzip": 144981,
+          "gzip": 145000,
           "maximumGzip": 204800
         },
         "competition": {
-          "gzip": 202393,
+          "gzip": 202395,
           "maximumGzip": 204800
         },
         "teacherConsole": {
-          "gzip": 166743,
+          "gzip": 166752,
           "maximumGzip": 204800
         },
         "game": {
-          "gzip": 3129024,
+          "gzip": 3129238,
           "maximumGzip": 3145728
         }
       }
@@ -198,5 +208,6 @@
     "Physical ENI and phone testing remain open.",
     "Visual fraction shapes, composed TPM fraction exercises and further advanced mechanics remain open.",
     "No production room activation or external deployment was performed."
-  ]
+  ],
+  "presentationCommit": "f91b54a2"
 }
