@@ -139,12 +139,25 @@
     "qcm_rendering": "2318 variants / 12 shuffle cases",
     "catalogue_unit_tests": "13 passed",
     "typecheck": "passed",
-    "production_build": "passed"
+    "production_build": "passed",
+    "upstream_pool_unit_tests": "7 passed",
+    "route_budgets": "passed with production manifest"
   },
   "browser_summary": {
     "views": 40,
     "question_views": 42,
     "image_views": 126,
     "errors": []
+  },
+  "upstream_integration": {
+    "commit": "daa5ec5e56ed4f52f3e1593958e2f1f40e0fbb54",
+    "upstream_tcf_bank_changes": 0,
+    "generated_catalogue_rebuilt": true,
+    "upstream_proof_images_preserved": 6,
+    "gallery_images": 6804,
+    "browser_rechecked_after_merge": true,
+    "lexical_image_entries": 1100,
+    "new_lexical_image_entries": 12,
+    "existing_lexical_entries_preserved": true
   }
 }

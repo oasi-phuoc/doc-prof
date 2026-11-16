@@ -3,14 +3,14 @@ import type { TimerSettings } from './settings'
 import { readPlanOptions, type PlanOptions } from './plan-options'
 import { sourcePosition } from './source-position'
 
-export type SourceReference = { kind: 'saved' | 'draft' | 'demo'; id: string }
+export type SourceReference = { kind: 'saved' | 'draft' | 'demo' | 'pool'; id: string }
 export type SessionSource = { reference: SourceReference; sourceKey: string; seed: number; selectedKeys: string[]; replay: number; timer: TimerSettings; options?: PlanOptions; presetId?: string; resolvedKeys?: string[] }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
 export function readSessionSource(value: unknown): SessionSource | undefined {
   if (value === undefined) return undefined
-  if (!object(value) || !object(value.reference) || !['saved', 'draft', 'demo'].includes(value.reference.kind as string) ||
+  if (!object(value) || !object(value.reference) || !['saved', 'draft', 'demo', 'pool'].includes(value.reference.kind as string) ||
     typeof value.reference.id !== 'string' || !value.reference.id || value.reference.id.length > 200 || [...value.reference.id].some((char) => char.charCodeAt(0) < 32) ||
-    typeof value.sourceKey !== 'string' || !/^(saved|draft|demo)-\d+$/.test(value.sourceKey) ||
+    typeof value.sourceKey !== 'string' || !/^(saved|draft|demo|pool)-\d+$/.test(value.sourceKey) ||
     typeof value.seed !== 'number' || !Number.isSafeInteger(value.seed) ||
     !Array.isArray(value.selectedKeys) || value.selectedKeys.length > 5000 || value.selectedKeys.some((key) => typeof key !== 'string' || !sourcePosition.test(key)) ||
     typeof value.replay !== 'number' || !Number.isSafeInteger(value.replay) || value.replay < 0 || value.replay > 5000 ||

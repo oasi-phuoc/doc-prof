@@ -44,3 +44,10 @@ condition = "AND"
 paths = ['''(^|/)docs/tcf/generation-scenarios-b1-final-20261115\.json$''']
 regexTarget = "match"
 regexes = ['''^key"\s*:\s*"(?:scenario\-b1\-choix\-plats\-trois\-interlocuteurs|scenario\-b1\-expliquer\-exercice\-non\-fait|scenario\-b1\-discuter\-loisirs\-citoyens|scenario\-b1\-appel\-choix\-cadeau\-patrick)"?$''']
+
+[[rules.allowlists]]
+description = "Référence exacte à une question publique DELF, reliée à la banque et au MP3 vérifiés le 16 novembre."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/delf-actif-20261113/images-a-preparer\.json$''']
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"tcf-delf-actif-a2-043-03-01#6"?$''']

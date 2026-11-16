@@ -19,7 +19,8 @@ const delfEvidence = [
   'signature-52-1-d7caa132e648.json',
   'signature-52-2-caaca983b5dd.json',
 ].map(file => `docs/tcf/delf-actif-20261113/relectures/${file}`)
-const sceneRecords=(await Promise.all(['20261114','20261115'].map(async date=>JSON.parse(await readFile(`docs/interactive/revue-identifiants-scenes-${date}.json`,'utf8')).reviewed))).flat()
+const existingSceneRecords=(await Promise.all(['20261114','20261115'].map(async date=>JSON.parse(await readFile(`docs/interactive/revue-identifiants-scenes-${date}.json`,'utf8')).reviewed))).flat()
+const sceneRecords=[...existingSceneRecords,...JSON.parse(await readFile('docs/interactive/revue-identifiants-pool-integration-20261116.json','utf8')).reviewed]
 const sceneEvidence=[...new Set(sceneRecords.map(record=>record.file))]
 const normalizedEvidence = [...modelEvidence, ...delfEvidence,...sceneEvidence]
 async function separateJsonLines(file) {
@@ -109,7 +110,7 @@ try {
   }
   const history = await scan(binary, ['git', `--log-opts=${baseline}..HEAD`, root], 'history')
   const changed = await scan(binary, ['dir', tree], 'changed')
-  const report = { tool: `Gitleaks ${version}`, selfTest: `Jeton GitHub et clés génériques synthétiques non émis détectés dans ${normalizedEvidence.length} rapports, contenus masqués ; key et api_key restent détectés dans les ${sceneEvidence.length} rapports de scènes, seuls ${sceneRecords.length} identifiants publics exacts sont admis ; empreintes de vocabulaires admises dans huit rapports précis et détectées ailleurs.`, baseline, changedFiles: files.length, findings: [...history, ...changed], scope: 'Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.' }
+  const report = { tool: `Gitleaks ${version}`, selfTest: `Jeton GitHub et clés génériques synthétiques non émis détectés dans ${normalizedEvidence.length} rapports, contenus masqués ; key et api_key restent détectés dans les ${sceneEvidence.length} rapports de références publiques, seuls ${sceneRecords.length} identifiants publics exacts sont admis ; empreintes de vocabulaires admises dans huit rapports précis et détectées ailleurs.`, baseline, changedFiles: files.length, findings: [...history, ...changed], scope: 'Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.' }
   await writeFile('docs/interactive/secrets-results.json', JSON.stringify(report, null, 2) + '\n')
   if (report.findings.length) { console.error(JSON.stringify(report.findings, null, 2)); throw new Error('Gitleaks a trouvé des valeurs à vérifier ; leur contenu est masqué.') }
   console.log(`Gitleaks ${version} : aucun secret détecté dans le périmètre des modifications (${files.length} fichiers).`)

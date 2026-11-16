@@ -92,7 +92,7 @@ try{
     await button(page,'Enregistrer').click();const save=page.getByRole('dialog',{name:'Enregistrer la fiche',exact:true});await save.getByRole('button',{name:'Mettre à jour',exact:true}).click();await save.waitFor({state:'detached'})
     assert.ok(saved);assert.equal(saved.recipe.pages[0].phraseItems.length,4);assert.equal(saved.recipe.pages[0].phraseItems[0].responseAnswer,'Je mange une pomme.');const authored=structuredClone(saved.recipe)
     await page.reload();await rows(page).first().waitFor({timeout:120000});assert.deepEqual(await rows(page).first().locator('.phrase-image-clue').evaluateAll(nodes=>nodes.map(node=>node.dataset.category)),['pronom','verbe','nom'])
-    await button(page,'Jouer avec la classe').click();await page.locator('.ci-launch:enabled').waitFor({timeout:120000})
+    await button(page,'Jouer cette fiche').click();await page.locator('.ci-launch:enabled').waitFor({timeout:120000})
     await button(page,'Précharger toute la séance').click();await page.getByRole('status').filter({hasText:'Prêt à jouer sans connexion'}).waitFor()
     await context.setOffline(true);await page.locator('.ci-launch').click();await page.locator('.ci-app .phrase-image-row').waitFor()
     assert.equal(await page.locator('.ci-answer').count(),0);assert.ok(!(await page.locator('body').innerText()).includes('Je mange une pomme.'));await colours(page.locator('.ci-app'))

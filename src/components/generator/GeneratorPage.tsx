@@ -584,9 +584,9 @@ export function GeneratorPage({
       <Header
         onCreate={() => undefined}
         generator
-        afterBrand={<button type="button" className="button small" onClick={playWithClass}>Jouer avec la classe</button>}
         rightSlot={
           <>
+            <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}

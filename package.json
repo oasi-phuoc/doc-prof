@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs",
-    "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs",
+    "predev": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs && node scripts/game-pool-catalog.mjs --check",
+    "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs && node scripts/game-pool-catalog.mjs --check",
     "gallery:index": "node scripts/image-gallery-catalog.mjs",
     "test:gallery": "node --test tests/gallery/catalog.test.mjs",
     "test:gallery:browser": "node tests/gallery/browser.mjs",
@@ -84,7 +84,9 @@
     "mascots:combat-masks": "node scripts/mascot-combat-crops.mjs",
     "test:interactive:annotations": "node tests/interactive/image-annotations-browser.mjs",
     "test:interactive:memory": "node tests/interactive/memory-browser.mjs",
-    "test:interactive:loto": "node tests/interactive/loto-browser.mjs"
+    "test:interactive:loto": "node tests/interactive/loto-browser.mjs",
+    "pool:catalog": "node scripts/game-pool-catalog.mjs && node scripts/certify-game-pool.mjs",
+    "test:interactive:pools": "node tests/interactive/pools-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

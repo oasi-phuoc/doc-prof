@@ -31,6 +31,12 @@ import {
   type ShapeId,
 } from './domain/palette'
 import { demoRecipe } from './demo'
+import {loadPool} from './pools/storage'
+import {poolRecipe,convertPoolRecipe,assertPoolDraw} from './pools/recipe'
+// The selector preloads this game entry before validating and opening a pool.
+// eslint-disable-next-line react/only-export-components -- This lazy game entry also validates the selector before navigation.
+export {checkPoolQuestions} from './pools/recipe'
+import {DEFAULT_PLAN_OPTIONS} from './domain/plan-options'
 import { readDraftWarning, readInteractiveDraft } from './navigation'
 import { loadLocalDraft, localDraftId } from './drafts'
 import { SessionView } from './SessionView'
@@ -87,20 +93,21 @@ async function deletePreparedSession(game: Game, mode: PlayMode): Promise<void> 
 
 export default function GameApp({ initialPreferences, initialWarning }: { initialPreferences: ClassroomPreferences; initialWarning: string }) {
   const draftId = localDraftId()
+  const poolId = new URLSearchParams(window.location.search).get('pool')
   const savedId = savedIdFromPath()
   const demo = window.location.pathname === '/interactif/demo'
   const requestedSession = new URLSearchParams(window.location.search).get('s')
   const [source, setSource] = useState<Source | null>(() => {
-    if (demo || draftId !== null || savedId) return null
+    if (poolId || demo || draftId !== null || savedId) return null
     const value = readInteractiveDraft()
     return value ? createGameSource(value, 'draft') : null
   })
   const [error, setError] = useState(() =>
-    !source && !demo && !savedId && draftId === null
-      ? 'Ouvrez une fiche puis choisissez « Jouer avec la classe ».'
+    !source && !poolId && !demo && !savedId && draftId === null
+      ? 'Choisissez les exercices de votre pool pour préparer une partie.'
       : '',
   )
-  const [loading, setLoading] = useState(!source && (demo || !!savedId || draftId !== null))
+  const [loading, setLoading] = useState(!source && (!!poolId || demo || !!savedId || draftId !== null))
   const [draftWarning] = useState(readDraftWarning)
   const [colors, setColors] = useState(initialPreferences.colors)
   const [shapes, setShapes] = useState(initialPreferences.shapes)
@@ -132,19 +139,21 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const [teacherSheetExport, setTeacherSheetExport] = useState('')
   useEffect(() => {
     if (source) return
-    if (!demo && !savedId && draftId === null) return
+    if (!poolId && !demo && !savedId && draftId === null) return
     let active = true
     const load = async () => {
-      const kind = demo ? 'demo' : draftId !== null ? 'draft' : 'saved'
-      const id = demo ? 'demo' : draftId ?? savedId!
+      const kind = poolId ? 'pool' : demo ? 'demo' : draftId !== null ? 'draft' : 'saved'
+      const id = poolId ?? (demo ? 'demo' : draftId ?? savedId!)
+      const pool=kind==='pool'?await loadPool(id):undefined
+      const poolOptions=pool?{...DEFAULT_PLAN_OPTIONS,orderMode:pool.config.shuffle?'shuffled' as const:'source' as const}:undefined
       const fiche = kind === 'saved' ? (await listFiches()).find((f) => f.id === id) : undefined
       if (kind === 'saved' && !fiche) throw new Error('Cette fiche est introuvable ou inaccessible pour votre compte.')
-      const value = demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : kind === 'draft' ? await loadLocalDraft(id) : { recipe: fiche!.recipe, name: fiche!.name }
-      if (!requestedSession) return loadGameSource(value, kind, id)
+      const value = pool?{recipe:poolRecipe(pool.config,pool.seed),name:pool.name}:demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : kind === 'draft' ? await loadLocalDraft(id) : { recipe: fiche!.recipe, name: fiche!.name }
+      if (!requestedSession) return loadGameSource(value, kind, id, poolOptions)
       const run = await runById(requestedSession)
-      const next = createGameSource(value, kind, id)
+      const next = createGameSource(value, kind, id, poolOptions)
       if (!run) return { ...next, storageWarning: 'Cette sauvegarde est introuvable ou expirée. Vous pouvez commencer une nouvelle partie.' }
-      if (run.source.reference.kind !== kind || run.source.reference.id !== id) throw new Error('Cette séance appartient à une autre fiche. Ouvrez son adresse d’origine.')
+      if (run.source.reference.kind !== kind || run.source.reference.id !== id) throw new Error('Cette séance appartient à une autre source. Ouvrez son adresse d’origine.')
       return { ...next, recipe: { ...next.recipe, seed: run.source.seed }, selectedKeys: run.source.selectedKeys, replay: run.source.replay, options: readPlanOptions(run.source.options), presetId: run.source.presetId, resolvedKeys: run.source.resolvedKeys, restoredMode: run.mode, restoredTimer: run.source.timer, sessionId: run.sessionId, restoredGameId: run.gameId }
     }
     void load()
@@ -158,7 +167,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
       .catch((e) => {
         if (active)
           setError(
-            e instanceof Error ? e.message : 'La fiche est indisponible.',
+            e instanceof Error ? e.message : 'La source de la partie est indisponible.',
           )
       })
       .finally(() => {
@@ -167,7 +176,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     return () => {
       active = false
     }
-  }, [source, draftId, savedId, demo, requestedSession])
+  }, [source, poolId, draftId, savedId, demo, requestedSession])
   const allowed = new Set(domainsForAccount(readAccessAccount()))
   const forbidden = source?.recipe.pages.some(
     (page) => !allowed.has(page.domain),
@@ -175,7 +184,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const game = useMemo(
     () => {
       if (!source || forbidden) return null
-      const converted = convertRecipe(source.recipe, source.name)
+      const converted = source.reference?.kind==='pool'?convertPoolRecipe(source.recipe,source.name):convertRecipe(source.recipe, source.name)
       const replayed = source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.recipe.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
       return applyPlanOptions(replayed, source.options)
     },
@@ -242,8 +251,16 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const canResume = !!saved && !saved.state.finished
   const newPart = (autoStart: boolean) => {
     if (!source) return
+    let next=renewGameSource(source,selection)
+    if(source.reference?.kind==='pool'){
+      let valid=false
+      for(let attempt=0;attempt<16;attempt++){
+        try{assertPoolDraw(next.recipe,convertPoolRecipe(next.recipe,next.name));valid=true;break}catch{next=renewGameSource(source,selection)}
+      }
+      if(!valid){setPreferencesWarning('Impossible de renouveler tous les exercices avec ces réglages. Modifiez le pool pour continuer.');return}
+    }
     setPlaying(false)
-    setSource(renewGameSource(source, selection))
+    setSource(next)
     setSelectionModified(false)
     const url = new URL(window.location.href); url.searchParams.delete('s'); window.history.replaceState(window.history.state, '', url)
     setResumeResult(null)
@@ -290,6 +307,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   }
   const savePreferences = (patch: Partial<ClassroomPreferences>) => { void patchClassroomPreferences(patch, initialPreferences).then((next) => setPaletteVersion(next.paletteVersion ?? 1), (error: unknown) => setPreferencesWarning(error instanceof Error ? error.message : 'Réglages non enregistrés.')) }
   const header = {
+    homeHref:poolId?'/interactif':undefined,
     onCompetition: activeGame && media.complete && readability.complete && preload.phase !== 'loading' ? () => { if (!hasLocalCompetition(activeGame.id) && !hasDuel(activeGame.id, 'duel') && !hasDuel(activeGame.id, 'teams')) newPart(false); setCompetitionOpen(true) } : undefined,
     toolbarGuard,
     mascot,
@@ -334,11 +352,11 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
           <h1>Préparer une séance</h1>
           <p role="alert">
             {forbidden
-              ? 'Votre compte ne permet pas de jouer cette fiche.'
+              ? `Votre compte ne permet pas de jouer ${poolId?'ce pool':'cette fiche'}.`
               : error}
           </p>
-          <a className="ci-primary" href="/generateur">
-            Ouvrir le générateur
+          <a className="ci-primary" href={poolId?'/interactif':'/generateur'}>
+            {poolId?'Choisir des exercices':'Ouvrir le générateur'}
           </a>
         </main>
       ) : (
@@ -397,6 +415,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                   <section className="ci-panel">
                     <p className="ci-eyebrow">Votre séance</p>
                     <h2>{game.title}</h2>
+                    {poolId&&<p><a href={`/interactif?edit=${poolId}`}>Modifier les exercices du pool</a> · <a href="/interactif">Nouveau pool</a></p>}
                     <p>
                       {activeGame.questions.length} question
                       {activeGame.questions.length > 1 ? 's' : ''} retenue
@@ -490,7 +509,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                     </div>
                     {!game.questions.length && (
                       <p>
-                        Aucune question compatible dans cette fiche. Les
+                        Aucune question compatible dans cette sélection. Les
                         éléments à adapter sont indiqués ci-dessous.
                       </p>
                     )}

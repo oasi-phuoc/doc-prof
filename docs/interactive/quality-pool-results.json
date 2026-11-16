@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-16T05:07:59.705797+00:00",
+  "baseCommit": "a5adf36d2a9977c181429b85bd54f01e625110ff",
+  "scope": "Direct multi-domain exercise pools, verified types only, immutable local configurations and seeded Class/Solo sessions without worksheet API calls.",
+  "catalog": {
+    "certifiedTypes": 685,
+    "seeds": [
+      20261107,
+      42,
+      20261115
+    ],
+    "sourcePositions": 16
+  },
+  "targetedDomainTests": {
+    "tests": 34,
+    "passed": 34,
+    "failed": 0,
+    "files": [
+      "pools",
+      "game-run",
+      "source-adapters",
+      "presets",
+      "session-transfer",
+      "source-reference"
+    ]
+  },
+  "browserStagesPassed": [
+    "pools-browser",
+    "a4-regression",
+    "drafts-browser",
+    "mobile-browser",
+    "gallery/navigation-browser"
+  ],
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 72,
+  "native": {
+    "results": [
+      {
+        "viewport": "390x844",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "1366x768",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "360x640",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "solo": "Two mixed domains: correct and wrong choices, timeout and two-second automatic feedback through the final summary."
+      }
+    ],
+    "apiRequests": [],
+    "errors": []
+  },
+  "a4": {
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "identicalScreenshot": true
+  },
+  "checks": {
+    "typescript": "passed",
+    "workerTypes": "passed",
+    "build": "passed after integrating concurrent TCF image and catalogue-navigation updates",
+    "lint": {
+      "errors": 0,
+      "preexistingWarnings": 85
+    },
+    "gitleaks": "passed after integration; exact public DELF question ID verified against bundled bank and public audio, key/api_key canaries remain detected",
+    "bundleBudgets": "passed after integration, without increasing limits"
+  },
+  "gzipBytes": {
+    "landing": 122276,
+    "pool": 159664,
+    "calibration": 142917,
+    "diagnostic": 145061,
+    "competition": 204526,
+    "teacherConsole": 166414,
+    "game": 3125687
+  },
+  "limits": [
+    "Pools and their source configurations remain on the same device/browser; they are not synchronized to the server.",
+    "Catalog certification samples three seeds, all offered levels and sixteen source positions; it does not exhaust every possible range or seed. Actual pool configurations are checked before saving and new draws before replacement.",
+    "Guided activities keep human assessment; duels and rooms use only answer-verifiable questions.",
+    "Physical phone/ENI tests and cold-start offline are not covered."
+  ],
+  "integratedMainCommit": "fef634ad3e4b5189c621fa9c19a2221987e357af"
+}

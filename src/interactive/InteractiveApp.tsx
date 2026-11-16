@@ -5,9 +5,11 @@ import './interactive.css'
 import './projection.css'
 import './teacher-controls.css'
 import { LoadingScreen } from '@/components/LoadingScreen'
+import {INTERACTIVE_DRAFT_KEY} from './draft-key'
 
 const DiagnosticPage = lazy(() => import('./DiagnosticPage'))
 const CardsPage = lazy(() => import('./CardsPage'))
+const PoolPage=lazy(()=>import('./pools/PoolPage'))
 const GameApp = lazy(() => import('./GameApp'))
 const CompetitionPage = lazy(() => import('./competition/CompetitionPage'))
 const TeacherConsolePage = lazy(() => import('./teacher-console/TeacherConsolePage'))
@@ -32,5 +34,6 @@ function InteractiveRoutes() {
   if (!loaded) return <LoadingScreen title="Préparation du jeu" description="Votre séance arrive…" />
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/cartes') return <Suspense fallback={<LoadingScreen title="Préparation des cartes" />}><CardsPage initial={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<LoadingScreen title="Ouverture du diagnostic" />}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>
+  if(path==='/interactif'&&!new URLSearchParams(window.location.search).has('pool')&&!new URLSearchParams(window.location.search).has('d')&&!window.history.state?.[INTERACTIVE_DRAFT_KEY])return <Suspense fallback={<LoadingScreen title="Choix des exercices" />}><PoolPage initialPreferences={loaded.preferences} initialWarning={loaded.warning}/></Suspense>
   return <Suspense fallback={<LoadingScreen title="Préparation de la séance" />}><GameApp initialPreferences={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
 }

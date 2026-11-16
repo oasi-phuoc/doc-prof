@@ -8,6 +8,7 @@ import { validSeconds, validFeedbackSeconds, type TimerSettings } from '../domai
 import type { ToolbarGuard } from '../domain/teacher'
 
 export type ClassroomHeaderProps = {
+  homeHref?:string
   mascot: MascotKind
   onMascot: (mascot: MascotKind) => void
   mode: PlayMode
@@ -23,7 +24,7 @@ export type ClassroomHeaderProps = {
   toolbarGuard?: ToolbarGuard
   onCompetition?: () => void
 }
-export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
+export function ClassroomHeader({ homeHref='/generateur', mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
   session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void; onConsole?: () => void }
 }) {
   const locked = !!session?.teacherLocked
@@ -45,7 +46,7 @@ export function ClassroomHeader({ mascot, onMascot, mode, onMode, contrast, onCo
   return (
     <header className={`ci-header ci-no-print${playing?' ci-clean-header':''}`} data-ci-toolbar>
       <div className="ci-header-start">
-        <a href="/generateur" className="brand" aria-label="ClairFLE" aria-disabled={locked || undefined} tabIndex={locked ? -1 : undefined} onClick={(event) => { if (locked) event.preventDefault() }}>
+        <a href={homeHref} className="brand" aria-label="ClairFLE" aria-disabled={locked || undefined} tabIndex={locked ? -1 : undefined} onClick={(event) => { if (locked) event.preventDefault() }}>
           <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
           Clair<span className="brand-accent">FLE</span>
         </a>

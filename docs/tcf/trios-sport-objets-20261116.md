@@ -2,7 +2,7 @@
 
 **21 trios QCM image sont ajoutés : 16 A1 et cinq A2**, dont six historiques et quinze des nouveaux supports DELF Actif. Le lot intègre **18 PNG originaux en paysage exact 1 448 × 1 086**, utilisés 19 fois, et **44 réemplois de 41 images distinctes** contrôlées dans la banque. Les questions, réponses, corrigés, transcriptions et pistes audio sont conservés.
 
-L’environnement est de nouveau accessible. Le dépôt a été synchronisé avant la reprise depuis `fef634ad`. La génération et les réemplois suivent le [style TCF validé](style-images.md), lié au commit `48a753d8` : peinture semi-réaliste douce, contours discrets, couleurs naturelles, objets entiers sur crème et personnages variés. Les PNG sont conservés sans conversion.
+L’environnement est de nouveau accessible. Le dépôt a été synchronisé avant la reprise depuis `fef634ad`. Les deux commits de jeux interactifs publiés ensuite sur `main`, jusqu’à `daa5ec5e`, sont intégrés avant publication ; leurs six captures de vérification sont conservées dans la documentation et l’index de galerie est régénéré. La génération et les réemplois suivent le [style TCF validé](style-images.md), lié au commit `48a753d8` : peinture semi-réaliste douce, contours discrets, couleurs naturelles, objets entiers sur crème et personnages variés. Les PNG sont conservés sans conversion.
 
 ## Livré dans ce lot
 
@@ -47,8 +47,8 @@ Les **117 pistes de scénario** et les **80 clés de leurres provenant d’autre
 
 ## Vérifications
 
-Les contrôles des 763 décisions, des 346 supports DELF Actif, des 1 021 revues de contexte et de la banque passent. Le rendu vérifie **2 318 variantes QCM image et 12 cas de mélange** ; les **13 tests des catalogues**, TypeScript et la compilation passent.
+Les contrôles des 763 décisions, des 346 supports DELF Actif, des 1 021 revues de contexte et de la banque passent. Le rendu vérifie **2 318 variantes QCM image et 12 cas de mélange** ; les **13 tests des catalogues**, les **sept tests des pools de jeux intégrés**, TypeScript et la compilation passent.
 
 Le [contrôle Chromium](trios-sport-objets-20261116-browser.json) couvre **les 21 nouveaux trios sur ordinateur et mobile** : 40 vues de supports, 42 affichages de questions et 126 images. Chargement, proportions, affichage entier, corrigés et conservation de l’exercice lors du changement de format sont vérifiés, sans erreur navigateur.
 
-La [comparaison exhaustive des six banques](verification-trios-sport-objets-20261116.json) confirme **21 ajouts de forme image et aucune autre modification** des questions, sources, réponses ou audios depuis `fef634ad`. Les 18 fichiers intégrés correspondent exactement aux octets des originaux ; les 41 images réutilisées et les anciennes entrées du manifeste sont inchangées.
+La [comparaison exhaustive des six banques](verification-trios-sport-objets-20261116.json) confirme **21 ajouts de forme image et aucune autre modification** des questions, sources, réponses ou audios depuis `fef634ad`. Les 18 fichiers intégrés correspondent exactement aux octets des originaux ; les 41 images réutilisées et les anciennes entrées du manifeste sont inchangées. Le prébuild régénère les références lexicales : 1 100 entrées, dont douze nouvelles, en conservant les anciennes. Les budgets de chargement des pages passent sur la compilation avec manifeste.

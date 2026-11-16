@@ -1,5 +1,5 @@
 import { parseFicheRecipe, type FicheRecipe } from '@/fiches/recipe'
-export const INTERACTIVE_DRAFT_KEY = 'clairfleInteractive'
+export {INTERACTIVE_DRAFT_KEY} from './draft-key'
 export type DraftData = { recipe: FicheRecipe; name: string }
 
 export function parseInteractiveDraft(value: unknown): DraftData | null {

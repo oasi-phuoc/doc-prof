@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "viewport": "390x844",
+      "domains": 3,
+      "questions": 6,
+      "source": "Direct domain generators, no worksheet API or saved worksheet",
+      "checks": [
+        "Selection preserved across domains and searches",
+        "Configured quantities and number range",
+        "Shuffled cross-domain plan",
+        "Native play offline after preload",
+        "Durable resume after clearing sessionStorage",
+        "Fresh seed preserves immutable pool"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "domains": 3,
+      "questions": 6,
+      "source": "Direct domain generators, no worksheet API or saved worksheet",
+      "checks": [
+        "Selection preserved across domains and searches",
+        "Configured quantities and number range",
+        "Shuffled cross-domain plan",
+        "Native play offline after preload",
+        "Durable resume after clearing sessionStorage",
+        "Fresh seed preserves immutable pool"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "viewport": "360x640",
+      "domains": 3,
+      "questions": 6,
+      "source": "Direct domain generators, no worksheet API or saved worksheet",
+      "checks": [
+        "Selection preserved across domains and searches",
+        "Configured quantities and number range",
+        "Shuffled cross-domain plan",
+        "Native play offline after preload",
+        "Durable resume after clearing sessionStorage",
+        "Fresh seed preserves immutable pool"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "solo": "Two mixed domains: correct and wrong choices, timeout and two-second automatic feedback through the final summary."
+    }
+  ],
+  "apiRequests": [],
+  "errors": []
+}

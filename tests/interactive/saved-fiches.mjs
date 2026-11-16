@@ -53,9 +53,9 @@ try {
   assert.equal((await (await initialResponse).json()).fiches.length, 1)
   await page.getByRole('heading', { name: 'Fiches enregistrées', exact: true }).waitFor()
   await page
-    .getByRole('button', { name: 'Jouer', exact: true })
+    .getByRole('button', { name: 'Jouer cette fiche', exact: true })
     .waitFor({ timeout: 120000 })
-  await page.getByRole('button', { name: 'Jouer', exact: true }).click()
+  await page.getByRole('button', { name: 'Jouer cette fiche', exact: true }).click()
   await page.waitForURL(`**/interactif/${saved.id}`)
   await page.getByRole('button', { name: /Commencer la séance/ }).waitFor()
   assert.equal(
