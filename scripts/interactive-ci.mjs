@@ -38,6 +38,7 @@ try {
   await run('duel-settings-browser')
   await run('duel-clearance-browser')
   await run('fractions-browser')
+  await run('fraction-figures-browser')
   await run('pools-browser')
   await run('loto-browser')
   await run('memory-browser')

@@ -10,6 +10,7 @@ import type {
   PublicMediaPlan,
 } from './types'
 import type { MediaResolver } from './prepared-context'
+import { loadFractionDrawing } from './fraction-drawing'
 
 type Cached = { result: MediaResult; checkedAt: number }
 export class MediaManager {
@@ -37,6 +38,8 @@ export class MediaManager {
     onResult?: (result: MediaResult) => void,
     retry = false,
   ): Promise<MediaResult[]> {
+    if (plan.questions.some(question => question.fractionFigure)) await loadFractionDrawing()
+    if (signal.aborted) throw aborted()
     const assets = this.assets(plan)
     const results: MediaResult[] = Array(assets.length)
     let next = 0

@@ -1,5 +1,7 @@
 # État utilisable et réutilisation — V4
 
+Les [fractions illustrées](adr-0063-lecture-des-fractions-illustrees.md) ajoutent la lecture des figures TPM et TCM CFR aux pools de plusieurs domaines, en Classe, Solo, défi local et duel. La forme et ses parties coloriées suivent le tirage source ; les six propositions ont des valeurs distinctes et les fractions sont verticales. Les salles vérifient la prise en charge de cette activité par le serveur avant leur création.
+
 Les [fractions exactes](adr-0062-fractions-exactes.md) ajoutent six types d’algèbre dans les pools : numérateur et dénominateur, équivalences, simplification et calculs. Elles s’affichent verticalement avec une barre horizontale ; les cartes ont six valeurs distinctes et le tri reste exact. Les duels réservent de l’espace aux auras au-dessus des mascottes réduites. Voir les [preuves du lot](quality-fractions-results.json).
 
 Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.
@@ -17,7 +19,7 @@ Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserv
 | Élément existant | Utilisable / réutilisable | Limites connues |
 |---|---|---|
 | Générateur et fiches v1 | Recettes, banques, rendu imprimable et navigation réutilisés | Huit erreurs de génération repérées dans l’inventaire ; aucun remaniement de banque fait pour les masquer |
-| Conversion vers le jeu | 755 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases de deux à douze éléments manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
+| Conversion vers le jeu | 757 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases de deux à douze éléments manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
 | Modes Classe et Solo | Vote collectif, protections enseignant ; états et minuteurs conservés par écran, nouvelles tentatives et essais archivés ; Solo automatique | Mécaniques avancées encore à étendre |
 | Compétition | Code de salle, 30 mascottes sans pseudo, scores serveur, classement et reprise dans l’onglet ; défi local sur un appareil commun après préparation complète ; duels avec vies, attaque propre à chaque mascotte et tournoi par équipes tirées au sort | Code vérifié avec le moteur Cloudflare ; activation du Worker de production à faire par l’administrateur ; appareils séparés non synchronisables sans réseau ; démarrage à froid hors ligne non couvert |
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias ; transcription CO facultative après les corrections, avec suspension du battement Solo pendant la lecture | Préchargement manuel des images, audios et 30 mascottes en Classe et Solo ; page ouverte jouable sans réseau ; démarrage à froid et rechargement hors ligne encore ouverts |
@@ -33,7 +35,7 @@ Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserv
 
 ## Couverture observée
 
-L’inventaire courant trouve 746 variantes avec au moins une activité : 518 uniquement en QCM source, comparaisons, classements ou noms de signes vérifiés, 83 adaptations vérifiées, 111 uniquement guidées et 34 mixtes. Répartition : soutien FR 231, alphabétisation 216, grammaire 152, TCF CFR 10, TCF CSC 9, TPF 9, algèbre 25, Gattegno 28, TPM 14, géométrie 24, TCM CFR 9, TCM CSC 13 et Jeux 6. Les 1 404 autres variantes demandent des adaptateurs ou une correction de génération. Le jeu signale ces incompatibilités dans la préparation.
+L’inventaire courant trouve 757 variantes avec au moins une activité : 521 uniquement en QCM source ou conversion automatique, 91 adaptations vérifiées, 111 uniquement guidées et 34 mixtes. Répartition : soutien FR 231, alphabétisation 216, grammaire 155, TCF CFR 10, TCF CSC 9, TPF 9, algèbre 31, Gattegno 28, TPM 15, géométrie 24, TCM CFR 10, TCM CSC 13 et Jeux 6. Les 1 393 autres variantes demandent des adaptateurs ou une correction de génération. Le jeu signale ces incompatibilités dans la préparation.
 
 Les sources déjà prises en charge et leurs limites sont décrites dans l’[audit de compatibilité](audit-compatibilite.md). L’inventaire conserve les configurations et items témoins pour étendre chaque famille avec des tests fiables. Le moteur, les médias, les cartes, les minuteurs, le plan de réponses et la persistance constituent le socle à garder pour ces extensions.
 

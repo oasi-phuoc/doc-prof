@@ -1,0 +1,165 @@
+{
+  "generatedAt": "2026-11-16T16:03:52.036Z",
+  "base": "e9201e79",
+  "scope": "Read TPM and TCM CFR fraction figures in multi-domain exercise pools, Class, Solo, local competition, duels and the room protocol.",
+  "unit": {
+    "passed": 60,
+    "failed": 0,
+    "files": [
+      "fraction-figures.test.mjs",
+      "fractions.test.mjs",
+      "competition-core.test.mjs",
+      "competition-local.test.mjs",
+      "competition-api.test.mjs",
+      "full-preload.test.mjs",
+      "pools.test.mjs"
+    ],
+    "sourceConfigurations": 600,
+    "svgConfigurations": 708,
+    "checks": [
+      "Source drawing and key retained without mutating worksheets",
+      "Every allowed subdivision and colored numerator counted in actual SVG; equal polygon areas checked",
+      "Six exact distinct values within one whole, ascending order and caps",
+      "Class and Solo replay, new seeds and teacher-sheet descriptions",
+      "Strict room drawing fields, private answer key and legacy-server feature check",
+      "Renderer readiness included before offline preparation"
+    ]
+  },
+  "native": {
+    "passed": true,
+    "cases": 7,
+    "classViewports": [
+      "1366x768",
+      "390x844",
+      "360x640"
+    ],
+    "duelViewports": [
+      "1366x768",
+      "640x360"
+    ],
+    "solo": "Correct, incorrect and timeout; one-second automatic feedback and new part",
+    "localCompetition": "Two mascots, same drawing, correct/incorrect answers and leaderboard, offline after preparation",
+    "duels": "Adult fighters and critical x4 aura, ten CSS animation times, at least 20 px clear of question and responses, all twelve targets fit",
+    "axeViews": 6,
+    "worksheetServiceRequests": 0,
+    "physicalDevicesTested": false
+  },
+  "server": {
+    "typecheck": "passed",
+    "runtime": "real workerd with SQLite Durable Objects",
+    "drawingAfterRestart": "passed",
+    "injectedAnswerMetadata": "rejected",
+    "featureHandshake": "fraction-figures-v1",
+    "productionDeployment": false
+  },
+  "catalog": {
+    "inventoryPlayableVariants": 757,
+    "inventoryVariants": 2150,
+    "certifiedPoolTypes": 696,
+    "seeds": [
+      20261107,
+      42,
+      20261115
+    ],
+    "positions": 16,
+    "newTypes": [
+      "tpm-frac-read",
+      "tcm-cfr-ex13"
+    ],
+    "worksheetSourceFilesChanged": false
+  },
+  "build": {
+    "typescript": "passed",
+    "viteWithManifest": "passed",
+    "budgets": {
+      "landing": {
+        "gzip": 122360,
+        "maximumGzip": 153600
+      },
+      "pool": {
+        "gzip": 159842,
+        "maximumGzip": 204800
+      },
+      "calibration": {
+        "gzip": 142876,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 145020,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 204156,
+        "maximumGzip": 204800
+      },
+      "teacherConsole": {
+        "gzip": 166780,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 3132336,
+        "maximumGzip": 3145728
+      }
+    },
+    "lint": {
+      "status": "passed",
+      "existingWarnings": 85,
+      "targetedWarnings": 0
+    }
+  },
+  "orchestration": {
+    "availableBrowserStages": 76,
+    "allStagesRun": false
+  },
+  "evidence": [
+    "fraction-figures-results.json",
+    "fraction-figure-proofs/index.html",
+    "competition-worker-results.json",
+    "performance-results.json",
+    "secrets-results.json",
+    "fraction-figures-merged-tcf-results.json",
+    "revue-identifiants-pool-integration-20261116.json"
+  ],
+  "limits": [
+    "The full unit suite and all 76 browser stages were not rerun.",
+    "No physical phone or ENI test.",
+    "The production Worker must be updated for online fraction-figure rooms; the client rejects unsupported servers before sending the quiz.",
+    "Coloring, multiple figures and cold offline startup remain open."
+  ],
+  "integration": {
+    "mergedBase": "e9201e79",
+    "targetedTestsPassed": 13,
+    "targetedTestsFailed": 0,
+    "files": [
+      "fraction-figures.test.mjs",
+      "pools.test.mjs"
+    ],
+    "buildWithManifest": "passed",
+    "budgets": "passed",
+    "updatedTcfPools": {
+      "base": "e9201e79",
+      "types": 24,
+      "configurations": 105,
+      "questions": 10970,
+      "positions": 16,
+      "seeds": [
+        20261107,
+        42,
+        20261115
+      ],
+      "checks": [
+        "Every offered level and all sixteen source positions remain playable after the TCF bank update",
+        "No blocking conversion issue",
+        "All image and audio references exist locally"
+      ],
+      "productionWrites": 0
+    }
+  },
+  "security": {
+    "status": "passed",
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "publicReferenceReview": "revue-identifiants-pool-integration-20261116.json",
+    "scope": "One exact public TCF question reference and one exact report path; synthetic generic keys remain detected in that same path."
+  }
+}

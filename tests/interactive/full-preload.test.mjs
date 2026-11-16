@@ -38,6 +38,8 @@ try{
     const source=plan(question()),same=structuredClone(source)
     same.id='another-seed';same.questions[0].id='q2';same.questions[0].choices.reverse();same.corrections={q2:{choiceId:'no'}}
     assert.equal(preloadIdentity(source,options),preloadIdentity(same,options))
+    const illustrated=structuredClone(source);illustrated.questions[0].fractionFigure={kind:'square',colored:[true,false]}
+    assert.notEqual(preloadIdentity(source,options),preloadIdentity(illustrated,options),'a media-only pack cannot claim the optional drawing renderer is ready')
     same.questions[0].images=['/different.webp'];assert.notEqual(preloadIdentity(source,options),preloadIdentity(same,options))
     assert.equal(sessionAssets(plan(question({images:[],choices:[]})),options).length,mascotMedia.length)
   })

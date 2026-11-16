@@ -51,3 +51,10 @@ condition = "AND"
 paths = ['''(^|/)docs/tcf/delf-actif-20261113/images-a-preparer\.json$''']
 regexTarget = "match"
 regexes = ['''^key"\s*:\s*"tcf-delf-actif-a2-043-03-01#6"?$''']
+
+[[rules.allowlists]]
+description = "Référence publique exacte de la question 6 de l’invitation DELF A1, vérifiée dans la banque et son document illustré."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/plan-images-contextuel-20261106\.json$''']
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"delf\-a1\-2022\-ce\-ex1\-invitation\#6"?$''']

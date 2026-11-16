@@ -4,6 +4,7 @@ import { CompetitionError, competitionStep, createCompetition, parseCompetitionS
 import type { ShapeId } from '../domain/palette'
 import { validAvatar } from './avatars'
 import { localCompetitionKey as key } from './storage-key'
+import { loadFractionDrawing } from '../media/fraction-drawing'
 
 export type LocalCompetitionJournal = { version: 1; quizId: string; createdAt: number; settings: CompetitionSettings; colors: string[]; shapes: ShapeId[]; events: { at: number; action: CompetitionAction }[] }
 function validAction(value: unknown): value is CompetitionAction {
@@ -40,6 +41,8 @@ export async function prepareLocalCompetition(quiz: CompetitionQuiz, signal: Abo
   const urls = new Map<string, string>(),decodedArtwork:HTMLImageElement[]=[]; let total = 0
   const dispose = () => { for(const image of decodedArtwork)image.src='';decodedArtwork.length=0;for (const value of urls.values()) URL.revokeObjectURL(value) }
   try {
+    if (quiz.items.some(item => item.question.fractionFigure)) await loadFractionDrawing()
+    if (signal.aborted) throw new DOMException('Annulé', 'AbortError')
     for (const source of sources) {
       if (signal.aborted) throw new DOMException('Annulé', 'AbortError')
       const response = await fetch(source, { signal, credentials: 'omit', cache: 'force-cache' })

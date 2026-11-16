@@ -3,6 +3,7 @@ import type { ShapeId } from '../domain/palette'
 import type { CompetitionAvatar } from './avatars'
 import { resolveCompetitionApiBase } from './config'
 import { readTeacherAccess, saveTeacherAccess, forgetTeacherAccess, type TeacherAccess } from './teacher-access'
+import { FRACTION_FIGURE_FEATURE } from '../domain/fraction-figure'
 
 export type RoomCapability = { code: string; token: string; role: 'host' | 'player'; playerId?: string; returnTo?: string }
 type RoomReply = { code: string; token: string; playerId?: string; view: RoomView; teacherAccess?: TeacherAccess }
@@ -36,6 +37,15 @@ export const answerRoom = (access: RoomCapability, questionId: string, choiceId:
 export const joinRoom = (code: string, avatarId: CompetitionAvatar) => request(`/rooms/${code}/join`, undefined, { avatarId })
 export async function createRoom(quiz: CompetitionQuiz, settings: CompetitionSettings, colors: string[], shapes: ShapeId[], teacherKey: string) {
   try {
+    if (quiz.items.some(item => item.question.fractionFigure)) {
+      let supported = false
+      try {
+        const response = await fetch(`${base()}/status`, { credentials: 'omit', cache: 'no-store', signal: AbortSignal.timeout(8000) })
+        const status = await response.json()
+        supported = response.ok && status?.available === true && Array.isArray(status.features) && status.features.includes(FRACTION_FIGURE_FEATURE)
+      } catch { throw new Error('Impossible de vérifier les figures de la salle. Réessayez avec une connexion.') }
+      if (!supported) throw new Error('Le serveur des salles doit être mis à jour pour les fractions illustrées. Les modes Classe, Solo, duel et défi local sont disponibles.')
+    }
     const reply = await request('/rooms', teacherKey, { quiz, settings, colors, shapes })
     saveTeacherAccess(base(), reply.teacherAccess)
     return reply

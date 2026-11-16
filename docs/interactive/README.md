@@ -1,5 +1,7 @@
 # ClairFLE — jouer avec la classe
 
+Les [fractions illustrées](adr-0063-lecture-des-fractions-illustrees.md) ajoutent la lecture des figures TPM et TCM CFR aux pools de plusieurs domaines, en Classe, Solo, défi local et duel. La forme et ses parties coloriées suivent le tirage source ; les six propositions ont des valeurs distinctes et les fractions sont verticales. Les salles vérifient la prise en charge de cette activité par le serveur avant leur création.
+
 Les [fractions exactes](adr-0062-fractions-exactes.md) ajoutent six types aux pools : numérateur et dénominateur, équivalences, simplification, addition et soustraction, multiplication, division. Elles s’affichent verticalement avec une barre horizontale. Les six cartes ont des valeurs distinctes et se trient sans arrondi. Les comparaisons restent disponibles. Les mascottes des duels sont réduites, avec de l’espace pour leurs auras sous la question.
 
 Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.

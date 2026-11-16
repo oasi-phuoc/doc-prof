@@ -27,6 +27,7 @@ import './guided-oral.css'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 import { GrammarCountryPrompt } from '@/components/grammar/GrammarCountryPrompt'
 import { FractionText } from './FractionText'
+import { FractionFigureView } from './FractionFigureView'
 import { isFractionQuestion } from '../domain/fraction-notation'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
@@ -82,7 +83,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.lotoBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.lotoBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.fractionFigure, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
   const drop=useWordDrop({question:q,canSelect,disabled:interactionsDisabled||phase==='revealed',onSelect,onPropose:onWordDrop})
   const proposed=q.choices.find(choice=>choice.id===(selected??wordDrop))
   const pending=q.choices.find(choice=>choice.id===drop.pending)
@@ -91,12 +92,12 @@ export function QuestionStage({
   const showCorrection =
     phase === 'revealed' &&
     q.choices.some((entry) => entry.id === correctChoiceId)
-  const picturePair=q.mode==='choice'&&q.images.length===1&&q.choices.length>0&&q.choices.every(choice=>!choice.image)&&!q.context&&!q.figure
+  const picturePair=q.mode==='choice'&&q.images.length===1&&q.choices.length>0&&q.choices.every(choice=>!choice.image)&&!q.context&&!q.figure&&!q.fractionFigure
   const availableWords=q.choices.length-unavailableChoiceIds.length
-  const fractions = isFractionQuestion(q.prompt)
+  const fractions = !!q.fractionFigure || isFractionQuestion(q.prompt)
   return (
     <>
-      <section ref={section} className={`ci-question${picturePair?' ci-picture-pair':''}${q.matchingGroup?' ci-matching-question':''}`}>
+      <section ref={section} className={`ci-question${q.fractionFigure?' ci-fraction-reading':''}${picturePair?' ci-picture-pair':''}${q.matchingGroup?' ci-matching-question':''}`}>
         <div className="ci-question-body" tabIndex={report.questionScroll ? 0 : undefined} role={report.questionScroll ? 'region' : undefined} aria-label={report.questionScroll ? 'Question et document à faire défiler' : undefined}>
         <h1 tabIndex={-1} className={number !== undefined ? 'ci-numbered-heading' : undefined}>
           {number !== undefined && (
@@ -125,6 +126,7 @@ export function QuestionStage({
             <GeometryFigure type={q.figure.type} dims={q.figure.dims} />
           </div>
         )}
+        {q.fractionFigure && <FractionFigureView figure={q.fractionFigure} />}
         {q.mode !== 'memory' && q.mode !== 'sequence' && q.mode !== 'oral' && !!q.images.length && (
           <div className="ci-stimulus-images">
             {q.images.map((image, i) => (
@@ -221,7 +223,7 @@ export function QuestionStage({
       )}
       {report.manualScroll && !q.wordSorting && q.mode!=='memory' && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
       {drop.available&&<><span className="ci-sr-only" role="status">{drop.announcement}</span><SequenceDragGhost drag={drop.drag}>{dragged&&drop.drag&&<div className="ci-word-drop-ghost" style={{background:colors[slotOffset+drop.drag.source],color:inkForColor(colors[slotOffset+drop.drag.source]!)}}><b>{PALETTE[slotOffset+drop.drag.source]!.letter}</b><span>{dragged.text}</span></div>}</SequenceDragGhost></>}
-      {reading !== null && <TextReadingDialog fractionNotation={fractions} title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [playPrompt(q.prompt), q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.mode==='memory'&&phase!=='revealed'?[]:q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
+      {reading !== null && <TextReadingDialog fractionNotation={fractions} title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [playPrompt(q.prompt), q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.mode==='memory'&&phase!=='revealed'?[]:q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} fractionFigure={reading === 'question' ? q.fractionFigure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }
