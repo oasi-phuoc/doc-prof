@@ -1,5 +1,6 @@
-import type { ReactNode } from 'react'
-import { CatalogPageTools } from './CatalogNavigation'
+import {lazy,Suspense,type ReactNode} from 'react'
+import { navigateTo } from './routing'
+const CatalogPageTools=lazy(()=>import('./CatalogNavigation').then(module=>({default:module.CatalogPageTools})))
 
 export function Header({
   onCreate,
@@ -40,7 +41,7 @@ export function Header({
         ) : null}
       </div>
       <div className="topbar-right">
-        {generator && !rightSlot && <CatalogPageTools onLogout={onLogout} />}
+        {generator && !rightSlot && <Suspense fallback={<span aria-busy="true" aria-label="Chargement du menu" style={{display:'inline-block',width:96,height:44}}/>}><CatalogPageTools onLogout={onLogout} /></Suspense>}
         {rightSlot}
         {endSlot}
       </div>

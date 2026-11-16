@@ -28,7 +28,8 @@
     "pools-browser",
     "a4-regression",
     "drafts-browser",
-    "mobile-browser"
+    "mobile-browser",
+    "gallery/navigation-browser"
   ],
   "allWorkflowStagesRun": false,
   "workflowStagesAvailable": 72,
@@ -93,26 +94,28 @@
   "checks": {
     "typescript": "passed",
     "workerTypes": "passed",
-    "build": "passed",
+    "build": "passed after integrating concurrent TCF image and catalogue-navigation updates",
     "lint": {
       "errors": 0,
       "preexistingWarnings": 85
     },
-    "gitleaks": "passed"
+    "gitleaks": "passed after integration; exact public DELF question ID verified against bundled bank and public audio, key/api_key canaries remain detected",
+    "bundleBudgets": "passed after integration, without increasing limits"
   },
   "gzipBytes": {
-    "landing": 122025,
-    "pool": 159371,
-    "calibration": 142640,
-    "diagnostic": 144788,
-    "competition": 204236,
-    "teacherConsole": 166135,
-    "game": 3092906
+    "landing": 122276,
+    "pool": 159664,
+    "calibration": 142917,
+    "diagnostic": 145061,
+    "competition": 204526,
+    "teacherConsole": 166414,
+    "game": 3125687
   },
   "limits": [
     "Pools and their source configurations remain on the same device/browser; they are not synchronized to the server.",
     "Catalog certification samples three seeds, all offered levels and sixteen source positions; it does not exhaust every possible range or seed. Actual pool configurations are checked before saving and new draws before replacement.",
     "Guided activities keep human assessment; duels and rooms use only answer-verifiable questions.",
     "Physical phone/ENI tests and cold-start offline are not covered."
-  ]
+  ],
+  "integratedMainCommit": "fef634ad3e4b5189c621fa9c19a2221987e357af"
 }
