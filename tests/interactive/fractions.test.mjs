@@ -81,12 +81,43 @@ try {
     }
   })
 
+  await test('equivalent-fraction series mix amplification and reduction with exact answers and either missing term', () => {
+    const singleDirections = new Set(), blanks = new Set()
+    for (const count of [1, 2, 3, 8, 9]) for (let draw = 1; draw <= 40; draw++) {
+      const seed = draw * 1_000_003
+      const page = { ...config('fractions-equivalentes'), count }
+      const items = buildPage(page, seed).blocks.flatMap(block => block.items)
+      assert.equal(items.length, count)
+      const directions = { up: 0, down: 0 }
+      for (const item of items) {
+        assert.equal(item.prompt.match(/□/g)?.length, 1)
+        assert.match(item.answer, /^[1-9]\d*$/)
+        const [left, right] = item.prompt.replace('□', item.answer).split(' = ').map(ratio)
+        assert.ok(equal(left, right), `${item.prompt} → ${item.answer}`)
+        assert.ok(left[0] < left[1] && right[0] < right[1])
+        const direction = left[1] < right[1] ? 'up' : 'down'
+        directions[direction]++
+        const [smaller, larger] = left[1] < right[1] ? [left, right] : [right, left]
+        assert.equal(larger[0] % smaller[0], 0n)
+        assert.equal(larger[1] % smaller[1], 0n)
+        assert.equal(larger[0] / smaller[0], larger[1] / smaller[1])
+        assert.ok(larger[1] / smaller[1] >= 2n && larger[1] / smaller[1] <= 5n)
+        blanks.add(`${direction}:${item.prompt.includes('□/') ? 'numerator' : 'denominator'}`)
+        if (count === 1) singleDirections.add(direction)
+      }
+      assert.ok(Math.abs(directions.up - directions.down) <= 1)
+      if (count >= 2) assert.ok(directions.up && directions.down)
+    }
+    assert.deepEqual(singleDirections, new Set(['up', 'down']))
+    assert.deepEqual(blanks, new Set(['up:numerator', 'up:denominator', 'down:numerator', 'down:denominator']))
+  })
+
   await test('identifier questions use the written numerator/denominator, and equivalent fractions keep exactly one integer blank', () => {
     for (const [prompt, answer] of [['Dans 6/9, le numérateur est', '6'], ['Dans 6/9, le dénominateur est', '9'], ['Dans 0/9, le numérateur est', '0']]) {
       const verified = verifiedFractions(source(prompt, answer), 'fractions-identifier')
       assert.ok(!verified.reason); assert.equal(verified.value.numerator.toString(), answer); assert.equal(verified.integer, true)
     }
-    for (const [prompt, answer] of [['2/3 = □/12', '8'], ['2/3 = 8/□', '12'], ['0/3 = □/9', '0'], ['−2/3 = −8/□', '12']]) {
+    for (const [prompt, answer] of [['2/3 = □/12', '8'], ['2/3 = 8/□', '12'], ['8/12 = □/3', '2'], ['8/12 = 2/□', '3'], ['0/3 = □/9', '0'], ['−2/3 = −8/□', '12']]) {
       const verified = verifiedFractions(source(prompt, answer), 'fractions-equivalentes')
       assert.ok(!verified.reason, prompt); assert.equal(verified.model.includes('□'), false)
       const game = gameFor('fractions-equivalentes', source(prompt, answer))

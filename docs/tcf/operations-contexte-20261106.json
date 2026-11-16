@@ -30395,6 +30395,105 @@
       "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
       "reason": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-003",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
+      "reason": "Le stage 2 propose la voile ; les deux autres réponses sont le ski nautique et le surf.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-062",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-fondue-chocolat.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp"
+          }
+        ]
+      },
+      "source_sha256": "a98ffd5bd210417065370d742b96bcf36cff38734adcabaaba8a99c3f861f0b9",
+      "reason": "La soirée de bienvenue du premier soir prévoit une raclette, spécialité du Valais.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-071",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-parachutisme.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png"
+          }
+        ]
+      },
+      "source_sha256": "0dc47fa924e496eead531b7cfd12e4abd827c2113a90b610954719c530e0eb59",
+      "reason": "Le texte dit que la simulation de chute libre ressemble au parachutisme.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

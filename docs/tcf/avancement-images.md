@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Dernier lot du 16 novembre : quinze trios ajoutés, six PNG originaux et 39 réemplois.** Restent **350 trios historiques** ; DELF Actif compte **325 trios actifs et 421 candidats à vérifier**. Sports, repas, transports, métiers, lieux et objets ont leur source relue et leurs trois images vérifiées. [Rapport et reste à faire](trios-sports-repas-20261116.md).
+
 **Dernière suite du 16 novembre : neuf trios A2 ajoutés, quatre PNG originaux et 23 réemplois.** Restent **353 trios historiques** ; DELF Actif compte **313 trios actifs et 433 candidats à vérifier**. Le ticket automobile et les trois tartes remplacent les réemplois hors contexte. [Rapport et reste à faire](acces-full-et-trios-20261116.md).
 
 **Suite du 16 novembre : 21 trios QCM ajoutés, avec 18 PNG originaux et 44 réemplois.** Il reste **355 trios historiques** ; DELF Actif compte **306 trios actifs et 440 candidats à vérifier**. Sports, météo, repas, baignade, cadeaux, communications, recyclage et métiers suivent le style TCF validé. [Rapport actuel et reste à faire](trios-sport-objets-20261116.md).

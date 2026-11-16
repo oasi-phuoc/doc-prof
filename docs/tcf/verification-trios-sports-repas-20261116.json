@@ -1,0 +1,116 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "9814814ee15500c594752ae508cba03260a093b9",
+  "compared_all_six_banks": true,
+  "added_image_forms": 15,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 6,
+  "new_image_usages": 6,
+  "reused_image_usages": 39,
+  "reused_distinct_images": 35,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "delf-a2j-ce-003#5",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-062#7",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-071#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-02#1",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-02#3",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-002-03#1",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-003-01#3",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-004-01#8",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-010-01#5",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-024-01#10",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-025-01#6",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-032-02#1",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-040-01-01#4",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-040-01-01#7",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-041-01-01#1",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 scripts/check_tcf_763_review.py",
+      "exit_code": 0,
+      "output": "763 décisions vérifiées : 301 trios actifs, 112 textes conservés, 350 trios à préparer."
+    },
+    {
+      "command": "python3 scripts/check-delf-actif-images.py",
+      "exit_code": 0,
+      "output": "346 supports et 1 663 questions suivis ; 325 trios actifs liés à leur relecture, images et MP3 vérifiés."
+    },
+    {
+      "command": "python3 scripts/check-delf-actif-context-review.py",
+      "exit_code": 0,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés."
+    },
+    {
+      "command": "node scripts/check-tcf-qcm-images.mjs",
+      "exit_code": 0,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2342 bank variants"
+    },
+    {
+      "command": "node scripts/check-tcf-bank.mjs",
+      "exit_code": 0,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration"
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 26,
+    "question_views": 30,
+    "image_views": 90,
+    "errors": []
+  }
+}

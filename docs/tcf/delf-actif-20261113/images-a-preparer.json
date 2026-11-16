@@ -8,9 +8,9 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 313,
+      "active_reviewed_trio": 325,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 433,
+      "candidate_visual_review": 421,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
@@ -33,9 +33,9 @@
         "keep_text_amount": 24
       },
       "A2-B1": {
-        "candidate_visual_review": 137,
+        "candidate_visual_review": 125,
         "keep_text_contextual": 346,
-        "active_reviewed_trio": 9,
+        "active_reviewed_trio": 21,
         "keep_text_calendar_or_duration": 35,
         "keep_text_named_identity_or_code": 9,
         "keep_text_amount": 12
@@ -24309,7 +24309,14 @@
           "id": "a",
           "label": "La natation",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e860af13fb48c1b1",
           "brief": "Représenter entièrement « La natation » pour « Quel sport pratique-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-044-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -44947,7 +44954,14 @@
           "id": "a",
           "label": "La natation",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e860af13fb48c1b1",
           "brief": "Représenter entièrement « La natation » pour « Quelle activité peut-on pratiquer avec l’appareil présenté ? ». Vérifier la transcription du support tcf-delf-actif-a2-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -58734,7 +58748,14 @@
           "id": "c",
           "label": "La natation",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e860af13fb48c1b1",
           "brief": "Représenter entièrement « La natation » pour « Quel sport est apprécié ? ». Vérifier la transcription du support tcf-delf-actif-a2-036 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -60817,7 +60838,14 @@
           "id": "a",
           "label": "La natation",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e860af13fb48c1b1",
           "brief": "Représenter entièrement « La natation » pour « Quel sport font-ils ensemble ? ». Vérifier la transcription du support tcf-delf-actif-a2-040-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -73772,7 +73800,14 @@
           "id": "a",
           "label": "Une raclette",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+              "sha256": "3f88e73ccf7049a0192fc1251ca700fc23028772ccedf27daa42c7adc7a163b1",
+              "label": "Une raclette",
+              "visual_review_required": true
+            }
+          ],
           "asset": "879a4212f7bb5815",
           "brief": "Représenter entièrement « Une raclette » pour « Quel plat les amis veulent-ils manger ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-04-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Raclette, fondue et pizza fidèles et distinctes ; le fromage seul ne prouve pas le plat."
         },
@@ -79073,8 +79108,8 @@
       "semantic_sha256": "d3cfab35cd9af3a5c43d7ffcf89d56a75d6882c1abc3d23914669f74da3cdee7",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
       "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -79122,8 +79157,24 @@
           "brief": "Représenter entièrement « Une omelette » pour « Quel plat Alain choisit-il volontiers ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-poisson-grille.png",
+          "sha256": "383bfadbd7f1f2f8dc06c8e63f9fc89081a8df77e62ed843959117ebb8525e1e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-poulet-roti.webp",
+          "sha256": "6c5828f3b7b3bec25b0f280a7e4337bd74c34c73a65ee3adf26b6fb0d42643f3"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-omelette.png",
+          "sha256": "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -79134,7 +79185,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Poisson cuisiné sur une assiette, poulet rôti et omelette ; les images désignent les catégories de plats, sans affirmer une recette précise commandée par Alain. Le poisson vivant proposé est rejeté dans ce contexte de repas."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-001-02#2",
@@ -79207,8 +79262,8 @@
       "semantic_sha256": "4c3a03c1a829a39093186ab82a409b2fbfb8dc1d4820f43756e46d14f67910d6",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
       "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -79256,8 +79311,24 @@
           "brief": "Représenter entièrement « Du riz » pour « Quel accompagnement Martin demande-t-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-b1-legumes-accompagnement.png",
+          "sha256": "a19adac8869b1f5899f2a13f2bb7b14c4d88f4a7a103d4e9cb60d370770c5871"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+          "sha256": "27e2a2cd255a71a0985b4494d6c9475c42bd9edd1692a0ad1a1c61f4d572f773"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp",
+          "sha256": "000b14a297384b03d100f2acfc84d56490c54892ee9723c2724f1254d074210b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -79268,7 +79339,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Assiettes d’accompagnement : légumes cuits, frites et riz. Les légumes bruts proposés initialement sont écartés ; aucun plat principal n’est ajouté à l’assiette de légumes."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-001-02#4",
@@ -80699,8 +80774,8 @@
       "semantic_sha256": "85b1527c9154caed2201c5c7cec2e8810fe71e8c8d4b7851d738e71f5b22fab4",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-002-03.mp3",
       "audio_sha256": "99cf11b5dd7634f0a4daee38da6c06ee36ba735e9b032473fe1a63cb6167c2a8",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -80754,8 +80829,24 @@
           "brief": "Représenter entièrement « Une moto » pour « Quel véhicule le témoin utilisait-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-002-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+          "sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+          "sha256": "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+          "sha256": "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -80766,7 +80857,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Vélo ordinaire entier, voiture et moto distincte d’un scooter. La question vise le véhicule du témoin, pas celui de la victime ou du conducteur ; les couleurs des véhicules ne sont pas des faits du témoignage."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-002-03#2",
@@ -81732,8 +81827,8 @@
       "semantic_sha256": "f10a3652130c7b5590f5c8a258616718dd2d281797bcd851fffc2127cefc6ced",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-003-01.mp3",
       "audio_sha256": "07dfdec176b1a495d033a1fa5389c6810b5263e75d280a23ff394364017a916c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -81781,8 +81876,24 @@
           "brief": "Représenter entièrement « Dans un restaurant » pour « Où la fête pourra-t-elle avoir lieu ? ». Vérifier la transcription du support tcf-delf-actif-b1-003-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-jardin-dessine.webp",
+          "sha256": "2bcc850a497badcb07f299e385205759f1f640d692180aacdb269e8d97710dba"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+          "sha256": "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+          "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -81793,7 +81904,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Jardin privé attenant à une maison, salle de sport avec matériel et restaurant avec tables dressées. Catégories de lieux ; aucun décor n’est présenté comme la photographie du domicile réel des locuteurs."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-003-01#4",
@@ -82661,8 +82776,8 @@
       "semantic_sha256": "de8700494382328fd43a4a403ed899b18a1eece7ab5c38f57161a606c868c25f",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-004-01.mp3",
       "audio_sha256": "188cc5ad96eee7b5fe499035307255abf868143587b28862f4d6649dafc0c737",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -82716,8 +82831,24 @@
           "brief": "Représenter entièrement « Le bateau » pour « Quel moyen de transport est prévu ? ». Vérifier la transcription du support tcf-delf-actif-b1-004-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+          "sha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+          "sha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -82728,7 +82859,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Train sur rails, avion et bateau entiers. Le transport prévu pour les amies est distingué de celui des parents, sans affirmer un modèle de train ni une compagnie."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-004-01#9",
@@ -82868,7 +83003,14 @@
           "id": "a",
           "label": "La natation",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation",
+              "visual_review_required": true
+            }
+          ],
           "asset": "e860af13fb48c1b1",
           "brief": "Représenter entièrement « La natation » pour « Quel sport Léo pratique-t-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-005-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Natation, basket et équitation avec équipements et gestes distincts ; le cours de natation est celui de Léo."
         },
@@ -86170,8 +86312,8 @@
       "semantic_sha256": "7868c17423395a32cef5372ac11802bd38ef997cf3ab0b15f4486086e12f4198",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-010-01.mp3",
       "audio_sha256": "d51509f3b38825bbb11ae8c94c54d979e63bc7be65311e185b0ed9b14ab39c35",
-      "status": "candidate_visual_review",
-      "reason": "Pharmacien délivrant un médicament en officine, médecin examinant un patient, architecte au plan de bâtiment ; aucun métier déduit d’un visage.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -86225,8 +86367,24 @@
           "brief": "Représenter entièrement « Architecte » pour « Quel métier son grand-père exerçait-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Pharmacien délivrant un médicament en officine, médecin examinant un patient, architecte au plan de bâtiment ; aucun métier déduit d’un visage."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/metiers/pharmacien.webp",
+          "sha256": "b323d357a0e7ae0b74dc4fbf3830978e536ce4956d83dbba0d9717e76c4225cb"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/metiers/architecte.webp",
+          "sha256": "0f59ab12dc1d820fd9fe7b9641577b7b8e1259ebe97e1092f4333a8065075b99"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -86244,6 +86402,10 @@
         "evidence_quote": "il avait une pharmacie à Carcassonne",
         "semantic_sha256": "7868c17423395a32cef5372ac11802bd38ef997cf3ab0b15f4486086e12f4198",
         "note": "Pharmacien délivrant un médicament en officine, médecin examinant un patient, architecte au plan de bâtiment ; aucun métier déduit d’un visage."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Profession en officine, médecin examinant une patiente et architecte avec plans et maquette. Illustrations des métiers, sans attribuer les visages ou le genre des professionnels dessinés aux personnes de l’audio."
       }
     },
     {
@@ -96556,8 +96718,8 @@
       "semantic_sha256": "5a8b935a79071411828efd73b7f4a7ae926b20616960d0d24f00bcda8395fe0c",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-024-01.mp3",
       "audio_sha256": "d60ca6e7ad550006d76e7b9054a7a076606be61a4e8b4c2680edaffa058073fe",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -96617,8 +96779,24 @@
           "brief": "Représenter entièrement « Un cours de dessin » pour « Quel cours suit-il pendant son temps libre ? ». Vérifier la transcription du support tcf-delf-actif-b1-024-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/actions/cours-d-anglais.webp",
+          "sha256": "f103f2d07c2b2fdd92c0a1c9b37772a9b3e85719aedbe8a2ef65d66c8c46ab26"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+          "sha256": "adcf49233bb429f177fb5985655d0c24b73677caed21214f94b3583874e0bad2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp",
+          "sha256": "f71d43b39f03ba7eae24756f171a060de9ff47762b1e4440676162506d216f2d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -96629,7 +96807,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Cours de langue avec indice anglophone, cours de cuisine en pratique et cours de dessin avec enseignante et élèves. Pas de simple salle vide ; aucun élève dessiné n’est présenté comme le sportif interviewé."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-025-01#1",
@@ -96928,8 +97110,8 @@
       "semantic_sha256": "3983e104883034c77e7fcc5ddbb0b8442c8d3a3d0d23757c0ca3858730b9cbbc",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-025-01.mp3",
       "audio_sha256": "5db301cdeed1e540daf4cb21001c832ffdc16f68ee3699fc9bbd8a095e06af71",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -96983,8 +97165,24 @@
           "brief": "Représenter entièrement « Une orange » pour « Quel fruit prend-il dans son petit-déjeuner favori ? ». Vérifier la transcription du support tcf-delf-actif-b1-025-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-banane.webp",
+          "sha256": "cf938ac6281f4bdfae4584062cc770e399883340fa26885add42f65e07e2e397"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-pomme.webp",
+          "sha256": "d2a2550f18e70458e8e9a96413068e6543bdd3395d56ea3b5f4f04c60945b7a0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-orange.webp",
+          "sha256": "d2c6e30398b97123da0fce7f6c1f67fdbbf2e29d071e4dbcd1998cadf8d7c86f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -96995,7 +97193,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Banane, pomme et orange entières. L’échantillon de couleur orange est rejeté ; la question demande un fruit, pas sa couleur ni un menu complet."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-025-01#7",
@@ -100362,8 +100564,8 @@
       "semantic_sha256": "9523e2c3f086091fec37d0423c4ab45b0ca405d9068cf7c01c1cbfc0c3b41524",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
       "audio_sha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -100417,8 +100619,24 @@
           "brief": "Représenter entièrement « Un scooter » pour « Quel objet la personne a-t-elle acheté ? ». Vérifier la transcription du support tcf-delf-actif-b1-032-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+          "sha256": "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+          "sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+          "sha256": "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -100429,7 +100647,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Trottinette ordinaire, vélo et scooter motorisé entiers ; pas d’assistance électrique imposée par le dessin de la trottinette."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-032-02#2",
@@ -108673,8 +108895,8 @@
       "semantic_sha256": "d32ad3150b05393bcf37b3491d7678d026c7362bf10986c616ae150f0d36c62d",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
       "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -108722,8 +108944,24 @@
           "brief": "Représenter entièrement « Un appareil photo » pour « Quel autre objet Patrick possède-t-il déjà ? ». Vérifier la transcription du support tcf-delf-actif-b1-040-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+          "sha256": "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+          "sha256": "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+          "sha256": "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -108734,7 +108972,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Montre à écran d’applications et indicateur de connexion, guitare et appareil photo. Le cadeau futur n’est pas confondu avec l’objet déjà possédé ; pas de simple montre analogique."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-040-01-01#5",
@@ -108867,8 +109109,8 @@
       "semantic_sha256": "c85458f399b847c8e101e8acd85c772dd6706101c922033ae994e772a8c09875",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
       "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -108922,8 +109164,24 @@
           "brief": "Représenter entièrement « Une voiture » pour « Pour quel véhicule envisagent-elles finalement un accessoire ? ». Vérifier la transcription du support tcf-delf-actif-b1-040-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+          "sha256": "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+          "sha256": "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+          "sha256": "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -108934,7 +109192,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Moto, vélo et voiture entiers. La question porte sur le type de véhicule auquel destiner l’accessoire ; l’image ne prétend pas identifier la moto précise de Patrick."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-040-01-01#8",
@@ -110320,8 +110582,8 @@
       "semantic_sha256": "304fdfd2cb512a73df9c5e477ba8d8334afd2ec284269b55e20362ccacbd8276",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
       "audio_sha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -110369,8 +110631,24 @@
           "brief": "Représenter entièrement « Dans une banque » pour « Où le jeune homme effectue-t-il son stage ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+          "sha256": "54fbc370b2e923fa99f4c65072d0db3943f3ce953076c06355a7dbedbd471054"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp",
+          "sha256": "a04e11e667af9b9d1f88cc4e1d29e441528484e618e4dcefd5c78ce96c3dbb12"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -110381,7 +110659,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
+        "note": "Mairie identifiable par sa façade, hôpital avec entrée de soins et banque avec guichet. Catégories d’établissements, sans reproduire la ville ni la personne interrogée."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-041-01-01#2",
@@ -119776,7 +120058,14 @@
     {
       "id": "e860af13fb48c1b1",
       "label": "La natation",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+          "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+          "label": "La natation",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-044-01#2",
@@ -129091,7 +129380,14 @@
     {
       "id": "879a4212f7bb5815",
       "label": "Une raclette",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+          "sha256": "3f88e73ccf7049a0192fc1251ca700fc23028772ccedf27daa42c7adc7a163b1",
+          "label": "Une raclette",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-045-04-02#1",

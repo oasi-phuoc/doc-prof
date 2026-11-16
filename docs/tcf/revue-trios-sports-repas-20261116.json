@@ -1,0 +1,1040 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "9814814ee15500c594752ae508cba03260a093b9",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 15,
+    "added_historical_trios": 3,
+    "added_delf_actif_trios": 12,
+    "new_images": 6,
+    "imagegen_calls": 6,
+    "rejected_generations": 0,
+    "new_image_usages": 6,
+    "reused_image_usages": 39,
+    "reused_distinct_images": 35,
+    "added_by_level": {
+      "A1-A2": 3,
+      "A2-B1": 12
+    },
+    "historical_pending": 350
+  },
+  "new_images": [
+    {
+      "id": "qcm-a2-ski-nautique",
+      "label": "Le ski nautique",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+      "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single adult WATER-SKIER with medium brown skin, wearing a muted orange life jacket over a navy sports swimsuit, is pulled along a calm blue lake by a small motorboat visible WHOLE in the farther left background. The skier is entirely visible from head to both feet, knees slightly bent, with BOTH FEET properly fixed to TWO separate long narrow WATER SKIS riding on the water. Two correct natural hands hold ONE tow-rope handle; the taut rope leads visibly back to the boat. A modest realistic spray trails behind the TWO skis. Wide side three-quarter composition, enough space to show the complete skier, skis, rope and boat. Soft green distant shore and low hills under pale blue sky. Clear water-skiing, absolutely no surfboard, snowboard, snow, parasail or extra tow rope. Single coherent natural activity scene.",
+      "source_png": "/workspace/generated_images/exec-f1a30a3e-231b-4a9b-81ce-3cc157cdf115.png",
+      "source_sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+      "sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+      "bytes": 2730206,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sports-repas-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Skieuse, deux skis nautiques, deux mains sur une poignée et corde tendue vers un bateau entier. Gilet de flottabilité, eau et rive ; la planche de surf et la neige sont exclues.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Action"
+      ],
+      "gallery_themes": [
+        "Sports",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-parachutisme",
+      "label": "Le parachutisme",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-parachutisme.png",
+      "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. One adult recreational SKYDIVER, gender-neutral appearance, wearing helmet, goggles, muted rust jumpsuit, dark boots and a correctly fitted skydiving harness, descends under ONE fully open rectangular ram-air parachute canopy in muted cream and navy. The ENTIRE parachute canopy, its correctly connected thin suspension lines, harness and WHOLE human body with both boots are comfortably inside the frame with generous clear sky margin. Natural one hand on each brake toggle, coherent parachute geometry, no floating straps or impossible equipment. Wide view with distant soft patchwork countryside and low hills below, calm pale blue sky, no airplane or second person. This represents the SPORT of parachuting as a comparison for an indoor free-fall simulator: show the unambiguous sport, never a portrait, wind tunnel, astronaut, balloon, paragliding seated chair or wingsuit.",
+      "source_png": "/workspace/generated_images/exec-b173ebb1-6f66-4598-a1ba-5f451aaa671f.png",
+      "source_sha256": "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
+      "sha256": "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
+      "bytes": 2098292,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sports-repas-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Parachutiste entier sous une voile rectangulaire ouverte, suspentes et harnais reliés, deux bottes visibles, ciel et campagne. Catégorie sportive de comparaison, pas reproduction d’un simulateur intérieur.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Action"
+      ],
+      "gallery_themes": [
+        "Sports",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-raclette-plat",
+      "label": "Une raclette",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+      "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A clear still life of the complete dish RACLETTE on a warm cream tabletop: a plain round ceramic plate with THREE small whole boiled potatoes partly covered by a broad freshly melted golden cheese layer, a few cornichons alongside. Beside the plate is ONE small plain two-person tabletop raclette grill, entire and visible, with one small square raclette pan containing melting cheese visibly resting on its lower heating shelf, its handle safely clear of the heater; a second empty pan rests on the tabletop. The plate is central and large enough for the melted cheese and potatoes to be obvious. Entire grill, plate and pans visible with wide margins, believable supported cookware and correct perspective. Simple cream background, no people, poster, building, invitation, text, pizza, chocolate fondue, soup, live flame or raw cheese alone. This must show the actual warm meal, not a picture of it on a restaurant sign.",
+      "source_png": "/workspace/generated_images/exec-ce7b2638-9171-4a52-a00e-35e4010e6e36.png",
+      "source_sha256": "3f88e73ccf7049a0192fc1251ca700fc23028772ccedf27daa42c7adc7a163b1",
+      "sha256": "3f88e73ccf7049a0192fc1251ca700fc23028772ccedf27daa42c7adc7a163b1",
+      "bytes": 2510349,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sports-repas-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Plat de raclette avec pommes de terre, fromage fondu et cornichons, appareil et deux poêlons posés. Assiette et objets entiers sur fond crème ; le plat ne reste pas caché dans une affiche.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-fondue-chocolat",
+      "label": "Une fondue au chocolat",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-fondue-chocolat.png",
+      "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A clear still life of a CHOCOLATE FONDUE dessert on a warm cream tabletop: one small plain ceramic fondue pot filled with dark brown melted chocolate on a compact safe fondue warming stand, both entirely visible. One long fondue fork rests safely across the pot with a strawberry at its tip visibly coated halfway in chocolate. A small plain plate of neatly cut banana slices, strawberry halves and apple pieces sits alongside, and one spare long fork rests on the table. All objects physically supported, no floating food. Central pot and visible chocolate large and readable, complete dishes with wide margins, coherent perspective. Soft cream background, no hands or people, text, cheese, potatoes, raclette grill, ordinary drinking mug, oversized steaming soup bowl or isolated chocolate bar. The pot, stand, long forks and dipping fruit must make the dessert distinct from hot chocolate.",
+      "source_png": "/workspace/generated_images/exec-c14bf3cf-86a9-478a-a941-fbbfdec40190.png",
+      "source_sha256": "6a0371d5f6aa4ca2d05486524bb3142f74bddd51ec88fc8f9d9d1e855647da15",
+      "sha256": "6a0371d5f6aa4ca2d05486524bb3142f74bddd51ec88fc8f9d9d1e855647da15",
+      "bytes": 2534975,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sports-repas-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Caquelon de chocolat fondu sur réchaud, longue fourchette avec fraise enrobée et assiette de fruits à tremper. Les objets sont entiers et posés ; le matériel distingue la fondue d’une boisson chaude.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-natation-sport",
+      "label": "La natation",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+      "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single adult SWIMMER with warm dark skin in a plain navy swim cap, goggles and modest navy one-piece swimsuit swims breaststroke in one clear blue indoor swimming-pool lane. Wider slightly elevated side three-quarter view shows her ENTIRE head, both natural outstretched arms and hands, torso, both legs and BOTH FEET comfortably within the frame. Her body is naturally partly submerged, but the clear water gives a believable view of the submerged legs and feet, with realistic refraction rather than duplicate limbs. Natural breaststroke moment with arms apart at shoulder level and legs extended behind; complete body, no cropped hand or foot. No coach or other people. Pale cream tiled poolside with a wooden bench and soft daylight from tall windows, one blue lane rope at a distance. No diving, standing beside the pool, water aerobics equipment or flotation board. Make SWIMMING recognisable as an activity while preserving plausible anatomy and restrained painted style.",
+      "source_png": "/workspace/generated_images/exec-00ad5d79-1a94-4d0d-b94b-82eca11d274b.png",
+      "source_sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+      "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+      "bytes": 2504071,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sports-repas-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Une nageuse effectue un mouvement de nage dans sa ligne de piscine. Tête, deux bras, deux mains, jambes et deux pieds restent dans le cadre ; immersion naturelle, sans membre coupé au bord.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Action"
+      ],
+      "gallery_themes": [
+        "Sports",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-b1-legumes-accompagnement",
+      "label": "Des légumes cuits en accompagnement",
+      "path": "/lib/images/tcf/qcm-audit/qcm-b1-legumes-accompagnement.png",
+      "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single plain pale round ceramic dinner plate containing a modest attractive serving of COOKED VEGETABLES as a side dish: a few steamed broccoli florets, sliced carrots, green beans and zucchini slices. They look freshly cooked with gentle soft texture and a restrained natural sheen, not raw produce or a salad in a crate. ENTIRE plate seen at a clear three-quarter overhead angle, centred with generous margins on the warm cream tabletop. No meat, fish, rice, French fries, potatoes, soup, bread, people, cutlery, labels or extra plates. The question asks which side dish is served with a steak; illustrate the side alone, not an entire invented meal. Coherent softly painted still life, natural colour, soft contact shadow.",
+      "source_png": "/workspace/generated_images/exec-6b1bbf5e-1bfa-43b4-a0d8-4093744b73c7.png",
+      "source_sha256": "a19adac8869b1f5899f2a13f2bb7b14c4d88f4a7a103d4e9cb60d370770c5871",
+      "sha256": "a19adac8869b1f5899f2a13f2bb7b14c4d88f4a7a103d4e9cb60d370770c5871",
+      "bytes": 2579805,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-sports-repas-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Assiette entière de légumes cuits : brocoli, carotte, haricots et courgette. Un accompagnement prêt à servir, sans viande ni autre féculent, distinct des frites et du riz.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-poisson.webp",
+      "reason": "Poisson vivant au lieu d’un plat cuisiné dans ce contexte de commande au restaurant."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+      "reason": "Produits bruts au lieu d’un accompagnement servi avec un bifteck."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/extension573-couleur-orange.png",
+      "reason": "Échantillon de couleur au lieu du fruit du petit-déjeuner."
+    },
+    {
+      "path": "/lib/images/tcf/co/bg/cours-dessin.webp",
+      "reason": "Simple salle de dessin au lieu d’un cours avec enseignant et élèves."
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "reason": "Plat représenté dans une affiche au second plan ; le QCM demande directement le plat."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/eb82d6d99458.webp",
+      "reason": "Scène de cours avec enseignante coupée par le bord ; un nageur entier convient au choix sportif."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/actions/nager-a-la-piscine.webp",
+      "reason": "Nageurs et mains coupés aux bords ; la nouvelle nageuse conserve ses deux mains et ses deux pieds dans le cadre."
+    }
+  ],
+  "trios": [
+    {
+      "key": "delf-a2j-ce-003#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Stage 1 — Développez votre imagination grâce au théâtre, au cirque, à la musique, au cinéma…\n\nStage 2 — Découvrez de nouveaux sports : VTT, escalade, poney, voile, plongée, à la mer, à la montagne ou à la campagne.\n\nStage 3 — Apprenez à comprendre, aimer et respecter l’environnement : séjour en plein air pour admirer les paysages et connaître fleurs, plantes et animaux.",
+      "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
+      "semantic_sha256": "d8567eb2aba9bb8b65839c57b1f281386364d85099f1578c0bbf3ac522194a17",
+      "question": {
+        "enonce": "Quel sport nautique est proposé dans le stage 2 ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La voile",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le ski nautique",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le surf",
+            "correct": false
+          }
+        ],
+        "written_model": "La voile"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "co306-cours-voile-dessine",
+        "qcm-a2-ski-nautique",
+        "co834-surf-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+        "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp"
+      ],
+      "image_sha256": [
+        "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
+        "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+        "52679a4e7f57f4c66cf4ba19c350ff6c19a4fa7cd82ff38a624fc448a88150c2"
+      ],
+      "reason": "Le stage 2 propose la voile ; les deux autres réponses sont le ski nautique et le surf.",
+      "visual_review": "Voilier à voile entière avec ses occupants, skieuse sur deux skis tirée par un bateau et surfeur sur une planche dans la vague. Trois activités distinctes, sans mélanger sports ou accessoires seuls.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-062#7",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Vivez une superbe aventure à la découverte de Zermatt !\nNous partirons de Sion à 7 h. Nous arriverons à Täsch à 8 h 30, puis nous prendrons le petit train jusqu’à Zermatt. À notre arrivée, nous nous installerons dans notre chalet, où nous passerons la nuit. Ruedi, notre guide de la région, vous fera ensuite découvrir le village.\nLe soir, Ruedi vous propose une soirée de bienvenue : au menu, une raclette, la spécialité du Valais.\nLe lendemain, nous prendrons le téléphérique jusqu’au glacier pour admirer les montagnes et les paysages. Nous visiterons ensuite une célèbre grotte de glace. À 19 h, vous profiterez d’un très beau coucher de soleil sur le Cervin, autour d’une boisson chaude.",
+      "source_sha256": "a98ffd5bd210417065370d742b96bcf36cff38734adcabaaba8a99c3f861f0b9",
+      "semantic_sha256": "c543ba7f7dea88c1313e52b5f559c44d7badc1417892135dc516fd4b2f743a86",
+      "question": {
+        "enonce": "Quel plat est proposé le premier soir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une raclette",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une fondue au chocolat",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une pizza",
+            "correct": false
+          }
+        ],
+        "written_model": "Une raclette"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-raclette-plat",
+        "qcm-a2-fondue-chocolat",
+        "co834-pizza-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-fondue-chocolat.png",
+        "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp"
+      ],
+      "image_sha256": [
+        "3f88e73ccf7049a0192fc1251ca700fc23028772ccedf27daa42c7adc7a163b1",
+        "6a0371d5f6aa4ca2d05486524bb3142f74bddd51ec88fc8f9d9d1e855647da15",
+        "be5d4a7cf9dab36bbba9217877079d73e81a98419c319dcd4050deb14d2e5599"
+      ],
+      "reason": "La soirée de bienvenue du premier soir prévoit une raclette, spécialité du Valais.",
+      "visual_review": "Raclette réellement servie avec fromage fondu et pommes de terre, fondue au chocolat avec matériel et fruits à tremper, pizza entière. L’affiche de raclette incluse dans une scène de restaurant est écartée pour montrer directement le plat.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-071#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "La simulation de chute libre vous permet de découvrir des sensations extrêmes. Ça ressemble un peu au parachutisme. Le principe est simple : vous êtes dans une pièce ronde de 4,80 mètres de diamètre. Un vent très fort souffle vers le haut, jusqu’à 250 km/h.\nAvant de voler, un moniteur vous explique comment ça marche, puis vous donne votre équipement. Ensuite, vous entrez dans la pièce avec lui. Le vent est d’abord lent, puis sa vitesse augmente, et vous volez ! Vous avez l’impression de voler à 4 000 mètres d’altitude. Le vol dure 2 minutes 30.\nPas besoin d’être sportif ! On peut voler à partir de 8 ans. Avant 18 ans, il faut une autorisation des parents.\nTarifs\n1 session : 70 CHF. 2 sessions : 130 CHF. 3 sessions : 190 CHF. Réservation obligatoire au 027 555 02 02.",
+      "source_sha256": "0dc47fa924e496eead531b7cfd12e4abd827c2113a90b610954719c530e0eb59",
+      "semantic_sha256": "b47bc2f5ff9030fe74a4e38d69fb6290d22049ad55d599198fe00538971946a2",
+      "question": {
+        "enonce": "À quel sport la simulation ressemble-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au parachutisme",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la natation",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À l’équitation",
+            "correct": false
+          }
+        ],
+        "written_model": "Au parachutisme"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-parachutisme",
+        "qcm-a2-natation-sport",
+        "extension573-equitation-cavaliere"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-parachutisme.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png"
+      ],
+      "image_sha256": [
+        "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
+        "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888"
+      ],
+      "reason": "Le texte dit que la simulation de chute libre ressemble au parachutisme.",
+      "visual_review": "Parachutiste sous une voile ouverte, nageuse dont les membres restent dans le cadre et cavalière avec cheval entier. Ce sont les sports comparés, pas une représentation fictive du simulateur décrit.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-02#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Qu’est-ce que tu prends Alain ? Moi, s’il y a du poisson, c’est déjà choisi. Et toi Martin, qu’est-ce que tu prends ?? Pour moi pas de poisson avec mes allergies, un bifteck et des légumes ça sera très bien. Moi, je ne peux pas renoncer à la moussaka, vous savez bien mes origines.",
+      "source_sha256": "2365aaa481df03cdbd5de9265584c7885a82033efbfda8aea3e35a416a658915",
+      "semantic_sha256": "d3cfab35cd9af3a5c43d7ffcf89d56a75d6882c1abc3d23914669f74da3cdee7",
+      "question": {
+        "enonce": "Quel plat Alain choisit-il volontiers ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du poisson",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du poulet",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une omelette",
+            "correct": false
+          }
+        ],
+        "written_model": "Du poisson"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+      "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
+      "image_ids": [
+        "extension573-poisson-grille",
+        "extension573-poulet-roti",
+        "extension573-omelette"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-poisson-grille.png",
+        "/lib/images/tcf/qcm-audit/extension573-poulet-roti.webp",
+        "/lib/images/tcf/qcm-audit/extension573-omelette.png"
+      ],
+      "image_sha256": [
+        "383bfadbd7f1f2f8dc06c8e63f9fc89081a8df77e62ed843959117ebb8525e1e",
+        "6c5828f3b7b3bec25b0f280a7e4337bd74c34c73a65ee3adf26b6fb0d42643f3",
+        "175b15a696b37f7daeb2977cd3498a70b2c2da2168e1ac9e4efcbdf9db98e4c1"
+      ],
+      "reason": "Alain choisit le poisson s’il est proposé. Le refus du poisson et le bifteck concernent Martin.",
+      "visual_review": "Poisson cuisiné sur une assiette, poulet rôti et omelette ; les images désignent les catégories de plats, sans affirmer une recette précise commandée par Alain. Le poisson vivant proposé est rejeté dans ce contexte de repas.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-02#3",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Qu’est-ce que tu prends Alain ? Moi, s’il y a du poisson, c’est déjà choisi. Et toi Martin, qu’est-ce que tu prends ?? Pour moi pas de poisson avec mes allergies, un bifteck et des légumes ça sera très bien. Moi, je ne peux pas renoncer à la moussaka, vous savez bien mes origines.",
+      "source_sha256": "2365aaa481df03cdbd5de9265584c7885a82033efbfda8aea3e35a416a658915",
+      "semantic_sha256": "4c3a03c1a829a39093186ab82a409b2fbfb8dc1d4820f43756e46d14f67910d6",
+      "question": {
+        "enonce": "Quel accompagnement Martin demande-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des légumes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des frites",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du riz",
+            "correct": false
+          }
+        ],
+        "written_model": "Des légumes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3",
+      "audio_sha256": "e99a54d2ea467a7f6e9acae59818603f748015331622649f821cf1d9ffeedefc",
+      "image_ids": [
+        "qcm-b1-legumes-accompagnement",
+        "co306-frites-dessine",
+        "co306-riz-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-legumes-accompagnement.png",
+        "/lib/images/tcf/qcm-audit/co306-frites-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-riz-dessine.webp"
+      ],
+      "image_sha256": [
+        "a19adac8869b1f5899f2a13f2bb7b14c4d88f4a7a103d4e9cb60d370770c5871",
+        "27e2a2cd255a71a0985b4494d6c9475c42bd9edd1692a0ad1a1c61f4d572f773",
+        "000b14a297384b03d100f2acfc84d56490c54892ee9723c2724f1254d074210b"
+      ],
+      "reason": "Martin commande un bifteck et des légumes après avoir signalé son allergie au poisson.",
+      "visual_review": "Assiettes d’accompagnement : légumes cuits, frites et riz. Les légumes bruts proposés initialement sont écartés ; aucun plat principal n’est ajouté à l’assiette de légumes.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-002-03#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Alors jeune homme, pouvez-vous me dire ce que vous avez vu ? Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo, la voiture m’a doublé et a tourné à droite sans respecter le feu. Un scooter arrivait de l’autre côté et la voiture l’a renversé.",
+      "source_sha256": "c2f9985c57fbbc0b4a16f86e7e006174092864ceded171b2de41f75efd9c2786",
+      "semantic_sha256": "85b1527c9154caed2201c5c7cec2e8810fe71e8c8d4b7851d738e71f5b22fab4",
+      "question": {
+        "enonce": "Quel véhicule le témoin utilisait-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une moto",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-002-03.mp3",
+      "audio_sha256": "99cf11b5dd7634f0a4daee38da6c06ee36ba735e9b032473fe1a63cb6167c2a8",
+      "image_ids": [
+        "co834-velo-dessine",
+        "co834-voiture-dessinee",
+        "co306-moto-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+      ],
+      "image_sha256": [
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+      ],
+      "reason": "Le témoin dit être arrêté au feu rouge sur son vélo ; la voiture et le scooter sont les autres véhicules du récit.",
+      "visual_review": "Vélo ordinaire entier, voiture et moto distincte d’un scooter. La question vise le véhicule du témoin, pas celui de la victime ou du conducteur ; les couleurs des véhicules ne sont pas des faits du témoignage.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-003-01#3",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Clément, tu te rappelles que samedi c’est l’anniversaire d’André ? Ah oui, c’est vrai. Heureusement que tu es là… moi j’oubliais... Qu’en dis-tu, d’organiser pour lui une fête surprise ? Génial, oui. Tu as toujours des idées super ! mais où la faire et comment organiser tout ça ? On a peu de temps… Ne t’inquiète pas, si tu m’aides on arrivera bien à tout organiser. Je suis d’accord pour t’aider, mais par où commencer ? Moi je dirais par la liste des invités. Et puis, il faudra trouver la salle… et ça… Pour la salle aucun problème. En cette saison on pourrait la faire dans mon jardin. On y a déjà fêté les 18 ans de ma sœur. Super. Bon, alors invitons tous nos copains de classe ! Il faudra les prévenir et surtout avertir Thomas qui ne sait pas garder de secret. D’accord, je m’occupe de leur envoyer des mails avec le plan pour arriver chez moi. Mais à quelle heure ? Parce que vendredi nous avons cours jusqu’à 17 heures. Alors, repoussons à samedi… ! Mais le soir alors. C’est plus facile pour trouver une excuse et faire venir André. Super. Oui, on pourra lui dire de venir chez moi à 21 heures avec l’excuse que mon père nous accompagne en boîte. Et pour organiser la musique ? Je m’en occupe. Mais il reste encore le cadeau… On demandera aux filles de s’en occuper et d’acheter aussi des boissons. Et pour le gâteau ? Ce soir, je vais demander à ma grand-mère si elle veut bien le faire. C’est une excellente pâtissière. Elle ne me dira pas non. Génial, alors on peut se lancer.",
+      "source_sha256": "5ca9a5c974c2c613675c8b130b3b0eaf4c604942a0d68833a8ad22e4b5866e62",
+      "semantic_sha256": "f10a3652130c7b5590f5c8a258616718dd2d281797bcd851fffc2127cefc6ced",
+      "question": {
+        "enonce": "Où la fête pourra-t-elle avoir lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Dans un jardin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans une salle de sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans un restaurant",
+            "correct": false
+          }
+        ],
+        "written_model": "Dans un jardin"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-003-01.mp3",
+      "audio_sha256": "07dfdec176b1a495d033a1fa5389c6810b5263e75d280a23ff394364017a916c",
+      "image_ids": [
+        "co306-jardin-dessine",
+        "vocab-salle-sport",
+        "co306-restaurant-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-jardin-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-salle-sport.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "image_sha256": [
+        "2bcc850a497badcb07f299e385205759f1f640d692180aacdb269e8d97710dba",
+        "b3ed604b17d0af077c57ff88212771b81a8758969930e8f4927fb87113c810de",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "reason": "L’ami propose de faire la fête dans son jardin, déjà utilisé pour un anniversaire.",
+      "visual_review": "Jardin privé attenant à une maison, salle de sport avec matériel et restaurant avec tables dressées. Catégories de lieux ; aucun décor n’est présenté comme la photographie du domicile réel des locuteurs.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-004-01#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Salut Alice ! Salut Jade ! ça va ? Super ! Je suis contente de te rencontrer. J’ai plein de choses à te dire et une surprise pour toi ! Une surprise ? Tu as un amoureux ? Ça va pas non ! Et alors, c’est quoi ? Tu es tellement radieuse .... Alors vite dis-moi ? Et bien je suis en train d’organiser le réveillon du premier de l’an. Mes parents font une petite croisière pour leurs 20 ans de mariage et ils viennent de me donner leur accord pour passer six jours dans leur chalet à la montagne. Et il est où ce chalet ? Dans les Alpes, à Megève. Tu connais ? Pas du tout mais j’ai entendu parler de cette station touristique. Alors ? Alors… c’est que je t’ invite à venir avec moi. Tu as déjà prévu quelque chose ? Non, j’espère ! Oh non ! Moi je reste à la maison et le soir du nouvel an, au maximum, on fête avec les amis de mes parents et leurs enfants chez nous ou chez eux. Tu sais… la fille qui râle tout le temps… Alors c’est une bonne occasion pour la laisser râler. Viens !!! Il y a aussi ma cousine Stéphanie et à trois ça sera super. Et puis Stéphanie, tu la connais déjà, elle a notre âge. Oui, elle est rigolote, super sympa… ça me tente, tu sais. Il te faut une réponse quand ? Dans le courant de la semaine parce qu’il faut réserver les billets de train. Bon, ce soir je demande à mes parents. Écoute, si tu veux, ma mère peut appeler la tienne. C’est peut-être mieux ? Oui, sûrement. Super Jade ! Tu es adorable.",
+      "source_sha256": "b1f74b7f99b56d1f3888b8e5ea43928f0fb9de311e03900ddaff3164705f34a6",
+      "semantic_sha256": "de8700494382328fd43a4a403ed899b18a1eece7ab5c38f57161a606c868c25f",
+      "question": {
+        "enonce": "Quel moyen de transport est prévu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le train",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’avion",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le bateau",
+            "correct": false
+          }
+        ],
+        "written_model": "Le train"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-004-01.mp3",
+      "audio_sha256": "188cc5ad96eee7b5fe499035307255abf868143587b28862f4d6649dafc0c737",
+      "image_ids": [
+        "co834-train-dessine",
+        "vocab-avion",
+        "co834-bateau-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+      ],
+      "image_sha256": [
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f",
+        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+      ],
+      "reason": "La réponse est attendue dans la semaine pour réserver les billets de train ; la croisière concerne les parents.",
+      "visual_review": "Train sur rails, avion et bateau entiers. Le transport prévu pour les amies est distingué de celui des parents, sans affirmer un modèle de train ni une compagnie.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-010-01#5",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Mathilde ? Oh Gabrielle ! Quelle surprise ! Mais tu es là ? Tu n’y croiras pas, mais hier j’ai parlé de toi avec Antoine. Ça alors, je suis heureuse de te revoir ! Je voulais justement te passer un coup de fil. Moi aussi je suis contente de te rencontrer. Alors qu’est-ce que tu deviens ? Ben, je suis venue chez mes parents quelques jours et j’en profite pour faire un tour dans ma ville. J’aime toujours autant faire les magasins surtout ici. Tu es toujours à Toulouse ? Plus maintenant, je suis à Montpellier pour mes études en médecine et je ne reviens ici qu’une fois par mois en coup de vent pour voir mes parents. Mais tu ne devais pas t’inscrire à la faculté d’architecture ? Si, mais j’ai raté mon examen et comme ma deuxième passion c’est la médecine j’ai choisi cette branche. Mais ton grand-père n’était pas médecin déjà ? Non, il avait une pharmacie à Carcassonne. Mais moi, j’adore les enfants et je voudrais m’occuper d’eux. Je voudrais choisir la pédiatrie. Et tes parents, dis-moi, ils sont contents ? Oui bien sûr, et toi, raconte- moi ! Tu en es où avec ton projet de bénévolat en Afrique ? Ça tient toujours. Je pense y aller pendant 1 mois cet été et puis on verra… Tu es toujours à la mairie, à l’accueil ? Oui, mais j’en ai marre. Je suis en train de préparer un concours pour changer de poste. Mais ça t’amènera à quoi ce concours ? Je pourrai être responsable de service… et bien sûr gagner davantage.",
+      "source_sha256": "c9e4288d00933883dd422f83676336bf1864d503e954f4aa0ca8790d462fb4c9",
+      "semantic_sha256": "7868c17423395a32cef5372ac11802bd38ef997cf3ab0b15f4486086e12f4198",
+      "question": {
+        "enonce": "Quel métier son grand-père exerçait-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Pharmacien",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Médecin",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Architecte",
+            "correct": false
+          }
+        ],
+        "written_model": "Pharmacien"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-010-01.mp3",
+      "audio_sha256": "d51509f3b38825bbb11ae8c94c54d979e63bc7be65311e185b0ed9b14ab39c35",
+      "image_ids": [
+        "catalogue-20261113-metier-pharmacien",
+        "co834-medecin-dessine",
+        "catalogue-20261113-metier-architecte"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/pharmacien.webp",
+        "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+        "/lib/images/tcf/catalogue/metiers/architecte.webp"
+      ],
+      "image_sha256": [
+        "b323d357a0e7ae0b74dc4fbf3830978e536ce4956d83dbba0d9717e76c4225cb",
+        "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+        "0f59ab12dc1d820fd9fe7b9641577b7b8e1259ebe97e1092f4333a8065075b99"
+      ],
+      "reason": "Le grand-père avait une pharmacie ; les études de médecine et l’architecture sont évoquées pour la petite-fille.",
+      "visual_review": "Profession en officine, médecin examinant une patiente et architecte avec plans et maquette. Illustrations des métiers, sans attribuer les visages ou le genre des professionnels dessinés aux personnes de l’audio.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-024-01#10",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Pierre Marchand, vous avez choisi le basket, pourquoi pas le football ? Je vais vous surprendre. J’ai commencé par le football et j’occupais la position d’attaquant. Mais ça ne m’empêchait pas de jouer au basket, deux fois par semaine. Disons que j’ai connu le ballon de basket avant celui de foot. Puis quand j’ai vu à la télévision Michael Jordan ça m’a donné envie de devenir basketteur. Je restais bouche bée en le voyant évoluer sur les parquets. Jouer en NBA signifie être le meilleur au monde mais aussi gagner beaucoup d’argent. Comment vous comportez-vous dans la vie de tous les jours depuis votre succès ? Vous savez, ma vie n’a pas changé. J’habite toujours la même maison et je possède la même voiture depuis que j’habite San Antonio. Mes amis sont toujours les mêmes et pour eux, que je sois en Nationale ou pas, rien n’a changé. Je continue à les fréquenter et à partager des jours de vacances avec eux. Ce n’est pas parce que vous gagnez de l’argent que d’un seul coup, vous allez devenir quelqu’un d’autre. Finalement, ce sont les autres qui me regardent différemment. Vous partagez votre temps entre la France et les États-Unis ou les États-Unis et la France. De quel pays êtes-vous le plus proche ? Je suis avant tout Français. Je peux vous confier que c’est pour moi un réel plaisir de retrouver tous mes amis en France. Je n’oublie pas d’où je viens. J’ai grandi en Bretagne et il est très important de se replonger de temps à autre dans cette ambiance qui a bercé mon enfance et qui me permet de garder les pieds sur terre. Comment conciliez-vous ces contraintes avec vos envies de liberté ? Et bien mon entraîneur insiste beaucoup sur la récupération. Nous avons des entraînements de deux heures le matin et, le reste du temps, nous organisons nos journées comme nous le souhaitons. Ça me laisse donc beaucoup de temps libre, je peux profiter de la vie comme n’importe qui et même suivre un cours d’anglais. Vous savez… vivre dans un pays avec mes connaissances linguistiques scolaires… n’est pas toujours suffisant.",
+      "source_sha256": "ce84342024a260cc2dd17e9442d705840a4052594c7e4d3b4be8269df5508e5e",
+      "semantic_sha256": "5a8b935a79071411828efd73b7f4a7ae926b20616960d0d24f00bcda8395fe0c",
+      "question": {
+        "enonce": "Quel cours suit-il pendant son temps libre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un cours d’anglais",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un cours de cuisine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un cours de dessin",
+            "correct": false
+          }
+        ],
+        "written_model": "Un cours d’anglais"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-024-01.mp3",
+      "audio_sha256": "d60ca6e7ad550006d76e7b9054a7a076606be61a4e8b4c2680edaffa058073fe",
+      "image_ids": [
+        "catalogue-20261113-action-cours-d-anglais",
+        "co306-cours-cuisine-dessine",
+        "co834-cours-dessin-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/actions/cours-d-anglais.webp",
+        "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-cours-dessin-dessine.webp"
+      ],
+      "image_sha256": [
+        "f103f2d07c2b2fdd92c0a1c9b37772a9b3e85719aedbe8a2ef65d66c8c46ab26",
+        "adcf49233bb429f177fb5985655d0c24b73677caed21214f94b3583874e0bad2",
+        "f71d43b39f03ba7eae24756f171a060de9ff47762b1e4440676162506d216f2d"
+      ],
+      "reason": "Le basketteur dit profiter de son temps libre pour suivre un cours d’anglais.",
+      "visual_review": "Cours de langue avec indice anglophone, cours de cuisine en pratique et cours de dessin avec enseignante et élèves. Pas de simple salle vide ; aucun élève dessiné n’est présenté comme le sportif interviewé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-025-01#6",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Daniel Leduc, dites-nous ce que représente le sport pour vous ? Le sport est pour moi indispensable, il fait partie de mon quotidien. Il me permet de décompresser après une journée stressante, de rester en contact avec la nature. Quoi de plus agréable qu’un footing en forêt, de rencontrer des gens lors des compétitions, de repousser mes limites et de me fixer des défis ! Dans la semaine je fais de la course à pied et du vélo. Je me garde toujours une journée « récupération » par semaine ou je ne fais rien du tout. Dans quel but participez-vous aux compétitions ? Chaque année je participe à des marathons et des semi-marathons et cela pour affronter un nouveau défi, pour améliorer mes temps, pour optimiser ma condition physique... mais aussi pour retrouver ceux qui, comme moi, aiment ce sport. Quel est votre secret pour garder une telle condition physique ? Et bien la diététique et l’entraînement régulier toute l’année ! C’est primordial pour moi de maintenir mon poids de forme. Je peux vous dire que 1 ou 2 kg de plus sur un marathon ça se sent ! De quoi se composent alors vos repas ? Mon petit-déjeuner favori est du pain avec du beurre, une banane, un yaourt nature et un café sans sucre. Après une course l’envie de me récompenser en mangeant tout et n’importe quoi est bien là ! mais je garde ma ligne de conduite, je mange comme d’habitude, une viande blanche, des légumes crus et cuits assaisonnés avec un mélange de 3 huiles différentes de colza, d’olives et de noix, des féculents, un yaourt nature et un ou deux fruits. Je ne m’hydrate qu’avec une eau gazeuse très minéralisée. Vous êtes Gendarme dans un village près de Dijon. Que vous apporte le sport dans votre métier ? C'est une obligation pour nous de faire du sport, ça peut sauver des vies, et nous sauver la vie. Que conseillez-vous aux gens qui ne font pas du tout de sport ? De s’y mettre rapidement et de s’intéresser sérieusement à la diététique s’ils veulent optimiser et prendre du plaisir !",
+      "source_sha256": "c0cf5fa740706f80ccfcee1c8dd5727aa07bc86ea17df6b523c392615dc2ea6f",
+      "semantic_sha256": "3983e104883034c77e7fcc5ddbb0b8442c8d3a3d0d23757c0ca3858730b9cbbc",
+      "question": {
+        "enonce": "Quel fruit prend-il dans son petit-déjeuner favori ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une banane",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une pomme",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une orange",
+            "correct": false
+          }
+        ],
+        "written_model": "Une banane"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-025-01.mp3",
+      "audio_sha256": "5db301cdeed1e540daf4cb21001c832ffdc16f68ee3699fc9bbd8a095e06af71",
+      "image_ids": [
+        "vocab-banane",
+        "vocab-pomme",
+        "extension573-orange"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-banane.webp",
+        "/lib/images/tcf/qcm-audit/vocab-pomme.webp",
+        "/lib/images/tcf/qcm-audit/extension573-orange.webp"
+      ],
+      "image_sha256": [
+        "cf938ac6281f4bdfae4584062cc770e399883340fa26885add42f65e07e2e397",
+        "d2a2550f18e70458e8e9a96413068e6543bdd3395d56ea3b5f4f04c60945b7a0",
+        "d2c6e30398b97123da0fce7f6c1f67fdbbf2e29d071e4dbcd1998cadf8d7c86f"
+      ],
+      "reason": "Le petit-déjeuner préféré contient explicitement une banane, avec pain, beurre, yaourt nature et café sans sucre.",
+      "visual_review": "Banane, pomme et orange entières. L’échantillon de couleur orange est rejeté ; la question demande un fruit, pas sa couleur ni un menu complet.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-032-02#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Je me suis acheté une trottinette. Il ne manquait que toi sur les trottoirs avec ta trottinette.",
+      "source_sha256": "68c2c8ec66d8938a9712293c102a9d08709327d971cdaf9648b844698fa953c2",
+      "semantic_sha256": "9523e2c3f086091fec37d0423c4ab45b0ca405d9068cf7c01c1cbfc0c3b41524",
+      "question": {
+        "enonce": "Quel objet la personne a-t-elle acheté ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une trottinette",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un scooter",
+            "correct": false
+          }
+        ],
+        "written_model": "Une trottinette"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3",
+      "audio_sha256": "d9ee8340338ca2c79781dd2cd7a5d5a4864fce8c723764126f0f404f9a087e4c",
+      "image_ids": [
+        "vocab-trottinette",
+        "co834-velo-dessine",
+        "vocab-scooter"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-scooter.webp"
+      ],
+      "image_sha256": [
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590"
+      ],
+      "reason": "La personne annonce qu’elle s’est acheté une trottinette.",
+      "visual_review": "Trottinette ordinaire, vélo et scooter motorisé entiers ; pas d’assistance électrique imposée par le dessin de la trottinette.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-040-01-01#4",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Allô Barbara. Ah, Céline quel plaisir de t’entendre… Je ne te dérange pas ? Pas du tout ! Je t’appelle parce que ça va bientôt être l’anniversaire de Patrick. Tu t’en souviens ? Ah, c’est vrai je n’y pensais plus! C’est le 26 non ? C’est bien ça. Il est né le 26 avril. Qu’allons-nous lui offrir cette année, toi qui as toujours des idées fabuleuses ? Et bien cette fois je n’en ai pas la moindre idée. Les choix sont limités pour un garçon de son âge. C’est vrai mais il faut bien trouver quelque chose ? Et si on lui offrait une tablette. Non c’est le cadeau qu’il va recevoir de sa sœur. Tu en es sûre ? C’est elle qui me l’a dit, elle l’a déjà acheté. Pas de chance pour nous ! Je réfléchis… attends… pourquoi pas alors une montre connectée ? Il en a une ! Alors, écoute, un bracelet. Tu as vu la vitrine de la nouvelle bijouterie avenue du Général De Gaulle ? Il y a des très jolis bracelets pour jeunes avec une plaque en argent où on peut faire graver son prénom. Ça pourrait être une idée mais réfléchissons encore un peu… tu ne penses pas qu’un accessoire pour sa moto serait préférable ? Peut-être, surtout qu’il ne va pas tarder à l’utiliser avec la belle saison qui arrive. Allons voir alors chez Moto shop. Ils ont un grand choix et tous les jeunes s’attardent devant les vitrines. Ils doivent avoir des accessoires pour tous les budgets. Oui je pense ! Je sais qu’ils font souvent des promotions et donc nous pourrions trouver quelque chose. On y va demain si tu veux ? D’accord, je téléphone pour savoir si c’est ouvert non-stop et je passe te chercher chez toi.",
+      "source_sha256": "60b06b53e8be15d04cad3effc0076046a6c71d21fccfb043d5d59ef584498fc0",
+      "semantic_sha256": "d32ad3150b05393bcf37b3491d7678d026c7362bf10986c616ae150f0d36c62d",
+      "question": {
+        "enonce": "Quel autre objet Patrick possède-t-il déjà ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une montre connectée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une guitare",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un appareil photo",
+            "correct": false
+          }
+        ],
+        "written_model": "Une montre connectée"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+      "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
+      "image_ids": [
+        "extension573-montre-connectee",
+        "co834-guitare-dessine",
+        "co834-appareil-photo-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-montre-connectee.png",
+        "/lib/images/tcf/qcm-audit/co834-guitare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp"
+      ],
+      "image_sha256": [
+        "c41198a6263829dec14279653bd047f9145f05af82639dabcf9cad1463cadbfa",
+        "4f0746cb533c4b4a62c043d3335c86b340419023fff032c9c3069a0b67aedb77",
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d"
+      ],
+      "reason": "La montre connectée est déjà possédée ; la tablette sera offerte par la sœur et les autres idées restent discutées.",
+      "visual_review": "Montre à écran d’applications et indicateur de connexion, guitare et appareil photo. Le cadeau futur n’est pas confondu avec l’objet déjà possédé ; pas de simple montre analogique.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-040-01-01#7",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Allô Barbara. Ah, Céline quel plaisir de t’entendre… Je ne te dérange pas ? Pas du tout ! Je t’appelle parce que ça va bientôt être l’anniversaire de Patrick. Tu t’en souviens ? Ah, c’est vrai je n’y pensais plus! C’est le 26 non ? C’est bien ça. Il est né le 26 avril. Qu’allons-nous lui offrir cette année, toi qui as toujours des idées fabuleuses ? Et bien cette fois je n’en ai pas la moindre idée. Les choix sont limités pour un garçon de son âge. C’est vrai mais il faut bien trouver quelque chose ? Et si on lui offrait une tablette. Non c’est le cadeau qu’il va recevoir de sa sœur. Tu en es sûre ? C’est elle qui me l’a dit, elle l’a déjà acheté. Pas de chance pour nous ! Je réfléchis… attends… pourquoi pas alors une montre connectée ? Il en a une ! Alors, écoute, un bracelet. Tu as vu la vitrine de la nouvelle bijouterie avenue du Général De Gaulle ? Il y a des très jolis bracelets pour jeunes avec une plaque en argent où on peut faire graver son prénom. Ça pourrait être une idée mais réfléchissons encore un peu… tu ne penses pas qu’un accessoire pour sa moto serait préférable ? Peut-être, surtout qu’il ne va pas tarder à l’utiliser avec la belle saison qui arrive. Allons voir alors chez Moto shop. Ils ont un grand choix et tous les jeunes s’attardent devant les vitrines. Ils doivent avoir des accessoires pour tous les budgets. Oui je pense ! Je sais qu’ils font souvent des promotions et donc nous pourrions trouver quelque chose. On y va demain si tu veux ? D’accord, je téléphone pour savoir si c’est ouvert non-stop et je passe te chercher chez toi.",
+      "source_sha256": "60b06b53e8be15d04cad3effc0076046a6c71d21fccfb043d5d59ef584498fc0",
+      "semantic_sha256": "c85458f399b847c8e101e8acd85c772dd6706101c922033ae994e772a8c09875",
+      "question": {
+        "enonce": "Pour quel véhicule envisagent-elles finalement un accessoire ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une moto",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une voiture",
+            "correct": false
+          }
+        ],
+        "written_model": "Une moto"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3",
+      "audio_sha256": "7e023a211f3ac38f5ef5f70531e7abd033519275952d8653455a461169b663e0",
+      "image_ids": [
+        "co306-moto-dessine",
+        "co834-velo-dessine",
+        "co834-voiture-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+      ],
+      "image_sha256": [
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+      ],
+      "reason": "Après plusieurs idées, les amies envisagent un accessoire pour sa moto et une visite chez Moto shop.",
+      "visual_review": "Moto, vélo et voiture entiers. La question porte sur le type de véhicule auquel destiner l’accessoire ; l’image ne prétend pas identifier la moto précise de Patrick.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-041-01-01#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ? Je fréquente le lycée Jean Moulin de la ville et je suis actuellement en stage à la mairie. Ah, oui ! Je sais que les jeunes lycéens doivent faire des stages. C’est ça ! La Mairie m’a chargé d’interviewer des personnes pour savoir ce qu’elles pensent de mettre dans différents quartiers de la ville de grosses boîtes à lettre pour y récolter et distribuer les livres dont des personnes veulent se séparer et d’autres peuvent emprunter gratuitement. Que pensez-vous de cette idée ? Ça serait formidable, J’habite un appartement et vous savez qu’au prix des loyers on ne peut pas toujours se permettre d’avoir une pièce en plus pour y placer une grande bibliothèque, donc de temps à autre je fais le tri de mes livres, j’en donne et quand on me les rend il m’arrive de les mettre à la poubelle quand tous les membres de ma famille les ont lus. Alors vous aimeriez bien en faire bénéficier des inconnus qui les prendraient et à leur tour en feraient profiter encore à d’autres ? Oui bien sûr ! Parce que les livre sont chers. Moi, par exemple, j’ai encore des livres de mes enfants quand ils étaient plus jeunes. Je voudrais bien les donner ! Vous pensez donc que ça serait un bon service ? Selon moi, c’est une idée excellente, il y a des personnes âgées qui pourraient les garder ou les restituer sans le délais qu’impose la bibliothèque municipale . C’est bien à cela que la mairie a pensé et ça serait un service social qui impliquerait tout le monde et sensibiliserait à l’échange. Et bien madame, je vous remercie de m’avoir accordé du temps.",
+      "source_sha256": "806105704a49478d2f530655f3db3b2474b9bbd6188e213de33dc4e82b93ca1c",
+      "semantic_sha256": "304fdfd2cb512a73df9c5e477ba8d8334afd2ec284269b55e20362ccacbd8276",
+      "question": {
+        "enonce": "Où le jeune homme effectue-t-il son stage ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la mairie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À l’hôpital",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans une banque",
+            "correct": false
+          }
+        ],
+        "written_model": "À la mairie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
+      "audio_sha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019",
+      "image_ids": [
+        "co306-mairie-dessine",
+        "co306-hopital-dessine",
+        "co306-banque-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-hopital-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-banque-dessine.webp"
+      ],
+      "image_sha256": [
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "54fbc370b2e923fa99f4c65072d0db3943f3ce953076c06355a7dbedbd471054",
+        "a04e11e667af9b9d1f88cc4e1d29e441528484e618e4dcefd5c78ce96c3dbb12"
+      ],
+      "reason": "Le lycéen précise au début être actuellement en stage à la mairie.",
+      "visual_review": "Mairie identifiable par sa façade, hôpital avec entrée de soins et banque avec guichet. Catégories d’établissements, sans reproduire la ville ni la personne interrogée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

@@ -61,6 +61,19 @@ import {
 
 const PLACE = ['unités', 'dizaines', 'centaines', 'milliers'] as const
 
+function equivalentFractionItem(rng: Rng, reducing: boolean): MathItem {
+  const n = int(rng, 1, 6)
+  const d = int(rng, n + 1, 9)
+  const k = int(rng, 2, 5)
+  const missNum = rng() < 0.5
+  const [leftN, leftD, rightN, rightD] = reducing ? [n * k, d * k, n, d] : [n, d, n * k, d * k]
+  return {
+    layout: 'inline',
+    prompt: missNum ? `${frac(leftN, leftD)} = □/${rightD}` : `${frac(leftN, leftD)} = ${rightN}/□`,
+    answer: String(missNum ? rightN : rightD),
+  }
+}
+
 export function generateItems(
   typeId: string,
   count: number,
@@ -79,6 +92,12 @@ export function generateItems(
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count, range)
+  }
+  if (typeId === 'fractions-equivalentes') {
+    const reducingFirst = rng() < 0.5
+    return shuffle(rng, Array.from({ length: count }, (_, i) =>
+      equivalentFractionItem(rng, i % 2 === 0 ? reducingFirst : !reducingFirst),
+    ))
   }
   const items: MathItem[] = []
   for (let i = 0; i < count; i++) {
@@ -457,17 +476,6 @@ function generateOne(
       const d = int(rng, n + 1, 12)
       const ask = rng() < 0.5 ? 'numérateur' : 'dénominateur'
       return { layout: 'inline', prompt: `Dans ${frac(n, d)}, le ${ask} est`, answer: ask === 'numérateur' ? String(n) : String(d) }
-    }
-    case 'fractions-equivalentes': {
-      const n = int(rng, 1, 6)
-      const d = int(rng, n + 1, 9)
-      const k = int(rng, 2, 5)
-      const missNum = rng() < 0.5
-      return {
-        layout: 'inline',
-        prompt: missNum ? `${frac(n, d)} = □/${d * k}` : `${frac(n, d)} = ${n * k}/□`,
-        answer: missNum ? String(n * k) : String(d * k),
-      }
     }
     case 'fractions-simplifier': {
       const k = int(rng, 2, 6)

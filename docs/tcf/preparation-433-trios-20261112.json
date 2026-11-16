@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 80,
-    "initial_pending": 353,
+    "activated_since_baseline": 83,
+    "initial_pending": 350,
     "additional_pending": 0,
-    "total_pending": 353,
+    "total_pending": 350,
     "pending_by_level": {
       "A0-A1": 143,
-      "A1-A2": 187,
+      "A1-A2": 184,
       "A2-B1": 23
     }
   },
@@ -3637,7 +3637,13 @@
           "id": "c",
           "label": "La natation",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation"
+            }
+          ],
           "generation_jobs": []
         }
       ],
@@ -10918,8 +10924,8 @@
       "audio": null,
       "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
       "semantic_sha256": "d8567eb2aba9bb8b65839c57b1f281386364d85099f1578c0bbf3ac522194a17",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le stage 2 propose la voile ; les deux autres réponses sont le ski nautique et le surf.",
       "choices": [
         {
           "id": "a",
@@ -10932,7 +10938,13 @@
           "id": "b",
           "label": "Le ski nautique",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+              "sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+              "label": "Le ski nautique"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -10949,7 +10961,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+        "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10958,7 +10974,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -14879,21 +14895,33 @@
       "audio": null,
       "source_sha256": "a98ffd5bd210417065370d742b96bcf36cff38734adcabaaba8a99c3f861f0b9",
       "semantic_sha256": "c543ba7f7dea88c1313e52b5f559c44d7badc1417892135dc516fd4b2f743a86",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La soirée de bienvenue du premier soir prévoit une raclette, spécialité du Valais.",
       "choices": [
         {
           "id": "a",
           "label": "Une raclette",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+              "sha256": "3f88e73ccf7049a0192fc1251ca700fc23028772ccedf27daa42c7adc7a163b1",
+              "label": "Une raclette"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Une fondue au chocolat",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-fondue-chocolat.png",
+              "sha256": "6a0371d5f6aa4ca2d05486524bb3142f74bddd51ec88fc8f9d9d1e855647da15",
+              "label": "Une fondue au chocolat"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -14910,7 +14938,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-raclette-plat.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-fondue-chocolat.png",
+        "/lib/images/tcf/qcm-audit/co834-pizza-dessinee.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14919,7 +14951,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -15517,21 +15549,33 @@
       "audio": null,
       "source_sha256": "0dc47fa924e496eead531b7cfd12e4abd827c2113a90b610954719c530e0eb59",
       "semantic_sha256": "b47bc2f5ff9030fe74a4e38d69fb6290d22049ad55d599198fe00538971946a2",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le texte dit que la simulation de chute libre ressemble au parachutisme.",
       "choices": [
         {
           "id": "a",
           "label": "Au parachutisme",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-parachutisme.png",
+              "sha256": "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
+              "label": "Le parachutisme"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "À la natation",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+              "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+              "label": "La natation"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -15548,7 +15592,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-parachutisme.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -15557,7 +15605,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
