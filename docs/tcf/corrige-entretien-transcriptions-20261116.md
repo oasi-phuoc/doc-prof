@@ -11,6 +11,8 @@ Chaque transcription de dialogue ou de document commence sur sa propre page, dan
 - Le [PDF de contrôle](corrige-entretien-transcriptions-20261116.pdf) contient sept pages A4 : une page d’entretien et six pages de transcription. Le texte extrait confirme une seule transcription sur chacune des six pages : [résultats d’impression](corrige-entretien-transcriptions-20261116-print.json).
 - TypeScript, la compilation de production et les budgets de chargement passent.
 
+Les deux nouveaux commits de `main`, jusqu’à `a3b07611`, sont conservés par fusion. TypeScript, la compilation et les budgets sont également vérifiés après cette intégration ; les mesures actualisées figurent dans le [rapport de chargement](../interactive/performance-results.json).
+
 ## Suite du tri
 
 Ce lot de mise en page ne modifie pas les compteurs de trios. Le reliquat documenté demeure de **355 trios historiques** et **440 candidats DELF Actif** à vérifier, illustrer ou conserver en texte selon leur contexte. Les autres travaux ouverts sont détaillés dans le [bilan du cahier des charges](bilan-cahier-des-charges-20261111.md) et le [dernier rapport de tri](trios-sport-objets-20261116.md).
