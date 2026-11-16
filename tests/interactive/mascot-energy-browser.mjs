@@ -2,13 +2,14 @@ import assert from 'node:assert/strict'
 import {mkdir,writeFile} from 'node:fs/promises'
 import {createServer} from 'vite'
 import {createElement} from 'react'
-import {renderToStaticMarkup} from 'react-dom/server'
+import {renderToStaticMarkup,renderToReadableStream} from 'react-dom/server'
 import {chromium} from 'playwright'
 const vite=await createServer({appType:'custom',cacheDir:'/tmp/clairfle-mascot-energy',server:{host:'127.0.0.1',port:5198,strictPort:true,hmr:false}})
 vite.middlewares.use('/__mascot_energy',(_req,res)=>{res.setHeader('content-type','text/html');res.end('<!doctype html><html lang="fr"><meta charset="utf-8"><title>Mascottes et énergie</title><body></body></html>')});await vite.listen()
 const {MASCOTS}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts'),{CombatPortrait}=await vite.ssrLoadModule('/src/interactive/duel/CombatPortrait.tsx'),{signatureFor,SUPER_AURA_COLORS}=await vite.ssrLoadModule('/src/interactive/duel/vfx/catalog.ts')
 const browser=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH||undefined,args:['--no-sandbox']}),errors=[],plates=[],out='docs/interactive/mascot-energy-proofs'
 try{
+ const initial=await renderToReadableStream(createElement(CombatPortrait,{avatarId:'leaf',hp:20,level:2}));await initial.allReady;await new Response(initial).text()
  await mkdir(out,{recursive:true});const page=await browser.newPage({viewport:{width:1366,height:1100},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:5198/__mascot_energy')
  await page.evaluate(async()=>{await import('/src/interactive/projection.css');await import('/src/interactive/competition/competition.css');await import('/src/interactive/duel/combat-portraits.css');await import('/src/interactive/duel/power-aura.css')})
  for(let group=0;group<5;group++){

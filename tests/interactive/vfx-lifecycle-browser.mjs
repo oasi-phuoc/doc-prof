@@ -17,7 +17,7 @@ async function setup(fault){
  await context.route('**/__test_api/fiches',route=>{assert.equal(route.request().method(),'GET');return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({fiches:[saved]})})})
  const page=await context.newPage();page.setDefaultTimeout(30000);page.on('pageerror',e=>errors.push(e.message));await page.goto(base+'/interactif/'+saved.id);await page.locator('.ci-launch:enabled').waitFor({timeout:120000})
  if(fault)await page.evaluate(fault=>{if(fault==='missing')HTMLCanvasElement.prototype.getContext=()=>null;else CanvasRenderingContext2D.prototype.createLinearGradient=()=>{throw new Error('Controlled renderer failure')}},fault)
- await button(page,'Compétition').click();await button(page,'Préparer un duel').click();await button(page,'Préparer la partie').click();await button(page,'Commencer le duel').waitFor();return{page,context}
+ await button(page,'Compétition').click();await button(page,'Préparer un duel').click();await page.getByRole('spinbutton',{name:'Chance de critique ×4 (%)',exact:true}).fill('0');await button(page,'Préparer la partie').click();await button(page,'Commencer le duel').waitFor();return{page,context}
 }
 try{
  const {page,context}=await setup()
@@ -61,7 +61,7 @@ try{
  }
  assert.equal(await low.page.locator('.ci-duel-arena').getAttribute('data-multiplier'),'1');assert.equal(await left.locator('[data-combat-state="critical-tired"]').count(),1);await low.page.clock.resume()
  results.push({case:'critical energy at low HP',mascot:'rabbit',hp20AngryDuringBothLevels:true,angryUntilAttackEnds:true,returnsToFatigueAfterward:true,cleanBodyContour:true});await low.context.close()
- const legacy=await setup();await legacy.page.evaluate(async()=>{const {createDuel,duelRound}=await import('/src/interactive/duel/core.ts');const key=Object.keys(sessionStorage).find(s=>s.startsWith('clairfle.duel.duel.')),j=JSON.parse(sessionStorage.getItem(key)),quiz={id:j.quizId,items:[{question:{id:'q',choices:[{id:'yes'}]},correctChoiceId:'yes'}]};j.version=2;for(let seed=0;seed<1000;seed++)if(duelRound(quiz,createDuel(quiz,{...j.config,seed},j.timer,j.createdAt,2)).multiplier===3){j.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(j));return}})
+ const legacy=await setup();await legacy.page.evaluate(async()=>{const {createDuel,duelRound}=await import('/src/interactive/duel/core.ts');const key=Object.keys(sessionStorage).find(s=>s.startsWith('clairfle.duel.duel.')),j=JSON.parse(sessionStorage.getItem(key)),quiz={id:j.quizId,items:[{question:{id:'q',choices:[{id:'yes'}]},correctChoiceId:'yes'}]};j.version=2;delete j.config.combat;for(let seed=0;seed<1000;seed++)if(duelRound(quiz,createDuel(quiz,{...j.config,seed},j.timer,j.createdAt,2)).multiplier===3){j.config.seed=seed;sessionStorage.setItem(key,JSON.stringify(j));return}})
  await button(legacy.page,'Quitter la compétition').click();await button(legacy.page,'Reprendre la partie').click();await button(legacy.page,'Commencer le duel').click();await answer(legacy.page).click()
  await legacy.page.waitForFunction(()=>document.querySelectorAll('.ci-duel-hp')[1]?.textContent==='70');assert.equal(await legacy.page.locator('.ci-duel-feedback').count(),1)
  const oldJournal=await legacy.page.evaluate(()=>JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage).find(s=>s.startsWith('clairfle.duel.duel.')))));assert.equal(oldJournal.version,2);assert.equal(oldJournal.timer.feedbackSeconds,1)

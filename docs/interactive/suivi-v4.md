@@ -1,5 +1,7 @@
 # Suivi de la mise en œuvre V4
 
+Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.
+
 Les [pools de plusieurs domaines](adr-0060-pools-multidomaines.md) permettent de sélectionner directement les types d’exercices, sans fiche. Le catalogue retire les types non pris en charge et les domaines vides ; la sélection, les réglages, les nouveaux tirages et les reprises restent conservés sur cet appareil.
 
 Ce registre complète les anciennes checklists de livraison. Il distingue les fonctions vérifiées, les incréments encore partiels et les contrôles nécessitant le matériel réel. Les demandes récentes du propriétaire prévalent : Classe sans sélection au tableau ; Solo avec correction et suite automatiques ; 30 mascottes animées et mouvements maintenus même avec la préférence système de réduction des animations ; push de chaque étape validée sur `origin/main`.

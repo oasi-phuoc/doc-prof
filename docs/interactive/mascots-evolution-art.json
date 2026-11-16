@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-16",
+  "method": "New art generated with image_gen from the existing mascot sheets, including separate charging and releasing poses. Original generated PNG bytes are preserved; alpha-connected body contours are applied only as CSS clipping at runtime.",
+  "adultMascots": 30,
+  "adultStatesPerMascot": 14,
+  "adultSprites": 420,
+  "miniCastingSprites": 60,
+  "atlasCount": 20,
+  "layout": {
+    "adultBase": "4 columns × 6 rows: normal, angry, tired, critical-tired",
+    "adultAction": "4 columns × 6 rows: victory, defeat, charge, release",
+    "adultActivities": "6 columns × 6 rows: thinking, cards-up, discussion, correct, incorrect, pause",
+    "miniCharge": "2 columns × 6 rows: charge, release"
+  },
+  "ordering": "MASCOTS order, six identities per group: classic, zodiac-a, zodiac-b, nature, spirits.",
+  "verification": "Image hashes, dimensions and foreground contours are recorded in src/interactive/duel/evolution-masks.generated.json; all 480 mapped cells and the rendered dark-background gallery are verified.",
+  "assets": [
+    {
+      "src": "/lib/images/interactive/mascots-adult-base-classic.png",
+      "generatedOriginal": "/workspace/generated_images/exec-cd9fdf20-3410-4b18-8782-e68adfcf8cf4.png",
+      "reference": "/lib/images/interactive/mascots-health-classic.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-base-zodiac-a.png",
+      "generatedOriginal": "/workspace/generated_images/exec-9c06ef88-f08e-4f1f-8996-84c97666c68c.png",
+      "reference": "/lib/images/interactive/mascots-health-zodiac-a.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-base-zodiac-b.png",
+      "generatedOriginal": "/workspace/generated_images/exec-8b985b7d-da61-496c-b2b7-2362071361e3.png",
+      "reference": "/lib/images/interactive/mascots-health-zodiac-b.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-base-nature.png",
+      "generatedOriginal": "/workspace/generated_images/exec-637dc881-afad-4a6f-a431-33986645a25a.png",
+      "reference": "/lib/images/interactive/mascots-health-nature.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-base-spirits.png",
+      "generatedOriginal": "/workspace/generated_images/exec-641fe571-b270-4953-877b-9280190b10ba.png",
+      "reference": "/lib/images/interactive/mascots-health-spirits.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-action-classic.png",
+      "generatedOriginal": "/workspace/generated_images/exec-e991c360-7628-496f-bf73-1cbee34f1e40.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-classic.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-action-zodiac-a.png",
+      "generatedOriginal": "/workspace/generated_images/exec-865469c6-88e0-4618-8b27-e95b93e54c45.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-zodiac-a.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-action-zodiac-b.png",
+      "generatedOriginal": "/workspace/generated_images/exec-56f5966c-2b08-4217-a10e-65951e5b721f.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-zodiac-b.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-action-nature.png",
+      "generatedOriginal": "/workspace/generated_images/exec-c471b9fb-29c0-4b5c-ba67-942be93ad1f2.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-nature.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-action-spirits.png",
+      "generatedOriginal": "/workspace/generated_images/exec-5872e1bc-8c1a-450c-bb8f-fc6d137ce1e5.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-spirits.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-activities-classic.png",
+      "generatedOriginal": "/workspace/generated_images/exec-5f17fef7-c0b7-4c57-9a8a-8a80fd0fc211.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-classic.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-activities-zodiac-a.png",
+      "generatedOriginal": "/workspace/generated_images/exec-23d05efb-7c19-4815-b83a-62d6db0c8582.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-zodiac-a.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-activities-zodiac-b.png",
+      "generatedOriginal": "/workspace/generated_images/exec-a7db0768-68d2-49a0-ae02-45a2c2161214.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-zodiac-b.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-activities-nature.png",
+      "generatedOriginal": "/workspace/generated_images/exec-8b804b32-b708-473f-b4b0-a45f628167e5.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-nature.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-adult-activities-spirits.png",
+      "generatedOriginal": "/workspace/generated_images/exec-caa4f830-421c-48ef-b021-5bd50220b5d4.png",
+      "reference": "/lib/images/interactive/mascots-adult-base-spirits.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-mini-charge-classic.png",
+      "generatedOriginal": "/workspace/generated_images/exec-43f72021-abb1-45e1-9788-11f3af836a5b.png",
+      "reference": "/lib/images/interactive/mascots-health-classic.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-mini-charge-zodiac-a.png",
+      "generatedOriginal": "/workspace/generated_images/exec-d3643275-77ca-4133-af05-c85168669f1e.png",
+      "reference": "/lib/images/interactive/mascots-health-zodiac-a.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-mini-charge-zodiac-b.png",
+      "generatedOriginal": "/workspace/generated_images/exec-e2162d6a-9ff6-4ddd-b4f4-fe015f5d872b.png",
+      "reference": "/lib/images/interactive/mascots-health-zodiac-b.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-mini-charge-nature.png",
+      "generatedOriginal": "/workspace/generated_images/exec-1004f2a8-038f-4c6c-ac39-d075def28f0d.png",
+      "reference": "/lib/images/interactive/mascots-health-nature.png"
+    },
+    {
+      "src": "/lib/images/interactive/mascots-mini-charge-spirits.png",
+      "generatedOriginal": "/workspace/generated_images/exec-04eced93-e1ac-4ae9-8760-e2e2dd8f533f.png",
+      "reference": "/lib/images/interactive/mascots-health-spirits.png"
+    }
+  ]
+}

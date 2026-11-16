@@ -1,9 +1,9 @@
 import type {MascotKind} from '../../domain/mascot'
 
-export type Power = 1|2|3
+export type Power = 1|2|3|4
 export type Material = 'leaf'|'feather'|'ink'|'quill'|'moon'|'fire'|'cheese'|'rock'|'claw'|'ribbon'|'star'|'cloud'|'banana'|'sun'|'paw'|'dust'|'bamboo'|'wisp'|'bubble'|'ice'|'coin'|'water'
-export type Signature = {id:MascotKind; material:Material; color:string; light:string; normal:string; double:string; triple:string; durations:readonly [number,number,number]; phase:number}
-const signature=(id:MascotKind,material:Material,color:string,light:string,normal:string,double:string,triple:string,phase:number,durations:readonly [number,number,number]=[920,1420,2100]):Signature=>({id,material,color,light,normal,double,triple,phase,durations})
+export type Signature = {id:MascotKind; material:Material; color:string; light:string; normal:string; double:string; triple:string; quadruple:string;durations:readonly [number,number,number,number]; phase:number}
+const signature=(id:MascotKind,material:Material,color:string,light:string,normal:string,double:string,triple:string,phase:number,durations:readonly [number,number,number]=[920,1420,2100]):Signature=>({id,material,color,light,normal,double,triple,quadruple:`Rayon · ${normal}`,phase,durations:[...durations,durations[2]+900]})
 /** Each level names a different composition; these are also the contact-sheet captions. */
 export const SIGNATURES:readonly Signature[]=[
   signature('leaf','leaf','#389b60','#d6ff8b','feuilles portées','courants croisés et graines','couronnes végétales opposées',.1),
@@ -42,5 +42,6 @@ export const signatureFor=(id:MascotKind)=>SIGNATURES.find(item=>item.id===id)??
 const energyTint=(color:string,light:string)=>'#'+[1,3,5].map(at=>Math.round(parseInt(color.slice(at,at+2),16)*.78+parseInt(light.slice(at,at+2),16)*.22).toString(16).padStart(2,'0')).join('')
 export const SUPER_AURA_COLORS=Object.fromEntries(SIGNATURES.map(s=>[s.id,energyTint(s.color,s.light)])) as Record<MascotKind,string>
 export const sceneDuration=(id:MascotKind,level:Power,timeout=false)=>timeout?700:signatureFor(id).durations[level-1]!
-export const contactTime=(id:MascotKind,level:Power,local=false)=>sceneDuration(id,level)*(local?.62:level===3?.68:level===2?.69:.63)
+export const contactTime=(id:MascotKind,level:Power,local=false)=>sceneDuration(id,level)*(local||level===4?.62:level===3?.68:level===2?.69:.63)
+export const releaseTime=(id:MascotKind)=>sceneDuration(id,4)*.28
 export const feedbackDuration=(requestedSeconds:number,id:MascotKind,level:Power,timeout=false)=>Math.max(requestedSeconds*1000,sceneDuration(id,level,timeout)+140)

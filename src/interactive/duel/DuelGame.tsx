@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react'
 import { CompetitionShell } from '../competition/CompetitionShell'
-import { CompetitionPortrait } from '../competition/Avatar'
 import { COMPETITION_AVATARS } from '../competition/avatars'
 import type { CompetitionQuestion, CompetitionQuiz } from '../competition/core'
 import { PALETTE, inkForColor, type ShapeId } from '../domain/palette'
@@ -11,11 +10,11 @@ import { AudioPlayer, SafeImage } from '../components/Media'
 import { NumberSequenceView } from '../components/NumberSequenceView'
 import { WordClassificationView } from '../components/WordClassificationView'
 import { GeometryFigure } from '@/components/math/GeometryFigure'
-import { duelRound, duelRoundId, stepDuel, type DuelAction, type DuelConfig, type Fighter, type Side } from './core'
+import { duelRound, duelRoundId, stepDuel, duelRules, type DuelAction, type DuelConfig, type Fighter, type Side } from './core'
 import { newDuelRun, readDuel, writeDuel } from './storage'
 import {DuelVfx} from './vfx/DuelVfx'
 import {CombatPortrait} from './CombatPortrait'
-import {feedbackDuration,contactTime,sceneDuration} from './vfx/catalog'
+import {feedbackDuration,contactTime,sceneDuration,releaseTime,signatureFor} from './vfx/catalog'
 import {impactFor} from './effects'
 import {useDuelLandscape} from './useDuelLandscape'
 import {DuelRotationPrompt} from './DuelRotationPrompt'
@@ -26,7 +25,7 @@ const fighterName = (fighter: Fighter) => `${COMPETITION_AVATARS.find(avatar => 
 export function DuelGame(props: Props) {
   const [run, setRun] = useState(() => props.resume ? readDuel(props.quiz, props.planId, props.config, props.timer) : newDuelRun(props.quiz, props.planId, props.config, props.timer))
   const current = useRef(run), [now, setNow] = useState(Date.now), [confirming, setConfirming] = useState(false)
-  const { state } = run, pair = state.pairs[state.pairIndex]!, round = duelRound(props.quiz, state)
+  const { state } = run,maxHp=duelRules(state.config).maxHp, pair = state.pairs[state.pairIndex]!, round = duelRound(props.quiz, state)
   const dispatch = useCallback((action: DuelAction) => {
     const previous = current.current, at = Date.now()
     try {
@@ -68,30 +67,32 @@ export function DuelGame(props: Props) {
   const elapsed=state.phase==='feedback'?Math.max(0,duration-(state.paused?state.remainingMs??duration:Math.max(0,(state.deadline??now)-now))):0
   const visualElapsed=state.version===2&&resolution?elapsed*Math.max(1,(sceneDuration(pair[resolution.side??'left'].avatarId,resolution.multiplier??1,resolution.timeout)+140)/duration):elapsed
   const contact=resolution?.timeout?260:resolution?contactTime(pair[resolution.side??'left'].avatarId,resolution.multiplier??1,!resolution.correct):Infinity
-  const powerLevel=state.phase==='question'||state.phase==='feedback'&&!resolution?.timeout&&visualElapsed<sceneDuration(pair[resolution?.side??'left'].avatarId,round.multiplier)?round.multiplier:1
   const contacted=visualElapsed>=contact,freshImpact=state.phase==='feedback'&&contacted&&visualElapsed<contact+480
-  const visibleHp=(side:Side)=>!contacted&&state.phase==='feedback'&&(resolution?.victim===side||resolution?.timeout)?Math.min(100,state.hp[side]+resolution.damage):state.hp[side]
+  const visibleHp=(side:Side)=>!contacted&&state.phase==='feedback'&&(resolution?.victim===side||resolution?.timeout)?resolution.previousHp?.[side]??Math.min(maxHp,state.hp[side]+resolution.damage):state.hp[side]
+  const levelFor=(side:Side)=>state.phase==='question'?round.multiplier:state.phase==='feedback'&&resolution?.side===side&&!resolution.timeout&&visualElapsed<sceneDuration(pair[side].avatarId,round.multiplier)?round.multiplier:1
+  const castFor=(side:Side)=>levelFor(side)===4?(state.phase==='feedback'&&resolution?.correct&&visualElapsed>=releaseTime(pair[side].avatarId)?'release' as const:'charge' as const):undefined
+  const dangerFor=(side:Side)=>state.phase==='question'?state.hp[side]>0&&state.hp[side]<=round.damage:state.phase==='feedback'&&!contacted&&state.hp[side]===0&&(resolution?.victim===side||resolution?.timeout)
   const outcome=(side:Side)=>!contacted||!resolution?.winner&&!resolution?.draw?'ongoing' as const:resolution.draw?'draw-ko' as const:resolution.winner===side?'winner' as const:'loser' as const
   const seconds = state.paused ? state.remainingMs === undefined ? null : Math.ceil(state.remainingMs / 1000) : state.deadline === undefined ? null : Math.max(0, Math.ceil((state.deadline - now) / 1000))
-  const ending=resolution?.draw?' Match nul : les deux mascottes sont à 0 %.':resolution?.winner?` ${fighterName(pair[resolution.winner])} remporte le duel !`:''
-  const message = state.phase !== 'feedback'||!resolution ? '' : resolution.timeout ? `Temps écoulé : les deux joueurs perdent 10 %.${ending}` : `${resolution.correct ? 'Bonne réponse' : 'Mauvaise réponse'} : ${fighterName(pair[resolution.victim!])} perd ${resolution.damage} %.${ending}`
+  const ending=resolution?.draw?' Match nul : les deux mascottes sont à 0 point.':resolution?.winner?` ${fighterName(pair[resolution.winner])} remporte le duel !`:''
+  const message = state.phase !== 'feedback'||!resolution ? '' : resolution.timeout ? `Temps écoulé : les deux joueurs perdent 10 points.${ending}` : `${resolution.correct ? 'Bonne réponse' : 'Mauvaise réponse'} : ${fighterName(pair[resolution.victim!])} perd ${resolution.damage} points.${ending}`
   return <CompetitionShell title={state.config.mode === 'teams' ? 'Duels par équipes' : 'Duel à deux'} playing={['question', 'feedback'].includes(state.phase)} preferLandscape onExit={() => { pause(); props.onExit() }}>
     {run.warning && <p className="ci-notice" role="status">{run.warning} <button onClick={props.onRestart}>Nouvelle partie</button></p>}
     {state.phase === 'ready' ? <main className="ci-container ci-duel-ready"><h1 tabIndex={-1}>{state.pairIndex ? 'Prochain duel' : 'À vous de jouer !'}</h1><p className="ci-sr-only">Duel {state.pairIndex + 1} / {state.pairs.length}</p>
       {landscape.pending?<DuelRotationPrompt onPortrait={landscape.complete} onBack={landscape.cancel}/>:<>
-      {state.pairIndex>0&&<div className="ci-duel-previous" aria-label="Résultat du duel précédent">{(['left','right'] as const).map(side=>{const result=state.results.at(-1)!;return <CombatPortrait key={side} avatarId={state.pairs[result.pairIndex]![side].avatarId} hp={result.hp[side]} outcome={result.draw?'draw-ko':result.winner===side?'winner':'loser'}/>})}</div>}
-      <div className="ci-duel-call">{(['left', 'right'] as const).map(side => <section key={side}><CompetitionPortrait {...pair[side]} /><p>{fighterName(pair[side])}</p><b>100 %</b></section>)}</div>
+      {state.pairIndex>0&&<div className="ci-duel-previous" aria-label="Résultat du duel précédent">{(['left','right'] as const).map(side=>{const result=state.results.at(-1)!;return <CombatPortrait key={side} avatarId={state.pairs[result.pairIndex]![side].avatarId} hp={result.hp[side]} maxHp={maxHp} outcome={result.draw?'draw-ko':result.winner===side?'winner':'loser'}/>})}</div>}
+      <div className="ci-duel-call">{(['left', 'right'] as const).map(side => <section key={side}><CombatPortrait avatarId={pair[side].avatarId} hp={maxHp} maxHp={maxHp} facing={side} seat={pair[side].seat}/><p>{fighterName(pair[side])}</p><b>{maxHp}</b></section>)}</div>
       {state.config.mode==='teams'&&state.pairs.length-state.pairIndex>1&&<button className="ci-duel-reshuffle" onClick={()=>{const draw=crypto.getRandomValues(new Uint32Array(1))[0]!;dispatch({type:'reshuffle',pairIndex:state.pairIndex,seed:draw===state.config.seed?(draw+1)>>>0:draw})}}>Randomiser les matchs restants</button>}
       <button className="ci-primary" onClick={startDuel}>Commencer le duel</button></>}
     </main> : state.phase === 'finished' ? <main className="ci-container ci-duel-finished"><h1 tabIndex={-1}>{state.aborted ? 'Partie arrêtée' : state.config.mode === 'duel' ? state.results[0]?.winner?`${fighterName(state.pairs[0]![state.results[0].winner])} remporte le duel !`:'Match nul !' : state.wins.left === state.wins.right ? 'Égalité entre les équipes !' : `L’équipe ${state.wins.left > state.wins.right ? 1 : 2} remporte le tournoi !`}</h1>
       {state.config.mode==='teams'&&<div className="ci-duel-final-score"><section><h2>Équipe 1</h2><b>{state.wins.left}</b><p>duel(s) remporté(s)</p></section><section><h2>Équipe 2</h2><b>{state.wins.right}</b><p>duel(s) remporté(s)</p></section></div>}
-      <ol className="ci-duel-results">{state.results.map(result => <li key={result.pairIndex}><span className="ci-duel-result-portraits">{(['left','right'] as const).map(side=><CombatPortrait key={side} avatarId={state.pairs[result.pairIndex]![side].avatarId} hp={result.hp[side]} outcome={result.draw?'draw-ko':result.winner===side?'winner':'loser'}/>)}</span>Duel {result.pairIndex + 1} : {result.winner?`${fighterName(state.pairs[result.pairIndex]![result.winner])}${state.config.mode==='teams'?` · Équipe ${result.winner==='left'?1:2}`:''}`:'Match nul'}</li>)}</ol>
+      <ol className="ci-duel-results">{state.results.map(result => <li key={result.pairIndex}><span className="ci-duel-result-portraits">{(['left','right'] as const).map(side=><CombatPortrait key={side} avatarId={state.pairs[result.pairIndex]![side].avatarId} hp={result.hp[side]} maxHp={maxHp} outcome={result.draw?'draw-ko':result.winner===side?'winner':'loser'}/>)}</span>Duel {result.pairIndex + 1} : {result.winner?`${fighterName(state.pairs[result.pairIndex]![result.winner])}${state.config.mode==='teams'?` · Équipe ${result.winner==='left'?1:2}`:''}`:'Match nul'}</li>)}</ol>
       <button className="ci-primary" onClick={props.onRestart}>Nouvelle partie</button>
-    </main> : <main className={`ci-duel-arena${state.phase === 'feedback' ? ' ci-duel-feedback' : ''}`} data-duel-round={round.id} data-damage={round.damage} data-multiplier={round.multiplier} data-paused={state.paused||undefined}>
+    </main> : <main className={`ci-duel-arena${state.phase === 'feedback' ? ' ci-duel-feedback' : ''}`} data-duel-round={round.id} data-max-hp={maxHp} data-damage={round.damage} data-multiplier={round.multiplier} data-paused={state.paused||undefined}>
       {state.paused&&<section className="ci-duel-pause">{landscape.pending?<DuelRotationPrompt onPortrait={landscape.complete} onBack={landscape.cancel}/>:<><h1 tabIndex={-1}>Duel en pause</h1><p>Les vies et le temps sont conservés.</p><button className="ci-primary" onClick={resumeDuel}>Reprendre le duel</button></>}</section>}<>
         <section className="ci-duel-question"><h1 tabIndex={-1}>{playPrompt(round.item.question.prompt)}</h1><DuelSupport question={round.item.question} paused={state.phase !== 'question'||state.paused} /></section>
-        <div className="ci-duel-sides">{(['left', 'right'] as const).map((side, index) => <section key={side} className={`ci-duel-player${freshImpact && (resolution?.victim === side||resolution?.timeout) ? resolution?.critical ? ` ci-duel-hurt ci-duel-super-hurt${resolution.multiplier===3?' ci-duel-ultra-hurt':''}` : ' ci-duel-hurt' : ''}`} data-side={side} aria-label={`Joueur ${index + 1}`}>
-          <div className="ci-duel-fighter"><span className="ci-sr-only">{fighterName(pair[side])}</span><div className="ci-duel-health-row" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={visibleHp(side)} aria-label={`Vie du joueur ${index+1}`} data-low={visibleHp(side)<=30||undefined}><span className="ci-duel-health-fill" style={{height:`${visibleHp(side)}%`}}/><strong className="ci-duel-hp" aria-hidden="true">{visibleHp(side)}</strong></div><CombatPortrait avatarId={pair[side].avatarId} hp={visibleHp(side)} level={powerLevel} outcome={outcome(side)} hit={freshImpact&&(resolution?.victim===side||!!resolution?.timeout)} /></div>
+        <div className="ci-duel-sides">{(['left', 'right'] as const).map((side, index) => <section key={side} className={`ci-duel-player${dangerFor(side)?' ci-finisher-warning':''}${freshImpact && (resolution?.victim === side||resolution?.timeout) ? resolution?.critical ? ` ci-duel-hurt ci-duel-super-hurt${resolution.multiplier===3?' ci-duel-ultra-hurt':resolution.multiplier===4?' ci-duel-mega-hurt':''}` : ' ci-duel-hurt' : ''}`} data-side={side} style={{'--ci-finisher-color':signatureFor(pair[side].avatarId).color} as CSSProperties} aria-label={`Joueur ${index + 1}`}>
+          <div className="ci-duel-fighter"><span className="ci-sr-only">{fighterName(pair[side])}</span><div className="ci-duel-health-row" role="progressbar" aria-valuemin={0} aria-valuemax={maxHp} aria-valuenow={visibleHp(side)} aria-label={`Vie du joueur ${index+1}`} data-low={visibleHp(side)/maxHp<=.3||undefined}><span className="ci-duel-health-fill" style={{height:`${visibleHp(side)*100/maxHp}%`}}/><strong className="ci-duel-hp" aria-hidden="true">{visibleHp(side)}</strong></div><CombatPortrait avatarId={pair[side].avatarId} hp={visibleHp(side)} maxHp={maxHp} level={levelFor(side)} cast={castFor(side)} facing={side} outcome={outcome(side)} hit={freshImpact&&(resolution?.victim===side||!!resolution?.timeout)} /></div>
           <div className="ci-duel-cards"><DuelChoices key={round.id} question={round.item.question} side={side} colors={props.colors} shapes={props.shapes} disabled={state.phase !== 'question'||state.paused} correctId={state.phase === 'feedback' ? round.item.correctChoiceId : undefined} selected={resolution?.side === side ? resolution.choiceId : undefined} onAnswer={choiceId => dispatch({ type: 'answer', roundId: round.id, side,choiceId })} /></div>
         </section>)}</div>
         <DuelVfx left={pair.left.avatarId} right={pair.right.avatarId} questionKey={round.id} level={round.multiplier} aura={state.phase==='question'} impact={state.phase==='feedback'?impact:undefined} elapsedMs={visualElapsed} paused={state.paused}/>

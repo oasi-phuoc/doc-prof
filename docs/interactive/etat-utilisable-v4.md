@@ -1,5 +1,7 @@
 # État utilisable et réutilisation — V4
 
+Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.
+
 Les [pools de plusieurs domaines](adr-0060-pools-multidomaines.md) permettent de sélectionner directement les types d’exercices, sans fiche. Le catalogue retire les types non pris en charge et les domaines vides ; la sélection, les réglages, les nouveaux tirages et les reprises restent conservés sur cet appareil.
 
 Le [Loto collectif M12](adr-0059-loto-collectif.md) propose des tirages mélangés et les objectifs « Une ligne » ou « Grille complète », avec validation enseignante en Classe, cases justes automatiques en Solo et reprise sauvegardée. L’option se règle dans la préparation de Loto.

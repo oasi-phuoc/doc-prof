@@ -5,17 +5,18 @@ import type { CompetitionQuiz } from '../competition/core'
 import type { TimerSettings } from '../domain/settings'
 import { validEffects, type DuelEffects } from './effects'
 import {feedbackDuration} from './vfx/catalog'
+import {parseDuelRules,LEGACY_DUEL_RULES,type DuelRules} from './rules'
 
 export type Side = 'left' | 'right'
 export type DuelMode = 'duel' | 'teams'
-export type DuelConfig = { mode: DuelMode; seed: number; left: CompetitionAvatar[]; right: CompetitionAvatar[]; effects?:DuelEffects }
+export type DuelConfig = { mode: DuelMode; seed: number; left: CompetitionAvatar[]; right: CompetitionAvatar[]; effects?:DuelEffects;combat?:DuelRules }
 export type Fighter = { avatarId: CompetitionAvatar; seat: number }
 export type DuelPair = { left: Fighter; right: Fighter }
 export type DuelPhase = 'ready' | 'question' | 'feedback' | 'finished'
-export type DamageMultiplier = 1 | 2 | 3
-export type DuelResolution = { at: number; side?: Side; choiceId?: string; correct?: boolean; victim?: Side; damage: number; critical: boolean; multiplier?: DamageMultiplier; timeout?: boolean; winner?: Side; draw?: true }
+export type DamageMultiplier = 1 | 2 | 3 | 4
+export type DuelResolution = { at: number; side?: Side; choiceId?: string; correct?: boolean; victim?: Side; damage: number; critical: boolean; multiplier?: DamageMultiplier; timeout?: boolean; winner?: Side; draw?: true;previousHp?:Record<Side,number> }
 export type DuelState = {
-  version: 2|3; quizId: string; config: DuelConfig; timer: TimerSettings; pairs: DuelPair[];
+  version: 2|3|4; quizId: string; config: DuelConfig; timer: TimerSettings; pairs: DuelPair[];
   pairIndex: number; turn: number; phase: DuelPhase; hp: Record<Side, number>; wins: Record<Side, number>;
   results: { pairIndex: number; winner?: Side; draw?: true; hp: Record<Side, number> }[];
   resolution?: DuelResolution; paused: boolean; deadline?: number; remainingMs?: number;
@@ -34,9 +35,10 @@ export const otherSide = (side: Side): Side => side === 'left' ? 'right' : 'left
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
 
 export function parseDuelConfig(value: unknown): DuelConfig {
-  if (!object(value) || Object.keys(value).some(key => !['mode', 'seed', 'left', 'right', 'effects'].includes(key)) || !['duel', 'teams'].includes(value.mode as string) || !Number.isSafeInteger(value.seed) || Number(value.seed) < 0 || Number(value.seed) > 0xffffffff || !Array.isArray(value.left) || !Array.isArray(value.right) || value.left.length < 1 || value.left.length > 15 || value.left.length !== value.right.length || value.mode === 'duel' && value.left.length !== 1 || [...value.left, ...value.right].some(avatar => !validAvatar(avatar)) || new Set([...value.left,...value.right]).size!==value.left.length+value.right.length || value.effects!==undefined&&!validEffects(value.effects)) throw new Error('Choisissez autant de mascottes dans chaque équipe, avec une mascotte différente par joueur (15 par équipe au maximum).')
-  return { mode: value.mode as DuelMode, seed: Number(value.seed), left: [...value.left] as CompetitionAvatar[], right: [...value.right] as CompetitionAvatar[], ...(value.effects!==undefined?{effects:{...value.effects as DuelEffects}}:{}) }
+  if (!object(value) || Object.keys(value).some(key => !['mode', 'seed', 'left', 'right', 'effects','combat'].includes(key)) || !['duel', 'teams'].includes(value.mode as string) || !Number.isSafeInteger(value.seed) || Number(value.seed) < 0 || Number(value.seed) > 0xffffffff || !Array.isArray(value.left) || !Array.isArray(value.right) || value.left.length < 1 || value.left.length > 15 || value.left.length !== value.right.length || value.mode === 'duel' && value.left.length !== 1 || [...value.left, ...value.right].some(avatar => !validAvatar(avatar)) || new Set([...value.left,...value.right]).size!==value.left.length+value.right.length || value.effects!==undefined&&!validEffects(value.effects)) throw new Error('Choisissez autant de mascottes dans chaque équipe, avec une mascotte différente par joueur (15 par équipe au maximum).')
+  return { mode: value.mode as DuelMode, seed: Number(value.seed), left: [...value.left] as CompetitionAvatar[], right: [...value.right] as CompetitionAvatar[], ...(value.effects!==undefined?{effects:{...value.effects as DuelEffects}}:{}),...(value.combat!==undefined?{combat:parseDuelRules(value.combat)}:{}) }
 }
+export const duelRules=(config:DuelConfig)=>config.combat??LEGACY_DUEL_RULES
 export function parseDuelTimer(value: unknown): TimerSettings {
   if (!object(value) || Object.keys(value).some(key => !['enabled', 'seconds', 'feedbackSeconds'].includes(key)) || typeof value.enabled !== 'boolean' || !Number.isInteger(value.seconds) || Number(value.seconds) < 5 || Number(value.seconds) > 600 || !Number.isInteger(value.feedbackSeconds) || Number(value.feedbackSeconds) < 1 || Number(value.feedbackSeconds) > 10) throw new Error('Minuteur du duel invalide.')
   return { enabled: value.enabled, seconds: Number(value.seconds), feedbackSeconds: Number(value.feedbackSeconds) }
@@ -67,13 +69,16 @@ export function duelRound(quiz: CompetitionQuiz, state: DuelState) {
   const order = shuffle(createRng(hash(`${state.config.seed}:${state.pairIndex}:${cycle}:questions`)), quiz.items.map((_, index) => index))
   const item = quiz.items[order[state.turn % quiz.items.length]!]!
   const roll = createRng(hash(`${state.config.seed}:${state.pairIndex}:${state.turn}:critical`))()
-  const multiplier:DamageMultiplier=roll<SUPER_CRITICAL_CHANCE?3:roll<SUPER_CRITICAL_CHANCE+CRITICAL_CHANCE?2:1
+  const rules=duelRules(state.config),quad=rules.critical4/100,triple=rules.critical3/100,double=rules.critical2/100
+  const multiplier:DamageMultiplier=roll<quad?4:roll<quad+triple?3:roll<quad+triple+double?2:1
   return { id: duelRoundId(state), item, critical:multiplier>1, multiplier, damage:10*multiplier }
 }
-export function createDuel(quiz: CompetitionQuiz, config: DuelConfig, timer: TimerSettings, at: number,version:2|3=3): DuelState {
+export function createDuel(quiz: CompetitionQuiz, config: DuelConfig, timer: TimerSettings, at: number,version:2|3|4=config.combat?4:3): DuelState {
   if (!Number.isFinite(at) || at < 0 || !quiz.items.length || quiz.items.length > 100 || quiz.items.some(item => !item.question.choices.some(choice => choice.id === item.correctChoiceId))) throw new Error('Le duel demande des questions à réponse vérifiée.')
   const checked = parseDuelConfig(config)
-  return { version, quizId: quiz.id, config: checked, timer: parseDuelTimer(timer), pairs: duelPairs(checked), pairIndex: 0, turn: 0, phase: 'ready', hp: { left: 100, right: 100 }, wins: { left: 0, right: 0 }, results: [], paused: false, createdAt: at, revision: 0 }
+  if(version<4&&checked.combat||version===4&&!checked.combat)throw new Error('La version de la partie ne correspond pas aux paramètres de combat.')
+  const maxHp=duelRules(checked).maxHp
+  return { version, quizId: quiz.id, config: checked, timer: parseDuelTimer(timer), pairs: duelPairs(checked), pairIndex: 0, turn: 0, phase: 'ready', hp: { left: maxHp, right: maxHp }, wins: { left: 0, right: 0 }, results: [], paused: false, createdAt: at, revision: 0 }
 }
 export function isDuelAction(value: unknown): value is DuelAction {
   if (!object(value) || typeof value.type !== 'string') return false
@@ -96,7 +101,7 @@ function feedback(state: DuelState, resolution: DuelResolution, at: number) {
 function advance(state: DuelState, at: number) {
   if (state.resolution?.winner||state.resolution?.draw) {
     if (state.pairIndex + 1 >= state.pairs.length) { state.phase = 'finished'; delete state.deadline }
-    else { state.pairIndex++; state.turn = 0; state.phase = 'ready'; state.hp = { left: 100, right: 100 }; delete state.deadline; delete state.resolution }
+    else { const maxHp=duelRules(state.config).maxHp;state.pairIndex++; state.turn = 0; state.phase = 'ready'; state.hp = { left: maxHp, right: maxHp }; delete state.deadline; delete state.resolution }
   } else { state.turn++; beginQuestion(state, at) }
 }
 function pairResult(state:DuelState):{winner?:Side;draw?:true} {
@@ -113,8 +118,9 @@ export function stepDuel(quiz: CompetitionQuiz, original: DuelState, action: Due
   let changed = false
   if (!state.paused && state.deadline !== undefined && at >= state.deadline) {
     if (state.phase === 'question') {
+      const previousHp={...state.hp}
       state.hp.left=Math.max(0,state.hp.left-10);state.hp.right=Math.max(0,state.hp.right-10)
-      feedback(state,{at,damage:10,critical:false,multiplier:1,timeout:true,...pairResult(state)},at)
+      feedback(state,{at,damage:10,critical:false,multiplier:1,timeout:true,...(state.version===4?{previousHp}:{}),...pairResult(state)},at)
     }
     else if (state.phase === 'feedback') advance(state, at)
     changed = true
@@ -133,8 +139,9 @@ export function stepDuel(quiz: CompetitionQuiz, original: DuelState, action: Due
       const round = duelRound(quiz, state)
       if (!round.item.question.choices.some(choice => choice.id === action.choiceId)) throw new Error('Cette carte n’est pas proposée.')
       const correct = action.choiceId === round.item.correctChoiceId, victim = correct ? otherSide(action.side) : action.side
+      const previousHp={...state.hp}
       state.hp[victim] = Math.max(0, state.hp[victim] - round.damage)
-      feedback(state, { at, side: action.side, choiceId: action.choiceId, correct, victim, damage: round.damage, critical: round.critical, multiplier:round.multiplier, ...pairResult(state) }, at)
+      feedback(state, { at, side: action.side, choiceId: action.choiceId, correct, victim, damage: round.damage, critical: round.critical, multiplier:round.multiplier,...(state.version===4?{previousHp}:{}), ...pairResult(state) }, at)
       changed = true; break
     }
     case 'pause':

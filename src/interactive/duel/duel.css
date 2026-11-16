@@ -23,7 +23,7 @@
 .ci-duel-critical { background: #fff0c2; color: #6c2500; animation: ci-duel-critical-pulse 1.5s ease-in-out infinite; }
 .ci-duel-super-critical { background: #eee0ff; color: #4b176e; border-color: #7639a0; box-shadow: 0 0 14px #c38be666; }
 .ci-duel-normal { background: #eaf0ff; color: #26365c; }
-.ci-duel-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-height: 0; }
+.ci-duel-sides { clip-path: inset(0 -20px 0 -20px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-height: 0; }
 .ci-duel-player { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
 .ci-duel-cards { position: relative; z-index: 2; display: flex; flex: 1; min-height: 0; padding: 10px; border: 2px solid #7b9aca; border-radius: 20px; background: #eaf2ff; }
 .ci-duel-player[data-side='right'] .ci-duel-cards { background: #f4eaff; border-color: #a282ca; }
@@ -33,9 +33,24 @@
 .ci-duel-fighter small { display: block; font-size: 13px; }
 .ci-duel-health-row { position: absolute; z-index: 3; left: 0; top: 6%; bottom: 6%; width: 50px; border: 2px solid #315642; border-radius: 14px; background: #e2e9e5; overflow: hidden; display: grid; place-items: center; }
 .ci-duel-player[data-side='right'] .ci-duel-health-row { left: auto; right: 0; }
-.ci-duel-health-fill { position: absolute; bottom: 0; left: 0; right: 0; background: #30834d; transition: height .25s ease-out; }
-.ci-duel-health-row[data-low] .ci-duel-health-fill { background: #bf3b53; }
-.ci-duel-hp { position: relative; z-index: 1; min-width: 0; width: 100%; max-width: 100%; text-align: center; color: white; background: #182238; padding: 4px 0; border-radius: 6px; font-size: 15px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ci-duel-health-fill { position: absolute; bottom: 0; left: 0; right: 0; background: #acd8b9; transition: height .25s ease-out; }
+.ci-duel-health-row[data-low] .ci-duel-health-fill { background: #f1b2c1; }
+.ci-duel-hp { position: relative; z-index: 1; min-width: 0; width: 100%; max-width: 100%; text-align: center; color: #185334; background: transparent; padding: 4px 0; font-size: 16px; font-weight: 950; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ci-duel-health-row[data-low] .ci-duel-hp { color: #7a1932; }
+.ci-duel-parameters { text-align: left; margin: 20px 0; }
+.ci-duel-parameters h2 { text-align: center; }
+.ci-duel-parameters fieldset { min-width: 0; border: 1px solid var(--ci-line); padding: 16px; border-radius: 12px; margin-top: 16px; }
+.ci-duel-parameters legend { font-weight: 800; padding: 0 8px; }
+.ci-duel-parameters p { font-size: 14px; }
+.ci-duel-parameter-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 16px; margin-top: 12px; }
+.ci-duel-parameter-fields label { display: flex; flex-direction: column; gap: 8px; }
+.ci-duel-parameter-fields input { width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--ci-line); border-radius: 8px; background: var(--ci-paper); color: var(--ci-ink); }
+.ci-duel-timer-switch { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+.ci-duel-timer-switch input { width: 22px; height: 22px; }
+.ci-finisher-warning .ci-combat-art,.ci-finisher-warning .ci-competition-avatar { animation: ci-finisher-danger 1.1s ease-in-out infinite; }
+.ci-duel-mega-hurt .ci-competition-portrait { animation: ci-duel-mega-hurt 1.1s ease-out both; }
+@keyframes ci-finisher-danger { 0%,100% { filter: none; } 50% { filter: brightness(1.45) drop-shadow(0 0 14px var(--ci-finisher-color)); } }
+@keyframes ci-duel-mega-hurt { 15% { transform: translateX(-10px) scale(.8,.9); } 35% { transform: translateY(-14px) rotate(8deg) scale(1.08); } 55% { transform: translateX(12px) rotate(-8deg) scale(.9); } 80% { transform: translateX(-6px) scale(1.03); } }
 .ci-duel-choices { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(44px, 1fr); gap: 8px; }
 .ci-duel-choices[data-count='2'], .ci-duel-choices[data-count='4'] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ci-app .ci-duel-answer { display: flex; gap: 5px; align-items: stretch; min-width: 0; min-height: 44px; padding: 4px; border: 2px solid #42516d; border-radius: 12px; background: var(--duel-card); color: var(--duel-card-ink); overflow: hidden; touch-action: manipulation; }

@@ -3,6 +3,7 @@ import type {MascotKind} from '../../domain/mascot'
 import type {Point,FighterPoints} from '../effects'
 import type {Side} from '../core'
 import {signatureFor,sceneDuration,contactTime,SUPER_AURA_COLORS,type Power,type Material,type Signature} from './catalog'
+import {sampleQuadruple,sampleQuadAura,type EnergyBeam} from './quadruple'
 
 const TAU=Math.PI*2
 export const clamp=(x:number,min=0,max=1)=>Math.max(min,Math.min(max,x))
@@ -17,7 +18,7 @@ export type Stroke={points:Point[];width:number;alpha:number;color:string;light:
 export type Glyph={x:number;y:number;size:number;angle:number;alpha:number;material:Material;color:string;light:string;depth:number}
 export type Ring={x:number;y:number;rx:number;ry:number;angle:number;alpha:number;width:number;color:string}
 export type Volume={x:number;y:number;radius:number;height:number;phase:number;alpha:number;material:Material;color:string;light:string}
-export type Frame={strokes:Stroke[];glyphs:Glyph[];rings:Ring[];volumes:Volume[];glows:{x:number;y:number;radius:number;alpha:number;color:string}[];contact:boolean;local:boolean}
+export type Frame={strokes:Stroke[];glyphs:Glyph[];rings:Ring[];volumes:Volume[];glows:{x:number;y:number;radius:number;alpha:number;color:string}[];beams?:EnergyBeam[];contact:boolean;local:boolean}
 const empty=():Frame=>({strokes:[],glyphs:[],rings:[],volumes:[],glows:[],contact:false,local:false})
 function flight(s:Scene,progress:number,lane:number,points:FighterPoints):Point {
   const a=points[s.source],b=points[s.target],u=clamp(progress),dir=Math.sign(b.x-a.x)||1,r=Math.min(b.radius??72,110),phase=s.signature.phase
@@ -148,6 +149,11 @@ function localSignature(f:Frame,s:Scene,t:number,target:Point,r:number,alpha:num
 
 /** Pure time sampling. Reconstructs actual earlier head positions, never a pre-drawn trail. */
 export function sampleScene(s:Scene,at:number,points:FighterPoints,density=1):Frame {
+  if(s.level===4&&!s.timeout){
+    const frame=sampleQuadruple(s,at,points,density),beam=frame.beams?.[0]
+    if(beam)localSignature(frame,s,at/s.duration,beam.tip,Math.min(points[s.target].radius??72,138)*.52,beam.alpha*.7)
+    return frame
+  }
   const f=empty(),t=clamp(at/s.duration),p=s.signature,target=points[s.target],r=Math.max(24,Math.min(target.radius??72,138)),phase=p.phase
   f.local=s.local;f.contact=at>=s.contact
   if(at<0||at>=s.duration)return f
@@ -218,7 +224,8 @@ export function sampleScene(s:Scene,at:number,points:FighterPoints,density=1):Fr
 }
 
 /** Periodic by construction, so two minutes or a seek do not exhaust an aura. */
-export function sampleAura(id:MascotKind,level:2|3,at:number,point:Point,density=1):Frame{
+export function sampleAura(id:MascotKind,level:2|3|4,at:number,point:Point,density=1):Frame{
+  if(level===4)return sampleQuadAura(id,at,point,density)
   const base=signatureFor(id),p=level===3?{...base,color:SUPER_AURA_COLORS[id]}:base,f=empty(),r=(point.radius??72)*(level===3?1.38:1.06),t=at/1000,n=Math.round((level===3?42:26)*density),phase=p.phase
   for(let i=0;i<n;i++){
     const q=i/n,a=q*TAU+t*(.45+(i%4)*.18)*(i%2?1:-1)+phase,lift=fract(q+t*(.12+(i%3)*.015)),depth=Math.sin(a)

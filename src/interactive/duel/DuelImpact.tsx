@@ -8,6 +8,9 @@ import './effects.css'
 
 export function DuelImpact({impact,points}:{impact:Impact;points:FighterPoints}) {
   if(impact.kind==='timeout')return <>{(['left','right'] as const).map(side=><DuelImpact key={side} impact={{...impact,kind:'mistake',target:side,mascot:'leaf'}} points={points}/>)}</>
+  // This legacy DOM renderer remains for old journals. The fourth critical is
+  // rendered by DuelVfx, including its own safe fallback; it is never a triple.
+  if(impact.multiplier===4)return null
   const target=points[impact.target],path=impact.kind==='attack'?trajectory(points[impact.from],target):undefined
   const signature=impact.kind==='attack'?signatureAttack(impact.style):undefined
   const sequence=impact.kind==='attack'?attackSequence(impact.style,impact.multiplier).map(hit=>({...hit,path:attackTrajectory(points[impact.from],target,`${impact.variation}:${impact.style}`,hit.index)})):[]

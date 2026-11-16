@@ -35,6 +35,7 @@ try {
 
   // These existing integration fixtures own port 5182 one after another.
   for (const name of ['game-run-browser', 'durable-run-browser', 'presets-browser', 'listening-browser', 'transcripts-browser', 'audio-sequences-browser', 'full-preload-browser', 'loading-browser', 'archives-browser', 'source-adapters-browser', 'guided-oral-browser', 'teacher-console-browser', 'printable-pairs-browser', 'printable-decks-browser', 'printable-riddles-browser', 'numeracy-browser', 'written-arithmetic-browser', 'ordering-browser', 'long-word-order-browser', 'geometry-browser', 'polygon-measures-browser', 'place-value-browser', 'recognition-browser', 'word-classification-browser', 'word-sorting-browser', 'word-drop-browser', 'sound-check-browser', 'readability-browser', 'tcm-csc-browser', 'tcf-formats-browser', 'gattegno-browser', 'phrase-images-browser', 'phrase-interrogatives-browser', 'competition-browser', 'competition-transcripts-browser', 'duel-browser', 'duel-landscape-browser', 'mascots-effects-browser', 'vfx-lifecycle-browser', 'vfx-browser']) await run(name)
+  await run('duel-settings-browser')
   await run('pools-browser')
   await run('loto-browser')
   await run('memory-browser')
