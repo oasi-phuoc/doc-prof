@@ -4,12 +4,12 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 119,
-    "initial_pending": 314,
+    "activated_since_baseline": 133,
+    "initial_pending": 300,
     "additional_pending": 0,
-    "total_pending": 314,
+    "total_pending": 300,
     "pending_by_level": {
-      "A0-A1": 127,
+      "A0-A1": 113,
       "A1-A2": 164,
       "A2-B1": 23
     }
@@ -292,8 +292,8 @@
       "audio": null,
       "source_sha256": "d9a1991db3fbf0cfd98b3ee1c0e4925dd60ecc23a4493b6f3d6e29cc39543018",
       "semantic_sha256": "74ba50a2165fe0e752dda54d4f034e4b77b074d605c7ae821881099a047a08c7",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le règlement interdit de quitter le bâtiment pendant les pauses de quinze minutes.",
       "choices": [
         {
           "id": "a",
@@ -323,7 +323,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-hall.webp",
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -332,7 +336,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -400,8 +404,8 @@
       "audio": null,
       "source_sha256": "428924f328c5f79d1891568bc1f425b7a70e2fc2a7f8fcc447198c1498bff481",
       "semantic_sha256": "36596bf072c68d6d0a55e17c52e006d8110b214fd7c0a9ef2365a36c0b7a6f1d",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le départ de la course est devant la gare ; l’Hôtel du Lac correspond à l’arrivée.",
       "choices": [
         {
           "id": "a",
@@ -420,7 +424,13 @@
           "id": "b",
           "label": "Devant l'hôtel",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+              "sha256": "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+              "label": "Devant l’hôtel"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -443,7 +453,11 @@
           ]
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -452,7 +466,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -1468,8 +1482,8 @@
       "audio": null,
       "source_sha256": "ed2b418e8fd441c5a5d179fa609fdfb006caa4f308a40003ca0ea8e11418d6d4",
       "semantic_sha256": "54fca2a609461e1ca3682671293e8506fada1b095fd83c3fc5cc991ba08bf9c6",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Karim arrive en train, demande qu’on vienne le chercher puis dit « nous allons chez toi ». Le zoo est proposé pour jeudi.",
       "choices": [
         {
           "id": "a",
@@ -1499,7 +1513,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1508,7 +1526,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -1916,8 +1934,8 @@
       "audio": null,
       "source_sha256": "48db5dc05b84be676c42db7665b82a2da874245fdeb97d62d13ccd1d96b1259c",
       "semantic_sha256": "fe0f241e4aaa8e6bb22a46e2b23389ad2894c573c3b3fafee647a6cfc2f8a51f",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le rendez-vous de la visite est à 10 h devant la gare ; la cathédrale est la destination suivante.",
       "choices": [
         {
           "id": "a",
@@ -1947,7 +1965,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cathedrale.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -1956,7 +1978,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4128,21 +4150,33 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-3.mp3",
       "source_sha256": "6245de5cb0004689ce2ef07ec41c8ad3f6b7d3d9b7f313e9234409b701d5b3c7",
       "semantic_sha256": "3be7e7e96207eaf43a126d1cca389bffba86a3a13ee3f1b1e95aa551f22cc344",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Les interlocuteurs repèrent la professeure d’histoire à l’entrée de la bibliothèque ; elle enseigne aussi la géographie.",
       "choices": [
         {
           "id": "a",
           "label": "À l'entrée de la bibliothèque",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+              "sha256": "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+              "label": "À l’entrée de la bibliothèque"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Devant la cantine",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+              "sha256": "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+              "label": "Devant la cantine"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -4153,7 +4187,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4162,7 +4200,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4284,14 +4322,20 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_02-2.mp3",
       "source_sha256": "d65d1ee80f9ce9394e014aade0e3f8f2a552c389ddb2cbcd602a45e737d924d0",
       "semantic_sha256": "a263151925a1bea6dff67806d52063cff41d83a9f9b091246eef5723d1352ca2",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Valérie dit attendre Isabelle devant le musée ; le rendez-vous de 16 h avec Juliette est évoqué séparément.",
       "choices": [
         {
           "id": "a",
           "label": "Devant le musée",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+              "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+              "label": "Devant le musée"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -4321,7 +4365,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4330,7 +4378,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4619,8 +4667,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_13-1.mp3",
       "source_sha256": "4d39fef4305e279f02ea3b60ea20684c7f3628c547b8de293f92b0a217ff4dc4",
       "semantic_sha256": "05de8b561e277b6ad0385b3eadb8ea693d03e173a256eb21c4b5f10c62d6f555",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Sébastien confirme le rendez-vous de mardi chez lui à midi.",
       "choices": [
         {
           "id": "a",
@@ -4656,7 +4704,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4665,7 +4717,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -4679,8 +4731,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_13-2.mp3",
       "source_sha256": "7cbe588decb2ad9f21d8826bae8170f8984d6d54e0314d247fd5ce624e50cb6d",
       "semantic_sha256": "8980ca55db251f238d80767fa83dff8353801faf027e1868c810c517379b300c",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Sountou propose d’aller au marché et fixe le rendez-vous devant le marché à 10 h ; le restaurant est une autre proposition.",
       "choices": [
         {
           "id": "a",
@@ -4704,7 +4756,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/co/bg/marche.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4713,7 +4769,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -5029,8 +5085,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_17-3.mp3",
       "source_sha256": "43d19228e30c79f7ed45a6dce69e9338fa583c0ee3bca08877ae76164e9e0c82",
       "semantic_sha256": "5b6b6e3d9f95db4c2f32f02ab8373be2fd235a142e95e66ee27202822b8ba00d",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce situe le marché du samedi sur la place du village, de 8 h à 13 h.",
       "choices": [
         {
           "id": "a",
@@ -5060,7 +5116,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/revue-20261107-5b8d0c27e1.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5069,7 +5129,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -5083,8 +5143,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_18-2.mp3",
       "source_sha256": "b769befff2932f351b4218770c5ce5b8e600e919677385fba2568da0dd3dffb5",
       "semantic_sha256": "fbc7f494bc4ea4ab40fe0aabe19ac7815689d7db077634b6c4e7a2b7aab4e3aa",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le nouveau film et la présence des acteurs sont annoncés au cinéma Terre’in ; les billets sont en vente sur son site.",
       "choices": [
         {
           "id": "a",
@@ -5114,7 +5174,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5123,7 +5187,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -5191,8 +5255,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_63.mp3",
       "source_sha256": "7121586ee13488c2383d79c446143af6ade7567afe67f9329dc38c06512c9836",
       "semantic_sha256": "d24e9064f9d7a756d24d9bccf63eb06846520154daa039a370befce35ccfb6f3",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le concert annoncé a lieu sur la place de la mairie ; la pluie annoncée est une consigne distincte.",
       "choices": [
         {
           "id": "a",
@@ -5228,7 +5292,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5237,7 +5305,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -6238,8 +6306,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3",
       "source_sha256": "2ca095a5aac8432ea594c4dcd416a9e2fc0a4e0b1b7b5e70869102b86eecec9d",
       "semantic_sha256": "2f5773e5969aa339e9f8f44f973acdb356cc272faacecb354e477d03a20ea6b5",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Rebecca précise qu’à midi on peut aller au restaurant de l’entreprise, le jour de l’arrivée dans les bureaux.",
       "choices": [
         {
           "id": "a",
@@ -6263,7 +6331,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6272,7 +6344,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -10585,8 +10657,8 @@
       "audio": "/lib/audio/tcf/co/fetes/13-invitation-nouveau-cinéma.mp3",
       "source_sha256": "4a9899a8dca19e8352b0499f528b2c35777ee9492d00fe3d997a713d28d4f8f3",
       "semantic_sha256": "abe994a3c9f21b5209e581ea2a3f4830fafa1c38db67fdd4e1b7895a17515c14",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Alex, en retard, donne rendez-vous au nouveau cinéma. Le centre commercial des Fontaines indique la direction du bus.",
       "choices": [
         {
           "id": "a",
@@ -10622,7 +10694,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/co/bg/pizzeria.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10631,7 +10707,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -10753,21 +10829,33 @@
       "audio": "/lib/audio/tcf/co/ecole/23-école-professeure-d-histoire.mp3",
       "source_sha256": "30fe7b3ad99ef17abdb6ac9c0054aec1db69bb850a20b973e8627cad692261d4",
       "semantic_sha256": "3be7e7e96207eaf43a126d1cca389bffba86a3a13ee3f1b1e95aa551f22cc344",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La professeure d’histoire et de géographie est située à l’entrée de la bibliothèque.",
       "choices": [
         {
           "id": "a",
           "label": "À l'entrée de la bibliothèque",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+              "sha256": "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+              "label": "À l’entrée de la bibliothèque"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Devant la cantine",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+              "sha256": "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+              "label": "Devant la cantine"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -10778,7 +10866,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10787,7 +10879,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -12582,7 +12674,13 @@
           "id": "c",
           "label": "Devant la cantine",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+              "sha256": "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+              "label": "Devant la cantine"
+            }
+          ],
           "generation_jobs": []
         }
       ],
@@ -19463,7 +19561,13 @@
           "id": "c",
           "label": "Devant le musée",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+              "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+              "label": "Devant le musée"
+            }
+          ],
           "generation_jobs": []
         }
       ],

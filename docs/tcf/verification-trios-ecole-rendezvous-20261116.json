@@ -1,0 +1,188 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "0bf69536a33f5c748834ff6a55e2fbd286ea568f",
+  "compared_all_six_banks": true,
+  "added_image_forms": 24,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 6,
+  "new_image_usages": 12,
+  "reused_image_usages": 60,
+  "reused_distinct_images": 28,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "delf-a1v-ce-007#6",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "delf-a1v-ce-019#5",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "delf-a1s-ce-003#7",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "delf-a1s-ce-010#5",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "tcf-ss-a1-s9-co-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ssx-a1-ecole-professeure-d-histoire-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-02#7",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-13#3",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-13#6",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-17#13",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-18#6",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-63#3",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-96#9",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-72#8",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-004-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-025-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-036-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-03-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-03-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-04-04#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "name": "revue763",
+      "chunk_id": "0aee49",
+      "wall_time_seconds": 5.9533e-05,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 351 trios actifs, 112 textes conservés, 300 trios à préparer.\n"
+    },
+    {
+      "name": "delf-images",
+      "chunk_id": "84cd13",
+      "wall_time_seconds": 2.0892e-05,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 339 trios actifs liés à leur relecture, images et MP3 vérifiés.\n"
+    },
+    {
+      "name": "delf-context",
+      "chunk_id": "3bcbbd",
+      "wall_time_seconds": 7.848e-06,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n"
+    },
+    {
+      "name": "qcm-images",
+      "chunk_id": "f1cf3f",
+      "wall_time_seconds": 1.881e-05,
+      "exit_code": 0,
+      "original_token_count": 17,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2406 bank variants\n"
+    },
+    {
+      "name": "tcf-bank",
+      "chunk_id": "d76a72",
+      "wall_time_seconds": 1.2191e-05,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n"
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 46,
+    "question_views": 48,
+    "image_views": 144,
+    "errors": []
+  },
+  "additional_checks": {
+    "catalogue_tests": {
+      "command": "node --test --test-reporter=tap --test-concurrency=1 tests/gallery/catalog.test.mjs tests/audio-catalog/catalog.test.mjs",
+      "passed": 13,
+      "failed": 0
+    },
+    "typecheck": {
+      "command": "npx tsc -b",
+      "exit_code": 0
+    },
+    "production_build": {
+      "command": "npx vite build --manifest",
+      "exit_code": 0
+    },
+    "loading_budgets": {
+      "command": "node scripts/interactive-budgets.mjs",
+      "exit_code": 0,
+      "game_gzip_bytes": 3133709,
+      "game_maximum_gzip_bytes": 3145728
+    }
+  }
+}

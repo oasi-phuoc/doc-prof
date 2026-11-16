@@ -1473,14 +1473,14 @@
         "À l'hôtel",
         "Au zoo"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "ed2b418e8fd441c5a5d179fa609fdfb006caa4f308a40003ca0ea8e11418d6d4",
       "audio": null,
       "review_index": 29,
       "semantic_sha256": "54fca2a609461e1ca3682671293e8506fada1b095fd83c3fc5cc991ba08bf9c6",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Karim arrive en train, demande qu’on vienne le chercher puis dit « nous allons chez toi ». Le zoo est proposé pour jeudi.",
       "brief": {
         "context_question": "Où Karim ira-t-il après son arrivée ?",
         "choices_to_illustrate": [
@@ -1500,6 +1500,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
+      ],
+      "selected_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+        "b84a6bf9e79ba909e5f9d9a467b040db461a9323ed9f549985d2fe1fdc1ff1fb"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Domicile, hôtel et entrée de zoo. Le logement après l’arrivée est distingué de la visite ultérieure. Les visiteurs du zoo ne représentent pas Karim ou son destinataire."
       }
     },
     {
@@ -2055,14 +2069,14 @@
         "Devant la cathédrale",
         "Devant l'école"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "48db5dc05b84be676c42db7665b82a2da874245fdeb97d62d13ccd1d96b1259c",
       "audio": null,
       "review_index": 42,
       "semantic_sha256": "fe0f241e4aaa8e6bb22a46e2b23389ad2894c573c3b3fafee647a6cfc2f8a51f",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le rendez-vous de la visite est à 10 h devant la gare ; la cathédrale est la destination suivante.",
       "brief": {
         "context_question": "Où est le rendez-vous ?",
         "choices_to_illustrate": [
@@ -2082,6 +2096,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cathedrale.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
+      "selected_sha256": [
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "4f4e8120fdc8ebbf6e4afaa2be5ddeeca66adb003dcffff8fcda526538454927",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Façades de gare, cathédrale et école. Le rendez-vous n’est pas confondu avec l’arrêt de bus Cathédrale ni avec le trajet après la gare. Aucun bâtiment n’est présenté comme le lieu réel de la sortie."
       }
     },
     {
@@ -3492,14 +3520,14 @@
         "Dans la rue",
         "Sur le parking"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "d9a1991db3fbf0cfd98b3ee1c0e4925dd60ecc23a4493b6f3d6e29cc39543018",
       "audio": null,
       "review_index": 73,
       "semantic_sha256": "74ba50a2165fe0e752dda54d4f034e4b77b074d605c7ae821881099a047a08c7",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le règlement interdit de quitter le bâtiment pendant les pauses de quinze minutes.",
       "brief": {
         "context_question": "Où faut-il rester pendant les pauses ?",
         "choices_to_illustrate": [
@@ -3519,6 +3547,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-hall.webp",
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+      ],
+      "selected_sha256": [
+        "ef71d2208cca1f23dec40f2abd65d423982b4dc5b760d408ad4eb025c3e5bc16",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c",
+        "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Hall intérieur, rue et parking. La distinction intérieur/extérieur reste visible ; les usagers du hall ne sont pas présentés comme les élèves précis du texte."
       }
     },
     {
@@ -3816,14 +3858,14 @@
         "Devant l'hôtel",
         "Devant le cinéma"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "428924f328c5f79d1891568bc1f425b7a70e2fc2a7f8fcc447198c1498bff481",
       "audio": null,
       "review_index": 81,
       "semantic_sha256": "36596bf072c68d6d0a55e17c52e006d8110b214fd7c0a9ef2365a36c0b7a6f1d",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le départ de la course est devant la gare ; l’Hôtel du Lac correspond à l’arrivée.",
       "brief": {
         "context_question": "Où se trouve le départ de la course ?",
         "choices_to_illustrate": [
@@ -3843,6 +3885,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "selected_sha256": [
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Gare, hôtel et cinéma vus depuis l’extérieur. Le départ est distingué de l’arrivée ; l’hôtel illustré est une catégorie de bâtiment et ne prétend pas reproduire l’Hôtel du Lac réel."
       }
     },
     {
@@ -7263,14 +7319,14 @@
         "À la pizzeria",
         "À la gare"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "4a9899a8dca19e8352b0499f528b2c35777ee9492d00fe3d997a713d28d4f8f3",
       "audio": "/lib/audio/tcf/co/fetes/13-invitation-nouveau-cinéma.mp3",
       "review_index": 161,
       "semantic_sha256": "abe994a3c9f21b5209e581ea2a3f4830fafa1c38db67fdd4e1b7895a17515c14",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Alex, en retard, donne rendez-vous au nouveau cinéma. Le centre commercial des Fontaines indique la direction du bus.",
       "brief": {
         "context_question": "Où Alex donne-t-il rendez-vous ?",
         "choices_to_illustrate": [
@@ -7290,6 +7346,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/co/bg/pizzeria.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png"
+      ],
+      "selected_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "49f340683410ff63b43601adf52ee5e80ffa659c9e52f3bfa309bb5d152467bc",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Cinéma, pizzeria et gare. La destination de rendez-vous est distinguée de la direction du bus et du nom rue de la Gare ; aucun nom ni tarif n’est ajouté à l’image."
       }
     },
     {
@@ -11924,14 +11994,14 @@
         "Devant la cantine",
         "Dans la cour"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "30fe7b3ad99ef17abdb6ac9c0054aec1db69bb850a20b973e8627cad692261d4",
       "audio": "/lib/audio/tcf/co/ecole/23-école-professeure-d-histoire.mp3",
       "review_index": 275,
       "semantic_sha256": "3be7e7e96207eaf43a126d1cca389bffba86a3a13ee3f1b1e95aa551f22cc344",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "La professeure d’histoire et de géographie est située à l’entrée de la bibliothèque.",
       "brief": {
         "context_question": "Où se trouve-t-elle ?",
         "choices_to_illustrate": [
@@ -11951,6 +12021,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+      ],
+      "selected_sha256": [
+        "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+        "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+        "4fc6cdd622c3fa18d8c805995a5d585ee75e8ec6a748320704388ed305ddf218"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Même trio de lieux que delf-a1-2022-co-96#9 : entrée de bibliothèque, façade de cantine et cour. La concordance du lieu est relue dans les deux transcriptions ; aucun personnage n’est inventé."
       }
     },
     {
@@ -12034,14 +12118,14 @@
         "Devant le cinéma",
         "Devant le théâtre"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "d65d1ee80f9ce9394e014aade0e3f8f2a552c389ddb2cbcd602a45e737d924d0",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_02-2.mp3",
       "review_index": 278,
       "semantic_sha256": "a263151925a1bea6dff67806d52063cff41d83a9f9b091246eef5723d1352ca2",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Valérie dit attendre Isabelle devant le musée ; le rendez-vous de 16 h avec Juliette est évoqué séparément.",
       "brief": {
         "context_question": "Où Valérie attend-elle ?",
         "choices_to_illustrate": [
@@ -12061,6 +12145,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+      ],
+      "selected_sha256": [
+        "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Musée, cinéma et théâtre vus de l’extérieur. Le musée entier et son parvis remplacent une galerie intérieure ; le premier cadrage coupant les côtés est écarté."
       }
     },
     {
@@ -12321,14 +12419,14 @@
         "Devant la gare",
         "Au restaurant"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "4d39fef4305e279f02ea3b60ea20684c7f3628c547b8de293f92b0a217ff4dc4",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_13-1.mp3",
       "review_index": 284,
       "semantic_sha256": "05de8b561e277b6ad0385b3eadb8ea693d03e173a256eb21c4b5f10c62d6f555",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Sébastien confirme le rendez-vous de mardi chez lui à midi.",
       "brief": {
         "context_question": "Où est le rendez-vous ?",
         "choices_to_illustrate": [
@@ -12348,6 +12446,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "selected_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Domicile, gare et restaurant. La maison illustre la catégorie chez Sébastien sans inventer son domicile réel ou son apparence."
       }
     },
     {
@@ -12361,14 +12473,14 @@
         "Devant l'école",
         "Devant la mairie"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "7cbe588decb2ad9f21d8826bae8170f8984d6d54e0314d247fd5ce624e50cb6d",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_13-2.mp3",
       "review_index": 285,
       "semantic_sha256": "8980ca55db251f238d80767fa83dff8353801faf027e1868c810c517379b300c",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Sountou propose d’aller au marché et fixe le rendez-vous devant le marché à 10 h ; le restaurant est une autre proposition.",
       "brief": {
         "context_question": "Où est le rendez-vous ?",
         "choices_to_illustrate": [
@@ -12388,6 +12500,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/co/bg/marche.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "selected_sha256": [
+        "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Approche d’un marché sur une place, école et mairie. Les images identifient les trois repères de rendez-vous sans prétendre reconstituer la place réelle ni le déplacement ultérieur."
       }
     },
     {
@@ -12525,14 +12651,14 @@
         "Devant l'école",
         "Dans le parc"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "43d19228e30c79f7ed45a6dce69e9338fa583c0ee3bca08877ae76164e9e0c82",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_17-3.mp3",
       "review_index": 289,
       "semantic_sha256": "5b6b6e3d9f95db4c2f32f02ab8373be2fd235a142e95e66ee27202822b8ba00d",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "L’annonce situe le marché du samedi sur la place du village, de 8 h à 13 h.",
       "brief": {
         "context_question": "Où le marché a-t-il lieu ?",
         "choices_to_illustrate": [
@@ -12552,6 +12678,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/revue-20261107-5b8d0c27e1.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+      ],
+      "selected_sha256": [
+        "1dcaf7775f378eb580d733193127eb51ddfb39b3009b7e55c87c57e867b1c419",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Place de village pavée avec façades, école et parc. La place est illustrée sans marché pour ne pas donner la bonne réponse par les étals ; la fontaine est un élément de décor générique, sans prétendre reproduire le village du support."
       }
     },
     {
@@ -12565,14 +12705,14 @@
         "Le théâtre municipal",
         "La bibliothèque"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "b769befff2932f351b4218770c5ce5b8e600e919677385fba2568da0dd3dffb5",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_18-2.mp3",
       "review_index": 290,
       "semantic_sha256": "fbc7f494bc4ea4ab40fe0aabe19ac7815689d7db077634b6c4e7a2b7aab4e3aa",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le nouveau film et la présence des acteurs sont annoncés au cinéma Terre’in ; les billets sont en vente sur son site.",
       "brief": {
         "context_question": "Quel lieu présente un nouveau film ?",
         "choices_to_illustrate": [
@@ -12592,6 +12732,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+      ],
+      "selected_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Cinéma, théâtre et bibliothèque identifiables. La façade de cinéma est générique et ne reproduit pas une enseigne réelle nommée Terre’in."
       }
     },
     {
@@ -13905,14 +14059,14 @@
         "Dans la cour de l'école",
         "Dans la gare"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "7121586ee13488c2383d79c446143af6ade7567afe67f9329dc38c06512c9836",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_63.mp3",
       "review_index": 320,
       "semantic_sha256": "d24e9064f9d7a756d24d9bccf63eb06846520154daa039a370befce35ccfb6f3",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le concert annoncé a lieu sur la place de la mairie ; la pluie annoncée est une consigne distincte.",
       "brief": {
         "context_question": "Où a-t-il lieu ?",
         "choices_to_illustrate": [
@@ -13932,6 +14086,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "selected_sha256": [
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "4fc6cdd622c3fa18d8c805995a5d585ee75e8ec6a748320704388ed305ddf218",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Mairie avec espace pavé devant l’entrée, cour d’école et intérieur de gare. Les vues désignent les lieux proposés ; elles ne reconstituent pas le concert ni la météo du soir."
       }
     },
     {
@@ -14994,14 +15162,14 @@
         "Devant la cantine",
         "Dans la cour"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "6245de5cb0004689ce2ef07ec41c8ad3f6b7d3d9b7f313e9234409b701d5b3c7",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-3.mp3",
       "review_index": 345,
       "semantic_sha256": "3be7e7e96207eaf43a126d1cca389bffba86a3a13ee3f1b1e95aa551f22cc344",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Les interlocuteurs repèrent la professeure d’histoire à l’entrée de la bibliothèque ; elle enseigne aussi la géographie.",
       "brief": {
         "context_question": "Où se trouve-t-elle ?",
         "choices_to_illustrate": [
@@ -15021,6 +15189,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+      ],
+      "selected_sha256": [
+        "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+        "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+        "4fc6cdd622c3fa18d8c805995a5d585ee75e8ec6a748320704388ed305ddf218"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Entrée extérieure de bibliothèque, devanture de cantine et cour d’école. Les vues identifient les lieux et ne prétendent pas être un portrait de la professeure. Le même trio convient à la transcription correspondante de la série école."
       }
     },
     {
@@ -15813,14 +15995,14 @@
         "À la cantine de l'école",
         "Chez Rebecca"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "2ca095a5aac8432ea594c4dcd416a9e2fc0a4e0b1b7b5e70869102b86eecec9d",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3",
       "review_index": 364,
       "semantic_sha256": "2f5773e5969aa339e9f8f44f973acdb356cc272faacecb354e477d03a20ea6b5",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Rebecca précise qu’à midi on peut aller au restaurant de l’entreprise, le jour de l’arrivée dans les bureaux.",
       "brief": {
         "context_question": "Où peut-on manger à midi ?",
         "choices_to_illustrate": [
@@ -15840,6 +16022,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+      ],
+      "selected_sha256": [
+        "688f167b2c37ad6be698cd9e6cce937732a8c8ee33f4db3b27095ee800210266",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Restaurant d’entreprise avec espace de restauration collective, cantine d’école et domicile. La scène du restaurant illustre la catégorie sans attribuer les visages dessinés à Rebecca ou aux nouveaux salariés."
       }
     },
     {
@@ -31436,10 +31632,10 @@
     }
   ],
   "summary": {
-    "artwork_needed_contextual_locations": 241,
+    "artwork_needed_contextual_locations": 228,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 337,
-    "artwork_needed_whole_answer_concepts": 59,
+    "active_reviewed_trio": 351,
+    "artwork_needed_whole_answer_concepts": 58,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
@@ -31451,7 +31647,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 337,
+  "activated_total": 351,
   "retained_text_total": 112,
-  "artwork_pending_total": 314
+  "artwork_pending_total": 300
 }

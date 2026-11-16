@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Dernière suite du 16 novembre : vingt-quatre trios A1 ajoutés**, quatorze historiques et dix DELF Actif. Six vues extérieures natives et 60 réemplois ; restent **300 trios historiques** et **407 candidats DELF Actif**, avec **339 trios DELF Actif actifs**. Le lieu du marché est illustré sans étals pour éviter un indice supplémentaire. [Rapport actuel et reste à faire](trios-ecole-rendezvous-20261116.md).
+
 **Dernière suite du 16 novembre : fonds des trois nouvelles compositions d’objets harmonisés et seize trios A2 ajoutés.** Huit PNG natifs et 38 réemplois ; restent **314 trios historiques** et **417 candidats DELF Actif**, avec **329 trios DELF Actif actifs**. Le guide fixe le fond ivoire lisse de la référence validée. [Rapport actuel et reste à faire](trios-aliments-paysages-20261116.md).
 
 **Dernière suite du 16 novembre : seize trios supplémentaires, six PNG natifs et quarante réemplois.** Quatorze trios historiques et deux DELF Actif ; restent **328 historiques** et **419 candidats DELF Actif**, avec **327 trios DELF Actif actifs**. Les vues extérieures de gare et de pharmacie respectent les rendez-vous « devant ». [Rapport actuel et reste à faire](trios-loisirs-lieux-20261116.md).

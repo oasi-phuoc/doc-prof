@@ -1,0 +1,1518 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "0bf69536a33f5c748834ff6a55e2fbd286ea568f",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 24,
+    "added_historical_trios": 14,
+    "added_delf_actif_trios": 10,
+    "new_images": 6,
+    "imagegen_calls": 8,
+    "rejected_generations": 2,
+    "new_image_usages": 12,
+    "reused_image_usages": 60,
+    "reused_distinct_images": 28,
+    "added_by_level": {
+      "A0-A1": 24
+    },
+    "historical_pending": 300
+  },
+  "new_images": [
+    {
+      "id": "qcm-a1-hotel-facade",
+      "label": "Devant l’hôtel",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+      "prompt": "One French TCF exam illustration of 'DEVANT L'HOTEL': the complete exterior of a modest ordinary neighbourhood hotel, viewed from the pavement facing its entrance. Show the entire main cream stone building from roof to ground with generous margins, three floors of simple guest-room windows, a muted navy entrance canopy and an unobstructed forecourt in front of the glass entry door. A small correct generic sign HÔTEL above the door, no other readable words. Gentle plants beside the door, coherent architecture, no restaurant terrace, shop or cafe in the picture, no people, luggage in foreground, vehicles, clocks, numbers, dates, prices, brand names or flags. Soft semi-realistic painted editorial illustration, fine gentle visible brushwork, soft natural daylight and restrained cream/wood/olive/navy colours matching a coherent warm French teaching image bank. Not a photograph, CGI, cartoon or vector icon. Landscape native EXACT 1448 x 1086 pixels, 4:3. One scene, no collage, panels, border or watermark. This is the OUTSIDE entrance and forecourt, not an indoor reception lobby; the word does not replace the real building.",
+      "source_png": "/workspace/generated_images/exec-7fa0bfcf-68ce-4c94-ae35-ef9bf7864c2b.png",
+      "source_sha256": "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+      "sha256": "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+      "bytes": 2995260,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ecole-rendezvous-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Façade d’hôtel entière, porte, auvent et parvis visibles ; vue extérieure sans restaurant adjacent ni personne attribuée à la source.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Hébergement",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-musee-facade",
+      "label": "Devant le musée",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+      "prompt": "Edit this TCF museum illustration to correct ONLY its too-tight framing. Preserve the exact building type, museum sign, materials, softly painted semi-realistic editorial style, gentle natural daylight, sculpture glimpsed through its door, ramp and cream/olive/navy palette. MOVE THE CAMERA MUCH FARTHER BACK so the ENTIRE small museum building fits in the image: the outer LEFT and RIGHT vertical exterior corners, the complete roof from left eave to right eave, all of the front steps and the full accessibility ramp must be visible. Add at least 80 pixels of open contextual space beyond BOTH exterior corners and roof edges. No piece of the building may meet or be cut by a canvas edge. Preserve a paved forecourt before the entrance; the building can occupy only the central 75 percent of the canvas width. It is a low compact museum, not an endlessly wide facade. No people, additional buildings attached to the museum, vehicles, flags, clocks, new text or posters. Keep MUSÉE correctly spelled. Final native EXACT 1448 x 1086 pixels, landscape 4:3, no borders, panels, collage or watermark. Maintain natural coherent architecture and perspective while widening the view.",
+      "source_png": "/workspace/generated_images/exec-ed0318f1-6878-4cb3-a795-cd26eea6b6b9.png",
+      "source_sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+      "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+      "bytes": 2772260,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ecole-rendezvous-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Musée entier, deux angles extérieurs, toiture, marches et rampe visibles. Première vue trop serrée écartée avant intégration.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise du cadrage de /workspace/generated_images/exec-9fcc689a-a21d-40bf-b595-e10a9d865626.png ; la vue initiale coupant les côtés du musée n’est pas intégrée.",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Culture",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-bibliotheque-entree",
+      "label": "À l’entrée de la bibliothèque",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+      "prompt": "One French TCF exam illustration of 'A L'ENTREE DE LA BIBLIOTHEQUE' and 'DEVANT LA BIBLIOTHEQUE'. View from the quiet paved approach directly toward the entrance of a modest low neighbourhood library. Entire small building and complete roof visible in the central 75 percent of the canvas width with at least 80 pixels of margin at BOTH exterior corners. Cream masonry, muted olive door frame, a clearly visible main glass door, broad windows revealing rows of bookshelves and a reading table. Small correct generic sign BIBLIOTHÈQUE above the entrance. A simple ramp, an empty bench beside the wall and a few plants; no chairs in the middle of a passage. No people, borrowers, children, shop counter, cash register, shop display, cars, clocks, dates, opening hours, numbers, prices, brands or any other readable text. This is a library entrance, not a bookshop or an interior-only reading room. Soft semi-realistic painted editorial illustration with fine gentle visible brushwork, natural restrained cream/wood/olive/navy palette and soft daylight matching a warm French learning image bank. Not photograph, CGI, cartoon or vector icon. Native EXACT 1448 x 1086 pixels landscape 4:3, one coherent scene, no panels, collage, border or watermark.",
+      "source_png": "/workspace/generated_images/exec-80d8ba14-745b-42ec-9400-1d360f56a258.png",
+      "source_sha256": "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+      "sha256": "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+      "bytes": 2980699,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ecole-rendezvous-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Entrée extérieure de bibliothèque, porte et rayonnages visibles, banc contre le mur. Pas de comptoir de vente ni de personnage nommé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Culture",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-cantine-facade",
+      "label": "Devant la cantine",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+      "prompt": "One French TCF exam illustration of 'DEVANT LA CANTINE'. View from a school courtyard directly toward the entrance of a modest low school dining-hall building. Entire small building, complete roof and outer corners fit in the central 75 percent of the canvas width with generous space on both sides. Cream walls, pale wooden door framing, broad windows through which orderly school dining tables, simple chairs and a self-service food counter with tray stacks can be clearly seen. Small correct generic sign CANTINE above the main door. A paved approach and a few simple shrubs; coherent architecture and believable perspective. No people or children, restaurant terrace, café tables outside, fancy tablecloths, swimming pool, vehicles, clocks, dates, opening times, numbers, prices, brands or any other readable words. Soft semi-realistic painted editorial illustration, fine gentle visible brushwork, restrained natural cream/wood/olive/navy palette, soft daylight coherent with a warm French teaching image bank. Not photograph, CGI, cartoon or vector icon. Native EXACT 1448 x 1086 pixels landscape 4:3, one continuous scene, no panels, collage, border or watermark. Prioritise a clear OUTSIDE entrance, not an interior-only view.",
+      "source_png": "/workspace/generated_images/exec-31e69693-a061-4a4c-96d2-47726ead468b.png",
+      "source_sha256": "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+      "sha256": "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+      "bytes": 2767084,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ecole-rendezvous-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Façade et approche devant la cantine ; tables et comptoir de self visibles à travers les fenêtres. Bâtiment et toit dans le cadre.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-boulangerie-facade",
+      "label": "Devant la boulangerie",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-boulangerie-facade.png",
+      "prompt": "One French TCF exam illustration of 'DEVANT LA BOULANGERIE': an ordinary small neighbourhood bakery viewed from the paved space directly in front of its entrance. Show the entire compact one-storey shop facade from roof to ground, both exterior corners and complete cornice comfortably inside the central 75 percent of the frame width with open context on each side. Warm cream stone, muted navy or olive trim, a glass entrance door and two display windows with real whole loaves, baguettes and a few croissants clearly visible on interior wooden shelves. Small correct generic sign BOULANGERIE above the door, no other readable text. Coherent architecture, simple plants, unobstructed pavement before the entrance. No people, terrace tables, grocery supermarket, vehicles, clock, prices, numbers, dates, brands, names or logos. Soft semi-realistic painted editorial illustration, fine gentle visible brushwork, natural restrained cream/wood/olive/navy palette and soft daylight matching a coherent warm French teaching image bank. Not photograph, CGI, cartoon or vector icon. Native EXACT 1448 x 1086 pixels landscape 4:3, one continuous scene, no panels, collage, border or watermark. Show the exterior entry, not only an interior counter or a bread object.",
+      "source_png": "/workspace/generated_images/exec-6f1339b4-5a7d-4ddb-8d35-f1eef30b68f7.png",
+      "source_sha256": "2a469d611af68ec1b5300639e533b862bc515f7aa6194602bc6d06fd25383ca6",
+      "sha256": "2a469d611af68ec1b5300639e533b862bc515f7aa6194602bc6d06fd25383ca6",
+      "bytes": 2884918,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ecole-rendezvous-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Boutique entière, porte et trottoir visibles, pains et baguettes dans la vitrine. Aucun prix, numéro ou nom d’enseigne inventé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-college-facade",
+      "label": "Devant le collège",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+      "prompt": "Correct the canvas FORMAT of the attached approved college illustration. Output a NEW native image of EXACTLY 1448 pixels wide by 1086 pixels high, mathematically EXACT landscape 4:3. The input is 1447 by 1087 and therefore is NOT the required shape; do not preserve that input canvas size. Repaint the same college exterior scene directly onto the correct 1448 x 1086 canvas, retaining its style and composition: whole compact two-storey cream building with complete roof and both outer corners in frame, clear entrance, correctly spelled COLLÈGE sign, muted navy door and railings, open gate, ramp, trees and forecourt. Keep generous margins, believable architecture, fine softly painted semi-realistic brushwork, warm natural cream/wood/olive/navy colours and soft daylight. No new people, objects, writing, dates, numbers, clocks, vehicles, posters, logos, border, panels, collage or watermark. The ONLY intended correction is the native exact 4:3 canvas format. Keep the complete building and gate comfortably within the new image.",
+      "source_png": "/workspace/generated_images/exec-8dede86c-3acf-4ae1-9fb9-b5e3c05694c5.png",
+      "source_sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d",
+      "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d",
+      "bytes": 2869675,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ecole-rendezvous-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Façade complète de collège, portail ouvert, parvis et entrée visibles. Aucune classe d’âge de figurants ni horaire de cours inventé.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Première génération /workspace/generated_images/exec-b8afc70f-5618-48b0-a4eb-84dafa5035b2.png écartée : 1447 × 1087, rapport 4:3 inexact. Reprise native exacte 1448 × 1086, sans redimensionnement local.",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "École",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/co/bg/hotel.webp",
+      "reason": "Hall de réception intérieur, pas le devant de l’hôtel."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+      "reason": "Galerie intérieure, pas le rendez-vous devant le musée."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+      "reason": "Salle de lecture : réutilisable pour la catégorie bibliothèque, pas pour l’entrée demandée dans les deux questions de professeure."
+    },
+    {
+      "path": "/lib/images/tcf/co/bg/cantine.webp",
+      "reason": "Intérieur de cantine : conservé pour la catégorie self, pas pour le devant de la cantine."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/extension573-infirmerie.webp",
+      "reason": "Personnage coupé ; aucune nouvelle activation pour la question d’infirmerie.",
+      "question": "tcf-delf-actif-a1-050-04-04#2"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+      "reason": "Ancienne scène avec un interlocuteur hors cadre ; pas de réemploi dans ce lot.",
+      "question": "tcf-delf-actif-a1-050-04-04#2"
+    },
+    {
+      "path": "/lib/images/tcf/co/bg/marche.webp",
+      "question": "delf-a1-2022-co-ex2-17#13",
+      "reason": "Étals qui donnent un indice supplémentaire sur la réponse à la question du lieu du marché. Ce même fichier reste adapté au repère de rendez-vous explicitement proposé devant le marché."
+    }
+  ],
+  "trios": [
+    {
+      "key": "delf-a1v-ce-007#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Salut !\nMon train arrive à Berne mardi à 15 h 10. Peux-tu venir me chercher à la gare ? J’ai une grosse valise et je ne connais pas la ville. Ensuite, nous allons chez toi.\nLe soir, j’ai rendez-vous à 19 h chez le dentiste.\nJeudi, on pourrait aller au zoo si tu es libre : j’ai deux billets. Réponds-moi vite !\nKarim",
+      "source_sha256": "ed2b418e8fd441c5a5d179fa609fdfb006caa4f308a40003ca0ea8e11418d6d4",
+      "semantic_sha256": "54fca2a609461e1ca3682671293e8506fada1b095fd83c3fc5cc991ba08bf9c6",
+      "question": {
+        "enonce": "Où Karim ira-t-il après son arrivée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez son destinataire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À l'hôtel",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au zoo",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez son destinataire"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "co306-maison-dessine",
+        "qcm-a1-hotel-facade",
+        "co57-visiter-zoo"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+        "/lib/images/tcf/qcm-audit/co57-visiter-zoo.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+        "b84a6bf9e79ba909e5f9d9a467b040db461a9323ed9f549985d2fe1fdc1ff1fb"
+      ],
+      "reason": "Karim arrive en train, demande qu’on vienne le chercher puis dit « nous allons chez toi ». Le zoo est proposé pour jeudi.",
+      "visual_review": "Domicile, hôtel et entrée de zoo. Le logement après l’arrivée est distingué de la visite ultérieure. Les visiteurs du zoo ne représentent pas Karim ou son destinataire.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1v-ce-019#5",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Bonjour à toutes et à tous,\nSamedi, nous visitons la cathédrale. Rendez-vous à 10 h devant la gare. Prenez le bus 3 jusqu’à l’arrêt « Cathédrale », puis montez la rue des Alpes. Au bout, tournez à gauche : l’entrée est après la fontaine. L’entrée est gratuite.\nApportez une bouteille d’eau et de bonnes chaussures.\nClara\nProfesseure de français",
+      "source_sha256": "48db5dc05b84be676c42db7665b82a2da874245fdeb97d62d13ccd1d96b1259c",
+      "semantic_sha256": "fe0f241e4aaa8e6bb22a46e2b23389ad2894c573c3b3fafee647a6cfc2f8a51f",
+      "question": {
+        "enonce": "Où est le rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant la gare",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la cathédrale",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant l'école",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant la gare"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a1-gare-facade",
+        "extension573-cathedrale",
+        "co306-ecole-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cathedrale.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
+      "image_sha256": [
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "4f4e8120fdc8ebbf6e4afaa2be5ddeeca66adb003dcffff8fcda526538454927",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857"
+      ],
+      "reason": "Le rendez-vous de la visite est à 10 h devant la gare ; la cathédrale est la destination suivante.",
+      "visual_review": "Façades de gare, cathédrale et école. Le rendez-vous n’est pas confondu avec l’arrêt de bus Cathédrale ni avec le trajet après la gare. Aucun bâtiment n’est présenté comme le lieu réel de la sortie.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1s-ce-003#7",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "En classe, il est interdit de manger, de parler fort, de quitter sa place sans permission et d’utiliser un téléphone portable.\nLes élèves doivent respecter les enseignants et les écouter.\nUn retard supérieur à 5 minutes n’est pas accepté.\nLes récréations durent 15 minutes. On n’a pas le droit de quitter le bâtiment pendant les pauses.",
+      "source_sha256": "d9a1991db3fbf0cfd98b3ee1c0e4925dd60ecc23a4493b6f3d6e29cc39543018",
+      "semantic_sha256": "74ba50a2165fe0e752dda54d4f034e4b77b074d605c7ae821881099a047a08c7",
+      "question": {
+        "enonce": "Où faut-il rester pendant les pauses ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Dans le bâtiment",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans la rue",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sur le parking",
+            "correct": false
+          }
+        ],
+        "written_model": "Dans le bâtiment"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-hall",
+        "retained-20261107-2ea2762cc434",
+        "co834-parking-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-hall.webp",
+        "/lib/images/tcf/co/bg/ville.webp",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+      ],
+      "image_sha256": [
+        "ef71d2208cca1f23dec40f2abd65d423982b4dc5b760d408ad4eb025c3e5bc16",
+        "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c",
+        "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948"
+      ],
+      "reason": "Le règlement interdit de quitter le bâtiment pendant les pauses de quinze minutes.",
+      "visual_review": "Hall intérieur, rue et parking. La distinction intérieur/extérieur reste visible ; les usagers du hall ne sont pas présentés comme les élèves précis du texte.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1s-ce-010#5",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "La course est ouverte à tout le monde. Pour participer, envoyez un formulaire d’inscription et deux photos d’identité.\nLe départ est devant la gare et l’arrivée en face de l’Hôtel du Lac. Le parcours mesure 4 500 mètres.\nPour plus d’informations sur la course et les prix, téléphonez au 032 555 64 24.",
+      "source_sha256": "428924f328c5f79d1891568bc1f425b7a70e2fc2a7f8fcc447198c1498bff481",
+      "semantic_sha256": "36596bf072c68d6d0a55e17c52e006d8110b214fd7c0a9ef2365a36c0b7a6f1d",
+      "question": {
+        "enonce": "Où se trouve le départ de la course ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant la gare",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant l'hôtel",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant le cinéma",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant la gare"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a1-gare-facade",
+        "qcm-a1-hotel-facade",
+        "extension573-cinema-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp"
+      ],
+      "image_sha256": [
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+      ],
+      "reason": "Le départ de la course est devant la gare ; l’Hôtel du Lac correspond à l’arrivée.",
+      "visual_review": "Gare, hôtel et cinéma vus depuis l’extérieur. Le départ est distingué de l’arrivée ; l’hôtel illustré est une catégorie de bâtiment et ne prétend pas reproduire l’Hôtel du Lac réel.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a1-s9-co-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c'est Alex.\nJe suis en retard.\nJe ne peux pas passer chez toi.\nJe te donne rendez-vous au nouveau cinéma.\nPrends le bus numéro 16, en direction du centre commercial des Fontaines.\nDescends à l'arrêt Nouveau Cinéma.\nLe cinéma est rue de la Gare, au numéro 3.\nEst-ce que tu peux acheter les tickets, s'il te plaît ?\nLa place coûte 7 euros.\nÀ tout à l'heure.\nBisous.",
+      "source_sha256": "4a9899a8dca19e8352b0499f528b2c35777ee9492d00fe3d997a713d28d4f8f3",
+      "semantic_sha256": "abe994a3c9f21b5209e581ea2a3f4830fafa1c38db67fdd4e1b7895a17515c14",
+      "question": {
+        "enonce": "Où Alex donne-t-il rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au nouveau cinéma",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la pizzeria",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la gare",
+            "correct": false
+          }
+        ],
+        "written_model": "Au nouveau cinéma"
+      },
+      "audio": "/lib/audio/tcf/co/fetes/13-invitation-nouveau-cinéma.mp3",
+      "audio_sha256": "17019e4e5c1f9e78c63ea24b0e074251a60e91e97f103638865466a3637086ff",
+      "image_ids": [
+        "extension573-cinema-facade",
+        "retained-20261107-a0f7552a70dc",
+        "qcm-a1-gare-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/co/bg/pizzeria.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png"
+      ],
+      "image_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "49f340683410ff63b43601adf52ee5e80ffa659c9e52f3bfa309bb5d152467bc",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+      ],
+      "reason": "Alex, en retard, donne rendez-vous au nouveau cinéma. Le centre commercial des Fontaines indique la direction du bus.",
+      "visual_review": "Cinéma, pizzeria et gare. La destination de rendez-vous est distinguée de la direction du bus et du nom rue de la Gare ; aucun nom ni tarif n’est ajouté à l’image.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ssx-a1-ecole-professeure-d-histoire-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- Regarde, c'est la professeure d'histoire.\nElle est à l'entrée de la bibliothèque.\n- Ah oui, je la connais.\nC'est aussi ma professeure de géographie.",
+      "source_sha256": "30fe7b3ad99ef17abdb6ac9c0054aec1db69bb850a20b973e8627cad692261d4",
+      "semantic_sha256": "3be7e7e96207eaf43a126d1cca389bffba86a3a13ee3f1b1e95aa551f22cc344",
+      "question": {
+        "enonce": "Où se trouve-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À l'entrée de la bibliothèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la cantine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans la cour",
+            "correct": false
+          }
+        ],
+        "written_model": "À l'entrée de la bibliothèque"
+      },
+      "audio": "/lib/audio/tcf/co/ecole/23-école-professeure-d-histoire.mp3",
+      "audio_sha256": "9948b69b0a8d2d656dbc2af02a45bbbb76b29e09fe9f802b8a84792377bbd572",
+      "image_ids": [
+        "qcm-a1-bibliotheque-entree",
+        "qcm-a1-cantine-facade",
+        "audit-context-cour-ecole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+      ],
+      "image_sha256": [
+        "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+        "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+        "4fc6cdd622c3fa18d8c805995a5d585ee75e8ec6a748320704388ed305ddf218"
+      ],
+      "reason": "La professeure d’histoire et de géographie est située à l’entrée de la bibliothèque.",
+      "visual_review": "Même trio de lieux que delf-a1-2022-co-96#9 : entrée de bibliothèque, façade de cantine et cour. La concordance du lieu est relue dans les deux transcriptions ; aucun personnage n’est inventé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-02#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, c’est moi, Valérie. Je suis devant le musée. J’attends Isabelle. Elle est en retard. Tu es toujours d’accord pour le rendez-vous de 16 h avec Juliette ? À tout à l’heure.",
+      "source_sha256": "d65d1ee80f9ce9394e014aade0e3f8f2a552c389ddb2cbcd602a45e737d924d0",
+      "semantic_sha256": "a263151925a1bea6dff67806d52063cff41d83a9f9b091246eef5723d1352ca2",
+      "question": {
+        "enonce": "Où Valérie attend-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant le musée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant le cinéma",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant le théâtre",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant le musée"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_02-2.mp3",
+      "audio_sha256": "839c9fc87491f13194f51014b731364fb0edcaa0a478ab849c2bbd6ad56a8e01",
+      "image_ids": [
+        "qcm-a1-musee-facade",
+        "extension573-cinema-facade",
+        "co306-batiment-theatre-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+      ],
+      "image_sha256": [
+        "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+      ],
+      "reason": "Valérie dit attendre Isabelle devant le musée ; le rendez-vous de 16 h avec Juliette est évoqué séparément.",
+      "visual_review": "Musée, cinéma et théâtre vus de l’extérieur. Le musée entier et son parvis remplacent une galerie intérieure ; le premier cadrage coupant les côtés est écarté.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-13#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut ! C’est Sébastien. Est-ce que tu es chez toi ? Je te téléphone pour le rendez-vous de mardi. On se retrouve chez moi à midi, d’accord ? À mardi !",
+      "source_sha256": "4d39fef4305e279f02ea3b60ea20684c7f3628c547b8de293f92b0a217ff4dc4",
+      "semantic_sha256": "05de8b561e277b6ad0385b3eadb8ea693d03e173a256eb21c4b5f10c62d6f555",
+      "question": {
+        "enonce": "Où est le rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez Sébastien",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la gare",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au restaurant",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez Sébastien"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_13-1.mp3",
+      "audio_sha256": "f00b0ca4ea94fe2e86d1fb1ab07f18b348db284961fdcf950309b93dc84eeaad",
+      "image_ids": [
+        "co306-maison-dessine",
+        "qcm-a1-gare-facade",
+        "co306-restaurant-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "reason": "Sébastien confirme le rendez-vous de mardi chez lui à midi.",
+      "visual_review": "Domicile, gare et restaurant. La maison illustre la catégorie chez Sébastien sans inventer son domicile réel ou son apparence.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-13#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Sountou. Tu viens avec moi au marché ? Si tu es d’accord, rendez-vous devant le marché à 10 h. Et on va au restaurant aussi ? Appelle-moi !",
+      "source_sha256": "7cbe588decb2ad9f21d8826bae8170f8984d6d54e0314d247fd5ce624e50cb6d",
+      "semantic_sha256": "8980ca55db251f238d80767fa83dff8353801faf027e1868c810c517379b300c",
+      "question": {
+        "enonce": "Où est le rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant le marché",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant l'école",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant la mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant le marché"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_13-2.mp3",
+      "audio_sha256": "da3d4bb5e1d1790a679e31b850a1c71015342925b92aab65585162e08d826d7a",
+      "image_ids": [
+        "retained-20261107-c98f6a0464f3",
+        "co306-ecole-dessine",
+        "co306-mairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/marche.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+      ],
+      "reason": "Sountou propose d’aller au marché et fixe le rendez-vous devant le marché à 10 h ; le restaurant est une autre proposition.",
+      "visual_review": "Approche d’un marché sur une place, école et mairie. Les images identifient les trois repères de rendez-vous sans prétendre reconstituer la place réelle ni le déplacement ultérieur.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-17#13",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Au marché, les nouveaux fruits de la saison sont arrivés. Il y a des pommes et des bananes ! Et grosse réduction sur les salades. Le marché, c’est le samedi de 8 h à 13 h sur la place du village.",
+      "source_sha256": "43d19228e30c79f7ed45a6dce69e9338fa583c0ee3bca08877ae76164e9e0c82",
+      "semantic_sha256": "5b6b6e3d9f95db4c2f32f02ab8373be2fd235a142e95e66ee27202822b8ba00d",
+      "question": {
+        "enonce": "Où le marché a-t-il lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur la place du village",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant l'école",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans le parc",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur la place du village"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_17-3.mp3",
+      "audio_sha256": "0851d9755abe9a0630c0fc7bc4702997f7bf74336a2df80712c10755a556e284",
+      "image_ids": [
+        "revue-20261107-5b8d0c27e1",
+        "co306-ecole-dessine",
+        "co306-parc-public-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/revue-20261107-5b8d0c27e1.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp"
+      ],
+      "image_sha256": [
+        "1dcaf7775f378eb580d733193127eb51ddfb39b3009b7e55c87c57e867b1c419",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466"
+      ],
+      "reason": "L’annonce situe le marché du samedi sur la place du village, de 8 h à 13 h.",
+      "visual_review": "Place de village pavée avec façades, école et parc. La place est illustrée sans marché pour ne pas donner la bonne réponse par les étals ; la fontaine est un élément de décor générique, sans prétendre reproduire le village du support.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-18#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Le cinéma Terre’in présente le nouveau film de Luc Besson avec la présence des acteurs. C’est ce soir. Vous pouvez acheter les billets sur le site internet du cinéma.",
+      "source_sha256": "b769befff2932f351b4218770c5ce5b8e600e919677385fba2568da0dd3dffb5",
+      "semantic_sha256": "fbc7f494bc4ea4ab40fe0aabe19ac7815689d7db077634b6c4e7a2b7aab4e3aa",
+      "question": {
+        "enonce": "Quel lieu présente un nouveau film ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le cinéma Terre'in",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le théâtre municipal",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La bibliothèque",
+            "correct": false
+          }
+        ],
+        "written_model": "Le cinéma Terre'in"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_18-2.mp3",
+      "audio_sha256": "9d3aadb945746986523a23cae0ccef9af6e4dd4007f27a3a9f2b199ab003d763",
+      "image_ids": [
+        "extension573-cinema-facade",
+        "co306-batiment-theatre-dessine",
+        "co306-bibliotheque-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+        "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+      ],
+      "image_sha256": [
+        "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914",
+        "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+      ],
+      "reason": "Le nouveau film et la présence des acteurs sont annoncés au cinéma Terre’in ; les billets sont en vente sur son site.",
+      "visual_review": "Cinéma, théâtre et bibliothèque identifiables. La façade de cinéma est générique et ne reproduit pas une enseigne réelle nommée Terre’in.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-63#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Ce soir, grand concert sur la place de la mairie.\nDes chanteurs français, anglais et italiens\nsont au rendez-vous. Pour gagner des billets\npour rencontrer les artistes, téléphonez au\n01.46.79.02.84. La météo n’est pas au rendezvous : de la pluie est annoncée. N’oubliez pas\nvotre parapluie !",
+      "source_sha256": "7121586ee13488c2383d79c446143af6ade7567afe67f9329dc38c06512c9836",
+      "semantic_sha256": "d24e9064f9d7a756d24d9bccf63eb06846520154daa039a370befce35ccfb6f3",
+      "question": {
+        "enonce": "Où a-t-il lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur la place de la mairie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans la cour de l'école",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans la gare",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur la place de la mairie"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_63.mp3",
+      "audio_sha256": "bfc9d69126aae55e55c0c82fbb7549c5f1dcb0578ee72aecd7177ed7683ad608",
+      "image_ids": [
+        "co306-mairie-dessine",
+        "audit-context-cour-ecole",
+        "co306-gare-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "image_sha256": [
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "4fc6cdd622c3fa18d8c805995a5d585ee75e8ec6a748320704388ed305ddf218",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+      ],
+      "reason": "Le concert annoncé a lieu sur la place de la mairie ; la pluie annoncée est une consigne distincte.",
+      "visual_review": "Mairie avec espace pavé devant l’entrée, cour d’école et intérieur de gare. Les vues désignent les lieux proposés ; elles ne reconstituent pas le concert ni la météo du soir.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-96#9",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Regarde, c'est la professeure d'histoire. Elle est à l'entrée de la bibliothèque. Ah oui, je la connais. C'est aussi ma professeur de géographie.",
+      "source_sha256": "6245de5cb0004689ce2ef07ec41c8ad3f6b7d3d9b7f313e9234409b701d5b3c7",
+      "semantic_sha256": "3be7e7e96207eaf43a126d1cca389bffba86a3a13ee3f1b1e95aa551f22cc344",
+      "question": {
+        "enonce": "Où se trouve-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À l'entrée de la bibliothèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la cantine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans la cour",
+            "correct": false
+          }
+        ],
+        "written_model": "À l'entrée de la bibliothèque"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-3.mp3",
+      "audio_sha256": "9948b69b0a8d2d656dbc2af02a45bbbb76b29e09fe9f802b8a84792377bbd572",
+      "image_ids": [
+        "qcm-a1-bibliotheque-entree",
+        "qcm-a1-cantine-facade",
+        "audit-context-cour-ecole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cantine-facade.png",
+        "/lib/images/tcf/qcm-audit/audit-context-cour-ecole.webp"
+      ],
+      "image_sha256": [
+        "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e",
+        "191968f3c2d1d0200028a1b30b816a2117d9668f15e9bd6b8d611642e2de2a79",
+        "4fc6cdd622c3fa18d8c805995a5d585ee75e8ec6a748320704388ed305ddf218"
+      ],
+      "reason": "Les interlocuteurs repèrent la professeure d’histoire à l’entrée de la bibliothèque ; elle enseigne aussi la géographie.",
+      "visual_review": "Entrée extérieure de bibliothèque, devanture de cantine et cour d’école. Les vues identifient les lieux et ne prétendent pas être un portrait de la professeure. Le même trio convient à la transcription correspondante de la série école.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-72#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, c’est Rebecca ! Demain, c’est votre premier jour dans notre entreprise. Vous devez apporter votre pièce d’identité. Dans votre bureau, il y a une grande chaise, votre ordinateur et une machine à café. Il y a aussi une tasse avec le nom de l’entreprise. Le midi, nous pouvons aller au restaurant de l’entreprise. À demain !",
+      "source_sha256": "2ca095a5aac8432ea594c4dcd416a9e2fc0a4e0b1b7b5e70869102b86eecec9d",
+      "semantic_sha256": "2f5773e5969aa339e9f8f44f973acdb356cc272faacecb354e477d03a20ea6b5",
+      "question": {
+        "enonce": "Où peut-on manger à midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au restaurant de l'entreprise",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la cantine de l'école",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Chez Rebecca",
+            "correct": false
+          }
+        ],
+        "written_model": "Au restaurant de l'entreprise"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_72.mp3",
+      "audio_sha256": "e47f213658edb2297dd45f43ff23914dd46fd80fd29b6abff68fe60278a170bb",
+      "image_ids": [
+        "co306-restaurant-entreprise-dessine",
+        "retained-20261107-9ffe4cb56ad8",
+        "co306-maison-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-entreprise-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+      ],
+      "image_sha256": [
+        "688f167b2c37ad6be698cd9e6cce937732a8c8ee33f4db3b27095ee800210266",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+      ],
+      "reason": "Rebecca précise qu’à midi on peut aller au restaurant de l’entreprise, le jour de l’arrivée dans les bureaux.",
+      "visual_review": "Restaurant d’entreprise avec espace de restauration collective, cantine d’école et domicile. La scène du restaurant illustre la catégorie sans attribuer les visages dessinés à Rebecca ou aux nouveaux salariés.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Manon. Samedi je t’invite à un pique-nique à la campagne. Qu’en dis-tu ? On y va en vélo avec Léo. Mets un vieux jean et de vieilles baskets. Apporte une bouteille d’eau. Moi, je pense aux sandwichs et Léo apporte des fruits. Rendez-vous à l’arrêt de bus.",
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "6fde7d3dc1f2566778b43a984cbba286971d40e93197fbd1f276d40a6b194167",
+      "question": {
+        "enonce": "Où les amis ont-ils rendez-vous ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À l’arrêt de bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la gare",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant le collège",
+            "correct": false
+          }
+        ],
+        "written_model": "À l’arrêt de bus"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-002-01.mp3",
+      "audio_sha256": "40b684f1d3edebf63f98ef948f0edbebadd4125c7edb560c60d61720f34ccfbd",
+      "image_ids": [
+        "co306-arret-bus-dessine",
+        "qcm-a1-gare-facade",
+        "qcm-a1-college-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "image_sha256": [
+        "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+      ],
+      "reason": "Manon propose un pique-nique à vélo avec Léo mais fixe le rendez-vous à l’arrêt de bus.",
+      "visual_review": "Arrêt de bus, façade de gare et collège. Le lieu de rencontre n’est pas confondu avec le moyen de transport du pique-nique ; le bus dessiné n’est pas présenté comme un trajet effectivement pris.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-004-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour Simon. Tu es libre le samedi 22 ? Avec ma famille nous fêtons les 18 ans de ma sœur Léa. Tu es invité à manger le gâteau d’anniversaire à 14h30 chez moi. Ses amis apportent de la musique pour danser. Nous t’attendons tous. Appelle-moi pour confirmer avant jeudi.",
+      "source_sha256": "162ca3640d0658d0fac7cbe38f408aacbdc0f586f21c253dbdda526b790f4671",
+      "semantic_sha256": "dfdeb6e82b75a508041f3328b6cc140eb1b49ba2004a418b5d621ed0a9f3e43b",
+      "question": {
+        "enonce": "Où la fête a-t-elle lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez la personne qui appelle",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans un restaurant",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans une salle des fêtes",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez la personne qui appelle"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-004-01.mp3",
+      "audio_sha256": "a95c13766272c5a5e0de3f44894f30d4830db20d3d8cae2fbe73782fa50d34c0",
+      "image_ids": [
+        "co306-maison-dessine",
+        "co306-restaurant-dessine",
+        "co306-grande-salle-fetes-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "a648cf3001b4fd547a37bb5d9b7409f169078aaae887e6ca08e5ce85c07301ac"
+      ],
+      "reason": "L’invitation pour les dix-huit ans de Léa donne rendez-vous chez la personne qui appelle à 14 h 30.",
+      "visual_review": "Domicile, restaurant et salle des fêtes. Les lieux sont des catégories de réponses, sans représentation du domicile réel ni des personnes de la famille.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-025-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Zoé, j’ai besoin d’un cadeau pour ce soir à 20h00. On fête mon père. Je cherche une belle écharpe. Tu as du temps pour venir avec moi chez Accessory ? Tu peux apporter ta carte pour avoir une réduction ? On s’attend à 17h00 devant la pharmacie de rue Lagrange.",
+      "source_sha256": "93dd3019e70c1f5838510181a603ef1bc393b41d6565fbfa1121b7365e141e0e",
+      "semantic_sha256": "95e0b8ebd4beaf22216fc3e79c9a63b0a98d2a344a9f6e0f1ba588fab4ff6f26",
+      "question": {
+        "enonce": "Où le rendez-vous est-il prévu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Devant la pharmacie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Devant la boulangerie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant la bibliothèque",
+            "correct": false
+          }
+        ],
+        "written_model": "Devant la pharmacie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-025-01.mp3",
+      "audio_sha256": "81d5119bcd0e266667b83324f0eed8ea2e03e926cbd1878d931557b4965a15f1",
+      "image_ids": [
+        "qcm-a1-pharmacie-facade",
+        "qcm-a1-boulangerie-facade",
+        "qcm-a1-bibliotheque-entree"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-boulangerie-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png"
+      ],
+      "image_sha256": [
+        "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9",
+        "2a469d611af68ec1b5300639e533b862bc515f7aa6194602bc6d06fd25383ca6",
+        "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e"
+      ],
+      "reason": "Zoé fixe le rendez-vous à 17 h devant la pharmacie de la rue Lagrange pour aller acheter le cadeau de son père.",
+      "visual_review": "Trois façades extérieures : pharmacie, boulangerie et bibliothèque. La pharmacie n’est pas remplacée par un comptoir intérieur ; aucune de ces façades n’est présentée comme un bâtiment réel de la rue citée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-030-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+      "source_sha256": "38adc2d35d30f00958f831b3e7e87042664797497dbce53f43f271b8a0daa5bf",
+      "semantic_sha256": "a3a35ddff80b97e94b053989b8f85e1dec70404f1dc5154801433541fd8b31ce",
+      "question": {
+        "enonce": "Où l’élève mange-t-il cette semaine ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez lui",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au self",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au restaurant",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez lui"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+      "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+      "image_ids": [
+        "co306-maison-dessine",
+        "retained-20261107-9ffe4cb56ad8",
+        "co306-restaurant-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "reason": "L’élève explique rentrer chez lui cette semaine, sa mère étant en vacances ; il ne mange donc pas au self.",
+      "visual_review": "Domicile, self avec comptoir et restaurant avec tables dressées. Le contraste entre l’habitude évoquée par la question et le choix de cette semaine est conservé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-036-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est moi ! Demain on part pour Chamonix à 7h00. On annonce une belle journée sur les pistes et skier avec le soleil c’est fantastique ! Pense à apporter tes gants, ton masque de ski et ton casque. Pour déjeuner j’apporte des sandwichs pour nous deux. Rendez-vous à la gare à 6h45.",
+      "source_sha256": "72dece5739ac886c7e3e4fb00ca413ccb2e0165492d646a0713ed0e87e55a259",
+      "semantic_sha256": "51f2837ae39c9ff5cb9e2a9b05873d3e27b8d812498c28efb27b1d42c077acde",
+      "question": {
+        "enonce": "Où le rendez-vous est-il fixé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la gare",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À l’arrêt de bus",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Devant le collège",
+            "correct": false
+          }
+        ],
+        "written_model": "À la gare"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-036-01.mp3",
+      "audio_sha256": "79b6a76ab44b0f54af8c6e98989af54e05e8ad4b73e0b1e6776dd2b153e54458",
+      "image_ids": [
+        "qcm-a1-gare-facade",
+        "co306-arret-bus-dessine",
+        "qcm-a1-college-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "image_sha256": [
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+        "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+      ],
+      "reason": "Le départ pour Chamonix est à 7 h et le rendez-vous à la gare à 6 h 45.",
+      "visual_review": "Gare, arrêt de bus avec abri et collège vu de l’extérieur. Les horaires et le lieu sont conservés dans le texte ; aucun horaire n’est ajouté aux façades.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous aimez lire ?\nAllez-vous à l’école demain ?\nPourquoi prenez-vous le bus ?\nEst-ce que vous mangez au self à midi ?\nOù achetez-vous des fruits ?\nAimez-vous la mer ?\nEst-ce que vous connaissez Paris ?\nVous habitez à la campagne ?\nEst-ce que vous avez un vélo ?\nVous faites du sport ?",
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "2aab280c0b32572fd852994622d1c3787f0b323269a2a73ccbe5851197494687",
+      "question": {
+        "enonce": "Dans quel lieu demande-t-on à la personne si elle mange à midi ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au self",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au restaurant",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la maison",
+            "correct": false
+          }
+        ],
+        "written_model": "Au self"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
+      "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
+      "image_ids": [
+        "retained-20261107-9ffe4cb56ad8",
+        "co306-restaurant-dessine",
+        "co306-maison-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+      ],
+      "image_sha256": [
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+      ],
+      "reason": "La liste comporte la question « Est-ce que vous mangez au self à midi ? ». Le lieu nommé est le self.",
+      "visual_review": "Self, restaurant et domicile. Le support est une liste de questions, pas le récit d’un repas effectivement pris au self ; les images désignent les lieux des propositions.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-049-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Tchao Anton , c’est Alexandre. Jeudi on a une interrogation. On révise ensemble ? Mercredi à la sortie du collège on va manger un sandwich à la boulangerie près de la bibliothèque. Après on va à la bibliothèque où on peut travailler jusqu’à 18h00. Pense à prendre ton cahier à spirale et moi j’apporte mon ordinateur.",
+      "source_sha256": "e3f12f074ceadf3550957b97a474b0f9ba41989f02a8924d144407efdf5d888f",
+      "semantic_sha256": "9bc1d3291a612abfb0aa38569322d6717895ce0821ee0903c7daab85a20cd0c2",
+      "question": {
+        "enonce": "Où les amis vont-ils travailler ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la bibliothèque",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Chez Alexandre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au collège",
+            "correct": false
+          }
+        ],
+        "written_model": "À la bibliothèque"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-01-01.mp3",
+      "audio_sha256": "f351fd6715c6dca42b7704e10ec6252ca5bb1485daa3bfc5c3fee44198472dc5",
+      "image_ids": [
+        "co306-bibliotheque-dessine",
+        "co306-maison-dessine",
+        "qcm-a1-college-facade"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "image_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+      ],
+      "reason": "Alexandre propose de manger à la boulangerie puis de travailler à la bibliothèque jusqu’à 18 h.",
+      "visual_review": "Bibliothèque, domicile et collège. La révision est distinguée du repas précédent et de la sortie du collège ; aucune adresse d’Alexandre n’est inventée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-03-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est André ! Le site de la mairie annonce une entrée gratuite demain à 11h00 à la piscine communale. Tu viens avec moi ? Prends ton maillot de bain. Les profs présentent les cours. Moi je veux faire de l’aquabike. Rendez-vous devant le théâtre à 10h30.",
+      "source_sha256": "cd9a827a9ede2086903f88323b6601232b100abddf647f43db05d830eb160c27",
+      "semantic_sha256": "9b836cd13ec053452b9fd22d6213714662020c77fe3c380d9e462e84fbff5276",
+      "question": {
+        "enonce": "Quel lieu peut-on découvrir gratuitement ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La piscine communale",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le stade municipal",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le gymnase du collège",
+            "correct": false
+          }
+        ],
+        "written_model": "La piscine communale"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-03-01.mp3",
+      "audio_sha256": "498c4db6f2fd0967fb5b63c349b2556d8ee1dc10440203d7a02e96cda1482f80",
+      "image_ids": [
+        "co306-piscine-dessine",
+        "qcm-a1-match-stade",
+        "co306-gymnase-municipal-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+      ],
+      "image_sha256": [
+        "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456",
+        "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961",
+        "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4"
+      ],
+      "reason": "André annonce une entrée gratuite à la piscine communale, avec présentation des cours. Le rendez-vous devant le théâtre est distinct.",
+      "visual_review": "Piscine avec bassin, stade avec terrain et gymnase intérieur. L’image identifie l’équipement sportif ; elle n’affiche pas de gratuité, de tarif ou d’horaire inventé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-03-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "C’est Florent. Samedi 3 juillet je fête la fin du championnat de foot et je t’invite avec tous nos copains. Rendez-vous chez moi à 19h30! On regarde un match de l’équipe de France et 21h30 on mange des pizzas. Si tu veux, apporte des biscuits.",
+      "source_sha256": "2c0cf62aced8cebaa00423e3526291ac91839714fe34db6517c83b4876c77821",
+      "semantic_sha256": "34a6ad84bdc87a0433d12dcc508082f20522da81acb8482ba603069ff13a57e6",
+      "question": {
+        "enonce": "Où la fête aura-t-elle lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Chez Florent",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au stade",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au restaurant",
+            "correct": false
+          }
+        ],
+        "written_model": "Chez Florent"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-03-01.mp3",
+      "audio_sha256": "c57f5fb490dd8c37c0f28c9d2068f3e26c27c326eb9c24057ad2af7e076c7ad3",
+      "image_ids": [
+        "co306-maison-dessine",
+        "qcm-a1-match-stade",
+        "co306-restaurant-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "reason": "Florent invite ses amis chez lui pour fêter la fin du championnat et regarder un match ; le stade est lié au sport évoqué.",
+      "visual_review": "Domicile, stade et restaurant. Le lieu de la fête n’est pas confondu avec celui d’un match ; aucune maison n’est attribuée comme adresse réelle de Florent.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-04-04#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+      "source_sha256": "cbb64e636c4a5d8f0c7a504bbe1b13db9111450ceec91d46707e75c24bca3b67",
+      "semantic_sha256": "6a8401260616272a62ced1f6bf42dc111a8552b832fa8d241e8f9438120f9cf5",
+      "question": {
+        "enonce": "Dans quel lieu cherche-t-il ses affaires ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au vestiaire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la cantine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la bibliothèque",
+            "correct": false
+          }
+        ],
+        "written_model": "Au vestiaire"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+      "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+      "image_ids": [
+        "extension573-vestiaires",
+        "retained-20261107-9ffe4cb56ad8",
+        "co306-bibliotheque-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-vestiaires.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+      ],
+      "image_sha256": [
+        "a97f93af31ffa5e0df8d9579162d5f16ba027e8d2fcf647539f666ade4cea9d4",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+      ],
+      "reason": "L’élève cherche ses affaires au vestiaire ; le dialogue indique ensuite de regarder sous le blouson bleu.",
+      "visual_review": "Vestiaire avec casiers et bancs, cantine et bibliothèque. La question porte sur le lieu de recherche ; la vue générique du vestiaire n’est pas présentée comme une reconstitution de la cachette du sac.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ],
+  "rejected_generation_details": [
+    {
+      "id": "qcm-a1-musee-facade",
+      "source_png": "/workspace/generated_images/exec-9fcc689a-a21d-40bf-b595-e10a9d865626.png",
+      "sha256": "922cfb70b70c72b64afe36b70951c552e5ca5e124ea42c9b264e429e99afae02",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "reason": "Cadrage trop serré, côtés du musée coupés.",
+      "integrated": false
+    },
+    {
+      "id": "qcm-a1-college-facade",
+      "source_png": "/workspace/generated_images/exec-b8afc70f-5618-48b0-a4eb-84dafa5035b2.png",
+      "sha256": "a284c0706d082f23f77d15f3432bcef95c0a1410045f9e0071396a3c03124f12",
+      "dimensions": [
+        1447,
+        1087
+      ],
+      "reason": "Format natif 1447 × 1087, rapport 4:3 inexact.",
+      "integrated": false
+    }
+  ]
+}

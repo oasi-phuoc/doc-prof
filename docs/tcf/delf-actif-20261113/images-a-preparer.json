@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 329,
+      "active_reviewed_trio": 339,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 417,
+      "candidate_visual_review": 407,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 193,
+        "active_reviewed_trio": 203,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 69,
+        "candidate_visual_review": 59,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -4528,8 +4528,8 @@
       "semantic_sha256": "6fde7d3dc1f2566778b43a984cbba286971d40e93197fbd1f276d40a6b194167",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-002-01.mp3",
       "audio_sha256": "40b684f1d3edebf63f98ef948f0edbebadd4125c7edb560c60d61720f34ccfbd",
-      "status": "candidate_visual_review",
-      "reason": "Abribus, gare et collège doivent être identifiables ; le bus sert au rendez-vous même si le déplacement prévu est à vélo.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -4565,13 +4565,36 @@
           "id": "c",
           "label": "Devant le collège",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+              "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d",
+              "label": "Devant le collège",
+              "visual_review_required": true
+            }
+          ],
           "asset": "8aa66f91ec2f292a",
           "brief": "Représenter entièrement « Devant le collège » pour « Où les amis ont-ils rendez-vous ? ». Vérifier la transcription du support tcf-delf-actif-a1-002-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Abribus, gare et collège doivent être identifiables ; le bus sert au rendez-vous même si le déplacement prévu est à vélo."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+          "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+          "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+          "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -4589,6 +4612,10 @@
         "evidence_quote": "Rendez-vous à l’arrêt de bus",
         "semantic_sha256": "6fde7d3dc1f2566778b43a984cbba286971d40e93197fbd1f276d40a6b194167",
         "note": "Abribus, gare et collège doivent être identifiables ; le bus sert au rendez-vous même si le déplacement prévu est à vélo."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Arrêt de bus, façade de gare et collège. Le lieu de rencontre n’est pas confondu avec le moyen de transport du pique-nique ; le bus dessiné n’est pas présenté comme un trajet effectivement pris."
       }
     },
     {
@@ -5219,8 +5246,8 @@
       "semantic_sha256": "dfdeb6e82b75a508041f3328b6cc140eb1b49ba2004a418b5d621ed0a9f3e43b",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-004-01.mp3",
       "audio_sha256": "a95c13766272c5a5e0de3f44894f30d4830db20d3d8cae2fbe73782fa50d34c0",
-      "status": "candidate_visual_review",
-      "reason": "Domicile privé, restaurant et salle de fête sont distincts ; ne pas inventer un portrait du propriétaire.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -5254,8 +5281,24 @@
           "brief": "Représenter entièrement « Dans une salle des fêtes » pour « Où la fête a-t-elle lieu ? ». Vérifier la transcription du support tcf-delf-actif-a1-004-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Domicile privé, restaurant et salle de fête sont distincts ; ne pas inventer un portrait du propriétaire."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "sha256": "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+          "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-grande-salle-fetes-dessine.webp",
+          "sha256": "a648cf3001b4fd547a37bb5d9b7409f169078aaae887e6ca08e5ce85c07301ac"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -5273,6 +5316,10 @@
         "evidence_quote": "chez moi",
         "semantic_sha256": "dfdeb6e82b75a508041f3328b6cc140eb1b49ba2004a418b5d621ed0a9f3e43b",
         "note": "Domicile privé, restaurant et salle de fête sont distincts ; ne pas inventer un portrait du propriétaire."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Domicile, restaurant et salle des fêtes. Les lieux sont des catégories de réponses, sans représentation du domicile réel ni des personnes de la famille."
       }
     },
     {
@@ -14264,8 +14311,8 @@
       "semantic_sha256": "95e0b8ebd4beaf22216fc3e79c9a63b0a98d2a344a9f6e0f1ba588fab4ff6f26",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-025-01.mp3",
       "audio_sha256": "81d5119bcd0e266667b83324f0eed8ea2e03e926cbd1878d931557b4965a15f1",
-      "status": "candidate_visual_review",
-      "reason": "Pharmacie, boulangerie et bibliothèque ; le nom de la rue n’est pas l’objet des trois choix.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -14286,7 +14333,14 @@
           "id": "b",
           "label": "Devant la boulangerie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-boulangerie-facade.png",
+              "sha256": "2a469d611af68ec1b5300639e533b862bc515f7aa6194602bc6d06fd25383ca6",
+              "label": "Devant la boulangerie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "a05db7672c469a68",
           "brief": "Représenter entièrement « Devant la boulangerie » pour « Où le rendez-vous est-il prévu ? ». Vérifier la transcription du support tcf-delf-actif-a1-025-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Pharmacie, boulangerie et bibliothèque ; le nom de la rue n’est pas l’objet des trois choix."
         },
@@ -14299,8 +14353,24 @@
           "brief": "Représenter entièrement « Devant la bibliothèque » pour « Où le rendez-vous est-il prévu ? ». Vérifier la transcription du support tcf-delf-actif-a1-025-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Pharmacie, boulangerie et bibliothèque ; le nom de la rue n’est pas l’objet des trois choix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+          "sha256": "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-boulangerie-facade.png",
+          "sha256": "2a469d611af68ec1b5300639e533b862bc515f7aa6194602bc6d06fd25383ca6"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bibliotheque-entree.png",
+          "sha256": "66d034f4c999f2e69a23093ee1db17dd8c63a642cbb97aa5c05f5a15474d5d9e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -14318,6 +14388,10 @@
         "evidence_quote": "devant la pharmacie",
         "semantic_sha256": "95e0b8ebd4beaf22216fc3e79c9a63b0a98d2a344a9f6e0f1ba588fab4ff6f26",
         "note": "Pharmacie, boulangerie et bibliothèque ; le nom de la rue n’est pas l’objet des trois choix."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Trois façades extérieures : pharmacie, boulangerie et bibliothèque. La pharmacie n’est pas remplacée par un comptoir intérieur ; aucune de ces façades n’est présentée comme un bâtiment réel de la rue citée."
       }
     },
     {
@@ -16570,8 +16644,8 @@
       "semantic_sha256": "a3a35ddff80b97e94b053989b8f85e1dec70404f1dc5154801433541fd8b31ce",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
       "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
-      "status": "candidate_visual_review",
-      "reason": "Domicile, self et restaurant ; le premier choix peut être un intérieur privé générique, sans attribuer un portrait à l’élève.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -16605,8 +16679,24 @@
           "brief": "Représenter entièrement « Au restaurant » pour « Où l’élève mange-t-il cette semaine ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Domicile, self et restaurant ; le premier choix peut être un intérieur privé générique, sans attribuer un portrait à l’élève."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "sha256": "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/cantine.webp",
+          "sha256": "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+          "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -16624,6 +16714,10 @@
         "evidence_quote": "cette semaine je rentre chez moi",
         "semantic_sha256": "a3a35ddff80b97e94b053989b8f85e1dec70404f1dc5154801433541fd8b31ce",
         "note": "Domicile, self et restaurant ; le premier choix peut être un intérieur privé générique, sans attribuer un portrait à l’élève."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Domicile, self avec comptoir et restaurant avec tables dressées. Le contraste entre l’habitude évoquée par la question et le choix de cette semaine est conservé."
       }
     },
     {
@@ -21248,8 +21342,8 @@
       "semantic_sha256": "51f2837ae39c9ff5cb9e2a9b05873d3e27b8d812498c28efb27b1d42c077acde",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-036-01.mp3",
       "audio_sha256": "79b6a76ab44b0f54af8c6e98989af54e05e8ad4b73e0b1e6776dd2b153e54458",
-      "status": "candidate_visual_review",
-      "reason": "Gare, arrêt de bus et collège ; la première heure de départ n’est pas le lieu du rendez-vous.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -21285,13 +21379,36 @@
           "id": "c",
           "label": "Devant le collège",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+              "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d",
+              "label": "Devant le collège",
+              "visual_review_required": true
+            }
+          ],
           "asset": "8aa66f91ec2f292a",
           "brief": "Représenter entièrement « Devant le collège » pour « Où le rendez-vous est-il fixé ? ». Vérifier la transcription du support tcf-delf-actif-a1-036-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Gare, arrêt de bus et collège ; la première heure de départ n’est pas le lieu du rendez-vous."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+          "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+          "sha256": "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+          "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21309,6 +21426,10 @@
         "evidence_quote": "Rendez-vous à la gare",
         "semantic_sha256": "51f2837ae39c9ff5cb9e2a9b05873d3e27b8d812498c28efb27b1d42c077acde",
         "note": "Gare, arrêt de bus et collège ; la première heure de départ n’est pas le lieu du rendez-vous."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Gare, arrêt de bus avec abri et collège vu de l’extérieur. Les horaires et le lieu sont conservés dans le texte ; aucun horaire n’est ajouté aux façades."
       }
     },
     {
@@ -25624,8 +25745,8 @@
       "semantic_sha256": "2aab280c0b32572fd852994622d1c3787f0b323269a2a73ccbe5851197494687",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-046.mp3",
       "audio_sha256": "876f7ae5514149005ff19465c2d7f1f40f156bc1374bd15d31af9aa330672b5b",
-      "status": "candidate_visual_review",
-      "reason": "Self avec comptoir de service, restaurant et repas à domicile ; la question porte sur le lieu cité, pas sur une réponse oui/non.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -25666,8 +25787,24 @@
           "brief": "Représenter entièrement « À la maison » pour « Dans quel lieu demande-t-on à la personne si elle mange à midi ? ». Vérifier la transcription du support tcf-delf-actif-a1-046 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Self avec comptoir de service, restaurant et repas à domicile ; la question porte sur le lieu cité, pas sur une réponse oui/non."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/cantine.webp",
+          "sha256": "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+          "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "sha256": "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25685,6 +25822,10 @@
         "evidence_quote": "vous mangez au self à midi",
         "semantic_sha256": "2aab280c0b32572fd852994622d1c3787f0b323269a2a73ccbe5851197494687",
         "note": "Self avec comptoir de service, restaurant et repas à domicile ; la question porte sur le lieu cité, pas sur une réponse oui/non."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Self, restaurant et domicile. Le support est une liste de questions, pas le récit d’un repas effectivement pris au self ; les images désignent les lieux des propositions."
       }
     },
     {
@@ -27559,8 +27700,8 @@
       "semantic_sha256": "9bc1d3291a612abfb0aa38569322d6717895ce0821ee0903c7daab85a20cd0c2",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-01-01.mp3",
       "audio_sha256": "f351fd6715c6dca42b7704e10ec6252ca5bb1485daa3bfc5c3fee44198472dc5",
-      "status": "candidate_visual_review",
-      "reason": "Bibliothèque, domicile et collège ; la boulangerie sert au repas avant le travail, pas au lieu de révision.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -27607,8 +27748,24 @@
           "brief": "Représenter entièrement « Au collège » pour « Où les amis vont-ils travailler ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bibliothèque, domicile et collège ; la boulangerie sert au repas avant le travail, pas au lieu de révision."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "sha256": "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+          "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -27626,6 +27783,10 @@
         "evidence_quote": "à la bibliothèque où on peut travailler",
         "semantic_sha256": "9bc1d3291a612abfb0aa38569322d6717895ce0821ee0903c7daab85a20cd0c2",
         "note": "Bibliothèque, domicile et collège ; la boulangerie sert au repas avant le travail, pas au lieu de révision."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Bibliothèque, domicile et collège. La révision est distinguée du repas précédent et de la sortie du collège ; aucune adresse d’Alexandre n’est inventée."
       }
     },
     {
@@ -30401,8 +30562,8 @@
       "semantic_sha256": "9b836cd13ec053452b9fd22d6213714662020c77fe3c380d9e462e84fbff5276",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-03-01.mp3",
       "audio_sha256": "498c4db6f2fd0967fb5b63c349b2556d8ee1dc10440203d7a02e96cda1482f80",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -30429,8 +30590,24 @@
           "brief": "Représenter entièrement « Le gymnase du collège » pour « Quel lieu peut-on découvrir gratuitement ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "sha256": "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+          "sha256": "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -30441,7 +30618,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Piscine avec bassin, stade avec terrain et gymnase intérieur. L’image identifie l’équipement sportif ; elle n’affiche pas de gratuité, de tarif ou d’horaire inventé."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-050-03-01#2",
@@ -34935,8 +35116,8 @@
       "semantic_sha256": "34a6ad84bdc87a0433d12dcc508082f20522da81acb8482ba603069ff13a57e6",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-03-01.mp3",
       "audio_sha256": "c57f5fb490dd8c37c0f28c9d2068f3e26c27c326eb9c24057ad2af7e076c7ad3",
-      "status": "candidate_visual_review",
-      "reason": "Domicile privé, stade et restaurant ; le logement peut être générique car aucune autre maison n’est proposée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -34970,8 +35151,24 @@
           "brief": "Représenter entièrement « Au restaurant » pour « Où la fête aura-t-elle lieu ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Domicile privé, stade et restaurant ; le logement peut être générique car aucune autre maison n’est proposée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+          "sha256": "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+          "sha256": "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34989,6 +35186,10 @@
         "evidence_quote": "Rendez-vous chez moi",
         "semantic_sha256": "34a6ad84bdc87a0433d12dcc508082f20522da81acb8482ba603069ff13a57e6",
         "note": "Domicile privé, stade et restaurant ; le logement peut être générique car aucune autre maison n’est proposée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Domicile, stade et restaurant. Le lieu de la fête n’est pas confondu avec celui d’un match ; aucune maison n’est attribuée comme adresse réelle de Florent."
       }
     },
     {
@@ -35850,8 +36051,8 @@
       "semantic_sha256": "6a8401260616272a62ced1f6bf42dc111a8552b832fa8d241e8f9438120f9cf5",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
       "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
-      "status": "candidate_visual_review",
-      "reason": "Vestiaire, cantine et bibliothèque ; mobilier et fonction distincts.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -35892,8 +36093,24 @@
           "brief": "Représenter entièrement « À la bibliothèque » pour « Dans quel lieu cherche-t-il ses affaires ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Vestiaire, cantine et bibliothèque ; mobilier et fonction distincts."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-vestiaires.webp",
+          "sha256": "a97f93af31ffa5e0df8d9579162d5f16ba027e8d2fcf647539f666ade4cea9d4"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/cantine.webp",
+          "sha256": "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -35911,6 +36128,10 @@
         "evidence_quote": "au vestiaire",
         "semantic_sha256": "6a8401260616272a62ced1f6bf42dc111a8552b832fa8d241e8f9438120f9cf5",
         "note": "Vestiaire, cantine et bibliothèque ; mobilier et fonction distincts."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-ecole-rendezvous-20261116.json",
+        "note": "Vestiaire avec casiers et bancs, cantine et bibliothèque. La question porte sur le lieu de recherche ; la vue générique du vestiaire n’est pas présentée comme une reconstitution de la cachette du sac."
       }
     },
     {
@@ -58495,7 +58716,14 @@
           "id": "a",
           "label": "Devant le musée",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+              "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+              "label": "Devant le musée",
+              "visual_review_required": true
+            }
+          ],
           "asset": "5eda5d7af34d8d3f",
           "brief": "Représenter entièrement « Devant le musée » pour « Où ce transport la dépose-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-035-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Le bus dépose devant le musée, pas près de la gare de départ ; montrer véhicule et repère pour les positions proposées."
         },
@@ -113550,7 +113778,14 @@
     {
       "id": "8aa66f91ec2f292a",
       "label": "Devant le collège",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+          "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d",
+          "label": "Devant le collège",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-002-01#5",
@@ -116952,7 +117187,14 @@
     {
       "id": "a05db7672c469a68",
       "label": "Devant la boulangerie",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-boulangerie-facade.png",
+          "sha256": "2a469d611af68ec1b5300639e533b862bc515f7aa6194602bc6d06fd25383ca6",
+          "label": "Devant la boulangerie",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-025-01#4",
@@ -127229,7 +127471,14 @@
     {
       "id": "5eda5d7af34d8d3f",
       "label": "Devant le musée",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+          "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27",
+          "label": "Devant le musée",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-035-04#3",
