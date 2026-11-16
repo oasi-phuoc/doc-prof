@@ -154,8 +154,39 @@
     "loading_budgets": {
       "command": "node scripts/interactive-budgets.mjs",
       "exit_code": 0,
-      "game_gzip_bytes": 3131259,
-      "game_maximum_gzip_bytes": 3145728
+      "game_gzip_bytes": 3132952,
+      "game_maximum_gzip_bytes": 3145728,
+      "pre_merge_game_gzip_bytes": 3131259
     }
+  },
+  "post_merge_validation": {
+    "upstream_commit": "85d3b123f90671609062a1af2aef3ce501716ee3",
+    "tcf_and_catalogue_files_unchanged_vs_local_commit": "93673a03",
+    "only_conflict": "docs/interactive/performance-results.json",
+    "resolution": "Rapport généré recalculé sur le code fusionné, sans modifier les seuils.",
+    "checks": [
+      {
+        "command": "npm run prebuild",
+        "exit_code": 0,
+        "game_types": 696
+      },
+      {
+        "command": "node --test tests/interactive/fraction-figures.test.mjs",
+        "exit_code": 0
+      },
+      {
+        "command": "npx tsc -b",
+        "exit_code": 0
+      },
+      {
+        "command": "npx vite build --manifest",
+        "exit_code": 0
+      },
+      {
+        "command": "node scripts/interactive-budgets.mjs",
+        "exit_code": 0
+      }
+    ],
+    "browser_results_scope": "Contrôlés avant fusion ; les banques TCF, images, métadonnées et catalogues concernés sont identiques après fusion."
   }
 }

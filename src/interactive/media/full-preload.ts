@@ -5,6 +5,7 @@ import { aborted, decodeAudio, decodeImage } from './decode'
 import { acceptableMime, mediaUrl } from './policy'
 import type { MediaAsset, MediaPolicy, MediaProbeDependencies, PublicMediaPlan } from './types'
 import type { MediaResolver } from './prepared-context'
+import { loadFractionDrawing } from './fraction-drawing'
 
 export class PreloadError extends Error {}
 export const MAX_PRELOAD_BYTES = 128 * 1024 * 1024
@@ -28,6 +29,7 @@ export function preloadIdentity(plan: PublicMediaPlan, policy: MediaPolicy): str
   return JSON.stringify([
     sessionAssets(plan,policy).map(({url,kind,conflictingKinds}) => [url,kind,!!conflictingKinds]).sort((a,b) => String(a[0]).localeCompare(String(b[0]))),
     [...new Set(plan.questions.flatMap(q => q.grammarImages?.map(image => JSON.stringify(image)) ?? []))].sort(),
+    plan.questions.some(question => question.fractionFigure),
   ])
 }
 function abortable<T>(promise: Promise<T>, signal: AbortSignal): Promise<T> {
@@ -66,6 +68,7 @@ export async function preloadSession(plan: PublicMediaPlan, options: Options, si
   const assets=sessionAssets(plan,options), grammar=plan.questions.flatMap(q=>q.grammarImages??[])
   if (assets.length>1024 || assets.some(asset=>asset.conflictingKinds||!mediaUrl(asset.url,options)) || grammar.some(image=>!validGrammarImage(image))) throw new PreloadError('Certains médias ne peuvent pas être préparés. Vérifiez la sélection et les références des images.')
   if (signal.aborted) throw aborted()
+  if (plan.questions.some(question => question.fractionFigure)) await abortable(loadFractionDrawing(), signal)
   const deps=dependencies??{fetch:globalThis.fetch.bind(globalThis),decodeImage,decodeAudio,createUrl:URL.createObjectURL.bind(URL),revokeUrl:URL.revokeObjectURL.bind(URL)}
   const controller=new AbortController(), stop=()=>controller.abort(), urls=new Map<string,string>()
   const dispose=()=>{for(const url of urls.values())deps.revokeUrl(url);urls.clear()}

@@ -19,6 +19,8 @@ La comparaison complète des six banques avec `e9201e79` confirme **seize ajouts
 - Chromium : **32 vues**, couvrant les seize questions sur ordinateur et mobile, avec **96 affichages d’image**. Chargement, proportions, cases du corrigé et bascule Texte/Image vérifiés sans erreur JavaScript. Les trois fonds sont aussi examinés ensemble dans le QCM. Les aperçus isolent les questions et ne remplacent pas les documents CE complets. [Résultats navigateur](trios-aliments-paysages-20261116-browser.json).
 - TypeScript, compilation de production et budgets de chargement réussis.
 
+Le commit de fractions `85d3b123`, publié pendant le push, est conservé par fusion. Le seul conflit portait sur le rapport de performances, recalculé sur le code fusionné sans modifier les seuils. Les tests des figures de fractions, les 696 types de jeu, TypeScript, la compilation et les budgets passent après fusion ; les banques TCF, illustrations et catalogues de ce lot sont inchangés.
+
 ## Reste à faire
 
 - **314 trios historiques** : 127 A1, 164 A2 et 23 B1. Parmi eux, 241 cas de lieux et relations de contexte, 59 concepts complets et 14 types de documents.

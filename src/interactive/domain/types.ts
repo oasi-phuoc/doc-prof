@@ -2,6 +2,7 @@ import type { Figure, FigureDims, PhraseImageClue } from '@/math/types'
 import type { ManualVote } from './votes'
 import type { GrammarImageSupport } from '@/grammaire/curriculum/types'
 import type {ImageStroke,ImageAnnotations} from './image-annotations'
+import type { FractionFigure } from './fraction-figure'
 
 export type PlayMode = 'class' | 'solo'
 export type ChoiceOrderPolicy = 'shuffle' | 'fixed' | 'ascending' | 'pin-last'
@@ -60,6 +61,7 @@ export type Question = {
   grammarCountryGender?: 'masculin' | 'féminin' | 'pluriel'
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }
+  fractionFigure?: FractionFigure
   mode: 'choice' | 'oral' | 'sequence' | 'sorting' | 'memory'
   choices: Choice[]
   choiceOrderPolicy?: ChoiceOrderPolicy

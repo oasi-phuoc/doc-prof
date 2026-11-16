@@ -1,6 +1,6 @@
 {
   "date": "2026-11-16",
-  "scope": "Exact public question reference in the image preparation report, verified against the bundled TCF source and its public audio file; not a credential.",
+  "scope": "Exact public question references verified against bundled TCF banks and their public media; these identifiers are not credentials.",
   "reviewed": [
     {
       "file": "docs/tcf/delf-actif-20261113/images-a-preparer.json",
@@ -12,6 +12,16 @@
       "choice": "c",
       "path": "/lib/audio/tcf/co/delf-actif-a2/a2-043-03-01.mp3",
       "sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5"
+    },
+    {
+      "file": "docs/tcf/plan-images-contextuel-20261106.json",
+      "sceneId": "delf-a1-2022-ce-ex1-invitation#6",
+      "kind": "public-bank-question",
+      "bankSource": "src/tcf/content/a0-a1/ce.json",
+      "bankId": "delf-a1-2022-ce-ex1-invitation",
+      "question": 6,
+      "path": "/lib/images/tcf/ce-art-generated/delf-a1-2022-ce-ex1-invitation.webp",
+      "sha256": "1a3be166cfdc123f66fb26a8773472f59e4313e6307abdc68679d4abd58ca617"
     }
   ]
 }

@@ -5,7 +5,7 @@ if(process.argv.includes('--check')){const current=JSON.parse(await readFile('sr
 const complete=new Set(['jeux','grammaire','tpf','tcf-csc','tcf-cfr','tcm-csc','tcm-cfr'])
 // These generators choose their numerators/denominators independently of the
 // generic integer range. Do not offer a range they cannot honor.
-const fractionTypes=new Set(['fractions-identifier','fractions-equivalentes','fractions-simplifier','fractions-add','fractions-mul','fractions-div'])
+const fractionTypes=new Set(['fractions-identifier','fractions-equivalentes','fractions-simplifier','fractions-add','fractions-mul','fractions-div','tpm-frac-read'])
 const informational=JSON.parse(await readFile('src/interactive/pools/informational-issues.json','utf8'))
 const harmless=reason=>informational.includes(reason)||/^Audio \d+ : activité guidée, car la piste ne permet pas de garantir une seule réponse parmi les propositions\.$/.test(reason)
 const media=value=>typeof value==='string'&&/^\/lib\/.*\.(?:png|webp|jpe?g|svg|mp3|wav|ogg)$/i.test(value)?[value]:Array.isArray(value)?value.flatMap(media):value&&typeof value==='object'?Object.values(value).flatMap(media):[]

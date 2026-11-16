@@ -169,7 +169,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 755,
+    "playableTypes": 757,
     "generationErrors": 8
   },
   "rows": [
@@ -2396,20 +2396,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tpm-frac-read",
-          "reason": "Rendu « fraction-shape » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tpm-frac-read",
-          "reason": "Rendu « fraction-shape » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "fracShape",
@@ -9741,13 +9732,13 @@
       "sourceFixture": [
         {
           "layout": "inline",
-          "prompt": "4/6 = □/18",
-          "answer": "12"
+          "prompt": "2/4 = □/12",
+          "answer": "6"
         },
         {
           "layout": "inline",
-          "prompt": "1/6 = 2/□",
-          "answer": "12"
+          "prompt": "16/20 = □/5",
+          "answer": "4"
         }
       ]
     },
@@ -123063,20 +123054,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tcm-cfr-ex13",
-          "reason": "Rendu « fraction-shape » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tcm-cfr-ex13",
-          "reason": "Rendu « fraction-shape » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "answer",
         "fracShape",

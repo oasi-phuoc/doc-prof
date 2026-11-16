@@ -13,6 +13,7 @@ import { adaptNumeracy } from './numeracy'
 import { verifiedWrittenArithmetic } from './written-arithmetic'
 import { decimalChoices } from './decimal-choices'
 import { verifiedFractions, fractionChoices } from './fractions'
+import { readFractionFigure } from './read-fraction-figure'
 import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
 import { adaptRecognition } from './recognition'
@@ -272,6 +273,18 @@ export function convertRecipe(
               q.choices = entry.choices
               add(q, entry.model, entry.correctId)
             })
+            return
+          }
+          const fractionFigure = readFractionFigure(item, block.exerciseType, deriveSeed({ originalSeed: recipe.seed, sourceKey: base().id, purpose: 'distractors' }))
+          if (fractionFigure) {
+            if ('reason' in fractionFigure) { reject(fractionFigure.reason); return }
+            const q = base()
+            q.prompt = 'Quelle fraction est coloriée ?'
+            q.instruction = 'Observe la figure et choisis la fraction correspondante.'
+            q.fractionFigure = fractionFigure.figure
+            q.choices = fractionFigure.choices
+            q.compatibility = 'assisted'
+            add(q, fractionFigure.model, fractionFigure.correctId)
             return
           }
           const fractions = verifiedFractions(item, block.exerciseType)

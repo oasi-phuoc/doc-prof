@@ -76,3 +76,5 @@ npm run test:interactive:competition-worker
 ```
 
 Les parcours ouvrent un enseignant et deux navigateurs élèves contre le routeur réel en local. Le test Worker utilise `workerd` et le stockage SQLite, vérifie un quiz de 60 questions dépassant 128 Kio et restaure les scores après redémarrage. Ils n’envoient aucune donnée au service de production. Voir [architecture et accès](adr-0021-salles-et-mascottes.md), [résultats navigateur](competition-results.json) et [résultats Worker](competition-worker-results.json).
+
+Pour les [fractions illustrées](adr-0063-lecture-des-fractions-illustrees.md), le Worker doit annoncer `fraction-figures-v1` dans `GET /competition/status`. Si le serveur est ancien, le jeu demande sa mise à jour avant de créer une salle contenant ces figures. Redéployer la version actuelle du Worker existant suffit, sans nouvelle variable Vercel ni nouvelle clé ; cette opération se fait lors de la mise à jour, pas avant chaque partie. Les modes Classe, Solo, duel et défi local sont disponibles indépendamment de cette mise à jour serveur.

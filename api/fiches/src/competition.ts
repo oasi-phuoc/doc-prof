@@ -2,6 +2,7 @@ import { CompetitionError, competitionStep, competitionView, createCompetition, 
 import { validAvatar } from '../../../src/interactive/competition/avatars'
 import type { ShapeId } from '../../../src/interactive/domain/palette'
 import { issueTeacherAccess, verifyTeacherAccess } from './competition-teacher-access'
+import { FRACTION_FIGURE_FEATURE } from '../../../src/interactive/domain/fraction-figure'
 
 export interface CompetitionStorage {
   get<T>(key: string): Promise<T | undefined>
@@ -52,7 +53,7 @@ export async function handleCompetitionRequest(request: Request, env: Competitio
     if (!env.COMPETITION_ROOMS || !env.COMPETITION_HOST_KEY || env.COMPETITION_HOST_KEY.length < 16 || !allowed.length) return respond(json(503, { error: 'Les salles en ligne ne sont pas encore activées sur ce site. Le défi local reste disponible.' }))
     const url = new URL(request.url), parts = url.pathname.replace(/^\/competition\/?/, '').split('/').filter(Boolean)
     if (url.search) throw new CompetitionError('Les identifiants ne doivent pas figurer dans l’adresse.', 400)
-    if (parts.length === 1 && parts[0] === 'status' && request.method === 'GET') return respond(json(200, { available: true }))
+    if (parts.length === 1 && parts[0] === 'status' && request.method === 'GET') return respond(json(200, { available: true, features: [FRACTION_FIGURE_FEATURE] }))
     if (parts[0] !== 'rooms') return respond(json(404, { error: 'Adresse inconnue.' }))
     const gateKind = request.method === 'POST' && parts.length === 1 ? 'create' : request.method === 'POST' && parts[2] === 'join' ? 'join' : null
     if (gateKind) {

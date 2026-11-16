@@ -4,8 +4,9 @@ import { validAvatar, type CompetitionAvatar } from './avatars'
 import { audioIdentity, MAX_AUDIO_PARTS } from '../domain/audio'
 import type { Figure, FigureDims } from '@/math/types'
 import { matchingTextKey } from '../domain/matching'
+import { validFractionFigure } from '../domain/fraction-figure'
 
-export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'wordClassification' | 'matchingGroup' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure'>
+export type CompetitionQuestion = Pick<Question, 'id' | 'prompt' | 'context' | 'numberSequence' | 'wordClassification' | 'matchingGroup' | 'audio' | 'audioParts' | 'images' | 'choices' | 'figure' | 'fractionFigure'>
 export type CompetitionQuiz = { id: string; title: string; items: { question: CompetitionQuestion; correctChoiceId: string; transcript?: string }[] }
 export type CompetitionSettings = { enabled: boolean; seconds: number; feedbackSeconds: number; speedPoints: boolean; showTranscripts?: boolean }
 export type CompetitionPhase = 'lobby' | 'handoff' | 'question' | 'correction' | 'finished'
@@ -88,7 +89,7 @@ export function competitionQuiz(game: Game, origin: string, includeTranscripts =
     if (q.lotoBoard || q.mode !== 'choice' || !correctChoiceId || !q.choices.some((choice) => choice.id === correctChoiceId)) return []
     const transcript = includeTranscripts && q.audio ? game.corrections[q.id]?.transcript?.trim() : undefined
     return [{ correctChoiceId, ...(transcript ? { transcript } : {}), question: { id: q.id, prompt: q.prompt, ...(q.context ? { context: q.context } : {}), ...(q.audio ? { audio: media(q.audio) } : {}), ...(q.audioParts ? { audioParts: q.audioParts.map(media) } : {}),
-      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.matchingGroup ? { matchingGroup: { ...q.matchingGroup } } : {}), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.wordClassification ? { wordClassification: { tokens: [...q.wordClassification.tokens], target: q.wordClassification.target,...(q.wordClassification.joins?{joins:[...q.wordClassification.joins]}:{}),...(q.wordClassification.prefix?{prefix:q.wordClassification.prefix}:{}),...(q.wordClassification.ending?{ending:q.wordClassification.ending}:{}) } } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
+      images: q.images.map(media), choices: q.choices.map((choice) => ({ id: choice.id, text: choice.text, ...(choice.image ? { image: media(choice.image) } : {}) })), ...(q.matchingGroup ? { matchingGroup: { ...q.matchingGroup } } : {}), ...(q.figure ? { figure: structuredClone(q.figure) } : {}), ...(q.fractionFigure ? { fractionFigure: structuredClone(q.fractionFigure) } : {}), ...(q.wordClassification ? { wordClassification: { tokens: [...q.wordClassification.tokens], target: q.wordClassification.target,...(q.wordClassification.joins?{joins:[...q.wordClassification.joins]}:{}),...(q.wordClassification.prefix?{prefix:q.wordClassification.prefix}:{}),...(q.wordClassification.ending?{ending:q.wordClassification.ending}:{}) } } : {}), ...(q.numberSequence ? { numberSequence: { terms: [...q.numberSequence.terms], target: q.numberSequence.target, ...(q.numberSequence.hint ? { hint: q.numberSequence.hint } : {}) } } : {}) } }]
   }) }
 }
 
@@ -124,6 +125,11 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
     if (q.figure !== undefined) {
       figure = parseFigure(q.figure)
     }
+    let fractionFigure: CompetitionQuestion['fractionFigure']
+    if (q.fractionFigure !== undefined) {
+      if (!validFractionFigure(q.fractionFigure)) throw new CompetitionError('Fraction illustrée invalide.', 400)
+      fractionFigure = { kind: q.fractionFigure.kind, colored: [...q.fractionFigure.colored] }
+    }
     const audio = q.audio ? media(q.audio) : undefined
     let audioParts: string[] | undefined
     if (q.audioParts !== undefined) {
@@ -153,7 +159,7 @@ export function parseCompetitionQuiz(value: unknown, mediaOrigins: string[] = []
       matchingGroup = existing ?? {groupId:`m${matchingGroups.size+1}`,number:Number(group.number),total:Number(group.total)}
       matchingGroups.set(group.groupId,matchingGroup)
     }
-    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, ...(entry.transcript !== undefined ? { transcript: (entry.transcript as string).trim() } : {}), question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(wordClassification ? { wordClassification } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
+    return { correctChoiceId: `c${originalChoiceIds.indexOf(entry.correctChoiceId)}`, ...(entry.transcript !== undefined ? { transcript: (entry.transcript as string).trim() } : {}), question: { id: `q${questionIndex + 1}`, prompt: q.prompt, images: q.images.map(media), choices, ...(q.context ? { context: q.context as string } : {}), ...(audio ? { audio } : {}), ...(audioParts ? { audioParts } : {}), ...(figure ? { figure } : {}), ...(fractionFigure ? { fractionFigure } : {}), ...(numberSequence ? { numberSequence } : {}), ...(wordClassification ? { wordClassification } : {}), ...(matchingGroup ? { matchingGroup } : {}) } }
   })
   for (const {groupId} of matchingGroups.values()) {
     const members=items.filter(item=>item.question.matchingGroup?.groupId===groupId)

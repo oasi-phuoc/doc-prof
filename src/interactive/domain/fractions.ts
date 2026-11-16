@@ -93,19 +93,19 @@ export function verifiedFractions(item: MathItem, exerciseType: string): Verifie
 
 /** Every card has a different exact value, including equivalent fractions.
  * Stable rational IDs also allow exact ascending order without float rounding. */
-export function fractionChoices(value: Rational, correctText: string, seed: number, integer = false, distractors: Rational[] = []): { choices: Choice[]; correctId: string } {
+export function fractionChoices(value: Rational, correctText: string, seed: number, integer = false, distractors: Rational[] = [], withinWhole = false): { choices: Choice[]; correctId: string } {
   const n = value.numerator, d = value.denominator
   const candidates = [value, ...distractors, reduced(d, n), reduced(-n, d), reduced(n + 1n, d), reduced(n - 1n, d), reduced(n, d + 1n), d > 1n ? reduced(n, d - 1n) : null, reduced(n + 2n, d), reduced(n - 2n, d)]
   const unique = new Map<string, Rational>()
   for (const candidate of candidates) {
     if (!candidate) continue
     const normalized = reduced(candidate.numerator, candidate.denominator)
-    if (normalized && (value.numerator < 0n || normalized.numerator >= 0n) && (!integer || normalized.denominator === 1n)) unique.set(key(normalized), normalized)
+    if (normalized && (value.numerator < 0n || normalized.numerator >= 0n) && (!integer || normalized.denominator === 1n) && (!withinWhole || normalized.numerator <= normalized.denominator)) unique.set(key(normalized), normalized)
   }
   // Zero or a small integer has fewer nearby distinct nonnegative candidates.
   // Extend only until five wrong answers exist, instead of drawing far offsets.
   for (let offset = 1n; unique.size < 6; offset++) {
-    const candidate = reduced(n + offset * d, d)!
+    const candidate = withinWhole ? reduced(1n, offset + 1n)! : reduced(n + offset * d, d)!
     unique.set(key(candidate), candidate)
   }
   const rng = createRng(seed), correctKey = key(value)

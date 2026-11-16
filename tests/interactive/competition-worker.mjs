@@ -23,6 +23,7 @@ try {
     return { status: response.status, body: await response.json() }
   }
   assert.equal((await request('/status')).body.available, true)
+  assert.ok((await request('/status')).body.features.includes('fraction-figures-v1'))
   const quiz = { id: 'real-runtime', title: 'Durable quiz', items: Array.from({ length: 60 }, (_, i) => ({ question: { id: `source-${i}`, prompt: 'Question '.repeat(300), images: [], choices: [{ id: 'original-yes', text: 'Oui' }, { id: 'original-no', text: 'Non' }] }, correctChoiceId: 'original-yes' })) }
   assert.ok(JSON.stringify(quiz).length > 128 * 1024)
   const settings = { enabled: false, seconds: 30, feedbackSeconds: 10, speedPoints: true }
@@ -83,6 +84,17 @@ try {
   assert.deepEqual(publicWord.question.wordClassification,{tokens:['Le','chat'],target:0})
   assert.equal(publicWord.correctChoiceId,undefined);assert.ok(!JSON.stringify(publicWord).includes('source-det'))
   await request(`/rooms/${wordCode}/host`,{action:'pause'},wordHost)
+  const fractionFigure={kind:'hexagon',colored:[true,false,true,false,false,false]}
+  const fractionQuiz={id:'real-fraction-figure',title:'Fraction illustrée',items:[{question:{id:'source-fraction',prompt:'Quelle fraction est coloriée ?',images:[],fractionFigure,choices:[{id:'source-two',text:'2/6'},{id:'source-three',text:'3/6'}]},correctChoiceId:'source-two'}]}
+  const forgedFraction=structuredClone(fractionQuiz);forgedFraction.items[0].question.fractionFigure.answer='2/6'
+  assert.equal((await request('/rooms',{quiz:forgedFraction,settings},teacherKey)).status,400)
+  const fractionRoom=await request('/rooms',{quiz:fractionQuiz,settings},teacherKey)
+  assert.equal(fractionRoom.status,201,fractionRoom.body.error)
+  const fractionCode=fractionRoom.body.code,fractionHost=fractionRoom.body.token,fractionPlayer=(await request(`/rooms/${fractionCode}/join`,{avatarId:'rabbit'})).body.token
+  await request(`/rooms/${fractionCode}/host`,{action:'start'},fractionHost)
+  const publicFraction=(await request(`/rooms/${fractionCode}`,undefined,fractionPlayer)).body.view
+  assert.deepEqual(publicFraction.question.fractionFigure,fractionFigure);assert.equal(publicFraction.correctChoiceId,undefined);assert.ok(!JSON.stringify(publicFraction).includes('source-two'))
+  await request(`/rooms/${fractionCode}/host`,{action:'pause'},fractionHost)
   await runtime.dispose(); runtime = new Miniflare(convertV4MiniflareOptions(options))
   const restored = await request(`/rooms/${code}`, undefined, first.token)
   assert.equal(restored.status, 200); assert.equal(restored.body.view.paused, true)
@@ -108,10 +120,16 @@ try {
   await request(`/rooms/${wordCode}/host`,{action:'resume'},wordHost)
   const wordAnswer=await request(`/rooms/${wordCode}/answer`,{questionId:'q1',choiceId:'c0'},wordPlayer)
   assert.equal(wordAnswer.status,200);assert.equal(wordAnswer.body.view.players[0].score,1000)
+  const restoredFraction=(await request(`/rooms/${fractionCode}`,undefined,fractionPlayer)).body.view
+  assert.equal(restoredFraction.paused,true);assert.deepEqual(restoredFraction.question.fractionFigure,fractionFigure);assert.equal(restoredFraction.correctChoiceId,undefined)
+  await request(`/rooms/${fractionCode}/host`,{action:'resume'},fractionHost)
+  const fractionAnswer=await request(`/rooms/${fractionCode}/answer`,{questionId:'q1',choiceId:'c0'},fractionPlayer)
+  assert.equal(fractionAnswer.status,200);assert.equal(fractionAnswer.body.view.players[0].score,1000)
   const report = { runtime: 'real workerd through Miniflare, SQLite-backed Durable Objects', workerBytes: (await stat(path.join(compiled, 'index.js'))).size,
     quiz: '60 questions, serialized content larger than 128 KiB; bounded atomic KV chunks accepted by the real runtime', authority: 'teacher key and room capabilities; learner cannot control host; original source IDs and future keys absent from learner view', grading: '1000 and 0 points derived by server', restart: 'new workerd instance restores quiz, capabilities, pause, answer key and scores from durable storage', matching:'Three-pair group retained after restart; an already associated word is rejected with HTTP 400; the next correct pair scores 2000 points in total; current key stays private', productionDeployment: false }
   report.transcripts='Two listeners and two questions on the same recording: no transcript in lobby, questions or first correction; final correction releases only the current text; stale pause refused; paused review text and scores survive a new SQLite runtime.'
   report.wordClassification='Only neutral tokens and the target position reach learners; injected category tags are rejected; SQLite restart preserves the phrase and private grading.'
+  report.fractionFigures='Only a known shape and boolean visible partitions cross the boundary; injected answer metadata is rejected. SQLite restart preserves the drawing and private grading; a correct fraction scores 1000 points.'
   report.mascots='The common Leaf and new Kitsune identities join the real Worker, remain in the public roster and keep their scores after restart; no name or nickname supplied.'
   report.teacherAccess='A signed 30-day room-creation grant survives a new workerd process, creates another room without resending the root key, retains its original expiry and cannot read a room as a host capability.'
   await writeFile('docs/interactive/competition-worker-results.json', JSON.stringify(report, null, 2) + '\n')
