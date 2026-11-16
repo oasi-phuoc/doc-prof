@@ -15,9 +15,11 @@ La comparaison des six banques avec `31e9213f` vérifie vingt ajouts de format Q
 - **763 décisions historiques** : 351 trios actifs, 112 textes conservés et 300 trios à préparer, sans changement de ce périmètre dans ce lot.
 - **346 supports / 1 663 questions DELF Actif** et 1 021 relectures de contexte contrôlés.
 - **2 426 variantes image**, douze cas de mélange et banque TCF vérifiés.
-- **Treize tests des catalogues réussis**. Galerie : **6 864 images**. Audio : **8 801 fichiers, 6 734 questions et 15 167 formats de réponse**.
+- **Dix-sept tests des catalogues réussis après fusion**. Galerie : **6 926 images**. Audio : **8 801 fichiers, 6 734 questions et 15 167 formats de réponse**.
 - Chromium : **36 vues** sur ordinateur et mobile, vingt questions vérifiées deux fois et **120 affichages d'image**. Chargement, proportions 4:3, cases élève et corrigé et bascule Texte/Image contrôlés sans erreur JavaScript. Les aperçus isolent les QCM. [Résultats navigateur](trios-rayons-documents-20261116-browser.json).
 - TypeScript, compilation de production, budgets de chargement et vérification des **696 types de jeu** réussis.
+
+Les compléments de `origin/main` (`6ccc6a2e`) sont conservés : 62 illustrations de fruits, légumes, plats et véhicules, avec leurs types et leurs tests de catalogue. Les trois fichiers générés en conflit sont reconstruits à partir des sources combinées. Les banques, le rendu TCF et les images de ce lot restent identiques à ceux des 36 vues navigateur ; les 62 fichiers distants sont comparés octet pour octet. Les catalogues, TypeScript, la compilation et les budgets sont revérifiés après fusion.
 
 ## Reste à faire
 

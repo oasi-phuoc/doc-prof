@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSy
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
+import { gallerySubjectTypes, gallerySubjectThemes } from './gallery-subject-types.mjs'
 
 const IMAGE = /\.(?:png|jpe?g|webp|svg|gif|avif|bmp|ico)$/i
 const norm = text => String(text).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/œ/g, 'oe').replace(/[’‘]/g, "'")
@@ -63,6 +64,9 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   }
   for (const image of read(root, 'docs/tcf/images-generees.json', {}).images ?? []) {
     add(image.path, { labels: [image.label], types: image.gallery_types, themes: image.gallery_themes, terms: [image.id] })
+  }
+  for (const image of read(root, 'docs/gallery/complements-20261116.json', {}).images ?? []) {
+    if (image.status === 'visually_reviewed') add(image.path, { labels: [image.label], types: [image.type], themes: [image.type, image.subtype, 'Style TCF validé'], terms: image.aliases ?? [] })
   }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], terms: [image.action] })
@@ -153,7 +157,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
       const subject = norm(label)
       if (/\b(?:passeport|billet|carte bancaire|carte d|permis|convocation|diplome|affiche|formulaire|annonce)\b/.test(subject)) types.push('Document')
       else if (/\b(?:acheter|preparer|cuisiner|manger|boire|demander|telephoner|parler|ranger|reparer|chercher|attendre|payer|promener|faire du|faire de|se rendre|s inscrire)\b/.test(subject)) types.push('Scénario')
-      else if (/\b(?:pantalon|robe|costume|canape|fauteuil|lit|armoire|chaise|table|velo|voiture|train|bus|avion|bateau|horloge|montre|sac|livre|bouteille|carafe|jus|tarte|glace|salade|chocolat|cafe|cacao|the|plante|fleur|telephone|cle|crayon|stylo|cahier|assiette|verre|guitare|pain|pomme|banane|casque|pompe|antivol|manteau|chaussure|parapluie|gant|lunette|lampe)\b/.test(subject)) types.push('Objet')
+      else if (/\b(?:pantalon|robe|costume|canape|fauteuil|lit|armoire|chaise|table|velo|voiture|train|bus|avion|bateau|horloge|montre|sac|livre|romans?|bouteille|carafe|jus|tarte|glace|salade|chocolat|cafe|cacao|the|plante|fleur|telephone|cle|crayon|stylo|cahier|assiette|verre|guitare|pain|pomme|banane|casque|pompe|antivol|manteau|chaussure|parapluie|gant|lunette|lampe)\b/.test(subject)) types.push('Objet')
     }
     if (!types.length) types.push('Illustration')
     const classification = classifications.get(src)
@@ -173,12 +177,13 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     else if (/(?:horloges?|cadrans?|pendules?|reveils?|clocks?|montres?)(?:[-_. /]|$)/.test(norm(file))) types = ['Heure et horloge']
     types = types.filter(type => !['Version antérieure', 'Logo et icône', 'Capture et référence'].includes(type))
     if (!types.length) types.push('Illustration')
+    types = gallerySubjectTypes({label, types, file, origin, themes: meta.themes})
     const themes = new Set(meta.themes)
     if (file.includes('/vocabulaire/')) themes.add(pretty(file.split('/vocabulaire/')[1].split('/')[0]))
     const subject = norm([label, ...meta.labels, ...meta.themes, file].join(' '))
     for (const [theme, rule] of RULES) if (rule.test(subject)) themes.add(theme)
     if (!themes.size) themes.add(collection === 'Documentation et captures' ? 'Documentation' : collection === 'Logique' ? 'Formes et logique' : 'Autres images')
-    return { id: file, src, label, themes: [...themes].filter(Boolean).sort(), types: [...new Set(types)], collection, keywords: [...new Set(meta.labels.concat(meta.terms))].join(' '), bytes: statSync(path.join(root, file)).size }
+    return { id: file, src, label, themes: gallerySubjectThemes([...themes], types), types: [...new Set(types)], collection, keywords: [...new Set(meta.labels.concat(meta.terms))].join(' '), bytes: statSync(path.join(root, file)).size }
   }).sort((a, b) => Number(/^(?:\d|[a-f\d]{12}$)/i.test(a.label)) - Number(/^(?:\d|[a-f\d]{12}$)/i.test(b.label)) || a.label.localeCompare(b.label, 'fr') || a.id.localeCompare(b.id))
 }
 

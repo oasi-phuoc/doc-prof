@@ -148,7 +148,7 @@
     "image_views": 120,
     "errors": []
   },
-  "additional_checks": {
+  "before_merge_checks": {
     "catalogue_tests": {
       "passed": 13,
       "failed": 0
@@ -174,5 +174,287 @@
       "response_forms": 15167,
       "game_types": 696
     }
+  },
+  "post_merge_checks": {
+    "upstream_commit": "6ccc6a2ee1a9472898c5c94f95d7ba3034e4bace",
+    "local_review_commit": "363dee56",
+    "tcf_banks_render_and_manifest_unchanged_since_browser_test": true,
+    "upstream_images_preserved": [
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/bergamote.webp",
+        "sha256": "30fbce0eaacfbe5c2b8fbcc043c29124b55e21b74b44c55a74433505c40e73b0"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/carambole.webp",
+        "sha256": "991e77c08b2fa9812f3130c01791fe12293d199d7daa0d34408c9823bcd32c85"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/cedrat.webp",
+        "sha256": "8648c38afbe91bd5709d2b13d1b4071c75b526d78e65fe12306ce1565087e9f6"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/coing.webp",
+        "sha256": "77b84d0c0fd1d09a1253dfb476dc92035541c35489f2fc83d73b8ce46962a80d"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/corossol.webp",
+        "sha256": "9dfc2433487d814f263cd2c34a2492b200fb9a180bcf914fb6c95fbaa884ce3a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/datte.webp",
+        "sha256": "8386d6243c9f8be07d9e62f0fd04532890835f0b5a0e60799b351db8578564e0"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/figue.webp",
+        "sha256": "679e20cd4d4a58525f8facc67ee7680b47b4406436f5df546d80ed3eff775a48"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/kumquat.webp",
+        "sha256": "64913b5fe7baabf80f02e69764fd739ff34504a4874c54c328e8f5dd34097162"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/litchi.webp",
+        "sha256": "58ede240ad83ac509a6096654b9e0d3b437bb46cdd6e3bcf5110fa6f56e85827"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/longane.webp",
+        "sha256": "bd3a5944f988ebc9ed58fd568929705e8b3272566905b8bb67645fae9787f616"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/nefle.webp",
+        "sha256": "5d84832e0580cda877f77d11df5951f50f9b4f3cdf3271778c553600170f784a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/physalis.webp",
+        "sha256": "39abccf7275d065334b7986acd4c07554ecda21f829212e74590733b76ced42a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/pitaya.webp",
+        "sha256": "afce680b3a90528194e1123bfa51de5780d0d8e1749301057e9fcee74fd6f760"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/pomme-cannelle.webp",
+        "sha256": "42d6c4b90903d898976d7153eb58fdae50d0063368a6127124fa5ac317a108cf"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/ramboutan.webp",
+        "sha256": "8cc2e8b7be3466f60911fd6d3d4f78e3ed6c1edf771e3fea88abf9beec1b1906"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/rhubarbe.webp",
+        "sha256": "a2454ced89a7ecf4e55e88281ea99f7a36e01d56b88d02aa94bd4da9ad1a570e"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/tamarin.webp",
+        "sha256": "057538f79158cd89768ea4ef97457507d9016129753a38acd7d63b1c02405010"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/fruits/yuzu.webp",
+        "sha256": "b00923929a83b0a80bb26481b4a04ca8fb90a154dcf12c9c69027a86d186bf80"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/ail.webp",
+        "sha256": "f54f6dafcf6b377a6eaa4a09f5fc6dc612bc9d87affdf03246a1d30a4e32088e"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/cepe.webp",
+        "sha256": "a83a5b4a32c850e0d9a8f9cf71cc52b8e920ea810f3cad3fd56254d1d06144ff"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/champignon-de-paris.webp",
+        "sha256": "abee170d0fe04dac32837aee0321286985a2bc8ea7b95ef777256dafa9ea5e56"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/echalote.webp",
+        "sha256": "918ba69ea7418064be706510ac5bd765d2a7cc2ea883eb781a210ef0119ce7e9"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/endive.webp",
+        "sha256": "9c5463aa6f0c18a66a34019b718134286a6c902b5f9290144b8370444a55c23e"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/feve.webp",
+        "sha256": "9091227b232ae48fc22e6ebe044393330aab0ef3261380cefae5df3cda8644f7"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/girolle.webp",
+        "sha256": "6c706b8e272fa52d8047f98ad3bba53b0505a89654533988b83d54ada2ef84cb"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/gombo.webp",
+        "sha256": "ebc588aac95f41edd9936193ba531f5e1d75341c07df2f1d55e409d325dfd1b6"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/haricot-blanc.webp",
+        "sha256": "b3b10eafc0077b65b66b3f671cb41a0b522f791cba769afb82890d49b14ed953"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/haricot-rouge.webp",
+        "sha256": "eebb40d20560d2779241056396cbd58e1159b20e5b674e960ef25d07edd94528"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/mache.webp",
+        "sha256": "1d9c0ad442e543f82060ed1c5c560b95c2371ad53b1aa6f39a69753cfbeae428"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/mais.webp",
+        "sha256": "1ae0a58ed8b20c35de9f5f5c0f0d1ef9633a675dd2053aff2a6a590aca744f25"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/manioc.webp",
+        "sha256": "6349ee603d8b97193ce68884ee8492b546a6c5532a118940baa274b711172913"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/morille.webp",
+        "sha256": "bd01c99acfe14d27c2d6c2a5e7405eedb1d515bd6149d244638a8efac4e89c56"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/navet.webp",
+        "sha256": "db51b3aeba0f144b07eb7dc8a536ebed5a45b79a40bcaa4ba5500b9a73e62c09"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/panais.webp",
+        "sha256": "ef9893568f30c12795fa0bfe0a048d3f571e327325cfe389abe81dc65f174295"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/pleurote.webp",
+        "sha256": "24ec79a727057226be1ae724b52ca185a67ad2830f5c5ae447731b37092f63d6"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/pois-chiche.webp",
+        "sha256": "e2f4b02662c6f9eb67922fb4d6063b895c2d2656df558be8184b89c1c839f1f3"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/radis.webp",
+        "sha256": "45c02af792bf8f8b3ce8c90c66bdc1c2a7bf6575d2c76967ee5342f46aae4857"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/roquette.webp",
+        "sha256": "0cff8cbacd5a13a5069e956aa792871d7932e2e5326c56fb2ae90d7570567724"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/salsifis.webp",
+        "sha256": "64e401f756eff690b3d9f09c2e1953fa378d61c8bfaf8fe5c86b5e466bd4f14f"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/shiitake.webp",
+        "sha256": "77ee45acce91799a9a4338c2f7470b5c53d228527eae2e981ece3b74665e73a8"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/legumes/topinambour.webp",
+        "sha256": "6c803d3804284da2b201256a43a895d0b497133a6abc1dda11619a1518fc6185"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/fondue-au-fromage.webp",
+        "sha256": "153f6d6b7c0772f5c9166a6f961b85df0146c73a2d996943fb19b8740680ef0a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/gratin-de-pommes-de-terre.webp",
+        "sha256": "8131d054395d7ca431f8f174ecb536d1c81d02ddf3b65bae67b026cc4102fad0"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/lasagnes.webp",
+        "sha256": "62c45eddfacbe9f027b4f932345b1b01e7cbe2f1e208423cce0afac7fb8a8a22"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/ramen.webp",
+        "sha256": "03a1222165c0f2f957d75f2409a62b51000f5844ac2567ffe301b7cf69ac8704"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/ratatouille.webp",
+        "sha256": "341da16a3d485673a59af988ef153b1272a28c79d0c174459cf5c82d74d42fa7"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/raviolis.webp",
+        "sha256": "e259c8d0f556f973cf607977d9c26799522ca42c004f8d8522de01ecc3ab85cb"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/plats/tajine.webp",
+        "sha256": "8cd0617ca4f123ea9a3c5127dea0aecb3263526ef55eb64ebc7f2e5b8811ccac"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/ambulance.webp",
+        "sha256": "1786305b8747b0a8ea3b9a01f035cd02bffb828c53b07dbf99fdd422a94cff2e"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/autocar.webp",
+        "sha256": "a19c4a1fe4be7931b0db5705d7c4f5deee278d6d8da4c48252ccc97ab875b5ab"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/bateau.webp",
+        "sha256": "0cf086536c00145e863dbfc2d4c3aa6d3be807aa11b5e1211cf82a6950c756db"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/camion-de-pompiers.webp",
+        "sha256": "8ca116da10c48894249e88447b955cb8778756af3dd8af0273884abf8704de39"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/camionnette.webp",
+        "sha256": "21c32904983e08d27e5d74b2d3e1735199d4950277320011fc8bb26c4917c808"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/camping-car.webp",
+        "sha256": "4e67daddccfe8bdd15ddea8ff15361a46b6b695743b83f8dc02169d82144662a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/ferry.webp",
+        "sha256": "46df4cc69eaa39d38a84508bf0e4cd57ae5ef00eaf0648387792f704362a221d"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/helicoptere.webp",
+        "sha256": "6c664b075338c0856fce3251da5f951ddf9eaa97ce9dcb17877a97f10d089c2a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/montgolfiere.webp",
+        "sha256": "ec591954d69347dda55d224f8a0e6c2abb27f6f0cc00f6633c187bb83d1df26e"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/sous-marin.webp",
+        "sha256": "b62896d751e4a547b394f440686bf0a3da29fb109631e27eba57e70b8d4043ab"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/telepherique.webp",
+        "sha256": "ac074b7b264b04cb0efa83250c59723539abee2f089f6a025355a56d7c8bfef6"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/tracteur.webp",
+        "sha256": "8dc56b1936b9013eed68c4a05c3d18837783a4f0481a45e3049c9c069f4b8bc9"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/voilier.webp",
+        "sha256": "7b72ede9e708088410462b651d79ecbe0717e6653e502702fbd277583147ed28"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/vehicules/voiture-de-police.webp",
+        "sha256": "09c5a5d58fa7da8de265c4b5a437e803aac3511c6a046a0e1958728e463d7427"
+      }
+    ],
+    "catalogue_tests": {
+      "passed": 17,
+      "failed": 0
+    },
+    "typescript_exit_code": 0,
+    "production_build_exit_code": 0,
+    "interactive_budgets": {
+      "exit_code": 0,
+      "game_gzip": 3137202,
+      "game_maximum_gzip": 3145728,
+      "competition_gzip": 204156,
+      "competition_maximum_gzip": 204800
+    },
+    "prebuild": {
+      "exit_code": 0,
+      "gallery_images": 6926,
+      "nominal_image_clues": 1248,
+      "audio_files": 8801,
+      "questions": 6734,
+      "response_forms": 15167,
+      "game_types": 696
+    },
+    "generated_conflicts_rebuilt": [
+      "src/francais/phrase-tcf-pictures.generated.json",
+      "src/gallery/catalog.generated.json",
+      "docs/interactive/performance-results.json"
+    ]
   }
 }

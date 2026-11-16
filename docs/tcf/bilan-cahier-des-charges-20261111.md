@@ -1,6 +1,6 @@
 # Bilan du cahier des charges — mise à jour du 16 novembre 2026
 
-**Dernière suite du 16 novembre : vingt trios DELF Actif de commerces, documents et transports ajoutés**, dix-neuf A2 et un B1. Cinq rayons peints et 43 réemplois ; restent **300 trios historiques** et **387 candidats DELF Actif**, avec **359 trios DELF Actif actifs**. Les 36 vues navigateur, treize tests des catalogues et la comparaison des six banques passent. [Rapport et reste à faire](trios-rayons-documents-20261116.md).
+**Dernière suite du 16 novembre : vingt trios DELF Actif de commerces, documents et transports ajoutés**, dix-neuf A2 et un B1. Cinq rayons peints et 43 réemplois ; restent **300 trios historiques** et **387 candidats DELF Actif**, avec **359 trios DELF Actif actifs**. Les 36 vues navigateur, dix-sept tests des catalogues après fusion et la comparaison des six banques passent. [Rapport et reste à faire](trios-rayons-documents-20261116.md).
 
 **Dernière suite du 16 novembre : vingt-quatre trios d’école et de rendez-vous ajoutés**, avec six PNG natifs et 60 réemplois. Quatorze trios historiques et dix DELF Actif ; restent **300 historiques** et **407 candidats DELF Actif**, avec **339 trios DELF Actif actifs**. Les 46 vues navigateur, treize tests des catalogues, la comparaison des six banques et la compilation passent. [Rapport et reste à faire](trios-ecole-rendezvous-20261116.md).
 

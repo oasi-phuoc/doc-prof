@@ -5,7 +5,7 @@ const norm=text=>text.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().repla
 const withoutArticle=text=>text.replace(/^(?:un |une |des |du |de la |le |la |les |l['’])/i,'')
 const nouns=new Map()
 for(const image of catalog){
-  if(image.collection!=='TCF'||!image.types.some(type=>['Objet','Animal','Végétal','Lieu et décor','Forme et symbole','Personnage'].includes(type))||image.types.some(type=>['Scénario','Action','Document'].includes(type)))continue
+  if(image.collection!=='TCF'||!image.types.some(type=>['Objet','Animal','Végétal','Fruit','Légume','Plat','Véhicule','Lieu et décor','Forme et symbole','Personnage'].includes(type))||image.types.some(type=>['Scénario','Action','Document'].includes(type)))continue
   const label=norm(withoutArticle(image.label))
   if(label&&!nouns.has(label))nouns.set(label,{label,src:image.src,sourceLabel:image.label})
 }
