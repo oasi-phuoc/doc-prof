@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "5c303cca5dae8b669c7df3b415cccd11d04a75b3",
+  "compared_all_six_banks": true,
+  "added_image_forms": 8,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 5,
+  "new_image_usages": 5,
+  "reused_image_usages": 19,
+  "reused_distinct_images": 11,
+  "corrected_existing_images": 2,
+  "other_previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "tcf-a1-tpb-ce-4#5",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "tcf-a1-sem1-ce-2#3",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "delf-a1v-ce-015#3",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "delf-a1v-ce-030#4",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "tcf-a1-tpa-co-1#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-a1-tpbb-co-2#3",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex3-34#5",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex4-68#4",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "name": "revue763",
+      "chunk_id": "947c43",
+      "wall_time_seconds": 1.6909e-05,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 309 trios actifs, 112 textes conservés, 342 trios à préparer.\n"
+    },
+    {
+      "name": "delf-images",
+      "chunk_id": "9570fe",
+      "wall_time_seconds": 3.0716e-05,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 325 trios actifs liés à leur relecture, images et MP3 vérifiés.\n"
+    },
+    {
+      "name": "delf-context",
+      "chunk_id": "f0fa47",
+      "wall_time_seconds": 1.3731e-05,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n"
+    },
+    {
+      "name": "qcm-images",
+      "exit_code": 0,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2350 bank variants"
+    },
+    {
+      "name": "tcf-bank",
+      "exit_code": 0,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration"
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 20,
+    "question_views": 20,
+    "image_views": 60,
+    "errors": []
+  },
+  "additional_checks": {
+    "gallery_tests": {
+      "passed": 5
+    },
+    "audio_catalog_tests": {
+      "passed": 8,
+      "execution": "node --test --test-reporter=tap --test-concurrency=1 tests/audio-catalog/catalog.test.mjs",
+      "local_network_restriction_lifted_for_vite": true
+    },
+    "typecheck": {
+      "command": "npx tsc -b",
+      "exit_code": 0
+    },
+    "production_build": {
+      "command": "npx vite build --manifest",
+      "exit_code": 0
+    },
+    "loading_budgets": {
+      "command": "node scripts/interactive-budgets.mjs",
+      "exit_code": 0,
+      "game_gzip_bytes": 3130137,
+      "game_maximum_gzip_bytes": 3145728
+    }
+  }
+}

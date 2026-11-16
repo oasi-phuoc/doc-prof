@@ -1,0 +1,399 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "5c303cca5dae8b669c7df3b415cccd11d04a75b3",
+  "user_request": "Corriger la gestuelle de la piscine et du ski nautique.",
+  "imagegen_calls": 3,
+  "corrected_images": 2,
+  "new_image_files": 0,
+  "paths_preserved": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "questions_changed": 0,
+  "sources_changed": 0,
+  "answers_changed": 0,
+  "audios_changed": 0,
+  "changes": [
+    {
+      "id": "qcm-a2-natation-sport",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+      "before": {
+        "id": "qcm-a2-natation-sport",
+        "label": "La natation",
+        "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+        "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single adult SWIMMER with warm dark skin in a plain navy swim cap, goggles and modest navy one-piece swimsuit swims breaststroke in one clear blue indoor swimming-pool lane. Wider slightly elevated side three-quarter view shows her ENTIRE head, both natural outstretched arms and hands, torso, both legs and BOTH FEET comfortably within the frame. Her body is naturally partly submerged, but the clear water gives a believable view of the submerged legs and feet, with realistic refraction rather than duplicate limbs. Natural breaststroke moment with arms apart at shoulder level and legs extended behind; complete body, no cropped hand or foot. No coach or other people. Pale cream tiled poolside with a wooden bench and soft daylight from tall windows, one blue lane rope at a distance. No diving, standing beside the pool, water aerobics equipment or flotation board. Make SWIMMING recognisable as an activity while preserving plausible anatomy and restrained painted style.",
+        "source_png": "/workspace/generated_images/exec-00ad5d79-1a94-4d0d-b94b-82eca11d274b.png",
+        "source_sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+        "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+        "bytes": 2504071,
+        "width": 1448,
+        "height": 1086,
+        "aspect_ratio": "4:3",
+        "status": "visually_reviewed",
+        "domain": "ce-co",
+        "batch": "trios-sports-repas-20261116",
+        "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "style_references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "reference_images": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Une nageuse effectue un mouvement de nage dans sa ligne de piscine. Tête, deux bras, deux mains, jambes et deux pieds restent dans le cadre ; immersion naturelle, sans membre coupé au bord.",
+        "style_review": {
+          "status": "aligned",
+          "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+          "references": [
+            "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+          ]
+        },
+        "original_bytes_preserved": true,
+        "gallery_types": [
+          "Action"
+        ],
+        "gallery_themes": [
+          "Sports",
+          "Style TCF validé"
+        ]
+      },
+      "before_sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+      "source_png": "/workspace/generated_images/exec-ddf78603-eea1-4d22-a4ba-63737bebc705.png",
+      "source_sha256": "0e118b1e523c0cc5ffec75cf263fdc2e8f8cd476fc82f4662c0d99f42ad06f30",
+      "review_note": "Crawl : corps et hanches proches de l’horizontale, tête tournée latéralement pour respirer, un bras allongé devant et l’autre en retour avec coude fléchi, deux mains et deux pieds dans le cadre. Immersion et battement discrets, sans posture verticale ni bras en ailes.",
+      "rejected_attempts": [],
+      "after": {
+        "id": "qcm-a2-natation-sport",
+        "label": "La natation",
+        "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+        "prompt": "Edit the attached approved TCF illustration to CORRECT THE HUMAN SPORTING GESTURE. Preserve its softly painted semi-realistic editorial style, restrained natural colours, gentle visible brush texture, soft daylight, general setting and adult character. Native EXACT 1448 x 1086 pixels, landscape 4:3. One coherent illustration, no text, logos, watermark, collage or panels. All main anatomy and equipment stays entirely inside the frame with generous margins. The action must look physically natural and anatomically consistent. Completely redraw the woman's swimming pose as an ordinary natural FRONT CRAWL stroke, viewed from the side at a slightly elevated angle. Keep her warm dark skin, plain navy one-piece swimsuit, navy swim cap and goggles in the same blue indoor pool. Her WHOLE BODY lies almost HORIZONTAL and buoyant at the water surface, shoulders, hips and relaxed extended legs aligned, with a small natural flutter kick and both feet present. She swims toward the RIGHT. The arm nearest the viewer is extended FORWARD in line with the shoulder just under the surface, its single relaxed hand pointing ahead. The OTHER arm is in recovery: a naturally raised bent elbow, relaxed forearm and hand passing forward near the head, with a credible shoulder attachment. Exactly TWO arms, TWO hands, TWO legs and TWO feet, proportional joints and ordinary natural fingers. Her head is LOW and rotated gently to the side for a lateral breath, one goggle near the water; no upright chest, arched back, high lifted head, frog legs, arms spread like wings, out-of-water push-up or standing pose. Water naturally conceals parts of the body and refracts the submerged legs, but never creates duplicate or ghost limbs; keep the complete swimmer within the image even where submerged. Use wide enough framing to preserve the fingertips ahead and feet behind, no other people. The lane ropes, pale tiled poolside, bench and softly lit windows remain coherent in perspective. Clear real swimming movement rather than a posed person floating stiffly.",
+        "source_png": "/workspace/generated_images/exec-ddf78603-eea1-4d22-a4ba-63737bebc705.png",
+        "source_sha256": "0e118b1e523c0cc5ffec75cf263fdc2e8f8cd476fc82f4662c0d99f42ad06f30",
+        "sha256": "0e118b1e523c0cc5ffec75cf263fdc2e8f8cd476fc82f4662c0d99f42ad06f30",
+        "bytes": 2318497,
+        "width": 1448,
+        "height": 1086,
+        "aspect_ratio": "4:3",
+        "status": "visually_reviewed",
+        "domain": "ce-co",
+        "batch": "correction-gestes-20261116",
+        "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "style_references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "reference_images": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Crawl : corps et hanches proches de l’horizontale, tête tournée latéralement pour respirer, un bras allongé devant et l’autre en retour avec coude fléchi, deux mains et deux pieds dans le cadre. Immersion et battement discrets, sans posture verticale ni bras en ailes.",
+        "style_review": {
+          "status": "aligned_after_redraw",
+          "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+          "references": [
+            "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+          ]
+        },
+        "original_bytes_preserved": true,
+        "gallery_types": [
+          "Action"
+        ],
+        "gallery_themes": [
+          "Sports",
+          "Style TCF validé"
+        ],
+        "previous_revisions": [
+          {
+            "id": "qcm-a2-natation-sport",
+            "label": "La natation",
+            "path": "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+            "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single adult SWIMMER with warm dark skin in a plain navy swim cap, goggles and modest navy one-piece swimsuit swims breaststroke in one clear blue indoor swimming-pool lane. Wider slightly elevated side three-quarter view shows her ENTIRE head, both natural outstretched arms and hands, torso, both legs and BOTH FEET comfortably within the frame. Her body is naturally partly submerged, but the clear water gives a believable view of the submerged legs and feet, with realistic refraction rather than duplicate limbs. Natural breaststroke moment with arms apart at shoulder level and legs extended behind; complete body, no cropped hand or foot. No coach or other people. Pale cream tiled poolside with a wooden bench and soft daylight from tall windows, one blue lane rope at a distance. No diving, standing beside the pool, water aerobics equipment or flotation board. Make SWIMMING recognisable as an activity while preserving plausible anatomy and restrained painted style.",
+            "source_png": "/workspace/generated_images/exec-00ad5d79-1a94-4d0d-b94b-82eca11d274b.png",
+            "source_sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+            "sha256": "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+            "bytes": 2504071,
+            "width": 1448,
+            "height": 1086,
+            "aspect_ratio": "4:3",
+            "status": "visually_reviewed",
+            "domain": "ce-co",
+            "batch": "trios-sports-repas-20261116",
+            "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+            "style_references": [
+              "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+            ],
+            "reference_images": [
+              "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+            ],
+            "review_note": "Une nageuse effectue un mouvement de nage dans sa ligne de piscine. Tête, deux bras, deux mains, jambes et deux pieds restent dans le cadre ; immersion naturelle, sans membre coupé au bord.",
+            "style_review": {
+              "status": "aligned",
+              "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+              "references": [
+                "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+              ]
+            },
+            "original_bytes_preserved": true,
+            "gallery_types": [
+              "Action"
+            ],
+            "gallery_themes": [
+              "Sports",
+              "Style TCF validé"
+            ],
+            "superseded_reason": "Gestuelle signalée par l’utilisateur.",
+            "superseded_by_register": "docs/tcf/correction-gestes-natation-ski-20261116.json"
+          }
+        ],
+        "gesture_revision": 2,
+        "correction_register": "docs/tcf/correction-gestes-natation-ski-20261116.json"
+      }
+    },
+    {
+      "id": "qcm-a2-ski-nautique",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+      "before": {
+        "id": "qcm-a2-ski-nautique",
+        "label": "Le ski nautique",
+        "path": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+        "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single adult WATER-SKIER with medium brown skin, wearing a muted orange life jacket over a navy sports swimsuit, is pulled along a calm blue lake by a small motorboat visible WHOLE in the farther left background. The skier is entirely visible from head to both feet, knees slightly bent, with BOTH FEET properly fixed to TWO separate long narrow WATER SKIS riding on the water. Two correct natural hands hold ONE tow-rope handle; the taut rope leads visibly back to the boat. A modest realistic spray trails behind the TWO skis. Wide side three-quarter composition, enough space to show the complete skier, skis, rope and boat. Soft green distant shore and low hills under pale blue sky. Clear water-skiing, absolutely no surfboard, snowboard, snow, parasail or extra tow rope. Single coherent natural activity scene.",
+        "source_png": "/workspace/generated_images/exec-f1a30a3e-231b-4a9b-81ce-3cc157cdf115.png",
+        "source_sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+        "sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+        "bytes": 2730206,
+        "width": 1448,
+        "height": 1086,
+        "aspect_ratio": "4:3",
+        "status": "visually_reviewed",
+        "domain": "ce-co",
+        "batch": "trios-sports-repas-20261116",
+        "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "style_references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "reference_images": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Skieuse, deux skis nautiques, deux mains sur une poignée et corde tendue vers un bateau entier. Gilet de flottabilité, eau et rive ; la planche de surf et la neige sont exclues.",
+        "style_review": {
+          "status": "aligned",
+          "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+          "references": [
+            "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+          ]
+        },
+        "original_bytes_preserved": true,
+        "gallery_types": [
+          "Action"
+        ],
+        "gallery_themes": [
+          "Sports",
+          "Style TCF validé"
+        ]
+      },
+      "before_sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+      "source_png": "/workspace/generated_images/exec-3e72cafa-3752-42c0-8c92-1dc292f94d52.png",
+      "source_sha256": "e9a49477ed221e5b9e0b9e3d83251b24fcb1c199f43c8e5c546b34d5cdbe0683",
+      "review_note": "Genoux visiblement fléchis, bassin reculé, dos neutre et bras tendus avec souplesse. Les deux mains tiennent une seule barre ; une bride de corde rejoint la traction vers la poupe du bateau. Deux skis parallèles, fixations et équipement entiers.",
+      "rejected_attempts": [
+        {
+          "source": "/workspace/generated_images/exec-a1ed9e52-47fc-48c2-a749-c4ddfa2d3ce6.png",
+          "reason": "Barre inférieure superflue sous la poignée de traction.",
+          "sha256": "d8825139513258a88d7f37c328db281a5ebb2581eaa30b461af7e139f6d03347",
+          "integrated": false
+        }
+      ],
+      "after": {
+        "id": "qcm-a2-ski-nautique",
+        "label": "Le ski nautique",
+        "path": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+        "prompt": "Edit the attached approved TCF illustration to CORRECT THE HUMAN SPORTING GESTURE. Preserve its softly painted semi-realistic editorial style, restrained natural colours, gentle visible brush texture, soft daylight, general setting and adult character. Native EXACT 1448 x 1086 pixels, landscape 4:3. One coherent illustration, no text, logos, watermark, collage or panels. All main anatomy and equipment stays entirely inside the frame with generous margins. The action must look physically natural and anatomically consistent. Redraw the water-skier in a REALISTIC BALANCED RECREATIONAL TWO-SKI WATER-SKIING STANCE. Keep the adult woman with medium brown skin, orange life jacket and navy sports swimsuit, two separate narrow water skis and a small motorboat farther LEFT. Her TWO KNEES are visibly FLEXED about 35 to 45 degrees, shins inclined forward, HIPS BACK behind the knees, seat slightly lowered as if gently sitting into the pull. A modest backward lean from the ankles counters the tow; the spine and neck stay neutral and the shoulders relaxed, no straight locked legs, rigid upright standing, arched back, twisted pelvis, exaggerated deep squat or collapsed waist. Her TWO FEET are securely held in separate proper ski bindings, both skis parallel, entire ski tips and tails on the water and correctly pointed toward travel to the left. BOTH ARMS extend comfortably toward the tow handle with a little elbow softness; BOTH normal hands grip ONE horizontal handle naturally, palms down and thumbs around it. One taut tow rope and a sensible short bridle connect the handle to the motorboat's STERN; the boat travels in the same direction and the skier is naturally behind it. Make the connection and wake plausible, not attached to the skier's torso or to the bow. Show the entire skier, both skis, both hands and the whole small motorboat, with adequate margins around them. Calm blue lake, realistic small spray trailing the skis, distant soft green shore and hills, no surfboard, personal watercraft, snow or third ski. Prioritise believable knee, hip, arm and handle mechanics over a model-like smile.\n\nFinition locale : supprimer la seconde barre et les montants ; conserver une seule barre tenue par les deux mains et deux segments de corde légers formant la bride vers la corde principale.",
+        "source_png": "/workspace/generated_images/exec-3e72cafa-3752-42c0-8c92-1dc292f94d52.png",
+        "source_sha256": "e9a49477ed221e5b9e0b9e3d83251b24fcb1c199f43c8e5c546b34d5cdbe0683",
+        "sha256": "e9a49477ed221e5b9e0b9e3d83251b24fcb1c199f43c8e5c546b34d5cdbe0683",
+        "bytes": 2340838,
+        "width": 1448,
+        "height": 1086,
+        "aspect_ratio": "4:3",
+        "status": "visually_reviewed",
+        "domain": "ce-co",
+        "batch": "correction-gestes-20261116",
+        "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "style_references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "reference_images": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "review_note": "Genoux visiblement fléchis, bassin reculé, dos neutre et bras tendus avec souplesse. Les deux mains tiennent une seule barre ; une bride de corde rejoint la traction vers la poupe du bateau. Deux skis parallèles, fixations et équipement entiers.",
+        "style_review": {
+          "status": "aligned_after_redraw",
+          "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+          "references": [
+            "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+          ]
+        },
+        "original_bytes_preserved": true,
+        "gallery_types": [
+          "Action"
+        ],
+        "gallery_themes": [
+          "Sports",
+          "Style TCF validé"
+        ],
+        "previous_revisions": [
+          {
+            "id": "qcm-a2-ski-nautique",
+            "label": "Le ski nautique",
+            "path": "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+            "prompt": "ONE landscape image, native EXACT 1448 x 1086 pixels, 4:3. Approved TCF style: softly PAINTED semi-realistic editorial illustration, believable proportions and anatomy, natural restrained colours, gentle brush texture, warm soft daylight, coherent cream/wood/olive/navy palette adapted to the subject. Clear recognisable subject, no frame, panels, collage, text, caption, letters, logos, brands, numbers, dates or watermark. Not a photograph, vector icon, cartoon or CGI. Whole main subject comfortably inside the frame with margins, no cropped head, fingers, feet, equipment or meaningful object. A single adult WATER-SKIER with medium brown skin, wearing a muted orange life jacket over a navy sports swimsuit, is pulled along a calm blue lake by a small motorboat visible WHOLE in the farther left background. The skier is entirely visible from head to both feet, knees slightly bent, with BOTH FEET properly fixed to TWO separate long narrow WATER SKIS riding on the water. Two correct natural hands hold ONE tow-rope handle; the taut rope leads visibly back to the boat. A modest realistic spray trails behind the TWO skis. Wide side three-quarter composition, enough space to show the complete skier, skis, rope and boat. Soft green distant shore and low hills under pale blue sky. Clear water-skiing, absolutely no surfboard, snowboard, snow, parasail or extra tow rope. Single coherent natural activity scene.",
+            "source_png": "/workspace/generated_images/exec-f1a30a3e-231b-4a9b-81ce-3cc157cdf115.png",
+            "source_sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+            "sha256": "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+            "bytes": 2730206,
+            "width": 1448,
+            "height": 1086,
+            "aspect_ratio": "4:3",
+            "status": "visually_reviewed",
+            "domain": "ce-co",
+            "batch": "trios-sports-repas-20261116",
+            "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+            "style_references": [
+              "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+            ],
+            "reference_images": [
+              "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+            ],
+            "review_note": "Skieuse, deux skis nautiques, deux mains sur une poignée et corde tendue vers un bateau entier. Gilet de flottabilité, eau et rive ; la planche de surf et la neige sont exclues.",
+            "style_review": {
+              "status": "aligned",
+              "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+              "references": [
+                "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+              ]
+            },
+            "original_bytes_preserved": true,
+            "gallery_types": [
+              "Action"
+            ],
+            "gallery_themes": [
+              "Sports",
+              "Style TCF validé"
+            ],
+            "superseded_reason": "Gestuelle signalée par l’utilisateur.",
+            "superseded_by_register": "docs/tcf/correction-gestes-natation-ski-20261116.json"
+          }
+        ],
+        "intermediate_edit_source_png": "/workspace/generated_images/exec-a1ed9e52-47fc-48c2-a749-c4ddfa2d3ce6.png",
+        "gesture_revision": 2,
+        "correction_register": "docs/tcf/correction-gestes-natation-ski-20261116.json"
+      }
+    }
+  ],
+  "trios": [
+    {
+      "key": "delf-a2j-ce-003#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Stage 1 — Développez votre imagination grâce au théâtre, au cirque, à la musique, au cinéma…\n\nStage 2 — Découvrez de nouveaux sports : VTT, escalade, poney, voile, plongée, à la mer, à la montagne ou à la campagne.\n\nStage 3 — Apprenez à comprendre, aimer et respecter l’environnement : séjour en plein air pour admirer les paysages et connaître fleurs, plantes et animaux.",
+      "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
+      "semantic_sha256": "d8567eb2aba9bb8b65839c57b1f281386364d85099f1578c0bbf3ac522194a17",
+      "question": {
+        "enonce": "Quel sport nautique est proposé dans le stage 2 ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La voile",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le ski nautique",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le surf",
+            "correct": false
+          }
+        ],
+        "written_model": "La voile"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "co306-cours-voile-dessine",
+        "qcm-a2-ski-nautique",
+        "co834-surf-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-cours-voile-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-ski-nautique.png",
+        "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp"
+      ],
+      "before_image_sha256": [
+        "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
+        "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+        "52679a4e7f57f4c66cf4ba19c350ff6c19a4fa7cd82ff38a624fc448a88150c2"
+      ],
+      "reason": "Correction des gestes demandée par l’utilisateur ; sport, énoncé, réponses et autres images du trio conservés.",
+      "visual_review": "Revue de la posture, des articulations, de la prise et des marges de cadrage ; nouvelle version native PNG.",
+      "image_sha256": [
+        "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
+        "e9a49477ed221e5b9e0b9e3d83251b24fcb1c199f43c8e5c546b34d5cdbe0683",
+        "52679a4e7f57f4c66cf4ba19c350ff6c19a4fa7cd82ff38a624fc448a88150c2"
+      ]
+    },
+    {
+      "key": "delf-a2r-ce-071#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "La simulation de chute libre vous permet de découvrir des sensations extrêmes. Ça ressemble un peu au parachutisme. Le principe est simple : vous êtes dans une pièce ronde de 4,80 mètres de diamètre. Un vent très fort souffle vers le haut, jusqu’à 250 km/h.\nAvant de voler, un moniteur vous explique comment ça marche, puis vous donne votre équipement. Ensuite, vous entrez dans la pièce avec lui. Le vent est d’abord lent, puis sa vitesse augmente, et vous volez ! Vous avez l’impression de voler à 4 000 mètres d’altitude. Le vol dure 2 minutes 30.\nPas besoin d’être sportif ! On peut voler à partir de 8 ans. Avant 18 ans, il faut une autorisation des parents.\nTarifs\n1 session : 70 CHF. 2 sessions : 130 CHF. 3 sessions : 190 CHF. Réservation obligatoire au 027 555 02 02.",
+      "source_sha256": "0dc47fa924e496eead531b7cfd12e4abd827c2113a90b610954719c530e0eb59",
+      "semantic_sha256": "b47bc2f5ff9030fe74a4e38d69fb6290d22049ad55d599198fe00538971946a2",
+      "question": {
+        "enonce": "À quel sport la simulation ressemble-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au parachutisme",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la natation",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À l’équitation",
+            "correct": false
+          }
+        ],
+        "written_model": "Au parachutisme"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-parachutisme",
+        "qcm-a2-natation-sport",
+        "extension573-equitation-cavaliere"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-parachutisme.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-natation-sport.png",
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png"
+      ],
+      "before_image_sha256": [
+        "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
+        "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888"
+      ],
+      "reason": "Correction des gestes demandée par l’utilisateur ; sport, énoncé, réponses et autres images du trio conservés.",
+      "visual_review": "Revue de la posture, des articulations, de la prise et des marges de cadrage ; nouvelle version native PNG.",
+      "image_sha256": [
+        "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
+        "0e118b1e523c0cc5ffec75cf263fdc2e8f8cd476fc82f4662c0d99f42ad06f30",
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888"
+      ]
+    }
+  ]
+}

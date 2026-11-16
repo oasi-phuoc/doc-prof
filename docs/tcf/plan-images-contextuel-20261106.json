@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1918,
+    "reviewed_trio": 1926,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 350,
+    "reviewed_763_artwork_pending": 342,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -12627,19 +12627,27 @@
         "Dans un livre",
         "Sur une affiche"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "d4d8ed48be35bea6e52c7120e62fe1ecb9a27cea97d556c651aaf420fba80de0",
       "semantic_before_sha256": "018d7d5f7c2a5ff921d86afcc3808ae75b775c4ab3e9ec3651d1442def83ea12",
       "semantic_after_sha256": "018d7d5f7c2a5ff921d86afcc3808ae75b775c4ab3e9ec3651d1442def83ea12",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-site-festivals.png",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-affiche-festival.png"
+      ],
+      "target_sha256": [
+        "11257ad69626089696b93710df7e49ef5b69e7292ad8cf110abcda82d691b1bd",
+        "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2",
+        "f46182a9fe13bfe8fc3c44ac95d5b85fe7cd5eededa6fb525e935b86688d5dbd"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le texte indique que les douze descriptions des festivals sont des articles sur le site Internet.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le texte indique que les douze descriptions des festivals sont des articles sur le site Internet.",
       "before_upstream_integration": {
         "source_sha256": "512a3e0028a6f673428238e76218dec08a0b6d9a0a91118605cba235a80ecb9c",
         "semantic_before_sha256": "018d7d5f7c2a5ff921d86afcc3808ae75b775c4ab3e9ec3651d1442def83ea12",
@@ -12650,6 +12658,10 @@
           "Dans un livre",
           "Sur une affiche"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Page de navigateur avec des articles de festivals, livre relié et affiche unique physique sur un mur. Ni calendrier de réservation ni courriel ; les traits graphiques n’inventent pas de prix ni de date de festival. L’affiche est au singulier et le site traite de musique."
       }
     },
     {
@@ -12811,19 +12823,31 @@
         "À l'école",
         "Au restaurant"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "ec7fffe8be99ec74ac6bdd3989d552653c2880a5f9b7c93d858666750f8f1044",
       "semantic_before_sha256": "4486523475bc47eb7063bfbc9b33694f93300d7478d83510b2f955b04e51e4a2",
       "semantic_after_sha256": "4486523475bc47eb7063bfbc9b33694f93300d7478d83510b2f955b04e51e4a2",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Jules invite à une fête chez lui, dimanche 24 juin à 14 h 30.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Jules invite à une fête chez lui, dimanche 24 juin à 14 h 30.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Domicile, école et restaurant identifiables. Illustrations des catégories de lieux ; aucun portrait ni bâtiment n’est présenté comme le domicile réel de Jules ou comme le lieu effectif de sa fête."
+      }
     },
     {
       "key": "tcf-a1-sem1-ce-2#4",
@@ -16896,19 +16920,27 @@
         "Dans une école",
         "Dans un studio de radio"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "4e45861fa3d6552d9d4f0f9a6f4638d10f578e60aabd263d36f9af748f96fbcb",
       "semantic_before_sha256": "7b6e5072313e213dca0d4dfa19bf1e430a93464c9eb27546c1c6cba08190598b",
       "semantic_after_sha256": "7b6e5072313e213dca0d4dfa19bf1e430a93464c9eb27546c1c6cba08190598b",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-studio-radio.png"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "c1b43d30484fa53a833ddfb301f230173bad82fc32803417d557cd63cd6b713a"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Sara propose ses cours de piano au domicile des élèves, à Bienne et dans les environs.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Sara propose ses cours de piano au domicile des élèves, à Bienne et dans les environs.",
       "before_upstream_integration": {
         "source_sha256": "fc819e8fe995366e0802bb8e7eace4969292eb43f29ebb15076997f9bbf33126",
         "semantic_before_sha256": "7b6e5072313e213dca0d4dfa19bf1e430a93464c9eb27546c1c6cba08190598b",
@@ -16919,6 +16951,10 @@
           "Dans une école",
           "Dans un studio de radio"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Maison pour la catégorie domicile, école et véritable studio de radio avec microphones et console. Les lieux illustrent les choix, sans présenter une maison précise comme celle des élèves, ni attribuer aux personnages de l’image le rôle de Sara. Le studio d’habitation est rejeté."
       }
     },
     {
@@ -20488,19 +20524,31 @@
         "Le pont",
         "La fontaine"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "54940c555db20942d56ba9a12d244786c5d59b3d7537daaa9db38622bb28e74e",
       "semantic_before_sha256": "cdb51601e711ce5a038aa495567bd0a5ef8fab96448a7ba70a10ef604d1ac128",
       "semantic_after_sha256": "cdb51601e711ce5a038aa495567bd0a5ef8fab96448a7ba70a10ef604d1ac128",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-kiosque-journaux.png",
+        "/lib/images/tcf/qcm-audit/revue-20261107-effd8592eb.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-5b8d0c27e1.webp"
+      ],
+      "target_sha256": [
+        "9b0d9cf0c12267deeaec12740e091053bf84102370c8cfaf78b38215292b1ee0",
+        "991cadf7709d0d229e69750556109e14724efc13f6b0e58f2055f22e72522b4d",
+        "1dcaf7775f378eb580d733193127eb51ddfb39b3009b7e55c87c57e867b1c419"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "L’itinéraire demande de rejoindre le kiosque puis de tourner à droite.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "L’itinéraire demande de rejoindre le kiosque puis de tourner à droite.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Trois repères entiers et distincts : kiosque de presse, pont et fontaine. La question demande d’identifier le repère ; les illustrations ne constituent pas un plan de l’itinéraire réel. La scène de kiosque fermé existante est écartée car l’activité de presse y reste trop peu identifiable."
+      }
     },
     {
       "key": "delf-a1v-ce-030#5",
@@ -51232,19 +51280,31 @@
         "À la maison",
         "À l’école"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "13c149ec6a46ae64216dfb3caa0d0f9ed09b077915a3902a1c1114b486e5796a",
       "semantic_before_sha256": "d6a320974c02fb2f3d27feafb63374504533343e1ed960d0559437da66206bc1",
       "semantic_after_sha256": "d6a320974c02fb2f3d27feafb63374504533343e1ed960d0559437da66206bc1",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/la-famille-1.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/co/bg/bureau-directeur.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp"
+      ],
+      "target_sha256": [
+        "b0276a477b142460d876df5732eb0b881dee0fc4e57167ae67c64d72f3af4b41",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Catherine dit être encore à son bureau. Le passage à l’école à 16 h 45 est une demande faite à l’autre personne.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Catherine dit être encore à son bureau. Le passage à l’école à 16 h 45 est une demande faite à l’autre personne.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Bureau professionnel, domicile et école. Le lieu actuel est distingué du déplacement à effectuer ; aucun visage dessiné n’est présenté comme celui de Catherine ou de Margot."
+      }
     },
     {
       "key": "tcf-a1-tpa-co-1#3",
@@ -53092,19 +53152,31 @@
         "Au restaurant",
         "Dans le bus"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "06edabaea51532ad2f512152f618c661f0fd282d88b731833f67b519ee4a31ef",
       "semantic_before_sha256": "ed4a710f67c32948b91f75ad89c08a43ae6a5c8b2d766e6249aa3347b7cb3a46",
       "semantic_after_sha256": "ed4a710f67c32948b91f75ad89c08a43ae6a5c8b2d766e6249aa3347b7cb3a46",
       "audio": "/lib/audio/tcf/co/ecole/47-école-chercher-livre-de-mathématiques.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-interieur-bus.png"
+      ],
+      "target_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "93dae8e8f4e2b1cf33ae451757853ac77a0114e282bf26ff7e0660553b62338f"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "Sammy pense que son livre doit être chez lui ; la réponse est une hypothèse exprimée dans le dialogue.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Sammy pense que son livre doit être chez lui ; la réponse est une hypothèse exprimée dans le dialogue.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Domicile, restaurant et intérieur de bus. La scène du bus n’ajoute aucun livre oublié ; l’image désigne seulement le lieu proposé, sans transformer l’hypothèse de Sammy en certitude. L’extérieur d’un véhicule seul est écarté."
+      }
     },
     {
       "key": "tcf-a1-tpbb-co-3#1",
@@ -101066,20 +101138,32 @@
         "À son domicile",
         "À la gare"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "8ecb2929033f366b68924642f09a9632dfa03e111854223b6d3012c1b506f0d9",
       "semantic_before_sha256": "f91d73e3be24e9f56265e26ebbdc1ee8b124f89443d4dd9935d1ed32feb8c77a",
       "semantic_after_sha256": "f91d73e3be24e9f56265e26ebbdc1ee8b124f89443d4dd9935d1ed32feb8c77a",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_34-2.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/co/bg/bureau-directeur.webp",
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp"
+      ],
+      "target_sha256": [
+        "b0276a477b142460d876df5732eb0b881dee0fc4e57167ae67c64d72f3af4b41",
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
-      "semantic_sha256": "f91d73e3be24e9f56265e26ebbdc1ee8b124f89443d4dd9935d1ed32feb8c77a"
+      "reason": "Monsieur Lenoir dit explicitement ne pas être au bureau aujourd’hui. La négation est conservée : la réponse attendue reste le bureau.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Monsieur Lenoir dit explicitement ne pas être au bureau aujourd’hui. La négation est conservée : la réponse attendue reste le bureau.",
+      "semantic_sha256": "f91d73e3be24e9f56265e26ebbdc1ee8b124f89443d4dd9935d1ed32feb8c77a",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Pièce de bureau équipée, domicile et gare avec quais et trains. Le bureau n’est pas représenté par un meuble isolé. On n’affirme pas que Monsieur Lenoir est chez lui ou à la gare ; la question porte sur le lieu où il n’est pas."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex3-34#6",
@@ -107155,19 +107239,31 @@
         "Dans la cantine",
         "Dans la salle de sport"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "ee7d77dd5b5a88469b14823076d9e174833255fcc5dd50c08ed6c589819aa24c",
       "semantic_before_sha256": "cfe9c1fd99d6ca54517a9ae3904c040665ba164373456a772abb13bcff3a0011",
       "semantic_after_sha256": "cfe9c1fd99d6ca54517a9ae3904c040665ba164373456a772abb13bcff3a0011",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_68-2.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+        "/lib/images/tcf/co/bg/cantine.webp",
+        "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp"
+      ],
+      "target_sha256": [
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9",
+        "14ec9bd7dc5710165a6b3daeba5a7556ea53309a22790894a8fc3dae772bf90e",
+        "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La réunion avec les professeurs a lieu jeudi dans la bibliothèque de l’école.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La réunion avec les professeurs a lieu jeudi dans la bibliothèque de l’école.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-supports-20261116.json",
+        "note": "Bibliothèque avec livres et tables de lecture, cantine avec comptoir et tables, gymnase avec tracés et paniers. Catégories de salles, sans inventer une scène de réunion ni attribuer de rôle aux lecteurs. La cantine n’est pas réduite à un plateau-repas."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex4-68#5",
@@ -125633,7 +125729,7 @@
         "Le surf"
       ],
       "status": "reviewed_trio",
-      "method": "individual_visual_review_20261116",
+      "method": "individual_gesture_redraw_20261116",
       "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
       "semantic_before_sha256": "d8567eb2aba9bb8b65839c57b1f281386364d85099f1578c0bbf3ac522194a17",
       "semantic_after_sha256": "d8567eb2aba9bb8b65839c57b1f281386364d85099f1578c0bbf3ac522194a17",
@@ -125645,7 +125741,7 @@
       ],
       "target_sha256": [
         "83b619c7dd19aacdba56f0a1d4e62cedd439a8aef40ed0e7a5f9aefb897df753",
-        "988f5d79c6ac1f1db44f474b53bccdf36c0a7d23d72834dc41ea673426f4ee75",
+        "e9a49477ed221e5b9e0b9e3d83251b24fcb1c199f43c8e5c546b34d5cdbe0683",
         "52679a4e7f57f4c66cf4ba19c350ff6c19a4fa7cd82ff38a624fc448a88150c2"
       ],
       "old_images": [],
@@ -125654,8 +125750,8 @@
       "review_763_decision": "active_reviewed_trio",
       "review_763_reason": "Le stage 2 propose la voile ; les deux autres réponses sont le ski nautique et le surf.",
       "visual_review": {
-        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
-        "note": "Voilier à voile entière avec ses occupants, skieuse sur deux skis tirée par un bateau et surfeur sur une planche dans la vague. Trois activités distinctes, sans mélanger sports ou accessoires seuls."
+        "register": "docs/tcf/correction-gestes-natation-ski-20261116.json",
+        "note": "Genoux visiblement fléchis, bassin reculé, dos neutre et bras tendus avec souplesse. Les deux mains tiennent une seule barre ; une bride de corde rejoint la traction vers la poupe du bateau. Deux skis parallèles, fixations et équipement entiers."
       }
     },
     {
@@ -154718,7 +154814,7 @@
         "À l’équitation"
       ],
       "status": "reviewed_trio",
-      "method": "individual_visual_review_20261116",
+      "method": "individual_gesture_redraw_20261116",
       "source_sha256": "0dc47fa924e496eead531b7cfd12e4abd827c2113a90b610954719c530e0eb59",
       "semantic_before_sha256": "b47bc2f5ff9030fe74a4e38d69fb6290d22049ad55d599198fe00538971946a2",
       "semantic_after_sha256": "b47bc2f5ff9030fe74a4e38d69fb6290d22049ad55d599198fe00538971946a2",
@@ -154730,7 +154826,7 @@
       ],
       "target_sha256": [
         "027b37525943f5b41f3934e3d9897bb7be52cb2052435427ffd3d47eee9879dd",
-        "a5c163a2851ae2b567fd0e88b4c1a1b27f78a9fe837d79dd1945ee21f3efd297",
+        "0e118b1e523c0cc5ffec75cf263fdc2e8f8cd476fc82f4662c0d99f42ad06f30",
         "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888"
       ],
       "old_images": [],
@@ -154739,8 +154835,8 @@
       "review_763_decision": "active_reviewed_trio",
       "review_763_reason": "Le texte dit que la simulation de chute libre ressemble au parachutisme.",
       "visual_review": {
-        "register": "docs/tcf/revue-trios-sports-repas-20261116.json",
-        "note": "Parachutiste sous une voile ouverte, nageuse dont les membres restent dans le cadre et cavalière avec cheval entier. Ce sont les sports comparés, pas une représentation fictive du simulateur décrit."
+        "register": "docs/tcf/correction-gestes-natation-ski-20261116.json",
+        "note": "Crawl : corps et hanches proches de l’horizontale, tête tournée latéralement pour respirer, un bras allongé devant et l’autre en retour avec coude fléchi, deux mains et deux pieds dans le cadre. Immersion et battement discrets, sans posture verticale ni bras en ailes."
       }
     },
     {
