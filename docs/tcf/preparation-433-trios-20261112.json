@@ -4,14 +4,14 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 133,
-    "initial_pending": 300,
+    "activated_since_baseline": 139,
+    "initial_pending": 294,
     "additional_pending": 0,
-    "total_pending": 300,
+    "total_pending": 294,
     "pending_by_level": {
-      "A0-A1": 113,
+      "A0-A1": 110,
       "A1-A2": 164,
-      "A2-B1": 23
+      "A2-B1": 20
     }
   },
   "questions": [
@@ -4214,8 +4214,8 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-4.mp3",
       "source_sha256": "d89c698b7af740f5d9f37c427a95745fba73406c268498daee8d73022d3bf2b0",
       "semantic_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La quatrième piste contient « Alors, viens au tableau ». Même échange que l'autre support, empreintes et quatrième fichier audio vérifiés séparément.",
       "choices": [
         {
           "id": "a",
@@ -4251,7 +4251,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -4260,7 +4264,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -6838,8 +6842,8 @@
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
       "source_sha256": "87f177803ab1df25e52c1e52fc444e6cb1c4c477bcb8239419837a7539557d2f",
       "semantic_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "« Merci d'aller à la caisse pour payer vos achats » répond à la destination ; l'horaire de fermeture ne change pas les trois lieux.",
       "choices": [
         {
           "id": "a",
@@ -6863,7 +6867,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cabines-essayage.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6872,7 +6880,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -10769,8 +10777,8 @@
       "audio": "/lib/audio/tcf/co/ecole/24-école-ne-pas-comprendre-l-exercice.mp3",
       "source_sha256": "bf098937e09f8e259032b5ea81dc7a0cd668bea12bc6db886b4cb32f390edd95",
       "semantic_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
-      "current_status": "artwork_needed_contextual_locations",
-      "decision": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La professeure répond « Alors, viens au tableau » ; le livre doit accompagner l'élève mais n'est pas le lieu demandé.",
       "choices": [
         {
           "id": "a",
@@ -10806,7 +10814,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -10815,7 +10827,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -23377,14 +23389,20 @@
       "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-1.mp3",
       "source_sha256": "6b5e68b3d82aca8f5818631eda9def487bc02f00f9fa0a77375cb7f08b954860",
       "semantic_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Les sauces « peuvent être coulées dans un bac à glaçons, chaque compartiment correspondant à une portion ». La passoire et le panier sont les distracteurs conservés.",
       "choices": [
         {
           "id": "a",
           "label": "Un bac à glaçons",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-b1-bac-glacons.png",
+              "sha256": "ebe9739ec5e2643f81cc5c1f10513e44f7e2ed5d4885fedd7a6bf18bf7ef4cfb",
+              "label": "Un bac à glaçons"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -23408,7 +23426,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-bac-glacons.png",
+        "/lib/images/tcf/qcm-audit/vocab-passoire.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23417,7 +23439,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -24060,8 +24082,8 @@
       "audio": "/lib/audio/tcf/co/restaurant/08-restaurant-problème-avec-l-addition.mp3",
       "source_sha256": "b07bb6e0b3a16b14ad0fc7036a22a48c039d23e994b5fe08157de3c9b677622d",
       "semantic_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Nicolas dit « J'ai pris un steak-frites ». La salade verte est celle de Ludivine et les pâtes celles d'Aurore ; l'ensemble du calcul de l'addition est relu sans le modifier.",
       "choices": [
         {
           "id": "a",
@@ -24086,7 +24108,13 @@
           "id": "b",
           "label": "Une salade verte",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png",
+              "sha256": "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3",
+              "label": "Une salade verte"
+            }
+          ],
           "generation_jobs": [
             {
               "id": "extension573-salade-verte",
@@ -24102,7 +24130,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-steak-frites.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24111,7 +24143,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -24533,8 +24565,8 @@
       "audio": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
       "source_sha256": "88d55377d2bf95a7ed2ca1275201b833f1fdcb981e925b64af6a444d409b0267",
       "semantic_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le directeur précise que « des lasagnes végétariennes avaient été proposées » et n'étaient pas excellentes. La question porte sur le plat cité, pas sur les chiffres ni sur l'opinion générale.",
       "choices": [
         {
           "id": "a",
@@ -24569,7 +24601,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-lasagnes-vegetariennes.png",
+        "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -24578,7 +24614,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

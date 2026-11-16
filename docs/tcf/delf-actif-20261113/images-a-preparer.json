@@ -8,9 +8,9 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 359,
+      "active_reviewed_trio": 361,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 387,
+      "candidate_visual_review": 385,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
@@ -25,8 +25,8 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 134,
-        "candidate_visual_review": 204,
+        "active_reviewed_trio": 136,
+        "candidate_visual_review": 202,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -38046,8 +38046,8 @@
       "semantic_sha256": "db8f282c2d9cfefe711285eacfd6fcdc9ec2737342c388b224ef70b9ad031217",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-01.mp3",
       "audio_sha256": "11671880b002dda099aa7a4c430f88f920f6be5adcef2f538c4a1eca14172a4f",
-      "status": "candidate_visual_review",
-      "reason": "Guichet d’information, rayon jouets et caisse ; le lieu fonctionnel doit être identifiable sans portrait de Cédric.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -38088,8 +38088,24 @@
           "brief": "Représenter entièrement « À la caisse » pour « Où l’enfant attend-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-003-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Guichet d’information, rayon jouets et caisse ; le lieu fonctionnel doit être identifiable sans portrait de Cédric."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png",
+          "sha256": "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+          "sha256": "6cae2bda213a9e03a51826eb2fc54fb56ce5f8df0a44953e1f4ccda49415daa1"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+          "sha256": "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38107,6 +38123,10 @@
         "evidence_quote": "au guichet information",
         "semantic_sha256": "db8f282c2d9cfefe711285eacfd6fcdc9ec2737342c388b224ef70b9ad031217",
         "note": "Guichet d’information, rayon jouets et caisse ; le lieu fonctionnel doit être identifiable sans portrait de Cédric."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Le nouvel accueil est à l'entrée d'un magasin, avec symbole d'information générique et rayons visibles. L'ancien accueil hôtelier est écarté. L'enfant n'est pas ajouté seulement à la réponse correcte, ce qui donnerait un indice visuel."
       }
     },
     {
@@ -38582,8 +38602,8 @@
       "semantic_sha256": "db1d3d33e3c8dfbc09f3e006367a0d771277c4890822e2d1cfaf51a1010a13d3",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-04.mp3",
       "audio_sha256": "4b220fb818fb9035684ae2f6d4e35199a458a43cf4b9b79de635a46b0d52c55f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -38624,8 +38644,24 @@
           "brief": "Représenter entièrement « Au parking » pour « Où Monsieur Legrand doit-il se rendre ? ». Vérifier la transcription du support tcf-delf-actif-a2-003-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png",
+          "sha256": "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+          "sha256": "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp",
+          "sha256": "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38636,7 +38672,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Accueil commercial distinct du paiement et du parking. Les images désignent les trois destinations ; aucun personnage n'est assimilé à Monsieur Legrand."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-003-04#2",

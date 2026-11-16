@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1968,
+    "reviewed_trio": 1974,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 300,
+    "reviewed_763_artwork_pending": 294,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -54279,20 +54279,32 @@
         "Vers les cabines",
         "Vers l’accueil"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "87f177803ab1df25e52c1e52fc444e6cb1c4c477bcb8239419837a7539557d2f",
       "semantic_before_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48",
       "semantic_after_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48",
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cabines-essayage.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png"
+      ],
+      "target_sha256": [
+        "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e",
+        "91ab1300e5e98f2c09a9f0974f9568e906662615c9f7e07102611294011662e7",
+        "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
-      "semantic_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48"
+      "reason": "« Merci d'aller à la caisse pour payer vos achats » répond à la destination ; l'horaire de fermeture ne change pas les trois lieux.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "« Merci d'aller à la caisse pour payer vos achats » répond à la destination ; l'horaire de fermeture ne change pas les trois lieux.",
+      "semantic_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Zone de deux caisses avec tapis et terminaux, cabines avec miroirs et rideaux, accueil d'information sans tapis de paiement. Les trois lieux sont complets, pas des objets isolés."
+      }
     },
     {
       "key": "tcf-ss-a1-s1-co-3#3",
@@ -92295,19 +92307,31 @@
         "À son bureau",
         "Dans le couloir"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "bf098937e09f8e259032b5ea81dc7a0cd668bea12bc6db886b4cb32f390edd95",
       "semantic_before_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
       "semantic_after_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
       "audio": "/lib/audio/tcf/co/ecole/24-école-ne-pas-comprendre-l-exercice.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png"
+      ],
+      "target_sha256": [
+        "31112982e3535d87c204f5f71bff37ba16ffb8a6a1974fbc03e05e3333b70c2b",
+        "5f6a927bea15d537fe2f57e127df0c52e157ef613e85681b56e9dd7e467dd93e",
+        "79ffc41502d5206270718494c98a715c50bb9ef2336a704dc839964b2abeb099"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La professeure répond « Alors, viens au tableau » ; le livre doit accompagner l'élève mais n'est pas le lieu demandé.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La professeure répond « Alors, viens au tableau » ; le livre doit accompagner l'élève mais n'est pas le lieu demandé.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Trois lieux scolaires vides : tableau dans sa classe, bureau d'enseignante avec rangées de pupitres en arrière-plan et couloir avec casiers. Aucun personnage de dialogue inventé ; ce sont des choix de lieu, pas la scène illustrant les locuteurs."
+      }
     },
     {
       "key": "tcf-ssx-a1-ecole-comprendre-l-exercice-co-4#3",
@@ -114564,19 +114588,31 @@
         "À son bureau",
         "Dans le couloir"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "d89c698b7af740f5d9f37c427a95745fba73406c268498daee8d73022d3bf2b0",
       "semantic_before_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
       "semantic_after_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-4.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png"
+      ],
+      "target_sha256": [
+        "31112982e3535d87c204f5f71bff37ba16ffb8a6a1974fbc03e05e3333b70c2b",
+        "5f6a927bea15d537fe2f57e127df0c52e157ef613e85681b56e9dd7e467dd93e",
+        "79ffc41502d5206270718494c98a715c50bb9ef2336a704dc839964b2abeb099"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_contextual_locations",
-      "review_763_reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale."
+      "reason": "La quatrième piste contient « Alors, viens au tableau ». Même échange que l'autre support, empreintes et quatrième fichier audio vérifiés séparément.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La quatrième piste contient « Alors, viens au tableau ». Même échange que l'autre support, empreintes et quatrième fichier audio vérifiés séparément.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Même trio de lieux scolaires après relecture séparée de la quatrième piste. Le bureau est contextualisé comme bureau d'enseignante ; le couloir conserve un passage libre et un banc contre le mur."
+      }
     },
     {
       "key": "delf-a1-2022-co-96#13",
@@ -201221,20 +201257,32 @@
         "Une salade verte",
         "Un plat de pâtes"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "b07bb6e0b3a16b14ad0fc7036a22a48c039d23e994b5fe08157de3c9b677622d",
       "semantic_before_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1",
       "semantic_after_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1",
       "audio": "/lib/audio/tcf/co/restaurant/08-restaurant-problème-avec-l-addition.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-steak-frites.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png"
+      ],
+      "target_sha256": [
+        "f19536ebdb88d0707499b525c333c3d2970a1486e29fc195f0a2a3d1d09e43b3",
+        "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3",
+        "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
-      "semantic_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1"
+      "reason": "Nicolas dit « J'ai pris un steak-frites ». La salade verte est celle de Ludivine et les pâtes celles d'Aurore ; l'ensemble du calcul de l'addition est relu sans le modifier.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Nicolas dit « J'ai pris un steak-frites ». La salade verte est celle de Ludivine et les pâtes celles d'Aurore ; l'ensemble du calcul de l'addition est relu sans le modifier.",
+      "semantic_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Steak avec frites, salade de feuilles seules servie en bol et plat de pâtes à la bolognaise comme illustration de la catégorie « plat de pâtes », sans attribuer cette recette à Aurore. La salade au poulet, la salade grecque et la salade de pâtes sont écartées : elles ne sont pas une salade verte."
+      }
     },
     {
       "key": "tcf-ss-b1-s2-co-3#9",
@@ -207266,20 +207314,32 @@
         "Une soupe",
         "Une salade"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "88d55377d2bf95a7ed2ca1275201b833f1fdcb981e925b64af6a444d409b0267",
       "semantic_before_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342",
       "semantic_after_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342",
       "audio": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-lasagnes-vegetariennes.png",
+        "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png"
+      ],
+      "target_sha256": [
+        "369ca889c2916b36f7c0574d75ae32715606db1d2b277ba01bbee02a67cd62d5",
+        "850075bad1f18cb1ef930844529d34ff3b11a85f09f7fbb2d68241def12d60ca",
+        "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
-      "semantic_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342"
+      "reason": "Le directeur précise que « des lasagnes végétariennes avaient été proposées » et n'étaient pas excellentes. La question porte sur le plat cité, pas sur les chiffres ni sur l'opinion générale.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le directeur précise que « des lasagnes végétariennes avaient été proposées » et n'étaient pas excellentes. La question porte sur le plat cité, pas sur les chiffres ni sur l'opinion générale.",
+      "semantic_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Les lasagnes montrent les feuilles de pâtes, épinards et courgettes sans viande ; la soupe et la salade restent végétariennes. Une image générique de lasagnes à la viande ne conviendrait pas."
+      }
     },
     {
       "key": "tcf-ss-b1-s8-co-4#7",
@@ -208648,20 +208708,32 @@
         "Une passoire",
         "Un panier en osier"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "6b5e68b3d82aca8f5818631eda9def487bc02f00f9fa0a77375cb7f08b954860",
       "semantic_before_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc",
       "semantic_after_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc",
       "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-1.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-bac-glacons.png",
+        "/lib/images/tcf/qcm-audit/vocab-passoire.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp"
+      ],
+      "target_sha256": [
+        "ebe9739ec5e2643f81cc5c1f10513e44f7e2ed5d4885fedd7a6bf18bf7ef4cfb",
+        "a6bd5ee23f41753a449752fd54d73effe8a9815ea22a178227c23cdc57cf3c97",
+        "d486afcb022c7ebec0c12dde5370910920fc5f87feec3f6d3795c011acfcd8d3"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
-      "semantic_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc"
+      "reason": "Les sauces « peuvent être coulées dans un bac à glaçons, chaque compartiment correspondant à une portion ». La passoire et le panier sont les distracteurs conservés.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Les sauces « peuvent être coulées dans un bac à glaçons, chaque compartiment correspondant à une portion ». La passoire et le panier sont les distracteurs conservés.",
+      "semantic_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-lieux-cuisine-20261116.json",
+        "note": "Bac vide à douze compartiments, passoire métallique perforée et panier d'osier vide. Aucun liquide congelé ne donne la réponse ; les formes et usages des récipients restent distincts."
+      }
     },
     {
       "key": "tcf-ss-b1-s10-co-2#5",

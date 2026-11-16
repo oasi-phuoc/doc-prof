@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "eb123e9ac32c1183820ca0cfe92caaf98be241fc",
+  "compared_all_six_banks": true,
+  "added_image_forms": 8,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 9,
+  "new_image_usages": 17,
+  "reused_image_usages": 7,
+  "reused_distinct_images": 7,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "tcf-ss-a1-s1-co-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ssx-a1-ecole-comprendre-l-exercice-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-96#12",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-ss-b1-s2-co-3#8",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-ss-b1-s8-co-4#6",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-ss-b1-s10-co-2#4",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "cmd": "python3 scripts/check_tcf_763_review.py",
+      "chunk_id": "0d1048",
+      "wall_time_seconds": 1.000905261,
+      "original_token_count": 0,
+      "output": "763 décisions vérifiées : 357 trios actifs, 112 textes conservés, 294 trios à préparer.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-images.py",
+      "chunk_id": "0e0381",
+      "wall_time_seconds": 1.001372813,
+      "original_token_count": 0,
+      "output": "346 supports et 1 663 questions suivis ; 361 trios actifs liés à leur relecture, images et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-context-review.py",
+      "chunk_id": "829fee",
+      "wall_time_seconds": 1.001376101,
+      "original_token_count": 0,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-qcm-images.mjs",
+      "chunk_id": "2081fe",
+      "wall_time_seconds": 1.001121747,
+      "original_token_count": 0,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2434 bank variants\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-bank.mjs",
+      "chunk_id": "5a8f61",
+      "wall_time_seconds": 1.001220481,
+      "original_token_count": 0,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n",
+      "exit_code": 0
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 16,
+    "question_views": 16,
+    "image_views": 48,
+    "errors": []
+  },
+  "additional_checks": {
+    "catalogue_tests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "typescript_exit_code": 0,
+    "production_build_exit_code": 0,
+    "interactive_budgets": {
+      "exit_code": 0,
+      "game_gzip": 3138947,
+      "game_maximum_gzip": 3145728,
+      "competition_gzip": 204169,
+      "competition_maximum_gzip": 204800
+    },
+    "prebuild": {
+      "exit_code": 0,
+      "gallery_images": 6993,
+      "nominal_image_clues": 1315,
+      "audio_files": 8801,
+      "questions": 6734,
+      "response_forms": 15175,
+      "game_types": 696
+    },
+    "upstream_commit": "eb123e9ac32c1183820ca0cfe92caaf98be241fc",
+    "upstream_images_preserved_count": 58
+  }
+}

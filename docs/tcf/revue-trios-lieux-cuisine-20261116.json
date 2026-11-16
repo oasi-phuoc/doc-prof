@@ -1,0 +1,987 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "eb123e9ac32c1183820ca0cfe92caaf98be241fc",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 8,
+    "added_historical_trios": 6,
+    "added_delf_actif_trios": 2,
+    "new_images": 9,
+    "imagegen_calls": 10,
+    "rejected_generations": 1,
+    "new_image_usages": 17,
+    "reused_image_usages": 7,
+    "reused_distinct_images": 7,
+    "added_by_level": {
+      "A0-A1": 3,
+      "A1-A2": 2,
+      "A2-B1": 3
+    },
+    "historical_pending": 294
+  },
+  "new_images": [
+    {
+      "id": "qcm-a1-caisses-magasin",
+      "label": "Les caisses du magasin",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING, soft painted transitions, discreet thin contours, natural colours, cream walls and light honey-coloured wood, navy and muted green accents, soft daylight. Not a photograph or a cartoon. A coherent realistic interior with physically supported furniture, fully readable main subject, no texture overlay. No people, words, numbers, labels, prices, logos or watermark. One image, no panels. A supermarket checkout area seen from the customer's approach, with TWO checkout lanes clearly identifiable. Each has a conveyor belt, barcode scanner, payment terminal and a simple closed cashier chair. Small empty shopping basket on the lower shelf. Grocery shelves in distant background, clear walking space in front. Not an information desk, not self-service machines only. Show entire two checkout counters within frame with margin.",
+      "source_png": "/workspace/generated_images/exec-7b840525-a0c3-4a1c-ad4c-db8791a5b933.png",
+      "source_sha256": "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e",
+      "sha256": "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e",
+      "bytes": 2203480,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : lieu complet reconnaissable, mobilier soutenu, passage libre et lumière douce dans le style TCF. Le banc reste contre le mur. Aucun personnage inventé ou coupé, aucun prix, date ou texte-réponse. Le i générique désigne la fonction information. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-accueil-magasin",
+      "label": "L’accueil et le guichet d’information du magasin",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING, soft painted transitions, discreet thin contours, natural colours, cream walls and light honey-coloured wood, navy and muted green accents, soft daylight. Not a photograph or a cartoon. A coherent realistic interior with physically supported furniture, fully readable main subject, no texture overlay. No people, words, numbers, labels, prices, logos or watermark. One image, no panels. A supermarket CUSTOMER INFORMATION desk at the entrance, NOT a checkout. A low accessible reception counter, simple staffed-desk chair but no person, telephone and computer behind the counter, brochure rack with unlettered leaflets, a prominent simple round information symbol lowercase i above counter (the ONLY allowed typographic glyph). Glass automatic store entrance and a glimpse of ordinary supermarket aisles in background. No conveyor belt, no cash register, no prices or lost-child cue. Clear foreground approach space, whole counter visible.",
+      "source_png": "/workspace/generated_images/exec-d886803b-1aa0-4264-9d5f-4e8a8edad9a6.png",
+      "source_sha256": "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369",
+      "sha256": "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369",
+      "bytes": 2228965,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : lieu complet reconnaissable, mobilier soutenu, passage libre et lumière douce dans le style TCF. Le banc reste contre le mur. Aucun personnage inventé ou coupé, aucun prix, date ou texte-réponse. Le i générique désigne la fonction information. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-cabines-essayage",
+      "label": "Les cabines d’essayage",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-cabines-essayage.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING, soft painted transitions, discreet thin contours, natural colours, cream walls and light honey-coloured wood, navy and muted green accents, soft daylight. Not a photograph or a cartoon. A coherent realistic interior with physically supported furniture, fully readable main subject, no texture overlay. No people, words, numbers, labels, prices, logos or watermark. One image, no panels. The changing-room area of a clothing shop, two fitting cubicles with soft plain fabric curtains, one curtain open revealing a tall wall mirror and wall hooks. A low bench securely against the wall and a clothes hanger on a hook. Clothing racks visible only in background. Not swimming pool lockers, not toilets. Show the fitting cubicles, floor and bench in a spacious clear composition, no person or clothing being tried on.",
+      "source_png": "/workspace/generated_images/exec-b67857d9-df44-4779-8735-021407100d5a.png",
+      "source_sha256": "91ab1300e5e98f2c09a9f0974f9568e906662615c9f7e07102611294011662e7",
+      "sha256": "91ab1300e5e98f2c09a9f0974f9568e906662615c9f7e07102611294011662e7",
+      "bytes": 2090694,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : lieu complet reconnaissable, mobilier soutenu, passage libre et lumière douce dans le style TCF. Le banc reste contre le mur. Aucun personnage inventé ou coupé, aucun prix, date ou texte-réponse. Le i générique désigne la fonction information. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-au-tableau-classe",
+      "label": "Au tableau de la classe",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING, believable painted volumes, unobtrusive fine contours, natural warm muted colours, cream walls, light wood, navy and sage accents, soft daylight. No photographic texture, no heavy outlines, no cartoon, no overlay grain. Empty French school interior, NO people, NO writing, words, numbers, clocks, calendars, signs, logos or watermark. One coherent image with full main subject and floor approach space visible. The FRONT teaching area of a classroom. A large empty matte green blackboard attached securely to wall is the dominant subject. Below a slim chalk tray and small eraser. Show comfortable floor approach space in front of the board, side edges of ordinary student desks further away on both sides. No teacher desk, no generic painting, no blackboard standing isolated on a background. The blackboard must unmistakably belong to a real classroom.",
+      "source_png": "/workspace/generated_images/exec-98c9d5e5-d897-473f-847b-b87b73bdaa68.png",
+      "source_sha256": "31112982e3535d87c204f5f71bff37ba16ffb8a6a1974fbc03e05e3333b70c2b",
+      "sha256": "31112982e3535d87c204f5f71bff37ba16ffb8a6a1974fbc03e05e3333b70c2b",
+      "bytes": 2000416,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : lieu complet reconnaissable, mobilier soutenu, passage libre et lumière douce dans le style TCF. Le banc reste contre le mur. Aucun personnage inventé ou coupé, aucun prix, date ou texte-réponse. Le i générique désigne la fonction information. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "École et classe",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-bureau-professeure",
+      "label": "Au bureau de la professeure",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING, believable painted volumes, unobtrusive fine contours, natural warm muted colours, cream walls, light wood, navy and sage accents, soft daylight. No photographic texture, no heavy outlines, no cartoon, no overlay grain. Empty French school interior, NO people, NO writing, words, numbers, clocks, calendars, signs, logos or watermark. One coherent image with full main subject and floor approach space visible. A clearly recognisable TEACHER'S DESK at the front side of a classroom, seen from a student's approach. One broad wooden teaching desk, adult-size chair behind it, closed teacher notebook, pencil cup, tidy small pile of exercise books. Rows of smaller student desks in background establish that this is the teacher's desk, not an office or an empty table. Do not show a blackboard in this image: main focus is the complete teacher desk, whole desk legs and clear floor visible.",
+      "source_png": "/workspace/generated_images/exec-74850634-dcd4-40be-b532-290c1b86b4ad.png",
+      "source_sha256": "5f6a927bea15d537fe2f57e127df0c52e157ef613e85681b56e9dd7e467dd93e",
+      "sha256": "5f6a927bea15d537fe2f57e127df0c52e157ef613e85681b56e9dd7e467dd93e",
+      "bytes": 2267166,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : lieu complet reconnaissable, mobilier soutenu, passage libre et lumière douce dans le style TCF. Le banc reste contre le mur. Aucun personnage inventé ou coupé, aucun prix, date ou texte-réponse. Le i générique désigne la fonction information. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "École et classe",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-couloir-ecole",
+      "label": "Dans le couloir de l’école",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING, believable painted volumes, unobtrusive fine contours, natural warm muted colours, cream walls, light wood, navy and sage accents, soft daylight. No photographic texture, no heavy outlines, no cartoon, no overlay grain. Empty French school interior, NO people, NO writing, words, numbers, clocks, calendars, signs, logos or watermark. One coherent image with full main subject and floor approach space visible. An empty school CORRIDOR with classroom doors along one side and large windows along the other, several plain school lockers beside doors, a simple wooden bench AGAINST THE WALL, broad completely unobstructed central passage. Floor, ceiling and depth clearly visible. No desks or chalkboard, no chairs standing in the passage, no signs or classroom numbers. It must read as a school passage, not a private apartment hallway.",
+      "source_png": "/workspace/generated_images/exec-bbde0f3a-8ebe-4ff8-be3a-56de9c6d8947.png",
+      "source_sha256": "79ffc41502d5206270718494c98a715c50bb9ef2336a704dc839964b2abeb099",
+      "sha256": "79ffc41502d5206270718494c98a715c50bb9ef2336a704dc839964b2abeb099",
+      "bytes": 2133949,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : lieu complet reconnaissable, mobilier soutenu, passage libre et lumière douce dans le style TCF. Le banc reste contre le mur. Aucun personnage inventé ou coupé, aucun prix, date ou texte-réponse. Le i générique désigne la fonction information. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "École et classe",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-b1-bac-glacons",
+      "label": "Un bac à glaçons",
+      "path": "/lib/images/tcf/qcm-audit/qcm-b1-bac-glacons.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Detailed gentle semi-realistic digital painting of the actual object, soft realistic volumes and discreet fine contours, natural colours and soft light from upper left. The entire object must fit comfortably with ample margin. The WHOLE empty background is a smooth almost perfectly uniform PALE WARM IVORY, exact colour RGB 253,242,225 hex #FDF2E1, like the approved TCF isolated objects. NO paper grain, NO canvas, NO brush texture in background, NO yellow ochre, NO vignette, NO strong gradient, NO horizon, NO table edge or room. Fine painted material detail ONLY on the subject, with a short soft contact shadow. No text, logo, numbers or watermark. One coherent subject composition, no panels. ONE ordinary empty blue flexible silicone ICE CUBE TRAY in three-quarter view, twelve clearly visible small mould compartments in a 3 by 4 rectangular grid, each compartment has a bottom and walls. A simple kitchen tray, no ice outside, no lids, no second tray, no sauce, no food or other kitchen equipment. Show the entire tray.",
+      "source_png": "/workspace/generated_images/exec-081ad7de-548f-4b82-bdff-1821998a2bcb.png",
+      "source_sha256": "ebe9739ec5e2643f81cc5c1f10513e44f7e2ed5d4885fedd7a6bf18bf7ef4cfb",
+      "sha256": "ebe9739ec5e2643f81cc5c1f10513e44f7e2ed5d4885fedd7a6bf18bf7ef4cfb",
+      "bytes": 1450345,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : sujet entier sur ivoire clair lisse, ombre courte, sans grain de papier, date, prix ou texte. Le bac est vide ; la salade est composée de feuilles seules ; les lasagnes montrent les couches de pâtes et les légumes sans viande. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Cuisine et alimentation",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-b1-salade-verte",
+      "label": "Une salade verte",
+      "path": "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Detailed gentle semi-realistic digital painting of the actual object, soft realistic volumes and discreet fine contours, natural colours and soft light from upper left. The entire object must fit comfortably with ample margin. The WHOLE empty background is a smooth almost perfectly uniform PALE WARM IVORY, exact colour RGB 253,242,225 hex #FDF2E1, like the approved TCF isolated objects. NO paper grain, NO canvas, NO brush texture in background, NO yellow ochre, NO vignette, NO strong gradient, NO horizon, NO table edge or room. Fine painted material detail ONLY on the subject, with a short soft contact shadow. No text, logo, numbers or watermark. One coherent subject composition, no panels. ONE shallow plain white ceramic salad bowl containing a simple FRENCH GREEN SIDE SALAD made only of washed mixed green lettuce leaves. Recognisable fresh leafy greens in a bowl, no chicken, no meat, no egg, no tomato, no fruit, no bread or cutlery. The whole bowl with all leaves comfortably within frame. Not a whole unprepared head of lettuce.",
+      "source_png": "/workspace/generated_images/exec-07da3dad-69aa-4775-b9ae-751b32209ba4.png",
+      "source_sha256": "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3",
+      "sha256": "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3",
+      "bytes": 1603637,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : sujet entier sur ivoire clair lisse, ombre courte, sans grain de papier, date, prix ou texte. Le bac est vide ; la salade est composée de feuilles seules ; les lasagnes montrent les couches de pâtes et les légumes sans viande. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Cuisine et alimentation",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-b1-lasagnes-vegetariennes",
+      "label": "Des lasagnes végétariennes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-b1-lasagnes-vegetariennes.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Detailed gentle semi-realistic digital painting of the actual object, soft realistic volumes and discreet fine contours, natural colours and soft light from upper left. The entire object must fit comfortably with ample margin. The WHOLE empty background is a smooth almost perfectly uniform PALE WARM IVORY, exact colour RGB 253,242,225 hex #FDF2E1, like the approved TCF isolated objects. NO paper grain, NO canvas, NO brush texture in background, NO yellow ochre, NO vignette, NO strong gradient, NO horizon, NO table edge or room. Fine painted material detail ONLY on the subject, with a short soft contact shadow. No text, logo, numbers or watermark. One coherent subject composition, no panels. ONE simple white dinner plate with a generous rectangular serving of VEGETARIAN LASAGNA. Clearly show stacked flat pasta sheets, tomato sauce, bechamel, melted lightly golden cheese, visible green spinach and zucchini and small red vegetable pieces between the layers. Recognisable lasagna, not spaghetti, not soup, NO minced meat, chicken or fish, no garnish side dish or extra object. Show the full plate and food, soft plausible culinary detail.\nReprise du fond : Edit ONLY the empty background of the FIRST supplied image (vegetarian lasagna on white plate). Preserve the lasagna, green vegetables, every pasta layer, all colours of food, plate shape, full composition and exact native 1448 by 1086 dimensions. The SECOND supplied image (approved TCF drinks) is the exact background reference: use its very pale smooth warm IVORY background, approximately RGB 253,242,225 hex #FDF2E1. The current first image background is slightly too peach/ochre and must become this lighter neutral ivory. Absolutely NO paper grain, canvas texture, brush texture, mottling, vignette, or strong gradient anywhere in the empty background. Keep a small subtle contact shadow immediately under the plate only. Do not add drinks or any new objects from the reference. Do not alter the illustration style or turn it into a photo. Deliver one standalone landscape 4:3 PNG with native exact width1448 height1086.",
+      "source_png": "/workspace/generated_images/exec-f4c68180-f3cd-4152-8579-51d9aaafc024.png",
+      "source_sha256": "369ca889c2916b36f7c0574d75ae32715606db1d2b277ba01bbee02a67cd62d5",
+      "sha256": "369ca889c2916b36f7c0574d75ae32715606db1d2b277ba01bbee02a67cd62d5",
+      "bytes": 1897207,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-lieux-cuisine-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : sujet entier sur ivoire clair lisse, ombre courte, sans grain de papier, date, prix ou texte. Le bac est vide ; la salade est composée de feuilles seules ; les lasagnes montrent les couches de pâtes et les légumes sans viande. PNG natif exact conservé sans transformation.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Fond de la première génération trop pêche ; reprise imagegen avec la référence boissons, plat végétarien et cadrage conservés. Première source conservée.",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Cuisine et alimentation",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "background_review": [
+    {
+      "id": "qcm-b1-bac-glacons",
+      "corner_median_rgb": [
+        253.0,
+        240.0,
+        224.0
+      ],
+      "reference_corner_median_rgb": [
+        253.0,
+        242.0,
+        225.0
+      ],
+      "maximum_channel_difference": 2.0,
+      "corner_standard_deviation": [
+        0.5561701907984923,
+        0.5738432944749647,
+        0.5878603576388645
+      ]
+    },
+    {
+      "id": "qcm-b1-salade-verte",
+      "corner_median_rgb": [
+        253.0,
+        240.0,
+        222.0
+      ],
+      "reference_corner_median_rgb": [
+        253.0,
+        242.0,
+        225.0
+      ],
+      "maximum_channel_difference": 3.0,
+      "corner_standard_deviation": [
+        0.572861577816682,
+        0.5799253136649655,
+        0.6273933765824741
+      ]
+    },
+    {
+      "id": "qcm-b1-lasagnes-vegetariennes",
+      "corner_median_rgb": [
+        253.0,
+        241.0,
+        225.0
+      ],
+      "reference_corner_median_rgb": [
+        253.0,
+        242.0,
+        225.0
+      ],
+      "maximum_channel_difference": 1.0,
+      "corner_standard_deviation": [
+        0.5568937171893033,
+        0.5716624521373376,
+        0.5696574227919241
+      ]
+    }
+  ],
+  "generation": {
+    "date": "2026-11-16",
+    "imagegen_calls": 10,
+    "final_images": 9,
+    "rejected_generations": [
+      {
+        "id": "qcm-b1-lasagnes-vegetariennes",
+        "source": "/workspace/generated_images/exec-07dbec98-5446-49e3-af5d-a4db9bf991fc.png",
+        "reason": "Fond trop pêche : médiane du coin [253,239,221], référence [253,242,225].",
+        "replacement": "/workspace/generated_images/exec-f4c68180-f3cd-4152-8579-51d9aaafc024.png",
+        "edit_prompt": "Edit ONLY the empty background of the FIRST supplied image (vegetarian lasagna on white plate). Preserve the lasagna, green vegetables, every pasta layer, all colours of food, plate shape, full composition and exact native 1448 by 1086 dimensions. The SECOND supplied image (approved TCF drinks) is the exact background reference: use its very pale smooth warm IVORY background, approximately RGB 253,242,225 hex #FDF2E1. The current first image background is slightly too peach/ochre and must become this lighter neutral ivory. Absolutely NO paper grain, canvas texture, brush texture, mottling, vignette, or strong gradient anywhere in the empty background. Keep a small subtle contact shadow immediately under the plate only. Do not add drinks or any new objects from the reference. Do not alter the illustration style or turn it into a photo. Deliver one standalone landscape 4:3 PNG with native exact width1448 height1086."
+      }
+    ]
+  },
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-accueil-dessine.webp",
+      "reason": "Accueil de type hôtelier, inadapté au guichet d’information du supermarché."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-pates-fromage-dessine.webp",
+      "reason": "Fond trop jaune pour le nouveau trio : un autre plat de pâtes existant est préféré sans modifier l’original."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-soupe-dessine.webp",
+      "reason": "Fond trop chaud pour le nouveau trio : soupe de légumes au fond plus proche de la référence réemployée."
+    }
+  ],
+  "editorial_scope": "Catégories de réponse QCM, distinctes des scènes de dialogue à deux interlocuteurs.",
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s1-co-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Mesdames, Messieurs, notre magasin ferme ses portes dans 15 minutes. Merci d'aller à la caisse pour payer vos achats. Le magasin est fermé dimanche. Nous vous accueillons lundi de 9h à 20h. Nous vous souhaitons un bon week-end.",
+      "source_sha256": "87f177803ab1df25e52c1e52fc444e6cb1c4c477bcb8239419837a7539557d2f",
+      "semantic_sha256": "ae735215b0340b6896f5186a56123427995bb21e8f06b9bd55f58ee0cba4df48",
+      "question": {
+        "enonce": "Où les clients doivent-ils se diriger ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Vers les caisses",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Vers les cabines",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Vers l’accueil",
+            "correct": false
+          }
+        ],
+        "written_model": "Vers les caisses"
+      },
+      "audio": "/lib/audio/tcf/co/magasins/chers-clients-magasin-ferme.mp3",
+      "audio_sha256": "657cc76b3f3707883c8beb94dcc40b00c8664bca9c8f1e7592ed1ad70ff7760f",
+      "image_ids": [
+        "qcm-a1-caisses-magasin",
+        "qcm-a1-cabines-essayage",
+        "qcm-a1-accueil-magasin"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cabines-essayage.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png"
+      ],
+      "image_sha256": [
+        "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e",
+        "91ab1300e5e98f2c09a9f0974f9568e906662615c9f7e07102611294011662e7",
+        "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369"
+      ],
+      "reason": "« Merci d'aller à la caisse pour payer vos achats » répond à la destination ; l'horaire de fermeture ne change pas les trois lieux.",
+      "visual_review": "Zone de deux caisses avec tapis et terminaux, cabines avec miroirs et rideaux, accueil d'information sans tapis de paiement. Les trois lieux sont complets, pas des objets isolés.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ssx-a1-ecole-comprendre-l-exercice-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- Madame ?\n- Oui ?\n- Je ne comprends pas l'exercice.\n- Alors, viens au tableau.\nOn va faire l'exercice.\n- D'accord.\nJe prends mon livre ?\n- Oui, prends ton livre.",
+      "source_sha256": "bf098937e09f8e259032b5ea81dc7a0cd668bea12bc6db886b4cb32f390edd95",
+      "semantic_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
+      "question": {
+        "enonce": "Où la professeure lui demande-t-elle de venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au tableau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À son bureau",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans le couloir",
+            "correct": false
+          }
+        ],
+        "written_model": "Au tableau"
+      },
+      "audio": "/lib/audio/tcf/co/ecole/24-école-ne-pas-comprendre-l-exercice.mp3",
+      "audio_sha256": "7dcfafe0871e44ff43efcb445e7a87c87477c54c6ddc3b524bef96f08f7443c2",
+      "image_ids": [
+        "qcm-a1-au-tableau-classe",
+        "qcm-a1-bureau-professeure",
+        "qcm-a1-couloir-ecole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png"
+      ],
+      "image_sha256": [
+        "31112982e3535d87c204f5f71bff37ba16ffb8a6a1974fbc03e05e3333b70c2b",
+        "5f6a927bea15d537fe2f57e127df0c52e157ef613e85681b56e9dd7e467dd93e",
+        "79ffc41502d5206270718494c98a715c50bb9ef2336a704dc839964b2abeb099"
+      ],
+      "reason": "La professeure répond « Alors, viens au tableau » ; le livre doit accompagner l'élève mais n'est pas le lieu demandé.",
+      "visual_review": "Trois lieux scolaires vides : tableau dans sa classe, bureau d'enseignante avec rangées de pupitres en arrière-plan et couloir avec casiers. Aucun personnage de dialogue inventé ; ce sont des choix de lieu, pas la scène illustrant les locuteurs.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-96#12",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Madame ! Oui ? Je ne comprends pas l'exercice. Alors, viens au tableau. On va faire l'exercice. D'accord. Je prends mon livre ? Oui, prends ton livre.",
+      "source_sha256": "d89c698b7af740f5d9f37c427a95745fba73406c268498daee8d73022d3bf2b0",
+      "semantic_sha256": "89523554dc953b90ab703157aa11dd0a23ce63ea2e4af05bca05ff925b387b5b",
+      "question": {
+        "enonce": "Où la professeure lui demande-t-elle de venir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au tableau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À son bureau",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans le couloir",
+            "correct": false
+          }
+        ],
+        "written_model": "Au tableau"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_96-4.mp3",
+      "audio_sha256": "7dcfafe0871e44ff43efcb445e7a87c87477c54c6ddc3b524bef96f08f7443c2",
+      "image_ids": [
+        "qcm-a1-au-tableau-classe",
+        "qcm-a1-bureau-professeure",
+        "qcm-a1-couloir-ecole"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-au-tableau-classe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-bureau-professeure.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-couloir-ecole.png"
+      ],
+      "image_sha256": [
+        "31112982e3535d87c204f5f71bff37ba16ffb8a6a1974fbc03e05e3333b70c2b",
+        "5f6a927bea15d537fe2f57e127df0c52e157ef613e85681b56e9dd7e467dd93e",
+        "79ffc41502d5206270718494c98a715c50bb9ef2336a704dc839964b2abeb099"
+      ],
+      "reason": "La quatrième piste contient « Alors, viens au tableau ». Même échange que l'autre support, empreintes et quatrième fichier audio vérifiés séparément.",
+      "visual_review": "Même trio de lieux scolaires après relecture séparée de la quatrième piste. Le bureau est contextualisé comme bureau d'enseignante ; le couloir conserve un passage libre et un banc contre le mur.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît, le petit Cédric attend ses parents au guichet information situé à l’entrée du supermarché.",
+      "source_sha256": "7fc895a683b215f5167ff51f063e4f1102ccf0bda6a473fd5d46a9f6053986c7",
+      "semantic_sha256": "db8f282c2d9cfefe711285eacfd6fcdc9ec2737342c388b224ef70b9ad031217",
+      "question": {
+        "enonce": "Où l’enfant attend-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au guichet information",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Au rayon jouets",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la caisse",
+            "correct": false
+          }
+        ],
+        "written_model": "Au guichet information"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-01.mp3",
+      "audio_sha256": "11671880b002dda099aa7a4c430f88f920f6be5adcef2f538c4a1eca14172a4f",
+      "image_ids": [
+        "qcm-a1-accueil-magasin",
+        "co834-rayon-jouets-dessine",
+        "qcm-a1-caisses-magasin"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png",
+        "/lib/images/tcf/qcm-audit/co834-rayon-jouets-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png"
+      ],
+      "image_sha256": [
+        "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369",
+        "6cae2bda213a9e03a51826eb2fc54fb56ce5f8df0a44953e1f4ccda49415daa1",
+        "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e"
+      ],
+      "reason": "Cédric attend ses parents « au guichet information situé à l'entrée du supermarché » ; le rayon jouets et la caisse restent des distracteurs.",
+      "visual_review": "Le nouvel accueil est à l'entrée d'un magasin, avec symbole d'information générique et rayons visibles. L'ancien accueil hôtelier est écarté. L'enfant n'est pas ajouté seulement à la réponse correcte, ce qui donnerait un indice visuel.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît !... Monsieur Legrand est prié de se rendre à l’accueil du magasin pour une communication urgente le concernant.",
+      "source_sha256": "a5119ec8b20bd985b87fb08b4dc6c3708e54a869839a5666673085b2d23694ad",
+      "semantic_sha256": "db1d3d33e3c8dfbc09f3e006367a0d771277c4890822e2d1cfaf51a1010a13d3",
+      "question": {
+        "enonce": "Où Monsieur Legrand doit-il se rendre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À l’accueil du magasin",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la caisse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au parking",
+            "correct": false
+          }
+        ],
+        "written_model": "À l’accueil du magasin"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-04.mp3",
+      "audio_sha256": "4b220fb818fb9035684ae2f6d4e35199a458a43cf4b9b79de635a46b0d52c55f",
+      "image_ids": [
+        "qcm-a1-accueil-magasin",
+        "qcm-a1-caisses-magasin",
+        "co834-parking-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-accueil-magasin.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-caisses-magasin.png",
+        "/lib/images/tcf/qcm-audit/co834-parking-dessine.webp"
+      ],
+      "image_sha256": [
+        "7b8f83a33cbcba8dbba29cdc76ae714a25d727313dc02b874de7cc51a8127369",
+        "cbb5a84510257f0cd3fac109a4d08478ce9d6fce9ad78968fdf1227e62454a0e",
+        "3e32e457e19827e9dd0c3dfd552b4dae9f0db9825b8d6f9708229ba7ee1fb948"
+      ],
+      "reason": "Monsieur Legrand est prié de se rendre « à l'accueil du magasin » pour une communication urgente.",
+      "visual_review": "Accueil commercial distinct du paiement et du parking. Les images désignent les trois destinations ; aucun personnage n'est assimilé à Monsieur Legrand.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-b1-s2-co-3#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Alors, voici l'addition. Merci. Alors voyons, ça fait pour nous trois... 40 euros en tout. Tiens, regarde, Aurore. Bon, on divise en trois, non ? Ah non ! Moi, j'ai pris qu'une salade verte à 6 euros et de l'eau. Pardon, Ludivine, c'est vrai. Faisons les calculs, donc. Toi, Nicolas, qu'est-ce que tu as pris déjà ? J'ai pris un steak-frites, ça coûtait 10 euros. Plus un jus de fruit à 3,50 euros. Ok. Moi, j'ai pris un plat de pâtes à 7 euros et un dessert à 4 euros. 7 + 4 + 10 +... On n'a pas dépensé autant. Ils ont fait une erreur à la caisse, apparemment. Attends, Aurore, j'ai pas compté mon dessert. Finalement, tu as dépensé autant que nous. Je calcule à nouveau. Il coûtait combien ton dessert ? Dans les 5 euros ? Bon, mais ils ont quand même compté trop. Je rappelle le serveur. S'il vous plaît ? Oui, mademoiselle. Je crois que vous avez fait une petite erreur dans l'addition. Il y a 4,50 euros en plus. Attendez, donnez-moi votre ticket. Je vais vérifier tout de suite avec le patron à la caisse. Heureusement qu'on a refait nos comptes. Si on avait divisé par 3, on ne s'en serait pas aperçu. Voilà voilà, je vous explique tout. Les 4 euros 50 en plus correspondent exactement au prix du couvert 1,50 euros par personne. Et qu'est-ce que c'est le prix du couvert ? Ce sont des frais pour le service et pour le pain, etc. Ah, très bien, merci. Alors récapitulons, moi je dois 15 euros, Ludivine 12,50 euros et Aurore... 12,50€ aussi. Voilà monsieur, 40€. Merci. Au revoir et à bientôt.",
+      "source_sha256": "b07bb6e0b3a16b14ad0fc7036a22a48c039d23e994b5fe08157de3c9b677622d",
+      "semantic_sha256": "14831dd4d64a4ad18fc61b4ac5f2b6eb5d6fa0ef416c222eba591e11b65207f1",
+      "question": {
+        "enonce": "Quel plat Nicolas a-t-il commandé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un steak-frites",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une salade verte",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un plat de pâtes",
+            "correct": false
+          }
+        ],
+        "written_model": "Un steak-frites"
+      },
+      "audio": "/lib/audio/tcf/co/restaurant/08-restaurant-problème-avec-l-addition.mp3",
+      "audio_sha256": "b8cdbac76cc4c303456ee1f8b6a112f00c88dac5d30cf23577e4f5cbbac0baf4",
+      "image_ids": [
+        "extension573-steak-frites",
+        "qcm-b1-salade-verte",
+        "qcm-a1-pates-bolognaise"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-steak-frites.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png"
+      ],
+      "image_sha256": [
+        "f19536ebdb88d0707499b525c333c3d2970a1486e29fc195f0a2a3d1d09e43b3",
+        "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3",
+        "9ad2359941b2ca2ff2b9ff0f9c3d7e87bb19b61bf6ea0dbd001a50d5fc35ac50"
+      ],
+      "reason": "Nicolas dit « J'ai pris un steak-frites ». La salade verte est celle de Ludivine et les pâtes celles d'Aurore ; l'ensemble du calcul de l'addition est relu sans le modifier.",
+      "visual_review": "Steak avec frites, salade de feuilles seules servie en bol et plat de pâtes à la bolognaise comme illustration de la catégorie « plat de pâtes », sans attribuer cette recette à Aurore. La salade au poulet, la salade grecque et la salade de pâtes sont écartées : elles ne sont pas une salade verte.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-b1-s8-co-4#6",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Aujourd'hui dans notre émission \"C’est tout vu\", nous parlerons de l'alimentation à l'école. Convictions religieuses, choix éthiques ou encore allergie alimentaire, les écoles prennent de plus en plus en compte ces paramètres et diversifient les repas proposés aux enfants. Mais cela n'est pas toujours suffisant. Aujourd'hui, la loi française oblige les cantines scolaires à servir, une fois par semaine, un repas végétarien. Cette loi apparaît aujourd'hui mais de nombreux établissements proposés dans le passé des menus ponctuellement sans viande. Monsieur Charignan, vous êtes directeur de l'école Saint-Exupéry à Rouen. C'est un peu votre cas, non ? Oui, tout à fait. Dans notre école, nous proposons tous les jours, depuis la dernière rentrée, un repas avec viande et un autre sans viande, mais avec tout de même du poisson. Ainsi, peu importe la raison pour laquelle l'enfant ne mange pas de viande. On ne se pose pas la question, il choisit le plat qu'il souhaite prendre. Quelles types de plats prennent davantage les enfants quand ils sont libres de choisir ? La consommation principale reste les menus avec de la viande. Pour que le plat végétarien soit davantage consommé, il faut qu'il soit bon et qu'il donne envie. L'année dernière, des lasagnes végétariennes avaient été proposées et, gustativement, ce n'était pas excellent. Aujourd'hui, nous avons nettement amélioré la qualité des plats végétariens et ils sont beaucoup plus consommés. Merci, Monsieur Charignan. Selon les chiffres officiels, plus de 5000 repas sont servis chaque jour dans les cantines de Rouen. Ils sont préparés par une cuisine centrale gérée en régie qui met en œuvre 62% de produits bio et locaux, 82% de produits frais, 3% de surgelés. Cela est également une garantie de qualité imposée par les services de la municipalité. Oui, toutefois, je dois dire que cela reste problématique pour les enfants végétaliens, c'est-à-dire ceux qui ne mangent aucun aliment issu de la production animale. on ne peut pas diversifier autant pour des simples raisons de stockage et de logistique. Il y a donc toujours des plaintes et demandes de la part de certains parents, malgré le fait que nos efforts aillent bien au-delà de ce que la loi oblige.",
+      "source_sha256": "88d55377d2bf95a7ed2ca1275201b833f1fdcb981e925b64af6a444d409b0267",
+      "semantic_sha256": "3f757bda2343553d682f158851880dd8ee8b86f47ea40ee705ba37553a9e7342",
+      "question": {
+        "enonce": "Quel plat végétarien avait été peu apprécié ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des lasagnes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une soupe",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une salade",
+            "correct": false
+          }
+        ],
+        "written_model": "Des lasagnes"
+      },
+      "audio": "/lib/audio/tcf/co/maison/nourriture-annonce.mp3",
+      "audio_sha256": "d926836d65af70fb620400ce8b79bc8f37efd45db7d08e4ed70a459ef3dc6b70",
+      "image_ids": [
+        "qcm-b1-lasagnes-vegetariennes",
+        "co306-soupe-legumes-dessine",
+        "qcm-b1-salade-verte"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-lasagnes-vegetariennes.png",
+        "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-salade-verte.png"
+      ],
+      "image_sha256": [
+        "369ca889c2916b36f7c0574d75ae32715606db1d2b277ba01bbee02a67cd62d5",
+        "850075bad1f18cb1ef930844529d34ff3b11a85f09f7fbb2d68241def12d60ca",
+        "eb08755e12394bf6e16908b7d378b92369e428261edd067238debdea7bd19ce3"
+      ],
+      "reason": "Le directeur précise que « des lasagnes végétariennes avaient été proposées » et n'étaient pas excellentes. La question porte sur le plat cité, pas sur les chiffres ni sur l'opinion générale.",
+      "visual_review": "Les lasagnes montrent les feuilles de pâtes, épinards et courgettes sans viande ; la soupe et la salade restent végétariennes. Une image générique de lasagnes à la viande ne conviendrait pas.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-b1-s10-co-2#4",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Le secret, c'est l'anticipation. Établir ses menus pour la semaine et consacrer un soir à préparer plusieurs plats est une méthode particulièrement adaptée aux célibataires. C'est aussi retrouver l'art d'accommoder les restes qu'on appelle aujourd'hui le \"slash cooking\". Le congélateur est l'allié du solo. Savez-vous que la soupe ou le camembert se congèle ? Un bouillon de pot-au-feu congelé réchauffé en 5 minutes parfumera des ravioles ou sera utilisé pour pocher un poisson. Les sauces, tomates, crème citron peuvent être coulées dans un bac à glaçons, chaque compartiment correspondant à une portion. Des bananes coupées en cubes et congelées, mixées avec un yaourt, feront un délicieux sorbet. Garnissez vos placards d'une base gourmande et d'aide culinaire. Huile parfumée, noix, sésame, chanvre, moutarde, épices et herbes aromatiques. Saupoudrez les carottes crues d'estragon ou les carottes cuites de curry, par exemple. Votre poisson de ciboulette ou de curcuma. Les fruits secs, graines de courge, de lin, pignons de pin, etc. améliorent le quotidien, introduisent du croquant. Des tomates séchées en bocal, mixées, deviennent un pesto minute. La cuisine est un jeu. Plus on pratique, plus on prend du plaisir à marier les saveurs, les textures. Faites simple et savourez. Certains desserts se réalisent en 10 minutes, telles le pavlova, une meringue émiettée dans un bol, des fruits et une crème chantilly, ou une crème au lait d'amande avec des graines de chia. Quand on s'y met, cela devient grisant. Le bénéfice d'une cuisine plus saine, sans conservateur, se fait vite ressentir. On dort mieux, on est plus en forme, c'est un cercle vertueux. Votre plat réchauffe doucement, ce qui éveille les sens et met en appétit. Soignez l'art de la table, lâchez les écrans et savourez. Cuisiner revient à prendre soin de soi et nourrit l'estime de soi.",
+      "source_sha256": "6b5e68b3d82aca8f5818631eda9def487bc02f00f9fa0a77375cb7f08b954860",
+      "semantic_sha256": "c442d99668c4a418300122838c2ebc669c1a7c20dbc926fbfbd43363a62a3fbc",
+      "question": {
+        "enonce": "Dans quel récipient peut-on congeler des sauces en portions ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un bac à glaçons",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une passoire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un panier en osier",
+            "correct": false
+          }
+        ],
+        "written_model": "Un bac à glaçons"
+      },
+      "audio": "/lib/audio/tcf/co/maison/le-secret-c-est-l-anticipation-1.mp3",
+      "audio_sha256": "e2aa8c47de2b29f539065f5df66a93b01bddd7191e7bc1d8fc255af63be8c3de",
+      "image_ids": [
+        "qcm-b1-bac-glacons",
+        "vocab-passoire",
+        "co306-panier-vide-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-bac-glacons.png",
+        "/lib/images/tcf/qcm-audit/vocab-passoire.webp",
+        "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp"
+      ],
+      "image_sha256": [
+        "ebe9739ec5e2643f81cc5c1f10513e44f7e2ed5d4885fedd7a6bf18bf7ef4cfb",
+        "a6bd5ee23f41753a449752fd54d73effe8a9815ea22a178227c23cdc57cf3c97",
+        "d486afcb022c7ebec0c12dde5370910920fc5f87feec3f6d3795c011acfcd8d3"
+      ],
+      "reason": "Les sauces « peuvent être coulées dans un bac à glaçons, chaque compartiment correspondant à une portion ». La passoire et le panier sont les distracteurs conservés.",
+      "visual_review": "Bac vide à douze compartiments, passoire métallique perforée et panier d'osier vide. Aucun liquide congelé ne donne la réponse ; les formes et usages des récipients restent distincts.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ],
+  "reused_object_background_review": [
+    {
+      "id": "vocab-passoire",
+      "path": "/lib/images/tcf/qcm-audit/vocab-passoire.webp",
+      "corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 0,
+      "corner_standard_deviation": [
+        0.2835321920945032,
+        0.3421995637718928,
+        0.4388132874094859
+      ]
+    },
+    {
+      "id": "co306-panier-vide-dessine",
+      "path": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
+      "corner_median_rgb": [
+        254,
+        245,
+        228
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.4994584322297586,
+        0.4994584322297586,
+        1.0836733925221806
+      ]
+    },
+    {
+      "id": "extension573-steak-frites",
+      "path": "/lib/images/tcf/qcm-audit/extension573-steak-frites.webp",
+      "corner_median_rgb": [
+        253,
+        240,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.8414105290887126,
+        0.6145350365325692,
+        1.0211589075017315
+      ]
+    },
+    {
+      "id": "qcm-a1-pates-bolognaise",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-pates-bolognaise.png",
+      "corner_median_rgb": [
+        253,
+        241,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5914243461233027,
+        0.6409292439188347,
+        0.7169425515611659
+      ]
+    },
+    {
+      "id": "co306-soupe-legumes-dessine",
+      "path": "/lib/images/tcf/qcm-audit/co306-soupe-legumes-dessine.webp",
+      "corner_median_rgb": [
+        253,
+        242,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.6428507936160333,
+        0.9644116319901377,
+        0.663120863393887
+      ]
+    }
+  ]
+}

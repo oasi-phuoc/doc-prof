@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Dernière suite du 16 novembre : huit trios supplémentaires**, trois A1, deux A2 et trois B1. Neuf PNG natifs et sept réemplois ; les lieux complets et les trois nouveaux sujets de cuisine suivent le style validé, avec fonds ivoire contrôlés. Restent **294 trios historiques** et **385 candidats DELF Actif**, avec **361 trios DELF Actif actifs**. [Rapport actuel et reste à faire](trios-lieux-cuisine-20261116.md).
+
 **Dernière suite du 16 novembre : vingt trios DELF Actif ajoutés**, dix-neuf A2 et un B1, avec cinq rayons natifs et 43 réemplois de 36 images existantes. Restent **300 trios historiques** et **387 candidats DELF Actif**, avec **359 trios DELF Actif actifs**. Papeterie, parfumerie, BD, sport et DVD complètent les choix sans modifier les réponses ni les audios. [Rapport actuel et reste à faire](trios-rayons-documents-20261116.md).
 
 **Dernière suite du 16 novembre : vingt-quatre trios A1 ajoutés**, quatorze historiques et dix DELF Actif. Six vues extérieures natives et 60 réemplois ; restent **300 trios historiques** et **407 candidats DELF Actif**, avec **339 trios DELF Actif actifs**. Le lieu du marché est illustré sans étals pour éviter un indice supplémentaire. [Rapport actuel et reste à faire](trios-ecole-rendezvous-20261116.md).
