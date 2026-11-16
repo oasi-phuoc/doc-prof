@@ -3,12 +3,12 @@ import { Mascot } from '../components/Mascot'
 import {lazy,Suspense} from 'react'
 import type {DamageMultiplier} from '../duel/core'
 const PowerAura=lazy(()=>import('../duel/PowerAura').then(module=>({default:module.PowerAura})))
-export function CompetitionPortrait({ avatarId, seat, outcome, powerLevel=1,aura=true }: { avatarId: CompetitionAvatar; seat?: number; outcome?: boolean; powerLevel?:DamageMultiplier;aura?:boolean }) {
+export function CompetitionPortrait({ avatarId, seat, outcome, powerLevel=1,aura=true,facing }: { avatarId: CompetitionAvatar; seat?: number; outcome?: boolean; powerLevel?:DamageMultiplier;aura?:boolean;facing?:'left'|'right' }) {
   const index = COMPETITION_AVATARS.findIndex((avatar) => avatar.id === avatarId)
   const label = COMPETITION_AVATARS[index]?.label ?? 'Mascotte'
-  return <span data-ci-motion data-power={powerLevel} className={`ci-competition-portrait${powerLevel>1?` ci-powered-portrait ci-power-${powerLevel}`:''}${outcome === true ? ' ci-competition-win' : outcome === false ? ' ci-competition-miss' : ''}`}>
+  return <span data-ci-motion data-power={powerLevel} data-looking={facing} className={`ci-competition-portrait${powerLevel>1?` ci-powered-portrait ci-power-${powerLevel}`:''}${outcome === true ? ' ci-competition-win' : outcome === false ? ' ci-competition-miss' : ''}`}>
     {aura&&powerLevel>1&&<Suspense fallback={null}><PowerAura level={powerLevel} mascot={avatarId}/></Suspense>}
-    <span role="img" aria-label={`${label}${seat ? ` · joueur ${seat}` : ''}`} data-ci-motion className="ci-competition-avatar"><Mascot kind={avatarId} pose={powerLevel>1?'angry':outcome===false?'incorrect':outcome===true?'correct':'thinking'} label={label} decorative /></span>
+    <span role="img" aria-label={`${label}${seat ? ` · joueur ${seat}` : ''}`} data-ci-motion className="ci-competition-avatar"><span className="ci-mascot-facing" data-facing={facing}><Mascot kind={avatarId} pose={powerLevel>1?'angry':outcome===false?'incorrect':outcome===true?'correct':'thinking'} label={label} decorative /></span></span>
     {seat !== undefined && <b className="ci-competition-seat" aria-hidden="true">{seat}</b>}
     {outcome === false && powerLevel===1 && <span className="ci-competition-tears" aria-hidden="true" data-ci-motion />}
   </span>

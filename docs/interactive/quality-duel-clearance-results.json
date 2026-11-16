@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-11-16T12:06:07.931Z",
+  "base": "86a048fd",
+  "scope": "Priority fix: smaller duel mascots facing one another, with animation space above and below, in both duel and team arenas.",
+  "unit": {
+    "passed": 10,
+    "mascots": 30,
+    "portraitCombinations": 1080,
+    "files": [
+      "duel-landscape.test.mjs",
+      "mascot-transparency.test.mjs"
+    ]
+  },
+  "native": {
+    "passed": true,
+    "cases": 8,
+    "keyframesPerPhase": 22,
+    "phases": [
+      "charged",
+      "after self-damage"
+    ],
+    "form": [
+      "mini",
+      "adult"
+    ],
+    "criticalLevels": [
+      3,
+      4
+    ],
+    "minimumAbove": 22.143646240234375,
+    "minimumBelow": 34.88008117675781,
+    "answerTargetsMinHeight": 44,
+    "checks": [
+      "Inner graphic faces the other player in each phase",
+      "Animated aura stays at least 20 px clear of question and cards",
+      "Question text does not overlap either corner control",
+      "All answers, health bars and game controls fit the viewport",
+      "Offline after battle preparation"
+    ],
+    "legacyLandscape": "passed: denied lock, portrait fallback and accepted lock/fullscreen release; normal, double and triple",
+    "artChanged": false,
+    "physicalDevicesTested": false
+  },
+  "checks": {
+    "buildWithManifest": "passed",
+    "typescript": "passed",
+    "budgets": {
+      "landing": {
+        "gzip": 122328,
+        "maximumGzip": 153600
+      },
+      "pool": {
+        "gzip": 159788,
+        "maximumGzip": 204800
+      },
+      "calibration": {
+        "gzip": 142844,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 144990,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 202483,
+        "maximumGzip": 204800
+      },
+      "teacherConsole": {
+        "gzip": 166752,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 3129876,
+        "maximumGzip": 3145728
+      }
+    },
+    "lint": {
+      "status": "passed",
+      "existingWarnings": 85,
+      "targetedWarnings": 0
+    },
+    "secrets": "See secrets-results.json for the final delta scan"
+  },
+  "orchestration": {
+    "available": 75,
+    "allStagesRun": false
+  },
+  "evidence": [
+    "duel-clearance-results.json",
+    "duel-clearance-proofs/index.html",
+    "duel-landscape-results.json"
+  ],
+  "limits": [
+    "No physical phone or ENI test.",
+    "The complete unit suite and all 75 browser stages were not rerun for this UI change."
+  ],
+  "integration": {
+    "mergedBase": "86a048fd",
+    "unitPassed": 21,
+    "unitFailed": 0,
+    "files": [
+      "duel-landscape.test.mjs",
+      "mascot-transparency.test.mjs",
+      "fractions.test.mjs"
+    ],
+    "buildWithManifest": "passed",
+    "budgets": "passed"
+  }
+}

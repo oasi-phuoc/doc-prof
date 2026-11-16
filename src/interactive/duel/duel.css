@@ -23,15 +23,15 @@
 .ci-duel-critical { background: #fff0c2; color: #6c2500; animation: ci-duel-critical-pulse 1.5s ease-in-out infinite; }
 .ci-duel-super-critical { background: #eee0ff; color: #4b176e; border-color: #7639a0; box-shadow: 0 0 14px #c38be666; }
 .ci-duel-normal { background: #eaf0ff; color: #26365c; }
-.ci-duel-sides { --ci-card-reserve: 160px; --ci-fighter-gutter: 80px; --ci-fighter-size: min(200px,24dvh,calc(50cqw - var(--ci-fighter-gutter)),max(52px,calc((100cqh - var(--ci-card-reserve) - 36px) / 2))); --ci-aura-room: calc(var(--ci-fighter-size) + 20px); container-type: size; clip-path: inset(0 -20px 0 -20px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-height: 0; }
+.ci-duel-sides { --ci-card-reserve: 160px; --ci-fighter-gutter: 80px; --ci-fighter-size: min(160px,20dvh,calc(44cqw - var(--ci-fighter-gutter)),max(40px,calc((100cqh - var(--ci-card-reserve) - 64px) / 2.95))); --ci-aura-room: calc(var(--ci-fighter-size) * 1.2 + 24px); --ci-aura-bottom: calc(var(--ci-fighter-size) * .75 + 24px); container-type: size; clip-path: inset(0 -20px 0 -20px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-height: 0; }
 .ci-duel-player { min-width: 0; min-height: 0; display: flex; flex-direction: column; gap: 8px; }
 .ci-duel-cards { position: relative; z-index: 2; display: flex; flex: 1; min-height: 0; padding: 10px; border: 2px solid #7b9aca; border-radius: 20px; background: #eaf2ff; }
 .ci-duel-player[data-side='right'] .ci-duel-cards { background: #f4eaff; border-color: #a282ca; }
-.ci-duel-fighter { position: relative; display: flex; justify-content: center; align-items: center; padding-left: 64px; padding-top: var(--ci-aura-room); flex: 0 0 auto; }
+.ci-duel-fighter { position: relative; display: flex; justify-content: center; align-items: center; padding-left: 64px; padding-top: var(--ci-aura-room); padding-bottom: var(--ci-aura-bottom); flex: 0 0 auto; }
 .ci-duel-player[data-side='right'] .ci-duel-fighter { padding-left: 0; padding-right: 64px; }
 .ci-duel-fighter .ci-competition-portrait { width: var(--ci-fighter-size); height: auto; aspect-ratio: 1; flex: 0 0 auto; }
 .ci-duel-fighter small { display: block; font-size: 13px; }
-.ci-duel-health-row { position: absolute; z-index: 3; left: 0; top: calc(var(--ci-aura-room) + var(--ci-fighter-size) * .06); height: calc(var(--ci-fighter-size) * .88); width: 50px; border: 2px solid #315642; border-radius: 14px; background: #e2e9e5; overflow: hidden; display: grid; place-items: center; }
+.ci-duel-health-row { position: absolute; z-index: 3; left: 0; top: calc(var(--ci-aura-room) + var(--ci-fighter-size) * .06); height: calc(var(--ci-fighter-size) * .88); min-height: 44px; width: 50px; border: 2px solid #315642; border-radius: 14px; background: #e2e9e5; overflow: hidden; display: grid; place-items: center; }
 .ci-duel-player[data-side='right'] .ci-duel-health-row { left: auto; right: 0; }
 .ci-duel-health-fill { position: absolute; bottom: 0; left: 0; right: 0; background: #acd8b9; transition: height .25s ease-out; }
 .ci-duel-health-row[data-low] .ci-duel-health-fill { background: #f1b2c1; }
@@ -119,8 +119,13 @@
   .ci-duel-support .ci-classification-progress { font-size: 12px; margin: 2px 0; }
 }
 @media (orientation:landscape) and (max-height:550px) {
+  .ci-app.ci-competition-playing[data-ci-duel] > .ci-header.ci-clean-header { position: absolute; top: 4px; left: 8px; right: 8px; min-height: 0; height: 44px; padding: 0; pointer-events: none; }
+  .ci-app.ci-competition-playing[data-ci-duel] > .ci-header.ci-clean-header .ci-header-tools { margin-left: 0; width: 100%; flex: 1 1 100%; justify-content: space-between; pointer-events: none; }
+  .ci-app.ci-competition-playing[data-ci-duel] > .ci-header.ci-clean-header .ci-header-tools > .ci-icon-button { pointer-events: auto; }
+  .ci-app.ci-competition-playing[data-ci-duel] > .ci-header.ci-clean-header [data-ci-fullscreen] { margin-left: auto; }
+  .ci-app.ci-competition-playing[data-ci-duel] > .ci-header.ci-clean-header .ci-game-options { left: 0; right: auto; pointer-events: auto; }
   .ci-duel-arena,.ci-competition.ci-immersive .ci-duel-arena { padding: 4px 8px; gap: 4px; }
-  .ci-duel-question { max-height: 28dvh; padding: 0 48px; }
+  .ci-duel-question { max-height: min(28dvh,max(44px,calc(100dvh - 300px))); padding: 0 48px; }
   .ci-duel-question h1 { font-size: 22px; margin: 1px 0; }
   .ci-duel-round-meta { font-size: 11px; }
   .ci-duel-critical { padding: 1px 6px; }

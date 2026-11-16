@@ -8,6 +8,7 @@ const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'c
 try{
   const {CompetitionPortrait}=await vite.ssrLoadModule('/src/interactive/competition/Avatar.tsx')
   const {MASCOTS}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
+  const {CombatPortrait}=await vite.ssrLoadModule('/src/interactive/duel/CombatPortrait.tsx')
   const {playPrompt}=await vite.ssrLoadModule('/src/interactive/domain/presentation.ts')
   const {isPhoneViewport,isLandscapeViewport,requestDuelLandscape,releaseDuelLandscape}=await vite.ssrLoadModule('/src/interactive/duel/landscape.ts')
   await test('all thirty mascots gain an actual angry sprite and larger distinct aura in triple mode; normal portraits remain neutral',async()=>{
@@ -19,6 +20,17 @@ try{
       assert.ok(triple.includes('data-power-aura="3"'));assert.ok(triple.includes('class="ci-mascot-sprite ci-mascot-angry"'));assert.ok(triple.includes('ci-power-lightning'))
       const hurt=renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:mascot.id,powerLevel:3,outcome:false}));assert.ok(hurt.includes('ci-mascot-angry'));assert.ok(!hurt.includes('ci-competition-tears'))
     }
+  })
+  await test('all thirty mini and adult fighters face their opponent in normal, critical, fatigued, casting and final states',()=>{
+    for(const mascot of MASCOTS)for(const maxHp of[100,200])for(const side of['left','right'])for(const state of[{hp:maxHp},{hp:maxHp*.4},{hp:maxHp*.1},{hp:0},{hp:maxHp,outcome:'winner'},{hp:0,outcome:'loser'},{hp:maxHp,level:3},{hp:maxHp,level:4,cast:'charge'},{hp:maxHp,level:4,cast:'release'}]){
+      const html=renderToStaticMarkup(createElement(CombatPortrait,{avatarId:mascot.id,maxHp,facing:side,seat:12,...state}))
+      assert.ok(html.includes(`data-looking="${side==='left'?'right':'left'}"`),`${mascot.id}/${maxHp}/${side}`)
+      if(html.includes('ci-combat-art'))assert.ok(html.includes(`data-facing="${side}"`))
+      else assert.ok(html.includes(`class="ci-mascot-facing" data-facing="${side==='left'?'right':'left'}"`))
+      assert.ok(html.includes('>12</b>'),'player numbers stay outside the mirrored graphic')
+    }
+    const neutral=renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:'fox',seat:12}))
+    assert.ok(!neutral.includes('data-looking='),'ordinary non-duel avatars keep their existing presentation')
   })
   await test('question presentation removes empty result markers everywhere while preserving given equations and meaningful missing operands',()=>{
     for(const [source,shown]of [['2 + 2 = ?','2 + 2'],['12 × 3 = □','12 × 3'],['2,5 ÷ 0,5 = ▢','2,5 ÷ 0,5'],['−8 − 2 = ___','−8 − 2'],['Simplifie : 12/8 = □','Simplifie : 12/8'],['A = ?','A'],['Un résultat = …','Un résultat'],['2 + 2 =','2 + 2']]){assert.equal(playPrompt(source),shown);assert.equal(playPrompt(playPrompt(source)),shown)}

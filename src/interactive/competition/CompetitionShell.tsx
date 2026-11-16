@@ -14,7 +14,7 @@ export function CompetitionShell({ children, title = 'Compétition', playing = f
     else if(preferLandscape&&isPhoneViewport())void requestDuelLandscape()
     else void document.documentElement.requestFullscreen?.().catch(()=>{})
   }
-  return <div className={`ci-app ci-competition${playing ? ' ci-competition-playing' : ''}${fullscreen ? ' ci-immersive' : ''}${contrast ? ' ci-high-contrast' : ''}`}>
+  return <div data-ci-duel={preferLandscape||undefined} className={`ci-app ci-competition${playing ? ' ci-competition-playing' : ''}${fullscreen ? ' ci-immersive' : ''}${contrast ? ' ci-high-contrast' : ''}`}>
     <header className={`ci-header ci-no-print${playing?' ci-clean-header':''}`}><div className="ci-header-start"><a href="/generateur" className="brand" aria-label="ClairFLE"><span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>Clair<span className="brand-accent">FLE</span></a><span className="ci-competition-heading">{title}</span></div>
       <nav ref={tools} className="ci-toolbar ci-header-tools" aria-label="Affichage de la compétition" onKeyDown={event=>{if(event.key==='Escape'){setOptionsOpen(false);tools.current?.querySelector<HTMLButtonElement>('[aria-label="Options du jeu"]')?.focus()}}}>
         {playing&&<IconButton icon="options" label="Options du jeu" aria-expanded={optionsOpen} onClick={()=>setOptionsOpen(!optionsOpen)}/>}
