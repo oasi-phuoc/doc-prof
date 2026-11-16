@@ -4,6 +4,7 @@ import type {FighterPoints,Impact} from '../effects'
 import {measureFighters} from '../effects'
 import {contactTime,signatureFor,type Power} from './catalog'
 import {makeScene,sampleAura,sampleScene} from './model'
+import {sampleChargeOrb} from './quadruple'
 import {paintFrame} from './renderer'
 import {renderScale,adaptQuality} from './quality'
 import {createFrameScheduler} from './frame-scheduler'
@@ -50,7 +51,7 @@ export function DuelVfx(props:Props){
         if(points){
           c.save();c.beginPath();c.rect(0,clip.top,viewport.width,Math.max(0,clip.bottom-clip.top));for(const bar of protectedBars)c.rect(bar.x,bar.y,bar.width,bar.height);c.clip('evenodd')
           const amount=p.simplified?.55:density,auraFade=p.aura?1:p.impact?Math.max(0,1-time/230):0
-          if(p.level>1&&auraFade)for(const side of ['left','right'] as const)paintFrame(c,sampleAura(p[side],p.level as 2|3,at,points[side],amount),auraFade)
+          if(p.level>1&&auraFade)for(const side of ['left','right'] as const){paintFrame(c,sampleAura(p[side],p.level as 2|3|4,at,points[side],amount),auraFade);if(p.level===4)paintFrame(c,sampleChargeOrb(p[side],at,points[side],side),auraFade)}
           if(p.impact){
             const hit=p.impact
             if(hit.kind==='timeout')for(const side of ['left','right'] as const)paintFrame(c,sampleScene(makeScene(p[side],1,p.questionKey,side,side,true,true),time,points,amount))

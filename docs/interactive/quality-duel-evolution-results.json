@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-16T06:36:40.992861+00:00",
+  "baseCommit": "daa5ec5e56ed4f52f3e1593958e2f1f40e0fbb54",
+  "scope": "Grouped timer/combat parameters, configured critical probabilities including x4, life up to 200, all thirty evolved adult mascots and casting poses, directional widening beams, owner-only implosions and lethal-hit warning.",
+  "fullUnitSuite": {
+    "tests": 487,
+    "passed": 487,
+    "failed": 0,
+    "scope": "Complete suite before integration of concurrent TCF image updates; affected domain suites and native combat rerun after integration."
+  },
+  "newDomainTests": 11,
+  "finalTargetedDomainTests": {
+    "tests": 27,
+    "passed": 27,
+    "failed": 0,
+    "scope": "Pools, combat settings/evolution, mascot transparency and landscape suites after integration and the final motion attributes."
+  },
+  "artwork": {
+    "adultMascots": 30,
+    "adultStates": 14,
+    "adultSprites": 420,
+    "miniCastingSprites": 60,
+    "atlases": 20,
+    "pixelHashesAndCssContours": "src/interactive/duel/evolution-masks.generated.json",
+    "generatedArtProvenance": "mascots-evolution-art.json"
+  },
+  "browserStagesPassed": [
+    "duel-settings-browser",
+    "duel-browser (390px, including Gattegno, team tournament, timeout and repeated clicks)",
+    "mascot-energy-browser",
+    "vfx-lifecycle-browser",
+    "a4-regression"
+  ],
+  "allWorkflowStagesRun": false,
+  "workflowStagesAvailable": 73,
+  "native": {
+    "results": [
+      {
+        "viewport": "390x844",
+        "maxHp": 200,
+        "critical4Chance": 100,
+        "checks": [
+          "Grouped timer and combat settings persist",
+          "Excess probability disables preparation",
+          "Adult form at 200 stays adult at 40 and zero",
+          "Animated charge and widening beam in both directions",
+          "Mistake is a local implosion",
+          "HP changes at contact, exact pre-lethal health retained",
+          "Potentially fatal victim flashes in its own colour",
+          "Colourful bold HP without black background",
+          "Native offline play after full preload",
+          "Finished match resumes with original rules"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "1366x768",
+        "maxHp": 200,
+        "critical4Chance": 100,
+        "checks": [
+          "Grouped timer and combat settings persist",
+          "Excess probability disables preparation",
+          "Adult form at 200 stays adult at 40 and zero",
+          "Animated charge and widening beam in both directions",
+          "Mistake is a local implosion",
+          "HP changes at contact, exact pre-lethal health retained",
+          "Potentially fatal victim flashes in its own colour",
+          "Colourful bold HP without black background",
+          "Native offline play after full preload",
+          "Finished match resumes with original rules"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "844x390",
+        "maxHp": 200,
+        "critical4Chance": 100,
+        "checks": [
+          "Grouped timer and combat settings persist",
+          "Excess probability disables preparation",
+          "Adult form at 200 stays adult at 40 and zero",
+          "Animated charge and widening beam in both directions",
+          "Mistake is a local implosion",
+          "HP changes at contact, exact pre-lethal health retained",
+          "Potentially fatal victim flashes in its own colour",
+          "Colourful bold HP without black background",
+          "Native offline play after full preload",
+          "Finished match resumes with original rules"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "360x640",
+        "maxHp": 100,
+        "critical4Chance": 100,
+        "checks": [
+          "Mini ink and bamboo casting sheets preloaded for their two roster families",
+          "Native play with network disabled",
+          "Both minis retain their form",
+          "Self-knockout displays the actual 20 HP before a 40-point implosion",
+          "No opposing attacker appears on a mistake"
+        ]
+      }
+    ],
+    "errors": [],
+    "liveApiWrites": 0,
+    "visualGallery": "30 adults × 14 states and 30 minis × 2 casting poses = 480 mapped sprites",
+    "motionPreferenceTested": "reduce",
+    "motionChecks": "Fourth-critical orbit motion and the lethal-hit warning remain animated with reduced-motion media preference, as requested; pause still stops game motion.",
+    "numericTyping": "150 HP and 15 seconds can be entered sequentially without clamping their first digit."
+  },
+  "legacyCompatibility": "Versions 2 and 3 retain 100 HP, their historical critical probabilities and timing. Version 4 journals retain their own combat rules on replay.",
+  "preload": "Fresh matches preload combat artwork for the roster families and form. Resumed matches include all combat variants for their possibly different stored roster. Unused activity sheets are not preloaded during battle.",
+  "a4": {
+    "baseline": "0addb36d662842040cc8ed64e8b2c0ca81eac810",
+    "identicalScreenshot": true,
+    "draftLaunchPreserved": true
+  },
+  "checks": {
+    "typescript": "passed",
+    "workerTypes": "passed",
+    "build": "passed after integration",
+    "lint": {
+      "errors": 0,
+      "existingWarnings": 85
+    },
+    "bundleBudgets": "passed after integration without increasing limits",
+    "gitleaks": "passed after integration with synthetic key/api_key detection canaries"
+  },
+  "gzipBytes": {
+    "landing": 122258,
+    "pool": 159516,
+    "calibration": 142774,
+    "diagnostic": 144916,
+    "competition": 201510,
+    "teacherConsole": 166271,
+    "game": 3126413
+  },
+  "limits": [
+    "Duels remain on a shared screen; ordinary online score rooms are not converted to synchronized HP battles.",
+    "The six adult activity poses are registered and available; duel play uses its own combat phases.",
+    "Artwork uses generated 3D-style sprites animated in 2D, rather than articulated 3D models.",
+    "Physical ENI/phone measurements and cold-start offline are not covered."
+  ],
+  "integratedMainCommit": "cb52cc6fbf97f60c383247521eb922ed65b174ed"
+}

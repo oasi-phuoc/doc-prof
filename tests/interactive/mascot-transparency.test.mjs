@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import {readFile} from 'node:fs/promises'
 import {PNG} from 'pngjs'
 import {createElement} from 'react'
-import {renderToStaticMarkup} from 'react-dom/server'
+import {renderToStaticMarkup,renderToReadableStream} from 'react-dom/server'
 import {createServer} from 'vite'
 const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom'})
 try{
@@ -19,7 +19,8 @@ try{
    for(const index of [3,(png.width-1)*4+3,(png.height-1)*png.width*4+3,(png.width*png.height-1)*4+3])assert.ok(png.data[index]<20,`${source} corner`)
   }
  })
- await test('critical energy temporarily overrides both fatigue thresholds for all thirty mascots, then restores HP state',()=>{
+ await test('critical energy temporarily overrides both fatigue thresholds for all thirty mascots, then restores HP state',async()=>{
+  const initial=await renderToReadableStream(createElement(CombatPortrait,{avatarId:'leaf',hp:20,level:2}));await initial.allReady;await new Response(initial).text()
   for(const {id} of MASCOTS)for(const level of [2,3])for(const hp of [1,10,20,40,50,100]){
    assert.equal(combatPoseForHp(hp,'ongoing',level),'angry');const html=renderToStaticMarkup(createElement(CombatPortrait,{avatarId:id,hp,level}))
    assert.ok(html.includes('ci-mascot-angry'));assert.ok(html.includes(`data-power-aura="${level}"`));assert.ok(html.includes(`data-aura-mascot="${id}"`))

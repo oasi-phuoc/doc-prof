@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {createServer} from 'vite'
 import {createElement} from 'react'
-import {renderToStaticMarkup} from 'react-dom/server'
+import {renderToStaticMarkup,renderToReadableStream} from 'react-dom/server'
 
 const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom'})
 try{
@@ -10,7 +10,8 @@ try{
   const {MASCOTS}=await vite.ssrLoadModule('/src/interactive/domain/mascot.ts')
   const {playPrompt}=await vite.ssrLoadModule('/src/interactive/domain/presentation.ts')
   const {isPhoneViewport,isLandscapeViewport,requestDuelLandscape,releaseDuelLandscape}=await vite.ssrLoadModule('/src/interactive/duel/landscape.ts')
-  await test('all thirty mascots gain an actual angry sprite and larger distinct aura in triple mode; normal portraits remain neutral',()=>{
+  await test('all thirty mascots gain an actual angry sprite and larger distinct aura in triple mode; normal portraits remain neutral',async()=>{
+    const initial=await renderToReadableStream(createElement(CompetitionPortrait,{avatarId:'leaf',powerLevel:2}));await initial.allReady;await new Response(initial).text()
     for(const mascot of MASCOTS){
       const render=powerLevel=>renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:mascot.id,powerLevel}))
       const normal=render(1),double=render(2),triple=render(3)

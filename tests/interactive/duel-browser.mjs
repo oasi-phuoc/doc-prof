@@ -182,7 +182,7 @@ try{
       const called=await page.locator('.ci-duel-call .ci-competition-seat').allTextContents()
       assert.deepEqual(called.map(Number),[expected[pairIndex].left.seat,expected[pairIndex].right.seat])
       assert.deepEqual(await page.locator('.ci-duel-call .ci-competition-avatar').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('aria-label'))),previewAvatars.slice(pairIndex*2,pairIndex*2+2))
-      assert.deepEqual(await page.locator('.ci-duel-call section > b').allTextContents(),['100 %','100 %'])
+      assert.deepEqual(await page.locator('.ci-duel-call section > b').allTextContents(),['100','100'])
       await button(page,'Commencer le duel').click();await page.locator('.ci-duel-answer:enabled').first().waitFor();assert.deepEqual(await hp(page),[100,100]);await fits(page)
       if(pairIndex===0){await axe(page);await page.screenshot({path:`docs/interactive/screenshots/duel-teams-${width}.png`})}
       let targetHP=100

@@ -14,3 +14,12 @@
 @keyframes ci-power-body-3 { from { transform: scale(1.08) translateY(0); } to { transform: scale(1.14) translateY(-3px); } }
 @keyframes ci-power-rise { from { transform: translateY(0) scale(.25); opacity: 0; } 25% { opacity: 1; } to { transform: translateY(-130px) scale(.8); opacity: 0; } }
 @keyframes ci-power-lightning { from { opacity: .3; transform: scale(.96); } to { opacity: 1; transform: scale(1.04); } }
+.ci-power-aura-4 { width: 185%; height: 205%; left: -42.5%; top: -74%; }
+.ci-power-aura-4 .ci-power-flame { animation: ci-power-pressure .8s ease-in-out infinite; filter: drop-shadow(0 0 16px var(--ci-power-outer)); }
+.ci-power-aura-4 .ci-power-lightning { animation-duration: .38s; }
+.ci-power-orbits { position: absolute; inset: 16% 9%; animation: ci-power-orbit 2.8s linear infinite; }
+.ci-power-orbits > i { position: absolute; inset: 0; width: auto; height: auto; bottom: 0; border: 3px solid var(--ci-power-inner); border-left-color: transparent; border-right-color: var(--ci-power-outer); background: transparent; border-radius: 50%; box-shadow: 0 0 12px var(--ci-power-outer), inset 0 0 9px var(--ci-power-outer); animation: ci-power-orbit 1.8s linear infinite; }
+.ci-power-orbits > i:nth-child(2) { inset: 12% -10%; transform: rotate(65deg); animation-direction: reverse; }
+.ci-power-orbits > i:nth-child(3) { inset: -6% 16%; animation-duration: 1.1s; }
+@keyframes ci-power-pressure { 0%,100% { opacity: .7; transform: scale(.94,1.02); } 30% { opacity: 1; transform: scale(1.09,.98); } 65% { opacity: .9; transform: scale(.99,1.08); } }
+@keyframes ci-power-orbit { to { rotate: 360deg; } }

@@ -1,4 +1,5 @@
 import type {Frame,Glyph} from './model'
+import type {EnergyBeam} from './quadruple'
 
 /** No retained browser state: the same frame can be sought, paused, or exported. */
 export function paintFrame(c:CanvasRenderingContext2D,f:Frame,opacity=1) {
@@ -9,6 +10,7 @@ export function paintFrame(c:CanvasRenderingContext2D,f:Frame,opacity=1) {
     gradient.addColorStop(0,g.color);gradient.addColorStop(1,'transparent');c.fillStyle=gradient;c.globalAlpha=opacity*g.alpha
     c.fillRect(g.x-g.radius,g.y-g.radius,g.radius*2,g.radius*2)
   }
+  for(const beam of f.beams??[])paintBeam(c,beam,opacity)
   for(const s of f.strokes){
     const n=s.points.length;if(n<2)continue
     // Segment alpha and thickness follow the age of the actual historic sample.
@@ -38,6 +40,25 @@ export function paintFrame(c:CanvasRenderingContext2D,f:Frame,opacity=1) {
   }
   for(const g of f.glyphs){if(g.alpha<=0||g.size<=0)continue;c.save();c.translate(g.x,g.y);c.rotate(g.angle);c.scale(g.size,g.size);c.globalAlpha=opacity*g.alpha;glyph(c,g);c.restore()}
   c.restore()
+}
+function paintBeam(c:CanvasRenderingContext2D,b:EnergyBeam,opacity:number){
+ const dx=b.tip.x-b.origin.x,dy=b.tip.y-b.origin.y,length=Math.hypot(dx,dy)
+ if(length<1||b.alpha<=0)return
+ c.save();c.translate(b.origin.x,b.origin.y);c.rotate(Math.atan2(dy,dx));c.globalCompositeOperation='screen';c.shadowColor=b.color;c.shadowBlur=12
+ const fluid=['water','bubble','ink','ribbon'].includes(b.material),fire=['fire','wisp'].includes(b.material),frequency=fluid?11:fire?19:14
+ for(let layer=0;layer<4;layer++){
+  const scale=1-layer*.22,gradient=c.createLinearGradient(0,0,length,0);gradient.addColorStop(0,b.light);gradient.addColorStop(.3,layer>1?'#ffffff':b.color);gradient.addColorStop(1,layer>1?b.light:b.color)
+  c.fillStyle=gradient;c.globalAlpha=opacity*b.alpha*(layer===0?.34:.64);c.beginPath()
+  for(let side=-1;side<=1;side+=2)for(let j=0;j<=34;j++){
+   const u=(side===-1?j:34-j)/34,width=(b.startRadius+(b.endRadius-b.startRadius)*u**1.18)*scale,turbulence=1+Math.sin(u*frequency+b.phase+layer+b.identity)*(.08+.04*Math.sin(b.identity)),y=side*width*turbulence
+   if(side===-1&&j===0)c.moveTo(u*length,y);else c.lineTo(u*length,y)
+  }
+  c.closePath();c.fill()
+ }
+ c.shadowBlur=0;c.strokeStyle=b.light;c.lineWidth=2;c.globalAlpha=opacity*b.alpha*.65
+ for(let i=1;i<6;i++){const u=((i/6+b.phase*.08)%1),width=b.startRadius+(b.endRadius-b.startRadius)*u;c.beginPath();c.ellipse(length*u,0,width*.18,width*.92,Math.sin(b.phase+i)*.3,0,Math.PI*2);c.stroke()}
+ const cap=c.createRadialGradient(length,0,0,length,0,b.endRadius);cap.addColorStop(0,b.light);cap.addColorStop(.55,b.color);cap.addColorStop(1,'transparent');c.fillStyle=cap;c.globalAlpha=opacity*b.alpha*.65;c.beginPath();c.ellipse(length,0,b.endRadius*.28,b.endRadius,0,0,Math.PI*2);c.fill()
+ c.restore()
 }
 function glyph(c:CanvasRenderingContext2D,g:Glyph){
   const gradient=c.createLinearGradient(-1,-1,1,1);gradient.addColorStop(0,g.light);gradient.addColorStop(.43,g.color);gradient.addColorStop(1,g.color)

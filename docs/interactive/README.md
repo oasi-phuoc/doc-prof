@@ -1,5 +1,7 @@
 # ClairFLE — jouer avec la classe
 
+Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.
+
 [Fonctions réutilisables](etat-utilisable-v4.md) · [Suivi V4](suivi-v4.md) · [Compétition](guide-competition.md) · [Diagnostic](diagnostic-eni.md) · [Feuille enseignant](feuille-enseignant.md) · [Mobile et cartes carrées](livraison-mobile-question-cartes.md)
 
 Le bouton **Jouer en classe** ouvre le [choix direct des exercices](adr-0060-pools-multidomaines.md) : plusieurs types et plusieurs domaines peuvent composer un même pool, sans créer de fiche. Seuls les types pris en charge sont proposés ; les tirages se renouvellent à chaque nouvelle partie. Les pools restent disponibles sur le même appareil.
