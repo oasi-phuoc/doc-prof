@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "7bef760465589782147efd819e4b5e5148db00e4",
+  "compared_all_six_banks": true,
+  "added_image_forms": 9,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 4,
+  "new_image_usages": 4,
+  "reused_image_usages": 23,
+  "reused_distinct_images": 22,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "delf-a2r-ce-006#1",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-017#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-06#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-014-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-016-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-01-05#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-04-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-01-04#2",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-01-04#4",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "command": "python3 scripts/check_tcf_763_review.py",
+      "exit_code": 0,
+      "output": "763 décisions vérifiées : 298 trios actifs, 112 textes conservés, 353 trios à préparer."
+    },
+    {
+      "command": "python3 scripts/check-delf-actif-images.py",
+      "exit_code": 0,
+      "output": "346 supports et 1 663 questions suivis ; 313 trios actifs liés à leur relecture, images et MP3 vérifiés."
+    },
+    {
+      "command": "python3 scripts/check-delf-actif-context-review.py",
+      "exit_code": 0,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés."
+    },
+    {
+      "command": "node scripts/check-tcf-qcm-images.mjs",
+      "exit_code": 0,
+      "output": "10:47:42 AM [vite] (client) [optimizer] scanning dependencies...\nQCM rendering verified: 12 shuffle regressions, 2327 bank variants"
+    },
+    {
+      "command": "node scripts/check-tcf-bank.mjs",
+      "exit_code": 0,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration"
+    }
+  ],
+  "browser_summary": {
+    "account": "full",
+    "views": 16,
+    "question_views": 18,
+    "image_views": 54,
+    "errors": []
+  }
+}

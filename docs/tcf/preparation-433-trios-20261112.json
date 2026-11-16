@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 78,
-    "initial_pending": 355,
+    "activated_since_baseline": 80,
+    "initial_pending": 353,
     "additional_pending": 0,
-    "total_pending": 355,
+    "total_pending": 353,
     "pending_by_level": {
       "A0-A1": 143,
-      "A1-A2": 189,
+      "A1-A2": 187,
       "A2-B1": 23
     }
   },
@@ -13022,8 +13022,8 @@
       "audio": null,
       "source_sha256": "1d4593e974150bb48251d949eac89f5b3ddeefb7bb1839b31d887772c49cf65e",
       "semantic_sha256": "39d36647d085ba6b998418e723ba2f02ef31dec9a3f14c8e989af933cbadcc43",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le document 1, « À cheval », annonce le club d’équitation de la région ; le judo appartient au document 3.",
       "choices": [
         {
           "id": "a",
@@ -13059,7 +13059,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+        "/lib/images/tcf/qcm-audit/vocab-judo.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13068,7 +13072,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -13226,8 +13230,8 @@
       "audio": null,
       "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
       "semantic_sha256": "814190718ce170a27939c857b1ed38ca51b176e8b2e72477a0e0ccf91a2de369",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
       "choices": [
         {
           "id": "a",
@@ -13274,7 +13278,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/catalogue/animaux/taureau.webp",
+        "/lib/images/tcf/catalogue/animaux/poule.webp",
+        "/lib/images/tcf/catalogue/animaux/cochon.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13283,7 +13291,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

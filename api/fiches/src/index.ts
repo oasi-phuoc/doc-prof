@@ -24,6 +24,8 @@ interface Env extends CompetitionEnv {
 
 type Account = 'admin' | 'full' | 'partial'
 
+const FULL_TEST_DOMAINS = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr'] as const
+
 const ADMIN_ONLY = new Set([
   'tpf',
   'tcf-csc',
@@ -156,7 +158,7 @@ function allowedDomains(account: Account, env: Env): Set<string> {
   }
   if (account === 'full') {
     const fromEnv = parseDomainCsv(env.ACCESS_DOMAINS_FULL)
-    return new Set(fromEnv.length > 0 ? fromEnv : regularDomains())
+    return new Set([...(fromEnv.length > 0 ? fromEnv : regularDomains()), ...FULL_TEST_DOMAINS])
   }
   return partialDomains(env)
 }

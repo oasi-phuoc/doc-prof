@@ -1,5 +1,7 @@
 # Bilan du cahier des charges — mise à jour du 16 novembre 2026
 
+**Dernière suite du 16 novembre : accès TCF/TCM CSC et CFR garanti au compte `jebosseplus`, et neuf nouveaux trios A2 activés.** Quatre PNG originaux et 23 réemplois ; restent **353 trios historiques** et **433 candidats DELF Actif**, avec **313 trios DELF Actif actifs**. L’enregistrement est vérifié localement ; le contrôle du Worker en production reste inaccessible depuis cet environnement. [Rapport, preuves et reste à faire](acces-full-et-trios-20261116.md).
+
 **Corrigés du 16 novembre : entretien PO sur une colonne pour TCF-CSC, TCF-CFR et TPF, avec numéros gras, colorés et alignés. Chaque transcription de dialogue ou de document commence sur une page distincte.** Les aperçus sur ordinateur et mobile ainsi que l’impression sont vérifiés. [Rapport et preuves](corrige-entretien-transcriptions-20261116.md).
 
 **Suite du 16 novembre : 21 trios QCM ajoutés, avec 18 PNG originaux et 44 réemplois.** Il reste **355 trios historiques** ; DELF Actif compte **306 trios actifs et 440 candidats à vérifier**. Sports, météo, repas, baignade, cadeaux, communications, recyclage et métiers suivent le style TCF validé. [Rapport actuel et reste à faire](trios-sport-objets-20261116.md).

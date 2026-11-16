@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Dernière suite du 16 novembre : neuf trios A2 ajoutés, quatre PNG originaux et 23 réemplois.** Restent **353 trios historiques** ; DELF Actif compte **313 trios actifs et 433 candidats à vérifier**. Le ticket automobile et les trois tartes remplacent les réemplois hors contexte. [Rapport et reste à faire](acces-full-et-trios-20261116.md).
+
 **Suite du 16 novembre : 21 trios QCM ajoutés, avec 18 PNG originaux et 44 réemplois.** Il reste **355 trios historiques** ; DELF Actif compte **306 trios actifs et 440 candidats à vérifier**. Sports, météo, repas, baignade, cadeaux, communications, recyclage et métiers suivent le style TCF validé. [Rapport actuel et reste à faire](trios-sport-objets-20261116.md).
 
 **Suite du 15 novembre : les 21 cadrages et les trois gestes de guichet signalés sont corrigés.** Dix-neuf PNG natifs couvrent les 21 liaisons ; les 117 pistes restent disponibles. Les leurres viennent désormais d’autres audios de scénario non sélectionnés, avec 80 clés candidates. Le registre ne signale plus d’interlocuteur manquant ni de cadrage restant. Le bouton à icône « Catalogue » regroupe les trois catalogues à gauche de « Paramètres ». [Rapport et reste à faire](cadrages-finaux-20261115.md).

@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-16",
+  "viewport_width": 390,
+  "account": "full",
+  "server": "real Worker request handler with local in-memory SQLite, no production writes",
+  "configuration": "legacy full domain list containing only algebra on both client and server",
+  "results": [
+    {
+      "domain": "tcf-csc",
+      "visible_in_catalogue": true,
+      "opened": true,
+      "saved_copy": true,
+      "persisted_in_local_sqlite": true,
+      "listed_after_reload": true,
+      "password_reentry_required": false
+    },
+    {
+      "domain": "tcf-cfr",
+      "visible_in_catalogue": true,
+      "opened": true,
+      "saved_copy": true,
+      "persisted_in_local_sqlite": true,
+      "listed_after_reload": true,
+      "password_reentry_required": false
+    },
+    {
+      "domain": "tcm-csc",
+      "visible_in_catalogue": true,
+      "opened": true,
+      "saved_copy": true,
+      "persisted_in_local_sqlite": true,
+      "listed_after_reload": true,
+      "password_reentry_required": false
+    },
+    {
+      "domain": "tcm-cfr",
+      "visible_in_catalogue": true,
+      "opened": true,
+      "saved_copy": true,
+      "persisted_in_local_sqlite": true,
+      "listed_after_reload": true,
+      "password_reentry_required": false
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "production_verification": "Worker URL blocked by the environment network proxy; Cloudflare deployment credentials unavailable"
+}

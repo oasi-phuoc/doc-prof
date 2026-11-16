@@ -8,9 +8,9 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 306,
+      "active_reviewed_trio": 313,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 440,
+      "candidate_visual_review": 433,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
@@ -25,8 +25,8 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 232,
-        "active_reviewed_trio": 106,
+        "candidate_visual_review": 225,
+        "active_reviewed_trio": 113,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -42966,8 +42966,8 @@
       "semantic_sha256": "4de21bf035feaa5ee2e288d4f09b180e3cb4d5b87c11b41c8569a1f9a91ac61d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-06.mp3",
       "audio_sha256": "e5e1f1f5113bc89c0ad695dc743ccaaf8f55852acb7009c47b1a2642679955bb",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -43015,8 +43015,24 @@
           "brief": "Représenter entièrement « Aux hommes » pour « À qui la collection s’adresse-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-femmes.webp",
+          "sha256": "586feb7cc858be41b9159bb9a21dc4002eebbdf5340c8c28b0805524ea2bc123"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-enfants.webp",
+          "sha256": "c7706d03ff390a7967d948dc22a52c44f8fe9ad01026a3e4fb967a6982e126c4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-hommes.webp",
+          "sha256": "f54fa208edc76347546f99aa08d40210b68501e0a1788de69e359d1d5f5cdd9f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -43027,7 +43043,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Trois femmes, trois enfants et trois hommes : groupes pluriels sans identité attribuée, personnes et corps entiers. La question porte sur le public, sans ajouter de marque ni de modèle de chaussures."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-007-06#2",
@@ -47573,8 +47593,8 @@
       "semantic_sha256": "2e2d8e9a9dbd5e5b7a9d214185c8c441db4f3d43b06c2ccffcf8552e25e13a42",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-014-01.mp3",
       "audio_sha256": "5b5619f8a8bd5114723f96b80cf089bd578b06dd8e1d973f949d1b7331045b8f",
-      "status": "candidate_visual_review",
-      "reason": "Carte d’identité anonyme, carte bancaire et certificat médical ; fonctions clairement distinctes, sans identité ni données bancaires réelles ou inventées.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -47622,8 +47642,24 @@
           "brief": "Représenter entièrement « Un certificat médical » pour « Quel document est nécessaire ? ». Vérifier la transcription du support tcf-delf-actif-a2-014-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Carte d’identité anonyme, carte bancaire et certificat médical ; fonctions clairement distinctes, sans identité ni données bancaires réelles ou inventées."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+          "sha256": "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+          "sha256": "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-certificat-medical.webp",
+          "sha256": "01503a392c6b4e3b49bdef0783b9483b63c4adc4ae0348c7d36b78179ba5d0a1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47641,6 +47677,10 @@
         "evidence_quote": "il te faut ta carte d’identité",
         "semantic_sha256": "2e2d8e9a9dbd5e5b7a9d214185c8c441db4f3d43b06c2ccffcf8552e25e13a42",
         "note": "Carte d’identité anonyme, carte bancaire et certificat médical ; fonctions clairement distinctes, sans identité ni données bancaires réelles ou inventées."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Carte avec silhouette et champs d’identité, carte bancaire avec puce et sans-contact, certificat médical sur papier avec stéthoscope. Trois types de documents distincts, sans date ni nom inventés."
       }
     },
     {
@@ -48199,8 +48239,8 @@
       "semantic_sha256": "2be61d4ee2ddf32acb2cce503dc3ed220ef42fe2a37af85d154d560ac3cb8147",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-016-01.mp3",
       "audio_sha256": "b6e98586ae950703009f894e6e3a0a222e44e6e9d1aa0623fd5298f58a35ed89",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -48248,8 +48288,24 @@
           "brief": "Représenter entièrement « Une pièce de théâtre » pour « À quel spectacle la personne ne peut-elle pas assister ? ». Vérifier la transcription du support tcf-delf-actif-a2-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp",
+          "sha256": "ca3bc5f49aec1ce39ffbdd1cf53d19e35e07100013022d90498a82e59f8f8fca"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -48260,7 +48316,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Danseurs en mouvement sur scène, chanteuse et guitariste en concert, deux acteurs de théâtre dans un décor. Les scènes représentent les catégories de spectacle, pas les personnes nommées dans l’audio."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-016-01#2",
@@ -66740,8 +66800,8 @@
       "semantic_sha256": "5ca6742670bdf1b4262dac1f41b899c6381ea8c63777dde5ed0a668e4a457bce",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-01-05.mp3",
       "audio_sha256": "2d287df9b9b8313f787669da85979dabbbf2a01cd61ccced6a4be07a116433b4",
-      "status": "candidate_visual_review",
-      "reason": "Ticket d’entrée, carte d’identité et permis de conduire anonymes ; pas de valeur, nom ou date imprimés.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -66789,8 +66849,24 @@
           "brief": "Représenter entièrement « Le permis de conduire » pour « Quel document faut-il introduire dans la machine ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-01-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Ticket d’entrée, carte d’identité et permis de conduire anonymes ; pas de valeur, nom ou date imprimés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-ticket-voiture.png",
+          "sha256": "a6e69a542bfe7898ce6ffcc7ab1000dd1d9e5162e70750fc680b319a693cfa64"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+          "sha256": "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+          "sha256": "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -66808,6 +66884,10 @@
         "evidence_quote": "votre ticket d’entrée",
         "semantic_sha256": "5ca6742670bdf1b4262dac1f41b899c6381ea8c63777dde5ed0a668e4a457bce",
         "note": "Ticket d’entrée, carte d’identité et permis de conduire anonymes ; pas de valeur, nom ou date imprimés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Ticket papier avec automobile et barrière, carte d’identité et permis de conduire. Le ticket de piscine proposé est rejeté. Pas de ville, de tarif ni d’établissement spécifique ajouté."
       }
     },
     {
@@ -74172,8 +74252,8 @@
       "semantic_sha256": "75d8960d7fe6c7d3a2a344e92f23b196e293076a0d392ff4ea28e69003217acb",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
       "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -74233,8 +74313,24 @@
           "brief": "Représenter entièrement « Le bus » pour « Quel moyen permet de monter en haut de la montagne ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+          "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+          "sha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
+          "sha256": "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -74245,7 +74341,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Cabine suspendue à des câbles montant vers la montagne, train sur rails et bus de ligne. Le téléphérique est entier et suffisamment grand dans la scène ; les interlocuteurs n’en masquent pas la cabine."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-04-04#2",
@@ -75197,8 +75297,8 @@
       "semantic_sha256": "2d7bcb1b4f7b4f2e1e40df73dbeeeaa1131f245d20d2577efaaba544917da467",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-01-04.mp3",
       "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -75252,8 +75352,24 @@
           "brief": "Représenter entièrement « L’abricot » pour « Quel parfum de tarte est cité ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-chocolat.png",
+          "sha256": "f2b00b46a592c2844f7bc0a1b401ba321d8e130a239090c06409ee8437aff4d3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-citron.png",
+          "sha256": "50f23514853d793e782f0f8d6801321ad52fd518a5aeb6a5e4075700bb389f93"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-abricot.png",
+          "sha256": "2d4a7a1c4e340944c1ccc9e1debfb6dd3686c3d480d86372a8eddf1fb0495197"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -75264,7 +75380,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Trois tartes entières avec leurs garnitures de chocolat, citron et abricot, même assiette et même lumière. Tablette et fruits isolés sont rejetés : le choix est un parfum de tarte, pas seulement un ingrédient."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-046-01-04#3",
@@ -75373,8 +75493,8 @@
       "semantic_sha256": "38e063652ec8a15553ed0c77edaab5cb199ab2b6cea1d8f4db980d966c47bd11",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-01-04.mp3",
       "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
-      "status": "candidate_visual_review",
-      "reason": "Pâtissier, boucher et fromager dans leurs activités et commerces ; ne pas les distinguer par leurs seuls visages.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -75422,8 +75542,24 @@
           "brief": "Représenter entièrement « Le fromager » pour « Chez quel professionnel une surprise attend-elle les clients ? ». Vérifier la transcription du support tcf-delf-actif-a2-046-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Pâtissier, boucher et fromager dans leurs activités et commerces ; ne pas les distinguer par leurs seuls visages."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/metiers/patissier.webp",
+          "sha256": "827fad3ba5a8201842a4e861e98ebe417a7b74691e78caef6cafb69368c3f899"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/catalogue/metiers/boucher.webp",
+          "sha256": "43eca4be8b4f05b6b8acdd7950adf53e753d9db67c71030f66eb5b5f78aacff2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/metiers/fromager.webp",
+          "sha256": "4ebadfb37ce215234505a9e18ea4533cadc5773b36fb1be22c2ec8af2c6f363b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -75441,6 +75577,10 @@
         "evidence_quote": "chez notre pâtissier",
         "semantic_sha256": "38e063652ec8a15553ed0c77edaab5cb199ab2b6cea1d8f4db980d966c47bd11",
         "note": "Pâtissier, boucher et fromager dans leurs activités et commerces ; ne pas les distinguer par leurs seuls visages."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Pâtissier décorant un gâteau et des pâtisseries, boucher découpant de la viande, fromagère travaillant une meule. Les outils et produits établissent chaque profession, sans attribuer ces portraits au commerce de l’annonce."
       }
     },
     {
@@ -77441,6 +77581,12 @@
             {
               "path": "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp",
               "sha256": "395345c543575c1f64ddd60889f816e5e1268b46333830ac7036c88016c18b11",
+              "label": "Une tarte au citron",
+              "visual_review_required": true
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-citron.png",
+              "sha256": "50f23514853d793e782f0f8d6801321ad52fd518a5aeb6a5e4075700bb389f93",
               "label": "Une tarte au citron",
               "visual_review_required": true
             }
@@ -129550,6 +129696,12 @@
         {
           "path": "/lib/images/tcf/qcm-audit/co306-tarte-citron-dessine.webp",
           "sha256": "395345c543575c1f64ddd60889f816e5e1268b46333830ac7036c88016c18b11",
+          "label": "Une tarte au citron",
+          "visual_review_required": true
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-citron.png",
+          "sha256": "50f23514853d793e782f0f8d6801321ad52fd518a5aeb6a5e4075700bb389f93",
           "label": "Une tarte au citron",
           "visual_review_required": true
         }

@@ -29,7 +29,7 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
 ]
 
 /**
- * Domaines réservés au compte admin (tests).
+ * Domaines de tests, affichés après les domaines réguliers.
  * Ordre d’affichage exact : tcf-csc → tcf-cfr → tcm-csc → tcm-cfr → tpf → tpm.
  */
 export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
@@ -42,6 +42,9 @@ export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[]
 ]
 
 export const ADMIN_ONLY_DOMAINS: readonly Domain[] = ADMIN_ONLY_DOMAIN_OPTIONS.map((d) => d.id)
+
+/** Accès TCF / TCM garanti au compte full, y compris avec une ancienne liste env. */
+const FULL_TEST_DOMAINS: readonly Domain[] = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr']
 
 /** Tous les domaines sélectionnables (ordre d’affichage final). */
 export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
@@ -136,15 +139,14 @@ export function parseAccessDomainList(raw: string | undefined): Domain[] {
 }
 
 /**
- * Domaines FULL / PARTIAL : la variable d’environnement est la source de vérité
- * (`VITE_ACCESS_DOMAINS_*`, ou `ACCESS_DOMAINS_*` recopié au build).
- * - **full** : liste telle quelle. Vide ou absente → domaines réguliers seulement.
+ * Domaines FULL / PARTIAL (`VITE_ACCESS_DOMAINS_*`, ou `ACCESS_DOMAINS_*` au build).
+ * - **full** : liste configurée (défaut : domaines réguliers), plus TCF / TCM CSC et CFR.
  * - **partial** : `VITE_ACCESS_DOMAINS_PARTIAL` (défaut algèbre + géométrie).
  */
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   if (account === 'full') {
     const fromEnv = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [])
-    return fromEnv.length > 0 ? fromEnv : [...REGULAR_DOMAIN_IDS]
+    return [...new Set([...(fromEnv.length > 0 ? fromEnv : REGULAR_DOMAIN_IDS), ...FULL_TEST_DOMAINS])]
   }
   return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
     'algèbre',

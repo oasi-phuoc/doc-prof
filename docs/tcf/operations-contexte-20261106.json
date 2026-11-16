@@ -30329,6 +30329,72 @@
       "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
       "reason": "Le règlement indique que la chambre possède un mini-frigo avec jus et boissons fraîches.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-006",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-judo.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+          }
+        ]
+      },
+      "source_sha256": "1d4593e974150bb48251d949eac89f5b3ddeefb7bb1839b31d887772c49cf65e",
+      "reason": "Le document 1, « À cheval », annonce le club d’équitation de la région ; le judo appartient au document 3.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-017",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/animaux/taureau.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/catalogue/animaux/poule.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/catalogue/animaux/cochon.webp"
+          }
+        ]
+      },
+      "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
+      "reason": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

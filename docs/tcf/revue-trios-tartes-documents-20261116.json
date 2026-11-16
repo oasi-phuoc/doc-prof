@@ -1,0 +1,649 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "7bef760465589782147efd819e4b5e5148db00e4",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 9,
+    "added_historical_trios": 2,
+    "added_delf_actif_trios": 7,
+    "new_images": 4,
+    "imagegen_calls": 4,
+    "rejected_generations": 0,
+    "new_image_usages": 4,
+    "reused_image_usages": 23,
+    "reused_distinct_images": 22,
+    "added_by_level": {
+      "A1-A2": 9
+    },
+    "historical_pending": 353
+  },
+  "new_images": [
+    {
+      "id": "qcm-a2-ticket-voiture",
+      "label": "Un ticket d’entrée automobile",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-ticket-voiture.png",
+      "prompt": "One landscape illustration, EXACT native size 1448 x 1086 pixels, 4:3. Approved TCF worksheet style: softly painted semi-realistic editorial illustration, natural proportional forms and subtle visible brush texture, warm ivory and cream ground, gently modelled light and shadow, restrained natural colours, clear legible central subject, generous empty space around all edges, no graphic border, no panels, no flat vector icon, no photograph or CGI, no excessive gloss, no text, letters, logos, dates, numbers or watermark. Soft daylight from upper left and a mild contact shadow on the same warm cream tabletop. The entire main object must fit comfortably with a margin; never crop any meaningful part. Show ONE ordinary small rectangular parking-entry paper ticket laid at a slight angle on the cream surface, seen from a readable three-quarter overhead view. A small plain pictogram of a car and a raised parking barrier printed on the ticket unambiguously identify a vehicle entry ticket. Add a narrow barcode made of short irregular bars, but NO readable word, number, price, date or time. Realistically painted paper with a clean straight edge, no detachable swimming-pool or theatre ticket shape, no swimmers, portraits, driving licence, bank chip, credit-card branding, hands, machine or people. This is a generic document for a listening task where a driver must put an entry ticket and money in a machine while staying inside the car. Do not invent a specific city or parking tariff.",
+      "source_png": "/workspace/generated_images/exec-7054d1fd-ef3e-49b8-9dbe-ff806aa1067e.png",
+      "source_sha256": "a6e69a542bfe7898ce6ffcc7ab1000dd1d9e5162e70750fc680b319a693cfa64",
+      "sha256": "a6e69a542bfe7898ce6ffcc7ab1000dd1d9e5162e70750fc680b319a693cfa64",
+      "bytes": 2369859,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-tartes-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Ticket papier entier, pictogrammes automobile et barrière, code-barres sans texte ni montant. Le contexte reste celui d’une entrée automobile, sans préciser un établissement ni un tarif.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Transport",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-tarte-chocolat",
+      "label": "Une tarte au chocolat",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-chocolat.png",
+      "prompt": "One landscape illustration, EXACT native size 1448 x 1086 pixels, 4:3. Approved TCF worksheet style: softly painted semi-realistic editorial illustration, natural proportional forms and subtle visible brush texture, warm ivory and cream ground, gently modelled light and shadow, restrained natural colours, clear legible central subject, generous empty space around all edges, no graphic border, no panels, no flat vector icon, no photograph or CGI, no excessive gloss, no text, letters, logos, dates, numbers or watermark. Soft daylight from upper left and a mild contact shadow on the same warm cream tabletop. The entire main object must fit comfortably with a margin; never crop any meaningful part. One whole round CHOCOLATE TART on a plain pale ceramic plate. Golden shortcrust pastry rim clearly visible, rich dark chocolate ganache filling, a few delicate chocolate curls on the centre. A single neat slice has been pulled slightly away on the SAME plate so the baked pastry and chocolate filling are visible. Two small chocolate pieces rest beside the plate as a flavour cue. Frame the entire plate and tart at a low three-quarter overhead angle. No fruit, lemon, orange filling, cream cake or naked chocolate bar as main subject. This depicts the actual tart flavour in a dessert announcement, not just its ingredient. Coherent simple still life, no cutlery or text.",
+      "source_png": "/workspace/generated_images/exec-7246ca7c-67d0-49c2-9ec3-1b231da91c4f.png",
+      "source_sha256": "f2b00b46a592c2844f7bc0a1b401ba321d8e130a239090c06409ee8437aff4d3",
+      "sha256": "f2b00b46a592c2844f7bc0a1b401ba321d8e130a239090c06409ee8437aff4d3",
+      "bytes": 2402477,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-tartes-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Tarte entière à pâte dorée et ganache brune, part légèrement écartée sur la même assiette et chocolat à côté. Fond crème, lumière douce, peinture et texture cohérentes avec les deux autres tartes.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-tarte-citron",
+      "label": "Une tarte au citron",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-citron.png",
+      "prompt": "One landscape illustration, EXACT native size 1448 x 1086 pixels, 4:3. Approved TCF worksheet style: softly painted semi-realistic editorial illustration, natural proportional forms and subtle visible brush texture, warm ivory and cream ground, gently modelled light and shadow, restrained natural colours, clear legible central subject, generous empty space around all edges, no graphic border, no panels, no flat vector icon, no photograph or CGI, no excessive gloss, no text, letters, logos, dates, numbers or watermark. Soft daylight from upper left and a mild contact shadow on the same warm cream tabletop. The entire main object must fit comfortably with a margin; never crop any meaningful part. One whole round LEMON TART on a plain pale ceramic plate. Golden shortcrust pastry rim clearly visible, smooth pale lemon-yellow custard filling, a delicate thin lemon slice at the centre, NO meringue. A single neat slice has been pulled slightly away on the SAME plate so the baked pastry and lemon filling are visible. One freshly cut lemon half rests beside the plate as a flavour cue. Frame the entire plate and tart at a low three-quarter overhead angle. No chocolate, apricot, orange jam, fruit salad or lemon alone as main subject. This depicts the actual tart flavour as a complete dessert, not just its ingredient. Coherent simple still life, no cutlery or text.",
+      "source_png": "/workspace/generated_images/exec-0d3df2a3-854d-4cc0-af0c-238712a15685.png",
+      "source_sha256": "50f23514853d793e782f0f8d6801321ad52fd518a5aeb6a5e4075700bb389f93",
+      "sha256": "50f23514853d793e782f0f8d6801321ad52fd518a5aeb6a5e4075700bb389f93",
+      "bytes": 2414686,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-tartes-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Tarte au citron entière, garniture jaune pâle et rondelle de citron ; part écartée et demi-citron permettent de distinguer le parfum, sans texte. Même assiette et cadrage que les autres tartes.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-tarte-abricot",
+      "label": "Une tarte à l’abricot",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-tarte-abricot.png",
+      "prompt": "One landscape illustration, EXACT native size 1448 x 1086 pixels, 4:3. Approved TCF worksheet style: softly painted semi-realistic editorial illustration, natural proportional forms and subtle visible brush texture, warm ivory and cream ground, gently modelled light and shadow, restrained natural colours, clear legible central subject, generous empty space around all edges, no graphic border, no panels, no flat vector icon, no photograph or CGI, no excessive gloss, no text, letters, logos, dates, numbers or watermark. Soft daylight from upper left and a mild contact shadow on the same warm cream tabletop. The entire main object must fit comfortably with a margin; never crop any meaningful part. One whole round APRICOT TART on a plain pale ceramic plate. Golden shortcrust pastry rim clearly visible, baked orange APRICOT HALVES arranged neatly over a thin baked filling; each halved fruit has a visible small pit cavity and a lightly glazed cut surface, clearly apricots, not citrus slices or peaches. A single neat slice has been pulled slightly away on the SAME plate so the baked pastry and apricot filling are visible. One fresh halved apricot with a single brown stone rests beside the plate as a flavour cue. Frame the entire plate and tart at a low three-quarter overhead angle. No chocolate, lemon, apple pie, fruit salad or bare apricot alone as main subject. This depicts the actual tart flavour as a complete dessert, not just its ingredient. Coherent simple still life, no cutlery or text.",
+      "source_png": "/workspace/generated_images/exec-1f7ec3db-8ec5-4a63-a268-8cdccc647cd9.png",
+      "source_sha256": "2d4a7a1c4e340944c1ccc9e1debfb6dd3686c3d480d86372a8eddf1fb0495197",
+      "sha256": "2d4a7a1c4e340944c1ccc9e1debfb6dd3686c3d480d86372a8eddf1fb0495197",
+      "bytes": 2709412,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-tartes-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Tarte entière garnie de demi-abricots avec cavités du noyau visibles ; part écartée et demi-abricot avec noyau. Assiette et objets entiers, fond crème et peinture douce.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Alimentation",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/e0b9c553597c.webp",
+      "reason": "Ticket de piscine au lieu du ticket d’entrée automobile demandé par le contexte."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-chocolat-dessine.webp",
+      "reason": "Tablette isolée au lieu du parfum de tarte représenté par un dessert entier."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-citron.webp",
+      "reason": "Fruit isolé au lieu d’une tarte au citron."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/vegetaux/abricot.webp",
+      "reason": "Fruit isolé au lieu d’une tarte à l’abricot."
+    }
+  ],
+  "trios": [
+    {
+      "key": "delf-a2r-ce-006#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Document 1 — À cheval\nLe club d’équitation de la région vous attend. Vous bénéficiez de 25 % de réduction pour une inscription avant le 30 juin.\n\nDocument 2 — L’art de la danse\nLe centre sportif de la ville propose des cours de danse classique et moderne. Inscriptions à partir de lundi.\n\nDocument 3 — Judo : cours d’essai\nVous voulez essayer un sport de combat ? Le club de judo vous offre un cours d’essai gratuit samedi matin.",
+      "source_sha256": "1d4593e974150bb48251d949eac89f5b3ddeefb7bb1839b31d887772c49cf65e",
+      "semantic_sha256": "39d36647d085ba6b998418e723ba2f02ef31dec9a3f14c8e989af933cbadcc43",
+      "question": {
+        "enonce": "Document 1 — Quel sport le club propose-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L’équitation",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le judo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le tennis",
+            "correct": false
+          }
+        ],
+        "written_model": "L’équitation"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "extension573-equitation-cavaliere",
+        "vocab-judo",
+        "26876e2318ce"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+        "/lib/images/tcf/qcm-audit/vocab-judo.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+      ],
+      "image_sha256": [
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+        "68c61e54af101e5b7ad8800759ae67b8e33b72827922b1af45b2f89d6a602d01",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+      ],
+      "reason": "Le document 1, « À cheval », annonce le club d’équitation de la région ; le judo appartient au document 3.",
+      "visual_review": "Cavalière avec casque et cheval entiers, deux judokas sur tatami et deux joueurs de tennis sur court avec filet. Les quatre pieds du cheval et les chaussures des joueurs sont visibles ; chaque choix représente un sport unique.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-017#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Plat 1 — Émincé de bœuf\nViande de bœuf avec des pommes de terre et des carottes.\n\nPlat 2 — Fondant au chocolat\nGâteau au chocolat presque liquide à l’intérieur.\n\nPlat 3 — Spaghetti au pesto\nPâtes avec une sauce au basilic, à l’italienne.",
+      "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
+      "semantic_sha256": "814190718ce170a27939c857b1ed38ca51b176e8b2e72477a0e0ccf91a2de369",
+      "question": {
+        "enonce": "De quel animal vient la viande de l’émincé ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du bœuf",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du poulet",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du porc",
+            "correct": false
+          }
+        ],
+        "written_model": "Du bœuf"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "catalogue-20261113-animal-taureau",
+        "catalogue-20261113-animal-poule",
+        "catalogue-20261113-animal-cochon"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/animaux/taureau.webp",
+        "/lib/images/tcf/catalogue/animaux/poule.webp",
+        "/lib/images/tcf/catalogue/animaux/cochon.webp"
+      ],
+      "image_sha256": [
+        "7119b8314e06093bb7cafa92406a137ba8894ff3cd8bd4b4afd9d0fead9539eb",
+        "61bd1cfe11fc1fa01f3a6f406f3046b4cd5c42a6243eb0796e24fc4ac1413994",
+        "c50237b56a70f4968734d84a63323a804dfafa38f98cd3bba1fdf5ba4a27a09e"
+      ],
+      "reason": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
+      "visual_review": "La question demande l’animal d’origine : bovin, poule et cochon entiers, reconnaissables par leur morphologie. Les images montrent les espèces, sans proposer une assiette de poulet pour représenter l’animal.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-06#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour un look féminin offrez-vous une jolie paire de chaussures modernes. Nous vous attendons dans notre magasin avec une large collection de chaussures, de basket et de sandales pour l’été.",
+      "source_sha256": "a6389a3d8c955d46fc1d086b971d989cb33df31aee1df8e12d3adf16be1d4f1b",
+      "semantic_sha256": "4de21bf035feaa5ee2e288d4f09b180e3cb4d5b87c11b41c8569a1f9a91ac61d",
+      "question": {
+        "enonce": "À qui la collection s’adresse-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Aux femmes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Aux enfants",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Aux hommes",
+            "correct": false
+          }
+        ],
+        "written_model": "Aux femmes"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-06.mp3",
+      "audio_sha256": "e5e1f1f5113bc89c0ad695dc743ccaaf8f55852acb7009c47b1a2642679955bb",
+      "image_ids": [
+        "vocab-femmes",
+        "vocab-enfants",
+        "vocab-hommes"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-femmes.webp",
+        "/lib/images/tcf/qcm-audit/vocab-enfants.webp",
+        "/lib/images/tcf/qcm-audit/vocab-hommes.webp"
+      ],
+      "image_sha256": [
+        "586feb7cc858be41b9159bb9a21dc4002eebbdf5340c8c28b0805524ea2bc123",
+        "c7706d03ff390a7967d948dc22a52c44f8fe9ad01026a3e4fb967a6982e126c4",
+        "f54fa208edc76347546f99aa08d40210b68501e0a1788de69e359d1d5f5cdd9f"
+      ],
+      "reason": "L’annonce propose des chaussures pour un « look féminin ».",
+      "visual_review": "Trois femmes, trois enfants et trois hommes : groupes pluriels sans identité attribuée, personnes et corps entiers. La question porte sur le public, sans ajouter de marque ni de modèle de chaussures.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-014-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Benoît, pour ton abonnement à la patinoire il te faut ta carte d’identité. Rappelle-toi pour les inscriptions de t’abonner demain mercredi de 14h00 à 17h00. Moi, ma maman va m’inscrire demain quand elle sort de son travail.",
+      "source_sha256": "6d805a4349175d2b61d4d70749e1817291ae6237c36b35aba3096dbc73c2b075",
+      "semantic_sha256": "2e2d8e9a9dbd5e5b7a9d214185c8c441db4f3d43b06c2ccffcf8552e25e13a42",
+      "question": {
+        "enonce": "Quel document est nécessaire ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une carte d’identité",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une carte bancaire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un certificat médical",
+            "correct": false
+          }
+        ],
+        "written_model": "Une carte d’identité"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-014-01.mp3",
+      "audio_sha256": "5b5619f8a8bd5114723f96b80cf089bd578b06dd8e1d973f949d1b7331045b8f",
+      "image_ids": [
+        "vocab-carte-identite",
+        "co834-carte-bancaire-dessinee",
+        "extension573-certificat-medical"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/extension573-certificat-medical.webp"
+      ],
+      "image_sha256": [
+        "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f",
+        "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583",
+        "01503a392c6b4e3b49bdef0783b9483b63c4adc4ae0348c7d36b78179ba5d0a1"
+      ],
+      "reason": "Pour l’abonnement à la patinoire, le message dit « il te faut ta carte d’identité ».",
+      "visual_review": "Carte avec silhouette et champs d’identité, carte bancaire avec puce et sans-contact, certificat médical sur papier avec stéthoscope. Trois types de documents distincts, sans date ni nom inventés.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-016-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Coucou, Manu, c’est Danielle. Samedi soir je ne peux pas assister à ton spectacle de danse. Je viens de savoir que mon père arrive en avion à 20h00. Nous allons l’attendre ma mère, ma sœur et moi. Je regrette mais je viens te voir volontiers la prochaine fois. Bisous.",
+      "source_sha256": "0f6f693aeda0ceb36ab7f955d28cd5aad22a214f5c0cab2c2a29aa7dc07a2d34",
+      "semantic_sha256": "2be61d4ee2ddf32acb2cce503dc3ed220ef42fe2a37af85d154d560ac3cb8147",
+      "question": {
+        "enonce": "À quel spectacle la personne ne peut-elle pas assister ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un spectacle de danse",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un concert",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une pièce de théâtre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un spectacle de danse"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-016-01.mp3",
+      "audio_sha256": "b6e98586ae950703009f894e6e3a0a222e44e6e9d1aa0623fd5298f58a35ed89",
+      "image_ids": [
+        "co834-spectacle-danse-dessine",
+        "co834-concert-dessine",
+        "d8953c7ddfe7"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/d8953c7ddfe7.webp"
+      ],
+      "image_sha256": [
+        "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0",
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924",
+        "ca3bc5f49aec1ce39ffbdd1cf53d19e35e07100013022d90498a82e59f8f8fca"
+      ],
+      "reason": "Danielle dit ne pas pouvoir assister au spectacle de danse de Manu, car elle va chercher son père à l’aéroport.",
+      "visual_review": "Danseurs en mouvement sur scène, chanteuse et guitariste en concert, deux acteurs de théâtre dans un décor. Les scènes représentent les catégories de spectacle, pas les personnes nommées dans l’audio.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-01-05#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Vous devez mettre votre ticket d’entrée et l’argent dans la machine. Vous ne devez pas descendre de votre voiture. En cas de nécessité, appuyez sur le bouton rouge.",
+      "source_sha256": "6c603cb1be699e3362b32fd83821cb4008ae595a663b93d79e56ae91570d2921",
+      "semantic_sha256": "5ca6742670bdf1b4262dac1f41b899c6381ea8c63777dde5ed0a668e4a457bce",
+      "question": {
+        "enonce": "Quel document faut-il introduire dans la machine ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le ticket d’entrée",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La carte d’identité",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le permis de conduire",
+            "correct": false
+          }
+        ],
+        "written_model": "Le ticket d’entrée"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-01-05.mp3",
+      "audio_sha256": "2d287df9b9b8313f787669da85979dabbbf2a01cd61ccced6a4be07a116433b4",
+      "image_ids": [
+        "qcm-a2-ticket-voiture",
+        "vocab-carte-identite",
+        "audit-context-permis-conduire"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-ticket-voiture.png",
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
+      "image_sha256": [
+        "a6e69a542bfe7898ce6ffcc7ab1000dd1d9e5162e70750fc680b319a693cfa64",
+        "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+      ],
+      "reason": "La consigne demande le ticket d’entrée et l’argent dans la machine, sans descendre de voiture.",
+      "visual_review": "Ticket papier avec automobile et barrière, carte d’identité et permis de conduire. Le ticket de piscine proposé est rejeté. Pas de ville, de tarif ni d’établissement spécifique ajouté.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-04-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "On va comment en haut de la montagne ? Par la route ? Non il y a un téléphérique toutes les demi-heures. C’est le seul moyen. Super ! Oui le point de vue est magnifique même si c’est impressionnant.",
+      "source_sha256": "5d962a7043edbe96f8d964b22e81cfc81241e2b71daad01ea29154628198ca30",
+      "semantic_sha256": "75d8960d7fe6c7d3a2a344e92f23b196e293076a0d392ff4ea28e69003217acb",
+      "question": {
+        "enonce": "Quel moyen permet de monter en haut de la montagne ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le téléphérique",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le bus",
+            "correct": false
+          }
+        ],
+        "written_model": "Le téléphérique"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+      "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
+      "image_ids": [
+        "scenario-demander-montee-telepherique",
+        "co834-train-dessine",
+        "co834-bus-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+      ],
+      "image_sha256": [
+        "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+      ],
+      "reason": "Le dialogue répond « il y a un téléphérique toutes les demi-heures » et précise que c’est le seul moyen.",
+      "visual_review": "Cabine suspendue à des câbles montant vers la montagne, train sur rails et bus de ligne. Le téléphérique est entier et suffisamment grand dans la scène ; les interlocuteurs n’en masquent pas la cabine.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-01-04#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour fêter cette journée, pensez à mettre sur votre table un bon dessert. Vaste choix de tartes au chocolat, de gâteaux aux fruits et à la crème. Une surprise vous attend chez notre pâtissier.",
+      "source_sha256": "e2374941cd257d184bd8cc6e454c6bf1580905944f73d6047fdca49c677ef993",
+      "semantic_sha256": "2d7bcb1b4f7b4f2e1e40df73dbeeeaa1131f245d20d2577efaaba544917da467",
+      "question": {
+        "enonce": "Quel parfum de tarte est cité ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le chocolat",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le citron",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "L’abricot",
+            "correct": false
+          }
+        ],
+        "written_model": "Le chocolat"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-01-04.mp3",
+      "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
+      "image_ids": [
+        "qcm-a2-tarte-chocolat",
+        "qcm-a2-tarte-citron",
+        "qcm-a2-tarte-abricot"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-tarte-chocolat.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-tarte-citron.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-tarte-abricot.png"
+      ],
+      "image_sha256": [
+        "f2b00b46a592c2844f7bc0a1b401ba321d8e130a239090c06409ee8437aff4d3",
+        "50f23514853d793e782f0f8d6801321ad52fd518a5aeb6a5e4075700bb389f93",
+        "2d4a7a1c4e340944c1ccc9e1debfb6dd3686c3d480d86372a8eddf1fb0495197"
+      ],
+      "reason": "L’annonce parle de « tartes au chocolat », puis de gâteaux aux fruits et à la crème.",
+      "visual_review": "Trois tartes entières avec leurs garnitures de chocolat, citron et abricot, même assiette et même lumière. Tablette et fruits isolés sont rejetés : le choix est un parfum de tarte, pas seulement un ingrédient.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-01-04#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour fêter cette journée, pensez à mettre sur votre table un bon dessert. Vaste choix de tartes au chocolat, de gâteaux aux fruits et à la crème. Une surprise vous attend chez notre pâtissier.",
+      "source_sha256": "e2374941cd257d184bd8cc6e454c6bf1580905944f73d6047fdca49c677ef993",
+      "semantic_sha256": "38e063652ec8a15553ed0c77edaab5cb199ab2b6cea1d8f4db980d966c47bd11",
+      "question": {
+        "enonce": "Chez quel professionnel une surprise attend-elle les clients ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le pâtissier",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le boucher",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le fromager",
+            "correct": false
+          }
+        ],
+        "written_model": "Le pâtissier"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-01-04.mp3",
+      "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
+      "image_ids": [
+        "catalogue-20261113-metier-patissier",
+        "catalogue-20261113-metier-boucher",
+        "catalogue-20261113-metier-fromager"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/catalogue/metiers/patissier.webp",
+        "/lib/images/tcf/catalogue/metiers/boucher.webp",
+        "/lib/images/tcf/catalogue/metiers/fromager.webp"
+      ],
+      "image_sha256": [
+        "827fad3ba5a8201842a4e861e98ebe417a7b74691e78caef6cafb69368c3f899",
+        "43eca4be8b4f05b6b8acdd7950adf53e753d9db67c71030f66eb5b5f78aacff2",
+        "4ebadfb37ce215234505a9e18ea4533cadc5773b36fb1be22c2ec8af2c6f363b"
+      ],
+      "reason": "L’annonce conclut « Une surprise vous attend chez notre pâtissier ».",
+      "visual_review": "Pâtissier décorant un gâteau et des pâtisseries, boucher découpant de la viande, fromagère travaillant une meule. Les outils et produits établissent chaque profession, sans attribuer ces portraits au commerce de l’annonce.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

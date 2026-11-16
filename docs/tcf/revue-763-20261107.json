@@ -20310,14 +20310,14 @@
         "Le judo",
         "Le tennis"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "1d4593e974150bb48251d949eac89f5b3ddeefb7bb1839b31d887772c49cf65e",
       "audio": null,
       "review_index": 485,
       "semantic_sha256": "39d36647d085ba6b998418e723ba2f02ef31dec9a3f14c8e989af933cbadcc43",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "reason": "Le document 1, « À cheval », annonce le club d’équitation de la région ; le judo appartient au document 3.",
       "brief": {
         "context_question": "Document 1 — Quel sport le club propose-t-il ?",
         "choices_to_illustrate": [
@@ -20337,6 +20337,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+        "/lib/images/tcf/qcm-audit/vocab-judo.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+      ],
+      "selected_sha256": [
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+        "68c61e54af101e5b7ad8800759ae67b8e33b72827922b1af45b2f89d6a602d01",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Cavalière avec casque et cheval entiers, deux judokas sur tatami et deux joueurs de tennis sur court avec filet. Les quatre pieds du cheval et les chaussures des joueurs sont visibles ; chaque choix représente un sport unique."
       }
     },
     {
@@ -20572,14 +20586,14 @@
         "Du poulet",
         "Du porc"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
       "audio": null,
       "review_index": 491,
       "semantic_sha256": "814190718ce170a27939c857b1ed38ca51b176e8b2e72477a0e0ccf91a2de369",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
       "brief": {
         "context_question": "De quel animal vient la viande de l’émincé ?",
         "choices_to_illustrate": [
@@ -20599,6 +20613,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/catalogue/animaux/taureau.webp",
+        "/lib/images/tcf/catalogue/animaux/poule.webp",
+        "/lib/images/tcf/catalogue/animaux/cochon.webp"
+      ],
+      "selected_sha256": [
+        "7119b8314e06093bb7cafa92406a137ba8894ff3cd8bd4b4afd9d0fead9539eb",
+        "61bd1cfe11fc1fa01f3a6f406f3046b4cd5c42a6243eb0796e24fc4ac1413994",
+        "c50237b56a70f4968734d84a63323a804dfafa38f98cd3bba1fdf5ba4a27a09e"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "La question demande l’animal d’origine : bovin, poule et cochon entiers, reconnaissables par leur morphologie. Les images montrent les espèces, sans proposer une assiette de poulet pour représenter l’animal."
       }
     },
     {
@@ -30864,20 +30892,20 @@
   "summary": {
     "artwork_needed_contextual_locations": 271,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 296,
-    "artwork_needed_whole_answer_concepts": 68,
+    "active_reviewed_trio": 298,
+    "artwork_needed_whole_answer_concepts": 67,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
     "keep_text_nonvisual_or_quantified_claim": 9,
-    "artwork_needed_distinct_document_types": 16,
+    "artwork_needed_distinct_document_types": 15,
     "keep_text_arbitrary_identifier": 8,
     "keep_text_rule_temporal_scope": 1
   },
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 296,
+  "activated_total": 298,
   "retained_text_total": 112,
-  "artwork_pending_total": 355
+  "artwork_pending_total": 353
 }

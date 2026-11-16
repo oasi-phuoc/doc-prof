@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1913,
+    "reviewed_trio": 1915,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 355,
+    "reviewed_763_artwork_pending": 353,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -140139,19 +140139,31 @@
         "Le judo",
         "Le tennis"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "1d4593e974150bb48251d949eac89f5b3ddeefb7bb1839b31d887772c49cf65e",
       "semantic_before_sha256": "39d36647d085ba6b998418e723ba2f02ef31dec9a3f14c8e989af933cbadcc43",
       "semantic_after_sha256": "39d36647d085ba6b998418e723ba2f02ef31dec9a3f14c8e989af933cbadcc43",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/extension573-equitation-cavaliere.png",
+        "/lib/images/tcf/qcm-audit/vocab-judo.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp"
+      ],
+      "target_sha256": [
+        "2f56d1b9840992b4b8adadbd25dc19ec0d929668e9ac691ee0b280acb2c71888",
+        "68c61e54af101e5b7ad8800759ae67b8e33b72827922b1af45b2f89d6a602d01",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "Le document 1, « À cheval », annonce le club d’équitation de la région ; le judo appartient au document 3.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le document 1, « À cheval », annonce le club d’équitation de la région ; le judo appartient au document 3.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "Cavalière avec casque et cheval entiers, deux judokas sur tatami et deux joueurs de tennis sur court avec filet. Les quatre pieds du cheval et les chaussures des joueurs sont visibles ; chaque choix représente un sport unique."
+      }
     },
     {
       "key": "delf-a2r-ce-006#2",
@@ -142286,19 +142298,31 @@
         "Du poulet",
         "Du porc"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "4f1fda6e974020134d129f689018c24ee141ddc170ed20ae5a0a13387d2ca0e6",
       "semantic_before_sha256": "814190718ce170a27939c857b1ed38ca51b176e8b2e72477a0e0ccf91a2de369",
       "semantic_after_sha256": "814190718ce170a27939c857b1ed38ca51b176e8b2e72477a0e0ccf91a2de369",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/catalogue/animaux/taureau.webp",
+        "/lib/images/tcf/catalogue/animaux/poule.webp",
+        "/lib/images/tcf/catalogue/animaux/cochon.webp"
+      ],
+      "target_sha256": [
+        "7119b8314e06093bb7cafa92406a137ba8894ff3cd8bd4b4afd9d0fead9539eb",
+        "61bd1cfe11fc1fa01f3a6f406f3046b4cd5c42a6243eb0796e24fc4ac1413994",
+        "c50237b56a70f4968734d84a63323a804dfafa38f98cd3bba1fdf5ba4a27a09e"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le plat 1 est un émincé de bœuf, explicitement décrit comme de la viande de bœuf.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-tartes-documents-20261116.json",
+        "note": "La question demande l’animal d’origine : bovin, poule et cochon entiers, reconnaissables par leur morphologie. Les images montrent les espèces, sans proposer une assiette de poulet pour représenter l’animal."
+      }
     },
     {
       "key": "delf-a2r-ce-017#3",
