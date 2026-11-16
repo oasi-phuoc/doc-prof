@@ -1,3 +1,4 @@
+import {playPrompt} from './domain/presentation'
 import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { questionsForRound, roundsFor } from './domain/plan'
 import { matchingSummary, usedMatchingChoices } from './domain/matching'
@@ -285,18 +286,18 @@ function ActiveSessionView({
               const voteDetails = vote && <><ManualVoteView question={q} vote={vote} offset={offset} />{!a.skipped && manualTotal(vote) > 0 && game.corrections[q.id]?.choiceId && <p>D’après votre comptage : {vote.counts[game.corrections[q.id]!.choiceId!] ?? 0} vote(s) sur {manualTotal(vote)} sur la bonne carte.</p>}</>
               return (
                 <Fragment key={q.id}><p>
-                  <b>{q.prompt}</b>
+                  <b>{playPrompt(q.prompt)}</b>
                   <span> · {label}</span>
                 </p>
-                {vote && (vote.shared ? <section className="ci-vote-summary" aria-label={`Vote compté manuellement : ${q.prompt}`}>{voteDetails}</section> : <details className="ci-vote-summary"><summary>Vote compté manuellement · afficher sur cet écran</summary>{voteDetails}</details>)}
-                {state.mode === 'class' && <div className="ci-teacher-marks" role="group" aria-label={`Marque enseignant : ${q.prompt}`}>{([{ value: 'success', label: 'Réussi' }, { value: 'review', label: 'À revoir' }, { value: 'unassessed', label: 'Non évalué' }] as const).map((mark) => <button key={mark.value} aria-pressed={state.teacherMarks[q.id] === mark.value} onClick={() => dispatch({ type: 'TEACHER_MARK_SET', questionId: q.id, value: mark.value })}>{mark.label}</button>)}</div>}
+                {vote && (vote.shared ? <section className="ci-vote-summary" aria-label={`Vote compté manuellement : ${playPrompt(q.prompt)}`}>{voteDetails}</section> : <details className="ci-vote-summary"><summary>Vote compté manuellement · afficher sur cet écran</summary>{voteDetails}</details>)}
+                {state.mode === 'class' && <div className="ci-teacher-marks" role="group" aria-label={`Marque enseignant : ${playPrompt(q.prompt)}`}>{([{ value: 'success', label: 'Réussi' }, { value: 'review', label: 'À revoir' }, { value: 'unassessed', label: 'Non évalué' }] as const).map((mark) => <button key={mark.value} aria-pressed={state.teacherMarks[q.id] === mark.value} onClick={() => dispatch({ type: 'TEACHER_MARK_SET', questionId: q.id, value: mark.value })}>{mark.label}</button>)}</div>}
                 </Fragment>
               )
             })}
           </div>
           {!!state.previousAttempts?.length && <details className="ci-panel ci-attempt-history"><summary>Tentatives précédentes ({state.previousAttempts.length})</summary>{state.previousAttempts.map((attempt, i) => <section key={`${attempt.roundId}:${attempt.attempt}`}><b>Tentative {attempt.attempt + 1} · écran {rounds.findIndex((round) => round.id === attempt.roundId) + 1}</b><p>{attempt.results.length ? attempt.results.map((result) => `${game.questions.find((q) => q.id === result.questionId)?.prompt} · ${result.skipped ? 'passée' : result.manual === 'retry' ? 'à revoir' : 'corrigée'}`).join(' ; ') : 'Tentative relancée avant correction.'}</p>{Object.keys(attempt.manualVotes).length > 0 && <p>Comptage de cet essai conservé.</p>}<span className="ci-sr-only">Essai archivé {i + 1}</span></section>)}</details>}
           {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
-          <section className="ci-summary-print-only">{state.note && <><h2>Observations</h2><p>{state.note}</p></>}{game.questions.filter((q) => state.manualVotes[q.id]).map((q) => <div key={q.id}><h2>{q.prompt}</h2><ManualVoteView question={q} vote={state.manualVotes[q.id]!} /></div>)}</section>
+          <section className="ci-summary-print-only">{state.note && <><h2>Observations</h2><p>{state.note}</p></>}{game.questions.filter((q) => state.manualVotes[q.id]).map((q) => <div key={q.id}><h2>{playPrompt(q.prompt)}</h2><ManualVoteView question={q} vote={state.manualVotes[q.id]!} /></div>)}</section>
           <div className="ci-toolbar">
             <button onClick={exportSession}>Exporter la séance</button>
             <button onClick={() => window.requestAnimationFrame(() => window.print())}>Imprimer le bilan</button>
@@ -522,7 +523,7 @@ function PlayingRound({
                 <article
                   className={`ci-round-question${reveal ? ' ci-reveal' : ''}`}
                   key={q.id}
-                  aria-label={`${reveal ? 'Correction' : 'Question'} ${i + 1} : ${q.prompt}`}
+                  aria-label={`${reveal ? 'Correction' : 'Question'} ${i + 1} : ${playPrompt(q.prompt)}`}
                 >
                   <QuestionStage
                     key={`${q.id}:${runtime.attempt}`}

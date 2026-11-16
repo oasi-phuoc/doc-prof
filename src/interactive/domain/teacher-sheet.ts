@@ -1,3 +1,4 @@
+import {playPrompt} from './presentation'
 import { roundsFor, questionsForRound } from './plan'
 import { PALETTE, SHAPES, SHAPE_PATHS, inkForColor, type ShapeId } from './palette'
 import { planIdentity } from './persistence'
@@ -26,11 +27,12 @@ export function teacherSheetRows(game: Game, colors: string[], shapes: ShapeId[]
       if (question.mode === 'choice' && !correct) throw new Error('Le corrigé de cette question doit être vérifié avant de créer la feuille.')
       const slot = (questions.length === 2 ? index * 3 : 0) + correctIndex
       const shape = shapes[slot]
-      const text = [...question.prompt]
+      const prompt = playPrompt(question.prompt)
+      const text = [...prompt]
       rows.push({
         number: rows.length + 1,
         questionId: question.id,
-        prompt: text.length > 80 ? `${text.slice(0, 79).join('')}…` : question.prompt,
+        prompt: text.length > 80 ? `${text.slice(0, 79).join('')}…` : prompt,
         answer: correct ? correct.text || 'Réponse en image' : key?.text || 'Évaluation par l’enseignant, sans modèle fourni.',
         explanation: correct && key?.text !== correct.text ? key?.text ?? '' : '',
         notes: question.oralSituation ? [question.oralSituation,...question.hints??[]].join('\n') : question.hints?.join(' · ') ?? '',

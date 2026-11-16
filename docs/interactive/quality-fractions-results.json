@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-11-16T11:06:12.013Z",
+  "scope": "Exact numeric fraction games, vertical fraction notation and smaller duel mascots with space for their full auras. No production service or environment configuration deployment.",
+  "implementationBase": "a3b07611",
+  "integratedMain": "7bef7604",
+  "featureCommit": "e7f3a8fd",
+  "unit": {
+    "uniquePassed": 64,
+    "fullSuiteRun": false,
+    "runs": [
+      {
+        "files": [
+          "fractions",
+          "presets",
+          "slots",
+          "written-arithmetic",
+          "numeracy"
+        ],
+        "passed": 37
+      },
+      {
+        "files": [
+          "pools"
+        ],
+        "passed": 7
+      },
+      {
+        "files": [
+          "fractions",
+          "duel-landscape"
+        ],
+        "passed": 16
+      },
+      {
+        "stage": "after integration",
+        "files": [
+          "fractions",
+          "pools",
+          "tcf-transcription-pages"
+        ],
+        "passed": 24
+      },
+      {
+        "stage": "final question presentation",
+        "files": [
+          "fractions",
+          "duel-landscape",
+          "teacher-sheet",
+          "presets"
+        ],
+        "passed": 28
+      }
+    ],
+    "realFractionConfigurations": 2100,
+    "levels": 3,
+    "seedsPerTypeAndLevel": 100,
+    "notes": "The final fraction tests include two notation/accessibility checks and preservation of existing manually prepared QCMs."
+  },
+  "catalog": {
+    "playableInventoryTypes": 755,
+    "totalInventoryTypes": 2150,
+    "certifiedPoolTypes": 694,
+    "seeds": [
+      20261107,
+      42,
+      20261115
+    ],
+    "sourcePositions": 16,
+    "newFractionTypes": 6,
+    "note": "Refreshing the inventory also reflects three previously implemented grammar types whose sources are now available."
+  },
+  "native": {
+    "executed": [
+      "fractions-browser",
+      "duel-settings-browser",
+      "duel-landscape-browser",
+      "a4-regression",
+      "written-arithmetic-browser"
+    ],
+    "allOrchestratorStagesRun": false,
+    "orchestratorStagesAvailable": 74,
+    "fractionCases": [
+      {
+        "viewport": "390x844",
+        "mode": "class",
+        "pool": "Seven fraction types plus addition, source order, no worksheet service.",
+        "offline": "All eight questions played after complete preparation and network cut.",
+        "correction": "Teacher only; answer in its colored card and all other cards gray, no duplicate answer.",
+        "resume": "Same revealed fraction, cards and key after clearing sessionStorage and reload.",
+        "layout": "All answer cards and controls fit; automated axe checks pass."
+      },
+      {
+        "viewport": "1366x768",
+        "mode": "class",
+        "pool": "Seven fraction types plus addition, source order, no worksheet service.",
+        "offline": "All eight questions played after complete preparation and network cut.",
+        "correction": "Teacher only; answer in its colored card and all other cards gray, no duplicate answer.",
+        "resume": "Same revealed fraction, cards and key after clearing sessionStorage and reload.",
+        "layout": "All answer cards and controls fit; automated axe checks pass."
+      },
+      {
+        "viewport": "360x640",
+        "mode": "class",
+        "pool": "Seven fraction types plus addition, source order, no worksheet service.",
+        "offline": "All eight questions played after complete preparation and network cut.",
+        "correction": "Teacher only; answer in its colored card and all other cards gray, no duplicate answer.",
+        "resume": "Same revealed fraction, cards and key after clearing sessionStorage and reload.",
+        "layout": "All answer cards and controls fit; automated axe checks pass."
+      },
+      {
+        "mode": "solo",
+        "answers": "Correct, incorrect and timeout, then automatic one-second feedback through the report.",
+        "newPart": "New source seed; same pool configuration, selection and ascending order; stored pool unchanged."
+      },
+      {
+        "mode": "local-competition",
+        "network": "Disabled after media preparation.",
+        "turns": "Two mascots, correct and incorrect answers with the same six rational cards and correction."
+      },
+      {
+        "mode": "duel",
+        "viewport": "844x390",
+        "network": "Disabled after battle preparation.",
+        "result": "Six stacked rational cards per player, first correct ×4 answer defeats the opponent with 40 HP; full charge aura stays below the question and the round reaches its result."
+      }
+    ],
+    "worksheetApiRequests": [],
+    "competitionAvailabilityChecks": [
+      "GET",
+      "GET",
+      "GET",
+      "GET"
+    ],
+    "errors": [],
+    "stackedNotation": "Numerator above denominator with a horizontal rule in questions and cards; the literal fraction remains accessible and copyable. Source prompts, keys and saved plans are unchanged.",
+    "auraLayout": "Mini and adult fourth-critical auras checked below the question; portrait widths reduced, all answer targets remain playable.",
+    "battleRegression": "Normal, double, triple and fourth criticals, both directions, mistake implosion, low HP and persistent adult form; offline play, portrait fallback and landscape capability paths.",
+    "artGallery": "Existing 480 mini casting/adult-state sprites reviewed by the battle fixture.",
+    "integrationScope": "Fraction and written arithmetic flows ran on integrated main after the final presentation change. Adult/mini battle layout checks ran before the upstream TCF print/transcription integration; the affected source tests, build and A4 check also ran after that integration.",
+    "emptyResultMarkers": "Removed in Class, Solo, duel, competition, preparation, navigation, reports, teacher console and teacher sheet. Fraction equivalences become questions retaining both given numbers. Actual given equalities and missing operands remain usable."
+  },
+  "checks": {
+    "typescript": "passed",
+    "apiTypes": "passed",
+    "productionBuildWithManifest": "passed",
+    "lint": {
+      "status": "passed",
+      "existingWarnings": 85,
+      "targetedNewCodeWarnings": 0
+    },
+    "budgets": {
+      "status": "passed",
+      "routes": {
+        "landing": {
+          "gzip": 122312,
+          "maximumGzip": 153600
+        },
+        "pool": {
+          "gzip": 159782,
+          "maximumGzip": 204800
+        },
+        "calibration": {
+          "gzip": 142839,
+          "maximumGzip": 204800
+        },
+        "diagnostic": {
+          "gzip": 144981,
+          "maximumGzip": 204800
+        },
+        "competition": {
+          "gzip": 202393,
+          "maximumGzip": 204800
+        },
+        "teacherConsole": {
+          "gzip": 166743,
+          "maximumGzip": 204800
+        },
+        "game": {
+          "gzip": 3129024,
+          "maximumGzip": 3145728
+        }
+      }
+    },
+    "a4": {
+      "status": "passed",
+      "pixelDifference": "none",
+      "legacyDraftLaunch": "source preserved",
+      "fontsTeardown": "No unhandled font-ready error in the final run."
+    },
+    "secrets": {
+      "report": "secrets-results.json",
+      "scope": "Final scan of the delta since C0 with synthetic canaries."
+    },
+    "diffCheck": "passed"
+  },
+  "limits": [
+    "Not a full run of the 74 browser stages or every unit-test file.",
+    "Physical ENI and phone testing remain open.",
+    "Visual fraction shapes, composed TPM fraction exercises and further advanced mechanics remain open.",
+    "No production room activation or external deployment was performed."
+  ]
+}

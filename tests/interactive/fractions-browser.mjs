@@ -12,6 +12,7 @@ await vite.listen()
 const { poolRecipe, convertPoolRecipe } = await vite.ssrLoadModule('/src/interactive/pools/recipe.ts')
 const { applyPlanOptions } = await vite.ssrLoadModule('/src/interactive/domain/plan-options.ts')
 const { prepareGame } = await vite.ssrLoadModule('/src/interactive/domain/plan.ts')
+const {playPrompt}=await vite.ssrLoadModule('/src/interactive/domain/presentation.ts')
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
 const errors = [], api = [], availability = [], results = []
 const families = ['fractions-identifier', 'fractions-equivalentes', 'fractions-simplifier', 'fractions-comparer', 'fractions-add', 'fractions-mul', 'fractions-div', 'addition-ligne']
@@ -114,7 +115,8 @@ try {
     assert.equal(record.source.options.numericOrder, true)
     for (let index = 0; index < game.questions.length; index++) {
       if (index) await navigate(page, index)
-      assert.equal(await page.locator('.ci-question-prompt').textContent(), game.questions[index].prompt.replace(/\s*=\s*\?$/, ''))
+      assert.equal(await page.locator('.ci-question-prompt').textContent(), playPrompt(game.questions[index].prompt))
+      assert.ok(!/=\s*(?:[?□▢]|_+)/u.test(await page.locator('.ci-question-prompt').textContent()))
       assert.equal(await page.locator('.ci-answer:enabled').count(), 0)
       assert.equal(await page.locator('.ci-answer-key').count(), 0)
       if (index < 7) await stacked(page, '.ci-question-prompt')
@@ -150,11 +152,11 @@ try {
     await launch(page)
     const { game, record } = await currentRun(page, pool, 'solo')
     await card(page, answerText(game, 0)).click(); await page.locator('.ci-answer-correct').waitFor()
-    await page.clock.runFor(1200); await page.locator('.ci-question-prompt').filter({ hasText: game.questions[1].prompt }).waitFor()
+    await page.clock.runFor(1200); await page.locator('.ci-question-prompt').filter({ hasText: playPrompt(game.questions[1].prompt) }).waitFor()
     const wrong = game.questions[1].choices.find(choice => choice.id !== game.corrections[game.questions[1].id].choiceId).text
     await card(page, wrong).click(); await page.locator('.ci-answer-incorrect').waitFor()
     assert.equal(await page.locator('.ci-answer-key .ci-answer-content').textContent(), answerText(game, 1))
-    await page.clock.runFor(1200); await page.locator('.ci-question-prompt').filter({ hasText: game.questions[2].prompt }).waitFor()
+    await page.clock.runFor(1200); await page.locator('.ci-question-prompt').filter({ hasText: playPrompt(game.questions[2].prompt) }).waitFor()
     await page.clock.runFor(5200); await page.locator('.ci-reveal').waitFor()
     assert.equal((await page.locator('.ci-correction-status').innerText()).trim(), 'Temps écoulé')
     assert.equal(await page.locator('.ci-answer-key .ci-answer-content').textContent(), answerText(game, 2))

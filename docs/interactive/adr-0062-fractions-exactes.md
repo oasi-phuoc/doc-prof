@@ -16,9 +16,11 @@ Les cartes conservent la notation du corrigé source. Leurs distracteurs viennen
 
 Les identifiants rationnels portent leur numérateur et dénominateur réduits. Le tri croissant compare leurs produits croisés, sans arrondi ni conversion en virgule flottante. Les identifiants des anciens entiers et décimaux gardent leur traitement et leurs plans. Le plafond de deux à six choix conserve toujours la bonne réponse.
 
-La question reste à compléter pendant la correction. La bonne réponse apparaît dans sa carte, les autres sont grisées. Les modes Classe, Solo, duels et compétition réutilisent leur moteur de réponses et de sauvegarde. Les questions de salle passent par le parseur existant qui remplace les identifiants internes ; la clé reste privée jusqu’à la correction.
+L’affichage retire les marqueurs de résultat vide (`= ?`, `= □`, ligne à compléter ou signe `=` final). Les équivalences deviennent des questions courtes qui conservent la fraction donnée et le nombre imposé au numérateur ou au dénominateur. Les données nécessaires aux calculs à opérande manquant restent présentes. Cette présentation commune s’applique au jeu, à la préparation, à la navigation, aux bilans, à la console et à la feuille enseignant ; elle ne modifie ni les questions source ni les corrigés.
 
-Les fractions s’affichent verticalement, numérateur au-dessus du dénominateur et barre horizontale : questions, cartes des deux joueurs, compétition et lecture agrandie. Les cases inconnues gardent leur place dans la fraction. La valeur textuelle reste disponible pour l’accessibilité et la copie ; les énoncés, corrigés, identifiants et sauvegardes restent identiques. Les dates, adresses et textes ordinaires ne sont pas transformés.
+La bonne réponse apparaît dans sa carte, les autres sont grisées. Les modes Classe, Solo, duels et compétition réutilisent leur moteur de réponses et de sauvegarde. Les questions de salle passent par le parseur existant qui remplace les identifiants internes ; la clé reste privée jusqu’à la correction.
+
+Les fractions s’affichent verticalement, numérateur au-dessus du dénominateur et barre horizontale : questions, cartes des deux joueurs, compétition et lecture agrandie. La valeur textuelle reste disponible pour l’accessibilité et la copie ; les énoncés source, corrigés, identifiants et sauvegardes restent identiques. Les dates, adresses et textes ordinaires ne sont pas transformés.
 
 Les mascottes des duels et tournois sont réduites selon l’espace disponible. Une réserve au-dessus de chaque personnage accueille les auras, y compris le ×4, sous la bande de question. La barre de vie reste alignée sur la mascotte, avec le nombre en couleur. Les mouvements et la taille relative des différents niveaux d’aura sont conservés.
 

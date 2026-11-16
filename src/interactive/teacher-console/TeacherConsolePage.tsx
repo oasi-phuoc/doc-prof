@@ -1,3 +1,4 @@
+import {playPrompt} from '../domain/presentation'
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import { CardBadge } from '../components/CardBadge'
 import { SafeImage } from '../components/Media'
@@ -116,7 +117,7 @@ export default function TeacherConsolePage() {
         <div className="ci-console-layout">
           <div className="ci-console-questions">
             {snapshot.questions.map((question, index) => <article className="ci-console-card" key={question.id} aria-label={`Corrigé enseignant ${index + 1}`}>
-              <h2>{snapshot.questions.length > 1 ? `${index + 1}. ` : ''}{question.prompt}</h2>
+              <h2>{snapshot.questions.length > 1 ? `${index + 1}. ` : ''}{playPrompt(question.prompt)}</h2>
               <p className="ci-console-instruction">{question.instruction}</p>
               {question.context && <details><summary>Document</summary><p>{question.context}</p></details>}
               {question.answer && <div className="ci-console-answer" style={{ backgroundColor: question.answer.color, color: inkForColor(question.answer.color) }} aria-label={`Bonne réponse : carte ${question.answer.letter}`}>
@@ -124,7 +125,7 @@ export default function TeacherConsolePage() {
               </div>}
               <h3>{question.mode==='memory'?'Paires attendues':question.mode === 'choice' ? 'Corrigé' : 'Exemple ou pistes de réponse'}</h3>
               <p className="ci-console-model">{question.model}</p>
-              {question.mode !== 'choice' && <div className="ci-console-assessment" role="group" aria-label={`Appréciation : ${question.prompt}`}>
+              {question.mode !== 'choice' && <div className="ci-console-assessment" role="group" aria-label={`Appréciation : ${playPrompt(question.prompt)}`}>
                 <button disabled={!allowed('assess')} aria-pressed={question.assessment === 'acquired'} onClick={() => send({ name: 'assess', questionId: question.id, value: 'acquired' })}>Acquis</button>
                 <button disabled={!allowed('assess')} aria-pressed={question.assessment === 'retry'} onClick={() => send({ name: 'assess', questionId: question.id, value: 'retry' })}>À retravailler</button>
               </div>}

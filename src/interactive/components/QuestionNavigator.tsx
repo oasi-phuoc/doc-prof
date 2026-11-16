@@ -1,3 +1,4 @@
+import {playPrompt} from '../domain/presentation'
 import { useEffect, useId, useRef } from 'react'
 import type { Game, Session } from '../domain/types'
 import { roundsFor } from '../domain/plan'
@@ -23,7 +24,7 @@ export function QuestionNavigator({ game, state, onGo, onRetry, onClose }: { gam
       const runtime = runtimeFor(game, state, index)
       const passed = round.questionIds.every((id) => state.history.some((a) => a.questionId === id && a.skipped))
       const status = passed ? 'Passée' : runtime.phase === 'revealed' ? 'Corrigée' : runtime.phase === 'discussion' ? 'Discussion' : runtime.phase === 'cards-up' || runtime.phase === 'selected' ? 'Cartes levées' : state.roundStates?.[round.id] ? 'Réflexion' : 'Non commencée'
-      return <li key={round.id}><button type="button" aria-current={index === state.index ? 'step' : undefined} onClick={() => onGo(index)}><b>{first === number ? `Question ${first}` : `Questions ${first} et ${number}`}</b><span>{round.questionIds.map((id) => game.questions.find((q) => q.id === id)?.prompt).join(' · ')}</span><small>{status}{runtime.attempt ? ` · tentative ${runtime.attempt + 1}` : ''}</small></button></li>
+      return <li key={round.id}><button type="button" aria-current={index === state.index ? 'step' : undefined} onClick={() => onGo(index)}><b>{first === number ? `Question ${first}` : `Questions ${first} et ${number}`}</b><span>{round.questionIds.map((id) => playPrompt(game.questions.find((q) => q.id === id)?.prompt ?? '')).join(' · ')}</span><small>{status}{runtime.attempt ? ` · tentative ${runtime.attempt + 1}` : ''}</small></button></li>
     })}</ol>
     <div className="ci-toolbar"><button type="button" disabled={!['discussion', 'revealed'].includes(state.phase) || (state.previousAttempts?.length ?? 0) >= 5000} onClick={onRetry}>Réessayer cette question</button><button type="button" onClick={onClose}>Revenir à la séance</button></div>
   </dialog>

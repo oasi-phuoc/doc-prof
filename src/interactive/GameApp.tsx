@@ -1,3 +1,4 @@
+import {playPrompt} from './domain/presentation'
 import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
 import { listFiches } from '@/fiches/api'
 import { LoadingScreen } from '@/components/LoadingScreen'
@@ -482,7 +483,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                                 />
                                 <span>
                                   <b>
-                                    {q.lotoBoard?`Loto · grille ${q.lotoBoard.number}/${q.lotoBoard.total}`:`${game.questions.indexOf(q) + 1}. ${q.prompt}`}
+                                    {q.lotoBoard?`Loto · grille ${q.lotoBoard.number}/${q.lotoBoard.total}`:`${game.questions.indexOf(q) + 1}. ${playPrompt(q.prompt)}`}
                                   </b>
                                   <small>
                                     {q.lotoBoard?`${q.lotoBoard.cells.length} cases · tous les tirages de cette grille`:q.mode === 'choice'

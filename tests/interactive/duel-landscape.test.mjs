@@ -20,9 +20,12 @@ try{
       const hurt=renderToStaticMarkup(createElement(CompetitionPortrait,{avatarId:mascot.id,powerLevel:3,outcome:false}));assert.ok(hurt.includes('ci-mascot-angry'));assert.ok(!hurt.includes('ci-competition-tears'))
     }
   })
-  await test('calculation presentation omits only the redundant result question while source text and other question forms remain intact',()=>{
-    for(const [source,shown]of [['2 + 2 = ?','2 + 2'],['12 × 3 = ?','12 × 3'],['2,5 ÷ 0,5 = ?','2,5 ÷ 0,5'],['−8 − 2 = ?','−8 − 2']])assert.equal(playPrompt(source),shown)
-    for(const source of ['Qui est-ce ?','2 + ? = 5','A = ?','Le nombre est ___','Un résultat = ?','2 + 2 = 4'])assert.equal(playPrompt(source),source)
+  await test('question presentation removes empty result markers everywhere while preserving given equations and meaningful missing operands',()=>{
+    for(const [source,shown]of [['2 + 2 = ?','2 + 2'],['12 × 3 = □','12 × 3'],['2,5 ÷ 0,5 = ▢','2,5 ÷ 0,5'],['−8 − 2 = ___','−8 − 2'],['Simplifie : 12/8 = □','Simplifie : 12/8'],['A = ?','A'],['Un résultat = …','Un résultat'],['2 + 2 =','2 + 2']]){assert.equal(playPrompt(source),shown);assert.equal(playPrompt(playPrompt(source)),shown)}
+    for(const source of ['Qui est-ce ?','2 + ? = 5','12 ÷ □ = 3','Le nombre est ___','2 + 2 = 4','Quel est le nom du signe « = » ?'])assert.equal(playPrompt(source),source)
+    assert.equal(playPrompt('2/3 = □/12'),'Même valeur que 2/3 : quel nombre sur 12 ?')
+    assert.equal(playPrompt('2/3 = 8/□'),'Même valeur que 2/3 : 8 sur quel nombre ?')
+    assert.equal(playPrompt('Dans 6/9, le numérateur est…'),'Quel est le numérateur de 6/9 ?')
   })
   const original=new Map(['window','screen','document','innerWidth','innerHeight'].map(key=>[key,Object.getOwnPropertyDescriptor(globalThis,key)]))
   const set=(key,value)=>Object.defineProperty(globalThis,key,{configurable:true,writable:true,value})

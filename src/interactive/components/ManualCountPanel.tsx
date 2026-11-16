@@ -1,3 +1,4 @@
+import {playPrompt} from '../domain/presentation'
 import { useEffect, useRef, useState } from 'react'
 import type { Question } from '../domain/types'
 import { manualTotal, QUICK_READINGS, validateManualVote, type ManualVote, type QuickReading } from '../domain/votes'
@@ -21,7 +22,7 @@ export function ManualCountPanel({ questions, votes, onSave, onClose }: {
   return <dialog className="ci-count-dialog" ref={dialog} aria-labelledby="ci-count-title" onCancel={(event) => { event.preventDefault(); onClose() }}>
     <h2 id="ci-count-title">Comptage saisi par l’enseignant</h2>
     <p>Les cartes levées sont comptées à la main. Ce panneau est visible sur cet écran.</p>
-    {questions.length > 1 && <label>Question à compter<select value={index} onChange={(event) => setIndex(Number(event.target.value))}>{questions.map((q, i) => <option key={q.id} value={i}>{i + 1}. {q.prompt}</option>)}</select></label>}
+    {questions.length > 1 && <label>Question à compter<select value={index} onChange={(event) => setIndex(Number(event.target.value))}>{questions.map((q, i) => <option key={q.id} value={i}>{i + 1}. {playPrompt(q.prompt)}</option>)}</select></label>}
     <ManualCountForm key={question.id} question={question} offset={questions.length === 2 ? index * 3 : 0} initial={votes[question.id]} onSave={(vote) => onSave(question.id, vote)} onClose={onClose} />
   </dialog>
 }
