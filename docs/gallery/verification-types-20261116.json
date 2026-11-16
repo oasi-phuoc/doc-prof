@@ -1,0 +1,175 @@
+{
+  "date": "2026-11-16",
+  "base_commit": "31e9213f23a4dfed63dace8aaf84ac00c7c0f8d3",
+  "scope": "Nouveaux types Fruit, Légume, Plat et Véhicule ; Végétal réservé aux plantes, fleurs et arbres.",
+  "subjects": {
+    "Fruit": 60,
+    "Légume": 64,
+    "Plat": 30,
+    "Véhicule": 30
+  },
+  "reviewed_new_illustrations": {
+    "Fruit": 18,
+    "Légume": 23,
+    "Plat": 7,
+    "Véhicule": 14
+  },
+  "reused_illustrations": 122,
+  "gallery_images": 6921,
+  "gallery_type_counts": {
+    "Fruit": 134,
+    "Légume": 114,
+    "Végétal": 113,
+    "Véhicule": 95,
+    "Plat": 114
+  },
+  "sha256": {
+    "scripts/gallery-subject-types.json": "410e612e20325ddefa44a9b59d9bc21993c22830c3a7b9e3f8f2ca4cbeac5c4b",
+    "scripts/gallery-subject-types.mjs": "0ce27aa4da4cb2398332986c240d228c37a795ed0240e27b1eb3eb3d3a5ecb2a",
+    "docs/gallery/complements-20261116.json": "40c2c58718c96223da50ed2198cb64165345813ce11e06c2978c6d628083d70d",
+    "src/gallery/catalog.generated.json": "6da1e54678fce21b3fdf226530f1b76eabc5c90c26e766cdb21f2390032abca8",
+    "src/francais/phrase-tcf-pictures.generated.json": "9f2d03ab75e83f1121f545db27a02b7a70e4f564eaf26b75a2ac4f3ebb9b7571"
+  },
+  "unit_tests": {
+    "command": "npm run test:gallery",
+    "passed": 9,
+    "failed": 0
+  },
+  "browser_dev": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "browser_production": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "mobile_types": {
+    "passed": true,
+    "rows": [
+      {
+        "type": "Fruit",
+        "query": "ramboutan",
+        "width": 390,
+        "imageLoaded": true,
+        "withoutHorizontalOverflow": true
+      },
+      {
+        "type": "Légume",
+        "query": "topinambour",
+        "width": 390,
+        "imageLoaded": true,
+        "withoutHorizontalOverflow": true
+      },
+      {
+        "type": "Plat",
+        "query": "ratatouille",
+        "width": 390,
+        "imageLoaded": true,
+        "withoutHorizontalOverflow": true
+      },
+      {
+        "type": "Véhicule",
+        "query": "camion de pompiers",
+        "width": 390,
+        "imageLoaded": true,
+        "withoutHorizontalOverflow": true
+      }
+    ]
+  },
+  "production_identity": {
+    "identical_browser_tested_assets": true,
+    "asset_count": 67,
+    "different_assets": [],
+    "all_complement_subjects_present_in_production": true,
+    "subjects_checked": 184,
+    "missing_subjects": []
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "typescript": true,
+    "manifest_command": "npx vite build --manifest",
+    "manifest_build_passed": true
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exit_code": 0,
+    "existing_warnings": 85
+  },
+  "performance": {
+    "landing": {
+      "gzip": 122364,
+      "maximumGzip": 153600
+    },
+    "pool": {
+      "gzip": 159861,
+      "maximumGzip": 204800
+    },
+    "calibration": {
+      "gzip": 142883,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 145027,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 204167,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 166785,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3136563,
+      "maximumGzip": 3145728
+    }
+  },
+  "secrets": {
+    "command": "npm run check:interactive:secrets",
+    "exit_code": 0,
+    "report": "docs/interactive/secrets-results.json"
+  },
+  "artwork_review": "Chaque nouvelle illustration a été contrôlée individuellement. Les 62 images sont en paysage 4:3, sur fond crème opaque, sans texte. Les WebP conservent les dimensions des PNG générés; les sources PNG sont conservées à leur emplacement de génération."
+}

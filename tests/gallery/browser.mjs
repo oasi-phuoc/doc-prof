@@ -53,7 +53,7 @@ try {
   assert.equal(await page.getByLabel('Collection', { exact: true }).count(), 0)
   assert.equal(await page.getByLabel('Thème', { exact: true }).count(), 0)
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
-  for (const type of ['Action', 'Animal', 'Végétal', 'Métier', 'Logique', 'Heure et horloge', 'Pays et nationalité', 'Partie du corps', 'Maladie']) {
+  for (const type of ['Fruit', 'Légume', 'Plat', 'Véhicule', 'Action', 'Animal', 'Végétal', 'Métier', 'Logique', 'Heure et horloge', 'Pays et nationalité', 'Partie du corps', 'Maladie']) {
     await page.getByLabel('Type d’image', { exact: true }).selectOption(type)
     assert(await page.locator('.gallery-card').count() > 0, `${type} doit contenir des images contrôlées`)
     assert((await page.locator('.gallery-card-body > p').allTextContents()).every(t => t.includes(type)))
@@ -67,6 +67,32 @@ try {
   assert.match(await page.locator('.gallery-card h2').textContent(), /épaule/)
   assert(!await page.getByLabel('Type d’image', { exact: true }).locator('option').allTextContents().then(values => values.includes('Animal et végétal')))
   results.push('Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.')
+  await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
+  for (const [type, query, slug] of [['Fruit', 'ramboutan', 'ramboutan'], ['Légume', 'topinambour', 'topinambour'], ['Plat', 'ratatouille', 'ratatouille'], ['Véhicule', 'camion de pompiers', 'camion-de-pompiers']]) {
+    await page.getByLabel('Type d’image', { exact: true }).selectOption(type)
+    await page.getByLabel('Rechercher une image', { exact: true }).fill(query)
+    const card = page.locator('.gallery-card').filter({ has: page.locator(`img[src$="/${slug}.webp"]`) })
+    assert.equal(await card.count(), 1)
+    await card.locator('img').waitFor()
+    await page.waitForFunction(slug => [...document.querySelectorAll('.gallery-card img')].some(image => image.src.endsWith('/' + slug + '.webp') && image.complete && image.naturalWidth >= 1200), slug)
+    const [download] = await Promise.all([page.waitForEvent('download'), card.locator('.gallery-download').click()])
+    const saved = output + '/' + download.suggestedFilename()
+    await download.saveAs(saved)
+    const source = new URL(await card.locator('img').getAttribute('src'), base).pathname
+    assert.deepEqual(readFileSync(saved), readFileSync('public' + decodeURIComponent(source)))
+    const [typeZip] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: /Télécharger ce type/ }).click()])
+    const typeZipPath = `${output}/complement-${slug}.zip`
+    await typeZip.saveAs(typeZipPath)
+    execFileSync('python3', ['-c', 'import zipfile,sys,pathlib; z=zipfile.ZipFile(sys.argv[1]); assert z.testzip() is None; assert sys.argv[2].lstrip("/") in z.namelist(); assert all(z.read(n)==pathlib.Path("public",n).read_bytes() for n in z.namelist())', typeZipPath, source])
+    await page.screenshot({ path: `${output}/gallery-${type}.png`, fullPage: false })
+    await page.getByLabel('Rechercher une image', { exact: true }).fill('')
+  }
+  await page.getByLabel('Type d’image', { exact: true }).selectOption('Végétal')
+  await page.getByLabel('Rechercher une image', { exact: true }).fill('pomme de terre')
+  await page.getByRole('heading', { name: 'Aucune image trouvée' }).waitFor()
+  await page.getByLabel('Rechercher une image', { exact: true }).fill('chêne')
+  assert(await page.locator('.gallery-card').count() > 0)
+  results.push('Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.')
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
   await page.getByLabel('Rechercher une image', { exact: true }).fill('CO CFR A2')
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
