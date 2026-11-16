@@ -8,9 +8,9 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 339,
+      "active_reviewed_trio": 359,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 407,
+      "candidate_visual_review": 387,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
@@ -25,17 +25,17 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "candidate_visual_review": 223,
-        "active_reviewed_trio": 115,
+        "active_reviewed_trio": 134,
+        "candidate_visual_review": 204,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
         "keep_text_amount": 24
       },
       "A2-B1": {
-        "candidate_visual_review": 125,
+        "candidate_visual_review": 124,
         "keep_text_contextual": 346,
-        "active_reviewed_trio": 21,
+        "active_reviewed_trio": 22,
         "keep_text_calendar_or_duration": 35,
         "keep_text_named_identity_or_code": 9,
         "keep_text_amount": 12
@@ -9604,7 +9604,14 @@
           "id": "b",
           "label": "Au rayon papeterie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+              "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+              "label": "Le rayon papeterie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "a7727aa631d56a49",
           "brief": "Représenter entièrement « Au rayon papeterie » pour « Où faut-il acheter les billets ? ». Vérifier la transcription du support tcf-delf-actif-a1-015-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : La distinction porte sur une caisse numérotée face à deux lieux ; ne pas remplacer le numéro 3 par une caisse quelconque."
         },
@@ -19513,7 +19520,14 @@
           "id": "b",
           "label": "Au rayon sport",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+              "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+              "label": "Le rayon sport",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6e93848ef2b65ada",
           "brief": "Représenter entièrement « Au rayon sport » pour « Dans quel rayon les trouve-t-on ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -19521,7 +19535,14 @@
           "id": "c",
           "label": "Au rayon papeterie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+              "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+              "label": "Le rayon papeterie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "a7727aa631d56a49",
           "brief": "Représenter entièrement « Au rayon papeterie » pour « Dans quel rayon les trouve-t-on ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -34763,7 +34784,14 @@
           "id": "b",
           "label": "Le rayon sport",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+              "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+              "label": "Le rayon sport",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6e93848ef2b65ada",
           "brief": "Représenter entièrement « Le rayon sport » pour « Quel rayon propose une offre exceptionnelle ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -34771,7 +34799,14 @@
           "id": "c",
           "label": "Le rayon parfumerie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+              "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+              "label": "Le rayon parfumerie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "3b8719d0ae5557a5",
           "brief": "Représenter entièrement « Le rayon parfumerie » pour « Quel rayon propose une offre exceptionnelle ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
@@ -36653,8 +36688,8 @@
       "semantic_sha256": "ab238242a8cd7fd73a4ec4e6e7c07532db3326da3313f9e90349ea0fc56c511a",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
       "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -36695,8 +36730,24 @@
           "brief": "Représenter entièrement « La carte bancaire » pour « Quel document faut-il composter ? ». Vérifier la transcription du support tcf-delf-actif-a2-001 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+          "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+          "sha256": "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp",
+          "sha256": "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -36707,7 +36758,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Trois documents isolés, billet avec pictogramme de train, passeport et carte à puce reconnaissables."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-001#2",
@@ -36901,8 +36956,8 @@
       "semantic_sha256": "abe7876fb6e22744c0bb2cdf846f84d65895a79468937a4b1259cd71d4450998",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
       "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
-      "status": "candidate_visual_review",
-      "reason": "Appel de réservation, envoi postal et guichet ; aucune coordonnée ou date à inventer.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -36929,8 +36984,24 @@
           "brief": "Représenter entièrement « En allant au guichet » pour « Comment faut-il réserver les places ? ». Vérifier la transcription du support tcf-delf-actif-a2-001 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Appel de réservation, envoi postal et guichet ; aucune coordonnée ou date à inventer."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+          "sha256": "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+          "sha256": "3b54ef391ab12452bcac4045003d366191911b9444e3abd690c5cbf53b3dbc30"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp",
+          "sha256": "d368a9fe753d72f75166488c2866531e74590e69224c63b1f8a582684a2cfb79"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -36948,6 +37019,10 @@
         "evidence_quote": "Pour réserver vos places, téléphonez",
         "semantic_sha256": "abe7876fb6e22744c0bb2cdf846f84d65895a79468937a4b1259cd71d4450998",
         "note": "Appel de réservation, envoi postal et guichet ; aucune coordonnée ou date à inventer."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Icône d'appel validée, enveloppe ouverte avec lignes et cliente au guichet de gare. Pas de téléphone à écran de message."
       }
     },
     {
@@ -37401,14 +37476,21 @@
       "semantic_sha256": "493e30ac56c1283ebd83a9ea687ba3989a7a9f034365987ff470f34e49e69357",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-04.mp3",
       "audio_sha256": "cd2f90d06fcc72bf5e15f4ddfc5d65d7a9ae4cd971567be32660d047daeab62b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Le rayon BD",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+              "sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65",
+              "label": "Le rayon BD",
+              "visual_review_required": true
+            }
+          ],
           "asset": "1fdcb6bea7265120",
           "brief": "Représenter entièrement « Le rayon BD » pour « Dans quel rayon la rencontre a-t-elle lieu ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -37416,7 +37498,14 @@
           "id": "b",
           "label": "Le rayon sport",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+              "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+              "label": "Le rayon sport",
+              "visual_review_required": true
+            }
+          ],
           "asset": "6e93848ef2b65ada",
           "brief": "Représenter entièrement « Le rayon sport » pour « Dans quel rayon la rencontre a-t-elle lieu ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -37424,13 +37513,36 @@
           "id": "c",
           "label": "Le rayon papeterie",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+              "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+              "label": "Le rayon papeterie",
+              "visual_review_required": true
+            }
+          ],
           "asset": "a7727aa631d56a49",
           "brief": "Représenter entièrement « Le rayon papeterie » pour « Dans quel rayon la rencontre a-t-elle lieu ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+          "sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37441,7 +37553,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "BD identifiées par les cases et bulles, sport par les équipements et papeterie par les fournitures. Aucun dessinateur ajouté uniquement à la bonne réponse."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-002-04#2",
@@ -37602,8 +37718,8 @@
       "semantic_sha256": "622e35ddbf70a8688956d0764398563e8aec9374831a18e99a69a0b7aaba4da8",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-05.mp3",
       "audio_sha256": "b7cd489692cf2c43a663d7fdc746e4122e8bb464851a57a6012bb155eca9feca",
-      "status": "candidate_visual_review",
-      "reason": "Boucherie, boulangerie et parfumerie ; le chariot doit être rapporté au rayon boucherie, pas à une caisse.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -37644,8 +37760,24 @@
           "brief": "Représenter entièrement « La parfumerie » pour « Dans quel rayon faut-il le rapporter ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Boucherie, boulangerie et parfumerie ; le chariot doit être rapporté au rayon boucherie, pas à une caisse."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp",
+          "sha256": "39d557b3a0f05413fe0ad88c0206ed000ecef65f8238040d52d9ecbd0ceca72a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "sha256": "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37663,6 +37795,10 @@
         "evidence_quote": "au rayon boucherie",
         "semantic_sha256": "622e35ddbf70a8688956d0764398563e8aec9374831a18e99a69a0b7aaba4da8",
         "note": "Boucherie, boulangerie et parfumerie ; le chariot doit être rapporté au rayon boucherie, pas à une caisse."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Intérieurs de commerces désignant les catégories de rayons. Aucun chariot ou indice ajouté seulement au rayon correct."
       }
     },
     {
@@ -37676,8 +37812,8 @@
       "semantic_sha256": "65ed7b3818681923ec07389f96735f6c773c9f0810a207102c32b9624db578a1",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-06.mp3",
       "audio_sha256": "42014d0c4ccbb373182750002f808ec5faba1df505db6696caac282617876ead",
-      "status": "candidate_visual_review",
-      "reason": "Rayons de parfumerie, papeterie et boulangerie, avec produits distincts ; pas un flacon isolé pour représenter tout un rayon.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -37711,8 +37847,24 @@
           "brief": "Représenter entièrement « La boulangerie » pour « Dans quel rayon l’offre est-elle proposée ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Rayons de parfumerie, papeterie et boulangerie, avec produits distincts ; pas un flacon isolé pour représenter tout un rayon."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "sha256": "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37730,6 +37882,10 @@
         "evidence_quote": "au rayon parfumerie",
         "semantic_sha256": "65ed7b3818681923ec07389f96735f6c773c9f0810a207102c32b9624db578a1",
         "note": "Rayons de parfumerie, papeterie et boulangerie, avec produits distincts ; pas un flacon isolé pour représenter tout un rayon."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Trois catégories de rayons par leurs marchandises ; la boulangerie est un intérieur, sans façade substituée à un rayon."
       }
     },
     {
@@ -37743,8 +37899,8 @@
       "semantic_sha256": "9cc7f60721321c42b97af853c432997984657cd64510b765586ce6ab26fc0cda",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-06.mp3",
       "audio_sha256": "42014d0c4ccbb373182750002f808ec5faba1df505db6696caac282617876ead",
-      "status": "candidate_visual_review",
-      "reason": "Flacon, trousse et livre ; conserver la forme de flacon sans inventer une marque ou un prix.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -37785,8 +37941,24 @@
           "brief": "Représenter entièrement « Un livre » pour « Quel achat permet de profiter de l’offre ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Flacon, trousse et livre ; conserver la forme de flacon sans inventer une marque ou un prix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+          "sha256": "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-trousse-toilette.png",
+          "sha256": "3084675d6965b3825b38d556b114e142ccbefa55fec102436cee422e240e42e3"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+          "sha256": "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37804,6 +37976,10 @@
         "evidence_quote": "l’achat d’un flacon",
         "semantic_sha256": "9cc7f60721321c42b97af853c432997984657cd64510b765586ce6ab26fc0cda",
         "note": "Flacon, trousse et livre ; conserver la forme de flacon sans inventer une marque ou un prix."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Un flacon de parfum isolé, une trousse de toilette identifiable et un livre fermé ; quantités singulières respectées."
       }
     },
     {
@@ -38533,8 +38709,8 @@
       "semantic_sha256": "8154dcb29aac016a9f4ffe1ace5fe81eff9246f1e0713c30a9c55bf47a8e9b52",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-05.mp3",
       "audio_sha256": "b4096b3bac9225077bcab497f8cd4aacf620e8479e5e95c7c0f5ada036e1470d",
-      "status": "candidate_visual_review",
-      "reason": "Car, train et avion ; le mot car indique le véhicule, pas le goûter à venir.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -38581,8 +38757,24 @@
           "brief": "Représenter entièrement « Un avion » pour « Dans quel véhicule l’annonce est-elle faite ? ». Vérifier la transcription du support tcf-delf-actif-a2-003-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Car, train et avion ; le mot car indique le véhicule, pas le goûter à venir."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+          "sha256": "330ce9feb76da804656f3270f07f4a55fe94bfa9194be84c28b20deba84fcb63"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+          "sha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+          "sha256": "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38600,6 +38792,10 @@
         "evidence_quote": "il est interdit de manger dans le car",
         "semantic_sha256": "8154dcb29aac016a9f4ffe1ace5fe81eff9246f1e0713c30a9c55bf47a8e9b52",
         "note": "Car, train et avion ; le mot car indique le véhicule, pas le goûter à venir."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Car à voyageurs, train et avion reconnaissables. Illustrations de catégories de transport ; aucune prétention à reproduire le véhicule exact de l'annonce."
       }
     },
     {
@@ -40757,8 +40953,8 @@
       "semantic_sha256": "225c120ac84fee50cbba749f4214619f0df996f258d7afe2a92f49d2fd20ac66",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-06.mp3",
       "audio_sha256": "fb4b8e02a75f89f618cf910ddd8d1bb8d13b3cde0a0b82ea7dc296eb747929a6",
-      "status": "candidate_visual_review",
-      "reason": "Parfumerie, papeterie et vêtements ; ne pas utiliser la crème seule pour représenter le rayon.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -40792,8 +40988,24 @@
           "brief": "Représenter entièrement « Le rayon vêtements » pour « Dans quel rayon l’offre a-t-elle lieu ? ». Vérifier la transcription du support tcf-delf-actif-a2-005-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Parfumerie, papeterie et vêtements ; ne pas utiliser la crème seule pour représenter le rayon."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+          "sha256": "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40811,6 +41023,10 @@
         "evidence_quote": "au rayon parfumerie",
         "semantic_sha256": "225c120ac84fee50cbba749f4214619f0df996f258d7afe2a92f49d2fd20ac66",
         "note": "Parfumerie, papeterie et vêtements ; ne pas utiliser la crème seule pour représenter le rayon."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Rayons complets sans dates, prix, étage inventé ni cadeau promotionnel ajouté à la bonne image."
       }
     },
     {
@@ -42114,8 +42330,8 @@
       "semantic_sha256": "faecb405efdb480cd9d4c1078823665262f58e4bf64457f88dbc10d7b864077b",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-006-06.mp3",
       "audio_sha256": "80097260a7d757b93e27ba273e107448d7d865e256647a342d9936d0b8d6d9f7",
-      "status": "candidate_visual_review",
-      "reason": "Inscription sur écran web, envoi d’un courrier et démarche à la mairie ; pas de données personnelles, adresse ou montant inventés.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -42149,8 +42365,24 @@
           "brief": "Représenter entièrement « À la mairie » pour « Comment peut-on réserver un cours ? ». Vérifier la transcription du support tcf-delf-actif-a2-006-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Inscription sur écran web, envoi d’un courrier et démarche à la mairie ; pas de données personnelles, adresse ou montant inventés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-internet.webp",
+          "sha256": "80dbb26a14fff6a874b6d24b4b219389bbc1b64289f6c00fe730f572a645c187"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+          "sha256": "3b54ef391ab12452bcac4045003d366191911b9444e3abd690c5cbf53b3dbc30"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png",
+          "sha256": "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -42168,6 +42400,10 @@
         "evidence_quote": "par inscription sur notre site",
         "semantic_sha256": "faecb405efdb480cd9d4c1078823665262f58e4bf64457f88dbc10d7b864077b",
         "note": "Inscription sur écran web, envoi d’un courrier et démarche à la mairie ; pas de données personnelles, adresse ou montant inventés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "La scène d'ordinateur avec calendrier convient ici à une réservation de cours. Enveloppe de courrier et déplacement vers la mairie représentent les deux autres méthodes."
       }
     },
     {
@@ -42483,14 +42719,21 @@
       "semantic_sha256": "1e1afc8a78f331c60c9e0b5ac9ec0033aa72f72333e742c7bdb2bfc3257eaa69",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-02.mp3",
       "audio_sha256": "82a530facdf2664aadb8f21eaf41ec64d417c620f4a5b85b6f447d2674eb3460",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Le rayon DVD",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-dvd.png",
+              "sha256": "2bed9b74ff2004c5e424db961c8447615fdf6669eee0f86e0d3f4cceb1d35177",
+              "label": "Le rayon DVD",
+              "visual_review_required": true
+            }
+          ],
           "asset": "70dd3ffc12fbe78a",
           "brief": "Représenter entièrement « Le rayon DVD » pour « Quel rayon est présenté ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -42506,13 +42749,36 @@
           "id": "c",
           "label": "Le rayon BD",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+              "sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65",
+              "label": "Le rayon BD",
+              "visual_review_required": true
+            }
+          ],
           "asset": "1fdcb6bea7265120",
           "brief": "Représenter entièrement « Le rayon BD » pour « Quel rayon est présenté ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-dvd.png",
+          "sha256": "2bed9b74ff2004c5e424db961c8447615fdf6669eee0f86e0d3f4cceb1d35177"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-magasin-journaux-dessine.webp",
+          "sha256": "b610da68e2b97ffe076f3d3e0a22c75ac3e0578ab626d87b6fbcc4f186883e8c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+          "sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -42523,7 +42789,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "DVD identifiés par boîtiers et disque, presse par journaux et périodiques, BD par pages à cases. Le kiosque est une illustration de catégorie presse, pas un nouvel emplacement affirmé dans la médiathèque."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-007-02#2",
@@ -42977,8 +43247,8 @@
       "semantic_sha256": "06bb3e0c6f4917cb6fd16aadb27b4c84cbbd90be2d3d534850186fd81f6027bf",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-04.mp3",
       "audio_sha256": "830d341542f88af67b9c44ee346500b9c9baaf45968e09bcabe4d9dac5ab6862",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -43025,8 +43295,24 @@
           "brief": "Représenter entièrement « Le casque » pour « Quel équipement faut-il attacher ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-ceinture-securite-avion-dessine.webp",
+          "sha256": "f7736a1fad22a7d5768b98d120d28c000428b755bb0a143cbd52d0545bcd0388"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-valise.webp",
+          "sha256": "744040e659df36bec4d86ba0ed84f1f6c64f49c5410ef53c5efab716806e2f2c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp",
+          "sha256": "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -43037,7 +43323,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Ceinture et boucle clairement visibles sur un siège d'avion ; valise seule et casque audio seuls pour les deux distracteurs. La ceinture de pantalon est écartée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-007-04#4",
@@ -43184,8 +43474,8 @@
       "semantic_sha256": "802d718065aba183ee2a5c037f422d32d12d2d86155245ae3e7ac308a357589e",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-05.mp3",
       "audio_sha256": "132edb266408ec3ea320783808f15cf2a2e5f1967d7f2cec3e28cc87f1e9287d",
-      "status": "candidate_visual_review",
-      "reason": "Papeterie, parfumerie et boucherie ; montrer des rayons, pas seulement un cahier ou un flacon.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -43219,8 +43509,24 @@
           "brief": "Représenter entièrement « La boucherie » pour « Dans quel rayon les offres sont-elles proposées ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Papeterie, parfumerie et boucherie ; montrer des rayons, pas seulement un cahier ou un flacon."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp",
+          "sha256": "39d557b3a0f05413fe0ad88c0206ed000ecef65f8238040d52d9ecbd0ceca72a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -43238,6 +43544,10 @@
         "evidence_quote": "au rayon papeterie",
         "semantic_sha256": "802d718065aba183ee2a5c037f422d32d12d2d86155245ae3e7ac308a357589e",
         "note": "Papeterie, parfumerie et boucherie ; montrer des rayons, pas seulement un cahier ou un flacon."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Papeterie complète avec cahiers, classeurs, stylos et trousses ; parfumerie et boucherie clairement distinctes, sans prix ni texte réponse."
       }
     },
     {
@@ -44896,8 +45206,8 @@
       "semantic_sha256": "ac80aa5a01075cf7764bbbe6c52e6f19b97c026ac001b9ceaa2549a2aa40b6ea",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-05.mp3",
       "audio_sha256": "fa880c15708ea81af871a52fa30455ed2d7bf8c2efec5ab24632a4707ab157c9",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -44945,8 +45255,24 @@
           "brief": "Représenter entièrement « De l’ouest » pour « De quelle direction l’air froid arrive-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-nord.webp",
+          "sha256": "d8856660c139f3d11be5cdfb76be872c375f0e3f5d567aa3500014fc5eb9c2e1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-sud.webp",
+          "sha256": "add7304224510820d08f0eb7d40999872c423c676b7c34dc9b42f5af03f7fce0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-ouest.webp",
+          "sha256": "45879fc487d06eb7784b7757329bd857b016d1da9827d7ce47334daf39c098ba"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -44957,7 +45283,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Même modèle de rose des vents pour les trois points cardinaux. Le trait rouge désigne le point choisi, sans représenter une flèche de déplacement du vent qui inverserait l'origine."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-008-06#1",
@@ -45487,8 +45817,8 @@
       "semantic_sha256": "ef382ee947ea5a871b5effb8bcd16949fc06231a7372c09336d796ff519b6114",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-010-01.mp3",
       "audio_sha256": "58d4e6c266799f9209872458f2b964b08163a772237e01924a10f238c4cfa853",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -45515,8 +45845,24 @@
           "brief": "Représenter entièrement « Les librairies » pour « Dans quel type de magasins l’appareil est-il vendu ? ». Vérifier la transcription du support tcf-delf-actif-a2-010-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-rayon-informatique.webp",
+          "sha256": "91d205c3f49296346607c771c47dc3ff0f10e936caa78eb34b7ff5d1a2b26592"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+          "sha256": "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "sha256": "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -45527,7 +45873,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Magasin informatique et électronique, vêtements et livres. Le premier montre des appareils proposés à la vente ; ce n'est pas une salle de cours informatique."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-010-02#1",
@@ -47663,8 +48013,8 @@
       "semantic_sha256": "dafe92e98e815eb9a8c6851b99b45df1dfb9d60aeea31170ca02fb8ada0a3b31",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-013-01.mp3",
       "audio_sha256": "d75a458cdd316768fdce9f24028bbd353799ebfd3a5b9192ef1fbcfae3067e58",
-      "status": "candidate_visual_review",
-      "reason": "Parfumerie, librairie et boulangerie ; la papeterie est la visite suivante pour une carte, pas le magasin du cadeau.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -47705,8 +48055,24 @@
           "brief": "Représenter entièrement « À la boulangerie » pour « Dans quel magasin les amies achèteront-elles le cadeau ? ». Vérifier la transcription du support tcf-delf-actif-a2-013-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Parfumerie, librairie et boulangerie ; la papeterie est la visite suivante pour une carte, pas le magasin du cadeau."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "sha256": "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+          "sha256": "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47724,6 +48090,10 @@
         "evidence_quote": "acheter son cadeau à la parfumerie",
         "semantic_sha256": "dafe92e98e815eb9a8c6851b99b45df1dfb9d60aeea31170ca02fb8ada0a3b31",
         "note": "Parfumerie, librairie et boulangerie ; la papeterie est la visite suivante pour une carte, pas le magasin du cadeau."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Trois commerces identifiés par leurs marchandises. Pas de poste ni de cadeau dessiné uniquement dans le commerce correct."
       }
     },
     {
@@ -49659,8 +50029,8 @@
       "semantic_sha256": "6dec9d08f9e43a2e635cae812e729c048c232dadc7af14f00f6096fcf812d6fa",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-019-01.mp3",
       "audio_sha256": "6863dadb5bf6d58faf8d33c66cff1f81e27bdcdc4cfeb575651f05742cf2a144",
-      "status": "candidate_visual_review",
-      "reason": "Papeterie, parfumerie et magasin de sport ; la boulangerie est la seconde étape, pas la première.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -49687,8 +50057,24 @@
           "brief": "Représenter entièrement « Au magasin de sport » pour « Dans quel magasin faut-il d’abord passer ? ». Vérifier la transcription du support tcf-delf-actif-a2-019-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Papeterie, parfumerie et magasin de sport ; la boulangerie est la seconde étape, pas la première."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -49706,6 +50092,10 @@
         "evidence_quote": "Passe à la papeterie",
         "semantic_sha256": "6dec9d08f9e43a2e635cae812e729c048c232dadc7af14f00f6096fcf812d6fa",
         "note": "Papeterie, parfumerie et magasin de sport ; la boulangerie est la seconde étape, pas la première."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "La papeterie montre papier, crayons et feutres sans liste écrite. Les deux distracteurs restent parfumerie et magasin de sport tels que dans les réponses actuelles."
       }
     },
     {
@@ -58433,8 +58823,8 @@
       "semantic_sha256": "75b15a5fdefd147f2b10d3c7f0dc6666d47a50eefbde21f05668406ce700dca9",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
       "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -58475,8 +58865,24 @@
           "brief": "Représenter entièrement « À la papeterie » pour « Dans quel magasin peut-elle encore l’acheter ? ». Vérifier la transcription du support tcf-delf-actif-a2-035-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+          "sha256": "cdb04119e729cc7588d99bc9e967c339f565ceb027ed9285f4a04bae9eed75aa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+          "sha256": "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -58487,7 +58893,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Catégories de commerces, sans horaires dessinés. L'intérieur de supermarché n'est pas enrichi d'une plante cadeau qui révélerait la réponse."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-035-04#1",
@@ -62857,8 +63267,8 @@
       "semantic_sha256": "09c33f42697d20a2459a346484c951aa16f70c691682b54f0fdb01a3bda2bb69",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-02.mp3",
       "audio_sha256": "7f356b53ef8bd22d0e62ff13a3d5f6f617e6e7981f6b1ba5a59e10b30f7051b9",
-      "status": "candidate_visual_review",
-      "reason": "Tee-shirt, veste et casquette distincts ; un éventuel motif doit rester neutre car la marque n’est pas donnée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -62899,8 +63309,24 @@
           "brief": "Représenter entièrement « Une casquette » pour « Sur quel vêtement le logo du magasin se trouve-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-01-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Tee-shirt, veste et casquette distincts ; un éventuel motif doit rester neutre car la marque n’est pas donnée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
+          "sha256": "41b7b9239a145b75a6e719d0dd02699068913a119ae8b7a0d3957f82967f3414"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-veste.webp",
+          "sha256": "0f7859a2a0c1c671a10877af09fce7b6f03f91002fc1868876c7a1458fcbf65b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+          "sha256": "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -62918,6 +63344,10 @@
         "evidence_quote": "logo du magasin sur son Tshirt",
         "semantic_sha256": "09c33f42697d20a2459a346484c951aa16f70c691682b54f0fdb01a3bda2bb69",
         "note": "Tee-shirt, veste et casquette distincts ; un éventuel motif doit rester neutre car la marque n’est pas donnée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Tee-shirt, veste et casquette isolés et entiers. Tous restent unis, sans logo réservé à la bonne réponse qui dispenserait d'écouter."
       }
     },
     {
@@ -71360,8 +71790,8 @@
       "semantic_sha256": "339be84550a246d2bdd1d568a83bb02381e74cb8038a2942138ceebb0e41768d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
       "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
-      "status": "candidate_visual_review",
-      "reason": "Carte étudiante, permis et passeport anonymes à fonctions distinctes ; aucune identité, date de naissance ou nationalité inventée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -71402,8 +71832,24 @@
           "brief": "Représenter entièrement « Un passeport » pour « Quel document contient-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-01-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Carte étudiante, permis et passeport anonymes à fonctions distinctes ; aucune identité, date de naissance ou nationalité inventée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-carte-etudiant.webp",
+          "sha256": "2f81cc692cf54d72ffd54eba3b01e0190032eb55183f4671fdef52932e95c37a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+          "sha256": "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+          "sha256": "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -71421,6 +71867,10 @@
         "evidence_quote": "une carte étudiante",
         "semantic_sha256": "339be84550a246d2bdd1d568a83bb02381e74cb8038a2942138ceebb0e41768d",
         "note": "Carte étudiante, permis et passeport anonymes à fonctions distinctes ; aucune identité, date de naissance ou nationalité inventée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Trois documents distincts et lisibles, sans portefeuille ajouté seulement à la carte correcte. Les titres génériques servent à reconnaître la catégorie du document."
       }
     },
     {
@@ -80281,8 +80731,8 @@
       "semantic_sha256": "365433d3a97405a1fc10fa6ea9e8bd31c71f46ed5b00029254d1537d1c6ee049",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
       "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -80336,8 +80786,24 @@
           "brief": "Représenter entièrement « À la bibliothèque » pour « Où la petite-fille ira-t-elle après sa visite ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+          "sha256": "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "sha256": "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -80348,7 +80814,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-rayons-documents-20261116.json",
+        "note": "Patinoire, piscine et bibliothèque représentent des catégories de lieux ; pas de portrait inventé des locutrices, pas d'heure dessiné."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-001-05#2",
@@ -118731,7 +119201,14 @@
     {
       "id": "6e93848ef2b65ada",
       "label": "Au rayon sport",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+          "label": "Le rayon sport",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-033-01#2",
@@ -118750,7 +119227,14 @@
     {
       "id": "a7727aa631d56a49",
       "label": "Au rayon papeterie",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+          "label": "Le rayon papeterie",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-033-01#2",
@@ -122817,7 +123301,14 @@
     {
       "id": "3b8719d0ae5557a5",
       "label": "Le rayon parfumerie",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+          "label": "Le rayon parfumerie",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-052-02-01#1",
@@ -123498,7 +123989,14 @@
     {
       "id": "1fdcb6bea7265120",
       "label": "Le rayon BD",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+          "sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65",
+          "label": "Le rayon BD",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-002-04#1",
@@ -124771,7 +125269,14 @@
     {
       "id": "70dd3ffc12fbe78a",
       "label": "Le rayon DVD",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-dvd.png",
+          "sha256": "2bed9b74ff2004c5e424db961c8447615fdf6669eee0f86e0d3f4cceb1d35177",
+          "label": "Le rayon DVD",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-007-02#1",

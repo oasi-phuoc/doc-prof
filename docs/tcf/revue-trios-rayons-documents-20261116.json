@@ -1,0 +1,1243 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "31e9213f23a4dfed63dace8aaf84ac00c7c0f8d3",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 20,
+    "added_historical_trios": 0,
+    "added_delf_actif_trios": 20,
+    "new_images": 5,
+    "imagegen_calls": 5,
+    "rejected_generations": 0,
+    "new_image_usages": 17,
+    "reused_image_usages": 43,
+    "reused_distinct_images": 36,
+    "added_by_level": {
+      "A1-A2": 19,
+      "A2-B1": 1
+    },
+    "historical_pending": 300
+  },
+  "new_images": [
+    {
+      "id": "qcm-a2-rayon-papeterie",
+      "label": "Le rayon papeterie",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Match a detailed warm semi-realistic digital painting: believable volumes, delicate unobtrusive contours, natural muted colours, soft daylight from left, pale cream walls and honey-coloured wooden display furniture. Painterly detail belongs to actual materials, no grain overlay, no heavy outlines, not a photograph, not a cartoon. Show the entire coherent department with clear floor space in foreground; eye-level wide view, calm composition, fully within frame. No people, no text, letters, numbers, dates, prices, logos or watermarks. The merchandise alone must make the department immediately identifiable. A stationery department in a French general store. Low wooden display island with tidy stacks of colourful blank notebooks and drawing-paper pads, several upright ring binders visibly showing their ring mechanisms, pen and pencil display cups, pencil cases, simple rulers and erasers. Back shelves of paper packs and folders. All merchandise plainly stationery, no perfume, no sports gear, no comic books, no computers.",
+      "source_png": "/workspace/generated_images/exec-2c228748-fe81-4941-a24d-f6bb5b8e18be.png",
+      "source_sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+      "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+      "bytes": 2463236,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-rayons-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : département reconnaissable par les marchandises, composition cohérente, lumière douce et bois clairs dans le style peint TCF. Aucune date, prix, marque ou réponse textuelle ajoutée. PNG natif exact 1448 × 1086 conservé sans recadrage.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-rayon-parfumerie",
+      "label": "Le rayon parfumerie",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Match a detailed warm semi-realistic digital painting: believable volumes, delicate unobtrusive contours, natural muted colours, soft daylight from left, pale cream walls and honey-coloured wooden display furniture. Painterly detail belongs to actual materials, no grain overlay, no heavy outlines, not a photograph, not a cartoon. Show the entire coherent department with clear floor space in foreground; eye-level wide view, calm composition, fully within frame. No people, no text, letters, numbers, dates, prices, logos or watermarks. The merchandise alone must make the department immediately identifiable. A perfume department in a French general store. Elegant simple wooden display counter with clearly recognisable glass fragrance bottles, rounded and rectangular, delicate spray nozzles and fitted caps, amber and clear liquids. Repeated neatly spaced fragrance bottles and blank small boxes on wall shelves, subtle botanical decoration. Avoid exaggerated luxury or pharmacy styling. No people, no cosmetics being applied, no special promotional gift, no cream pot singled out, no papers or books.",
+      "source_png": "/workspace/generated_images/exec-bc403f4a-6bc7-4888-b4b8-84183aff4f1d.png",
+      "source_sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+      "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+      "bytes": 2416521,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-rayons-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : département reconnaissable par les marchandises, composition cohérente, lumière douce et bois clairs dans le style peint TCF. Aucune date, prix, marque ou réponse textuelle ajoutée. PNG natif exact 1448 × 1086 conservé sans recadrage.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-rayon-bd",
+      "label": "Le rayon BD",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING matching illustrated French learning materials, soft painted material transitions, discreet fine edges, natural warm muted colours, honey-coloured wooden display furniture and cream walls, soft daylight from left. Visibly painted illustration, no photographic microtexture or photorealistic render. Eye-level wide interior view, entire coherent department and furniture comfortably inside frame, clear foreground floor. No people, no text, letters, numbers, dates, prices, logos or watermarks. Merchandise must make the department immediately recognisable. The comic-book department in a store or media library. Wooden bookcase and low display stand holding large upright hardback graphic novels, several displayed face-out. Front covers show colourful illustrated fictional adventure characters with no lettering. Two open comic books on a waist-high reading display, plainly showing multiple rectangular cartoon panels and blank speech balloons. Many colourful narrow graphic novel spines. No prose books with printed paragraphs, no DVDs, no writing stationery.",
+      "source_png": "/workspace/generated_images/exec-3393789e-4708-41c9-b774-ccd79f84d6b9.png",
+      "source_sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65",
+      "sha256": "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65",
+      "bytes": 2629453,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-rayons-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : département reconnaissable par les marchandises, composition cohérente, lumière douce et bois clairs dans le style peint TCF. Aucune date, prix, marque ou réponse textuelle ajoutée. PNG natif exact 1448 × 1086 conservé sans recadrage.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-rayon-sport",
+      "label": "Le rayon sport",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING matching illustrated French learning materials, soft painted material transitions, discreet fine edges, natural warm muted colours, honey-coloured wooden display furniture and cream walls, soft daylight from left. Visibly painted illustration, no photographic microtexture or photorealistic render. Eye-level wide interior view, entire coherent department and furniture comfortably inside frame, clear foreground floor. No people, no text, letters, numbers, dates, prices, logos or watermarks. Merchandise must make the department immediately recognisable. A sports equipment department in a French general store. Wooden wall racks and low display island, two tennis rackets prominently displayed with visible netting, footballs and basketballs in low wire baskets, a yoga mat neatly rolled, pairs of running shoes on wall shelves, two dumbbells on low shelf. Clearly merchandise arranged for sale, not a playing field or gym. No comic books, no stationery or perfume.",
+      "source_png": "/workspace/generated_images/exec-9971e87f-c3df-473f-ab0f-71b4718e4a0f.png",
+      "source_sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+      "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+      "bytes": 2450431,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-rayons-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : département reconnaissable par les marchandises, composition cohérente, lumière douce et bois clairs dans le style peint TCF. Aucune date, prix, marque ou réponse textuelle ajoutée. PNG natif exact 1448 × 1086 conservé sans recadrage.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-rayon-dvd",
+      "label": "Le rayon DVD",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-dvd.png",
+      "prompt": "Create ONE standalone educational TCF answer-choice illustration, native exact 1448 by 1086 pixels, landscape 4:3. Detailed warm semi-realistic DIGITAL PAINTING matching illustrated French learning materials, soft painted material transitions, discreet fine edges, natural warm muted colours, honey-coloured wooden display furniture and cream walls, soft daylight from left. Visibly painted illustration, no photographic microtexture or photorealistic render. Eye-level wide interior view, entire coherent department and furniture comfortably inside frame, clear foreground floor. No people, no text, letters, numbers, dates, prices, logos or watermarks. Merchandise must make the department immediately recognisable. The DVD department in a French media library. Low wooden shelving with rows of thin upright DVD movie cases, a few cases displayed face-out showing simple painted film-scene covers without lettering. An opened plastic DVD case in foreground clearly contains ONE shiny optical disc snapped into a circular holder; two closed thin movie cases beside it. In back a small viewing station with one powered-off monitor and over-ear headphones hanging beside it, secondary to the shelves of movie discs. NO books, no comic panels, no newspapers, no retail prices.",
+      "source_png": "/workspace/generated_images/exec-875aeb81-7ff6-41c2-a317-e5c78af5aaf0.png",
+      "source_sha256": "2bed9b74ff2004c5e424db961c8447615fdf6669eee0f86e0d3f4cceb1d35177",
+      "sha256": "2bed9b74ff2004c5e424db961c8447615fdf6669eee0f86e0d3f4cceb1d35177",
+      "bytes": 2566723,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-rayons-documents-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "review_note": "Contrôle visuel individuel : département reconnaissable par les marchandises, composition cohérente, lumière douce et bois clairs dans le style peint TCF. Aucune date, prix, marque ou réponse textuelle ajoutée. PNG natif exact 1448 × 1086 conservé sans recadrage.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Commerces et rayons",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-ceinture-dessine.webp",
+      "reason": "Ceinture de vêtement : ne représente pas la ceinture de sécurité demandée lors de l’atterrissage."
+    }
+  ],
+  "editorial_scope": "Catégories de réponse QCM, distinctes des scènes de dialogue à deux interlocuteurs.",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a2-001#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Compostez votre billet.\nMontez dans le train.\nIl est interdit de filmer.\nPour réserver vos places, téléphonez !\nMontrez vos passeports.\nRegardez le panneau lumineux.",
+      "source_sha256": "c180a7959adf7ce92b3b3ee908d1d7ce47123f33abfd3cdb1b7bb81836a0c95a",
+      "semantic_sha256": "ab238242a8cd7fd73a4ec4e6e7c07532db3326da3313f9e90349ea0fc56c511a",
+      "question": {
+        "enonce": "Quel document faut-il composter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le billet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le passeport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La carte bancaire",
+            "correct": false
+          }
+        ],
+        "written_model": "Le billet"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
+      "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
+      "image_ids": [
+        "audit-context-billet-train",
+        "co306-passeport-dessine",
+        "co834-carte-bancaire-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-carte-bancaire-dessinee.webp"
+      ],
+      "image_sha256": [
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "8503834770cdaed7fa7d72026cd4e3625453955224a34a51dd7b8a9d3006c583"
+      ],
+      "reason": "L'injonction « Compostez votre billet » confirme le billet, distinct du passeport demandé plus loin et de la carte bancaire.",
+      "visual_review": "Trois documents isolés, billet avec pictogramme de train, passeport et carte à puce reconnaissables.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-001#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Compostez votre billet.\nMontez dans le train.\nIl est interdit de filmer.\nPour réserver vos places, téléphonez !\nMontrez vos passeports.\nRegardez le panneau lumineux.",
+      "source_sha256": "c180a7959adf7ce92b3b3ee908d1d7ce47123f33abfd3cdb1b7bb81836a0c95a",
+      "semantic_sha256": "abe7876fb6e22744c0bb2cdf846f84d65895a79468937a4b1259cd71d4450998",
+      "question": {
+        "enonce": "Comment faut-il réserver les places ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "En téléphonant",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "En envoyant une lettre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "En allant au guichet",
+            "correct": false
+          }
+        ],
+        "written_model": "En téléphonant"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
+      "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
+      "image_ids": [
+        "communication-appeler",
+        "communication-lettre",
+        "co57-guichet-gare"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+        "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+        "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp"
+      ],
+      "image_sha256": [
+        "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe",
+        "3b54ef391ab12452bcac4045003d366191911b9444e3abd690c5cbf53b3dbc30",
+        "d368a9fe753d72f75166488c2866531e74590e69224c63b1f8a582684a2cfb79"
+      ],
+      "reason": "« Pour réserver vos places, téléphonez ! » désigne la méthode de réservation ; les deux autres moyens restent les leurres du texte.",
+      "visual_review": "Icône d'appel validée, enveloppe ouverte avec lignes et cliente au guichet de gare. Pas de téléphone à écran de message.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-002-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Venez au rayon BD pour rencontrer le dessinateur Léo Hubert.",
+      "source_sha256": "ffe5a7c327b9b5e1c5a33f06aea75408e6ed1e3daee90c52d34b0daac6e3ec15",
+      "semantic_sha256": "493e30ac56c1283ebd83a9ea687ba3989a7a9f034365987ff470f34e49e69357",
+      "question": {
+        "enonce": "Dans quel rayon la rencontre a-t-elle lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le rayon BD",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le rayon sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le rayon papeterie",
+            "correct": false
+          }
+        ],
+        "written_model": "Le rayon BD"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-04.mp3",
+      "audio_sha256": "cd2f90d06fcc72bf5e15f4ddfc5d65d7a9ae4cd971567be32660d047daeab62b",
+      "image_ids": [
+        "qcm-a2-rayon-bd",
+        "qcm-a2-rayon-sport",
+        "qcm-a2-rayon-papeterie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png"
+      ],
+      "image_sha256": [
+        "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65",
+        "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4",
+        "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+      ],
+      "reason": "« Venez au rayon BD » ; la question porte sur la catégorie de rayon, pas sur l'identité du dessinateur.",
+      "visual_review": "BD identifiées par les cases et bulles, sport par les équipements et papeterie par les fournitures. Aucun dessinateur ajouté uniquement à la bonne réponse.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-002-05#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "La personne qui s’est trompée de chariot au rayon boucherie est priée de le rapporter dans le rayon.",
+      "source_sha256": "1bba25fec98a17165cadfc0a933bc6c2287484b4fc2c13e3c15f806f28e32709",
+      "semantic_sha256": "622e35ddbf70a8688956d0764398563e8aec9374831a18e99a69a0b7aaba4da8",
+      "question": {
+        "enonce": "Dans quel rayon faut-il le rapporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La boucherie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La boulangerie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La parfumerie",
+            "correct": false
+          }
+        ],
+        "written_model": "La boucherie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-05.mp3",
+      "audio_sha256": "b7cd489692cf2c43a663d7fdc746e4122e8bb464851a57a6012bb155eca9feca",
+      "image_ids": [
+        "co834-boucherie-dessinee",
+        "co834-boulangerie-dessinee",
+        "qcm-a2-rayon-parfumerie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png"
+      ],
+      "image_sha256": [
+        "39d557b3a0f05413fe0ad88c0206ed000ecef65f8238040d52d9ecbd0ceca72a",
+        "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637",
+        "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+      ],
+      "reason": "Le chariot doit être rapporté « au rayon boucherie » où l'échange s'est produit.",
+      "visual_review": "Intérieurs de commerces désignant les catégories de rayons. Aucun chariot ou indice ajouté seulement au rayon correct.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-002-06#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Profitez de notre offre au rayon parfumerie pour l’achat d’un flacon d’eau douce.",
+      "source_sha256": "a0b10cc4e29f24aa5c520f04337373c44a9e283414b08137295705896ae35ce1",
+      "semantic_sha256": "65ed7b3818681923ec07389f96735f6c773c9f0810a207102c32b9624db578a1",
+      "question": {
+        "enonce": "Dans quel rayon l’offre est-elle proposée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La parfumerie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La papeterie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La boulangerie",
+            "correct": false
+          }
+        ],
+        "written_model": "La parfumerie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-06.mp3",
+      "audio_sha256": "42014d0c4ccbb373182750002f808ec5faba1df505db6696caac282617876ead",
+      "image_ids": [
+        "qcm-a2-rayon-parfumerie",
+        "qcm-a2-rayon-papeterie",
+        "co834-boulangerie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+        "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+        "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+      ],
+      "reason": "L'annonce place explicitement l'offre « au rayon parfumerie ».",
+      "visual_review": "Trois catégories de rayons par leurs marchandises ; la boulangerie est un intérieur, sans façade substituée à un rayon.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-002-06#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Profitez de notre offre au rayon parfumerie pour l’achat d’un flacon d’eau douce.",
+      "source_sha256": "a0b10cc4e29f24aa5c520f04337373c44a9e283414b08137295705896ae35ce1",
+      "semantic_sha256": "9cc7f60721321c42b97af853c432997984657cd64510b765586ce6ab26fc0cda",
+      "question": {
+        "enonce": "Quel achat permet de profiter de l’offre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un flacon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une trousse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un livre",
+            "correct": false
+          }
+        ],
+        "written_model": "Un flacon"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-06.mp3",
+      "audio_sha256": "42014d0c4ccbb373182750002f808ec5faba1df505db6696caac282617876ead",
+      "image_ids": [
+        "vocab-parfum",
+        "extension573-trousse-toilette",
+        "co834-livre-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+        "/lib/images/tcf/qcm-audit/extension573-trousse-toilette.png",
+        "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp"
+      ],
+      "image_sha256": [
+        "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72",
+        "3084675d6965b3825b38d556b114e142ccbefa55fec102436cee422e240e42e3",
+        "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2"
+      ],
+      "reason": "L'offre concerne « l'achat d'un flacon ». La question demande le contenant acheté, sans réécrire le libellé de la transcription « eau douce ».",
+      "visual_review": "Un flacon de parfum isolé, une trousse de toilette identifiable et un livre fermé ; quantités singulières respectées.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-05#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Nous vous rappelons qu’il est interdit de manger dans le car. Un arrêt pour le goûter est prévu dans un quart d’heure.",
+      "source_sha256": "db8690b51ec434945fc3fe9bd26f06e0e0003fed4234790383702d2b886e6e75",
+      "semantic_sha256": "8154dcb29aac016a9f4ffe1ace5fe81eff9246f1e0713c30a9c55bf47a8e9b52",
+      "question": {
+        "enonce": "Dans quel véhicule l’annonce est-elle faite ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un car",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un avion",
+            "correct": false
+          }
+        ],
+        "written_model": "Un car"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-05.mp3",
+      "audio_sha256": "b4096b3bac9225077bcab497f8cd4aacf620e8479e5e95c7c0f5ada036e1470d",
+      "image_ids": [
+        "extension573-bus-touristique",
+        "co834-train-dessine",
+        "vocab-avion"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+      ],
+      "image_sha256": [
+        "330ce9feb76da804656f3270f07f4a55fe94bfa9194be84c28b20deba84fcb63",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+      ],
+      "reason": "L'annonce rappelle qu'il est interdit de manger « dans le car » ; l'arrêt pour le goûter ne change pas le véhicule.",
+      "visual_review": "Car à voyageurs, train et avion reconnaissables. Illustrations de catégories de transport ; aucune prétention à reproduire le véhicule exact de l'annonce.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-06#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Du jeudi 20 mars au samedi 22 mars, au rayon parfumerie situé au premier étage, profitez de notre offre exclusive : 1 parfum acheté, une crème offerte.",
+      "source_sha256": "59ace0ba5838a9ab9d0d4227ba731f3824bf70b9431686ae8056a8c84832115f",
+      "semantic_sha256": "225c120ac84fee50cbba749f4214619f0df996f258d7afe2a92f49d2fd20ac66",
+      "question": {
+        "enonce": "Dans quel rayon l’offre a-t-elle lieu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La parfumerie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La papeterie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le rayon vêtements",
+            "correct": false
+          }
+        ],
+        "written_model": "La parfumerie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-06.mp3",
+      "audio_sha256": "fb4b8e02a75f89f618cf910ddd8d1bb8d13b3cde0a0b82ea7dc296eb747929a6",
+      "image_ids": [
+        "qcm-a2-rayon-parfumerie",
+        "qcm-a2-rayon-papeterie",
+        "co834-rayon-vetements-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp"
+      ],
+      "image_sha256": [
+        "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+        "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+        "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8"
+      ],
+      "reason": "L'offre parfum/crème se situe « au rayon parfumerie ». L'étage et les dates ne sont pas la réponse demandée.",
+      "visual_review": "Rayons complets sans dates, prix, étage inventé ni cadeau promotionnel ajouté à la bonne image.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-006-06#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Le centre de bien-être Nautilus propose salle de sport, restaurant, spa, piscine et diverses activités en famille. Vous pouvez réserver votre cours par inscription sur notre site.",
+      "source_sha256": "cd5a12d1583dcef03bdc074f2a783371d5a33962ea3abb5abcbe06e2274a18c4",
+      "semantic_sha256": "faecb405efdb480cd9d4c1078823665262f58e4bf64457f88dbc10d7b864077b",
+      "question": {
+        "enonce": "Comment peut-on réserver un cours ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur le site Internet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Par courrier",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la mairie",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur le site Internet"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-006-06.mp3",
+      "audio_sha256": "80097260a7d757b93e27ba273e107448d7d865e256647a342d9936d0b8d6d9f7",
+      "image_ids": [
+        "vocab-internet",
+        "communication-lettre",
+        "qcm-a1-aller-mairie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-internet.webp",
+        "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-aller-mairie.png"
+      ],
+      "image_sha256": [
+        "80dbb26a14fff6a874b6d24b4b219389bbc1b64289f6c00fe730f572a645c187",
+        "3b54ef391ab12452bcac4045003d366191911b9444e3abd690c5cbf53b3dbc30",
+        "2642c1f34783c4fe1cc187016c6c82734963326e497e489d734fe987bf207756"
+      ],
+      "reason": "« Réserver votre cours par inscription sur notre site » confirme Internet ; courrier et déplacement à la mairie restent des distracteurs.",
+      "visual_review": "La scène d'ordinateur avec calendrier convient ici à une réservation de cours. Enveloppe de courrier et déplacement vers la mairie représentent les deux autres méthodes.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-02#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Le rayon DVD de notre médiathèque, situé au deuxième étage, est équipé de casques bluetooth 3D pour vous permettre de regarder le film de votre choix.",
+      "source_sha256": "00fdc051235e3eaa5c703f90880e7845d4ad100c16a1b0c8e33b1f72719e01ec",
+      "semantic_sha256": "1e1afc8a78f331c60c9e0b5ac9ec0033aa72f72333e742c7bdb2bfc3257eaa69",
+      "question": {
+        "enonce": "Quel rayon est présenté ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le rayon DVD",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le rayon presse",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le rayon BD",
+            "correct": false
+          }
+        ],
+        "written_model": "Le rayon DVD"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-02.mp3",
+      "audio_sha256": "82a530facdf2664aadb8f21eaf41ec64d417c620f4a5b85b6f447d2674eb3460",
+      "image_ids": [
+        "qcm-a2-rayon-dvd",
+        "co834-magasin-journaux-dessine",
+        "qcm-a2-rayon-bd"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-dvd.png",
+        "/lib/images/tcf/qcm-audit/co834-magasin-journaux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-bd.png"
+      ],
+      "image_sha256": [
+        "2bed9b74ff2004c5e424db961c8447615fdf6669eee0f86e0d3f4cceb1d35177",
+        "b610da68e2b97ffe076f3d3e0a22c75ac3e0578ab626d87b6fbcc4f186883e8c",
+        "97959486c6126a7748249c3ac96c195913cbe207dc48f5a4e962ed7000bfbb65"
+      ],
+      "reason": "La médiathèque présente « le rayon DVD ». La question demande le rayon, pas l'étage ni le type de casque.",
+      "visual_review": "DVD identifiés par boîtiers et disque, presse par journaux et périodiques, BD par pages à cases. Le kiosque est une illustration de catégorie presse, pas un nouvel emplacement affirmé dans la médiathèque.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Mesdames et Messieurs, nous allons commencer notre phase d’atterrissage. Nous vous invitons à redresser votre siège et à attacher votre ceinture. Les téléphones portables doivent être éteints.",
+      "source_sha256": "0d412628651e6231602e4b5658da4834076691bce184d1661554ea76ed465645",
+      "semantic_sha256": "06bb3e0c6f4917cb6fd16aadb27b4c84cbbd90be2d3d534850186fd81f6027bf",
+      "question": {
+        "enonce": "Quel équipement faut-il attacher ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La ceinture",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La valise",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le casque",
+            "correct": false
+          }
+        ],
+        "written_model": "La ceinture"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-04.mp3",
+      "audio_sha256": "830d341542f88af67b9c44ee346500b9c9baaf45968e09bcabe4d9dac5ab6862",
+      "image_ids": [
+        "co306-ceinture-securite-avion-dessine",
+        "vocab-valise",
+        "vocab-casque-audio"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-ceinture-securite-avion-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-valise.webp",
+        "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp"
+      ],
+      "image_sha256": [
+        "f7736a1fad22a7d5768b98d120d28c000428b755bb0a143cbd52d0545bcd0388",
+        "744040e659df36bec4d86ba0ed84f1f6c64f49c5410ef53c5efab716806e2f2c",
+        "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60"
+      ],
+      "reason": "En phase d'atterrissage, « attacher votre ceinture » désigne la ceinture de sécurité du siège et non une ceinture vestimentaire.",
+      "visual_review": "Ceinture et boucle clairement visibles sur un siège d'avion ; valise seule et casque audio seuls pour les deux distracteurs. La ceinture de pantalon est écartée.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-007-05#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "En raison de la rentrée des classes notre magasin vous offre des promotions au rayon papeterie. Profitez de nos prix sur les cahiers, les classeurs et les trousses",
+      "source_sha256": "6bdb1ed8827679567981135f686ec7aef9fd5d8cebd7c36df561f339ad7f96bd",
+      "semantic_sha256": "802d718065aba183ee2a5c037f422d32d12d2d86155245ae3e7ac308a357589e",
+      "question": {
+        "enonce": "Dans quel rayon les offres sont-elles proposées ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La papeterie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "La parfumerie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "La boucherie",
+            "correct": false
+          }
+        ],
+        "written_model": "La papeterie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-05.mp3",
+      "audio_sha256": "132edb266408ec3ea320783808f15cf2a2e5f1967d7f2cec3e28cc87f1e9287d",
+      "image_ids": [
+        "qcm-a2-rayon-papeterie",
+        "qcm-a2-rayon-parfumerie",
+        "co834-boucherie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+        "/lib/images/tcf/qcm-audit/co834-boucherie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+        "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+        "39d557b3a0f05413fe0ad88c0206ed000ecef65f8238040d52d9ecbd0ceca72a"
+      ],
+      "reason": "Les promotions de rentrée se trouvent « au rayon papeterie », puis l'annonce cite cahiers, classeurs et trousses.",
+      "visual_review": "Papeterie complète avec cahiers, classeurs, stylos et trousses ; parfumerie et boucherie clairement distinctes, sans prix ni texte réponse.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-008-05#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Après une quinzaine de jours de beau temps et même chaud dans le sud, le temps change en cours de week-end. Une nette baisse de température va se mettre en place dimanche avec l’arrivée d’air plus froid par le nord.",
+      "source_sha256": "f708f7e3c0b5db94e7ad4fb556a0fc408c23c11f5eacf035cb690e76179c0624",
+      "semantic_sha256": "ac80aa5a01075cf7764bbbe6c52e6f19b97c026ac001b9ceaa2549a2aa40b6ea",
+      "question": {
+        "enonce": "De quelle direction l’air froid arrive-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Du nord",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du sud",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "De l’ouest",
+            "correct": false
+          }
+        ],
+        "written_model": "Du nord"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-05.mp3",
+      "audio_sha256": "fa880c15708ea81af871a52fa30455ed2d7bf8c2efec5ab24632a4707ab157c9",
+      "image_ids": [
+        "vocab-nord",
+        "vocab-sud",
+        "vocab-ouest"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-nord.webp",
+        "/lib/images/tcf/qcm-audit/vocab-sud.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ouest.webp"
+      ],
+      "image_sha256": [
+        "d8856660c139f3d11be5cdfb76be872c375f0e3f5d567aa3500014fc5eb9c2e1",
+        "add7304224510820d08f0eb7d40999872c423c676b7c34dc9b42f5af03f7fce0",
+        "45879fc487d06eb7784b7757329bd857b016d1da9827d7ce47334daf39c098ba"
+      ],
+      "reason": "La baisse vient de « l'arrivée d'air plus froid par le nord ». La direction d'origine citée est le nord.",
+      "visual_review": "Même modèle de rose des vents pour les trois points cardinaux. Le trait rouge désigne le point choisi, sans représenter une flèche de déplacement du vent qui inverserait l'origine.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-010-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Pour les passionnés de natation en avant la musique ! Fixé à la bretelle de votre maillot de bain Musicsoumarine notre nouveau MP3 vous permet d’écouter votre musique préférée. Dans les meilleurs magasins de High-Tech pour profiter au mieux de vos vacances !",
+      "source_sha256": "09e0d02b1aee275270d8ed5761ce0d47ad998d18ff73c202eba14932760c1b86",
+      "semantic_sha256": "ef382ee947ea5a871b5effb8bcd16949fc06231a7372c09336d796ff519b6114",
+      "question": {
+        "enonce": "Dans quel type de magasins l’appareil est-il vendu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les magasins de high-tech",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les magasins de vêtements",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les librairies",
+            "correct": false
+          }
+        ],
+        "written_model": "Les magasins de high-tech"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-010-01.mp3",
+      "audio_sha256": "58d4e6c266799f9209872458f2b964b08163a772237e01924a10f238c4cfa853",
+      "image_ids": [
+        "co57-rayon-informatique",
+        "co834-rayon-vetements-dessine",
+        "co834-rayon-librairie-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-rayon-informatique.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-vetements-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp"
+      ],
+      "image_sha256": [
+        "91d205c3f49296346607c771c47dc3ff0f10e936caa78eb34b7ff5d1a2b26592",
+        "371ea6539049a3d8bf05a181ed02ee254846d0b744dd1e539f73c79a890eb6a8",
+        "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465"
+      ],
+      "reason": "La publicité indique une vente « dans les meilleurs magasins de High-Tech ». Natation et maillot sont les usages de l'appareil, pas ses lieux de vente.",
+      "visual_review": "Magasin informatique et électronique, vêtements et livres. Le premier montre des appareils proposés à la vente ; ce n'est pas une salle de cours informatique.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-013-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour Claire, le 10 mars c’est l’anniversaire de Laure. Alors on va ensemble acheter son cadeau à la parfumerie. Rendez-vous devant la poste à 16h00 ! Après on va acheter aussi une carte de vœux à la papeterie.",
+      "source_sha256": "098dfb15bdae1ad643c8679f814e87a2c0797033fa079e5b42fb53313a36a503",
+      "semantic_sha256": "dafe92e98e815eb9a8c6851b99b45df1dfb9d60aeea31170ca02fb8ada0a3b31",
+      "question": {
+        "enonce": "Dans quel magasin les amies achèteront-elles le cadeau ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la parfumerie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la librairie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la boulangerie",
+            "correct": false
+          }
+        ],
+        "written_model": "À la parfumerie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-013-01.mp3",
+      "audio_sha256": "d75a458cdd316768fdce9f24028bbd353799ebfd3a5b9192ef1fbcfae3067e58",
+      "image_ids": [
+        "qcm-a2-rayon-parfumerie",
+        "co834-rayon-librairie-dessine",
+        "co834-boulangerie-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+        "/lib/images/tcf/qcm-audit/co834-rayon-librairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp"
+      ],
+      "image_sha256": [
+        "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+        "f63569cd7cbb8105b24f48fb133d19e444243a56ee6cb0028d28da1fb258d465",
+        "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637"
+      ],
+      "reason": "Les amies vont acheter « son cadeau à la parfumerie » ; la poste est le rendez-vous et la papeterie un achat ultérieur.",
+      "visual_review": "Trois commerces identifiés par leurs marchandises. Pas de poste ni de cadeau dessiné uniquement dans le commerce correct.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-019-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "C’est maman. Quand tu rentres de ton cours de musique j’ai besoin de toi pour des courses. Passe à la papeterie. Ton frère n’a plus de feuilles de dessin petit modèle. Prends un paquet de 20 feuilles. Il a besoin aussi d’un crayon noir et d’un feutre bleu. Ensuite tu t’arrêtes à la boulangerie. Tu prends un kilo de farine pour des crêpes et demande à notre boulangère de mettre de côté 3 baguettes pour demain après-midi. Bisous.",
+      "source_sha256": "a71e211ae2d97b68da1b3f592bb9a6009ff868497a2b471f4f6840976752ac0f",
+      "semantic_sha256": "6dec9d08f9e43a2e635cae812e729c048c232dadc7af14f00f6096fcf812d6fa",
+      "question": {
+        "enonce": "Dans quel magasin faut-il d’abord passer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la papeterie",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la parfumerie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Au magasin de sport",
+            "correct": false
+          }
+        ],
+        "written_model": "À la papeterie"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-019-01.mp3",
+      "audio_sha256": "6863dadb5bf6d58faf8d33c66cff1f81e27bdcdc4cfeb575651f05742cf2a144",
+      "image_ids": [
+        "qcm-a2-rayon-papeterie",
+        "qcm-a2-rayon-parfumerie",
+        "qcm-a2-rayon-sport"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png"
+      ],
+      "image_sha256": [
+        "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca",
+        "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20",
+        "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+      ],
+      "reason": "« Passe à la papeterie » précède « Ensuite tu t'arrêtes à la boulangerie ». La question vise le premier magasin.",
+      "visual_review": "La papeterie montre papier, crayons et feutres sans liste écrite. Les deux distracteurs restent parfumerie et magasin de sport tels que dans les réponses actuelles.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-03#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Tu sais si le fleuriste ferme à 19h00 ? Oui, tous les jours. Et je vais où pour prendre une plante pour l’anniversaire de ma mère ? Va voir au supermarché ! Il ferme à 21h00.",
+      "source_sha256": "6d0146cd0b61e5405d0829f36037b646d8c3e8e226b907d8a3c074e1068d8051",
+      "semantic_sha256": "75b15a5fdefd147f2b10d3c7f0dc6666d47a50eefbde21f05668406ce700dca9",
+      "question": {
+        "enonce": "Dans quel magasin peut-elle encore l’acheter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Au supermarché",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la pharmacie",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la papeterie",
+            "correct": false
+          }
+        ],
+        "written_model": "Au supermarché"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+      "image_ids": [
+        "co306-supermarche-dessine",
+        "qcm-a1-pharmacie-facade",
+        "qcm-a2-rayon-papeterie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-supermarche-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-pharmacie-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png"
+      ],
+      "image_sha256": [
+        "cdb04119e729cc7588d99bc9e967c339f565ceb027ed9285f4a04bae9eed75aa",
+        "bcf7d66dd94196b22c66bcf5b060a490297f4a02556efcf1da460fe22d8463a9",
+        "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+      ],
+      "reason": "« Va voir au supermarché ! Il ferme à 21h00 » répond au problème d'achat après la fermeture du fleuriste.",
+      "visual_review": "Catégories de commerces, sans horaires dessinés. L'intérieur de supermarché n'est pas enrichi d'une plante cadeau qui révélerait la réponse.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-01-02#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Chers clients votre magasin est heureux de vous accueillir aujourd’hui. Notre personnel avec le logo du magasin sur son Tshirt est à votre disposition pour tout renseignement.",
+      "source_sha256": "5bbd263d0549d9ecdfa963147b44acc06b50a55ed7389ab9fabaec7ad14dea00",
+      "semantic_sha256": "09c33f42697d20a2459a346484c951aa16f70c691682b54f0fdb01a3bda2bb69",
+      "question": {
+        "enonce": "Sur quel vêtement le logo du magasin se trouve-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un tee-shirt",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une veste",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une casquette",
+            "correct": false
+          }
+        ],
+        "written_model": "Un tee-shirt"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-02.mp3",
+      "audio_sha256": "7f356b53ef8bd22d0e62ff13a3d5f6f617e6e7981f6b1ba5a59e10b30f7051b9",
+      "image_ids": [
+        "co306-t-shirt-dessine",
+        "vocab-veste",
+        "co834-casquette-dessinee"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-veste.webp",
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp"
+      ],
+      "image_sha256": [
+        "41b7b9239a145b75a6e719d0dd02699068913a119ae8b7a0d3957f82967f3414",
+        "0f7859a2a0c1c671a10877af09fce7b6f03f91002fc1868876c7a1458fcbf65b",
+        "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f"
+      ],
+      "reason": "Le personnel porte « le logo du magasin sur son Tshirt ». La question porte sur le vêtement qui le supporte.",
+      "visual_review": "Tee-shirt, veste et casquette isolés et entiers. Tous restent unis, sans logo réservé à la bonne réponse qui dispenserait d'écouter.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-01-03#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Votre attention s’il vous plaît ! Un portefeuille rouge contenant une carte étudiante vient d’être trouvé. Nous attendons son propriétaire à l’accueil situé à l’entrée du magasin.",
+      "source_sha256": "fa127bb0fe9709f53a184f2d0ee93ce2a3763731f77549b16abe707a8fd83531",
+      "semantic_sha256": "339be84550a246d2bdd1d568a83bb02381e74cb8038a2942138ceebb0e41768d",
+      "question": {
+        "enonce": "Quel document contient-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une carte étudiante",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un permis de conduire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un passeport",
+            "correct": false
+          }
+        ],
+        "written_model": "Une carte étudiante"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-01-03.mp3",
+      "audio_sha256": "dc9096af294c7197f9c870842e12e878a466ece62c9491e966b1375880f93590",
+      "image_ids": [
+        "audit-context-carte-etudiant",
+        "audit-context-permis-conduire",
+        "co306-passeport-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-carte-etudiant.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp"
+      ],
+      "image_sha256": [
+        "2f81cc692cf54d72ffd54eba3b01e0190032eb55183f4671fdef52932e95c37a",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0"
+      ],
+      "reason": "Le portefeuille rouge contient « une carte étudiante » ; sa couleur ne transforme pas le type du document.",
+      "visual_review": "Trois documents distincts et lisibles, sans portefeuille ajouté seulement à la carte correcte. Les titres génériques servent à reconnaître la catégorie du document.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-001-05#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Mamie, je passerai te faire un petit coucou cet après-midi avant d’aller à la patinoire. À quelle heure viens-tu ? Tu sais que le mercredi je retrouve mes amies au club de troisième âge. Je passerai vers 15h30, tu y seras ? C’est très bien, nous resterons ensemble une demi-heure.",
+      "source_sha256": "1566d006003a578aa74706694451b71a7b4a1fd668ef9530656687256dd7c1b7",
+      "semantic_sha256": "365433d3a97405a1fc10fa6ea9e8bd31c71f46ed5b00029254d1537d1c6ee049",
+      "question": {
+        "enonce": "Où la petite-fille ira-t-elle après sa visite ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "À la patinoire",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "À la piscine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "À la bibliothèque",
+            "correct": false
+          }
+        ],
+        "written_model": "À la patinoire"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3",
+      "audio_sha256": "7425c179d685e3460657993fb861acbbae7a00a90346b337680026f57f0758ba",
+      "image_ids": [
+        "qcm-a2-patinoire-lieu",
+        "co306-piscine-dessine",
+        "co306-bibliotheque-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-patinoire-lieu.png",
+        "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+      ],
+      "image_sha256": [
+        "b8ec0fa9428dd3d8c731b8533ec25ac3e67ad3296f02b4e6350367d69586185f",
+        "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456",
+        "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+      ],
+      "reason": "La petite-fille passera voir sa grand-mère « avant d'aller à la patinoire ». Le club du troisième âge est le lieu de la grand-mère.",
+      "visual_review": "Patinoire, piscine et bibliothèque représentent des catégories de lieux ; pas de portrait inventé des locutrices, pas d'heure dessiné.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}
