@@ -6,13 +6,13 @@ import { fileURLToPath } from 'node:url'
 
 // Register individually reviewed generations without changing the shared TCF bank.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const manifestPath = path.join(root, 'docs/gallery/complements-20261116.json')
+const manifestPath = path.resolve(root, process.argv[2] ?? 'docs/gallery/complements-20261116.json')
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'))
 const hash = file => createHash('sha256').update(readFileSync(file)).digest('hex')
 const dimensions = file => JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'json', file], { encoding: 'utf8' })).streams[0]
 let added = 0
 for (const job of manifest.jobs) {
-  const reviewPath = path.join(root, 'docs/gallery/generation-20261116', job.id + '.json')
+  const reviewPath = path.join(root, manifest.generation_directory ?? 'docs/gallery/generation-20261116', job.id + '.json')
   if (!existsSync(reviewPath)) continue
   const review = JSON.parse(readFileSync(reviewPath, 'utf8'))
   if (review.status !== 'visually_reviewed') continue
@@ -34,7 +34,7 @@ for (const job of manifest.jobs) {
   if (output.width !== width || output.height !== height) throw new Error(`Unexpected dimension change: ${job.id}`)
   const subject = manifest.subjects.find(subject => subject.job === job.id)
   if (!subject) throw new Error(`Missing subject: ${job.id}`)
-  const record = { ...review, aliases: subject.aliases, subtype: ({ Fruit: 'Fruits', Légume: 'Légumes', Plat: 'Plats', Véhicule: 'Véhicules' })[job.type], width, height, bytes: statSync(target).size, sha256: hash(target), source_sha256: hash(review.source_png), reference_sha256: hash(review.reference), conversion: 'PNG to WebP, quality 90; no crop or resize' }
+  const record = { ...review, aliases: subject.aliases, subtype: job.subtype ?? ({ Fruit: 'Fruits', Légume: 'Légumes', Plat: 'Plats', Véhicule: 'Véhicules' })[job.type], width, height, bytes: statSync(target).size, sha256: hash(target), source_sha256: hash(review.source_png), reference_sha256: hash(review.reference), conversion: 'PNG to WebP, quality 90; no crop or resize' }
   manifest.images.push(record)
   Object.assign(job, { status: 'visually_reviewed', source_png: review.source_png, sha256: record.sha256 })
   Object.assign(subject, { status: 'visually_reviewed', path: job.path, sha256: record.sha256 })

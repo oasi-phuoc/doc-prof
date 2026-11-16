@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-16",
+  "base_commit": "9f024ab7fb87d139af0d20efe0ced9cec2fafed4",
+  "new_images": 58,
+  "families": {
+    "Objets scolaires": 20,
+    "Meubles": 18,
+    "Objets de la maison": 20
+  },
+  "reviewed_individually": true,
+  "rejected_attempts_not_published": 2,
+  "production_files_verified": 58,
+  "unit_tests": {
+    "command": "npm run test:gallery",
+    "passed": 10,
+    "failed": 0
+  },
+  "browser_development": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "browser_production": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "build": {
+    "command": "npm run build -- --manifest",
+    "exit_code": 0
+  },
+  "lint_exit_code": 0,
+  "secrets_exit_code": 0,
+  "performance": {
+    "landing": {
+      "gzip": 122359,
+      "maximumGzip": 153600
+    },
+    "pool": {
+      "gzip": 159845,
+      "maximumGzip": 204800
+    },
+    "calibration": {
+      "gzip": 142871,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 145015,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 204157,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 166779,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3138344,
+      "maximumGzip": 3145728
+    }
+  },
+  "sha256": {
+    "docs/gallery/objets-20261116.json": "404089d264d8835d298a999bd112f10a5d8bc4176b049669a8a71771be7d4808",
+    "src/gallery/catalog.generated.json": "cee904d8b516098d71a37a0f9159f9ce35225c7c5a2b020a6ca5c859a449a598",
+    "src/francais/phrase-tcf-pictures.generated.json": "db831819e7457915e6f508fff3b48899d2827d24e824bdbd12448f58436302d0"
+  },
+  "development_note": "Le serveur Vite démarré pendant la création des fichiers avait un index public incomplet pour commode.webp. Le parcours complet passe avec un serveur démarré après la fin du lot. La compilation et les 58 fichiers publiables sont vérifiés séparément."
+}

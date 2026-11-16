@@ -87,6 +87,18 @@ try {
     await page.screenshot({ path: `${output}/gallery-${type}.png`, fullPage: false })
     await page.getByLabel('Rechercher une image', { exact: true }).fill('')
   }
+  await page.getByLabel('Type d’image', { exact: true }).selectOption('Objet')
+  for (const [query, slug] of [['Objets scolaires', 'taille-crayon'], ['Meubles', 'commode'], ['Objets de la maison', 'coussin']]) {
+    await page.getByLabel('Rechercher une image', { exact: true }).fill(query)
+    const card = page.locator('.gallery-card').filter({ has: page.locator(`img[src$="/${slug}.webp"]`) })
+    assert.equal(await card.count(), 1)
+    const [download] = await Promise.all([page.waitForEvent('download'), card.locator('.gallery-download').click()])
+    const saved = `${output}/objects-${slug}.webp`
+    await download.saveAs(saved)
+    const source = new URL(await card.locator('img').getAttribute('src'), base).pathname
+    assert.deepEqual(readFileSync(saved), readFileSync('public' + source))
+  }
+  results.push('Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.')
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Végétal')
   await page.getByLabel('Rechercher une image', { exact: true }).fill('pomme de terre')
   await page.getByRole('heading', { name: 'Aucune image trouvée' }).waitFor()
