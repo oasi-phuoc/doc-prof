@@ -45,14 +45,14 @@ function readMetadata(key: string): RunMetadata | null {
     return { seed: data.seed, selectedKeys: data.selectedKeys as string[] | null, replay: data.replay as number | undefined, options: readPlanOptions(data.options), ...(typeof data.presetId === 'string' && data.presetId.length <= 100 ? { presetId: data.presetId } : {}) }
   } catch { return null }
 }
-export function createGameSource(value: { recipe: FicheRecipe; name: string }, kind: 'demo' | 'draft' | 'saved', sourceId = ''): GameSource {
+export function createGameSource(value: { recipe: FicheRecipe; name: string }, kind: SourceReference['kind'], sourceId = '', defaultOptions?:PlanOptions): GameSource {
   const sourceKey = `${kind}-${hash(canonicalJson({ recipe: value.recipe, sourceId }))}`
   const metadata = readMetadata(sourceKey)
   const seed = metadata?.seed ?? (kind === 'saved' ? nextGameSeed(value.recipe.seed) : value.recipe.seed)
-  return { name: value.name, template: value.recipe, recipe: { ...value.recipe, seed }, sourceKey, selectedKeys: metadata?.selectedKeys ?? null, replay: metadata?.replay ?? 0, options: readPlanOptions(metadata?.options), presetId: metadata?.presetId, ...(sourceId || kind === 'demo' ? { reference: { kind, id: sourceId || 'demo' } } : {}) }
+  return { name: value.name, template: value.recipe, recipe: { ...value.recipe, seed }, sourceKey, selectedKeys: metadata?.selectedKeys ?? null, replay: metadata?.replay ?? 0, options: readPlanOptions(metadata?.options??defaultOptions), presetId: metadata?.presetId, ...(sourceId || kind === 'demo' ? { reference: { kind, id: sourceId || 'demo' } } : {}) }
 }
-export async function loadGameSource(value: { recipe: FicheRecipe; name: string }, kind: 'demo' | 'draft' | 'saved', sourceId = ''): Promise<GameSource> {
-  const source = createGameSource(value, kind, sourceId)
+export async function loadGameSource(value: { recipe: FicheRecipe; name: string }, kind: SourceReference['kind'], sourceId = '', defaultOptions?:PlanOptions): Promise<GameSource> {
+  const source = createGameSource(value, kind, sourceId, defaultOptions)
   const cached = readMetadata(source.sourceKey)
   if (cached || !source.reference) return source
   try {

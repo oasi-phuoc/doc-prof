@@ -7,6 +7,7 @@ import { sourcePlan } from '../domain/source-plan'
 import { TRANSFER_MAX_BYTES, readTransfer, validateTransfer, makeTransfer, downloadTransfer, importTransfer, removeLocalRun, eraseInteractiveData, type SessionTransfer } from '../session-transfer'
 
 export function SessionArchive({ reference, template, title, onOpen, onErased }: { reference: SourceReference; template: FicheRecipe; title: string; onOpen: (run: StoredRun) => void; onErased: () => void }) {
+  const pool=reference.kind==='pool'
   const [runs, setRuns] = useState<LocalRun[]>([])
   const [unavailable, setUnavailable] = useState(0)
   const [limit, setLimit] = useState(10)
@@ -43,14 +44,14 @@ export function SessionArchive({ reference, template, title, onOpen, onErased }:
   }
   return <section className="ci-panel ci-no-print ci-archives">
     <h2>Parties et bilans sur cet appareil</h2>
-    <p>Les parties sont conservées pendant sept jours après leur dernière utilisation. L’export contient l’état, les comptages et vos observations. Il ne contient ni la fiche ni son corrigé ; la fiche d’origine doit rester accessible pour importer ou reprendre.</p>
+    <p>Les parties sont conservées pendant sept jours après leur dernière utilisation. L’export contient l’état, les comptages et vos observations. {pool?'Le pool d’origine doit rester disponible sur cet appareil pour importer ou reprendre.':'Il ne contient ni la fiche ni son corrigé ; la fiche d’origine doit rester accessible pour importer ou reprendre.'}</p>
     <div className="ci-toolbar"><button type="button" disabled={busy} onClick={() => run(refresh)}>Actualiser les parties</button><label className="ci-import-file">Importer une séance<input type="file" accept="application/json,.json" disabled={busy} onChange={(event) => { pick(event.target.files?.[0]); event.target.value = '' }} /></label></div>
-    {runs.length === 0 && <p>Aucune partie conservée pour cette fiche.</p>}
+    {runs.length === 0 && <p>Aucune partie conservée pour {pool?'ce pool':'cette fiche'}.</p>}
     <ol className="ci-archive-list">{runs.slice(0, limit).map((entry) => <li key={entry.gameId} data-session-id={entry.sessionId}><div><b>{entry.completed ? 'Bilan terminé' : 'Partie en cours'} · {entry.mode === 'class' ? 'Classe' : 'Solo'}</b><time dateTime={new Date(entry.updatedAt).toISOString()}>{new Date(entry.updatedAt).toLocaleString('fr-CH')}</time></div><div className="ci-toolbar"><button type="button" disabled={busy} onClick={() => onOpen(entry)}>{entry.completed ? 'Ouvrir ce bilan' : 'Ouvrir cette partie'}</button><button type="button" disabled={busy} onClick={() => exportRun(entry)}>Exporter</button><button type="button" disabled={busy} onClick={() => { setMessage(''); setDeleting(entry) }}>Supprimer</button></div></li>)}</ol>
     {runs.length > limit && <button type="button" onClick={() => setLimit((count) => count + 10)}>Afficher dix parties de plus</button>}
     {unavailable > 0 && <p role="status">{unavailable} sauvegarde(s) d’une version non prise en charge sont conservées sans modification.</p>}
     {message && !deleting && !erasing && !incoming && <p role="status">{message}</p>}
-    <details className="ci-local-erase"><summary>Données locales du jeu</summary><p>L’effacement retire toutes les parties, brouillons, préréglages et préférences du jeu sur cet appareil. Les fiches enregistrées sur le serveur restent disponibles.</p><button type="button" disabled={busy} onClick={() => { setMessage(''); setErasing(true) }}>Effacer les données locales du jeu</button></details>
+    <details className="ci-local-erase"><summary>Données locales du jeu</summary><p>L’effacement retire toutes les parties, pools, brouillons, préréglages et préférences du jeu sur cet appareil. Les fiches enregistrées sur le serveur restent disponibles.</p><button type="button" disabled={busy} onClick={() => { setMessage(''); setErasing(true) }}>Effacer les données locales du jeu</button></details>
     {(deleting || erasing || incoming) && <dialog ref={modal} className="ci-teacher-confirm" aria-labelledby={modalTitle} onCancel={(event) => { event.preventDefault(); close() }}>
       <h2 id={modalTitle}>{incoming ? 'Importer cette séance ?' : erasing ? 'Effacer toutes les données locales du jeu ?' : 'Supprimer cette partie ?'}</h2>
       <p>{incoming ? `Export du ${new Date(incoming.transfer.exportedAt).toLocaleString('fr-CH')} · ${incoming.transfer.session.mode === 'class' ? 'Classe' : 'Solo'} · ${incoming.transfer.bilan.worked} question(s) abordée(s), ${incoming.transfer.bilan.skipped} passée(s). Les sauvegardes existantes ne seront pas remplacées.` : erasing ? 'Les données du jeu seront supprimées de cet appareil. Cette action ne peut pas être annulée.' : 'Cette sauvegarde et son bilan seront supprimés de cet appareil. La fiche serveur sera conservée.'}</p>

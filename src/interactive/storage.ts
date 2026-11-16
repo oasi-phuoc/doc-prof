@@ -1,6 +1,6 @@
 const DATABASE = 'clairfle-interactive'
-const VERSION = 4
-const stores = { sessions: 'gameId', drafts: 'draftId', settings: 'id', 'presets-local': 'presetId' } as const
+const VERSION = 5
+const stores = { sessions: 'gameId', drafts: 'draftId', settings: 'id', 'presets-local': 'presetId', pools:'poolId' } as const
 export type LocalStore = keyof typeof stores
 export const LOCAL_STORAGE_WARNING = 'Impossible de sauvegarder les données du jeu sur cet appareil.'
 let connection: Promise<IDBDatabase> | undefined

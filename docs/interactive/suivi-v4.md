@@ -1,5 +1,7 @@
 # Suivi de la mise en œuvre V4
 
+Les [pools de plusieurs domaines](adr-0060-pools-multidomaines.md) permettent de sélectionner directement les types d’exercices, sans fiche. Le catalogue retire les types non pris en charge et les domaines vides ; la sélection, les réglages, les nouveaux tirages et les reprises restent conservés sur cet appareil.
+
 Ce registre complète les anciennes checklists de livraison. Il distingue les fonctions vérifiées, les incréments encore partiels et les contrôles nécessitant le matériel réel. Les demandes récentes du propriétaire prévalent : Classe sans sélection au tableau ; Solo avec correction et suite automatiques ; 30 mascottes animées et mouvements maintenus même avec la préférence système de réduction des animations ; push de chaque étape validée sur `origin/main`.
 
 ## Priorités P0

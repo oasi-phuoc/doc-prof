@@ -40,7 +40,7 @@ try {
     }
   }
   await page.goto(`${base}/fiches`)
-  await page.getByRole('button', { name: 'Jouer', exact: true }).click()
+  await page.getByRole('button', { name: 'Jouer cette fiche', exact: true }).click()
   await page.waitForURL(`${base}/interactif/${saved.id}`)
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
   const run = await page.evaluate(() => Object.entries(sessionStorage).filter(([key]) => key.startsWith('clairfle.interactive.run.v1.')).map(([key, value]) => ({ key, ...JSON.parse(value) })))

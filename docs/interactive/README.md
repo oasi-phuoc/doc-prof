@@ -2,13 +2,15 @@
 
 [Fonctions réutilisables](etat-utilisable-v4.md) · [Suivi V4](suivi-v4.md) · [Compétition](guide-competition.md) · [Diagnostic](diagnostic-eni.md) · [Feuille enseignant](feuille-enseignant.md) · [Mobile et cartes carrées](livraison-mobile-question-cartes.md)
 
+Le bouton **Jouer en classe** ouvre le [choix direct des exercices](adr-0060-pools-multidomaines.md) : plusieurs types et plusieurs domaines peuvent composer un même pool, sans créer de fiche. Seuls les types pris en charge sont proposés ; les tirages se renouvellent à chaque nouvelle partie. Les pools restent disponibles sur le même appareil.
+
 Le mode Classe est le mode par défaut : chacun répond avec ses cartes physiques, puis l’enseignant conduit la discussion et révèle la correction. Aucun élève ne sélectionne une réponse au tableau. Le bouton icône Classe/Solo change directement le mode.
 
 Les [protections enseignant](livraison-protections-enseignant.md) ajoutent un maintien optionnel pour révéler, un cadenas conservé après actualisation, une annulation de correction pendant dix secondes et une confirmation avant de passer ou terminer. Les raccourcis de phase s’utilisent avec le focus dans les commandes.
 
 Le compteur de questions ouvre la navigation en Classe. Chaque écran retrouve sa phase et son temps restant ; les images déplacées et les relances affichées sont conservées. « Réessayer cette question » garde l’ancien essai et redistribue les cartes mélangées. Voir [états et tentatives](adr-0009-etats-et-tentatives.md).
 
-Depuis le générateur, « Jouer avec la classe » conserve un brouillon local pendant 24 heures après sa dernière ouverture. Son adresse permet de retrouver la préparation après actualisation, dans le même navigateur. Voir [brouillons locaux](adr-0007-brouillons-locaux.md), notamment les limites des images temporaires et le repli lorsque le stockage est indisponible.
+Depuis le générateur, « Jouer cette fiche » conserve un brouillon local pendant 24 heures après sa dernière ouverture. Son adresse permet de retrouver la préparation après actualisation, dans le même navigateur. Voir [brouillons locaux](adr-0007-brouillons-locaux.md), notamment les limites des images temporaires et le repli lorsque le stockage est indisponible.
 
 Les parties et réglages se retrouvent après fermeture de l’onglet dans le même navigateur. Une adresse de séance porte son identifiant local ; les modèles serveur sont toujours chargés en lecture seule. Voir [reprise durable](adr-0010-reprise-durable.md).
 
@@ -24,7 +26,7 @@ Les images des activités d’oral s’annotent dans leur agrandissement : stylo
 
 L’icône trophée ouvre la [compétition](guide-competition.md) : code de salle, trente mascottes sans nom ni pseudo, scores et classement. Les salles Internet nécessitent l’activation du Worker décrite dans le guide ; le défi sur un appareil commun continue sans réseau après préparation complète des médias. Des appareils sans aucun lien entre eux ne peuvent pas partager une salle synchronisée.
 
-Depuis le générateur : **Jouer avec la classe**, puis **Commencer la séance**. Depuis la bibliothèque : **Jouer**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.
+Depuis le menu : **Jouer en classe**, choisir les types puis **Préparer la partie** et **Commencer la séance**. Le générateur et la bibliothèque conservent aussi le raccourci **Jouer cette fiche**. `/interactif/demo` propose dix questions de la banque réelle avec un compte autorisé.
 
 ## Installation et démarrage
 

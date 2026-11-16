@@ -32,7 +32,7 @@ export function Header({
           </span>
           Clair<span className="brand-accent">FLE</span>
         </a>
-        {afterBrand}
+        {afterBrand??<a className="button small topbar-play" href="/interactif" onClick={event=>{if(event.button||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();navigateTo('/interactif');window.dispatchEvent(new PopStateEvent('popstate'))}}>Jouer en classe</a>}
         {createVisible ? (
           <button className="button small" type="button" onClick={onCreate}>
             Créer une fiche

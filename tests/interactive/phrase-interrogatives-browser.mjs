@@ -97,7 +97,7 @@ try {
       await preview.screenshot({path:'docs/gattegno/screenshots/interrogatives-svc.png'})
       await button(page,'Corrigé (cliquer pour fiche élève)').click();await button(page,'Page 1').click()
     }
-    await button(page,'Jouer avec la classe').click();await page.locator('.ci-launch:enabled').waitFor({timeout:120000});await page.locator('.ci-launch').click()
+    await button(page,'Jouer cette fiche').click();await page.locator('.ci-launch:enabled').waitFor({timeout:120000});await page.locator('.ci-launch').click()
     await page.locator('.ci-classification-sentence').waitFor()
     assert.equal(await page.locator('.ci-classification-sentence').innerText(),color[0].model)
     assert.equal(await page.locator('.ci-classification-target').innerText(),color[0].tokens[0].text)

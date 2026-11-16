@@ -353,7 +353,7 @@ export function SavedFichesPage({
                             Ouvrir
                           </button>
                         )}
-                        <button className="button small" type="button" onClick={() => openInteractive(fiche.recipe, fiche.name, fiche.id)}>Jouer</button>
+                        <button className="button small" type="button" onClick={() => openInteractive(fiche.recipe, fiche.name, fiche.id)}>Jouer cette fiche</button>
                         <button className="topbar-text-btn" type="button" onClick={() => setPendingDelete(fiche.id)}>
                           Supprimer
                         </button>
