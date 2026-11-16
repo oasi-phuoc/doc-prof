@@ -2,6 +2,14 @@ import { createRng, shuffle } from '@/math/rng'
 import { deriveSeed, hash } from './seeds'
 import type { ChoiceOrderPolicy, Game, Question } from './types'
 
+/** Integer/decimal IDs share one scale per question; fraction IDs are reduced. */
+export function numericChoiceValue(id: string): [bigint, bigint] | null {
+  const integer = /^n(-?\d+)$/.exec(id)
+  if (integer) return [BigInt(integer[1]!), 1n]
+  const fraction = /^f(-?\d+)_(\d+)$/.exec(id)
+  return fraction && BigInt(fraction[2]!) > 0n ? [BigInt(fraction[1]!), BigInt(fraction[2]!)] : null
+}
+
 const normalized = (value: string) => value.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().trim().replace(/[.!?]+$/, '').replace(/\s+/g, ' ')
 const aggregates = new Set(['aucune de ces reponses', 'aucune des reponses', 'aucune reponse', 'toutes les reponses', 'toutes ces reponses', 'les deux', 'les deux reponses'])
 const isAggregate = (text: string) => aggregates.has(normalized(text))
@@ -92,8 +100,11 @@ export function assignChoicePositions(game: Game, source: Question[]): Question[
       choices = others
     } else if (policy === 'pin-last') choices = [...shuffle(rng, choices.filter((choice) => !isAggregate(choice.text))), ...choices.filter((choice) => isAggregate(choice.text))]
     else if (policy === 'ascending') {
-      if (choices.some((choice) => !/^n-?\d+$/.test(choice.id))) throw new Error('Le tri croissant nécessite des choix numériques vérifiés.')
-      choices.sort((a, b) => BigInt(a.id.slice(1)) < BigInt(b.id.slice(1)) ? -1 : BigInt(a.id.slice(1)) > BigInt(b.id.slice(1)) ? 1 : 0)
+      if (choices.some((choice) => !numericChoiceValue(choice.id))) throw new Error('Le tri croissant nécessite des choix numériques vérifiés.')
+      choices.sort((a, b) => {
+        const [an, ad] = numericChoiceValue(a.id)!, [bn, bd] = numericChoiceValue(b.id)!
+        return an * bd < bn * ad ? -1 : an * bd > bn * ad ? 1 : 0
+      })
     }
     return { ...q, choices, choiceOrderPolicy: isTrueFalse(q) ? 'fixed' : policy, ...(referencesLetters(q) ? { compatibility: 'assisted' as const } : {}) }
   })

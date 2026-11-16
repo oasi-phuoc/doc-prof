@@ -1,5 +1,7 @@
 # État utilisable et réutilisation — V4
 
+Les [fractions exactes](adr-0062-fractions-exactes.md) ajoutent six types d’algèbre dans les pools : numérateur et dénominateur, équivalences, simplification et calculs. Elles s’affichent verticalement avec une barre horizontale ; les cartes ont six valeurs distinctes et le tri reste exact. Les duels réservent de l’espace aux auras au-dessus des mascottes réduites. Voir les [preuves du lot](quality-fractions-results.json).
+
 Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.
 
 Les [pools de plusieurs domaines](adr-0060-pools-multidomaines.md) permettent de sélectionner directement les types d’exercices, sans fiche. Le catalogue retire les types non pris en charge et les domaines vides ; la sélection, les réglages, les nouveaux tirages et les reprises restent conservés sur cet appareil.
@@ -15,7 +17,7 @@ Complément du 14 novembre : la [banque Gattegno](../gattegno/README.md) conserv
 | Élément existant | Utilisable / réutilisable | Limites connues |
 |---|---|---|
 | Générateur et fiches v1 | Recettes, banques, rendu imprimable et navigation réutilisés | Huit erreurs de génération repérées dans l’inventaire ; aucun remaniement de banque fait pour les masquer |
-| Conversion vers le jeu | 746 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases de deux à douze éléments manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
+| Conversion vers le jeu | 755 variantes sur 2 150, recalculées par l’inventaire ; calculs exacts, rangs numériques et alphabétiques, phrases de deux à douze éléments manipulables, S-V-C et phrases en images guidés | Un tirage par type, deux items, niveau par défaut ; validation de toutes les graines et variantes non acquise |
 | Modes Classe et Solo | Vote collectif, protections enseignant ; états et minuteurs conservés par écran, nouvelles tentatives et essais archivés ; Solo automatique | Mécaniques avancées encore à étendre |
 | Compétition | Code de salle, 30 mascottes sans pseudo, scores serveur, classement et reprise dans l’onglet ; défi local sur un appareil commun après préparation complète ; duels avec vies, attaque propre à chaque mascotte et tournoi par équipes tirées au sort | Code vérifié avec le moteur Cloudflare ; activation du Worker de production à faire par l’administrateur ; appareils séparés non synchronisables sans réseau ; démarrage à froid hors ligne non couvert |
 | Minuteurs et médias | Minuteur facultatif, battement de 1 à 10 s, pause, reprise et précontrôle des médias ; transcription CO facultative après les corrections, avec suspension du battement Solo pendant la lecture | Préchargement manuel des images, audios et 30 mascottes en Classe et Solo ; page ouverte jouable sans réseau ; démarrage à froid et rechargement hors ligne encore ouverts |

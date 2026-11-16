@@ -1,6 +1,6 @@
 import { createRng, shuffle } from '@/math/rng'
 import { canonicalJson, deriveSeed, hash } from './seeds'
-import { choiceOrderPolicy } from './slots'
+import { choiceOrderPolicy, numericChoiceValue } from './slots'
 import { sourcePosition, positionOf } from './source-position'
 export { positionOf } from './source-position'
 import type { Game } from './types'
@@ -47,7 +47,7 @@ export function applyPlanOptions(game: Game, options: PlanOptions): Game {
         issues.push({ source: q.prompt, reason: `${choices.length} choix source conservés sur ${q.choices.length}, avec la bonne réponse.` })
       }
     }
-    return { ...q, choices, ...(!fixed && options.numericOrder && choices.every((choice) => /^n-?\d+$/.test(choice.id)) ? { choiceOrderPolicy: 'ascending' as const } : {}) }
+    return { ...q, choices, ...(!fixed && options.numericOrder && choices.every((choice) => numericChoiceValue(choice.id)) ? { choiceOrderPolicy: 'ascending' as const } : {}) }
   })
   if (options.orderMode === 'shuffled') questions = shuffle(createRng(deriveSeed({ originalSeed: game.seed ?? hash(game.id), sourceKey: 'questions', purpose: 'order' })), options.loto?lotoClusters(questions):questions.map(q=>[q])).flat()
   if (options.orderMode === 'custom') {

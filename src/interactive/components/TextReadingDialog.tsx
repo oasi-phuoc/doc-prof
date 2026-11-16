@@ -5,8 +5,9 @@ import type { Question } from '../domain/types'
 import { NumberSequenceView } from './NumberSequenceView'
 import { WordClassificationView } from './WordClassificationView'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
+import { FractionText } from './FractionText'
 
-export function TextReadingDialog({ title, text, images = [], grammarImages, figure, numberSequence, wordClassification, onClose }: { title: string; text: string; images?: string[]; grammarImages?: Question['grammarImages']; figure?: Question['figure']; numberSequence?: Question['numberSequence']; wordClassification?: Question['wordClassification']; onClose: () => void }) {
+export function TextReadingDialog({ title, text, images = [], grammarImages, figure, numberSequence, wordClassification, fractionNotation = false, onClose }: { title: string; text: string; images?: string[]; grammarImages?: Question['grammarImages']; figure?: Question['figure']; numberSequence?: Question['numberSequence']; wordClassification?: Question['wordClassification']; fractionNotation?: boolean; onClose: () => void }) {
   const dialog = useRef<HTMLDialogElement>(null)
   useEffect(() => {
     const previous = document.activeElement, element = dialog.current
@@ -17,7 +18,7 @@ export function TextReadingDialog({ title, text, images = [], grammarImages, fig
     <div className="ci-text-dialog-head"><h2>{title}</h2><button onClick={onClose}>Fermer la lecture</button></div>
     <div className="ci-text-dialog-body" tabIndex={0} role="region" aria-label="Texte complet, défilement avec les flèches">
       <GrammarImageSupports supports={grammarImages}/>
-      <p>{text}</p>{numberSequence && <NumberSequenceView sequence={numberSequence} />}{wordClassification && <WordClassificationView classification={wordClassification} />}{figure && <div className="ci-reading-figure"><GeometryFigure type={figure.type} dims={figure.dims} /></div>}{images.map((src, i) => <SafeImage key={`${src}:${i}`} src={src} alt={`Document ${i + 1}`} retryable={false} />)}
+      <p><FractionText text={text} enabled={fractionNotation}/></p>{numberSequence && <NumberSequenceView sequence={numberSequence} />}{wordClassification && <WordClassificationView classification={wordClassification} />}{figure && <div className="ci-reading-figure"><GeometryFigure type={figure.type} dims={figure.dims} /></div>}{images.map((src, i) => <SafeImage key={`${src}:${i}`} src={src} alt={`Document ${i + 1}`} retryable={false} />)}
     </div>
   </dialog>
 }

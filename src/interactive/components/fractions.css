@@ -1,0 +1,4 @@
+.ci-fraction { display: inline-block; vertical-align: middle; white-space: nowrap; margin: .04em .08em; }
+.ci-fraction-digits { display: inline-grid; grid-template-rows: auto auto; text-align: center; vertical-align: middle; font-size: .82em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.ci-fraction-digits::before { content: attr(data-numerator); padding: 0 .18em .12em; border-bottom: .075em solid currentColor; }
+.ci-fraction-digits::after { content: attr(data-denominator); padding: .12em .18em 0; }

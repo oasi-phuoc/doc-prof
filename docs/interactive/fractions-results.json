@@ -1,0 +1,55 @@
+{
+  "results": [
+    {
+      "viewport": "390x844",
+      "mode": "class",
+      "pool": "Seven fraction types plus addition, source order, no worksheet service.",
+      "offline": "All eight questions played after complete preparation and network cut.",
+      "correction": "Teacher only; answer in its colored card and all other cards gray, no duplicate answer.",
+      "resume": "Same revealed fraction, cards and key after clearing sessionStorage and reload.",
+      "layout": "All answer cards and controls fit; automated axe checks pass."
+    },
+    {
+      "viewport": "1366x768",
+      "mode": "class",
+      "pool": "Seven fraction types plus addition, source order, no worksheet service.",
+      "offline": "All eight questions played after complete preparation and network cut.",
+      "correction": "Teacher only; answer in its colored card and all other cards gray, no duplicate answer.",
+      "resume": "Same revealed fraction, cards and key after clearing sessionStorage and reload.",
+      "layout": "All answer cards and controls fit; automated axe checks pass."
+    },
+    {
+      "viewport": "360x640",
+      "mode": "class",
+      "pool": "Seven fraction types plus addition, source order, no worksheet service.",
+      "offline": "All eight questions played after complete preparation and network cut.",
+      "correction": "Teacher only; answer in its colored card and all other cards gray, no duplicate answer.",
+      "resume": "Same revealed fraction, cards and key after clearing sessionStorage and reload.",
+      "layout": "All answer cards and controls fit; automated axe checks pass."
+    },
+    {
+      "mode": "solo",
+      "answers": "Correct, incorrect and timeout, then automatic one-second feedback through the report.",
+      "newPart": "New source seed; same pool configuration, selection and ascending order; stored pool unchanged."
+    },
+    {
+      "mode": "local-competition",
+      "network": "Disabled after media preparation.",
+      "turns": "Two mascots, correct and incorrect answers with the same six rational cards and correction."
+    },
+    {
+      "mode": "duel",
+      "viewport": "844x390",
+      "network": "Disabled after battle preparation.",
+      "result": "Six stacked rational cards per player, first correct ×4 answer defeats the opponent with 40 HP; full charge aura stays below the question and the round reaches its result."
+    }
+  ],
+  "worksheetApiRequests": [],
+  "competitionAvailabilityChecks": [
+    "GET",
+    "GET",
+    "GET",
+    "GET"
+  ],
+  "pageErrors": []
+}

@@ -12,6 +12,7 @@ import { verifiedNumericAudio } from './audio-math'
 import { adaptNumeracy } from './numeracy'
 import { verifiedWrittenArithmetic } from './written-arithmetic'
 import { decimalChoices } from './decimal-choices'
+import { verifiedFractions, fractionChoices } from './fractions'
 import { adaptOrdering } from './ordering'
 import { verifiedGeometry } from './geometry'
 import { adaptRecognition } from './recognition'
@@ -271,6 +272,17 @@ export function convertRecipe(
               q.choices = entry.choices
               add(q, entry.model, entry.correctId)
             })
+            return
+          }
+          const fractions = verifiedFractions(item, block.exerciseType)
+          if (fractions) {
+            if ('reason' in fractions) { reject(fractions.reason); return }
+            const q = base()
+            q.prompt = fractions.prompt
+            q.compatibility = 'assisted'
+            const choices = fractionChoices(fractions.value, fractions.correctText, deriveSeed({ originalSeed: recipe.seed, sourceKey: q.id, purpose: 'distractors' }), fractions.integer, fractions.distractors)
+            q.choices = choices.choices
+            add(q, fractions.model, choices.correctId)
             return
           }
           const numeracy = adaptNumeracy(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))

@@ -1,5 +1,7 @@
 # ClairFLE — jouer avec la classe
 
+Les [fractions exactes](adr-0062-fractions-exactes.md) ajoutent six types aux pools : numérateur et dénominateur, équivalences, simplification, addition et soustraction, multiplication, division. Elles s’affichent verticalement avec une barre horizontale. Les six cartes ont des valeurs distinctes et se trient sans arrondi. Les comparaisons restent disponibles. Les mascottes des duels sont réduites, avec de l’espace pour leurs auras sous la question.
+
 Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) ajoutent la vie maximale jusqu’à 200, les probabilités configurables ×2/×3/×4, un quatrième critique avec charge/tir ou implosion, et trente mascottes adultes avec tous leurs états. Le nombre de PV reste coloré et gras ; un coup potentiellement fatal avertit sa victime.
 
 [Fonctions réutilisables](etat-utilisable-v4.md) · [Suivi V4](suivi-v4.md) · [Compétition](guide-competition.md) · [Diagnostic](diagnostic-eni.md) · [Feuille enseignant](feuille-enseignant.md) · [Mobile et cartes carrées](livraison-mobile-question-cartes.md)
@@ -118,7 +120,7 @@ Les [nombres et calculs oraux](adr-0024-sequences-audio.md) lisent tous leurs ex
 
 Les [comparaisons et suites numériques](adr-0026-comparaisons-et-suites.md) proposent les signes `<`, `=` et `>` ou une question par case manquante. Les nombres de la fiche et son aide sont conservés ; la case demandée est encadrée, les autres blancs restent masqués et la correction apparaît uniquement dans les cartes. Entiers, décimaux et fractions sont vérifiés exactement ; les suites doivent avoir un pas constant. Ces activités fonctionnent aussi en compétition.
 
-Les [calculs à trou, divisions et décimaux](adr-0027-calculs-a-trou-et-decimaux.md) gardent l’équation de la fiche et sa case manquante. Les résultats décimaux sont exacts, les calculs ambigus ou incohérents sont signalés, et le jeu conserve ses parcours Classe, Solo et compétition. Les fractions non décimales, les quotients arrondis et les divisions avec reste demandent encore une adaptation.
+Les [calculs à trou, divisions et décimaux](adr-0027-calculs-a-trou-et-decimaux.md) gardent l’équation de la fiche et sa case manquante. Les résultats décimaux sont exacts, les calculs ambigus ou incohérents sont signalés, et le jeu conserve ses parcours Classe, Solo et compétition. Les [calculs fractionnaires du thème Fractions](adr-0062-fractions-exactes.md) ont leur adaptateur exact. Les quotients arrondis et les divisions avec reste demandent encore une adaptation.
 
 L’[ordre des nombres et des lettres](adr-0028-classements-et-phrases.md) propose une question par position avec les éléments source comme cartes, tout en montrant la liste complète. Les phrases courtes à remettre en ordre réutilisent les mots manipulables et la validation humaine. Les classements stricts avec nombres répétés et les phrases trop longues sont signalés avant de jouer.
 

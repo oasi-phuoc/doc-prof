@@ -27,7 +27,7 @@ export function useReadableQuestion(contentKey: string) {
     root.addEventListener('load', loaded, true)
     root.addEventListener('click', loaded)
     window.addEventListener('resize', loaded)
-    void root.ownerDocument.fonts.ready.then(() => { if (!disposed) measure(true) })
+    void root.ownerDocument.fonts?.ready?.then(() => { if (!disposed) measure(true) })
     measure(true)
     return () => { disposed = true; cancelAnimationFrame(frame); observer?.disconnect(); root.removeEventListener('load', loaded, true); root.removeEventListener('click', loaded); window.removeEventListener('resize', loaded) }
   }, [contentKey])

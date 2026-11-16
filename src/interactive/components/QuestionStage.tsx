@@ -26,6 +26,8 @@ import {PhraseImageRow} from '@/components/math/PhraseImageRow'
 import './guided-oral.css'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
 import { GrammarCountryPrompt } from '@/components/grammar/GrammarCountryPrompt'
+import { FractionText } from './FractionText'
+import { isFractionQuestion } from '../domain/fraction-notation'
 import { useReadableQuestion } from '../layout/useReadableQuestion'
 import '../layout/readability.css'
 import type {ImageAnnotationControls} from './ImageAnnotationEditor'
@@ -91,6 +93,7 @@ export function QuestionStage({
     q.choices.some((entry) => entry.id === correctChoiceId)
   const picturePair=q.mode==='choice'&&q.images.length===1&&q.choices.length>0&&q.choices.every(choice=>!choice.image)&&!q.context&&!q.figure
   const availableWords=q.choices.length-unavailableChoiceIds.length
+  const fractions = isFractionQuestion(q.prompt)
   return (
     <>
       <section ref={section} className={`ci-question${picturePair?' ci-picture-pair':''}${q.matchingGroup?' ci-matching-question':''}`}>
@@ -99,7 +102,7 @@ export function QuestionStage({
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
           )}
-          <span className="ci-question-prompt">{drop.available?<WordBlankPrompt question={q} target={drop.target} value={proposed?.text} pending={pending?.text} hover={drop.drag?.target===0?dragged?.text:undefined} disabled={drop.blocked||!pending&&!proposed} onDeposit={drop.deposit} onEscape={drop.escape}/>:<GrammarCountryPrompt text={playPrompt(q.prompt)} gender={q.grammarCountryGender}/>}</span>
+          <span className="ci-question-prompt">{drop.available?<WordBlankPrompt question={q} target={drop.target} value={proposed?.text} pending={pending?.text} hover={drop.drag?.target===0?dragged?.text:undefined} disabled={drop.blocked||!pending&&!proposed} onDeposit={drop.deposit} onEscape={drop.escape}/>:fractions?<FractionText text={q.prompt}/>:<GrammarCountryPrompt text={playPrompt(q.prompt)} gender={q.grammarCountryGender}/>}</span>
         </h1>
         {drop.available&&phase!=='revealed'&&<p className="ci-word-drop-help">{canSelect?'Glissez une carte, ou touchez-la.':'Glissez une carte, ou touchez-la puis le blanc.'}</p>}
         {q.matchingGroup && !q.lotoBoard && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}
@@ -184,7 +187,7 @@ export function QuestionStage({
                       retryable={false}
                     />
                   )}
-                  {choice.text && <span>{choice.text}</span>}
+                  {choice.text && <span><FractionText text={choice.text} enabled={fractions}/></span>}
                 </span>
                 {(verdict || correctAnswer) && (
                   <span className="ci-answer-verdict">
@@ -218,7 +221,7 @@ export function QuestionStage({
       )}
       {report.manualScroll && !q.wordSorting && q.mode!=='memory' && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
       {drop.available&&<><span className="ci-sr-only" role="status">{drop.announcement}</span><SequenceDragGhost drag={drop.drag}>{dragged&&drop.drag&&<div className="ci-word-drop-ghost" style={{background:colors[slotOffset+drop.drag.source],color:inkForColor(colors[slotOffset+drop.drag.source]!)}}><b>{PALETTE[slotOffset+drop.drag.source]!.letter}</b><span>{dragged.text}</span></div>}</SequenceDragGhost></>}
-      {reading !== null && <TextReadingDialog title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.mode==='memory'&&phase!=='revealed'?[]:q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
+      {reading !== null && <TextReadingDialog fractionNotation={fractions} title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [q.prompt, q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.mode==='memory'&&phase!=='revealed'?[]:q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}
     </>
   )
 }
