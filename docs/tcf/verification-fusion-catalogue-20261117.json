@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-17",
+  "feature_commit": "6b23fe25",
+  "merged_main": "3951cdcde059376739a11bef150c737f887983de",
+  "prior_verification": "verification-trios-piscine-loisirs-courrier-20261117.json",
+  "unchanged_verified_tcf_sources": [
+    "src/tcf/content",
+    "src/components/tcf",
+    "src/tcf/generate.ts",
+    "src/App.css",
+    "public/lib/audio"
+  ],
+  "new_png_hashes_preserved": true,
+  "incoming_gattegno_images_preserved": 11,
+  "gallery_images": 7247,
+  "keyword_audit": {
+    "total": 7247,
+    "visually_reviewed": 18,
+    "pending": 3675,
+    "not_started": 3554,
+    "by_collection": {
+      "TCF": 3693,
+      "Vocabulaire": 2226,
+      "Gattegno": 225,
+      "Grammaire": 32,
+      "Logique": 952,
+      "Identité visuelle": 13,
+      "Jeux et interactif": 106
+    }
+  },
+  "reviewed_keyword_paths": [
+    "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+    "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+    "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+    "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+    "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png",
+    "/lib/images/tcf/qcm-audit/qcm-loisirs-dvd-pyjama.png",
+    "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png",
+    "/lib/images/tcf/qcm-audit/qcm-courrier-feuilles-stylos-ivoire.png",
+    "/lib/images/tcf/qcm-audit/qcm-loisirs-jeux-baskets.png",
+    "/lib/images/tcf/qcm-audit/qcm-loisirs-livres-maillot.png",
+    "/lib/images/tcf/qcm-audit/qcm-piscine-lunettes-maillots.png",
+    "/lib/images/tcf/qcm-audit/qcm-loisirs-lunettes-bijoux-appareils-photo.png",
+    "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-deux-pieces.png",
+    "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-une-piece.png",
+    "/lib/images/tcf/qcm-audit/qcm-piscine-serviettes-bonnets.png",
+    "/lib/images/tcf/qcm-audit/qcm-piscine-shorts-bermudas.png",
+    "/lib/images/tcf/qcm-audit/qcm-piscine-maillot-bonnet.png",
+    "/lib/images/tcf/qcm-audit/qcm-service-uniforme-tablier.png"
+  ],
+  "search": {
+    "piscine": {
+      "before": {
+        "results": 43,
+        "clocks": 15
+      },
+      "after": {
+        "results": 27,
+        "clocks": 0
+      }
+    },
+    "chat": {
+      "before": {
+        "results": 76,
+        "clocks": 3
+      },
+      "after": {
+        "results": 33,
+        "clocks": 0
+      }
+    },
+    "envoyer": {
+      "before": {
+        "results": 27,
+        "clocks": 3
+      },
+      "after": {
+        "results": 6,
+        "clocks": 0
+      }
+    },
+    "horloge": {
+      "before": {
+        "results": 452,
+        "clocks": 450
+      },
+      "after": {
+        "results": 452,
+        "clocks": 450
+      }
+    }
+  },
+  "catalogue_tests": {
+    "passed": 21,
+    "failed": 0
+  },
+  "gallery_production_browser": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      "Piscine, chat et envoyer ne remontent plus les horloges réutilisées ; horloge conserve ses résultats.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
+      "Chaque famille publiée du quotidien est recherchable et son téléchargement conserve les octets de l’illustration contrôlée.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les scènes sont accessibles par le type Scénario ; la recherche de réservation téléphonique retrouve le réemploi hôtel existant sans mots-clés de niveau pédagogique.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "palette_production_browser": {
+    "results": [
+      {
+        "width": 390,
+        "metrics": {
+          "display": "grid",
+          "gap": "8px",
+          "columns": 3
+        },
+        "card_min_height": 122,
+        "color_change": true,
+        "shape_change": true,
+        "six_distinct_shapes": true,
+        "no_horizontal_overflow": true,
+        "no_internal_button_overflow": true
+      },
+      {
+        "width": 1366,
+        "metrics": {
+          "display": "grid",
+          "gap": "14px",
+          "columns": 3
+        },
+        "card_min_height": 122,
+        "color_change": true,
+        "shape_change": true,
+        "six_distinct_shapes": true,
+        "no_horizontal_overflow": true,
+        "no_internal_button_overflow": true
+      }
+    ],
+    "errors": []
+  },
+  "palette_styles": "Styles loaded with the lazy editor; narrow-screen controls and choices stay inside their cards.",
+  "typescript": true,
+  "production_build": true,
+  "production_budgets": {
+    "landing": {
+      "gzip": 122552,
+      "maximumGzip": 153600
+    },
+    "pool": {
+      "gzip": 160798,
+      "maximumGzip": 204800
+    },
+    "calibration": {
+      "gzip": 143194,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 145326,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 204580,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 167671,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3143106,
+      "maximumGzip": 3145728
+    }
+  },
+  "budget_limits_unchanged": true,
+  "palette_stylesheet_sha256": "0353b5aedbeff814f87b3a1e9d0d33c1b55a567a53660e71691bb5536a0fb617"
+}

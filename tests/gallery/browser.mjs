@@ -130,7 +130,7 @@ try {
   assert(await page.locator('.gallery-card').count() > 0)
   results.push('Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.')
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
-  await page.getByLabel('Rechercher une image', { exact: true }).fill('CO CFR A2')
+  await page.getByLabel('Rechercher une image', { exact: true }).fill('')
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Scénario')
   assert(await page.locator('.gallery-card').count() >= 13)
   await page.waitForFunction(() => {
@@ -144,7 +144,7 @@ try {
   await page.getByLabel('Rechercher une image', { exact: true }).fill('reservation telephonique')
   assert.equal(await page.locator('.gallery-card').count(), 1)
   assert.match(await page.locator('.gallery-card img').getAttribute('src'), /receptionniste\.webp$/)
-  results.push('Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.')
+  results.push('Les scènes sont accessibles par le type Scénario ; la recherche de réservation téléphonique retrouve le réemploi hôtel existant sans mots-clés de niveau pédagogique.')
   await page.getByRole('button', { name: 'Effacer les filtres', exact: true }).click()
   await page.getByLabel('Rechercher une image', { exact: true }).fill('extension573-cadeau')
   assert.equal(await page.locator('.gallery-card').count(), 3)

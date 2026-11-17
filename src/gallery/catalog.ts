@@ -18,7 +18,10 @@ export const galleryImages: GalleryImage[] = data.map(image => ({
 }))
 export function filterGallery(images: GalleryImage[], query: string, theme: string, type: string, collection: string) {
   const terms = normalizeSearch(query).split(/\s+/).filter(Boolean)
-  return images.filter(image => (!theme || image.themes.includes(theme)) && (!type || image.types.includes(type)) && (!collection || image.collection === collection) && terms.every(term => normalizeSearch([image.label, image.id, image.keywords, ...image.themes, ...image.types].join(' ')).includes(term)))
+  return images.filter(image => {
+    const filename = image.id.split('/').pop()?.replace(/\.[^.]+$/, '') ?? ''
+    return (!theme || image.themes.includes(theme)) && (!type || image.types.includes(type)) && (!collection || image.collection === collection) && terms.every(term => normalizeSearch([image.label, filename, image.keywords, ...image.types].join(' ')).includes(term))
+  })
 }
 export function formatBytes(bytes: number) {
   return bytes >= 1024 * 1024 ? `${(bytes / 1024 / 1024).toLocaleString('fr', { maximumFractionDigits: 1 })} Mo` : `${Math.max(1, Math.round(bytes / 1024))} Ko`

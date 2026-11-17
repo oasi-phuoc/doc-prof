@@ -80,6 +80,20 @@ test('gallery replacements require approved images and retain the original bytes
   }
 })
 
+test('visual search keywords exclude exercise prompts and audio transcriptions', () => {
+  const catalog = buildGalleryCatalog(process.cwd())
+  const find = suffix => catalog.find(image => image.id.endsWith(suffix))
+  const clock = find('/qcm-audit/co834-horloge-1000-dessinee.webp')
+  assert(clock.keywords.toLowerCase().includes('horloge'))
+  assert(!clock.keywords.includes('Quelle heure'))
+  assert(!clock.keywords.includes('co834-horloge'))
+  const scenes = JSON.parse(readFileSync('src/tcf/association-image-themes.json')).sources
+  for (const scene of scenes) {
+    const image = catalog.find(entry => entry.src === scene.image)
+    if (image) assert(!image.keywords.includes(scene.transcription))
+  }
+})
+
 test('CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios', () => {
   const catalogue = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
   const exercises = JSON.parse(readFileSync('src/tcf/content/a1-a2/co.json'))

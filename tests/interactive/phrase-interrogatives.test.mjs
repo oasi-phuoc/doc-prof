@@ -21,8 +21,8 @@ try {
   const { convertRecipe } = await vite.ssrLoadModule('/src/interactive/domain/convert.ts')
   const { defaultPage } = await vite.ssrLoadModule('/src/math/catalog.ts')
   const { demoRecipe } = await vite.ssrLoadModule('/src/interactive/demo.ts')
-  const get = (source, lemma, form, cats) => {
-    const result = interrogativeCandidates(tagged(source), [lemma], cats).find(q => q.form === form)
+  const get = (source, lemma, form, cats, picturedChoice=false) => {
+    const result = interrogativeCandidates(tagged(source), [lemma], cats, picturedChoice).find(q => q.form === form)
     assert.ok(result, `${form}: ${source}`); return result
   }
   const sentence = q => phraseSentence(q.tokens, true, true)
@@ -65,6 +65,11 @@ try {
     }
     assert.equal(sentence(get('Tu/pronom embrasses/verbe son/determinant amie/nom','embrasser','quel')), 'Quelle amie embrasses-tu ?')
   })
+  await test('lequel refers to the pictured backpack choice without repeating the noun', () => {
+    const q=get('Tu/pronom choisis/verbe un/determinant sac/nom','choisir','lequel',undefined,true)
+    assert.equal(sentence(q),'Lequel choisis-tu ?')
+    assert.equal(q.tokens[0].category,'pronom')
+  })
   await test('qui, que and quoi retain pronoun roles, remove their target and elide que before a vowel', () => {
     assert.equal(sentence(get('La/determinant voisine/nom chante/verbe une/determinant chanson/nom', 'chanter', 'qui')), 'Qui chante une chanson ?')
     assert.equal(sentence(get('Tu/pronom aides/verbe une/determinant voisine/nom', 'aider', 'qui')), 'Qui aides-tu ?')
@@ -79,6 +84,12 @@ try {
     assert.equal(sentence(get('La/determinant fille/nom joue/verbe dans/preposition le/determinant parc/nom','jouer','où')), 'Où la fille joue-t-elle ?')
     assert.equal(sentence(get('Il/pronom vient/verbe de/preposition l’/determinant école/nom','venir','où')), 'D’où vient-il ?')
     for (const [s, lemma] of [['Il/pronom pense/verbe à/preposition l’/determinant école/nom','penser'],['Il/pronom voyage/verbe en/preposition train/nom','voyager']]) assert.ok(!interrogativeCandidates(tagged(s),[lemma]).some(q => q.form === 'où'))
+  })
+  await test('à qui replaces a human recipient with a correctly formed interrogative', () => {
+    const q=get('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom','donner','a-qui')
+    assert.equal(sentence(q),'À qui donnes-tu un livre ?')
+    assert.deepEqual(q.tokens.slice(0,2).map(token=>token.text),['à','qui'])
+    assert.ok(!interrogativeCandidates(tagged('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom'),['donner'],{preposition:false}).some(item=>item.form==='a-qui'))
   })
   await test('quand, comment, combien and pourquoi are adverbs with no repeated time, manner or counted object', () => {
     for (const [source, lemma, form, expected] of [

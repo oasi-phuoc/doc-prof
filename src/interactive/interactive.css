@@ -293,33 +293,6 @@
   font-size: 14px;
   color: var(--ci-muted);
 }
-.ci-palette-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin: 20px 0;
-}
-.ci-palette-card {
-  border: 1px solid var(--ci-line);
-  border-radius: 16px;
-  overflow: hidden;
-  display: grid;
-  gap: 10px;
-  padding: 12px;
-}
-.ci-palette-card > .ci-card-badge {
-  padding: 18px 8px;
-  background: var(--card-color);
-  border-radius: 10px;
-}
-.ci-palette-card label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 14px;
-}
 .ci-session {
   max-width: 1640px;
   padding: 8px 32px 24px;
@@ -963,9 +936,6 @@
   .ci-phase-next {
     font-size: 13px;
   }
-  .ci-palette-card {
-    padding: 8px;
-  }
 }
 @media (max-width: 600px) {
   .ci-header {
@@ -987,12 +957,6 @@
   }
   .ci-card-badge {
     font-size: 30px;
-  }
-  .ci-palette-grid {
-    gap: 8px;
-  }
-  .ci-palette-card label {
-    font-size: 12px;
   }
   .ci-session {
     padding: 8px 12px 24px;

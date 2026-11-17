@@ -67,6 +67,8 @@ Le lot demandé de 87 validations et quatre corrections d’édition est termin�
 3. **Fiches enregistrées dans D1** : les droits TCF/TCM CSC et CFR du compte `jebosseplus` et l’enregistrement passent les contrôles locaux ([preuves](acces-full-et-trios-20261116.md)). La vérification des anciennes fiches et du Worker en production reste à effectuer avec l’accès serveur ; l’URL publique ne donne pas cet accès.
 4. Refaire le contrôle contextuel des questions, images, tags et corrigés après chaque changement audio, puis publier les lots vérifiés sur `origin/main`.
 
+5. **Indexation visuelle du catalogue** : dix-huit images TCF du dernier lot ont des titres et mots-clés relus sur les fichiers finaux ; **3 675 images TCF restent en attente de revue des mots-clés**. Ce suivi porte sur les fichiers existants, avec leur empreinte et leur statut individuel ([registre](../gallery/audit-mots-cles-tcf-20261117.json)).
+
 ## Rappels de fichiers
 
 Le rappel des pistes 31, 46, 53 et 54 est **annulé** : elles appartenaient à la collection de nouvelles voix désormais exclue. Le PDF A1 Piste76.pdf reste absent du lot documentaire ; ce point n’empêche pas la clôture du lot demandé.

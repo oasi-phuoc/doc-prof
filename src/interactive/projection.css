@@ -124,30 +124,6 @@
   width: 100px;
   height: 116px;
 }
-.ci-app .ci-palette-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-  align-items: stretch;
-}
-.ci-app .ci-palette-card {
-  display: grid;
-  grid-template-rows: 122px 48px 48px;
-  gap: 12px;
-}
-.ci-app .ci-palette-card > .ci-card-badge {
-  font-size: 38px;
-}
-.ci-app .ci-palette-card label {
-  display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: 8px;
-  align-items: center;
-}
-.ci-app .ci-palette-card select {
-  width: 100%;
-  min-width: 0;
-}
 .ci-app .ci-session {
   max-width: 1800px;
   padding: 24px 18px;
@@ -561,13 +537,6 @@
   }
   .ci-app .ci-dual-session .ci-answer-content img {
     height: 70px;
-  }
-  .ci-app .ci-palette-card {
-    grid-template-rows: 110px auto auto;
-  }
-  .ci-app .ci-palette-card label {
-    grid-template-columns: 1fr;
-    font-size: 12px;
   }
 }
 @media print {

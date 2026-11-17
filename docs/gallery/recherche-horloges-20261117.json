@@ -1,6 +1,6 @@
 {
   "date": "2026-11-17",
-  "cause": "Les énoncés et thèmes de tous les exercices utilisateurs d’une image étaient fusionnés avec son sujet. Les choix QCM sont désormais indexés par leurs réponses, avec les métadonnées propres à l’image.",
+  "cause": "Les énoncés et thèmes des exercices étaient indexés avec les choix d’images. La recherche utilise désormais le titre, les mots-clés visuels, le nom de fichier et le type, avec la provenance conservée séparément.",
   "queries": {
     "piscine": {
       "before": {
@@ -18,7 +18,7 @@
         "clocks": 3
       },
       "after": {
-        "results": 35,
+        "results": 33,
         "clocks": 0
       }
     },
@@ -43,6 +43,21 @@
       }
     }
   },
+  "keyword_audit": {
+    "total": 7247,
+    "visually_reviewed": 18,
+    "pending": 3675,
+    "not_started": 3554,
+    "by_collection": {
+      "TCF": 3693,
+      "Vocabulaire": 2226,
+      "Gattegno": 225,
+      "Grammaire": 32,
+      "Logique": 952,
+      "Identité visuelle": 13,
+      "Jeux et interactif": 106
+    }
+  },
   "production_browser": {
     "passed": true,
     "results": [
@@ -62,7 +77,7 @@
       "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
       "Chaque famille publiée du quotidien est recherchable et son téléchargement conserve les octets de l’illustration contrôlée.",
       "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
-      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Les scènes sont accessibles par le type Scénario ; la recherche de réservation téléphonique retrouve le réemploi hôtel existant sans mots-clés de niveau pédagogique.",
       "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
       "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
       "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
@@ -70,5 +85,5 @@
     ],
     "browserErrors": []
   },
-  "existing_files_preserved": true
+  "existing_image_bytes_preserved": true
 }

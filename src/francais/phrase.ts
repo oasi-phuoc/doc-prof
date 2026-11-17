@@ -124,7 +124,7 @@ function pickPhrase(
   const positive=passive?passivePhrase(tokens,infinitives,passiveAgent):tokens
   if(!positive)throw new Error(`Cette construction ne peut pas être transformée à la voix passive : ${frame.id} — ${joinPhrase(tokens)}`)
   const final=negative?withNegation(positive,passive?infinitives.map(()=>'être'):infinitives):positive
-  const interrogative=question?interrogativePhrase(final,infinitives,rng,usedQuestions,categories):undefined
+  const interrogative=question?interrogativePhrase(final,infinitives,rng,usedQuestions,categories,illustrated):undefined
   const result=interrogative?.tokens??final
   return {...builtFromTokens(result,frame.id,frame.rightId),sentence:phraseSentence(result,question,!!interrogative),...(interrogative?{question:true,questionForm:interrogative.form}:{})}
 }
@@ -192,7 +192,7 @@ export function tryGeneratePhraseBatch(
   group: PhraseVerbGroup = 'er',
   polarity?: PhrasePolarity,
   categories?: PhraseCategories,
-  imageLabels=false,
+  imageLabels=true,
   sentenceType:PhraseSentenceType='declarative',
   voice:PhraseVoice='active',
 ): PhraseBatch | null {
@@ -243,7 +243,7 @@ export function tryGeneratePhraseBatch(
     const items:MathItem[]=[],seen=new Set<string>()
     for(const [index,negative] of polarities.entries()){
       for(let attempt=0;attempt<64;attempt++){
-        const phrase=pickPhrase(rng,theme,used,passiveFlags[index]?passives:frames,negative,true,passiveFlags[index],questions[index],categories?.preposition!==false,usedQuestions,categories),clues=phraseImageClues(phrase.tokens,phrase.verbInfinitives)
+        const phrase=pickPhrase(rng,theme,used,passiveFlags[index]?passives:frames,negative,true,passiveFlags[index],questions[index],categories?.preposition!==false,usedQuestions,categories),clues=phraseImageClues(phrase.tokens,phrase.verbInfinitives,phrase.questionForm)
         if(!clues||seen.has(phrase.sentence))continue
         seen.add(phrase.sentence)
         items.push({layout:'phrase-images',tokens:phrase.tokens,...(phrase.question?{phraseQuestion:true,phraseQuestionForm:phrase.questionForm}:{}),phraseImages:clues,phraseImageLabels:imageLabels,writeLines:1,answer:phrase.sentence,responseAnswer:phrase.sentence})
