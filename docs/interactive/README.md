@@ -1,5 +1,7 @@
 # ClairFLE — jouer avec la classe
 
+Les [fractions TPM mixtes](adr-0065-fractions-tpm-mixtes.md) proposent les réductions et les quatre opérations dans une même série du pool, avec six questions par défaut. Les corrigés sont vérifiés exactement ; Classe, Solo et compétition conservent leurs parcours habituels.
+
 L’[accueil épuré du mode jeu](adr-0064-accueil-et-preparation.md) propose **Exercices ou fiche** et **Imprimer les cartes**. Les réglages et les bilans apparaissent après le choix du contenu. Les réglages du chrono, du mode, de la mascotte et du contraste sont regroupés dans une fenêtre ; les préréglages et le préchargement restent disponibles dans ses rubriques. Une fois les questions choisies, le lancement, les compétitions et les supports à imprimer sont accessibles par leurs boutons.
 
 Les [fractions illustrées](adr-0063-lecture-des-fractions-illustrees.md) ajoutent la lecture des figures TPM et TCM CFR aux pools de plusieurs domaines, en Classe, Solo, défi local et duel. La forme et ses parties coloriées suivent le tirage source ; les six propositions ont des valeurs distinctes et les fractions sont verticales. Les salles vérifient la prise en charge de cette activité par le serveur avant leur création.

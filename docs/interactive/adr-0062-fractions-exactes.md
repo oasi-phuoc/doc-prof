@@ -28,7 +28,7 @@ Les mascottes des duels et tournois sont réduites selon l’espace disponible. 
 
 Le rendu des fiches imprimables et leurs générateurs ne sont pas modifiés. Les nouvelles parties changent la graine et gardent les types et réglages sélectionnés. Les six types ne proposent pas le réglage générique de plage de nombres : leurs générateurs choisissent leurs numérateurs et dénominateurs indépendamment de cette plage. Le catalogue des pools est reconstruit et certifié avec les générateurs réels, sur trois graines et les seize positions de source.
 
-Les lectures de figures TPM et TCM CFR sont ajoutées par l’[ADR 0063](adr-0063-lecture-des-fractions-illustrees.md). Le coloriage, les figures multiples, les calculs fractionnaires TPM composés, les expressions libres et les autres fractions hors de ces formats demandent encore leurs adaptateurs. Les anciens exercices de comparaison gardent leur conversion.
+Les lectures de figures TPM et TCM CFR sont ajoutées par l’[ADR 0063](adr-0063-lecture-des-fractions-illustrees.md). Les réductions et opérations binaires de la série TPM mixte sont ajoutées par l’[ADR 0065](adr-0065-fractions-tpm-mixtes.md). Le coloriage, les figures multiples, les calculs fractionnaires TPM composés, les expressions libres et les autres fractions hors de ces formats demandent encore leurs adaptateurs. Les anciens exercices de comparaison gardent leur conversion.
 
 ## Preuves
 

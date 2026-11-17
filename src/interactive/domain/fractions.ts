@@ -33,6 +33,13 @@ const divide = (a: Rational, b: Rational) => reduced(a.numerator * b.denominator
 /** Verify the meaning of the source prompt as well as its answer. In particular,
  * a/b ÷ c/d divides by the entire second fraction, never by c and then by d. */
 export function verifiedFractions(item: MathItem, exerciseType: string): Verified | undefined {
+  if (exerciseType === 'tpm-fractions-mixte' && item.layout === 'inline') {
+    const label = item.labels?.length === 1 ? item.labels[0] : undefined
+    const type = label === 'frac-reduce-partial' ? 'fractions-equivalentes' : label === 'frac-reduce' ? 'fractions-simplifier' : label === 'frac-op'
+      ? item.op === '+' || item.op === '−' ? 'fractions-add' : item.op === '×' ? 'fractions-mul' : item.op === '÷' ? 'fractions-div' : undefined
+      : undefined
+    return type ? verifiedFractions(item, type) : { reason: 'Fractions : cette variante TPM doit préciser une réduction ou une opération prise en charge.' }
+  }
   if (!TYPES.has(exerciseType) || item.layout !== 'inline') return undefined
   const fail = (reason: string): Verified => ({ reason: `Fractions : ${reason}` })
   if (typeof item.prompt !== 'string' || item.prompt.length > 256 || typeof item.answer !== 'string' || item.answer.length > 100) return fail('énoncé absent ou format à adapter.')
