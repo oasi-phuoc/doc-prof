@@ -184,3 +184,25 @@ test('school, household and furniture complements are reviewed, searchable and c
   }
   for (const subject of manifest.subjects) assert.equal(subject.status, 'visually_reviewed')
 })
+
+test('daily-life illustrations keep reviewed originals and searchable family names', () => {
+  const manifest = JSON.parse(readFileSync('docs/gallery/quotidien-20261116.json', 'utf8'))
+  const catalog = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
+  assert.equal(manifest.jobs.length, 161)
+  assert(manifest.images.length > 0 && manifest.images.length <= manifest.jobs.length)
+  assert.equal(new Set(manifest.images.map(image => image.path)).size, manifest.images.length)
+  for (const image of manifest.images) {
+    assert.equal(image.status, 'visually_reviewed')
+    assert(image.review_note && image.source_sha256 && image.reference_sha256)
+    assert(image.width >= 1200 && image.height >= 900 && Math.abs(image.width / image.height - 4 / 3) < .002)
+    assert.equal(createHash('sha256').update(readFileSync('public' + image.path)).digest('hex'), image.sha256)
+    assert.equal(statSync('public' + image.path).size, image.bytes)
+    assert.deepEqual(catalog.get(image.path).types, ['Objet'])
+    assert.equal(catalog.get(image.path).label, image.label)
+    assert(catalog.get(image.path).themes.includes(image.subtype))
+  }
+  for (const subject of manifest.subjects) {
+    if (subject.status === 'visually_reviewed') assert(catalog.has(subject.path))
+    else assert(!manifest.images.some(image => image.id === subject.job), 'unfinished subjects are never published')
+  }
+})

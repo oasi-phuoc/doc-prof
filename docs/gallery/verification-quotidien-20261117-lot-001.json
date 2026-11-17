@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-17",
+  "milestone": 1,
+  "published_images": 48,
+  "planned_subjects": 161,
+  "complete": false,
+  "unit_tests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "browser_production": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
+      "Chaque famille publiée du quotidien est recherchable et son téléchargement conserve les octets de l’illustration contrôlée.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "build_command": "npm run build -- --manifest",
+  "build_exit_code": 0,
+  "lint_exit_code": 0,
+  "production_files_verified": 48,
+  "sha256": {
+    "docs/gallery/quotidien-20261116.json": "fb1870d31cb0d7ca84b5b3fa1d221306c011128585d83d5da18013c35c0cb1a2",
+    "src/gallery/catalog.generated.json": "296dd517740383a6cd1e0173fb00605766bbb88f928cce3aee288351cba13737",
+    "src/francais/phrase-tcf-pictures.generated.json": "f6afac89fc2ebe764c91d8fc6366874da82b5abe194d51d8f3a3883c4664b1e4"
+  }
+}

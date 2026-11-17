@@ -99,6 +99,18 @@ try {
     assert.deepEqual(readFileSync(saved), readFileSync('public' + source))
   }
   results.push('Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.')
+  const dailyImages = JSON.parse(readFileSync('docs/gallery/quotidien-20261116.json', 'utf8')).images
+  for (const family of [...new Set(dailyImages.map(image => image.subtype))]) {
+    const image = dailyImages.find(image => image.subtype === family)
+    await page.getByLabel('Rechercher une image', { exact: true }).fill(`${family} ${image.label}`)
+    const card = page.locator('.gallery-card').filter({ has: page.locator(`img[src$="${image.path}"]`) })
+    assert.equal(await card.count(), 1)
+    const [download] = await Promise.all([page.waitForEvent('download'), card.locator('.gallery-download').click()])
+    const saved = `${output}/daily-${image.id}.webp`
+    await download.saveAs(saved)
+    assert.deepEqual(readFileSync(saved), readFileSync('public' + image.path))
+  }
+  results.push('Chaque famille publiée du quotidien est recherchable et son téléchargement conserve les octets de l’illustration contrôlée.')
   await page.getByLabel('Type d’image', { exact: true }).selectOption('Végétal')
   await page.getByLabel('Rechercher une image', { exact: true }).fill('pomme de terre')
   await page.getByRole('heading', { name: 'Aucune image trouvée' }).waitFor()
