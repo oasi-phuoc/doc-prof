@@ -25,7 +25,7 @@ try{
   const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message))
   await page.goto(base+'/interactif');await page.getByRole('heading',{name:'On joue ?'}).waitFor({timeout:120000})
   const before=requests.length
-  await page.getByRole('button',{name:/^Exercices ou fiche/}).click()
+  await page.getByRole('button',{name:/^Contenu/}).click()
   await page.getByRole('combobox',{name:'Domaine des exercices'}).selectOption('algèbre')
   await page.locator('input[data-pool-type="addition-ligne"]').check()
   assert.equal(requests.length,before,'The pool chooser must not request worksheets.')
@@ -51,7 +51,7 @@ try{
   await page.getByRole('button',{name:'Supports à imprimer',exact:true}).click()
   await page.getByRole('spinbutton',{name:'Jeux de cartes'}).waitFor();await page.keyboard.press('Escape')
   // Errors, retries and empty libraries stay inside the chooser.
-  state='error';await page.goto(base+'/interactif');await page.getByRole('button',{name:/^Exercices ou fiche/}).click();await page.getByRole('button',{name:'Fiches enregistrées',exact:true}).click()
+  state='error';await page.goto(base+'/interactif');await page.getByRole('button',{name:/^Contenu/}).click();await page.getByRole('button',{name:'Fiches enregistrées',exact:true}).click()
   await page.getByRole('alert').waitFor();state='empty';await page.getByRole('button',{name:'Réessayer le chargement des fiches'}).click()
   await page.getByRole('status').filter({hasText:'Aucune fiche enregistrée.'}).waitFor()
   results.push({viewport:`${width}x${height}`,checks:['No worksheet fetch in Exercises','Direct server worksheet list','Domain access checked against recipe pages','Pagination and accent-insensitive search','Exercise selection retained across source changes','Saved worksheet preparation, competition and print remain reachable','Error, retry and empty-library states'],axeViolations:0})

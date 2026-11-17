@@ -418,14 +418,14 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                     )}
                   </div>
                   <div className="ci-setup-actions">
-                    <SetupAction icon="folder" title="Exercices ou fiche" detail={`${activeGame.questions.length} questions sélectionnées`} onClick={() => setSetupPanel('content')} />
+                    <SetupAction icon="folder" title="Contenu" detail={`${activeGame.questions.length} questions sélectionnées`} onClick={() => setSetupPanel('content')} />
                     <SetupAction icon="timer" title="Préparer la séance" detail="Mode, chrono, mascotte et options" onClick={() => setSetupPanel('settings')} />
                     <SetupAction opensDialog={false} icon="trophy" title="Compétition" detail="Duel, équipes ou salle en ligne" disabled={!header.onCompetition} onClick={() => header.onCompetition?.()} />
                     <SetupAction icon="console" title="Parties et bilans" detail="Reprendre ou retrouver une séance" onClick={() => setSetupPanel('history')} />
                   </div>
                   <button type="button" onClick={() => setSetupPanel('print')}><span aria-hidden="true">▤</span>Supports à imprimer</button>
                 </div>
-                {setupPanel === 'content' && <SetupDialog title="Exercices ou fiche" onClose={() => setSetupPanel(null)} wide>
+                {setupPanel === 'content' && <SetupDialog title="Contenu" onClose={() => setSetupPanel(null)} wide>
                   <div className="ci-setup-links"><a href="/interactif">Choisir un nouveau pool d’exercices</a><a href="/fiches">Ouvrir une fiche</a>{poolId && <a href={`/interactif?edit=${poolId}`}>Modifier les exercices du pool</a>}</div>
                   <h3>Questions de cette partie</h3>
                     <div className="ci-toolbar">

@@ -71,10 +71,26 @@ try {
         .inputValue(),
       '30',
     )
-    await page.getByText('Palette de la classe', { exact: true }).click()
     await page
-      .getByRole('combobox', { name: 'Forme de la carte A' })
-      .selectOption('cross')
+      .getByText('Couleurs et symboles des cartes', { exact: true })
+      .click()
+    await page.getByRole('button', { name: 'Modifier la carte A' }).click()
+    await page
+      .getByRole('button', { name: 'Changer la couleur de la carte A' })
+      .click()
+    await page.getByRole('button', { name: 'Rose pour la carte A' }).click()
+    assert.equal(
+      await page
+        .locator('.ci-palette-card-preview')
+        .first()
+        .evaluate((el) => getComputedStyle(el).backgroundColor),
+      'rgb(242, 195, 208)',
+    )
+    assert.equal(await page.locator('.ci-palette-card select').count(), 0)
+    await page
+      .getByRole('button', { name: 'Changer la forme de la carte A' })
+      .click()
+    await page.getByRole('button', { name: 'Croix', exact: true }).click()
     const shapeLabels = await page
       .locator('.ci-palette-card > .ci-card-badge .ci-shape')
       .evaluateAll((els) => els.map((el) => el.getAttribute('aria-label')))

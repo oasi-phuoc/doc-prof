@@ -19,7 +19,7 @@ async function setup(width,height,mode='class'){
  await context.addInitScript(mode=>{sessionStorage.setItem('clairfle.interactive.mode.v1',mode);localStorage.setItem('clairfle.interactive.timer.v1',JSON.stringify({enabled:mode==='solo',seconds:5,feedbackSeconds:1}))},mode)
  await context.route('**/__unused_fiches/**',route=>{if(!route.request().url().endsWith('/competition/status'))requests.push(route.request().method());return route.fulfill({status:503,contentType:'application/json',body:'{}'})})
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.setDefaultTimeout(30000)
- await page.goto(base+'/interactif');await page.getByRole('button',{name:/^Exercices ou fiche/}).click()
+ await page.goto(base+'/interactif');await page.getByRole('button',{name:/^Contenu/}).click()
  await page.getByRole('combobox',{name:'Domaine des exercices'}).selectOption('tpm')
  await page.locator('input[data-pool-type="tpm-fractions-mixte"]').check()
  const entry=page.locator('[data-selected-pool-type="tpm-fractions-mixte"]');await entry.locator('summary').click()

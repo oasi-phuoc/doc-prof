@@ -33,11 +33,11 @@ try{
   if(width===390){await page.pdf({path:`${output}/cartes-accueil.pdf`,preferCSSPageSize:true,printBackground:true});assert.match(execFileSync('pdfinfo',[`${output}/cartes-accueil.pdf`],{encoding:'utf8'}),/Pages:\s+4/)}
   await page.emulateMedia({media:'screen'});await close(page,'Imprimer les cartes')
 
-  await action(page,'Exercices ou fiche').click();await page.getByRole('combobox',{name:'Domaine des exercices'}).selectOption('algèbre')
+  await action(page,'Contenu').click();await page.getByRole('combobox',{name:'Domaine des exercices'}).selectOption('algèbre')
   await page.locator('input[data-pool-type="addition-ligne"]').check()
   const entry=page.locator('[data-selected-pool-type="addition-ligne"]');await entry.locator('summary').click();await entry.getByRole('spinbutton',{name:/Nombre d’éléments/}).fill('2')
   await fit(page);await axe(page);await page.screenshot({path:`${output}/pool-${width}.png`})
-  await page.keyboard.press('Escape');await action(page,'Exercices ou fiche').click()
+  await page.keyboard.press('Escape');await action(page,'Contenu').click()
   assert.equal(await page.locator('input[data-pool-type="addition-ligne"]').isChecked(),true)
   await page.locator('[data-selected-pool-type="addition-ligne"] summary').click();assert.equal(await page.locator('[data-selected-pool-type="addition-ligne"]').getByRole('spinbutton',{name:/Nombre d’éléments/}).inputValue(),'2')
   await page.getByRole('button',{name:'Préparer la partie',exact:true}).click();await page.waitForURL(url=>url.searchParams.has('pool'))
@@ -68,7 +68,7 @@ try{
   await page.getByRole('button',{name:'Enregistrer le préréglage',exact:true}).click()
   await page.getByRole('status').filter({hasText:'Préréglage enregistré sur cet appareil.'}).waitFor()
   await close(page,'Préparer la séance')
-  await action(page,'Exercices ou fiche').click();assert.equal(await page.locator('.ci-question-list fieldset > label').count(),2)
+  await action(page,'Contenu').click();assert.equal(await page.locator('.ci-question-list fieldset > label').count(),2)
   await page.locator('.ci-question-list fieldset > label').last().locator('input').uncheck()
   await page.getByRole('button',{name:'Valider la sélection'}).click()
   await page.locator('.ci-launch:enabled').waitFor();assert.match(await page.locator('.ci-setup-welcome').innerText(),/1 question/)
@@ -93,7 +93,7 @@ try{
   await page.getByRole('button',{name:'Ouvrir ce bilan',exact:true}).click();await page.locator('.ci-summary').waitFor()
   await page.getByRole('button',{name:'Terminer',exact:true}).click();await page.locator('.ci-launch:enabled').waitFor()
   // The pool's own history is reachable from the clean entry page too.
-  await page.goto(base+'/interactif');await action(page,'Exercices ou fiche').click()
+  await page.goto(base+'/interactif');await action(page,'Contenu').click()
   await page.getByText('Pools enregistrés sur cet appareil',{exact:true}).click();await page.getByRole('link',{name:'Ouvrir',exact:true}).click();await page.locator('.ci-launch:enabled').waitFor();await action(page,'Parties et bilans').click();await dialog(page,'Parties et bilans').waitFor()
   assert.equal(new URL(page.url()).searchParams.get('pool'),poolId)
   await close(page,'Parties et bilans');await action(page,'Compétition').click()

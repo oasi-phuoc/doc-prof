@@ -6,7 +6,7 @@ Les [duels à vie infinie](adr-0066-vie-infinie-et-questions.md) limitent les no
 
 Les [fractions TPM mixtes](adr-0065-fractions-tpm-mixtes.md) ajoutent les réductions avec ou sans terme manquant, puis les quatre opérations avec fractions signées. Le pool respecte les six questions disponibles et conserve les nouvelles graines et les reprises. Les expressions à plusieurs opérations et puissances restent ouvertes.
 
-L’[accueil du jeu](adr-0064-accueil-et-preparation.md) propose désormais uniquement le choix **Exercices ou fiche**, avec deux onglets, et **Imprimer les cartes**. La préparation, les compétitions et les bilans sont accessibles après la sélection du contenu.
+L’[accueil du jeu](adr-0064-accueil-et-preparation.md) propose désormais uniquement **Contenu**, avec deux onglets, et **Imprimer les cartes**. La préparation, les compétitions et les bilans sont accessibles après la sélection du contenu.
 
 Les [fractions illustrées](adr-0063-lecture-des-fractions-illustrees.md) ajoutent la lecture des figures TPM et TCM CFR aux pools de plusieurs domaines, en Classe, Solo, défi local et duel. La forme et ses parties coloriées suivent le tirage source ; les six propositions ont des valeurs distinctes et les fractions sont verticales. Les salles vérifient la prise en charge de cette activité par le serveur avant leur création.
 

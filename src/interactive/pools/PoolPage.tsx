@@ -36,10 +36,10 @@ export default function PoolPage({initialPreferences,initialWarning}:{initialPre
    <div className="ci-setup-welcome"><p className="ci-eyebrow">En classe ou en solo</p><h1>On joue ?</h1><p>Choisissez vos exercices, puis préparez votre partie.</p></div>
    {warning&&<p className="ci-notice" role="status">{warning}</p>}
    <div className="ci-setup-actions">
-    <SetupAction icon="folder" title="Exercices ou fiche" detail={entries.length?`${entries.length} types sélectionnés`:'Composer un pool ou ouvrir une fiche'} onClick={()=>setPanel('content')}/>
+    <SetupAction icon="folder" title="Contenu" detail={entries.length?`${entries.length} types sélectionnés`:'Composer un pool ou ouvrir une fiche'} onClick={()=>setPanel('content')}/>
     <SetupAction icon="card" title="Imprimer les cartes" detail="Cartes A–F, recto verso" onClick={()=>setPanel('print')}/>
    </div>
-   {panel==='content'&&<SetupDialog title="Exercices ou fiche" onClose={()=>setPanel(null)} wide>
+   {panel==='content'&&<SetupDialog title="Contenu" onClose={()=>setPanel(null)} wide>
     <div className="ci-source-tabs" role="group" aria-label="Choisir la source des questions"><button type="button" aria-pressed={sourceTab==='exercises'} onClick={()=>setSourceTab('exercises')}>Exercices</button><button type="button" aria-pressed={sourceTab==='fiches'} onClick={()=>{setFichesOpened(true);setSourceTab('fiches')}}>Fiches enregistrées</button></div>
     {fichesOpened&&<div hidden={sourceTab!=='fiches'}><Suspense fallback={<LoadingScreen variant="inline" title="Chargement des fiches…"/>}><FicheChooser onChoose={id=>go(`/interactif/${encodeURIComponent(id)}`)}/></Suspense></div>}
     <div hidden={sourceTab!=='exercises'}>
