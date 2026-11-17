@@ -1,0 +1,88 @@
+{
+  "date": "2026-11-17",
+  "baseline": "12062d02b22837d272ffce79e69e3b6bb9975748",
+  "feature_commit": "087072a3",
+  "merged_main": "272da44cd9442c68fb9cd19452b2f885546d059f",
+  "checks": {
+    "layout_transcriptions_fonts_saved_fiche_access": {
+      "passed": 21,
+      "failed": 0
+    },
+    "image_and_audio_catalogs": {
+      "passed": 19,
+      "failed": 0
+    },
+    "qcm_bank_variants": 2460,
+    "qcm_shuffle_regressions": 12,
+    "tcf_exercises": 1355,
+    "indexed_tcf_audios_and_pools": 1371,
+    "game_pool_types": 697,
+    "typescript": true,
+    "production_build": true
+  },
+  "browser": {
+    "proof": "reglages-mise-en-page-20261117-browser.json",
+    "cases": 4,
+    "errors": [],
+    "domains": [
+      "tcf-csc",
+      "tcf-cfr",
+      "tpf"
+    ],
+    "widths": [
+      1440,
+      390
+    ],
+    "old_frame_break_undo": true,
+    "student_and_correction_print": true,
+    "no_printed_footer_overlap": true,
+    "saved_fiche_api": "mocked local API; production Worker not exercised"
+  },
+  "unchanged_against_merged_main": [
+    "src/tcf/content",
+    "public/lib/images",
+    "public/lib/audio",
+    "public/fonts/interface",
+    "src/interactive"
+  ],
+  "optional_worksheet_font": {
+    "family": "didact-gothic",
+    "file": "didact-gothic-v1.ttf",
+    "bytes": 194200,
+    "sha256": "b98f9e091b6337a86f4e0f69c94c31905e1e287782853f472e176b4e28d3f81f",
+    "source": "https://github.com/google/fonts/tree/main/ofl/didactgothic",
+    "license": "SIL OFL 1.1"
+  },
+  "production_budgets": {
+    "landing": {
+      "gzip": 122552,
+      "maximumGzip": 153600
+    },
+    "pool": {
+      "gzip": 160965,
+      "maximumGzip": 204800
+    },
+    "calibration": {
+      "gzip": 143353,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 145488,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 204756,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 167833,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3141520,
+      "maximumGzip": 3145728
+    }
+  },
+  "budget_limits_unchanged": true,
+  "font_loading": "Worksheet font preferences and styles loaded with worksheet components; default interface fonts unchanged."
+}

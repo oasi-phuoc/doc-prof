@@ -1,7 +1,8 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { navigateTo } from './routing'
 import { SheetFontSelect } from './SheetFontSelect'
-import { applySheetFont, readSheetFont, applyBaseFontSize, MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE, readBaseFontSize } from './typography'
+import { applyBaseFontSize, MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE, readBaseFontSize } from './typography'
+import { applySheetFont, readSheetFont } from './sheet-font'
 
 export function SettingsIcon() {
   return <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="m9 3-.6 2.2-2 .9-2-.6-2 3.5 1.5 1.6v2.8L2.4 15l2 3.5 2-.6 2 .9.6 2.2h4l.6-2.2 2-.9 2 .6 2-3.5-1.5-1.6v-2.8L19.6 9l-2-3.5-2 .6-2-.9L13 3Z"/><circle cx="11" cy="12" r="3"/></svg>

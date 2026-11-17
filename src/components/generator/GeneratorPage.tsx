@@ -23,7 +23,8 @@ import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
-import { applyBaseFontSize, readBaseFontSize, applySheetFont, readSheetFont } from '@/components/generator/typography'
+import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
+import { applySheetFont, readSheetFont } from '@/components/generator/sheet-font'
 import {
   isA5DoubleFormat,
   pageForA5Half,

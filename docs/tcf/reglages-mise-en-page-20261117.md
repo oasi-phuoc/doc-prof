@@ -19,5 +19,6 @@ Les banques, fichiers audio et illustrations ne sont pas modifiés par cette rep
 - Enregistrement et réouverture de la recette vérifiés avec une API simulée ; aucun enregistrement sur le serveur de production n’est effectué par ces essais.
 - Les vues élève et corrigé sont contrôlées en impression, sans chevauchement des questions avec le pied de page et sans boutons de réglage imprimés.
 - TypeScript, compilation de production, plafonds de poids, 2 460 variantes QCM, banque TCF et catalogue des jeux passent.
+- Les 19 tests des catalogues image et audio passent après la fusion des trois dernières modifications de `main`. Leurs changements de jeux et de fractions sont conservés. Le catalogue compte 697 types de jeu.
 
-Les résultats détaillés des parcours sont dans [la preuve navigateur](reglages-mise-en-page-20261117-browser.json).
+Les réglages de police et leurs styles sont chargés avec les fiches ; les polices de l’interface et les sept plafonds de poids restent inchangés. Les résultats détaillés sont dans [la preuve navigateur](reglages-mise-en-page-20261117-browser.json) et [le relevé de vérification](verification-reglages-mise-en-page-20261117.json).

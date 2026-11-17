@@ -6444,8 +6444,3 @@ textarea.pill-input,
 @media screen and (max-width:700px) {
  .topbar-brand:has(.topbar-play):has(> button) .button { flex:1; min-width:0; max-width:100px; padding:6px 4px; font-size:12px; line-height:1.15; white-space:normal; text-align:center; }
 }
-
-/* La police de la fiche reste indépendante du document de lecture CE. */
-.worksheet-sheet,.a5-half{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
-.tcf-ce-doc .tcf-assoc-people,.tcf-ce-doc .tcf-assoc-people-title{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
-.a4-frame .worksheet-sheet .tcf-audio-cadre-q>.tcf-question-page-chip{top:var(--tcf-audio-text-nudge,0);left:calc(100% + var(--tcf-audio-body-pad-x,3mm) + 1.5px + var(--ex-pad-x) + 2px);right:auto}

@@ -1,0 +1,69 @@
+.ci-app .ci-setup-home { max-width: 960px; padding-top: clamp(28px,6vh,64px); }
+.ci-app .ci-setup-welcome { margin-bottom: 28px; }
+.ci-app .ci-setup-welcome h1 { font-size: clamp(32px,4vw,48px); overflow-wrap: anywhere; }
+.ci-app .ci-setup-welcome > p:not(.ci-eyebrow) { color: var(--ci-muted); }
+.ci-app .ci-setup-actions { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin: 24px 0; }
+.ci-app .ci-setup-action { justify-content: flex-start; text-align: left; min-height: 100px; padding: 20px; gap: 16px; border-radius: 20px; }
+.ci-app .ci-setup-action > span:nth-child(2) { flex: 1; min-width: 0; }
+.ci-app .ci-setup-action b { display: block; font-size: 18px; }
+.ci-app .ci-setup-action small { display: block; color: var(--ci-muted); font-size: 14px; font-weight: 400; margin-top: 4px; }
+.ci-app .ci-setup-action-icon { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 auto; border-radius: 14px; color: var(--ci-accent); background: var(--ci-soft); }
+.ci-app .ci-setup-action-arrow { color: var(--ci-muted); font-size: 28px; }
+.ci-app .ci-setup-start { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 24px 0; }
+.ci-app .ci-setup-start .ci-launch { margin: 0; width: auto; min-height: 56px; }
+.ci-app .ci-setup-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin: 20px 0; }
+.ci-app .ci-setup-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.ci-app .ci-setup-dialog { width: min(760px,calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 0; margin: auto; border: 1px solid var(--ci-line); border-radius: 24px; background: var(--ci-paper); color: var(--ci-ink); box-shadow: 0 24px 90px #18223838; overflow: hidden; }
+.ci-app .ci-setup-dialog[open] { display: flex; flex-direction: column; }
+.ci-app .ci-setup-dialog::backdrop { background: #18223899; }
+.ci-app .ci-setup-dialog-wide { width: min(1180px,calc(100% - 32px)); }
+.ci-app .ci-setup-dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; border-bottom: 1px solid var(--ci-line); flex-shrink: 0; }
+.ci-app .ci-setup-dialog-head h2 { margin: 0; font-size: clamp(21px,3vw,27px); }
+.ci-app .ci-setup-dialog-body { overflow: auto; overscroll-behavior: contain; padding: 24px; min-height: 0; }
+.ci-app .ci-setup-dialog .ci-panel { padding: 0; border: 0; border-radius: 0; margin-bottom: 24px; }
+.ci-app .ci-setup-dialog .ci-pool-layout .ci-panel { margin: 0; }
+.ci-app .ci-session-settings { display: grid; gap: 24px; }
+.ci-app .ci-session-settings fieldset { border: 0; border-bottom: 1px solid var(--ci-line); padding: 0 0 24px; margin: 0; min-width: 0; }
+.ci-app .ci-session-settings legend { font-weight: 750; font-size: 19px; padding: 0; margin-bottom: 12px; }
+.ci-app .ci-settings-modes { display: flex; gap: 12px; }
+.ci-app .ci-settings-modes button { flex: 1; }
+.ci-app .ci-session-settings button[aria-pressed='true'] { border: 2px solid var(--ci-accent); background: var(--ci-soft); }
+.ci-app .ci-settings-toggle { display: flex; flex-direction: row; align-items: center; gap: 12px; min-height: 44px; }
+.ci-app .ci-settings-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+.ci-app .ci-settings-fields label { display: flex; flex-direction: column; gap: 8px; }
+.ci-app .ci-settings-fields input[type='number'] { width: 100%; min-height: 44px; }
+.ci-app .ci-session-settings small { color: var(--ci-muted); }
+.ci-app .ci-settings-mascots summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ci-app .ci-settings-mascots summary .ci-mascot { width: 56px; height: 56px; min-width: 0; }
+.ci-app .ci-settings-mascot-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 16px; }
+.ci-app .ci-settings-mascot-grid button { min-width: 0; padding: 8px; }
+.ci-app .ci-settings-mascot-grid .ci-mascot { width: 96px; height: 96px; max-width: 100%; }
+.ci-app .ci-settings-extra { border-top: 1px solid var(--ci-line); padding-top: 12px; }
+.ci-app .ci-setup-home-header .ci-header-start { flex: 1; justify-content: space-between; }
+.ci-app .ci-source-tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+.ci-app .ci-source-tabs button { flex: 1; }
+.ci-app .ci-source-tabs button[aria-pressed='true'] { background: var(--ci-soft); border-color: var(--ci-accent); }
+.ci-app .ci-fiche-chooser > label { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.ci-app .ci-fiche-chooser input { width: 100%; min-height: 48px; padding: 10px; font: inherit; border: 1px solid var(--ci-line); border-radius: 8px; color: var(--ci-ink); background: var(--ci-paper); }
+.ci-app .ci-fiche-chooser ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.ci-app .ci-fiche-chooser li { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 16px; border: 1px solid var(--ci-line); border-radius: 14px; }
+.ci-app .ci-fiche-chooser li > div { flex: 1 1 230px; min-width: 0; overflow-wrap: anywhere; }
+.ci-app .ci-fiche-chooser h3 { font-size: 19px; margin: 0; }
+.ci-app .ci-fiche-chooser li p { margin: 4px 0 0; color: var(--ci-muted); font-size: 14px; }
+@media screen and (max-width:700px) {
+  .ci-app .ci-setup-home { padding: 24px 16px 32px; }
+  .ci-app .ci-setup-welcome { margin-bottom: 20px; }
+  .ci-app .ci-setup-actions { grid-template-columns: 1fr; gap: 10px; margin: 20px 0; }
+  .ci-app .ci-setup-action { padding: 14px; min-height: 82px; border-radius: 16px; gap: 12px; }
+  .ci-app .ci-setup-action b { font-size: 17px; }
+  .ci-app .ci-setup-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: 18px; }
+  .ci-app .ci-setup-dialog-head { padding: 12px 16px; gap: 8px; }
+  .ci-app .ci-setup-dialog-body { padding: 16px; }
+  .ci-app .ci-settings-fields { grid-template-columns: 1fr; }
+  .ci-app .ci-setup-start .ci-launch { width: 100%; }
+  .ci-app .ci-setup-home-header .ci-header-start { width: 100%; }
+}
+@media print {
+  .ci-app .ci-setup-dialog[open],.ci-app .ci-setup-dialog-body { position: static; display: block; width: auto; max-width: none; height: auto; max-height: none; overflow: visible; padding: 0; margin: 0; border: 0; box-shadow: none; }
+  .ci-app .ci-setup-dialog::backdrop { display: none; }
+}

@@ -1,5 +1,5 @@
-export type SheetFontId = 'arial' | 'gothic'
-export type CeTextFontId = SheetFontId | 'marelle' | 'playwrite'
+import type { CeTextFontId } from './font-ids'
+export type { SheetFontId, CeTextFontId } from './font-ids'
 
 export const SHEET_FONTS = [
   { id: 'arial', label: 'Classique (proche d’Arial)', family: "'DM Sans', Arial, sans-serif" },
@@ -14,8 +14,4 @@ export const CE_TEXT_FONTS = [
 
 export function textFontFamily(id: CeTextFontId = 'arial'): string {
   return CE_TEXT_FONTS.find(font => font.id === id)?.family ?? SHEET_FONTS[0].family
-}
-
-export function isSheetFontId(value: unknown): value is SheetFontId {
-  return value === 'arial' || value === 'gothic'
 }

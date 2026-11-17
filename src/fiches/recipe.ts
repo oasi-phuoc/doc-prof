@@ -1,5 +1,5 @@
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
-import { isSheetFontId, type SheetFontId } from '@/typography/font-families'
+import { isSheetFontId, type SheetFontId } from '@/typography/font-ids'
 import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
 import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'

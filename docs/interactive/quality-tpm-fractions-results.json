@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-17",
+  "exercise": "tpm-fractions-mixte",
+  "certifiedPoolTypes": 697,
+  "observedPlayableVariants": 758,
+  "quantity": {
+    "default": 6,
+    "min": 1,
+    "max": 6
+  },
+  "unitTests": {
+    "passed": 23,
+    "failed": 0,
+    "sourceConfigurations": 900,
+    "existingFractionConfigurations": 2100
+  },
+  "browser": {
+    "passed": true,
+    "results": [
+      {
+        "mode": "class",
+        "viewport": "390x844",
+        "questions": 6,
+        "offline": true,
+        "resume": true,
+        "axeViolations": 0
+      },
+      {
+        "mode": "class",
+        "viewport": "1366x768",
+        "questions": 6,
+        "offline": true,
+        "resume": true,
+        "axeViolations": 0
+      },
+      {
+        "mode": "class",
+        "viewport": "360x640",
+        "questions": 6,
+        "offline": true,
+        "resume": true,
+        "axeViolations": 0
+      },
+      {
+        "mode": "solo",
+        "questions": 6,
+        "correct": true,
+        "wrong": true,
+        "timeout": true,
+        "automaticSummary": true,
+        "newSeed": true
+      },
+      {
+        "mode": "duel",
+        "viewport": "844x390",
+        "offline": true,
+        "cards": 12,
+        "completed": true
+      }
+    ],
+    "worksheetRequests": [],
+    "pageErrors": []
+  },
+  "productionSmoke": {
+    "passed": true,
+    "results": [
+      {
+        "viewport": "390x844",
+        "questions": 6,
+        "stackedFractions": true,
+        "correctionInCards": true,
+        "errors": []
+      },
+      {
+        "viewport": "1366x768",
+        "questions": 6,
+        "stackedFractions": true,
+        "correctionInCards": true,
+        "errors": []
+      }
+    ]
+  },
+  "build": {
+    "command": "npm run build -- --manifest",
+    "exitCode": 0
+  },
+  "budgetsExitCode": 0,
+  "lintExitCode": 0,
+  "secretsScanExitCode": 0,
+  "fullBrowserOrchestratorExecuted": false,
+  "sha256": {
+    "src/interactive/domain/fractions.ts": "72d8e06a2dfa4c809148f39ef93d10df043efcf65577992f3031d3ad02c3643b",
+    "src/interactive/pools/config.ts": "7a6ecf00127457da6cff2e418d4304b9b09a148cab9b096cd7bc480e5f8b3c35",
+    "src/interactive/pools/PoolPage.tsx": "67117481d43cd42a64f0612b8de98dcaeba2fb397273a9276e79f20bf59e3b28",
+    "src/interactive/pools/catalog.generated.json": "2e4989ee3df1057105af2b02b54c5164933af5165330305adcb4d16fc0d4c2a7",
+    "docs/interactive/inventory.json": "0b8ce5dd2c95490ac7d6e169cba5cdcc984a3723312a58593fb7bba32f54253a",
+    "scripts/game-pool-catalog.mjs": "2a062d12a25b30d530646d1d9ecb193fd993df0b2702b5fa39af320112671c58",
+    "scripts/certify-game-pool.mjs": "cca7df985d8d38d02e40adc2029378fe2bf241ef148becf647a6449ffcbefa24"
+  }
+}

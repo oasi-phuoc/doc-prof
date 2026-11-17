@@ -1,0 +1,6 @@
+/* Optional worksheet font; license and pinned source in public/fonts/worksheet/. */
+@font-face{font-family:'Didact Gothic';src:url('/fonts/worksheet/didact-gothic-v1.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+/* La police de la fiche reste indépendante du document de lecture CE. */
+.worksheet-sheet,.a5-half{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
+.tcf-ce-doc .tcf-assoc-people,.tcf-ce-doc .tcf-assoc-people-title{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
+.a4-frame .worksheet-sheet .tcf-audio-cadre-q>.tcf-question-page-chip{top:var(--tcf-audio-text-nudge,0);left:calc(100% + var(--tcf-audio-body-pad-x,3mm) + 1.5px + var(--ex-pad-x) + 2px);right:auto}

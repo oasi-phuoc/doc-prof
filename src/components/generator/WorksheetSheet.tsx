@@ -1,4 +1,5 @@
 import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
+import './worksheet-typography.css'
 import { ExerciseFrame } from '@/components/math/ExerciseFrame'
 import { renderSheetCopy } from '@/components/sheet-copy'
 import { ItemView, tokenizeAlgebra } from '@/components/ItemView'

@@ -169,7 +169,7 @@
       "vocab-write",
       "audio-match"
     ],
-    "playableTypes": 757,
+    "playableTypes": 758,
     "generationErrors": 8
   },
   "rows": [
@@ -2790,20 +2790,11 @@
       ],
       "tcfKinds": [],
       "sourceItems": 2,
-      "playableQuestions": 0,
+      "playableQuestions": 2,
       "compatibility": [
-        "unsupported"
+        "assisted"
       ],
-      "issues": [
-        {
-          "source": "1/1/1 tpm-fractions-mixte",
-          "reason": "Rendu « inline » non pris en charge dans ce premier prototype."
-        },
-        {
-          "source": "1/1/2 tpm-fractions-mixte",
-          "reason": "Rendu « inline » non pris en charge dans ce premier prototype."
-        }
-      ],
+      "issues": [],
       "fields": [
         "a",
         "answer",
@@ -192666,11 +192657,11 @@
               "category": "verbe"
             },
             {
-              "text": "une",
+              "text": "des",
               "category": "determinant"
             },
             {
-              "text": "clémentine",
+              "text": "lentilles",
               "category": "nom"
             }
           ],
@@ -192687,14 +192678,14 @@
             },
             {
               "category": "nom",
-              "label": "clémentine",
-              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/clementine.webp"
+              "label": "lentilles",
+              "imageSrc": "/lib/images/tcf/qcm-audit/co306-lentilles-contact-dessine.webp"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Je mange une clémentine.",
-          "responseAnswer": "Je mange une clémentine."
+          "answer": "Je mange des lentilles.",
+          "responseAnswer": "Je mange des lentilles."
         }
       ]
     },
@@ -193225,11 +193216,11 @@
               "category": "verbe"
             },
             {
-              "text": "une",
+              "text": "des",
               "category": "determinant"
             },
             {
-              "text": "clémentine",
+              "text": "lentilles",
               "category": "nom"
             }
           ],
@@ -193246,14 +193237,14 @@
             },
             {
               "category": "nom",
-              "label": "clémentine",
-              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/clementine.webp"
+              "label": "lentilles",
+              "imageSrc": "/lib/images/tcf/qcm-audit/co306-lentilles-contact-dessine.webp"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Je mange une clémentine.",
-          "responseAnswer": "Je mange une clémentine."
+          "answer": "Je mange des lentilles.",
+          "responseAnswer": "Je mange des lentilles."
         }
       ]
     },
@@ -193800,15 +193791,15 @@
               "category": "verbe"
             },
             {
-              "text": "avant",
+              "text": "devant",
               "category": "preposition"
             },
             {
-              "text": "le",
+              "text": "la",
               "category": "determinant"
             },
             {
-              "text": "travail",
+              "text": "glace",
               "category": "nom"
             }
           ],
@@ -193829,18 +193820,18 @@
             },
             {
               "category": "preposition",
-              "label": "avant"
+              "label": "devant"
             },
             {
               "category": "nom",
-              "label": "travail",
-              "imageSrc": "/lib/images/tcf/co/bg/bureau.webp"
+              "label": "glace",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-glace-cornet.webp"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Je me coiffe avant le travail.",
-          "responseAnswer": "Je me coiffe avant le travail."
+          "answer": "Je me coiffe devant la glace.",
+          "responseAnswer": "Je me coiffe devant la glace."
         }
       ]
     },
@@ -194484,12 +194475,16 @@
               "category": "verbe"
             },
             {
-              "text": "une",
+              "text": "des",
               "category": "determinant"
             },
             {
-              "text": "pomme",
+              "text": "fraises",
               "category": "nom"
+            },
+            {
+              "text": "fraîches",
+              "category": "adjectif"
             }
           ],
           "phraseImages": [
@@ -194505,14 +194500,18 @@
             },
             {
               "category": "nom",
-              "label": "pomme",
-              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-pomme.webp"
+              "label": "fraises",
+              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-fraises.webp"
+            },
+            {
+              "category": "adjectif",
+              "label": "fraîches"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Je mange une pomme.",
-          "responseAnswer": "Je mange une pomme."
+          "answer": "Je mange des fraises fraîches.",
+          "responseAnswer": "Je mange des fraises fraîches."
         }
       ]
     },
@@ -195042,19 +195041,19 @@
               "category": "pronom"
             },
             {
-              "text": "grillons",
+              "text": "décorons",
               "category": "verbe"
             },
             {
-              "text": "des",
+              "text": "le",
               "category": "determinant"
             },
             {
-              "text": "aubergines",
+              "text": "sapin",
               "category": "nom"
             },
             {
-              "text": "dans",
+              "text": "à",
               "category": "preposition"
             },
             {
@@ -195062,7 +195061,7 @@
               "category": "determinant"
             },
             {
-              "text": "cuisine",
+              "text": "maison",
               "category": "nom"
             }
           ],
@@ -195074,28 +195073,28 @@
             },
             {
               "category": "verbe",
-              "label": "griller",
-              "imageSrc": "/lib/images/gattegno/verbe-griller.webp"
+              "label": "décorer",
+              "imageSrc": "/lib/images/gattegno/verbe-decorer.webp"
             },
             {
               "category": "nom",
-              "label": "aubergines",
-              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-aubergine.webp"
+              "label": "sapin",
+              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/sapin.webp"
             },
             {
               "category": "preposition",
-              "label": "dans"
+              "label": "à"
             },
             {
               "category": "nom",
-              "label": "cuisine",
-              "imageSrc": "/lib/images/tcf/co/bg/cuisine.webp"
+              "label": "maison",
+              "imageSrc": "/lib/images/tcf/co/bg/maison.webp"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Nous grillons des aubergines dans la cuisine.",
-          "responseAnswer": "Nous grillons des aubergines dans la cuisine."
+          "answer": "Nous décorons le sapin à la maison.",
+          "responseAnswer": "Nous décorons le sapin à la maison."
         },
         {
           "layout": "phrase-images",
@@ -195681,11 +195680,11 @@
               "category": "adverbe"
             },
             {
-              "text": "un",
+              "text": "une",
               "category": "determinant"
             },
             {
-              "text": "abricot",
+              "text": "omelette",
               "category": "nom"
             }
           ],
@@ -195706,14 +195705,14 @@
             },
             {
               "category": "nom",
-              "label": "abricot",
-              "imageSrc": "/lib/images/tcf/catalogue/vegetaux/abricot.webp"
+              "label": "omelette",
+              "imageSrc": "/lib/images/tcf/qcm-audit/extension573-omelette.png"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Je mange vite un abricot.",
-          "responseAnswer": "Je mange vite un abricot."
+          "answer": "Je mange vite une omelette.",
+          "responseAnswer": "Je mange vite une omelette."
         }
       ]
     },
@@ -196348,15 +196347,15 @@
               "category": "pronom"
             },
             {
-              "text": "bricolons",
+              "text": "protégeons",
               "category": "verbe"
             },
             {
-              "text": "une",
+              "text": "la",
               "category": "determinant"
             },
             {
-              "text": "étagère",
+              "text": "forêt",
               "category": "nom"
             },
             {
@@ -196372,7 +196371,7 @@
               "category": "nom"
             },
             {
-              "text": "essuie",
+              "text": "adore",
               "category": "verbe"
             },
             {
@@ -196380,7 +196379,7 @@
               "category": "determinant"
             },
             {
-              "text": "assiettes",
+              "text": "papillons",
               "category": "nom"
             }
           ],
@@ -196392,13 +196391,13 @@
             },
             {
               "category": "verbe",
-              "label": "bricoler",
-              "imageSrc": "/lib/images/gattegno/verbe-bricoler.webp"
+              "label": "protéger",
+              "imageSrc": "/lib/images/gattegno/verbe-proteger.webp"
             },
             {
               "category": "nom",
-              "label": "étagère",
-              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-etagere.webp"
+              "label": "forêt",
+              "imageSrc": "/lib/images/tcf/co/bg/foret.webp"
             },
             {
               "category": "conjonction",
@@ -196411,19 +196410,19 @@
             },
             {
               "category": "verbe",
-              "label": "essuyer",
-              "imageSrc": "/lib/images/gattegno/verbe-essuyer.webp"
+              "label": "adorer",
+              "imageSrc": "/lib/images/gattegno/verbe-adorer.webp"
             },
             {
               "category": "nom",
-              "label": "assiettes",
-              "imageSrc": "/lib/images/tcf/qcm-audit/vocab-assiette.webp"
+              "label": "papillons",
+              "imageSrc": "/lib/images/tcf/catalogue/animaux/papillon.webp"
             }
           ],
           "phraseImageLabels": false,
           "writeLines": 1,
-          "answer": "Nous bricolons une étagère et le cuisinier essuie les assiettes.",
-          "responseAnswer": "Nous bricolons une étagère et le cuisinier essuie les assiettes."
+          "answer": "Nous protégeons la forêt et le cuisinier adore les papillons.",
+          "responseAnswer": "Nous protégeons la forêt et le cuisinier adore les papillons."
         },
         {
           "layout": "phrase-images",

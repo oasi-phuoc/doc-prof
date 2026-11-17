@@ -1,0 +1,163 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "viewport": "390x844",
+      "axeViolations": 0,
+      "checks": [
+        "Clean entry and prepared-game home",
+        "Settings, mascot and timer retained after dialog closure",
+        "Pool edits survive dialog closure",
+        "Presets and question selection retained",
+        "Saved pool reopens from content; its report is available after selection",
+        "Nested archive confirmation preserved",
+        "Competition still reachable",
+        "Four duplex A4 pages from the print dialog"
+      ]
+    },
+    {
+      "viewport": "360x640",
+      "axeViolations": 0,
+      "checks": [
+        "Clean entry and prepared-game home",
+        "Settings, mascot and timer retained after dialog closure",
+        "Pool edits survive dialog closure",
+        "Presets and question selection retained",
+        "Saved pool reopens from content; its report is available after selection",
+        "Nested archive confirmation preserved",
+        "Competition still reachable"
+      ]
+    },
+    {
+      "viewport": "1366x768",
+      "axeViolations": 0,
+      "checks": [
+        "Clean entry and prepared-game home",
+        "Settings, mascot and timer retained after dialog closure",
+        "Pool edits survive dialog closure",
+        "Presets and question selection retained",
+        "Saved pool reopens from content; its report is available after selection",
+        "Nested archive confirmation preserved",
+        "Competition still reachable"
+      ]
+    }
+  ],
+  "errors": [],
+  "date": "2026-11-17",
+  "environment": "Production build served locally at port 5185; Chromium",
+  "build_exit_code": 0,
+  "lint_exit_code": 0,
+  "budget_exit_code": 0,
+  "secrets_scan_exit_code": 0,
+  "pool_regressions": {
+    "results": [
+      {
+        "viewport": "390x844",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "1366x768",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "360x640",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "solo": "Two mixed domains: correct and wrong choices, timeout and two-second automatic feedback through the final summary."
+      }
+    ],
+    "apiRequests": [],
+    "errors": []
+  },
+  "worksheet_chooser": {
+    "date": "2026-11-17",
+    "passed": true,
+    "results": [
+      {
+        "viewport": "390x844",
+        "checks": [
+          "No worksheet fetch in Exercises",
+          "Direct server worksheet list",
+          "Domain access checked against recipe pages",
+          "Pagination and accent-insensitive search",
+          "Exercise selection retained across source changes",
+          "Saved worksheet preparation, competition and print remain reachable",
+          "Error, retry and empty-library states"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "1366x768",
+        "checks": [
+          "No worksheet fetch in Exercises",
+          "Direct server worksheet list",
+          "Domain access checked against recipe pages",
+          "Pagination and accent-insensitive search",
+          "Exercise selection retained across source changes",
+          "Saved worksheet preparation, competition and print remain reachable",
+          "Error, retry and empty-library states"
+        ],
+        "axeViolations": 0
+      }
+    ],
+    "requests": [
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET",
+      "GET"
+    ],
+    "errors": []
+  },
+  "proofs": "docs/interactive/setup-proofs",
+  "source_sha256": {
+    "src/interactive/components/FicheChooser.tsx": "8e832a9e43793417f9f255b9215e865605bc19f8bb7c6cb77a581303046d9905",
+    "src/interactive/components/HomeHeader.tsx": "699cd77c75ce670bae4f64622685897c575956590b17588a2224bca7d3d95a54",
+    "src/interactive/components/SetupHub.tsx": "7f1b30261e1b9a2fc10b2b3097d2206d0ca4accf9478a7ea4ea33fc293f1fc7e",
+    "src/interactive/pools/PoolPage.tsx": "7a7e5716f410b0aea84fa8f83711ced57fd61cf9ef015395acab912c6e1731af",
+    "src/interactive/GameApp.tsx": "539fdd019e0f64f16dc444e3915f81b370f6e06cf96b8a6b5a2b5c1b4233ce52"
+  }
+}
