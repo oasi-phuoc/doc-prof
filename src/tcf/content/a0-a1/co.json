@@ -95566,6 +95566,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des cartes postales et des timbres"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png"
+              }
+            ]
           }
         }
       },

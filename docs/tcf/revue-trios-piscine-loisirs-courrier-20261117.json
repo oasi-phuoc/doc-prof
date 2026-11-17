@@ -1,0 +1,1286 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "35cb1bb3aeb0fa3325af5b5b402eb9233edb5e0c",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 6,
+    "added_historical_trios": 6,
+    "added_delf_actif_trios": 0,
+    "new_images": 15,
+    "imagegen_calls": 16,
+    "rejected_generations": 1,
+    "new_image_usages": 15,
+    "reused_image_usages": 3,
+    "reused_distinct_images": 3,
+    "added_by_level": {
+      "A0-A1": 2,
+      "A1-A2": 4
+    },
+    "historical_pending": 267
+  },
+  "new_images": [
+    {
+      "id": "qcm-courrier-cartes-postales-timbres",
+      "label": "Des cartes postales et des timbres",
+      "path": "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. At left THREE recognisable POSTCARDS: two landscape-format cards showing small painted views of a lake and a mountain village, and a third postcard turned over to show a central divider, a blank message area and address guide lines. At right FOUR small separate POSTAGE STAMPS with clearly perforated serrated edges and tiny illustrations of a bird, flowers and trees; no prices, denominations, numbers, dates, address or other readable text. Make the stamps much smaller than the postcards, with each stamp clearly separate from its neighbour. No envelopes, package, letter sheet or computer.",
+      "source_png": "/workspace/generated_images/exec-e5720d05-ade3-4e10-a22e-04702ec6c5ef.png",
+      "source_sha256": "3c4e87feebf7cb19fb9f32b8408c7b0f067dc5fdddad80f3290ddc3bbfdb14db",
+      "sha256": "3c4e87feebf7cb19fb9f32b8408c7b0f067dc5fdddad80f3290ddc3bbfdb14db",
+      "bytes": 1716468,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois cartes postales dont un verso avec lignes d’adresse et quatre petits timbres dentelés ; distinction des formats, aucun montant ni date. Style peint et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Courrier et correspondance",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-courrier-colis-papier-cadeau",
+      "label": "Des colis et du papier cadeau",
+      "path": "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. At left TWO plain brown CARDBOARD POSTAL PARCELS, one larger rectangular box and one smaller cuboid, visibly sealed with packing tape and bearing a small generic white address label with faint guide lines only. At right TWO rolls of colourful GIFT-WRAPPING PAPER, one red with small dots and one blue with simple stars, and a small loose sheet partly unrolled to show that it is wrapping paper. The postal boxes must stay plain packing cartons, with no gift ribbons or bows. No envelope, postcard, scissors, writing tool, brand, readable address, price or date.",
+      "source_png": "/workspace/generated_images/exec-07404eab-9fdd-44c6-929c-bc5fdc841a98.png",
+      "source_sha256": "f2d230253ba17b5223a5812836c4f0dfbba85f258f566ca94f66c1062a97f16c",
+      "sha256": "f2d230253ba17b5223a5812836c4f0dfbba85f258f566ca94f66c1062a97f16c",
+      "bytes": 1628198,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux cartons postaux fermés avec ruban d’emballage et étiquettes génériques, ainsi que deux rouleaux de papier cadeau dont un déroulé ; aucun ruban cadeau sur les colis. Style peint et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Courrier et correspondance",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-courrier-enveloppes-lettres",
+      "label": "Des enveloppes et des lettres",
+      "path": "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. THREE cream-white paper ENVELOPES, two open with triangular flaps and one closed, together with TWO paper LETTERS with simple grey horizontal handwriting-like lines and visible folds. One open envelope may contain the corner of one lined letter, but keep both letter sheets sufficiently visible and all envelopes recognisable. No @ symbol, smartphone, postcard scenery, stamp sheet, price, date, name or address. This is physical postal correspondence.",
+      "source_png": "/workspace/generated_images/exec-171d3e27-f81c-4597-a276-ae8d9a2761c6.png",
+      "source_sha256": "5ff61136cf0a04e46c469fe80188fd1654783437ffa212e660fab0abec52e86e",
+      "sha256": "5ff61136cf0a04e46c469fe80188fd1654783437ffa212e660fab0abec52e86e",
+      "bytes": 1693779,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois enveloppes dont deux ouvertes et plusieurs feuilles de lettres avec traits d’écriture ; courrier physique, sans @ ni illustration de carte postale. Style peint et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Courrier et correspondance",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-courrier-feuilles-stylos-ivoire",
+      "label": "Des feuilles et des stylos",
+      "path": "/lib/images/tcf/qcm-audit/qcm-courrier-feuilles-stylos-ivoire.png",
+      "prompt": "EDIT the first supplied TCF illustration: retain its complete group of FIVE overlapping blank white paper sheets at left and THREE ballpoint PENS with blue, red and green caps at right. Retain the same full objects, proportions and softly painted educational drawing style. Use the SECOND reference ONLY to match the exact almost-uniform pale ivory BACKGROUND, RGB 253 242 225 (#FDF2E1), instead of the first image's stronger yellow/peach tone. Background smooth with no texture, no gradient or vignette; retain small soft contact shadows next to the objects only. Do not introduce drinks, text, ruled lines, envelopes or extra objects. Entire group inside margins. Native landscape PNG 1448x1086 pixels, exact 4:3.",
+      "source_png": "/workspace/generated_images/exec-ccda67da-e067-4e33-8d7f-5335c9d8a469.png",
+      "source_sha256": "dbffcef8651c0ba668c099d91a2bbee1ed97699c63b34b6025f62cb0cf25ebe4",
+      "sha256": "dbffcef8651c0ba668c099d91a2bbee1ed97699c63b34b6025f62cb0cf25ebe4",
+      "bytes": 1409465,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cinq feuilles blanches et trois stylos à capuchons bleu, rouge et vert ; groupe conservé et fond harmonisé par génération, original non modifié. Style peint et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Papeterie et écriture",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-loisirs-dvd-pyjama",
+      "label": "Des DVD et un pyjama",
+      "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-dvd-pyjama.png",
+      "prompt": "EDIT the approved TCF illustration supplied as a real visual reference. Replace ALL drink objects with the exact complete subject below. Keep its EXACT smooth near-uniform pale ivory background (#FDF2E1, RGB 253 242 225), its hand-painted semi-realistic educational illustration style, softly painted colour volumes, fine discreet contours, gentle material details, and small soft contact shadows beneath objects. No photo, CGI, 3D render, grain, canvas, yellow cast, vignette or gradient in empty background. One composition, no panels, no people, no room, no labels outside objects, no dates or prices. Entire objects inside frame with clear margins. EXACT landscape PNG 1448x1086 pixels, 4:3. Subject: THREE recognisable DVD film cases grouped at left, one case open showing its silver optical DVD disc and two closed cases with small generic movie artwork and a tiny 'DVD' mark (no invented film title); at right ONE complete neatly laid-out two-piece sleep PYJAMA, a long-sleeved pale blue button-up pajama top with a matching pair of long pajama trousers. Both the plural DVDs and the complete pajama equally clear. No books, swimming clothes, footwear, food or other objects.",
+      "source_png": "/workspace/generated_images/exec-50041b77-23ff-41f2-b90a-aff53a1a5a38.png",
+      "source_sha256": "836a32ca11cc3107f467f473c84c84bb2d1b6934522f5ae9108434aa523b905e",
+      "sha256": "836a32ca11cc3107f467f473c84c84bb2d1b6934522f5ae9108434aa523b905e",
+      "bytes": 1758700,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois boîtiers DVD dont un ouvert avec disque, et un pyjama complet haut/pantalon ; objets entiers, pluriel et matières peints contrôlés. Fond ivoire comparé à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires pour les loisirs",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-loisirs-jeux-baskets",
+      "label": "Des jeux et des baskets",
+      "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-jeux-baskets.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. At left TWO recognisable tabletop GAMES: an open small cardboard board-game box with a partly unfolded path board, coloured pawns and dice, plus a separate deck of playing cards with a few cards visible. At right ONE PAIR of ordinary blue-and-white lace-up athletic SNEAKERS. Show the two game types clearly and both matching shoes entirely. No books, DVDs, sports balls or swimming objects.",
+      "source_png": "/workspace/generated_images/exec-20797ea4-2b4d-46f2-b4be-b3fc8d19777d.png",
+      "source_sha256": "8cd3e816d2058f011c70d8e37f6483c41bafa3eefb430b8ec9caa6ca6d2d5b82",
+      "sha256": "8cd3e816d2058f011c70d8e37f6483c41bafa3eefb430b8ec9caa6ca6d2d5b82",
+      "bytes": 1754765,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Jeu de plateau avec pions et dés, jeu de cartes et paire de baskets visibles ; les deux catégories au pluriel sont complètes. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires pour les loisirs",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-loisirs-livres-maillot",
+      "label": "Des livres et un maillot",
+      "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-livres-maillot.png",
+      "prompt": "EDIT the FIRST illustration, keeping its exact subject and layout: THREE closed books at left (one red upright, two ochre and blue stacked) and ONE dark teal one-piece swimsuit at right. Keep complete objects and their soft hand-painted educational illustration style. Change ONLY the empty background to match the SECOND approved reference: exact smooth pale ivory RGB 253 242 225 (#FDF2E1). The first background is slightly too yellow/peach; make it match the lighter approved ivory, with no gradient, texture, vignette or yellow cast. Retain small soft contact shadows immediately under objects only. No drinks, words, other clothes or extra objects. Entire subjects inside margins. Native landscape PNG 1448x1086 pixels, exact 4:3.",
+      "source_png": "/workspace/generated_images/exec-523e9022-cfb4-42ff-ab98-2a57e09e017f.png",
+      "source_sha256": "445fbdd66df8cfab64d6d2a5c59be5eb2a054b4e9209745aab59b57eed5343dd",
+      "sha256": "445fbdd66df8cfab64d6d2a5c59be5eb2a054b4e9209745aab59b57eed5343dd",
+      "bytes": 1645207,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-26705a21-665e-481a-a9be-7f9a0f5c72cf.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois livres et un maillot une pièce entiers, sans bonnet ni objet parasite ; volumes et détails peints comparés à la référence réelle. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires pour les loisirs",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-loisirs-lunettes-bijoux-appareils-photo",
+      "label": "Des lunettes, des bijoux et des appareils photo",
+      "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-lunettes-bijoux-appareils-photo.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. THREE clear groups of personal objects spread across the composition. Left: two pairs of ordinary EYEGLASSES with full frames and temples visible. Centre: JEWELLERY consisting of a short gold necklace, one bangle and a pair of earrings. Right: TWO recognisable CAMERAS, one small compact camera and one larger camera with a lens and complete camera strap. Every category must be obvious, the two cameras must be visibly distinct complete cameras. No smartphones, telescope, clocks, shoes, clothes, bag or person.",
+      "source_png": "/workspace/generated_images/exec-3f5967ba-d61e-4093-8ee9-4bb77bf796c0.png",
+      "source_sha256": "2805b5679678eaca1028285f5d763e4655c145f4cb46359d789ac41e57bb4f27",
+      "sha256": "2805b5679678eaca1028285f5d763e4655c145f4cb46359d789ac41e57bb4f27",
+      "bytes": 1640392,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux paires de lunettes de vue, collier, bracelet et boucles d’oreilles, ainsi que deux vrais appareils photo distincts avec objectifs ; les trois familles sont visibles. Style peint et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires pour les loisirs",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-piscine-lunettes-maillots",
+      "label": "Des lunettes et des maillots de bain",
+      "path": "/lib/images/tcf/qcm-audit/qcm-piscine-lunettes-maillots.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. TWO PAIRS of recognisable SWIMMING GOGGLES with small clear lenses, nose bridges and complete adjustable head straps at left. TWO one-piece swimming SUITS, one dark teal and one dark red, laid out at right with straps and leg openings entirely visible. Keep the plural goggles group and the plural swimsuit group separate and equally readable. No towels, caps, shorts, shoes, food or drinks.",
+      "source_png": "/workspace/generated_images/exec-37d7a49e-1dcf-4167-afb1-3d52e9e73b27.png",
+      "source_sha256": "bc4dc4305922b751e6d701e7269511d11c5c1b95d175d4c2228c1e362e42625a",
+      "sha256": "bc4dc4305922b751e6d701e7269511d11c5c1b95d175d4c2228c1e362e42625a",
+      "bytes": 1652037,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux paires de lunettes de natation avec sangles et deux maillots une pièce ; les deux catégories sont visibles au pluriel. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires de piscine",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-piscine-maillot-bonnet",
+      "label": "Un maillot et un bonnet de bain",
+      "path": "/lib/images/tcf/qcm-audit/qcm-piscine-maillot-bonnet.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. ONE complete athletic one-piece dark blue SWIMMING SUIT with broad shoulder straps, laid flat at left. ONE yellow silicone SWIM CAP at right, with a rounded dome and a visible open oval rim. The single swimsuit and single bathing cap are equally clear. No goggles, towels, shoes or extra garments.",
+      "source_png": "/workspace/generated_images/exec-6409ebeb-8ced-4cea-9419-ec95ba519393.png",
+      "source_sha256": "1f0fface00e292fbf8b90678cd01e1f737da80641099910c10310fd5b83fd062",
+      "sha256": "1f0fface00e292fbf8b90678cd01e1f737da80641099910c10310fd5b83fd062",
+      "bytes": 1505961,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Un maillot de natation une pièce et un seul bonnet en silicone ; pas de serviette ni de lunettes ajoutées. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires de piscine",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-piscine-maillots-deux-pieces",
+      "label": "Des maillots de bain deux pièces",
+      "path": "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-deux-pieces.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. TWO complete TWO-PIECE SWIMMING SUITS (bikinis), shown as clothing only, lying flat with no person or mannequin. One dark red matching bikini top and briefs at left; one dark teal matching bikini top and briefs at right. Each top clearly separated from its matching bottom by a wide visible empty waist gap. Both complete sets fully inside the frame, clear broad shoulder straps and credible swimming-fabric material. No one-piece garment, towel, cap, goggles or accessories.",
+      "source_png": "/workspace/generated_images/exec-69d2f397-5ff2-40d9-8bec-b83bc96d2e8a.png",
+      "source_sha256": "bae6c9eb042c9ed62174aa25ab168a87bc7a1f812c4acb90a6837f1a6c83d129",
+      "sha256": "bae6c9eb042c9ed62174aa25ab168a87bc7a1f812c4acb90a6837f1a6c83d129",
+      "bytes": 1628513,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux ensembles deux pièces complets, chaque haut séparé de son bas assorti, sans mannequin ni personne ; distinction nette des maillots une pièce. Style peint et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Vêtements de piscine",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-piscine-maillots-une-piece",
+      "label": "Des maillots de bain une pièce",
+      "path": "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-une-piece.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. TWO full one-piece athletic swimming SUITS laid out side by side: one navy blue and one dark teal. Each is a single continuous garment from shoulder straps to the leg openings, without a gap at the waist. All straps and leg openings visible. No separate top or briefs, bikini, person, hanger, goggles, cap or other object.",
+      "source_png": "/workspace/generated_images/exec-05db1dc1-433f-4b98-8e93-da278ed451a4.png",
+      "source_sha256": "ae1c1398344a62955c23c3de2171e421c099553f80f07f901041993d3a8bf205",
+      "sha256": "ae1c1398344a62955c23c3de2171e421c099553f80f07f901041993d3a8bf205",
+      "bytes": 1584662,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux maillots une pièce continus du haut aux jambes, avec toutes les bretelles visibles ; aucun élément de bikini. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Vêtements de piscine",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-piscine-serviettes-bonnets",
+      "label": "Des serviettes et des bonnets de bain",
+      "path": "/lib/images/tcf/qcm-audit/qcm-piscine-serviettes-bonnets.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. At left TWO thick folded terrycloth bath TOWELS, blue and green. At right TWO clearly recognisable flexible silicone SWIM CAPS, yellow and blue, with rounded domed tops and gently stretched oval head openings visible. No wool hat, visor or pompom. Both plural groups fully shown. No goggles, swimsuit, shoes, food or drinks.",
+      "source_png": "/workspace/generated_images/exec-bc81094d-9167-42f2-a813-b7c6925257bd.png",
+      "source_sha256": "d9cff7559dd72acc7ee526ad7566a37e4367e89bc90f4f72198748355a57785a",
+      "sha256": "d9cff7559dd72acc7ee526ad7566a37e4367e89bc90f4f72198748355a57785a",
+      "bytes": 1955749,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux serviettes et deux bonnets de bain en silicone ; les bonnets ne ressemblent pas à des bonnets de laine. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Affaires de piscine",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-piscine-shorts-bermudas",
+      "label": "Des shorts et des bermudas",
+      "path": "/lib/images/tcf/qcm-audit/qcm-piscine-shorts-bermudas.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. At left TWO ordinary SHORTS with short thigh-length legs, one blue and one red, with clear waistbands and pockets. At right TWO ordinary BERMUDA SHORTS with noticeably longer straight legs reaching almost to the knee, one beige and one olive green, with waistbands and pockets. Lay out all four garments entirely with small spaces between them. Contrast short legs and knee-length Bermuda legs clearly. No person, mannequin, swimming suit, bikini, shoes, prohibition symbol or text.",
+      "source_png": "/workspace/generated_images/exec-cbd19acb-f089-4221-940d-41bd88e9ea37.png",
+      "source_sha256": "bb70507bb7dbd96e51dec5427262a437e9283e4d829c54055d92a0069f97d940",
+      "sha256": "bb70507bb7dbd96e51dec5427262a437e9283e4d829c54055d92a0069f97d940",
+      "bytes": 1545456,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux shorts à jambes courtes et deux bermudas à jambes plus longues ; les quatre vêtements sont entiers et les catégories restent distinctes. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Vêtements de piscine",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-service-uniforme-tablier",
+      "label": "Un uniforme et un tablier",
+      "path": "/lib/images/tcf/qcm-audit/qcm-service-uniforme-tablier.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. ONE complete RESTAURANT SERVICE UNIFORM laid flat at left: a neat white collared long-sleeve shirt and a pair of dark charcoal work trousers, visibly one matching outfit. At right ONE dark green full-length BIB APRON laid flat, with neck strap, waist ties and a front pocket fully visible. Treat the apron as a separate object, do not hide the uniform underneath it. No person, mannequin, chef hat, tie, shoes, labels or other objects.",
+      "source_png": "/workspace/generated_images/exec-3a5be2e5-d434-453d-98d2-9ea5f3819579.png",
+      "source_sha256": "4ecad1075ef2cf73f677255bf7fd7b1be0439c170b5a1d222e5eb31f4e4369ee",
+      "sha256": "4ecad1075ef2cf73f677255bf7fd7b1be0439c170b5a1d222e5eb31f4e4369ee",
+      "bytes": 1650232,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-piscine-loisirs-courrier-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Uniforme de service complet chemise/pantalon et tablier à bavette séparé avec sangles ; aucun vêtement ne masque l’autre. Style peint et fond ivoire comparés à la référence.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Tenues de travail",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "generation": {
+    "calls": 16,
+    "accepted_images": 15,
+    "rejected_generations": [
+      {
+        "source": "/workspace/generated_images/exec-26705a21-665e-481a-a9be-7f9a0f5c72cf.png",
+        "prompt": "EDIT the supplied approved TCF object illustration. Replace ALL drink objects with the specified complete subject. Preserve the EXACT smooth almost-uniform pale ivory background (#FDF2E1, RGB 253 242 225), hand-painted semi-realistic educational style, soft painted volumes, fine discreet contours, restrained texture only on objects and tiny soft grounded contact shadows. No photographic/CGI rendering, no paper/canvas grain in empty background, no yellow/ochre cast, vignette or gradient. One single composition, no panels, no people, no room scenery or extra objects. Entire objects inside the frame with clear margins. No floating labels, dates, prices or brands. EXACT landscape PNG 1448x1086 pixels, 4:3. At left THREE ordinary closed BOOKS, one upright and two stacked, with unmarked red, ochre and blue covers and clearly visible cream page blocks. At right ONE dark teal ONE-PIECE SWIMSUIT with broad straps, laid flat. Both the plural books and the single complete swimsuit equally clear. No swimming cap, glasses, shoes or DVDs.",
+        "reason": "Fond légèrement plus jaune : médiane [253,240,221], écart maximal de quatre valeurs de canal. Reprise générée avec la référence réelle, sans recoloration locale."
+      }
+    ],
+    "original_bytes_preserved": true,
+    "method": "PNG natifs générés avec références réelles, aucune conversion ni recoloration locale."
+  },
+  "background_review": {
+    "reference": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+    "reference_corner_median_rgb": [
+      253,
+      242,
+      225
+    ],
+    "method": "Comparaison visuelle des sujets, fonds et groupes ; médiane et écart-type du coin supérieur gauche 40×40. Mesure de ce lot, sans jugement sur les autres originaux.",
+    "rows": [
+      {
+        "path": "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "source": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "sha256": "a56a3ce5a19107604aa5a846435b48b32f566cbc3e3b66339ade2a9b1a7ef6e1",
+        "width": 1280,
+        "height": 960,
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "source": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "sha256": "e0675e8b025c2f79baf7f3b9a2d217f79a090eb346586c589a9c5428a8fea4e3",
+        "width": 1280,
+        "height": 960,
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          226.0
+        ],
+        "corner_std_rgb": [
+          0.5,
+          0.499,
+          0.832
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+        "source": "/workspace/generated_images/exec-e5720d05-ade3-4e10-a22e-04702ec6c5ef.png",
+        "sha256": "3c4e87feebf7cb19fb9f32b8408c7b0f067dc5fdddad80f3290ddc3bbfdb14db",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.54,
+          0.576,
+          0.576
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png",
+        "source": "/workspace/generated_images/exec-07404eab-9fdd-44c6-929c-bc5fdc841a98.png",
+        "sha256": "f2d230253ba17b5223a5812836c4f0dfbba85f258f566ca94f66c1062a97f16c",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.534,
+          0.583,
+          0.597
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png",
+        "source": "/workspace/generated_images/exec-171d3e27-f81c-4597-a276-ae8d9a2761c6.png",
+        "sha256": "5ff61136cf0a04e46c469fe80188fd1654783437ffa212e660fab0abec52e86e",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.557,
+          0.559,
+          0.646
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-courrier-feuilles-stylos-ivoire.png",
+        "source": "/workspace/generated_images/exec-ccda67da-e067-4e33-8d7f-5335c9d8a469.png",
+        "sha256": "dbffcef8651c0ba668c099d91a2bbee1ed97699c63b34b6025f62cb0cf25ebe4",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          226.0
+        ],
+        "corner_std_rgb": [
+          0.555,
+          0.57,
+          0.578
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-dvd-pyjama.png",
+        "source": "/workspace/generated_images/exec-50041b77-23ff-41f2-b90a-aff53a1a5a38.png",
+        "sha256": "836a32ca11cc3107f467f473c84c84bb2d1b6934522f5ae9108434aa523b905e",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.591,
+          0.598,
+          0.632
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-jeux-baskets.png",
+        "source": "/workspace/generated_images/exec-20797ea4-2b4d-46f2-b4be-b3fc8d19777d.png",
+        "sha256": "8cd3e816d2058f011c70d8e37f6483c41bafa3eefb430b8ec9caa6ca6d2d5b82",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.539,
+          0.623,
+          0.595
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-livres-maillot.png",
+        "source": "/workspace/generated_images/exec-523e9022-cfb4-42ff-ab98-2a57e09e017f.png",
+        "sha256": "445fbdd66df8cfab64d6d2a5c59be5eb2a054b4e9209745aab59b57eed5343dd",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          252.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.568,
+          0.555,
+          0.556
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-loisirs-lunettes-bijoux-appareils-photo.png",
+        "source": "/workspace/generated_images/exec-3f5967ba-d61e-4093-8ee9-4bb77bf796c0.png",
+        "sha256": "2805b5679678eaca1028285f5d763e4655c145f4cb46359d789ac41e57bb4f27",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.578,
+          0.574,
+          0.622
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-piscine-lunettes-maillots.png",
+        "source": "/workspace/generated_images/exec-37d7a49e-1dcf-4167-afb1-3d52e9e73b27.png",
+        "sha256": "bc4dc4305922b751e6d701e7269511d11c5c1b95d175d4c2228c1e362e42625a",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.573,
+          0.551,
+          0.58
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-piscine-maillot-bonnet.png",
+        "source": "/workspace/generated_images/exec-6409ebeb-8ced-4cea-9419-ec95ba519393.png",
+        "sha256": "1f0fface00e292fbf8b90678cd01e1f737da80641099910c10310fd5b83fd062",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.556,
+          0.549,
+          0.554
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-deux-pieces.png",
+        "source": "/workspace/generated_images/exec-69d2f397-5ff2-40d9-8bec-b83bc96d2e8a.png",
+        "sha256": "bae6c9eb042c9ed62174aa25ab168a87bc7a1f812c4acb90a6837f1a6c83d129",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.563,
+          0.542,
+          0.611
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-une-piece.png",
+        "source": "/workspace/generated_images/exec-05db1dc1-433f-4b98-8e93-da278ed451a4.png",
+        "sha256": "ae1c1398344a62955c23c3de2171e421c099553f80f07f901041993d3a8bf205",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.592,
+          0.582,
+          0.604
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-piscine-serviettes-bonnets.png",
+        "source": "/workspace/generated_images/exec-bc81094d-9167-42f2-a813-b7c6925257bd.png",
+        "sha256": "d9cff7559dd72acc7ee526ad7566a37e4367e89bc90f4f72198748355a57785a",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.578,
+          0.572,
+          0.618
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-piscine-shorts-bermudas.png",
+        "source": "/workspace/generated_images/exec-cbd19acb-f089-4221-940d-41bd88e9ea37.png",
+        "sha256": "bb70507bb7dbd96e51dec5427262a437e9283e4d829c54055d92a0069f97d940",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.559,
+          0.555,
+          0.623
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-service-uniforme-tablier.png",
+        "source": "/workspace/generated_images/exec-3a5be2e5-d434-453d-98d2-9ea5f3819579.png",
+        "sha256": "4ecad1075ef2cf73f677255bf7fd7b1be0439c170b5a1d222e5eb31f4e4369ee",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          239.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.575,
+          0.619,
+          0.654
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+        "source": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+        "sha256": "5058464a2d41fa99c66856705d81842558bd2945b9d17b5088058887b150c9a7",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          239.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.564,
+          0.583,
+          0.685
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      }
+    ]
+  },
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-feuilles-stylos-dessine.webp",
+      "reason": "Fond plus jaune : médiane du coin [255,241,216] contre [253,242,225] pour la référence réelle. Variante générée au fond harmonisé, original conservé."
+    }
+  ],
+  "editorial_scope": "Groupes complets, pluriels et vêtements distincts ; illustrations des catégories sans ajout de prix, date, symbole de réponse ni changement du texte source.",
+  "trios": [
+    {
+      "key": "delf-a1s-ce-013#3",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Il est interdit de plonger. Nourriture et boissons ne sont pas autorisées. On peut jouer au ballon dans le bassin seulement. La douche est obligatoire avant de se baigner.\nOuverture : en été, tous les jours de 9 h à 20 h ; en hiver, du jeudi au dimanche de 10 h à 18 h.\nEntrée : 8 CHF.",
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
+      "semantic_sha256": "59d134dc56e80d1f038a5e7d74ae0ec5df3692b438ec99b6b77676460a2cf507",
+      "question": {
+        "enonce": "Quels produits ne sont pas autorisés ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "La nourriture et les boissons",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les serviettes et les bonnets",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les lunettes et les maillots",
+            "correct": false
+          }
+        ],
+        "written_model": "La nourriture et les boissons"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "co306-boissons-biscuits-dessine",
+        "qcm-piscine-serviettes-bonnets",
+        "qcm-piscine-lunettes-maillots"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-serviettes-bonnets.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-lunettes-maillots.png"
+      ],
+      "image_sha256": [
+        "a56a3ce5a19107604aa5a846435b48b32f566cbc3e3b66339ade2a9b1a7ef6e1",
+        "d9cff7559dd72acc7ee526ad7566a37e4367e89bc90f4f72198748355a57785a",
+        "bc4dc4305922b751e6d701e7269511d11c5c1b95d175d4c2228c1e362e42625a"
+      ],
+      "reason": "Le règlement interdit nourriture et boissons ; biscuits et boissons représentent cette catégorie, sans ajouter d’interdiction aux équipements de natation.",
+      "visual_review": "Les trois choix gardent leurs deux familles : nourriture/boissons, serviettes/bonnets, lunettes/maillots ; équipements au pluriel et fond comparés côte à côte.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-55-1#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Je suis dans une librairie. Je prends des cartes postales et des timbres. J’achète un stylo bleu.",
+      "source_sha256": "9a4beb770bd60dd6e8d932961d4d9b84b9b0fdb2cc3ff173ae31a403b07425c3",
+      "semantic_sha256": "2ccf956d6c3995925cbeeeee612c7609596fcce01f66b7393de01f809b71e417",
+      "question": {
+        "enonce": "Quels objets de correspondance prend-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des cartes postales et des timbres",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des enveloppes et des lettres",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des colis et du papier cadeau",
+            "correct": false
+          }
+        ],
+        "written_model": "Des cartes postales et des timbres"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-1.mp3",
+      "audio_sha256": "a1922b92c7ad703fbabed7f86a4874ae8037b34c95a60ed62c59245e96a280f9",
+      "image_ids": [
+        "qcm-courrier-cartes-postales-timbres",
+        "qcm-courrier-enveloppes-lettres",
+        "qcm-courrier-colis-papier-cadeau"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+        "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png",
+        "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png"
+      ],
+      "image_sha256": [
+        "3c4e87feebf7cb19fb9f32b8408c7b0f067dc5fdddad80f3290ddc3bbfdb14db",
+        "5ff61136cf0a04e46c469fe80188fd1654783437ffa212e660fab0abec52e86e",
+        "f2d230253ba17b5223a5812836c4f0dfbba85f258f566ca94f66c1062a97f16c"
+      ],
+      "reason": "La transcription nomme cartes postales et timbres ; chaque leurre montre les deux objets de correspondance demandés, sans les confondre avec le stylo cité ailleurs.",
+      "visual_review": "Cartes et timbres distincts par taille et dentelure, lettres avec traits et enveloppes ouvertes, colis postaux et rouleaux de papier cadeau ; trois compositions au pluriel.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-022#8",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Salut !\nVendredi soir, mes parents ne sont pas là : ils accompagnent mon petit frère à une fête où il n’y aura que des familles avec des enfants de 7 ou 8 ans, et je n’ai aucune envie d’y aller.\nTu pourrais passer la soirée avec moi, je serai seule jusqu’à 21 h. On commande des pizzas et on regarde un film ; moi, je prépare un gâteau. Tu peux même dormir chez moi ! Apporte des DVD pour qu’on choisisse le film ensemble.\nViens vers 18 h 30 et n’oublie pas ton pyjama !\nÀ vendredi,\nSophie",
+      "source_sha256": "77ce79faa7e5a8f18248c3fcb4aadf15556a11afd1427f75ddca9f389ed99412",
+      "semantic_sha256": "7aa37c2fa07ab9c0fd04089d9d664a71bbc6e429ec368fc6cb275a3daa249d53",
+      "question": {
+        "enonce": "Quels objets faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des DVD et un pyjama",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des livres et un maillot",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des jeux et des baskets",
+            "correct": false
+          }
+        ],
+        "written_model": "Des DVD et un pyjama"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-loisirs-dvd-pyjama",
+        "qcm-loisirs-livres-maillot",
+        "qcm-loisirs-jeux-baskets"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-dvd-pyjama.png",
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-livres-maillot.png",
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-jeux-baskets.png"
+      ],
+      "image_sha256": [
+        "836a32ca11cc3107f467f473c84c84bb2d1b6934522f5ae9108434aa523b905e",
+        "445fbdd66df8cfab64d6d2a5c59be5eb2a054b4e9209745aab59b57eed5343dd",
+        "8cd3e816d2058f011c70d8e37f6483c41bafa3eefb430b8ec9caa6ca6d2d5b82"
+      ],
+      "reason": "Le message de Sophie demande des DVD et le pyjama ; les autres paires restent des leurres complets, sans image unique générique de vêtements.",
+      "visual_review": "Trois DVD et un pyjama haut/pantalon ; trois livres et un maillot de bain ; deux types de jeux et une paire de baskets. Chaque partie de chaque réponse est visible.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-038#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "À votre arrivée au restaurant :\n• Mettez votre uniforme et votre tablier. Les chaussures de service sont obligatoires.\n• Les personnes aux cheveux longs doivent s’attacher les cheveux.\n• Nettoyez les tables et le sol. Vous trouverez les produits d’entretien dans la petite armoire, à l’entrée à droite.\n• Vous avez une pause de 15 minutes. Une salle de repos est à la disposition des employés.",
+      "source_sha256": "eb289b35db26f9bf7990146cd4399ac9dc976741562ae224ad6e55b4d5ae56df",
+      "semantic_sha256": "85ea2577a58603398ba5bffb692b9af44600bd691abc1fca30b853d10215b1f8",
+      "question": {
+        "enonce": "Quels vêtements faut-il mettre à son arrivée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un uniforme et un tablier",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un costume et une cravate",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un maillot et un bonnet",
+            "correct": false
+          }
+        ],
+        "written_model": "Un uniforme et un tablier"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-service-uniforme-tablier",
+        "qcm-vetements-costume-cravate",
+        "qcm-piscine-maillot-bonnet"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-service-uniforme-tablier.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-maillot-bonnet.png"
+      ],
+      "image_sha256": [
+        "4ecad1075ef2cf73f677255bf7fd7b1be0439c170b5a1d222e5eb31f4e4369ee",
+        "5058464a2d41fa99c66856705d81842558bd2945b9d17b5088058887b150c9a7",
+        "1f0fface00e292fbf8b90678cd01e1f737da80641099910c10310fd5b83fd062"
+      ],
+      "reason": "La consigne du restaurant demande l’uniforme et le tablier. L’uniforme de service chemise/pantalon et le tablier séparé n’ajoutent pas de métier précis à la source.",
+      "visual_review": "Uniforme et tablier, costume complet et cravate réutilisés, maillot et bonnet de natation ; objets entiers sans personne, travail et piscine visuellement distincts.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-043#3",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Le règlement se trouve à l’accueil.\n• Le maillot de bain est obligatoire (shorts et bermudas interdits).\n• Déposez vos affaires dans un casier, dans les vestiaires.\n• Rincez-vous d’abord à la douche avant d’entrer dans la piscine.\n• Il est interdit de courir, de boire et de manger autour des bassins.",
+      "source_sha256": "3891cfa9512313d1e4072f0fad8b9273ea670c438ad95ba2bccb096179e06186",
+      "semantic_sha256": "27625ca3b3d0d1874e6c7e51d64162affc237254bd1c513d82650d3063edd2c0",
+      "question": {
+        "enonce": "Quels vêtements sont interdits ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les shorts et les bermudas",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les maillots une pièce",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les maillots deux pièces",
+            "correct": false
+          }
+        ],
+        "written_model": "Les shorts et les bermudas"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-piscine-shorts-bermudas",
+        "qcm-piscine-maillots-une-piece",
+        "qcm-piscine-maillots-deux-pieces"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-piscine-shorts-bermudas.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-une-piece.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-deux-pieces.png"
+      ],
+      "image_sha256": [
+        "bb70507bb7dbd96e51dec5427262a437e9283e4d829c54055d92a0069f97d940",
+        "ae1c1398344a62955c23c3de2171e421c099553f80f07f901041993d3a8bf205",
+        "bae6c9eb042c9ed62174aa25ab168a87bc7a1f812c4acb90a6837f1a6c83d129"
+      ],
+      "reason": "Le règlement interdit shorts et bermudas ; aucun symbole d’interdiction ajouté sur l’image correcte ne donne la réponse.",
+      "visual_review": "Deux shorts courts et deux bermudas plus longs ; deux maillots une pièce continus ; deux ensembles deux pièces séparés au niveau de la taille. Pluriels et différence entre formes contrôlés.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s20-co-3#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bienvenue au parc Astérix !\nVous allez bientôt entrer dans l’attraction du train rapide.\nIl y a quelques règles à respecter pour votre sécurité.\nIl faut mesurer au moins 1 mètre 20 pour pouvoir monter dans le manège.\nRangez vos affaires : lunettes, bijoux, appareils photo...\ndans votre sac.\nEt gardez bien votre tête contre le siège dans le train.\nN’oubliez pas de sourire pour la photo !\nVous pouvez acheter cette photo sur le stand à la sortie du train rapide.\nAmusez-vous bien !",
+      "source_sha256": "6e3a08ff6b10f9d712d19df17376543efd8b0da12bbda30ad017d3ee6fdd689b",
+      "semantic_sha256": "b82288e18e0636a6e71192a2630465589ee86d201f88e7a1c3f7ed385d77b1e5",
+      "question": {
+        "enonce": "Quels objets sont notamment cités parmi les affaires à ranger ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les lunettes, les bijoux et les appareils photo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les vêtements et les chaussures uniquement",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les papiers et les stylos uniquement",
+            "correct": false
+          }
+        ],
+        "written_model": "Les lunettes, les bijoux et les appareils photo"
+      },
+      "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-2.mp3",
+      "audio_sha256": "6ab6d1b3b8b009354a2c9d4cc900b9e3280a93ce07766adaeafdceef98c80622",
+      "image_ids": [
+        "qcm-loisirs-lunettes-bijoux-appareils-photo",
+        "co306-vetements-chaussures-dessine",
+        "qcm-courrier-feuilles-stylos-ivoire"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-lunettes-bijoux-appareils-photo.png",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-courrier-feuilles-stylos-ivoire.png"
+      ],
+      "image_sha256": [
+        "2805b5679678eaca1028285f5d763e4655c145f4cb46359d789ac41e57bb4f27",
+        "e0675e8b025c2f79baf7f3b9a2d217f79a090eb346586c589a9c5428a8fea4e3",
+        "dbffcef8651c0ba668c099d91a2bbee1ed97699c63b34b6025f62cb0cf25ebe4"
+      ],
+      "reason": "L’annonce du parc Astérix cite lunettes, bijoux et appareils photo à ranger. Les leurres restent limités aux vêtements/chaussures et aux papiers/stylos.",
+      "visual_review": "Deux paires de lunettes, bijoux et deux appareils photo ; vêtements et paire de chaussures réemployés sans sac ; groupe feuilles/stylos au fond repris. Les trois catégories du bon choix sont visibles.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

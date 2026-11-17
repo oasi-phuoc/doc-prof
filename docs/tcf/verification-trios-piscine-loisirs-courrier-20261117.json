@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "35cb1bb3aeb0fa3325af5b5b402eb9233edb5e0c",
+  "six_bank_comparison": [
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 162
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 507
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 177
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 379
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/ce.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 0
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 130
+    }
+  ],
+  "existing_image_metadata_preserved": true,
+  "source_png_bytes_preserved": 15,
+  "reused_images_preserved": [
+    "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+    "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+    "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png"
+  ],
+  "original_paper_image_preserved": true,
+  "audio_files_changed": 0,
+  "human_audio_listening_performed": false,
+  "historical": {
+    "active": 384,
+    "retained_text": 112,
+    "pending": 267,
+    "pending_by_level": {
+      "A0-A1": 99,
+      "A1-A2": 149,
+      "A2-B1": 19
+    },
+    "pending_categories": {
+      "artwork_needed_contextual_locations": 219,
+      "artwork_needed_whole_answer_concepts": 37,
+      "artwork_needed_distinct_document_types": 11
+    }
+  },
+  "delf_actif": {
+    "active": 366,
+    "candidates": 380,
+    "retained_text": 917
+  },
+  "catalog_tests": {
+    "passed": 20,
+    "failed": 0
+  },
+  "gallery": {
+    "images": 7236,
+    "search": {
+      "piscine": {
+        "before": {
+          "results": 43,
+          "clocks": 15
+        },
+        "after": {
+          "results": 27,
+          "clocks": 0
+        }
+      },
+      "chat": {
+        "before": {
+          "results": 76,
+          "clocks": 3
+        },
+        "after": {
+          "results": 35,
+          "clocks": 0
+        }
+      },
+      "envoyer": {
+        "before": {
+          "results": 27,
+          "clocks": 3
+        },
+        "after": {
+          "results": 6,
+          "clocks": 0
+        }
+      },
+      "horloge": {
+        "before": {
+          "results": 452,
+          "clocks": 450
+        },
+        "after": {
+          "results": 452,
+          "clocks": 450
+        }
+      }
+    },
+    "production_browser": {
+      "passed": true,
+      "results": [
+        "La galerie conserve la protection d’accès du site.",
+        "Piscine, chat et envoyer ne remontent plus les horloges réutilisées ; horloge conserve ses résultats.",
+        {
+          "selectionZip": [
+            "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+            "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+          ],
+          "labels": [
+            "Le passeport et la carte d’embarquement",
+            "Le passeport et le billet"
+          ]
+        },
+        "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+        "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
+        "Chaque famille publiée du quotidien est recherchable et son téléchargement conserve les octets de l’illustration contrôlée.",
+        "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+        "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+        "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+        "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+        "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+        "Annulation vérifiée ; la sélection est conservée."
+      ],
+      "browserErrors": []
+    }
+  },
+  "trio_browser": {
+    "views": 12,
+    "question_views": 12,
+    "image_views": 36,
+    "errors": []
+  },
+  "checks": {
+    "historical_763": true,
+    "delf_actif_images": true,
+    "delf_actif_context": true,
+    "qcm_variants": 2466,
+    "qcm_shuffle_regressions": 12,
+    "bank_exercises": 1355,
+    "indexed_tcf_audio_pools": 1371,
+    "game_pool_types": 697,
+    "typescript": true,
+    "production_build": true
+  },
+  "production_budgets": {
+    "landing": {
+      "gzip": 122553,
+      "maximumGzip": 153600
+    },
+    "pool": {
+      "gzip": 160978,
+      "maximumGzip": 204800
+    },
+    "calibration": {
+      "gzip": 143362,
+      "maximumGzip": 204800
+    },
+    "diagnostic": {
+      "gzip": 145498,
+      "maximumGzip": 204800
+    },
+    "competition": {
+      "gzip": 204772,
+      "maximumGzip": 204800
+    },
+    "teacherConsole": {
+      "gzip": 167843,
+      "maximumGzip": 204800
+    },
+    "game": {
+      "gzip": 3142428,
+      "maximumGzip": 3145728
+    }
+  },
+  "budget_limits_unchanged": true
+}

@@ -33335,6 +33335,204 @@
       "source_sha256": "ffab2d642ccc46647e41783cae0f144de88dfb9fe0e57f951f45f474a4b3dc9e",
       "reason": "La promotion porte sur les derniers livres de recettes, au pluriel. Un seul livre ne suffit pas pour ce choix et les ustensiles restent une catégorie différente des livres.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-013",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-piscine-serviettes-bonnets.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-piscine-lunettes-maillots.png"
+          }
+        ]
+      },
+      "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
+      "reason": "Le règlement interdit nourriture et boissons ; biscuits et boissons représentent cette catégorie, sans ajouter d’interdiction aux équipements de natation.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-55-1",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png"
+          }
+        ]
+      },
+      "source_sha256": "9a4beb770bd60dd6e8d932961d4d9b84b9b0fdb2cc3ff173ae31a403b07425c3",
+      "reason": "La transcription nomme cartes postales et timbres ; chaque leurre montre les deux objets de correspondance demandés, sans les confondre avec le stylo cité ailleurs.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-022",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-loisirs-dvd-pyjama.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-loisirs-livres-maillot.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-loisirs-jeux-baskets.png"
+          }
+        ]
+      },
+      "source_sha256": "77ce79faa7e5a8f18248c3fcb4aadf15556a11afd1427f75ddca9f389ed99412",
+      "reason": "Le message de Sophie demande des DVD et le pyjama ; les autres paires restent des leurres complets, sans image unique générique de vêtements.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-038",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-service-uniforme-tablier.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-piscine-maillot-bonnet.png"
+          }
+        ]
+      },
+      "source_sha256": "eb289b35db26f9bf7990146cd4399ac9dc976741562ae224ad6e55b4d5ae56df",
+      "reason": "La consigne du restaurant demande l’uniforme et le tablier. L’uniforme de service chemise/pantalon et le tablier séparé n’ajoutent pas de métier précis à la source.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-043",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-piscine-shorts-bermudas.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-une-piece.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-deux-pieces.png"
+          }
+        ]
+      },
+      "source_sha256": "3891cfa9512313d1e4072f0fad8b9273ea670c438ad95ba2bccb096179e06186",
+      "reason": "Le règlement interdit shorts et bermudas ; aucun symbole d’interdiction ajouté sur l’image correcte ne donne la réponse.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s20-co-3",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-loisirs-lunettes-bijoux-appareils-photo.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-courrier-feuilles-stylos-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "6e3a08ff6b10f9d712d19df17376543efd8b0da12bbda30ad017d3ee6fdd689b",
+      "reason": "L’annonce du parc Astérix cite lunettes, bijoux et appareils photo à ranger. Les leurres restent limités aux vêtements/chaussures et aux papiers/stylos.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

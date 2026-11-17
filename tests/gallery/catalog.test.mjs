@@ -24,6 +24,18 @@ test('all repository images appear once, including documents, logos and source a
   assert.deepEqual(JSON.parse(readFileSync('src/gallery/catalog.generated.json', 'utf8')), catalog)
 })
 
+test('reused clock choices stay searchable by time without inheriting unrelated exercise subjects', () => {
+  const catalog = buildGalleryCatalog(process.cwd())
+  const clock = catalog.find(image => image.src.endsWith('/co834-horloge-1400-dessinee.webp'))
+  assert(clock)
+  assert(clock.types.includes('Heure et horloge'))
+  assert(clock.keywords.includes('14 heures'), 'Answer aliases remain searchable')
+  const subject = [clock.label, clock.id, clock.keywords, ...clock.themes, ...clock.types].join(' ').toLowerCase()
+  for (const unrelated of ['piscine', 'envoyer', 'achats', 'boulangerie']) assert(!subject.includes(unrelated), unrelated)
+  assert(!clock.keywords.includes('À quelle heure'), 'The whole exercise question is not the image subject')
+  assert(!clock.themes.includes('Transports'), 'A transport question does not turn its clock into a vehicle scene')
+})
+
 test('animal, plant, profession and illness filters preserve the actual meaning', () => {
   const catalog = buildGalleryCatalog(process.cwd())
   const find = suffix => catalog.find(image => image.id.endsWith(suffix))

@@ -24,6 +24,18 @@ try {
   await page.getByRole('heading', { name: 'Galerie d’images', exact: true }).waitFor()
   assert.equal(await page.locator('.gallery-card').count(), 48)
   assert.equal(await page.locator('.gallery-card img').evaluateAll(images => images.filter(i => i.complete && i.naturalWidth > 0).length) > 0, true)
+  for (const query of ['piscine', 'chat', 'envoyer']) {
+    await page.getByLabel('Rechercher une image', { exact: true }).fill(query)
+    assert((await page.locator('.gallery-card-body > p').allTextContents()).every(text => !text.includes('Heure et horloge')), query)
+    await page.getByLabel('Type d’image', { exact: true }).selectOption('Heure et horloge')
+    await page.getByRole('heading', { name: 'Aucune image trouvée', exact: true }).waitFor()
+    await page.getByLabel('Type d’image', { exact: true }).selectOption('')
+  }
+  await page.getByLabel('Rechercher une image', { exact: true }).fill('horloge')
+  await page.getByLabel('Type d’image', { exact: true }).selectOption('Heure et horloge')
+  assert(await page.locator('.gallery-card').count() > 0)
+  results.push('Piscine, chat et envoyer ne remontent plus les horloges réutilisées ; horloge conserve ses résultats.')
+  await page.getByLabel('Type d’image', { exact: true }).selectOption('')
   await page.getByLabel('Rechercher une image', { exact: true }).fill('passeport')
   assert(await page.locator('.gallery-card').count() >= 2)
   await page.locator('.gallery-card input[type=checkbox]').nth(0).check()

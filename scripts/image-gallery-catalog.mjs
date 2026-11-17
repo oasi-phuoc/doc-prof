@@ -102,7 +102,8 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
       for (const q of ex.questions ?? []) {
         const texts = new Map((q.choix ?? []).map(c => [c.id, c.texte]))
         for (const c of [...(q.choix ?? []), ...(q.formes?.qcm_image?.choix ?? [])]) {
-          add(c.image, { labels: [c.texte ?? texts.get(c.id)], themes: context, terms: [q.enonce] })
+          // A reused choice depicts its answer, not every situation that asks about it.
+          add(c.image, { labels: [c.texte ?? texts.get(c.id)] })
         }
       }
     }

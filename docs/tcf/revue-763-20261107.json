@@ -4060,14 +4060,14 @@
         "Les serviettes et les bonnets",
         "Les lunettes et les maillots"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "81ec7938905994994cc771f85fec942d9ce4b9ed5bb9e743f9cc732a5342ab51",
       "audio": null,
       "review_index": 85,
       "semantic_sha256": "59d134dc56e80d1f038a5e7d74ae0ec5df3692b438ec99b6b77676460a2cf507",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le règlement interdit nourriture et boissons ; biscuits et boissons représentent cette catégorie, sans ajouter d’interdiction aux équipements de natation.",
       "brief": {
         "context_question": "Quels produits ne sont pas autorisés ?",
         "choices_to_illustrate": [
@@ -4098,7 +4098,21 @@
           "Les lunettes et les maillots"
         ]
       },
-      "upstream_revalidation": "retained_review_after_exact_swiss_localization"
+      "upstream_revalidation": "retained_review_after_exact_swiss_localization",
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/co306-boissons-biscuits-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-serviettes-bonnets.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-lunettes-maillots.png"
+      ],
+      "selected_sha256": [
+        "a56a3ce5a19107604aa5a846435b48b32f566cbc3e3b66339ade2a9b1a7ef6e1",
+        "d9cff7559dd72acc7ee526ad7566a37e4367e89bc90f4f72198748355a57785a",
+        "bc4dc4305922b751e6d701e7269511d11c5c1b95d175d4c2228c1e362e42625a"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-piscine-loisirs-courrier-20261117.json",
+        "note": "Les trois choix gardent leurs deux familles : nourriture/boissons, serviettes/bonnets, lunettes/maillots ; équipements au pluriel et fond comparés côte à côte."
+      }
     },
     {
       "key": "delf-a1s-ce-013#4",
@@ -15930,14 +15944,14 @@
         "Des enveloppes et des lettres",
         "Des colis et du papier cadeau"
       ],
-      "status": "artwork_needed_distinct_document_types",
+      "status": "active_reviewed_trio",
       "source_sha256": "9a4beb770bd60dd6e8d932961d4d9b84b9b0fdb2cc3ff173ae31a403b07425c3",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_55-1.mp3",
       "review_index": 359,
       "semantic_sha256": "2ccf956d6c3995925cbeeeee612c7609596fcce01f66b7393de01f809b71e417",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "reason": "La transcription nomme cartes postales et timbres ; chaque leurre montre les deux objets de correspondance demandés, sans les confondre avec le stylo cité ailleurs.",
       "brief": {
         "context_question": "Quels objets de correspondance prend-elle ?",
         "choices_to_illustrate": [
@@ -15957,6 +15971,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-courrier-cartes-postales-timbres.png",
+        "/lib/images/tcf/qcm-audit/qcm-courrier-enveloppes-lettres.png",
+        "/lib/images/tcf/qcm-audit/qcm-courrier-colis-papier-cadeau.png"
+      ],
+      "selected_sha256": [
+        "3c4e87feebf7cb19fb9f32b8408c7b0f067dc5fdddad80f3290ddc3bbfdb14db",
+        "5ff61136cf0a04e46c469fe80188fd1654783437ffa212e660fab0abec52e86e",
+        "f2d230253ba17b5223a5812836c4f0dfbba85f258f566ca94f66c1062a97f16c"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-piscine-loisirs-courrier-20261117.json",
+        "note": "Cartes et timbres distincts par taille et dentelure, lettres avec traits et enveloppes ouvertes, colis postaux et rouleaux de papier cadeau ; trois compositions au pluriel."
       }
     },
     {
@@ -18820,14 +18848,14 @@
         "Des livres et un maillot",
         "Des jeux et des baskets"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "77ce79faa7e5a8f18248c3fcb4aadf15556a11afd1427f75ddca9f389ed99412",
       "audio": null,
       "review_index": 427,
       "semantic_sha256": "7aa37c2fa07ab9c0fd04089d9d664a71bbc6e429ec368fc6cb275a3daa249d53",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le message de Sophie demande des DVD et le pyjama ; les autres paires restent des leurres complets, sans image unique générique de vêtements.",
       "brief": {
         "context_question": "Quels objets faut-il apporter ?",
         "choices_to_illustrate": [
@@ -18847,6 +18875,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-dvd-pyjama.png",
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-livres-maillot.png",
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-jeux-baskets.png"
+      ],
+      "selected_sha256": [
+        "836a32ca11cc3107f467f473c84c84bb2d1b6934522f5ae9108434aa523b905e",
+        "445fbdd66df8cfab64d6d2a5c59be5eb2a054b4e9209745aab59b57eed5343dd",
+        "8cd3e816d2058f011c70d8e37f6483c41bafa3eefb430b8ec9caa6ca6d2d5b82"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-piscine-loisirs-courrier-20261117.json",
+        "note": "Trois DVD et un pyjama haut/pantalon ; trois livres et un maillot de bain ; deux types de jeux et une paire de baskets. Chaque partie de chaque réponse est visible."
       }
     },
     {
@@ -22125,14 +22167,14 @@
         "Un costume et une cravate",
         "Un maillot et un bonnet"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "eb289b35db26f9bf7990146cd4399ac9dc976741562ae224ad6e55b4d5ae56df",
       "audio": null,
       "review_index": 509,
       "semantic_sha256": "85ea2577a58603398ba5bffb692b9af44600bd691abc1fca30b853d10215b1f8",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "La consigne du restaurant demande l’uniforme et le tablier. L’uniforme de service chemise/pantalon et le tablier séparé n’ajoutent pas de métier précis à la source.",
       "brief": {
         "context_question": "Quels vêtements faut-il mettre à son arrivée ?",
         "choices_to_illustrate": [
@@ -22152,6 +22194,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-service-uniforme-tablier.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-maillot-bonnet.png"
+      ],
+      "selected_sha256": [
+        "4ecad1075ef2cf73f677255bf7fd7b1be0439c170b5a1d222e5eb31f4e4369ee",
+        "5058464a2d41fa99c66856705d81842558bd2945b9d17b5088058887b150c9a7",
+        "1f0fface00e292fbf8b90678cd01e1f737da80641099910c10310fd5b83fd062"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-piscine-loisirs-courrier-20261117.json",
+        "note": "Uniforme et tablier, costume complet et cravate réutilisés, maillot et bonnet de natation ; objets entiers sans personne, travail et piscine visuellement distincts."
       }
     },
     {
@@ -22359,14 +22415,14 @@
         "Les maillots une pièce",
         "Les maillots deux pièces"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "3891cfa9512313d1e4072f0fad8b9273ea670c438ad95ba2bccb096179e06186",
       "audio": null,
       "review_index": 515,
       "semantic_sha256": "27625ca3b3d0d1874e6c7e51d64162affc237254bd1c513d82650d3063edd2c0",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le règlement interdit shorts et bermudas ; aucun symbole d’interdiction ajouté sur l’image correcte ne donne la réponse.",
       "brief": {
         "context_question": "Quels vêtements sont interdits ?",
         "choices_to_illustrate": [
@@ -22386,6 +22442,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-piscine-shorts-bermudas.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-une-piece.png",
+        "/lib/images/tcf/qcm-audit/qcm-piscine-maillots-deux-pieces.png"
+      ],
+      "selected_sha256": [
+        "bb70507bb7dbd96e51dec5427262a437e9283e4d829c54055d92a0069f97d940",
+        "ae1c1398344a62955c23c3de2171e421c099553f80f07f901041993d3a8bf205",
+        "bae6c9eb042c9ed62174aa25ab168a87bc7a1f812c4acb90a6837f1a6c83d129"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-piscine-loisirs-courrier-20261117.json",
+        "note": "Deux shorts courts et deux bermudas plus longs ; deux maillots une pièce continus ; deux ensembles deux pièces séparés au niveau de la taille. Pluriels et différence entre formes contrôlés."
       }
     },
     {
@@ -25818,14 +25888,14 @@
         "Les vêtements et les chaussures uniquement",
         "Les papiers et les stylos uniquement"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "6e3a08ff6b10f9d712d19df17376543efd8b0da12bbda30ad017d3ee6fdd689b",
       "audio": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-2.mp3",
       "review_index": 600,
       "semantic_sha256": "b82288e18e0636a6e71192a2630465589ee86d201f88e7a1c3f7ed385d77b1e5",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "L’annonce du parc Astérix cite lunettes, bijoux et appareils photo à ranger. Les leurres restent limités aux vêtements/chaussures et aux papiers/stylos.",
       "brief": {
         "context_question": "Quels objets sont notamment cités parmi les affaires à ranger ?",
         "choices_to_illustrate": [
@@ -25845,6 +25915,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-loisirs-lunettes-bijoux-appareils-photo.png",
+        "/lib/images/tcf/qcm-audit/co306-vetements-chaussures-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-courrier-feuilles-stylos-ivoire.png"
+      ],
+      "selected_sha256": [
+        "2805b5679678eaca1028285f5d763e4655c145f4cb46359d789ac41e57bb4f27",
+        "e0675e8b025c2f79baf7f3b9a2d217f79a090eb346586c589a9c5428a8fea4e3",
+        "dbffcef8651c0ba668c099d91a2bbee1ed97699c63b34b6025f62cb0cf25ebe4"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-piscine-loisirs-courrier-20261117.json",
+        "note": "Deux paires de lunettes, bijoux et deux appareils photo ; vêtements et paire de chaussures réemployés sans sac ; groupe feuilles/stylos au fond repris. Les trois catégories du bon choix sont visibles."
       }
     },
     {
@@ -32012,20 +32096,20 @@
   "summary": {
     "artwork_needed_contextual_locations": 219,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 378,
-    "artwork_needed_whole_answer_concepts": 42,
+    "active_reviewed_trio": 384,
+    "artwork_needed_whole_answer_concepts": 37,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
     "keep_text_nonvisual_or_quantified_claim": 9,
-    "artwork_needed_distinct_document_types": 12,
+    "artwork_needed_distinct_document_types": 11,
     "keep_text_arbitrary_identifier": 8,
     "keep_text_rule_temporal_scope": 1
   },
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 378,
+  "activated_total": 384,
   "retained_text_total": 112,
-  "artwork_pending_total": 273
+  "artwork_pending_total": 267
 }
