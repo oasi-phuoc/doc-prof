@@ -68,7 +68,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   for (const image of read(root, 'docs/tcf/images-generees.json', {}).images ?? []) {
     add(image.path, { labels: [image.label], types: image.gallery_types, themes: image.gallery_themes })
   }
-  for (const manifest of ['docs/gallery/complements-20261116.json', 'docs/gallery/objets-20261116.json', 'docs/gallery/quotidien-20261116.json']) for (const image of read(root, manifest, {}).images ?? []) {
+  for (const manifest of ['docs/gallery/complements-20261116.json', 'docs/gallery/objets-20261116.json', 'docs/gallery/quotidien-20261116.json', 'docs/gallery/ajouts-20261117.json']) for (const image of read(root, manifest, {}).images ?? []) {
     if (image.status === 'visually_reviewed') {
       add(image.path, { labels: [image.label], types: [image.type], themes: [image.type, image.subtype, 'Style TCF validé'], keywords: image.aliases ?? [] })
       if (image.type === 'Objet') reviewedObjects.add(image.path)

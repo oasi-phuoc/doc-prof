@@ -232,3 +232,20 @@ test('daily-life illustrations keep reviewed originals and searchable family nam
     else assert(!manifest.images.some(image => image.id === subject.job), 'unfinished subjects are never published')
   }
 })
+
+test('November 17 image additions are searchable WebP variants', () => {
+  const manifest = JSON.parse(readFileSync('docs/gallery/ajouts-20261117.json', 'utf8'))
+  const catalog = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
+  assert.equal(new Set(manifest.images.map(image => image.path)).size, manifest.images.length)
+  for (const image of manifest.images) {
+    assert.equal(image.status, 'visually_reviewed')
+    assert(image.path.endsWith('.webp'))
+    assert.equal(image.width / image.height, 4 / 3)
+    assert.equal(createHash('sha256').update(readFileSync('public' + image.path)).digest('hex'), image.sha256)
+    const indexed = catalog.get(image.path)
+    assert(indexed, `Missing gallery image: ${image.path}`)
+    assert.equal(indexed.label, image.label)
+    assert.deepEqual(indexed.types, [image.type])
+    assert(indexed.keywords.includes(image.aliases[0]))
+  }
+})
