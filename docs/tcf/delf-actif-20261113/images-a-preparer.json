@@ -8,9 +8,9 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 363,
+      "active_reviewed_trio": 366,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 383,
+      "candidate_visual_review": 380,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
@@ -25,17 +25,17 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 136,
-        "candidate_visual_review": 202,
+        "active_reviewed_trio": 137,
+        "candidate_visual_review": 201,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
         "keep_text_amount": 24
       },
       "A2-B1": {
-        "candidate_visual_review": 123,
+        "candidate_visual_review": 121,
+        "active_reviewed_trio": 25,
         "keep_text_contextual": 346,
-        "active_reviewed_trio": 23,
         "keep_text_calendar_or_duration": 35,
         "keep_text_named_identity_or_code": 9,
         "keep_text_amount": 12
@@ -33943,6 +33943,12 @@
               "sha256": "82de39963c07aeec77cae57aeccc8690445d10a3659e50ba40096904045d8907",
               "label": "Imperméable",
               "visual_review_required": true
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-impermeable.png",
+              "sha256": "68b4c27631641fb1f6d98d367ac058116e73e0ff69338aec453130ef84b7efc9",
+              "label": "Un imperméable",
+              "visual_review_required": true
             }
           ],
           "asset": "91c2211ebdb1b686",
@@ -64066,14 +64072,21 @@
       "semantic_sha256": "af84afed5f6cfb6d79026b59555764ea6d031496daeb845a8b588848f4b244d3",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-05.mp3",
       "audio_sha256": "84935b8ada93b4924438ba6a5bfa4cf680fc43ee6bdd20c4af5d983aacd09550",
-      "status": "candidate_visual_review",
-      "reason": "Anorak, maillot de bain et tee-shirt entiers ; le vêtement demandé n’est pas le téléphone interdit.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "L’anorak",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-anorak.png",
+              "sha256": "5451d590e38fc9b8c89ab67413a98b0993adcd418fb356867962f857e000c27b",
+              "label": "Un anorak",
+              "visual_review_required": true
+            }
+          ],
           "asset": "13584bab689f0a51",
           "brief": "Représenter entièrement « L’anorak » pour « Quel vêtement doit aussi y être déposé ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-01-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Anorak, maillot de bain et tee-shirt entiers ; le vêtement demandé n’est pas le téléphone interdit."
         },
@@ -64101,8 +64114,24 @@
           "brief": "Représenter entièrement « Le tee-shirt » pour « Quel vêtement doit aussi y être déposé ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-01-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Anorak, maillot de bain et tee-shirt entiers ; le vêtement demandé n’est pas le téléphone interdit."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-anorak.png",
+          "sha256": "5451d590e38fc9b8c89ab67413a98b0993adcd418fb356867962f857e000c27b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-maillot-une-piece-ivoire.png",
+          "sha256": "822f244945cb144a2a0589fd6c7c6bc808527a6704b413b38bb6d24e69c6c026"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-t-shirt-dessine.webp",
+          "sha256": "41b7b9239a145b75a6e719d0dd02699068913a119ae8b7a0d3957f82967f3414"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -64120,6 +64149,10 @@
         "evidence_quote": "vos sacs et anorak",
         "semantic_sha256": "af84afed5f6cfb6d79026b59555764ea6d031496daeb845a8b588848f4b244d3",
         "note": "Anorak, maillot de bain et tee-shirt entiers ; le vêtement demandé n’est pas le téléphone interdit."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Anorak matelassé avec capuche, maillot une pièce, tee-shirt. L'anorak rembourré est distingué de l'imperméable léger utilisé dans l'autre support."
       }
     },
     {
@@ -79940,8 +79973,8 @@
       "semantic_sha256": "178d5a50c8dd3c20c24e4984bb5ee99f5e845dfe39b29ed83973f6d689184ce6",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-01.mp3",
       "audio_sha256": "be1b49bcca12143558ec40300810770ad906074482de1a10af02571106d61b71",
-      "status": "candidate_visual_review",
-      "reason": "Imperméable, maillot et pyjama entiers ; pas de parapluie substitué au vêtement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -79968,8 +80001,24 @@
           "brief": "Représenter entièrement « Son pyjama » pour « Quel vêtement sa mère lui demande-t-elle de prendre contre la pluie ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Imperméable, maillot et pyjama entiers ; pas de parapluie substitué au vêtement."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-impermeable.png",
+          "sha256": "68b4c27631641fb1f6d98d367ac058116e73e0ff69338aec453130ef84b7efc9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-short-bain.png",
+          "sha256": "0fa357a89261a44e8dbad552602d7cfa781691e916dc63715fc9d1f92fb56dce"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-pyjama.png",
+          "sha256": "0201521027f906438413aaace9a3cacba6a0bf7df12e8a004bbac202f997e789"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -79987,6 +80036,10 @@
         "evidence_quote": "n’oublie pas ton imper",
         "semantic_sha256": "178d5a50c8dd3c20c24e4984bb5ee99f5e845dfe39b29ed83973f6d689184ce6",
         "note": "Imperméable, maillot et pyjama entiers ; pas de parapluie substitué au vêtement."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Imperméable complet, short de bain comme catégorie de maillot de Bastien, pyjama complet haut et pantalon. Aucune identité visuelle inventée et aucune prévision météo chiffrée."
       }
     },
     {
@@ -80435,8 +80488,8 @@
       "semantic_sha256": "0fcdad30bf753502765d239b57354a4786f224f13aa93ebb51cfc1df1c41489e",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-03.mp3",
       "audio_sha256": "e7380ce87dd03c19e5657a152cbd2a97e9863ea98513e9711bfded47f2319803",
-      "status": "candidate_visual_review",
-      "reason": "Veste blanche, manteau rouge et pull vert ; conserver type ET couleur sans attribuer un portrait réel à la personne.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -80463,8 +80516,24 @@
           "brief": "Représenter entièrement « Avec un pull vert » pour « Comment est habillée la personne au guichet ? ». Vérifier la transcription du support tcf-delf-actif-b1-001-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Veste blanche, manteau rouge et pull vert ; conserver type ET couleur sans attribuer un portrait réel à la personne."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-veste-blanche.png",
+          "sha256": "7b40e9cdd9d1202ea2faafbcd290f7270c5ecb53e757b4c430690e1216bef11d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-manteau-rouge.webp",
+          "sha256": "4a97987ac02ec4fe71f86bc94ef56c1d924e93108b372aaf9d89fecc63b6729c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-pull-vert.png",
+          "sha256": "16d1f07974e9ac0f670b79b15fee4822453dedd70ea8b5a429f06615aa08e8ef"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -80482,6 +80551,10 @@
         "evidence_quote": "la veste blanche",
         "semantic_sha256": "0fcdad30bf753502765d239b57354a4786f224f13aa93ebb51cfc1df1c41489e",
         "note": "Veste blanche, manteau rouge et pull vert ; conserver type ET couleur sans attribuer un portrait réel à la personne."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Veste blanche à revers et manches longues, manteau rouge et pull vert tels que dans les choix. Les couleurs sont contrôlées ; une blouse de travail blanche ne remplace pas la veste. Les vêtements illustrent des catégories, pas le portrait de la dame."
       }
     },
     {
@@ -123206,6 +123279,12 @@
           "sha256": "82de39963c07aeec77cae57aeccc8690445d10a3659e50ba40096904045d8907",
           "label": "Imperméable",
           "visual_review_required": true
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-impermeable.png",
+          "sha256": "68b4c27631641fb1f6d98d367ac058116e73e0ff69338aec453130ef84b7efc9",
+          "label": "Un imperméable",
+          "visual_review_required": true
         }
       ],
       "references": [
@@ -129020,7 +129099,14 @@
     {
       "id": "13584bab689f0a51",
       "label": "L’anorak",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-vetements-anorak.png",
+          "sha256": "5451d590e38fc9b8c89ab67413a98b0993adcd418fb356867962f857e000c27b",
+          "label": "Un anorak",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a2-043-01-05#2",

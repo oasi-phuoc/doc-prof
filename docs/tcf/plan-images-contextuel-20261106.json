@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1979,
+    "reviewed_trio": 1983,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 289,
+    "reviewed_763_artwork_pending": 285,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -96085,20 +96085,32 @@
         "Un short et un tee-shirt",
         "Une robe et des sandales"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261117",
       "source_sha256": "130b9b90e641338e5aaa8db36d27a8d1661638a1a6caf499ce5a29eb5caf971f",
       "semantic_before_sha256": "272d65fd80d4d4dca689e2bb2e6fcac2a42a7a59a68495c3c330214e7c20418f",
       "semantic_after_sha256": "272d65fd80d4d4dca689e2bb2e6fcac2a42a7a59a68495c3c330214e7c20418f",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-2.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-vetements-manteau-echarpe-gants.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-short-tee-shirt.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-robe-sandales.png"
+      ],
+      "target_sha256": [
+        "c1791315106481fac4d0af047ee283d2d914e65c78fce09ecab3e352f2ff420f",
+        "20190b5905a231d0a28d30e973f9ffdf55558ea7423b857b1a971e8e5a2fe1e7",
+        "045cf5146af72c7988d92f4419bfe2d79f7e2bc7900af6c01f95505ce93b4ce5"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
-      "semantic_sha256": "272d65fd80d4d4dca689e2bb2e6fcac2a42a7a59a68495c3c330214e7c20418f"
+      "reason": "La deuxième piste demande « votre manteau, votre écharpe et vos gants ». Les trois pièces sont nécessaires ; le froid annoncé ne doit pas être dessiné sous forme de nombre.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La deuxième piste demande « votre manteau, votre écharpe et vos gants ». Les trois pièces sont nécessaires ; le froid annoncé ne doit pas être dessiné sous forme de nombre.",
+      "semantic_sha256": "272d65fd80d4d4dca689e2bb2e6fcac2a42a7a59a68495c3c330214e7c20418f",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Un manteau, une écharpe et une paire de gants dans la même composition. Les deux autres choix conservent short/tee-shirt et robe/sandales. L'ancien duo manteau/gants est incomplet ici."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex2-15#5",
@@ -120928,19 +120940,31 @@
         "Un maillot et des sandales",
         "Un costume et une cravate"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261117",
       "source_sha256": "c09071ab473ef45a8bdf6a097658d22dadaef524c07a76e4563348ae12fceade",
       "semantic_before_sha256": "691abf6bd7f0165a4a67c60f960c9d9b964066df1437e8126b900a3e1cea2c50",
       "semantic_after_sha256": "691abf6bd7f0165a4a67c60f960c9d9b964066df1437e8126b900a3e1cea2c50",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-vetements-manteau-echarpe-gants.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-maillot-sandales.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png"
+      ],
+      "target_sha256": [
+        "c1791315106481fac4d0af047ee283d2d914e65c78fce09ecab3e352f2ff420f",
+        "e73e8c7ec304d338e276232b570ae228486e246fbf9d022a9d9eafb510c97b84",
+        "5058464a2d41fa99c66856705d81842558bd2945b9d17b5088058887b150c9a7"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Nicolas demande de prendre « des habits chauds et des gants » pour le séjour à la montagne. Les draps et serviettes sont déjà fournis ; ils ne font pas partie de ce choix.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Nicolas demande de prendre « des habits chauds et des gants » pour le séjour à la montagne. Les draps et serviettes sont déjà fournis ; ils ne font pas partie de ce choix.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Le manteau et l'écharpe sont les habits chauds, avec les deux gants. Maillot avec sandales et costume complet avec cravate restent les deux tenues distractrices. Aucune date ou température ajoutée."
+      }
     },
     {
       "key": "tcf-a2p-s1-ce-2#3",
@@ -147038,19 +147062,31 @@
         "Un maillot de bain",
         "Un manteau de pluie"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261117",
       "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
       "semantic_before_sha256": "7ed074af7876465de53836e46c4baea9215bd409b10da8aef0baa5e40cfc35af",
       "semantic_after_sha256": "7ed074af7876465de53836e46c4baea9215bd409b10da8aef0baa5e40cfc35af",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-vetements-blouse-professionnelle.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-maillot-une-piece-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-impermeable.png"
+      ],
+      "target_sha256": [
+        "5309db58211812ea32d7d40e864bfb24bddbad7cdc38f4db557c684615557f36",
+        "822f244945cb144a2a0589fd6c7c6bc808527a6704b413b38bb6d24e69c6c026",
+        "68b4c27631641fb1f6d98d367ac058116e73e0ff69338aec453130ef84b7efc9"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La consigne de l'institut demande la « tenue de travail (blouse, pantalon, chaussures) ». La question porte seulement sur le vêtement du haut.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La consigne de l'institut demande la « tenue de travail (blouse, pantalon, chaussures) ». La question porte seulement sur le vêtement du haut.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Blouse de travail à manches courtes adaptée à un institut, maillot une pièce et imperméable léger à capuche. Aucun instrument médical ou personnage n'invente un autre métier."
+      }
     },
     {
       "key": "delf-a2r-ce-036#4",
@@ -147063,19 +147099,31 @@
         "Un short de bain",
         "Une jupe de soirée"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261117",
       "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
       "semantic_before_sha256": "c874d96a2dea49fddc977ccd1938af33a871d8fc842ffcd1c729705e20c9619a",
       "semantic_after_sha256": "c874d96a2dea49fddc977ccd1938af33a871d8fc842ffcd1c729705e20c9619a",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-short-bain.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-jupe-soiree.png"
+      ],
+      "target_sha256": [
+        "5800a918010832838d307f2bdaba4e946d60f123fb7af0f9a51770e9a38b986f",
+        "0fa357a89261a44e8dbad552602d7cfa781691e916dc63715fc9d1f92fb56dce",
+        "81fbe9f154898eb0cc6e8fdad58d2393f79218400977cacc9db2246d5c6e1c2a"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La même consigne cite le pantalon comme vêtement de travail. La question porte sur le bas du corps, pas sur la couleur ou la matière.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La même consigne cite le pantalon comme vêtement de travail. La question porte sur le bas du corps, pas sur la couleur ou la matière.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-vetements-20261117.json",
+        "note": "Un pantalon entier au singulier, un short de bain identifiable à sa taille élastique et son cordon, une jupe de soirée longue en satin sans corsage. La jupe n'est pas remplacée par une robe."
+      }
     },
     {
       "key": "delf-a2r-ce-036#5",

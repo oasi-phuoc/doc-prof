@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 144,
-    "initial_pending": 289,
+    "activated_since_baseline": 148,
+    "initial_pending": 285,
     "additional_pending": 0,
-    "total_pending": 289,
+    "total_pending": 285,
     "pending_by_level": {
-      "A0-A1": 110,
-      "A1-A2": 160,
+      "A0-A1": 109,
+      "A1-A2": 157,
       "A2-B1": 19
     }
   },
@@ -4981,32 +4981,54 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_15-2.mp3",
       "source_sha256": "130b9b90e641338e5aaa8db36d27a8d1661638a1a6caf499ce5a29eb5caf971f",
       "semantic_sha256": "272d65fd80d4d4dca689e2bb2e6fcac2a42a7a59a68495c3c330214e7c20418f",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La deuxième piste demande « votre manteau, votre écharpe et vos gants ». Les trois pièces sont nécessaires ; le froid annoncé ne doit pas être dessiné sous forme de nombre.",
       "choices": [
         {
           "id": "a",
           "label": "Un manteau, une écharpe et des gants",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-manteau-echarpe-gants.png",
+              "sha256": "c1791315106481fac4d0af047ee283d2d914e65c78fce09ecab3e352f2ff420f",
+              "label": "Un manteau, une écharpe et des gants"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Un short et un tee-shirt",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-short-tee-shirt.png",
+              "sha256": "20190b5905a231d0a28d30e973f9ffdf55558ea7423b857b1a971e8e5a2fe1e7",
+              "label": "Un short et un tee-shirt"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Une robe et des sandales",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-robe-sandales.png",
+              "sha256": "045cf5146af72c7988d92f4419bfe2d79f7e2bc7900af6c01f95505ce93b4ce5",
+              "label": "Une robe et des sandales"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-vetements-manteau-echarpe-gants.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-short-tee-shirt.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-robe-sandales.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -5015,7 +5037,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -13886,8 +13908,8 @@
       "audio": null,
       "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
       "semantic_sha256": "7ed074af7876465de53836e46c4baea9215bd409b10da8aef0baa5e40cfc35af",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La consigne de l'institut demande la « tenue de travail (blouse, pantalon, chaussures) ». La question porte seulement sur le vêtement du haut.",
       "choices": [
         {
           "id": "a",
@@ -13917,7 +13939,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-vetements-blouse-professionnelle.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-maillot-une-piece-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-impermeable.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13926,7 +13952,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -13940,8 +13966,8 @@
       "audio": null,
       "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
       "semantic_sha256": "c874d96a2dea49fddc977ccd1938af33a871d8fc842ffcd1c729705e20c9619a",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La même consigne cite le pantalon comme vêtement de travail. La question porte sur le bas du corps, pas sur la couleur ou la matière.",
       "choices": [
         {
           "id": "a",
@@ -13960,18 +13986,34 @@
           "id": "b",
           "label": "Un short de bain",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-short-bain.png",
+              "sha256": "0fa357a89261a44e8dbad552602d7cfa781691e916dc63715fc9d1f92fb56dce",
+              "label": "Un short de bain"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Une jupe de soirée",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-jupe-soiree.png",
+              "sha256": "81fbe9f154898eb0cc6e8fdad58d2393f79218400977cacc9db2246d5c6e1c2a",
+              "label": "Une jupe de soirée"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/vocab-pantalon.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-short-bain.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-jupe-soiree.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -13980,7 +14022,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -14068,7 +14110,13 @@
           "id": "b",
           "label": "Un costume et une cravate",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+              "sha256": "5058464a2d41fa99c66856705d81842558bd2945b9d17b5088058887b150c9a7",
+              "label": "Un costume et une cravate"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -17383,8 +17431,8 @@
       "audio": null,
       "source_sha256": "c09071ab473ef45a8bdf6a097658d22dadaef524c07a76e4563348ae12fceade",
       "semantic_sha256": "691abf6bd7f0165a4a67c60f960c9d9b964066df1437e8126b900a3e1cea2c50",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Nicolas demande de prendre « des habits chauds et des gants » pour le séjour à la montagne. Les draps et serviettes sont déjà fournis ; ils ne font pas partie de ce choix.",
       "choices": [
         {
           "id": "a",
@@ -17397,18 +17445,34 @@
           "id": "b",
           "label": "Un maillot et des sandales",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-maillot-sandales.png",
+              "sha256": "e73e8c7ec304d338e276232b570ae228486e246fbf9d022a9d9eafb510c97b84",
+              "label": "Un maillot et des sandales"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Un costume et une cravate",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png",
+              "sha256": "5058464a2d41fa99c66856705d81842558bd2945b9d17b5088058887b150c9a7",
+              "label": "Un costume et une cravate"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-vetements-manteau-echarpe-gants.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-maillot-sandales.png",
+        "/lib/images/tcf/qcm-audit/qcm-vetements-costume-cravate.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -17417,7 +17481,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
