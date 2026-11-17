@@ -1,11 +1,11 @@
 import {useRef,useState} from 'react'
 import type {MathItem,PhraseCategory,PhraseImageClue} from '@/math/types'
 import {PHRASE_CATEGORY_LABELS,PHRASE_COLORS} from './phrase-banks'
-import {GATTEGNO_PICTOGRAMS} from './phrase-pictograms'
+import {GATTEGNO_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS} from './phrase-pictograms'
 import tcfPictures from './phrase-tcf-pictures.generated.json'
 import {VocabImagePicker} from '@/tcf/VocabImagePicker'
 import {MAX_PHRASE_IMAGE_CLUES,nounPicture,newPictureSentence} from './phrase-images'
-const choices=[...GATTEGNO_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — pronoms et verbes'})),...tcfPictures.map(image=>({...image,theme:'TCF — objets, personnages et lieux'}))]
+const choices=[...GATTEGNO_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — pronoms et verbes'})),...INTERROGATIVE_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — mots interrogatifs'})),...tcfPictures.map(image=>({...image,theme:'TCF — objets, personnages et lieux'}))]
 
 export function PhraseImageEditor({items,instruction,onChangeItems,onChangeInstruction}:{items:MathItem[];instruction:string;onChangeItems:(items:MathItem[])=>void;onChangeInstruction:(instruction:string)=>void}) {
   const [selected,setSelected]=useState<{item:number;clue:number}|null>(null)
@@ -34,7 +34,7 @@ export function PhraseImageEditor({items,instruction,onChangeItems,onChangeInstr
         <button type="button" disabled={(item.phraseImages?.length??0)>=MAX_PHRASE_IMAGE_CLUES} onClick={()=>cluesFor(itemIndex,[...item.phraseImages??[],{category:'nom',label:'pomme',imageSrc:nounPicture('pomme')}])}>Ajouter une image</button>
         <button type="button" disabled={(item.phraseImages?.length??0)>=MAX_PHRASE_IMAGE_CLUES} onClick={()=>cluesFor(itemIndex,[...item.phraseImages??[],{category:'preposition',label:'avec'}])}>Ajouter un mot indice</button>
       </div>
-      <label className="phrase-image-label-option"><input type="checkbox" checked={item.phraseImageLabels??false} onChange={event=>update(itemIndex,{phraseImageLabels:event.target.checked})}/> Afficher les mots sous les images</label>
+      <label className="phrase-image-label-option"><input type="checkbox" checked={item.phraseImageLabels??true} onChange={event=>update(itemIndex,{phraseImageLabels:event.target.checked})}/> Afficher les mots sous les images</label>
       <label className="phrase-libre-field"><span>Phrase exemple</span><textarea aria-label={`Phrase exemple ${itemIndex+1}`} value={item.responseAnswer??item.answer} onChange={event=>update(itemIndex,{answer:event.target.value,responseAnswer:event.target.value})}/></label>
     </div>)}</div>
     <button type="button" onClick={()=>onChangeItems([...items,newPictureSentence()])}>Ajouter une phrase en images</button>

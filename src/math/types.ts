@@ -864,7 +864,7 @@ export type ExerciseBlock = {
   phraseVoice?: import('@/francais/phrase-forms').PhraseVoice
   /** Optional Gattegno categories; false excludes complete predicates using them. */
   phraseCategories?: import('@/francais/phrase-themes').PhraseCategories
-  /** Show lexical hints under the images; personal pronouns remain identified. */
+  /** Show all word labels under the images, including pronouns and interrogatives. */
   phraseImageLabels?: boolean
   /**
    * Graine locale de l’exercice (bouton refresh sur la fiche).

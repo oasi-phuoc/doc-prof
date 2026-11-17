@@ -125,7 +125,7 @@ const BASE_AUTRES: readonly SimpleFrame[] = [
   frame('ouvrir', ['ouvre/verbe la/determinant fenêtre/nom', 'ouvre/verbe la/determinant porte/nom', 'ouvre/verbe la/determinant boîte/nom']),
   frame('prendre', ['prend/verbe le/determinant bus/nom', 'prend/verbe le/determinant train/nom', 'prend/verbe une/determinant photo/nom', 'prend/verbe l’/determinant autocar/nom', 'prend/verbe la/determinant moto/nom', 'prend/verbe la/determinant trottinette/nom', 'prend/verbe la/determinant voiture/nom', 'prend/verbe le/determinant bateau/nom', 'prend/verbe le/determinant camion/nom']),
   frame('finir', ['finit/verbe un/determinant puzzle/nom', 'finit/verbe un/determinant devoir/nom', 'finit/verbe un/determinant dessin/nom']),
-  frame('choisir', ['choisit/verbe une/determinant robe/nom', 'choisit/verbe un/determinant film/nom', 'choisit/verbe une/determinant pomme/nom']),
+  frame('choisir', ['choisit/verbe une/determinant robe/nom', 'choisit/verbe un/determinant film/nom', 'choisit/verbe une/determinant pomme/nom', 'choisit/verbe un/determinant sac/nom']),
   frame('voir', ['voit/verbe un/determinant oiseau/nom', 'voit/verbe un/determinant chat/nom', 'voit/verbe la/determinant mer/nom']),
   frame('faire', ['fait/verbe un/determinant bricolage/nom', 'fait/verbe la/determinant vaisselle/nom', 'fait/verbe un/determinant gâteau/nom']),
   frame('mettre', ['met/verbe une/determinant écharpe/nom', 'met/verbe un/determinant chapeau/nom', 'met/verbe la/determinant table/nom']),

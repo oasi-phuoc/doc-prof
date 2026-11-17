@@ -363,7 +363,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   }}
                 />
               ) : null}
-              {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&activeBlock.verbGroup!=='libre'&&<label className="phrase-image-label-option"><input type="checkbox" aria-label="Afficher les mots sous les images" checked={activeBlock.phraseImageLabels??false} onChange={event=>updatePage({phraseImageLabels:event.target.checked})}/><span>Afficher les mots sous les images<small>Les pronoms restent identifiés pour préciser qui parle.</small></span></label>}
+              {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&activeBlock.verbGroup!=='libre'&&<label className="phrase-image-label-option"><input type="checkbox" aria-label="Afficher les mots sous les images" checked={activeBlock.phraseImageLabels??true} onChange={event=>updatePage({phraseImageLabels:event.target.checked})}/><span>Afficher les mots sous les images<small>Décochez pour masquer aussi les pronoms et les mots interrogatifs.</small></span></label>}
               {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&!libreMode&&activeBlock.verbGroup!=='libre'&&<button type="button" onClick={()=>{const block=blockItemsForConfig(worksheets,activeSheet?.configIndex??safeSheetIndex,safeBlockIndex);updatePage({verbGroup:'libre',phraseItems:block?.items.length?block.items:[newPictureSentence()],phraseInstruction:block?.items.length?block.instruction:'Écrivez une phrase à partir des images. Ajoutez les mots nécessaires.'})}}>Personnaliser les images</button>}
               {!libreMode &&
               isPhraseDomain &&

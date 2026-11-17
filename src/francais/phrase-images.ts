@@ -1,16 +1,22 @@
 import type {MathItem,PhraseImageClue,PhraseToken} from '@/math/types'
 import tcfPictures from './phrase-tcf-pictures.generated.json'
-import {ACTION_PICTOGRAMS,PRONOUN_PICTOGRAMS,pictureKey} from './phrase-pictograms'
+import {ACTION_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,PRONOUN_PICTOGRAMS,pictureKey} from './phrase-pictograms'
 import {tagged,pronounsForFrame} from './phrase-sentences'
 import type {PhraseCategories,PhraseThemeId} from './phrase-themes'
 import type {PhraseVerbGroup} from '@/math/types'
 import type {ThemedFrame} from './phrase-theme-frames'
+import type {PhraseQuestionForm} from './phrase-interrogatives'
 
 export const MAX_PHRASE_IMAGE_CLUES=12
 const nouns=new Map<string,string>(),actions=new Map<string,string>()
 for(const word of tcfPictures)nouns.set(pictureKey(word.label),word.src)
 for(const image of ACTION_PICTOGRAMS)actions.set(pictureKey(image.label),image.src)
 const pronouns=new Map(PRONOUN_PICTOGRAMS.map(image=>[image.label,image.src]))
+const interrogatives=new Map(INTERROGATIVE_PICTOGRAMS.map(image=>[pictureKey(image.label.replace(/\s*\/\s*/g,' ')),image.src]))
+const QUESTION_PICTURE_KEYS:Partial<Record<PhraseQuestionForm,string>>={
+  qui:'qui',que:'que quoi',quoi:'que quoi',où:'où',quand:'quand',comment:'comment',
+  pourquoi:'pourquoi',combien:'combien',quel:'quel quelle',lequel:'lequel laquelle',
+}
 // These TCF objects have a direct, unambiguous counterpart in the source phrase.
 for(const noun of ['pomme','tomate','chat','chien'])nouns.set(noun,`/lib/images/tcf/qcm-audit/vocab-${noun}.webp`)
 
@@ -40,12 +46,32 @@ export function pronounPicture(word:string):string|undefined {
   return pronouns.get(key==='j'?'je':key)
 }
 
+function isQuestionWord(form:PhraseQuestionForm,token:PhraseToken):boolean {
+  const key=pictureKey(token.text)
+  switch(form){
+    case 'qui':return token.category==='pronom'&&key==='qui'
+    case 'que':return token.category==='pronom'&&(key==='que'||key==='qu')
+    case 'quoi':return token.category==='pronom'&&key==='quoi'
+    case 'où':return token.category==='adverbe'&&key==='ou'
+    case 'quand':case 'comment':case 'pourquoi':case 'combien':
+      return token.category==='adverbe'&&key===form
+    case 'quel':return token.category==='determinant'&&['quel','quelle','quels','quelles'].includes(key)
+    case 'lequel':return token.category==='pronom'&&['lequel','laquelle','lesquels','lesquelles'].includes(key)
+    default:return false
+  }
+}
+
 /** Determiners are supplied by the learner; abstract relations remain explicit word clues. */
-export function phraseImageClues(tokens:readonly PhraseToken[],verbIds:readonly string[]):PhraseImageClue[]|undefined {
+export function phraseImageClues(tokens:readonly PhraseToken[],verbIds:readonly string[],questionForm?:PhraseQuestionForm):PhraseImageClue[]|undefined {
   const clues:PhraseImageClue[]=[]
   const pictures=nounPictures(tokens);if(!pictures)return undefined
+  const questionPicture=questionForm?interrogatives.get(pictureKey(QUESTION_PICTURE_KEYS[questionForm]??'')):undefined
   let verb=0,subject=true
   for(const [index,token] of tokens.entries()){
+    if(questionPicture&&questionForm&&isQuestionWord(questionForm,token)){
+      clues.push({category:token.category,label:token.text,imageSrc:questionPicture})
+      continue
+    }
     if(token.category==='determinant'){
       if(/^(?:quel|quelle|quels|quelles)$/i.test(token.text))clues.push({category:'determinant',label:token.text})
       continue

@@ -21,8 +21,8 @@ try {
   const { convertRecipe } = await vite.ssrLoadModule('/src/interactive/domain/convert.ts')
   const { defaultPage } = await vite.ssrLoadModule('/src/math/catalog.ts')
   const { demoRecipe } = await vite.ssrLoadModule('/src/interactive/demo.ts')
-  const get = (source, lemma, form, cats) => {
-    const result = interrogativeCandidates(tagged(source), [lemma], cats).find(q => q.form === form)
+  const get = (source, lemma, form, cats, picturedChoice=false) => {
+    const result = interrogativeCandidates(tagged(source), [lemma], cats, picturedChoice).find(q => q.form === form)
     assert.ok(result, `${form}: ${source}`); return result
   }
   const sentence = q => phraseSentence(q.tokens, true, true)
@@ -64,6 +64,11 @@ try {
       assert.equal(sentence(q), expected); assert.equal(q.tokens[0].category, 'determinant'); assert.equal(q.tokens.filter(t => t.category === 'determinant').length, 1)
     }
     assert.equal(sentence(get('Tu/pronom embrasses/verbe son/determinant amie/nom','embrasser','quel')), 'Quelle amie embrasses-tu ?')
+  })
+  await test('lequel refers to the pictured backpack choice without repeating the noun', () => {
+    const q=get('Tu/pronom choisis/verbe un/determinant sac/nom','choisir','lequel',undefined,true)
+    assert.equal(sentence(q),'Lequel choisis-tu ?')
+    assert.equal(q.tokens[0].category,'pronom')
   })
   await test('qui, que and quoi retain pronoun roles, remove their target and elide que before a vowel', () => {
     assert.equal(sentence(get('La/determinant voisine/nom chante/verbe une/determinant chanson/nom', 'chanter', 'qui')), 'Qui chante une chanson ?')

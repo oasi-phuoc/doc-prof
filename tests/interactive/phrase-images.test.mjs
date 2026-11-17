@@ -15,7 +15,7 @@ try{
   const {createRng}=await vite.ssrLoadModule('/src/math/rng.ts')
   const {joinPhrase}=await vite.ssrLoadModule('/src/francais/phrase-sentences.ts')
   const {phraseImageClues,MAX_PHRASE_IMAGE_CLUES}=await vite.ssrLoadModule('/src/francais/phrase-images.ts')
-  const {GATTEGNO_PICTOGRAMS,pictureKey}=await vite.ssrLoadModule('/src/francais/phrase-pictograms.ts')
+  const {GATTEGNO_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,pictureKey}=await vite.ssrLoadModule('/src/francais/phrase-pictograms.ts')
   const {convertRecipe}=await vite.ssrLoadModule('/src/interactive/domain/convert.ts')
   const {prepareGame}=await vite.ssrLoadModule('/src/interactive/domain/plan.ts')
   const {startSession,transition}=await vite.ssrLoadModule('/src/interactive/domain/session.ts')
@@ -52,10 +52,27 @@ try{
   await test('Je + manger + pomme yields three pictures with their word classes and an example only in the correction',()=>{
     assert.deepEqual(example.phraseImages.map(clue=>clue.category),['pronom','verbe','nom'])
     assert.ok(example.phraseImages[0].imageSrc.endsWith('pronom-je.webp'));assert.ok(example.phraseImages[1].imageSrc==='/lib/images/tcf/catalogue/actions/manger.webp');assert.ok(example.phraseImages[2].imageSrc.includes('/tcf/'))
-    const student=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:example,mode:'student'})),answers=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:example,mode:'answers'}))
+    const student=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:{...example,phraseImageLabels:false},mode:'student'})),answers=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:example,mode:'answers'}))
     assert.ok(!student.includes(example.answer));assert.ok(!student.includes('Exemple :'));assert.ok(answers.includes('Exemple : Je mange une pomme.'))
     for(const color of ['#8b5a2b','#e67e22','#2e8b57'])assert.ok(student.includes(color))
+    assert.ok(!student.includes('<figcaption>Je</figcaption>'))
+    const defaultLabels=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:example,mode:'student'}))
+    assert.ok(defaultLabels.includes('<figcaption>Je</figcaption>'))
+    const labeled=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:{...example,phraseImageLabels:true},mode:'student'}))
+    assert.ok(labeled.includes('<figcaption>Je</figcaption>'));assert.ok(labeled.includes('<figcaption>manger</figcaption>'));assert.ok(labeled.includes('<figcaption>pomme</figcaption>'))
     assert.equal((student.match(/<figure/g)||[]).length,3)
+  })
+  await test('interrogative forms use their own Gattegno pictures in generated image clues',async()=>{
+    const forms=[['qui','Qui','pronom'],['que','Que','pronom'],['quoi','quoi','pronom'],['où','Où','adverbe'],['quand','Quand','adverbe'],['comment','Comment','adverbe'],['pourquoi','Pourquoi','adverbe'],['combien','Combien','adverbe'],['quel','Quel','determinant'],['lequel','Lequel','pronom']]
+    assert.equal(INTERROGATIVE_PICTOGRAMS.length,9)
+    for(const [form,text,category] of forms){
+      const verb=form==='lequel'?'choisis':'mange',infinitive=form==='lequel'?'choisir':'manger'
+      const tokens=[{text,category},{text:verb,category:'verbe'},{text:'une',category:'determinant'},{text:'pomme',category:'nom'}]
+      const clues=phraseImageClues(tokens,[infinitive],form)
+      const expected=INTERROGATIVE_PICTOGRAMS.find(image=>image.src.endsWith(form==='que'||form==='quoi'?'interrogatif-quoi.webp':form==='quel'?'interrogatif-quel-quelle.webp':form==='lequel'?'interrogatif-lequel-laquelle.webp':`interrogatif-${form==='où'?'ou':form}.webp`))
+      assert.equal(clues?.find(clue=>clue.label===text)?.imageSrc,expected?.src,form)
+    }
+    for(const image of INTERROGATIVE_PICTOGRAMS){const bytes=await readFile('public'+image.src);assert.equal(bytes.subarray(8,12).toString(),'WEBP',image.src)}
   })
   await test('new seeds retain generation constraints while existing optional category filters remove whole predicates',()=>{
     const before=structuredClone(recipe),sentences=new Set()

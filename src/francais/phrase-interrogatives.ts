@@ -7,7 +7,7 @@ import { startsWithVowelSound } from './phrase-phonetics'
 import { phraseSyntaxRoles } from './phrase-forms'
 import type { PhraseCategories } from './phrase-themes'
 
-export type PhraseQuestionForm = 'est-ce-que' | 'inversion' | 'qui' | 'que' | 'quoi' | 'quel' | 'où' | 'quand' | 'comment' | 'combien' | 'pourquoi' | 'intonation'
+export type PhraseQuestionForm = 'est-ce-que' | 'inversion' | 'qui' | 'que' | 'quoi' | 'quel' | 'lequel' | 'où' | 'quand' | 'comment' | 'combien' | 'pourquoi' | 'intonation'
 export type InterrogativePhrase = { tokens: PhraseToken[]; form: PhraseQuestionForm }
 const PLURAL = new Set('les des ces mes tes ses nos vos leurs quelques plusieurs'.split(' '))
 const FEMALE_NAMES = new Set([...FEMALE_PROPER_NAMES, 'Fanny', 'Sophie', 'Déborah', 'Iryna', 'Léa', 'Maya', 'Amira', 'Nina', 'Clara', 'Inès', 'Lina', 'Marie', 'Julie', 'Alice', 'Emma'])
@@ -73,7 +73,7 @@ function withoutAdverbs(tokens: PhraseToken[], removed: Set<string>) {
 }
 
 /** Reviewed transformations of a complete source clause, with explicit word classes and roles. */
-export function interrogativeCandidates(source: readonly PhraseToken[], infinitives: readonly string[], categories?: PhraseCategories): InterrogativePhrase[] {
+export function interrogativeCandidates(source: readonly PhraseToken[], infinitives: readonly string[], categories?: PhraseCategories, picturedChoice=false): InterrogativePhrase[] {
   const roles = phraseSyntaxRoles(source), base = lower(source.map((token, index) => ({ ...token, syntaxRole: roles[index] ?? null })))
   const result: InterrogativePhrase[] = [], adverbs = categories?.adverbe !== false
   const add = (form: PhraseQuestionForm, tokens: PhraseToken[]) => result.push({ form, tokens: cap(tokens) })
@@ -111,6 +111,9 @@ export function interrogativeCandidates(source: readonly PhraseToken[], infiniti
       const quel = info.gender === 'f' ? info.plural ? 'quelles' : 'quelle' : info.plural ? 'quels' : 'quel'
       front('quel', [word(quel, 'determinant', 'complement'), ...object.slice(1)], remainder)
     }
+    if (picturedChoice && infinitive === 'choisir' && nounKey(info.noun ?? '') === 'sac' && !info.plural) {
+      front('lequel', [word('lequel', 'pronom', 'complement')], remainder)
+    }
     if (info.plural && adverbs && categories?.preposition !== false) {
       const tail = object.slice(1)
       front('combien', [word('combien', 'adverbe', 'complement'), word(startsWithVowelSound(tail[0]?.text ?? '') ? 'd’' : 'de', 'preposition', 'complement'), ...tail], remainder)
@@ -137,8 +140,8 @@ export function interrogativeCandidates(source: readonly PhraseToken[], infiniti
   return result.length ? result : [{ form: 'intonation', tokens: cap(base) }]
 }
 
-export function interrogativePhrase(tokens: readonly PhraseToken[], infinitives: readonly string[], rng: Rng, used: Set<PhraseQuestionForm>, categories?: PhraseCategories): InterrogativePhrase {
-  const candidates = interrogativeCandidates(tokens, infinitives, categories)
+export function interrogativePhrase(tokens: readonly PhraseToken[], infinitives: readonly string[], rng: Rng, used: Set<PhraseQuestionForm>, categories?: PhraseCategories, picturedChoice=false): InterrogativePhrase {
+  const candidates = interrogativeCandidates(tokens, infinitives, categories, picturedChoice)
   const fresh = candidates.filter(candidate => !used.has(candidate.form))
   const selected = pick(rng, fresh.length ? fresh : candidates)
   used.add(selected.form)
