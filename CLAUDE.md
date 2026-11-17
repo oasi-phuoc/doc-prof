@@ -84,6 +84,7 @@ React + Vite + TypeScript. Styles principaux dans `src/App.css` (variables CSS d
 | Cadre FALC (fiches théorie FR + traductions d’aide) | `falc` |
 | CO TCF / transcription audio (Whisper `large-v3`, banques `co.json`) | `comprehension-orale` |
 | Découper audio CO complet multi-documents → pistes `audio: 1..n` | `decoupage-audio-co` |
+| Nommer et indexer les illustrations du catalogue | `catalogue-images` |
 | Verso cartes Jeux (logo ClairFLE, série, cadre) | `jeux-verso-serie` |
 | Images / audios vocab (fond blanc, TTS DeniseNeural −25 %) ; scènes PO TCF / fide (décor quotidien, pas fond blanc) | `medias-image-audio` |
 | Aperçu A4 fixe + impression | `test-impression` |
