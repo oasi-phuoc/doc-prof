@@ -1527,14 +1527,14 @@
         "Dans le four",
         "Sur la table"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "ed9ed00fa2fdfc5a7bb720c44d7386902e44bf9c505a9eb7e9d139d1d5dac2d5",
       "audio": null,
       "review_index": 30,
       "semantic_sha256": "727f2989a1fa8474542d2a36359e68d9e78f70e7a040f9baffc9f517ffbd566a",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le message dit « Le dessert est dans le frigo ». Les horaires, le pain et le fromage ne modifient pas cette localisation.",
       "brief": {
         "context_question": "Où se trouve le dessert ?",
         "choices_to_illustrate": [
@@ -1554,6 +1554,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-position-dessert-frigo.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-dessert-four.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-dessert-table.png"
+      ],
+      "selected_sha256": [
+        "1330a0dfbfef719df060db2bf19929db37cf32a42d8ec9da9bb6fe0b1a079e0d",
+        "c27468833df949efd1fb571af4439eedd71e9af4b9fbbd02cd4bc9f94d2b432d",
+        "079c97e2c1a354fa9b72dca73952632e543b3a1721667457037e0a19598dc41e"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-style-scenes-20261117.json",
+        "note": "Une tarte représente la catégorie dessert, dont le type n’est pas précisé par Mathieu. Même dessert dans un plat métallique, entièrement dans le frigo, dans le four éteint ou sur la table ; seul l’emplacement distingue les choix."
       }
     },
     {
@@ -2444,7 +2458,7 @@
       "semantic_sha256": "34d192f0d0d191a49768bd12ce91d5c2acf23b8d9ff27ff5ea7372fbb115cbf7",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Nora a oublié son passeport sur son bureau. L’aéroport est le lieu où l’apporter ; ni l’heure de départ, ni le tram, ni le guichet ne doivent devenir des indices graphiques.",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
       "brief": {
         "context_question": "Où se trouve le document oublié ?",
         "choices_to_illustrate": [
@@ -2466,18 +2480,18 @@
         ]
       },
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png"
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine-style-tcf.png"
       ],
       "selected_sha256": [
-        "a8e66a10da7b5d364ed767da6a01a4735925c8df0eb0eb8ccfe3e1c078aff6ad",
-        "7e85ec59ff5981ecd7a3a97614dcb0795c8177d86cbb171b710d2f668383afca",
-        "5bb058e5d1969ed81ad9ce454d28ae1dab4e7607c5972d2ee84e4119fdb64b76"
+        "2d2533c0949233f5a2ad537364791ea620110c81675119cf90c30c3b2ec38309",
+        "5cd7ca60a02c0c47e67614bd51194fa738169e4a6584d1f5b35623c5ac9ac14b",
+        "3e4926bf6f087b91cff992264f64f490e487c2960d28c23d58ba5369c71e820f"
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
-        "note": "Le même passeport bleu fermé est visible sur le bureau, dans la valise ouverte et sur la table indépendante de la cuisine. Seul le titre générique PASSEPORT identifie le document, sans données personnelles."
+        "register": "docs/tcf/revue-style-scenes-20261117.json",
+        "note": "Revue côte à côte avec les références co834-club-musique et co834-club-photo ; traitement peint sur meubles, murs, tissus et objets. Positions, trousseau, passeport et trois serviettes conservés. Le pot de fleurs du salon reste présent. Aucun personnage ajouté à ces choix de localisation."
       }
     },
     {
@@ -6843,7 +6857,7 @@
       "semantic_sha256": "453a21fbfd9320892c14a65116eab8c712c900d4c5fd07ee75dc38590e10ada5",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "La réponse à « où sont mes clés ? » est « sur la table ». Le support ne précise pas le modèle des clés : le trousseau illustre la catégorie.",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
       "brief": {
         "context_question": "Où se trouve cet objet ?",
         "choices_to_illustrate": [
@@ -6869,18 +6883,18 @@
         "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
       },
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-sac.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise.png"
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-sac-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise-style-tcf.png"
       ],
       "selected_sha256": [
-        "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
-        "de90b2436fb3859d4aebc6143542a2c9b1b338125f7c3ad9932d97af3fe7626e",
-        "dc8486ca764e8706c5300e612af6f57da781c54c43769d035854bba9f59a58b6"
+        "f35acc44e2c9e192f201df59c31ed880e75ec7c1eedf9591362eb6e48fc70c9d",
+        "1207165c31b2bfeaaf85f4167f07ddbfb8eccf41034f390b05fa91cd85e5b824",
+        "8f0ab807f5e02faac6686a6e818a842d427a391bd173f470d7d5c2435d5a41ba"
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
-        "note": "Dans les trois choix, le trousseau complet est visible, respectivement sur la table, au fond du sac ouvert et sous l’assise de la chaise. Les pièces et meubles situent réellement l’objet."
+        "register": "docs/tcf/revue-style-scenes-20261117.json",
+        "note": "Revue côte à côte avec les références co834-club-musique et co834-club-photo ; traitement peint sur meubles, murs, tissus et objets. Positions, trousseau, passeport et trois serviettes conservés. Le pot de fleurs du salon reste présent. Aucun personnage ajouté à ces choix de localisation."
       }
     },
     {
@@ -7852,7 +7866,7 @@
       "semantic_sha256": "efa970169c6cf882866174e4aac67fffc036084b8404d124b1ee42bb7723e47f",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "La transcription place les clés de voiture « sur la table du salon à côté du pot de fleurs ». Les autres consignes sur la cuisine et la météo ne changent pas cette localisation.",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
       "brief": {
         "context_question": "Où sont posées les clés de la voiture ?",
         "choices_to_illustrate": [
@@ -7874,18 +7888,18 @@
         ]
       },
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-lit.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png"
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-lit-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine-style-tcf.png"
       ],
       "selected_sha256": [
-        "e5edf11d0eac34c6995e84a05b87101b2c364f0c63259f697907cbd3ba44880a",
-        "13c95e8286ffa8b531a864c86f0682d178d850b330b3c6b20086be6e614d9322",
-        "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298"
+        "c7ab38e22ea50e05b35166f17564d0c77bb7e9bbc598fc479af0dffecda77bbb",
+        "e72f635f6e5524308613964511d511f17ef96d5d0607c2b8fa540154d243a647",
+        "c3d7a038875c83adc006e4d1b758344c9d2cef4eb34a610340874692add786f0"
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
-        "note": "Le trousseau avec télécommande est posé sur chaque surface proposée. Le salon contient le canapé et le pot de fleurs ; les leurres montrent bien un lit de chambre et un comptoir de cuisine."
+        "register": "docs/tcf/revue-style-scenes-20261117.json",
+        "note": "Revue côte à côte avec les références co834-club-musique et co834-club-photo ; traitement peint sur meubles, murs, tissus et objets. Positions, trousseau, passeport et trois serviettes conservés. Le pot de fleurs du salon reste présent. Aucun personnage ajouté à ces choix de localisation."
       }
     },
     {
@@ -11235,7 +11249,7 @@
       "semantic_sha256": "033f47871ea706620ad7ad4216de742546eb21f67c0d93c536182d5da4d723f5",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le message dit « j’ai oublié mes clés sur la table à manger » et demande de les apporter au bureau. Le bureau est la destination, pas l’emplacement initial.",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
       "brief": {
         "context_question": "Où a-t-elle oublié cet objet ?",
         "choices_to_illustrate": [
@@ -11257,18 +11271,18 @@
         ]
       },
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png",
-        "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau.png"
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau-style-tcf.png"
       ],
       "selected_sha256": [
-        "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
-        "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298",
-        "f52f9fb51f8abbb37679915fa3ba69440dba4a682d656cddbf1c99b01614fb09"
+        "f35acc44e2c9e192f201df59c31ed880e75ec7c1eedf9591362eb6e48fc70c9d",
+        "c3d7a038875c83adc006e4d1b758344c9d2cef4eb34a610340874692add786f0",
+        "b1012ea10d95f3268b27b837f34f85d7f95241a86549d75e1e8805467824dae0"
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
-        "note": "La table de repas est distinguée du plan de travail de la cuisine et du bureau avec ordinateur. Les deux réemplois au sein du lot conservent le trousseau et sa relation à la surface."
+        "register": "docs/tcf/revue-style-scenes-20261117.json",
+        "note": "Revue côte à côte avec les références co834-club-musique et co834-club-photo ; traitement peint sur meubles, murs, tissus et objets. Positions, trousseau, passeport et trois serviettes conservés. Le pot de fleurs du salon reste présent. Aucun personnage ajouté à ces choix de localisation."
       }
     },
     {
@@ -15055,7 +15069,7 @@
       "semantic_sha256": "b9052e9a785ba940944e5a975e51eb0826fa590440cfb234b258b734af1ef6e7",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le message demande plusieurs serviettes et précise « elles sont sur mon lit, dans ma chambre ». Les gants, le dentifrice et la valise appartiennent aux autres consignes.",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
       "brief": {
         "context_question": "Où sont les serviettes ?",
         "choices_to_illustrate": [
@@ -15077,18 +15091,18 @@
         ]
       },
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
-        "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp",
-        "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir.png"
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains-style-tcf.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir-style-tcf.png"
       ],
       "selected_sha256": [
-        "db8274c85a472cdc9313628a62cca0f30125b887ae1289b3358e1e9f80b2c644",
-        "e9418c1ea79c04e9c32985e9752de3fe414bfd3511de499efb0c9fc2a9ed2451",
-        "afb3e6d7e8480e13c901b73b2bd4e83124af744719a05895c3797e63994cb342"
+        "68229d811d2cc532ac6acdac8770be10ff7395e20c9e5e59e51a692e56bfdbba",
+        "16923358b6a154766262317d22f798d698ddbd938c5f06a665d102ebd9c0c1a4",
+        "fa8d3be051b5f048e0acc9b93288032df75fa8b8475ed80e8bb2b0e4da98829d"
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
-        "note": "Les deux images actives déjà approuvées sont réutilisées à l’identique : serviettes sur le lit et dans la salle de bains. L’image nouvelle conserve trois serviettes bleues assorties dans une armoire du couloir, sans lavabo ni baignoire."
+        "register": "docs/tcf/revue-style-scenes-20261117.json",
+        "note": "Revue côte à côte avec les références co834-club-musique et co834-club-photo ; traitement peint sur meubles, murs, tissus et objets. Positions, trousseau, passeport et trois serviettes conservés. Le pot de fleurs du salon reste présent. Aucun personnage ajouté à ces choix de localisation."
       }
     },
     {
@@ -31912,9 +31926,9 @@
     }
   ],
   "summary": {
-    "artwork_needed_contextual_locations": 220,
+    "artwork_needed_contextual_locations": 219,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 371,
+    "active_reviewed_trio": 372,
     "artwork_needed_whole_answer_concepts": 47,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
@@ -31927,7 +31941,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 371,
+  "activated_total": 372,
   "retained_text_total": 112,
-  "artwork_pending_total": 280
+  "artwork_pending_total": 279
 }

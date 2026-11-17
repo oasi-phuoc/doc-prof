@@ -32804,6 +32804,339 @@
       "source_sha256": "a4d320ac187987775d631d8235912137e8e9fda186c9d25cb17f02b601f43edf",
       "reason": "Le message demande plusieurs serviettes et précise « elles sont sur mon lit, dans ma chambre ». Les gants, le dentifrice et la valise appartiennent aux autres consignes.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-008",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-dessert-frigo.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-dessert-four.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-dessert-table.png"
+          }
+        ]
+      },
+      "source_sha256": "ed9ed00fa2fdfc5a7bb720c44d7386902e44bf9c505a9eb7e9d139d1d5dac2d5",
+      "reason": "Le message dit « Le dessert est dans le frigo ». Les horaires, le pain et le fromage ne modifient pas cette localisation.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-025",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau-style-tcf.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise-style-tcf.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine-style-tcf.png"
+          }
+        ]
+      },
+      "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-s1-co-5",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-table-cuisine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit-style-tcf.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains-style-tcf.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-table-cuisine-style-tcf.png"
+          }
+        ]
+      },
+      "source_sha256": "e3f9db6754a2722e5d74647f5bedd00190fdfb4b6860f8e2e8ba1d710539012b",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s5b-co-1",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-sac.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise.png"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger-style-tcf.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-sac-style-tcf.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise-style-tcf.png"
+          }
+        ]
+      },
+      "source_sha256": "c270720d6e26baf66386958adfda51e0638bdc1f0d6e39956e4f7d2aac371fea",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s16-co-4",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-lit.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon-style-tcf.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-lit-style-tcf.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine-style-tcf.png"
+          }
+        ]
+      },
+      "source_sha256": "c152632f5c8806ad0f3572eb79a7534edf8852e228ddd78662e43f27bebec94e",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s47-co-4",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau.png"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger-style-tcf.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine-style-tcf.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau-style-tcf.png"
+          }
+        ]
+      },
+      "source_sha256": "e36f628b78d90d6c5eaea3f922a82e50544b8b9bb86d82851e346f2bbdc5e74e",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-92",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir.png"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit-style-tcf.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains-style-tcf.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir-style-tcf.png"
+          }
+        ]
+      },
+      "source_sha256": "a4d320ac187987775d631d8235912137e8e9fda186c9d25cb17f02b601f43edf",
+      "reason": "Reprise du rendu photographique signalé par l’utilisateur : les trois réponses et leur sens sont conservés ; sujet et décor sont repeints à partir des références TCF validées.",
+      "review_ledger": "docs/tcf/revue-style-scenes-20261117.json"
     }
   ]
 }

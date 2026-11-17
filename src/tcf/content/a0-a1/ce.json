@@ -16107,6 +16107,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Dans le frigo"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-dessert-frigo.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-dessert-four.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-dessert-table.png"
+              }
+            ]
           }
         }
       },
@@ -21019,16 +21037,16 @@
             "choix": [
               {
                 "id": "a",
-                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau-style-tcf.png",
                 "correct": true
               },
               {
                 "id": "b",
-                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png"
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise-style-tcf.png"
               },
               {
                 "id": "c",
-                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png"
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine-style-tcf.png"
               }
             ]
           }

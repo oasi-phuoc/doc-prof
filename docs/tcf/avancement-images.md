@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Correction du 17 novembre : quatorze images de lieux reprises dans le style peint TCF**, six trios existants harmonisés et un trio CE A1 supplémentaire avec trois nouvelles scènes de dessert. Les références réelles sont jointes à chaque reprise ; les fonds et meubles sont repeints avec les sujets. Les premières images restent conservées. Restent **279 trios historiques** et **380 candidats DELF Actif**. [Rapport actuel et reste à faire](correction-style-scenes-20261117.md).
+
 **Suite du 17 novembre : cinq trios A1 sur les positions d’objets ajoutés**, avec onze scènes PNG natives et deux réemplois. Clés, passeport et serviettes apparaissent dans chaque lieu proposé ; questions, réponses et transcriptions sont conservées. Restent **280 trios historiques** et **380 candidats DELF Actif**, avec **366 trios DELF Actif actifs**. [Rapport actuel et reste à faire](trios-positions-objets-20261117.md).
 
 **Suite du 17 novembre : sept trios de vêtements supplémentaires**, un A1, quatre A2 et deux B1. Treize PNG natifs, dix-sept usages des nouvelles images et quatre réemplois ; toutes les pièces et couleurs des réponses sont conservées. Restent **285 trios historiques** et **380 candidats DELF Actif**, avec **366 trios DELF Actif actifs**. [Rapport actuel et reste à faire](trios-vetements-20261117.md).
