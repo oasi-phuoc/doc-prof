@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "5a92e8bfd409eece3afa7bb11a059056b5b213d8",
+  "compared_all_six_banks": true,
+  "added_image_forms": 6,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 14,
+  "new_image_usages": 15,
+  "reused_image_usages": 3,
+  "reused_distinct_images": 3,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "tcf-ss-a1-s1-co-4#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ss-a1-s38-co-2#6",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-a2-s1-ce-4#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2j-ce-001#3",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-ss-a2-s3-co-3#6",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-5-1-co-2#1",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "cmd": "python3 scripts/check_tcf_763_review.py",
+      "chunk_id": "985a16",
+      "wall_time_seconds": 2.4144e-05,
+      "session_id": 47242,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 378 trios actifs, 112 textes conservés, 273 trios à préparer.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-images.py",
+      "chunk_id": "957227",
+      "wall_time_seconds": 1.5583e-05,
+      "session_id": 9921,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 366 trios actifs liés à leur relecture, images et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-context-review.py",
+      "chunk_id": "2d3136",
+      "wall_time_seconds": 1.7228e-05,
+      "session_id": 80638,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-qcm-images.mjs",
+      "chunk_id": "7a8f25",
+      "wall_time_seconds": 2.5058e-05,
+      "session_id": 32929,
+      "original_token_count": 17,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2460 bank variants\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-bank.mjs",
+      "chunk_id": "244003",
+      "wall_time_seconds": 2.2804e-05,
+      "session_id": 75855,
+      "original_token_count": 25,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n",
+      "exit_code": 0
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 12,
+    "question_views": 12,
+    "image_views": 36,
+    "errors": []
+  },
+  "additional_checks": {
+    "catalog_tests": 19,
+    "typescript": "passed",
+    "production_build": "passed",
+    "interactive_budgets": "passed",
+    "gallery_images": 7221,
+    "audio_files": 8801,
+    "audio_questions": 6734,
+    "audio_response_forms": 15191,
+    "qcm_image_variants": 2460,
+    "game_types": 696,
+    "budgets": {
+      "landing": {
+        "gzip": 122382,
+        "maximumGzip": 153600
+      },
+      "pool": {
+        "gzip": 159874,
+        "maximumGzip": 204800
+      },
+      "calibration": {
+        "gzip": 142897,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 145045,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 204182,
+        "maximumGzip": 204800
+      },
+      "teacherConsole": {
+        "gzip": 166805,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 3144148,
+        "maximumGzip": 3145728
+      }
+    },
+    "original_books_and_magazines_file_preserved": true,
+    "browser_scope": "Six aperçus QCM isolés à 1440 et 390 pixels. Ces fixtures ne vérifient pas les supports CE complets ou l’intégralité des autres questions de chaque exercice.",
+    "browser_capture_note": "La première exécution échoue pendant la capture d’un nœud rafraîchi ; attente des polices et reprise bornée de la capture ajoutées dans la fixture. Les douze vues passent ensuite, avec les mêmes assertions fonctionnelles et sans changement du rendu applicatif.",
+    "checks": [
+      {
+        "name": "catalogs",
+        "exit_code": 0
+      },
+      {
+        "name": "production",
+        "exit_code": 0
+      },
+      {
+        "name": "browser",
+        "exit_code": 0
+      }
+    ]
+  }
+}

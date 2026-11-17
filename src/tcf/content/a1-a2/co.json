@@ -9850,6 +9850,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des pains spéciaux"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-ensembles-pains-speciaux.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+              }
+            ]
           }
         },
         "audio": 2
@@ -30920,6 +30938,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Des livres de recettes"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-recettes.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-ensembles-romans.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/vocab-ustensiles-patisserie.webp"
+              }
+            ]
           }
         }
       },

@@ -4,13 +4,13 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 154,
-    "initial_pending": 279,
+    "activated_since_baseline": 160,
+    "initial_pending": 273,
     "additional_pending": 0,
-    "total_pending": 279,
+    "total_pending": 273,
     "pending_by_level": {
-      "A0-A1": 103,
-      "A1-A2": 157,
+      "A0-A1": 101,
+      "A1-A2": 153,
       "A2-B1": 19
     }
   },
@@ -6928,8 +6928,8 @@
       "audio": "/lib/audio/tcf/co/magasins/chers-clients-feter-rentree.mp3",
       "source_sha256": "6e4616d26964f9330b311f09b2a4a4dc08a580769c7181bbee0464ead3572c9a",
       "semantic_sha256": "01424bdc39d64fe5dc024818c581588f8d6efea57e7d638bae0ea91c467cf446",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’annonce distingue les cahiers et les crayons à moitié prix du sac d’école qui donne droit à une trousse. Le pourcentage, la porte et l’heure ne sont pas dessinés.",
       "choices": [
         {
           "id": "a",
@@ -6953,7 +6953,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-cahiers-crayons.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-magazines-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-sacs-chaussures.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -6962,7 +6966,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -8634,32 +8638,54 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-emilie.mp3",
       "source_sha256": "90165aa4ee346dd9e1f43e1f06ebcd365c2d65bf9cd7cf219d0a011eec58cc5a",
       "semantic_sha256": "f19c44eb54362677f8b1e3242c13a02bab00026a93eefd9b0d8f0fe895ac1fd7",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Émilie dit être végétarienne et apprécier les quiches aux légumes Chez Léa. La viande excellente de l’autre restaurant est l’avis de Théo et ne devient pas sa réponse.",
       "choices": [
         {
           "id": "a",
           "label": "Les quiches aux légumes",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-quiches-legumes.png",
+              "sha256": "b4ff7b7ceab01beea423f9b5e9b3269d55880fa48c3e12a380750e398d87233e",
+              "label": "Des quiches aux légumes"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Les steaks-frites",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-steaks-frites.png",
+              "sha256": "258776bac542e96d83e0da163888c84930a87f46f8f31e6e7176a9bb6619a14a",
+              "label": "Des steaks-frites"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Les poissons grillés",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-poissons-grilles.png",
+              "sha256": "7b840d704231c7d2c9c52beb2086d13245e13f9efc90fc14ca2853ff76d2ecfb",
+              "label": "Des poissons grillés"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-quiches-legumes.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-steaks-frites.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-poissons-grilles.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -8668,7 +8694,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -11074,14 +11100,20 @@
       "audio": null,
       "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
       "semantic_sha256": "237cff13a08a52d6c6ce6a686bde7f4eded26ca4d5e64c86908c3e022e77b470",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’atelier 2 apprend à réussir croissants et pains au chocolat. Les métiers du cinéma et de la scène appartiennent aux deux autres ateliers et ne sont pas les réponses à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "Des croissants et des pains au chocolat",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-croissants-pains-chocolat.png",
+              "sha256": "5a176a15e38ba215db1cab4147837666ba0df05994e9bbd6de61d60d3a5a9d47",
+              "label": "Des croissants et des pains au chocolat"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -11093,6 +11125,11 @@
               "path": "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
               "sha256": "c010e6fb88d529130b86caa0625838d12ebedd72b41b1bafca2ffa4b7aa8bdf5",
               "label": "Des pizzas et des pâtes"
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-pizzas-pates.png",
+              "sha256": "dbd7ebabf5e828e2e70ccf5dd3c1756e2f42bcf402c406c5129ee14b26956601",
+              "label": "Des pizzas et des pâtes"
             }
           ],
           "generation_jobs": []
@@ -11101,11 +11138,21 @@
           "id": "c",
           "label": "Des soupes et des salades",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-soupes-salades.png",
+              "sha256": "d0916715be4ff2d20e50d9515f7f1122114e9765799d993b0829fb66fc8d04e5",
+              "label": "Des soupes et des salades"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-croissants-pains-chocolat.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-pizzas-pates.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-soupes-salades.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -11114,7 +11161,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -12798,7 +12845,13 @@
           "id": "c",
           "label": "Dans les romans",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-romans.png",
+              "sha256": "a812ea808f085fff102312d3523b232f54925a746da86eb6fd0da85592d1cb3e",
+              "label": "Des romans"
+            }
+          ],
           "generation_jobs": []
         }
       ],
@@ -16151,8 +16204,8 @@
       "audio": null,
       "source_sha256": "47ab5a11add1849892fa5fecfa1e04657e14debad0cca3d59b543aee58d09257",
       "semantic_sha256": "fdd7540a5d91862c540e176e22aad46ea0e818e6585282a9115ba49d7fc0ef10",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "L’article décrit les commandes Internet de fournitures scolaires. La question porte sur les produits, pas sur la méthode de commande : aucun ordinateur ne remplace les fournitures.",
       "choices": [
         {
           "id": "a",
@@ -16165,18 +16218,34 @@
           "id": "b",
           "label": "Des vêtements de sport",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-vetements-sport.png",
+              "sha256": "7b86a773ca7fd3cf33c720845ce6063368dfc99be6015eec828ad50539221a25",
+              "label": "Des vêtements de sport"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Des billets de transport",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-billets-transport.png",
+              "sha256": "67866301d55a5d2a4fe18547899de0e25ba5d9375c090d4ac271735b6e03e38e",
+              "label": "Des billets de transport"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-cahiers-crayons.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-vetements-sport.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-billets-transport.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -16185,7 +16254,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -21357,14 +21426,20 @@
       "audio": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
       "source_sha256": "a32345137767b0c4b11bfc6be7f9f6c78391bb131e57728375cde8ebc43c651a",
       "semantic_sha256": "c7b9adb4a2ec537b6bb13df8a86ecedb6e79b08d83e8bd0a4f0b29fe111249d4",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La deuxième piste du support annonce une dégustation de pains spéciaux avec Valérie, après les réductions sur tomates et carottes. Le lien audio reste celui de cette piste, pas celui de l’autre annonce du même exercice.",
       "choices": [
         {
           "id": "a",
           "label": "Des pains spéciaux",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-pains-speciaux.png",
+              "sha256": "a8fc66aa97c9323a1bee1c031d5afe75b6ff6482ac0e6b00f7ddb37bc091e37a",
+              "label": "Des pains spéciaux"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -21394,7 +21469,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-pains-speciaux.png",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -21403,7 +21482,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -23049,21 +23128,33 @@
       "audio": "/lib/audio/tcf/co/magasins/03-magasin-annonce-promotion-livres-de-recette.mp3",
       "source_sha256": "ffab2d642ccc46647e41783cae0f144de88dfb9fe0e57f951f45f474a4b3dc9e",
       "semantic_sha256": "399dd43fa6e8ce48f95a17626b1482a79ad95c423d8b5ead3387e7190b0e964c",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La promotion porte sur les derniers livres de recettes, au pluriel. Un seul livre ne suffit pas pour ce choix et les ustensiles restent une catégorie différente des livres.",
       "choices": [
         {
           "id": "a",
           "label": "Des livres de recettes",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-recettes.png",
+              "sha256": "455ab01929d4da1cf6e1bd5dd9bdb808ed9cdbf83d381e9b06080b1339782892",
+              "label": "Des livres de recettes"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Des romans",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-romans.png",
+              "sha256": "a812ea808f085fff102312d3523b232f54925a746da86eb6fd0da85592d1cb3e",
+              "label": "Des romans"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -23074,7 +23165,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-recettes.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-romans.png",
+        "/lib/images/tcf/qcm-audit/vocab-ustensiles-patisserie.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23083,7 +23178,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

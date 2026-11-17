@@ -1,0 +1,1277 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "5a92e8bfd409eece3afa7bb11a059056b5b213d8",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 6,
+    "added_historical_trios": 6,
+    "added_delf_actif_trios": 0,
+    "new_images": 14,
+    "imagegen_calls": 15,
+    "rejected_generations": 1,
+    "new_image_usages": 15,
+    "reused_image_usages": 3,
+    "reused_distinct_images": 3,
+    "added_by_level": {
+      "A0-A1": 2,
+      "A1-A2": 4
+    },
+    "historical_pending": 273
+  },
+  "new_images": [
+    {
+      "id": "qcm-ensembles-cahiers-crayons",
+      "label": "Des cahiers et des crayons",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-cahiers-crayons.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE closed exercise NOTEBOOKS with unmarked blue, green and red covers stacked slightly offset at left, and FOUR recognisable sharpened graphite wooden PENCILS at right (yellow lacquer, dark graphite tips). Both plural groups equally clear. No pens, no erasers, no bag, no writing.",
+      "source_png": "/workspace/generated_images/exec-bfd6a192-1289-4edd-99dd-0e1db4495c0d.png",
+      "source_sha256": "6547445bc55713caf050b9f18126eb847d9be007df3fea7b366f6d520d189d6f",
+      "sha256": "6547445bc55713caf050b9f18126eb847d9be007df3fea7b366f6d520d189d6f",
+      "bytes": 1754810,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-sacs-chaussures",
+      "label": "Des sacs et des chaussures",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-sacs-chaussures.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO ordinary everyday bags (one blue fabric backpack with two straps, one olive canvas tote with handles) beside ONE PAIR of brown lace-up shoes, all whole and distinct. Multiple bags and both shoes visible, no sports equipment or text.",
+      "source_png": "/workspace/generated_images/exec-1027e488-bfef-442c-9292-f2ae3d2f7b39.png",
+      "source_sha256": "95e5f4a21a7a6e254fe1655f1acdc5d770e128f8d0f5541a91087a1c9e8f730b",
+      "sha256": "95e5f4a21a7a6e254fe1655f1acdc5d770e128f8d0f5541a91087a1c9e8f730b",
+      "bytes": 1856980,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-vetements-sport",
+      "label": "Des vêtements de sport",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-vetements-sport.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show a coherent group of SPORTS CLOTHING only: one plain blue athletic jersey, one pair of charcoal running shorts with elastic waist, and a pair of white athletic trainers. All garments separate, laid neatly side by side, entire outlines visible, no mannequin, no body, no ball or bag, no logo/text. Fabrics visibly painted like approved TCF objects.",
+      "source_png": "/workspace/generated_images/exec-d513f3d6-7bd2-41c2-84c5-ac926ac436b3.png",
+      "source_sha256": "7b86a773ca7fd3cf33c720845ce6063368dfc99be6015eec828ad50539221a25",
+      "sha256": "7b86a773ca7fd3cf33c720845ce6063368dfc99be6015eec828ad50539221a25",
+      "bytes": 1910239,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-quiches-legumes",
+      "label": "Des quiches aux légumes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-quiches-legumes.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO small whole VEGETABLE QUICHES, each in a shallow ceramic tart dish, side by side with gap. Golden savoury egg custard surface contains visibly identifiable green broccoli florets, zucchini half-rounds, red pepper strips and cherry tomato pieces. One small wedge removed and set just beside one quiche reveals vegetable filling. Absolutely NO ham, bacon, fish or meat. Whole dishes visible. Match painted food rendering of reference, soft appetising colour volumes, no photographic texture.",
+      "source_png": "/workspace/generated_images/exec-452465ce-3e66-4acd-8c78-c9b27506c8c7.png",
+      "source_sha256": "b4ff7b7ceab01beea423f9b5e9b3269d55880fa48c3e12a380750e398d87233e",
+      "sha256": "b4ff7b7ceab01beea423f9b5e9b3269d55880fa48c3e12a380750e398d87233e",
+      "bytes": 1778797,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale. Deux quiches aux légumes identifiables, garniture sans viande ; une part coupée révèle l’intérieur.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-steaks-frites",
+      "label": "Des steaks-frites",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-steaks-frites.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO complete white DINNER PLATES, each containing one ordinary grilled beef steak with subtle grill marks and a portion of golden FRENCH FRIES. Both steak-plus-fries dishes equally visible, placed side by side, no overlap hiding components. No salad, sauces, labels or additional cutlery. Soft clearly painted food, discreet edges and natural colours.",
+      "source_png": "/workspace/generated_images/exec-2e6e4054-8a26-4c50-9662-7684ee3a7438.png",
+      "source_sha256": "258776bac542e96d83e0da163888c84930a87f46f8f31e6e7176a9bb6619a14a",
+      "sha256": "258776bac542e96d83e0da163888c84930a87f46f8f31e6e7176a9bb6619a14a",
+      "bytes": 1632746,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-poissons-grilles",
+      "label": "Des poissons grillés",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-poissons-grilles.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO fully cooked grilled WHOLE FISH, on two simple oval white serving plates side by side. Each browned fish has clear gentle grill marks, intact head/tail/fins, recognisable cooked skin and small lemon wedge. No rice or other main food. Both entire plates and fish fit within margins, no cropping. Clearly food, not aquarium animals; not wet raw fish. Match restrained illustrated food treatment.",
+      "source_png": "/workspace/generated_images/exec-10411af8-bc12-4fd5-b9e2-5a649f44c1ca.png",
+      "source_sha256": "7b840d704231c7d2c9c52beb2086d13245e13f9efc90fc14ca2853ff76d2ecfb",
+      "sha256": "7b840d704231c7d2c9c52beb2086d13245e13f9efc90fc14ca2853ff76d2ecfb",
+      "bytes": 1592467,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-croissants-pains-chocolat",
+      "label": "Des croissants et des pains au chocolat",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-croissants-pains-chocolat.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO golden crescent CROISSANTS on left and TWO rectangular laminated PAINS AU CHOCOLAT on right. All FOUR pastries entirely visible with slight gaps, each pain au chocolat shows dark chocolate ends in rolled pastry. Both plural groups clear, all objects grounded, no basket, no plate, no writing. Match reference's finely outlined painted material detail.",
+      "source_png": "/workspace/generated_images/exec-094abacc-6dbd-435c-a652-f7a3c9f7b826.png",
+      "source_sha256": "5a176a15e38ba215db1cab4147837666ba0df05994e9bbd6de61d60d3a5a9d47",
+      "sha256": "5a176a15e38ba215db1cab4147837666ba0df05994e9bbd6de61d60d3a5a9d47",
+      "bytes": 1930381,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-pizzas-pates",
+      "label": "Des pizzas et des pâtes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-pizzas-pates.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO SMALL whole round PIZZAS on plain white round plates at left (tomato and cheese only), and TWO small white bowls of penne pasta with tomato sauce at right. All FOUR servings fit entirely in a compact 2×2 arrangement with gap between both food categories. No panels or dividing lines. No partial cropped dishes. Both pizzas unmistakable and pasta entirely visible. Softly painted food, no shiny photographic render.",
+      "source_png": "/workspace/generated_images/exec-b62c5cdd-31b8-4681-bd78-7254c9d0d92d.png",
+      "source_sha256": "dbd7ebabf5e828e2e70ccf5dd3c1756e2f42bcf402c406c5129ee14b26956601",
+      "sha256": "dbd7ebabf5e828e2e70ccf5dd3c1756e2f42bcf402c406c5129ee14b26956601",
+      "bytes": 1985126,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-soupes-salades",
+      "label": "Des soupes et des salades",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-soupes-salades.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO small cream ceramic bowls of orange vegetable SOUP at left, each with one parsley leaf, and TWO small cream ceramic bowls of mixed green SALAD with lettuce, cucumber and cherry tomato at right. Compact 2×2 arrangement, whole four bowls with gaps, both plural food categories equally legible. No meat, bread, spoons, writing or room. Clearly painted textures and discreet contours, keep smooth ivory background exact.",
+      "source_png": "/workspace/generated_images/exec-952945f0-aaf2-45b5-a385-8f4acb7d4350.png",
+      "source_sha256": "d0916715be4ff2d20e50d9515f7f1122114e9765799d993b0829fb66fc8d04e5",
+      "sha256": "d0916715be4ff2d20e50d9515f7f1122114e9765799d993b0829fb66fc8d04e5",
+      "bytes": 1776494,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-pains-speciaux",
+      "label": "Des pains spéciaux",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-pains-speciaux.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE different small artisan SPECIAL BREAD LOAVES: a round seeded multigrain loaf, a dark oblong rye loaf with scored top, and a walnut loaf cut once to reveal walnut pieces in crumb. All three entirely visible, a couple of neat slices beside walnut loaf. Clear bread textures painted with fine restrained edges, no pastries, no baguette, no flour scattered in background, no labels.",
+      "source_png": "/workspace/generated_images/exec-42c72b63-2285-40b8-aeae-17ffd5b8100b.png",
+      "source_sha256": "a8fc66aa97c9323a1bee1c031d5afe75b6ff6482ac0e6b00f7ddb37bc091e37a",
+      "sha256": "a8fc66aa97c9323a1bee1c031d5afe75b6ff6482ac0e6b00f7ddb37bc091e37a",
+      "bytes": 2431238,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-livres-recettes",
+      "label": "Des livres de recettes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-recettes.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE distinct actual COOKBOOKS, all whole. One open cookbook at front shows a large painted photograph-like illustration of a cooked vegetable dish on one page and a small set of ingredient drawings on other (NO ingredient quantities, no numbers). Two upright closed cookbooks behind, one with a soup cover and generic cover title RECETTES, another with bread/pastry cover and title CUISINE. Titles are printed ON actual covers, never floating outside. Clearly book spines and page blocks. No extra utensils, no real food outside book illustrations. Generic educational books, no logos or author names.",
+      "source_png": "/workspace/generated_images/exec-e08d3cd5-c89f-47e7-9ddb-c756ef2e28ee.png",
+      "source_sha256": "455ab01929d4da1cf6e1bd5dd9bdb808ed9cdbf83d381e9b06080b1339782892",
+      "sha256": "455ab01929d4da1cf6e1bd5dd9bdb808ed9cdbf83d381e9b06080b1339782892",
+      "bytes": 2174800,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-romans",
+      "label": "Des romans",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-romans.png",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE distinct FICTION NOVEL BOOKS with visible spines/page blocks: two upright closed paperbacks and one lying flat. Illustrated covers depict a quiet village at dusk, mountains and an old sailing boat, each with the small generic cover word ROMAN. Title only on each book cover, no floating labels, no author names, dates or numbers. No food, no recipes, no kitchen or other objects. Entire books visible, restrained painterly cover art and discreet contours.",
+      "source_png": "/workspace/generated_images/exec-f148f1d0-34ad-48d7-8002-2a3e53a47c8f.png",
+      "source_sha256": "a812ea808f085fff102312d3523b232f54925a746da86eb6fd0da85592d1cb3e",
+      "sha256": "a812ea808f085fff102312d3523b232f54925a746da86eb6fd0da85592d1cb3e",
+      "bytes": 1793455,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-billets-transport",
+      "label": "Des billets de transport",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-billets-transport.png",
+      "prompt": "EDIT FIRST supplied transport-paper illustration. Its square all-around serrated shapes look like postage stamps. Replace them with THREE clearly recognisable LANDSCAPE rectangular PUBLIC TRANSPORT TICKETS, each about 2.4 times wider than tall, arranged in a vertical stack with clear gaps and all corners fully visible. Each ticket has straight smooth long edges, very slightly rounded corners, and ONE vertical dashed tear-off line near RIGHT end creating a small detachable stub. No serrations around edges, no stamp-shaped cards. Keep the three designs: BLUE ticket with small train pictogram and single word TRAIN, GREEN ticket with bus pictogram and BUS, muted ochre ticket with tram pictogram and TRAM. Put generic short fine horizontal print lines beneath pictograms, not readable words, dates, prices or numbers. No personal data or floating headings. Match the SECOND reference's exact smooth almost-uniform ivory background RGB253,242,225 #FDF2E1 and finely outlined hand-painted object treatment, with tiny soft contact shadows. No grain in empty background, no photographic/CGI effects, no panels or people. EXACT native landscape PNG 1448×1086 pixels 4:3.",
+      "source_png": "/workspace/generated_images/exec-34ddb86c-b7ea-4ba7-815a-a45b6f274978.png",
+      "source_sha256": "67866301d55a5d2a4fe18547899de0e25ba5d9375c090d4ac271735b6e03e38e",
+      "sha256": "67866301d55a5d2a4fe18547899de0e25ba5d9375c090d4ac271735b6e03e38e",
+      "bytes": 1967251,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-d3d90b57-9ac3-4475-8610-6dddc085b2d2.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-d3d90b57-9ac3-4475-8610-6dddc085b2d2.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale. Trois billets rectangulaires à talon détachable, pictogrammes train/bus/tram, sans montant ni date ; première version évoquant des timbres écartée.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-d3d90b57-9ac3-4475-8610-6dddc085b2d2.png",
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-ensembles-livres-magazines-ivoire",
+      "label": "Des livres et des magazines",
+      "path": "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-magazines-ivoire.png",
+      "prompt": "EDIT the FIRST supplied books-and-magazines illustration to match the SECOND supplied actual TCF reference. Keep ALL existing objects: three unmarked closed hardcover books on left, a short overlapping stack of picture magazines on right, no change of category, no extra object. Harmonise the EMPTY BACKGROUND to EXACT smooth pale ivory of SECOND reference, RGB253,242,225 #FDF2E1, uniform, no paper grain, gradient, vignette, stronger yellow/peach or cool tint. Keep the subtle grounded contact shadows. Repaint subjects gently in same semi-realistic HAND-PAINTED object treatment as second reference, finely discreet edges and soft volumes, no photographic gloss or CGI. Magazine covers retain illustrated travel/food/landscape subject pictures without readable text or numbers. Entire subjects in frame with margin. Exact landscape native PNG 1448×1086 pixels 4:3. No people, no floating labels or panels.",
+      "source_png": "/workspace/generated_images/exec-c6f7b46c-120e-4d26-b916-02dbe0d546b6.png",
+      "source_sha256": "606b08840813fa82aae20bb6b8b1637ebdfaddabfb8d436ba0c266c742694d5b",
+      "sha256": "606b08840813fa82aae20bb6b8b1637ebdfaddabfb8d436ba0c266c742694d5b",
+      "bytes": 1831653,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-ensembles-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Sens du groupe, pluriel et éléments entiers contrôlés visuellement ; traitement peint TCF et fond ivoire lisse comparés à la référence réelle. PNG natif sans recadrage ni conversion locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Ensembles de produits et fournitures",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "generation": [
+    {
+      "id": "qcm-ensembles-cahiers-crayons",
+      "label": "Des cahiers et des crayons",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE closed exercise NOTEBOOKS with unmarked blue, green and red covers stacked slightly offset at left, and FOUR recognisable sharpened graphite wooden PENCILS at right (yellow lacquer, dark graphite tips). Both plural groups equally clear. No pens, no erasers, no bag, no writing.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-bfd6a192-1289-4edd-99dd-0e1db4495c0d.png"
+    },
+    {
+      "id": "qcm-ensembles-sacs-chaussures",
+      "label": "Des sacs et des chaussures",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO ordinary everyday bags (one blue fabric backpack with two straps, one olive canvas tote with handles) beside ONE PAIR of brown lace-up shoes, all whole and distinct. Multiple bags and both shoes visible, no sports equipment or text.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-1027e488-bfef-442c-9292-f2ae3d2f7b39.png"
+    },
+    {
+      "id": "qcm-ensembles-vetements-sport",
+      "label": "Des vêtements de sport",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show a coherent group of SPORTS CLOTHING only: one plain blue athletic jersey, one pair of charcoal running shorts with elastic waist, and a pair of white athletic trainers. All garments separate, laid neatly side by side, entire outlines visible, no mannequin, no body, no ball or bag, no logo/text. Fabrics visibly painted like approved TCF objects.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-d513f3d6-7bd2-41c2-84c5-ac926ac436b3.png"
+    },
+    {
+      "id": "qcm-ensembles-quiches-legumes",
+      "label": "Des quiches aux légumes",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO small whole VEGETABLE QUICHES, each in a shallow ceramic tart dish, side by side with gap. Golden savoury egg custard surface contains visibly identifiable green broccoli florets, zucchini half-rounds, red pepper strips and cherry tomato pieces. One small wedge removed and set just beside one quiche reveals vegetable filling. Absolutely NO ham, bacon, fish or meat. Whole dishes visible. Match painted food rendering of reference, soft appetising colour volumes, no photographic texture.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-452465ce-3e66-4acd-8c78-c9b27506c8c7.png"
+    },
+    {
+      "id": "qcm-ensembles-steaks-frites",
+      "label": "Des steaks-frites",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO complete white DINNER PLATES, each containing one ordinary grilled beef steak with subtle grill marks and a portion of golden FRENCH FRIES. Both steak-plus-fries dishes equally visible, placed side by side, no overlap hiding components. No salad, sauces, labels or additional cutlery. Soft clearly painted food, discreet edges and natural colours.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-2e6e4054-8a26-4c50-9662-7684ee3a7438.png"
+    },
+    {
+      "id": "qcm-ensembles-poissons-grilles",
+      "label": "Des poissons grillés",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO fully cooked grilled WHOLE FISH, on two simple oval white serving plates side by side. Each browned fish has clear gentle grill marks, intact head/tail/fins, recognisable cooked skin and small lemon wedge. No rice or other main food. Both entire plates and fish fit within margins, no cropping. Clearly food, not aquarium animals; not wet raw fish. Match restrained illustrated food treatment.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-10411af8-bc12-4fd5-b9e2-5a649f44c1ca.png"
+    },
+    {
+      "id": "qcm-ensembles-croissants-pains-chocolat",
+      "label": "Des croissants et des pains au chocolat",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO golden crescent CROISSANTS on left and TWO rectangular laminated PAINS AU CHOCOLAT on right. All FOUR pastries entirely visible with slight gaps, each pain au chocolat shows dark chocolate ends in rolled pastry. Both plural groups clear, all objects grounded, no basket, no plate, no writing. Match reference's finely outlined painted material detail.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-094abacc-6dbd-435c-a652-f7a3c9f7b826.png"
+    },
+    {
+      "id": "qcm-ensembles-pizzas-pates",
+      "label": "Des pizzas et des pâtes",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO SMALL whole round PIZZAS on plain white round plates at left (tomato and cheese only), and TWO small white bowls of penne pasta with tomato sauce at right. All FOUR servings fit entirely in a compact 2×2 arrangement with gap between both food categories. No panels or dividing lines. No partial cropped dishes. Both pizzas unmistakable and pasta entirely visible. Softly painted food, no shiny photographic render.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-b62c5cdd-31b8-4681-bd78-7254c9d0d92d.png"
+    },
+    {
+      "id": "qcm-ensembles-soupes-salades",
+      "label": "Des soupes et des salades",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show TWO small cream ceramic bowls of orange vegetable SOUP at left, each with one parsley leaf, and TWO small cream ceramic bowls of mixed green SALAD with lettuce, cucumber and cherry tomato at right. Compact 2×2 arrangement, whole four bowls with gaps, both plural food categories equally legible. No meat, bread, spoons, writing or room. Clearly painted textures and discreet contours, keep smooth ivory background exact.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-952945f0-aaf2-45b5-a385-8f4acb7d4350.png"
+    },
+    {
+      "id": "qcm-ensembles-pains-speciaux",
+      "label": "Des pains spéciaux",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE different small artisan SPECIAL BREAD LOAVES: a round seeded multigrain loaf, a dark oblong rye loaf with scored top, and a walnut loaf cut once to reveal walnut pieces in crumb. All three entirely visible, a couple of neat slices beside walnut loaf. Clear bread textures painted with fine restrained edges, no pastries, no baguette, no flour scattered in background, no labels.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-42c72b63-2285-40b8-aeae-17ffd5b8100b.png"
+    },
+    {
+      "id": "qcm-ensembles-livres-recettes",
+      "label": "Des livres de recettes",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE distinct actual COOKBOOKS, all whole. One open cookbook at front shows a large painted photograph-like illustration of a cooked vegetable dish on one page and a small set of ingredient drawings on other (NO ingredient quantities, no numbers). Two upright closed cookbooks behind, one with a soup cover and generic cover title RECETTES, another with bread/pastry cover and title CUISINE. Titles are printed ON actual covers, never floating outside. Clearly book spines and page blocks. No extra utensils, no real food outside book illustrations. Generic educational books, no logos or author names.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-e08d3cd5-c89f-47e7-9ddb-c756ef2e28ee.png"
+    },
+    {
+      "id": "qcm-ensembles-romans",
+      "label": "Des romans",
+      "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE distinct FICTION NOVEL BOOKS with visible spines/page blocks: two upright closed paperbacks and one lying flat. Illustrated covers depict a quiet village at dusk, mountains and an old sailing boat, each with the small generic cover word ROMAN. Title only on each book cover, no floating labels, no author names, dates or numbers. No food, no recipes, no kitchen or other objects. Entire books visible, restrained painterly cover art and discreet contours.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-f148f1d0-34ad-48d7-8002-2a3e53a47c8f.png"
+    },
+    {
+      "id": "qcm-ensembles-billets-transport",
+      "label": "Des billets de transport",
+      "prompt": "EDIT FIRST supplied transport-paper illustration. Its square all-around serrated shapes look like postage stamps. Replace them with THREE clearly recognisable LANDSCAPE rectangular PUBLIC TRANSPORT TICKETS, each about 2.4 times wider than tall, arranged in a vertical stack with clear gaps and all corners fully visible. Each ticket has straight smooth long edges, very slightly rounded corners, and ONE vertical dashed tear-off line near RIGHT end creating a small detachable stub. No serrations around edges, no stamp-shaped cards. Keep the three designs: BLUE ticket with small train pictogram and single word TRAIN, GREEN ticket with bus pictogram and BUS, muted ochre ticket with tram pictogram and TRAM. Put generic short fine horizontal print lines beneath pictograms, not readable words, dates, prices or numbers. No personal data or floating headings. Match the SECOND reference's exact smooth almost-uniform ivory background RGB253,242,225 #FDF2E1 and finely outlined hand-painted object treatment, with tiny soft contact shadows. No grain in empty background, no photographic/CGI effects, no panels or people. EXACT native landscape PNG 1448×1086 pixels 4:3.",
+      "reference_images": [
+        "/workspace/generated_images/exec-d3d90b57-9ac3-4475-8610-6dddc085b2d2.png",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-34ddb86c-b7ea-4ba7-815a-a45b6f274978.png",
+      "rejected_attempts": [
+        {
+          "source": "/workspace/generated_images/exec-d3d90b57-9ac3-4475-8610-6dddc085b2d2.png",
+          "prompt": "EDIT the supplied approved TCF object illustration. Keep its EXACT smooth almost uniform pale ivory BACKGROUND colour (#FDF2E1, RGB 253 242 225), its visibly hand-painted semi-realistic educational drawing style with fine discreet contours, softly painted colour volumes, restrained material details and tiny soft grounded contact shadows. Replace ALL original drink objects with the specified complete subject. No photographic/CGI rendering, no grain/paper/canvas texture in empty background, no yellow or ochre cast, vignette or gradient. One single composition, no panels, no room scenery, no people, no arrows or labels outside objects. Entire subjects fully inside frame with margins. EXACT landscape PNG 1448×1086 pixels, 4:3. Show THREE actual PAPER PUBLIC TRANSPORT TICKETS, each entirely visible with slight gaps: muted blue TRAIN ticket with small train pictogram, green BUS ticket with bus pictogram, and ochre TRAM ticket with tram pictogram. Only those generic single-word labels printed ON ticket cards; no dates, prices, times, numbers, maps, personal data or floating captions. Perforated edge on each card helps ticket recognition. One composition of three physical tickets, not a poster, not payment banknotes, no blank concert tickets. Clearly painted paper object rendering, quiet ivory background exactly like reference.",
+          "reason": "Formes carrées à bords dentelés évoquant des timbres plutôt que des billets de transport."
+        }
+      ]
+    },
+    {
+      "id": "qcm-ensembles-livres-magazines-ivoire",
+      "label": "Des livres et des magazines",
+      "prompt": "EDIT the FIRST supplied books-and-magazines illustration to match the SECOND supplied actual TCF reference. Keep ALL existing objects: three unmarked closed hardcover books on left, a short overlapping stack of picture magazines on right, no change of category, no extra object. Harmonise the EMPTY BACKGROUND to EXACT smooth pale ivory of SECOND reference, RGB253,242,225 #FDF2E1, uniform, no paper grain, gradient, vignette, stronger yellow/peach or cool tint. Keep the subtle grounded contact shadows. Repaint subjects gently in same semi-realistic HAND-PAINTED object treatment as second reference, finely discreet edges and soft volumes, no photographic gloss or CGI. Magazine covers retain illustrated travel/food/landscape subject pictures without readable text or numbers. Entire subjects in frame with margin. Exact landscape native PNG 1448×1086 pixels 4:3. No people, no floating labels or panels.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "source": "/workspace/generated_images/exec-c6f7b46c-120e-4d26-b916-02dbe0d546b6.png"
+    }
+  ],
+  "background_review": {
+    "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+    "reference_rgb": [
+      253,
+      242,
+      225
+    ],
+    "sample": [
+      0,
+      0,
+      70,
+      70
+    ],
+    "note": "Repère de teinte complété par la comparaison visuelle des sujets et des trois choix ; ce seuil ne condamne pas les autres originaux historiques.",
+    "images": [
+      {
+        "id": "qcm-ensembles-cahiers-crayons",
+        "source": "/workspace/generated_images/exec-bfd6a192-1289-4edd-99dd-0e1db4495c0d.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-sacs-chaussures",
+        "source": "/workspace/generated_images/exec-1027e488-bfef-442c-9292-f2ae3d2f7b39.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          254,
+          240,
+          222
+        ],
+        "max_channel_delta": 3
+      },
+      {
+        "id": "qcm-ensembles-vetements-sport",
+        "source": "/workspace/generated_images/exec-d513f3d6-7bd2-41c2-84c5-ac926ac436b3.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          254,
+          241,
+          222
+        ],
+        "max_channel_delta": 3
+      },
+      {
+        "id": "qcm-ensembles-quiches-legumes",
+        "source": "/workspace/generated_images/exec-452465ce-3e66-4acd-8c78-c9b27506c8c7.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-steaks-frites",
+        "source": "/workspace/generated_images/exec-2e6e4054-8a26-4c50-9662-7684ee3a7438.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          225
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-poissons-grilles",
+        "source": "/workspace/generated_images/exec-10411af8-bc12-4fd5-b9e2-5a649f44c1ca.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-croissants-pains-chocolat",
+        "source": "/workspace/generated_images/exec-094abacc-6dbd-435c-a652-f7a3c9f7b826.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          225
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-pizzas-pates",
+        "source": "/workspace/generated_images/exec-b62c5cdd-31b8-4681-bd78-7254c9d0d92d.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          222
+        ],
+        "max_channel_delta": 3
+      },
+      {
+        "id": "qcm-ensembles-soupes-salades",
+        "source": "/workspace/generated_images/exec-952945f0-aaf2-45b5-a385-8f4acb7d4350.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          224
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-pains-speciaux",
+        "source": "/workspace/generated_images/exec-42c72b63-2285-40b8-aeae-17ffd5b8100b.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          254,
+          242,
+          223
+        ],
+        "max_channel_delta": 2
+      },
+      {
+        "id": "qcm-ensembles-livres-recettes",
+        "source": "/workspace/generated_images/exec-e08d3cd5-c89f-47e7-9ddb-c756ef2e28ee.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          240,
+          222
+        ],
+        "max_channel_delta": 3
+      },
+      {
+        "id": "qcm-ensembles-romans",
+        "source": "/workspace/generated_images/exec-f148f1d0-34ad-48d7-8002-2a3e53a47c8f.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          240,
+          224
+        ],
+        "max_channel_delta": 2
+      },
+      {
+        "id": "qcm-ensembles-billets-transport",
+        "source": "/workspace/generated_images/exec-34ddb86c-b7ea-4ba7-815a-a45b6f274978.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          241,
+          225
+        ],
+        "max_channel_delta": 1
+      },
+      {
+        "id": "qcm-ensembles-livres-magazines-ivoire",
+        "source": "/workspace/generated_images/exec-c6f7b46c-120e-4d26-b916-02dbe0d546b6.png",
+        "size": [
+          1448,
+          1086
+        ],
+        "median_rgb": [
+          253,
+          240,
+          223
+        ],
+        "max_channel_delta": 2
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "median_rgb": [
+          253,
+          244,
+          228
+        ],
+        "max_channel_delta": 3,
+        "reused": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+        "median_rgb": [
+          253,
+          242,
+          225
+        ],
+        "max_channel_delta": 0,
+        "reused": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/vocab-ustensiles-patisserie.webp",
+        "median_rgb": [
+          254,
+          243,
+          226
+        ],
+        "max_channel_delta": 1,
+        "reused": true
+      }
+    ]
+  },
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-pizzas-pates-dessine.webp",
+      "reason": "Une seule pizza visible ; nouvelle composition avec plusieurs portions de chaque catégorie."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-livres-magazines-dessine.webp",
+      "reason": "Fond moins proche de la référence : médiane du coin [254,243,230], contre [253,242,225]. Variante harmonisée sans modifier l’original."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-livre-recettes-dessine.webp",
+      "reason": "Un seul livre, alors que la réponse demande des livres."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-billets-3.png",
+      "reason": "Billets vierges sans indication de transport ; nouvelle catégorie illustrée par les billets de train, bus et tram."
+    }
+  ],
+  "editorial_scope": "Groupes complets de produits, objets et documents ; catégories illustrées sans inventer de prix, date ou contenu attribué à la source.",
+  "trios": [
+    {
+      "key": "tcf-ss-a1-s1-co-4#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Cher client, aujourd'hui c'est la rentrée des classes. Pour fêter cet événement, les cahiers et les crayons sont 50% moins chers. Et si vous achetez un sac d'école, nous vous offrons une trousse. Venez la chercher à l'accueil, porte 30. Vite, la promotion se termine à 18h.",
+      "source_sha256": "6e4616d26964f9330b311f09b2a4a4dc08a580769c7181bbee0464ead3572c9a",
+      "semantic_sha256": "01424bdc39d64fe5dc024818c581588f8d6efea57e7d638bae0ea91c467cf446",
+      "question": {
+        "enonce": "Quels produits sont vendus à moitié prix ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les cahiers et les crayons",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les livres et les magazines",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les sacs et les chaussures",
+            "correct": false
+          }
+        ],
+        "written_model": "Les cahiers et les crayons"
+      },
+      "audio": "/lib/audio/tcf/co/magasins/chers-clients-feter-rentree.mp3",
+      "audio_sha256": "9eba14b8e8470bfa40784a7c0c5cca3be3a4cee6f75ad8e063c7cfe53eb49a62",
+      "image_ids": [
+        "qcm-ensembles-cahiers-crayons",
+        "qcm-ensembles-livres-magazines-ivoire",
+        "qcm-ensembles-sacs-chaussures"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-cahiers-crayons.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-magazines-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-sacs-chaussures.png"
+      ],
+      "image_sha256": [
+        "6547445bc55713caf050b9f18126eb847d9be007df3fea7b366f6d520d189d6f",
+        "606b08840813fa82aae20bb6b8b1637ebdfaddabfb8d436ba0c266c742694d5b",
+        "95e5f4a21a7a6e254fe1655f1acdc5d770e128f8d0f5541a91087a1c9e8f730b"
+      ],
+      "reason": "L’annonce distingue les cahiers et les crayons à moitié prix du sac d’école qui donne droit à une trousse. Le pourcentage, la porte et l’heure ne sont pas dessinés.",
+      "visual_review": "Trois cahiers avec quatre crayons, trois livres avec plusieurs magazines, deux sacs avec une paire de chaussures. Chaque groupe comprend les deux catégories annoncées et plusieurs objets lorsque la réponse l’exige.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a1-s38-co-2#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- Salut Émilie !\nTu vas bien ?\n- Salut Théo, ça va et toi ?\nQu'est-ce que tu fais en ville ?\n- Eh bien, ce matin je dois acheter des vêtements pour l'hiver et à midi, je déjeune au restaurant avec mon frère.\nEt toi ?\n- Moi, j'achète une baguette et je rentre à la maison.\nEt vous allez dans quel restaurant ?\n- À La Table du chef, la salle est belle et la viande est excellente.\n- Moi je suis végétarienne, alors je préfère aller Chez Léa…\net les quiches aux légumes sont délicieuses !\n- C'est bien aussi !\nEt pour les vêtements…\ntu sais où je peux acheter un beau pantalon et un pull en laine ?\n- Oui, va chez Zaro.\nIl y a aussi de jolis accessoires, des bonnets et des écharpes en laine, des ceintures en cuir…\n- C'est une super idée, merci !\n- Je t'en prie, au revoir !",
+      "source_sha256": "90165aa4ee346dd9e1f43e1f06ebcd365c2d65bf9cd7cf219d0a011eec58cc5a",
+      "semantic_sha256": "f19c44eb54362677f8b1e3242c13a02bab00026a93eefd9b0d8f0fe895ac1fd7",
+      "question": {
+        "enonce": "Quel plat Émilie apprécie-t-elle Chez Léa ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les quiches aux légumes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les steaks-frites",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les poissons grillés",
+            "correct": false
+          }
+        ],
+        "written_model": "Les quiches aux légumes"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-emilie.mp3",
+      "audio_sha256": "e865f151e16dab7b357228ab0c1d78fae455a69b926f4da3198202639c527815",
+      "image_ids": [
+        "qcm-ensembles-quiches-legumes",
+        "qcm-ensembles-steaks-frites",
+        "qcm-ensembles-poissons-grilles"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-quiches-legumes.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-steaks-frites.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-poissons-grilles.png"
+      ],
+      "image_sha256": [
+        "b4ff7b7ceab01beea423f9b5e9b3269d55880fa48c3e12a380750e398d87233e",
+        "258776bac542e96d83e0da163888c84930a87f46f8f31e6e7176a9bb6619a14a",
+        "7b840d704231c7d2c9c52beb2086d13245e13f9efc90fc14ca2853ff76d2ecfb"
+      ],
+      "reason": "Émilie dit être végétarienne et apprécier les quiches aux légumes Chez Léa. La viande excellente de l’autre restaurant est l’avis de Théo et ne devient pas sa réponse.",
+      "visual_review": "Deux quiches avec légumes visibles et sans viande, deux assiettes steak-frites et deux poissons cuits grillés. Les animaux vivants ou le steak-frites isolé ne remplacent pas ces plats au pluriel.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-a2-s1-ce-4#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Comme chaque année, en France, la deuxième quinzaine d’août marque le début des courses pour la rentrée des écoliers français. Cette année, les commandes Internet de fournitures scolaires rencontrent un fort succès. Le magasin Bureau Vallée de Tours-Nord enregistre une hausse de ces commandes en ligne depuis le début du mois.\n\nFaire sa liste de fournitures scolaires en quelques clics et récupérer sa commande toute prête, c’est ce que propose le magasin. Une offre qui séduit de plus en plus de familles. C’est rapide et pratique.\n\nFernande Cerjak est la directrice de ce magasin spécialisé. Elle constate une hausse du nombre de commandes Internet cette année : « On a de plus en plus de commandes en ligne. Je pense que c’est plus simple pour les familles. Elles sont à la maison, elles peuvent prendre le temps de regarder et de choisir. »\n\nD’après France Bleu Touraine – Radio France, 19/08/2020.",
+      "source_sha256": "47ab5a11add1849892fa5fecfa1e04657e14debad0cca3d59b543aee58d09257",
+      "semantic_sha256": "fdd7540a5d91862c540e176e22aad46ea0e818e6585282a9115ba49d7fc0ef10",
+      "question": {
+        "enonce": "Quels produits sont commandés en ligne ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des fournitures scolaires",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des vêtements de sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des billets de transport",
+            "correct": false
+          }
+        ],
+        "written_model": "Des fournitures scolaires"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-ensembles-cahiers-crayons",
+        "qcm-ensembles-vetements-sport",
+        "qcm-ensembles-billets-transport"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-cahiers-crayons.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-vetements-sport.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-billets-transport.png"
+      ],
+      "image_sha256": [
+        "6547445bc55713caf050b9f18126eb847d9be007df3fea7b366f6d520d189d6f",
+        "7b86a773ca7fd3cf33c720845ce6063368dfc99be6015eec828ad50539221a25",
+        "67866301d55a5d2a4fe18547899de0e25ba5d9375c090d4ac271735b6e03e38e"
+      ],
+      "reason": "L’article décrit les commandes Internet de fournitures scolaires. La question porte sur les produits, pas sur la méthode de commande : aucun ordinateur ne remplace les fournitures.",
+      "visual_review": "Le groupe cahiers/crayons représente la catégorie fournitures scolaires. Maillot de sport, short et baskets représentent les vêtements de sport ; les trois billets train/bus/tram représentent les billets de transport, sans prix ni date.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-001#3",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Atelier 1 — Vous rêvez de devenir acteur, réalisateur ou technicien de cinéma ? Cet atelier vous fait découvrir l’audiovisuel et ses métiers.\n\nAtelier 2 — Apprenez à réussir croissants et pains au chocolat : l’atelier dévoile les secrets de la pâtisserie suisse.\n\nAtelier 3 — Découvrez les métiers de la scène (opéra, danse, cirque…) : une formation artistique, mais aussi de gestion et d’administration.",
+      "source_sha256": "5adfb458535a72ee615d9a58305b513a9decf8f213bd4bd59ed436ba414b639f",
+      "semantic_sha256": "237cff13a08a52d6c6ce6a686bde7f4eded26ca4d5e64c86908c3e022e77b470",
+      "question": {
+        "enonce": "Quels produits apprend-on à réaliser dans l’atelier 2 ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des croissants et des pains au chocolat",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des pizzas et des pâtes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des soupes et des salades",
+            "correct": false
+          }
+        ],
+        "written_model": "Des croissants et des pains au chocolat"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-ensembles-croissants-pains-chocolat",
+        "qcm-ensembles-pizzas-pates",
+        "qcm-ensembles-soupes-salades"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-croissants-pains-chocolat.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-pizzas-pates.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-soupes-salades.png"
+      ],
+      "image_sha256": [
+        "5a176a15e38ba215db1cab4147837666ba0df05994e9bbd6de61d60d3a5a9d47",
+        "dbd7ebabf5e828e2e70ccf5dd3c1756e2f42bcf402c406c5129ee14b26956601",
+        "d0916715be4ff2d20e50d9515f7f1122114e9765799d993b0829fb66fc8d04e5"
+      ],
+      "reason": "L’atelier 2 apprend à réussir croissants et pains au chocolat. Les métiers du cinéma et de la scène appartiennent aux deux autres ateliers et ne sont pas les réponses à cette question.",
+      "visual_review": "Deux croissants et deux pains au chocolat, deux pizzas avec deux portions de pâtes, deux soupes et deux salades. Les trois compositions gardent les deux familles de produits et le pluriel.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s3-co-3#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Aujourd'hui dans votre supermarché, des réductions sur les tomates et les carottes. Venez vite en profiter et faites aussi un petit tour au rayon boulangerie. Valérie vous fera goûter nos pains spéciaux.",
+      "source_sha256": "a32345137767b0c4b11bfc6be7f9f6c78391bb131e57728375cde8ebc43c651a",
+      "semantic_sha256": "c7b9adb4a2ec537b6bb13df8a86ecedb6e79b08d83e8bd0a4f0b29fe111249d4",
+      "question": {
+        "enonce": "Quels produits Valérie fait-elle goûter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des pains spéciaux",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des fromages",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des boissons",
+            "correct": false
+          }
+        ],
+        "written_model": "Des pains spéciaux"
+      },
+      "audio": "/lib/audio/tcf/co/magasins/magasins-3-2.mp3",
+      "audio_sha256": "404f5842bd61242e92b5c2311ebf29212eade0a94667553a4c657ed019a5cd8f",
+      "image_ids": [
+        "qcm-ensembles-pains-speciaux",
+        "co834-fromages-dessines",
+        "co834-boissons-dessinees"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-pains-speciaux.png",
+        "/lib/images/tcf/qcm-audit/co834-fromages-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "image_sha256": [
+        "a8fc66aa97c9323a1bee1c031d5afe75b6ff6482ac0e6b00f7ddb37bc091e37a",
+        "c4cc7882be4af4a8adff154cc880905f38558fd41fa9bea7133d476bcff7b41d",
+        "1c5390e6f99375b91ca2d8d43ae0b768a997d65730cc9546e287b183a97f7542"
+      ],
+      "reason": "La deuxième piste du support annonce une dégustation de pains spéciaux avec Valérie, après les réductions sur tomates et carottes. Le lien audio reste celui de cette piste, pas celui de l’autre annonce du même exercice.",
+      "visual_review": "Trois pains différents (graines, seigle, noix) illustrent des exemples de pains spéciaux, sans attribuer ces recettes à l’audio. Les groupes de fromages et boissons déjà validés sont réutilisés à l’identique.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-5-1-co-2#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Chers clients, ne manquez pas aujourd’hui notre promotion sur nos derniers livres de recettes !\nIl n’y en aura pas pour tout le monde, alors dépêchez-vous !",
+      "source_sha256": "ffab2d642ccc46647e41783cae0f144de88dfb9fe0e57f951f45f474a4b3dc9e",
+      "semantic_sha256": "399dd43fa6e8ce48f95a17626b1482a79ad95c423d8b5ead3387e7190b0e964c",
+      "question": {
+        "enonce": "Quels produits sont en promotion ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des livres de recettes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des romans",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des ustensiles de cuisine",
+            "correct": false
+          }
+        ],
+        "written_model": "Des livres de recettes"
+      },
+      "audio": "/lib/audio/tcf/co/magasins/03-magasin-annonce-promotion-livres-de-recette.mp3",
+      "audio_sha256": "7cb96487c7e41f119b097a2afebb749ec5cf770fbb983f8d9d2da0f88ef529b4",
+      "image_ids": [
+        "qcm-ensembles-livres-recettes",
+        "qcm-ensembles-romans",
+        "vocab-ustensiles-patisserie"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-livres-recettes.png",
+        "/lib/images/tcf/qcm-audit/qcm-ensembles-romans.png",
+        "/lib/images/tcf/qcm-audit/vocab-ustensiles-patisserie.webp"
+      ],
+      "image_sha256": [
+        "455ab01929d4da1cf6e1bd5dd9bdb808ed9cdbf83d381e9b06080b1339782892",
+        "a812ea808f085fff102312d3523b232f54925a746da86eb6fd0da85592d1cb3e",
+        "63c0de6afe506c13e0b5ee3d5c1c2bc71b45a4d0ed23276c9b7236855e334323"
+      ],
+      "reason": "La promotion porte sur les derniers livres de recettes, au pluriel. Un seul livre ne suffit pas pour ce choix et les ustensiles restent une catégorie différente des livres.",
+      "visual_review": "Trois livres de cuisine, dont un ouvert sur des illustrations de plat et d’ingrédients, trois romans avec couvertures illustrées et titres génériques, et un groupe réel d’ustensiles (bol, fouet, fourchette, moule). Les titres sont sur les livres ; aucun texte flottant ne remplace les objets.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}
