@@ -17,9 +17,11 @@ La comparaison des six banques avec `5465a1b8` vérifie **sept ajouts de format 
 - **763 décisions historiques** : 366 trios actifs, 112 textes conservés et 285 trios à préparer.
 - **346 supports / 1 663 questions DELF Actif**, 1 021 relectures de contexte et banque TCF contrôlés.
 - **2 448 variantes image**, avec douze cas de mélange vérifiés.
-- **Dix-huit tests des catalogues réussis**. Galerie : **7 018 images**. Audio : **8 801 fichiers, 6 734 questions et 15 183 formats de réponse**. Les trois variantes CE sont suivies dans la banque de lecture.
+- **Dix-neuf tests des catalogues réussis après fusion**. Galerie : **7 066 images**. Audio : **8 801 fichiers, 6 734 questions et 15 183 formats de réponse**. Les trois variantes CE sont suivies dans la banque de lecture.
 - Chromium : **12 vues** sur ordinateur et mobile, sept questions vérifiées deux fois et **42 affichages d’image**. Chargement, proportions 4:3, cases élève/corrigé et bascule Texte/Image contrôlés sans erreur JavaScript. Les aperçus isolent les QCM et ne remplacent pas une vérification des documents CE complets. [Résultats navigateur](trios-vetements-20261117-browser.json).
 - TypeScript, compilation de production, budgets de chargement et vérification des **696 types de jeu** réussis.
+
+Les 48 illustrations du quotidien reçues sur `origin/main` (`4fed764c`) sont conservées octet pour octet. Les trois fichiers générés en conflit sont reconstruits à partir des sources combinées. Les banques, le rendu et le manifeste TCF restent identiques à ceux des douze vues navigateur. Catalogues, TypeScript, compilation et budgets sont revérifiés après fusion.
 
 ## Reste à faire
 

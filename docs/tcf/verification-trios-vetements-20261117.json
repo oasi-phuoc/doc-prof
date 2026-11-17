@@ -96,7 +96,7 @@
     "image_views": 42,
     "errors": []
   },
-  "additional_checks": {
+  "before_merge_checks": {
     "catalogue_tests": {
       "passed": 18,
       "failed": 0
@@ -124,6 +124,232 @@
         "path": "public/lib/images/tcf/qcm-audit/vocab-maillot-une-piece.webp",
         "sha256": "d0f90c9e45f467fb47fad8a5fac6ab35873fd6f0361800d26c41fc5379368f82"
       }
+    ]
+  },
+  "post_merge_checks": {
+    "upstream_commit": "4fed764ce35def9feafe921c0aa3acc29ca08550",
+    "local_review_commit": "a7583b7b",
+    "tcf_banks_render_and_manifest_unchanged_since_browser_test": true,
+    "upstream_images_preserved": [
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/bottine.webp",
+        "sha256": "414a0d11fbe463ace2775e594cbfc011e74bd375291fcf776c8081567d2c730b"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/chaussette.webp",
+        "sha256": "b167ed487caacf26dba1b351394f755cf65ddb9d2af28396f4cd3e08ed7755da"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/chaussure-a-talon.webp",
+        "sha256": "92b33214e29bccc343464a3db0e69f7ba93a25ebd25a87b6cfcbb613c3c3c75f"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/chaussure-de-randonnee.webp",
+        "sha256": "86a0c0aa6c968514a9c67665593583a1c1193db6a627235af565a88d98db8e79"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/chaussure-de-securite.webp",
+        "sha256": "adc5e2faab9fbd3aee0efa83cd66f01116efd8d67107a798f786633432d0d6b7"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/collant.webp",
+        "sha256": "c05d200c973793ab7680d83e8a4b27acb0cda1aff74cc89ced7940470e7eac32"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/accessoires/espadrille.webp",
+        "sha256": "53868c413aa7000dfe3f6b10dc570e66a73af647e829ce159ea3987f3f4ddc7f"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/cocotte-en-fonte.webp",
+        "sha256": "a3fc9aeb3e8898c5ea15935e761826ab41fd068ad4fd745c03a957d45d0206f5"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/cocotte-minute.webp",
+        "sha256": "61a810c50ede918d2778cf213d09bc7a6ce8941c8e260eb030a5ae74a567d7ed"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/cuit-vapeur.webp",
+        "sha256": "5d00ea6ce4e0e693c07244d1ca864dd9c92096d4a73125c6626170a3daac6e1f"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/faitout.webp",
+        "sha256": "0a320a9e9c07d97e2ea72a7540c182f8a83757a7f663c6891232b3ee4b761c45"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/marmite.webp",
+        "sha256": "e38ecca71b0129c0a1a8b5741629c75be04f8cfd28c88b3faee3f5e658cdff21"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/sauteuse.webp",
+        "sha256": "f56ff38f34a164b2e881b7d6b7ffcfcf88509edf3378b93c1b54c586aaa4960c"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/cuisine/wok.webp",
+        "sha256": "09735bc68d0079bdf3e626369a779918208ad9a99e70d318d4f7ab2a836d144c"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/ballon-de-baudruche.webp",
+        "sha256": "e771c10cc129a43bd617c8ef85ea74265146ced3d43fd1ac3d3df11b08521606"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/bouquet-de-ballon.webp",
+        "sha256": "94551d6320e59c344670a6382215322ba9ad00dae76235791104405d02ac9521"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/chapeau-de-fete.webp",
+        "sha256": "63d3507b706b602a2c116e9c588526aafb038f5bef79e9586f5b7e653f4c3e72"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/confetti.webp",
+        "sha256": "a8626182857df9f5e28486d8e3a78261c7f44c982672adb66dff61274cb760f2"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/guirlande-de-fanion.webp",
+        "sha256": "7ab5b073a73edaa668e37ebbe86433fecdc3e2561df7ecb639f24b70a7c1114a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/guirlande-lumineuse.webp",
+        "sha256": "a2eaac670c108b9ca5787cb933c5bca8d6a48eafb5e06887ea637ff77c39aff5"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/fetes/serpentin.webp",
+        "sha256": "840f612fe8d2d6d3b0016a6bdc54dffc6de3923847ccefbc90471bd725efb179"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/brosse-a-ongle.webp",
+        "sha256": "0df878d86b4f1e3b04b5b61579906378d60e4c43ef41860d3915071f69f95680"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/ciseaux-a-ongle.webp",
+        "sha256": "b2dd6b0e5d0ead95e96aa0ff5e61ece8c6692ebf37559e5228273523dd7284f7"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/coupe-ongle.webp",
+        "sha256": "3436a7c9c8e73c814a7b970e0bbf1da31f0659c1d168fb20c7a11406ec860d7b"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/lime-a-ongle.webp",
+        "sha256": "070330b120af6f898b28ecd05414381208770b893752d80267f476a4b202fb1c"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/peigne-a-dent-large.webp",
+        "sha256": "356d30fdb14f1cc2a215532221d937b283e5b93f27fdf264983bd0ee846bab97"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/pince-a-epiler.webp",
+        "sha256": "4dea0ab3e8ea47f718142c50e16c7d9a8c43c0146e535a1c10e05e1102adac6a"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/hygiene/rasoir-manuel.webp",
+        "sha256": "9fe68b48082483bcb8a0b52cb64856cdc241f6670e397f5bfb5168e950057404"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/bermuda.webp",
+        "sha256": "fdac6988cde9109daff33dee0c93c6d43137bab823ddccc8fe5c13e8ab168466"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/blouson.webp",
+        "sha256": "8531a4bca0d05d8012df578685bce314ccb9936dae3fa10bb82a626a97ba90f1"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/cardigan.webp",
+        "sha256": "78f50e3363a1367baee3db86825017da5f3e5fd3f4b7f813b3a82bc822b87a90"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/chemisier.webp",
+        "sha256": "4952b8ef27458c2ab53b373dde44accb683dbb855d2f77638d07b9b1100175ff"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/combinaison-de-travail.webp",
+        "sha256": "57baf4b53917045a5b321f793f4ac5eaf78a111a9015cc044ca6f27c77f07945"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/debardeur.webp",
+        "sha256": "6f3e97b8ee99bf5b7a2a9fa34d68a8e1829e5504c315d0012aff769aec4ca227"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/doudoune.webp",
+        "sha256": "a8e325295e1a8488a98cd25964a1788b429e2e5fecaaced5f2e708e380289803"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/gilet.webp",
+        "sha256": "5764ca8b1a738f99a24710dbf308757416e5f9e10a1b9db314934ccc89c3d9ec"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/jean.webp",
+        "sha256": "2bbaf9711089d739ec9cbb899e99eab13ce25e6d3512c756ed63a2fc475da4c7"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/jogging.webp",
+        "sha256": "c3e883e81a0cfb9458c60afe6783a1a1c791d7819567d961b8780e0d3b27a4f2"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/jupe-plissee.webp",
+        "sha256": "7e83a1909a45d9df89cd38e4dd9fcaf4ef8df2b95a280f207ece0aaa4c28fc33"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/legging.webp",
+        "sha256": "94a2cf00d750b8fbd1340c673bb6e0c0fd480a644bb9b543304572df9f93ebad"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/polo.webp",
+        "sha256": "3b6d9c9527abaab8fcc1b966bff0218c1e10b854ca7bae5b1c6d17c193d1f42f"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/pyjama.webp",
+        "sha256": "e9bca0d7b9325249623997b175e5d51c1a82a60c3587ed546404dbb676a97ead"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/robe-de-mariee.webp",
+        "sha256": "3d5b99a8f154437722fa141650547294a1dad6ae3ef36588312869021ee6d286"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/salopette.webp",
+        "sha256": "e7846ea40900f03197bd1de8d00e0ae302535225690ada6cd148bc118d381013"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/sweat-a-capuche.webp",
+        "sha256": "ba3176e272e5f15248bd40b2b8087d0b8aeb40dc6273fa8fb322405c83745bf9"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/tailleur.webp",
+        "sha256": "d57403142c20fcecc0e46292a495eb2e36701c292c1923f1ac1ecde83240c7c5"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/tee-shirt.webp",
+        "sha256": "e8469b1dee5f08a218ce062096627cbaa85f8752adb0725ef42f37c5cd330a86"
+      },
+      {
+        "path": "public/lib/images/tcf/catalogue/quotidien/vetements/veste-de-costume.webp",
+        "sha256": "b892aa43cf436912b7a7c850baee85cdc5ccf802168b7778308bb18c69f0e5c4"
+      }
+    ],
+    "catalogue_tests": {
+      "passed": 19,
+      "failed": 0
+    },
+    "typescript_exit_code": 0,
+    "production_build_exit_code": 0,
+    "interactive_budgets": {
+      "exit_code": 0,
+      "game_gzip": 3140798,
+      "game_maximum_gzip": 3145728,
+      "competition_gzip": 204155,
+      "competition_maximum_gzip": 204800
+    },
+    "prebuild": {
+      "exit_code": 0,
+      "gallery_images": 7066,
+      "nominal_image_clues": 1385,
+      "audio_files": 8801,
+      "questions": 6734,
+      "response_forms": 15183,
+      "game_types": 696
+    },
+    "generated_conflicts_rebuilt": [
+      "src/francais/phrase-tcf-pictures.generated.json",
+      "src/gallery/catalog.generated.json",
+      "docs/interactive/performance-results.json"
     ]
   }
 }

@@ -43,6 +43,7 @@ const RULES = [
 /** Index every repository image once, then enrich it from the existing banks. */
 export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   const metadata = new Map()
+  const reviewedObjects = new Set()
   const associationScenes = new Set()
   const coSources = new Map()
   const curated = read(root, 'docs/gallery/classement-tcf-20261113.json', {})
@@ -65,8 +66,11 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   for (const image of read(root, 'docs/tcf/images-generees.json', {}).images ?? []) {
     add(image.path, { labels: [image.label], types: image.gallery_types, themes: image.gallery_themes, terms: [image.id] })
   }
-  for (const manifest of ['docs/gallery/complements-20261116.json', 'docs/gallery/objets-20261116.json']) for (const image of read(root, manifest, {}).images ?? []) {
-    if (image.status === 'visually_reviewed') add(image.path, { labels: [image.label], types: [image.type], themes: [image.type, image.subtype, 'Style TCF validé'], terms: image.aliases ?? [] })
+  for (const manifest of ['docs/gallery/complements-20261116.json', 'docs/gallery/objets-20261116.json', 'docs/gallery/quotidien-20261116.json']) for (const image of read(root, manifest, {}).images ?? []) {
+    if (image.status === 'visually_reviewed') {
+      add(image.path, { labels: [image.label], types: [image.type], themes: [image.type, image.subtype, 'Style TCF validé'], terms: image.aliases ?? [] })
+      if (image.type === 'Objet') reviewedObjects.add(image.path)
+    }
   }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], terms: [image.action] })
@@ -177,7 +181,8 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     else if (/(?:horloges?|cadrans?|pendules?|reveils?|clocks?|montres?)(?:[-_. /]|$)/.test(norm(file))) types = ['Heure et horloge']
     types = types.filter(type => !['Version antérieure', 'Logo et icône', 'Capture et référence'].includes(type))
     if (!types.length) types.push('Illustration')
-    types = gallerySubjectTypes({label, types, file, origin, themes: meta.themes})
+    // A reviewed balloon bouquet is an object, even though "bouquet" can name flowers.
+    if (!reviewedObjects.has(src)) types = gallerySubjectTypes({label, types, file, origin, themes: meta.themes})
     const themes = new Set(meta.themes)
     if (file.includes('/vocabulaire/')) themes.add(pretty(file.split('/vocabulaire/')[1].split('/')[0]))
     const subject = norm([label, ...meta.labels, ...meta.themes, file].join(' '))
