@@ -93,7 +93,7 @@
     "image_views": 30,
     "errors": []
   },
-  "additional_checks": {
+  "before_merge_additional_checks": {
     "catalog_tests": 19,
     "typescript": "passed",
     "production_build": "passed",
@@ -135,6 +135,78 @@
         "session_id": 46626,
         "original_token_count": 16,
         "output": "{\"views\":10,\"question_views\":10,\"image_views\":30,\"errors\":[]}\n",
+        "exit_code": 0
+      }
+    ]
+  },
+  "additional_checks": {
+    "catalog_tests": 19,
+    "typescript": "passed",
+    "production_build": "passed",
+    "interactive_budgets": "passed",
+    "audio_files": 8801,
+    "audio_questions": 6734,
+    "audio_response_forms": 15187,
+    "qcm_image_variants": 2453,
+    "game_types": 696,
+    "browser_scope": "Aperçus QCM isolés à 1440 et 390 pixels, cinq questions vérifiées deux fois. Le support CE complet n’est pas testé par cette fixture.",
+    "gallery_images": 7190,
+    "budgets": {
+      "landing": {
+        "gzip": 122379,
+        "maximumGzip": 153600
+      },
+      "pool": {
+        "gzip": 159871,
+        "maximumGzip": 204800
+      },
+      "calibration": {
+        "gzip": 142896,
+        "maximumGzip": 204800
+      },
+      "diagnostic": {
+        "gzip": 145038,
+        "maximumGzip": 204800
+      },
+      "competition": {
+        "gzip": 204183,
+        "maximumGzip": 204800
+      },
+      "teacherConsole": {
+        "gzip": 166802,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 3143532,
+        "maximumGzip": 3145728
+      }
+    }
+  },
+  "post_merge": {
+    "upstream_commit": "b2976624e887ccddfa609f27dc39cc972725d24c",
+    "local_review_commit": "f9688acc5ba54b0544667334cb5791e3b9fd9975",
+    "incoming_image_count": 113,
+    "incoming_image_bytes_preserved": true,
+    "reviewed_tcf_sources_and_manifest_unchanged": true,
+    "application_rendering_sources_unchanged": true,
+    "regenerated_conflicts": [
+      "docs/interactive/performance-results.json",
+      "src/francais/phrase-tcf-pictures.generated.json",
+      "src/gallery/catalog.generated.json"
+    ],
+    "catalog_tests_passed": 19,
+    "typescript": "passed",
+    "production_build": "passed",
+    "interactive_budgets": "passed",
+    "gallery_images": 7190,
+    "browser_repetition": "Les sources de rendu et TCF, les métadonnées et les octets des images testées sont inchangés. Les dix vues navigateur restent applicables après fusion.",
+    "checks": [
+      {
+        "name": "catalogs",
+        "exit_code": 0
+      },
+      {
+        "name": "production",
         "exit_code": 0
       }
     ]

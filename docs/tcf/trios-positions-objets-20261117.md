@@ -15,9 +15,11 @@ La comparaison des six banques avec `efeaa4da` vérifie cinq ajouts de format im
 - **763 décisions historiques** : 371 trios actifs, 112 textes conservés et 280 trios à préparer.
 - **346 supports / 1 663 questions DELF Actif**, 1 021 relectures de contexte et banque TCF contrôlés.
 - **2 453 variantes image**, avec douze cas de mélange vérifiés.
-- **Dix-neuf tests des catalogues réussis**. Galerie : **7 077 images**. Audio : **8 801 fichiers, 6 734 questions et 15 187 formats de réponse**. La variante CE est suivie dans la banque de lecture.
+- **Dix-neuf tests des catalogues réussis après fusion**. Galerie : **7 190 images**. Audio : **8 801 fichiers, 6 734 questions et 15 187 formats de réponse**. La variante CE est suivie dans la banque de lecture.
 - Chromium : **10 vues** sur ordinateur et mobile, cinq questions vérifiées deux fois et **30 affichages d’image**. Chargement, proportions 4:3, cases élève/corrigé et bascule Texte/Image contrôlés sans erreur JavaScript. Les aperçus isolent les QCM et ne remplacent pas une vérification du document CE complet. [Résultats navigateur](trios-positions-objets-20261117-browser.json).
 - TypeScript, compilation de production, budgets de chargement et vérification des **696 types de jeu** réussis.
+
+Les 113 illustrations du quotidien reçues sur `origin/main` (`b2976624`) sont conservées octet pour octet. Les trois fichiers générés en conflit sont reconstruits depuis les sources combinées. Les sources de rendu et TCF ainsi que les images vérifiées restent inchangées ; les dix vues navigateur demeurent applicables. Catalogues, TypeScript, compilation et budgets passent après fusion.
 
 ## Reste à faire
 

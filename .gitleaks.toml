@@ -58,3 +58,10 @@ condition = "AND"
 paths = ['''(^|/)docs/tcf/plan-images-contextuel-20261106\.json$''']
 regexTarget = "match"
 regexes = ['''^key"\s*:\s*"delf\-a1\-2022\-ce\-ex1\-invitation\#6"?$''']
+
+[[rules.allowlists]]
+description = "Référence publique exacte de la question 2 du nouvel élève, vérifiée dans la banque TCF et son MP3 le 17 novembre."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/preparation-433-trios-20261112\.json$''']
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"tcf-ssx-a2-ecole-nouvel-eleve-co-4#2"?$''']

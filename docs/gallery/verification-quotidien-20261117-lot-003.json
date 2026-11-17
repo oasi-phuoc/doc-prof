@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-17",
+  "milestone": 3,
+  "published_images": 161,
+  "planned_subjects": 161,
+  "complete": true,
+  "families": {
+    "Vêtements": 31,
+    "Chaussures et accessoires": 25,
+    "Hygiène et soins": 31,
+    "Cuisine et arts de la table": 39,
+    "Fêtes et célébrations": 35
+  },
+  "unit_tests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "browser_production": {
+    "passed": true,
+    "results": [
+      "La galerie conserve la protection d’accès du site.",
+      {
+        "selectionZip": [
+          "lib/images/tcf/qcm-audit/extension573-passeport-embarquement.webp",
+          "lib/images/tcf/qcm-audit/extension573-passeport-billet.png"
+        ],
+        "labels": [
+          "Le passeport et la carte d’embarquement",
+          "Le passeport et le billet"
+        ]
+      },
+      "Les types demandés et la recherche des douleurs avec apostrophe simple affichent des images disponibles.",
+      "Les objets scolaires, meubles et objets de la maison sont recherchables par famille et téléchargeables individuellement.",
+      "Chaque famille publiée du quotidien est recherchable et son téléchargement conserve les octets de l’illustration contrôlée.",
+      "Fruit, Légume, Plat et Véhicule : nouvelles illustrations chargées et téléchargées sans modifier leurs octets ; Végétal exclut les pommes de terre et conserve les arbres.",
+      "Les 12 scènes et leurres CFR A2 ainsi que le réemploi hôtel sont accessibles sous Scénario ; la recherche du contexte téléphonique conserve le fichier existant.",
+      "Recherche sans accents, filtres combinés, sélection persistante, aperçu clavier, fichier individuel et ZIP du type vérifiés.",
+      "ZIP écrit séquentiellement : trois originaux, CRC valides, aucun nom écrasé.",
+      "Une image indisponible interrompt le ZIP et affiche une erreur explicite.",
+      "Annulation vérifiée ; la sélection est conservée."
+    ],
+    "browserErrors": []
+  },
+  "exhaustive_search": {
+    "passed": true,
+    "checked": 161,
+    "report": "docs/gallery/verification-quotidien-20261117-recherche.json"
+  },
+  "build_command": "npm run build -- --manifest",
+  "build_exit_code": 0,
+  "lint_exit_code": 0,
+  "budgets_exit_code": 0,
+  "secrets_scan_exit_code": 0,
+  "production_files_verified": 161,
+  "sha256": {
+    "docs/gallery/quotidien-20261116.json": "5a206891b914061fbd4e134786b09f850a18e5b7933ce758a036436925af878d",
+    "src/gallery/catalog.generated.json": "f8261289d549b661130318205d045cb146ab514a420dc5ab152c91ee9956d0ea",
+    "src/francais/phrase-tcf-pictures.generated.json": "7e29322c7c33c3280239a11aada6bc0da9a4de6ff4688fc1a928885c5fd22199"
+  }
+}
