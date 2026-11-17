@@ -51,13 +51,15 @@ function paintBeam(c:CanvasRenderingContext2D,b:EnergyBeam,opacity:number){
   c.fillStyle=gradient;c.globalAlpha=opacity*b.alpha*(layer===0?.34:.64);c.beginPath()
   for(let side=-1;side<=1;side+=2)for(let j=0;j<=34;j++){
    const u=(side===-1?j:34-j)/34,width=(b.startRadius+(b.endRadius-b.startRadius)*u**1.18)*scale,turbulence=1+Math.sin(u*frequency+b.phase+layer+b.identity)*(.08+.04*Math.sin(b.identity)),y=side*width*turbulence
-   if(side===-1&&j===0)c.moveTo(u*length,y);else c.lineTo(u*length,y)
+   if(side===-1&&j===0)c.moveTo(u*length,y)
+   else if(side===1&&j===0){const radius=Math.abs(y);c.ellipse(length,0,Math.min(radius*.65,length*.4),radius,0,-Math.PI/2,Math.PI/2)}
+   else c.lineTo(u*length,y)
   }
   c.closePath();c.fill()
  }
  c.shadowBlur=0;c.strokeStyle=b.light;c.lineWidth=2;c.globalAlpha=opacity*b.alpha*.65
  for(let i=1;i<6;i++){const u=((i/6+b.phase*.08)%1),width=b.startRadius+(b.endRadius-b.startRadius)*u;c.beginPath();c.ellipse(length*u,0,width*.18,width*.92,Math.sin(b.phase+i)*.3,0,Math.PI*2);c.stroke()}
- const cap=c.createRadialGradient(length,0,0,length,0,b.endRadius);cap.addColorStop(0,b.light);cap.addColorStop(.55,b.color);cap.addColorStop(1,'transparent');c.fillStyle=cap;c.globalAlpha=opacity*b.alpha*.65;c.beginPath();c.ellipse(length,0,b.endRadius*.28,b.endRadius,0,0,Math.PI*2);c.fill()
+ const cap=c.createRadialGradient(length,0,0,length,0,b.endRadius);cap.addColorStop(0,b.light);cap.addColorStop(.55,b.color);cap.addColorStop(1,'transparent');c.fillStyle=cap;c.globalAlpha=opacity*b.alpha*.65;c.beginPath();c.ellipse(length,0,Math.min(b.endRadius*.65,length*.4),b.endRadius,0,0,Math.PI*2);c.fill()
  c.restore()
 }
 function glyph(c:CanvasRenderingContext2D,g:Glyph){

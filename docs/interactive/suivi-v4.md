@@ -1,5 +1,9 @@
 # Suivi de la mise en œuvre V4
 
+Le [rayon ×4 arrondi et l’avertissement de coup de grâce](adr-0067-rayon-arrondi-et-danger.md) conservent les signatures des 30 mascottes. Deux ondes de danger s’ajoutent à la brillance avant un coup potentiellement fatal ; la pause les arrête et elles disparaissent à l’impact.
+
+Les [duels à vie infinie](adr-0066-vie-infinie-et-questions.md) limitent les nouveaux choix de vie à 100 ou 200 et ajoutent une fin au nombre de questions. Les scores comptent les bonnes réponses, les égalités sont explicites, chaque paire d’un tournoi repart de zéro et la reprise conserve les paramètres d’origine.
+
 Les [fractions TPM mixtes](adr-0065-fractions-tpm-mixtes.md) ajoutent les réductions avec ou sans terme manquant, puis les quatre opérations avec fractions signées. Le pool respecte les six questions disponibles et conserve les nouvelles graines et les reprises. Les expressions à plusieurs opérations et puissances restent ouvertes.
 
 L’[accueil du jeu](adr-0064-accueil-et-preparation.md) propose désormais uniquement le choix **Exercices ou fiche**, avec deux onglets, et **Imprimer les cartes**. La préparation, les compétitions et les bilans sont accessibles après la sélection du contenu.

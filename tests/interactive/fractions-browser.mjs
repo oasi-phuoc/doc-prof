@@ -201,7 +201,7 @@ try {
     await choose(page, ['fractions-div'])
     const pool = await prepare(page)
     await gameControl(page, 'Compétition').click(); await page.getByRole('button', { name: 'Préparer un duel', exact: true }).click()
-    await page.getByRole('spinbutton', { name: 'Vie maximale', exact: true }).fill('40')
+    await page.getByRole('combobox', { name: 'Vie', exact: true }).selectOption('100')
     for (const level of [2, 3]) await page.getByRole('spinbutton', { name: `Chance de critique ×${level} (%)`, exact: true }).fill('0')
     await page.getByRole('spinbutton', { name: 'Chance de critique ×4 (%)', exact: true }).fill('100')
     await page.getByRole('checkbox', { name: 'Activer le minuteur du duel', exact: true }).uncheck()
@@ -221,9 +221,9 @@ try {
     }
     await page.screenshot({ path: `${out}/duel-844.png` })
     await page.locator('.ci-duel-player[data-side="left"] .ci-duel-answer').filter({ has: page.getByText(correct, { exact: true }) }).click()
-    await page.locator('.ci-duel-finished').waitFor()
+    await page.locator('.ci-duel-feedback').waitFor()
     assert.match(await page.locator('.ci-duel-finished h1').innerText(), /remporte le duel/)
-    results.push({ mode: 'duel', viewport: '844x390', network: 'Disabled after battle preparation.', result: 'Six stacked rational cards per player, first correct ×4 answer defeats the opponent with 40 HP; full charge aura stays below the question and the round reaches its result.' })
+    results.push({ mode: 'duel', viewport: '844x390', network: 'Disabled after battle preparation.', result: 'Six stacked rational cards per player, first correct ×4 answer is graded with 100 HP; full charge aura stays below the question and the round reaches its correction.' })
     await context.close()
   }
   assert.deepEqual(errors, []); assert.deepEqual(api, []); assert.ok(availability.every(method => method === 'GET'))

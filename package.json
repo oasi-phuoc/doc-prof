@@ -94,7 +94,9 @@
     "test:interactive:tpm-fractions": "node tests/interactive/tpm-fractions-browser.mjs",
     "mascots:evolution-crops": "node scripts/mascot-evolution-crops.mjs",
     "test:interactive:duel-settings": "node tests/interactive/duel-settings-browser.mjs",
-    "test:interactive:duel-clearance": "node tests/interactive/duel-clearance-browser.mjs"
+    "test:interactive:duel-infinite": "node tests/interactive/duel-infinite-browser.mjs",
+    "test:interactive:duel-clearance": "node tests/interactive/duel-clearance-browser.mjs",
+    "test:interactive:rounded-beam": "node tests/interactive/rounded-beam-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

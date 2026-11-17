@@ -44,8 +44,8 @@ export function attackTrajectory(from:Point,to:Point,roundKey:string,index=0) {
   return {...trajectory(origin,target),origin,target,bendX:nx*bend,bendY:ny*bend}
 }
 export function impactFor(resolution:DuelResolution|undefined,fighters:DuelPair,roundKey:string) {
-  if(resolution?.timeout&&resolution.damage)return {kind:'timeout' as const,style:'cloud' as const,target:'left' as Side,critical:false,multiplier:1 as DamageMultiplier,variation:roundKey}
-  if(!resolution?.damage||!resolution.side||!resolution.victim)return null
+  if(resolution?.timeout&&(resolution.damage||resolution.scoreOnly))return {kind:'timeout' as const,style:'cloud' as const,target:'left' as Side,critical:false,multiplier:1 as DamageMultiplier,variation:roundKey}
+  if((!resolution?.damage&&!resolution?.scoreOnly)||!resolution.side||!resolution.victim)return null
   const multiplier=resolution.multiplier??(resolution.critical?2:1),common={critical:multiplier>1,multiplier,variation:roundKey,mascot:fighters[resolution.side].avatarId}
   return resolution.correct
     ? {kind:'attack' as const,style:fighters[resolution.side].avatarId,from:resolution.side,target:resolution.victim,...common}

@@ -81,15 +81,15 @@ try{
  }
  {
   const{page,context}=await setup(844,390);await page.getByRole('button',{name:/^Compétition/}).click();await page.getByRole('button',{name:'Préparer un duel',exact:true}).click()
-  await page.getByRole('spinbutton',{name:'Vie maximale',exact:true}).fill('10')
+  await page.getByRole('combobox',{name:'Vie',exact:true}).selectOption('100')
   for(const multiplier of [2,3,4])await page.getByRole('spinbutton',{name:`Chance de critique ×${multiplier} (%)`,exact:true}).fill('0')
   await page.getByRole('button',{name:'Préparer la partie',exact:true}).click();await page.getByRole('button',{name:'Commencer le duel',exact:true}).waitFor({timeout:120000});await context.setOffline(true)
   await page.getByRole('button',{name:'Commencer le duel',exact:true}).click();await page.locator('.ci-duel-answer:enabled').first().waitFor()
   assert.equal(await page.locator('.ci-duel-answer').count(),12);assert.ok(await page.locator('.ci-duel-question .ci-fraction-digits').count());await fits(page)
   await page.screenshot({path:`${out}/duel.png`})
-  // Either verdict completes this 10-point duel, exercising the shared exact grading in competition.
-  await page.locator('.ci-duel-answer:enabled').first().click();await page.locator('.ci-duel-finished').waitFor({timeout:30000})
-  results.push({mode:'duel',viewport:'844x390',offline:true,cards:12,completed:true});await context.close()
+  // Exercise shared exact grading without depending on an unsupported small health value.
+  await page.locator('.ci-duel-answer:enabled').first().click();await page.locator('.ci-duel-feedback').waitFor()
+  results.push({mode:'duel',viewport:'844x390',offline:true,cards:12,graded:true});await context.close()
  }
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[])
  await writeFile('docs/interactive/tpm-fractions-results.json',JSON.stringify({passed:true,results,worksheetRequests:requests,pageErrors:errors},null,2)+'\n');console.log(JSON.stringify(results,null,2))

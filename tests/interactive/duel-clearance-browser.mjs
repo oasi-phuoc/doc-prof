@@ -58,7 +58,7 @@ try{
   await gameControl(page,'Compétition').click();await page.getByRole('button',{name:'Préparer un duel',exact:true}).click()
   await page.getByRole('region',{name:'Équipe 1',exact:true}).getByRole('button',{name:'Kitsune',exact:true}).click()
   await page.getByRole('region',{name:'Équipe 2',exact:true}).getByRole('button',{name:'Carpe koï',exact:true}).click()
-  await page.getByRole('spinbutton',{name:'Vie maximale',exact:true}).fill(String(maxHp))
+  await page.getByRole('combobox',{name:'Vie',exact:true}).selectOption(String(maxHp))
   for(const n of[2,3,4])await page.getByRole('spinbutton',{name:`Chance de critique ×${n} (%)`,exact:true}).fill('0')
   await page.getByRole('spinbutton',{name:`Chance de critique ×${level} (%)`,exact:true}).fill('100')
   await page.getByRole('checkbox',{name:'Activer le minuteur du duel',exact:true}).uncheck()

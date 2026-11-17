@@ -1,5 +1,7 @@
 # ADR 0061 — Paramètres de combat, énergie ×4 et mascottes adultes
 
+Mise à jour : l’[ADR 0066](adr-0066-vie-infinie-et-questions.md) limite les nouveaux choix à 100 ou 200 et ajoute la vie infinie avec un nombre de questions fixé. Les règles ci-dessous décrivent le lot initial ; les anciennes parties conservent leur maximum d’origine.
+
 La préparation des duels à deux et par équipes regroupe désormais **Minuteur**, **Vie maximale** et **Chances de critiques** dans « Paramètres de la partie ». La vie maximale va de 10 à 200 points. Les probabilités ×2, ×3 et ×4 sont des pourcentages entiers de 0 à 100 ; leur somme ne peut pas dépasser 100. La part restante correspond aux coups normaux. Une configuration invalide reste visible et bloque la préparation.
 
 Les valeurs initiales sont 100 PV, 25 % de ×2, 10 % de ×3 et 5 % de ×4. Un coup normal retire 10 points, puis 20, 30 ou 40 selon le critique. Augmenter la vie maximale prolonge donc la partie. Le premier clic reste décisif : une réponse juste frappe l’adversaire ; une réponse fausse touche son propre auteur. Une expiration retire toujours 10 points aux deux joueurs, sans critique.

@@ -14,18 +14,18 @@ try{
  const start=s=>stepDuel(quiz,s,{type:'start',pairIndex:s.pairIndex},s.createdAt+10),hit=(s,side='left',correct=true,at=s.createdAt+20)=>stepDuel(quiz,s,{type:'answer',roundId:duelRoundId(s),side,choiceId:correct?'yes':'no'},at)
  await test('health and critical configuration is strict, each probability can reach zero or 100, and the total cannot exceed 100',()=>{
   assert.deepEqual(parseDuelRules(DEFAULT_DUEL_RULES),DEFAULT_DUEL_RULES)
-  for(const critical of [2,3,4])for(const maxHp of [10,100,101,200])assert.equal(parseDuelRules({maxHp,critical2:0,critical3:0,critical4:0,[`critical${critical}`]:100}).maxHp,maxHp)
-  for(const patch of [{maxHp:0},{maxHp:201},{maxHp:20.5},{critical2:-1},{critical3:101},{critical4:NaN},{critical4:1.5},{critical2:60,critical3:30,critical4:11},{extra:1}])assert.throws(()=>parseDuelRules({...DEFAULT_DUEL_RULES,...patch}))
+  for(const critical of [2,3,4])for(const maxHp of [100,200])assert.equal(parseDuelRules({maxHp,critical2:0,critical3:0,critical4:0,[`critical${critical}`]:100}).maxHp,maxHp)
+  for(const patch of [{maxHp:0},{maxHp:10},{maxHp:101},{maxHp:150},{maxHp:201},{maxHp:20.5},{critical2:-1},{critical3:101},{critical4:NaN},{critical4:1.5},{critical2:60,critical3:30,critical4:11},{extra:1}])assert.throws(()=>parseDuelRules({...DEFAULT_DUEL_RULES,...patch}))
  })
  await test('zero and certain critical rates take effect on every seeded turn, independently of who answers first',()=>{
   for(const multiplier of [1,2,3,4])for(let seed=0;seed<120;seed++){
    const combat={maxHp:200,critical2:0,critical3:0,critical4:0,...(multiplier>1?{[`critical${multiplier}`]:100}:{})},s=start(createDuel(quiz,{...config,seed,combat},timer,1000)),before=structuredClone(s)
-   assert.equal(s.version,4);assert.equal(duelRound(quiz,s).multiplier,multiplier);assert.deepEqual(s.hp,{left:200,right:200})
+   assert.equal(s.version,5);assert.equal(duelRound(quiz,s).multiplier,multiplier);assert.deepEqual(s.hp,{left:200,right:200})
    for(const side of ['left','right'])for(const correct of [true,false]){const result=hit(s,side,correct),victim=correct?(side==='left'?'right':'left'):side;assert.equal(result.hp[victim],200-10*multiplier);assert.equal(result.resolution.damage,10*multiplier);assert.deepEqual(result.resolution.previousHp,{left:200,right:200})}assert.deepEqual(s,before)
   }
  })
  await test('custom probabilities are exclusive, reproducible and follow the configured distribution',()=>{
-  const counts={1:0,2:0,3:0,4:0},combat={maxHp:150,critical2:15,critical3:20,critical4:10}
+  const counts={1:0,2:0,3:0,4:0},combat={maxHp:100,critical2:15,critical3:20,critical4:10}
   for(let seed=0;seed<4000;seed++){const s=createDuel(quiz,{...config,seed,combat},timer,1000),round=duelRound(quiz,s);counts[round.multiplier]++;assert.deepEqual(duelRound(quiz,s),round)}
   for(const[level,expected]of[[1,.55],[2,.15],[3,.2],[4,.1]])assert.ok(Math.abs(counts[level]/4000-expected)<.035,JSON.stringify(counts))
  })
@@ -33,7 +33,7 @@ try{
   let s=start(createDuel(quiz,config,timer,1000)),at=1100
   for(let n=0;n<5;n++){s=hit(s,'left',true,at);assert.equal(s.hp.right,Math.max(0,200-(n+1)*40));assert.equal(s.resolution.previousHp.right,200-n*40);assert.equal(hit(s,'right',false,at),s);at=s.deadline;s=stepDuel(quiz,s,{type:'tick'},at);at++}
   assert.equal(s.phase,'finished');assert.deepEqual(s.wins,{left:1,right:0});assert.equal(s.results.length,1)
-  const low=start(createDuel(quiz,{...config,combat:{...config.combat,maxHp:10}},timer,1000)),final=hit(low,'left',false);assert.equal(final.hp.left,0);assert.equal(final.resolution.previousHp.left,10);assert.equal(final.resolution.damage,40)
+  const low=start(createDuel(quiz,{...config,combat:{...config.combat,maxHp:10}},timer,1000,4)),final=hit(low,'left',false);assert.equal(final.hp.left,0);assert.equal(final.resolution.previousHp.left,10);assert.equal(final.resolution.damage,40)
  })
  await test('timeouts still remove ten points from both sides, and the next team pair starts at the configured maximum',()=>{
   const timed=start(createDuel(quiz,config,{...timer,enabled:true},1000)),expired=stepDuel(quiz,timed,{type:'tick'},timed.deadline);assert.deepEqual(expired.hp,{left:190,right:190});assert.equal(expired.resolution.damage,10);assert.equal(expired.resolution.multiplier,1)
@@ -42,7 +42,7 @@ try{
   assert.equal(s.phase,'ready');assert.equal(s.pairIndex,1);assert.deepEqual(s.hp,{left:200,right:200})
  })
  await test('fourth-critical journals restore their own rules and health, while legacy versions retain their original chances',async()=>{
-  const plan=await duelPlanId(quiz),run=newDuelRun(quiz,plan,config,timer,1000),events=[{at:1010,action:{type:'start',pairIndex:0}},{at:1020,action:{type:'answer',roundId:duelRoundId(run.state),side:'left',choiceId:'no'}}],journal={...run.journal,events};assert.equal(journal.version,4);assert.ok(writeDuel(journal))
+  const plan=await duelPlanId(quiz),run=newDuelRun(quiz,plan,config,timer,1000),events=[{at:1010,action:{type:'start',pairIndex:0}},{at:1020,action:{type:'answer',roundId:duelRoundId(run.state),side:'left',choiceId:'no'}}],journal={...run.journal,events};assert.equal(journal.version,5);assert.ok(writeDuel(journal))
   const restored=readDuel(quiz,plan,{...config,combat:{...DEFAULT_DUEL_RULES}},timer,1100);assert.equal(restored.warning,'');assert.deepEqual(restored.state.hp,{left:160,right:200});assert.deepEqual(restored.state.config.combat,config.combat)
   for(const version of [2,3]){const legacy={...config};delete legacy.combat;const s=createDuel(quiz,legacy,timer,1000,version);assert.equal(s.version,version);assert.deepEqual(s.hp,{left:100,right:100});assert.notEqual(duelRound(quiz,s).multiplier,4);assert.throws(()=>createDuel(quiz,config,timer,1000,version))}
  })
