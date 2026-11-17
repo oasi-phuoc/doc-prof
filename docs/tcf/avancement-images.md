@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Suite du 17 novembre : cinq trios A1 sur les positions d’objets ajoutés**, avec onze scènes PNG natives et deux réemplois. Clés, passeport et serviettes apparaissent dans chaque lieu proposé ; questions, réponses et transcriptions sont conservées. Restent **280 trios historiques** et **380 candidats DELF Actif**, avec **366 trios DELF Actif actifs**. [Rapport actuel et reste à faire](trios-positions-objets-20261117.md).
+
 **Suite du 17 novembre : sept trios de vêtements supplémentaires**, un A1, quatre A2 et deux B1. Treize PNG natifs, dix-sept usages des nouvelles images et quatre réemplois ; toutes les pièces et couleurs des réponses sont conservées. Restent **285 trios historiques** et **380 candidats DELF Actif**, avec **366 trios DELF Actif actifs**. [Rapport actuel et reste à faire](trios-vetements-20261117.md).
 
 **Suite finalisée le 17 novembre : sept trios supplémentaires**, un A1, quatre A2 et deux B1. Douze PNG natifs et neuf réemplois ; fonds ivoire contrôlés, réponses complètes et transcriptions conservées. Restent **289 trios historiques** et **383 candidats DELF Actif**, avec **363 trios DELF Actif actifs**. [Rapport actuel et reste à faire](trios-boissons-aliments-20261116.md).

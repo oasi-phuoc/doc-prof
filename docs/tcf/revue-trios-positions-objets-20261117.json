@@ -1,0 +1,814 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "efeaa4da80446e2afca65d7ecf5a7135dd4bc2f3",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 5,
+    "added_historical_trios": 5,
+    "added_delf_actif_trios": 0,
+    "new_images": 11,
+    "imagegen_calls": 11,
+    "rejected_generations": 0,
+    "new_image_usages": 13,
+    "reused_image_usages": 2,
+    "reused_distinct_images": 2,
+    "added_by_level": {
+      "A0-A1": 5
+    },
+    "historical_pending": 280
+  },
+  "new_images": [
+    {
+      "id": "qcm-position-cles-table-manger",
+      "label": "Clés sur la table à manger",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+      "prompt": "Create one finished educational TCF illustration, landscape EXACTLY 1448×1086 pixels (4:3), one single scene, no panels, no text, no labels, no people. Detailed semi-realistic digital painting with natural soft daylight from the left, cream walls, honey oak, muted navy and olive accents, subtle discreet contours, material texture only, coherent gentle warm-neutral light with no sepia cast. Clearly show spatial relation, grounded objects, believable scale. The main object is THE SAME design in the collection: a silver circular keyring holding two silver door keys and a small plain matte black oval car remote fob (no brand, no words). The keyring occupies about 12% image width and is easy to see but remains physically plausible. Show that keyring lying flat on the near half of a small honey oak DINING TABLE, at left-center foreground, viewed slightly from above. Show complete tabletop with four dining chairs around it, a simple dining room, daylight window in background and a modest unmarked ceramic bowl far from keys. No sofa, no desk, no kitchen appliances. Keys visibly touch tabletop. Furniture composition legible at thumbnail size.",
+      "source_png": "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png",
+      "source_sha256": "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
+      "sha256": "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
+      "bytes": 2876216,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "review_note": "Le trousseau à deux clés et télécommande noire repose sur une table à manger entourée de chaises ; salle à manger identifiable. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-cles-sac",
+      "label": "Clés dans le sac",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-sac.png",
+      "prompt": "Create one finished educational TCF illustration, landscape EXACTLY 1448×1086 pixels (4:3), one single scene, no panels, no text, no labels, no people. Detailed semi-realistic digital painting with natural soft daylight from the left, cream walls, honey oak, muted navy and olive accents, subtle discreet contours, material texture only, coherent gentle warm-neutral light with no sepia cast. Clearly show spatial relation, grounded objects, believable scale. The main object is THE SAME design in the collection: a silver circular keyring holding two silver door keys and a small plain matte black oval car remote fob (no brand, no words). The keyring occupies about 12% image width and is easy to see but remains physically plausible. Show that keyring lying INSIDE the main compartment of a fully OPEN tan canvas tote bag sitting upright on a low simple bench by an interior cream wall. View from above at gentle angle into bag: both metal keys and black fob entirely visible on the interior bag bottom, framed by its open rim; no hanging, no resting on rim. Whole tote bag and its handles visible. No other keyring elsewhere.",
+      "source_png": "/workspace/generated_images/exec-7eccdf39-1a01-4938-9979-32633c675613.png",
+      "source_sha256": "de90b2436fb3859d4aebc6143542a2c9b1b338125f7c3ad9932d97af3fe7626e",
+      "sha256": "de90b2436fb3859d4aebc6143542a2c9b1b338125f7c3ad9932d97af3fe7626e",
+      "bytes": 3143929,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "review_note": "Le même type de trousseau est entièrement visible au fond du compartiment principal du sac ouvert, à l’intérieur de son bord. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-cles-sous-chaise",
+      "label": "Clés sous la chaise",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise.png",
+      "prompt": "Create one finished educational TCF illustration, landscape EXACTLY 1448×1086 pixels (4:3), one single scene, no panels, no text, no labels, no people. Detailed semi-realistic digital painting with natural soft daylight from the left, cream walls, honey oak, muted navy and olive accents, subtle discreet contours, material texture only, coherent gentle warm-neutral light with no sepia cast. Clearly show spatial relation, grounded objects, believable scale. The main object is THE SAME design in the collection: a silver circular keyring holding two silver door keys and a small plain matte black oval car remote fob (no brand, no words). The keyring occupies about 12% image width and is easy to see but remains physically plausible. Show that keyring lying flat ON THE WOOD FLOOR DIRECTLY UNDER the seat of a single ordinary oak dining chair. Front three-quarter low view: all four chair legs and entire chair back visible, gap below seat clear and keyring visually centered between the legs on floor, no key on seat. No table in frame. Clean cream wall and wood floor room, soft daylight.",
+      "source_png": "/workspace/generated_images/exec-de42e3a7-8055-440b-b9a9-15951a189257.png",
+      "source_sha256": "dc8486ca764e8706c5300e612af6f57da781c54c43769d035854bba9f59a58b6",
+      "sha256": "dc8486ca764e8706c5300e612af6f57da781c54c43769d035854bba9f59a58b6",
+      "bytes": 2224223,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "review_note": "Le trousseau repose sur le sol entre les pieds, sous l’assise de la chaise entière ; aucune clé sur le siège. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-cles-table-salon",
+      "label": "Clés sur la table du salon",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon.png",
+      "prompt": "Use the supplied illustration as the exact collection reference for paint technique, soft neutral daylight from left, cream walls/honey oak/navy/olive palette, natural perspective, AND identical keyring design (silver ring with TWO silver door keys and matte black oval remote). Create a different single educational TCF scene, EXACTLY 1448×1086 pixels 4:3 landscape PNG, no panels, no labels, no writing, no people. Keep keys clearly legible at thumbnail, physically plausible scale (around 12% image width), entirely supported by named surface. Replace the dining room by a LIVING ROOM. Keyring lying on near half of honey oak low rectangular COFFEE TABLE, next to a small cream ceramic pot of pink flowers. Whole tabletop visible, low table legs planted on carpet, navy sofa with cushions behind, window at left and modest bookcase in background. This is unmistakably a living room, no dining chairs and no kitchen.",
+      "source_png": "/workspace/generated_images/exec-3b5903d7-d7d0-45d6-8e26-f62cde530cdd.png",
+      "source_sha256": "e5edf11d0eac34c6995e84a05b87101b2c364f0c63259f697907cbd3ba44880a",
+      "sha256": "e5edf11d0eac34c6995e84a05b87101b2c364f0c63259f697907cbd3ba44880a",
+      "bytes": 3027892,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "review_note": "Le trousseau repose sur la table basse devant le canapé, à côté du pot de fleurs demandé dans la transcription. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-cles-lit",
+      "label": "Clés sur le lit de la chambre",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-lit.png",
+      "prompt": "Use the supplied illustration as the exact collection reference for paint technique, soft neutral daylight from left, cream walls/honey oak/navy/olive palette, natural perspective, AND identical keyring design (silver ring with TWO silver door keys and matte black oval remote). Create a different single educational TCF scene, EXACTLY 1448×1086 pixels 4:3 landscape PNG, no panels, no labels, no writing, no people. Keep keys clearly legible at thumbnail, physically plausible scale (around 12% image width), entirely supported by named surface. Replace setting with BEDROOM. Keyring lying flat on an unpatterned cream BED DUVET near foot of bed, slight natural contact indentation. Show wood headboard, two pillows, bedside table with small pot of flowers and bedside lamp, softly lit window. Close enough that keys remain easily visible; enough bed/headboard to identify bed unequivocally. No table beneath keys.",
+      "source_png": "/workspace/generated_images/exec-a9d86a22-b2dc-4a5f-801c-62c9198b8a93.png",
+      "source_sha256": "13c95e8286ffa8b531a864c86f0682d178d850b330b3c6b20086be6e614d9322",
+      "sha256": "13c95e8286ffa8b531a864c86f0682d178d850b330b3c6b20086be6e614d9322",
+      "bytes": 2501802,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "review_note": "Le trousseau est posé sur la couette du lit ; tête de lit, oreillers et chevet identifient la chambre. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-cles-comptoir-cuisine",
+      "label": "Clés sur le comptoir de la cuisine",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png",
+      "prompt": "Use the supplied illustration as the exact collection reference for paint technique, soft neutral daylight from left, cream walls/honey oak/navy/olive palette, natural perspective, AND identical keyring design (silver ring with TWO silver door keys and matte black oval remote). Create a different single educational TCF scene, EXACTLY 1448×1086 pixels 4:3 landscape PNG, no panels, no labels, no writing, no people. Keep keys clearly legible at thumbnail, physically plausible scale (around 12% image width), entirely supported by named surface. Replace setting with KITCHEN. Keyring lying flat on honey oak fitted kitchen COUNTERTOP, on clear near foreground section. Visible under-counter cabinetry with drawer handles, sink and faucet to side, cream tile backsplash and kettle in background make context unmistakable. Small cream flower pot at far edge. No dining table or desk, no food, no floating objects, counter has plausible edges/supports.",
+      "source_png": "/workspace/generated_images/exec-c8f2b440-2939-4c5e-b261-49b4f6178952.png",
+      "source_sha256": "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298",
+      "sha256": "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298",
+      "bytes": 2375656,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "review_note": "Le trousseau repose sur le plan de travail fixé aux meubles de cuisine, avec évier et crédence visibles. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-cles-bureau",
+      "label": "Clés sur le bureau",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau.png",
+      "prompt": "Using supplied collection reference, keep exactly same semi-realistic painted technique, neutral soft natural left daylight, cream/honey-oak/navy/olive palette and keyring design: silver ring, two silver metal door keys and plain matte black oval car remote with three unmarked buttons. Create ONE new 4:3 landscape illustration EXACTLY 1448×1086 pixels. Keyring lies flat on clear front-center of a home office WORK DESK. Show desk drawers, desk chair, closed unmarked laptop farther back, pen cup, a few blank sheets, shelves with books, left window. Keys clearly visible about 12% image width, all objects grounded. No dining setting, no kitchen appliances, no text, no people, no panels.",
+      "source_png": "/workspace/generated_images/exec-421c81f2-78ee-49e5-a3a3-331bc9b24e0c.png",
+      "source_sha256": "f52f9fb51f8abbb37679915fa3ba69440dba4a682d656cddbf1c99b01614fb09",
+      "sha256": "f52f9fb51f8abbb37679915fa3ba69440dba4a682d656cddbf1c99b01614fb09",
+      "bytes": 2393974,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "review_note": "Le trousseau repose sur le bureau avec tiroirs, ordinateur fermé et fauteuil de travail ; ce n’est pas une table de repas. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-passeport-bureau",
+      "label": "Passeport sur le bureau",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
+      "prompt": "One finished educational TCF illustration, EXACTLY 1448×1086 pixels landscape 4:3, one scene, detailed semi-realistic digital painting, soft natural daylight from LEFT, cream walls/honey oak/muted navy and olive, natural materials, discreet contours, gentle neutral warmth, no sepia cast. Show a CLOSED navy blue PASSPORT lying flat on the near half of a HOME OFFICE WORK DESK. Entire passport visible, cover upright to viewer, gold small globe emblem and only word PASSEPORT, no personal data or numbers. Plain embossed cover, about 18% image width. Entire desktop context: drawer front, desk chair behind, unmarked closed laptop and pencil cup farther back, bookcase and left window. No suitcase, no kitchen, no people, no inset panels, no other text. This passport design will be reused identically in other places.",
+      "source_png": "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png",
+      "source_sha256": "a8e66a10da7b5d364ed767da6a01a4735925c8df0eb0eb8ccfe3e1c078aff6ad",
+      "sha256": "a8e66a10da7b5d364ed767da6a01a4735925c8df0eb0eb8ccfe3e1c078aff6ad",
+      "bytes": 2424390,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+      ],
+      "review_note": "Passeport bleu fermé, couverture et titre générique visibles, posé sur le bureau devant l’ordinateur ; aucun renseignement personnel. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-serviettes-armoire-couloir",
+      "label": "Serviettes dans l’armoire du couloir",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir.png",
+      "prompt": "Create a third matching illustration for these two TCF location choices. Keep EXACTLY their semi-realistic digital painting style, soft natural daylight, cream walls, honey oak furniture, and SAME THREE folded medium-blue terry bath towels, with matching woven parallel border stripes. Landscape EXACTLY 1448×1086 pixels 4:3, ONE scene with no people and no text. Show the THREE matching blue towels stacked on a waist-height wooden shelf INSIDE an OPEN full-height honey oak LINEN CUPBOARD in a household HALLWAY. Both cupboard doors visibly open. Towels entirely visible and large enough to recognise (stack about 38% image width), shelf fully supports them. Clear hallway recedes past two closed interior doors, wood floor and simple wall hook in background. No bathroom, sink, tub or bed anywhere. Cupboard is placed against wall with clear walking passage, all furniture grounded. No words, labels, panels.",
+      "source_png": "/workspace/generated_images/exec-b93896c2-a537-44f5-9456-c31103cf2552.png",
+      "source_sha256": "afb3e6d7e8480e13c901b73b2bd4e83124af744719a05895c3797e63994cb342",
+      "sha256": "afb3e6d7e8480e13c901b73b2bd4e83124af744719a05895c3797e63994cb342",
+      "bytes": 2213309,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+      ],
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+      ],
+      "review_note": "Trois serviettes bleues à bordures assorties aux réemplois, empilées dans une armoire ouverte située dans un couloir dégagé. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+          "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-passeport-valise",
+      "label": "Passeport dans la valise",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png",
+      "prompt": "Use supplied image as exact collection reference: preserve identical CLOSED navy passport with ONLY gold word PASSEPORT and small gold globe emblem, same proportions/design, same detailed semi-realistic painted technique and gentle neutral cream/honey-oak/navy/olive colours and soft natural daylight from LEFT. Create one different single scene EXACTLY 1448×1086 pixels, landscape 4:3. Passport entirely visible, no personal data/numbers. No people, no arrows, no panels, no other writing. Show passport lying flat INSIDE the main zipped compartment of a fully OPEN medium tan SUITCASE. Whole open suitcase seen from above at gentle angle, main compartment in foreground and empty hinged lid behind. Passport rests visibly ON TOP of neatly folded cream/olive clothes inside lining, with all its edges within the case rim; passport about 20% image width. Suitcase supported on a low wooden luggage stand in a simple cream bedroom, small part of bed in background, wooden floor, soft window light. No desk or kitchen. Make inside-versus-outside unmistakable.",
+      "source_png": "/workspace/generated_images/exec-7a8d9b78-d577-4a01-9b8a-37a1a4508942.png",
+      "source_sha256": "7e85ec59ff5981ecd7a3a97614dcb0795c8177d86cbb171b710d2f668383afca",
+      "sha256": "7e85ec59ff5981ecd7a3a97614dcb0795c8177d86cbb171b710d2f668383afca",
+      "bytes": 2719791,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+      ],
+      "review_note": "Même passeport bleu fermé, entièrement à l’intérieur de la valise ouverte sur les vêtements ; intérieur/extérieur sans ambiguïté. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-position-passeport-table-cuisine",
+      "label": "Passeport sur la table de la cuisine",
+      "path": "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png",
+      "prompt": "Use supplied image as exact collection reference: preserve identical CLOSED navy passport with ONLY gold word PASSEPORT and small gold globe emblem, same proportions/design, same detailed semi-realistic painted technique and gentle neutral cream/honey-oak/navy/olive colours and soft natural daylight from LEFT. Create one different single scene EXACTLY 1448×1086 pixels, landscape 4:3. Passport entirely visible, no personal data/numbers. No people, no arrows, no panels, no other writing. Show passport lying flat on the near half of a small honey oak KITCHEN DINING TABLE in foreground, passport about 20% image width, closed cover wholly visible. Two simple kitchen chairs flank the clearly freestanding table (this must NOT be the fitted counter). Behind it: cream lower and upper cupboards, tiled backsplash, fitted sink and faucet, plain kettle and daylight window. Clear table top except passport and unmarked cream mug far away. Believable supports/perspective, no desk or laptop, no suitcase.",
+      "source_png": "/workspace/generated_images/exec-f157b3e1-15fa-4fbf-ab7b-42f44fb3bf35.png",
+      "source_sha256": "5bb058e5d1969ed81ad9ce454d28ae1dab4e7607c5972d2ee84e4119fdb64b76",
+      "sha256": "5bb058e5d1969ed81ad9ce454d28ae1dab4e7607c5972d2ee84e4119fdb64b76",
+      "bytes": 2279056,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-positions-objets-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+      ],
+      "reference_images": [
+        "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+      ],
+      "review_note": "Même passeport fermé sur une table indépendante avec chaises ; les meubles et l’évier à l’arrière situent la cuisine. Scène peinte réaliste, lumière naturelle douce et palette crème/bois/bleu ; fichier PNG natif 4:3 sans retouche locale.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Lieu et décor"
+      ],
+      "gallery_themes": [
+        "Positions d’objets",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "generation": [
+    {
+      "id": "qcm-position-cles-table-manger",
+      "label": "Clés sur la table à manger",
+      "prompt": "Create one finished educational TCF illustration, landscape EXACTLY 1448×1086 pixels (4:3), one single scene, no panels, no text, no labels, no people. Detailed semi-realistic digital painting with natural soft daylight from the left, cream walls, honey oak, muted navy and olive accents, subtle discreet contours, material texture only, coherent gentle warm-neutral light with no sepia cast. Clearly show spatial relation, grounded objects, believable scale. The main object is THE SAME design in the collection: a silver circular keyring holding two silver door keys and a small plain matte black oval car remote fob (no brand, no words). The keyring occupies about 12% image width and is easy to see but remains physically plausible. Show that keyring lying flat on the near half of a small honey oak DINING TABLE, at left-center foreground, viewed slightly from above. Show complete tabletop with four dining chairs around it, a simple dining room, daylight window in background and a modest unmarked ceramic bowl far from keys. No sofa, no desk, no kitchen appliances. Keys visibly touch tabletop. Furniture composition legible at thumbnail size.",
+      "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "source": "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+    },
+    {
+      "id": "qcm-position-cles-sac",
+      "label": "Clés dans le sac",
+      "prompt": "Create one finished educational TCF illustration, landscape EXACTLY 1448×1086 pixels (4:3), one single scene, no panels, no text, no labels, no people. Detailed semi-realistic digital painting with natural soft daylight from the left, cream walls, honey oak, muted navy and olive accents, subtle discreet contours, material texture only, coherent gentle warm-neutral light with no sepia cast. Clearly show spatial relation, grounded objects, believable scale. The main object is THE SAME design in the collection: a silver circular keyring holding two silver door keys and a small plain matte black oval car remote fob (no brand, no words). The keyring occupies about 12% image width and is easy to see but remains physically plausible. Show that keyring lying INSIDE the main compartment of a fully OPEN tan canvas tote bag sitting upright on a low simple bench by an interior cream wall. View from above at gentle angle into bag: both metal keys and black fob entirely visible on the interior bag bottom, framed by its open rim; no hanging, no resting on rim. Whole tote bag and its handles visible. No other keyring elsewhere.",
+      "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-7eccdf39-1a01-4938-9979-32633c675613.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "source": "/workspace/generated_images/exec-7eccdf39-1a01-4938-9979-32633c675613.png"
+    },
+    {
+      "id": "qcm-position-cles-sous-chaise",
+      "label": "Clés sous la chaise",
+      "prompt": "Create one finished educational TCF illustration, landscape EXACTLY 1448×1086 pixels (4:3), one single scene, no panels, no text, no labels, no people. Detailed semi-realistic digital painting with natural soft daylight from the left, cream walls, honey oak, muted navy and olive accents, subtle discreet contours, material texture only, coherent gentle warm-neutral light with no sepia cast. Clearly show spatial relation, grounded objects, believable scale. The main object is THE SAME design in the collection: a silver circular keyring holding two silver door keys and a small plain matte black oval car remote fob (no brand, no words). The keyring occupies about 12% image width and is easy to see but remains physically plausible. Show that keyring lying flat ON THE WOOD FLOOR DIRECTLY UNDER the seat of a single ordinary oak dining chair. Front three-quarter low view: all four chair legs and entire chair back visible, gap below seat clear and keyring visually centered between the legs on floor, no key on seat. No table in frame. Clean cream wall and wood floor room, soft daylight.",
+      "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-de42e3a7-8055-440b-b9a9-15951a189257.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "source": "/workspace/generated_images/exec-de42e3a7-8055-440b-b9a9-15951a189257.png"
+    },
+    {
+      "id": "qcm-position-cles-table-salon",
+      "label": "Clés sur la table du salon",
+      "prompt": "Use the supplied illustration as the exact collection reference for paint technique, soft neutral daylight from left, cream walls/honey oak/navy/olive palette, natural perspective, AND identical keyring design (silver ring with TWO silver door keys and matte black oval remote). Create a different single educational TCF scene, EXACTLY 1448×1086 pixels 4:3 landscape PNG, no panels, no labels, no writing, no people. Keep keys clearly legible at thumbnail, physically plausible scale (around 12% image width), entirely supported by named surface. Replace the dining room by a LIVING ROOM. Keyring lying on near half of honey oak low rectangular COFFEE TABLE, next to a small cream ceramic pot of pink flowers. Whole tabletop visible, low table legs planted on carpet, navy sofa with cushions behind, window at left and modest bookcase in background. This is unmistakably a living room, no dining chairs and no kitchen.",
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "source": "/workspace/generated_images/exec-3b5903d7-d7d0-45d6-8e26-f62cde530cdd.png",
+      "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-3b5903d7-d7d0-45d6-8e26-f62cde530cdd.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "qcm-position-cles-lit",
+      "label": "Clés sur le lit de la chambre",
+      "prompt": "Use the supplied illustration as the exact collection reference for paint technique, soft neutral daylight from left, cream walls/honey oak/navy/olive palette, natural perspective, AND identical keyring design (silver ring with TWO silver door keys and matte black oval remote). Create a different single educational TCF scene, EXACTLY 1448×1086 pixels 4:3 landscape PNG, no panels, no labels, no writing, no people. Keep keys clearly legible at thumbnail, physically plausible scale (around 12% image width), entirely supported by named surface. Replace setting with BEDROOM. Keyring lying flat on an unpatterned cream BED DUVET near foot of bed, slight natural contact indentation. Show wood headboard, two pillows, bedside table with small pot of flowers and bedside lamp, softly lit window. Close enough that keys remain easily visible; enough bed/headboard to identify bed unequivocally. No table beneath keys.",
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "source": "/workspace/generated_images/exec-a9d86a22-b2dc-4a5f-801c-62c9198b8a93.png",
+      "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-a9d86a22-b2dc-4a5f-801c-62c9198b8a93.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "qcm-position-cles-comptoir-cuisine",
+      "label": "Clés sur le comptoir de la cuisine",
+      "prompt": "Use the supplied illustration as the exact collection reference for paint technique, soft neutral daylight from left, cream walls/honey oak/navy/olive palette, natural perspective, AND identical keyring design (silver ring with TWO silver door keys and matte black oval remote). Create a different single educational TCF scene, EXACTLY 1448×1086 pixels 4:3 landscape PNG, no panels, no labels, no writing, no people. Keep keys clearly legible at thumbnail, physically plausible scale (around 12% image width), entirely supported by named surface. Replace setting with KITCHEN. Keyring lying flat on honey oak fitted kitchen COUNTERTOP, on clear near foreground section. Visible under-counter cabinetry with drawer handles, sink and faucet to side, cream tile backsplash and kettle in background make context unmistakable. Small cream flower pot at far edge. No dining table or desk, no food, no floating objects, counter has plausible edges/supports.",
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "source": "/workspace/generated_images/exec-c8f2b440-2939-4c5e-b261-49b4f6178952.png",
+      "output_hint": "Generated images are saved to /workspace/generated_images as /workspace/generated_images/exec-c8f2b440-2939-4c5e-b261-49b4f6178952.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "id": "qcm-position-cles-bureau",
+      "label": "Clés sur le bureau",
+      "prompt": "Using supplied collection reference, keep exactly same semi-realistic painted technique, neutral soft natural left daylight, cream/honey-oak/navy/olive palette and keyring design: silver ring, two silver metal door keys and plain matte black oval car remote with three unmarked buttons. Create ONE new 4:3 landscape illustration EXACTLY 1448×1086 pixels. Keyring lies flat on clear front-center of a home office WORK DESK. Show desk drawers, desk chair, closed unmarked laptop farther back, pen cup, a few blank sheets, shelves with books, left window. Keys clearly visible about 12% image width, all objects grounded. No dining setting, no kitchen appliances, no text, no people, no panels.",
+      "reference_images": [
+        "/workspace/generated_images/exec-ce7c511e-8503-4692-b82f-6f83ec2124b3.png"
+      ],
+      "source": "/workspace/generated_images/exec-421c81f2-78ee-49e5-a3a3-331bc9b24e0c.png"
+    },
+    {
+      "id": "qcm-position-passeport-bureau",
+      "label": "Passeport sur le bureau",
+      "prompt": "One finished educational TCF illustration, EXACTLY 1448×1086 pixels landscape 4:3, one scene, detailed semi-realistic digital painting, soft natural daylight from LEFT, cream walls/honey oak/muted navy and olive, natural materials, discreet contours, gentle neutral warmth, no sepia cast. Show a CLOSED navy blue PASSPORT lying flat on the near half of a HOME OFFICE WORK DESK. Entire passport visible, cover upright to viewer, gold small globe emblem and only word PASSEPORT, no personal data or numbers. Plain embossed cover, about 18% image width. Entire desktop context: drawer front, desk chair behind, unmarked closed laptop and pencil cup farther back, bookcase and left window. No suitcase, no kitchen, no people, no inset panels, no other text. This passport design will be reused identically in other places.",
+      "reference_images": [],
+      "source": "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+    },
+    {
+      "id": "qcm-position-serviettes-armoire-couloir",
+      "label": "Serviettes dans l’armoire du couloir",
+      "prompt": "Create a third matching illustration for these two TCF location choices. Keep EXACTLY their semi-realistic digital painting style, soft natural daylight, cream walls, honey oak furniture, and SAME THREE folded medium-blue terry bath towels, with matching woven parallel border stripes. Landscape EXACTLY 1448×1086 pixels 4:3, ONE scene with no people and no text. Show the THREE matching blue towels stacked on a waist-height wooden shelf INSIDE an OPEN full-height honey oak LINEN CUPBOARD in a household HALLWAY. Both cupboard doors visibly open. Towels entirely visible and large enough to recognise (stack about 38% image width), shelf fully supports them. Clear hallway recedes past two closed interior doors, wood floor and simple wall hook in background. No bathroom, sink, tub or bed anywhere. Cupboard is placed against wall with clear walking passage, all furniture grounded. No words, labels, panels.",
+      "reference_images": [
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+        "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp"
+      ],
+      "source": "/workspace/generated_images/exec-b93896c2-a537-44f5-9456-c31103cf2552.png"
+    },
+    {
+      "id": "qcm-position-passeport-valise",
+      "label": "Passeport dans la valise",
+      "prompt": "Use supplied image as exact collection reference: preserve identical CLOSED navy passport with ONLY gold word PASSEPORT and small gold globe emblem, same proportions/design, same detailed semi-realistic painted technique and gentle neutral cream/honey-oak/navy/olive colours and soft natural daylight from LEFT. Create one different single scene EXACTLY 1448×1086 pixels, landscape 4:3. Passport entirely visible, no personal data/numbers. No people, no arrows, no panels, no other writing. Show passport lying flat INSIDE the main zipped compartment of a fully OPEN medium tan SUITCASE. Whole open suitcase seen from above at gentle angle, main compartment in foreground and empty hinged lid behind. Passport rests visibly ON TOP of neatly folded cream/olive clothes inside lining, with all its edges within the case rim; passport about 20% image width. Suitcase supported on a low wooden luggage stand in a simple cream bedroom, small part of bed in background, wooden floor, soft window light. No desk or kitchen. Make inside-versus-outside unmistakable.",
+      "reference_images": [
+        "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+      ],
+      "source": "/workspace/generated_images/exec-7a8d9b78-d577-4a01-9b8a-37a1a4508942.png"
+    },
+    {
+      "id": "qcm-position-passeport-table-cuisine",
+      "label": "Passeport sur la table de la cuisine",
+      "prompt": "Use supplied image as exact collection reference: preserve identical CLOSED navy passport with ONLY gold word PASSEPORT and small gold globe emblem, same proportions/design, same detailed semi-realistic painted technique and gentle neutral cream/honey-oak/navy/olive colours and soft natural daylight from LEFT. Create one different single scene EXACTLY 1448×1086 pixels, landscape 4:3. Passport entirely visible, no personal data/numbers. No people, no arrows, no panels, no other writing. Show passport lying flat on the near half of a small honey oak KITCHEN DINING TABLE in foreground, passport about 20% image width, closed cover wholly visible. Two simple kitchen chairs flank the clearly freestanding table (this must NOT be the fitted counter). Behind it: cream lower and upper cupboards, tiled backsplash, fitted sink and faucet, plain kettle and daylight window. Clear table top except passport and unmarked cream mug far away. Believable supports/perspective, no desk or laptop, no suitcase.",
+      "reference_images": [
+        "/workspace/generated_images/exec-a984e51f-7fc6-47c7-89ee-faa7f283a9ca.png"
+      ],
+      "source": "/workspace/generated_images/exec-f157b3e1-15fa-4fbf-ab7b-42f44fb3bf35.png"
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "reason": "Une pièce vide ou un objet isolé ne montre pas la relation de position demandée ; les scènes incluent à la fois l’objet et le support."
+    },
+    {
+      "key": "tcf-ssx-a2-famille-telephone-perdu-co-4#2",
+      "reason": "Support laissé en attente : le téléphone n’est précisément pas aperçu sur le bureau dans le dialogue ; dessiner un téléphone trouvé sur ce bureau contredirait la source."
+    }
+  ],
+  "editorial_scope": "Scènes de position pour les réponses QCM ; le modèle du trousseau ou du passeport illustre la catégorie, sans inventer une identité personnelle. Le fond ivoire uni des objets isolés ne remplace pas les lieux nécessaires à ces réponses.",
+  "trios": [
+    {
+      "key": "delf-a1v-ce-025#3",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Salut !\nMon avion décolle à 16 h 30 et j’ai oublié mon passeport sur mon bureau ! Peux-tu me l’apporter à l’aéroport ? De la maison, prends le tram 10 jusqu’au terminus. Va tout droit, prends l’escalier à droite et traverse le hall : je suis devant le guichet 14.\nJe n’ai plus de batterie. Envoie-moi un SMS pour dire que tu arrives. Merci !\nNora",
+      "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
+      "semantic_sha256": "34d192f0d0d191a49768bd12ce91d5c2acf23b8d9ff27ff5ea7372fbb115cbf7",
+      "question": {
+        "enonce": "Où se trouve le document oublié ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur son bureau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans sa valise",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sur la table de la cuisine",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur son bureau"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-position-passeport-bureau",
+        "qcm-position-passeport-valise",
+        "qcm-position-passeport-table-cuisine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png"
+      ],
+      "image_sha256": [
+        "a8e66a10da7b5d364ed767da6a01a4735925c8df0eb0eb8ccfe3e1c078aff6ad",
+        "7e85ec59ff5981ecd7a3a97614dcb0795c8177d86cbb171b710d2f668383afca",
+        "5bb058e5d1969ed81ad9ce454d28ae1dab4e7607c5972d2ee84e4119fdb64b76"
+      ],
+      "reason": "Nora a oublié son passeport sur son bureau. L’aéroport est le lieu où l’apporter ; ni l’heure de départ, ni le tram, ni le guichet ne doivent devenir des indices graphiques.",
+      "visual_review": "Le même passeport bleu fermé est visible sur le bureau, dans la valise ouverte et sur la table indépendante de la cuisine. Seul le titre générique PASSEPORT identifie le document, sans données personnelles.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a1-s5b-co-1#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Oh là là, où sont mes clés? Elles sont sur la table. Comme d'habitude.",
+      "source_sha256": "c270720d6e26baf66386958adfda51e0638bdc1f0d6e39956e4f7d2aac371fea",
+      "semantic_sha256": "453a21fbfd9320892c14a65116eab8c712c900d4c5fd07ee75dc38590e10ada5",
+      "question": {
+        "enonce": "Où se trouve cet objet ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur la table",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans le sac",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sous la chaise",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur la table"
+      },
+      "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
+      "audio_sha256": "d27f86009fb5858819c223c89a4223f6c11704ba71e7958ce8a7b633abc9f273",
+      "image_ids": [
+        "qcm-position-cles-table-manger",
+        "qcm-position-cles-sac",
+        "qcm-position-cles-sous-chaise"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-sac.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise.png"
+      ],
+      "image_sha256": [
+        "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
+        "de90b2436fb3859d4aebc6143542a2c9b1b338125f7c3ad9932d97af3fe7626e",
+        "dc8486ca764e8706c5300e612af6f57da781c54c43769d035854bba9f59a58b6"
+      ],
+      "reason": "La réponse à « où sont mes clés ? » est « sur la table ». Le support ne précise pas le modèle des clés : le trousseau illustre la catégorie.",
+      "visual_review": "Dans les trois choix, le trousseau complet est visible, respectivement sur la table, au fond du sac ouvert et sous l’assise de la chaise. Les pièces et meubles situent réellement l’objet.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a1-s16-co-4#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Les clés de la voiture sont posées sur la table du salon à côté du pot de fleurs.\nN'oublie pas de sortir la poubelle, elle est dans la cuisine à droite du frigo.\nÉteins toutes les lumières avant de partir et fais attention sur la route, il y a des averses.",
+      "source_sha256": "c152632f5c8806ad0f3572eb79a7534edf8852e228ddd78662e43f27bebec94e",
+      "semantic_sha256": "efa970169c6cf882866174e4aac67fffc036084b8404d124b1ee42bb7723e47f",
+      "question": {
+        "enonce": "Où sont posées les clés de la voiture ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur la table du salon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Sur le lit de la chambre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sur le comptoir de la cuisine",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur la table du salon"
+      },
+      "audio": "/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3",
+      "audio_sha256": "cedd53c9ea4f7e55bcf8abe8bb5b5a224ea75337da7c537c5ebc257cebf7ebfe",
+      "image_ids": [
+        "qcm-position-cles-table-salon",
+        "qcm-position-cles-lit",
+        "qcm-position-cles-comptoir-cuisine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-lit.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png"
+      ],
+      "image_sha256": [
+        "e5edf11d0eac34c6995e84a05b87101b2c364f0c63259f697907cbd3ba44880a",
+        "13c95e8286ffa8b531a864c86f0682d178d850b330b3c6b20086be6e614d9322",
+        "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298"
+      ],
+      "reason": "La transcription place les clés de voiture « sur la table du salon à côté du pot de fleurs ». Les autres consignes sur la cuisine et la météo ne changent pas cette localisation.",
+      "visual_review": "Le trousseau avec télécommande est posé sur chaque surface proposée. Le salon contient le canapé et le pot de fleurs ; les leurres montrent bien un lit de chambre et un comptoir de cuisine.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a1-s47-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut !\nJ'ai oublié mes clés sur la table à manger.\nTu peux venir me les apporter au bureau ?\nJe finis à 17 heures 30.\nOn peut aller se promener au parc et manger chez l'italien, en face du cinéma, ensuite ?\nJe dois juste rentrer avant 20 heures, car j'ai une réunion très importante demain à 9 heures.\nMerci !",
+      "source_sha256": "e36f628b78d90d6c5eaea3f922a82e50544b8b9bb86d82851e346f2bbdc5e74e",
+      "semantic_sha256": "033f47871ea706620ad7ad4216de742546eb21f67c0d93c536182d5da4d723f5",
+      "question": {
+        "enonce": "Où a-t-elle oublié cet objet ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur la table à manger",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans la cuisine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Sur son bureau",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur la table à manger"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-instruction.mp3",
+      "audio_sha256": "a4486eadbfc8090314b738f948d5d619bf3c9ceb22f41fcfeaa5549ca8a3334a",
+      "image_ids": [
+        "qcm-position-cles-table-manger",
+        "qcm-position-cles-comptoir-cuisine",
+        "qcm-position-cles-bureau"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau.png"
+      ],
+      "image_sha256": [
+        "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
+        "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298",
+        "f52f9fb51f8abbb37679915fa3ba69440dba4a682d656cddbf1c99b01614fb09"
+      ],
+      "reason": "Le message dit « j’ai oublié mes clés sur la table à manger » et demande de les apporter au bureau. Le bureau est la destination, pas l’emplacement initial.",
+      "visual_review": "La table de repas est distinguée du plan de travail de la cuisine et du bureau avec ordinateur. Les deux réemplois au sein du lot conservent le trousseau et sa relation à la surface.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a1-2022-co-92#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Allô ? Est-ce que tu peux m'aider à faire le sac pour ce week-end ? Prends des gants s'il te plaît. Il faut aussi des serviettes. Elles sont sur mon lit, dans ma chambre. Mets aussi le dentifrice et les brosses à dents dans le sac. Pour nos vêtements, je vais apporter une valise. Merci.",
+      "source_sha256": "a4d320ac187987775d631d8235912137e8e9fda186c9d25cb17f02b601f43edf",
+      "semantic_sha256": "b9052e9a785ba940944e5a975e51eb0826fa590440cfb234b258b734af1ef6e7",
+      "question": {
+        "enonce": "Où sont les serviettes ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Sur le lit",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans la salle de bains",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans l'armoire du couloir",
+            "correct": false
+          }
+        ],
+        "written_model": "Sur le lit"
+      },
+      "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_92.mp3",
+      "audio_sha256": "cec146ce6f0da1c987aa8ea692bb6da9f5b1b08e59049c6eb7843247a03c876d",
+      "image_ids": [
+        "audit-context-serviettes-lit",
+        "audit-context-serviettes-armoire-bains",
+        "qcm-position-serviettes-armoire-couloir"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp",
+        "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir.png"
+      ],
+      "image_sha256": [
+        "db8274c85a472cdc9313628a62cca0f30125b887ae1289b3358e1e9f80b2c644",
+        "e9418c1ea79c04e9c32985e9752de3fe414bfd3511de499efb0c9fc2a9ed2451",
+        "afb3e6d7e8480e13c901b73b2bd4e83124af744719a05895c3797e63994cb342"
+      ],
+      "reason": "Le message demande plusieurs serviettes et précise « elles sont sur mon lit, dans ma chambre ». Les gants, le dentifrice et la valise appartiennent aux autres consignes.",
+      "visual_review": "Les deux images actives déjà approuvées sont réutilisées à l’identique : serviettes sur le lit et dans la salle de bains. L’image nouvelle conserve trois serviettes bleues assorties dans une armoire du couloir, sans lavabo ni baignoire.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

@@ -2437,14 +2437,14 @@
         "Dans sa valise",
         "Sur la table de la cuisine"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "884a5bef52d5b71420e8226bd213ce74e601c66ec13da49590c55ef555923537",
       "audio": null,
       "review_index": 50,
       "semantic_sha256": "34d192f0d0d191a49768bd12ce91d5c2acf23b8d9ff27ff5ea7372fbb115cbf7",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Nora a oublié son passeport sur son bureau. L’aéroport est le lieu où l’apporter ; ni l’heure de départ, ni le tram, ni le guichet ne doivent devenir des indices graphiques.",
       "brief": {
         "context_question": "Où se trouve le document oublié ?",
         "choices_to_illustrate": [
@@ -2464,6 +2464,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png"
+      ],
+      "selected_sha256": [
+        "a8e66a10da7b5d364ed767da6a01a4735925c8df0eb0eb8ccfe3e1c078aff6ad",
+        "7e85ec59ff5981ecd7a3a97614dcb0795c8177d86cbb171b710d2f668383afca",
+        "5bb058e5d1969ed81ad9ce454d28ae1dab4e7607c5972d2ee84e4119fdb64b76"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
+        "note": "Le même passeport bleu fermé est visible sur le bureau, dans la valise ouverte et sur la table indépendante de la cuisine. Seul le titre générique PASSEPORT identifie le document, sans données personnelles."
       }
     },
     {
@@ -6822,14 +6836,14 @@
         "Dans le sac",
         "Sous la chaise"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "c270720d6e26baf66386958adfda51e0638bdc1f0d6e39956e4f7d2aac371fea",
       "audio": "/lib/audio/tcf/co/famille/19-maison-où-sont-clés.mp3",
       "review_index": 149,
       "semantic_sha256": "453a21fbfd9320892c14a65116eab8c712c900d4c5fd07ee75dc38590e10ada5",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "La réponse à « où sont mes clés ? » est « sur la table ». Le support ne précise pas le modèle des clés : le trousseau illustre la catégorie.",
       "brief": {
         "context_question": "Où se trouve cet objet ?",
         "choices_to_illustrate": [
@@ -6853,6 +6867,20 @@
       "source_refresh_review": {
         "date": "2026-11-12",
         "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-sac.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-sous-chaise.png"
+      ],
+      "selected_sha256": [
+        "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
+        "de90b2436fb3859d4aebc6143542a2c9b1b338125f7c3ad9932d97af3fe7626e",
+        "dc8486ca764e8706c5300e612af6f57da781c54c43769d035854bba9f59a58b6"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
+        "note": "Dans les trois choix, le trousseau complet est visible, respectivement sur la table, au fond du sac ouvert et sous l’assise de la chaise. Les pièces et meubles situent réellement l’objet."
       }
     },
     {
@@ -7817,14 +7845,14 @@
         "Sur le lit de la chambre",
         "Sur le comptoir de la cuisine"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "c152632f5c8806ad0f3572eb79a7534edf8852e228ddd78662e43f27bebec94e",
       "audio": "/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3",
       "review_index": 172,
       "semantic_sha256": "efa970169c6cf882866174e4aac67fffc036084b8404d124b1ee42bb7723e47f",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "La transcription place les clés de voiture « sur la table du salon à côté du pot de fleurs ». Les autres consignes sur la cuisine et la météo ne changent pas cette localisation.",
       "brief": {
         "context_question": "Où sont posées les clés de la voiture ?",
         "choices_to_illustrate": [
@@ -7844,6 +7872,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-salon.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-lit.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png"
+      ],
+      "selected_sha256": [
+        "e5edf11d0eac34c6995e84a05b87101b2c364f0c63259f697907cbd3ba44880a",
+        "13c95e8286ffa8b531a864c86f0682d178d850b330b3c6b20086be6e614d9322",
+        "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
+        "note": "Le trousseau avec télécommande est posé sur chaque surface proposée. Le salon contient le canapé et le pot de fleurs ; les leurres montrent bien un lit de chambre et un comptoir de cuisine."
       }
     },
     {
@@ -11186,14 +11228,14 @@
         "Dans la cuisine",
         "Sur son bureau"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "e36f628b78d90d6c5eaea3f922a82e50544b8b9bb86d82851e346f2bbdc5e74e",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/presenter-instruction.mp3",
       "review_index": 255,
       "semantic_sha256": "033f47871ea706620ad7ad4216de742546eb21f67c0d93c536182d5da4d723f5",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le message dit « j’ai oublié mes clés sur la table à manger » et demande de les apporter au bureau. Le bureau est la destination, pas l’emplacement initial.",
       "brief": {
         "context_question": "Où a-t-elle oublié cet objet ?",
         "choices_to_illustrate": [
@@ -11213,6 +11255,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-table-manger.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-comptoir-cuisine.png",
+        "/lib/images/tcf/qcm-audit/qcm-position-cles-bureau.png"
+      ],
+      "selected_sha256": [
+        "5632a1e4a3796dc2e90954fc4c8e09c2ae9d15fe4eced846cd75937323cc6839",
+        "6c1db2a855d9542b5de01cb4fb0e472fa2015fd373f2b18634189f8a2be65298",
+        "f52f9fb51f8abbb37679915fa3ba69440dba4a682d656cddbf1c99b01614fb09"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
+        "note": "La table de repas est distinguée du plan de travail de la cuisine et du bureau avec ordinateur. Les deux réemplois au sein du lot conservent le trousseau et sa relation à la surface."
       }
     },
     {
@@ -14992,14 +15048,14 @@
         "Dans la salle de bains",
         "Dans l'armoire du couloir"
       ],
-      "status": "artwork_needed_contextual_locations",
+      "status": "active_reviewed_trio",
       "source_sha256": "a4d320ac187987775d631d8235912137e8e9fda186c9d25cb17f02b601f43edf",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_92.mp3",
       "review_index": 340,
       "semantic_sha256": "b9052e9a785ba940944e5a975e51eb0826fa590440cfb234b258b734af1ef6e7",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "reason": "Le message demande plusieurs serviettes et précise « elles sont sur mon lit, dans ma chambre ». Les gants, le dentifrice et la valise appartiennent aux autres consignes.",
       "brief": {
         "context_question": "Où sont les serviettes ?",
         "choices_to_illustrate": [
@@ -15019,6 +15075,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-lit.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-serviettes-armoire-bains.webp",
+        "/lib/images/tcf/qcm-audit/qcm-position-serviettes-armoire-couloir.png"
+      ],
+      "selected_sha256": [
+        "db8274c85a472cdc9313628a62cca0f30125b887ae1289b3358e1e9f80b2c644",
+        "e9418c1ea79c04e9c32985e9752de3fe414bfd3511de499efb0c9fc2a9ed2451",
+        "afb3e6d7e8480e13c901b73b2bd4e83124af744719a05895c3797e63994cb342"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-positions-objets-20261117.json",
+        "note": "Les deux images actives déjà approuvées sont réutilisées à l’identique : serviettes sur le lit et dans la salle de bains. L’image nouvelle conserve trois serviettes bleues assorties dans une armoire du couloir, sans lavabo ni baignoire."
       }
     },
     {
@@ -31842,9 +31912,9 @@
     }
   ],
   "summary": {
-    "artwork_needed_contextual_locations": 225,
+    "artwork_needed_contextual_locations": 220,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 366,
+    "active_reviewed_trio": 371,
     "artwork_needed_whole_answer_concepts": 47,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
@@ -31857,7 +31927,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 366,
+  "activated_total": 371,
   "retained_text_total": 112,
-  "artwork_pending_total": 285
+  "artwork_pending_total": 280
 }

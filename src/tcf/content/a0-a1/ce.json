@@ -21013,6 +21013,24 @@
           "lignes": {
             "nb_lignes": 2,
             "reponse_modele": "Sur son bureau"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-bureau.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-valise.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-position-passeport-table-cuisine.png"
+              }
+            ]
           }
         }
       },

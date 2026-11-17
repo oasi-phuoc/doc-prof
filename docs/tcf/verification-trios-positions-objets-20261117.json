@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "efeaa4da80446e2afca65d7ecf5a7135dd4bc2f3",
+  "compared_all_six_banks": true,
+  "added_image_forms": 5,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 11,
+  "new_image_usages": 13,
+  "reused_image_usages": 2,
+  "reused_distinct_images": 2,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "delf-a1v-ce-025#3",
+      "bank": "src/tcf/content/a0-a1/ce.json"
+    },
+    {
+      "key": "tcf-ss-a1-s5b-co-1#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ss-a1-s16-co-4#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "tcf-ss-a1-s47-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a1-2022-co-92#5",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "cmd": "python3 scripts/check_tcf_763_review.py",
+      "chunk_id": "563b89",
+      "wall_time_seconds": 8.688e-06,
+      "session_id": 19401,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 371 trios actifs, 112 textes conservés, 280 trios à préparer.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-images.py",
+      "chunk_id": "9d71cf",
+      "wall_time_seconds": 1.112e-05,
+      "session_id": 96471,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 366 trios actifs liés à leur relecture, images et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-context-review.py",
+      "chunk_id": "20acf8",
+      "wall_time_seconds": 1.1758e-05,
+      "session_id": 47591,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-qcm-images.mjs",
+      "chunk_id": "f286b9",
+      "wall_time_seconds": 1.843e-05,
+      "session_id": 88288,
+      "original_token_count": 17,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2453 bank variants\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-bank.mjs",
+      "chunk_id": "c72e09",
+      "wall_time_seconds": 2.1938e-05,
+      "session_id": 20682,
+      "original_token_count": 25,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n",
+      "exit_code": 0
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 10,
+    "question_views": 10,
+    "image_views": 30,
+    "errors": []
+  },
+  "additional_checks": {
+    "catalog_tests": 19,
+    "typescript": "passed",
+    "production_build": "passed",
+    "interactive_budgets": "passed",
+    "gallery_images": 7077,
+    "audio_files": 8801,
+    "audio_questions": 6734,
+    "audio_response_forms": 15187,
+    "qcm_image_variants": 2453,
+    "game_types": 696,
+    "budget_gzip": {
+      "game": 3141248,
+      "competition": 204180
+    },
+    "browser_scope": "Aperçus QCM isolés à 1440 et 390 pixels, cinq questions vérifiées deux fois. Le support CE complet n’est pas testé par cette fixture.",
+    "check_outputs": [
+      {
+        "name": "catalogs",
+        "chunk_id": "76fff4",
+        "wall_time_seconds": 0.403949815,
+        "session_id": 80913,
+        "original_token_count": 1222,
+        "output": "TAP version 13\n# Subtest: the committed catalogue reproduces all available audio files and every detail count without changing the banks\nok 1 - the committed catalogue reproduces all available audio files and every detail count without changing the banks\n  ---\n  duration_ms: 2088.362228\n  type: 'test'\n  ...\n# Subtest: every prepared TCF question, all its response forms and the exact per-track transcript are retained\nok 2 - every prepared TCF question, all its response forms and the exact per-track transcript are retained\n  ---\n  duration_ms: 319.417402\n  type: 'test'\n  ...\n# Subtest: reviewed scenario recordings retain their exact source, searchable category and bound scene in catalogue exports\nok 3 - reviewed scenario recordings retain their exact source, searchable category and bound scene in catalogue exports\n  ---\n  duration_ms: 11.927232\n  type: 'test'\n  ...\n# Subtest: multi-track audio and replacement aliases cannot receive another dialogue’s text or questions\nok 4 - multi-track audio and replacement aliases cannot receive another dialogue’s text or questions\n  ---\n  duration_ms: 64.645241\n  type: 'test'\n  ...\n# Subtest: short, medium and long catalogue filters agree with every active question pool in the exercise generator\nok 5 - short, medium and long catalogue filters agree with every active question pool in the exercise generator\n  ---\n  duration_ms: 1647.147716\n  type: 'test'\n  ...\n# Subtest: accent-insensitive searches combine with every filter, including exact levels and prepared content\nok 6 - accent-insensitive searches combine with every filter, including exact levels and prepared content\n  ---\n  duration_ms: 167.257684\n  type: 'test'\n  ...\n# Subtest: Word contains real tables, letters, unchecked boxes, every response form, answer keys and embedded images\nok 7 - Word contains real tables, letters, unchecked boxes, every response form, answer keys and embedded images\n  ---\n  duration_ms: 186.812439\n  type: 'test'\n  ...\n# Subtest: Word never silently drops an available image after a fetch failure and respects cancellation\nok 8 - Word never silently drops an available image after a fetch failure and respects cancellation\n  ---\n  duration_ms: 7.779723\n  type: 'test'\n  ...\n# Subtest: all repository images appear once, including documents, logos and source assets\nok 9 - all repository images appear once, including documents, logos and source assets\n  ---\n  duration_ms: 2622.731852\n  type: 'test'\n  ...\n# Subtest: animal, plant, profession and illness filters preserve the actual meaning\nok 10 - animal, plant, profession and illness filters preserve the actual meaning\n  ---\n  duration_ms: 1667.295274\n  type: 'test'\n  ...\n# Subtest: gallery replacements require approved images and retain the original bytes\nok 11 - gallery replacements require approved images and retain the original bytes\n  ---\n  duration_ms: 2521.549458\n  type: 'test'\n  ...\n# Subtest: CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios\nok 12 - CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios\n  ---\n  duration_ms: 1288.906827\n  type: 'test'\n  ...\n# Subtest: gallery uses the requested content categories and keeps originals and logos\nok 13 - gallery uses the requested content categories and keeps originals and logos\n  ---\n  duration_ms: 1365.529032\n  type: 'test'\n  ...\n# Subtest: food and vehicle types describe the illustrated subject, including ambiguous French words\nok 14 - food and vehicle types describe the illustrated subject, including ambiguous French words\n  ---\n  duration_ms: 2.38902\n  type: 'test'\n  ...\n# Subtest: botanical category contains plants and excludes fruits, vegetables, meals and nonbotanical leaves\nok 15 - botanical category contains plants and excludes fruits, vegetables, meals and nonbotanical leaves\n  ---\n  duration_ms: 1557.466347\n  type: 'test'\n  ...\n# Subtest: gallery complements cover every announced subject with a reviewed full-size original\nok 16 - gallery complements cover every announced subject with a reviewed full-size original\n  ---\n  duration_ms: 1184.272903\n  type: 'test'\n  ...\n# Subtest: Gattegno keeps nominal clues after food and vehicle reclassification\nok 17 - Gattegno keeps nominal clues after food and vehicle reclassification\n  ---\n  duration_ms: 1.788836\n  type: 'test'\n  ...\n# Subtest: school, household and furniture complements are reviewed, searchable and complete\nok 18 - school, household and furniture complements are reviewed, searchable and complete\n  ---\n  duration_ms: 935.883638\n  type: 'test'\n  ...\n# Subtest: daily-life illustrations keep reviewed originals and searchable family names\nok 19 - daily-life illustrations keep reviewed originals and searchable family names\n  ---\n  duration_ms: 748.995265\n  type: 'test'\n  ...\n1..19\n# tests 19\n# suites 0\n# pass 19\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 33131.943759\n",
+        "exit_code": 0
+      },
+      {
+        "name": "production",
+        "chunk_id": "66c15d",
+        "wall_time_seconds": 4.384350402,
+        "session_id": 61945,
+        "original_token_count": 1817,
+        "output": "Warning: truncated output (original token count: 1817)\nTotal output lines: 120\n\nvite v8.3.0 building client environment for production...\ntransforming...\n✓ 976 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                                     1.62 kB │ gzip:     0.62 kB\ndist/assets/react-CHdo91hT.svg                      4.12 kB │ gzip:     2.06 kB\ndist/assets/vite-BF8QNONU.svg                       8.70 kB │ gzip:     1.60 kB\ndist/.vite/manifest.json                           15.91 kB │ gzip:     2.33 kB\ndist/assets/etat-du-valais-DiFx2QBr.webp           22.97 kB\ndist/assets/hero-white-BLcpIciJ.png             1,064.05 kB\ndist/assets/AudioCatalogPage-CWyNrlNY.css           1.77 kB │ gzip:     0.68 kB\ndist/assets/DiagnosticPage-CGvDQ9va.css             1.78 kB │ gzip:     0.70 kB\ndist/assets/CardsPage-dgu5QAcS.css                  1.95 kB │ gzip:     0.68 kB\ndist/assets/Media-DtjCBJDZ.css                      2.22 kB │ gzip:     0.77 kB\ndist/assets/PhraseImageRow-BSFR729O.css             2.29 kB │ gzip:     0.77 kB\ndist/assets/clean-play-D3OFCFmn.css                 2.80 kB │ gzip:     0.84 kB\ndist/assets/PowerAura-CV-OyZyS.css                  2.86 kB │ gzip:     0.88 kB\ndist/assets/PoolPage-BKwYDOS6.css                   3.08 kB │ gzip:     0.94 kB\ndist/assets/TeacherConsolePage-DRPcd2me.css         3.46 kB │ gzip:     1.08 kB\ndist/assets/gallery-BRac_suR.css                    4.75 kB │ gzip:     1.44 kB\ndist/assets/CompetitionPage-Bob9ypWm.css            7.49 kB │ gzip:     1.97 kB\ndist/assets/GameApp-NRdcv9r_.css                    8.51 kB │ gzip:     2.19 kB\ndist/assets/BookStudio-15vMLxQp.css                 8.58 kB │ gzip:     2.24 kB\ndist/assets/DuelSetup-BfjjAUWw.css                 16.68 kB │ gzip:     4.14 kB\ndist/assets/storage-key-B_UnPfBW.css               22.22 kB │ gzip:     4.44 kB\ndist/assets/InteractiveApp-BHjzbXtx.css            50.00 kB │ gzip:    10.14 kB\ndist/assets/index-D1w8XYG7.css                    291.62 kB │ gzip:    48.91 kB\ndist/assets/storage-key-DctTKeS8.js                 0.13 kB │ gzip:     0.13 kB\ndist/assets/FractionFigureDrawing-r56XlXkJ.js       0.24 kB │ gzip:     0.21 kB\ndist/assets/clean-play-qM6C3GKL.js                  0.49 kB │ gzip:     0.30 kB\ndist/assets/seeds-Dw3uL0qc.js                       0.66 kB │ gzip:     0.44 kB\ndist/assets/CardBadge-DNWkV6Gt.js                   0.71 kB │ gzip:     0.41 kB\ndist/assets/rolldown-runtime-hePW80VL.js            0.71 kB │ gzip:     0.42 kB\ndist/assets/matching-CesT8oA8.js                    1.45 kB │ gzip:     0.81 kB\ndist/assets/palette-ChLFkzSm.js                     1.47 kB │ gzip:     0.75 kB\ndist/assets/storage-C1MIzWNc.js                     1.54 kB │ gzip:     0.71 kB\ndist/assets/zip-store-BfzPIfgb.js                   1.82 kB │ gzip:     0.86 kB\ndist/assets/gallery-DHmV_GYh.js                     2.22 kB │ gzip:     1.13 kB\ndist/assets/PrintCards-DLk6L_-S.js                  2.22 kB │ gzip:     1.07 kB\ndist/assets/mascot-vtjkXQBN.…317 tokens truncated… gzip:    10.13 kB\ndist/assets/purify.es-B7SQ8EAD.js                  29.07 kB │ gzip:    11.45 kB\ndist/assets/storage-key-JgJ1njWd.js                39.70 kB │ gzip:    12.14 kB\ndist/assets/CompetitionPage-C4QJVvew.js            48.12 kB │ gzip:    15.67 kB\ndist/assets/PhraseImageRow-Bb2CaVgs.js             55.32 kB │ gzip:    15.15 kB\ndist/assets/index.es-CkUDo-pS.js                  151.44 kB │ gzip:    48.91 kB\ndist/assets/ClassroomHeader-DMdmoKY2.js           193.78 kB │ gzip:    13.43 kB\ndist/assets/html2canvas-Dn6bw578.js               199.49 kB │ gzip:    46.77 kB\ndist/assets/index-C3xin9So.js                     231.90 kB │ gzip:    72.67 kB\ndist/assets/GameApp-DXtWrN80.js                   244.16 kB │ gzip:    76.08 kB\ndist/assets/BookStudio-CsoH-QK9.js                258.66 kB │ gzip:    66.63 kB\ndist/assets/bank-BP6oKpQd.js                      282.76 kB │ gzip:    31.35 kB\ndist/assets/GeneratorPage-ISZETL2g.js             334.34 kB │ gzip:    84.63 kB\ndist/assets/jspdf.es.min-G-JMS8b4.js              399.06 kB │ gzip:   129.62 kB\ndist/assets/DuelSetup-qLbXsPE2.js               1,456.48 kB │ gzip:   277.69 kB\ndist/assets/ImageGalleryPage-CpAbfWEe.js        2,565.21 kB │ gzip:   339.75 kB\ndist/assets/AudioCatalogPage-DU86DSMN.js        3,819.69 kB │ gzip:   532.65 kB\ndist/assets/api-DAjhGr_r.js                    19,962.06 kB │ gzip: 2,843.03 kB\n\n✓ built in 27.89s\n[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n\u001b[33m[PLUGIN_TIMINGS] \u001b[0mPlugin hooks ran for 26.5s of this 27.9s build (95%).\nThe slowest hooks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):\n  - vite:prepare-out-dir renderStart (73%, 20.3s, 1 call)\nAdditional hook time came from the hooks below and from hooks under 1s.\n3 hooks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:\n  - vite:css transform (35 calls)\n  - vite:asset load (5 calls)\n  - @tailwindcss/vite:generate:build transform (35 calls)\nSee https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.\n\n{\n  \"landing\": {\n    \"gzip\": 122388,\n    \"maximumGzip\": 153600\n  },\n  \"pool\": {\n    \"gzip\": 159874,\n    \"maximumGzip\": 204800\n  },\n  \"calibration\": {\n    \"gzip\": 142900,\n    \"maximumGzip\": 204800\n  },\n  \"diagnostic\": {\n    \"gzip\": 145043,\n    \"maximumGzip\": 204800\n  },\n  \"competition\": {\n    \"gzip\": 204180,\n    \"maximumGzip\": 204800\n  },\n  \"teacherConsole\": {\n    \"gzip\": 166801,\n    \"maximumGzip\": 204800\n  },\n  \"game\": {\n    \"gzip\": 3141248,\n    \"maximumGzip\": 3145728\n  }\n}\n",
+        "exit_code": 0
+      },
+      {
+        "name": "browser",
+        "chunk_id": "9a1219",
+        "wall_time_seconds": 1.8941e-05,
+        "session_id": 46626,
+        "original_token_count": 16,
+        "output": "{\"views\":10,\"question_views\":10,\"image_views\":30,\"errors\":[]}\n",
+        "exit_code": 0
+      }
+    ]
+  }
+}
