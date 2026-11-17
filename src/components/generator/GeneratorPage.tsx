@@ -23,7 +23,7 @@ import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
-import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
+import { applyBaseFontSize, readBaseFontSize, applySheetFont, readSheetFont } from '@/components/generator/typography'
 import {
   isA5DoubleFormat,
   pageForA5Half,
@@ -103,6 +103,8 @@ export function GeneratorPage({
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const [themeColor, setThemeColor] = useState(readThemeColor)
   const [fontSizes, setFontSizes] = useState(() => ({default:readBaseFontSize(),csc:readBaseFontSize('tcm-csc')}))
+  const [sheetFont, setSheetFont] = useState(() => openedFiche?.recipe.sheetFont ?? readSheetFont())
+  useEffect(() => { applySheetFont(sheetFont, false) }, [sheetFont])
   const [sheetFormat, setSheetFormat] = useState<SheetFormat>(
     () => openedFiche?.recipe.sheetFormat ?? 'a4-portrait',
   )
@@ -401,7 +403,7 @@ export function GeneratorPage({
 
   function playWithClass() {
     try {
-      const recipe = buildFicheRecipe({ pages, seed, institutional, evalMode, pointsPerQuestion, libreMode, libreSnapshot, sheetFormat, hideChrome, printCorrections, imageOverrides })
+      const recipe = buildFicheRecipe({ pages, seed, institutional, evalMode, pointsPerQuestion, libreMode, libreSnapshot, sheetFormat, sheetFont, hideChrome, printCorrections, imageOverrides })
       openInteractive(recipe, ficheRef?.name ?? 'Ma fiche')
     } catch (error) {
       if (!(error instanceof GrammarCurriculumError)) throw error
@@ -420,6 +422,7 @@ export function GeneratorPage({
       libreMode,
       libreSnapshot,
       sheetFormat,
+      sheetFont,
       hideChrome,
       printCorrections,
       imageOverrides,
@@ -592,6 +595,8 @@ export function GeneratorPage({
             onThemeColor={applyThemeColor}
             fontSize={fontSize}
             onFontSizeChange={changeFontSize}
+            sheetFont={sheetFont}
+            onSheetFontChange={font => setSheetFont(applySheetFont(font))}
             sheetFormat={sheetFormat}
             onSheetFormatChange={setSheetFormat}
             printCorrections={printCorrections}

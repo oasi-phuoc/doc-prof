@@ -49,3 +49,7 @@ Pour les CO TCF, `co-character-refresh.json` prépare séparément la reprise de
 ## Reprise du 12 novembre 2026
 
 Les 162 documents CE sont maintenant actifs après intégration de « La clé de sol », dont le texte, les dates, le pourcentage, les horaires et le site ont été comparés visuellement au support. Le PNG original 1448 × 1086 est conservé sans conversion. Les dix scènes CO du registre de diversité sont également reprises et appliquées ; les deux leurres coiffure/vélo de « Les achats » ont été remplacés par salade de fruits/bouilloire, dans les thèmes entendus et absents des transcriptions. L’ancien blocage de quota ci-dessus décrit l’état du 7 novembre ; la génération a repris.
+
+## Réglages du document au format Texte — 17 novembre 2026
+
+Le document natif CE dispose de quatre polices (Classique, Géométrique, Marelle et Playwrite), indépendantes de la police globale du titre d’exercice et des questions. Son cadre suit la couleur du thème. Les images CE conservent leur composition et leur typographie intégrées. Voir les [réglages de mise en page](reglages-mise-en-page-20261117.md).

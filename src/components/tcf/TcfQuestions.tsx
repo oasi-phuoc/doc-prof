@@ -400,6 +400,9 @@ export function AudioCadre({
   mode,
   onSelectForm,
   blankStyle,
+  pageBreakBefore,
+  framePageBreakBefore,
+  onTogglePageBreak,
 }: {
   blankStyle?: 'line' | 'dots'
   audioLabel: string
@@ -407,12 +410,15 @@ export function AudioCadre({
   questions: TcfCadreQuestion[]
   mode: PreviewMode
   onSelectForm?: (modeIndex: number, form: TcfTypeReponse) => void
+  pageBreakBefore?: number[]
+  framePageBreakBefore?: boolean
+  onTogglePageBreak?: (modeIndex: number) => void
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
       <AudioFrameHead label={audioLabel} audioSrc={mode === 'answers' ? audioSrc : undefined} />
       <div className="tcf-audio-frame-body tcf-audio-cadre-body">
-        {questions.map((q) => {
+        {questions.map((q, questionIndex) => {
           const formSelect = q.formSelect
           const active = formSelect?.active
           const forms =
@@ -472,8 +478,17 @@ export function AudioCadre({
               />
             )
           return (
-            <div key={q.numero} className="tcf-audio-cadre-q">
+            <div key={q.numero} className="tcf-audio-cadre-q" data-tcf-question-index={q.formModeIndex}>
               {forms}
+              {onTogglePageBreak && q.formModeIndex != null && q.formModeIndex > 1 && !(questionIndex === 0 && framePageBreakBefore) ? <button
+                type="button"
+                className={`no-print draft-grid-chip draft-grid-chip-margin tcf-page-chip tcf-question-page-chip ${pageBreakBefore?.includes(q.formModeIndex) ? 'on' : 'off'}`}
+                aria-label={`Saut de page avant la question ${q.numero} (${audioLabel})`}
+                aria-pressed={Boolean(pageBreakBefore?.includes(q.formModeIndex))}
+                title={pageBreakBefore?.includes(q.formModeIndex) ? 'Remettre cette question et les suivantes sur la page précédente' : 'Passer cette question et les suivantes sur une nouvelle page'}
+                onClick={() => onTogglePageBreak(q.formModeIndex!)}>
+                <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h5.2L12 5.3V13.5H4Z M8 7v4 M6 9h4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+              </button> : null}
               {body}
             </div>
           )

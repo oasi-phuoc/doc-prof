@@ -1,6 +1,7 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { navigateTo } from './routing'
-import { applyBaseFontSize, MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE, readBaseFontSize } from './typography'
+import { SheetFontSelect } from './SheetFontSelect'
+import { applySheetFont, readSheetFont, applyBaseFontSize, MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE, readBaseFontSize } from './typography'
 
 export function SettingsIcon() {
   return <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="m9 3-.6 2.2-2 .9-2-.6-2 3.5 1.5 1.6v2.8L2.4 15l2 3.5 2-.6 2 .9.6 2.2h4l.6-2.2 2-.9 2 .6 2-3.5-1.5-1.6v-2.8L19.6 9l-2-3.5-2 .6-2-.9L13 3Z"/><circle cx="11" cy="12" r="3"/></svg>
@@ -66,11 +67,12 @@ export function CatalogMenu() {
 
 export function CatalogPageTools({ onLogout }: { onLogout?: () => void }) {
   const [fontSize, setFontSize] = useState(readBaseFontSize)
+  const [sheetFont, setSheetFont] = useState(readSheetFont)
   const sizeId = useId()
   return <div className="catalog-page-tools">
     <CatalogMenu />
     <ToolbarPopover label="Paramètres" icon={<SettingsIcon />}>
-      {close => <><p className="settings-menu-heading">Paramètres des fiches</p><label className="settings-font-label" htmlFor={sizeId}><span>Taille du texte des fiches</span><output htmlFor={sizeId}>{fontSize} px</output></label><input id={sizeId} type="range" min={MIN_BASE_FONT_SIZE} max={MAX_BASE_FONT_SIZE} value={fontSize} onChange={event => setFontSize(applyBaseFontSize(Number(event.target.value)))} />{onLogout && <button type="button" className="settings-logout-btn" onClick={() => { close(); onLogout() }}>Se déconnecter</button>}</>}
+      {close => <><p className="settings-menu-heading">Paramètres des fiches</p><SheetFontSelect value={sheetFont} onChange={font => setSheetFont(applySheetFont(font))} /><label className="settings-font-label" htmlFor={sizeId}><span>Taille du texte des fiches</span><output htmlFor={sizeId}>{fontSize} px</output></label><input id={sizeId} type="range" min={MIN_BASE_FONT_SIZE} max={MAX_BASE_FONT_SIZE} value={fontSize} onChange={event => setFontSize(applyBaseFontSize(Number(event.target.value)))} />{onLogout && <button type="button" className="settings-logout-btn" onClick={() => { close(); onLogout() }}>Se déconnecter</button>}</>}
     </ToolbarPopover>
   </div>
 }

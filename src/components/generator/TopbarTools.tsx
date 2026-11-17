@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { CatalogMenu, SettingsIcon } from './CatalogNavigation'
+import { SheetFontSelect } from './SheetFontSelect'
+import type { SheetFontId } from '@/typography/font-families'
 import {
   THEME_COLORS,
   THEME_TONES,
@@ -176,13 +178,18 @@ function ColorSection({
 
 function FontSizeSection({
   fontSize,
+  sheetFont,
+  onSheetFontChange,
   onChange,
 }: {
   fontSize: number
+  sheetFont: SheetFontId
+  onSheetFontChange: (font: SheetFontId) => void
   onChange: (size: number) => void
 }) {
   return (
-    <div className="settings-section" role="group" aria-label="Taille du texte">
+    <div className="settings-section" role="group" aria-label="Police et taille du texte">
+      <SheetFontSelect value={sheetFont} onChange={onSheetFontChange} />
       <label className="settings-font-label" htmlFor="base-font-size">
         <span>Taille du corps du texte</span>
         <output htmlFor="base-font-size">{fontSize} px</output>
@@ -319,6 +326,8 @@ function AccountMenu({
   onThemeColor,
   fontSize,
   onFontSizeChange,
+  sheetFont,
+  onSheetFontChange,
   sheetFormat,
   onSheetFormatChange,
   printCorrections,
@@ -331,6 +340,8 @@ function AccountMenu({
   onThemeColor: (color: string) => void
   fontSize: number
   onFontSizeChange: (size: number) => void
+  sheetFont: SheetFontId
+  onSheetFontChange: (font: SheetFontId) => void
   sheetFormat: SheetFormat
   onSheetFormatChange: (format: SheetFormat) => void
   printCorrections: boolean
@@ -374,7 +385,7 @@ function AccountMenu({
       {open ? (
         <div className="topbar-account-menu" role="menu" aria-label="Paramètres">
           <p className="settings-menu-heading">Paramètres</p>
-          <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} />
+          <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} sheetFont={sheetFont} onSheetFontChange={onSheetFontChange} />
           <ColorSection themeColor={themeColor} onChange={onThemeColor} />
           <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
           <PrintCorrectionsSection printCorrections={printCorrections} onChange={onPrintCorrectionsChange} />
@@ -408,6 +419,8 @@ export function TopbarTools({
   onThemeColor,
   fontSize,
   onFontSizeChange,
+  sheetFont,
+  onSheetFontChange,
   sheetFormat,
   onSheetFormatChange,
   printCorrections,
@@ -427,6 +440,8 @@ export function TopbarTools({
   onThemeColor: (color: string) => void
   fontSize: number
   onFontSizeChange: (size: number) => void
+  sheetFont: SheetFontId
+  onSheetFontChange: (font: SheetFontId) => void
   sheetFormat: SheetFormat
   onSheetFormatChange: (format: SheetFormat) => void
   printCorrections: boolean
@@ -492,6 +507,8 @@ export function TopbarTools({
         onThemeColor={onThemeColor}
         fontSize={fontSize}
         onFontSizeChange={onFontSizeChange}
+        sheetFont={sheetFont}
+        onSheetFontChange={onSheetFontChange}
         sheetFormat={sheetFormat}
         onSheetFormatChange={onSheetFormatChange}
         printCorrections={printCorrections}

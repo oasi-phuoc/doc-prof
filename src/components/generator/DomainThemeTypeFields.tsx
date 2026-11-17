@@ -1,4 +1,4 @@
-import { TcfCeFormatControl } from './TcfCeFormatControl'
+import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
 import {PhraseFormControls} from './PhraseFormControls'
 import { PhraseCategoryControls } from './PhraseCategoryControls'
@@ -489,6 +489,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
+              {isTcf && activeBlock.exerciseType.startsWith('tcf-ce') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont, libreItems: undefined })} /> : null}
               {activePage.domain === 'tcf-csc' && activeBlock.exerciseType.startsWith('tcf-ce') ? (
                 <TcfCeFormatControl value={activeBlock.tcfCeFormat ?? 'texte'}
                   onChange={(tcfCeFormat) => updatePage({ tcfCeFormat, libreItems: undefined })} />

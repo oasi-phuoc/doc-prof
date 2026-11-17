@@ -1,4 +1,5 @@
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
+import { isSheetFontId, type SheetFontId } from '@/typography/font-families'
 import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
 import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
@@ -19,6 +20,7 @@ export type FicheRecipe = {
   bookKind?: 'alpha' | 'soutien'
   /** Format de feuille (portrait A4 ou paysage double A5). */
   sheetFormat?: SheetFormat
+  sheetFont?: SheetFontId
   /** Masque en-tête et pied : exercices seulement. */
   hideChrome?: boolean
   /** Inclut le corrigé à l’impression ; activé par défaut pour les anciennes fiches. */
@@ -147,6 +149,7 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     libreSnapshot: snapshot ? snapshot.map(migratePage) : null,
     bookKind: value.bookKind === 'alpha' || value.bookKind === 'soutien' ? value.bookKind : undefined,
     sheetFormat,
+    sheetFont: isSheetFontId(value.sheetFont) ? value.sheetFont : undefined,
     hideChrome,
     printCorrections: value.printCorrections !== false,
     imageOverrides: isRecord(value.imageOverrides)
@@ -173,6 +176,7 @@ export function buildFicheRecipe(input: {
   libreSnapshot: PageConfig[] | null
   bookKind?: 'alpha' | 'soutien'
   sheetFormat?: SheetFormat
+  sheetFont?: SheetFontId
   hideChrome?: boolean
   printCorrections?: boolean
   /** Remplacements d’images provenant de la banque ; fichiers temporaires exclus. */

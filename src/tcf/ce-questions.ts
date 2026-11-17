@@ -1,5 +1,7 @@
 import type { TcfExercise, TcfQuestion } from './types'
 
+export const TCF_CE_DEFAULT_QUESTIONS = 5
+
 /** Empreinte stable pour reconnaître une question de banque dans l’édition libre. */
 export function tcfQuestionKey(q: TcfQuestion): string {
   return `${q.type_reponse}|${q.enonce.trim()}`
@@ -7,14 +9,14 @@ export function tcfQuestionKey(q: TcfQuestion): string {
 
 /**
  * Limite le nombre de questions CE (ordre de la banque).
- * Sans effet si `count` est absent ou ≥ au total.
+ * Cinq questions par défaut ; un choix explicite peut utiliser toute la banque.
  */
 export function limitTcfCeQuestions(
   ex: TcfExercise,
   count: number | undefined,
 ): TcfExercise {
   if (ex.competence !== 'CE') return ex
-  if (count == null || !Number.isFinite(count)) return ex
+  if (count == null || !Number.isFinite(count)) count = TCF_CE_DEFAULT_QUESTIONS
   const n = Math.max(1, Math.min(Math.round(count), ex.questions.length))
   if (n >= ex.questions.length) return ex
   return { ...ex, questions: ex.questions.slice(0, n) }

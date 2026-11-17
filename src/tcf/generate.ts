@@ -728,8 +728,9 @@ export function tryGenerateTcfBlock(
   let items = tcfExerciseItems(ex, rng, config.tcfFormModes).map((item) => ({
     ...item,
     tcfExerciseId: ex.id,
-    ...(config.domain === 'tcf-csc' && ex.competence === 'CE' && item.tcf?.kind === 'support'
-      ? { tcf: { ...item.tcf, ceFormat: config.tcfCeFormat ?? 'texte' } } : {}),
+    ...(ex.competence === 'CE' && item.tcf?.kind === 'support'
+      ? { tcf: { ...item.tcf, ceTextFont: config.tcfCeTextFont,
+          ceFormat: config.domain === 'tcf-csc' ? config.tcfCeFormat ?? 'texte' : undefined } } : {}),
   }))
   // PE : points = total de l’exercice (un seul barème), pas par question.
   if (ex.competence === 'PE' && config.pointsPerQuestion != null) {

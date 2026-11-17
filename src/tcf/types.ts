@@ -393,7 +393,7 @@ export type TcfCadreQuestion =
 
 export type TcfSheetItem =
   | { kind: 'ce_association_answers'; exercise: TcfCeAnnonce }
-  | { kind: 'support'; exercise: TcfExercise; ceFormat?: 'texte' | 'image' }
+  | { kind: 'support'; exercise: TcfExercise; ceFormat?: 'texte' | 'image'; ceTextFont?: import('@/typography/font-families').CeTextFontId }
   | {
       kind: 'qcm'
       numero: number
@@ -437,6 +437,8 @@ export type TcfSheetItem =
   | {
       /** Cadre Audio N : plusieurs questions sous le même bandeau (trois moyens, audio complet). */
       kind: 'audio_cadre'
+      /** Fragment débutant à l’intérieur d’un cadre audio, après une coupure de question. */
+      startsInsideAudio?: boolean
       audioLabel: string
       /** Piste du bandeau, lue dans le corrigé. */
       audioSrc?: string

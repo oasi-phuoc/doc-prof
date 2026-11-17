@@ -1,5 +1,7 @@
 # Bilan du cahier des charges — mise à jour du 17 novembre 2026
 
+**Édition du 17 novembre : réglages de mise en page ajoutés.** Coupures entre les questions d’un audio complet, cinq questions CE par défaut, deux polices globales, quatre polices indépendantes pour le texte CE et cadre dans la couleur du thème. [Détail et vérification](reglages-mise-en-page-20261117.md).
+
 **Suite du 17 novembre : six trios d’ensembles complets ajoutés**, deux A1 et quatre A2. Quatorze PNG natifs, quinze usages des nouvelles images et trois réemplois ; fournitures, plats, produits de boulangerie et livres gardent leurs catégories et leur pluriel. Fonds ivoire contrôlés, questions et sources conservées. Restent **273 trios historiques** et **380 candidats DELF Actif**. [Rapport actuel et reste à faire](trios-ensembles-20261117.md).
 
 **Correction du 17 novembre : quatorze images de lieux reprises dans le style peint TCF**, six trios existants harmonisés et un trio CE A1 supplémentaire avec trois nouvelles scènes de dessert. Les références réelles sont jointes à chaque reprise ; les fonds et meubles sont repeints avec les sujets. Les premières images restent conservées. Restent **279 trios historiques** et **380 candidats DELF Actif**. [Rapport actuel et reste à faire](correction-style-scenes-20261117.md).

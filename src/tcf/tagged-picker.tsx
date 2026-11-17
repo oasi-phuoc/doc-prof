@@ -2,6 +2,7 @@
  * Sélecteur CE / PE : Aléatoire (tag de l’exercice) ou Libre (liste filtrée).
  */
 import { useMemo } from 'react'
+import { TCF_CE_DEFAULT_QUESTIONS } from './ce-questions'
 import {
   tcfCeTagForSlot,
   tcfPeTagsForSlot,
@@ -185,24 +186,25 @@ export function TcfTaggedExercisePicker({
           <input
             className="pill-input"
             type="number"
+            aria-label="Nombre de questions CE"
             inputMode="numeric"
             min={1}
             max={bankCap}
             step={1}
-            value={questionCount ?? bankCap}
+            value={Math.min(questionCount ?? TCF_CE_DEFAULT_QUESTIONS, bankCap)}
             onChange={(event) => {
               const raw = Number(event.target.value)
               if (!Number.isFinite(raw)) return
               const next = Math.max(1, Math.min(bankCap, Math.round(raw)))
               onChange({
-                tcfQuestionCount: next >= bankCap ? undefined : next,
+                tcfQuestionCount: next,
                 tcfExercise: undefined,
                 contentSeed: Date.now() % 1_000_000_000,
               })
             }}
           />
           <small className="muted">
-            Défaut : toutes les questions du texte (max. {bankCap}).
+            Défaut : cinq questions au maximum. Vous pouvez en choisir jusqu’à {bankCap}.
           </small>
         </label>
       ) : null}
@@ -234,5 +236,5 @@ export function tcfCeQuestionCountHint(
   if (questionCount != null && Number.isFinite(questionCount) && questionCount > 0) {
     return Math.min(Math.round(questionCount), full)
   }
-  return full
+  return exercise ? full : Math.min(TCF_CE_DEFAULT_QUESTIONS, full)
 }

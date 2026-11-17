@@ -1,4 +1,5 @@
 import { ceArtFor } from '@/tcf/ce-art'
+import { textFontFamily, type CeTextFontId } from '@/typography/font-families'
 import { CePoster } from './CePoster'
 import { WorksheetImage } from '@/components/WorksheetImage'
 import { useState, type ReactNode } from 'react'
@@ -137,13 +138,9 @@ function MotsBanque({ mots }: { mots?: string[] }) {
   )
 }
 
-/** Document CE : noir et blanc, comme l’annonce et le courriel. */
-function ceDoc(children: ReactNode) {
-  return <div className="tcf-ce-doc">{children}</div>
-}
-
 /** Support de l’exercice : document à lire, audio, images, consignes de production. */
-export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte' }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image' }) {
+export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte', ceTextFont }: { exercise: TcfExercise; mode: PreviewMode; ceFormat?: 'texte' | 'image'; ceTextFont?: CeTextFontId }) {
+  const ceDoc = (children: ReactNode) => <div className="tcf-ce-doc" style={ex.competence === 'CE' ? { fontFamily: textFontFamily(ceTextFont) } : undefined}>{children}</div>
   const banque = <MotsBanque mots={ex.mots_banque} />
   if (ceFormat === 'image' && ex.competence === 'CE' && ceArtFor(ex)) return <CePoster exercise={ex} />
   switch (ex.type_exercice) {

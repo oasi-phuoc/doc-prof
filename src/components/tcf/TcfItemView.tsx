@@ -98,6 +98,9 @@ export function TcfItemView({
   mode,
   tcfFormMode,
   tcfFormModes,
+  tcfQuestionPageBreakBefore,
+  tcfPageBreakBefore,
+  onToggleTcfQuestionPageBreak,
   onSelectTcfFormAt,
   formulaireLetterGrid,
   hideMotsBanque,
@@ -107,6 +110,9 @@ export function TcfItemView({
   tcfFormMode?: TcfTypeReponse
   /** Modes par index global (ex. 2 : questions dans les cadres). */
   tcfFormModes?: Array<TcfTypeReponse | undefined>
+  tcfQuestionPageBreakBefore?: number[]
+  tcfPageBreakBefore?: boolean
+  onToggleTcfQuestionPageBreak?: (modeIndex: number) => void
   onSelectTcfFormAt?: (modeIndex: number, form: TcfTypeReponse) => void
   formulaireLetterGrid?: boolean
   hideMotsBanque?: boolean
@@ -123,7 +129,7 @@ export function TcfItemView({
         hideMotsBanque && tcf.exercise.mots_banque
           ? { ...tcf.exercise, mots_banque: undefined }
           : tcf.exercise
-      return <TexteSupport exercise={exercise} mode={mode} ceFormat={tcf.ceFormat} />
+      return <TexteSupport exercise={exercise} mode={mode} ceFormat={tcf.ceFormat} ceTextFont={tcf.ceTextFont} />
     }
     case 'qcm':
       return tcf.mode === 'image' ? (
@@ -145,6 +151,9 @@ export function TcfItemView({
           audioSrc={tcf.audioSrc}
           blankStyle={blankStyle}
           questions={questions}
+          pageBreakBefore={tcfQuestionPageBreakBefore}
+          framePageBreakBefore={tcfPageBreakBefore}
+          onTogglePageBreak={onToggleTcfQuestionPageBreak}
           mode={mode}
           onSelectForm={
             onSelectTcfFormAt

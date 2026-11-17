@@ -300,13 +300,18 @@ export function usePageConfig({
     )
   }
 
-  const toggleTcfPageBreak = (itemIndex: number, targetBlock = safeBlockIndex, sheetAt = safeSheetIndex) => {
+  const toggleTcfPageBreak = (itemIndex: number, targetBlock = safeBlockIndex, sheetAt = safeSheetIndex, questionModeIndex?: number) => {
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
         const sheet = worksheets[sheetAt]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
+        if (questionModeIndex != null && questionModeIndex > 1) {
+          const breaks = block.tcfQuestionPageBreakBefore ?? []
+          return setPageBlock(page, targetBlock, { tcfQuestionPageBreakBefore: breaks.includes(questionModeIndex)
+            ? breaks.filter(value => value !== questionModeIndex) : [...breaks, questionModeIndex].sort((a, b) => a - b) })
+        }
         const grammar=sheetBlock?.items[itemIndex]?.grammar,readingPart=grammar?.readingPart??grammar?.scenarioPart
         if ((block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set')&&readingPart?.kind==='question') {
           const ids=block.grammarPageBreakAfterQuestionIds??[]

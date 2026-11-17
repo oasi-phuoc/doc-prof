@@ -920,6 +920,8 @@ export type ExerciseBlock = {
    * TCF : saut de page après l’item d’index i (questions trop longues).
    */
   tcfPageBreakAfter?: boolean[]
+  /** Cadres audio : indices globaux (1-based) des questions à commencer sur une nouvelle page. */
+  tcfQuestionPageBreakBefore?: number[]
   /**
    * Compréhension orale / écrite : les questions qui ne tiennent pas sur la fiche
    * continuent sur la page suivante (saut de page automatique).
@@ -1068,6 +1070,8 @@ export type ExerciseBlock = {
   tcfBankId?: string
   /** TCF CSC CE : présentation du document à lire. */
   tcfCeFormat?: 'texte' | 'image'
+  /** Police du document CE uniquement ; titres d’exercice et questions suivent la fiche. */
+  tcfCeTextFont?: import('@/typography/font-families').CeTextFontId
   /** TCF : scénario qui limite la banque (id de `TCF_SCENARIOS`). */
   tcfScenario?: string
   /**
@@ -1077,7 +1081,7 @@ export type ExerciseBlock = {
   tcfAudioSlots?: Array<string | undefined>
   /**
    * TCF CO ex. 3 : nombre de questions tirées du pool (défaut 5).
-   * TCF CE : nombre de questions du texte (défaut = toutes).
+   * TCF CE : nombre de questions du texte (défaut 5, dans la limite du support).
    */
   tcfQuestionCount?: number
   /**
@@ -1141,6 +1145,7 @@ export type WorksheetBlock = {
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>
   tcfFormModes?: Array<'qcm_texte' | 'qcm_image' | 'lignes' | undefined>
   tcfPageBreakAfter?: boolean[]
+  tcfQuestionPageBreakBefore?: number[]
   /**
    * Décalage des index d’items vers la PageConfig d’origine
    * (feuilles « suite » CO/TCF).

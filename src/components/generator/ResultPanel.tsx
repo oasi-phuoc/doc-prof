@@ -93,7 +93,7 @@ export type ResultPanelProps = {
   selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
   selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
   toggleFormulaireLetterGrid: (targetBlock?: number) => void
-  toggleTcfPageBreak: (itemIndex: number, targetBlock?: number, sheetIndex?: number) => void
+  toggleTcfPageBreak: (itemIndex: number, targetBlock?: number, sheetIndex?: number, questionModeIndex?: number) => void
   isFormes: boolean
   isCadrans: boolean
   isTransform: boolean
@@ -262,7 +262,7 @@ export function ResultPanel({
       onSelectTcfForm={(itemIndex, form, block) => selectTcfForm(itemIndex, form, block, index)}
       onSelectTcfFormForExercise={(form, block) => selectTcfFormForExercise(form, block, index)}
       onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
-      onToggleTcfPageBreak={(itemIndex, block) => toggleTcfPageBreak(itemIndex, block, index)}
+      onToggleTcfPageBreak={(itemIndex, block, question) => toggleTcfPageBreak(itemIndex, block, index, question)}
       coordEdit={coordEdit}
       {...sheetProps}
     />
@@ -501,7 +501,7 @@ export function ResultPanel({
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
-                          onToggleTcfPageBreak={toggleTcfPageBreak}
+                          onToggleTcfPageBreak={(itemIndex, block, question) => toggleTcfPageBreak(itemIndex, block, undefined, question)}
                           coordEdit={coordEdit}
                           {...sheetProps}
                         />

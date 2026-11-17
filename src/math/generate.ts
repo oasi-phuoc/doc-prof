@@ -1,4 +1,5 @@
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
+import { splitTcfAudioQuestionPages } from '@/tcf/audio-question-pages'
 import { splitCscColumnPages } from '@/tcm-csc/pagination'
 import { ceArtFor } from '@/tcf/ce-art'
 import { withTcfInformationTotals } from '@/tcf/information-totals'
@@ -414,7 +415,7 @@ export function buildPage(
     // libre efface la page des premières questions.
     const libreIsPartialSlice =
       isTpfFamilyDomain(page.domain) &&
-      Boolean(block.tcfPageBreakAfter?.some((on, i) => on && i < result.items.length - 1)) &&
+      Boolean(block.tcfPageBreakAfter?.some((on, i) => on && i < result.items.length - 1) || block.tcfQuestionPageBreakBefore?.some(index => index > 1)) &&
       Array.isArray(block.libreItems) &&
       block.libreItems.length > 0 &&
       block.libreItems.length < result.items.length
@@ -465,6 +466,7 @@ export function buildPage(
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,
       tcfPageBreakAfter,
+      tcfQuestionPageBreakBefore: block.tcfQuestionPageBreakBefore,
       bankQuestionCap: result.bankQuestionCap,
       grammarPageBreakAfterQuestionIds: block.grammarPageBreakAfterQuestionIds,
       corrigeAudios: corrigeAudios.length ? corrigeAudios : undefined,
@@ -651,6 +653,11 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       return
     }
 
+    const audioQuestionPages = isTpfFamilyDomain(page.domain) ? splitTcfAudioQuestionPages(worksheet) : null
+    if (audioQuestionPages) {
+      out.push(...audioQuestionPages.map(sheet => ({ ...sheet, configIndex: index })))
+      return
+    }
     const cePosterPages = paginateCePosters(worksheet)
     if (cePosterPages) {
       out.push(...cePosterPages.map((sheet) => ({ ...sheet, configIndex: index })))

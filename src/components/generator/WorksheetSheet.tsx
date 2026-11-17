@@ -126,7 +126,7 @@ export type WorksheetSheetProps = {
   onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex?: number) => void
   /** Qui suis-je Infos/Verbe : bascule QCM ↔ texte pour tout l’exercice. */
   onSelectTcfFormForExercise?: (form: TcfTypeReponse, blockIndex?: number) => void
-  onToggleTcfPageBreak?: (index: number, blockIndex?: number) => void
+  onToggleTcfPageBreak?: (index: number, blockIndex?: number, questionModeIndex?: number) => void
   onToggleFormulaireLetterGrid?: (blockIndex: number) => void
   /** Bouton refresh : régénère uniquement cet exercice (et éventuellement une moitié A5). */
   onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right') => void
@@ -466,6 +466,7 @@ export function WorksheetSheet({
                     block.tcfFormModes?.[sourceIndex] ?? page.tcfFormModes?.[sourceIndex]
                   const tcfPageBreakBefore =
                     sourceIndex > 0 &&
+                    !(item.tcf?.kind === 'audio_cadre' && item.tcf.startsInsideAudio) &&
                     Boolean(
                       block.tcfPageBreakAfter?.[sourceIndex - 1] ?? page.tcfPageBreakAfter?.[sourceIndex - 1],
                     )
@@ -546,10 +547,13 @@ export function WorksheetSheet({
                               onSelectTcfForm(modeIndex - itemOffset, form, blockIndex)
                           : undefined
                       }
+                      tcfQuestionPageBreakBefore={block.tcfQuestionPageBreakBefore}
+                      onToggleTcfQuestionPageBreak={interactiveTcfPageBreaks && isTcfAudioCadre && onToggleTcfPageBreak
+                        ? question => onToggleTcfPageBreak(index, blockIndex, question) : undefined}
                       tcfPageBreakBefore={isTcfPageBreakable ? tcfPageBreakBefore : undefined}
                       onToggleTcfPageBreak={
                         interactiveTcfPageBreaks &&
-                        isTcfPageBreakable &&
+                        isTcfPageBreakable && (!isTcfAudioCadre || tcfPageBreakBefore) &&
                         sourceIndex > 0 &&
                         onToggleTcfPageBreak
                           ? () => onToggleTcfPageBreak(index, blockIndex)

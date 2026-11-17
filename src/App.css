@@ -4242,8 +4242,8 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
   grid-template-columns:repeat(var(--sheet-columns, 1), minmax(0, 1fr))!important;
 }
 .tcf-text{margin:0 0 6px;text-align:justify;line-height:1.4;max-width:100%;overflow-wrap:break-word;word-wrap:break-word}
-/* CE : le document à lire est en noir et blanc (cadre noir, fond blanc, texte noir). */
-.tcf-ce-doc{color:var(--ink)}
+/* CE : fond blanc, texte noir et cadre dans la couleur du thème. */
+.tcf-ce-doc{color:var(--ink);--ce-frame:var(--purple)}
 .tcf-ce-doc .tcf-text,
 .tcf-ce-doc .tcf-annonce,
 .tcf-ce-doc .tcf-annonce-title,
@@ -4256,7 +4256,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-ce-doc .tcf-assoc-people-title{color:var(--ink)}
 .tcf-ce-doc .tcf-sms{max-width:100%}
 .tcf-ce-doc .tcf-sms-bubble{
-  border:1.5px solid var(--ink);border-radius:0;background:#fff;color:var(--ink)
+  border:1.5px solid var(--ce-frame,var(--ink));border-radius:0;background:#fff;color:var(--ink)
 }
 .tcf-ce-doc .tcf-assoc-doc-num,
 .tcf-ce-doc .tcf-assoc-letter,
@@ -4267,12 +4267,12 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 .tcf-sms{max-width:78%;margin-bottom:6px}
 .tcf-sms-from{margin:0 0 4px;font-size:.85em;font-weight:700;color:var(--muted)}
 .tcf-sms-bubble{padding:8px 12px;border:1.5px solid var(--purple);border-radius:14px 14px 14px 3px;background:var(--lavender)}
-.tcf-email{width:100%;max-width:none;box-sizing:border-box;border:1px solid var(--ink);margin-bottom:6px}
-.tcf-email-head{display:grid;grid-template-columns:max-content 1fr;gap:2px 10px;margin:0;padding:6px 10px;border-bottom:1px solid var(--ink);font-size:.9em}
+.tcf-email{width:100%;max-width:none;box-sizing:border-box;border:1px solid var(--ce-frame,var(--ink));margin-bottom:6px}
+.tcf-email-head{display:grid;grid-template-columns:max-content 1fr;gap:2px 10px;margin:0;padding:6px 10px;border-bottom:1px solid var(--ce-frame,var(--ink));font-size:.9em}
 .tcf-email-head dt{font-weight:700}
 .tcf-email-head dd{margin:0}
 .tcf-email-body{padding:8px 10px}
-.tcf-annonce{border:2px solid var(--ink);padding:8px 12px;margin-bottom:6px;max-width:100%;box-sizing:border-box;overflow:hidden}
+.tcf-annonce{border:2px solid var(--ce-frame,var(--ink));padding:8px 12px;margin-bottom:6px;max-width:100%;box-sizing:border-box;overflow:hidden}
 .tcf-annonce-title{margin:0 0 6px;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.03em}
 .tcf-annonce-body{display:flex;gap:12px;align-items:flex-start;min-width:0;max-width:100%}
 .tcf-annonce-body .tcf-image{width:34mm;height:26mm}
@@ -4287,7 +4287,7 @@ select.phrase-libre-word-fill{appearance:auto;cursor:pointer}
 }
 .tcf-assoc-doc{
   position:relative;margin:0;padding:6px 8px 6px 22px;
-  border:1.5px solid var(--ink);box-sizing:border-box;width:100%;max-width:100%
+  border:1.5px solid var(--ce-frame,var(--ink));box-sizing:border-box;width:100%;max-width:100%
 }
 .tcf-assoc-doc .tcf-text{margin:0;font-size:.95em;line-height:1.35}
 .tcf-assoc-doc-num{
@@ -6444,3 +6444,8 @@ textarea.pill-input,
 @media screen and (max-width:700px) {
  .topbar-brand:has(.topbar-play):has(> button) .button { flex:1; min-width:0; max-width:100px; padding:6px 4px; font-size:12px; line-height:1.15; white-space:normal; text-align:center; }
 }
+
+/* La police de la fiche reste indépendante du document de lecture CE. */
+.worksheet-sheet,.a5-half{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
+.tcf-ce-doc .tcf-assoc-people,.tcf-ce-doc .tcf-assoc-people-title{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
+.a4-frame .worksheet-sheet .tcf-audio-cadre-q>.tcf-question-page-chip{top:var(--tcf-audio-text-nudge,0);left:calc(100% + var(--tcf-audio-body-pad-x,3mm) + 1.5px + var(--ex-pad-x) + 2px);right:auto}
