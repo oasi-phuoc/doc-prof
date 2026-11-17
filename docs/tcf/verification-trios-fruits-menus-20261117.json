@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "16f77c72dd3ef77b9f5c86980d70833783a89dcb",
+  "six_bank_comparison": [
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 162
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 507
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 177
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 379
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/ce.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 0
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "only_allowed_image_forms_added": true,
+      "exercises": 130
+    }
+  ],
+  "existing_image_metadata_preserved": true,
+  "source_png_bytes_preserved": 18,
+  "existing_image_bytes_changed": 0,
+  "audio_files_changed": 0,
+  "human_audio_listening_performed": false,
+  "historical": {
+    "active": 390,
+    "retained_text": 112,
+    "pending": 261,
+    "pending_by_level": {
+      "A0-A1": 98,
+      "A1-A2": 144,
+      "A2-B1": 19
+    },
+    "pending_categories": {
+      "artwork_needed_contextual_locations": 219,
+      "artwork_needed_whole_answer_concepts": 31,
+      "artwork_needed_distinct_document_types": 11
+    }
+  },
+  "delf_actif": {
+    "active": 366,
+    "candidates": 380,
+    "retained_text": 917
+  },
+  "catalog_tests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "gallery": {
+    "images": 7331,
+    "prior_visual_reviews_preserved": true,
+    "progress": {
+      "total": 7331,
+      "visually_reviewed": 102,
+      "pending": 3675,
+      "not_started": 3554,
+      "by_collection": {
+        "TCF": 3777,
+        "Vocabulaire": 2226,
+        "Gattegno": 225,
+        "Grammaire": 32,
+        "Logique": 952,
+        "Identité visuelle": 13,
+        "Jeux et interactif": 106
+      }
+    }
+  },
+  "trio_browser": {
+    "views": 10,
+    "question_views": 12,
+    "image_views": 36,
+    "errors": [],
+    "scope": "Selected questions isolated in complete exercise fixtures, 1440 px and 390 px; student/correction and text/image switching."
+  },
+  "checks": {
+    "historical_763": true,
+    "delf_actif_images": true,
+    "delf_actif_context": true,
+    "qcm_variants": 2472,
+    "qcm_shuffle_regressions": 12,
+    "bank_exercises": 1355,
+    "indexed_tcf_audio_pools": 1371,
+    "game_pool_types": 697
+  },
+  "production_build_performed": false,
+  "application_code_changed": false,
+  "next_task": "Contrôler les fonds des 66 images du commit 16f77c72, après clôture de ce lot."
+}

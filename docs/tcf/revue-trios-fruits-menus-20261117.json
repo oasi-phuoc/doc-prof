@@ -1,0 +1,1484 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "16f77c72dd3ef77b9f5c86980d70833783a89dcb",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 6,
+    "added_historical_trios": 6,
+    "added_delf_actif_trios": 0,
+    "new_images": 18,
+    "imagegen_calls": 18,
+    "rejected_generations": 0,
+    "new_image_usages": 18,
+    "reused_image_usages": 0,
+    "reused_distinct_images": 0,
+    "added_by_level": {
+      "A0-A1": 1,
+      "A1-A2": 5
+    },
+    "historical_pending": 261
+  },
+  "new_images": [
+    {
+      "id": "qcm-fruits-fraises-bananes-oranges",
+      "label": "Des fraises, des bananes et des oranges",
+      "path": "/lib/images/tcf/qcm-audit/qcm-fruits-fraises-bananes-oranges.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE clear groups: FOUR ripe red STRAWBERRIES with green leaves at left, a bunch of THREE yellow BANANAS in the middle, and TWO whole ORANGES plus one orange half at right. Every fruit type fully recognisable and visible. No other fruits, containers, glass, juice or writing.",
+      "source_png": "/workspace/generated_images/exec-1504b7c7-ebdb-4f47-86c9-7787300c3554.png",
+      "source_sha256": "b87994153c6cca8d201db07d830ee8bf090e852886f2a223b25e94b861956297",
+      "sha256": "b87994153c6cca8d201db07d830ee8bf090e852886f2a223b25e94b861956297",
+      "bytes": 1596791,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Quatre fraises, un régime de bananes et deux oranges entières avec une moitié ; trois familles visibles au pluriel, sans jus ni autre fruit. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Fruit"
+      ],
+      "gallery_themes": [
+        "Trois familles de fruits",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-fruits-pommes-poires-peches",
+      "label": "Des pommes, des poires et des pêches",
+      "path": "/lib/images/tcf/qcm-audit/qcm-fruits-pommes-poires-peches.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE clear groups: TWO red APPLES at left, TWO green PEARS with narrow necks and bulbous bases in the middle, and TWO fuzzy pink-yellow PEACHES plus one peach half with its large stone at right. Each fruit type clearly different from the others. No oranges, berries, bananas, containers or writing.",
+      "source_png": "/workspace/generated_images/exec-2c67f6b3-a113-4ef1-8661-8721de3e3445.png",
+      "source_sha256": "c6bba807a0f4d7caa733f7a6d4dd389dbb8ae4567626b525638515eca868cd35",
+      "sha256": "c6bba807a0f4d7caa733f7a6d4dd389dbb8ae4567626b525638515eca868cd35",
+      "bytes": 1705190,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux pommes, deux poires à col étroit, deux pêches entières et une moitié avec noyau ; les trois espèces se distinguent. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Fruit"
+      ],
+      "gallery_themes": [
+        "Trois familles de fruits",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-fruits-cerises-kiwis-raisins",
+      "label": "Des cerises, des kiwis et des raisins",
+      "path": "/lib/images/tcf/qcm-audit/qcm-fruits-cerises-kiwis-raisins.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE clear groups: a small group of SIX ripe red CHERRIES with stems at left; TWO brown fuzzy KIWIS, one whole and one sliced open to show green flesh and tiny black seeds, in the middle; and a generous bunch of PURPLE GRAPES at right. No strawberries, apples, banana, peach, plate or glass.",
+      "source_png": "/workspace/generated_images/exec-ecf92268-753a-4d9b-8415-121f128d0c14.png",
+      "source_sha256": "ecb9803faa3e1813a6f8f6ad14c8e2f9390d124c6b6e4f4e7493c77320a3b8cb",
+      "sha256": "ecb9803faa3e1813a6f8f6ad14c8e2f9390d124c6b6e4f4e7493c77320a3b8cb",
+      "bytes": 1765824,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Groupe de cerises à tiges, kiwi entier et kiwi coupé à chair verte, grappe de raisins violets ; aucune confusion entre fruits frais et fruits secs. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Fruit"
+      ],
+      "gallery_themes": [
+        "Trois familles de fruits",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-menu-salades-sandwichs-boissons-fraiches",
+      "label": "Des salades, des sandwichs et des boissons fraîches",
+      "path": "/lib/images/tcf/qcm-audit/qcm-menu-salades-sandwichs-boissons-fraiches.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE balanced groups of food and drink. Left: TWO small white bowls of fresh green SALAD with lettuce, tomato and cucumber. Middle: TWO separate complete filled SANDWICH ROLLS, with visible bread, cheese and salad filling. Right: TWO tall glasses of COLD DRINKS, one orange juice and one water, both with visible ice cubes and slight condensation. Keep all three plural categories equally visible. No hot cup, pizza, pasta, meat dish, soup or dessert.",
+      "source_png": "/workspace/generated_images/exec-ddc1cbf1-3427-4ed0-b3c5-e9229b1a7611.png",
+      "source_sha256": "920bd7fe8d78208617e309cd7bbe50771054f8ff5e48aad4a63fe2c3c84e8631",
+      "sha256": "920bd7fe8d78208617e309cd7bbe50771054f8ff5e48aad4a63fe2c3c84e8631",
+      "bytes": 1857022,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux salades, deux petits pains garnis de fromage et crudités sans steak, deux verres avec glaçons ; trois familles au pluriel et caractère froid des boissons visibles. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Menus et repas",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-menu-pizzas-pates-boissons-chaudes",
+      "label": "Des pizzas, des pâtes et des boissons chaudes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-menu-pizzas-pates-boissons-chaudes.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE balanced groups. Left: TWO small round PIZZAS topped with tomato and melted cheese. Middle: TWO small white bowls of cooked PASTA, one with spaghetti and one with short penne in a simple tomato sauce. Right: TWO ceramic cups of HOT DRINKS, a dark coffee and a golden tea, with small gentle wisps of steam above both. No cold glass, ice, sandwich, salad or soup. Entire plates, bowls and cups visible.",
+      "source_png": "/workspace/generated_images/exec-7e47418c-6419-4239-83d6-3380844d65e8.png",
+      "source_sha256": "f79bee62548fd2524b2ae581757e747d92461e7a494fd9f66bf7ed2168c0bf20",
+      "sha256": "f79bee62548fd2524b2ae581757e747d92461e7a494fd9f66bf7ed2168c0bf20",
+      "bytes": 1912060,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux pizzas, deux bols de pâtes distinctes et deux tasses fumantes ; les trois familles sont complètes et les boissons sont chaudes. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Menus et repas",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-menu-soupes-viandes-desserts-glaces",
+      "label": "Des soupes, des viandes et des desserts glacés",
+      "path": "/lib/images/tcf/qcm-audit/qcm-menu-soupes-viandes-desserts-glaces.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE balanced groups. Left: TWO white bowls of SOUP, one orange vegetable soup and one clear vegetable broth. Middle: TWO small plates of cooked MEAT, one a grilled steak and the other a roasted chicken portion, without vegetable side dishes. Right: TWO small glass dessert cups of ICE CREAM, one chocolate and one strawberry with distinct scoops. All three plural categories equally clear. No pizza, salad, pasta, sandwich or extra drink.",
+      "source_png": "/workspace/generated_images/exec-c8edf03f-a82c-4aa3-bf73-58629688765e.png",
+      "source_sha256": "6f9c17eea242c96682b82c933031d8f28b9ef420384b649e13ed8e99e5ac7780",
+      "sha256": "6f9c17eea242c96682b82c933031d8f28b9ef420384b649e13ed8e99e5ac7780",
+      "bytes": 1834078,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux soupes, une portion de steak et une portion de poulet sur leurs assiettes, deux coupes de glace ; les trois familles sont représentées au pluriel. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Menus et repas",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-plats-fromages-desserts",
+      "label": "Des plats, des fromages et des desserts",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-plats-fromages-desserts.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE clearly separated food groups in a single composition. Left: TWO small portions of SAVOURY PREPARED DISHES, a golden potato rosti on a plate and a slice of vegetable quiche on a second plate. Middle: THREE differently shaped pieces of CHEESE, one pale yellow wedge with holes, one round white-rind piece and one firm cheese wedge. Right: TWO DESSERTS, a small individual fruit tart and a slice of cake. These are generic examples of the categories, no text, national flag, named recipe, decorative drink or fruit pile.",
+      "source_png": "/workspace/generated_images/exec-6d302e4b-587c-485f-a482-a332800266a5.png",
+      "source_sha256": "d600dd4767aa0fa24adf1047885d950fd284cbef438832f651a454e54d782e0c",
+      "sha256": "d600dd4767aa0fa24adf1047885d950fd284cbef438832f651a454e54d782e0c",
+      "bytes": 1797473,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux plats salés, trois fromages et deux desserts ; exemples génériques des catégories sans attribuer ces recettes à la source. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-boissons-epices-fruits",
+      "label": "Des boissons, des épices et des fruits",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-boissons-epices-fruits.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE clearly separated groups. Left: TWO glasses of DRINKS, orange juice and clear water. Middle: THREE small open bowls of SPICES, with yellow turmeric powder, red paprika powder and cinnamon sticks, recognisable by colours and material. Right: a group of FRUITS comprising two apples, two pears and a small grape bunch. No cheese, prepared meal, dessert, oil bottle, grain or vegetables.",
+      "source_png": "/workspace/generated_images/exec-b901eaf2-1265-47c0-a430-abf3568f2596.png",
+      "source_sha256": "d84e37601ceadf0d20465a521243386c15f18da55e41f4b2cf6a8937f3f35a44",
+      "sha256": "d84e37601ceadf0d20465a521243386c15f18da55e41f4b2cf6a8937f3f35a44",
+      "bytes": 1568983,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux verres, trois coupelles d’épices colorées dont des bâtons de cannelle, pommes/poires/raisins ; les trois familles se distinguent. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-cereales-huiles-legumes",
+      "label": "Des céréales, des huiles et des légumes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-cereales-huiles-legumes.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE clearly separated groups. Left: TWO small bowls of CEREAL GRAINS, one golden wheat kernels and one oat flakes. Middle: TWO transparent glass bottles of edible OIL with green-gold liquid and plain caps, without brands or label text. Right: FRESH VEGETABLES, two carrots, one courgette and two tomatoes. No beverages in cups or glasses, fruit bowl, spice powders, cheese or dessert.",
+      "source_png": "/workspace/generated_images/exec-a181658c-5f0d-464e-b18e-c2b1e04bdf97.png",
+      "source_sha256": "da1d6d1417a72af80dbdabd197e2eb1fcab6ae42831f3dc5fcee0a72ea567a41",
+      "sha256": "da1d6d1417a72af80dbdabd197e2eb1fcab6ae42831f3dc5fcee0a72ea567a41",
+      "bytes": 1724712,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux bols de céréales, deux bouteilles d’huile et un groupe de légumes frais ; trois catégories visibles, sans étiquettes ni dates. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-pates-cereales-completes",
+      "label": "Des pâtes et des céréales complètes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-pates-cereales-completes.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. TWO balanced food categories. Left: a white bowl of cooked PASTA with visible penne and spaghetti, without sauce or other foods. Right: TWO small wooden bowls containing WHOLE CEREALS, intact brown wheat kernels and coarse oat flakes, with a few grains beside the bowls. Grain shapes and light brown colour must make the whole grains recognisable. No sweets, chips, sauces, drink, fruit or vegetable.",
+      "source_png": "/workspace/generated_images/exec-b6d3506a-dd8d-4493-923e-b9f58dc43929.png",
+      "source_sha256": "e6288385c1a67559f746437f83f7512efe093fed4cf2c2742b6eee48ffd300a7",
+      "sha256": "e6288385c1a67559f746437f83f7512efe093fed4cf2c2742b6eee48ffd300a7",
+      "bytes": 1725045,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Bol de pâtes et deux bols de grains de blé et flocons d’avoine ; les céréales sont représentées par des grains entiers et des flocons, sans sauce ni boissons. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-bonbons-chips",
+      "label": "Des bonbons et des chips",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-bonbons-chips.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. TWO balanced groups: a small white bowl with colourful wrapped and unwrapped SWEETS at left, and a second bowl of thin golden POTATO CHIPS at right with a few chips beside it. Sweets clearly differ from fruit, chips clearly differ from French fries. No branded packet, sauces, drinks, pasta, cereal or other food.",
+      "source_png": "/workspace/generated_images/exec-12c0680b-5638-4fc9-b15b-aa7cdfdd5ffc.png",
+      "source_sha256": "b7bebf6eaede34215d31e3ff798c693435fa9428eacf794741e7db69f652e25b",
+      "sha256": "b7bebf6eaede34215d31e3ff798c693435fa9428eacf794741e7db69f652e25b",
+      "bytes": 1582515,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Bols distincts de bonbons colorés et de fines chips ; les chips ne sont pas remplacées par des frites. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-sauces-sodas",
+      "label": "Des sauces et des sodas",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-sauces-sodas.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. TWO balanced groups. Left: THREE little open dishes of SAUCES, red ketchup, pale mayonnaise and yellow mustard, with no food dipping into them. Right: TWO clear drinking glasses of SODA, one brown cola and one clear lemon soda, with visible sparkling bubbles, ice and one plain paper straw in each. No coffee, tea, hot steam, sweet packet, chips or other food.",
+      "source_png": "/workspace/generated_images/exec-17762c34-325d-445d-b037-f7e33b5e2d3f.png",
+      "source_sha256": "52fe9369c04e5c813855750e6e2fba1a4cafb51e468ab4d0b9b8f45ad2a9946c",
+      "sha256": "52fe9369c04e5c813855750e6e2fba1a4cafb51e468ab4d0b9b8f45ad2a9946c",
+      "bytes": 1837392,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois sauces en coupelles et deux sodas avec bulles et pailles ; sauces et boissons sont les deux familles principales. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-poisson-fruits-secs",
+      "label": "Du poisson et des fruits secs",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-poisson-fruits-secs.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. TWO balanced groups. Left: ONE recognisable whole cooked FISH on a simple white oval plate, head, tail and fins visible, with no side dish. Right: ONE shallow bowl of DRIED FRUIT AND NUTS containing raisins, dried apricot halves, almonds and walnut pieces, with a few almonds and raisins beside it. Distinguish the dry wrinkled fruit from fresh grapes. No chips, sweets, fried potatoes, pastry, drink or fresh fruit.",
+      "source_png": "/workspace/generated_images/exec-3ca948e5-d98e-45ef-8eef-5b747c21df46.png",
+      "source_sha256": "ca4e40399dd17b87ad1e2218091cb216efe16f4b36dda3ffd0f8b1d44344a3cb",
+      "sha256": "ca4e40399dd17b87ad1e2218091cb216efe16f4b36dda3ffd0f8b1d44344a3cb",
+      "bytes": 1685177,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Poisson cuit entier avec tête et queue ; bol de raisins secs, abricots secs, amandes et noix. Les fruits secs se distinguent de fruits frais. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-frites-bonbons",
+      "label": "Des frites et des bonbons",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-frites-bonbons.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. TWO balanced groups: a white plate piled with clearly elongated golden FRENCH FRIES at left, and a small bowl of colourful wrapped and unwrapped SWEETS at right. Show elongated fries, never potato chips. No burger, fish, pastry, sauce, soda, fruit or other objects.",
+      "source_png": "/workspace/generated_images/exec-34dfeed8-740d-41c8-8c3a-6301a239b79f.png",
+      "source_sha256": "b1d0467fb6ec28dc2a7431c8a6b68a1491b2ae5a352a16541711c8bfa11ba1f0",
+      "sha256": "b1d0467fb6ec28dc2a7431c8a6b68a1491b2ae5a352a16541711c8bfa11ba1f0",
+      "bytes": 1660427,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Assiette de frites allongées et bol de bonbons ; aucune chip à la place des frites ni aliment ajouté. Style peint, sujets entiers et fond ivoire comparés à la référence réelle.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-aliments-patisseries-sodas",
+      "label": "Des pâtisseries et des sodas",
+      "path": "/lib/images/tcf/qcm-audit/qcm-aliments-patisseries-sodas.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. TWO balanced groups: a small platter containing THREE different PASTRIES, a croissant, a small fruit tart and a chocolate eclair, at left. At right TWO clear glasses of fizzy SODA, one brown cola and one clear lemon soda, with bubbles, ice cubes and plain paper straws. No coffee, tea, steam, sweets, fried potatoes, fish or other food.",
+      "source_png": "/workspace/generated_images/exec-4822e4e0-2fef-4126-9568-7caee2cebc37.png",
+      "source_sha256": "d1349e2eef74990b4061968dadde8f29c162d504c6de89ffc97c75f70322df63",
+      "sha256": "d1349e2eef74990b4061968dadde8f29c162d504c6de89ffc97c75f70322df63",
+      "bytes": 1859585,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois pâtisseries distinctes : croissant, tartelette aux fruits et éclair ; deux sodas à bulles avec glaçons et pailles. Pluriels et deux familles visibles, fond ivoire conforme à la référence, aucun texte.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Plat"
+      ],
+      "gallery_themes": [
+        "Groupes d’aliments",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-produits-chocolat-vin-fromages",
+      "label": "Du chocolat, du vin et des fromages",
+      "path": "/lib/images/tcf/qcm-audit/qcm-produits-chocolat-vin-fromages.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE equally clear groups. Left: TWO dark CHOCOLATE TABLETS, one partly broken into squares, with no package or wrapper. Middle: ONE dark green WINE BOTTLE with a plain cream label and cork, beside ONE stemmed wine glass containing red wine; no label writing, year or price. Right: THREE distinct pieces of CHEESE, including a wedge with holes, a round white-rind piece and a hard cheese wedge. No fruit, rice, coffee, tea, decorative grapes or national flags.",
+      "source_png": "/workspace/generated_images/exec-bf4f01f6-8e9d-49c5-ba6c-c7cf72422cdb.png",
+      "source_sha256": "3eaa323cc86aee00d18a2bb6c8cf70cc21aa6004823e179755816d7fc40da0c5",
+      "sha256": "3eaa323cc86aee00d18a2bb6c8cf70cc21aa6004823e179755816d7fc40da0c5",
+      "bytes": 1546681,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux tablettes de chocolat et morceaux, bouteille et verre de vin rouge, trois fromages distincts. Les trois familles sont complètes ; aucune marque, aucun millésime, aucune attribution de recette. Fond ivoire et peinture douce cohérents.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes de produits alimentaires",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-produits-cafe-riz-the",
+      "label": "Du café, du riz et du thé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-produits-cafe-riz-the.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE equally clear product groups. Left: ONE small ceramic cup of dark COFFEE beside a small pile of roasted coffee beans. Middle: ONE shallow bowl of uncooked white RICE with clearly slender grains and a few grains beside it. Right: ONE glass cup of amber TEA with a recognisable tea bag, beside a small open tin of dried tea leaves. The dark coffee and amber tea must be clearly distinct, with the rice equally prominent between them. No chocolate, cheese, fruit, oil bottle, other cereal, brand, label or writing.",
+      "source_png": "/workspace/generated_images/exec-22fd2d9d-06a4-4ac1-9715-3edc546d4c8d.png",
+      "source_sha256": "17dffa0138c6e490fb70aa0203ce876aab044cdddd098730ff43859002ab7c8b",
+      "sha256": "17dffa0138c6e490fb70aa0203ce876aab044cdddd098730ff43859002ab7c8b",
+      "bytes": 1590259,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Café noir en tasse avec grains torréfiés, riz blanc cru en bol, thé ambré avec sachet et boîte de feuilles. Trois produits distincts et identifiables, sans légende ; fond ivoire et volumes peints cohérents.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes de produits alimentaires",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-produits-olives-oranges-dattes",
+      "label": "Des olives, des oranges et des dattes",
+      "path": "/lib/images/tcf/qcm-audit/qcm-produits-olives-oranges-dattes.png",
+      "prompt": "EDIT the supplied approved TCF object illustration as a real visual style reference. Replace ALL original drink objects with ONLY the complete subject specified below. Preserve its exact smooth almost-uniform pale ivory background RGB 253 242 225 (#FDF2E1), hand-painted semi-realistic educational drawing style, soft painted colour volumes, fine discreet contours, detailed material texture only on the objects, and small soft contact shadows. No photo or CGI render, no canvas/paper grain in empty background, no yellow/ochre cast, gradient or vignette. One coherent composition, no panels, no room, no people, no floating labels, no prices, dates, brands or response symbols. Whole objects inside frame with clear margins. EXACT native landscape PNG 1448x1086 pixels, 4:3. THREE equally clear groups. Left: a small bowl of GREEN AND BLACK OLIVES with a few whole olives beside it. Middle: TWO whole ORANGES and one cut orange half showing bright orange citrus segments. Right: a shallow bowl of brown DATES with their elongated wrinkled shiny skin, plus one open date showing its single long stone. No grapes, prunes, almonds, cheese, chocolate, drinks or writing.",
+      "source_png": "/workspace/generated_images/exec-c7fa42b8-93ff-4b35-97a8-0e79b58ab029.png",
+      "source_sha256": "43d7c40aa86d97c6fa7f9002651182e8fcdce58c1bc7d7c69c7c22f4ed80a721",
+      "sha256": "43d7c40aa86d97c6fa7f9002651182e8fcdce58c1bc7d7c69c7c22f4ed80a721",
+      "bytes": 1682599,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-fruits-menus-20261117",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Olives vertes et noires en bol et devant, deux oranges entières et une moitié, dattes en bol et datte ouverte avec noyau. Trois familles distinctes, sans autres produits ; fond ivoire conforme et peinture douce.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Groupes de produits alimentaires",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "generation": {
+    "imagegen_calls": 18,
+    "accepted": 18,
+    "rejected": 0,
+    "native_png_bytes_preserved": true,
+    "local_image_conversion_performed": false,
+    "reference": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+    "images": [
+      {
+        "id": "qcm-fruits-fraises-bananes-oranges",
+        "source": "/workspace/generated_images/exec-1504b7c7-ebdb-4f47-86c9-7787300c3554.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-fruits-pommes-poires-peches",
+        "source": "/workspace/generated_images/exec-2c67f6b3-a113-4ef1-8661-8721de3e3445.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-fruits-cerises-kiwis-raisins",
+        "source": "/workspace/generated_images/exec-ecf92268-753a-4d9b-8415-121f128d0c14.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-menu-salades-sandwichs-boissons-fraiches",
+        "source": "/workspace/generated_images/exec-ddc1cbf1-3427-4ed0-b3c5-e9229b1a7611.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-menu-pizzas-pates-boissons-chaudes",
+        "source": "/workspace/generated_images/exec-7e47418c-6419-4239-83d6-3380844d65e8.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-menu-soupes-viandes-desserts-glaces",
+        "source": "/workspace/generated_images/exec-c8edf03f-a82c-4aa3-bf73-58629688765e.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-plats-fromages-desserts",
+        "source": "/workspace/generated_images/exec-6d302e4b-587c-485f-a482-a332800266a5.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-boissons-epices-fruits",
+        "source": "/workspace/generated_images/exec-b901eaf2-1265-47c0-a430-abf3568f2596.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-cereales-huiles-legumes",
+        "source": "/workspace/generated_images/exec-a181658c-5f0d-464e-b18e-c2b1e04bdf97.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-pates-cereales-completes",
+        "source": "/workspace/generated_images/exec-b6d3506a-dd8d-4493-923e-b9f58dc43929.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-bonbons-chips",
+        "source": "/workspace/generated_images/exec-12c0680b-5638-4fc9-b15b-aa7cdfdd5ffc.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-sauces-sodas",
+        "source": "/workspace/generated_images/exec-17762c34-325d-445d-b037-f7e33b5e2d3f.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-poisson-fruits-secs",
+        "source": "/workspace/generated_images/exec-3ca948e5-d98e-45ef-8eef-5b747c21df46.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-frites-bonbons",
+        "source": "/workspace/generated_images/exec-34dfeed8-740d-41c8-8c3a-6301a239b79f.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-aliments-patisseries-sodas",
+        "source": "/workspace/generated_images/exec-4822e4e0-2fef-4126-9568-7caee2cebc37.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-produits-chocolat-vin-fromages",
+        "source": "/workspace/generated_images/exec-bf4f01f6-8e9d-49c5-ba6c-c7cf72422cdb.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-produits-cafe-riz-the",
+        "source": "/workspace/generated_images/exec-22fd2d9d-06a4-4ac1-9715-3edc546d4c8d.png",
+        "status": "visually_reviewed"
+      },
+      {
+        "id": "qcm-produits-olives-oranges-dattes",
+        "source": "/workspace/generated_images/exec-c7fa42b8-93ff-4b35-97a8-0e79b58ab029.png",
+        "status": "visually_reviewed"
+      }
+    ]
+  },
+  "background_review": {
+    "reference": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+    "reference_corner_median_rgb": [
+      253.0,
+      242.0,
+      225.0
+    ],
+    "method": "Comparaison visuelle des sujets, fonds et groupes ; médiane et écart-type du coin supérieur gauche 40×40. Mesure de ce lot, sans jugement sur les autres originaux.",
+    "rows": [
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-fruits-fraises-bananes-oranges.png",
+        "source": "/workspace/generated_images/exec-1504b7c7-ebdb-4f47-86c9-7787300c3554.png",
+        "sha256": "b87994153c6cca8d201db07d830ee8bf090e852886f2a223b25e94b861956297",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.54,
+          0.557,
+          0.585
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-fruits-pommes-poires-peches.png",
+        "source": "/workspace/generated_images/exec-2c67f6b3-a113-4ef1-8661-8721de3e3445.png",
+        "sha256": "c6bba807a0f4d7caa733f7a6d4dd389dbb8ae4567626b525638515eca868cd35",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.528,
+          0.593,
+          0.591
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-fruits-cerises-kiwis-raisins.png",
+        "source": "/workspace/generated_images/exec-ecf92268-753a-4d9b-8415-121f128d0c14.png",
+        "sha256": "ecb9803faa3e1813a6f8f6ad14c8e2f9390d124c6b6e4f4e7493c77320a3b8cb",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.534,
+          0.575,
+          0.569
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-menu-salades-sandwichs-boissons-fraiches.png",
+        "source": "/workspace/generated_images/exec-ddc1cbf1-3427-4ed0-b3c5-e9229b1a7611.png",
+        "sha256": "920bd7fe8d78208617e309cd7bbe50771054f8ff5e48aad4a63fe2c3c84e8631",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.529,
+          0.572,
+          0.614
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-menu-pizzas-pates-boissons-chaudes.png",
+        "source": "/workspace/generated_images/exec-7e47418c-6419-4239-83d6-3380844d65e8.png",
+        "sha256": "f79bee62548fd2524b2ae581757e747d92461e7a494fd9f66bf7ed2168c0bf20",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.565,
+          0.553,
+          0.584
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-menu-soupes-viandes-desserts-glaces.png",
+        "source": "/workspace/generated_images/exec-c8edf03f-a82c-4aa3-bf73-58629688765e.png",
+        "sha256": "6f9c17eea242c96682b82c933031d8f28b9ef420384b649e13ed8e99e5ac7780",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          252.0,
+          239.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.561,
+          0.549,
+          0.581
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-plats-fromages-desserts.png",
+        "source": "/workspace/generated_images/exec-6d302e4b-587c-485f-a482-a332800266a5.png",
+        "sha256": "d600dd4767aa0fa24adf1047885d950fd284cbef438832f651a454e54d782e0c",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.545,
+          0.562,
+          0.606
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-boissons-epices-fruits.png",
+        "source": "/workspace/generated_images/exec-b901eaf2-1265-47c0-a430-abf3568f2596.png",
+        "sha256": "d84e37601ceadf0d20465a521243386c15f18da55e41f4b2cf6a8937f3f35a44",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.585,
+          0.612,
+          0.627
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-cereales-huiles-legumes.png",
+        "source": "/workspace/generated_images/exec-a181658c-5f0d-464e-b18e-c2b1e04bdf97.png",
+        "sha256": "da1d6d1417a72af80dbdabd197e2eb1fcab6ae42831f3dc5fcee0a72ea567a41",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.549,
+          0.571,
+          0.604
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-pates-cereales-completes.png",
+        "source": "/workspace/generated_images/exec-b6d3506a-dd8d-4493-923e-b9f58dc43929.png",
+        "sha256": "e6288385c1a67559f746437f83f7512efe093fed4cf2c2742b6eee48ffd300a7",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.579,
+          0.546,
+          0.576
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-bonbons-chips.png",
+        "source": "/workspace/generated_images/exec-12c0680b-5638-4fc9-b15b-aa7cdfdd5ffc.png",
+        "sha256": "b7bebf6eaede34215d31e3ff798c693435fa9428eacf794741e7db69f652e25b",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.555,
+          0.556,
+          0.578
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-sauces-sodas.png",
+        "source": "/workspace/generated_images/exec-17762c34-325d-445d-b037-f7e33b5e2d3f.png",
+        "sha256": "52fe9369c04e5c813855750e6e2fba1a4cafb51e468ab4d0b9b8f45ad2a9946c",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.538,
+          0.586,
+          0.561
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-poisson-fruits-secs.png",
+        "source": "/workspace/generated_images/exec-3ca948e5-d98e-45ef-8eef-5b747c21df46.png",
+        "sha256": "ca4e40399dd17b87ad1e2218091cb216efe16f4b36dda3ffd0f8b1d44344a3cb",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          252.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.55,
+          0.588,
+          0.624
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-frites-bonbons.png",
+        "source": "/workspace/generated_images/exec-34dfeed8-740d-41c8-8c3a-6301a239b79f.png",
+        "sha256": "b1d0467fb6ec28dc2a7431c8a6b68a1491b2ae5a352a16541711c8bfa11ba1f0",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.569,
+          0.608,
+          0.612
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-aliments-patisseries-sodas.png",
+        "source": "/workspace/generated_images/exec-4822e4e0-2fef-4126-9568-7caee2cebc37.png",
+        "sha256": "d1349e2eef74990b4061968dadde8f29c162d504c6de89ffc97c75f70322df63",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.571,
+          0.585,
+          0.547
+        ],
+        "max_channel_delta_from_reference": 3.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-produits-chocolat-vin-fromages.png",
+        "source": "/workspace/generated_images/exec-bf4f01f6-8e9d-49c5-ba6c-c7cf72422cdb.png",
+        "sha256": "3eaa323cc86aee00d18a2bb6c8cf70cc21aa6004823e179755816d7fc40da0c5",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.59,
+          0.616,
+          0.624
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-produits-cafe-riz-the.png",
+        "source": "/workspace/generated_images/exec-22fd2d9d-06a4-4ac1-9715-3edc546d4c8d.png",
+        "sha256": "17dffa0138c6e490fb70aa0203ce876aab044cdddd098730ff43859002ab7c8b",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.555,
+          0.581,
+          0.621
+        ],
+        "max_channel_delta_from_reference": 1.0,
+        "visually_reviewed": true
+      },
+      {
+        "path": "/lib/images/tcf/qcm-audit/qcm-produits-olives-oranges-dattes.png",
+        "source": "/workspace/generated_images/exec-c7fa42b8-93ff-4b35-97a8-0e79b58ab029.png",
+        "sha256": "43d7c40aa86d97c6fa7f9002651182e8fcdce58c1bc7d7c69c7c22f4ed80a721",
+        "width": 1448,
+        "height": 1086,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.58,
+          0.543,
+          0.594
+        ],
+        "max_channel_delta_from_reference": 2.0,
+        "visually_reviewed": true
+      }
+    ]
+  },
+  "rejected_reuses": [],
+  "reuse_review": "Les images individuelles du catalogue ne réunissent pas toutes les familles et tous les pluriels de ces réponses. Dix-huit compositions complètes sont créées ; les fichiers existants sont conservés.",
+  "editorial_scope": "Trois familles complètes dans les menus, produits et fruits ; distinction chaud/froid et chips/frites ; exemples génériques des catégories sans recette ou origine attribuée à la source, sans changement des textes.",
+  "trios": [
+    {
+      "key": "delf-a1s-ce-034#8",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "La nouvelle cafétéria ouvre ses portes aujourd’hui. Elle se trouve dans le bâtiment C, à côté du secrétariat. On y sert des repas de 12 h à 14 h, du lundi au vendredi. Elle est aussi ouverte pendant les récréations (10 h – 10 h 20 et 16 h – 16 h 20).\nAu menu : salades, sandwichs et boissons fraîches.\nLe mercredi, de 16 h 30 à 18 h, elle accueille l’atelier cuisine.",
+      "source_sha256": "d749e344f891654c27c275a329a53b4dcdb30212db21d1ed0ad04e1ac1a35779",
+      "semantic_sha256": "5dc9f12be792620fa49ce24f0df75a4213b5fdd6c1fa9868fc563586bcdd49d7",
+      "question": {
+        "enonce": "Quels produits sont proposés au menu ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Salades, sandwichs et boissons fraîches",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Pizzas, pâtes et boissons chaudes",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Soupes, viandes et desserts glacés",
+            "correct": false
+          }
+        ],
+        "written_model": "Salades, sandwichs et boissons fraîches"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-menu-salades-sandwichs-boissons-fraiches",
+        "qcm-menu-pizzas-pates-boissons-chaudes",
+        "qcm-menu-soupes-viandes-desserts-glaces"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-menu-salades-sandwichs-boissons-fraiches.png",
+        "/lib/images/tcf/qcm-audit/qcm-menu-pizzas-pates-boissons-chaudes.png",
+        "/lib/images/tcf/qcm-audit/qcm-menu-soupes-viandes-desserts-glaces.png"
+      ],
+      "image_sha256": [
+        "920bd7fe8d78208617e309cd7bbe50771054f8ff5e48aad4a63fe2c3c84e8631",
+        "f79bee62548fd2524b2ae581757e747d92461e7a494fd9f66bf7ed2168c0bf20",
+        "6f9c17eea242c96682b82c933031d8f28b9ef420384b649e13ed8e99e5ac7780"
+      ],
+      "reason": "Le texte intégral de la cafétéria annonce salades, sandwichs et boissons fraîches. Les horaires et l’atelier cuisine n’interviennent pas dans cette réponse. Les deux autres menus restent des distracteurs.",
+      "visual_review": "Chaque choix montre ses trois familles au pluriel : deux salades et deux sandwichs avec boissons glacées ; deux pizzas et deux pâtes avec boissons fumantes ; deux soupes, deux viandes et deux coupes de glace.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2j-ce-007#7",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Exposé 1 — La Suisse et ses vingt-six cantons : montagnes, lacs et collines.\n\nExposé 2 — Les grandes figures de l’histoire et des arts en Suisse : politiques, musiciens, écrivains, acteurs…\n\nExposé 3 — Les spécialités suisses selon les régions : plats, fromages, desserts. Que mange-t-on en Valais ou à Fribourg ?",
+      "source_sha256": "f9bb5dbcb1af234a87f8199a6d4b2fdd86f80b7954365bb4735cfb1f2fed69c5",
+      "semantic_sha256": "d9cf71122bf8b495eda4d19e134b777871eb2781947dc5a913e38e015f91d29f",
+      "question": {
+        "enonce": "Quels produits sont présentés dans l’exposé 3 ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des plats, des fromages et des desserts",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des boissons, des épices et des fruits",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des céréales, des huiles et des légumes",
+            "correct": false
+          }
+        ],
+        "written_model": "Des plats, des fromages et des desserts"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-aliments-plats-fromages-desserts",
+        "qcm-aliments-boissons-epices-fruits",
+        "qcm-aliments-cereales-huiles-legumes"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-aliments-plats-fromages-desserts.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-boissons-epices-fruits.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-cereales-huiles-legumes.png"
+      ],
+      "image_sha256": [
+        "d600dd4767aa0fa24adf1047885d950fd284cbef438832f651a454e54d782e0c",
+        "d84e37601ceadf0d20465a521243386c15f18da55e41f4b2cf6a8937f3f35a44",
+        "da1d6d1417a72af80dbdabd197e2eb1fcab6ae42831f3dc5fcee0a72ea567a41"
+      ],
+      "reason": "Les trois exposés ont été relus : seul le troisième porte sur plats, fromages et desserts. Les images illustrent ces catégories avec des exemples génériques, sans attribuer au texte une recette ou une spécialité nommée.",
+      "visual_review": "Trois familles complètes dans chacun des choix ; préparations salées/fromages/desserts, boissons/épices/fruits, céréales/huiles/légumes sont visibles au pluriel. Aucune association culturelle ou origine géographique n’est nécessaire à la reconnaissance.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-055#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Suivez les conseils des professionnels pour rester calme avant les périodes de tests et d’examens.\n1. Mangez équilibré !\nÉvitez les boissons énergisantes comme les sodas ou le café. Préférez des boissons plus douces comme le thé au citron. Mangez beaucoup de pâtes et de céréales complètes pour avoir de l’énergie. Pensez aussi à manger du poisson de temps en temps et des fruits secs pour rester concentré.\n2. Respirez !\nIl est très important d’apprendre à bien respirer. Asseyez-vous sur une chaise, mettez votre main gauche sur le ventre et respirez en gonflant le ventre.\n3. Faites du sport !\nTennis, gym, volley-ball : choisissez le sport qui vous convient pour rester calme.\n4. Dormez bien !\nLe soir, posez un carnet et un crayon sur votre table de nuit. Si vous avez du mal à dormir, écrivez vos pensées négatives dans le carnet et relisez-les le lendemain matin. Vous pouvez aussi faire des exercices de relaxation pour vous endormir plus facilement.",
+      "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
+      "semantic_sha256": "5c950940e054ef11ecc821061ef28eae24e136132f31f2628dee47ed406d0a2d",
+      "question": {
+        "enonce": "Quels aliments sont recommandés pour avoir de l’énergie ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les pâtes et les céréales complètes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les bonbons et les chips",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les sauces et les sodas",
+            "correct": false
+          }
+        ],
+        "written_model": "Les pâtes et les céréales complètes"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-aliments-pates-cereales-completes",
+        "qcm-aliments-bonbons-chips",
+        "qcm-aliments-sauces-sodas"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-aliments-pates-cereales-completes.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-bonbons-chips.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-sauces-sodas.png"
+      ],
+      "image_sha256": [
+        "e6288385c1a67559f746437f83f7512efe093fed4cf2c2742b6eee48ffd300a7",
+        "b7bebf6eaede34215d31e3ff798c693435fa9428eacf794741e7db69f652e25b",
+        "52fe9369c04e5c813855750e6e2fba1a4cafb51e468ab4d0b9b8f45ad2a9946c"
+      ],
+      "reason": "Le conseil alimentaire du texte complet recommande pâtes et céréales complètes pour l’énergie. Le poisson et les fruits secs concernent la concentration, question suivante ; les deux réponses ne sont pas confondues.",
+      "visual_review": "Pâtes et bols de grains complets/flocons d’avoine ; bonbons et chips minces ; sauces et sodas à bulles. Chaque composition conserve ses deux catégories, sans confondre les chips avec les frites.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-055#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Suivez les conseils des professionnels pour rester calme avant les périodes de tests et d’examens.\n1. Mangez équilibré !\nÉvitez les boissons énergisantes comme les sodas ou le café. Préférez des boissons plus douces comme le thé au citron. Mangez beaucoup de pâtes et de céréales complètes pour avoir de l’énergie. Pensez aussi à manger du poisson de temps en temps et des fruits secs pour rester concentré.\n2. Respirez !\nIl est très important d’apprendre à bien respirer. Asseyez-vous sur une chaise, mettez votre main gauche sur le ventre et respirez en gonflant le ventre.\n3. Faites du sport !\nTennis, gym, volley-ball : choisissez le sport qui vous convient pour rester calme.\n4. Dormez bien !\nLe soir, posez un carnet et un crayon sur votre table de nuit. Si vous avez du mal à dormir, écrivez vos pensées négatives dans le carnet et relisez-les le lendemain matin. Vous pouvez aussi faire des exercices de relaxation pour vous endormir plus facilement.",
+      "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
+      "semantic_sha256": "cc9eab7258233ff5741bed5bea1a047b0092e555dc188df3a441d3067018c23a",
+      "question": {
+        "enonce": "Quels aliments sont conseillés pour rester concentré ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le poisson et les fruits secs",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les frites et les bonbons",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les pâtisseries et les sodas",
+            "correct": false
+          }
+        ],
+        "written_model": "Le poisson et les fruits secs"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-aliments-poisson-fruits-secs",
+        "qcm-aliments-frites-bonbons",
+        "qcm-aliments-patisseries-sodas"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-aliments-poisson-fruits-secs.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-frites-bonbons.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-patisseries-sodas.png"
+      ],
+      "image_sha256": [
+        "ca4e40399dd17b87ad1e2218091cb216efe16f4b36dda3ffd0f8b1d44344a3cb",
+        "b1d0467fb6ec28dc2a7431c8a6b68a1491b2ae5a352a16541711c8bfa11ba1f0",
+        "d1349e2eef74990b4061968dadde8f29c162d504c6de89ffc97c75f70322df63"
+      ],
+      "reason": "Le texte complet associe le poisson et les fruits secs à la concentration ; les autres conseils sur respiration, sport et sommeil ne changent pas cette réponse. Aucune nouvelle allégation de santé n’est ajoutée.",
+      "visual_review": "Poisson entier et fruits séchés/noix ; frites allongées et bonbons ; trois pâtisseries et deux sodas. Les fruits secs sont distincts des fruits frais et les frites des chips.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-067#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Découvrez Vevey, une petite ville suisse pleine de charme au bord du Léman, réputée pour son chocolat, son vin et ses fromages. Nous vous proposons nos idées de sorties.\nVous pouvez vous promener sur le marché, tous les samedis matin, sur la place près de l’église. Vous pouvez aussi vous balader au vieux port. Si vous aimez les promenades, marchez dans le centre historique. Si vous aimez la culture, vous pouvez aller visiter le musée consacré à Charlie Chaplin, qui a vécu près de Vevey.\nPour un séjour paisible, dormez dans une maison d’hôtes de charme près du lac. Contactez Mme Bandeau au 021 555 01 02 pour réserver une chambre.\nSi vous avez envie de découvrir autre chose, ne manquez pas le festival de jazz du 5 au 9 juin et la fête de la châtaigne, les 9 et 10 novembre.",
+      "source_sha256": "212faf92230b1108881f46109b4cbf621aac14265ecc8ba41b0671fe8ef0556e",
+      "semantic_sha256": "710ca2c32e9409199374df70aec2d543e43a3c730fd5577e24cbadf27700e736",
+      "question": {
+        "enonce": "Pour quels produits la ville est-elle notamment réputée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le chocolat, le vin et les fromages",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le café, le riz et le thé",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les olives, les oranges et les dattes",
+            "correct": false
+          }
+        ],
+        "written_model": "Le chocolat, le vin et les fromages"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-produits-chocolat-vin-fromages",
+        "qcm-produits-cafe-riz-the",
+        "qcm-produits-olives-oranges-dattes"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-produits-chocolat-vin-fromages.png",
+        "/lib/images/tcf/qcm-audit/qcm-produits-cafe-riz-the.png",
+        "/lib/images/tcf/qcm-audit/qcm-produits-olives-oranges-dattes.png"
+      ],
+      "image_sha256": [
+        "3eaa323cc86aee00d18a2bb6c8cf70cc21aa6004823e179755816d7fc40da0c5",
+        "17dffa0138c6e490fb70aa0203ce876aab044cdddd098730ff43859002ab7c8b",
+        "43d7c40aa86d97c6fa7f9002651182e8fcdce58c1bc7d7c69c7c22f4ed80a721"
+      ],
+      "reason": "Le texte de Vevey cite explicitement chocolat, vin et fromages. Les informations de visites, dates et réservation ne sont pas illustrées comme critères de réponse. Aucun millésime ou nom de fromage n’est attribué à la source.",
+      "visual_review": "Les trois familles sont présentes dans chaque choix : chocolat/vin/fromages, café/riz/thé, olives/oranges/dattes. Café noir et thé ambré avec sachet se distinguent ; les dattes ne sont pas confondues avec des raisins secs.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s25-co-4#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Bonjour ! Dans notre émission \"Roulez jeunesse\", nous allons parler aujourd'hui de l'alimentation des adolescents. Le repas préféré des adolescents ? Le hamburger-frites, bien sûr ! Mais attention ! Les adolescents mangent aussi d'autres produits. Des pâtes, du riz, du poulet. Johan, bonjour ! Bonjour ! Alors, qu'est-ce que tu aimes manger ? C'est vrai ! J'aime bien le hamburger frites. Mais je n'en mange pas tous les jours. Mon plat préféré, c'est la pizza. Et les légumes, les fruits ? Oui, les légumes aussi. Chez mes parents, on mange tous les jours de la salade. Les fruits, ça dépend. J'aime bien les fraises, les bananes, les oranges, mais je n'aime pas les pommes ni les poires. En fait, je préfère boire des jus de fruits plutôt que de manger des fruits. Et au petit-déjeuner, qu'est-ce que tu prends ? En général, du pain avec du chocolat et un verre de lait. Merci, Johan.",
+      "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
+      "semantic_sha256": "2578cb1e69b893ff0d78841113da1f74156a1c2bd9f97c6f645cd25c79ef74a6",
+      "question": {
+        "enonce": "Quels fruits Johan dit-il aimer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les fraises, les bananes et les oranges",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Les pommes, les poires et les pêches",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Les cerises, les kiwis et les raisins",
+            "correct": false
+          }
+        ],
+        "written_model": "Les fraises, les bananes et les oranges"
+      },
+      "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
+      "audio_sha256": "1a095905ff7087a760f390dd686a5427a7e379bc439c5af26fc310d1a00c8a46",
+      "image_ids": [
+        "qcm-fruits-fraises-bananes-oranges",
+        "qcm-fruits-pommes-poires-peches",
+        "qcm-fruits-cerises-kiwis-raisins"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-fruits-fraises-bananes-oranges.png",
+        "/lib/images/tcf/qcm-audit/qcm-fruits-pommes-poires-peches.png",
+        "/lib/images/tcf/qcm-audit/qcm-fruits-cerises-kiwis-raisins.png"
+      ],
+      "image_sha256": [
+        "b87994153c6cca8d201db07d830ee8bf090e852886f2a223b25e94b861956297",
+        "c6bba807a0f4d7caa733f7a6d4dd389dbb8ae4567626b525638515eca868cd35",
+        "ecb9803faa3e1813a6f8f6ad14c8e2f9390d124c6b6e4f4e7493c77320a3b8cb"
+      ],
+      "reason": "La transcription entière de l’entretien avec Johan a été relue. Il aime fraises, bananes et oranges, n’aime pas pommes et poires, et préfère boire du jus. La réponse vise les fruits nommés ; aucune nouvelle écoute n’est attestée.",
+      "visual_review": "Trois familles de fruits distinctes dans chacun des trois choix, sans verre de jus. Fraises/bananes/oranges ; pommes/poires/pêches avec noyau ; cerises/kiwis ouverts/raisin. Aucun symbole de préférence ou indication de bonne réponse.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ]
+}

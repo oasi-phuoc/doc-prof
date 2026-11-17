@@ -33533,6 +33533,204 @@
       "source_sha256": "6e3a08ff6b10f9d712d19df17376543efd8b0da12bbda30ad017d3ee6fdd689b",
       "reason": "L’annonce du parc Astérix cite lunettes, bijoux et appareils photo à ranger. Les leurres restent limités aux vêtements/chaussures et aux papiers/stylos.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-034",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-menu-salades-sandwichs-boissons-fraiches.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-menu-pizzas-pates-boissons-chaudes.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-menu-soupes-viandes-desserts-glaces.png"
+          }
+        ]
+      },
+      "source_sha256": "d749e344f891654c27c275a329a53b4dcdb30212db21d1ed0ad04e1ac1a35779",
+      "reason": "Le texte intégral de la cafétéria annonce salades, sandwichs et boissons fraîches. Les horaires et l’atelier cuisine n’interviennent pas dans cette réponse. Les deux autres menus restent des distracteurs.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-007",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-plats-fromages-desserts.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-boissons-epices-fruits.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-cereales-huiles-legumes.png"
+          }
+        ]
+      },
+      "source_sha256": "f9bb5dbcb1af234a87f8199a6d4b2fdd86f80b7954365bb4735cfb1f2fed69c5",
+      "reason": "Les trois exposés ont été relus : seul le troisième porte sur plats, fromages et desserts. Les images illustrent ces catégories avec des exemples génériques, sans attribuer au texte une recette ou une spécialité nommée.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-055",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-pates-cereales-completes.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-bonbons-chips.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-sauces-sodas.png"
+          }
+        ]
+      },
+      "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
+      "reason": "Le conseil alimentaire du texte complet recommande pâtes et céréales complètes pour l’énergie. Le poisson et les fruits secs concernent la concentration, question suivante ; les deux réponses ne sont pas confondues.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-055",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-poisson-fruits-secs.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-frites-bonbons.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-aliments-patisseries-sodas.png"
+          }
+        ]
+      },
+      "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
+      "reason": "Le texte complet associe le poisson et les fruits secs à la concentration ; les autres conseils sur respiration, sport et sommeil ne changent pas cette réponse. Aucune nouvelle allégation de santé n’est ajoutée.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-067",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-produits-chocolat-vin-fromages.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-produits-cafe-riz-the.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-produits-olives-oranges-dattes.png"
+          }
+        ]
+      },
+      "source_sha256": "212faf92230b1108881f46109b4cbf621aac14265ecc8ba41b0671fe8ef0556e",
+      "reason": "Le texte de Vevey cite explicitement chocolat, vin et fromages. Les informations de visites, dates et réservation ne sont pas illustrées comme critères de réponse. Aucun millésime ou nom de fromage n’est attribué à la source.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s25-co-4",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-fruits-fraises-bananes-oranges.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-fruits-pommes-poires-peches.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-fruits-cerises-kiwis-raisins.png"
+          }
+        ]
+      },
+      "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
+      "reason": "La transcription entière de l’entretien avec Johan a été relue. Il aime fraises, bananes et oranges, n’aime pas pommes et poires, et préfère boire du jus. La réponse vise les fruits nommés ; aucune nouvelle écoute n’est attestée.",
+      "review_ledger": "docs/tcf/revue-763-20261107.json"
     }
   ]
 }

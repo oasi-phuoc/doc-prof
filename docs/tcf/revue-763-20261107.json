@@ -4603,14 +4603,14 @@
         "Pizzas, pâtes et boissons chaudes",
         "Soupes, viandes et desserts glacés"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "d749e344f891654c27c275a329a53b4dcdb30212db21d1ed0ad04e1ac1a35779",
       "audio": null,
       "review_index": 96,
       "semantic_sha256": "5dc9f12be792620fa49ce24f0df75a4213b5fdd6c1fa9868fc563586bcdd49d7",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le texte intégral de la cafétéria annonce salades, sandwichs et boissons fraîches. Les horaires et l’atelier cuisine n’interviennent pas dans cette réponse. Les deux autres menus restent des distracteurs.",
       "brief": {
         "context_question": "Quels produits sont proposés au menu ?",
         "choices_to_illustrate": [
@@ -4630,6 +4630,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-menu-salades-sandwichs-boissons-fraiches.png",
+        "/lib/images/tcf/qcm-audit/qcm-menu-pizzas-pates-boissons-chaudes.png",
+        "/lib/images/tcf/qcm-audit/qcm-menu-soupes-viandes-desserts-glaces.png"
+      ],
+      "selected_sha256": [
+        "920bd7fe8d78208617e309cd7bbe50771054f8ff5e48aad4a63fe2c3c84e8631",
+        "f79bee62548fd2524b2ae581757e747d92461e7a494fd9f66bf7ed2168c0bf20",
+        "6f9c17eea242c96682b82c933031d8f28b9ef420384b649e13ed8e99e5ac7780"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-fruits-menus-20261117.json",
+        "note": "Chaque choix montre ses trois familles au pluriel : deux salades et deux sandwichs avec boissons glacées ; deux pizzas et deux pâtes avec boissons fumantes ; deux soupes, deux viandes et deux coupes de glace."
       }
     },
     {
@@ -18373,14 +18387,14 @@
         "Des boissons, des épices et des fruits",
         "Des céréales, des huiles et des légumes"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "f9bb5dbcb1af234a87f8199a6d4b2fdd86f80b7954365bb4735cfb1f2fed69c5",
       "audio": null,
       "review_index": 416,
       "semantic_sha256": "d9cf71122bf8b495eda4d19e134b777871eb2781947dc5a913e38e015f91d29f",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Les trois exposés ont été relus : seul le troisième porte sur plats, fromages et desserts. Les images illustrent ces catégories avec des exemples génériques, sans attribuer au texte une recette ou une spécialité nommée.",
       "brief": {
         "context_question": "Quels produits sont présentés dans l’exposé 3 ?",
         "choices_to_illustrate": [
@@ -18400,6 +18414,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-aliments-plats-fromages-desserts.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-boissons-epices-fruits.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-cereales-huiles-legumes.png"
+      ],
+      "selected_sha256": [
+        "d600dd4767aa0fa24adf1047885d950fd284cbef438832f651a454e54d782e0c",
+        "d84e37601ceadf0d20465a521243386c15f18da55e41f4b2cf6a8937f3f35a44",
+        "da1d6d1417a72af80dbdabd197e2eb1fcab6ae42831f3dc5fcee0a72ea567a41"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-fruits-menus-20261117.json",
+        "note": "Trois familles complètes dans chacun des choix ; préparations salées/fromages/desserts, boissons/épices/fruits, céréales/huiles/légumes sont visibles au pluriel. Aucune association culturelle ou origine géographique n’est nécessaire à la reconnaissance."
       }
     },
     {
@@ -22943,14 +22971,14 @@
         "Les bonbons et les chips",
         "Les sauces et les sodas"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
       "audio": null,
       "review_index": 527,
       "semantic_sha256": "5c950940e054ef11ecc821061ef28eae24e136132f31f2628dee47ed406d0a2d",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le conseil alimentaire du texte complet recommande pâtes et céréales complètes pour l’énergie. Le poisson et les fruits secs concernent la concentration, question suivante ; les deux réponses ne sont pas confondues.",
       "brief": {
         "context_question": "Quels aliments sont recommandés pour avoir de l’énergie ?",
         "choices_to_illustrate": [
@@ -22970,6 +22998,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-aliments-pates-cereales-completes.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-bonbons-chips.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-sauces-sodas.png"
+      ],
+      "selected_sha256": [
+        "e6288385c1a67559f746437f83f7512efe093fed4cf2c2742b6eee48ffd300a7",
+        "b7bebf6eaede34215d31e3ff798c693435fa9428eacf794741e7db69f652e25b",
+        "52fe9369c04e5c813855750e6e2fba1a4cafb51e468ab4d0b9b8f45ad2a9946c"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-fruits-menus-20261117.json",
+        "note": "Pâtes et bols de grains complets/flocons d’avoine ; bonbons et chips minces ; sauces et sodas à bulles. Chaque composition conserve ses deux catégories, sans confondre les chips avec les frites."
       }
     },
     {
@@ -22983,14 +23025,14 @@
         "Les frites et les bonbons",
         "Les pâtisseries et les sodas"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
       "audio": null,
       "review_index": 528,
       "semantic_sha256": "cc9eab7258233ff5741bed5bea1a047b0092e555dc188df3a441d3067018c23a",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le texte complet associe le poisson et les fruits secs à la concentration ; les autres conseils sur respiration, sport et sommeil ne changent pas cette réponse. Aucune nouvelle allégation de santé n’est ajoutée.",
       "brief": {
         "context_question": "Quels aliments sont conseillés pour rester concentré ?",
         "choices_to_illustrate": [
@@ -23010,6 +23052,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-aliments-poisson-fruits-secs.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-frites-bonbons.png",
+        "/lib/images/tcf/qcm-audit/qcm-aliments-patisseries-sodas.png"
+      ],
+      "selected_sha256": [
+        "ca4e40399dd17b87ad1e2218091cb216efe16f4b36dda3ffd0f8b1d44344a3cb",
+        "b1d0467fb6ec28dc2a7431c8a6b68a1491b2ae5a352a16541711c8bfa11ba1f0",
+        "d1349e2eef74990b4061968dadde8f29c162d504c6de89ffc97c75f70322df63"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-fruits-menus-20261117.json",
+        "note": "Poisson entier et fruits séchés/noix ; frites allongées et bonbons ; trois pâtisseries et deux sodas. Les fruits secs sont distincts des fruits frais et les frites des chips."
       }
     },
     {
@@ -23719,14 +23775,14 @@
         "Le café, le riz et le thé",
         "Les olives, les oranges et les dattes"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "212faf92230b1108881f46109b4cbf621aac14265ecc8ba41b0671fe8ef0556e",
       "audio": null,
       "review_index": 546,
       "semantic_sha256": "710ca2c32e9409199374df70aec2d543e43a3c730fd5577e24cbadf27700e736",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "Le texte de Vevey cite explicitement chocolat, vin et fromages. Les informations de visites, dates et réservation ne sont pas illustrées comme critères de réponse. Aucun millésime ou nom de fromage n’est attribué à la source.",
       "brief": {
         "context_question": "Pour quels produits la ville est-elle notamment réputée ?",
         "choices_to_illustrate": [
@@ -23746,6 +23802,20 @@
           "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
           "Revue visuelle et corrigé synchronisé avant toute activation."
         ]
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-produits-chocolat-vin-fromages.png",
+        "/lib/images/tcf/qcm-audit/qcm-produits-cafe-riz-the.png",
+        "/lib/images/tcf/qcm-audit/qcm-produits-olives-oranges-dattes.png"
+      ],
+      "selected_sha256": [
+        "3eaa323cc86aee00d18a2bb6c8cf70cc21aa6004823e179755816d7fc40da0c5",
+        "17dffa0138c6e490fb70aa0203ce876aab044cdddd098730ff43859002ab7c8b",
+        "43d7c40aa86d97c6fa7f9002651182e8fcdce58c1bc7d7c69c7c22f4ed80a721"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-fruits-menus-20261117.json",
+        "note": "Les trois familles sont présentes dans chaque choix : chocolat/vin/fromages, café/riz/thé, olives/oranges/dattes. Café noir et thé ambré avec sachet se distinguent ; les dattes ne sont pas confondues avec des raisins secs."
       }
     },
     {
@@ -26754,14 +26824,14 @@
         "Les pommes, les poires et les pêches",
         "Les cerises, les kiwis et les raisins"
       ],
-      "status": "artwork_needed_whole_answer_concepts",
+      "status": "active_reviewed_trio",
       "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
       "audio": "/lib/audio/tcf/co/maison/maison-3.mp3",
       "review_index": 620,
       "semantic_sha256": "2578cb1e69b893ff0d78841113da1f74156a1c2bd9f97c6f645cd25c79ef74a6",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "reason": "La transcription entière de l’entretien avec Johan a été relue. Il aime fraises, bananes et oranges, n’aime pas pommes et poires, et préfère boire du jus. La réponse vise les fruits nommés ; aucune nouvelle écoute n’est attestée.",
       "brief": {
         "context_question": "Quels fruits Johan dit-il aimer ?",
         "choices_to_illustrate": [
@@ -26785,6 +26855,20 @@
       "source_refresh_review": {
         "date": "2026-11-12",
         "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      },
+      "selected_images": [
+        "/lib/images/tcf/qcm-audit/qcm-fruits-fraises-bananes-oranges.png",
+        "/lib/images/tcf/qcm-audit/qcm-fruits-pommes-poires-peches.png",
+        "/lib/images/tcf/qcm-audit/qcm-fruits-cerises-kiwis-raisins.png"
+      ],
+      "selected_sha256": [
+        "b87994153c6cca8d201db07d830ee8bf090e852886f2a223b25e94b861956297",
+        "c6bba807a0f4d7caa733f7a6d4dd389dbb8ae4567626b525638515eca868cd35",
+        "ecb9803faa3e1813a6f8f6ad14c8e2f9390d124c6b6e4f4e7493c77320a3b8cb"
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-fruits-menus-20261117.json",
+        "note": "Trois familles de fruits distinctes dans chacun des trois choix, sans verre de jus. Fraises/bananes/oranges ; pommes/poires/pêches avec noyau ; cerises/kiwis ouverts/raisin. Aucun symbole de préférence ou indication de bonne réponse."
       }
     },
     {
@@ -32096,8 +32180,8 @@
   "summary": {
     "artwork_needed_contextual_locations": 219,
     "keep_text_named_identity_or_location": 39,
-    "active_reviewed_trio": 384,
-    "artwork_needed_whole_answer_concepts": 37,
+    "active_reviewed_trio": 390,
+    "artwork_needed_whole_answer_concepts": 31,
     "keep_text_calendar_or_temporal_scope": 49,
     "keep_text_private_home_identity": 3,
     "keep_text_source_referent_unspecified": 3,
@@ -32109,7 +32193,7 @@
   "review_pending": 0,
   "initial_review_complete": true,
   "method": "763 énoncés et leurs trois choix relus en sept blocs ; liaison exacte aux sources et à leur revue contextuelle antérieure. 87 fichiers réutilisés et 18 minuteurs inspectés pour les trios prêts. Les briefs restants sont un plan de recherche/réalisation, pas des images générées.",
-  "activated_total": 384,
+  "activated_total": 390,
   "retained_text_total": 112,
-  "artwork_pending_total": 267
+  "artwork_pending_total": 261
 }
