@@ -49,10 +49,12 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   const curated = read(root, 'docs/gallery/classement-tcf-20261113.json', {})
   const classifications = new Map((curated.images ?? []).map(image => [image.path, image]))
   const replacementSources = new Map((curated.replacements ?? []).map(image => [image.path, image.original]))
+  const keywordAudit = read(root, 'docs/gallery/audit-mots-cles-tcf-20261117.json', {})
+  const auditsByPath = new Map((keywordAudit.images ?? []).map(image => [image.path, image]))
   const add = (src, data) => {
     if (typeof src !== 'string' || !src.startsWith('/')) return
-    const previous = metadata.get(src) ?? { labels: [], themes: [], types: [], terms: [] }
-    for (const key of ['labels', 'themes', 'types', 'terms']) previous[key].push(...(data[key] ?? []).filter(Boolean))
+    const previous = metadata.get(src) ?? { labels: [], themes: [], types: [], keywords: [] }
+    for (const key of ['labels', 'themes', 'types', 'keywords']) previous[key].push(...(data[key] ?? []).filter(Boolean))
     metadata.set(src, previous)
   }
   const vocabFile = path.join(root, 'src/jeux/vocab-images.ts')
@@ -64,24 +66,24 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     }
   }
   for (const image of read(root, 'docs/tcf/images-generees.json', {}).images ?? []) {
-    add(image.path, { labels: [image.label], types: image.gallery_types, themes: image.gallery_themes, terms: [image.id] })
+    add(image.path, { labels: [image.label], types: image.gallery_types, themes: image.gallery_themes })
   }
   for (const manifest of ['docs/gallery/complements-20261116.json', 'docs/gallery/objets-20261116.json', 'docs/gallery/quotidien-20261116.json']) for (const image of read(root, manifest, {}).images ?? []) {
     if (image.status === 'visually_reviewed') {
-      add(image.path, { labels: [image.label], types: [image.type], themes: [image.type, image.subtype, 'Style TCF validé'], terms: image.aliases ?? [] })
+      add(image.path, { labels: [image.label], types: [image.type], themes: [image.type, image.subtype, 'Style TCF validé'], keywords: image.aliases ?? [] })
       if (image.type === 'Objet') reviewedObjects.add(image.path)
     }
   }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
-    add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], terms: [image.action] })
+    add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], keywords: [image.action] })
   }
   for (const image of read(root, 'docs/grammaire/implementation/media-supports.json', {}).supports ?? []) {
-    add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'], terms: [image.source?.path] })
+    add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'] })
   }
   for(const image of read(root,'docs/gattegno/illustrations-generation-20261114.json',{}).images??[])add(image.path,{labels:[image.label],themes:['Gattegno','Style TCF validé',image.category==='pronom'?'Pronoms personnels':'Verbes d’action'],types:[image.category==='pronom'?'Personnage':'Action']})
-  for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'], terms: [image.genre] })
-  for (const image of read(root, 'src/tcf/object-images.json')) add(image.image, { labels: [image.label], themes: [pretty(image.family ?? '')], types: ['Objet'], terms: image.aliases })
-  for (const image of classifications.values()) add(image.path, { labels: [image.label], themes: image.themes, terms: image.aliases })
+  for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'] })
+  for (const image of read(root, 'src/tcf/object-images.json')) add(image.image, { labels: [image.label], themes: [pretty(image.family ?? '')], types: ['Objet'], keywords: image.aliases })
+  for (const image of classifications.values()) add(image.path, { labels: [image.label], themes: image.themes, keywords: image.aliases })
   const tcf = path.join(root, 'src/tcf/content')
   if (existsSync(tcf)) for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) for (const skill of ['ce', 'co', 'pe', 'po']) {
     for (const ex of read(root, `src/tcf/content/${level}/${skill}.json`)) {
@@ -90,19 +92,18 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
         coSources.set(ex.id, ex)
         if (ex.type_exercice === 'association_images') {
           const levelTheme = level === 'a1-a2' ? 'CO CFR A2' : `CO ${level.toUpperCase()}`
-          const transcriptions = Array.isArray(ex.support?.transcription) ? ex.support.transcription : []
           for (const situation of ex.situations ?? []) {
             if (!situation.image?.startsWith('/')) continue
             associationScenes.add(situation.image)
             add(situation.image, { types: ['Scénario'], themes: [...context, levelTheme, situation.dialogue == null ? 'Leurres CO' : 'Situations CO'],
-              terms: [ex.id, ex.scene, situation.dialogue == null ? '' : transcriptions[situation.dialogue - 1]] })
+              labels: [ex.scene] })
           }
         }
       }
       for (const q of ex.questions ?? []) {
         const texts = new Map((q.choix ?? []).map(c => [c.id, c.texte]))
         for (const c of [...(q.choix ?? []), ...(q.formes?.qcm_image?.choix ?? [])]) {
-          add(c.image, { labels: [c.texte ?? texts.get(c.id)], themes: context, terms: [q.enonce] })
+          add(c.image, { labels: [c.texte ?? texts.get(c.id)], themes: context })
         }
       }
     }
@@ -116,7 +117,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     if (audio !== scene.audio || text !== scene.transcription || createHash('sha256').update(text).digest('hex') !== scene.sourceSha256) continue
     associationScenes.add(scene.image)
     const levelTheme = source.niveau === 'A1-A2' ? 'CO CFR A2' : source.niveau === 'A0-A1' ? 'CO A1' : 'CO B1'
-    add(scene.image, { types: ['Scénario'], themes: [levelTheme, 'Situations CO'], terms: [scene.exercise, source.scene, text] })
+    add(scene.image, { types: ['Scénario'], themes: [levelTheme, 'Situations CO'], labels: [source.scene] })
   }
   for (const reuse of read(root, 'docs/gallery/co-cfr-a2-reuses-20261113.json', {}).reuses ?? []) {
     if (reuse.status !== 'visually_reviewed') continue
@@ -127,11 +128,11 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     const audio = support.audios?.[index] ?? (index === 0 ? support.audio : undefined)
     if (audio !== reuse.audio || typeof text !== 'string' || createHash('sha256').update(text).digest('hex') !== reuse.transcription_sha256) continue
     associationScenes.add(reuse.path)
-    add(reuse.path, { types: ['Scénario'], labels: [reuse.label], themes: ['CO CFR A2', 'Situations CO'], terms: [reuse.source_id, text] })
+    add(reuse.path, { types: ['Scénario'], labels: [reuse.label], themes: ['CO CFR A2', 'Situations CO'] })
   }
   return files.filter(file => !['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))).map(file => {
     const src = file.startsWith('public/') ? '/' + file.slice(7) : '/' + file
-    const meta = metadata.get(src) ?? { labels: [], themes: [], types: [], terms: [] }
+    const meta = metadata.get(src) ?? { labels: [], themes: [], types: [], keywords: [] }
     const stem = path.basename(file, path.extname(file)).replace(/^(?:extension573|co\d+|co-personnages-\d+|vocab)-/, '').replace(/-dessine[es]?$/, '')
     let label = meta.labels.find(Boolean) ?? pretty(stem)
     if (/^\d+$/.test(label) && file.includes('/logique/')) label = `${pretty(file.split('/logique/')[1].split('/')[0])} — ${label}`
@@ -174,7 +175,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     if (!types.length) types.push('Illustration')
     if (/\/vocabulaire\/sante\//.test(file) && /^(?:allergie|blessure|brulure|coupure|douleur|fievre|fracture|grippe|infection|mal de tete|mal de ventre|malade|nausee|rhume|toux|vomissement|vertige)$/.test(norm(label))) types = ['Maladie']
     const origin = replacementSources.get(src) ?? src
-    const sourcePaths = [file, origin, ...meta.terms.filter(term => term.startsWith('/'))].join(' ')
+    const sourcePaths = [file, origin, ...meta.keywords.filter(term => term.startsWith('/'))].join(' ')
     if (/\/logique\//.test(file)) types = ['Logique']
     else if (/\/pays\/|\/presenter\/(?!portrait-)|nationalit|drapeau/.test(norm(sourcePaths))) types = ['Pays et nationalité']
     else if (/\/corps\//.test(origin)) types = ['Partie du corps']
@@ -188,7 +189,19 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     const subject = norm([label, ...meta.labels, ...meta.themes, file].join(' '))
     for (const [theme, rule] of RULES) if (rule.test(subject)) themes.add(theme)
     if (!themes.size) themes.add(collection === 'Documentation et captures' ? 'Documentation' : collection === 'Logique' ? 'Formes et logique' : 'Autres images')
-    return { id: file, src, label, themes: gallerySubjectThemes([...themes], types), types: [...new Set(types)], collection, keywords: [...new Set(meta.labels.concat(meta.terms))].join(' '), bytes: statSync(path.join(root, file)).size }
+    const audit = auditsByPath.get(src)
+    if (audit?.status === 'visually_reviewed') {
+      const actualHash = createHash('sha256').update(readFileSync(path.join(root, file))).digest('hex')
+      if (actualHash !== audit.sha256) throw new Error(`L’image ${src} a changé depuis sa révision des mots-clés.`)
+      if (typeof audit.visual_label !== 'string' || !Array.isArray(audit.visual_keywords) || audit.visual_keywords.some(keyword => typeof keyword !== 'string' || !keyword.trim())) {
+        throw new Error(`La révision des mots-clés de ${src} doit contenir un titre et une liste de mots-clés valides.`)
+      }
+      label = audit.visual_label
+    }
+    const keywords = audit?.status === 'visually_reviewed'
+      ? [...new Set(audit.visual_keywords)].join(' ')
+      : [...new Set([...meta.labels, ...meta.keywords, pretty(stem)])].filter(Boolean).join(' ')
+    return { id: file, src, label, themes: gallerySubjectThemes([...themes], types), types: [...new Set(types)], collection, keywords, bytes: statSync(path.join(root, file)).size }
   }).sort((a, b) => Number(/^(?:\d|[a-f\d]{12}$)/i.test(a.label)) - Number(/^(?:\d|[a-f\d]{12}$)/i.test(b.label)) || a.label.localeCompare(b.label, 'fr') || a.id.localeCompare(b.id))
 }
 
@@ -200,6 +213,25 @@ export function generateImageGallery(root) {
   writeChanged(path.join(out, 'catalog.generated.json'), JSON.stringify(images) + '\n')
   const imports = images.filter(image => !image.id.startsWith('public/'))
   writeChanged(path.join(out, 'assets.generated.ts'), '// Generated by scripts/image-gallery-catalog.mjs.\n' + imports.map((image, i) => `import asset${i} from ${JSON.stringify('/' + image.id + '?url')}`).join('\n') + '\nexport const galleryAssetUrls: Record<string, string> = {\n' + imports.map((image, i) => `  ${JSON.stringify(image.id)}: asset${i},`).join('\n') + '\n}\n')
+  const auditPath = path.join(root, 'docs/gallery/audit-mots-cles-tcf-20261117.json')
+  const audit = read(root, 'docs/gallery/audit-mots-cles-tcf-20261117.json', null)
+  if (audit) {
+    const catalogByPath = new Map(images.map(image => [image.src, image]))
+    const progress = { total: audit.images.length, visually_reviewed: 0, pending: 0, not_started: 0, by_collection: {} }
+    for (const entry of audit.images) {
+      if (!['not_started', 'pending', 'visually_reviewed'].includes(entry.status)) {
+        throw new Error(`Statut d’audit invalide pour ${entry.path} : ${entry.status}`)
+      }
+      const current = catalogByPath.get(entry.path)
+      if (!current) throw new Error(`Image absente du catalogue d’audit : ${entry.path}`)
+      entry.current_label = current.label
+      entry.current_keywords = current.keywords
+      progress[entry.status] += 1
+      progress.by_collection[entry.collection] = (progress.by_collection[entry.collection] ?? 0) + 1
+    }
+    audit.progress = progress
+    writeChanged(auditPath, JSON.stringify(audit, null, 2) + '\n')
+  }
   return images.length
 }
 
