@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Contrôle du 17 novembre : les 66 derniers ajouts au catalogue sont examinés**, avec 34 fonds d’objets harmonisés à l’ivoire validé, dix fonds déjà conformes et 22 décors de scènes conservés. Quatre titres sont corrigés d’après les sujets visibles. Les chemins restent identiques. Le contrôle des objets et véhicules sélectionnés dans les questions reste une tâche distincte à inventorier. [Rapport et preuves](../gallery/correction-fonds-ajouts-20261117.md).
+
 **Suite du 17 novembre : six trios fruits, menus et aliments activés**, avec dix-huit PNG natifs sur le fond ivoire validé. Un A1 et cinq A2 ; textes, réponses et audios conservés. Restent **261 trios historiques** et **380 candidats DELF Actif**. [Rapport actuel et reste à faire](trios-fruits-menus-20261117.md).
 
 **Suite du 17 novembre : six trios piscine, loisirs et courrier activés**, avec quinze PNG natifs et trois réemplois. La recherche du catalogue est corrigée pour ne plus associer les horloges aux thèmes de tous leurs exercices. Restent **267 trios historiques** et **380 candidats DELF Actif**. [Rapport actuel et reste à faire](trios-piscine-loisirs-courrier-20261117.md).

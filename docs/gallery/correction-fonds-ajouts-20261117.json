@@ -1,0 +1,4716 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "6c86ed7706c6c7790e66491a56ea4f9ad2215a94",
+  "original_import_commit": "16f77c72dd3ef77b9f5c86980d70833783a89dcb",
+  "reference": "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+  "reference_corner_median_rgb": [
+    253,
+    242,
+    225
+  ],
+  "method": "Examen visuel des 66 fichiers ; mesure du coin supérieur gauche 40×40 pour les 44 objets isolés. Les 22 scènes conservent leur décor. Les reprises utilisent les deux images réelles : sujet initial et référence ivoire.",
+  "summary": {
+    "checked": 66,
+    "isolated_objects": 44,
+    "corrected": 34,
+    "existing_ivory_retained": 10,
+    "scene_backgrounds_retained": 22,
+    "metadata_labels_corrected": 4,
+    "imagegen_calls": 35,
+    "rejected_generations": 1,
+    "catalogue_paths_preserved": true,
+    "lossless_rgb_pixels_identical_to_native_png": true
+  },
+  "metadata_corrections": [
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/remuer-une-preparation.webp",
+      "previous_label": "Remuer une préparation dans une casserole",
+      "label": "Servir une soupe avec une louche",
+      "reason": "Titre corrigé d’après le contenu effectivement visible, sans renommer le fichier."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-au-couteau.webp",
+      "previous_label": "Couper des légumes au couteau",
+      "label": "Servir une soupe dans un bol",
+      "reason": "Titre corrigé d’après le contenu effectivement visible, sans renommer le fichier."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/servir-la-soupe-a-la-louche.webp",
+      "previous_label": "Servir la soupe à la louche",
+      "label": "Couper un concombre sur une planche",
+      "reason": "Titre corrigé d’après le contenu effectivement visible, sans renommer le fichier."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-violet-et-vert.webp",
+      "previous_label": "Chou-rave violet et feuilles vertes",
+      "label": "Chou-rave vert et une tranche",
+      "reason": "Titre corrigé d’après le contenu effectivement visible, sans renommer le fichier."
+    }
+  ],
+  "images": [
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/cuire-a-la-poele.webp",
+      "label": "Faire cuire une préparation à la poêle",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/cuire-a-la-poele.webp",
+        "label": "Faire cuire une préparation à la poêle",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "55d576caedd61de5397c49bc3537562968b31c4a49d726e854a49de0a72754b4",
+        "corner_median_rgb": [
+          243.0,
+          239.0,
+          199.0
+        ],
+        "corner_std_rgb": [
+          17.286,
+          22.669,
+          35.16
+        ],
+        "all_corner_medians_rgb": [
+          [
+            243.0,
+            239.0,
+            199.0
+          ],
+          [
+            151.5,
+            146.0,
+            10.0
+          ],
+          [
+            242.0,
+            194.5,
+            162.0
+          ],
+          [
+            87.0,
+            96.0,
+            2.0
+          ]
+        ],
+        "delta": 26.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "55d576caedd61de5397c49bc3537562968b31c4a49d726e854a49de0a72754b4",
+        "bytes": 1789915,
+        "corner_median_rgb": [
+          243.0,
+          239.0,
+          199.0
+        ],
+        "corner_std_rgb": [
+          17.286,
+          22.669,
+          35.16
+        ],
+        "max_channel_delta_from_reference": 26.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/fouetter-une-preparation.webp",
+      "label": "Fouetter une préparation dans un bol",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/fouetter-une-preparation.webp",
+        "label": "Fouetter une préparation dans un bol",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c3f05b3de0e6153f2f40a9f297c6c5f69fc58b23aee8eb83fc3cef1e564b1e04",
+        "corner_median_rgb": [
+          212.0,
+          211.0,
+          146.0
+        ],
+        "corner_std_rgb": [
+          36.384,
+          46.644,
+          40.811
+        ],
+        "all_corner_medians_rgb": [
+          [
+            212.0,
+            211.0,
+            146.0
+          ],
+          [
+            130.5,
+            130.0,
+            5.0
+          ],
+          [
+            253.0,
+            184.0,
+            116.0
+          ],
+          [
+            238.0,
+            181.0,
+            138.0
+          ]
+        ],
+        "delta": 79.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c3f05b3de0e6153f2f40a9f297c6c5f69fc58b23aee8eb83fc3cef1e564b1e04",
+        "bytes": 1732195,
+        "corner_median_rgb": [
+          212.0,
+          211.0,
+          146.0
+        ],
+        "corner_std_rgb": [
+          36.384,
+          46.644,
+          40.811
+        ],
+        "max_channel_delta_from_reference": 79.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/remuer-une-preparation.webp",
+      "label": "Servir une soupe avec une louche",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/remuer-une-preparation.webp",
+        "label": "Remuer une préparation dans une casserole",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "96098b65767f1f361253f6cd6fcaed55e3d81c28186cfcaecb34c5a81d76437b",
+        "corner_median_rgb": [
+          216.0,
+          215.0,
+          144.0
+        ],
+        "corner_std_rgb": [
+          39.165,
+          51.869,
+          45.062
+        ],
+        "all_corner_medians_rgb": [
+          [
+            216.0,
+            215.0,
+            144.0
+          ],
+          [
+            160.0,
+            137.0,
+            52.0
+          ],
+          [
+            209.0,
+            118.5,
+            54.0
+          ],
+          [
+            233.5,
+            177.5,
+            129.0
+          ]
+        ],
+        "delta": 81.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "96098b65767f1f361253f6cd6fcaed55e3d81c28186cfcaecb34c5a81d76437b",
+        "bytes": 1795094,
+        "corner_median_rgb": [
+          216.0,
+          215.0,
+          144.0
+        ],
+        "corner_std_rgb": [
+          39.165,
+          51.869,
+          45.062
+        ],
+        "max_channel_delta_from_reference": 81.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/egoutter-des-pates.webp",
+      "label": "Égoutter des pâtes dans une passoire",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/egoutter-des-pates.webp",
+        "label": "Égoutter des pâtes dans une passoire",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "fcdd6ffc91764f4668b6091f75c2bf875790f2b9ef0a2a1c8a7366dc5d4671a3",
+        "corner_median_rgb": [
+          238.0,
+          234.0,
+          163.0
+        ],
+        "corner_std_rgb": [
+          29.677,
+          39.347,
+          41.582
+        ],
+        "all_corner_medians_rgb": [
+          [
+            238.0,
+            234.0,
+            163.0
+          ],
+          [
+            246.0,
+            194.0,
+            148.0
+          ],
+          [
+            252.0,
+            221.0,
+            193.0
+          ],
+          [
+            224.0,
+            135.0,
+            68.0
+          ]
+        ],
+        "delta": 62.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "fcdd6ffc91764f4668b6091f75c2bf875790f2b9ef0a2a1c8a7366dc5d4671a3",
+        "bytes": 1817471,
+        "corner_median_rgb": [
+          238.0,
+          234.0,
+          163.0
+        ],
+        "corner_std_rgb": [
+          29.677,
+          39.347,
+          41.582
+        ],
+        "max_channel_delta_from_reference": 62.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/rapper-du-fromage.webp",
+      "label": "Râper du fromage dans un bol",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/rapper-du-fromage.webp",
+        "label": "Râper du fromage dans un bol",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "419bf6a30f28761c2f63871ec60aa66ebfd4532f105489b26b0e307530c65a02",
+        "corner_median_rgb": [
+          219.0,
+          221.0,
+          172.0
+        ],
+        "corner_std_rgb": [
+          44.074,
+          51.668,
+          44.856
+        ],
+        "all_corner_medians_rgb": [
+          [
+            219.0,
+            221.0,
+            172.0
+          ],
+          [
+            150.0,
+            139.0,
+            52.0
+          ],
+          [
+            181.0,
+            100.0,
+            44.0
+          ],
+          [
+            224.0,
+            169.0,
+            125.0
+          ]
+        ],
+        "delta": 53.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "419bf6a30f28761c2f63871ec60aa66ebfd4532f105489b26b0e307530c65a02",
+        "bytes": 1809150,
+        "corner_median_rgb": [
+          219.0,
+          221.0,
+          172.0
+        ],
+        "corner_std_rgb": [
+          44.074,
+          51.668,
+          44.856
+        ],
+        "max_channel_delta_from_reference": 53.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/eplucher-des-carottes.webp",
+      "label": "Éplucher des carottes",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/eplucher-des-carottes.webp",
+        "label": "Éplucher des carottes",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "4353cbb099205f33b6ddb77f0999632b9f24391ba29510299552090070d1186b",
+        "corner_median_rgb": [
+          242.0,
+          246.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          17.977,
+          17.746,
+          42.789
+        ],
+        "all_corner_medians_rgb": [
+          [
+            242.0,
+            246.0,
+            230.0
+          ],
+          [
+            248.0,
+            209.0,
+            167.0
+          ],
+          [
+            248.0,
+            206.0,
+            167.0
+          ],
+          [
+            226.0,
+            136.0,
+            64.0
+          ]
+        ],
+        "delta": 11.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "4353cbb099205f33b6ddb77f0999632b9f24391ba29510299552090070d1186b",
+        "bytes": 1806016,
+        "corner_median_rgb": [
+          242.0,
+          246.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          17.977,
+          17.746,
+          42.789
+        ],
+        "max_channel_delta_from_reference": 11.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/ouvrir-une-conserve.webp",
+      "label": "Ouvrir une boîte de conserve",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/ouvrir-une-conserve.webp",
+        "label": "Ouvrir une boîte de conserve",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "8cf7e4fe6e8ed5a968e9deeb45eb29ef81bbf480a7bc8f67f267681c824361e2",
+        "corner_median_rgb": [
+          220.0,
+          215.0,
+          144.0
+        ],
+        "corner_std_rgb": [
+          29.302,
+          38.456,
+          37.323
+        ],
+        "all_corner_medians_rgb": [
+          [
+            220.0,
+            215.0,
+            144.0
+          ],
+          [
+            155.0,
+            144.0,
+            5.0
+          ],
+          [
+            241.0,
+            194.0,
+            157.0
+          ],
+          [
+            239.0,
+            147.0,
+            69.0
+          ]
+        ],
+        "delta": 81.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "8cf7e4fe6e8ed5a968e9deeb45eb29ef81bbf480a7bc8f67f267681c824361e2",
+        "bytes": 1801127,
+        "corner_median_rgb": [
+          220.0,
+          215.0,
+          144.0
+        ],
+        "corner_std_rgb": [
+          29.302,
+          38.456,
+          37.323
+        ],
+        "max_channel_delta_from_reference": 81.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/ouvrir-une-bouteille.webp",
+      "label": "Ouvrir une bouteille avec un tire-bouchon",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/ouvrir-une-bouteille.webp",
+        "label": "Ouvrir une bouteille avec un tire-bouchon",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "35de577d38b2069df5f82ada78438713e3868db320e3bdad2ba7072bde911f39",
+        "corner_median_rgb": [
+          238.0,
+          231.5,
+          183.0
+        ],
+        "corner_std_rgb": [
+          37.464,
+          49.667,
+          50.408
+        ],
+        "all_corner_medians_rgb": [
+          [
+            238.0,
+            231.5,
+            183.0
+          ],
+          [
+            239.0,
+            191.0,
+            150.0
+          ],
+          [
+            110.0,
+            106.5,
+            129.0
+          ],
+          [
+            225.0,
+            168.0,
+            124.0
+          ]
+        ],
+        "delta": 42.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "35de577d38b2069df5f82ada78438713e3868db320e3bdad2ba7072bde911f39",
+        "bytes": 1735375,
+        "corner_median_rgb": [
+          238.0,
+          231.5,
+          183.0
+        ],
+        "corner_std_rgb": [
+          37.464,
+          49.667,
+          50.408
+        ],
+        "max_channel_delta_from_reference": 42.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/etaler-la-pate-au-rouleau.webp",
+      "label": "Étaler la pâte au rouleau",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/etaler-la-pate-au-rouleau.webp",
+        "label": "Étaler la pâte au rouleau",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "887cea64efb3f56326c851de97e4269c2cc6a678280b7307caa2de636a435ea8",
+        "corner_median_rgb": [
+          234.0,
+          234.0,
+          166.0
+        ],
+        "corner_std_rgb": [
+          29.41,
+          36.015,
+          43.289
+        ],
+        "all_corner_medians_rgb": [
+          [
+            234.0,
+            234.0,
+            166.0
+          ],
+          [
+            251.0,
+            205.0,
+            165.0
+          ],
+          [
+            214.0,
+            126.0,
+            64.0
+          ],
+          [
+            247.0,
+            195.0,
+            150.0
+          ]
+        ],
+        "delta": 59.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "887cea64efb3f56326c851de97e4269c2cc6a678280b7307caa2de636a435ea8",
+        "bytes": 1789675,
+        "corner_median_rgb": [
+          234.0,
+          234.0,
+          166.0
+        ],
+        "corner_std_rgb": [
+          29.41,
+          36.015,
+          43.289
+        ],
+        "max_channel_delta_from_reference": 59.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/verser-la-pate-dans-un-moule.webp",
+      "label": "Verser la pâte dans un moule",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/verser-la-pate-dans-un-moule.webp",
+        "label": "Verser la pâte dans un moule",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "cf24fd3c1ad24465830577dac602a46f7062191bc20e9bee5b49537f85262820",
+        "corner_median_rgb": [
+          226.0,
+          232.0,
+          163.0
+        ],
+        "corner_std_rgb": [
+          12.973,
+          10.287,
+          44.793
+        ],
+        "all_corner_medians_rgb": [
+          [
+            226.0,
+            232.0,
+            163.0
+          ],
+          [
+            195.5,
+            161.0,
+            98.5
+          ],
+          [
+            238.0,
+            165.0,
+            106.0
+          ],
+          [
+            229.0,
+            178.0,
+            136.0
+          ]
+        ],
+        "delta": 62.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "cf24fd3c1ad24465830577dac602a46f7062191bc20e9bee5b49537f85262820",
+        "bytes": 1819781,
+        "corner_median_rgb": [
+          226.0,
+          232.0,
+          163.0
+        ],
+        "corner_std_rgb": [
+          12.973,
+          10.287,
+          44.793
+        ],
+        "max_channel_delta_from_reference": 62.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-au-lavabo.webp",
+      "label": "Se brosser les dents au lavabo",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-au-lavabo.webp",
+        "label": "Se brosser les dents au lavabo",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "129bb75cdaa64bd3fb8352037d6d35e977619456af5b4f48f14668de7fa94015",
+        "corner_median_rgb": [
+          253.0,
+          220.0,
+          187.0
+        ],
+        "corner_std_rgb": [
+          45.243,
+          42.242,
+          38.715
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            220.0,
+            187.0
+          ],
+          [
+            205.0,
+            176.0,
+            152.0
+          ],
+          [
+            204.0,
+            161.0,
+            133.0
+          ],
+          [
+            188.0,
+            162.0,
+            139.0
+          ]
+        ],
+        "delta": 38.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "129bb75cdaa64bd3fb8352037d6d35e977619456af5b4f48f14668de7fa94015",
+        "bytes": 1702758,
+        "corner_median_rgb": [
+          253.0,
+          220.0,
+          187.0
+        ],
+        "corner_std_rgb": [
+          45.243,
+          42.242,
+          38.715
+        ],
+        "max_channel_delta_from_reference": 38.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-raser-devant-le-lavabo.webp",
+      "label": "Se raser devant le lavabo",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-raser-devant-le-lavabo.webp",
+        "label": "Se raser devant le lavabo",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "784f6da573bd51fb6fbf429a6bdd171f1adde1a4f021b2f315b0319da67e91bb",
+        "corner_median_rgb": [
+          120.0,
+          131.0,
+          35.0
+        ],
+        "corner_std_rgb": [
+          62.755,
+          36.076,
+          73.383
+        ],
+        "all_corner_medians_rgb": [
+          [
+            120.0,
+            131.0,
+            35.0
+          ],
+          [
+            251.0,
+            237.0,
+            131.0
+          ],
+          [
+            223.0,
+            171.5,
+            122.0
+          ],
+          [
+            211.0,
+            128.0,
+            55.0
+          ]
+        ],
+        "delta": 190.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "784f6da573bd51fb6fbf429a6bdd171f1adde1a4f021b2f315b0319da67e91bb",
+        "bytes": 1742576,
+        "corner_median_rgb": [
+          120.0,
+          131.0,
+          35.0
+        ],
+        "corner_std_rgb": [
+          62.755,
+          36.076,
+          73.383
+        ],
+        "max_channel_delta_from_reference": 190.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-devant-le-miroir.webp",
+      "label": "Se brosser les dents devant le miroir",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-devant-le-miroir.webp",
+        "label": "Se brosser les dents devant le miroir",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "96a2722d5cfe2e8b18fbf9344bb2e460859e429bdd63d516d17971384a640eeb",
+        "corner_median_rgb": [
+          239.0,
+          199.0,
+          161.0
+        ],
+        "corner_std_rgb": [
+          58.129,
+          36.298,
+          73.197
+        ],
+        "all_corner_medians_rgb": [
+          [
+            239.0,
+            199.0,
+            161.0
+          ],
+          [
+            252.0,
+            237.0,
+            221.0
+          ],
+          [
+            218.0,
+            132.0,
+            65.0
+          ],
+          [
+            235.0,
+            176.0,
+            127.0
+          ]
+        ],
+        "delta": 64.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "96a2722d5cfe2e8b18fbf9344bb2e460859e429bdd63d516d17971384a640eeb",
+        "bytes": 1752536,
+        "corner_median_rgb": [
+          239.0,
+          199.0,
+          161.0
+        ],
+        "corner_std_rgb": [
+          58.129,
+          36.298,
+          73.197
+        ],
+        "max_channel_delta_from_reference": 64.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-dans-la-salle-de-bain.webp",
+      "label": "Se brosser les dents dans la salle de bain",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-dans-la-salle-de-bain.webp",
+        "label": "Se brosser les dents dans la salle de bain",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "037250b1647d1dcbc5614597a543534d474753ce3f522df7d026101f93252009",
+        "corner_median_rgb": [
+          207.0,
+          138.0,
+          91.0
+        ],
+        "corner_std_rgb": [
+          18.405,
+          34.688,
+          52.579
+        ],
+        "all_corner_medians_rgb": [
+          [
+            207.0,
+            138.0,
+            91.0
+          ],
+          [
+            239.0,
+            164.0,
+            105.0
+          ],
+          [
+            252.0,
+            234.0,
+            214.0
+          ],
+          [
+            213.0,
+            152.0,
+            95.0
+          ]
+        ],
+        "delta": 134.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "037250b1647d1dcbc5614597a543534d474753ce3f522df7d026101f93252009",
+        "bytes": 1754533,
+        "corner_median_rgb": [
+          207.0,
+          138.0,
+          91.0
+        ],
+        "corner_std_rgb": [
+          18.405,
+          34.688,
+          52.579
+        ],
+        "max_channel_delta_from_reference": 134.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-avec-le-sourire.webp",
+      "label": "Se brosser les dents avec le sourire",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-avec-le-sourire.webp",
+        "label": "Se brosser les dents avec le sourire",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "089a1b0623d364c1c703031c207c06d7519231684d8e957b87d6ca5a3528389a",
+        "corner_median_rgb": [
+          188.0,
+          163.0,
+          133.0
+        ],
+        "corner_std_rgb": [
+          33.822,
+          28.067,
+          39.112
+        ],
+        "all_corner_medians_rgb": [
+          [
+            188.0,
+            163.0,
+            133.0
+          ],
+          [
+            166.0,
+            121.0,
+            92.0
+          ],
+          [
+            204.0,
+            161.0,
+            129.0
+          ],
+          [
+            231.0,
+            217.0,
+            212.0
+          ]
+        ],
+        "delta": 92.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "089a1b0623d364c1c703031c207c06d7519231684d8e957b87d6ca5a3528389a",
+        "bytes": 1776746,
+        "corner_median_rgb": [
+          188.0,
+          163.0,
+          133.0
+        ],
+        "corner_std_rgb": [
+          33.822,
+          28.067,
+          39.112
+        ],
+        "max_channel_delta_from_reference": 92.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-dans-la-cuisine.webp",
+      "label": "Couper des légumes dans la cuisine",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-dans-la-cuisine.webp",
+        "label": "Couper des légumes dans la cuisine",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "e44ba5c302315ff53d0edfbdd9237aeef83457918a12bb0967564e778f6089ac",
+        "corner_median_rgb": [
+          233.0,
+          231.0,
+          167.0
+        ],
+        "corner_std_rgb": [
+          30.602,
+          36.26,
+          43.013
+        ],
+        "all_corner_medians_rgb": [
+          [
+            233.0,
+            231.0,
+            167.0
+          ],
+          [
+            135.0,
+            132.0,
+            9.0
+          ],
+          [
+            225.0,
+            167.0,
+            120.0
+          ],
+          [
+            246.0,
+            200.5,
+            160.0
+          ]
+        ],
+        "delta": 58.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "e44ba5c302315ff53d0edfbdd9237aeef83457918a12bb0967564e778f6089ac",
+        "bytes": 1755798,
+        "corner_median_rgb": [
+          233.0,
+          231.0,
+          167.0
+        ],
+        "corner_std_rgb": [
+          30.602,
+          36.26,
+          43.013
+        ],
+        "max_channel_delta_from_reference": 58.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-au-couteau.webp",
+      "label": "Servir une soupe dans un bol",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-au-couteau.webp",
+        "label": "Couper des légumes au couteau",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "508b0186d279d76ac599bab016dd2573175056004e62081fd94949ecafbf44a2",
+        "corner_median_rgb": [
+          241.0,
+          229.0,
+          169.0
+        ],
+        "corner_std_rgb": [
+          33.618,
+          39.605,
+          40.701
+        ],
+        "all_corner_medians_rgb": [
+          [
+            241.0,
+            229.0,
+            169.0
+          ],
+          [
+            147.0,
+            137.0,
+            12.0
+          ],
+          [
+            252.0,
+            193.0,
+            137.0
+          ],
+          [
+            190.0,
+            104.0,
+            33.0
+          ]
+        ],
+        "delta": 56.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "508b0186d279d76ac599bab016dd2573175056004e62081fd94949ecafbf44a2",
+        "bytes": 1523824,
+        "corner_median_rgb": [
+          241.0,
+          229.0,
+          169.0
+        ],
+        "corner_std_rgb": [
+          33.618,
+          39.605,
+          40.701
+        ],
+        "max_channel_delta_from_reference": 56.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/decouper-des-legumes-sur-une-planche.webp",
+      "label": "Découper des légumes sur une planche",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/decouper-des-legumes-sur-une-planche.webp",
+        "label": "Découper des légumes sur une planche",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c6f60264ca7450f1924c176973ab7d651e4a4f96e536795e74b4bebf1228a263",
+        "corner_median_rgb": [
+          233.0,
+          231.0,
+          168.0
+        ],
+        "corner_std_rgb": [
+          30.765,
+          36.133,
+          42.336
+        ],
+        "all_corner_medians_rgb": [
+          [
+            233.0,
+            231.0,
+            168.0
+          ],
+          [
+            135.0,
+            132.0,
+            12.0
+          ],
+          [
+            224.0,
+            167.5,
+            120.0
+          ],
+          [
+            244.0,
+            202.0,
+            162.0
+          ]
+        ],
+        "delta": 57.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c6f60264ca7450f1924c176973ab7d651e4a4f96e536795e74b4bebf1228a263",
+        "bytes": 1579752,
+        "corner_median_rgb": [
+          233.0,
+          231.0,
+          168.0
+        ],
+        "corner_std_rgb": [
+          30.765,
+          36.133,
+          42.336
+        ],
+        "max_channel_delta_from_reference": 57.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/servir-la-soupe-a-la-louche.webp",
+      "label": "Couper un concombre sur une planche",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/servir-la-soupe-a-la-louche.webp",
+        "label": "Servir la soupe à la louche",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "d442ae48bb67f04f55b6f732604e589a9e2c63fd42ad321255065ff61352e97c",
+        "corner_median_rgb": [
+          235.0,
+          238.0,
+          197.0
+        ],
+        "corner_std_rgb": [
+          10.453,
+          8.859,
+          36.416
+        ],
+        "all_corner_medians_rgb": [
+          [
+            235.0,
+            238.0,
+            197.0
+          ],
+          [
+            168.0,
+            152.0,
+            15.0
+          ],
+          [
+            111.0,
+            117.0,
+            12.0
+          ],
+          [
+            234.0,
+            177.0,
+            138.5
+          ]
+        ],
+        "delta": 28.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "d442ae48bb67f04f55b6f732604e589a9e2c63fd42ad321255065ff61352e97c",
+        "bytes": 1610699,
+        "corner_median_rgb": [
+          235.0,
+          238.0,
+          197.0
+        ],
+        "corner_std_rgb": [
+          10.453,
+          8.859,
+          36.416
+        ],
+        "max_channel_delta_from_reference": 28.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-variante.webp",
+      "label": "Se brosser les dents devant le miroir",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/se-brosser-les-dents-variante.webp",
+        "label": "Se brosser les dents devant le miroir",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "221f2290e18014585a47f55fdf1d0d72592e0ea404b3f1228309962f6e9e4d3e",
+        "corner_median_rgb": [
+          238.0,
+          200.0,
+          161.5
+        ],
+        "corner_std_rgb": [
+          57.803,
+          36.693,
+          73.029
+        ],
+        "all_corner_medians_rgb": [
+          [
+            238.0,
+            200.0,
+            161.5
+          ],
+          [
+            252.0,
+            238.0,
+            222.0
+          ],
+          [
+            218.0,
+            132.0,
+            65.0
+          ],
+          [
+            235.0,
+            176.0,
+            127.0
+          ]
+        ],
+        "delta": 63.5
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "221f2290e18014585a47f55fdf1d0d72592e0ea404b3f1228309962f6e9e4d3e",
+        "bytes": 1594743,
+        "corner_median_rgb": [
+          238.0,
+          200.0,
+          161.5
+        ],
+        "corner_std_rgb": [
+          57.803,
+          36.693,
+          73.029
+        ],
+        "max_channel_delta_from_reference": 63.5
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-au-couteau-variante.webp",
+      "label": "Couper des légumes sur une planche",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-au-couteau-variante.webp",
+        "label": "Couper des légumes sur une planche",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "13d1b5947f7738ce1ce4af73dfcc20e6871a7fad90cd01f9131234860f0e01ce",
+        "corner_median_rgb": [
+          235.0,
+          238.0,
+          197.0
+        ],
+        "corner_std_rgb": [
+          10.449,
+          8.823,
+          36.251
+        ],
+        "all_corner_medians_rgb": [
+          [
+            235.0,
+            238.0,
+            197.0
+          ],
+          [
+            168.0,
+            152.0,
+            14.0
+          ],
+          [
+            111.0,
+            117.0,
+            12.0
+          ],
+          [
+            234.0,
+            177.0,
+            138.0
+          ]
+        ],
+        "delta": 28.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "13d1b5947f7738ce1ce4af73dfcc20e6871a7fad90cd01f9131234860f0e01ce",
+        "bytes": 1656093,
+        "corner_median_rgb": [
+          235.0,
+          238.0,
+          197.0
+        ],
+        "corner_std_rgb": [
+          10.449,
+          8.823,
+          36.251
+        ],
+        "max_channel_delta_from_reference": 28.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/servir-une-soupe-a-la-louche-variante.webp",
+      "label": "Servir une soupe à la louche",
+      "type": "Action",
+      "status": "scene_background_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/servir-une-soupe-a-la-louche-variante.webp",
+        "label": "Servir une soupe à la louche",
+        "type": "Action",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "9cd476e1d284736f62adc808c30b8c55f9909068179af0c599b8874c74c93247",
+        "corner_median_rgb": [
+          241.0,
+          229.0,
+          169.0
+        ],
+        "corner_std_rgb": [
+          33.654,
+          39.696,
+          40.641
+        ],
+        "all_corner_medians_rgb": [
+          [
+            241.0,
+            229.0,
+            169.0
+          ],
+          [
+            147.0,
+            138.0,
+            13.0
+          ],
+          [
+            252.0,
+            194.0,
+            137.0
+          ],
+          [
+            189.0,
+            104.0,
+            33.0
+          ]
+        ],
+        "delta": 56.0
+      },
+      "after": {
+        "format": "PNG",
+        "width": 1024,
+        "height": 768,
+        "sha256": "9cd476e1d284736f62adc808c30b8c55f9909068179af0c599b8874c74c93247",
+        "bytes": 1575931,
+        "corner_median_rgb": [
+          241.0,
+          229.0,
+          169.0
+        ],
+        "corner_std_rgb": [
+          33.654,
+          39.696,
+          40.641
+        ],
+        "max_channel_delta_from_reference": 56.0
+      },
+      "review_note": "Décor peint de cuisine ou salle de bains conservé ; un aplat ivoire ne convient pas à cette scène."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/objets/couteau-de-cuisine.webp",
+      "label": "Couteau de cuisine à manche noir",
+      "type": "Objet",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/objets/couteau-de-cuisine.webp",
+        "label": "Couteau de cuisine à manche noir",
+        "type": "Objet",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "3cbc061dd4ab6bed2a4b9fd6510ea6ee12c704e162a4d45ea8b4f1861e7dd322",
+        "corner_median_rgb": [
+          253.0,
+          238.0,
+          213.0
+        ],
+        "corner_std_rgb": [
+          0.606,
+          0.815,
+          1.047
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            238.0,
+            213.0
+          ],
+          [
+            253.0,
+            239.0,
+            212.0
+          ],
+          [
+            253.0,
+            239.0,
+            211.0
+          ],
+          [
+            253.0,
+            239.0,
+            210.0
+          ]
+        ],
+        "delta": 12.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "81af909eceb92e05a20ace0b325a357fe926ebcba9ec744729d8149db0a58542",
+        "bytes": 873928,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.562,
+          0.586,
+          0.588
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-59d76f68-8e55-4336-9b98-ce30e45382ed.png",
+      "native_png_sha256": "9e9ba0d56c726f7f86b11e700473eda07b85f5a3f1042fd98729a8a993012d21",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Couteau de cuisine à manche noir. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Couteau entier à manche noir et trois rivets, lame métallique orientée comme l’original ; fond ivoire harmonisé, ombre douce. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/objets/fouet-a-main.webp",
+      "label": "Fouet de cuisine en métal",
+      "type": "Objet",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/objets/fouet-a-main.webp",
+        "label": "Fouet de cuisine en métal",
+        "type": "Objet",
+        "format": "PNG",
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 768,
+        "sha256": "58a34a75d2fb870a66750abd5a1becf5715a6a77363b90de91dee2014bc1f4a5",
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          215.0
+        ],
+        "corner_std_rgb": [
+          0.559,
+          0.632,
+          0.772
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            241.0,
+            215.0
+          ],
+          [
+            254.0,
+            241.0,
+            215.0
+          ],
+          [
+            254.0,
+            241.0,
+            214.0
+          ],
+          [
+            254.0,
+            241.0,
+            213.0
+          ]
+        ],
+        "delta": 10.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "77118c02a4f105cd25a4ea21d0c6448348f1cb5953602494c07451accda368a0",
+        "bytes": 1015192,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.534,
+          0.577,
+          0.612
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-cc94bac8-4ffb-44d9-aeed-eca90305ab5e.png",
+      "native_png_sha256": "ec6ab41120739aa03195fdb2ad897c519574839b81ea74ada438c3521ee14860",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Fouet de cuisine en métal. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Fouet à fils et manche métalliques, anneau de suspension et orientation conservés ; fond ivoire harmonisé, ombre douce. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/arbouses-avec-feuilles.webp",
+      "label": "Arbouses rouges et jaunes avec feuilles",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/arbouses-avec-feuilles.webp",
+        "label": "Arbouses rouges et jaunes avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "0f3d8ad44a79b40744c05cd02804ee9dff7f6ca877966964b179ff485fdf529b",
+        "corner_median_rgb": [
+          255.0,
+          251.0,
+          247.0
+        ],
+        "corner_std_rgb": [
+          0.47,
+          0.955,
+          0.7
+        ],
+        "all_corner_medians_rgb": [
+          [
+            255.0,
+            251.0,
+            247.0
+          ],
+          [
+            255.0,
+            251.0,
+            247.0
+          ],
+          [
+            255.0,
+            250.0,
+            249.0
+          ],
+          [
+            255.0,
+            250.0,
+            249.0
+          ]
+        ],
+        "delta": 22.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "f335cfa21c5c2cf24144575a413ecdaff7d76f0e5f71acdc019f63f11db9d716",
+        "bytes": 1536806,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.553,
+          0.601,
+          0.567
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-e51d3b6a-56e1-4b46-ac2a-c73565657b5e.png",
+      "native_png_sha256": "06fafd2fa9fff1dd1ec8d9e70c0d000ff3a722685ed333bdc52df28815678afa",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Arbouses rouges et jaunes avec feuilles. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Trois arbouses entières rouges et jaune, une moitié orange à graines, branche et deux feuilles conservées. Fond ivoire harmonisé et ombre douce ; aucun ajout de légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/cynorrhodons-coupes.webp",
+      "label": "Cynorrhodons rouges ouverts et graines",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/cynorrhodons-coupes.webp",
+        "label": "Cynorrhodons rouges ouverts et graines",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "85f3cd4b088fef3f4b2fe409e0db9c2c82697f511d61734b95d855703cdb22a9",
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          229.0
+        ],
+        "corner_std_rgb": [
+          0.517,
+          0.517,
+          0.684
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            241.0,
+            229.0
+          ],
+          [
+            253.0,
+            241.0,
+            229.0
+          ],
+          [
+            253.0,
+            242.0,
+            229.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ]
+        ],
+        "delta": 4.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "33278ad76e0617df510c7f63182d2f1089e404bb4c9388ea6c8111d9c4218a1c",
+        "bytes": 1508634,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.593,
+          0.593,
+          0.615
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-4b014be2-fe21-4cbd-b9ff-27ee224b15d6.png",
+      "native_png_sha256": "0bd50474466ca0c633aca3cbcec5bb8c14f993e95e9412b2455ff77b9bf4ab7f",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Cynorrhodons rouges ouverts et graines. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Trois cynorrhodons rouges entiers et une moitié avec graines, calices secs et feuilles dentées conservés. Fond ivoire harmonisé et ombre douce ; aucun ajout de légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/tamarillos-trio.webp",
+      "label": "Tamarillos rouges et orange avec feuilles",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/tamarillos-trio.webp",
+        "label": "Tamarillos rouges et orange avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "1fd9cb98ed582bda6408644b6ad07862b99e362539b6f15a03a6d0581f004cfe",
+        "corner_median_rgb": [
+          254.0,
+          244.0,
+          234.0
+        ],
+        "corner_std_rgb": [
+          0.49,
+          0.325,
+          0.882
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            244.0,
+            234.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ]
+        ],
+        "delta": 9.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "16dd32a9742b25912eceabb0f3ac41532161a532a66e96a9016707cab88a492e",
+        "bytes": 1429414,
+        "corner_median_rgb": [
+          252.0,
+          239.5,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.565,
+          0.522,
+          0.585
+        ],
+        "max_channel_delta_from_reference": 2.5
+      },
+      "native_png": "/workspace/generated_images/exec-f58b5ab3-2620-46da-95c7-c97837e1241b.png",
+      "native_png_sha256": "bc2f6c972bce0eb3d24764ff44224e17ee818149e4153b7c6d759269611fadc4",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Tamarillos rouges et orange avec feuilles. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Deux tamarillos rouges entiers et une moitié orange à graines sombres, tiges et feuilles conservées. Fond ivoire harmonisé et ombre douce ; aucun ajout de légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/amelanches-avec-feuilles.webp",
+      "label": "Amélanches rouges et bleues avec feuilles",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/amelanches-avec-feuilles.webp",
+        "label": "Amélanches rouges et bleues avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c8da7dafe197384d45c4c158e275b287b7e22e1fb6c0396193ac4314de6062ca",
+        "corner_median_rgb": [
+          254.0,
+          248.0,
+          241.0
+        ],
+        "corner_std_rgb": [
+          0.433,
+          0.627,
+          0.694
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            248.0,
+            241.0
+          ],
+          [
+            254.0,
+            248.0,
+            241.0
+          ],
+          [
+            255.0,
+            249.0,
+            244.0
+          ],
+          [
+            254.0,
+            250.0,
+            244.0
+          ]
+        ],
+        "delta": 16.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "0dbb56c005c80b006b0d56f5799035de5fe734fba67a7844a60af6ceb578ea89",
+        "bytes": 1372728,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.528,
+          0.572,
+          0.611
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-fdcfbece-3670-4491-891c-726f19b5f274.png",
+      "native_png_sha256": "6d0fce95d679937f626783ad3186cfec27546703c462f98aac93b66d433afe9e",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Amélanches rouges et bleues avec feuilles. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Grappe d’amélanches violettes, rouges et vertes avec calices étoilés, branche et feuilles ovales conservées. Fond ivoire harmonisé, sujets entiers et ombre douce. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/jacquier-entier-et-coupe.webp",
+      "label": "Jacquier vert et quartiers jaunes",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/jacquier-entier-et-coupe.webp",
+        "label": "Jacquier vert et quartiers jaunes",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "d95cc5dcfdcf9eff20388ad59096166ee2027fac6db0edd5886fcbbbc794363c",
+        "corner_median_rgb": [
+          254.0,
+          244.0,
+          234.0
+        ],
+        "corner_std_rgb": [
+          0.796,
+          0.7,
+          0.466
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            244.0,
+            234.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ]
+        ],
+        "delta": 9.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "e0c8487183ec9b4510ff0e8f87b0522e5accf973147fd180e316fa8a6f7b172b",
+        "bytes": 1448548,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.55,
+          0.52,
+          0.588
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-f2b67449-33d6-426f-86e2-c0d827086852.png",
+      "native_png_sha256": "76347b8e6ba808121eeb67d04becf52da605ff46f3fa55463c8424aac53491cc",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Jacquier vert et quartiers jaunes. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Seconde version contrôlée : jacquier entier, quartier ouvert, trois arilles jaunes, tige et feuille conservés ; fond ivoire harmonisé à la référence réelle après rejet du premier fond trop jaune.",
+      "rejected_generations": [
+        {
+          "source": "/workspace/generated_images/exec-24a88966-ea0b-463a-9586-3142ac98e326.png",
+          "reason": "Fond trop jaune : médiane du coin supérieur gauche [253.0, 240.0, 221.0], écart maximal 4.0"
+        }
+      ],
+      "retake_prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Jacquier vert et quartiers jaunes. Preserve its visible content exactly; do not infer a different subject from a filename. The previous attempt's background RGB was 253 240 221, too yellow. Match the second image's lighter ivory EXACT RGB 253 242 225 throughout the empty background, especially the upper-left. Raise its blue and green channels to match the reference; do not change the subject."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-sureau.webp",
+      "label": "Grappe de baies de sureau noires",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-sureau.webp",
+        "label": "Grappe de baies de sureau noires",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "02bac17c2ea6765d30731dcf9c9f42d83523c18a0ddf8d6b3a225f73d6b42cab",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.48,
+          0.933
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "e2848b345eda23c1de8b07edf07a0dc0ee96318a92295ff93b5db1ffe212ea85",
+        "bytes": 1467300,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.532,
+          0.543,
+          0.574
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-f5d3b96b-82a4-4b56-a55d-3a285174c8c8.png",
+      "native_png_sha256": "1bd31317eea82ee5116d2d6bbd75ba57e0b61da631987e2f9e2f17d2d69c0fca",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Grappe de baies de sureau noires. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Grappe de petites baies sombres sur pédoncules rouges et feuilles dentées conservées. Fond ivoire harmonisé, sujets entiers et ombre douce. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/amelanches-avec-fleurs.webp",
+      "label": "Amélanches violettes et fleurs blanches",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/amelanches-avec-fleurs.webp",
+        "label": "Amélanches violettes et fleurs blanches",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "9e5038b72182e26001465eae70a82b6359e5a78206bf3d634c80e641dc9b4595",
+        "corner_median_rgb": [
+          254.0,
+          252.0,
+          251.0
+        ],
+        "corner_std_rgb": [
+          0.218,
+          0.444,
+          0.815
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            252.0,
+            251.0
+          ],
+          [
+            254.0,
+            252.0,
+            251.0
+          ],
+          [
+            254.0,
+            252.0,
+            251.0
+          ],
+          [
+            254.0,
+            252.0,
+            251.0
+          ]
+        ],
+        "delta": 26.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "66ab7574eb59344e93baee1098d0679e25ea7423fcdfcafe1ff3ce95a314b9f9",
+        "bytes": 1521638,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.554,
+          0.564,
+          0.563
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-d117a5ca-c728-44f1-b1bd-b6e0e49af7ad.png",
+      "native_png_sha256": "743d6cbca9ea329c09cd33b973ba3c78c0a71da4a900e2a765d122d4bbf91d6c",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Amélanches violettes et fleurs blanches. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Grappe de baies violettes et rouges, deux fleurs blanches et feuilles dentées conservées. Fond ivoire harmonisé, ombre douce, sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/feijoas-entiers-et-coupes.webp",
+      "label": "Feijoas verts entiers et coupés",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/feijoas-entiers-et-coupes.webp",
+        "label": "Feijoas verts entiers et coupés",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "3467a3378354553dac8662280c9923418b0f6e81e4cd94f806833718579d38f5",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          232.0
+        ],
+        "corner_std_rgb": [
+          0.454,
+          0.454,
+          0.995
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            232.0
+          ],
+          [
+            253.0,
+            243.0,
+            232.0
+          ],
+          [
+            253.0,
+            243.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ]
+        ],
+        "delta": 7.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "cb6b26ffe179da57058707cb4b6bebdc32810836e2b1e9ef7fb197a66ff366a5",
+        "bytes": 1437954,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.595,
+          0.563,
+          0.602
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-21888bde-89d2-4f83-9646-99236c721176.png",
+      "native_png_sha256": "35b828dae22d919b2bf47c633cdabf3b821af52812550f99eb0a31cc0b7d0156",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Feijoas verts entiers et coupés. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Deux feijoas verts entiers et une moitié à chair claire avec graines, deux feuilles conservées. Fond ivoire harmonisé, ombre douce, sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-haskap.webp",
+      "label": "Baies de haskap bleues avec feuilles",
+      "type": "Fruit",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-haskap.webp",
+        "label": "Baies de haskap bleues avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "8ac5d4d33443b2bb5be5b525ca4d81bc69e01cc9ee4482754a9cb4d2780cbab8",
+        "corner_median_rgb": [
+          255.0,
+          241.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.96,
+          0.48,
+          0.898
+        ],
+        "all_corner_medians_rgb": [
+          [
+            255.0,
+            241.0,
+            227.0
+          ],
+          [
+            254.0,
+            242.0,
+            226.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ]
+        ],
+        "delta": 2.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "8ac5d4d33443b2bb5be5b525ca4d81bc69e01cc9ee4482754a9cb4d2780cbab8",
+        "bytes": 121738,
+        "corner_median_rgb": [
+          255.0,
+          241.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.96,
+          0.48,
+          0.898
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-goji-sur-branche.webp",
+      "label": "Baies de goji rouges sur une branche",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-goji-sur-branche.webp",
+        "label": "Baies de goji rouges sur une branche",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "808aed950c051a1a17951bb13f7c5192c1b6e76bcfa3dc057276b1ede8a25262",
+        "corner_median_rgb": [
+          254.0,
+          254.0,
+          254.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            254.0,
+            254.0
+          ],
+          [
+            254.0,
+            254.0,
+            254.0
+          ],
+          [
+            254.0,
+            254.0,
+            254.0
+          ],
+          [
+            254.0,
+            254.0,
+            254.0
+          ]
+        ],
+        "delta": 29.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "ac61a4767e73c2e82750ea9e8e8874feb8eaa0306cf8282a4df096e6069e85fe",
+        "bytes": 1505664,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.564,
+          0.621,
+          0.682
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-0418a311-321b-44cf-a19b-641f8ea39462.png",
+      "native_png_sha256": "073e5a186afbc6db074ebe2c61f8d96dd960e4c885da0387a940bb2607833c49",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Baies de goji rouges sur une branche. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Baies de goji rouges sur branche feuillée, baie coupée et groupe de baies sèches conservés. Fond ivoire harmonisé, ombre douce, sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/argousier-sur-branche.webp",
+      "label": "Baies orange d’argousier sur une branche",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/argousier-sur-branche.webp",
+        "label": "Baies orange d’argousier sur une branche",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "f10a37f8d71c50b2ce2a665e740b73588ab7263ba9f48dc8ea057c43ee0f7c4d",
+        "corner_median_rgb": [
+          253.0,
+          246.0,
+          237.0
+        ],
+        "corner_std_rgb": [
+          0.414,
+          0.83,
+          0.732
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            246.0,
+            237.0
+          ],
+          [
+            253.0,
+            246.0,
+            237.0
+          ],
+          [
+            254.0,
+            246.0,
+            240.0
+          ],
+          [
+            254.0,
+            246.0,
+            240.0
+          ]
+        ],
+        "delta": 12.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "869daad50f3e1a8f8819816669e9987fc95a92ca26ccf2293660a1b4c7bcc00d",
+        "bytes": 1317174,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.53,
+          0.543,
+          0.615
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-704769cc-ad37-4689-a54d-e2dacd668f2d.png",
+      "native_png_sha256": "02a0e34eb486b177c997528b60ae624edf2a8b93325134fc5780dbd15f9b5a95",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Baies orange d’argousier sur une branche. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Baies orange d’argousier sur une branche. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/airelles-rouges-avec-feuilles.webp",
+      "label": "Airelles rouges avec feuilles",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/airelles-rouges-avec-feuilles.webp",
+        "label": "Airelles rouges avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "cc4a688794228ad21892e1a31b43968d9c1d67c38b57c731ab96613d2024b617",
+        "corner_median_rgb": [
+          253.0,
+          247.0,
+          240.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.8
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            247.0,
+            240.0
+          ],
+          [
+            253.0,
+            247.0,
+            240.0
+          ],
+          [
+            253.0,
+            247.0,
+            240.0
+          ],
+          [
+            253.0,
+            247.0,
+            240.0
+          ]
+        ],
+        "delta": 15.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "0021515446a3dd7ff06a2079169209042d2e27c6ccbc71843f2469e82179d940",
+        "bytes": 1322936,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.586,
+          0.562,
+          0.59
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-04f0f42a-b253-4121-9d39-46ae475864fe.png",
+      "native_png_sha256": "b087aea9cad5182c7ddd306a5bc9688013058f6a5cdf84c71b150ff3c3633738",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Airelles rouges avec feuilles. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Airelles rouges avec feuilles. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/cornouilles-sur-branche.webp",
+      "label": "Cornouilles rouges sur une branche",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/cornouilles-sur-branche.webp",
+        "label": "Cornouilles rouges sur une branche",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "92ac59d79d43f8768ffc6d59d73909fd4d4679a70f24b7c903e627d9a59022ef",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.367,
+          0.483,
+          1.12
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            244.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "f72a841ca7a77cec34b350fccaf4ae248ae782e1bed82c4b5515795debe3eff3",
+        "bytes": 1441106,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.534,
+          0.576,
+          0.582
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-8319e91f-ec02-46ad-b57e-6cba7dab4c99.png",
+      "native_png_sha256": "c9438d178d56972a49dac598b2676b68fbbd87e5d86504fcc9f345ac50d96acf",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Cornouilles rouges sur une branche. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Cornouilles rouges sur une branche. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-d-aronia.webp",
+      "label": "Baies d’aronia noires avec feuilles",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-d-aronia.webp",
+        "label": "Baies d’aronia noires avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "c301b5255a643fa78a84cea035c48dee509a2228735ba70ca670638ae39b5b9d",
+        "corner_median_rgb": [
+          254.0,
+          249.0,
+          239.0
+        ],
+        "corner_std_rgb": [
+          0.271,
+          0.271,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            249.0,
+            239.0
+          ],
+          [
+            254.0,
+            249.0,
+            239.0
+          ],
+          [
+            255.0,
+            249.0,
+            243.5
+          ],
+          [
+            255.0,
+            249.0,
+            244.0
+          ]
+        ],
+        "delta": 14.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "4226a002241ee0104cba71ca8ffbf73fdf056f01075c611ac2c98afa3a70e660",
+        "bytes": 1471168,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.563,
+          0.556,
+          0.63
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-21424e67-a2be-43f2-812f-0af379aacd94.png",
+      "native_png_sha256": "5fabfd93652704ae0a34837856f32057f10966f27a63253e01070e3edb79d4b5",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Baies d’aronia noires avec feuilles. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Baies d’aronia noires avec feuilles. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/feijoas-avec-feuilles.webp",
+      "label": "Feijoas verts avec feuilles",
+      "type": "Fruit",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/feijoas-avec-feuilles.webp",
+        "label": "Feijoas verts avec feuilles",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "d501bf458bc50da74592d40f847fd0e268aa56bc4c02e3cfcf66da73227855ab",
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.733,
+          0.367,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            242.0,
+            225.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            245.0,
+            231.0
+          ]
+        ],
+        "delta": 0.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "d501bf458bc50da74592d40f847fd0e268aa56bc4c02e3cfcf66da73227855ab",
+        "bytes": 119596,
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.733,
+          0.367,
+          0.0
+        ],
+        "max_channel_delta_from_reference": 0.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/argousier-en-grappe.webp",
+      "label": "Grappe de baies orange d’argousier",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/argousier-en-grappe.webp",
+        "label": "Grappe de baies orange d’argousier",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "7ac44d61dafc16d0c0aa65dda2bec82e9061f9939d5b2e4cfe743cefdfb1859b",
+        "corner_median_rgb": [
+          253.0,
+          245.0,
+          239.0
+        ],
+        "corner_std_rgb": [
+          0.376,
+          0.684,
+          1.072
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            245.0,
+            239.0
+          ],
+          [
+            253.0,
+            245.5,
+            237.0
+          ],
+          [
+            253.0,
+            245.0,
+            238.0
+          ],
+          [
+            253.0,
+            245.0,
+            239.0
+          ]
+        ],
+        "delta": 14.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "0448ffc82bbd21a28ea9fcce3671b1660e2ab113b19cee9b2697d0e226694258",
+        "bytes": 1352244,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.558,
+          0.587,
+          0.611
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-56e368bd-2992-4691-a656-bfe62e97201e.png",
+      "native_png_sha256": "c86d85c23fa91a27e399e28535fbbf069f949994b76f2cd6d6bc3550e2dbbcad",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Grappe de baies orange d’argousier. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Grappe de baies orange d’argousier. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/figues-de-barbarie-en-trio.webp",
+      "label": "Figues de Barbarie entières et coupées",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/figues-de-barbarie-en-trio.webp",
+        "label": "Figues de Barbarie entières et coupées",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "f01771f04b4fdb531231f9d685047aad81d7cc4f85063dd85983cbb7bcdba402",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.72,
+          0.449,
+          0.627
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "3edc7d2d435dbdc648e3de97f13983f59558d209cb086677cf8cf746cc9af637",
+        "bytes": 1521244,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.56,
+          0.638,
+          0.752
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-e85ac760-ae91-48c1-8ed4-ec41f3d150ec.png",
+      "native_png_sha256": "13817e449c397d384ef57fe85aad944c11ea14699a9c7866e439258bced47ebc",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Figues de Barbarie entières et coupées. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Figues de Barbarie entières et coupées. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/kiwano-entier-et-coupe.webp",
+      "label": "Kiwano orange entier et coupé",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/kiwano-entier-et-coupe.webp",
+        "label": "Kiwano orange entier et coupé",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "059801e7e6d87f442a0588b8409946a1f1f6be1fc9dc6154c1a9c2aa50f6566c",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.282,
+          0.218,
+          0.099
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "ef0c62bd3204aef566599db2204dcdcdc273b474ab71ac0f5d098db708323313",
+        "bytes": 1293318,
+        "corner_median_rgb": [
+          252.0,
+          240.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.596,
+          0.596,
+          0.607
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-594e720a-7dea-4080-80c5-69eae8fc3199.png",
+      "native_png_sha256": "4a5fe496c59e19839ad596f92870bf641783ed95f637af9062705649181462f9",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Kiwano orange entier et coupé. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Kiwano orange entier et coupé. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/poire-nashi-coupee.webp",
+      "label": "Poire nashi entière et coupée",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/poire-nashi-coupee.webp",
+        "label": "Poire nashi entière et coupée",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "eb9dd350f5d51a754bb85e9e2dfb7ce4898a5ae6f75412e6823b5df3b69dd1e7",
+        "corner_median_rgb": [
+          254.0,
+          244.0,
+          232.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.392,
+          0.196
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 7.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "5e207668d147480c3b9972b617ba375160ae227273acc46e350b9592326438eb",
+        "bytes": 1228328,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.588,
+          0.529,
+          0.559
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-b0d8d805-4b28-442a-96f3-c4f1c895851a.png",
+      "native_png_sha256": "1bfc95b410e4e18ee94ea82a524093f17990a9e207c8d454e58616d634b06204",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Poire nashi entière et coupée. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Poire nashi entière et coupée. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/bananes-plantain-coupees.webp",
+      "label": "Bananes plantain entières et coupées",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/bananes-plantain-coupees.webp",
+        "label": "Bananes plantain entières et coupées",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "409615eceb7384f6647eab98d4b48f752c6e65193917af07b5324370d9cf10f7",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.449,
+          0.449,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "c402787311acab08964c06aa94b79a99fcc0cd5fec197bc5e50371c15ceeafe0",
+        "bytes": 1132742,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.591,
+          0.551,
+          0.576
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-50d22d34-7435-46d3-a1cf-b2b826197377.png",
+      "native_png_sha256": "fd6bad5e4d004c849d64feb03e8bece38f49f94d02599d33666fd076dcf02431",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Bananes plantain entières et coupées. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Bananes plantain entières et coupées. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/figues-de-barbarie-en-trio-variante.webp",
+      "label": "Figue de Barbarie rose entière et coupée",
+      "type": "Fruit",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/figues-de-barbarie-en-trio-variante.webp",
+        "label": "Figue de Barbarie rose entière et coupée",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "7dd1cb83e1a4d6b5cc8088f8c1df7570a9cb53df80f60eaaca979baa53c009bf",
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.325,
+          0.196,
+          0.826
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ]
+        ],
+        "delta": 2.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "7dd1cb83e1a4d6b5cc8088f8c1df7570a9cb53df80f60eaaca979baa53c009bf",
+        "bytes": 140458,
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.325,
+          0.196,
+          0.826
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/jujubes-rouges.webp",
+      "label": "Jujubes rouges entières et coupées",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/jujubes-rouges.webp",
+        "label": "Jujubes rouges entières et coupées",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "68a574d5052f02de7f290e7ae4366689c2e516c669d458c9415aaba8f1223a79",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.427,
+          0.557,
+          0.975
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            228.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "b136f50af50c3ffdca3ee3464fe0fc2da788d9f5eab2ceef82eb56b1006d7d46",
+        "bytes": 1379896,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.573,
+          0.531,
+          0.599
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-79b32419-01ab-42b8-80d1-f8123684e5af.png",
+      "native_png_sha256": "6a679ef7ffeecbfedf766816d493a9a00e182e793aac4ac5a1e842314eab945c",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Jujubes rouges entières et coupées. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Jujubes rouges entières et coupées. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/nefles-du-japon.webp",
+      "label": "Nèfles du Japon jaunes et coupées",
+      "type": "Fruit",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/nefles-du-japon.webp",
+        "label": "Nèfles du Japon jaunes et coupées",
+        "type": "Fruit",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "ad56429602798808048d65bae91bf1f80556bfb4f499c5c7a2da7c8df0f39c9a",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.367,
+          0.784
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "2f5dad3b7c74420b02aeeabf30d45c707f754c91f5e255cb0c91aa62c73415cb",
+        "bytes": 1440664,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.57,
+          0.54,
+          0.589
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-7c7e7186-f1be-4be1-976c-05e330f04d56.png",
+      "native_png_sha256": "cd5f6e6d13e391d406d3f265018331477b7e5958359f89187aaad0092cb116b0",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Nèfles du Japon jaunes et coupées. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Nèfles du Japon jaunes et coupées. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/artichauts-violets-coupes.webp",
+      "label": "Artichauts violets entiers et coupés",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/artichauts-violets-coupes.webp",
+        "label": "Artichauts violets entiers et coupés",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "54966caf3905aa989b5d5e5ad92d1feca442818d29e737f40ae0225b8947af06",
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.237,
+          0.347,
+          0.755
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            244.0,
+            234.0
+          ],
+          [
+            255.0,
+            245.0,
+            234.0
+          ]
+        ],
+        "delta": 3.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "54966caf3905aa989b5d5e5ad92d1feca442818d29e737f40ae0225b8947af06",
+        "bytes": 148178,
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.237,
+          0.347,
+          0.755
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-fractal.webp",
+      "label": "Brocoli romanesco vert avec feuilles",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-fractal.webp",
+        "label": "Brocoli romanesco vert avec feuilles",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "ff4317b8fec9d08475ef7fcb901b5366fdecac35c788b838bd987bda6d4f2756",
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.543
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ]
+        ],
+        "delta": 3.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "ff4317b8fec9d08475ef7fcb901b5366fdecac35c788b838bd987bda6d4f2756",
+        "bytes": 124190,
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.543
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-violet-coupe.webp",
+      "label": "Chou-rave violet coupé",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-violet-coupe.webp",
+        "label": "Chou-rave violet coupé",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "2c7dbeaf6392e14a81588404a425a9afd23db7e6428e39fdc15754b7c5793dd7",
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.196,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 3.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "2c7dbeaf6392e14a81588404a425a9afd23db7e6428e39fdc15754b7c5793dd7",
+        "bytes": 109300,
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.196,
+          0.0
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-entier-et-coupe.webp",
+      "label": "Brocoli romanesco entier et coupé",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-entier-et-coupe.webp",
+        "label": "Brocoli romanesco entier et coupé",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "53360aa060c679a90a6a5596ec9ffb07dbee03e88b6537f9ea0734538e139dc0",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.4,
+          0.4,
+          0.543
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            253.5,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "6f5d9293f5dbd41394320cf845ab53ec33adf54df2d0725ec70e395bea426703",
+        "bytes": 1525042,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.58,
+          0.589,
+          0.595
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-ab125cc3-20fa-40f7-a7b4-5b45fe952ae9.png",
+      "native_png_sha256": "54d2ced2bf34ae4ecbe2a52a3192e5bd1da1e7300c8db2f8eef1faf1eb13de65",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Brocoli romanesco entier et coupé. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Brocoli romanesco entier et coupé. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-violet-et-vert.webp",
+      "label": "Chou-rave vert et une tranche",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-violet-et-vert.webp",
+        "label": "Chou-rave violet et feuilles vertes",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "eaf03ce594eca843a4dae2a2cfd72c5a711164388ab5b7628e534c86da9a9bb3",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.65
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            232.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "0ace9d60287fcd613d22956ef70696f65773b2aa035d062429c35a739b5c294c",
+        "bytes": 1238150,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.52,
+          0.552,
+          0.597
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-ddc28f24-c31e-4f80-804d-2e6bd9046e43.png",
+      "native_png_sha256": "5b9a3d3818691cf162a22a7290819952ce2ae93a5c0d81043d7cbed8ef5c77af",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Chou-rave vert entier et tranche à chair blanche. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Chou-rave vert entier et tranche à chair blanche. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/oca-du-perou.webp",
+      "label": "Ocas du Pérou rouges et jaunes",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/oca-du-perou.webp",
+        "label": "Ocas du Pérou rouges et jaunes",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "1de4a6f39a6362a3367e47aebcaf94531b2db6776e3122e766946ff3487b133b",
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.444,
+          0.444,
+          0.628
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 2.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "1de4a6f39a6362a3367e47aebcaf94531b2db6776e3122e766946ff3487b133b",
+        "bytes": 112802,
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.444,
+          0.444,
+          0.628
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/pak-choi-en-bouquet.webp",
+      "label": "Pak-choï vert en bouquet",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/pak-choi-en-bouquet.webp",
+        "label": "Pak-choï vert en bouquet",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "72f24ffda4db93de6e5576e65ba2905573d6f0edb5ffe24f521826d03407da4b",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.632,
+          0.797,
+          0.835
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "f068dde6423c14f49960f254625ae5c7cbab67cd3d1d50504d63c022406badac",
+        "bytes": 1207578,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.529,
+          0.575,
+          0.605
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-8742745e-4824-49d9-84b4-dea5dccb5b18.png",
+      "native_png_sha256": "f525f667218e78d3b54757fd05e0b5e52c1bcd2dded923a2ba937a664700be12",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Pak-choï vert en bouquet. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Pak-choï vert en bouquet. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/edamame-en-cosses.webp",
+      "label": "Fèves de soja vertes en cosses",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/edamame-en-cosses.webp",
+        "label": "Fèves de soja vertes en cosses",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "25f869114f797deb68d2ecd32ed5153bda27fd83be0de3fe00b8692b1ba465f7",
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.392,
+          0.4,
+          0.854
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ]
+        ],
+        "delta": 2.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "25f869114f797deb68d2ecd32ed5153bda27fd83be0de3fe00b8692b1ba465f7",
+        "bytes": 102556,
+        "corner_median_rgb": [
+          253.0,
+          242.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.392,
+          0.4,
+          0.854
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/margose-coupee.webp",
+      "label": "Margose verte entière et coupée",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/margose-coupee.webp",
+        "label": "Margose verte entière et coupée",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "aa46df45706da25e5c69f73796c48c201bd022ca35d6c06c2ab20c0c0cc1c230",
+        "corner_median_rgb": [
+          255.0,
+          241.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.953,
+          0.48,
+          0.099
+        ],
+        "all_corner_medians_rgb": [
+          [
+            255.0,
+            241.0,
+            227.0
+          ],
+          [
+            255.0,
+            241.0,
+            227.0
+          ],
+          [
+            253.0,
+            242.0,
+            227.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ]
+        ],
+        "delta": 2.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "aa46df45706da25e5c69f73796c48c201bd022ca35d6c06c2ab20c0c0cc1c230",
+        "bytes": 93054,
+        "corner_median_rgb": [
+          255.0,
+          241.0,
+          227.0
+        ],
+        "corner_std_rgb": [
+          0.953,
+          0.48,
+          0.099
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/cardon-en-feuilles.webp",
+      "label": "Cardon avec feuilles",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/cardon-en-feuilles.webp",
+        "label": "Cardon avec feuilles",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "a35b5d6ea0aa03387b218ff40ca5512460ec2df02d9d252d18a800f04c4d5831",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.4,
+          0.862
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "0e046664d725d51b2c5220c94842b2a46e85a006e5c3f2f1b10f7b79a937941f",
+        "bytes": 1495180,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.591,
+          0.604,
+          0.617
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-4533734b-b4f4-4dfc-9e43-0d32274bf080.png",
+      "native_png_sha256": "87e0113ae68e5685b5b63776ff267b9213121899122161b6e20345bb145b834d",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Cardon avec feuilles. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Cardon avec feuilles. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/crosnes-du-japon.webp",
+      "label": "Crosnes du Japon",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/crosnes-du-japon.webp",
+        "label": "Crosnes du Japon",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "bb2a1520473f95243c0fe9e33a170d53b0a0cdd2da686250e3cea780562a508b",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.0,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "e00d0610ce303ed29b5866a097a16e71065bc450da4cd892907afd45c5f8007f",
+        "bytes": 1182448,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          224.0
+        ],
+        "corner_std_rgb": [
+          0.559,
+          0.555,
+          0.599
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-84894c58-3cd2-4b6b-a0a4-b138c703e39e.png",
+      "native_png_sha256": "49dd8ab5d4e9de89a073249cbdf6ecbcb043990631e7bffc0a4cf89470d1e740",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Crosnes du Japon. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Crosnes du Japon. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-chinois-vert.webp",
+      "label": "Chou chinois vert en bouquet",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-chinois-vert.webp",
+        "label": "Chou chinois vert en bouquet",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "6ed3bdfd4617c3ec320761b3c5b4b9974525a96884e939b36006e4585dab34d6",
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.427,
+          0.566,
+          0.96
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "c3fba2dce9fa4b431ae7eac15f2f640d46bed020f8fe604e355d77e2e7487b10",
+        "bytes": 1485704,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.586,
+          0.54,
+          0.613
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-5e7eb32b-6c15-426f-b11b-7a8b0a6c4f5a.png",
+      "native_png_sha256": "2c128353bcd5824af035eb3c8fc9dbcf15e5ad7332de11217b00361c87e1ce0d",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Chou chinois vert en bouquet. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Chou chinois vert en bouquet. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/courge-rayee-jaune.webp",
+      "label": "Courge jaune striée, entière et coupée",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/courge-rayee-jaune.webp",
+        "label": "Courge jaune striée, entière et coupée",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "19b82c24a30c14c53a2cfc41dbb92dc287f4a9bf26c7220a8468830406131b38",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.441,
+          0.466,
+          0.577
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "681df71c5a201192f82e1d81f58befff0b293f70c994e57938075f8acc012df5",
+        "bytes": 1450300,
+        "corner_median_rgb": [
+          253.0,
+          241.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.578,
+          0.532,
+          0.601
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-355440ff-88dc-4241-8558-e65a1b2542b6.png",
+      "native_png_sha256": "d953c74106d587b82cb7822e84e499f0b26656fe2a8e222425a0b3a468c691e7",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Courge jaune striée, entière et coupée. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Courge jaune striée, entière et coupée. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-vert-coupe.webp",
+      "label": "Chou-rave vert entier et coupé",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-vert-coupe.webp",
+        "label": "Chou-rave vert entier et coupé",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "27d8a58f8f505ef5bbc2f3f0619c7950af649826d8efd845b58f45c4b4b61789",
+        "corner_median_rgb": [
+          254.0,
+          244.0,
+          232.0
+        ],
+        "corner_std_rgb": [
+          0.444,
+          0.897,
+          1.393
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ]
+        ],
+        "delta": 7.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "e4a6e1066afc147915c7e4cf2a0a84576c65c790007165222b8d4a0390f76740",
+        "bytes": 1207240,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.536,
+          0.532,
+          0.563
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-ef10bebb-b66d-4eeb-a25e-a4de1229e1c5.png",
+      "native_png_sha256": "264254ec4b70c724bfbaa9f6c794e55e90a63ae67a6305b295103e029b8ae07e",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Chou-rave vert entier et coupé. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Chou-rave vert entier et coupé. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-vert.webp",
+      "label": "Brocoli romanesco vert",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-vert.webp",
+        "label": "Brocoli romanesco vert",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "56ce6b102b693df5378aa22ee1baa4054137f1bd9ac366cc3df921dfa9514dbf",
+        "corner_median_rgb": [
+          254.0,
+          244.0,
+          232.0
+        ],
+        "corner_std_rgb": [
+          0.271,
+          0.0,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            231.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 7.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "1788ef136f8df830ce1bcecc8bc2b13082fad96a082c06ff2f09bfaf55b1ba8b",
+        "bytes": 1380804,
+        "corner_median_rgb": [
+          253.0,
+          240.0,
+          222.0
+        ],
+        "corner_std_rgb": [
+          0.578,
+          0.563,
+          0.577
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "native_png": "/workspace/generated_images/exec-aa28999a-8d5c-408d-9a23-98c4c70280d6.png",
+      "native_png_sha256": "82e80f144fab541f394e0b4fbb4d0af09042a1ce8b92cfdf6822ca351880e145",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Brocoli romanesco vert. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Brocoli romanesco vert. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/radis-noir-coupe.webp",
+      "label": "Radis noir entier et coupé",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/radis-noir-coupe.webp",
+        "label": "Radis noir entier et coupé",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "b1cc3603f76b6009f47751cb47221fa85e3ea6985f9a9e2f440b3db2c49081bd",
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.196,
+          0.4,
+          0.862
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "a1ebc902d6670ea33cc795aa31a142e53417cd7a27d0646f01280fa1fb64bcf4",
+        "bytes": 1270008,
+        "corner_median_rgb": [
+          254.0,
+          241.0,
+          223.0
+        ],
+        "corner_std_rgb": [
+          0.516,
+          0.565,
+          0.614
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-16f00e62-e327-4eb7-bcb1-5bfe5923820f.png",
+      "native_png_sha256": "da72f3e8394ea32641c27bc806a1b9be3353445309336ef544816b139b39c105",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Radis noir entier et coupé. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Radis noir entier et coupé. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/radis-blanc-daikon.webp",
+      "label": "Radis blanc daikon entier et coupé",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/radis-blanc-daikon.webp",
+        "label": "Radis blanc daikon entier et coupé",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "626e82b3c52d12ba37928470354ae0ba76bae006e1d336bcdf8b62ad9a0b09a4",
+        "corner_median_rgb": [
+          254.0,
+          244.0,
+          232.0
+        ],
+        "corner_std_rgb": [
+          0.427,
+          0.806,
+          1.233
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            254.0,
+            244.0,
+            232.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 7.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "8849d2f87a4bcbfbf8056959c0f5ca318b75d25daf60fea55558cb29a2fbe837",
+        "bytes": 1063940,
+        "corner_median_rgb": [
+          254.0,
+          242.0,
+          225.0
+        ],
+        "corner_std_rgb": [
+          0.567,
+          0.524,
+          0.595
+        ],
+        "max_channel_delta_from_reference": 1.0
+      },
+      "native_png": "/workspace/generated_images/exec-a6bd4053-1ce2-4446-bd52-07d6ca0b50b4.png",
+      "native_png_sha256": "aa0686c273258c2150af3ebb59af56b22ea62850a5e7c21f44a0184b164e1ca1",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Radis blanc daikon entier et coupé. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Radis blanc daikon entier et coupé. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/courge-spaghetti-coupee.webp",
+      "label": "Courge spaghetti entière et coupée",
+      "type": "Légume",
+      "status": "corrected_and_visually_reviewed",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/courge-spaghetti-coupee.webp",
+        "label": "Courge spaghetti entière et coupée",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "ecf8401c566ca50f0978330f9016a9305f00ec4f1d16a82702dbbad86130412b",
+        "corner_median_rgb": [
+          253.0,
+          243.0,
+          230.0
+        ],
+        "corner_std_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_corner_medians_rgb": [
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ],
+          [
+            253.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            242.0,
+            230.0
+          ]
+        ],
+        "delta": 5.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "1aa6678c1c88f821d25597acdaad1351f1c2d643a0b361f0eb1c689599761e05",
+        "bytes": 1307812,
+        "corner_median_rgb": [
+          252.0,
+          240.0,
+          223.5
+        ],
+        "corner_std_rgb": [
+          0.58,
+          0.572,
+          0.574
+        ],
+        "max_channel_delta_from_reference": 2.0
+      },
+      "native_png": "/workspace/generated_images/exec-e68e641c-d8f7-4911-9014-b77993beadea.png",
+      "native_png_sha256": "0ed7e4094c07fb99a812678472ba741428fd01ec12c59bec7092b7e2644eead4",
+      "published_rgb_pixels_identical_to_native_png": true,
+      "prompt": "Edit ONLY the FIRST supplied image. The SECOND supplied image is the approved TCF background and painting reference. Keep the exact subject, its species or object identity, count, shape, cut surfaces, leaves, materials, colours, orientation and overall composition from the first image. Replace only the empty background and harmonise its soft contact shadow. The entire empty background must be smooth, almost uniform pale IVORY with RGB 253 242 225 (#FDF2E1), matching the second reference, with absolutely no white, pink, yellow cast, paper grain, canvas texture, gradient, vignette or decorative additions. Keep the original soft detailed semi-realistic painted educational rendering of the subject, fine discreet contours. Do not add objects, text, labels, borders or a room. All subject parts completely inside the frame with clear margins. Native landscape PNG EXACTLY 1448x1086 pixels, ratio 4:3. Subject visible in the first image: Courge spaghetti entière et coupée. Preserve its visible content exactly; do not infer a different subject from a filename.",
+      "review_note": "Sujet contrôlé dans le fichier final et la planche comparative : Courge spaghetti entière et coupée. Forme, matière, feuilles et coupes pertinentes conservées, sujet entier et sans légende. Comparaison finale avec la référence réelle : fond ivoire lisse, ombre de contact douce et cohérence du lot validées. Le PNG natif reste conservé.",
+      "rejected_generations": []
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/patisson-coupe.webp",
+      "label": "Pâtisson entier et coupé",
+      "type": "Légume",
+      "status": "existing_ivory_retained",
+      "before": {
+        "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/patisson-coupe.webp",
+        "label": "Pâtisson entier et coupé",
+        "type": "Légume",
+        "format": "WEBP",
+        "mode": "RGB",
+        "width": 1024,
+        "height": 768,
+        "sha256": "a54ca8addea267b426370cd92740fac7ea9c7c85ae38a41658b05608f69ec5d5",
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.645,
+          0.699,
+          0.458
+        ],
+        "all_corner_medians_rgb": [
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            228.0
+          ],
+          [
+            254.0,
+            243.0,
+            230.0
+          ],
+          [
+            254.0,
+            243.0,
+            230.0
+          ]
+        ],
+        "delta": 3.0
+      },
+      "after": {
+        "format": "WEBP",
+        "width": 1024,
+        "height": 768,
+        "sha256": "a54ca8addea267b426370cd92740fac7ea9c7c85ae38a41658b05608f69ec5d5",
+        "bytes": 71400,
+        "corner_median_rgb": [
+          254.0,
+          243.0,
+          228.0
+        ],
+        "corner_std_rgb": [
+          0.645,
+          0.699,
+          0.458
+        ],
+        "max_channel_delta_from_reference": 3.0
+      },
+      "review_note": "Fond ivoire existant conforme à la référence, examiné visuellement et conservé."
+    }
+  ]
+}

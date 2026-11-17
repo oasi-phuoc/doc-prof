@@ -19,3 +19,5 @@ Pour chaque trio concerné :
 | Questions exigeant une scène ou une action | À distinguer lors de la revue | Conserver une scène appropriée au sens de la question |
 
 Le nombre de questions concernées reste à établir. Ce suivi est distinct des **261 trios historiques à créer**, des **380 candidats DELF Actif** et du contrôle des fonds des **66 images ajoutées au commit `16f77c72`** ; certains fichiers pourront appartenir à plusieurs de ces périmètres.
+
+Le contrôle des fonds des 66 ajouts est désormais terminé : 34 remplacements, dix fonds d’objets conformes conservés et 22 décors de scènes conservés ([rapport](../gallery/correction-fonds-ajouts-20261117.md)). Cela ne constitue pas la revue des images effectivement sélectionnées dans les questions.

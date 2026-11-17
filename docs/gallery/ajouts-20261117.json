@@ -2,7 +2,7 @@
   "date": "2026-11-17",
   "scope": "66 variantes visuelles transmises pour intégration à la galerie ClairFLE.",
   "reviewed_individually": true,
-  "conversion": "PNG vers WebP qualité 90, sans recadrage ni redimensionnement; WebP copiés sans réencodage.",
+  "conversion": "Import initial : PNG vers WebP qualité 90 ou copie des fichiers reçus. Corrections du fond du 17 novembre : 34 reprises Imagegen publiées en WebP sans perte, sans redimensionnement, avec pixels RGB identiques aux PNG natifs conservés. Détail par fichier et dans correction-fonds-ajouts-20261117.json.",
   "images": [
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/cuire-a-la-poele.webp",
@@ -46,14 +46,19 @@
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/remuer-une-preparation.webp",
-      "label": "Remuer une préparation dans une casserole",
+      "label": "Servir une soupe avec une louche",
       "type": "Action",
       "subtype": "Actions du quotidien",
       "aliases": [
+        "servir",
+        "soupe",
+        "louche",
         "casserole",
-        "cuillère",
-        "préparation",
-        "cuisine"
+        "bol",
+        "cuisine",
+        "tablier",
+        "bleu",
+        "crème"
       ],
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_37_36-3.webp",
@@ -322,14 +327,20 @@
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/couper-des-legumes-au-couteau.webp",
-      "label": "Couper des légumes au couteau",
+      "label": "Servir une soupe dans un bol",
       "type": "Action",
       "subtype": "Actions du quotidien",
       "aliases": [
-        "couteau",
-        "légumes",
-        "planche",
-        "cuisine"
+        "servir",
+        "soupe",
+        "louche",
+        "casserole",
+        "bol",
+        "cuisine",
+        "pain",
+        "tablier",
+        "bleu",
+        "crème"
       ],
       "status": "visually_reviewed",
       "source_filename": "lot-02_01_OBJ-0001_couteau-de-cuisine.webp",
@@ -362,14 +373,21 @@
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/actions/servir-la-soupe-a-la-louche.webp",
-      "label": "Servir la soupe à la louche",
+      "label": "Couper un concombre sur une planche",
       "type": "Action",
       "subtype": "Actions du quotidien",
       "aliases": [
-        "soupe",
-        "louche",
-        "casserole",
-        "cuisine"
+        "couper",
+        "découper",
+        "concombre",
+        "rondelles",
+        "couteau",
+        "planche à découper",
+        "légume",
+        "cuisine",
+        "tablier",
+        "bleu",
+        "crème"
       ],
       "status": "visually_reviewed",
       "source_filename": "lot-02_03_OBJ-0005_louche.webp",
@@ -454,11 +472,25 @@
       "status": "visually_reviewed",
       "source_filename": "64a878a6-8657-4a72-b374-9aa62a26d554.webp",
       "source_sha256": "3cbc061dd4ab6bed2a4b9fd6510ea6ee12c704e162a4d45ea8b4f1861e7dd322",
-      "sha256": "3cbc061dd4ab6bed2a4b9fd6510ea6ee12c704e162a4d45ea8b4f1861e7dd322",
-      "width": 1024,
-      "height": 768,
-      "bytes": 1265639,
-      "conversion": "WebP copied without re-encoding"
+      "sha256": "81af909eceb92e05a20ace0b325a357fe926ebcba9ec744729d8149db0a58542",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 873928,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "3cbc061dd4ab6bed2a4b9fd6510ea6ee12c704e162a4d45ea8b4f1861e7dd322",
+          "width": 1024,
+          "height": 768,
+          "bytes": 1265639,
+          "conversion": "WebP copied without re-encoding"
+        },
+        "native_png": "/workspace/generated_images/exec-59d76f68-8e55-4336-9b98-ce30e45382ed.png",
+        "native_png_sha256": "9e9ba0d56c726f7f86b11e700473eda07b85f5a3f1042fd98729a8a993012d21",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/objets/fouet-a-main.webp",
@@ -473,11 +505,25 @@
       "status": "visually_reviewed",
       "source_filename": "e4aa7092-a22e-46af-abac-b258b5785df4.webp",
       "source_sha256": "58a34a75d2fb870a66750abd5a1becf5715a6a77363b90de91dee2014bc1f4a5",
-      "sha256": "58a34a75d2fb870a66750abd5a1becf5715a6a77363b90de91dee2014bc1f4a5",
-      "width": 1024,
-      "height": 768,
-      "bytes": 1350740,
-      "conversion": "WebP copied without re-encoding"
+      "sha256": "77118c02a4f105cd25a4ea21d0c6448348f1cb5953602494c07451accda368a0",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1015192,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "58a34a75d2fb870a66750abd5a1becf5715a6a77363b90de91dee2014bc1f4a5",
+          "width": 1024,
+          "height": 768,
+          "bytes": 1350740,
+          "conversion": "WebP copied without re-encoding"
+        },
+        "native_png": "/workspace/generated_images/exec-cc94bac8-4ffb-44d9-aeed-eca90305ab5e.png",
+        "native_png_sha256": "ec6ab41120739aa03195fdb2ad897c519574839b81ea74ada438c3521ee14860",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/arbouses-avec-feuilles.webp",
@@ -493,11 +539,25 @@
       "status": "visually_reviewed",
       "source_filename": "Arbutus Fruit Botanical Still Life-8.png",
       "source_sha256": "0df1ae0164c60b1baa63d875c670aef0814833d047aa21acbe24180a40b6a601",
-      "sha256": "0f3d8ad44a79b40744c05cd02804ee9dff7f6ca877966964b179ff485fdf529b",
-      "width": 1024,
-      "height": 768,
-      "bytes": 138468,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "f335cfa21c5c2cf24144575a413ecdaff7d76f0e5f71acdc019f63f11db9d716",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1536806,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "0f3d8ad44a79b40744c05cd02804ee9dff7f6ca877966964b179ff485fdf529b",
+          "width": 1024,
+          "height": 768,
+          "bytes": 138468,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-e51d3b6a-56e1-4b46-ac2a-c73565657b5e.png",
+        "native_png_sha256": "06fafd2fa9fff1dd1ec8d9e70c0d000ff3a722685ed333bdc52df28815678afa",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/cynorrhodons-coupes.webp",
@@ -513,11 +573,25 @@
       "status": "visually_reviewed",
       "source_filename": "Macro Rose Hips and Seeds-7.png",
       "source_sha256": "f75cdee8346edcfcc7e725c6995727f087c4c8d771893c43f052d4d7efbb2840",
-      "sha256": "85f3cd4b088fef3f4b2fe409e0db9c2c82697f511d61734b95d855703cdb22a9",
-      "width": 1024,
-      "height": 768,
-      "bytes": 128896,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "33278ad76e0617df510c7f63182d2f1089e404bb4c9388ea6c8111d9c4218a1c",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1508634,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "85f3cd4b088fef3f4b2fe409e0db9c2c82697f511d61734b95d855703cdb22a9",
+          "width": 1024,
+          "height": 768,
+          "bytes": 128896,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-4b014be2-fe21-4cbd-b9ff-27ee224b15d6.png",
+        "native_png_sha256": "0bd50474466ca0c633aca3cbcec5bb8c14f993e95e9412b2455ff77b9bf4ab7f",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/tamarillos-trio.webp",
@@ -533,11 +607,25 @@
       "status": "visually_reviewed",
       "source_filename": "Glistening Tamarillo Trio with Leaves-4.png",
       "source_sha256": "a2702b90cc9a08a3495101dececc009acd1452f1290b67b537343232f5292c88",
-      "sha256": "1fd9cb98ed582bda6408644b6ad07862b99e362539b6f15a03a6d0581f004cfe",
-      "width": 1024,
-      "height": 768,
-      "bytes": 117068,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "16dd32a9742b25912eceabb0f3ac41532161a532a66e96a9016707cab88a492e",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1429414,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "1fd9cb98ed582bda6408644b6ad07862b99e362539b6f15a03a6d0581f004cfe",
+          "width": 1024,
+          "height": 768,
+          "bytes": 117068,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-f58b5ab3-2620-46da-95c7-c97837e1241b.png",
+        "native_png_sha256": "bc2f6c972bce0eb3d24764ff44224e17ee818149e4153b7c6d759269611fadc4",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/amelanches-avec-feuilles.webp",
@@ -553,11 +641,25 @@
       "status": "visually_reviewed",
       "source_filename": "Realistic Serviceberry Cluster with Leaves-6.png",
       "source_sha256": "3eeb13bbe9bb0cf7cb5258d1f17dfe4cce39f925f3f6eda10718230234812de4",
-      "sha256": "c8da7dafe197384d45c4c158e275b287b7e22e1fb6c0396193ac4314de6062ca",
-      "width": 1024,
-      "height": 768,
-      "bytes": 102330,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "0dbb56c005c80b006b0d56f5799035de5fe734fba67a7844a60af6ceb578ea89",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1372728,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "c8da7dafe197384d45c4c158e275b287b7e22e1fb6c0396193ac4314de6062ca",
+          "width": 1024,
+          "height": 768,
+          "bytes": 102330,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-fdcfbece-3670-4491-891c-726f19b5f274.png",
+        "native_png_sha256": "6d0fce95d679937f626783ad3186cfec27546703c462f98aac93b66d433afe9e",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/jacquier-entier-et-coupe.webp",
@@ -573,11 +675,25 @@
       "status": "visually_reviewed",
       "source_filename": "Realistic Jackfruit Still Life-4.png",
       "source_sha256": "7a6bbaf2aa5752248651058ddc574b46e74e9749240de2a34c129331574a58ca",
-      "sha256": "d95cc5dcfdcf9eff20388ad59096166ee2027fac6db0edd5886fcbbbc794363c",
-      "width": 1024,
-      "height": 768,
-      "bytes": 143850,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "e0c8487183ec9b4510ff0e8f87b0522e5accf973147fd180e316fa8a6f7b172b",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1448548,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "d95cc5dcfdcf9eff20388ad59096166ee2027fac6db0edd5886fcbbbc794363c",
+          "width": 1024,
+          "height": 768,
+          "bytes": 143850,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-f2b67449-33d6-426f-86e2-c0d827086852.png",
+        "native_png_sha256": "76347b8e6ba808121eeb67d04becf52da605ff46f3fa55463c8424aac53491cc",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-sureau.webp",
@@ -593,11 +709,25 @@
       "status": "visually_reviewed",
       "source_filename": "Photorealistic Elderberry Cluster and Leaves-1.png",
       "source_sha256": "d6a39df5a52ca4668d4e00a10f1f5afa3ff70dd9b52d642c9b8d642ca743cf04",
-      "sha256": "02bac17c2ea6765d30731dcf9c9f42d83523c18a0ddf8d6b3a225f73d6b42cab",
-      "width": 1024,
-      "height": 768,
-      "bytes": 119640,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "e2848b345eda23c1de8b07edf07a0dc0ee96318a92295ff93b5db1ffe212ea85",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1467300,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "02bac17c2ea6765d30731dcf9c9f42d83523c18a0ddf8d6b3a225f73d6b42cab",
+          "width": 1024,
+          "height": 768,
+          "bytes": 119640,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-f5d3b96b-82a4-4b56-a55d-3a285174c8c8.png",
+        "native_png_sha256": "1bd31317eea82ee5116d2d6bbd75ba57e0b61da631987e2f9e2f17d2d69c0fca",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/amelanches-avec-fleurs.webp",
@@ -613,11 +743,25 @@
       "status": "visually_reviewed",
       "source_filename": "Hyper-Realistic Serviceberry Cluster with Blossoms-7.png",
       "source_sha256": "1074c8b60ce1380a5746f40bdfe5abe7f8233f734dab56b66d935a3a88e74232",
-      "sha256": "9e5038b72182e26001465eae70a82b6359e5a78206bf3d634c80e641dc9b4595",
-      "width": 1024,
-      "height": 768,
-      "bytes": 138852,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "66ab7574eb59344e93baee1098d0679e25ea7423fcdfcafe1ff3ce95a314b9f9",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1521638,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "9e5038b72182e26001465eae70a82b6359e5a78206bf3d634c80e641dc9b4595",
+          "width": 1024,
+          "height": 768,
+          "bytes": 138852,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-d117a5ca-c728-44f1-b1bd-b6e0e49af7ad.png",
+        "native_png_sha256": "743d6cbca9ea329c09cd33b973ba3c78c0a71da4a900e2a765d122d4bbf91d6c",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/feijoas-entiers-et-coupes.webp",
@@ -633,11 +777,25 @@
       "status": "visually_reviewed",
       "source_filename": "Hyper-Realistic Feijoa Still Life-2.png",
       "source_sha256": "e8a85f211a2dc6e5a534bcef33a580f5f716bc05e9263f235f7be194ef25479c",
-      "sha256": "3467a3378354553dac8662280c9923418b0f6e81e4cd94f806833718579d38f5",
-      "width": 1024,
-      "height": 768,
-      "bytes": 126630,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "cb6b26ffe179da57058707cb4b6bebdc32810836e2b1e9ef7fb197a66ff366a5",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1437954,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "3467a3378354553dac8662280c9923418b0f6e81e4cd94f806833718579d38f5",
+          "width": 1024,
+          "height": 768,
+          "bytes": 126630,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-21888bde-89d2-4f83-9646-99236c721176.png",
+        "native_png_sha256": "35b828dae22d919b2bf47c633cdabf3b821af52812550f99eb0a31cc0b7d0156",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-de-haskap.webp",
@@ -673,11 +831,25 @@
       "status": "visually_reviewed",
       "source_filename": "Goji Berry Branch and Berries-13.png",
       "source_sha256": "9eed62b4f8b690b8cc9936d53c027faad40fabfa8caa8c53c03fd08385d19a80",
-      "sha256": "808aed950c051a1a17951bb13f7c5192c1b6e76bcfa3dc057276b1ede8a25262",
-      "width": 1024,
-      "height": 768,
-      "bytes": 119878,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "ac61a4767e73c2e82750ea9e8e8874feb8eaa0306cf8282a4df096e6069e85fe",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1505664,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "808aed950c051a1a17951bb13f7c5192c1b6e76bcfa3dc057276b1ede8a25262",
+          "width": 1024,
+          "height": 768,
+          "bytes": 119878,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-0418a311-321b-44cf-a19b-641f8ea39462.png",
+        "native_png_sha256": "073e5a186afbc6db074ebe2c61f8d96dd960e4c885da0387a940bb2607833c49",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/argousier-sur-branche.webp",
@@ -693,11 +865,25 @@
       "status": "visually_reviewed",
       "source_filename": "Glossy Sea Buckthorn Berry Branch-10.png",
       "source_sha256": "b0d6e0aff57a3b2156f7f49b7ed2b7fc4fa94796b70654324188778062932cfb",
-      "sha256": "f10a37f8d71c50b2ce2a665e740b73588ab7263ba9f48dc8ea057c43ee0f7c4d",
-      "width": 1024,
-      "height": 768,
-      "bytes": 96436,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "869daad50f3e1a8f8819816669e9987fc95a92ca26ccf2293660a1b4c7bcc00d",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1317174,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "f10a37f8d71c50b2ce2a665e740b73588ab7263ba9f48dc8ea057c43ee0f7c4d",
+          "width": 1024,
+          "height": 768,
+          "bytes": 96436,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-704769cc-ad37-4689-a54d-e2dacd668f2d.png",
+        "native_png_sha256": "02a0e34eb486b177c997528b60ae624edf2a8b93325134fc5780dbd15f9b5a95",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/airelles-rouges-avec-feuilles.webp",
@@ -713,11 +899,25 @@
       "status": "visually_reviewed",
       "source_filename": "Glossy Lingonberry Cluster with Leaves-5.png",
       "source_sha256": "692a5740375a8767aca9a11d47824ed3f09bab74ab3a6f7b0da33e842e0595bd",
-      "sha256": "cc4a688794228ad21892e1a31b43968d9c1d67c38b57c731ab96613d2024b617",
-      "width": 1024,
-      "height": 768,
-      "bytes": 96938,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "0021515446a3dd7ff06a2079169209042d2e27c6ccbc71843f2469e82179d940",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1322936,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "cc4a688794228ad21892e1a31b43968d9c1d67c38b57c731ab96613d2024b617",
+          "width": 1024,
+          "height": 768,
+          "bytes": 96938,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-04f0f42a-b253-4121-9d39-46ae475864fe.png",
+        "native_png_sha256": "b087aea9cad5182c7ddd306a5bc9688013058f6a5cdf84c71b150ff3c3633738",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/cornouilles-sur-branche.webp",
@@ -733,11 +933,25 @@
       "status": "visually_reviewed",
       "source_filename": "Glossy Cornelian Cherries on a Branch-6.png",
       "source_sha256": "6a8c3a0b7c0b83141fd5e5142d0e7cb47be59aba0951d56a7e976b587c929857",
-      "sha256": "92ac59d79d43f8768ffc6d59d73909fd4d4679a70f24b7c903e627d9a59022ef",
-      "width": 1024,
-      "height": 768,
-      "bytes": 111698,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "f72a841ca7a77cec34b350fccaf4ae248ae782e1bed82c4b5515795debe3eff3",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1441106,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "92ac59d79d43f8768ffc6d59d73909fd4d4679a70f24b7c903e627d9a59022ef",
+          "width": 1024,
+          "height": 768,
+          "bytes": 111698,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-8319e91f-ec02-46ad-b57e-6cba7dab4c99.png",
+        "native_png_sha256": "c9438d178d56972a49dac598b2676b68fbbd87e5d86504fcc9f345ac50d96acf",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/baies-d-aronia.webp",
@@ -753,11 +967,25 @@
       "status": "visually_reviewed",
       "source_filename": "Glossy Aronia Berry Cluster with Green Leaves-12.png",
       "source_sha256": "186319b99162b4f95ebe1dbf7a449aa648b119928b6ca88a1d50458d9e359ec7",
-      "sha256": "c301b5255a643fa78a84cea035c48dee509a2228735ba70ca670638ae39b5b9d",
-      "width": 1024,
-      "height": 768,
-      "bytes": 113182,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "4226a002241ee0104cba71ca8ffbf73fdf056f01075c611ac2c98afa3a70e660",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1471168,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "c301b5255a643fa78a84cea035c48dee509a2228735ba70ca670638ae39b5b9d",
+          "width": 1024,
+          "height": 768,
+          "bytes": 113182,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-21424e67-a2be-43f2-812f-0af379aacd94.png",
+        "native_png_sha256": "5fabfd93652704ae0a34837856f32057f10966f27a63253e01070e3edb79d4b5",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/feijoas-avec-feuilles.webp",
@@ -792,11 +1020,25 @@
       "status": "visually_reviewed",
       "source_filename": "Sea Buckthorn Berry Cluster-11.png",
       "source_sha256": "39448192468525546ff2f5f35cd155b31df39db7df2101a34b1a6cc163e03172",
-      "sha256": "7ac44d61dafc16d0c0aa65dda2bec82e9061f9939d5b2e4cfe743cefdfb1859b",
-      "width": 1024,
-      "height": 768,
-      "bytes": 112366,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "0448ffc82bbd21a28ea9fcce3671b1660e2ab113b19cee9b2697d0e226694258",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1352244,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "7ac44d61dafc16d0c0aa65dda2bec82e9061f9939d5b2e4cfe743cefdfb1859b",
+          "width": 1024,
+          "height": 768,
+          "bytes": 112366,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-56e368bd-2992-4691-a656-bfe62e97201e.png",
+        "native_png_sha256": "c86d85c23fa91a27e399e28535fbbf069f949994b76f2cd6d6bc3550e2dbbcad",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/figues-de-barbarie-en-trio.webp",
@@ -812,11 +1054,25 @@
       "status": "visually_reviewed",
       "source_filename": "Vibrant Prickly Pear Trio-9.png",
       "source_sha256": "17e0d898e0c9816d1e3eeb343e1141583c61a899d9003417dc4aa441b0ad1d74",
-      "sha256": "f01771f04b4fdb531231f9d685047aad81d7cc4f85063dd85983cbb7bcdba402",
-      "width": 1024,
-      "height": 768,
-      "bytes": 140348,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "3edc7d2d435dbdc648e3de97f13983f59558d209cb086677cf8cf746cc9af637",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1521244,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "f01771f04b4fdb531231f9d685047aad81d7cc4f85063dd85983cbb7bcdba402",
+          "width": 1024,
+          "height": 768,
+          "bytes": 140348,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-e85ac760-ae91-48c1-8ed4-ec41f3d150ec.png",
+        "native_png_sha256": "13817e449c397d384ef57fe85aad944c11ea14699a9c7866e439258bced47ebc",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/kiwano-entier-et-coupe.webp",
@@ -832,11 +1088,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_08 PM-1.png",
       "source_sha256": "e44a40ce17cd348aa47a3ea94aa2fa5846b9fade352cbbfc4dcc6f9fde6697e6",
-      "sha256": "059801e7e6d87f442a0588b8409946a1f1f6be1fc9dc6154c1a9c2aa50f6566c",
-      "width": 1024,
-      "height": 768,
-      "bytes": 101424,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "ef0c62bd3204aef566599db2204dcdcdc273b474ab71ac0f5d098db708323313",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1293318,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "059801e7e6d87f442a0588b8409946a1f1f6be1fc9dc6154c1a9c2aa50f6566c",
+          "width": 1024,
+          "height": 768,
+          "bytes": 101424,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-594e720a-7dea-4080-80c5-69eae8fc3199.png",
+        "native_png_sha256": "4a5fe496c59e19839ad596f92870bf641783ed95f637af9062705649181462f9",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/poire-nashi-coupee.webp",
@@ -852,11 +1122,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_09 PM-2.png",
       "source_sha256": "e4f5a180f4deb0273ae15c7216c84b0cb1cf25c8f8b11964d21cfe3938e3134c",
-      "sha256": "eb9dd350f5d51a754bb85e9e2dfb7ce4898a5ae6f75412e6823b5df3b69dd1e7",
-      "width": 1024,
-      "height": 768,
-      "bytes": 82476,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "5e207668d147480c3b9972b617ba375160ae227273acc46e350b9592326438eb",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1228328,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "eb9dd350f5d51a754bb85e9e2dfb7ce4898a5ae6f75412e6823b5df3b69dd1e7",
+          "width": 1024,
+          "height": 768,
+          "bytes": 82476,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-b0d8d805-4b28-442a-96f3-c4f1c895851a.png",
+        "native_png_sha256": "1bfc95b410e4e18ee94ea82a524093f17990a9e207c8d454e58616d634b06204",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/bananes-plantain-coupees.webp",
@@ -872,11 +1156,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_10 PM-3.png",
       "source_sha256": "916b7a1dd25d0219096c90859deb671d90d56f6a7d57cb1c840fbd9fc2cc4101",
-      "sha256": "409615eceb7384f6647eab98d4b48f752c6e65193917af07b5324370d9cf10f7",
-      "width": 1024,
-      "height": 768,
-      "bytes": 70264,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "c402787311acab08964c06aa94b79a99fcc0cd5fec197bc5e50371c15ceeafe0",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1132742,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "409615eceb7384f6647eab98d4b48f752c6e65193917af07b5324370d9cf10f7",
+          "width": 1024,
+          "height": 768,
+          "bytes": 70264,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-50d22d34-7435-46d3-a1cf-b2b826197377.png",
+        "native_png_sha256": "fd6bad5e4d004c849d64feb03e8bece38f49f94d02599d33666fd076dcf02431",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/figues-de-barbarie-en-trio-variante.webp",
@@ -912,11 +1210,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_44_57-5.png",
       "source_sha256": "15a7d92109c7c90155b4e5c651c1f9cef168c16d021c153d006bbbd3dd05cd18",
-      "sha256": "68a574d5052f02de7f290e7ae4366689c2e516c669d458c9415aaba8f1223a79",
-      "width": 1024,
-      "height": 768,
-      "bytes": 111026,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "b136f50af50c3ffdca3ee3464fe0fc2da788d9f5eab2ceef82eb56b1006d7d46",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1379896,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "68a574d5052f02de7f290e7ae4366689c2e516c669d458c9415aaba8f1223a79",
+          "width": 1024,
+          "height": 768,
+          "bytes": 111026,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-79b32419-01ab-42b8-80d1-f8123684e5af.png",
+        "native_png_sha256": "6a679ef7ffeecbfedf766816d493a9a00e182e793aac4ac5a1e842314eab945c",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/fruits/nefles-du-japon.webp",
@@ -932,11 +1244,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_44_58-6.png",
       "source_sha256": "42b621486ece1e499edb321f486deadaaaa192e770a63d6915ed2481ffaa81bb",
-      "sha256": "ad56429602798808048d65bae91bf1f80556bfb4f499c5c7a2da7c8df0f39c9a",
-      "width": 1024,
-      "height": 768,
-      "bytes": 119036,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "2f5dad3b7c74420b02aeeabf30d45c707f754c91f5e255cb0c91aa62c73415cb",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1440664,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "ad56429602798808048d65bae91bf1f80556bfb4f499c5c7a2da7c8df0f39c9a",
+          "width": 1024,
+          "height": 768,
+          "bytes": 119036,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-7c7e7186-f1be-4be1-976c-05e330f04d56.png",
+        "native_png_sha256": "cd5f6e6d13e391d406d3f265018331477b7e5958359f89187aaad0092cb116b0",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/artichauts-violets-coupes.webp",
@@ -1012,31 +1338,64 @@
       "status": "visually_reviewed",
       "source_filename": "Fractal Romanesco Broccoli Study-3.png",
       "source_sha256": "2f93a796f857a3cd514ec0963dc329a902274a9757e2bde07ca8f606cf6dc536",
-      "sha256": "53360aa060c679a90a6a5596ec9ffb07dbee03e88b6537f9ea0734538e139dc0",
-      "width": 1024,
-      "height": 768,
-      "bytes": 129456,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "6f5d9293f5dbd41394320cf845ab53ec33adf54df2d0725ec70e395bea426703",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1525042,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "53360aa060c679a90a6a5596ec9ffb07dbee03e88b6537f9ea0734538e139dc0",
+          "width": 1024,
+          "height": 768,
+          "bytes": 129456,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-ab125cc3-20fa-40f7-a7b4-5b45fe952ae9.png",
+        "native_png_sha256": "54d2ced2bf34ae4ecbe2a52a3192e5bd1da1e7300c8db2f8eef1faf1eb13de65",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-violet-et-vert.webp",
-      "label": "Chou-rave violet et feuilles vertes",
+      "label": "Chou-rave vert et une tranche",
       "type": "Légume",
       "subtype": "Légumes",
       "aliases": [
         "chou-rave",
-        "colrave",
-        "bulbe violet",
-        "feuilles vertes"
+        "chou rave",
+        "légume",
+        "vert",
+        "tranche",
+        "coupe",
+        "chair blanche",
+        "feuilles",
+        "tige"
       ],
       "status": "visually_reviewed",
       "source_filename": "Photorealistic Kohlrabi Still Life-2 (1).png",
       "source_sha256": "3acac5338104d247e16f3f212b2c87b91f52494b778398d9e09603c55e1ddd43",
-      "sha256": "eaf03ce594eca843a4dae2a2cfd72c5a711164388ab5b7628e534c86da9a9bb3",
-      "width": 1024,
-      "height": 768,
-      "bytes": 67796,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "0ace9d60287fcd613d22956ef70696f65773b2aa035d062429c35a739b5c294c",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1238150,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "eaf03ce594eca843a4dae2a2cfd72c5a711164388ab5b7628e534c86da9a9bb3",
+          "width": 1024,
+          "height": 768,
+          "bytes": 67796,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-ddc28f24-c31e-4f80-804d-2e6bd9046e43.png",
+        "native_png_sha256": "5b9a3d3818691cf162a22a7290819952ce2ae93a5c0d81043d7cbed8ef5c77af",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/oca-du-perou.webp",
@@ -1072,11 +1431,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_44_54-2.png",
       "source_sha256": "3ee10128dae0680d4f9aefa88c215327e2df5985c54e403637bb5a1743d7f915",
-      "sha256": "72f24ffda4db93de6e5576e65ba2905573d6f0edb5ffe24f521826d03407da4b",
-      "width": 1024,
-      "height": 768,
-      "bytes": 79018,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "f068dde6423c14f49960f254625ae5c7cbab67cd3d1d50504d63c022406badac",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1207578,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "72f24ffda4db93de6e5576e65ba2905573d6f0edb5ffe24f521826d03407da4b",
+          "width": 1024,
+          "height": 768,
+          "bytes": 79018,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-8742745e-4824-49d9-84b4-dea5dccb5b18.png",
+        "native_png_sha256": "f525f667218e78d3b54757fd05e0b5e52c1bcd2dded923a2ba937a664700be12",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/edamame-en-cosses.webp",
@@ -1132,11 +1505,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_44_59-7.png",
       "source_sha256": "85e0d83336bc31384f308328fe339adafaa83064d203c7d78323b5fc6e844827",
-      "sha256": "a35b5d6ea0aa03387b218ff40ca5512460ec2df02d9d252d18a800f04c4d5831",
-      "width": 1024,
-      "height": 768,
-      "bytes": 131144,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "0e046664d725d51b2c5220c94842b2a46e85a006e5c3f2f1b10f7b79a937941f",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1495180,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "a35b5d6ea0aa03387b218ff40ca5512460ec2df02d9d252d18a800f04c4d5831",
+          "width": 1024,
+          "height": 768,
+          "bytes": 131144,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-4533734b-b4f4-4dfc-9e43-0d32274bf080.png",
+        "native_png_sha256": "87e0113ae68e5685b5b63776ff267b9213121899122161b6e20345bb145b834d",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/crosnes-du-japon.webp",
@@ -1151,11 +1538,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_45_00-8.png",
       "source_sha256": "c872fadffb6e83e6cc3b0b9e346479a4577d0ff00bfac48068ec89055406b8f2",
-      "sha256": "bb2a1520473f95243c0fe9e33a170d53b0a0cdd2da686250e3cea780562a508b",
-      "width": 1024,
-      "height": 768,
-      "bytes": 72326,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "e00d0610ce303ed29b5866a097a16e71065bc450da4cd892907afd45c5f8007f",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1182448,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "bb2a1520473f95243c0fe9e33a170d53b0a0cdd2da686250e3cea780562a508b",
+          "width": 1024,
+          "height": 768,
+          "bytes": 72326,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-84894c58-3cd2-4b6b-a0a4-b138c703e39e.png",
+        "native_png_sha256": "49dd8ab5d4e9de89a073249cbdf6ecbcb043990631e7bffc0a4cf89470d1e740",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-chinois-vert.webp",
@@ -1170,11 +1571,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_45_01-9.png",
       "source_sha256": "88c1aa0c9a7905627f75071fad524f768cb47a7a789fd97c4ffed9645537a56f",
-      "sha256": "6ed3bdfd4617c3ec320761b3c5b4b9974525a96884e939b36006e4585dab34d6",
-      "width": 1024,
-      "height": 768,
-      "bytes": 132994,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "c3fba2dce9fa4b431ae7eac15f2f640d46bed020f8fe604e355d77e2e7487b10",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1485704,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "6ed3bdfd4617c3ec320761b3c5b4b9974525a96884e939b36006e4585dab34d6",
+          "width": 1024,
+          "height": 768,
+          "bytes": 132994,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-5e7eb32b-6c15-426f-b11b-7a8b0a6c4f5a.png",
+        "native_png_sha256": "2c128353bcd5824af035eb3c8fc9dbcf15e5ad7332de11217b00361c87e1ce0d",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/courge-rayee-jaune.webp",
@@ -1190,11 +1605,25 @@
       "status": "visually_reviewed",
       "source_filename": "Image ChatGPT 17 nov. 2026, 16_45_02-10.png",
       "source_sha256": "57df56464e253b3c4e34ccee5a8300fe87f96ba2075c84c276243a258c5d6f55",
-      "sha256": "19b82c24a30c14c53a2cfc41dbb92dc287f4a9bf26c7220a8468830406131b38",
-      "width": 1024,
-      "height": 768,
-      "bytes": 115570,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "681df71c5a201192f82e1d81f58befff0b293f70c994e57938075f8acc012df5",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1450300,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "19b82c24a30c14c53a2cfc41dbb92dc287f4a9bf26c7220a8468830406131b38",
+          "width": 1024,
+          "height": 768,
+          "bytes": 115570,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-355440ff-88dc-4241-8558-e65a1b2542b6.png",
+        "native_png_sha256": "d953c74106d587b82cb7822e84e499f0b26656fe2a8e222425a0b3a468c691e7",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/chou-rave-vert-coupe.webp",
@@ -1210,11 +1639,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_11 PM-5.png",
       "source_sha256": "daf8bfdef2084c744b17dc9b210ed58a8d0b502b02f09f8c7a7b6cc7084463cf",
-      "sha256": "27d8a58f8f505ef5bbc2f3f0619c7950af649826d8efd845b58f45c4b4b61789",
-      "width": 1024,
-      "height": 768,
-      "bytes": 75138,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "e4a6e1066afc147915c7e4cf2a0a84576c65c790007165222b8d4a0390f76740",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1207240,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "27d8a58f8f505ef5bbc2f3f0619c7950af649826d8efd845b58f45c4b4b61789",
+          "width": 1024,
+          "height": 768,
+          "bytes": 75138,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-ef10bebb-b66d-4eeb-a25e-a4de1229e1c5.png",
+        "native_png_sha256": "264254ec4b70c724bfbaa9f6c794e55e90a63ae67a6305b295103e029b8ae07e",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/brocoli-romanesco-vert.webp",
@@ -1230,11 +1673,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_12 PM-6.png",
       "source_sha256": "e3c7c4625c45e29f6f5d8e4491f94e0135fda3a468949a14d6e8438886c701c6",
-      "sha256": "56ce6b102b693df5378aa22ee1baa4054137f1bd9ac366cc3df921dfa9514dbf",
-      "width": 1024,
-      "height": 768,
-      "bytes": 114324,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "1788ef136f8df830ce1bcecc8bc2b13082fad96a082c06ff2f09bfaf55b1ba8b",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1380804,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "56ce6b102b693df5378aa22ee1baa4054137f1bd9ac366cc3df921dfa9514dbf",
+          "width": 1024,
+          "height": 768,
+          "bytes": 114324,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-aa28999a-8d5c-408d-9a23-98c4c70280d6.png",
+        "native_png_sha256": "82e80f144fab541f394e0b4fbb4d0af09042a1ce8b92cfdf6822ca351880e145",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/radis-noir-coupe.webp",
@@ -1250,11 +1707,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_13 PM-7.png",
       "source_sha256": "491b07ed1bd0cf4bb4ecaa18c743b7dad94bbe8c8fd57c79c2cf4293190a1575",
-      "sha256": "b1cc3603f76b6009f47751cb47221fa85e3ea6985f9a9e2f440b3db2c49081bd",
-      "width": 1024,
-      "height": 768,
-      "bytes": 103254,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "a1ebc902d6670ea33cc795aa31a142e53417cd7a27d0646f01280fa1fb64bcf4",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1270008,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "b1cc3603f76b6009f47751cb47221fa85e3ea6985f9a9e2f440b3db2c49081bd",
+          "width": 1024,
+          "height": 768,
+          "bytes": 103254,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-16f00e62-e327-4eb7-bcb1-5bfe5923820f.png",
+        "native_png_sha256": "da72f3e8394ea32641c27bc806a1b9be3353445309336ef544816b139b39c105",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/radis-blanc-daikon.webp",
@@ -1270,11 +1741,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_14 PM-8.png",
       "source_sha256": "7493feb930ce125329d88e606cc9bd1885fb75d949ce0f357f568e5d64113da0",
-      "sha256": "626e82b3c52d12ba37928470354ae0ba76bae006e1d336bcdf8b62ad9a0b09a4",
-      "width": 1024,
-      "height": 768,
-      "bytes": 55834,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "8849d2f87a4bcbfbf8056959c0f5ca318b75d25daf60fea55558cb29a2fbe837",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1063940,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "626e82b3c52d12ba37928470354ae0ba76bae006e1d336bcdf8b62ad9a0b09a4",
+          "width": 1024,
+          "height": 768,
+          "bytes": 55834,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-a6bd4053-1ce2-4446-bd52-07d6ca0b50b4.png",
+        "native_png_sha256": "aa0686c273258c2150af3ebb59af56b22ea62850a5e7c21f44a0184b164e1ca1",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/courge-spaghetti-coupee.webp",
@@ -1290,11 +1775,25 @@
       "status": "visually_reviewed",
       "source_filename": "ChatGPT Image Nov 17, 2026, 03_44_15 PM-9.png",
       "source_sha256": "f8800ba5484cf373af32b0edb57cf6a91ea9527727d446307605e27b8acc8a5b",
-      "sha256": "ecf8401c566ca50f0978330f9016a9305f00ec4f1d16a82702dbbad86130412b",
-      "width": 1024,
-      "height": 768,
-      "bytes": 89474,
-      "conversion": "PNG to WebP, quality 90; no crop or resize"
+      "sha256": "1aa6678c1c88f821d25597acdaad1351f1c2d643a0b361f0eb1c689599761e05",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1307812,
+      "conversion": "Imagegen background edit; native PNG retained, published as pixel-identical lossless WebP without resizing.",
+      "background_review": {
+        "status": "corrected_and_visually_reviewed",
+        "register": "docs/gallery/correction-fonds-ajouts-20261117.json",
+        "previous": {
+          "sha256": "ecf8401c566ca50f0978330f9016a9305f00ec4f1d16a82702dbbad86130412b",
+          "width": 1024,
+          "height": 768,
+          "bytes": 89474,
+          "conversion": "PNG to WebP, quality 90; no crop or resize"
+        },
+        "native_png": "/workspace/generated_images/exec-e68e641c-d8f7-4911-9014-b77993beadea.png",
+        "native_png_sha256": "0ed7e4094c07fb99a812678472ba741428fd01ec12c59bec7092b7e2644eead4",
+        "lossless_rgb_pixels_identical": true
+      }
     },
     {
       "path": "/lib/images/tcf/catalogue/ajouts-20261117/legumes/patisson-coupe.webp",
