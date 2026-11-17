@@ -1,5 +1,5 @@
 import {playPrompt} from './domain/presentation'
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { listFiches } from '@/fiches/api'
 import { LoadingScreen } from '@/components/LoadingScreen'
 import { domainsForAccount, readAccessAccount } from '@/access'
@@ -27,8 +27,6 @@ import { FullPreload } from './components/FullPreload'
 import { useFullPreload } from './media/useFullPreload'
 import { PreparedMediaContext } from './media/prepared-context'
 import {
-  PALETTE,
-  inkForColor,
   type ShapeId,
 } from './domain/palette'
 import { demoRecipe } from './demo'
@@ -46,17 +44,15 @@ import { acquireSessionLease } from './session-lease'
 import { PrintCards } from './components/PrintCards'
 import { TeacherSheet } from './components/TeacherSheet'
 import { PaletteSettings } from './components/PaletteSettings'
-import { CardBadge } from './components/CardBadge'
 import { ClassroomHeader } from './components/ClassroomHeader'
 import {
-  validSeconds,
   type TimerSettings,
 } from './domain/settings'
 import { MODE_KEY } from './legacy-preferences'
 import { hasLocalCompetition } from './competition/storage-key'
 import { hasDuel } from './duel/storage-key'
 import { useReadabilityPreflight } from './layout/useReadabilityPreflight'
-import { ReadabilityCheck } from './components/ReadabilityCheck'
+import { SetupAction, SetupDialog, SessionSettings } from './components/SetupHub'
 
 
 type Source = GameSource
@@ -122,6 +118,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     try { return sessionStorage.getItem(MODE_KEY) === 'solo' ? 'solo' : 'class' } catch { return 'class' }
   })
   const [playing, setPlaying] = useState(false)
+  const [setupPanel, setSetupPanel] = useState<'content' | 'settings' | 'history' | 'print' | null>(() => new URLSearchParams(window.location.search).get('panel') === 'history' ? 'history' : null)
   const [competitionOpen, setCompetitionOpen] = useState(false)
   const [toolbarGuard, setToolbarGuard] = useState<ToolbarGuard>(initialPreferences.toolbarGuard)
   const [selection, setSelected] = useState<string[] | null>(() => source?.selectedKeys ?? null)
@@ -343,7 +340,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     <PreparedMediaContext value={preload.resolve}>
     <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot} style={mascotStyle(mascot,preload.resolve)}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
-      {!playing && <ClassroomHeader {...header} />}
+      {!playing && <ClassroomHeader {...header} compact />}
       {loading ? (
         <main className="ci-container">
           <LoadingScreen variant="panel" title="Préparation de la séance" description="Votre activité arrive…" />
@@ -382,48 +379,55 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                 onRetryDifficult={retryDifficult}
               />
             ) : (
-              <main className="ci-container">
-                <div className="ci-intro ci-no-print">
-                  <div>
-                    <p className="ci-eyebrow">Ensemble, en classe</p>
-                    <h1>
-                      Une question.
-                      <br />
-                      Toute la classe participe.
-                    </h1>
-                    <p className="ci-lead">
-                      Chacun réfléchit, puis lève sa carte. Toute la classe participe.
-                      Vous gardez la main sur la correction.
-                    </p>
-                  </div>
-                  <div className="ci-mini-cards" aria-hidden="true">
-                    {PALETTE.map((card, i) => (
-                      <div
-                        key={card.letter}
-                        style={
-                          {
-                            '--card-color': colors[i],
-                            '--card-ink': inkForColor(colors[i]!),
-                          } as CSSProperties
-                        }
-                      >
-                        <CardBadge letter={card.letter} shape={shapes[i]!} />
-                      </div>
-                    ))}
-                  </div>
+              <main className="ci-container ci-setup-home">
+                <div className="ci-setup-welcome ci-no-print">
+                  <p className="ci-eyebrow">Votre partie</p>
+                  <h1>{game.title}</h1>
+                  <p>{activeGame.questions.length} question{activeGame.questions.length > 1 ? 's' : ''} · {mode === 'class' ? 'Classe' : 'Solo'} · {timer.enabled ? `${timer.seconds} s` : 'Sans minuteur'}</p>
                 </div>
-                <div className="ci-setup-grid ci-no-print">
-                  <section className="ci-panel">
-                    <p className="ci-eyebrow">Votre séance</p>
-                    <h2>{game.title}</h2>
-                    {poolId&&<p><a href={`/interactif?edit=${poolId}`}>Modifier les exercices du pool</a> · <a href="/interactif">Nouveau pool</a></p>}
-                    <p>
-                      {activeGame.questions.length} question
-                      {activeGame.questions.length > 1 ? 's' : ''} retenue
-                      {activeGame.questions.length > 1 ? 's' : ''} ·{' '}
-                      {activeGame.rounds?.length ?? 0} écran(s) · sans
-                      classement
-                    </p>
+                <div className="ci-no-print">
+                  {draftWarning && <p role="status">{draftWarning}</p>}
+                  {source?.storageWarning && <p role="status">{source.storageWarning}</p>}
+                  {resumeWarning && <p role="status">{resumeWarning}</p>}
+                  {readability.error && <p role="status">{readability.error}</p>}
+                  {media.error && <p role="alert">{media.error}</p>}
+                  {resumeWarning === PLAN_CHANGED && <button onClick={() => newPart(false)}>Recommencer avec une nouvelle partie</button>}
+                  {(!media.complete || !readability.complete || !resumeChecked || pendingStart) && <LoadingScreen variant="inline" title="Préparation de la partie…" />}
+                  {canResume && saved && <p>Partie en cours du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')}.</p>}
+                  <div className="ci-setup-start">
+                    <button
+                      className="ci-primary ci-launch"
+                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || !readability.complete || pendingStart || resumeWarning === PLAN_CHANGED || preload.phase === 'loading'}
+                      onClick={() => { if (saved?.state.finished) newPart(true); else setPlaying(true) }}
+                    >
+                      {pendingStart ? 'Préparation de la nouvelle partie…' : saved?.state.finished ? 'Nouvelle partie' : canResume ? 'Reprendre la séance' : 'Commencer la séance'}{' '}
+                      <span aria-hidden="true">→</span>
+                    </button>
+                    {saved?.state.finished && <button className="ci-fresh-start" onClick={() => setPlaying(true)}>Revoir le bilan</button>}
+                    {canResume && (
+                      <>
+                      <button
+                        className="ci-fresh-start"
+                        disabled={!media.complete || preload.phase === 'loading'}
+                        onClick={() => newPart(true)}
+                      >
+                        Nouvelle partie
+                      </button>
+                      <button className="ci-fresh-start" onClick={() => { void deletePreparedSession(activeGame, mode).then(() => setResumeResult({ key: resumeKey, saved: null, warning: '' })).catch((error: unknown) => setResumeResult({ key: resumeKey, saved, warning: error instanceof Error ? error.message : 'Impossible de supprimer la sauvegarde.' })) }}>Supprimer la sauvegarde</button>
+                      </>
+                    )}
+                  </div>
+                  <div className="ci-setup-actions">
+                    <SetupAction icon="folder" title="Exercices ou fiche" detail={`${activeGame.questions.length} questions sélectionnées`} onClick={() => setSetupPanel('content')} />
+                    <SetupAction icon="timer" title="Préparer la séance" detail="Mode, chrono, mascotte et options" onClick={() => setSetupPanel('settings')} />
+                    <SetupAction opensDialog={false} icon="trophy" title="Compétition" detail="Duel, équipes ou salle en ligne" disabled={!header.onCompetition} onClick={() => header.onCompetition?.()} />
+                    <SetupAction icon="console" title="Parties et bilans" detail="Reprendre ou retrouver une séance" onClick={() => setSetupPanel('history')} />
+                  </div>
+                  <button type="button" onClick={() => setSetupPanel('print')}><span aria-hidden="true">▤</span>Supports à imprimer</button>
+                </div>
+                {setupPanel === 'content' && <SetupDialog title="Exercices ou fiche" onClose={() => setSetupPanel(null)} wide>
+                  <div className="ci-setup-links"><a href="/interactif">Choisir un nouveau pool d’exercices</a><a href="/fiches">Ouvrir une fiche</a>{poolId && <a href={`/interactif?edit=${poolId}`}>Modifier les exercices du pool</a>}</div>
+                  <h3>Questions de cette partie</h3>
                     <div className="ci-toolbar">
                       <button
                         onClick={() =>
@@ -514,6 +518,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                         éléments à adapter sont indiqués ci-dessous.
                       </p>
                     )}
+                  <details className="ci-settings-extra"><summary>Images et audios à vérifier</summary>
                     {selectedGame && (
                       <MediaCheck
                         plan={selectedGame}
@@ -530,99 +535,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                         onRetry={media.retry}
                       />
                     )}
-                    <FullPreload phase={preload.phase} progress={preload.progress} error={preload.error} disabled={!media.complete || !activeGame.questions.length} onStart={preload.start} onCancel={preload.release} onRelease={preload.release} />
-                    {media.complete && <ReadabilityCheck questions={activeGame.questions} {...readability} />}
-                    {(!media.complete || !readability.complete || !resumeChecked || pendingStart) && <LoadingScreen variant="inline" title={mode === 'solo' ? 'Préparation du mode Solo…' : 'Préparation du mode Classe…'} />}
-                    <p className="ci-run-note">Une nouvelle partie renouvelle les tirages du générateur, avec les mêmes types, limites et durées. Les questions saisies manuellement sont conservées ; une reprise garde la partie en cours.</p>
-                    {draftWarning && <p role="status">{draftWarning}</p>}
-                    {source?.storageWarning && <p role="status">{source.storageWarning}</p>}
-                    {resumeWarning && <p role="status">{resumeWarning}</p>}
-                    {resumeWarning === PLAN_CHANGED && <button onClick={() => newPart(false)}>Recommencer avec une nouvelle partie</button>}
-                    {canResume && saved && <p>Reprendre la séance du {new Date(saved.record.updatedAt).toLocaleString('fr-CH')} (question {saved.state.index + 1} sur {activeGame.rounds?.length ?? activeGame.questions.length}) ?</p>}
-                    <button
-                      className="ci-primary ci-launch"
-                      disabled={!activeGame.questions.length || !media.complete || !resumeChecked || !readability.complete || pendingStart || resumeWarning === PLAN_CHANGED || preload.phase === 'loading'}
-                      onClick={() => { if (saved?.state.finished) newPart(true); else setPlaying(true) }}
-                    >
-                      {pendingStart ? 'Préparation de la nouvelle partie…' : saved?.state.finished ? 'Nouvelle partie' : canResume ? 'Reprendre la séance' : 'Commencer la séance'}{' '}
-                      <span aria-hidden="true">→</span>
-                    </button>
-                    {saved?.state.finished && <button className="ci-fresh-start" onClick={() => setPlaying(true)}>Revoir le bilan</button>}
-                    {canResume && (
-                      <>
-                      <button
-                        className="ci-fresh-start"
-                        disabled={!media.complete || preload.phase === 'loading'}
-                        onClick={() => newPart(true)}
-                      >
-                        Nouvelle partie
-                      </button>
-                      <button className="ci-fresh-start" onClick={() => { void deletePreparedSession(activeGame, mode).then(() => setResumeResult({ key: resumeKey, saved: null, warning: '' })).catch((error: unknown) => setResumeResult({ key: resumeKey, saved, warning: error instanceof Error ? error.message : 'Impossible de supprimer la sauvegarde.' })) }}>Supprimer la sauvegarde</button>
-                      </>
-                    )}
-                  </section>
-                  <aside className="ci-panel">
-                    <h2>{mode === 'class' ? 'Le rituel de la classe' : 'Le parcours solo'}</h2>
-                    {mode === 'solo' ? <p>{timer.enabled ? 'Choisis une réponse avant la fin du compte à rebours. Sans réponse, la question est comptée comme fausse.' : 'Le minuteur est désactivé : choisis une réponse à ton rythme.'} La correction s’affiche pendant {timer.feedbackSeconds} seconde(s), puis la question suivante démarre. Les activités ouvertes restent sans note automatique.</p> : <ol className="ci-ritual">
-                      <li>Je réfléchis.</li>
-                      <li>Au signal, je lève ma carte.</li>
-
-                      <li>Nous discutons de la réponse.</li>
-                      <li>L’enseignant révèle la correction.</li>
-                    </ol>}
-                    <p>
-                      Les votes sur cartes ne sont pas captés automatiquement. Un comptage manuel est facultatif. Aucun
-                      téléphone élève n’est nécessaire.
-                    </p>
-                    <div className="ci-setup-timer">
-                      <label>
-                        <input
-                          type="checkbox"
-                          checked={timer.enabled}
-                          onChange={(e) =>
-                            changeTimer({ ...timer, enabled: e.target.checked })
-                          }
-                        />{' '}
-                        Activer le minuteur
-                      </label>
-                      <label>
-                        Temps de réflexion (secondes){' '}
-                        <input
-                          type="number"
-                          min="5"
-                          max="600"
-                          value={timer.seconds}
-                          onChange={(e) =>
-                            changeTimer({
-                              ...timer,
-                              seconds: validSeconds(Number(e.target.value)),
-                            })
-                          }
-                        />
-                      </label>
-                      <p>
-                        {mode === 'solo' ? '30 secondes par défaut, ou sans limite si le minuteur est désactivé. La correction et la suite sont automatiques après le choix.' : '30 secondes par défaut. Avec un document audio, le décompte commence à la fin de l’écoute. Vous choisissez toujours quand continuer.'}
-                      </p>
-                    </div>
-                    {activeGame.questions.some(question => activeGame.corrections[question.id]?.transcript) && <div className="ci-setup-guard"><label><input type="checkbox" checked={showTranscripts} onChange={(event) => {
-                      setShowTranscripts(event.target.checked); savePreferences({ showTranscripts: event.target.checked })
-                    }} />Proposer la transcription après les réponses</label><p>En Classe et en Solo, le texte de l’écoute devient accessible une fois toutes ses questions corrigées. La lecture suspend le passage automatique à la question suivante.</p></div>}
-                    {mode === 'class' && <div className="ci-setup-guard"><label><input type="checkbox" checked={toolbarGuard === 'hold-to-reveal'} onChange={(event) => {
-                      const next = event.target.checked ? 'hold-to-reveal' : 'none'
-                      setToolbarGuard(next); savePreferences({ toolbarGuard: next })
-                    }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
-                  </aside>
-                </div>
-                {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} paletteVersion={paletteVersion} />}
-                {source?.reference && <SessionArchive reference={source.reference} template={source.template} title={source.name} onOpen={(run) => { const url = new URL(window.location.href); url.searchParams.set('s', run.sessionId); window.history.pushState({ ...window.history.state, clairfleOpenSession: run.sessionId }, '', url); window.dispatchEvent(new PopStateEvent('popstate')) }} onErased={() => { window.history.pushState({}, '', '/generateur'); window.dispatchEvent(new PopStateEvent('popstate')) }} />}
-                <section className="ci-panel ci-no-print">
-                  <PaletteSettings
-                    colors={colors}
-                    shapes={shapes}
-                    onColors={changeColors}
-                    onShapes={changeShapes}
-                  />
-                </section>
+                  </details>
                 {!!activeGame.issues.length && (
                   <details className="ci-panel ci-no-print">
                     <summary>
@@ -638,9 +551,36 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                     </ul>
                   </details>
                 )}
+                  <button type="button" className="ci-primary" onClick={() => setSetupPanel(null)}>Valider la sélection</button>
+                </SetupDialog>}
+                {setupPanel === 'settings' && <SetupDialog title="Préparer la séance" onClose={() => setSetupPanel(null)}>
+                  <SessionSettings {...header}>
+                    {activeGame.questions.some(question => activeGame.corrections[question.id]?.transcript) && <div className="ci-setup-guard"><label><input type="checkbox" checked={showTranscripts} onChange={(event) => {
+                      setShowTranscripts(event.target.checked); savePreferences({ showTranscripts: event.target.checked })
+                    }} />Proposer la transcription après les réponses</label><p>En Classe et en Solo, le texte de l’écoute devient accessible une fois toutes ses questions corrigées. La lecture suspend le passage automatique à la question suivante.</p></div>}
+                    {mode === 'class' && <div className="ci-setup-guard"><label><input type="checkbox" checked={toolbarGuard === 'hold-to-reveal'} onChange={(event) => {
+                      const next = event.target.checked ? 'hold-to-reveal' : 'none'
+                      setToolbarGuard(next); savePreferences({ toolbarGuard: next })
+                    }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
+                    <details className="ci-settings-extra"><summary>Couleurs et symboles des cartes</summary><PaletteSettings colors={colors} shapes={shapes} onColors={changeColors} onShapes={changeShapes} /></details>
+                    <details className="ci-settings-extra"><summary>Ordre des questions et préréglages</summary>
+                {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} paletteVersion={paletteVersion} />}
+                    </details>
+                    <details className="ci-settings-extra"><summary>Jouer sans connexion</summary>
+                    <FullPreload phase={preload.phase} progress={preload.progress} error={preload.error} disabled={!media.complete || !activeGame.questions.length} onStart={preload.start} onCancel={preload.release} onRelease={preload.release} />
+                    </details>
+                    <button type="button" aria-pressed={fullscreen} onClick={header.onFullscreen}>{fullscreen ? 'Quitter le plein écran' : 'Plein écran'}</button>
+                  </SessionSettings>
+                </SetupDialog>}
+                {setupPanel === 'history' && <SetupDialog title="Parties et bilans" onClose={() => setSetupPanel(null)}>
+                {source?.reference && <SessionArchive reference={source.reference} template={source.template} title={source.name} onOpen={(run) => { const url = new URL(window.location.href); url.searchParams.set('s', run.sessionId); window.history.pushState({ ...window.history.state, clairfleOpenSession: run.sessionId }, '', url); window.dispatchEvent(new PopStateEvent('popstate')) }} onErased={() => { window.history.pushState({}, '', '/generateur'); window.dispatchEvent(new PopStateEvent('popstate')) }} />}
+                  {!source?.reference && <p>Les parties de démonstration n’ont pas d’historique. Choisissez un pool ou une fiche pour conserver vos bilans.</p>}
+                </SetupDialog>}
+                {setupPanel === 'print' && <SetupDialog title="Supports à imprimer" onClose={() => setSetupPanel(null)}>
                 <TeacherSheet game={activeGame} colors={colors} shapes={shapes} disabled={!media.complete} lastSignature={teacherSheetExport} onExport={setTeacherSheetExport} />
                 <PrintCards colors={colors} shapes={shapes} />
                 <p className="ci-no-print"><a href="/interactif/cartes" target="_blank" rel="noreferrer">Comparer les cartes avec cet écran</a> · <a href="/interactif/diagnostic" target="_blank" rel="noreferrer">Diagnostic de l’écran</a></p>
+                </SetupDialog>}
               </main>
             )}
           </>

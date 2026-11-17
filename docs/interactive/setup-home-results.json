@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "viewport": "390x844",
+      "axeViolations": 0,
+      "checks": [
+        "Clean entry and prepared-game home",
+        "Settings, mascot and timer survive navigation",
+        "Pool edits survive dialog closure",
+        "Presets and question selection retained",
+        "Completed report opens from both homes",
+        "Nested archive confirmation preserved",
+        "Competition still reachable",
+        "Four duplex A4 pages from the print dialog"
+      ]
+    },
+    {
+      "viewport": "360x640",
+      "axeViolations": 0,
+      "checks": [
+        "Clean entry and prepared-game home",
+        "Settings, mascot and timer survive navigation",
+        "Pool edits survive dialog closure",
+        "Presets and question selection retained",
+        "Completed report opens from both homes",
+        "Nested archive confirmation preserved",
+        "Competition still reachable"
+      ]
+    },
+    {
+      "viewport": "1366x768",
+      "axeViolations": 0,
+      "checks": [
+        "Clean entry and prepared-game home",
+        "Settings, mascot and timer survive navigation",
+        "Pool edits survive dialog closure",
+        "Presets and question selection retained",
+        "Completed report opens from both homes",
+        "Nested archive confirmation preserved",
+        "Competition still reachable"
+      ]
+    }
+  ],
+  "errors": [],
+  "date": "2026-11-17",
+  "environment": "Production build served locally at port 5185; Chromium",
+  "unit_tests": {
+    "passed": 17,
+    "failed": 0,
+    "files": [
+      "pools.test.mjs",
+      "presets.test.mjs",
+      "game-run.test.mjs"
+    ]
+  },
+  "pool_regressions": {
+    "results": [
+      {
+        "viewport": "390x844",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "1366x768",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "viewport": "360x640",
+        "domains": 3,
+        "questions": 6,
+        "source": "Direct domain generators, no worksheet API or saved worksheet",
+        "checks": [
+          "Selection preserved across domains and searches",
+          "Configured quantities and number range",
+          "Shuffled cross-domain plan",
+          "Native play offline after preload",
+          "Durable resume after clearing sessionStorage",
+          "Fresh seed preserves immutable pool"
+        ],
+        "axeViolations": 0
+      },
+      {
+        "solo": "Two mixed domains: correct and wrong choices, timeout and two-second automatic feedback through the final summary."
+      }
+    ],
+    "apiRequests": [],
+    "errors": []
+  },
+  "build": {
+    "command": "npm run build -- --manifest",
+    "exitCode": 0
+  },
+  "lint_exit_code": 0,
+  "secrets_scan_exit_code": 0,
+  "budget_exit_code": 0,
+  "proofs": "docs/interactive/setup-proofs",
+  "source_sha256": {
+    "src/interactive/components/SetupHub.tsx": "4b8ed1d49ce3ebe8521e2d02b61f892843ff2c9e331f034e4dc7feb2a4a15ad7",
+    "src/interactive/components/ClassroomHeader.tsx": "29b16098263156d5833e5edeb339164791e0600c2a58c22f6e29dcca7ee526b5",
+    "src/interactive/GameApp.tsx": "e92e45ca3d1f2763f04cd251f1f97d6c4719b77de2e888d0c72b1a8fa887697a",
+    "src/interactive/pools/PoolPage.tsx": "178d01c9c3e4acba16fb74db121ed2590cbff15840eafb6f79b2de938264c245",
+    "src/interactive/setup.css": "21d10096922a7dc1020e9188c8c9d71b25e5e5cdaf3e69b00ee7a63542a9837b"
+  }
+}

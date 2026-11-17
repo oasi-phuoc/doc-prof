@@ -89,6 +89,7 @@
     "test:interactive:loto": "node tests/interactive/loto-browser.mjs",
     "pool:catalog": "node scripts/game-pool-catalog.mjs && node scripts/certify-game-pool.mjs",
     "test:interactive:pools": "node tests/interactive/pools-browser.mjs",
+    "test:interactive:setup": "node tests/interactive/setup-home-browser.mjs",
     "mascots:evolution-crops": "node scripts/mascot-evolution-crops.mjs",
     "test:interactive:duel-settings": "node tests/interactive/duel-settings-browser.mjs",
     "test:interactive:duel-clearance": "node tests/interactive/duel-clearance-browser.mjs"

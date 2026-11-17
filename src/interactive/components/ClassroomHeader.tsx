@@ -8,6 +8,7 @@ import { validSeconds, validFeedbackSeconds, type TimerSettings } from '../domai
 import type { ToolbarGuard } from '../domain/teacher'
 
 export type ClassroomHeaderProps = {
+  compact?: boolean
   homeHref?:string
   mascot: MascotKind
   onMascot: (mascot: MascotKind) => void
@@ -24,7 +25,7 @@ export type ClassroomHeaderProps = {
   toolbarGuard?: ToolbarGuard
   onCompetition?: () => void
 }
-export function ClassroomHeader({ homeHref='/generateur', mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
+export function ClassroomHeader({ homeHref='/generateur', compact = false, mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
   session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void; onConsole?: () => void }
 }) {
   const locked = !!session?.teacherLocked
@@ -44,7 +45,7 @@ export function ClassroomHeader({ homeHref='/generateur', mascot, onMascot, mode
     return () => document.removeEventListener('pointerdown', outside)
   }, [panel,optionsOpen])
   return (
-    <header className={`ci-header ci-no-print${playing?' ci-clean-header':''}`} data-ci-toolbar>
+    <header className={`ci-header ci-no-print${playing?' ci-clean-header':''}${compact && !playing ? ' ci-setup-home-header' : ''}`} data-ci-toolbar>
       <div className="ci-header-start">
         <a href={homeHref} className="brand" aria-label="ClairFLE" aria-disabled={locked || undefined} tabIndex={locked ? -1 : undefined} onClick={(event) => { if (locked) event.preventDefault() }}>
           <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
@@ -53,7 +54,7 @@ export function ClassroomHeader({ homeHref='/generateur', mascot, onMascot, mode
         {!playing && <a className="ci-primary ci-create-link" href="/generateur">Créer des fiches</a>}
       </div>
       {session&&<><p className="ci-progress ci-sr-only">{session.progress}</p><div className="ci-header-audio" inert={locked} aria-disabled={locked || undefined}>{session.audio}</div></>}
-      <nav ref={tools} onKeyDown={(event) => { if (event.key === 'Escape' && panel) { event.stopPropagation(); closePanel() } }} className="ci-toolbar ci-header-tools" aria-label="Affichage et navigation">
+      {(!compact || playing) && <nav ref={tools} onKeyDown={(event) => { if (event.key === 'Escape' && panel) { event.stopPropagation(); closePanel() } }} className="ci-toolbar ci-header-tools" aria-label="Affichage et navigation">
         {playing&&<button ref={optionsTrigger} type="button" className="ci-icon-button" aria-label="Options du jeu" disabled={locked} aria-expanded={optionsOpen} onClick={()=>{setPanel(null);setOptionsOpen(!optionsOpen)}}><Icon name="options"/></button>}
         {<IconButton data-ci-fullscreen icon="expand" label={fullscreen?'Quitter le plein écran':'Plein écran'} aria-pressed={fullscreen} onClick={()=>{setPanel(null);setOptionsOpen(false);onFullscreen()}}/>}
         <div className={playing?'ci-game-options':'ci-toolbar'} hidden={playing&&!optionsOpen} onKeyDown={event=>{if(event.key==='Escape'&&!panel){event.stopPropagation();setOptionsOpen(false);optionsTrigger.current?.focus()}}}>
@@ -83,7 +84,7 @@ export function ClassroomHeader({ homeHref='/generateur', mascot, onMascot, mode
         <IconButton icon="folder" label="Mes fiches" disabled={locked} onClick={onFiches} />
         {session && <IconButton icon="exit" label="Quitter la séance" disabled={locked} onClick={session.onExit} />}
         </div>
-      </nav>
+      </nav>}
     </header>
   )
 }

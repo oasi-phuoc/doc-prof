@@ -1,5 +1,7 @@
 # ClairFLE — jouer avec la classe
 
+L’[accueil épuré du mode jeu](adr-0064-accueil-et-preparation.md) propose **Exercices ou fiche**, **Préparer la séance** et **Parties et bilans**. Les réglages du chrono, du mode, de la mascotte et du contraste sont regroupés dans une fenêtre ; les préréglages et le préchargement restent disponibles dans ses rubriques. Une fois les questions choisies, le lancement, les compétitions et les supports à imprimer sont accessibles par leurs boutons.
+
 Les [fractions illustrées](adr-0063-lecture-des-fractions-illustrees.md) ajoutent la lecture des figures TPM et TCM CFR aux pools de plusieurs domaines, en Classe, Solo, défi local et duel. La forme et ses parties coloriées suivent le tirage source ; les six propositions ont des valeurs distinctes et les fractions sont verticales. Les salles vérifient la prise en charge de cette activité par le serveur avant leur création.
 
 Les [fractions exactes](adr-0062-fractions-exactes.md) ajoutent six types aux pools : numérateur et dénominateur, équivalences, simplification, addition et soustraction, multiplication, division. Elles s’affichent verticalement avec une barre horizontale. Les six cartes ont des valeurs distinctes et se trient sans arrondi. Les comparaisons restent disponibles. Les mascottes des duels sont réduites, avec de l’espace pour leurs auras sous la question.
@@ -8,9 +10,9 @@ Les [réglages de combat et formes adultes](adr-0061-critiques-et-evolution.md) 
 
 [Fonctions réutilisables](etat-utilisable-v4.md) · [Suivi V4](suivi-v4.md) · [Compétition](guide-competition.md) · [Diagnostic](diagnostic-eni.md) · [Feuille enseignant](feuille-enseignant.md) · [Mobile et cartes carrées](livraison-mobile-question-cartes.md)
 
-Le bouton **Jouer en classe** ouvre le [choix direct des exercices](adr-0060-pools-multidomaines.md) : plusieurs types et plusieurs domaines peuvent composer un même pool, sans créer de fiche. Seuls les types pris en charge sont proposés ; les tirages se renouvellent à chaque nouvelle partie. Les pools restent disponibles sur le même appareil.
+Depuis **Jouer en classe**, **Exercices ou fiche** ouvre le [choix direct des exercices](adr-0060-pools-multidomaines.md) : plusieurs types et plusieurs domaines peuvent composer un même pool, sans créer de fiche. Seuls les types pris en charge sont proposés ; les tirages se renouvellent à chaque nouvelle partie. Les pools restent disponibles sur le même appareil.
 
-Le mode Classe est le mode par défaut : chacun répond avec ses cartes physiques, puis l’enseignant conduit la discussion et révèle la correction. Aucun élève ne sélectionne une réponse au tableau. Le bouton icône Classe/Solo change directement le mode.
+Le mode Classe est le mode par défaut : chacun répond avec ses cartes physiques, puis l’enseignant conduit la discussion et révèle la correction. Aucun élève ne sélectionne une réponse au tableau. Avant le départ, le mode se choisit dans **Préparer la séance** ; pendant le jeu, le bouton icône Classe/Solo reste dans les options.
 
 Les [protections enseignant](livraison-protections-enseignant.md) ajoutent un maintien optionnel pour révéler, un cadenas conservé après actualisation, une annulation de correction pendant dix secondes et une confirmation avant de passer ou terminer. Les raccourcis de phase s’utilisent avec le focus dans les commandes.
 
