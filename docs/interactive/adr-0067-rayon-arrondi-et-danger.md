@@ -1,0 +1,7 @@
+# Rayon ×4 arrondi et avertissement de coup de grâce
+
+Le rayon du critique ×4 se termine par un arrondi sur ses quatre couches colorées, avec un halo de même forme. Le contour suit la direction du tir, y compris en diagonale et de droite à gauche. Les couleurs, les particules et le moment des dégâts restent ceux de chaque mascotte. La profondeur de l’arrondi est bornée pour les tirs très courts.
+
+Quand les points de vie restants permettent au coup courant de mettre la mascotte K.-O., sa brillance s’accompagne de deux ondes circulaires décalées. Elles grandissent puis s’effacent autour d’elle, dans sa couleur d’attaque. Cet avertissement reste visible avant le contact du coup fatal et disparaît à l’impact. La pause arrête aussi ces ondes. La vie infinie n’affiche aucun avertissement de coup fatal.
+
+Le contrôle du rayon peint le rendu utilisé en jeu pour les 30 mascottes dans quatre directions. Il vérifie l’extension du bout, ses épaules arrondies et le maintien du départ du rayon, soit 120 cas. Une planche montre également six attaques complètes dans les deux sens. Le parcours navigateur de combat vérifie la présence des deux ondes uniquement sur la mascotte menacée, leur couleur, la pause et leur disparition au contact, sur les formes adultes et mini. Les captures couvrent le mobile portrait, le mobile paysage et l’ordinateur. Ces vérifications ne remplacent pas un essai sur tableau interactif physique.

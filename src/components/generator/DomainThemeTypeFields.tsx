@@ -489,7 +489,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isTcf && activeBlock.exerciseType.startsWith('tcf-ce') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont, libreItems: undefined })} /> : null}
+              {isTcf && activeBlock.exerciseType.startsWith('tcf-ce') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
               {activePage.domain === 'tcf-csc' && activeBlock.exerciseType.startsWith('tcf-ce') ? (
                 <TcfCeFormatControl value={activeBlock.tcfCeFormat ?? 'texte'}
                   onChange={(tcfCeFormat) => updatePage({ tcfCeFormat, libreItems: undefined })} />

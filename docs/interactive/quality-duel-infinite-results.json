@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-17",
+  "scope": "Duels locaux et tournois par équipes : vie 100/200/infinie, nombre de questions, rayon ×4 arrondi et ondes de coup de grâce.",
+  "rules": {
+    "finiteHp": [
+      100,
+      200
+    ],
+    "infinite": {
+      "questionMin": 1,
+      "questionMax": 100,
+      "defaultQuestions": 10,
+      "correctScore": 1,
+      "wrongScore": 0,
+      "timeoutScore": 0,
+      "criticalScoreBonus": 0,
+      "healthLoss": 0,
+      "tie": "draw",
+      "teams": "Chaque paire repart de zéro ; le tournoi compte les duels remportés."
+    },
+    "legacy": "Journaux v2/v3/v4 conservés ; paramètres v1 convertis uniquement pour les nouvelles parties."
+  },
+  "unitTests": {
+    "passed": 43,
+    "failed": 0,
+    "command": "node --test --test-concurrency=1 tests/interactive/duel.test.mjs tests/interactive/duel-settings.test.mjs tests/interactive/duel-infinite.test.mjs tests/interactive/mascot-effects.test.mjs"
+  },
+  "browser": {
+    "infinite": {
+      "passed": true,
+      "results": [
+        {
+          "viewport": "844x390",
+          "questions": 10,
+          "left": 7,
+          "right": 1,
+          "checks": [
+            "Only 100, 200 and infinite offered",
+            "Critical ×4 awards one point and keeps life infinite",
+            "Wrong answer and timeout award zero",
+            "Counts and original rules survive real reload",
+            "Stops at configured count and ranks correct answers",
+            "Offline play after preparation"
+          ],
+          "axeViolations": 0
+        },
+        {
+          "viewport": "1366x768",
+          "questions": 15,
+          "left": 12,
+          "right": 1,
+          "checks": [
+            "Only 100, 200 and infinite offered",
+            "Critical ×4 awards one point and keeps life infinite",
+            "Wrong answer and timeout award zero",
+            "Counts and original rules survive real reload",
+            "Stops at configured count and ranks correct answers",
+            "Offline play after preparation"
+          ],
+          "axeViolations": 0
+        },
+        {
+          "migration": "Legacy 150 HP maps to 200 for new games, then 100 is selectable; timer kept."
+        }
+      ],
+      "pageErrors": []
+    },
+    "finite": {
+      "passed": true,
+      "results": [
+        {
+          "viewport": "390x844",
+          "maxHp": 200,
+          "critical4Chance": 100,
+          "checks": [
+            "Grouped timer and combat settings persist",
+            "Excess probability disables preparation",
+            "Adult form at 200 stays adult at 40 and zero",
+            "Animated charge and widening beam in both directions",
+            "Mistake is a local implosion",
+            "HP changes at contact, exact pre-lethal health retained",
+            "Potentially fatal victim shines with two animated warning waves in its own colour; pause freezes both; no warning at contact or outside lethal range",
+            "Colourful bold HP without black background",
+            "Native offline play after full preload",
+            "Finished match resumes with original rules"
+          ],
+          "axeViolations": 0
+        },
+        {
+          "viewport": "1366x768",
+          "maxHp": 200,
+          "critical4Chance": 100,
+          "checks": [
+            "Grouped timer and combat settings persist",
+            "Excess probability disables preparation",
+            "Adult form at 200 stays adult at 40 and zero",
+            "Animated charge and widening beam in both directions",
+            "Mistake is a local implosion",
+            "HP changes at contact, exact pre-lethal health retained",
+            "Potentially fatal victim shines with two animated warning waves in its own colour; pause freezes both; no warning at contact or outside lethal range",
+            "Colourful bold HP without black background",
+            "Native offline play after full preload",
+            "Finished match resumes with original rules"
+          ],
+          "axeViolations": 0
+        },
+        {
+          "viewport": "844x390",
+          "maxHp": 200,
+          "critical4Chance": 100,
+          "checks": [
+            "Grouped timer and combat settings persist",
+            "Excess probability disables preparation",
+            "Adult form at 200 stays adult at 40 and zero",
+            "Animated charge and widening beam in both directions",
+            "Mistake is a local implosion",
+            "HP changes at contact, exact pre-lethal health retained",
+            "Potentially fatal victim shines with two animated warning waves in its own colour; pause freezes both; no warning at contact or outside lethal range",
+            "Colourful bold HP without black background",
+            "Native offline play after full preload",
+            "Finished match resumes with original rules"
+          ],
+          "axeViolations": 0
+        },
+        {
+          "viewport": "360x640",
+          "maxHp": 100,
+          "critical4Chance": 100,
+          "checks": [
+            "Mini ink and bamboo casting sheets preloaded for their two roster families",
+            "Native play with network disabled",
+            "Both minis retain their form",
+            "Self-knockout displays the actual 20 HP before a 40-point implosion",
+            "No opposing attacker appears on a mistake"
+          ]
+        }
+      ],
+      "pageErrors": [],
+      "liveApiWrites": 0,
+      "motionPreferenceTested": "reduce"
+    },
+    "roundedBeam": {
+      "passed": true,
+      "mascots": 30,
+      "directions": 4,
+      "cases": 120,
+      "checks": "Pixel alpha verifies the bright rounded tip extends beyond the former flat edge, while its shoulders curve away; all 30 mascot colours in four directions.",
+      "pageErrors": []
+    }
+  },
+  "build": {
+    "passed": true,
+    "command": "npm run build -- --manifest"
+  },
+  "lint": {
+    "passed": true,
+    "errors": 0,
+    "existingWarningsRemain": true
+  },
+  "budgets": {
+    "landing": {
+      "gzip": 122458,
+      "maximumGzip": 153600,
+      "passed": true
+    },
+    "pool": {
+      "gzip": 160837,
+      "maximumGzip": 204800,
+      "passed": true
+    },
+    "calibration": {
+      "gzip": 143242,
+      "maximumGzip": 204800,
+      "passed": true
+    },
+    "diagnostic": {
+      "gzip": 145376,
+      "maximumGzip": 204800,
+      "passed": true
+    },
+    "competition": {
+      "gzip": 204654,
+      "maximumGzip": 204800,
+      "passed": true
+    },
+    "teacherConsole": {
+      "gzip": 167724,
+      "maximumGzip": 204800,
+      "passed": true
+    },
+    "game": {
+      "gzip": 3140818,
+      "maximumGzip": 3145728,
+      "passed": true
+    }
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "command": "npm run check:interactive:secrets"
+  },
+  "proofs": [
+    "duel-infinite-proofs/",
+    "duel-evolution-proofs/",
+    "rounded-beam-proofs/rounded-rays.png"
+  ],
+  "limitations": [
+    "Parcours ciblés exécutés ; la suite navigateur complète n’a pas été relancée.",
+    "Pas de nouvel essai sur tableau interactif physique."
+  ],
+  "sourceSha256": {
+    "src/interactive/duel/rules.ts": "ab8b9620214c6ab39fab63a87dcac1b8252be7c7da014547b4421626566f61b0",
+    "src/interactive/duel/parameters.ts": "d335119fd533591532bc7e3a7eb2221252a9ff0ea5589524cc8a61b3a8b38062",
+    "src/interactive/duel/core.ts": "c7c2baa38ada6aa52c3e46308f209a029603932b190289d241b1a33631620871",
+    "src/interactive/duel/storage.ts": "2a7c38881624497812c83e26ace9931942a0f75dfde4adebf67bd9030a465957",
+    "src/interactive/duel/effects.ts": "0fdceebbf7d597337fc6cb351538c6f8f20b08d9523965d25a320d6cb45d9475",
+    "src/interactive/duel/BattleParameters.tsx": "ae7f5c70410c4a5ab123b7e682d0fba498a6afcac4d5b8ee3f4a2a04c8750f2c",
+    "src/interactive/duel/DuelSetup.tsx": "fb9cdc71e1b47f9ab7f6548e1d9b183e088c2dfe4c5eca9979e57aad519ee660",
+    "src/interactive/duel/DuelGame.tsx": "ce000b6147ead831006dfc1ced1fbbe54ae50bf04975da3310aea61bae6ef738",
+    "src/interactive/duel/duel.css": "bd94e66cc5b8213fbea9217c64fa73fee7964fce728696d45a3421f46be72bc9",
+    "src/interactive/duel/vfx/renderer.ts": "f5b829901eec6c273cbc8071776b89d4db2e4e584370c4194fde1fae48fda038",
+    "tests/interactive/duel-infinite.test.mjs": "fe130b1b7b8d165a795a15ed5bd526bf7afcb3ddd53e559f771e4842882b6874",
+    "tests/interactive/duel-infinite-browser.mjs": "5f18839983b893f65e6908503634cb5e4ba0c024a387cae6a589d137d8660076",
+    "tests/interactive/duel-settings-browser.mjs": "488fca820fd803841e7882a730cc9a60715e08d4472ed225f06eb5ffa14b1c88",
+    "tests/interactive/rounded-beam-browser.mjs": "cc844af972caba18c9ebb78f5d5a0f84e41dd127f7bf2673f3490be795c00dec"
+  }
+}

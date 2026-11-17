@@ -40,7 +40,7 @@ export default function DuelSetup(props: Props) {
   return <CompetitionShell title={props.mode === 'duel' ? 'Duel à deux' : 'Duels par équipes'} onExit={props.onExit}><main className="ci-container ci-duel-setup">
     <h1>{props.mode === 'duel' ? 'Préparer le duel' : 'Préparer les équipes'}</h1>
     <p>Le premier clic décide du coup : dégâts à l’adversaire si c’est juste, à soi si c’est faux. Réglez la vie et les chances de critiques dans les paramètres ci-dessous.</p>
-    <p>À 0 point, le duel est perdu. Si personne ne répond à temps, les deux joueurs perdent 10 points. Chaque joueur choisit une mascotte différente.</p>
+    <p>{combat.questionLimit!==undefined?`Vie infinie : ${combat.questionLimit} questions par duel, une bonne réponse vaut un point. Les questions disponibles sont mélangées puis reprises si nécessaire.`:'À 0 point, le duel est perdu. Si personne ne répond à temps, les deux joueurs perdent 10 points.'} Chaque joueur choisit une mascotte différente.</p>
     <div className="ci-duel-rosters">{(['left', 'right'] as const).map((side, index) => <section className="ci-panel" aria-label={`Équipe ${index + 1}`} key={side}>
       <h2>{props.mode === 'teams' ? `Équipe ${index + 1}` : `Joueur ${index + 1}`}</h2>
       <CompetitionAvatarPicker selected={props.mode === 'duel' ? config[side][0]! : selectedFor(side)} excluded={props.mode==='duel'?config[otherSide(side)]:[...left,...right]} onSelect={avatar => props.mode === 'duel' ? change(side, [avatar]) : setPicked(previous => ({ ...previous, [side]: avatar }))} />

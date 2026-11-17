@@ -2,10 +2,10 @@
   "date": "2026-11-17",
   "baseline": "12062d02b22837d272ffce79e69e3b6bb9975748",
   "feature_commit": "087072a3",
-  "merged_main": "272da44cd9442c68fb9cd19452b2f885546d059f",
+  "merged_main": "3193e9326d64640aa909c07b18dfba82eeb6b7b9",
   "checks": {
     "layout_transcriptions_fonts_saved_fiche_access": {
-      "passed": 21,
+      "passed": 22,
       "failed": 0
     },
     "image_and_audio_catalogs": {
@@ -36,7 +36,8 @@
     "old_frame_break_undo": true,
     "student_and_correction_print": true,
     "no_printed_footer_overlap": true,
-    "saved_fiche_api": "mocked local API; production Worker not exercised"
+    "saved_fiche_api": "mocked local API; production Worker not exercised",
+    "manual_edits_preserved": true
   },
   "unchanged_against_merged_main": [
     "src/tcf/content",
@@ -55,34 +56,70 @@
   },
   "production_budgets": {
     "landing": {
-      "gzip": 122552,
+      "gzip": 122550,
       "maximumGzip": 153600
     },
     "pool": {
-      "gzip": 160965,
+      "gzip": 160981,
       "maximumGzip": 204800
     },
     "calibration": {
-      "gzip": 143353,
+      "gzip": 143362,
       "maximumGzip": 204800
     },
     "diagnostic": {
-      "gzip": 145488,
+      "gzip": 145493,
       "maximumGzip": 204800
     },
     "competition": {
-      "gzip": 204756,
+      "gzip": 204775,
       "maximumGzip": 204800
     },
     "teacherConsole": {
-      "gzip": 167833,
+      "gzip": 167842,
       "maximumGzip": 204800
     },
     "game": {
-      "gzip": 3141520,
+      "gzip": 3141591,
       "maximumGzip": 3145728
     }
   },
   "budget_limits_unchanged": true,
-  "font_loading": "Worksheet font preferences and styles loaded with worksheet components; default interface fonts unchanged."
+  "font_loading": "Worksheet font preferences and styles loaded with worksheet components; default interface fonts unchanged.",
+  "verified_source_sha256": {
+    "public/fonts/worksheet/README.md": "bb4b6c0c8d4c1bafdc8633f8a4191d2254e2ba44793c2cc52837e04a14a713d8",
+    "public/fonts/worksheet/didact-gothic-OFL.txt": "36e2f1debc9778bac79fac1a0cb5a5ef51c102f00b58ef7d8a05324144b68166",
+    "public/fonts/worksheet/didact-gothic-v1.ttf": "b98f9e091b6337a86f4e0f69c94c31905e1e287782853f472e176b4e28d3f81f",
+    "public/fonts/worksheet/manifest.json": "750bd0875440f94027dc4ec51db69a62b7159e2dbd7680628ab556646a0fa60f",
+    "src/App.css": "2920e5c4a47953647db5c88571535849714c308442f39ce2faa506b27d54d596",
+    "src/components/ItemView.tsx": "2ae567ba0e39e0c68cdf47f65038c73ef3008586a0e7293fa559df6a75a44329",
+    "src/components/generator/CatalogNavigation.tsx": "69d9ff1196f83ce213b634e520416c26ecef91e45dc160ca128bd85d56d4a488",
+    "src/components/generator/DomainThemeTypeFields.tsx": "fb2061292354a381e001473937efb67208d623b637f081d839c7c2dc5df568d3",
+    "src/components/generator/GeneratorPage.tsx": "3f497aaebf1c2fabc56f5e54daa738135e202b1adae7517b9960d76c3ae2dee7",
+    "src/components/generator/ResultPanel.tsx": "8466561f8a428af567c71b10345a7e2ea9dee5f20789fc3d390624749c0e2c16",
+    "src/components/generator/SheetFontSelect.tsx": "596618373a61f16c99ccba668321456f54c5135d9b2b2edec2e910f21658dd3e",
+    "src/components/generator/TcfCeFormatControl.tsx": "3d7f40c22b71656d72b9762cbb04389137ddbbb2cfacc9ab1ebd1ca4391598c5",
+    "src/components/generator/TopbarTools.tsx": "b2ca6663aaaffbbda94876589d2bcdf91c9e4076e5496e552ceeb9ebfa5c6d02",
+    "src/components/generator/WorksheetSheet.tsx": "8e396fa3cae49db6dfe502d1052ca5f786078cd4b692092f2a9a1a437409924f",
+    "src/components/generator/font-controls.css": "f42992c89c858a07611d2ba1af7da8bb516483d05dc4dfcfbdecca757c62f0fc",
+    "src/components/generator/sheet-font.ts": "b8498885704eeab4c4a2b4b2bf61671c011d68c5480846fd0fde423f856d8869",
+    "src/components/generator/usePageConfig.ts": "0fe9ba0d5b4f4886e2f4490a6bf74a847950eba375fb7cfb0c3ee7eefce4bbb2",
+    "src/components/generator/worksheet-typography.css": "8eb66b614d0806d5842e01975c4a5e36a1ae2381016a9ad2a320972bb4006f4c",
+    "src/components/tcf/TcfItemView.tsx": "ee1e27cc103e8c15fef9eb320b60b5b009306e146f9d7cc6424536e28979dfe3",
+    "src/components/tcf/TcfQuestions.tsx": "3f077b7899828c823e92670a6c02147e891f339240923d949986e791dffbfaf3",
+    "src/components/tcf/TexteSupport.tsx": "4a3f9b3ec58a56f84837330e07219b24ecf4ac700c1d70be01bfeb737e394e34",
+    "src/fiches/recipe.ts": "57ff7b04c90e451859e1d06d8e14d9d41fd2eef901447f8c2c7385a248070e6d",
+    "src/math/generate.ts": "dddb0623e42dea9289030e1e3f1173fa196cb5f0685a3f068b3b6d6b3cef4ed7",
+    "src/math/page-model.ts": "d409f99cc8f180854b334311eb6520d6b85a9beab94ef8300521a18bef7d646c",
+    "src/math/types.ts": "de0fcbbe46598100d7b3af47b44da648418745674ee2ffd7f12f92e5b8ac9e0a",
+    "src/tcf/audio-question-pages.ts": "4ae671023bf177b103d927c51064961a5c04cc677ca1d90a7dd87db2c66ac30c",
+    "src/tcf/ce-questions.ts": "ace27671477d1b185c58d538263a37a5e49766289f4faa40c68a4736c671aa85",
+    "src/tcf/generate.ts": "0cf209c0217419ffd033173d3d2526492b7d2085537c5d56d8fe52c6e3927b73",
+    "src/tcf/tagged-picker.tsx": "2eb72fc4878a4eec4488de3af006e0407cffa0d7189ca170dc13cc4f61e05330",
+    "src/tcf/types.ts": "4748ac0d6a4a25d7edeb77cceb3591a0c23262156f9d63ddcf57277e37aeff96",
+    "src/typography/font-families.ts": "a124e6b9b98a61c006b51d3933545e59bdfeb8bc672415525b25a989d771f5fd",
+    "src/typography/font-ids.ts": "3000cdc5c343648bd078e5610ae2ba3f352c63ea5c510c7744a253cc56c78b8f",
+    "tests/interactive/tcf-layout-settings-browser.mjs": "3811a3d03d98829ceda1d2bb263f3eae41ff29017620fd0fdb1bc75d9a184c8c",
+    "tests/interactive/tcf-layout-settings.test.mjs": "e6e1c2a4079a7010672ba788381501469de2f2c32d56a575b6c09448938205eb"
+  }
 }

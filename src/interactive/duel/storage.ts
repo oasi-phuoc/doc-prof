@@ -5,7 +5,7 @@ import type { TimerSettings } from '../domain/settings'
 import { duelStorageKey as key } from './storage-key'
 export { hasDuel } from './storage-key'
 
-export type DuelJournal = { version: 2|3|4; quizId: string; planId: string; config: DuelConfig; timer: TimerSettings; createdAt: number; events: { at: number; action: DuelAction }[] }
+export type DuelJournal = { version: 2|3|4|5; quizId: string; planId: string; config: DuelConfig; timer: TimerSettings; createdAt: number; events: { at: number; action: DuelAction }[] }
 export async function duelPlanId(quiz: CompetitionQuiz): Promise<string> {
   const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonicalJson(quiz)))
   return Array.from(new Uint8Array(bytes), byte => byte.toString(16).padStart(2, '0')).join('')
@@ -24,7 +24,7 @@ export function readDuel(quiz: CompetitionQuiz, planId: string, config: DuelConf
     const raw = sessionStorage.getItem(key(quiz.id, config.mode)); if (!raw) return fallback
     if (raw.length > 1_000_000) throw new Error('Journal trop volumineux.')
     const journal = JSON.parse(raw) as DuelJournal
-    if (!journal || ![2,3,4].includes(journal.version) || Object.keys(journal).some(field => !['version', 'quizId', 'planId', 'config', 'timer', 'createdAt', 'events'].includes(field)) || journal.quizId !== quiz.id || journal.planId !== planId || journal.config?.mode !== config.mode || !Number.isFinite(journal.createdAt) || journal.createdAt > at + 60_000 || at >= journal.createdAt + DUEL_LIFETIME || !Array.isArray(journal.events) || journal.events.length > 5000) throw new Error('Journal invalide.')
+    if (!journal || ![2,3,4,5].includes(journal.version) || Object.keys(journal).some(field => !['version', 'quizId', 'planId', 'config', 'timer', 'createdAt', 'events'].includes(field)) || journal.quizId !== quiz.id || journal.planId !== planId || journal.config?.mode !== config.mode || !Number.isFinite(journal.createdAt) || journal.createdAt > at + 60_000 || at >= journal.createdAt + DUEL_LIFETIME || !Array.isArray(journal.events) || journal.events.length > 5000) throw new Error('Journal invalide.')
     let state = createDuel(quiz, journal.config, journal.timer, journal.createdAt,journal.version), last = journal.createdAt
     for (const event of journal.events) {
       if (!event || Object.keys(event).some(field => !['at', 'action'].includes(field)) || !Number.isFinite(event.at) || event.at < last || event.at > at + 60_000 || !isDuelAction(event.action)) throw new Error('Action invalide.')

@@ -1,5 +1,9 @@
 # ClairFLE — jouer avec la classe
 
+Le [rayon ×4 arrondi et l’avertissement de coup de grâce](adr-0067-rayon-arrondi-et-danger.md) ajoutent un bout courbe au tir et deux ondes animées autour de la mascotte menacée, en plus de sa brillance et dans sa couleur d’attaque.
+
+Les [duels à vie infinie](adr-0066-vie-infinie-et-questions.md) complètent les choix de vie **100** et **200**. En choisissant **∞**, réglez le nombre de questions : chaque bonne réponse vaut un point, et le meilleur score gagne après la dernière question. Les critiques gardent leurs animations sans multiplier le score.
+
 Les [fractions TPM mixtes](adr-0065-fractions-tpm-mixtes.md) proposent les réductions et les quatre opérations dans une même série du pool, avec six questions par défaut. Les corrigés sont vérifiés exactement ; Classe, Solo et compétition conservent leurs parcours habituels.
 
 L’[accueil épuré du mode jeu](adr-0064-accueil-et-preparation.md) propose **Exercices ou fiche** et **Imprimer les cartes**. Les réglages et les bilans apparaissent après le choix du contenu. Les réglages du chrono, du mode, de la mascotte et du contraste sont regroupés dans une fenêtre ; les préréglages et le préchargement restent disponibles dans ses rubriques. Une fois les questions choisies, le lancement, les compétitions et les supports à imprimer sont accessibles par leurs boutons.

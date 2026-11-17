@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "viewport": "844x390",
+      "questions": 10,
+      "left": 7,
+      "right": 1,
+      "checks": [
+        "Only 100, 200 and infinite offered",
+        "Critical ×4 awards one point and keeps life infinite",
+        "Wrong answer and timeout award zero",
+        "Counts and original rules survive real reload",
+        "Stops at configured count and ranks correct answers",
+        "Offline play after preparation"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "questions": 15,
+      "left": 12,
+      "right": 1,
+      "checks": [
+        "Only 100, 200 and infinite offered",
+        "Critical ×4 awards one point and keeps life infinite",
+        "Wrong answer and timeout award zero",
+        "Counts and original rules survive real reload",
+        "Stops at configured count and ranks correct answers",
+        "Offline play after preparation"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "migration": "Legacy 150 HP maps to 200 for new games, then 100 is selectable; timer kept."
+    }
+  ],
+  "pageErrors": [],
+  "worksheetMethods": [
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET"
+  ]
+}

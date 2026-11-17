@@ -39,6 +39,24 @@ try {
     }
   })
 
+  await test('changing CE typography preserves frozen manual edits and question selections', () => {
+    const source = structuredClone(tcfSlotBank('A0-A1', tcfSlotByTypeId['tcf-ce-ex-4']).find(ex => ex.questions.length > 5))
+    source.support.texte = 'Document personnalisé conservé.'
+    source.questions = source.questions.slice(0, 3)
+    source.questions[0].enonce = 'Question personnalisée conservée ?'
+    const config = { ...base, topic: 'tcf-ce', exerciseType: 'tcf-ce-ex-4', tcfExercise: source, tcfCeTextFont: 'marelle' }
+    const frozen = buildWorksheets([config], 42).flatMap(sheet => sheet.items)
+    const before = structuredClone(frozen)
+    for (const tcfCeTextFont of ['gothic', 'playwrite', 'arial']) {
+      const changed = buildWorksheets([{ ...config, libreItems: frozen, tcfCeTextFont }], 42).flatMap(sheet => sheet.items)
+      const document = changed.find(item => item.tcf?.kind === 'support')
+      assert.equal(document.tcf.ceTextFont, tcfCeTextFont)
+      assert.deepEqual(document.tcf.exercise, before.find(item => item.tcf?.kind === 'support').tcf.exercise)
+      assert.deepEqual(changed.filter(item => item.tcf?.kind !== 'support'), before.filter(item => item.tcf?.kind !== 'support'))
+    }
+    assert.deepEqual(frozen, before)
+  })
+
   await test('each internal audio question can start a page without changing answers, points, audio or form indexes', () => {
     for (const domain of ['tcf-csc', 'tcf-cfr', 'tpf']) {
       const config = { ...base, domain, tcfExercise: exercise }

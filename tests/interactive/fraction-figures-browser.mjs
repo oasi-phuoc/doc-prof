@@ -125,7 +125,7 @@ try{
   const{page,context}=await setup(width,height),pool=await choose(page,false,1)
   await gameControl(page,'Compétition').click();await gameControl(page,'Préparer un duel').click()
   await page.getByRole('region',{name:'Équipe 1',exact:true}).getByRole('button',{name:'Kitsune',exact:true}).click();await page.getByRole('region',{name:'Équipe 2',exact:true}).getByRole('button',{name:'Carpe koï',exact:true}).click()
-  await page.getByRole('spinbutton',{name:'Vie maximale',exact:true}).fill('200')
+  await page.getByRole('combobox',{name:'Vie',exact:true}).selectOption('200')
   for(const level of[2,3])await page.getByRole('spinbutton',{name:`Chance de critique ×${level} (%)`,exact:true}).fill('0')
   await page.getByRole('spinbutton',{name:'Chance de critique ×4 (%)',exact:true}).fill('100');await page.getByRole('checkbox',{name:'Activer le minuteur du duel',exact:true}).uncheck()
   const game=await competitionGame(page,pool);await page.getByRole('button',{name:'Préparer la partie',exact:true}).click();await page.getByRole('button',{name:'Commencer le duel',exact:true}).waitFor({timeout:120000})

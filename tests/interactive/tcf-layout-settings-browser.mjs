@@ -13,6 +13,7 @@ const results = [], errors = []
 try {
   const { tcfSlotBank } = await server.ssrLoadModule('/src/tcf/loader.ts')
   const { tcfSlotByTypeId } = await server.ssrLoadModule('/src/tcf/catalog.ts')
+  const { buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')
   const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
   browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || '/usr/bin/chromium', args: ['--no-sandbox'] })
   for (const [domain, level, difficulty, width] of [
@@ -65,6 +66,15 @@ try {
     await page.waitForFunction(expected => [...document.querySelectorAll('.sheet-stage:not(.print-only-sheets) .tcf-question')].filter(e => e.getClientRects().length).length === expected, ce.questions.length)
     await count.fill('5')
     await page.waitForFunction(() => [...document.querySelectorAll('.sheet-stage:not(.print-only-sheets) .tcf-question')].filter(e => e.getClientRects().length).length === 5)
+    const frozenConfig = { ...recipe.pages[0], tcfQuestionCount: 5 }
+    const frozenItems = JSON.parse(JSON.stringify(buildWorksheets([frozenConfig], recipe.seed)[0].items))
+    const editedQuestion = frozenItems.find(item => item.tcf?.kind === 'qcm')
+    assert(editedQuestion)
+    editedQuestion.tcf.enonce += ' [texte retouché]'
+    const editedFixture = { ...fixture, recipe: { ...recipe, pages: [{ ...frozenConfig, libreItems: frozenItems }, recipe.pages[1]] } }
+    await page.evaluate(fiche => history.replaceState({ clairfleFiche: fiche }, '', location.href), editedFixture)
+    await page.reload()
+    await sheets.locator('.tcf-ce-doc').first().waitFor({ timeout: 120000 })
     await page.getByRole('button', { name: 'Paramètres', exact: true }).click()
     const globalFont = page.getByRole('combobox', { name: 'Police de la fiche', exact: true })
     assert.equal(await globalFont.locator('option').count(), 2)
@@ -77,6 +87,7 @@ try {
       assert.match(await sheets.locator('.tcf-ce-doc .tcf-text').first().evaluate(el => getComputedStyle(el).fontFamily), new RegExp(family))
       assert.match(await sheets.locator('.exercise-heading h3').first().evaluate(el => getComputedStyle(el).fontFamily), /Didact Gothic/)
       assert.match(await sheets.locator('.tcf-enonce-text').first().evaluate(el => getComputedStyle(el).fontFamily), /Didact Gothic/)
+      assert.match(await sheets.locator('.tcf-enonce-text').first().textContent(), /texte retouché/)
     }
     await page.getByRole('button', { name: 'Paramètres', exact: true }).click()
     await globalFont.selectOption('arial')
@@ -121,6 +132,7 @@ try {
     assert.equal(saved.recipe.sheetFont, 'arial')
     assert.equal(saved.recipe.pages[0].tcfCeTextFont, 'playwrite')
     assert.equal(saved.recipe.pages[0].tcfQuestionCount, 5)
+    assert.deepEqual(saved.recipe.pages[0].libreItems, frozenItems)
     assert.deepEqual(saved.recipe.pages[1].tcfQuestionPageBreakBefore, [3, 5])
     assert.deepEqual(saved.recipe.pages[1].tcfExercise, audio)
     await page.reload()
@@ -139,7 +151,7 @@ try {
     assert.deepEqual(footerClashes, [])
 
     await page.emulateMedia({ media: 'screen' })
-    results.push({ domain, width, ce_default: 5, ce_expanded: ce.questions.length, ce_saved: 5, ce_manual_pages: 2, no_printed_footer_overlap: true, ce_fonts: 4, sheet_fonts: 2, independent_fonts: true, ce_frame_uses_theme: true,
+    results.push({ domain, width, ce_default: 5, ce_expanded: ce.questions.length, ce_saved: 5, ce_manual_pages: 2, no_printed_footer_overlap: true, ce_fonts: 4, sheet_fonts: 2, independent_fonts: true, manual_edits_preserved: true, ce_frame_uses_theme: true,
       question_groups: [[1, 2], [3, 4], [5]], undo_and_restore: true, legacy_frame_cut_undo: true, saved_and_reopened: true, printed_student_and_correction: true })
     await context.close()
   }

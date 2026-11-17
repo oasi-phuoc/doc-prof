@@ -436,7 +436,12 @@ export function buildPage(
       }
     }
     const rawItems = libre?.items ?? result.items
-    const items = rawItems.map((item) => sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem)
+    const items = rawItems.map((item) => {
+      const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      return block.tcfCeTextFont && clean.tcf?.kind === 'support' && clean.tcf.exercise.competence === 'CE'
+        ? { ...clean, tcf: { ...clean.tcf, ceTextFont: block.tcfCeTextFont } }
+        : clean
+    })
     const libreGivens = givensFromEvaluerLibre(rawItems)
     const corrigeAudios = collectCorrigeAudioSrcs(items, result.document?.audioSrc)
     const tcfPageBreakAfter =
