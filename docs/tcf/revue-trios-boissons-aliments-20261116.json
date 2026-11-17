@@ -1,0 +1,1796 @@
+{
+  "date": "2026-11-16",
+  "baseline_commit": "891c819717880d313600f72d557ef3816264eb15",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "added_trios": 7,
+    "added_historical_trios": 5,
+    "added_delf_actif_trios": 2,
+    "new_images": 12,
+    "imagegen_calls": 14,
+    "rejected_generations": 2,
+    "new_image_usages": 12,
+    "reused_image_usages": 9,
+    "reused_distinct_images": 9,
+    "added_by_level": {
+      "A0-A1": 1,
+      "A1-A2": 4,
+      "A2-B1": 2
+    },
+    "historical_pending": 289
+  },
+  "new_images": [
+    {
+      "id": "qcm-a2-jus-fruits-assortiment",
+      "label": "Des jus de fruits",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-jus-fruits-assortiment.png",
+      "prompt": "Create ONE standalone TCF French educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, believable soft volumes, discreet thin edges, natural colours, softly lit from upper left. Entire subject comfortably inside frame with margins. Detailed painted materials ONLY on actual objects. Uniform very pale warm IVORY empty background, RGB253,242,225 / hex #FDF2E1, smoothly flat like approved TCF objects, with only a small soft contact shadow under objects. NO yellow ochre, peach background, paper grain, canvas, mottling, background brush strokes, vignette or strong gradient. No furniture, room, horizon, text, dates, prices, logos or watermark. One coherent composition, no panels. THREE small clear sealed fruit-juice bottles standing side by side: orange juice, cloudy apple juice and purple grape juice. Each bottle has an otherwise blank simple label bearing ONLY a small recognisable pictogram of the respective fruit (orange, apple, bunch of grapes), no letters. Three varieties of FRUIT JUICE, not soda, wine or milk. Consistent bottle scale, each whole bottle and cap fully visible, no other objects.",
+      "source_png": "/workspace/generated_images/exec-4d3d5b7a-5716-4a36-bb11-9f651a80ec3f.png",
+      "source_sha256": "39daca11d0edccea7a04601a7f6a84bb2ede533326d7459e84570702bb28b13b",
+      "sha256": "39daca11d0edccea7a04601a7f6a84bb2ede533326d7459e84570702bb28b13b",
+      "bytes": 1583739,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Trois bouteilles entières de jus, variétés reconnues par les fruits dessinés, sans mot ni marque. Le pluriel est représenté. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-lait-chaud",
+      "label": "Du lait chaud",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-lait-chaud.png",
+      "prompt": "Create ONE standalone TCF French educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, believable soft volumes, discreet thin edges, natural colours, softly lit from upper left. Entire subject comfortably inside frame with margins. Detailed painted materials ONLY on actual objects. Uniform very pale warm IVORY empty background, RGB253,242,225 / hex #FDF2E1, smoothly flat like approved TCF objects, with only a small soft contact shadow under objects. NO yellow ochre, peach background, paper grain, canvas, mottling, background brush strokes, vignette or strong gradient. No furniture, room, horizon, text, dates, prices, logos or watermark. One coherent composition, no panels. ONE simple pale blue ceramic mug filled with opaque white hot MILK, a few delicate steam wisps rising visibly above it. The mug is full-size, whole handle and base visible, smooth milk surface with no foam art. No coffee, tea, cocoa, sugar, biscuit, bottle or other drink. The white milk and gentle steam must both be clear.",
+      "source_png": "/workspace/generated_images/exec-2749b6e9-7f19-401a-826e-e2942188f6e8.png",
+      "source_sha256": "e363e5e5f5a5cfabcec1306881091d5de31cd1326b7b2f8912a78dc35e5f8b21",
+      "sha256": "e363e5e5f5a5cfabcec1306881091d5de31cd1326b7b2f8912a78dc35e5f8b21",
+      "bytes": 1286856,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Lait blanc opaque dans une tasse entière, vapeur légère pour le chaud, sans café ou autre boisson. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-sodas-cafe",
+      "label": "Les sodas et le café",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-sodas-cafe.png",
+      "prompt": "Create ONE standalone TCF French educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, believable soft volumes, discreet thin edges, natural colours, softly lit from upper left. Entire subject comfortably inside frame with margins. Detailed painted materials ONLY on actual objects. Uniform very pale warm IVORY empty background, RGB253,242,225 / hex #FDF2E1, smoothly flat like approved TCF objects, with only a small soft contact shadow under objects. NO yellow ochre, peach background, paper grain, canvas, mottling, background brush strokes, vignette or strong gradient. No furniture, room, horizon, text, dates, prices, logos or watermark. One coherent composition, no panels. A complete group of SODAS AND COFFEE: two small unbranded soda containers, one clear bottle with dark cola and one aluminium can with a simple citrus pictogram, beside ONE white cup and saucer containing visibly dark black coffee. Soda labels have no lettering, only simple citrus shapes, no branded logos. All three drinks distinct, whole and at consistent believable scale. No tea, milk, juice, snack or other object.",
+      "source_png": "/workspace/generated_images/exec-0674b7e0-5950-40db-ad7b-ef305f19e9cb.png",
+      "source_sha256": "11a0ca0d732254a9273d8f92d75df467792c922b9db7e29e86e53dde2d7b36b6",
+      "sha256": "11a0ca0d732254a9273d8f92d75df467792c922b9db7e29e86e53dde2d7b36b6",
+      "bytes": 1548795,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Deux sodas et une tasse de café figurent ensemble, sans autre catégorie de boisson. Tous les contenants sont entiers. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-the-citron",
+      "label": "Le thé au citron",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-the-citron.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft realistic volumes, discreet fine contours and warm natural colours, light from upper left. Entire subject comfortably within frame with margins. Detailed materials on objects only. Uniform very pale warm IVORY empty background, RGB253,242,225 hex #FDF2E1, smoothly flat, small soft contact shadow only. NO peach, ochre yellow, paper grain, canvas texture, mottling, vignette, background brush strokes or strong gradient. No room, table edge, horizon, text, dates, prices, logos or watermark. One coherent composition, no panels. ONE clear glass cup and simple saucer of warm amber TEA WITH LEMON. A thin lemon slice is partly immersed in the tea and rests on the cup rim, with ONE small lemon wedge resting on saucer. Delicate steam visible. All of cup, handle and saucer fit within frame. No milk, coffee, sugar, biscuits or teabag packaging. Lemon and tea must be immediately recognisable.",
+      "source_png": "/workspace/generated_images/exec-e6c9ee95-45b4-4e8e-8287-4eb1e9112a22.png",
+      "source_sha256": "0e7cbc1d1431142752f6706e846ce372b1cff14d31e171fa52f6f6c1ae5c78bd",
+      "sha256": "0e7cbc1d1431142752f6706e846ce372b1cff14d31e171fa52f6f6c1ae5c78bd",
+      "bytes": 1659728,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Thé avec citron visible dans la tasse et sur la soucoupe, sans lait, sucre ni café. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-the-vert",
+      "label": "Le thé vert",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-the-vert.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft realistic volumes, discreet fine contours and warm natural colours, light from upper left. Entire subject comfortably within frame with margins. Detailed materials on objects only. Uniform very pale warm IVORY empty background, RGB253,242,225 hex #FDF2E1, smoothly flat, small soft contact shadow only. NO peach, ochre yellow, paper grain, canvas texture, mottling, vignette, background brush strokes or strong gradient. No room, table edge, horizon, text, dates, prices, logos or watermark. One coherent composition, no panels. ONE clear glass tea cup and saucer containing natural pale straw-green GREEN TEA, delicate steam, not neon green. Beside it on the saucer a tiny neat pinch of identifiable dried rolled green tea leaves and two small fresh green tea leaves as a botanical identification cue. Whole cup and saucer visible. No lemon, milk, sugar, coffee, teapot, other drink or snack. Clear uncomplicated composition.",
+      "source_png": "/workspace/generated_images/exec-fc6dd1e2-32bb-40dd-85fd-9e436d47bd43.png",
+      "source_sha256": "a4ad0b75b1b2f613e2357acd8268e19afafbbd9eec3c1c60741106d3d5d3d12e",
+      "sha256": "a4ad0b75b1b2f613e2357acd8268e19afafbbd9eec3c1c60741106d3d5d3d12e",
+      "bytes": 1628980,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Thé vert pâle naturel, feuilles de thé en repère botanique ; tasse et soucoupe entières, sans citron. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-cafe-sucre",
+      "label": "Le café très sucré",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-cafe-sucre.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft realistic volumes, discreet fine contours and warm natural colours, light from upper left. Entire subject comfortably within frame with margins. Detailed materials on objects only. Uniform very pale warm IVORY empty background, RGB253,242,225 hex #FDF2E1, smoothly flat, small soft contact shadow only. NO peach, ochre yellow, paper grain, canvas texture, mottling, vignette, background brush strokes or strong gradient. No room, table edge, horizon, text, dates, prices, logos or watermark. One coherent composition, no panels. ONE plain white coffee cup and saucer holding dark black COFFEE with a generous addition of SUGAR clearly illustrated. Several white sugar cubes are visibly breaking up and partly dissolving just at the coffee surface near the front rim; a few more small sugar cubes and a small glass sugar bowl rest securely on the saucer beside the cup. The cup is central and most prominent, all objects fully visible. Sugar must look like sharp small crystal cubes, NOT marshmallows or whipped cream. No milk, biscuit, chocolate or other beverage. This is a simple educational representation of sweetened coffee, no numerical quantities or labels.",
+      "source_png": "/workspace/generated_images/exec-c6b6bde0-94fb-4dfc-bd67-67bdaee19b15.png",
+      "source_sha256": "43aec72c291be7a61989f742ba218c8b3e6aa97b9537a966acf73819a7e810a3",
+      "sha256": "43aec72c291be7a61989f742ba218c8b3e6aa97b9537a966acf73819a7e810a3",
+      "bytes": 1861274,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Café avec plusieurs sucres partiellement dissous dans la tasse et réserve de cubes sur la soucoupe. L'ajout généreux de sucre est montré sans chiffrer une teneur réelle. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-eau-robinet",
+      "label": "L’eau du robinet",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-robinet.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft believable volumes, discreet thin contours, natural colours and soft upper-left light. Whole subject comfortably within frame with margins. Smooth uniformly pale warm IVORY empty background, exact RGB253,242,225 hex #FDF2E1, with small subtle contact shadows only. No peach, ochre, paper grain, canvas, background brushwork, mottling, vignette or strong gradient. No room, horizon, dates, prices, words, logos or watermark. Fine painted texture only on actual subjects, one coherent composition, no panels. A compact freestanding kitchen SINK UNIT seen in three-quarter front view, the entire small cream cabinet supports a stainless steel sink and a firmly attached chrome faucet. A narrow visible stream of clean WATER runs from the faucet into a transparent drinking glass standing securely on the sink bottom. The tap, water stream and glass are the main focus. No hands, people, bottle, sugar, cleaning products or other appliances. All cabinet edges and feet visible. Real plumbing and physical support, no floating tap or glass. Simple complete object vignette on ivory.\nReprise : Edit the FIRST image, using the SECOND image only as the exact approved TCF background reference. Preserve the complete sink cabinet, attached faucet and glass receiving tap water. Preserve all physical supports and the water stream. Give a little more breathing room above the faucet and below the feet, with the whole main unit still large and legible. Change the empty background to precisely the SAME smooth pale warm IVORY as the second image, approximately RGB253,242,225 / hex #FDF2E1. No peach, ochre, yellow cast, paper grain, mottling, canvas, vignette, background brush strokes or strong gradient. Keep only soft short contact shadows immediately under the existing objects. Do not add drinks, text, objects or logos from the reference. Maintain the same gentle semi-realistic painting, do not turn it into a photo. Deliver one standalone landscape 4:3 PNG, native exact 1448 by 1086 pixels, no panels.",
+      "source_png": "/workspace/generated_images/exec-d686b80c-7b33-4b3e-bff8-20302fff69eb.png",
+      "source_sha256": "6f87113bf0d12a54760b0ed2c2f318b6553f62ca83e3daa43d1a022f2b429377",
+      "sha256": "6f87113bf0d12a54760b0ed2c2f318b6553f62ca83e3daa43d1a022f2b429377",
+      "bytes": 1348411,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Robinet fixé sur un évier soutenu par un meuble entier ; eau versée dans un verre posé au fond. Aucune pièce ne flotte. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Fond harmonisé par imagegen avec la référence boissons, première source conservée.",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a1-eau-sucree",
+      "label": "L’eau sucrée",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-sucree.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft believable volumes, discreet thin contours, natural colours and soft upper-left light. Whole subject comfortably within frame with margins. Smooth uniformly pale warm IVORY empty background, exact RGB253,242,225 hex #FDF2E1, with small subtle contact shadows only. No peach, ochre, paper grain, canvas, background brushwork, mottling, vignette or strong gradient. No room, horizon, dates, prices, words, logos or watermark. Fine painted texture only on actual subjects, one coherent composition, no panels. ONE plain clear drinking glass containing WATER, with several small WHITE SUGAR cubes partly dissolving in the water at the bottom, a small clear glass bowl of identical dry white sugar cubes stands beside it. Cubes are opaque tiny crystalline sugar cubes, not translucent large ice cubes. Clear water remains visible, no tea or coloured beverage. Entire glass and small sugar bowl fully visible, securely resting on the same implied surface. No spoon suspended in air, no hand or pouring unsupported object.",
+      "source_png": "/workspace/generated_images/exec-57c917c6-3bda-4fa0-941a-4ae34cc8daa0.png",
+      "source_sha256": "72e3ca0fa4834935690fa17eb2299fac947b839cd199977f9cdfefeaa44df957",
+      "sha256": "72e3ca0fa4834935690fa17eb2299fac947b839cd199977f9cdfefeaa44df957",
+      "bytes": 1563715,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Eau et petits cubes de sucre opaque qui se dissolvent, avec réserve de sucre en repère ; pas de glaçons translucides. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-patee-croquettes-chat",
+      "label": "De la pâtée et des croquettes pour chat",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-patee-croquettes-chat.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft believable volumes, discreet thin contours, natural colours and soft upper-left light. Whole subject comfortably within frame with margins. Smooth uniformly pale warm IVORY empty background, exact RGB253,242,225 hex #FDF2E1, with small subtle contact shadows only. No peach, ochre, paper grain, canvas, background brushwork, mottling, vignette or strong gradient. No room, horizon, dates, prices, words, logos or watermark. Fine painted texture only on actual subjects, one coherent composition, no panels. A complete group of CAT FOOD: two small simple ceramic pet bowls side by side at equal scale, one containing soft moist brown pâté cat food, the other containing small dry brown kibble pellets. One small opened unbranded cat-food tin beside the moist-food bowl, its blank label bearing ONLY a simple cat-head pictogram with no letters. Both foods clearly visible and different in texture, all bowls and tin fully within frame. NO cat, milk, bread, vegetables or toys. This is food specifically for a cat, not two human meals.\nReprise : Edit the FIRST image, using the SECOND image only as the exact approved TCF background reference. Preserve the two cat-food bowls (wet pâté and dry kibble) and the opened can bearing a cat pictogram. Preserve the full group, food textures and every quantity. Change the empty background to precisely the SAME smooth pale warm IVORY as the second image, approximately RGB253,242,225 / hex #FDF2E1. No peach, ochre, yellow cast, paper grain, mottling, canvas, vignette, background brush strokes or strong gradient. Keep only soft short contact shadows immediately under the existing objects. Do not add drinks, text, objects or logos from the reference. Maintain the same gentle semi-realistic painting, do not turn it into a photo. Deliver one standalone landscape 4:3 PNG, native exact 1448 by 1086 pixels, no panels.",
+      "source_png": "/workspace/generated_images/exec-562cfcb6-b6dd-47be-9aa9-d979991cbd3e.png",
+      "source_sha256": "9ec3cb3d91385880ef46615b833e7e996d123397fe5bc5b6c855cbbaa40584fe",
+      "sha256": "9ec3cb3d91385880ef46615b833e7e996d123397fe5bc5b6c855cbbaa40584fe",
+      "bytes": 1604907,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Pâtée humide et croquettes sèches dans deux gamelles ; boîte au pictogramme de chat, sans marque et sans lait. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Fond harmonisé par imagegen avec la référence boissons, première source conservée.",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Aliments et contenants",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-b1-paquet-biscuits",
+      "label": "Un paquet de biscuits",
+      "path": "/lib/images/tcf/qcm-audit/qcm-b1-paquet-biscuits.png",
+      "prompt": "Create ONE standalone TCF educational answer-choice illustration, native exact 1448 x 1086 pixels, landscape 4:3. Gentle semi-realistic DIGITAL PAINTING, soft realistic painted volumes, discreet thin contours, natural warm colours, soft upper-left light. ONE partially opened rectangular paper PACKET OF BISCUITS, cream and muted blue wrapping with no words, brands, logos or symbols. The open short end reveals a neat stack of classic small rectangular butter biscuits with scalloped edges and tiny docking holes, unmistakably biscuits inside their packet. The whole wrapper and biscuits must fit with ample margins. No extra loose biscuit outside, no second packet, plate, drink or other object. Smooth uniformly pale warm IVORY background, RGB253,242,225 / hex #FDF2E1, subtle short contact shadow only. NO peach or ochre, paper grain, canvas, mottling, vignette, gradient, background brush texture, room or horizon. Fine paper texture may appear ONLY on the packet, never on background. No text, date, price or watermark.",
+      "source_png": "/workspace/generated_images/exec-7af05e3d-e257-414f-8a20-5d69d4a6a7ed.png",
+      "source_sha256": "ec6ab4e0215893e18623231948520ee2a2ac537969945bf1d7d50e3a8f681292",
+      "sha256": "ec6ab4e0215893e18623231948520ee2a2ac537969945bf1d7d50e3a8f681292",
+      "bytes": 1557029,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Un seul paquet ouvert contenant une pile de biscuits, sans biscuit supplémentaire en dehors, sans marque ni mot. Contrôle visuel individuel du style TCF et du fond ivoire lisse, sujet entier sans prix, date ou élément parasite. PNG natif conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Aliments et contenants",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-a2-soda-fond-ivoire",
+      "label": "Un soda",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+      "prompt": "Edit the FIRST image, using the SECOND image only as the exact approved TCF background reference. Preserve the one unbranded plastic bottle of dark bubbly soda, red cap and blank red label. Preserve the whole single bottle, its proportions, soda bubbles and painted illustration style. Change the empty background to precisely the SAME smooth pale warm IVORY as the second image, approximately RGB253,242,225 / hex #FDF2E1. No peach, ochre, yellow cast, paper grain, mottling, canvas, vignette, background brush strokes or strong gradient. Keep only soft short contact shadows immediately under the existing objects. Do not add drinks, text, objects or logos from the reference. Maintain the same gentle semi-realistic painting, do not turn it into a photo. Deliver one standalone landscape 4:3 PNG, native exact 1448 by 1086 pixels, no panels.",
+      "source_png": "/workspace/generated_images/exec-3fdf39c9-96b1-46b3-943b-3a3bceb9ba4f.png",
+      "source_sha256": "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+      "sha256": "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+      "bytes": 1348080,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Variante du sujet existant au fond ivoire lisse contrôlé. Sujet entier et sens conservés ; aucun texte, prix ou date ajouté. Le fichier original de la banque reste inchangé. PNG natif exact conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise imagegen du fond, source existante conservée : /workspace/doc-prof/public/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Objet"
+      ],
+      "gallery_themes": [
+        "Eau et boissons",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-b1-billet-train-ivoire",
+      "label": "Un billet de train",
+      "path": "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+      "prompt": "Edit the FIRST supplied train-ticket illustration, using the SECOND approved TCF drinks illustration solely as the exact background reference. Preserve ONE whole train ticket, its blue strip, train pictogram, station-to-station drawing, paper edges and barcode motif, proportions and gentle painted style. Change ONLY the empty background to the same smooth pale warm IVORY as the second image, approximately RGB253,242,225 hex #FDF2E1. No peach, yellow or ochre cast, paper grain, canvas, mottling, vignette or strong gradient in empty background. A tiny short contact shadow below the ticket is allowed; paper texture may stay ON the ticket only. Do not add any drink, date, text, price or object from the reference. Give comfortable margins and preserve the full ticket. One native exact 1448 x 1086 landscape 4:3 PNG.",
+      "source_png": "/workspace/generated_images/exec-0b0158fb-490a-4166-98c2-38ea74389f7e.png",
+      "source_sha256": "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
+      "sha256": "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
+      "bytes": 1569694,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "trios-boissons-aliments-20261116",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Variante du sujet existant au fond ivoire lisse contrôlé. Sujet entier et sens conservés ; aucun texte, prix ou date ajouté. Le fichier original de la banque reste inchangé. PNG natif exact conservé sans recadrage ni recompression.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "generation_recovery_note": "Reprise imagegen du fond, source existante conservée : /workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Titres de transport",
+        "Style TCF validé"
+      ]
+    }
+  ],
+  "background_review": [
+    {
+      "id": "qcm-a2-jus-fruits-assortiment",
+      "source": "/workspace/generated_images/exec-4d3d5b7a-5716-4a36-bb11-9f651a80ec3f.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.5601770931384907,
+        0.5598840764819026,
+        0.6087155415939304
+      ]
+    },
+    {
+      "id": "qcm-a2-lait-chaud",
+      "source": "/workspace/generated_images/exec-2749b6e9-7f19-401a-826e-e2942188f6e8.png",
+      "reused": false,
+      "corner_median_rgb": [
+        252,
+        239,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5741731102348916,
+        0.5789599890246981,
+        0.6162189391157759
+      ]
+    },
+    {
+      "id": "qcm-a2-sodas-cafe",
+      "source": "/workspace/generated_images/exec-0674b7e0-5950-40db-ad7b-ef305f19e9cb.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        241,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.5507397622436861,
+        0.5506263140975299,
+        0.6221067978819502
+      ]
+    },
+    {
+      "id": "qcm-a2-the-citron",
+      "source": "/workspace/generated_images/exec-e6c9ee95-45b4-4e8e-8287-4eb1e9112a22.png",
+      "reused": false,
+      "corner_median_rgb": [
+        252,
+        239,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5603657994886345,
+        0.5698305278693175,
+        0.5769628504326543
+      ]
+    },
+    {
+      "id": "qcm-a2-the-vert",
+      "source": "/workspace/generated_images/exec-fc6dd1e2-32bb-40dd-85fd-9e436d47bd43.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        239,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5647620973230218,
+        0.5538826267245712,
+        0.5559418916800674
+      ]
+    },
+    {
+      "id": "qcm-a2-cafe-sucre",
+      "source": "/workspace/generated_images/exec-c6b6bde0-94fb-4dfc-bd67-67bdaee19b15.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5660879806494193,
+        0.516159971521664,
+        0.5919850623395804
+      ]
+    },
+    {
+      "id": "qcm-a1-eau-robinet",
+      "source": "/workspace/generated_images/exec-d686b80c-7b33-4b3e-bff8-20302fff69eb.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        241,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5372456247405124,
+        0.5628716459330954,
+        0.5850639566757854
+      ]
+    },
+    {
+      "id": "qcm-a1-eau-sucree",
+      "source": "/workspace/generated_images/exec-57c917c6-3bda-4fa0-941a-4ae34cc8daa0.png",
+      "reused": false,
+      "corner_median_rgb": [
+        252,
+        239,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5501381826342966,
+        0.5780555595338307,
+        0.5994225667887393
+      ]
+    },
+    {
+      "id": "qcm-a2-patee-croquettes-chat",
+      "source": "/workspace/generated_images/exec-562cfcb6-b6dd-47be-9aa9-d979991cbd3e.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        241,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5611168727966804,
+        0.5679636568749665,
+        0.6146367903114167
+      ]
+    },
+    {
+      "id": "qcm-b1-paquet-biscuits",
+      "source": "/workspace/generated_images/exec-7af05e3d-e257-414f-8a20-5d69d4a6a7ed.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5445290733295908,
+        0.5811827475880843,
+        0.5601530031384774
+      ]
+    },
+    {
+      "id": "qcm-a2-soda-fond-ivoire",
+      "source": "/workspace/generated_images/exec-3fdf39c9-96b1-46b3-943b-3a3bceb9ba4f.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        242,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5625689277024579,
+        0.5758159196667537,
+        0.6129065812182902
+      ]
+    },
+    {
+      "id": "qcm-b1-billet-train-ivoire",
+      "source": "/workspace/generated_images/exec-0b0158fb-490a-4166-98c2-38ea74389f7e.png",
+      "reused": false,
+      "corner_median_rgb": [
+        254,
+        241,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5266370324381678,
+        0.5728580880140316,
+        0.6122393197001962
+      ]
+    },
+    {
+      "id": "co306-grand-cafe-dessine",
+      "source": "public/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        244,
+        228
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.6902453251645916,
+        0.7966101389360214,
+        1.0401883659860591
+      ]
+    },
+    {
+      "id": "co834-verre-eau-dessine",
+      "source": "public/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        243,
+        226
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.3412166779777445,
+        0.3412166779777445,
+        0.30589488140036414
+      ]
+    },
+    {
+      "id": "qcm-a2-pain-lait",
+      "source": "public/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        241,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5717966744386909,
+        0.5813186047925974,
+        0.6545700363809633
+      ]
+    },
+    {
+      "id": "co306-petits-legumes-dessine",
+      "source": "public/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        244,
+        228
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.39991669269339725,
+        0.2653453660143816,
+        1.1145726624618353
+      ]
+    },
+    {
+      "id": "communication-appeler",
+      "source": "public/lib/images/tcf/qcm-audit/communication-appeler.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        243,
+        226
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.23520405949536716,
+        0.24208451957735372,
+        0.5093223401213409
+      ]
+    },
+    {
+      "id": "co834-bouteille-eau-dessinee",
+      "source": "public/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        255,
+        245,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.3521377565483752,
+        0.3682989930367866,
+        0.37118269502423523
+      ]
+    },
+    {
+      "id": "vocab-sucre",
+      "source": "public/lib/images/tcf/qcm-audit/vocab-sucre.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 0,
+      "corner_standard_deviation": [
+        0.4904920223496542,
+        0.6644135743246117,
+        1.0684725792659733
+      ]
+    },
+    {
+      "id": "co834-bouteille-lait-dessinee",
+      "source": "public/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        242,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.5732123761342611,
+        0.6480345770024717,
+        0.8098941472690973
+      ]
+    },
+    {
+      "id": "vocab-sel",
+      "source": "public/lib/images/tcf/qcm-audit/vocab-sel.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        243,
+        226
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.1494479637769095,
+        0.15705324770874626,
+        0.6591835471019362
+      ]
+    }
+  ],
+  "generation": {
+    "date": "2026-11-16",
+    "imagegen_calls": 14,
+    "new_subjects": 10,
+    "final_images": 12,
+    "background_edits": 4,
+    "rejected_generations": 2,
+    "redrawn_existing_images": 2,
+    "edits": [
+      {
+        "id": "qcm-a1-eau-robinet",
+        "original_source": "/workspace/generated_images/exec-447b9797-02ef-4d29-87e3-f86670f46e05.png",
+        "prompt": "Edit the FIRST image, using the SECOND image only as the exact approved TCF background reference. Preserve the complete sink cabinet, attached faucet and glass receiving tap water. Preserve all physical supports and the water stream. Give a little more breathing room above the faucet and below the feet, with the whole main unit still large and legible. Change the empty background to precisely the SAME smooth pale warm IVORY as the second image, approximately RGB253,242,225 / hex #FDF2E1. No peach, ochre, yellow cast, paper grain, mottling, canvas, vignette, background brush strokes or strong gradient. Keep only soft short contact shadows immediately under the existing objects. Do not add drinks, text, objects or logos from the reference. Maintain the same gentle semi-realistic painting, do not turn it into a photo. Deliver one standalone landscape 4:3 PNG, native exact 1448 by 1086 pixels, no panels.",
+        "source": "/workspace/generated_images/exec-d686b80c-7b33-4b3e-bff8-20302fff69eb.png",
+        "kind": "rejected_first_attempt"
+      },
+      {
+        "id": "qcm-a2-patee-croquettes-chat",
+        "original_source": "/workspace/generated_images/exec-ef9d61fe-54fa-4766-be8b-fff2264b216b.png",
+        "prompt": "Edit the FIRST image, using the SECOND image only as the exact approved TCF background reference. Preserve the two cat-food bowls (wet pâté and dry kibble) and the opened can bearing a cat pictogram. Preserve the full group, food textures and every quantity. Change the empty background to precisely the SAME smooth pale warm IVORY as the second image, approximately RGB253,242,225 / hex #FDF2E1. No peach, ochre, yellow cast, paper grain, mottling, canvas, vignette, background brush strokes or strong gradient. Keep only soft short contact shadows immediately under the existing objects. Do not add drinks, text, objects or logos from the reference. Maintain the same gentle semi-realistic painting, do not turn it into a photo. Deliver one standalone landscape 4:3 PNG, native exact 1448 by 1086 pixels, no panels.",
+        "source": "/workspace/generated_images/exec-562cfcb6-b6dd-47be-9aa9-d979991cbd3e.png",
+        "kind": "rejected_first_attempt"
+      },
+      {
+        "id": "qcm-a2-soda-fond-ivoire",
+        "label": "Un soda",
+        "original_source": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+        "prompt": "Edit the FIRST image, using the SECOND image only as the exact approved TCF background reference. Preserve the one unbranded plastic bottle of dark bubbly soda, red cap and blank red label. Preserve the whole single bottle, its proportions, soda bubbles and painted illustration style. Change the empty background to precisely the SAME smooth pale warm IVORY as the second image, approximately RGB253,242,225 / hex #FDF2E1. No peach, ochre, yellow cast, paper grain, mottling, canvas, vignette, background brush strokes or strong gradient. Keep only soft short contact shadows immediately under the existing objects. Do not add drinks, text, objects or logos from the reference. Maintain the same gentle semi-realistic painting, do not turn it into a photo. Deliver one standalone landscape 4:3 PNG, native exact 1448 by 1086 pixels, no panels.",
+        "source": "/workspace/generated_images/exec-3fdf39c9-96b1-46b3-943b-3a3bceb9ba4f.png",
+        "kind": "redrawn_existing_image"
+      },
+      {
+        "id": "qcm-b1-billet-train-ivoire",
+        "label": "Un billet de train",
+        "original_source": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "prompt": "Edit the FIRST supplied train-ticket illustration, using the SECOND approved TCF drinks illustration solely as the exact background reference. Preserve ONE whole train ticket, its blue strip, train pictogram, station-to-station drawing, paper edges and barcode motif, proportions and gentle painted style. Change ONLY the empty background to the same smooth pale warm IVORY as the second image, approximately RGB253,242,225 hex #FDF2E1. No peach, yellow or ochre cast, paper grain, canvas, mottling, vignette or strong gradient in empty background. A tiny short contact shadow below the ticket is allowed; paper texture may stay ON the ticket only. Do not add any drink, date, text, price or object from the reference. Give comfortable margins and preserve the full ticket. One native exact 1448 x 1086 landscape 4:3 PNG.",
+        "source": "/workspace/generated_images/exec-0b0158fb-490a-4166-98c2-38ea74389f7e.png",
+        "kind": "redrawn_existing_image"
+      }
+    ]
+  },
+  "before_background_review": [
+    {
+      "id": "qcm-a2-jus-fruits-assortiment",
+      "source": "/workspace/generated_images/exec-4d3d5b7a-5716-4a36-bb11-9f651a80ec3f.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.5601770931384907,
+        0.5598840764819026,
+        0.6087155415939304
+      ]
+    },
+    {
+      "id": "qcm-a2-lait-chaud",
+      "source": "/workspace/generated_images/exec-2749b6e9-7f19-401a-826e-e2942188f6e8.png",
+      "reused": false,
+      "corner_median_rgb": [
+        252,
+        239,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5741731102348916,
+        0.5789599890246981,
+        0.6162189391157759
+      ]
+    },
+    {
+      "id": "qcm-a2-sodas-cafe",
+      "source": "/workspace/generated_images/exec-0674b7e0-5950-40db-ad7b-ef305f19e9cb.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        241,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.5507397622436861,
+        0.5506263140975299,
+        0.6221067978819502
+      ]
+    },
+    {
+      "id": "qcm-a2-the-citron",
+      "source": "/workspace/generated_images/exec-e6c9ee95-45b4-4e8e-8287-4eb1e9112a22.png",
+      "reused": false,
+      "corner_median_rgb": [
+        252,
+        239,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5603657994886345,
+        0.5698305278693175,
+        0.5769628504326543
+      ]
+    },
+    {
+      "id": "qcm-a2-the-vert",
+      "source": "/workspace/generated_images/exec-fc6dd1e2-32bb-40dd-85fd-9e436d47bd43.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        239,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5647620973230218,
+        0.5538826267245712,
+        0.5559418916800674
+      ]
+    },
+    {
+      "id": "qcm-a2-cafe-sucre",
+      "source": "/workspace/generated_images/exec-c6b6bde0-94fb-4dfc-bd67-67bdaee19b15.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5660879806494193,
+        0.516159971521664,
+        0.5919850623395804
+      ]
+    },
+    {
+      "id": "qcm-a1-eau-robinet",
+      "source": "/workspace/generated_images/exec-447b9797-02ef-4d29-87e3-f86670f46e05.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        239,
+        221
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 4,
+      "corner_standard_deviation": [
+        0.5708698069846535,
+        0.5544565574869997,
+        0.5631201750325182
+      ]
+    },
+    {
+      "id": "qcm-a1-eau-sucree",
+      "source": "/workspace/generated_images/exec-57c917c6-3bda-4fa0-941a-4ae34cc8daa0.png",
+      "reused": false,
+      "corner_median_rgb": [
+        252,
+        239,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5501381826342966,
+        0.5780555595338307,
+        0.5994225667887393
+      ]
+    },
+    {
+      "id": "qcm-a2-patee-croquettes-chat",
+      "source": "/workspace/generated_images/exec-ef9d61fe-54fa-4766-be8b-fff2264b216b.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        221
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 4,
+      "corner_standard_deviation": [
+        0.5649345275364315,
+        0.554246451977969,
+        0.5845428091334621
+      ]
+    },
+    {
+      "id": "qcm-b1-paquet-biscuits",
+      "source": "/workspace/generated_images/exec-7af05e3d-e257-414f-8a20-5d69d4a6a7ed.png",
+      "reused": false,
+      "corner_median_rgb": [
+        253,
+        240,
+        222
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.5445290733295908,
+        0.5811827475880843,
+        0.5601530031384774
+      ]
+    },
+    {
+      "id": "co834-cafe-dessine",
+      "source": "public/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        245,
+        230
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 5,
+      "corner_standard_deviation": [
+        0.0,
+        0.10629185851509455,
+        0.43953252210229354
+      ]
+    },
+    {
+      "id": "co834-verre-eau-dessine",
+      "source": "public/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        243,
+        226
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.3412166779777445,
+        0.3412166779777445,
+        0.30589488140036414
+      ]
+    },
+    {
+      "id": "95a8867c2af0",
+      "source": "public/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        255,
+        246,
+        231
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 6,
+      "corner_standard_deviation": [
+        0.8158723226149486,
+        0.43136943776896597,
+        0.30237157840738177
+      ]
+    },
+    {
+      "id": "qcm-a2-pain-lait",
+      "source": "public/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        241,
+        224
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.5717966744386909,
+        0.5813186047925974,
+        0.6545700363809633
+      ]
+    },
+    {
+      "id": "co834-legumes-dessines",
+      "source": "public/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        243,
+        221
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 4,
+      "corner_standard_deviation": [
+        0.4569970613018744,
+        0.6351622066337708,
+        1.0008363016949076
+      ]
+    },
+    {
+      "id": "audit-context-billet-train",
+      "source": "public/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        250,
+        237,
+        221
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 5,
+      "corner_standard_deviation": [
+        0.4675948010426368,
+        0.6318493907927963,
+        0.6990920511331352
+      ]
+    },
+    {
+      "id": "co834-telephone-dessine",
+      "source": "public/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        240,
+        215
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 10,
+      "corner_standard_deviation": [
+        1.0282753056077665,
+        0.730616349317756,
+        0.6003059056349055
+      ]
+    },
+    {
+      "id": "co834-bouteille-eau-dessinee",
+      "source": "public/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        255,
+        245,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 3,
+      "corner_standard_deviation": [
+        0.3521377565483752,
+        0.3682989930367866,
+        0.37118269502423523
+      ]
+    },
+    {
+      "id": "vocab-sucre",
+      "source": "public/lib/images/tcf/qcm-audit/vocab-sucre.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 0,
+      "corner_standard_deviation": [
+        0.4904920223496542,
+        0.6644135743246117,
+        1.0684725792659733
+      ]
+    },
+    {
+      "id": "co834-bouteille-lait-dessinee",
+      "source": "public/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        253,
+        242,
+        223
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 2,
+      "corner_standard_deviation": [
+        0.5732123761342611,
+        0.6480345770024717,
+        0.8098941472690973
+      ]
+    },
+    {
+      "id": "vocab-sel",
+      "source": "public/lib/images/tcf/qcm-audit/vocab-sel.webp",
+      "reused": true,
+      "corner_median_rgb": [
+        254,
+        243,
+        226
+      ],
+      "reference_corner_median_rgb": [
+        253,
+        242,
+        225
+      ],
+      "maximum_channel_difference": 1,
+      "corner_standard_deviation": [
+        0.1494479637769095,
+        0.15705324770874626,
+        0.6591835471019362
+      ]
+    }
+  ],
+  "rejected_reuses": [
+    {
+      "path": "/lib/images/tcf/co/objets/jus-fruit-dessine.webp",
+      "reason": "Un jus seul ne suffit pas à la catégorie plurielle des jus de fruits."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-cafe-dessine.webp",
+      "reason": "Fond plus éloigné : autre café déjà disponible choisi."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-legumes-dessines.webp",
+      "reason": "Autre composition de légumes au fond plus proche choisie."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+      "reason": "Ancien fond jaune écarté pour ce nouveau trio ; téléphone avec icône d’appel validée réemployé."
+    }
+  ],
+  "editorial_scope": "Catégories de réponse QCM, distinctes des scènes de dialogue à deux interlocuteurs.",
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-016-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Boire de l’eau du robinet, ce sont des milliers de bouteilles en plastique en moins dans la nature ! En plus d’être écologique, elle est moins chère, plus pratique et bonne pour la santé. Elle coûte 0,03 centimes par litre, contre environ 30 centimes pour l’eau minérale.",
+      "source_sha256": "85ed4c734fe16fa92f54f121395caadabef1adf01fe3a53d0172ad8d54564830",
+      "semantic_sha256": "d68349810439c82cf248b18c3743b2b94f6e6166e450b1d52ae9c6d97159e358",
+      "question": {
+        "enonce": "Quelle eau le message conseille-t-il de boire ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L’eau du robinet",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "L’eau minérale en bouteille",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "L’eau sucrée",
+            "correct": false
+          }
+        ],
+        "written_model": "L’eau du robinet"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-016-01.mp3",
+      "audio_sha256": "590610a2fc93822dafebf1283f361763880ad6e67e7078c82eb14b48f2d5d01a",
+      "image_ids": [
+        "qcm-a1-eau-robinet",
+        "co834-bouteille-eau-dessinee",
+        "qcm-a1-eau-sucree"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-eau-robinet.png",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-eau-sucree.png"
+      ],
+      "image_sha256": [
+        "6f87113bf0d12a54760b0ed2c2f318b6553f62ca83e3daa43d1a022f2b429377",
+        "c0f525c2f7e347128c94a162d9f516a910aaa1935a35727de6a69ef2dfd958eb",
+        "72e3ca0fa4834935690fa17eb2299fac947b839cd199977f9cdfefeaa44df957"
+      ],
+      "reason": "Le message recommande explicitement « de l'eau du robinet » en la comparant à l'eau minérale en bouteille.",
+      "visual_review": "Eau versée par un robinet fixé à un évier, bouteille d'eau minérale et eau avec sucre visible. Les trois images distinguent origine, conditionnement et ajout ; le sucre est opaque et granuleux, sans confusion avec des glaçons.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-045#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Voici quelques informations utiles :\n• Dans votre chambre, vous avez un mini-frigo avec des jus de fruits et des boissons fraîches.\n• Les draps sont changés tous les trois jours. Les serviettes sont changées chaque jour.\n• La personne qui fait le ménage passe dans votre chambre le matin, entre 10 h et 12 h.\n• À la fin de votre séjour, laissez votre clé à la réception.",
+      "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
+      "semantic_sha256": "6f3aeb20d15045f11221def4223f9b2e1cce9e206aba8830431291df8c9e7fc5",
+      "question": {
+        "enonce": "Quelles boissons sont notamment citées ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des jus de fruits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du lait chaud",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Du café préparé",
+            "correct": false
+          }
+        ],
+        "written_model": "Des jus de fruits"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-jus-fruits-assortiment",
+        "qcm-a2-lait-chaud",
+        "co306-grand-cafe-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-jus-fruits-assortiment.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-lait-chaud.png",
+        "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp"
+      ],
+      "image_sha256": [
+        "39daca11d0edccea7a04601a7f6a84bb2ede533326d7459e84570702bb28b13b",
+        "e363e5e5f5a5cfabcec1306881091d5de31cd1326b7b2f8912a78dc35e5f8b21",
+        "543fb32e2350b0847c94137811116015dd8b09eecaa47404d73c698fbab59496"
+      ],
+      "reason": "La notice indique « un mini-frigo avec des jus de fruits et des boissons fraîches ». Lait chaud et café préparé sont les distracteurs actuels.",
+      "visual_review": "Trois bouteilles de jus représentent le pluriel, le lait est blanc et fumant, le café est préparé dans une tasse. Pas de mini-frigo ajouté seulement à la bonne réponse.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-055#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Suivez les conseils des professionnels pour rester calme avant les périodes de tests et d’examens.\n1. Mangez équilibré !\nÉvitez les boissons énergisantes comme les sodas ou le café. Préférez des boissons plus douces comme le thé au citron. Mangez beaucoup de pâtes et de céréales complètes pour avoir de l’énergie. Pensez aussi à manger du poisson de temps en temps et des fruits secs pour rester concentré.\n2. Respirez !\nIl est très important d’apprendre à bien respirer. Asseyez-vous sur une chaise, mettez votre main gauche sur le ventre et respirez en gonflant le ventre.\n3. Faites du sport !\nTennis, gym, volley-ball : choisissez le sport qui vous convient pour rester calme.\n4. Dormez bien !\nLe soir, posez un carnet et un crayon sur votre table de nuit. Si vous avez du mal à dormir, écrivez vos pensées négatives dans le carnet et relisez-les le lendemain matin. Vous pouvez aussi faire des exercices de relaxation pour vous endormir plus facilement.",
+      "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
+      "semantic_sha256": "18ddb0bf960d5b7d1177b61545f311ad38d72b8f501374a40763bfea91b3e1d0",
+      "question": {
+        "enonce": "Quelles boissons faut-il éviter selon le texte ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les sodas et le café",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le thé au citron",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "L’eau uniquement",
+            "correct": false
+          }
+        ],
+        "written_model": "Les sodas et le café"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-sodas-cafe",
+        "qcm-a2-the-citron",
+        "co834-verre-eau-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-sodas-cafe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-the-citron.png",
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp"
+      ],
+      "image_sha256": [
+        "11a0ca0d732254a9273d8f92d75df467792c922b9db7e29e86e53dde2d7b36b6",
+        "0e7cbc1d1431142752f6706e846ce372b1cff14d31e171fa52f6f6c1ae5c78bd",
+        "3c1f04c74b88b3b20d943e0388c67daa463c1e74e333bc9962843964388cd433"
+      ],
+      "reason": "Le texte conseille d'éviter « les sodas ou le café » et de préférer le thé au citron. La réponse complète sodas et café doit rester groupée.",
+      "visual_review": "Deux sodas et un café dans une seule composition, thé avec citron visible, verre d'eau seul. Les deux boissons du premier choix ne sont pas réduites à un seul soda.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "delf-a2r-ce-056#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Vous avez tendance à oublier où sont vos lunettes ? Vous ne vous rappelez pas si vous avez bien fermé la porte à clé ? Des chercheurs vous donnent des conseils pour entraîner votre mémoire.\nL’alimentation\nMangez de préférence des légumes frais et des noix. Prenez du poisson deux fois par semaine, mais peu de viande (une fois par semaine). Buvez du thé vert : c’est très bon pour la santé et pour la mémoire.\nLe sport\nFaites de l’exercice physique. La course à pied et le vélo stimulent votre cerveau. Apprendre des pas de danse fait aussi travailler votre mémoire. Prenez des cours de salsa : c’est très bon pour le cerveau et pour le moral.\nL’activité mentale\nIl faut faire des activités différentes pour stimuler sa mémoire : par exemple faire un sudoku, jouer à des jeux de société en famille, raconter l’histoire d’un film à un ami, ou dessiner sa liste de courses au lieu de l’écrire.",
+      "source_sha256": "9c0c8ec40311784d5c5da38bc6cd27f49d17148cef729e64ace2dff2fe514f38",
+      "semantic_sha256": "1c630cb2e79b22fff1d2428638865666a3ab43cd3832bdd46a3524e7576097f5",
+      "question": {
+        "enonce": "Quelle boisson est recommandée ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le thé vert",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le soda",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le café très sucré",
+            "correct": false
+          }
+        ],
+        "written_model": "Le thé vert"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_ids": [
+        "qcm-a2-the-vert",
+        "qcm-a2-soda-fond-ivoire",
+        "qcm-a2-cafe-sucre"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-the-vert.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-cafe-sucre.png"
+      ],
+      "image_sha256": [
+        "a4ad0b75b1b2f613e2357acd8268e19afafbbd9eec3c1c60741106d3d5d3d12e",
+        "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+        "43aec72c291be7a61989f742ba218c8b3e6aa97b9537a966acf73819a7e810a3"
+      ],
+      "reason": "La recommandation est « Buvez du thé vert ». Soda et café très sucré restent les deux distracteurs.",
+      "visual_review": "Thé avec feuilles en repère botanique, soda seul, café avec plusieurs sucres partiellement dissous et réserve de cubes. L'ajout généreux de sucre est illustré sans prétendre mesurer une teneur ou fixer une recette réelle.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-a2-s25-co-1#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Salut, c'est Lucie. Je pars en vacances deux semaines et j'ai besoin de toi pour garder mon chat. Tu pourrais venir chaque jour à 9h pour lui donner à manger ? Il mange de la pâtée et des croquettes. Il ne faut surtout pas lui donner de lait. Sa nourriture est dans le placard de l'entrée. Attention à bien fermer la porte de la cuisine. Ses jeux sont dans le salon. Voici le code de mon immeuble. 6991. C'est au deuxième étage. Merci beaucoup.",
+      "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
+      "semantic_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698",
+      "question": {
+        "enonce": "Quels aliments le chat mange-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "De la pâtée et des croquettes",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Du lait et du pain",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des légumes uniquement",
+            "correct": false
+          }
+        ],
+        "written_model": "De la pâtée et des croquettes"
+      },
+      "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
+      "audio_sha256": "3be15ca9ac1c090ad34042a3d09a940dc65fff58e69c0c227c869b48c29cd959",
+      "image_ids": [
+        "qcm-a2-patee-croquettes-chat",
+        "qcm-a2-pain-lait",
+        "co306-petits-legumes-dessine"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-patee-croquettes-chat.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+        "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp"
+      ],
+      "image_sha256": [
+        "9ec3cb3d91385880ef46615b833e7e996d123397fe5bc5b6c855cbbaa40584fe",
+        "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+        "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91"
+      ],
+      "reason": "Lucie dit que le chat « mange de la pâtée et des croquettes » et précise qu'il ne faut surtout pas lui donner de lait.",
+      "visual_review": "Deux aliments pour chat ensemble, duo pain/lait existant et légumes seuls. La pâtée n'est pas remplacée par une gamelle unique de croquettes. Les légumes préparés illustrent la catégorie de légumes, sans ajouter de céréales ou de viande.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-ss-b1-s13-co-4#10",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Un geste désagréable, effectué dans l'intention de mêler l'insolence et le mépris. Peu diplomatique, en tout cas. Et qui ne vous disposera pas à la clémence. Visiblement, la personne couchée sur les deux sièges, le dos tourné au couloir, n'a pas cru bon de s'inquiéter de l'arrêt du train. Les écouteurs sur les oreilles, une tablette à la main, elle est plongée dans la consommation d'un film auquel il paraît impensable de la soustraire. Profondément éloignée de l'éventualité d'imaginer que de nouveaux voyageurs sont en train de pénétrer dans le wagon, elle baigne dans une atmosphère de retranchement inexpugnable, saupoudrée de miettes de biscuits. Par malchance, elle occupe la place que vous aviez réservée. Un peu impressionné par son isolement résolu, vous vous y prenez à deux fois pour vérifier le nombre inscrit sur votre billet. Pas d'autre recours. Vous finissez par lui tapoter l'épaule. Alors, c'est comme si elle tombait de la planète Mars. D'un mouvement maussade, elle enlève ses écouteurs. Quelle outrecuidance de l'arracher au délice d'un chef-d'œuvre du 7e art, où les gros plans sur les narines des protagonistes tiennent lieu de communication subliminale. Toutefois, il semble qu'elle analyse bien vite la situation pour quelqu'un qui était à mille lieues de l'envisager. Vous formulez, le plus doucement possible, l'information qui va la combler d'aise, mais son horripilation est au-delà des mots. Elle lève le menton et bientôt son regard balaie l'ensemble du wagon pour y trouver la confirmation de ce qu'elle espérait. Il y a d'autres places libres. Vous êtes un mauvais coucheur de lui dénier le droit d'être couché. Devant cette pantomime hostile, ce coup d'œil périphérique vulgaire et dédaigneux, quelque chose en vous se raffermit. Vous affirmez votre désir d'occuper votre place. Alors elle lève le camp en maugréant en prenant tout son temps. C'est drôle. Vous vous sentez très serein à présent. Vous lui tendez même obligeamment son paquet de Petit Lu qu'elle abandonne d'un haussement d'épaule. Pas de vacances ensemble. On se consolera.",
+      "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
+      "semantic_sha256": "26c63c3fdd204f55fc9bf6e9f9705f6877ef14f65cce6cc8d71fd777f9a021ea",
+      "question": {
+        "enonce": "Quel objet le voyageur lui tend-il à la fin ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son paquet de biscuits",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son billet de train",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son téléphone portable",
+            "correct": false
+          }
+        ],
+        "written_model": "Son paquet de biscuits"
+      },
+      "audio": "/lib/audio/tcf/co/transports/un-geste-desagreable-effectue.mp3",
+      "audio_sha256": "ec62ded9e40f866c02a6e849d5c86a5d73d351ee4019302d7bdd3b66d07e7d29",
+      "image_ids": [
+        "qcm-b1-paquet-biscuits",
+        "qcm-b1-billet-train-ivoire",
+        "communication-appeler"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-paquet-biscuits.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+      ],
+      "image_sha256": [
+        "ec6ab4e0215893e18623231948520ee2a2ac537969945bf1d7d50e3a8f681292",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
+        "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+      ],
+      "reason": "À la fin, le narrateur dit « Vous lui tendez même obligeamment son paquet de Petit Lu ». Le billet intervient plus tôt pour vérifier la place ; le paquet est l'objet tendu à la fin.",
+      "visual_review": "Un paquet ouvert contenant des biscuits, un billet de train au pictogramme ferroviaire et un téléphone portable entier avec icône d'appel. Les biscuits en vrac et les deux paquets jaunes ne conviennent pas au singulier. Le paquet générique ne prétend pas reproduire une marque.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    },
+    {
+      "key": "tcf-delf-actif-b1-022-01#7",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Pouvez-vous nous expliquer ce que sont « les rendez-vous conso » ? Conso veut dire consommation. Ce sont donc des rencontres organisées pour aider un public à faire les bons choix et à devenir acteur de sa propre consommation. Vous adressez-vous aux adultes ? Pas seulement. Certains thèmes s’adressent aussi aux adolescents. Quel est le thème qui a passionné les élèves ? Sans aucun doute celui du petit-déjeuner. Que leur avez-vous appris ? Et bien à déchiffrer les informations sur les étiquettes des produits. Nous cherchons à faire un atelier le plus interactif possible. Nous posons des questions aux élèves pour savoir s’ils l’ont pris, ce qu’ils ont mangé… Puis nous leur présentons divers produits que l’on trouve fréquemment sur les tables du petit-déjeuner en France, des produits sains et des « faux-produits » et on décrypte les étiquettes. Quel est votre objectif ? Notre intention est de leur montrer pourquoi le petit-déjeuner est important mais aussi qu’il ne faut pas faire une confiance aveugle aux beaux emballages. L’image d’une silhouette mince sur un paquet de céréales ne veut pas dire que l’aliment ne fait pas grossir et en lisant l’étiquette ils constatent qu’il contient énormément de sucre. Les jeunes ont-ils de bonnes notions sur ce que doit être une bonne alimentation et de son impact sur leur santé ? Ils savent que la pâte à tartiner à la noisette avec de l’huile de palme n’est pas un produit sain mais ils s’étonnent que dans un jus d’orange en bouteille les fabricants y ajoutent du sucre. Sans vouloir diaboliser le sucre et les matières grasses on leur explique qu’on en a besoin mais on leur dit qu’aujourd’hui il y en a partout. Et dans la pratique, sont-ils nombreux à prendre un petit-déjeuner sain et équilibré ? Nombreux sont ceux qui partent le ventre vide, faute de temps disent-ils. Certains se contentent de chips ou d’aliments pauvres sur le plan nutritionnel. Alors dans la matinée ils grignotent des biscuits ou des barres chocolatées industrielles…",
+      "source_sha256": "c189d01ef2fb77f888f375792a793b766739afbbcc1e6008d2551abcd490919e",
+      "semantic_sha256": "feaf5675e9091edd7bfeae46c19b92f4e6b159518f4a2f165d392334e6735d66",
+      "question": {
+        "enonce": "Quel ajout dans le jus d’orange surprend les jeunes ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le sucre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le lait",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le sel",
+            "correct": false
+          }
+        ],
+        "written_model": "Le sucre"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-022-01.mp3",
+      "audio_sha256": "ddac5cbaa97b26469d3c35f92a621f9be873254e1658d6702d2e8d029cd33078",
+      "image_ids": [
+        "vocab-sucre",
+        "co834-bouteille-lait-dessinee",
+        "vocab-sel"
+      ],
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-sucre.webp",
+        "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-sel.webp"
+      ],
+      "image_sha256": [
+        "74a03f3fa1fc46b26f33f79ea346ba9d147922cae8b6aa4ccc29a969a8c524a3",
+        "aaf1746c6df84474fd5f25938f9df329eb5caa5e25198e2c7e49d08139259920",
+        "ec9a3028658534ba61dbf5536ba7ce3fbbab51e5e42b0aae9ef5c9eed676237c"
+      ],
+      "reason": "Les jeunes « s'étonnent que dans un jus d'orange en bouteille les fabricants y ajoutent du sucre ». Lait et sel restent les distracteurs conservés.",
+      "visual_review": "Le sucre montre des cubes et des grains, le lait une bouteille opaque blanche, le sel des gros grains dans une petite coupelle avec cuillère. Pas de jus d'orange ajouté uniquement au bon ingrédient qui donnerait un indice. Aucun nutriment chiffré ou emballage commercial inventé.",
+      "change_kind": "added_image_form",
+      "before_image_form": null
+    }
+  ],
+  "completed_at": "2026-11-17"
+}

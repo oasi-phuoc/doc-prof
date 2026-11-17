@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-17",
+  "baseline_commit": "891c819717880d313600f72d557ef3816264eb15",
+  "compared_all_six_banks": true,
+  "added_image_forms": 7,
+  "question_changes": 0,
+  "source_changes": 0,
+  "answer_changes": 0,
+  "audio_changes": 0,
+  "new_original_pngs": 12,
+  "new_image_usages": 12,
+  "reused_image_usages": 9,
+  "reused_distinct_images": 9,
+  "previous_image_metadata_unchanged": true,
+  "reused_image_bytes_unchanged": true,
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "changes": [
+    {
+      "key": "tcf-delf-actif-a1-016-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json"
+    },
+    {
+      "key": "delf-a2r-ce-045#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-055#2",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "delf-a2r-ce-056#5",
+      "bank": "src/tcf/content/a1-a2/ce.json"
+    },
+    {
+      "key": "tcf-ss-a2-s25-co-1#5",
+      "bank": "src/tcf/content/a1-a2/co.json"
+    },
+    {
+      "key": "tcf-ss-b1-s13-co-4#10",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-022-01#7",
+      "bank": "src/tcf/content/a2-b1/co.json"
+    }
+  ],
+  "checks": [
+    {
+      "cmd": "python3 scripts/check_tcf_763_review.py",
+      "chunk_id": "c14b67",
+      "wall_time_seconds": 1.00206202,
+      "original_token_count": 0,
+      "output": "763 décisions vérifiées : 362 trios actifs, 112 textes conservés, 289 trios à préparer.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-images.py",
+      "chunk_id": "1c96c3",
+      "wall_time_seconds": 1.000995755,
+      "original_token_count": 0,
+      "output": "346 supports et 1 663 questions suivis ; 363 trios actifs liés à leur relecture, images et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 scripts/check-delf-actif-context-review.py",
+      "chunk_id": "d58e2c",
+      "wall_time_seconds": 1.001424214,
+      "original_token_count": 0,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-qcm-images.mjs",
+      "chunk_id": "71d48d",
+      "wall_time_seconds": 1.000677457,
+      "original_token_count": 0,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2441 bank variants\n",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node scripts/check-tcf-bank.mjs",
+      "chunk_id": "4d2b0e",
+      "wall_time_seconds": 1.000549724,
+      "original_token_count": 0,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n",
+      "exit_code": 0
+    }
+  ],
+  "browser_summary": {
+    "account": "admin",
+    "views": 14,
+    "question_views": 14,
+    "image_views": 42,
+    "errors": []
+  },
+  "additional_checks": {
+    "catalogue_tests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "typescript_exit_code": 0,
+    "production_build_exit_code": 0,
+    "interactive_budgets": {
+      "exit_code": 0,
+      "game_gzip": 3139439,
+      "game_maximum_gzip": 3145728,
+      "competition_gzip": 204184,
+      "competition_maximum_gzip": 204800
+    },
+    "prebuild": {
+      "exit_code": 0,
+      "gallery_images": 7005,
+      "nominal_image_clues": 1325,
+      "audio_files": 8801,
+      "questions": 6734,
+      "response_forms": 15179,
+      "game_types": 696
+    },
+    "redrawn_original_files_preserved": [
+      {
+        "path": "public/lib/images/tcf/qcm-audit/95a8867c2af0.webp",
+        "sha256": "39529f650ee16d0b0a28cdc9a4b523e5e17b24ed86c52853ff0576bfb0e5c7db"
+      },
+      {
+        "path": "public/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+      }
+    ]
+  }
+}

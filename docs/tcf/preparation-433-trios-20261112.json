@@ -4,14 +4,14 @@
   "scope": "433 trios demandés, réemplois proposés liés aux questions actuelles ; reprise supplémentaire d’un ancien trio invalidé par une correction audio.",
   "summary": {
     "initial_trios": 433,
-    "activated_since_baseline": 139,
-    "initial_pending": 294,
+    "activated_since_baseline": 144,
+    "initial_pending": 289,
     "additional_pending": 0,
-    "total_pending": 294,
+    "total_pending": 289,
     "pending_by_level": {
       "A0-A1": 110,
-      "A1-A2": 164,
-      "A2-B1": 20
+      "A1-A2": 160,
+      "A2-B1": 19
     }
   },
   "questions": [
@@ -14392,8 +14392,8 @@
       "audio": null,
       "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
       "semantic_sha256": "6f3aeb20d15045f11221def4223f9b2e1cce9e206aba8830431291df8c9e7fc5",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La notice indique « un mini-frigo avec des jus de fruits et des boissons fraîches ». Lait chaud et café préparé sont les distracteurs actuels.",
       "choices": [
         {
           "id": "a",
@@ -14404,6 +14404,11 @@
               "path": "/lib/images/tcf/co/objets/jus-fruit-dessine.webp",
               "sha256": "1096257b4f206f25dea473003a7d7a3ea1ca5ca5cdf6eba2c80561d05671d097",
               "label": "Un jus de fruits"
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-jus-fruits-assortiment.png",
+              "sha256": "39daca11d0edccea7a04601a7f6a84bb2ede533326d7459e84570702bb28b13b",
+              "label": "Des jus de fruits"
             }
           ],
           "generation_jobs": []
@@ -14412,7 +14417,13 @@
           "id": "b",
           "label": "Du lait chaud",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-lait-chaud.png",
+              "sha256": "e363e5e5f5a5cfabcec1306881091d5de31cd1326b7b2f8912a78dc35e5f8b21",
+              "label": "Du lait chaud"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -14423,7 +14434,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-jus-fruits-assortiment.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-lait-chaud.png",
+        "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14432,7 +14447,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -14602,21 +14617,33 @@
       "audio": null,
       "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
       "semantic_sha256": "18ddb0bf960d5b7d1177b61545f311ad38d72b8f501374a40763bfea91b3e1d0",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Le texte conseille d'éviter « les sodas ou le café » et de préférer le thé au citron. La réponse complète sodas et café doit rester groupée.",
       "choices": [
         {
           "id": "a",
           "label": "Les sodas et le café",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-sodas-cafe.png",
+              "sha256": "11a0ca0d732254a9273d8f92d75df467792c922b9db7e29e86e53dde2d7b36b6",
+              "label": "Les sodas et le café"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Le thé au citron",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-the-citron.png",
+              "sha256": "0e7cbc1d1431142752f6706e846ce372b1cff14d31e171fa52f6f6c1ae5c78bd",
+              "label": "Le thé au citron"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -14627,7 +14654,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-sodas-cafe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-the-citron.png",
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14636,7 +14667,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -14657,7 +14688,13 @@
           "id": "a",
           "label": "Le thé au citron",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-the-citron.png",
+              "sha256": "0e7cbc1d1431142752f6706e846ce372b1cff14d31e171fa52f6f6c1ae5c78bd",
+              "label": "Le thé au citron"
+            }
+          ],
           "generation_jobs": []
         },
         {
@@ -14938,32 +14975,54 @@
       "audio": null,
       "source_sha256": "9c0c8ec40311784d5c5da38bc6cd27f49d17148cef729e64ace2dff2fe514f38",
       "semantic_sha256": "1c630cb2e79b22fff1d2428638865666a3ab43cd3832bdd46a3524e7576097f5",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "La recommandation est « Buvez du thé vert ». Soda et café très sucré restent les deux distracteurs.",
       "choices": [
         {
           "id": "a",
           "label": "Le thé vert",
           "correct": true,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-the-vert.png",
+              "sha256": "a4ad0b75b1b2f613e2357acd8268e19afafbbd9eec3c1c60741106d3d5d3d12e",
+              "label": "Le thé vert"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "b",
           "label": "Le soda",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+              "sha256": "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+              "label": "Un soda"
+            }
+          ],
           "generation_jobs": []
         },
         {
           "id": "c",
           "label": "Le café très sucré",
           "correct": false,
-          "exact_label_reuse_candidates": [],
+          "exact_label_reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-cafe-sucre.png",
+              "sha256": "43aec72c291be7a61989f742ba218c8b3e6aa97b9537a966acf73819a7e810a3",
+              "label": "Le café très sucré"
+            }
+          ],
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-the-vert.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-cafe-sucre.png"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -14972,7 +15031,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -18165,6 +18224,11 @@
               "path": "/lib/images/tcf/co/objets/jus-fruit-dessine.webp",
               "sha256": "1096257b4f206f25dea473003a7d7a3ea1ca5ca5cdf6eba2c80561d05671d097",
               "label": "Un jus de fruits"
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-jus-fruits-assortiment.png",
+              "sha256": "39daca11d0edccea7a04601a7f6a84bb2ede533326d7459e84570702bb28b13b",
+              "label": "Des jus de fruits"
             }
           ],
           "generation_jobs": []
@@ -20743,8 +20807,8 @@
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
       "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "semantic_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698",
-      "current_status": "artwork_needed_whole_answer_concepts",
-      "decision": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
+      "current_status": "active_reviewed_trio",
+      "decision": "Lucie dit que le chat « mange de la pâtée et des croquettes » et précise qu'il ne faut surtout pas lui donner de lait.",
       "choices": [
         {
           "id": "a",
@@ -20768,7 +20832,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-patee-croquettes-chat.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+        "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -20777,7 +20845,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {
@@ -23878,8 +23946,8 @@
       "audio": "/lib/audio/tcf/co/transports/un-geste-desagreable-effectue.mp3",
       "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
       "semantic_sha256": "26c63c3fdd204f55fc9bf6e9f9705f6877ef14f65cce6cc8d71fd777f9a021ea",
-      "current_status": "artwork_needed_distinct_document_types",
-      "decision": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte.",
+      "current_status": "active_reviewed_trio",
+      "decision": "À la fin, le narrateur dit « Vous lui tendez même obligeamment son paquet de Petit Lu ». Le billet intervient plus tôt pour vérifier la place ; le paquet est l'objet tendu à la fin.",
       "choices": [
         {
           "id": "a",
@@ -23903,7 +23971,11 @@
           "generation_jobs": []
         }
       ],
-      "active_images": [],
+      "active_images": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-paquet-biscuits.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+      ],
       "constraints": [
         "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
         "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
@@ -23912,7 +23984,7 @@
         "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
         "Revue visuelle et corrigé synchronisé avant toute activation."
       ],
-      "candidate_review_required": true,
+      "candidate_review_required": false,
       "note": "Une correspondance de libellé ne prouve pas la relation spatiale, le rôle, le compte ou la composition entière ; relire le support et contrôler les trois images avant activation."
     },
     {

@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 361,
+      "active_reviewed_trio": 363,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 385,
+      "candidate_visual_review": 383,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 203,
+        "active_reviewed_trio": 204,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 59,
+        "candidate_visual_review": 58,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -33,9 +33,9 @@
         "keep_text_amount": 24
       },
       "A2-B1": {
-        "candidate_visual_review": 124,
+        "candidate_visual_review": 123,
         "keep_text_contextual": 346,
-        "active_reviewed_trio": 22,
+        "active_reviewed_trio": 23,
         "keep_text_calendar_or_duration": 35,
         "keep_text_named_identity_or_code": 9,
         "keep_text_amount": 12
@@ -9716,14 +9716,21 @@
       "semantic_sha256": "d68349810439c82cf248b18c3743b2b94f6e6166e450b1d52ae9c6d97159e358",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-016-01.mp3",
       "audio_sha256": "590610a2fc93822dafebf1283f361763880ad6e67e7078c82eb14b48f2d5d01a",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
           "label": "L’eau du robinet",
           "correct": true,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-robinet.png",
+              "sha256": "6f87113bf0d12a54760b0ed2c2f318b6553f62ca83e3daa43d1a022f2b429377",
+              "label": "L’eau du robinet",
+              "visual_review_required": true
+            }
+          ],
           "asset": "270520f5daa67498",
           "brief": "Représenter entièrement « L’eau du robinet » pour « Quelle eau le message conseille-t-il de boire ? ». Vérifier la transcription du support tcf-delf-actif-a1-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -9739,13 +9746,36 @@
           "id": "c",
           "label": "L’eau sucrée",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-sucree.png",
+              "sha256": "72e3ca0fa4834935690fa17eb2299fac947b839cd199977f9cdfefeaa44df957",
+              "label": "L’eau sucrée",
+              "visual_review_required": true
+            }
+          ],
           "asset": "cc36f4b3e8cd9698",
           "brief": "Représenter entièrement « L’eau sucrée » pour « Quelle eau le message conseille-t-il de boire ? ». Vérifier la transcription du support tcf-delf-actif-a1-016-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-robinet.png",
+          "sha256": "6f87113bf0d12a54760b0ed2c2f318b6553f62ca83e3daa43d1a022f2b429377"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+          "sha256": "c0f525c2f7e347128c94a162d9f516a910aaa1935a35727de6a69ef2dfd958eb"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-sucree.png",
+          "sha256": "72e3ca0fa4834935690fa17eb2299fac947b839cd199977f9cdfefeaa44df957"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -9756,7 +9786,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Eau versée par un robinet fixé à un évier, bouteille d'eau minérale et eau avec sucre visible. Les trois images distinguent origine, conditionnement et ajout ; le sucre est opaque et granuleux, sans confusion avec des glaçons."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-016-01#2",
@@ -14595,6 +14629,12 @@
             {
               "path": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
               "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+              "label": "Un billet de train",
+              "visual_review_required": true
+            },
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+              "sha256": "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
               "label": "Un billet de train",
               "visual_review_required": true
             }
@@ -96268,8 +96308,8 @@
       "semantic_sha256": "feaf5675e9091edd7bfeae46c19b92f4e6b159518f4a2f165d392334e6735d66",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-022-01.mp3",
       "audio_sha256": "ddac5cbaa97b26469d3c35f92a621f9be873254e1658d6702d2e8d029cd33078",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -96310,8 +96350,24 @@
           "brief": "Représenter entièrement « Le sel » pour « Quel ajout dans le jus d’orange surprend les jeunes ? ». Vérifier la transcription du support tcf-delf-actif-b1-022-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-sucre.webp",
+          "sha256": "74a03f3fa1fc46b26f33f79ea346ba9d147922cae8b6aa4ccc29a969a8c524a3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+          "sha256": "aaf1746c6df84474fd5f25938f9df329eb5caa5e25198e2c7e49d08139259920"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-sel.webp",
+          "sha256": "ec9a3028658534ba61dbf5536ba7ce3fbbab51e5e42b0aae9ef5c9eed676237c"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -96322,7 +96378,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Le sucre montre des cubes et des grains, le lait une bouteille opaque blanche, le sel des gros grains dans une petite coupelle avec cuillère. Pas de jus d'orange ajouté uniquement au bon ingrédient qui donnerait un indice. Aucun nutriment chiffré ou emballage commercial inventé."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-022-01#8",
@@ -98230,7 +98290,14 @@
           "id": "b",
           "label": "Un soda",
           "correct": false,
-          "reuse_candidates": [],
+          "reuse_candidates": [
+            {
+              "path": "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+              "sha256": "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+              "label": "Un soda",
+              "visual_review_required": true
+            }
+          ],
           "asset": "7cb739ba5c7ab2e7",
           "brief": "Représenter entièrement « Un soda » pour « Quelle boisson utilise-t-il pour s’hydrater ? ». Vérifier la transcription du support tcf-delf-actif-b1-025-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         },
@@ -116282,7 +116349,14 @@
     {
       "id": "270520f5daa67498",
       "label": "L’eau du robinet",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-robinet.png",
+          "sha256": "6f87113bf0d12a54760b0ed2c2f318b6553f62ca83e3daa43d1a022f2b429377",
+          "label": "L’eau du robinet",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-016-01#1",
@@ -116304,7 +116378,14 @@
     {
       "id": "cc36f4b3e8cd9698",
       "label": "L’eau sucrée",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-eau-sucree.png",
+          "sha256": "72e3ca0fa4834935690fa17eb2299fac947b839cd199977f9cdfefeaa44df957",
+          "label": "L’eau sucrée",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-a1-016-01#1",
@@ -117785,6 +117866,12 @@
         {
           "path": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
           "sha256": "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+          "label": "Un billet de train",
+          "visual_review_required": true
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+          "sha256": "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
           "label": "Un billet de train",
           "visual_review_required": true
         }
@@ -133574,7 +133661,14 @@
     {
       "id": "7cb739ba5c7ab2e7",
       "label": "Un soda",
-      "reuse_candidates": [],
+      "reuse_candidates": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+          "sha256": "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+          "label": "Un soda",
+          "visual_review_required": true
+        }
+      ],
       "references": [
         {
           "key": "tcf-delf-actif-b1-025-01#8",

@@ -3,9 +3,9 @@
   "scope": "Inventaire exhaustif des questions CE/CO à trois choix ; contrôle contre le texte ou la transcription active, sans nouvelle écoute intégrale des MP3.",
   "summary": {
     "text_variant_pending_images_or_intentionally_text": 5353,
-    "reviewed_trio": 1974,
+    "reviewed_trio": 1979,
     "existing_variant_partial_reviewed_reuse": 81,
-    "reviewed_763_artwork_pending": 294,
+    "reviewed_763_artwork_pending": 289,
     "reviewed_763_keep_text": 112,
     "existing_variant_needs_further_visual_review": 23,
     "retire_ambiguous_image_variant": 14
@@ -149006,19 +149006,31 @@
         "Du lait chaud",
         "Du café préparé"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "02749dbce7feabb0f6c42dc4bcdc9e22772cf8142182c1f889f7f90d25e50e7c",
       "semantic_before_sha256": "6f3aeb20d15045f11221def4223f9b2e1cce9e206aba8830431291df8c9e7fc5",
       "semantic_after_sha256": "6f3aeb20d15045f11221def4223f9b2e1cce9e206aba8830431291df8c9e7fc5",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-jus-fruits-assortiment.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-lait-chaud.png",
+        "/lib/images/tcf/qcm-audit/co306-grand-cafe-dessine.webp"
+      ],
+      "target_sha256": [
+        "39daca11d0edccea7a04601a7f6a84bb2ede533326d7459e84570702bb28b13b",
+        "e363e5e5f5a5cfabcec1306881091d5de31cd1326b7b2f8912a78dc35e5f8b21",
+        "543fb32e2350b0847c94137811116015dd8b09eecaa47404d73c698fbab59496"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La notice indique « un mini-frigo avec des jus de fruits et des boissons fraîches ». Lait chaud et café préparé sont les distracteurs actuels.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La notice indique « un mini-frigo avec des jus de fruits et des boissons fraîches ». Lait chaud et café préparé sont les distracteurs actuels.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Trois bouteilles de jus représentent le pluriel, le lait est blanc et fumant, le café est préparé dans une tasse. Pas de mini-frigo ajouté seulement à la bonne réponse."
+      }
     },
     {
       "key": "delf-a2r-ce-045#3",
@@ -151322,19 +151334,31 @@
         "Le thé au citron",
         "L’eau uniquement"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "246b09cc6b4ddde2965edd573385300867a770e26594b86fe7811651ab935c93",
       "semantic_before_sha256": "18ddb0bf960d5b7d1177b61545f311ad38d72b8f501374a40763bfea91b3e1d0",
       "semantic_after_sha256": "18ddb0bf960d5b7d1177b61545f311ad38d72b8f501374a40763bfea91b3e1d0",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-sodas-cafe.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-the-citron.png",
+        "/lib/images/tcf/qcm-audit/co834-verre-eau-dessine.webp"
+      ],
+      "target_sha256": [
+        "11a0ca0d732254a9273d8f92d75df467792c922b9db7e29e86e53dde2d7b36b6",
+        "0e7cbc1d1431142752f6706e846ce372b1cff14d31e171fa52f6f6c1ae5c78bd",
+        "3c1f04c74b88b3b20d943e0388c67daa463c1e74e333bc9962843964388cd433"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "Le texte conseille d'éviter « les sodas ou le café » et de préférer le thé au citron. La réponse complète sodas et café doit rester groupée.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Le texte conseille d'éviter « les sodas ou le café » et de préférer le thé au citron. La réponse complète sodas et café doit rester groupée.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Deux sodas et un café dans une seule composition, thé avec citron visible, verre d'eau seul. Les deux boissons du premier choix ne sont pas réduites à un seul soda."
+      }
     },
     {
       "key": "delf-a2r-ce-055#3",
@@ -151635,19 +151659,31 @@
         "Le soda",
         "Le café très sucré"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "9c0c8ec40311784d5c5da38bc6cd27f49d17148cef729e64ace2dff2fe514f38",
       "semantic_before_sha256": "1c630cb2e79b22fff1d2428638865666a3ab43cd3832bdd46a3524e7576097f5",
       "semantic_after_sha256": "1c630cb2e79b22fff1d2428638865666a3ab43cd3832bdd46a3524e7576097f5",
       "audio": null,
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-the-vert.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-cafe-sucre.png"
+      ],
+      "target_sha256": [
+        "a4ad0b75b1b2f613e2357acd8268e19afafbbd9eec3c1c60741106d3d5d3d12e",
+        "66731cda45bcb85735d2778bba897900551b0beb76d7f04c033fa281e022f0ad",
+        "43aec72c291be7a61989f742ba218c8b3e6aa97b9537a966acf73819a7e810a3"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel."
+      "reason": "La recommandation est « Buvez du thé vert ». Soda et café très sucré restent les deux distracteurs.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "La recommandation est « Buvez du thé vert ». Soda et café très sucré restent les deux distracteurs.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Thé avec feuilles en repère botanique, soda seul, café avec plusieurs sucres partiellement dissous et réserve de cubes. L'ajout généreux de sucre est illustré sans prétendre mesurer une teneur ou fixer une recette réelle."
+      }
     },
     {
       "key": "delf-a2r-ce-056#6",
@@ -170590,20 +170626,32 @@
         "Du lait et du pain",
         "Des légumes uniquement"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "dc8a3a81178601bf3c569c69bdeee4996116c51fd3a52b550c2d9d1d4eaab26a",
       "semantic_before_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698",
       "semantic_after_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698",
       "audio": "/lib/audio/tcf/co/maison/salut-lucie.mp3",
-      "targets": [],
-      "target_sha256": [],
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-a2-patee-croquettes-chat.png",
+        "/lib/images/tcf/qcm-audit/qcm-a2-pain-lait.png",
+        "/lib/images/tcf/qcm-audit/co306-petits-legumes-dessine.webp"
+      ],
+      "target_sha256": [
+        "9ec3cb3d91385880ef46615b833e7e996d123397fe5bc5b6c855cbbaa40584fe",
+        "44dedbd7f13de199add369b82941c544fc7b3cd49ddb3b497537a0ac6321001a",
+        "5ed33b54f7ee637086246196bcc56b5815694fe6a1d30968d7ae9cabd4e94f91"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_whole_answer_concepts",
-      "review_763_reason": "Rechercher d’abord une illustration validée de chaque réponse entière ; préserver les ingrédients, accessoires, actions, espèces, quantités et qualificatifs utiles. Ne pas activer un trio partiel.",
-      "semantic_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698"
+      "reason": "Lucie dit que le chat « mange de la pâtée et des croquettes » et précise qu'il ne faut surtout pas lui donner de lait.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "Lucie dit que le chat « mange de la pâtée et des croquettes » et précise qu'il ne faut surtout pas lui donner de lait.",
+      "semantic_sha256": "63518e3f6e180708dac654b353cdbcf97ff7f1e2dd942e05bd0103c8e071f698",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Deux aliments pour chat ensemble, duo pain/lait existant et légumes seuls. La pâtée n'est pas remplacée par une gamelle unique de croquettes. Les légumes préparés illustrent la catégorie de légumes, sans ajouter de céréales ou de viande."
+      }
     },
     {
       "key": "tcf-ss-a2-s25-co-1#6",
@@ -212207,19 +212255,31 @@
         "Son billet de train",
         "Son téléphone portable"
       ],
-      "status": "reviewed_763_artwork_pending",
-      "method": "reviewed_whole_answer_catalog",
+      "status": "reviewed_trio",
+      "method": "individual_visual_review_20261116",
       "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
       "semantic_before_sha256": "26c63c3fdd204f55fc9bf6e9f9705f6877ef14f65cce6cc8d71fd777f9a021ea",
       "semantic_after_sha256": "26c63c3fdd204f55fc9bf6e9f9705f6877ef14f65cce6cc8d71fd777f9a021ea",
       "audio": "/lib/audio/tcf/co/transports/un-geste-desagreable-effectue.mp3",
-      "targets": null,
-      "target_sha256": null,
+      "targets": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-paquet-biscuits.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+      ],
+      "target_sha256": [
+        "ec6ab4e0215893e18623231948520ee2a2ac537969945bf1d7d50e3a8f681292",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
+        "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+      ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Illustrations ou distinction visuelle à préparer ; les dates, montants, identifiants, relations et notions abstraites restent textuels.",
-      "review_763_decision": "artwork_needed_distinct_document_types",
-      "review_763_reason": "Préparer ou retrouver les types exacts de documents et leurs éventuelles combinaisons ; aucun montant, date ou renseignement personnel inventé. Ne pas confondre certificat, ordonnance, diplôme ou carte."
+      "reason": "À la fin, le narrateur dit « Vous lui tendez même obligeamment son paquet de Petit Lu ». Le billet intervient plus tôt pour vérifier la place ; le paquet est l'objet tendu à la fin.",
+      "review_763_decision": "active_reviewed_trio",
+      "review_763_reason": "À la fin, le narrateur dit « Vous lui tendez même obligeamment son paquet de Petit Lu ». Le billet intervient plus tôt pour vérifier la place ; le paquet est l'objet tendu à la fin.",
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-boissons-aliments-20261116.json",
+        "note": "Un paquet ouvert contenant des biscuits, un billet de train au pictogramme ferroviaire et un téléphone portable entier avec icône d'appel. Les biscuits en vrac et les deux paquets jaunes ne conviennent pas au singulier. Le paquet générique ne prétend pas reproduire une marque."
+      }
     },
     {
       "key": "tcf-ss-b1-s14-co-1#1",
