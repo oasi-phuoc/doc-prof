@@ -85,6 +85,12 @@ try {
     assert.equal(sentence(get('Il/pronom vient/verbe de/preposition l’/determinant école/nom','venir','où')), 'D’où vient-il ?')
     for (const [s, lemma] of [['Il/pronom pense/verbe à/preposition l’/determinant école/nom','penser'],['Il/pronom voyage/verbe en/preposition train/nom','voyager']]) assert.ok(!interrogativeCandidates(tagged(s),[lemma]).some(q => q.form === 'où'))
   })
+  await test('à qui replaces a human recipient with a correctly formed interrogative', () => {
+    const q=get('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom','donner','a-qui')
+    assert.equal(sentence(q),'À qui donnes-tu un livre ?')
+    assert.deepEqual(q.tokens.slice(0,2).map(token=>token.text),['à','qui'])
+    assert.ok(!interrogativeCandidates(tagged('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom'),['donner'],{preposition:false}).some(item=>item.form==='a-qui'))
+  })
   await test('quand, comment, combien and pourquoi are adverbs with no repeated time, manner or counted object', () => {
     for (const [source, lemma, form, expected] of [
       ['Tu/pronom manges/verbe le/determinant matin/nom','manger','quand','Quand manges-tu ?'],

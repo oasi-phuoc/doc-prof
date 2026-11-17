@@ -1,11 +1,11 @@
 import {useRef,useState} from 'react'
 import type {MathItem,PhraseCategory,PhraseImageClue} from '@/math/types'
 import {PHRASE_CATEGORY_LABELS,PHRASE_COLORS} from './phrase-banks'
-import {GATTEGNO_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS} from './phrase-pictograms'
+import {GATTEGNO_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,NEGATION_PICTOGRAMS} from './phrase-pictograms'
 import tcfPictures from './phrase-tcf-pictures.generated.json'
 import {VocabImagePicker} from '@/tcf/VocabImagePicker'
 import {MAX_PHRASE_IMAGE_CLUES,nounPicture,newPictureSentence} from './phrase-images'
-const choices=[...GATTEGNO_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — pronoms et verbes'})),...INTERROGATIVE_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — mots interrogatifs'})),...tcfPictures.map(image=>({...image,theme:'TCF — objets, personnages et lieux'}))]
+const choices=[...GATTEGNO_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — pronoms et verbes'})),...INTERROGATIVE_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — mots interrogatifs'})),...NEGATION_PICTOGRAMS.map(image=>({...image,theme:'Gattegno — négation'})),...tcfPictures.map(image=>({...image,theme:'TCF — objets, personnages et lieux'}))]
 
 export function PhraseImageEditor({items,instruction,onChangeItems,onChangeInstruction}:{items:MathItem[];instruction:string;onChangeItems:(items:MathItem[])=>void;onChangeInstruction:(instruction:string)=>void}) {
   const [selected,setSelected]=useState<{item:number;clue:number}|null>(null)

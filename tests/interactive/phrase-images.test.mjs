@@ -13,9 +13,10 @@ try{
   const {phraseSelection}=await vite.ssrLoadModule('/src/francais/phrase-options.ts')
   const {typesForTopic,defaultPage}=await vite.ssrLoadModule('/src/math/catalog.ts')
   const {createRng}=await vite.ssrLoadModule('/src/math/rng.ts')
-  const {joinPhrase}=await vite.ssrLoadModule('/src/francais/phrase-sentences.ts')
+  const {joinPhrase,tagged}=await vite.ssrLoadModule('/src/francais/phrase-sentences.ts')
+  const {interrogativeCandidates}=await vite.ssrLoadModule('/src/francais/phrase-interrogatives.ts')
   const {phraseImageClues,MAX_PHRASE_IMAGE_CLUES}=await vite.ssrLoadModule('/src/francais/phrase-images.ts')
-  const {GATTEGNO_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,pictureKey}=await vite.ssrLoadModule('/src/francais/phrase-pictograms.ts')
+  const {GATTEGNO_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,NEGATION_PICTOGRAMS,pictureKey}=await vite.ssrLoadModule('/src/francais/phrase-pictograms.ts')
   const {convertRecipe}=await vite.ssrLoadModule('/src/interactive/domain/convert.ts')
   const {prepareGame}=await vite.ssrLoadModule('/src/interactive/domain/plan.ts')
   const {startSession,transition}=await vite.ssrLoadModule('/src/interactive/domain/session.ts')
@@ -64,7 +65,7 @@ try{
   })
   await test('interrogative forms use their own Gattegno pictures in generated image clues',async()=>{
     const forms=[['qui','Qui','pronom'],['que','Que','pronom'],['quoi','quoi','pronom'],['où','Où','adverbe'],['quand','Quand','adverbe'],['comment','Comment','adverbe'],['pourquoi','Pourquoi','adverbe'],['combien','Combien','adverbe'],['quel','Quel','determinant'],['lequel','Lequel','pronom']]
-    assert.equal(INTERROGATIVE_PICTOGRAMS.length,9)
+    assert.equal(INTERROGATIVE_PICTOGRAMS.length,10)
     for(const [form,text,category] of forms){
       const verb=form==='lequel'?'choisis':'mange',infinitive=form==='lequel'?'choisir':'manger'
       const tokens=[{text,category},{text:verb,category:'verbe'},{text:'une',category:'determinant'},{text:'pomme',category:'nom'}]
@@ -73,6 +74,19 @@ try{
       assert.equal(clues?.find(clue=>clue.label===text)?.imageSrc,expected?.src,form)
     }
     for(const image of INTERROGATIVE_PICTOGRAMS){const bytes=await readFile('public'+image.src);assert.equal(bytes.subarray(8,12).toString(),'WEBP',image.src)}
+  })
+  await test('à qui and ne… pas use their supplied replacement images instead of separate word clues',async()=>{
+    const question=interrogativeCandidates(tagged('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom'),['donner']).find(item=>item.form==='a-qui')
+    assert.ok(question)
+    const recipientClues=phraseImageClues(question.tokens,['donner'],question.form)
+    assert.equal(recipientClues.filter(clue=>clue.label==='à qui').length,1)
+    assert.equal(recipientClues.find(clue=>clue.label==='à qui').imageSrc,'/lib/images/gattegno/interrogatif-a-qui.webp')
+    const negativeTokens=[{text:'Tu',category:'pronom'},{text:'ne',category:'adverbe'},{text:'manges',category:'verbe'},{text:'pas',category:'adverbe'},{text:'une',category:'determinant'},{text:'pomme',category:'nom'}]
+    const negativeClues=phraseImageClues(negativeTokens,['manger'])
+    assert.equal(negativeClues.filter(clue=>clue.label==='ne… pas').length,1)
+    assert.equal(negativeClues.some(clue=>clue.label==='ne'||clue.label==='pas'),false)
+    assert.equal(negativeClues.find(clue=>clue.label==='ne… pas').imageSrc,NEGATION_PICTOGRAMS[0].src)
+    for(const image of [...INTERROGATIVE_PICTOGRAMS,...NEGATION_PICTOGRAMS]){const bytes=await readFile('public'+image.src);assert.equal(bytes.subarray(8,12).toString(),'WEBP',image.src)}
   })
   await test('new seeds retain generation constraints while existing optional category filters remove whole predicates',()=>{
     const before=structuredClone(recipe),sentences=new Set()

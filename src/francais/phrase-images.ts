@@ -1,6 +1,6 @@
 import type {MathItem,PhraseImageClue,PhraseToken} from '@/math/types'
 import tcfPictures from './phrase-tcf-pictures.generated.json'
-import {ACTION_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,PRONOUN_PICTOGRAMS,pictureKey} from './phrase-pictograms'
+import {ACTION_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,NEGATION_PICTOGRAMS,PRONOUN_PICTOGRAMS,pictureKey} from './phrase-pictograms'
 import {tagged,pronounsForFrame} from './phrase-sentences'
 import type {PhraseCategories,PhraseThemeId} from './phrase-themes'
 import type {PhraseVerbGroup} from '@/math/types'
@@ -14,9 +14,10 @@ for(const image of ACTION_PICTOGRAMS)actions.set(pictureKey(image.label),image.s
 const pronouns=new Map(PRONOUN_PICTOGRAMS.map(image=>[image.label,image.src]))
 const interrogatives=new Map(INTERROGATIVE_PICTOGRAMS.map(image=>[pictureKey(image.label.replace(/\s*\/\s*/g,' ')),image.src]))
 const QUESTION_PICTURE_KEYS:Partial<Record<PhraseQuestionForm,string>>={
-  qui:'qui',que:'que quoi',quoi:'que quoi',où:'où',quand:'quand',comment:'comment',
+  qui:'qui','a-qui':'à qui',que:'que quoi',quoi:'que quoi',où:'où',quand:'quand',comment:'comment',
   pourquoi:'pourquoi',combien:'combien',quel:'quel quelle',lequel:'lequel laquelle',
 }
+const negationPicture=NEGATION_PICTOGRAMS[0]!.src
 // These TCF objects have a direct, unambiguous counterpart in the source phrase.
 for(const noun of ['pomme','tomate','chat','chien'])nouns.set(noun,`/lib/images/tcf/qcm-audit/vocab-${noun}.webp`)
 
@@ -66,10 +67,21 @@ export function phraseImageClues(tokens:readonly PhraseToken[],verbIds:readonly 
   const clues:PhraseImageClue[]=[]
   const pictures=nounPictures(tokens);if(!pictures)return undefined
   const questionPicture=questionForm?interrogatives.get(pictureKey(QUESTION_PICTURE_KEYS[questionForm]??'')):undefined
-  let verb=0,subject=true
-  for(const [index,token] of tokens.entries()){
+  const hasNegativePair=tokens.some(token=>token.category==='adverbe'&&['ne','n'].includes(pictureKey(token.text)))&&tokens.some(token=>token.category==='adverbe'&&pictureKey(token.text)==='pas')
+  let verb=0,subject=true,negativePictureAdded=false
+  for(let index=0;index<tokens.length;index++){
+    const token=tokens[index]!
+    if(questionPicture&&questionForm==='a-qui'&&token.category==='preposition'&&pictureKey(token.text)==='a'&&tokens[index+1]?.category==='pronom'&&pictureKey(tokens[index+1]!.text)==='qui'){
+      clues.push({category:'preposition',label:'à qui',imageSrc:questionPicture})
+      index++
+      continue
+    }
     if(questionPicture&&questionForm&&isQuestionWord(questionForm,token)){
       clues.push({category:token.category,label:token.text,imageSrc:questionPicture})
+      continue
+    }
+    if(hasNegativePair&&token.category==='adverbe'&&['ne','n','pas'].includes(pictureKey(token.text))){
+      if(!negativePictureAdded){clues.push({category:'adverbe',label:'ne… pas',imageSrc:negationPicture});negativePictureAdded=true}
       continue
     }
     if(token.category==='determinant'){
