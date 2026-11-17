@@ -40,6 +40,16 @@
 .ci-app .ci-settings-mascot-grid .ci-mascot { width: 96px; height: 96px; max-width: 100%; }
 .ci-app .ci-settings-extra { border-top: 1px solid var(--ci-line); padding-top: 12px; }
 .ci-app .ci-setup-home-header .ci-header-start { flex: 1; justify-content: space-between; }
+.ci-app .ci-source-tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+.ci-app .ci-source-tabs button { flex: 1; }
+.ci-app .ci-source-tabs button[aria-pressed='true'] { background: var(--ci-soft); border-color: var(--ci-accent); }
+.ci-app .ci-fiche-chooser > label { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.ci-app .ci-fiche-chooser input { width: 100%; min-height: 48px; padding: 10px; font: inherit; border: 1px solid var(--ci-line); border-radius: 8px; color: var(--ci-ink); background: var(--ci-paper); }
+.ci-app .ci-fiche-chooser ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.ci-app .ci-fiche-chooser li { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 16px; border: 1px solid var(--ci-line); border-radius: 14px; }
+.ci-app .ci-fiche-chooser li > div { flex: 1 1 230px; min-width: 0; overflow-wrap: anywhere; }
+.ci-app .ci-fiche-chooser h3 { font-size: 19px; margin: 0; }
+.ci-app .ci-fiche-chooser li p { margin: 4px 0 0; color: var(--ci-muted); font-size: 14px; }
 @media screen and (max-width:700px) {
   .ci-app .ci-setup-home { padding: 24px 16px 32px; }
   .ci-app .ci-setup-welcome { margin-bottom: 20px; }

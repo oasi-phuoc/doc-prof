@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-17",
+  "passed": true,
+  "results": [
+    {
+      "viewport": "390x844",
+      "checks": [
+        "No worksheet fetch in Exercises",
+        "Direct server worksheet list",
+        "Domain access checked against recipe pages",
+        "Pagination and accent-insensitive search",
+        "Exercise selection retained across source changes",
+        "Saved worksheet preparation, competition and print remain reachable",
+        "Error, retry and empty-library states"
+      ],
+      "axeViolations": 0
+    },
+    {
+      "viewport": "1366x768",
+      "checks": [
+        "No worksheet fetch in Exercises",
+        "Direct server worksheet list",
+        "Domain access checked against recipe pages",
+        "Pagination and accent-insensitive search",
+        "Exercise selection retained across source changes",
+        "Saved worksheet preparation, competition and print remain reachable",
+        "Error, retry and empty-library states"
+      ],
+      "axeViolations": 0
+    }
+  ],
+  "requests": [
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET",
+    "GET"
+  ],
+  "errors": []
+}

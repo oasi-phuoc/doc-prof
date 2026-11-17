@@ -1,4 +1,5 @@
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { Suspense, useEffect, useId, useRef, useState, type ReactNode } from 'react'
+import { LoadingScreen } from '@/components/LoadingScreen'
 import { Icon, type IconName } from './Icons'
 import { Mascot } from './Mascot'
 import { MASCOTS } from '../domain/mascot'
@@ -26,7 +27,7 @@ export function SetupDialog({ title, onClose, children, wide = false }: { title:
     event.preventDefault(); onClose()
   }}>
     <div className="ci-setup-dialog-head ci-no-print"><h2 ref={heading} tabIndex={-1} id={id}>{title}</h2><button type="button" className="ci-icon-button" aria-label={`Fermer · ${title}`} onClick={onClose}><Icon name="close" /></button></div>
-    <div className="ci-setup-dialog-body">{children}</div>
+    <div className="ci-setup-dialog-body"><Suspense fallback={<LoadingScreen variant="inline" title="Ouverture des options…"/>}>{children}</Suspense></div>
   </dialog>
 }
 

@@ -13,8 +13,6 @@ import { applyPlanOptions, readPlanOptions, type PlanOptions } from './domain/pl
 import {sortingSelection} from './domain/word-sorting'
 import {memorySelection} from './domain/memory-conversion'
 import {lotoSelection} from './domain/loto'
-import { PresetPanel } from './components/PresetPanel'
-import { SessionArchive } from './components/SessionArchive'
 import { presetOptions, type LocalPreset } from './presets'
 import { PLAN_CHANGED } from './domain/persistence'
 import { convertRecipe } from './domain/convert'
@@ -41,9 +39,6 @@ import { loadLocalDraft, localDraftId } from './drafts'
 import { SessionView } from './SessionView'
 import { loadSession, deleteSession, type Resume } from './domain/persistence'
 import { acquireSessionLease } from './session-lease'
-import { PrintCards } from './components/PrintCards'
-import { TeacherSheet } from './components/TeacherSheet'
-import { PaletteSettings } from './components/PaletteSettings'
 import { ClassroomHeader } from './components/ClassroomHeader'
 import {
   type TimerSettings,
@@ -55,6 +50,11 @@ import { useReadabilityPreflight } from './layout/useReadabilityPreflight'
 import { SetupAction, SetupDialog, SessionSettings } from './components/SetupHub'
 
 
+const PresetPanel = lazy(() => import('./components/PresetPanel').then(module => ({default: module.PresetPanel})))
+const SessionArchive = lazy(() => import('./components/SessionArchive').then(module => ({default: module.SessionArchive})))
+const PrintCards = lazy(() => import('./components/PrintCards').then(module => ({default: module.PrintCards})))
+const TeacherSheet = lazy(() => import('./components/TeacherSheet').then(module => ({default: module.TeacherSheet})))
+const PaletteSettings = lazy(() => import('./components/PaletteSettings').then(module => ({default: module.PaletteSettings})))
 type Source = GameSource
 const CompetitionSetup = lazy(() => import('./competition/CompetitionPage').then((module) => ({ default: module.CompetitionSetup })))
 function savedIdFromPath(): string | null {

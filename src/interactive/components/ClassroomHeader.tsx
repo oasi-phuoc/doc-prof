@@ -6,6 +6,7 @@ import { MASCOTS, type MascotKind } from '../domain/mascot'
 import type { PlayMode } from '../domain/types'
 import { validSeconds, validFeedbackSeconds, type TimerSettings } from '../domain/settings'
 import type { ToolbarGuard } from '../domain/teacher'
+import { HomeHeader } from './HomeHeader'
 
 export type ClassroomHeaderProps = {
   compact?: boolean
@@ -44,6 +45,7 @@ export function ClassroomHeader({ homeHref='/generateur', compact = false, masco
     document.addEventListener('pointerdown', outside)
     return () => document.removeEventListener('pointerdown', outside)
   }, [panel,optionsOpen])
+  if (compact && !playing) return <HomeHeader homeHref={homeHref}/>
   return (
     <header className={`ci-header ci-no-print${playing?' ci-clean-header':''}${compact && !playing ? ' ci-setup-home-header' : ''}`} data-ci-toolbar>
       <div className="ci-header-start">
