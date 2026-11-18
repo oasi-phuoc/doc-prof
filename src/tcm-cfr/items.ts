@@ -286,7 +286,7 @@ function padDigitsStart(row: string[] | undefined, width: number): string[] {
 
 /**
  * × 100–999 × 11–99 (5 colonnes) à gauche, ÷ 1000–9999 ÷ 2–9 à droite.
- * Division : 4 colonnes de travail + 4 colonnes de quotient, 10 lignes.
+ * Division : 4 colonnes de travail + 4 colonnes de quotient, 9 lignes.
  * Le trait violet est après la 4e colonne. Le diviseur est dans la 1re case à droite.
  */
 function genMulDivPair(rng: Rng, empty: boolean): MathItem[] {
@@ -299,11 +299,11 @@ function genMulDivPair(rng: Rng, empty: boolean): MathItem[] {
   const quot = int(rng, qMin, qMax)
   const posed = withFixedDivisionWorkRows(
     withFixedDivisionWidth(divisionColumnItem(d * quot, d, empty), 4, 4),
-    9,
+    8,
   )
   const div: MathItem = {
     ...posed,
-    divisionRows: 10,
+    divisionRows: 9,
     digitsB: padDigitsStart(posed.digitsB, 4),
     digitsResult: padDigitsStart(posed.digitsResult, 4),
   }
