@@ -1991,7 +1991,7 @@ html,body,#root{
 }
 
 .sheet-footer.doc-footer,.doc-footer{
-  margin-top:auto;padding-top:12px;border-top:1px solid #111;
+  margin-top:auto;padding-top:0;padding-bottom:12px;border-top:1px solid #111;
   display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;
   column-gap:12px;row-gap:2px;align-items:end;color:#111;font-size:calc(10px * var(--app-font-scale, 1))
 }
