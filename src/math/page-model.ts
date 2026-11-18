@@ -93,6 +93,9 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     tcfPointsDetail: page.tcfPointsDetail,
     libreItems: page.libreItems,
     libreInstruction: page.libreInstruction,
+    logiqueIds: page.logiqueIds,
+    countShapeScale: page.countShapeScale,
+    countIconTotal: page.countIconTotal,
   }
 }
 

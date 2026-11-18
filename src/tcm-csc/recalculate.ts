@@ -1,6 +1,6 @@
 import type { MathItem } from '@/math/types'
 import { SILENCE_6S_AUDIO } from '@/tcm-cfr/audio-nombres'
-import { cscCalculationParts, cscNumberParts, CSC_FIGURES, CSC_SIGN_NAMES } from './items'
+import { cscCalculationParts, cscConnectAnswer, cscConnectFrame, cscNumberParts, CSC_FIGURES, CSC_SIGN_NAMES } from './items'
 import { numberDecomposition } from '@/tcm-cfr/items'
 import { buildCscProblem } from './problems'
 
@@ -50,17 +50,19 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
     }
     if (task?.kind === 'number-grid') {
       if (task.numbers.length !== 100 || task.numbers.some((n, index) => n !== index + 1)) throw new Error('La grille contient les nombres de 1 à 100, dans l’ordre.')
-      if (task.heard.length !== 5 || new Set(task.heard).size !== 5 || !task.heard.every((n) => task.numbers.includes(n))) throw new Error('Choisissez cinq nombres différents présents dans la grille.')
+      if (task.heard.length < 1 || task.heard.length > 12 || new Set(task.heard).size !== task.heard.length || !task.heard.every((n) => task.numbers.includes(n))) throw new Error('Choisissez des nombres différents présents dans la grille.')
       const parts = task.heard.flatMap((n, i) => [...(i ? [SILENCE_6S_AUDIO] : []), ...cscNumberParts(n)])
       return { ...item, answer: task.heard.join(' ; '), audioParts: parts, audioSrc: undefined, libreError: undefined }
     }
     if (task?.kind === 'shape-names') {
-      if (task.figures.length !== 4 || !task.figures.every((figure) => CSC_FIGURES.some((entry) => entry.value === figure))) throw new Error('Choisissez quatre formes de la liste.')
+      if (task.figures.length < 1 || task.figures.length > CSC_FIGURES.length || new Set(task.figures).size !== task.figures.length || !task.figures.every((figure) => CSC_FIGURES.some((entry) => entry.value === figure))) throw new Error('Choisissez des formes distinctes de la liste.')
       return { ...item, answer: task.figures.map((figure) => CSC_FIGURES.find((entry) => entry.value === figure)!.label).join(' ; '), libreError: undefined }
     }
     if (task?.kind === 'connect-points') {
-      if (task.points.length !== 4 || task.points.some((p, i) => p.label !== 'ABCD'[i] || !integers([p.x], 8, 152) || !integers([p.y], 8, 72)) || new Set(task.points.map((p) => `${p.x}:${p.y}`)).size !== 4) throw new Error('Placez quatre points distincts à l’intérieur du cadre.')
-      return { ...item, answer: 'AB en rouge ; CD en bleu.', libreError: undefined }
+      const pairs = task.points.length / 2
+      const frame = task.frame ?? cscConnectFrame(pairs)
+      if (pairs < 1 || pairs > 5 || !Number.isInteger(pairs) || task.points.some((p, i) => p.label !== String.fromCharCode(65 + i) || !integers([p.x], 8, frame.width - 8) || !integers([p.y], 8, frame.height - 8)) || new Set(task.points.map((p) => `${p.x}:${p.y}`)).size !== task.points.length) throw new Error('Placez de une à cinq paires de points distincts dans le cadre.')
+      return { ...item, answer: cscConnectAnswer(pairs), libreError: undefined }
     }
     if ((typeId.endsWith('ex04') || typeId.endsWith('ex05')) && item.layout === 'sequence') {
       const values = (item.sequence ?? []).map(Number), step = values[1]! - values[0]!
@@ -70,7 +72,7 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
     }
     if (typeId.endsWith('ex14') && item.segments?.length) {
       const lengths = item.segments.map((segment) => segment.mm)
-      if (lengths.length !== 3 || new Set(lengths).size !== 3 || !integers(lengths, 10, 160)) throw new Error('Choisissez trois longueurs distinctes entre 10 et 160 mm.')
+      if (lengths.length < 2 || lengths.length > 6 || new Set(lengths).size !== lengths.length || !integers(lengths, 10, 160)) throw new Error('Choisissez des longueurs distinctes entre 10 et 160 mm.')
       return { ...item, cscTask: { kind: 'length-table', ...(task?.kind==='length-table'?{colors:task.colors}:{}) }, segments: item.segments.map((segment) => ({ ...segment, display: String(segment.unit === 'cm' ? segment.mm / 10 : segment.mm).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}`, libreError: undefined }
     }
     return null

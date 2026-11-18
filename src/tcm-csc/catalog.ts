@@ -11,6 +11,16 @@ export const TCM_CSC_TOPICS: Topic[] = [
 export function cscSheetNumber(typeNumber: number): number {
   return typeNumber === 25 ? 7 : typeNumber >= 7 && typeNumber <= 20 ? typeNumber + 1 : typeNumber
 }
+
+/** Plafond du champ Questions quand il compte des éléments d’un seul dessin. */
+export function cscQuestionLimit(typeId: string): number | undefined {
+  if (typeId === 'tcm-csc-ex03') return 12
+  if (typeId === 'tcm-csc-ex14') return 6
+  if (typeId === 'tcm-csc-ex15') return 5
+  if (typeId === 'tcm-csc-ex17') return 9
+  if (typeId === 'tcm-csc-ex19' || typeId === 'tcm-csc-ex20') return 15
+  return undefined
+}
 const exercise = (number: number, label: string, instruction: string, columns = 1): ExerciseType => ({
   id: `tcm-csc-ex${String(number).padStart(2, '0')}`, topic: 'tcm-csc-test', label: `${cscSheetNumber(number)} — ${label}`,
   description: instruction, instruction, visual: 'texte', preferredColumns: columns,
@@ -27,7 +37,7 @@ export const TCM_CSC_EXERCISE_TYPES: ExerciseType[] = [
   },
   exercise(1, 'Nombres entendus', 'Écrivez le nombre que vous entendez.'),
   exercise(2, 'Calculs entendus', 'Écrivez le calcul et son résultat.'),
-  exercise(3, 'Entourer les nombres', 'Entourez les cinq nombres entendus.'),
+  exercise(3, 'Entourer les nombres', 'Entourez les nombres entendus.'),
   exercise(4, 'Suites avec indication', 'Complétez les suites de nombres.'),
   exercise(5, 'Suites sans aide', 'Complétez les suites de nombres.'),
   exercise(6, 'Ranger du plus petit au plus grand', 'Rangez les nombres du plus petit au plus grand.'),
@@ -40,9 +50,9 @@ export const TCM_CSC_EXERCISE_TYPES: ExerciseType[] = [
   exercise(12, 'Reproduire une figure', 'Reproduisez la même figure sur le quadrillage de droite.'),
   exercise(13, 'Agrandir une figure', 'Reproduisez la même figure sur le quadrillage de droite.\n1 carré à gauche = 2 carrés à droite.'),
   exercise(14, 'Comparer des longueurs', ''),
-  exercise(15, 'Relier des points', 'Avec la règle, reliez A à B en rouge, puis C à D en bleu.'),
+  exercise(15, 'Relier des points', 'Avec la règle, reliez les points.'),
   exercise(16, 'Suites graphiques', 'Cochez la forme qui continue la suite.'),
-  exercise(17, 'Nommer quatre formes', 'Écrivez le nom de chaque forme géométrique.'),
+  exercise(17, 'Nommer les formes', 'Écrivez le nom de chaque forme géométrique.'),
   exercise(18, 'Compter les formes', ''),
   exercise(19, 'Lire les coordonnées', 'Écrivez les coordonnées de chaque forme.'),
   exercise(20, 'Placer les formes', 'Dessinez chaque forme à l’emplacement indiqué.'),

@@ -105,6 +105,8 @@ export type CountIconsLibreConfig = {
   targetCount: number
   distractorACount: number
   distractorBCount: number
+  /** TCM CSC : garder les quantités données, sans les bornes du TPM. */
+  exact?: boolean
 }
 
 function clampTarget(n: number): number {
@@ -131,13 +133,15 @@ export function buildCountIconsItem(rng: Rng, cfg?: Partial<CountIconsLibreConfi
       all.find((k) => k !== targetKind && k !== distractorA) ?? 'moon'
   }
 
-  const targetCount = clampTarget(cfg?.targetCount ?? int(rng, COUNT_TARGET_MIN, COUNT_TARGET_MAX))
-  const distractorACount = clampDecoy(
-    cfg?.distractorACount ?? int(rng, COUNT_DECOY_MIN, COUNT_DECOY_MAX),
-  )
-  const distractorBCount = clampDecoy(
-    cfg?.distractorBCount ?? int(rng, COUNT_DECOY_MIN, COUNT_DECOY_MAX),
-  )
+  const targetCount = cfg?.exact
+    ? Math.max(1, Math.round(cfg.targetCount ?? 1))
+    : clampTarget(cfg?.targetCount ?? int(rng, COUNT_TARGET_MIN, COUNT_TARGET_MAX))
+  const distractorACount = cfg?.exact
+    ? Math.max(1, Math.round(cfg.distractorACount ?? 1))
+    : clampDecoy(cfg?.distractorACount ?? int(rng, COUNT_DECOY_MIN, COUNT_DECOY_MAX))
+  const distractorBCount = cfg?.exact
+    ? Math.max(1, Math.round(cfg.distractorBCount ?? 1))
+    : clampDecoy(cfg?.distractorBCount ?? int(rng, COUNT_DECOY_MIN, COUNT_DECOY_MAX))
 
   const kinds: CountIconKind[] = [
     ...Array.from({ length: targetCount }, () => targetKind),

@@ -10,7 +10,7 @@ export type CscTask =
   | { kind: 'place-plain' }
   | { kind: 'copy'; scale: 1 | 2 }
   | { kind: 'length-table'; colors?: number[] }
-  | { kind: 'connect-points'; points: { label: string; x: number; y: number }[] }
+  | { kind: 'connect-points'; points: { label: string; x: number; y: number }[]; frame?: { width: number; height: number } }
   | { kind: 'shape-names'; figures: Figure[] }
   | { kind: 'large-count'; scale?: number }
   | { kind: 'coordinates-left'; xDirection?: 'left-to-right' | 'right-to-left'; yDirection?: 'bottom-to-top' | 'top-to-bottom' }

@@ -1220,6 +1220,7 @@ export function recalcTpmLibreItem(item: MathItem, exerciseType: string): MathIt
       targetCount: scene.targetCount,
       distractorACount: scene.distractorACount ?? 12,
       distractorBCount: scene.distractorBCount ?? 12,
+      exact: exerciseType === 'tcm-csc-ex18',
     })
     if (exerciseType !== 'tcm-csc-ex18') return rebuilt
     const built = rebuilt.countIcons ?? scene

@@ -29,7 +29,7 @@ try {
    const config={...configFor(domain,type,count),difficulty},recipe={...base,pages:[config],seed,libreMode:false},before=structuredClone(recipe)
    const items=buildPage(config,seed).blocks.flatMap(block=>block.items),paper=seed===1?structuredClone(buildWorksheets(recipe.pages,seed)):undefined
    const game=convertRecipe(recipe)
-   const expected=type==='figures-nommer'?16:type==='figures-proprietes'?52:8
+   const expected=type==='figures-nommer'?16:type==='figures-proprietes'?52:count
    assert.equal(game.questions.length,expected,JSON.stringify(game.issues))
    assert.equal(game.issues.length,0)
    for(const q of game.questions) {
@@ -95,7 +95,7 @@ try {
  })
  await test('renewed CSC templates change figure order while generic sources retain their pictures and vary their cards',()=>{
   for(const [domain,type,count] of families) {
-   const recipe={...base,pages:[configFor(domain,type,type==='tcm-csc-ex17'?1:count)],libreMode:false},before=structuredClone(recipe)
+   const recipe={...base,pages:[configFor(domain,type,type==='tcm-csc-ex17'?4:count)],libreMode:false},before=structuredClone(recipe)
    let source=createGameSource({recipe,name:type},'saved',type)
    const orders=new Set(),cards=new Set()
    for(let draw=0;draw<8;draw++) {
@@ -111,7 +111,7 @@ try {
   }
  })
  await test('Class is collective and Solo correct, incorrect and timeout verdicts survive durable checkpoints',async()=>{
-  const item=generateCscExercise('tcm-csc-ex17',1,7)[0],game=prepareGame(gameFor('tcm-csc-ex17',item))
+  const item=generateCscExercise('tcm-csc-ex17',4,7)[0],game=prepareGame(gameFor('tcm-csc-ex17',item))
   let state=startSession(game,'class')
   assert.equal(transition(game,state,{type:'SELECT',choiceId:game.questions[0].choices[0].id}),state)
   state=startSession(game,'solo')

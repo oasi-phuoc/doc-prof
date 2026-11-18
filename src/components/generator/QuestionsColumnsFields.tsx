@@ -134,6 +134,15 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     sheetTotalPoints,
   } = props
   const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
+  const questionMin = activeBlock.exerciseType === 'tcm-csc-ex14' ? 2 : 1
+  const cscQuestionHint = activeBlock.exerciseType === 'tcm-csc-ex03' ? 'Nombres à entourer, 1 point chacun.'
+    : activeBlock.exerciseType === 'tcm-csc-ex14' ? 'Segments à mesurer. Le tableau ajoute une colonne par segment.'
+    : activeBlock.exerciseType === 'tcm-csc-ex15' ? 'Paires de points, 5 au plus.'
+    : activeBlock.exerciseType === 'tcm-csc-ex17' ? 'Formes à nommer, 1 point chacune.'
+    : activeBlock.exerciseType === 'tcm-csc-ex19' ? 'Formes dont on écrit les coordonnées.'
+    : activeBlock.exerciseType === 'tcm-csc-ex20' ? 'Formes à placer, 1 point chacune.'
+    : null
+  const hideTcmCscColumns = activeBlock.exerciseType.startsWith('tcm-csc-') && !['tcm-csc-ex07', 'tcm-csc-ex10', 'tcm-csc-ex11'].includes(activeBlock.exerciseType)
   const grammarSituations=activeBlock.grammarPresentation==='scenario-set'
   const sheetItems = activeSheet?.blocks?.[safeBlockIndex]?.items
   const sheetHasInlineBlank = sheetItems?.some((item) => {
@@ -193,18 +202,19 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         : undefined
                   }
                   type="number"
-                  min={1}
+                  min={questionMin}
                   max={maxQuestions}
                   step={1}
                   value={activeBlock.count}
                   onChange={(event) => {
                     const next = Math.max(
-                      1,
-                      Math.min(maxQuestions, Number(event.target.value) || 1),
+                      questionMin,
+                      Math.min(maxQuestions, Number(event.target.value) || questionMin),
                     )
                     updatePage({ count: next })
                   }}
                 />
+                {cscQuestionHint ? <small className="muted">{cscQuestionHint}</small> : null}
                 {soutienKind === 'lettres' ? (
                   <small className="muted">
                     Nombre de lignes du tableau (8 lettres par ligne, max. 15 · défaut 5).
@@ -351,6 +361,32 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     <option value="3">Taille triple</option>
                   </select>
                   <small className="muted">Le cadre ne change pas.</small>
+                </label>
+              ) : null}
+              {activeBlock.exerciseType === 'tcm-csc-ex18' ? (
+                <label className="select-shell">
+                  <span>Formes dans le cadre</span>
+                  <input
+                    className="pill-input"
+                    type="number"
+                    inputMode="numeric"
+                    min={12}
+                    max={80}
+                    step={1}
+                    aria-label="Nombre total de formes dans le cadre"
+                    value={activeBlock.countIconTotal ?? ''}
+                    placeholder="Au hasard"
+                    onChange={(event) => {
+                      const raw = event.target.value.trim()
+                      if (raw === '') {
+                        updatePage({ countIconTotal: undefined })
+                        return
+                      }
+                      const total = Math.max(12, Math.min(80, Math.round(Number(raw) || 12)))
+                      updatePage({ countIconTotal: total })
+                    }}
+                  />
+                  <small className="muted">Nombre total de formes dessinées dans le cadre, de 12 à 80. Laissez vide pour un tirage.</small>
                 </label>
               ) : null}
               {activeBlock.exerciseType === 'tcm-csc-ex16' ? (
@@ -859,6 +895,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isTcf ||
               isTpmInfoPage ||
               hideColumnsOption ||
+              hideTcmCscColumns ||
               isSoutienCols123 ||
               isSoutienCols345 ||
               isAlphaMotsCols ||

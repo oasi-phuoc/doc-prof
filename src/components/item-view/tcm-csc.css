@@ -11,9 +11,9 @@
 .csc-name-figure .geometry-figure { margin: 0; height: 100%; max-width: 100%; }
 .csc-shape-answer { padding-top: 12.5px; padding-bottom: 15px; }
 .csc-shape-names .answer-line-field { width: 100%; font-size: calc(11pt * var(--app-font-scale, 1)); }
-.csc-connect svg { display: block; width: 100%; height: 67.5mm; }
-.csc-connect { width: 90%; margin-inline: auto; border: 0; }
-.csc-connect ol { margin: 0 0 4px; padding-left: 24px; }
+.csc-connect { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 8mm; align-items: center; width: 100%; margin: 0; border: 0; }
+.csc-connect ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4mm; }
+.csc-connect svg { display: block; width: 100%; height: auto; }
 .csc-copy { display: flex; align-items: flex-start; justify-content: center; gap: 6mm; width: 100%; }
 .csc-copy > div { flex: 0 0 auto; text-align: center; }
 .csc-copy p { margin: 2px 0 5px; font-size: calc(11pt * var(--app-font-scale, 1)); }

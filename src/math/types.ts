@@ -1117,6 +1117,8 @@ export type ExerciseBlock = {
   logiqueIds?: string[]
   /** TCM CSC exercice 19 : taille des formes à compter (1, 2 ou 3). Défaut 2. */
   countShapeScale?: 1 | 2 | 3
+  /** TCM CSC exercice 19 : nombre total de formes dans le cadre. Vide = tirage. */
+  countIconTotal?: number
 }
 
 export type PageConfig = ExerciseBlock & {

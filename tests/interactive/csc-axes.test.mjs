@@ -18,9 +18,9 @@ try {
   for(const type of ['tcm-csc-ex19','tcm-csc-ex20']){
    const directions=new Set()
    for(let seed=1;seed<=100;seed++){
-    const items=generateCscExercise(type,1,seed),item=items[0]
+    const items=generateCscExercise(type,6,seed),item=items[0]
     directions.add(item.cscTask.xDirection+'/'+item.cscTask.yDirection)
-    assert.deepEqual(generateCscExercise(type,1,seed),items)
+    assert.deepEqual(generateCscExercise(type,6,seed),items)
     assert.equal(item.coordScene.marks.length,6);assert.equal(item.coordQuestions.length,6)
    }
    assert.equal(directions.size,4)
@@ -53,7 +53,7 @@ try {
  await test('every regenerated measuring exercise includes cm and mm, exact displays and unchanged physical longest/shortest answers',()=>{
   const variants=new Set()
   for(let seed=1;seed<=100;seed++){
-   const item=generateCscExercise('tcm-csc-ex14',1,seed)[0],segments=item.segments
+   const item=generateCscExercise('tcm-csc-ex14',3,seed)[0],segments=item.segments
    assert.equal(segments.length,3);assert.deepEqual([...new Set(segments.map(s=>s.unit))].sort(),['cm','mm']);variants.add(segments.map(s=>s.unit).join('/'))
    for(const segment of segments){const value=Number(segment.display.replace(',','.'));assert.ok(Math.abs(value*(segment.unit==='cm'?10:1)-segment.mm)<1e-7)}
    const lengths=segments.map(s=>s.mm),expected=[Math.max(...lengths),Math.min(...lengths)].map(length=>String.fromCharCode(65+lengths.indexOf(length))).join(' ; ')

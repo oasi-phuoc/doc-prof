@@ -1,6 +1,7 @@
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import { grammarEligibleCount } from '@/grammaire/curriculum/generate'
 import { maxQuestionsFor } from '@/components/generator/generator-derived'
+import { cscQuestionLimit } from '@/tcm-csc/catalog'
 import {
   defaultCalliPhraseCount,
   defaultCalliWordCount,
@@ -254,11 +255,12 @@ const baseMaxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const bankQuestionCap = activeSheetBlock?.bankQuestionCap
-const maxQuestions = isGrammaireDomain && activeBlock.grammarLevel
+const maxQuestions = cscQuestionLimit(activeBlock.exerciseType)
+  ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
   : activePage.domain === 'gattegno' && bankQuestionCap != null
   ? Math.min(baseMaxQuestions, bankQuestionCap)
-  : baseMaxQuestions
+  : baseMaxQuestions)
 const bankOverflow =
   Boolean(bankQuestionCap != null) &&
   (isOralComprehensionExercise(activeBlock.exerciseType) ||

@@ -72,7 +72,7 @@ export function adaptRecognition(item: MathItem, exerciseType: string, seedFor: 
   if(cfr)return cfr
   if (item.cscTask?.kind==='shape-names' && exerciseType==='tcm-csc-ex17') {
     const figures=item.cscTask.figures
-    if (item.layout!=='csc-task' || !Array.isArray(figures) || figures.length!==4 || new Set(figures).size!==4 || figures.some(figure=>!CSC_FIGURES.some(entry=>entry.value===figure))) return reject('Les quatre formes CSC doivent être distinctes et appartenir à la liste des formes proposées.')
+    if (item.layout!=='csc-task' || !Array.isArray(figures) || figures.length<1 || figures.length>CSC_FIGURES.length || new Set(figures).size!==figures.length || figures.some(figure=>!CSC_FIGURES.some(entry=>entry.value===figure))) return reject('Les formes CSC doivent être distinctes et appartenir à la liste des formes proposées.')
     const labels=figures.map(figure=>CSC_FIGURES.find(entry=>entry.value===figure)!.label)
     if (normalize(item.answer)!==labels.join(' ; ')) return reject('Les formes CSC et leur corrigé ne correspondent plus. Validez la fiche avant de jouer.')
     return {items:figures.map((figure,part)=>naming({layout:'geo',figure,answer:labels[part]!},part,labels[part]!,labels,seedFor(part))),issues:[]}
