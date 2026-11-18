@@ -40,6 +40,10 @@
 .worksheet-sheet .coord-block.is-csc-left .coord-question-icon { display: inline-flex; flex: 0 0 auto; width: auto; }
 .worksheet-sheet .coord-block.is-csc-left .coord-question-icon svg { flex: none; display: block; }
 .worksheet-sheet .coord-block.is-csc-left .coord-grid.is-fixed-mm .axis-label { font-size: calc(4.5px * var(--app-font-scale, 1)); font-weight: 800; fill: var(--purple); }
+.worksheet-sheet .exercise-block[data-exercise-type="tcm-csc-ex20"] .coord-block.is-csc-left .coord-grid.is-fixed-mm .axis-label { font-size: calc(9px * var(--app-font-scale, 1)); }
+.worksheet-sheet .exercise-block[data-exercise-type="tcm-csc-ex20"] .coord-block.is-csc-left { align-items: flex-start; }
+.worksheet-sheet .exercise-block[data-exercise-type="tcm-csc-ex20"] .coord-block.is-csc-left .coord-question { flex-direction: column; align-items: flex-start; gap: 1mm; }
+.worksheet-sheet .exercise-block[data-exercise-type="tcm-csc-ex20"] .coord-given { font-size: calc(30px * var(--app-font-scale, 1)); flex: 0 0 auto; width: auto; white-space: nowrap; }
 .worksheet-sheet .coord-block.is-csc-left .coord-pair { white-space: nowrap; font-size: calc(11pt * var(--app-font-scale, 1)); gap: 2px; }
 .worksheet-sheet .coord-block.is-csc-left .coord-pair .answer-line-field { min-width: 2ch; width: 2ch; flex: 0 0 2ch; font-size: inherit; }
 .csc-free-fields { display: grid; gap: 12px; }
