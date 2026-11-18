@@ -162,7 +162,11 @@ export function GeneratorPage({
    */
   const previewSource =
     libreMode && !activeBlock.coordLibre && libreSnapshot && libreSnapshot.length === pages.length
-      ? libreSnapshot
+      ? libreSnapshot.map((page, index) =>
+          pageBlocks(pages[index] ?? page).some((block) => block.exerciseType === 'tcm-csc-ex18')
+            ? pages[index]!
+            : page,
+        )
       : null
   const previewWorksheets = useMemo(
     () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion) : worksheets),

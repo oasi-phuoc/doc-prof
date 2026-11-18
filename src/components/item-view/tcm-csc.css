@@ -23,7 +23,7 @@
 .csc-length-table th, .csc-length-table td { border: 1px solid var(--muted); padding: 6px 10px; text-align: center; }
 .csc-length-table th:first-child { text-align: left; }
 .csc-length-check { display: inline-grid; place-items: center; width: 5mm; height: 5mm; border: 1px solid var(--ink); font-size: calc(12pt * var(--app-font-scale, 1)); line-height: 1; }
-.worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: calc(48.75mm * var(--csc-count-scale, 2)); max-height: calc(48.75mm * var(--csc-count-scale, 2)); aspect-ratio: auto; }
+.worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: 97.5mm; max-height: 97.5mm; aspect-ratio: auto; }
 .is-csc-large .count-icons-frame { padding: 25px; }
 .csc-count-content { position: absolute; inset: 25px; container-type: size; }
 .csc-count-instruction { margin: 0; display: flex; align-items: center; gap: .3em; }

@@ -1213,7 +1213,7 @@ export function recalcTpmLibreItem(item: MathItem, exerciseType: string): MathIt
   ) {
     const scene = next.countIcons
     if (!scene) return next
-    return rebuildCountIconsItem(createRng(41 + (scene.targetCount ?? 0) * 17), {
+    const rebuilt = rebuildCountIconsItem(createRng(41 + (scene.targetCount ?? 0) * 17), {
       targetKind: scene.targetKind,
       distractorA: scene.distractorA ?? 'star',
       distractorB: scene.distractorB ?? 'moon',
@@ -1221,6 +1221,18 @@ export function recalcTpmLibreItem(item: MathItem, exerciseType: string): MathIt
       distractorACount: scene.distractorACount ?? 12,
       distractorBCount: scene.distractorBCount ?? 12,
     })
+    if (exerciseType !== 'tcm-csc-ex18') return rebuilt
+    const built = rebuilt.countIcons ?? scene
+    const same =
+      built.targetKind === scene.targetKind &&
+      built.targetCount === scene.targetCount &&
+      built.distractorA === scene.distractorA &&
+      built.distractorACount === scene.distractorACount &&
+      built.distractorB === scene.distractorB &&
+      built.distractorBCount === scene.distractorBCount &&
+      scene.tokens.length > 0
+    const scale = next.cscTask?.kind === 'large-count' ? next.cscTask.scale ?? 2 : 2
+    return { ...rebuilt, countIcons: same ? scene : built, cscTask: { kind: 'large-count', scale } }
   }
 
   if (next.layout === 'sequence') return recalcSequence(next)

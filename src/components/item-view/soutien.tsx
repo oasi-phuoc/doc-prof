@@ -153,19 +153,35 @@ export function CountIconGlyph({
   }
 }
 
+/** Taille 1 = formes actuelles, 2 = deux fois plus grandes, 3 = trois fois. Le cadre reste fixe. */
+function cscShapeBox(token: { x: number; y: number; size: number }, shapeScale: number) {
+  const scale = Math.min(3, Math.max(1, shapeScale))
+  const halfW = (token.size * scale) / 2
+  const halfH = (token.size * scale * 1.25) / 2
+  return {
+    x: Math.min(100 - halfW, Math.max(halfW, token.x)),
+    y: Math.min(100 - halfH, Math.max(halfH, token.y)),
+    side: `min(${(token.size * scale) / Math.SQRT2}cqw, ${(token.size * scale * 1.25) / Math.SQRT2}cqh)`,
+  }
+}
+
 export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const scene = item.countIcons
   const show = mode === 'answers'
   const isCsc = item.cscTask?.kind === 'large-count'
+  const shapeScale = item.cscTask?.kind === 'large-count' ? item.cscTask.scale ?? 2 : 1
   if (!scene) return null
-  const tokens = scene.tokens.map((token, index) => (
+  const tokens = scene.tokens.map((token, index) => {
+          const box = isCsc ? cscShapeBox(token, shapeScale) : null
+          return (
           <span
             key={`ci-${index}`}
             className={`count-icon-token kind-${token.kind}`}
             style={{
-              left: `${token.x}%`,
-              top: `${token.y}%`,
-              width: isCsc ? `min(${token.size/Math.SQRT2}cqw, ${token.size*1.25/Math.SQRT2}cqh)` : `${token.size}%`,
+              left: `${box ? box.x : token.x}%`,
+              top: `${box ? box.y : token.y}%`,
+              width: box ? box.side : `${token.size}%`,
+              height: box ? box.side : undefined,
               transform: `translate(-50%, -50%) rotate(${token.rot}deg)`,
             }}
           >
@@ -173,9 +189,9 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
               <CountIconGlyph kind={token.kind} />
             </svg>
           </span>
-        ))
+        )})
   return (
-    <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} style={item.cscTask?.kind === 'large-count' ? { ['--csc-count-scale' as string]: String(item.cscTask.scale ?? 2) } : undefined} aria-label="Compter les formes">
+    <div className={`count-icons-block${isCsc ? ' is-csc-large' : ''}`} aria-label="Compter les formes">
       {isCsc && <p className="csc-count-instruction"><strong>Comptez</strong> les formes <span className="csc-count-target" role="img" aria-label={scene.label}><svg viewBox="0 0 24 24" aria-hidden><CountIconGlyph kind={scene.targetKind}/></svg></span>.</p>}
       <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
         {isCsc ? <div className="csc-count-content">{tokens}</div> : tokens}
