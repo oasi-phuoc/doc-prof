@@ -228,6 +228,32 @@ export function TheoryBlockView({ item }: { item: MathItem }) {
   return <TheoryBlockContent block={block} />
 }
 
+function InfoNoticeIcon() {
+  return (
+    <svg className="theory-notice-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M12 11v6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="12" cy="7.6" r="1.15" fill="currentColor" />
+    </svg>
+  )
+}
+
+function AttentionNoticeIcon() {
+  return (
+    <svg className="theory-notice-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 3.4 2.9 20.4h18.2L12 3.4z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path d="M12 9.4v5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="12" cy="17.2" r="1.05" fill="currentColor" />
+    </svg>
+  )
+}
+
 function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
   if (block.kind === 'section') {
     const sectionLabels = {
@@ -304,6 +330,15 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
           <TheoryFlow text={block.text ?? ''} className="theory-astuce-text" />
         </div>
       </aside>
+    )
+  }
+  if (block.kind === 'notice') {
+    const attention = block.tone === 'attention'
+    return (
+      <p className={`theory-notice is-${block.tone}`} aria-label={attention ? 'Attention' : 'Information'}>
+        {attention ? <AttentionNoticeIcon /> : <InfoNoticeIcon />}
+        <span className="theory-notice-text">{block.text}</span>
+      </p>
     )
   }
   if (block.kind === 'note') {

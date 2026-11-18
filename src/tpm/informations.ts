@@ -1,131 +1,77 @@
 /**
- * Page 1 « Informations » partagée par TPM, TCM CFR et TCM CSC.
- * TPM : niveaux, organisation, consignes. TCM CSC et CFR : organisation et consignes.
+ * Page 1 « Consignes » partagée par TPM, TCM CFR et TCM CSC.
+ * Le nombre d’exercices et le score suivent la recette de chaque test.
  */
 import type { MathItem } from '@/math/types'
+import { TCM_CSC_STEPS } from '@/tcm-csc/pages'
+import { TCM_CFR_STEPS } from '@/tcm-cfr/test'
+import { TPM_STEPS } from '@/tpm/test'
 
 export type TpmInfoVariant = 'tpm' | 'tcm-cfr' | 'tcm-csc'
-
-type InfoSpec = {
-  levels: Array<[string, string]>
-  organisation: string[]
-  consignes: string[]
-}
 
 function scoreLabel(maxScore: number): string {
   return Number.isInteger(maxScore) ? String(maxScore) : String(maxScore).replace('.', ',')
 }
 
-function specFor(variant: TpmInfoVariant, maxScore: number): InfoSpec {
-  const points = scoreLabel(maxScore)
-  const consignes = [
-    'Lisez chaque consigne attentivement avant de répondre.',
-    'Répondez directement sur la fiche, dans les espaces prévus.',
-    'Vous pouvez utiliser un brouillon ; reportez ensuite vos réponses sur la fiche.',
-    'Si vous ne savez pas répondre, passez à la question suivante et revenez-y plus tard.',
-    'Les exercices progressent du plus simple au plus avancé : continuez aussi loin que possible.',
-    'Vérifiez vos calculs quand vous avez terminé.',
-  ]
-  if (variant === 'tcm-cfr') {
-    return {
-      levels: [
-        ['Nombres', 'Dictée orale, rangement, comparaison, décomposition'],
-        ['Opérations', 'Nommer les opérations, calculs posés (+ − × ÷)'],
-        ['Fractions', 'Fractions en lettres, colorier, lire, écriture décimale'],
-        ['Problèmes', 'Situations concrètes (magasin, atelier)'],
-        ['Géométrie', 'Figures, symétrie, mesures, périmètre et aire'],
-        ['Repérage', 'Plan gradué (cadran I) et plan de métro'],
-      ],
-      organisation: [
-        '28 exercices de mathématiques (variante CFR)',
-        'Écoutez les audios lorsque c’est demandé (nombres, multiplications)',
-        `Score maximum : ${points} points`,
-      ],
-      consignes: [
-        ...consignes.slice(0, 3),
-        'Pour les exercices avec audio, écoutez puis écrivez votre réponse.',
-        ...consignes.slice(3),
-      ],
-    }
-  }
-  if (variant === 'tcm-csc') {
-    return {
-      levels: [['CSC', 'Additions et soustractions, bases du calcul']],
-      organisation: [
-        'Test de connaissance de mathématiques — variante CSC',
-        '24 exercices : écoute, calcul, nombres, logique, géométrie et problèmes',
-        maxScore > 0 ? `Score maximum : ${points} points` : 'Barème communiqué avec les exercices',
-      ],
-      consignes,
-    }
-  }
+function exerciseCount(variant: TpmInfoVariant): number {
+  if (variant === 'tcm-csc') return TCM_CSC_STEPS.length
+  if (variant === 'tcm-cfr') return TCM_CFR_STEPS.length
+  return TPM_STEPS.length
+}
+
+function line(prompt: string, text: string): MathItem {
   return {
-    levels: [
-      ['CSC', 'Additions et soustractions'],
-      ['CFR', 'Multiplications, divisions, périmètre et aire du rectangle'],
-      ['CAF', 'Nombres décimaux, fractions, périmètre et aire'],
-      ['CAP', 'Puissances et racines, relatifs, fractions et équations, périmètre et aire'],
-    ],
-    organisation: [
-      '35 exercices couvrant tous les niveaux de CSC jusqu’à CAP',
-      '90 minutes pour compléter le test',
-      `Score maximum : ${points} points`,
-    ],
-    consignes,
+    layout: 'theory',
+    prompt,
+    answer: '',
+    noPoints: true,
+    theoryBlock: { kind: 'paragraph', text },
   }
 }
 
-/** Items théorie de la page Informations (pas de questions ni de colonnes). */
+/** Items théorie de la page Consignes (pas de questions ni de colonnes). */
 export function generateTpmInformations(variant: TpmInfoVariant, maxScore: number): MathItem[] {
-  const { levels, organisation, consignes } = specFor(variant, maxScore)
-  const levelsTable: MathItem | null = variant === 'tpm'
-    ? {
-        layout: 'theory',
-        prompt: 'niveaux',
-        answer: '',
-        noPoints: true,
-        theoryBlock: {
-          kind: 'table',
-          headers: ['Niveau', 'Contenu évalué'],
-          rows: levels.map(([niveau, contenu]) => [niveau, contenu]),
-        },
-      }
-    : null
+  const count = exerciseCount(variant)
+  const points = scoreLabel(maxScore)
+  const pointWord = maxScore === 1 ? 'point' : 'points'
+  const lines = [
+    count === 1 ? 'Il y a 1 exercice.' : `Il y a ${count} exercices.`,
+    `Le score maximum est de ${points} ${pointWord}.`,
+    'Lisez chaque consigne avant de répondre.',
+    'Répondez sur la feuille de test.',
+    'Si vous ne savez pas répondre, passez à la question suivante.',
+    'Vérifiez vos calculs quand vous avez terminé.',
+  ]
   return [
     {
       layout: 'theory',
-      prompt: 'Informations',
+      prompt: 'Consignes',
       answer: '',
       noPoints: true,
-      theoryBlock: { kind: 'heading', text: '' },
+      theoryBlock: { kind: 'heading', text: 'Consignes' },
     },
-    ...(levelsTable ? [levelsTable] : []),
+    ...lines.map((text, index) => line(`consigne-${index}`, text)),
+    line('espace', '{ligne}'),
     {
       layout: 'theory',
-      prompt: 'couverture',
+      prompt: 'brouillon',
       answer: '',
       noPoints: true,
       theoryBlock: {
-        kind: 'list',
-        title: 'Organisation du test',
-        items: organisation,
+        kind: 'notice',
+        tone: 'info',
+        text: 'Vous avez à disposition une feuille de brouillon.',
       },
     },
     {
       layout: 'theory',
-      prompt: 'consignes',
-      answer: '',
-      noPoints: true,
-      theoryBlock: { kind: 'heading', text: 'Consignes', sub: true },
-    },
-    {
-      layout: 'theory',
-      prompt: 'consignes-liste',
+      prompt: 'calculatrice',
       answer: '',
       noPoints: true,
       theoryBlock: {
-        kind: 'list',
-        items: consignes,
+        kind: 'notice',
+        tone: 'attention',
+        text: 'Il est interdit d’utiliser une calculatrice.',
       },
     },
   ]

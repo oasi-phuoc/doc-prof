@@ -36,6 +36,8 @@ export type GrammarTheoryBlock =
     }
   | { kind: 'attention'; text: string }
   | { kind: 'astuce'; text: string }
+  /** Ligne de consigne : icône information ou attention, puis le texte. */
+  | { kind: 'notice'; tone: 'info' | 'attention'; text: string }
   /** Coupe manuelle : la suite commence sur la feuille suivante. */
   | { kind: 'page' }
 
