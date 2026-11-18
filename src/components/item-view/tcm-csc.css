@@ -291,6 +291,58 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-value,
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-unit { text-align: left; justify-self: start; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-value { margin-left: calc(2px - 0.25em); }
+/* TPM : mêmes mises en forme que les exercices proches du TCM CSC / CFR. */
+.is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .item-number { flex-basis: 2em; width: 2em; min-width: 2em; justify-content: flex-end; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .compare-row.is-line { width: max-content; grid-template-columns: 4ch 2.4em 4ch; gap: 10px; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-suite"], [data-exercise-type="tpm-grandes-suites"], [data-exercise-type="tpm-suites-6"]) .sequence-row { display: grid; grid-template-columns: repeat(3, max-content); gap: 8px 12px; width: max-content; max-width: 100%; justify-content: start; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-suite"], [data-exercise-type="tpm-grandes-suites"], [data-exercise-type="tpm-suites-6"]) .sequence-term,
+.is-tpm .exercise-block:is([data-exercise-type="tpm-suite"], [data-exercise-type="tpm-grandes-suites"], [data-exercise-type="tpm-suites-6"]) .sequence-term.blank { border: 1.5px solid var(--purple); width: auto; min-width: 2.6em; max-width: none; height: 1.9em; min-height: 1.9em; padding: 0 0.35em; box-sizing: border-box; flex: unset; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-grandes-suites"], [data-exercise-type="tpm-suites-6"]) .sequence-row.sequence-digits-5 { flex-wrap: unset; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-grandes-suites"], [data-exercise-type="tpm-suites-6"]) .sequence-row.sequence-digits-5 .sequence-term { width: auto; min-width: 5.4ch; max-width: none; }
+.is-tpm .exercise-block[data-exercise-type="tpm-decompose-99"] .place-value-row.is-plain { display: grid; grid-template-columns: 4ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
+.is-tpm .exercise-block[data-exercise-type="tpm-decompose-9999"] .place-value-row.is-plain { display: grid; grid-template-columns: 8ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-decompose-99"], [data-exercise-type="tpm-decompose-9999"]) .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
+.is-tpm .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
+.is-tpm .csc-decompose-example { margin: 10px 0 0; font-size: calc(20pt * var(--app-font-scale, 1) * 0.75); font-weight: 800; line-height: 1.2; color: var(--purple); text-align: center; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-work-side .column-line.rule-line,
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-column .column-line-sign,
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-vbar,
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-answer-side .column-line.rule-line { display: none; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-column .digit-cell { border: 1px solid #c5cad3; width: 28px; height: 28px; flex: 0 0 28px; font-size: calc(14px * var(--app-font-scale, 1)); }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-column .column-line { gap: 0; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-answer-side { padding-left: 0; max-width: none; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-work-side { max-width: none; position: relative; z-index: 1; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-column.school { width: max-content; max-width: none; overflow: visible; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-work-side .digit-cell:nth-child(4) { border-right: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .division-answer-side .column-line:first-child .digit-cell { border-bottom: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .exercise-item { width: max-content; max-width: none; }
+.is-tpm .exercise-block:is([data-exercise-type="tpm-mul-div-col"], [data-exercise-type="tpm-div-mixte"]) .exercise-item .item-content { flex: 0 0 auto; width: max-content; max-width: none; overflow: visible; }
+.is-tpm .exercise-block[data-exercise-type="tpm-mul-div-col"] .exercise-grid,
+.is-tpm .exercise-block[data-exercise-type="tpm-div-mixte"] .exercise-grid { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: flex-start; width: 100%; }
+.is-tpm .exercise-block[data-exercise-type="tpm-mul-div-col"] .exercise-item:has(.column-grid) { margin-right: auto; }
+.is-tpm .exercise-block[data-exercise-type="tpm-mul-div-col"] .exercise-item:has(.division-column) { margin-left: auto; }
+.is-tpm .exercise-block[data-exercise-type="tpm-div-mixte"] .column-prompt { font-size: 1.2em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 8px; text-align: center; print-color-adjust: exact; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .exercise-grid {
+  grid-template-columns: max-content max-content max-content max-content 4.5em max-content minmax(8mm, 1fr) max-content max-content max-content max-content 4.5em max-content;
+  justify-content: start;
+  column-gap: 0.2em;
+  width: 100%;
+}
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .exercise-item { display: grid !important; grid-template-columns: subgrid; column-gap: 0.2em; align-items: baseline; min-width: 0; width: auto; justify-self: start; padding-left: 0; padding-right: 0; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .exercise-item:nth-child(odd) { grid-column: 1 / span 6; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .exercise-item:nth-child(even) { grid-column: 8 / span 6; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .item-number { min-width: 0; width: max-content; justify-self: start; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .item-content,
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .convert-row { display: contents; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .convert-value { width: max-content; text-align: right; justify-self: end; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .convert-unit { width: max-content; text-align: left; justify-self: start; }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .convert-value + .convert-unit { margin-left: calc(2px - 0.2em); }
+.is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .answer-line-field { width: 4.5em; min-width: 4.5em; max-width: 4.5em; }
+.is-tpm .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { max-height: 24mm; }
+.is-tpm .exercise-block { padding-top: 6px; }
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }

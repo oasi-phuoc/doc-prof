@@ -359,19 +359,25 @@ function buildSingleBlock(
   const cfrOrder = config.exerciseType === 'tcm-cfr-ex03' && config.orderAscending != null
     ? `Rangez les nombres ${config.orderAscending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
     : null
+  const generated = generateItems(
+    config.exerciseType,
+    config.count,
+    rng,
+    difficulty,
+    numberRangeFrom(config),
+    config.quadLibre ? config.quadShapes : undefined,
+    worksheetSeed,
+    config.orderAscending,
+  )
+  const tpmCompareLine = config.domain === 'tpm' && config.exerciseType === 'nombres-comparer'
   return {
     title: fallbackTitle,
-    instruction: cfrOrder ?? type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
-    items: generateItems(
-      config.exerciseType,
-      config.count,
-      rng,
-      difficulty,
-      numberRangeFrom(config),
-      config.quadLibre ? config.quadShapes : undefined,
-      worksheetSeed,
-      config.orderAscending,
-    ),
+    instruction: tpmCompareLine
+      ? 'Comparez les nombres. Écrivez <, = ou >.'
+      : cfrOrder ?? type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
+    items: tpmCompareLine
+      ? generated.map((item) => ({ ...item, cscTask: { kind: 'compare-line' as const } }))
+      : generated,
   }
 }
 

@@ -150,6 +150,8 @@ export function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMo
                   empty={index === 0 ? empty : true}
                   showAnswer={show}
                   answerDigits={digits}
+                  decimalPlaces={decimalPlaces}
+                  showDecimalComma={index === 0 && decimalPlaces > 0}
                 />
               </div>
             ))}
@@ -162,6 +164,8 @@ export function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMo
                   empty={index === 0 ? empty : true}
                   showAnswer={show}
                   answerDigits={digits}
+                  decimalPlaces={decimalPlaces}
+                  showDecimalComma={index === 1 && decimalPlaces > 0}
                 />
               </div>
             ))}

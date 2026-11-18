@@ -626,7 +626,8 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
   const isFracItem =
     item.labels?.some((l) => l.startsWith('frac-')) ||
     /[-−]?\d+\s*\/\s*[-−]?\d+/.test(prompt)
-  if (item.op && item.a != null && item.b != null && !isFracItem) {
+  const isRelatif = item.labels?.includes('relatif')
+  if (item.op && item.a != null && item.b != null && !isFracItem && !isRelatif) {
     return <EquationRow item={item} mode={mode} />
   }
 

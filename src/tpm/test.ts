@@ -263,7 +263,7 @@ function blockFromSpec(
     count: spec.count,
     columns: Math.max(1, Math.min(3, columns)) as 1 | 2 | 3,
     ...(isDraftPadExercise(type.id)
-      ? { problemDraftGrids: Array.from({ length: spec.count }, () => false) }
+      ? { problemDraftGrids: Array.from({ length: spec.count }, () => type.id.includes('peri-aire')) }
       : {}),
     ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
     ...(exerciseNo != null || spec.exerciseNo != null

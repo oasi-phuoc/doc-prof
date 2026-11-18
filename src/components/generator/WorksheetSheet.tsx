@@ -42,7 +42,7 @@ function markCscInstruction(text: string): string {
   return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
 }
 function cscSheetCopy(type: string, instruction: string): { text: string; example: string | null } {
-  if (type !== 'tcm-csc-ex08' && type !== 'tcm-cfr-ex05') return { text: markCscInstruction(instruction), example: null }
+  if (type !== 'tcm-csc-ex08' && type !== 'tcm-cfr-ex05' && !type.startsWith('tpm-decompose')) return { text: markCscInstruction(instruction), example: null }
   const lines = instruction.split('\n')
   const index = lines.findIndex((line) => line.startsWith('Exemple'))
   if (index < 0) return { text: markCscInstruction(instruction), example: null }
@@ -233,7 +233,7 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
-  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : ''
+  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const Root = asHalf ? 'div' : 'article'
   const rootClass = asHalf
     ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
@@ -267,7 +267,7 @@ export function WorksheetSheet({
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
           const blockHeading = block.title
-          const cscCopy = block.instruction && /^tcm-c(?:sc|fr)-/.test(block.exerciseType) ? cscSheetCopy(block.exerciseType, block.instruction) : null
+          const cscCopy = block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
@@ -540,7 +540,7 @@ export function WorksheetSheet({
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
-                      stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType)}
+                      stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType) || block.exerciseType.includes('peri-aire')}
                       showGeoFigure={block.geoFigureHelp !== false}
                       onToggleDraftGrid={
                         interactiveDraftGrids && blockAllowsDraftGrid && onToggleDraftGrid

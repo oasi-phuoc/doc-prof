@@ -445,7 +445,7 @@ function generateTpmComparerBatch(rng: Rng, count: number): MathItem[] {
     const lo = Math.min(a, b)
     const hi = Math.max(a, b)
     return { layout: 'compare' as const, left: String(hi), right: String(lo), answer: '>' }
-  })
+  }).map((item) => ({ ...item, cscTask: { kind: 'compare-line' as const } }))
 }
 
 /** Suites TPM : Q1 = deux blancs consécutifs ; Q2 = motif `n _ n _ n` (index 1 et 3). */
@@ -586,7 +586,8 @@ function generateTpmAddSubColBatch(rng: Rng, digitCount: 3 | 4): MathItem[] {
   }
   const add = withFixedColumnWidth(columnItem('+', aAdd, bAdd, aAdd + bAdd, false), width)
   const sub = withFixedColumnWidth(columnItem('−', aSub, bSub, aSub - bSub, false), width)
-  return rng() < 0.5 ? [add, sub] : [sub, add]
+  const pair = rng() < 0.5 ? [add, sub] : [sub, add]
+  return digitCount === 4 ? pair.map((item) => ({ ...item, hideItemNumber: true })) : pair
 }
 
 /** TPM : décomposition 11–99 (dizaines + unités). */
@@ -604,6 +605,7 @@ function generateTpmDecompose99Batch(rng: Rng, count: number): MathItem[] {
       labels: ['dizaines', 'unités'],
       placeParts,
       answer: placeParts.join(' + '),
+      cscTask: { kind: 'place-plain' as const },
     }
   })
 }
@@ -667,8 +669,32 @@ function generateTpmDecompose9999Batch(rng: Rng, count: number): MathItem[] {
       labels: ['milliers', 'centaines', 'dizaines', 'unités'],
       placeParts,
       answer: placeParts.join(' + '),
+      cscTask: { kind: 'place-plain' as const },
     }
   })
+}
+
+/** Chiffres utiles, puis cases vides à droite (diviseur et quotient entiers). */
+function padDigitsStart(row: string[] | undefined, width: number): string[] {
+  const src = (row ?? []).filter((cell) => cell !== '')
+  if (src.length >= width) return src.slice(0, width)
+  return [...src, ...Array.from({ length: width - src.length }, () => '')]
+}
+
+/**
+ * Grille de division du TCM CFR : 4 colonnes de travail, 4 de quotient, 9 lignes.
+ * Le trait violet passe après la 4e colonne. Le diviseur est dans la 1re case à droite.
+ */
+function asCfrDivisionGrid(item: MathItem): MathItem {
+  const posed = withFixedDivisionWorkRows(withFixedDivisionWidth(item, 4, 4), 8)
+  const places = posed.decimalPlaces ?? 0
+  return {
+    ...posed,
+    divisionRows: 9,
+    digitsB: padDigitsStart(posed.digitsB, 4),
+    digitsResult: places > 0 ? posed.digitsResult : padDigitsStart(posed.digitsResult, 4),
+    hideItemNumber: true,
+  }
 }
 
 /**
@@ -678,16 +704,17 @@ function generateTpmDecompose9999Batch(rng: Rng, count: number): MathItem[] {
 function generateTpmMulDivColBatch(rng: Rng): MathItem[] {
   const mulB = int(rng, 3, 9)
   const mulA = int(rng, 100, 999)
-  const mul = withFixedColumnWidth(columnItem('×', mulA, mulB, mulA * mulB, false), 7)
+  const mul = {
+    ...withFixedColumnWidth(columnItem('×', mulA, mulB, mulA * mulB, false), 7),
+    hideItemNumber: true,
+  }
   const divB = int(rng, 3, 9)
   const qMin = Math.ceil(1000 / divB)
   const qMax = Math.floor(9999 / divB)
   const quot = int(rng, qMin, qMax)
   const dividend = divB * quot
-  const div = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(dividend, divB, false), 4, 4),
-  )
-  return rng() < 0.5 ? [mul, div] : [div, mul]
+  const div = asCfrDivisionGrid(divisionColumnItem(dividend, divB, false))
+  return [mul, div]
 }
 
 /** TPM ex. 13 : rectangle — périmètre et aire, deux cadres. */
@@ -733,6 +760,7 @@ function tpmDualGeo(
     figure,
     dims: { ...dims, unit: dims.unit ?? 'cm' },
     geoDualPads: true,
+    geoDualTight: true,
     calcAnswer: periExpr,
     calcAnswerSecondary: areaExpr,
     propertyLines: [
@@ -834,6 +862,7 @@ function generateTpmCirclePeriAire(rng: Rng): MathItem {
     figure: 'circle',
     dims: { diameter, unit: 'cm' },
     geoDualPads: true,
+    geoDualTight: true,
     calcAnswer: `3,14 × ${fmt(diameter)}`,
     calcAnswerSecondary: `3,14 × ${fmt(r)}²`,
     propertyLines: [
@@ -965,9 +994,7 @@ function generateTpmDivMixteBatch(rng: Rng): MathItem[] {
   const qMin = Math.ceil(1_000 / dInt)
   const qMax = Math.floor(9_999 / dInt)
   const qInt = int(rng, qMin, qMax)
-  const left = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(dInt * qInt, dInt, true), 4, 4),
-  )
+  const left = asCfrDivisionGrid(divisionColumnItem(dInt * qInt, dInt, true))
 
   let dDec = int(rng, 3, 9)
   let dividendDec = 0
@@ -991,9 +1018,7 @@ function generateTpmDivMixteBatch(rng: Rng): MathItem[] {
     dividendDec = 12.06
     dDec = 3
   }
-  const right = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(dividendDec, dDec, true), 4, 4),
-  )
+  const right = asCfrDivisionGrid(divisionColumnItem(dividendDec, dDec, true))
   return [left, right]
 }
 
@@ -1072,27 +1097,29 @@ function fmtRelatifAnswer(n: number): string {
   return n >= 0 ? `(+${t})` : `(−${t.replace(/^-/, '').replace(/^−/, '')})`
 }
 
-/** Paire de signes opposés, ordre aléatoire (+ puis −, ou − puis +). */
-function tpmOppositeSignedPair(rng: Rng, lo: number, hi: number): [number, number] {
-  const pos = int(rng, lo, hi)
-  const neg = -int(rng, lo, hi)
-  return rng() < 0.5 ? [pos, neg] : [neg, pos]
+/**
+ * Deux relatifs dont au moins un est négatif.
+ * Les trois cas sont possibles : (−, +), (+, −) et (−, −).
+ */
+function tpmSignedPair(rng: Rng, loA: number, hiA: number, loB = loA, hiB = hiA): [number, number] {
+  const a = int(rng, loA, hiA)
+  const b = int(rng, loB, hiB)
+  const mode = int(rng, 0, 2)
+  if (mode === 0) return [-a, -b]
+  if (mode === 1) return [-a, b]
+  return [a, -b]
 }
 
 /**
- * TPM ex. 29 — quatre opérations sur relatifs :
- * 1) + et 2) − : magnitudes 10–99, signes opposés (+/− ou −/+) ;
- * 3) × et 4) ÷ : 1er facteur 10–25 (2 chiffres), 2e 1–9 (1 chiffre), signes libres ;
- * positifs toujours écrits (+n) ; quotient ÷ éventuellement décimal.
+ * TPM ex. 28 — quatre opérations sur relatifs, écrits (+n) ou (−n).
+ * Au moins un des deux nombres est négatif ; les deux peuvent l’être.
+ * 1) + et 2) − : magnitudes 10–99 ;
+ * 3) × et 4) ÷ : 1er facteur 10–25, 2e 2–9 ; quotient ÷ éventuellement décimal.
  */
 function generateTpmRelatifsOpsBatch(rng: Rng): MathItem[] {
-  const [addA, addB] = tpmOppositeSignedPair(rng, 10, 99)
-  const [subA, subB] = tpmOppositeSignedPair(rng, 10, 99)
-
-  const signed = (mag: number) => (rng() < 0.5 ? mag : -mag)
-  // × : aucun facteur ±1 (magnitudes ≥ 2).
-  const mulA = signed(int(rng, 10, 25))
-  const mulB = signed(int(rng, 2, 9))
+  const [addA, addB] = tpmSignedPair(rng, 10, 99)
+  const [subA, subB] = tpmSignedPair(rng, 10, 99)
+  const [mulA, mulB] = tpmSignedPair(rng, 10, 25, 2, 9)
 
   // ÷ : quotient exact, au plus 2 décimales (pas de reste « sale »).
   let divA = 0
@@ -1101,8 +1128,7 @@ function generateTpmRelatifsOpsBatch(rng: Rng): MathItem[] {
   for (let attempt = 0; attempt < 80; attempt++) {
     const magA = int(rng, 10, 25)
     const magB = int(rng, 2, 9)
-    const a = signed(magA)
-    const b = signed(magB)
+    const [a, b] = tpmSignedPair(rng, magA, magA, magB, magB)
     const raw = a / b
     const rounded = Math.round(raw * 100) / 100
     if (Math.abs(raw - rounded) < 1e-9) {
