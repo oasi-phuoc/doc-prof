@@ -225,7 +225,7 @@ export function WorksheetSheet({
   return (
     <Root
       className={rootClass + domainClass}
-      style={{ '--sheet-columns': sheetColumns } as CSSProperties}
+      style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 25}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
         <InstitutionalDocumentHeader
@@ -459,7 +459,7 @@ export function WorksheetSheet({
                 {block.items.map((item, index) => {
                   const padLeft =
                     item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
-                  const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? !/^tcm-csc-ex(?:22|23|24)$/.test(block.exerciseType)
+                  const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   const sourceIndex = index + (block.itemOffset ?? 0)
@@ -514,7 +514,7 @@ export function WorksheetSheet({
                       item={item}
                       mode={mode}
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
-                      seriesNumber={/^tcm-csc-ex(?:06|16)$/.test(block.exerciseType)?index+itemOffset+1:undefined}
+                      seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}

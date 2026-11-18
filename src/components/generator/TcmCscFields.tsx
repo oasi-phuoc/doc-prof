@@ -36,16 +36,17 @@ export function TcmCscFields({ item, typeId, change: onChange }: { item: MathIte
   } else if (item.layout === 'place-value' && typeId === 'tcm-csc-ex08') {
     fields = number('Nombre à décomposer', Number((item.prompt ?? '').replace(/['’\s]/g,'')), value=>change({...item,prompt:String(value)}),11,9999)
   } else if (task?.kind === 'number-grid') {
-    fields = <><NumberList key={`grid:${task.numbers.join()}`} label="Les 36 nombres de la grille (0–100)" values={task.numbers} change={(numbers) => change({ ...item, cscTask: { ...task, numbers } })} /><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
+    fields = <><p>La grille affiche les nombres de 0 à 100, dans l’ordre.</p><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
   } else if (task?.kind === 'shape-names') {
-    fields = task.figures.map((figure, i) => <label key={i}>Forme {String.fromCharCode(65 + i)}<select aria-label={`Forme ${String.fromCharCode(65 + i)}`} value={figure} onChange={(e) => change({ ...item, cscTask: { ...task, figures: task.figures.map((f, j) => j === i ? e.target.value as Figure : f) } })}>{CSC_FIGURES.map((entry) => <option key={entry.value} value={entry.value}>{entry.label}</option>)}</select></label>)
+    fields = task.figures.map((figure, i) => <label key={i}>Forme {i + 1}<select aria-label={`Forme ${i + 1}`} value={figure} onChange={(e) => change({ ...item, cscTask: { ...task, figures: task.figures.map((f, j) => j === i ? e.target.value as Figure : f) } })}>{CSC_FIGURES.map((entry) => <option key={entry.value} value={entry.value}>{entry.label}</option>)}</select></label>)
   } else if (task?.kind === 'copy') {
     fields = <><label>Figure à reproduire<select aria-label="Figure à reproduire" value={item.symmetryFigure?.id} onChange={(e) => change({ ...item, symmetryFigure: buildSymmetryFigure(e.target.value, 'left', 0) })}>{SYMMETRY_TEMPLATES.map((entry) => <option key={entry.id} value={entry.id}>{SYMMETRY_FIGURE_LABELS[entry.id] ?? entry.id}</option>)}</select></label><p>{task.scale === 2 ? 'Agrandissement : deux fois plus de lignes et de colonnes, même sens.' : 'Reproduction à l’identique, même sens.'}</p></>
   } else if (task?.kind === 'connect-points') {
     fields = task.points.map((p, i) => <div key={p.label} className="csc-free-columns">{number(`Point ${p.label} — horizontal`, p.x, (x) => change({ ...item, cscTask: { ...task, points: task.points.map((point, j) => j === i ? { ...point, x } : point) } }), 8, 152)}{number(`Point ${p.label} — vertical`, p.y, (y) => change({ ...item, cscTask: { ...task, points: task.points.map((point, j) => j === i ? { ...point, y } : point) } }), 8, 72)}</div>)
   } else if (item.layout === 'sequence') {
+    const length = typeId.endsWith('ex05') ? 8 : 6
     const start = Number(item.sequence?.[0]), step = Number(item.sequence?.[1]) - start
-    const update = (a: number, delta: number) => change({ ...item, sequence: Array.from({ length: 5 }, (_, i) => String(a + i * delta)) })
+    const update = (a: number, delta: number) => change({ ...item, sequence: Array.from({ length }, (_, i) => String(a + i * delta)) })
     fields = <div className="csc-free-columns">{number('Premier nombre de la suite', start, (n) => update(n, step))}{number('Pas de la suite', step, (n) => update(start, n), -25, 25)}</div>
   }
   return <div className="csc-free-fields" data-csc-exercise={typeId}>{fields}{item.libreError && <p role="alert">{item.libreError}</p>}<label>Corrigé<output>{item.answer || 'À vérifier'}</output></label></div>

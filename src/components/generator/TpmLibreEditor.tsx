@@ -883,6 +883,16 @@ function renderFields(
     const otherOpts = COUNT_ICON_OPTIONS.filter((o) => o.value !== targetKind)
     return (
       <div className="libre-frac-stack">
+        {exerciseType === 'tcm-csc-ex18' ? (
+          <Field label="Taille des formes">
+            <LineSelect
+              value={String(item.cscTask?.kind === 'large-count' ? item.cscTask.scale ?? 2 : 2)}
+              ariaLabel="Taille des formes"
+              options={[{ value: '1', label: 'Taille simple' }, { value: '2', label: 'Taille double' }, { value: '3', label: 'Taille triple' }]}
+              onChange={(v) => patch(index, { ...item, cscTask: { kind: 'large-count', scale: Number(v) } })}
+            />
+          </Field>
+        ) : null}
         <Field label="Icône à compter">
           <LineSelect
             value={targetKind}

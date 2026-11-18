@@ -41,7 +41,7 @@ export function parseListLine(line: string): ListLine | null {
 function renderInline(text: string): ReactNode {
   if (!text.includes('[[')) return text
   const parts: ReactNode[] = []
-  const re = /\[\[em\]\]([\s\S]*?)\[\[\/em\]\]|\[\[bell\]\]/g
+  const re = /\[\[em\]\]([\s\S]*?)\[\[\/em\]\]|\[\[b\]\]([\s\S]*?)\[\[\/b\]\]|\[\[c\]\]([\s\S]*?)\[\[\/c\]\]|\[\[bell\]\]/g
   let last = 0
   let match: RegExpExecArray | null
   let key = 0
@@ -49,6 +49,10 @@ function renderInline(text: string): ReactNode {
     if (match.index > last) parts.push(text.slice(last, match.index))
     if (match[0] === '[[bell]]') {
       parts.push(<InstructionBellIcon key={`bell-${key++}`} />)
+    } else if (match[2] != null) {
+      parts.push(<strong key={`b-${key++}`}>{match[2]}</strong>)
+    } else if (match[3] != null) {
+      parts.push(<strong className="csc-symbol" key={`c-${key++}`}>{match[3]}</strong>)
     } else {
       parts.push(
         <span className="det-choice" key={`em-${key++}`}>

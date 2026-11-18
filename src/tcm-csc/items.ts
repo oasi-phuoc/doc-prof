@@ -5,7 +5,7 @@ import { numberAudioParts, SILENCE_6S_AUDIO } from '@/tcm-cfr/audio-nombres'
 import { pickSymmetryTemplate } from '@/tcm-cfr/symetrie'
 import { buildCountIconsItem } from '@/math/count-icons'
 import { tryGenerateReperage } from '@/math/coord-reperage'
-import { tryGenerateLogiqueBlock } from '@/logique/generate'
+import { logiqueItemById, tryGenerateLogiqueBlock } from '@/logique/generate'
 import { CSC_DEFAULT_PROBLEMS, rollCscProblem } from './problems'
 import { numberDecomposition } from '@/tcm-cfr/items'
 import { cscDeniseOperator } from './denise-recordings'
@@ -36,21 +36,34 @@ function calculations(rng: Rng, count: number): MathItem[] {
   })
 }
 function numberGrid(rng: Rng): MathItem {
-  const numbers = uniqueNumbers(rng, 36, 0, 100), heard = shuffle(rng, numbers.filter((n) => n > 0)).slice(0, 5)
+  const numbers = Array.from({ length: 101 }, (_, i) => i), heard = uniqueNumbers(rng, 5, 1, 100)
   const parts = heard.flatMap((n, i) => [...(i ? [SILENCE_6S_AUDIO] : []), ...numberAudioParts(n)])
   return { layout: 'csc-task', answer: heard.join(' ; '), audioParts: parts, cscTask: { kind: 'number-grid', numbers, heard } }
 }
 function sequences(rng: Rng, count: number, help: boolean): MathItem[] {
+  const length = help ? 6 : 8
   return Array.from({ length: count }, (_, i) => {
-    const step = int(rng, 2, 10) * (i % 2 ? -1 : 1), start = step < 0 ? int(rng, -4 * step, 100) : int(rng, 0, 100 - 4 * step)
-    const sequence = Array.from({ length: 5 }, (_, j) => String(start + j * step)), blankIndexes = i % 2 ? [1, 3] : [3, 4]
+    const step = int(rng, 2, 10) * (i % 2 ? -1 : 1), span = (length - 1) * Math.abs(step)
+    const start = step < 0 ? int(rng, span, 100) : int(rng, 0, 100 - span)
+    const sequence = Array.from({ length }, (_, j) => String(start + j * step))
+    const blankIndexes = help ? [2, 3, 4, 5] : [3, 4, 5, 6, 7]
     return { layout: 'sequence', prompt: help ? `${step > 0 ? '+' : '−'}${Math.abs(step)}` : undefined, ...(help ? { cscTask: { kind: 'sequence-hint' as const, step } } : {}), sequence, blankIndexes, answer: blankIndexes.map((j) => sequence[j]).join(' ; ') }
   })
 }
-function order(rng: Rng, count: number): MathItem[] {
-  return Array.from({ length: count }, (_, i) => {
-    const numbers = uniqueNumbers(rng, 7, 0, 100), ascending = i % 2 === 0, ordered = [...numbers].sort((a, b) => ascending ? a - b : b - a)
-    return { layout: 'order', sequence: numbers.map(String), placeParts: ordered.map(String), orderBoxed: true, orderCompact: true, orderOp: ascending ? '<' : '>', prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :', answer: ordered.join(ascending ? ' < ' : ' > ') }
+export function cscOrderAscending(typeId: string, seed: number): boolean {
+  // Sur une même page, le second bloc reçoit seed + 10007. On retire cet écart
+  // pour que les deux consignes restent opposées, puis s’inversent ensemble.
+  const pageSeed = typeId === 'tcm-csc-ex25' ? seed - 10007 : seed
+  const smallFirst = ((pageSeed % 2) + 2) % 2 === 0
+  return typeId === 'tcm-csc-ex06' ? smallFirst : !smallFirst
+}
+export function cscOrderInstruction(ascending: boolean): string {
+  return `[[b]]Rangez[[/b]] les nombres ${ascending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
+}
+function order(rng: Rng, count: number, ascending: boolean): MathItem[] {
+  return Array.from({ length: count }, () => {
+    const numbers = uniqueNumbers(rng, 7, 0, 100), ordered = [...numbers].sort((a, b) => ascending ? a - b : b - a)
+    return { layout: 'order', sequence: numbers.map(String), placeParts: ordered.map(String), orderBoxed: true, orderCompact: true, orderOp: ascending ? '<' : '>', answer: ordered.join(ascending ? ' < ' : ' > ') }
   })
 }
 function comparisons(rng: Rng, count: number, large: boolean): MathItem[] {
@@ -78,7 +91,7 @@ function columnOperations(rng: Rng, count: number, empty: boolean): MathItem[] {
 function lengthTable(rng: Rng): MathItem {
   const lengths = shuffle(rng, [int(rng, 25, 40), int(rng, 50, 75), int(rng, 90, 120)])
   const units=shuffle(rng,['cm','mm',rng()<.5?'cm':'mm'] as const)
-  return { layout: 'segment-measure', cscTask: { kind: 'length-table', colors: shuffle(rng,[0,1,2,3]).slice(0,3) }, segments: lengths.map((mm,index) => ({ mm, unit: units[index]!, display: String(units[index]==='cm'?mm/10:mm).replace('.', ',') })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}` }
+  return { layout: 'segment-measure', cscTask: { kind: 'length-table', colors: shuffle(rng,[0,1,2,3]).slice(0,3) }, segments: lengths.map((mm,index) => ({ mm, unit: units[index]!, display: String(units[index]==='cm'?mm/10:mm).replace('.', ','), slope: (rng() < 0.5 ? -1 : 1) * (5 + int(rng, 0, 20)) / 100 })), answer: `${String.fromCharCode(65 + lengths.indexOf(Math.max(...lengths)))} ; ${String.fromCharCode(65 + lengths.indexOf(Math.min(...lengths)))}` }
 }
 function coordinates(rng: Rng, place: boolean): MathItem[] {
   const config: PageConfig = { domain: 'géométrie', topic: 'reperage', exerciseType: place ? 'reperage-placer' : 'reperage-lire', difficulty: 'facile', count: 6, columns: 1, coordCols: 8, coordRows: 8, coordCellMm: 8 }
@@ -98,27 +111,31 @@ function connectingPoints(rng: Rng): MathItem {
   return {layout:'csc-task',answer:'AB en rouge ; CD en bleu.',cscTask:{kind:'connect-points',points:labeled}}
 }
 
-export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, seed = 0): MathItem[] | null {
+export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, seed = 0, logiqueIds?: string[]): MathItem[] | null {
   if (!typeId.startsWith('tcm-csc-ex')) return null
   const n = Math.max(1, Math.min(100, count)), exercise = Number(typeId.slice(-2))
   if (exercise === 1) return uniqueNumbers(rng, n, 1, 100).map(audioNumber)
   if (exercise === 2) return calculations(rng, n)
   if (exercise === 3) return [numberGrid(rng)]
   if (exercise === 4 || exercise === 5) return sequences(rng, n, exercise === 4)
-  if (exercise === 6) return order(rng, n)
-  if (exercise === 7) return comparisons(rng, n, false)
-  if (exercise === 8) return Array.from({length:n},(_,i)=>numberDecomposition(i%4<2?int(rng,11,99):int(rng,101,999)))
+  if (exercise === 6 || exercise === 25) return order(rng, n, cscOrderAscending(typeId, seed))
+  if (exercise === 7) return comparisons(rng, n, false).map((item) => ({ ...item, cscTask: { kind: 'compare-line' as const } }))
+  if (exercise === 8) return Array.from({length:n},(_,i)=>({ ...numberDecomposition(i%4<2?int(rng,11,99):int(rng,101,999)), cscTask: { kind: 'place-plain' as const } }))
   if (exercise === 9) return signNames(rng, n)
   if (exercise === 10 || exercise === 11) return columnOperations(rng, n, exercise === 11)
   if (exercise === 12 || exercise === 13) return [{ layout: 'symmetry-grid', symmetryFigure: pickSymmetryTemplate(rng), cscTask: { kind: 'copy', scale: exercise === 13 ? 2 : 1 }, answer: 'Figure reproduite dans le même sens.' }]
   if (exercise === 14) return [lengthTable(rng)]
   if (exercise === 15) return [connectingPoints(rng)]
-  if (exercise === 16) return tryGenerateLogiqueBlock({ domain: 'logique', topic: 'logique', exerciseType: 'logique-suite-graphique', difficulty: 'moyen', count: Math.min(2, n), columns: 1 }, seed)?.items ?? []
+  if (exercise === 16) {
+    const random = tryGenerateLogiqueBlock({ domain: 'logique', topic: 'logique', exerciseType: 'logique-suite-graphique', difficulty: 'moyen', count: Math.min(2, n), columns: 1 }, seed)?.items ?? []
+    if (!logiqueIds?.some(Boolean)) return random
+    return Array.from({ length: Math.min(2, n) }, (_, index) => logiqueIds[index] ? logiqueItemById('logique-suite-graphique', logiqueIds[index], rng) : random[index]).filter((item): item is MathItem => Boolean(item))
+  }
   if (exercise === 17) return Array.from({ length: n }, () => {
     const figures = shuffle(rng, CSC_FIGURES.filter(entry => ['square','rectangle','circle','triangle'].includes(entry.value)))
     return { layout: 'csc-task', cscTask: { kind: 'shape-names', figures: figures.map((entry) => entry.value) }, answer: figures.map((entry) => entry.label).join(' ; ') }
   })
-  if (exercise === 18) return [{ ...buildCountIconsItem(rng), cscTask: { kind: 'large-count' } }]
+  if (exercise === 18) return [{ ...buildCountIconsItem(rng), cscTask: { kind: 'large-count', scale: 2 } }]
   if (exercise === 19 || exercise === 20) return coordinates(rng, exercise === 20)
   if (exercise >= 22 && exercise <= 24) return Array.from({ length: n }, () => {
     const p = rollCscProblem(CSC_DEFAULT_PROBLEMS[exercise - 22]!, rng)
@@ -128,4 +145,4 @@ export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, 
 }
 
 /** Same generator for an explicit re-roll in the free editor. */
-export function generateCscExercise(typeId: string, count: number, seed: number) { return tryGenerateTcmCscItems(typeId, count, createRng(seed), seed) ?? [] }
+export function generateCscExercise(typeId: string, count: number, seed: number, logiqueIds?: string[]) { return tryGenerateTcmCscItems(typeId, count, createRng(seed), seed, logiqueIds) ?? [] }

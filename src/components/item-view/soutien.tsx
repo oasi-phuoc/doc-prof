@@ -175,8 +175,8 @@ export function CountIconsBlock({ item, mode }: { item: MathItem; mode: PreviewM
           </span>
         ))
   return (
-    <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} aria-label="Compter les formes">
-      {isCsc && <p className="csc-count-instruction">Comptez les formes <span className="csc-count-target" role="img" aria-label={scene.label}><svg viewBox="0 0 24 24" aria-hidden><CountIconGlyph kind={scene.targetKind}/></svg></span>.</p>}
+    <div className={`count-icons-block${item.cscTask?.kind === 'large-count' ? ' is-csc-large' : ''}`} style={item.cscTask?.kind === 'large-count' ? { ['--csc-count-scale' as string]: String(item.cscTask.scale ?? 2) } : undefined} aria-label="Compter les formes">
+      {isCsc && <p className="csc-count-instruction"><strong>Comptez</strong> les formes <span className="csc-count-target" role="img" aria-label={scene.label}><svg viewBox="0 0 24 24" aria-hidden><CountIconGlyph kind={scene.targetKind}/></svg></span>.</p>}
       <div className="count-icons-frame" role="img" aria-label={`Cadre avec ${scene.label}`}>
         {isCsc ? <div className="csc-count-content">{tokens}</div> : tokens}
       </div>
