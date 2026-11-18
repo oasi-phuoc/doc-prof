@@ -420,7 +420,7 @@ export function buildPage(
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode
     // libre efface la page des premières questions.
     const libreIsPartialSlice =
-      isTpfFamilyDomain(page.domain) &&
+      (isTpfFamilyDomain(page.domain) || block.exerciseType === 'tcm-cfr-ex28') &&
       Boolean(block.tcfPageBreakAfter?.some((on, i) => on && i < result.items.length - 1) || block.tcfQuestionPageBreakBefore?.some(index => index > 1)) &&
       Array.isArray(block.libreItems) &&
       block.libreItems.length > 0 &&
@@ -675,8 +675,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       return
     }
 
-    // TPF / TCF : sauts de page manuels après certaines questions (marge « Page »).
-    if (isTpfFamilyDomain(page.domain)) {
+    // TPF / TCF, et le plan de métro CFR : sauts de page après certaines questions.
+    if (isTpfFamilyDomain(page.domain) || worksheet.blocks.some((block) => block.exerciseType === 'tcm-cfr-ex28')) {
       const sourceBlock = worksheet.blocks[0]
       const breaks = sourceBlock?.tcfPageBreakAfter ?? page.tcfPageBreakAfter
       const items = sourceBlock?.items ?? worksheet.items

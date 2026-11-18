@@ -283,17 +283,17 @@ export function MetroMapBlock({
   mode: PreviewMode
 }) {
   const show = mode === 'answers'
-  const map = item.metroMap
+  const map = item.metroMapHidden ? undefined : item.metroMap
   const questions = item.metroQuestions ?? []
-  if (!map) return null
+  if (!map && questions.length === 0) return null
   const width = 420
   const height = 280
   const pad = 28
-  const labelPos = metroLabelOffsets(map, width, height, pad)
+  const labelPos = map ? metroLabelOffsets(map, width, height, pad) : new Map()
 
   return (
     <div className="tcm-cfr-metro">
-      <svg className="tcm-cfr-metro-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Plan de métro">
+      {map ? <svg className="tcm-cfr-metro-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Plan de métro">
         {/* Grille */}
         {map.cols.map((col, ci) => {
           const x = pad + (ci + 0.5) * ((width - 2 * pad) / map.cols.length)
@@ -356,13 +356,13 @@ export function MetroMapBlock({
             </g>
           )
         })}
-      </svg>
-      <ol className="tcm-cfr-metro-questions">
+      </svg> : null}
+      {questions.length > 0 ? <ol className="tcm-cfr-metro-questions">
         {questions.map((q, i) => (
           <li key={`mq-${i}`}>
             <div className="tcm-cfr-metro-q-head">
               <span className="tcm-cfr-metro-q-num" aria-hidden>
-                {i + 1}.
+                {q.n ?? i + 1}.
               </span>
               <p className="prompt-stack-text">{q.prompt}</p>
             </div>
@@ -371,7 +371,7 @@ export function MetroMapBlock({
             </span>
           </li>
         ))}
-      </ol>
+      </ol> : null}
     </div>
   )
 }

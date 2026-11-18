@@ -171,14 +171,16 @@ export function ItemView({
     item.tcf != null &&
     item.tcf.kind !== 'qcm' &&
     item.tcf.kind !== 'lignes'
+  const isMetroQuestion = item.layout === 'metro-map' && Boolean(item.metroMapHidden) && (item.metroQuestions?.length ?? 0) > 0
   const showTcfPageChip = Boolean(
     onToggleTcfPageBreak &&
-      item.layout === 'tcf' &&
-      (item.tcf?.kind === 'qcm' ||
-        item.tcf?.kind === 'lignes' ||
-        item.tcf?.kind === 'audio_cadre' ||
-        item.tcf?.kind === 'ce_association_answers' ||
-        item.tcf?.kind === 'dialogue'),
+      (isMetroQuestion ||
+        (item.layout === 'tcf' &&
+          (item.tcf?.kind === 'qcm' ||
+            item.tcf?.kind === 'lignes' ||
+            item.tcf?.kind === 'audio_cadre' ||
+            item.tcf?.kind === 'ce_association_answers' ||
+            item.tcf?.kind === 'dialogue'))),
   )
   const grammarPart=item.grammar?.readingPart??item.grammar?.scenarioPart
   const showTheoryPageChip = Boolean(
@@ -347,7 +349,13 @@ export function ItemView({
         {item.layout === 'order' && <OrderRow item={item} mode={mode} series={seriesNumber} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
-        {item.layout === 'geo' && <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />}
+        {item.layout === 'geo' && (seriesNumber !== undefined && item.geoNameCard ? (
+          <ExerciseFrame title={`Forme ${seriesNumber}`} className="cfr-forme-frame">
+            <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />
+          </ExerciseFrame>
+        ) : (
+          <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />
+        ))}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
         {item.layout === 'algebra' && item.cscTask?.kind === 'problem' && <CscProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.layout === 'algebra' && item.cscTask?.kind !== 'problem' && (

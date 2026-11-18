@@ -587,9 +587,13 @@ export type MathItem = {
     rows: number[]
     lines: Array<{ id: string; name: string; color: string; cells: string[] }>
   }
+  /** Le plan est connu (éditeur, corrigé) mais n’est pas redessiné. */
+  metroMapHidden?: boolean
   metroQuestions?: Array<{
     prompt: string
     answer: string
+    /** Numéro affiché quand les questions sont des items séparés. */
+    n?: number
     kind?: 'crossing' | 'gare-where' | 'gare-which' | 'path' | 'termini'
     lineNames?: string[]
     cell?: string

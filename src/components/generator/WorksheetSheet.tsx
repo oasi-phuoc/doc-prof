@@ -510,9 +510,12 @@ export function WorksheetSheet({
                     (item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes')
                   const isTcfAudioCadre =
                     item.layout === 'tcf' && item.tcf?.kind === 'audio_cadre'
+                  const isMetroQuestion =
+                    item.layout === 'metro-map' && Boolean(item.metroMapHidden) && (item.metroQuestions?.length ?? 0) > 0
                   const isTcfPageBreakable =
                     isTcfQuestion ||
                     isTcfAudioCadre ||
+                    isMetroQuestion ||
                     (item.layout === 'tcf' && (item.tcf?.kind === 'dialogue' || item.tcf?.kind === 'ce_association_answers'))
                   const showMarginForms =
                     interactiveTcfOptions &&
@@ -532,8 +535,8 @@ export function WorksheetSheet({
                       item={item}
                       mode={mode}
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
-                      seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
-                      hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
+                      seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
+                      hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)||/^tcm-cfr-ex(?:07|08|09|10|16)$/.test(block.exerciseType)}
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}

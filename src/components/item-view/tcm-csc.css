@@ -138,7 +138,7 @@
 .is-tcm-cfr .exercise-heading h3,
 .is-tcm-cfr .instruction-points { line-height: 1; }
 .is-tcm-cfr .instruction-points { align-self: baseline; }
-.is-tcm-cfr .exercise-heading .exercise-instruction { margin-top: 13px; }
+.is-tcm-cfr .exercise-heading .exercise-instruction { margin-top: 13px; white-space: pre-line; }
 .is-tcm-cfr .exercise-block + .exercise-block { margin-top: 25px; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body {
   display: grid;
@@ -162,32 +162,60 @@
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(1) { grid-column: 1; grid-row: 1; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(2) { grid-column: 2; grid-row: 1; margin-top: 0; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(n + 3) { grid-column: 1 / -1; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; justify-content: flex-end; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-grid { column-gap: 22mm; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item { gap: 2px; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .item-number { flex-basis: 1.05em; width: 1.05em; min-width: 1.05em; justify-content: flex-end; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-row.is-line { width: max-content; grid-template-columns: 6ch 2.4em 6ch; gap: 10px; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .csc-operation-group .tcf-audio-frame-body { padding: 4px 6px 4px; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; width: 24px; height: 18px; flex: 0 0 24px; font-size: calc(13px * var(--app-font-scale, 1)); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell:last-child { border-right-color: #c5cad3 !important; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-line:has(+ .column-line.rule-line) .digit-cell,
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-grid.school > .column-line:last-child .digit-cell { border-bottom-color: #c5cad3 !important; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell.carry { height: 14px; font-size: calc(11px * var(--app-font-scale, 1)); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-grid { width: max-content; margin-inline: auto; }
 .exercise-block[data-exercise-type="tcm-cfr-ex08"] .csc-operation-groups { row-gap: 8px; }
 .exercise-block[data-exercise-type="tcm-cfr-ex08"] .column-prompt { font-size: 1.2em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 8px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); }
-.is-tcm-cfr .csc-length-parts { gap: 2mm; }
-.is-tcm-cfr .csc-length-parts .tcm-cfr-segment-frame { gap: 6px; }
-.is-tcm-cfr .csc-length-table th,
-.is-tcm-cfr .csc-length-table td { padding: 2px 8px; }
-.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex22"]):has([data-exercise-type="tcm-cfr-ex24"]) .draft-pad.draft-pad-geo { --grid-rows: 3; }
-.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex22"]):has([data-exercise-type="tcm-cfr-ex24"]) .geo-dual.is-tight .geo-dual-figure { aspect-ratio: 9 / 3; }
-.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex22"]):has([data-exercise-type="tcm-cfr-ex24"]) .geo-dual-answers { padding-top: 8px; }
+.is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-parts { gap: 2mm; }
+.is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-parts .tcm-cfr-segment-frame { gap: 6px; }
+.is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-table th,
+.is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-table td { padding: 2px 8px; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .exercise-heading { margin-bottom: 11.5px; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .exercise-item { padding-top: 0; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .csc-length-parts { gap: 4mm; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .csc-length-parts > section:first-child > .csc-part-instruction { margin-bottom: 50px; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-frame { gap: 22px; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-row { grid-template-columns: 1.2em minmax(0, 1fr) 14mm 2.4em; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-unit { width: 2.4em; text-align: left; }
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual.is-tight .geo-dual-figure { aspect-ratio: 9 / 5; min-height: 52mm; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geometry-figure .dim-label { font-size: calc(16pt * var(--app-font-scale, 1)); }
+.cfr-forme-frame .geo-name-card { border: 0; padding: 0; }
+.cfr-forme-frame .geo-name-card-inner { grid-template-columns: auto minmax(0, 1fr); justify-items: start; }
+.cfr-forme-frame .geo-name-card-figure { justify-content: flex-start; width: auto; min-height: 32mm; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .exercise-item { display: grid !important; grid-template-columns: 1.6em 42mm minmax(0, 1fr); align-items: center; gap: 4mm; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .item-content,
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .geo-name-card,
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .geo-name-card-inner { display: contents; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .geo-name-card-figure { height: 28mm; width: 42mm; min-height: 0; justify-content: center; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .geo-name-card-figure .geometry-figure { height: 100%; width: auto; max-width: 100%; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .property-label { display: none; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .geo-name-card-answers { width: 100%; }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .property-line { grid-template-columns: minmax(0, 1fr); }
+.exercise-block[data-exercise-type="tcm-cfr-ex17"] .answer-line-field { width: 100%; }
+.exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal { align-items: baseline; }
+.exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal .answer-line-field { align-self: baseline; position: relative; top: 0.18em; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side .column-line.rule-line { display: none; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .column-line-sign { display: none; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .digit-cell { border: 1px solid #c5cad3; width: 32px; height: 32px; flex: 0 0 32px; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .column-line { gap: 4px; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-vbar { border-left: 2px solid var(--ink); margin: 0 4px; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side .column-rule { border-bottom: 2px solid var(--ink); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .column-line { gap: 0; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side { padding-left: 0; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-vbar { display: none; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side .column-line.rule-line { display: none; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side .digit-cell:last-child { border-right: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side .column-line:first-child .digit-cell { border-bottom: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-grid { grid-template-columns: max-content max-content; justify-content: space-between; column-gap: 16mm; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-row { width: max-content; grid-template-columns: max-content max-content auto 4.5em max-content; column-gap: 0.28em; }
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }

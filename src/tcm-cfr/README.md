@@ -1,6 +1,6 @@
 # TCM CFR
 
-Test de connaissance de mathématiques — variante institutionnelle CFR (28 exercices).
+Test de connaissance de mathématiques — variante institutionnelle CFR (29 exercices affichés, 28 types).
 
 | Fichier | Rôle |
 |---|---|

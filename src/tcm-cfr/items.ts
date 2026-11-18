@@ -11,7 +11,6 @@ import {
   divisionColumnItem,
   withFixedColumnWidth,
   withFixedDivisionWidth,
-  withFixedDivisionWorkRows,
 } from '@/tpm/items'
 import { mulAudioParts, numberAudioParts } from './audio-nombres'
 import { generateMetroQuestions, pickMetroMap } from './metro'
@@ -81,8 +80,8 @@ function genEx02(rng: Rng, count: number): MathItem[] {
   })
 }
 
-/** Ex. 3 — ranger 7 nombres (Q1 mixtes 10–100 ; Q2 même unité, décimales variables). */
-function genEx03(rng: Rng, ascending?: boolean): MathItem[] {
+/** Ex. 3 / 4 — une liste de 7 nombres par question (mixtes, ou même unité). */
+function genEx03(rng: Rng, ascending?: boolean, count = 1): MathItem[] {
   const orderItem = (
     direction: boolean,
     sequence: string[],
@@ -100,65 +99,67 @@ function genEx03(rng: Rng, ascending?: boolean): MathItem[] {
     answer: ordered.join(direction ? ' < ' : ' > '),
   })
 
-  // Q1 — 7 nombres 10–100, 0 ou 1 décimale.
-  const q1vals: number[] = []
-  while (q1vals.length < 7) {
-    const withDec = rng() < 0.5
-    const v = withDec ? oneDecimal(rng, 100, 1000) : int(rng, 10, 100)
-    if (v < 10 || v > 100) continue
-    if (q1vals.some((x) => Math.abs(x - v) < 1e-9)) continue
-    q1vals.push(v)
+  // 7 nombres 10–100, 0 ou 1 décimale.
+  const mixed = (direction: boolean, withPrompt: boolean): MathItem => {
+    const vals: number[] = []
+    while (vals.length < 7) {
+      const withDec = rng() < 0.5
+      const v = withDec ? oneDecimal(rng, 100, 1000) : int(rng, 10, 100)
+      if (v < 10 || v > 100) continue
+      if (vals.some((x) => Math.abs(x - v) < 1e-9)) continue
+      vals.push(v)
+    }
+    const shuf = shuffle(rng, vals)
+    const ord = [...shuf].sort((a, b) => (direction ? a - b : b - a))
+    return orderItem(direction, shuf.map(fmt), ord.map(fmt), withPrompt)
   }
-  const q1Asc = ascending ?? rng() < 0.5
-  const q1Shuf = shuffle(rng, q1vals)
-  const q1Ord = [...q1Shuf].sort((a, b) => (q1Asc ? a - b : b - a))
-  if (ascending === true) return [orderItem(true, q1Shuf.map(fmt), q1Ord.map(fmt), false)]
 
-  // Q2 — même partie entière, décimales variables (6 · 6,1 · 6,01 · 6,11…).
-  const unit = int(rng, 2, 9)
-  const kinds: Array<() => number> = [
-    () => unit,
-    () => fromCents(unit, int(rng, 1, 9) * 10),
-    () => fromCents(unit, int(rng, 1, 9)),
-    () => fromCents(unit, int(rng, 1, 9) * 10 + int(rng, 1, 9)),
-    () => fromCents(unit, int(rng, 1, 9) * 10),
-    () => fromCents(unit, int(rng, 10, 99)),
-    () => fromCents(unit, int(rng, 1, 9)),
-  ]
-  const q2vals: number[] = []
-  const seen = new Set<string>()
-  for (const make of shuffle(rng, kinds)) {
-    let v = make()
-    let key = fmt(v)
-    let g = 0
-    while (seen.has(key) && g < 20) {
-      v = make()
-      key = fmt(v)
-      g++
+  // Même partie entière, décimales variables (6 · 6,1 · 6,01 · 6,11…).
+  const decimals = (direction: boolean, withPrompt: boolean): MathItem => {
+    const unit = int(rng, 2, 9)
+    const kinds: Array<() => number> = [
+      () => unit,
+      () => fromCents(unit, int(rng, 1, 9) * 10),
+      () => fromCents(unit, int(rng, 1, 9)),
+      () => fromCents(unit, int(rng, 1, 9) * 10 + int(rng, 1, 9)),
+      () => fromCents(unit, int(rng, 1, 9) * 10),
+      () => fromCents(unit, int(rng, 10, 99)),
+      () => fromCents(unit, int(rng, 1, 9)),
+    ]
+    const vals: number[] = []
+    const seen = new Set<string>()
+    for (const make of shuffle(rng, kinds)) {
+      let v = make()
+      let key = fmt(v)
+      let g = 0
+      while (seen.has(key) && g < 20) {
+        v = make()
+        key = fmt(v)
+        g++
+      }
+      if (!seen.has(key)) {
+        seen.add(key)
+        vals.push(v)
+      }
+      if (vals.length >= 7) break
     }
-    if (!seen.has(key)) {
-      seen.add(key)
-      q2vals.push(v)
+    while (vals.length < 7) {
+      const v = fromCents(unit, int(rng, 0, 99))
+      const key = fmt(v)
+      if (!seen.has(key)) {
+        seen.add(key)
+        vals.push(v)
+      }
     }
-    if (q2vals.length >= 7) break
+    const shuf = shuffle(rng, vals)
+    const ord = [...shuf].sort((a, b) => (direction ? a - b : b - a))
+    return orderItem(direction, shuf.map(fmt), ord.map(fmt), withPrompt)
   }
-  while (q2vals.length < 7) {
-    const v = fromCents(unit, int(rng, 0, 99))
-    const key = fmt(v)
-    if (!seen.has(key)) {
-      seen.add(key)
-      q2vals.push(v)
-    }
-  }
-  const q2Asc = ascending === false ? false : !q1Asc
-  const q2Shuf = shuffle(rng, q2vals)
-  const q2Ord = [...q2Shuf].sort((a, b) => (q2Asc ? a - b : b - a))
-  if (ascending === false) return [orderItem(false, q2Shuf.map(fmt), q2Ord.map(fmt), false)]
 
-  return [
-    orderItem(q1Asc, q1Shuf.map(fmt), q1Ord.map(fmt), true),
-    orderItem(q2Asc, q2Shuf.map(fmt), q2Ord.map(fmt), true),
-  ]
+  const n = Math.max(1, count)
+  if (ascending === true) return Array.from({ length: n }, () => mixed(true, false))
+  if (ascending === false) return Array.from({ length: n }, () => decimals(false, false))
+  return Array.from({ length: n }, (_, i) => (i % 2 === 0 ? mixed(true, true) : decimals(false, true)))
 }
 
 /** Ex. 4 — comparer décimaux (style 4,7 / 7,4 · 8,10 / 8,1…). */
@@ -283,9 +284,13 @@ function genMulDivPair(rng: Rng, empty: boolean): MathItem[] {
   const qMin = Math.ceil(1000 / d)
   const qMax = Math.floor(9999 / d)
   const quot = int(rng, qMin, qMax)
-  const div = withFixedDivisionWorkRows(
-    withFixedDivisionWidth(divisionColumnItem(d * quot, d, empty), 4, 4),
-  )
+  const posed = withFixedDivisionWidth(divisionColumnItem(d * quot, d, empty), 4, 4)
+  const digitsB = posed.digitsB ?? []
+  const div = {
+    ...posed,
+    // 4 colonnes à droite du trait : le diviseur (1 chiffre) est aligné à droite.
+    digitsB: digitsB.length >= 4 ? digitsB : [...Array.from({ length: 4 - digitsB.length }, () => ''), ...digitsB],
+  }
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }
 
@@ -685,11 +690,10 @@ function genEx26(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 27 — cadran I : toujours 24×24 cases positives ; graduation 1 u/case ou 1 u/2 cases. */
+/** Ex. 27 — cadran I : 22 cases positives ; graduation 1 u/case (max 22) ou 1 u/2 cases (max 11). */
 function genEx27(rng: Rng): MathItem[] {
-  const positiveCells = 24
-  // Deux types de graduation : 1 unité = 1 case (max 24) ou 1 unité = 2 cases (max 12).
-  // Le nombre de cases positives reste fixe ; seule l’échelle change.
+  const positiveCells = 22
+  // 1 unité = 1 case → graduation jusqu’à 22 ; 1 unité = 2 cases → jusqu’à 11.
   const unitSquares = rng() < 0.5 ? 1 : 2
   const maxUnit = positiveCells / unitSquares
   // 1 u/case → entiers ; 1 u/2 cases → demis (ex. 5,5) sur chaque intersection.
@@ -698,7 +702,7 @@ function genEx27(rng: Rng): MathItem[] {
   // pour les deux graduations (1 u/case et 1 u/2 cases). Ne pas lier à unitSquares.
   const originCol = 2
   const originRow = 2
-  // Pas de cases « flèche » en plus : la dernière graduation = +24 (ou +12 si 1 u/2 cases).
+  // Pas de cases « flèche » en plus : la dernière graduation = +22 (ou +11 si 1 u/2 cases).
   // Les flèches dépassent dans le padding SVG, pas dans des cases supplémentaires.
   const visibleCols = originCol + positiveCells
   const visibleRows = visibleCols
@@ -814,7 +818,11 @@ function genEx27(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 28 — plan de métro. */
+/**
+ * Ex. 28 — plan de métro, puis une question par item.
+ * Le plan n’est pas noté ; la première question porte le barème de l’exercice.
+ * Le saut avant cette question est activé dans la recette du test.
+ */
 function genEx28(rng: Rng): MathItem[] {
   const map = pickMetroMap(rng)
   const questions = generateMetroQuestions(rng, map)
@@ -822,9 +830,19 @@ function genEx28(rng: Rng): MathItem[] {
     {
       layout: 'metro-map' as const,
       metroMap: map,
-      metroQuestions: questions,
-      answer: questions.map((q) => q.answer).join(' ; '),
+      hideItemNumber: true,
+      noPoints: true,
+      answer: '',
     },
+    ...questions.map((q, i) => ({
+      layout: 'metro-map' as const,
+      metroMap: map,
+      metroMapHidden: true,
+      metroQuestions: [{ ...q, n: i + 1 }],
+      hideItemNumber: true,
+      noPoints: i > 0,
+      answer: q.answer,
+    })),
   ]
 }
 
@@ -841,7 +859,7 @@ export function tryGenerateTcmCfrItems(
   let items: MathItem[] | null = null
   if (typeId === 'tcm-cfr-ex01') items = genEx01(rng, count)
   else if (typeId === 'tcm-cfr-ex02') items = genEx02(rng, count)
-  else if (typeId === 'tcm-cfr-ex03') items = genEx03(rng, orderAscending).slice(0, Math.max(1, count))
+  else if (typeId === 'tcm-cfr-ex03') items = genEx03(rng, orderAscending, count)
   else if (typeId === 'tcm-cfr-ex04') items = genEx04(rng, count)
   else if (typeId === 'tcm-cfr-ex05') items = genEx05(rng).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex06') items = genEx06(rng).slice(0, Math.max(1, count))

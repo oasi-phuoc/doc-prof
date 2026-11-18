@@ -1,5 +1,5 @@
 /**
- * Test de connaissance de mathématiques — variante CFR (28 exercices).
+ * Test de connaissance de mathématiques — variante CFR (29 exercices affichés).
  */
 import type { Difficulty, Domain, ExerciseBlock, PageConfig } from '@/math/types'
 import { exerciseTypeById, isDraftPadExercise } from '@/math/catalog'
@@ -15,6 +15,8 @@ type BlockSpec = {
   exerciseNo?: number
   orderAscending?: boolean
   sheetTitle?: string
+  /** Saut de page après l’item d’index i (plan de métro). */
+  tcfPageBreakAfter?: boolean[]
 }
 
 type StepSpec = {
@@ -23,58 +25,58 @@ type StepSpec = {
   blocks: readonly BlockSpec[]
 }
 
-/** Recette chronologique TCM CFR (28 exercices). */
+/** Recette chronologique TCM CFR (29 exercices affichés ; ex03 sert pour 3 et 4). */
 export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 1, label: 'Nombres entendus', blocks: [{ exerciseType: 'tcm-cfr-ex01', count: 5, columns: 1, pointsPerQuestion: 0.5 }] },
   { id: 2, label: 'Multiplications orales', blocks: [{ exerciseType: 'tcm-cfr-ex02', count: 5, columns: 1, pointsPerQuestion: 0.5 }] },
-  { id: 3, label: 'Ranger', blocks: [
-    { exerciseType: 'tcm-cfr-ex03', count: 1, columns: 1, pointsPerQuestion: 2, orderAscending: true },
-    { exerciseType: 'tcm-cfr-ex03', count: 1, columns: 1, pointsPerQuestion: 2, orderAscending: false, sheetTitle: 'Exercice 3 bis' },
-  ] },
-  { id: 4, label: 'Comparer décimaux', blocks: [{ exerciseType: 'tcm-cfr-ex04', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 5, label: 'Décomposer', blocks: [{ exerciseType: 'tcm-cfr-ex05', count: 2, columns: 1, pointsPerQuestion: 1 }] },
-  { id: 6, label: 'Nommer les opérations', blocks: [{ exerciseType: 'tcm-cfr-ex06', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 7, label: 'Colonnes + −', blocks: [{ exerciseType: 'tcm-cfr-ex07', count: 4, columns: 2, pointsPerQuestion: 1 }] },
-  { id: 8, label: 'Colonnes + − (suite)', blocks: [{ exerciseType: 'tcm-cfr-ex08', count: 4, columns: 2, pointsPerQuestion: 1 }] },
-  { id: 9, label: '× et ÷ posées', blocks: [{ exerciseType: 'tcm-cfr-ex09', count: 2, columns: 2, pointsPerQuestion: 2 }] },
-  { id: 10, label: '× et ÷ (nombres hors grille)', blocks: [{ exerciseType: 'tcm-cfr-ex10', count: 2, columns: 2, pointsPerQuestion: 2 }] },
-  { id: 11, label: 'Fractions en lettres', blocks: [{ exerciseType: 'tcm-cfr-ex11', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 12, label: 'Colorier fractions', blocks: [{ exerciseType: 'tcm-cfr-ex12', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 13, label: 'Lire fractions', blocks: [{ exerciseType: 'tcm-cfr-ex13', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
-  // Symétrie (type ex18) devient l’exercice 14, juste après la lecture de fractions.
-  { id: 14, label: 'Symétrie axiale', blocks: [{ exerciseType: 'tcm-cfr-ex18', count: 1, columns: 1, pointsPerQuestion: 3 }] },
-  { id: 15, label: 'Problème magasin', blocks: [{ exerciseType: 'tcm-cfr-ex14', count: 2, columns: 1, pointsPerQuestion: 3 }] },
-  { id: 16, label: 'Problème mécanicien', blocks: [{ exerciseType: 'tcm-cfr-ex15', count: 2, columns: 1, pointsPerQuestion: 3 }] },
-  { id: 17, label: 'Figures et propriétés', blocks: [{ exerciseType: 'tcm-cfr-ex16', count: 3, columns: 1, pointsPerQuestion: 2 }] },
-  { id: 18, label: 'Nommer des formes', blocks: [{ exerciseType: 'tcm-cfr-ex17', count: 3, columns: 1, pointsPerQuestion: 1 }] },
-  { id: 19, label: 'Mesurer des segments', blocks: [{ exerciseType: 'tcm-cfr-ex19', count: 1, columns: 1, pointsPerQuestion: 4 }] },
-  { id: 20, label: 'Conversions', blocks: [{ exerciseType: 'tcm-cfr-ex20', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 21, label: 'Fractions → décimaux', blocks: [{ exerciseType: 'tcm-cfr-ex21', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 22, label: 'Carré décimal', blocks: [{ exerciseType: 'tcm-cfr-ex22', count: 1, columns: 1, pointsPerQuestion: 4 }] },
-  { id: 23, label: 'Rectangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex23', count: 1, columns: 1, pointsPerQuestion: 4 }] },
-  { id: 24, label: 'Triangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex24', count: 1, columns: 1, pointsPerQuestion: 4 }] },
-  { id: 25, label: 'Côté du carré', blocks: [{ exerciseType: 'tcm-cfr-ex25', count: 1, columns: 1, pointsPerQuestion: 2 }] },
-  { id: 26, label: 'Côté du rectangle', blocks: [{ exerciseType: 'tcm-cfr-ex26', count: 1, columns: 1, pointsPerQuestion: 2 }] },
-  { id: 27, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
-  { id: 28, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5 }] },
+  { id: 3, label: 'Ranger croissant', blocks: [{ exerciseType: 'tcm-cfr-ex03', count: 1, columns: 1, pointsPerQuestion: 2, orderAscending: true }] },
+  { id: 4, label: 'Ranger décroissant', blocks: [{ exerciseType: 'tcm-cfr-ex03', count: 1, columns: 1, pointsPerQuestion: 2, orderAscending: false }] },
+  { id: 5, label: 'Comparer décimaux', blocks: [{ exerciseType: 'tcm-cfr-ex04', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 6, label: 'Décomposer', blocks: [{ exerciseType: 'tcm-cfr-ex05', count: 2, columns: 1, pointsPerQuestion: 1 }] },
+  { id: 7, label: 'Nommer les opérations', blocks: [{ exerciseType: 'tcm-cfr-ex06', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 8, label: 'Colonnes + −', blocks: [{ exerciseType: 'tcm-cfr-ex07', count: 4, columns: 2, pointsPerQuestion: 1 }] },
+  { id: 9, label: 'Colonnes + − (suite)', blocks: [{ exerciseType: 'tcm-cfr-ex08', count: 4, columns: 2, pointsPerQuestion: 1 }] },
+  { id: 10, label: '× et ÷ posées', blocks: [{ exerciseType: 'tcm-cfr-ex09', count: 2, columns: 2, pointsPerQuestion: 2 }] },
+  { id: 11, label: '× et ÷ (nombres hors grille)', blocks: [{ exerciseType: 'tcm-cfr-ex10', count: 2, columns: 2, pointsPerQuestion: 2 }] },
+  { id: 12, label: 'Fractions en lettres', blocks: [{ exerciseType: 'tcm-cfr-ex11', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 13, label: 'Colorier fractions', blocks: [{ exerciseType: 'tcm-cfr-ex12', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 14, label: 'Lire fractions', blocks: [{ exerciseType: 'tcm-cfr-ex13', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 15, label: 'Symétrie axiale', blocks: [{ exerciseType: 'tcm-cfr-ex18', count: 1, columns: 1, pointsPerQuestion: 3 }] },
+  { id: 16, label: 'Problème magasin', blocks: [{ exerciseType: 'tcm-cfr-ex14', count: 2, columns: 1, pointsPerQuestion: 3 }] },
+  { id: 17, label: 'Problème mécanicien', blocks: [{ exerciseType: 'tcm-cfr-ex15', count: 2, columns: 1, pointsPerQuestion: 3 }] },
+  { id: 18, label: 'Figures et propriétés', blocks: [{ exerciseType: 'tcm-cfr-ex16', count: 3, columns: 1, pointsPerQuestion: 2 }] },
+  { id: 19, label: 'Nommer des formes', blocks: [{ exerciseType: 'tcm-cfr-ex17', count: 3, columns: 1, pointsPerQuestion: 1 }] },
+  { id: 20, label: 'Mesurer des segments', blocks: [{ exerciseType: 'tcm-cfr-ex19', count: 1, columns: 1, pointsPerQuestion: 4 }] },
+  { id: 21, label: 'Conversions', blocks: [{ exerciseType: 'tcm-cfr-ex20', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 22, label: 'Fractions → décimaux', blocks: [{ exerciseType: 'tcm-cfr-ex21', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 23, label: 'Carré décimal', blocks: [{ exerciseType: 'tcm-cfr-ex22', count: 1, columns: 1, pointsPerQuestion: 4 }] },
+  { id: 24, label: 'Rectangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex23', count: 1, columns: 1, pointsPerQuestion: 4 }] },
+  { id: 25, label: 'Triangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex24', count: 1, columns: 1, pointsPerQuestion: 4 }] },
+  { id: 26, label: 'Côté du carré', blocks: [{ exerciseType: 'tcm-cfr-ex25', count: 1, columns: 1, pointsPerQuestion: 2 }] },
+  { id: 27, label: 'Côté du rectangle', blocks: [{ exerciseType: 'tcm-cfr-ex26', count: 1, columns: 1, pointsPerQuestion: 2 }] },
+  { id: 28, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
+  { id: 29, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5, tcfPageBreakAfter: [true] }] },
 ]
 
 const TCM_CFR_PACKED_PAGES: readonly (readonly number[])[] = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8],
-  [9, 10],
-  [11, 12],
-  [13, 14],
+  [1, 2, 3, 4],
+  [5, 6, 7],
+  [8],
+  [9],
+  [10, 11],
+  [12, 13],
+  [14],
   [15],
   [16],
   [17],
   [18],
-  [19, 20, 21],
-  [22, 23, 24],
-  [25, 26],
-  [27],
+  [19],
+  [20, 21],
+  [22, 23],
+  [24, 25],
+  [26, 27],
   [28],
+  [29],
 ]
 
 function blockSpecPoints(spec: BlockSpec): number {
@@ -109,6 +111,7 @@ function blockFromSpec(
       : {}),
     ...(spec.orderAscending != null ? { orderAscending: spec.orderAscending } : {}),
     ...(spec.sheetTitle ? { sheetTitle: spec.sheetTitle } : {}),
+    ...(spec.tcfPageBreakAfter ? { tcfPageBreakAfter: spec.tcfPageBreakAfter } : {}),
     ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
     ...(exerciseNo != null || spec.exerciseNo != null
       ? { exerciseNo: spec.exerciseNo ?? exerciseNo }
