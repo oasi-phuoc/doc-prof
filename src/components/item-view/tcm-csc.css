@@ -107,6 +107,9 @@
 .exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-row.is-line { width: max-content; grid-template-columns: max-content auto max-content; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
+.exercise-block[data-exercise-type="tcm-csc-ex08"] .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; }
+.exercise-block[data-exercise-type="tcm-csc-ex08"] .place-value-row.is-plain { display: grid; grid-template-columns: 5ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
+.exercise-block[data-exercise-type="tcm-csc-ex08"] .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
 .is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell:last-child { border-right-color: #c5cad3 !important; }
