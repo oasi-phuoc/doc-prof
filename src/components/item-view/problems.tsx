@@ -483,6 +483,15 @@ export function PlaceValueRow({ item, mode }: { item: MathItem; mode: PreviewMod
   const show = mode === 'answers'
   const labels = item.labels ?? []
   const parts = item.placeParts ?? []
+  if (item.cscTask?.kind === 'place-plain') {
+    return (
+      <div className="place-value-row is-plain" aria-label="Décomposition">
+        <span className="place-value-num">{item.prompt}</span>
+        <span className="place-value-eq">=</span>
+        <span className={`answer-line-field place-value-line ${show ? 'filled' : ''}`}>{show ? item.answer : '\u00a0'}</span>
+      </div>
+    )
+  }
   const slots = labels.length > 0 ? labels.length : Math.max(parts.length, 3)
   return (
     <div className="place-value-row" aria-label="Décomposition">

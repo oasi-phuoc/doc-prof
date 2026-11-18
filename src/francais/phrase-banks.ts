@@ -31,17 +31,6 @@ export const PHRASE_CATEGORY_LABELS: Record<PhraseCategory, string> = {
 }
 
 /** Natures dont le mot peut s’afficher sous l’image Gattegno. */
-export const PHRASE_IMAGE_LABEL_CATEGORIES: PhraseCategory[] = [
-  'pronom',
-  'nom',
-  'verbe',
-  'determinant',
-  'adjectif',
-  'adverbe',
-  'preposition',
-  'conjonction',
-]
-
 /** Exemples affichés dans le tableau « mots » (extraits des banques). */
 export const CHART_WORD_SAMPLES: Record<PhraseCategory, string> = {
   pronom:

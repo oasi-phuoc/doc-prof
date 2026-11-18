@@ -3,7 +3,7 @@ import { generateTpmInformations } from '@/tpm/informations'
 import { isTcmCscConsignesType, TCM_CSC_MAX_SCORE } from './test'
 import { isTcmCscType } from './types'
 import { TCM_CSC_EXERCISE_TYPES } from './catalog'
-import { generateCscExercise } from './items'
+import { cscOrderAscending, cscOrderInstruction, generateCscExercise } from './items'
 
 export function tryGenerateTcmCscBlock(
   config: PageConfig,
@@ -18,5 +18,6 @@ export function tryGenerateTcmCscBlock(
   }
   if (config.exerciseType === 'tcm-csc-placeholder') return { instruction: 'Ouvrez le domaine TCM CSC pour préparer le test complet.', items: [] }
   const type = TCM_CSC_EXERCISE_TYPES.find((entry) => entry.id === config.exerciseType)
-  return { instruction: type?.instruction ?? '', items: generateCscExercise(config.exerciseType, config.count, seed) }
+  const ascending = config.exerciseType === 'tcm-csc-ex06' || config.exerciseType === 'tcm-csc-ex25' ? cscOrderAscending(config.exerciseType, seed) : undefined
+  return { instruction: ascending === undefined ? (type?.instruction ?? '') : cscOrderInstruction(ascending), items: generateCscExercise(config.exerciseType, config.count, seed, config.logiqueIds) }
 }

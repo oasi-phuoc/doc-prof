@@ -131,6 +131,21 @@ export function SymmetryGridBlock({
   )
 }
 
+function SegmentSlope({ mm, slope, color }: { mm: number; slope: number; color: string }) {
+  const angle = Math.atan(slope)
+  const dx = mm * Math.cos(angle)
+  const dy = mm * Math.sin(angle)
+  const pad = 1.2
+  const height = Math.abs(dy) + pad * 2
+  const y1 = dy >= 0 ? height - pad : pad
+  const y2 = dy >= 0 ? pad : height - pad
+  return (
+    <svg className="tcm-cfr-segment-line is-sloped" data-length-mm={mm} viewBox={`0 0 ${dx} ${height}`} style={{ width: `${dx}mm`, height: `${height}mm` }} role="img" aria-label={`Segment incliné de ${mm} millimètres`}>
+      <line x1="0" y1={y1} x2={dx} y2={y2} stroke={color} strokeWidth="0.7" strokeLinecap="butt" />
+    </svg>
+  )
+}
+
 const SEGMENT_LETTERS = ['a', 'b', 'c'] as const
 
 export function SegmentMeasureBlock({
@@ -154,7 +169,7 @@ export function SegmentMeasureBlock({
             <div className="tcm-cfr-segment-row" key={`seg-${i}`}>
               <span className="tcm-cfr-segment-num">{letter}.</span>
               <div className="tcm-cfr-segment-line-wrap">
-                <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm`, ...(item.cscTask?.kind==='length-table'?{borderColor:`var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})`}:{}) }} />
+                {seg.slope ? <SegmentSlope mm={widthMm} slope={seg.slope} color={item.cscTask?.kind==='length-table' ? `var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})` : 'var(--ink)'} /> : <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm`, ...(item.cscTask?.kind==='length-table'?{borderColor:`var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})`}:{}) }} />}
               </div>
               <span className="tcm-cfr-segment-answer">
                 <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>

@@ -12,8 +12,6 @@
 .phrase-image-word { min-height:92px; }
 .phrase-image-word > span { font-size:calc(14px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
 .phrase-image-blank { display:block; width:70%; min-height:1.2em; border-bottom:1px solid currentColor; }
-.phrase-image-word-choices { display:grid; grid-template-columns:1fr 1fr; gap:2px 12px; }
-.phrase-image-word-choices small { grid-column:1 / -1; }
 .phrase-images-block .phrase-answer-slot { min-height:32px; }
 .phrase-image-editor-list { display:flex; flex-direction:column; gap:12px; }
 .phrase-image-editor-clue { border-left:4px solid; padding:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
@@ -21,9 +19,6 @@
 .phrase-image-editor-clue input { min-width:0; max-width:100%; }
 .ci-app .phrase-image-row { grid-template-columns:repeat(var(--phrase-game-columns),minmax(0,1fr)); max-width:100%; }
 .ci-app .phrase-image-clue > .ci-image-zoom { min-height:44px; }
-.phrase-image-label-option { display:flex; gap:8px; align-items:flex-start; min-height:44px; }
-.phrase-image-label-option input[type="checkbox"] { width:18px; height:18px; flex:0 0 auto; padding:0; margin:2px 0 0; }
-.phrase-image-label-option > span { display:flex; flex-direction:column; gap:4px; }
 @media print { .phrase-images-block,.phrase-image-row { break-inside:avoid; } }
 
 .phrase-image-editor-list label, .phrase-image-editor-list label > span, .phrase-image-editor-list small { color:#352b47; }

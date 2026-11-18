@@ -25,13 +25,13 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
     if (typeId === 'tcm-csc-ex08' && item.layout === 'place-value') {
       const raw = (item.prompt ?? '').replace(/['’\s]/g,''), value = Number(raw)
       if (!/^\d{2,4}$/.test(raw) || !integers([value],11,9999)) throw new Error('Choisissez un nombre entier de deux à quatre chiffres, à partir de 11.')
-      return {...item,...numberDecomposition(value),libreError:undefined}
+      return {...item,...numberDecomposition(value),cscTask:item.cscTask,libreError:undefined}
     }
     if (task?.kind === 'sign-name') {
       if (!Object.hasOwn(CSC_SIGN_NAMES, task.symbol)) throw new Error('Choisissez le signe +, − ou =.')
       return {...item,prompt:task.symbol,answer:CSC_SIGN_NAMES[task.symbol],libreError:undefined}
     }
-    if (typeId === 'tcm-csc-ex06' && item.layout === 'order') {
+    if ((typeId === 'tcm-csc-ex06' || typeId === 'tcm-csc-ex25') && item.layout === 'order') {
       const values = (item.sequence ?? []).map(Number)
       if (values.length !== 7 || new Set(values).size !== 7 || !integers(values, 0, 100)) throw new Error('Choisissez sept entiers distincts de 0 à 100.')
       const sorted = [...values].sort((a, b) => item.orderOp === '>' ? b - a : a - b)
@@ -49,7 +49,7 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
       return { ...item, answer: String(result), audioParts: parts, audioSrc: parts[0], libreError: undefined }
     }
     if (task?.kind === 'number-grid') {
-      if (task.numbers.length !== 36 || new Set(task.numbers).size !== 36 || !integers(task.numbers, 0, 100)) throw new Error('La grille doit contenir 36 entiers distincts de 0 à 100.')
+      if (task.numbers.length !== 101 || task.numbers.some((n, index) => n !== index)) throw new Error('La grille contient les nombres de 0 à 100, dans l’ordre.')
       if (task.heard.length !== 5 || new Set(task.heard).size !== 5 || !task.heard.every((n) => task.numbers.includes(n))) throw new Error('Choisissez cinq nombres différents présents dans la grille.')
       const parts = task.heard.flatMap((n, i) => [...(i ? [SILENCE_6S_AUDIO] : []), ...cscNumberParts(n)])
       return { ...item, answer: task.heard.join(' ; '), audioParts: parts, audioSrc: undefined, libreError: undefined }
@@ -64,7 +64,8 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
     }
     if ((typeId.endsWith('ex04') || typeId.endsWith('ex05')) && item.layout === 'sequence') {
       const values = (item.sequence ?? []).map(Number), step = values[1]! - values[0]!
-      if (values.length !== 5 || !integers(values, 0, 100) || !step || values.some((n, i) => i > 0 && n - values[i - 1]! !== step)) throw new Error('La suite doit progresser régulièrement et rester entre 0 et 100.')
+      const expected = typeId.endsWith('ex05') ? 8 : 6
+      if (values.length !== expected || !integers(values, 0, 100) || !step || values.some((n, i) => i > 0 && n - values[i - 1]! !== step)) throw new Error('La suite doit progresser régulièrement et rester entre 0 et 100.')
       return { ...item, prompt: typeId.endsWith('ex04') ? `${step > 0 ? '+' : '−'}${Math.abs(step)}` : undefined, cscTask: typeId.endsWith('ex04') ? {kind:'sequence-hint',step} : undefined, answer: (item.blankIndexes ?? []).map((i) => values[i]).join(' ; '), libreError: undefined }
     }
     if (typeId.endsWith('ex14') && item.segments?.length) {

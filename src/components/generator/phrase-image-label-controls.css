@@ -1,0 +1,5 @@
+.phrase-image-word-choices { display:grid; grid-template-columns:1fr 1fr; gap:2px 12px; }
+.phrase-image-word-choices small { grid-column:1 / -1; }
+.phrase-image-label-option { display:flex; gap:8px; align-items:flex-start; min-height:44px; }
+.phrase-image-label-option input[type="checkbox"] { width:18px; height:18px; flex:0 0 auto; padding:0; margin:2px 0 0; }
+.phrase-image-label-option > span { display:flex; flex-direction:column; gap:4px; }

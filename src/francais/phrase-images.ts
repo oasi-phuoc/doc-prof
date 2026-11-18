@@ -1,4 +1,4 @@
-import type {MathItem,PhraseCategory,PhraseImageClue,PhraseToken} from '@/math/types'
+import type {MathItem,PhraseImageClue,PhraseToken} from '@/math/types'
 import tcfPictures from './phrase-tcf-pictures.generated.json'
 import {ACTION_PICTOGRAMS,INTERROGATIVE_PICTOGRAMS,NEGATION_PICTOGRAMS,PRONOUN_PICTOGRAMS,pictureKey} from './phrase-pictograms'
 import {tagged,pronounsForFrame} from './phrase-sentences'
@@ -8,15 +8,7 @@ import type {ThemedFrame} from './phrase-theme-frames'
 import type {PhraseQuestionForm} from './phrase-interrogatives'
 
 export const MAX_PHRASE_IMAGE_CLUES=12
-
-/** Les mots restent masqués tant que l’enseignant n’a pas choisi « Avec les mots ». */
-export function showsPhraseImageWord(category:PhraseCategory,labels?:boolean,shown?:readonly PhraseCategory[]):boolean {
-  return labels===true&&(!shown||shown.includes(category))
-}
-export function phraseImageWordFields(labels?:boolean,shown?:readonly PhraseCategory[]):{phraseImageLabels:boolean;phraseImageShownCategories?:PhraseCategory[]} {
-  const on=labels===true
-  return {phraseImageLabels:on,...(on&&shown?{phraseImageShownCategories:[...shown]}:{phraseImageShownCategories:undefined})}
-}
+export {showsPhraseImageWord,phraseImageWordFields} from './phrase-image-words'
 const nouns=new Map<string,string>(),actions=new Map<string,string>()
 for(const word of tcfPictures)nouns.set(pictureKey(word.label),word.src)
 for(const image of ACTION_PICTOGRAMS)actions.set(pictureKey(image.label),image.src)

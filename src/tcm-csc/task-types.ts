@@ -6,10 +6,12 @@ export type CscTask =
   | { kind: 'operator'; a: number; b: number; operation: '+' | '−'; blank: 'operator' | 'equals' }
   | { kind: 'sign-name'; symbol: '+' | '−' | '=' }
   | { kind: 'sequence-hint'; step: number }
+  | { kind: 'compare-line' }
+  | { kind: 'place-plain' }
   | { kind: 'copy'; scale: 1 | 2 }
   | { kind: 'length-table'; colors?: number[] }
   | { kind: 'connect-points'; points: { label: string; x: number; y: number }[] }
   | { kind: 'shape-names'; figures: Figure[] }
-  | { kind: 'large-count' }
+  | { kind: 'large-count'; scale?: number }
   | { kind: 'coordinates-left'; xDirection?: 'left-to-right' | 'right-to-left'; yDirection?: 'bottom-to-top' | 'top-to-bottom' }
   | { kind: 'problem'; templateId: string; a: number; b: number }

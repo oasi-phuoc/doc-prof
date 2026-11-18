@@ -23,6 +23,16 @@ export function EncadrementRow({ item, mode }: { item: MathItem; mode: PreviewMo
 
 export function CompareRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const symbols = ['<', '=', '>'] as const
+  if (item.cscTask?.kind === 'compare-line') {
+    const show = mode === 'answers'
+    return (
+      <div className="compare-row school is-line" aria-label="Comparer">
+        <span className="compare-side left">{renderMathText(item.left ?? '')}</span>
+        <span className={`answer-line-field compare-write${show ? ' filled csc-symbol' : ''}`}>{show ? item.answer : '\u00a0'}</span>
+        <span className="compare-side right">{renderMathText(item.right ?? '')}</span>
+      </div>
+    )
+  }
   return (
     <div className="compare-row school" aria-label="Comparer">
       <span className="compare-side left">{renderMathText(item.left ?? '')}</span>

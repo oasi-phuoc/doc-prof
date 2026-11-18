@@ -579,7 +579,7 @@ export type MathItem = {
     dots?: Array<{ x: number; y: number }>
   }
   /** Segments à mesurer (TCM CFR). */
-  segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string }>
+  segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string; slope?: number }>
   /** Plan de métro (TCM CFR). */
   metroMap?: {
     id: string
@@ -1107,6 +1107,10 @@ export type ExerciseBlock = {
   libreItems?: MathItem[]
   /** Mode libre global : consigne saisie (écrase l’instruction tirée). */
   libreInstruction?: string
+  /** TCM CSC : espace supplémentaire entre les exercices d’une même page, en pixels. */
+  exerciseGapPx?: number
+  /** TCM CSC suites graphiques : identifiants choisis (vide = tirage). */
+  logiqueIds?: string[]
 }
 
 export type PageConfig = ExerciseBlock & {

@@ -6,6 +6,7 @@ import {
 import { isAudioOnlyGrammarCo } from '@/grammaire/exercises/co-bank'
 import { isTcmCfrConsignesType } from '@/tcm-cfr/test'
 import { isTcmCscConsignesType } from '@/tcm-csc/test'
+import { logiqueBankOptions } from '@/logique/generate'
 import {
   isTcfConsignesType,
   tcfNiveauFromDifficulty,
@@ -324,6 +325,51 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     · total du test : {formatPointsLabel(sheetTotalPoints)}
                   </small>
                 </label>
+              ) : null}
+              {activeBlock.exerciseType.startsWith('tcm-csc-ex') ? (
+                <label className="select-shell">
+                  <span>Espace entre les exercices</span>
+                  <input
+                    className="pill-input"
+                    type="number"
+                    inputMode="numeric"
+                    min={0}
+                    max={80}
+                    step={1}
+                    aria-label="Espace entre les exercices"
+                    value={activeBlock.exerciseGapPx ?? activeSheet?.exerciseGapPx ?? 25}
+                    onChange={(event) => {
+                      const value = Number(event.target.value)
+                      if (Number.isInteger(value) && value >= 0 && value <= 80) updatePage({ exerciseGapPx: value })
+                    }}
+                  />
+                  <small className="muted">Pixels ajoutés entre les exercices. Le premier de la page n’en a pas.</small>
+                </label>
+              ) : null}
+              {activeBlock.exerciseType === 'tcm-csc-ex16' ? (
+                <>
+                  {[0, 1].map((index) => (
+                    <label className="select-shell" key={index}>
+                      <span>Série {index + 1}</span>
+                      <select
+                        aria-label={`Série ${index + 1}`}
+                        value={activeBlock.logiqueIds?.[index] ?? ''}
+                        onChange={(event) => {
+                          const next = [activeBlock.logiqueIds?.[0] ?? '', activeBlock.logiqueIds?.[1] ?? '']
+                          next[index] = event.target.value
+                          updatePage({ logiqueIds: next.some(Boolean) ? next : undefined })
+                        }}
+                      >
+                        <option value="">Au hasard</option>
+                        {logiqueBankOptions('logique-suite-graphique').map((choice) => {
+                          const match = /p(\d+)-e(\d+)/.exec(choice.id)
+                          const label = match ? `Planche ${Number(match[1])}, série ${Number(match[2])}` : choice.id
+                          return <option key={choice.id} value={choice.id}>{label}</option>
+                        })}
+                      </select>
+                    </label>
+                  ))}
+                </>
               ) : null}
               {isTcf &&
               evalMode &&

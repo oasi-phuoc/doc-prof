@@ -28,7 +28,8 @@ import {
   isTcmCfrDomain,
   TCM_CFR_DOCUMENT_TITLE,
 } from '@/tcm-cfr/test'
-import { buildTcmCscTestPages, isTcmCscDomain, TCM_CSC_DOCUMENT_TITLE } from '@/tcm-csc/test'
+import { buildTcmCscTestPages } from '@/tcm-csc/pages'
+import { isTcmCscDomain, TCM_CSC_DOCUMENT_TITLE } from '@/tcm-csc/test'
 import {
   isCalliPhrasesType,
 } from '@/calligraphie/defaults'

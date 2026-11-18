@@ -7,8 +7,12 @@ export const TCM_CSC_TOPICS: Topic[] = [
   { id: 'tcm-csc-test', label: 'Test CSC', domain: 'tcm-csc' },
 ]
 
+/** Numéro affiché. L’exercice 25 est le second rangement, inséré en 7 ; les suivants avancent d’un cran. */
+export function cscSheetNumber(typeNumber: number): number {
+  return typeNumber === 25 ? 7 : typeNumber >= 7 && typeNumber <= 20 ? typeNumber + 1 : typeNumber
+}
 const exercise = (number: number, label: string, instruction: string, columns = 1): ExerciseType => ({
-  id: `tcm-csc-ex${String(number).padStart(2, '0')}`, topic: 'tcm-csc-test', label: `${number} — ${label}`,
+  id: `tcm-csc-ex${String(number).padStart(2, '0')}`, topic: 'tcm-csc-test', label: `${cscSheetNumber(number)} — ${label}`,
   description: instruction, instruction, visual: 'texte', preferredColumns: columns,
 })
 export const TCM_CSC_EXERCISE_TYPES: ExerciseType[] = [
@@ -26,14 +30,15 @@ export const TCM_CSC_EXERCISE_TYPES: ExerciseType[] = [
   exercise(3, 'Entourer les nombres', 'Entourez les cinq nombres entendus.'),
   exercise(4, 'Suites avec indication', 'Complétez les suites de nombres.'),
   exercise(5, 'Suites sans aide', 'Complétez les suites de nombres.'),
-  exercise(6, 'Ranger de 0 à 100', 'Rangez les nombres dans l’ordre indiqué.'),
-  exercise(7, 'Comparer de 0 à 100', 'Comparez les nombres et coloriez le signe correct.', 2),
-  exercise(8, 'Décomposer les nombres', 'Décomposez chaque nombre.'),
+  exercise(6, 'Ranger du plus petit au plus grand', 'Rangez les nombres du plus petit au plus grand.'),
+  exercise(25, 'Ranger du plus grand au plus petit', 'Rangez les nombres du plus grand au plus petit.'),
+  exercise(7, 'Comparer de 0 à 100', 'Comparez les nombres et écrivez <, > ou =.', 2),
+  exercise(8, 'Décomposer les nombres', 'Décomposez les nombres en centaines, dizaines et unités.\nExemple : 243 = 200 + 40 + 3'),
   exercise(9, 'Nommer les signes', 'Écrivez le nom de chaque signe.'),
   exercise(10, 'Additions et soustractions posées', 'Calculez les additions et les soustractions.', 2),
   exercise(11, 'Poser les opérations', 'Posez les nombres dans les grilles, puis calculez.', 2),
-  exercise(12, 'Reproduire une figure', 'Reproduisez la même figure sur le quadrillage de gauche.'),
-  exercise(13, 'Agrandir une figure', 'Reproduisez la figure en l’agrandissant.\n1 carré à droite = 2 carrés à gauche.'),
+  exercise(12, 'Reproduire une figure', 'Reproduisez la même figure sur le quadrillage de droite.'),
+  exercise(13, 'Agrandir une figure', 'Reproduisez la même figure sur le quadrillage de droite.\n1 carré à gauche = 2 carrés à droite.'),
   exercise(14, 'Comparer des longueurs', ''),
   exercise(15, 'Relier des points', 'Avec la règle, reliez A à B en rouge, puis C à D en bleu.'),
   exercise(16, 'Suites graphiques', 'Cochez la forme qui continue la suite.'),

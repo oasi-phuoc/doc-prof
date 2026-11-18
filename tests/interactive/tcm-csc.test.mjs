@@ -5,7 +5,8 @@ import { createServer } from 'vite'
 
 const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
 try {
-  const { buildTcmCscTestPages, TCM_CSC_STEPS, TCM_CSC_MAX_SCORE } = await server.ssrLoadModule('/src/tcm-csc/test.ts')
+  const { TCM_CSC_MAX_SCORE } = await server.ssrLoadModule('/src/tcm-csc/test.ts')
+  const { TCM_CSC_STEPS, buildTcmCscTestPages } = await server.ssrLoadModule('/src/tcm-csc/pages.ts')
   const { generateCscExercise, CSC_PLUS_AUDIO, CSC_MINUS_AUDIO } = await server.ssrLoadModule('/src/tcm-csc/items.ts')
   const { CSC_PROBLEM_BANK, CSC_DEFAULT_PROBLEMS, buildCscProblem, rollCscProblem } = await server.ssrLoadModule('/src/tcm-csc/problems.ts')
   const { recalculateCsc } = await server.ssrLoadModule('/src/tcm-csc/recalculate.ts')
@@ -17,11 +18,12 @@ try {
   const { tryGenerateTcmCfrItems } = await server.ssrLoadModule('/src/tcm-cfr/items.ts')
   const { recalcTpmLibreItem } = await server.ssrLoadModule('/src/tpm/libre-recalc.ts')
   const samples = Array.from({ length: 100 }, (_, seed) => new Map(TCM_CSC_STEPS.map((step) => [step.number, generateCscExercise(`tcm-csc-ex${String(step.number).padStart(2, '0')}`, step.count, seed + 1)])))
-  await test('CSC test contains the 23 requested exercises and preserves the reserved number 21', () => {
+  await test('CSC test contains the 24 requested exercises, including the inserted ordering exercise', () => {
     const pages = buildTcmCscTestPages(), blocks = pages.flatMap((page) => [page, ...(page.extraBlocks ?? [])])
+    assert.equal(TCM_CSC_MAX_SCORE, TCM_CSC_STEPS.reduce((total, step) => total + step.count * ('points' in step ? step.points : 1), 0))
     assert.equal(blocks[0].exerciseType, 'tcm-csc-consignes')
-    assert.deepEqual(blocks.slice(1).map((block) => block.exerciseNo), [...Array.from({ length: 20 }, (_, i) => i + 1), 22, 23, 24])
-    assert.equal(blocks.filter((block) => block.exerciseNo === 21).length, 0)
+    assert.deepEqual(blocks.slice(1).map((block) => block.exerciseNo), Array.from({ length: 24 }, (_, i) => i + 1))
+    assert.equal(blocks.filter((block) => block.exerciseNo === 21).length, 1)
     assert.equal(blocks.slice(1).reduce((sum, block) => sum + block.count * block.pointsPerQuestion, 0), TCM_CSC_MAX_SCORE)
     assert.equal(TCM_CSC_MAX_SCORE,82)
     const sheets=buildWorksheets(pages,77)
@@ -47,24 +49,24 @@ try {
     }
     for (const src of assets) await access(`public${src}`)
   })
-  await test('the listening grid keeps thirty-six distinct numbers and five audible targets, including an editable zero', async () => {
+  await test('the listening grid keeps zero to one hundred in order and five audible targets, including an editable zero', async () => {
     for (const sample of samples) {
       const item = sample.get(3)[0], { numbers, heard } = item.cscTask
-      assert.equal(numbers.length, 36); assert.equal(new Set(numbers).size, 36)
-      assert.ok(numbers.every((n) => Number.isInteger(n) && n >= 0 && n <= 100))
-      assert.equal(new Set(heard).size, 5); assert.ok(heard.every((n) => numbers.includes(n)))
+      assert.deepEqual(numbers, Array.from({ length: 101 }, (_, i) => i))
+      assert.equal(new Set(heard).size, 5); assert.ok(heard.every((n) => numbers.includes(n) && n > 0))
       assert.equal(item.audioParts.filter((src) => src.endsWith('silence-6s.mp3')).length, 4)
     }
-    const item = structuredClone(samples[0].get(3)[0]); item.cscTask.numbers = Array.from({ length: 36 }, (_, i) => i); item.cscTask.heard = [0, 1, 2, 3, 4]
+    const item = structuredClone(samples[0].get(3)[0]); item.cscTask.numbers = Array.from({ length: 101 }, (_, i) => i); item.cscTask.heard = [0, 1, 2, 3, 4]
     const zero = recalculateCsc(item, 'tcm-csc-ex03')
     assert.equal(zero.libreError, undefined); assert.ok(zero.audioParts.includes('/lib/audio/vocabulaire/objets/zéro.mp3'))
     await access('public/lib/audio/vocabulaire/objets/zéro.mp3')
   })
-  await test('both sequence exercises contain five regular integer terms between zero and one hundred', () => {
+  await test('sequence exercises contain six terms with four blanks, or eight terms with five blanks', () => {
     for (const sample of samples) for (const exercise of [4, 5]) for (const item of sample.get(exercise)) {
       const values = item.sequence.map(Number), step = values[1] - values[0]
+      assert.equal(values.length, exercise === 4 ? 6 : 8)
       assert.ok(values.every((n, i) => Number.isInteger(n) && n >= 0 && n <= 100 && (i === 0 || n - values[i - 1] === step)))
-      assert.ok(step !== 0); assert.equal(item.blankIndexes.length, 2)
+      assert.ok(step !== 0); assert.equal(item.blankIndexes.length, exercise === 4 ? 4 : 5)
       assert.equal(item.answer, item.blankIndexes.map((i) => item.sequence[i]).join(' ; '))
       assert.equal(Boolean(item.prompt), exercise === 4)
       if (exercise === 4) { assert.doesNotMatch(item.prompt,/aide/i); assert.equal(item.cscTask.kind,'sequence-hint'); assert.equal(item.cscTask.step,step) }
@@ -72,11 +74,17 @@ try {
   })
   await test('sorting contains integers only and ten comparisons balance the three signs', () => {
     for (const sample of samples) {
-      for (const item of sample.get(6)) {
+      for (const item of [...sample.get(6), ...sample.get(25)]) {
         assert.equal(new Set(item.sequence).size, 7)
         assert.ok(item.sequence.every((value) => /^\d+$/.test(value) && Number(value) <= 100))
         const sorted = item.sequence.map(Number).sort((a, b) => item.orderOp === '<' ? a - b : b - a)
         assert.equal(item.answer, sorted.join(` ${item.orderOp} `))
+      }
+      const paired = buildWorksheets(buildTcmCscTestPages(), sample === samples[0] ? 1 : 2).flatMap((sheet) => sheet.blocks).filter((block) => block.exerciseType === 'tcm-csc-ex06' || block.exerciseType === 'tcm-csc-ex25')
+      if (sample === samples[0] || sample === samples[1]) {
+        assert.equal(paired.length, 2)
+        assert.notEqual(paired[0].items[0].orderOp, paired[1].items[0].orderOp)
+        assert.notEqual(paired[0].instruction.includes('plus grand au plus petit'), paired[1].instruction.includes('plus grand au plus petit'))
       }
       for (const exercise of [7]) {
         const items = sample.get(exercise)
@@ -168,8 +176,8 @@ try {
     const first = buildWorksheets(pages, 21), again = buildWorksheets(pages, 21), next = buildWorksheets(pages, 22)
     assert.deepEqual(first, again); assert.notDeepEqual(first, next); assert.deepEqual(pages, before)
     const blocks = first.flatMap((sheet) => sheet.blocks)
-    assert.equal(new Set(blocks.filter(block=>block.exerciseIndex>0).map(block=>block.exerciseIndex)).size,23)
-    assert.ok(!blocks.some((block) => block.exerciseIndex === 21))
+    assert.equal(new Set(blocks.filter(block=>block.exerciseIndex>0).map(block=>block.exerciseIndex)).size,24)
+    assert.ok(blocks.some((block) => block.exerciseIndex === 21))
     assert.deepEqual(cscAudioGroups(first).map((g) => [g.number, g.parts.length]), [[1, 5], [2, 5], [3, 5]])
     assert.equal(new Set(cscAudioGroups(first).map((g) => g.name)).size, 3)
     const altered = structuredClone(first)
@@ -216,7 +224,7 @@ try {
     const extended=structuredClone(pages);extended.find(page=>page.exerciseType==='tcm-csc-ex10').count=16
     const extra=buildWorksheets(extended,77).flatMap(sheet=>sheet.blocks).filter(block=>block.exerciseType==='tcm-csc-ex10')
     assert.deepEqual(extra.map(block=>block.itemOffset),[0,8]);assert.ok(extra.every(block=>block.items.length===8))
-    for (const page of pages) for (const block of [page,...(page.extraBlocks??[])]) if (/ex(?:22|23|24)$/.test(block.exerciseType)) assert.deepEqual(block.problemDraftGrids,[false])
+    for (const page of pages) for (const block of [page,...(page.extraBlocks??[])]) if (/ex(?:22|23|24)$/.test(block.exerciseType)) assert.deepEqual(block.problemDraftGrids,[true])
   })
   await test('screen audio uses five whole prompts per exercise, without a result clip or a silence player',()=>{
     for(const sample of samples){

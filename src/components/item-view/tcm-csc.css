@@ -1,18 +1,18 @@
-.csc-number-grid { border-collapse: collapse; width: 108mm; height: 108mm; margin: 8px auto; table-layout: fixed; }
+.csc-number-grid { border-collapse: collapse; width: 150mm; height: auto; margin: 8px auto; table-layout: fixed; }
 .is-tcm-csc > .sheet-body { --app-font-scale: var(--sheet-tcm-csc-font-scale, 1.25); }
-.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 18mm; height: 18mm; padding: 0; font-size: calc(17pt * var(--app-font-scale, 1)); font-weight: 700; }
-.csc-number-grid td span { display: inline-grid; place-items: center; width: 10mm; height: 10mm; }
-.csc-heard { border: 2px solid #174eae; border-radius: 50%; }
+.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 15mm; height: 15mm; padding: 0; font-size: calc(12pt * var(--app-font-scale, 1)); font-weight: 700; }
+.csc-heard { background: color-mix(in srgb, var(--purple) 22%, #fff); box-shadow: inset 0 0 0 1.5px var(--purple); print-color-adjust: exact; }
 .csc-operator { display: flex; align-items: baseline; justify-content: center; gap: 10px; font-size: calc(17pt * var(--app-font-scale, 1)); padding: 6px 0; }
 .csc-operator .answer-line-field { width: 2ch; min-width: 2ch; }
-.csc-shape-names { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6mm; width: 100%; }
-.csc-shape-names > .tcf-question { text-align: center; min-width: 0; margin: 0; }
-.csc-name-figure { height: 42mm; width: 100%; display: flex; align-items: center; justify-content: center; }
+.csc-shape-names { display: flex; flex-direction: column; gap: 6mm; width: 100%; margin: 0; padding: 0; list-style: none; }
+.csc-shape-row { display: grid; grid-template-columns: 1.6em 42mm minmax(0, 1fr); align-items: center; gap: 4mm; }
+.csc-shape-num { color: var(--purple); font-weight: 700; }
+.csc-name-figure { height: 28mm; width: 42mm; display: flex; align-items: center; justify-content: center; }
 .csc-name-figure .geometry-figure { margin: 0; height: 100%; max-width: 100%; }
 .csc-shape-answer { padding-top: 12.5px; padding-bottom: 15px; }
 .csc-shape-names .answer-line-field { width: 100%; font-size: calc(11pt * var(--app-font-scale, 1)); }
 .csc-connect svg { display: block; width: 100%; height: 67.5mm; }
-.csc-connect { width: 90%; margin-inline: auto; border: 1.5px solid var(--purple); }
+.csc-connect { width: 90%; margin-inline: auto; border: 0; }
 .csc-connect ol { margin: 0 0 4px; padding-left: 24px; }
 .csc-copy { display: flex; align-items: flex-start; justify-content: center; gap: 6mm; width: 100%; }
 .csc-copy > div { flex: 0 0 auto; text-align: center; }
@@ -23,7 +23,7 @@
 .csc-length-table th, .csc-length-table td { border: 1px solid var(--muted); padding: 6px 10px; text-align: center; }
 .csc-length-table th:first-child { text-align: left; }
 .csc-length-check { display: inline-grid; place-items: center; width: 5mm; height: 5mm; border: 1px solid var(--ink); font-size: calc(12pt * var(--app-font-scale, 1)); line-height: 1; }
-.worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: 97.5mm; max-height: 97.5mm; aspect-ratio: auto; }
+.worksheet-sheet .exercise-item .count-icons-block.is-csc-large > .count-icons-frame { height: calc(48.75mm * var(--csc-count-scale, 2)); max-height: calc(48.75mm * var(--csc-count-scale, 2)); aspect-ratio: auto; }
 .is-csc-large .count-icons-frame { padding: 25px; }
 .csc-count-content { position: absolute; inset: 25px; container-type: size; }
 .csc-count-instruction { margin: 0; display: flex; align-items: center; gap: .3em; }
@@ -52,8 +52,8 @@
 .csc-problem-text p { margin: 5px 0; }
 .csc-problem-text .draft-pad.draft-pad-short { --grid-rows: calc(6 * var(--sheet-columns, 1)); }
 .csc-problem-text .draft-pad + .answer-line-field { margin-top: calc(1lh + 3.5px); }
-.csc-sequence-hint { display: flex; align-items: center; gap: 5mm; }
-.csc-step-hint { border: 1.5px solid #6d3ca8; background: #f0e4ff; color: #492171; margin: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; print-color-adjust: exact; }
+.csc-sequence-hint { display: flex; align-items: center; gap: 0; }
+.csc-step-hint { border: 1.5px solid #6d3ca8; background: #f0e4ff; color: #492171; margin: 0 50px 0 0; display: flex; align-items: center; justify-content: center; font-weight: 700; print-color-adjust: exact; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .exercise-grid { row-gap: calc(2mm + 10px); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .sequence-row { gap: 16px; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) :is(.sequence-term,.csc-step-hint) { border: 1.5px solid var(--purple); width: 2.8em; height: 2.8em; min-width: 2.8em; min-height: 2.8em; flex: 0 0 2.8em; padding: 4px; font-size: inherit; line-height: 1; }
@@ -73,7 +73,7 @@
 .is-tcm-csc .exercise-item.layout-audio-dictation .item-number { align-self: flex-end; line-height: 1; transform: translateY(.18em); }
 .is-tcm-csc .exercise-item.layout-sequence { align-items: center; }
 .is-tcm-csc .exercise-item.layout-sequence .item-number { line-height: 1; }
-.exercise-block:is([data-exercise-type="tcm-csc-ex01"], [data-exercise-type="tcm-csc-ex02"]) .exercise-grid { row-gap: 25px; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex01"], [data-exercise-type="tcm-csc-ex02"]) .exercise-grid { row-gap: 15px; }
 .csc-operation-groups { display: grid; gap: 12px; }
 .csc-operation-group { margin: 0; }
 .csc-operation-group .tcf-audio-frame-body { padding: 6px 8px 25px; }
@@ -82,6 +82,16 @@
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .csc-operation-groups { row-gap: 60px; }
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .column-prompt { font-size: 1.5em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 16px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); }
 .is-tcm-csc .exercise-instruction { white-space: pre-line; }
+.is-tcm-csc .exercise-instruction .csc-symbol { font-weight: 800; color: var(--purple); }
+.is-tcm-csc { position: relative; }
+.is-tcm-csc::before { content: ""; position: absolute; z-index: 4; pointer-events: none; border: 1px solid var(--ink); top: calc(1cm - 12mm); right: calc(1cm - 16mm); bottom: calc(1cm - 10mm); left: calc(1cm - 16mm); }
+.is-tcm-csc .exercise-block + .exercise-block { margin-top: var(--csc-exercise-gap, 25px); }
+.is-tcm-csc .exercise-heading { border-bottom: 1.5px solid var(--ink); padding-bottom: 4px; }
+.is-tcm-csc .compare-row.is-line { gap: 10px; }
+.is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
+.is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
+.is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-color: #c5cad3 !important; border-width: 1px; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
 .exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell { font-size: min(calc(25.5px * var(--app-font-scale, 1)), 28.05px); }
@@ -89,3 +99,8 @@
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }
+@media print {
+  .print-only-sheets .worksheet-sheet.is-tcm-csc.sheet-odd::before { top: calc(1cm - 12mm); right: 0; bottom: calc(1cm - 10mm); left: calc(1cm - 2.5cm); }
+  .print-only-sheets .worksheet-sheet.is-tcm-csc.sheet-even::before { top: calc(1cm - 12mm); right: calc(1cm - 2.5cm); bottom: calc(1cm - 10mm); left: 0; }
+  .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-color: #c5cad3 !important; }
+}

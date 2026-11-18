@@ -76,6 +76,9 @@ export function usePageConfig({
         if (patch.domain != null && patch.exerciseType != null) {
           return { ...page, ...patch, extraBlocks: undefined }
         }
+        if (patch.exerciseGapPx !== undefined && Object.keys(patch).length === 1) {
+          return { ...page, exerciseGapPx: patch.exerciseGapPx, extraBlocks: page.extraBlocks?.map((block) => ({ ...block, exerciseGapPx: undefined })) }
+        }
         const mergedBlock = setPageBlock(
           page,
           safeBlockIndex,
@@ -103,7 +106,7 @@ export function usePageConfig({
             phraseInstruction:
               patch.phraseInstruction!==undefined ? patch.phraseInstruction : patch.phraseItems!==undefined ? fixed.phraseInstruction : undefined,
             problemDraftGrids: isProblemExercise(fixed.exerciseType)
-              ? resizeDraftGrids(fixed.problemDraftGrids, count, !/^tcm-csc-ex(?:22|23|24)$/.test(fixed.exerciseType))
+              ? resizeDraftGrids(fixed.problemDraftGrids, count, true)
               : undefined,
             oralAnswerModes: isOralComprehensionExercise(fixed.exerciseType)
               ? resizeOralAnswerModes(fixed.oralAnswerModes, count)
@@ -221,7 +224,7 @@ export function usePageConfig({
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
-        const grids = resizeDraftGrids(block.problemDraftGrids, block.count, !/^tcm-csc-ex(?:22|23|24)$/.test(block.exerciseType))
+        const grids = resizeDraftGrids(block.problemDraftGrids, block.count, true)
         grids[itemIndex] = !(grids[itemIndex] ?? true)
         return setPageBlock(page, targetBlock, { problemDraftGrids: grids })
       }),
