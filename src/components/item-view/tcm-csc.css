@@ -105,7 +105,11 @@
 .is-tcm-csc .exercise-heading h3,
 .is-tcm-csc .instruction-points { line-height: 1; }
 .is-tcm-csc .instruction-points { align-self: baseline; }
-.is-tcm-csc .exercise-heading .exercise-instruction { margin-top: 13px; }
+.is-tcm-csc .exercise-heading .exercise-instruction { margin-top: 6.5px; }
+.exercise-block[data-exercise-type="tcm-csc-ex14"] .exercise-heading { margin-bottom: 11.5px; }
+.exercise-block[data-exercise-type="tcm-csc-ex14"] .exercise-item { padding-top: 0; }
+.exercise-block[data-exercise-type="tcm-csc-ex14"] .csc-length-parts > section:first-child > .csc-part-instruction { margin-bottom: 50px; }
+.exercise-block[data-exercise-type="tcm-csc-ex14"] .tcm-cfr-segment-frame { gap: 22px; }
 .is-tcm-csc .compare-row.is-line { gap: 10px; }
 .exercise-block[data-exercise-type="tcm-csc-ex07"] .item-number { flex-basis: 2em; width: 2em; min-width: 2em; justify-content: flex-end; }
 .exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-row.is-line { width: max-content; grid-template-columns: 3.2ch 2.4em 3.2ch; }
