@@ -28,7 +28,7 @@ export function CscLengthBlock({item,mode,children}:{item:MathItem;mode:PreviewM
     <section><p className="csc-part-instruction"><strong>Mesurez</strong> les segments avec la règle.</p>{children}</section>
     <section><p className="csc-part-instruction"><strong>Cochez</strong> la bonne réponse.</p>
       <table className="csc-length-table" aria-label="Comparaison des segments"><thead><tr><th scope="col">Question</th>{segments.map((_,index)=><th scope="col" key={index}>{String.fromCharCode(65+index)}</th>)}</tr></thead>
-        <tbody>{['Quel est le plus long segment ?','Quel est le plus court segment ?'].map((question,row)=><tr key={question}><th scope="row"><span className="csc-numbered-label"><span>{row+1}.</span><span>{question}</span></span></th>{segments.map((_,index)=><td key={index}><span className="csc-length-check">{mode==='answers'&&answers[row]===String.fromCharCode(65+index)?'✓':'\u00a0'}</span></td>)}</tr>)}</tbody>
+        <tbody>{['Quel est le plus long segment ?','Quel est le plus court segment ?'].map((question,row)=><tr key={question}><th scope="row"><span className="csc-numbered-label"><span>{row+1}.</span><span>{question}</span></span></th>{segments.map((_,index)=><td key={index}><span className={`csc-length-check${mode==='answers'&&answers[row]===String.fromCharCode(65+index)?' is-checked':''}`} /></td>)}</tr>)}</tbody>
       </table>
     </section>
   </div>
