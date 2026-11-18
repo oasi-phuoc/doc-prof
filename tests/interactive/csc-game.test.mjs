@@ -10,7 +10,7 @@ try {
   const { generateCscExercise } = await server.ssrLoadModule('/src/tcm-csc/items.ts')
   const { CSC_PROBLEM_BANK, buildCscProblem } = await server.ssrLoadModule('/src/tcm-csc/problems.ts')
   const { startSession, transition } = await server.ssrLoadModule('/src/interactive/domain/session.ts')
-  const { buildTcmCscTestPages } = await server.ssrLoadModule('/src/tcm-csc/test.ts')
+  const { buildTcmCscTestPages } = await server.ssrLoadModule('/src/tcm-csc/pages.ts')
   const { createGameSource, renewGameSource } = await server.ssrLoadModule('/src/interactive/game-run.ts')
   const base = demoRecipe()
   function game(items, seed = 42) { return convertRecipe({ ...base, seed, pages: [{ ...base.pages[0], domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex22', count: items.length, extraBlocks: undefined, libreItems: items }] }) }

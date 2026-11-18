@@ -5,7 +5,8 @@ import { createServer } from 'vite'
 
 const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
 try {
-  const { buildTcmCscTestPages, TCM_CSC_STEPS, TCM_CSC_MAX_SCORE } = await server.ssrLoadModule('/src/tcm-csc/test.ts')
+  const { TCM_CSC_MAX_SCORE } = await server.ssrLoadModule('/src/tcm-csc/test.ts')
+  const { TCM_CSC_STEPS, buildTcmCscTestPages } = await server.ssrLoadModule('/src/tcm-csc/pages.ts')
   const { generateCscExercise, CSC_PLUS_AUDIO, CSC_MINUS_AUDIO } = await server.ssrLoadModule('/src/tcm-csc/items.ts')
   const { CSC_PROBLEM_BANK, CSC_DEFAULT_PROBLEMS, buildCscProblem, rollCscProblem } = await server.ssrLoadModule('/src/tcm-csc/problems.ts')
   const { recalculateCsc } = await server.ssrLoadModule('/src/tcm-csc/recalculate.ts')
@@ -19,6 +20,7 @@ try {
   const samples = Array.from({ length: 100 }, (_, seed) => new Map(TCM_CSC_STEPS.map((step) => [step.number, generateCscExercise(`tcm-csc-ex${String(step.number).padStart(2, '0')}`, step.count, seed + 1)])))
   await test('CSC test contains the 24 requested exercises, including the inserted ordering exercise', () => {
     const pages = buildTcmCscTestPages(), blocks = pages.flatMap((page) => [page, ...(page.extraBlocks ?? [])])
+    assert.equal(TCM_CSC_MAX_SCORE, TCM_CSC_STEPS.reduce((total, step) => total + step.count * ('points' in step ? step.points : 1), 0))
     assert.equal(blocks[0].exerciseType, 'tcm-csc-consignes')
     assert.deepEqual(blocks.slice(1).map((block) => block.exerciseNo), Array.from({ length: 24 }, (_, i) => i + 1))
     assert.equal(blocks.filter((block) => block.exerciseNo === 21).length, 1)

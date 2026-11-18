@@ -3,10 +3,9 @@ export { TCM_CSC_DOMAIN, TCM_CSC_TOPICS, TCM_CSC_EXERCISE_TYPES } from './catalo
 export { tryGenerateTcmCscBlock } from './generate'
 export {
   TCM_CSC_DOCUMENT_TITLE,
-  buildTcmCscTestPages,
   isTcmCscConsignesType,
   isTcmCscDomain,
-  TCM_CSC_STEPS,
   TCM_CSC_MAX_SCORE,
 } from './test'
+export { TCM_CSC_STEPS, buildTcmCscTestPages } from './pages'
 export { isTcmCscType } from './types'

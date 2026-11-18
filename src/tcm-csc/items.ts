@@ -51,14 +51,12 @@ function sequences(rng: Rng, count: number, help: boolean): MathItem[] {
   })
 }
 export function cscOrderAscending(typeId: string, seed: number): boolean {
-  // Sur une même page, le second bloc reçoit seed + 10007. On retire cet écart
-  // pour que les deux consignes restent opposées, puis s’inversent ensemble.
   const pageSeed = typeId === 'tcm-csc-ex25' ? seed - 10007 : seed
   const smallFirst = ((pageSeed % 2) + 2) % 2 === 0
   return typeId === 'tcm-csc-ex06' ? smallFirst : !smallFirst
 }
 export function cscOrderInstruction(ascending: boolean): string {
-  return `[[b]]Rangez[[/b]] les nombres ${ascending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
+  return `Rangez les nombres ${ascending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
 }
 function order(rng: Rng, count: number, ascending: boolean): MathItem[] {
   return Array.from({ length: count }, () => {

@@ -36,6 +36,12 @@ import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 import { clampInlineBlankPx } from '@/tcf/inline-blank'
 import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
 
+const CSC_BOLD = ['Écrivez', 'Entourez', 'Complétez', 'Rangez', 'Comparez', 'Décomposez', 'Calculez', 'Posez', 'Reproduisez', 'reliez', 'Cochez', 'Dessinez', 'Résolvez', 'centaines', 'dizaines', 'unités']
+function markCscInstruction(text: string): string {
+  const marked = CSC_BOLD.reduce((value, word) => value.replaceAll(word, `[[b]]${word}[[/b]]`), text)
+  return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
+}
+
 /** Audios du corrigé : figés sur le bloc, sinon recalculés depuis les items. */
 function blockCorrigeAudios(block: WorksheetBlock): string[] {
   if (block.corrigeAudios?.length) return block.corrigeAudios
@@ -382,7 +388,7 @@ export function WorksheetSheet({
                   </div>
                   {mode==='answers' && hasMathAudioPrompts(block.exerciseType) && <MathExerciseAudio block={block}/>}
                   {block.instruction ? (
-                    <p className="exercise-instruction">{renderSheetCopy(block.instruction)}</p>
+                    <p className="exercise-instruction">{renderSheetCopy(block.exerciseType.startsWith('tcm-csc-') ? markCscInstruction(block.instruction) : block.instruction)}</p>
                   ) : null}
                   {block.exerciseType === 'addition-decompose' ? <DecomposeExample op="+" /> : null}
                   {block.exerciseType === 'soustraction-decompose' ? <DecomposeExample op="−" /> : null}
