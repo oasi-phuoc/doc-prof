@@ -110,7 +110,7 @@ function connectingPoints(rng: Rng): MathItem {
   return {layout:'csc-task',answer:'AB en rouge ; CD en bleu.',cscTask:{kind:'connect-points',points:labeled}}
 }
 
-export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, seed = 0, logiqueIds?: string[]): MathItem[] | null {
+export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, seed = 0, logiqueIds?: string[], countShapeScale?: 1 | 2 | 3): MathItem[] | null {
   if (!typeId.startsWith('tcm-csc-ex')) return null
   const n = Math.max(1, Math.min(100, count)), exercise = Number(typeId.slice(-2))
   if (exercise === 1) return uniqueNumbers(rng, n, 1, 100).map(audioNumber)
@@ -134,7 +134,7 @@ export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, 
     const figures = shuffle(rng, CSC_FIGURES.filter(entry => ['square','rectangle','circle','triangle'].includes(entry.value)))
     return { layout: 'csc-task', cscTask: { kind: 'shape-names', figures: figures.map((entry) => entry.value) }, answer: figures.map((entry) => entry.label).join(' ; ') }
   })
-  if (exercise === 18) return [{ ...buildCountIconsItem(rng), cscTask: { kind: 'large-count', scale: 2 } }]
+  if (exercise === 18) return [{ ...buildCountIconsItem(rng), cscTask: { kind: 'large-count', scale: countShapeScale ?? 2 } }]
   if (exercise === 19 || exercise === 20) return coordinates(rng, exercise === 20)
   if (exercise >= 22 && exercise <= 24) return Array.from({ length: n }, () => {
     const p = rollCscProblem(CSC_DEFAULT_PROBLEMS[exercise - 22]!, rng)
@@ -144,4 +144,4 @@ export function tryGenerateTcmCscItems(typeId: string, count: number, rng: Rng, 
 }
 
 /** Same generator for an explicit re-roll in the free editor. */
-export function generateCscExercise(typeId: string, count: number, seed: number, logiqueIds?: string[]) { return tryGenerateTcmCscItems(typeId, count, createRng(seed), seed, logiqueIds) ?? [] }
+export function generateCscExercise(typeId: string, count: number, seed: number, logiqueIds?: string[], countShapeScale?: 1 | 2 | 3) { return tryGenerateTcmCscItems(typeId, count, createRng(seed), seed, logiqueIds, countShapeScale) ?? [] }

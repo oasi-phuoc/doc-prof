@@ -1111,6 +1111,8 @@ export type ExerciseBlock = {
   exerciseGapPx?: number
   /** TCM CSC suites graphiques : identifiants choisis (vide = tirage). */
   logiqueIds?: string[]
+  /** TCM CSC exercice 19 : taille des formes à compter (1, 2 ou 3). Défaut 2. */
+  countShapeScale?: 1 | 2 | 3
 }
 
 export type PageConfig = ExerciseBlock & {

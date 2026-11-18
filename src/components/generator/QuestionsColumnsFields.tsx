@@ -346,6 +346,33 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   <small className="muted">Pixels ajoutés entre les exercices. Le premier de la page n’en a pas.</small>
                 </label>
               ) : null}
+              {activeBlock.exerciseType === 'tcm-csc-ex18' ? (
+                <label className="select-shell">
+                  <span>Taille des formes</span>
+                  <select
+                    aria-label="Taille des formes"
+                    value={String(activeBlock.countShapeScale ?? 2)}
+                    onChange={(event) => {
+                      const scale = Number(event.target.value)
+                      if (scale !== 1 && scale !== 2 && scale !== 3) return
+                      const libreItems = activeBlock.libreItems?.map((item) =>
+                        item.cscTask?.kind === 'large-count'
+                          ? { ...item, cscTask: { ...item.cscTask, scale } }
+                          : item,
+                      )
+                      updatePage({
+                        countShapeScale: scale,
+                        ...(libreItems ? { libreItems } : {}),
+                      })
+                    }}
+                  >
+                    <option value="1">Taille simple</option>
+                    <option value="2">Taille double</option>
+                    <option value="3">Taille triple</option>
+                  </select>
+                  <small className="muted">Le cadre ne change pas.</small>
+                </label>
+              ) : null}
               {activeBlock.exerciseType === 'tcm-csc-ex16' ? (
                 <>
                   {[0, 1].map((index) => (
