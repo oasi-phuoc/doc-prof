@@ -437,6 +437,8 @@ export type MathItem = {
   quotient?: number
   remainder?: number
   divisionSteps?: DivisionStep[]
+  /** Hauteur fixe de la grille de division (lignes, y compris le dividende). */
+  divisionRows?: number
   left?: string
   right?: string
   sequence?: string[]

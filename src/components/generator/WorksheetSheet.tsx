@@ -36,13 +36,13 @@ import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 import { clampInlineBlankPx } from '@/tcf/inline-blank'
 import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
 
-const CSC_BOLD = ['Écrivez', 'Entourez', 'Complétez', 'Rangez', 'Comparez', 'Décomposez', 'Calculez', 'calculez', 'Posez', 'Reproduisez', 'reliez', 'Cochez', 'Dessinez', 'Résolvez', 'Coloriez', 'Nommez', 'Mesurez', 'Convertissez', 'Répondez', 'Lisez', 'centaines', 'dizaines', 'unités']
+const CSC_BOLD = ['Écrivez', 'Entourez', 'Complétez', 'Rangez', 'Comparez', 'Décomposez', 'Calculez', 'calculez', 'Posez', 'Reproduisez', 'reliez', 'Cochez', 'Dessinez', 'Résolvez', 'Coloriez', 'Nommez', 'Mesurez', 'Convertissez', 'Répondez', 'Lisez', 'milliers', 'centaines', 'dizaines', 'unités']
 function markCscInstruction(text: string): string {
   const marked = CSC_BOLD.reduce((value, word) => value.replaceAll(word, `[[b]]${word}[[/b]]`), text)
   return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
 }
 function cscSheetCopy(type: string, instruction: string): { text: string; example: string | null } {
-  if (type !== 'tcm-csc-ex08') return { text: markCscInstruction(instruction), example: null }
+  if (type !== 'tcm-csc-ex08' && type !== 'tcm-cfr-ex05') return { text: markCscInstruction(instruction), example: null }
   const lines = instruction.split('\n')
   const index = lines.findIndex((line) => line.startsWith('Exemple'))
   if (index < 0) return { text: markCscInstruction(instruction), example: null }
@@ -435,7 +435,7 @@ export function WorksheetSheet({
                 </div>
               ) : null}
               <WorksheetItems
-                groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) || /^tcm-cfr-ex(?:07|08)$/.test(block.exerciseType)}
+                groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                 className={`exercise-grid${
                   block.items.every((item) => item.layout === 'algebra')
                     ? ' algebra-grid'

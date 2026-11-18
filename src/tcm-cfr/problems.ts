@@ -803,12 +803,12 @@ function pickSpecItems(specs: readonly ProblemSpec[], rng: Rng): MathItem[] {
   return itemsFromSpec(spec, spec.roll(rng))
 }
 
-/** Ex. 15 affichage — problèmes magasin (type tcm-cfr-ex14). */
+/** Ex. 18 affichage — problèmes magasin (type tcm-cfr-ex14). */
 export function genShopProblems(rng: Rng): MathItem[] {
   return pickSpecItems(EX14_SPECS, rng)
 }
 
-/** Ex. 16 affichage — problèmes travail (type tcm-cfr-ex15). */
+/** Ex. 19 affichage — problèmes travail (type tcm-cfr-ex15). */
 export function genWorkProblems(rng: Rng): MathItem[] {
   return pickSpecItems(EX15_SPECS, rng)
 }

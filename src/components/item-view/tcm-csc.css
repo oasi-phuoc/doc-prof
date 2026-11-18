@@ -98,7 +98,8 @@
 .exercise-block[data-exercise-type="tcm-csc-ex10"] .exercise-grid { row-gap: 15px; }
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .csc-operation-groups { row-gap: 60px; }
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .column-prompt { font-size: 1.5em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 16px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); }
-.is-tcm-csc .csc-decompose-example { margin: 10px 0 0; font-size: calc(20pt * var(--app-font-scale, 1) * 0.75); font-weight: 800; line-height: 1.2; color: var(--purple); text-align: center; print-color-adjust: exact; }
+.is-tcm-csc .csc-decompose-example,
+.is-tcm-cfr .csc-decompose-example { margin: 10px 0 0; font-size: calc(20pt * var(--app-font-scale, 1) * 0.75); font-weight: 800; line-height: 1.2; color: var(--purple); text-align: center; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .is-tcm-csc .exercise-instruction { white-space: pre-line; }
 .is-tcm-csc .exercise-instruction .csc-symbol { font-weight: 800; color: var(--purple); }
 .is-tcm-csc { position: relative; }
@@ -171,15 +172,23 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .csc-operation-group .tcf-audio-frame-body { padding: 4px 6px 4px; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell:last-child { border-right-color: #c5cad3 !important; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-line:has(+ .column-line.rule-line) .digit-cell,
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-grid.school > .column-line:last-child .digit-cell { border-bottom-color: #c5cad3 !important; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-grid { width: max-content; margin-inline: auto; }
-.exercise-block[data-exercise-type="tcm-cfr-ex08"] .csc-operation-groups { row-gap: 8px; }
-.exercise-block[data-exercise-type="tcm-cfr-ex08"] .column-prompt { font-size: 1.2em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 8px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); }
+.exercise-block[data-exercise-type="tcm-cfr-ex05"] .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; }
+.exercise-block[data-exercise-type="tcm-cfr-ex05"] .place-value-row.is-plain { display: grid; grid-template-columns: 8ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
+.exercise-block[data-exercise-type="tcm-cfr-ex05"] .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
+.is-tcm-cfr .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
+.exercise-block[data-exercise-type="tcm-cfr-ex06"] .op-name-row { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); column-gap: 10px; align-items: baseline; width: 100%; }
+.exercise-block[data-exercise-type="tcm-cfr-ex06"] .op-name-box { width: 1.8em; min-width: 1.8em; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .exercise-grid { row-gap: 100px; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .exercise-item { padding-top: 0; padding-bottom: 0; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid .digit-cell:last-child { border-right-color: #c5cad3 !important; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-line:has(+ .column-line.rule-line) .digit-cell,
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid.school > .column-line:last-child .digit-cell { border-bottom-color: #c5cad3 !important; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid { width: max-content; margin-inline: auto; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex10"]) .column-prompt { font-size: 1.2em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 8px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.exercise-block[data-exercise-type="tcm-cfr-ex10"] .division-column .column-prompt { padding-left: 0; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex14"], [data-exercise-type="tcm-cfr-ex15"]) .problem-prompt { font-size: calc(13pt * var(--app-font-scale, 1)); }
 .is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-parts { gap: 2mm; }
 .is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-parts .tcm-cfr-segment-frame { gap: 6px; }
 .is-tcm-cfr .exercise-block:not([data-exercise-type="tcm-cfr-ex19"]) .csc-length-table th,
@@ -211,7 +220,7 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal .answer-line-field { align-self: baseline; position: relative; top: 0.18em; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side .column-line.rule-line { display: none; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .column-line-sign { display: none; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .digit-cell { border: 1px solid #c5cad3; width: 32px; height: 32px; flex: 0 0 32px; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .digit-cell { border: 1px solid #c5cad3; width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .column-line { gap: 0; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side { padding-left: 0; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-vbar { display: none; }

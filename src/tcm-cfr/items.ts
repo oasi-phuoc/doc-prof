@@ -11,6 +11,7 @@ import {
   divisionColumnItem,
   withFixedColumnWidth,
   withFixedDivisionWidth,
+  withFixedDivisionWorkRows,
 } from '@/tpm/items'
 import { mulAudioParts, numberAudioParts } from './audio-nombres'
 import { generateMetroQuestions, pickMetroMap } from './metro'
@@ -230,9 +231,10 @@ export function numberDecomposition(value: number): MathItem {
 function genEx05(rng: Rng): MathItem[] {
   const small = int(rng, 101, 999)
   const big = int(rng, 1001, 9999)
-  return rng() < 0.5
+  const items = rng() < 0.5
     ? [numberDecomposition(small), numberDecomposition(big)]
     : [numberDecomposition(big), numberDecomposition(small)]
+  return items.map((item) => ({ ...item, cscTask: { kind: 'place-plain' as const } }))
 }
 
 /** Ex. 6 — nommer + × ÷ − (signe encadré, trait sur la même ligne). */
@@ -252,11 +254,11 @@ function genEx06(rng: Rng): MathItem[] {
 }
 
 /**
- * Ex. 7 / 8 — 2 + et 2 −, nombres 100–9999 (7 colonnes).
+ * Ex. 8 / 9 affichés — 2 + et 2 −, nombres 100–9999 (5 colonnes).
  * `empty` : calcul au-dessus, grille vide (l’élève pose les chiffres).
  */
 function genAddSubFour(rng: Rng, empty: boolean): MathItem[] {
-  const width = 7
+  const width = 5
   const mkAdd = (): MathItem => {
     const a = int(rng, 100, 9999)
     const b = int(rng, 100, 9999)
@@ -275,21 +277,35 @@ function genAddSubFour(rng: Rng, empty: boolean): MathItem[] {
   return [mkAdd(), mkAdd(), mkSub(), mkSub()]
 }
 
-/** × 100–999 × 11–99 et ÷ 1000–9999 ÷ 2–9. */
+/** Chiffres utiles, puis cases vides à droite (alignés sur la 1re colonne). */
+function padDigitsStart(row: string[] | undefined, width: number): string[] {
+  const src = (row ?? []).filter((cell) => cell !== '')
+  if (src.length >= width) return src.slice(0, width)
+  return [...src, ...Array.from({ length: width - src.length }, () => '')]
+}
+
+/**
+ * × 100–999 × 11–99 (5 colonnes) et ÷ 1000–9999 ÷ 2–9.
+ * Division : 5 colonnes de travail + 5 colonnes de quotient, 10 lignes.
+ * Le diviseur est dans la 1re case à droite du trait.
+ */
 function genMulDivPair(rng: Rng, empty: boolean): MathItem[] {
   const a = int(rng, 100, 999)
   const b = int(rng, 11, 99)
-  const mul = withFixedColumnWidth(columnItem('×', a, b, a * b, empty), 7)
+  const mul = withFixedColumnWidth(columnItem('×', a, b, a * b, empty), 5)
   const d = int(rng, 2, 9)
   const qMin = Math.ceil(1000 / d)
   const qMax = Math.floor(9999 / d)
   const quot = int(rng, qMin, qMax)
-  const posed = withFixedDivisionWidth(divisionColumnItem(d * quot, d, empty), 4, 4)
-  const digitsB = posed.digitsB ?? []
-  const div = {
+  const posed = withFixedDivisionWorkRows(
+    withFixedDivisionWidth(divisionColumnItem(d * quot, d, empty), 5, 5),
+    9,
+  )
+  const div: MathItem = {
     ...posed,
-    // 4 colonnes à droite du trait : le diviseur (1 chiffre) est aligné à droite.
-    digitsB: digitsB.length >= 4 ? digitsB : [...Array.from({ length: 4 - digitsB.length }, () => ''), ...digitsB],
+    divisionRows: 10,
+    digitsB: padDigitsStart(posed.digitsB, 5),
+    digitsResult: padDigitsStart(posed.digitsResult, 5),
   }
   return rng() < 0.5 ? [mul, div] : [div, mul]
 }

@@ -5848,8 +5848,8 @@ textarea.pill-input,
 }
 .tcm-cfr-audio-btn:disabled{opacity:.5;cursor:default}
 .tcm-cfr-symmetry{width:100%}
-/* Grille 20×10 : largeur utile de la fiche A4. */
-.tcm-cfr-symmetry-svg{width:100%;max-width:170mm;height:auto;display:block;margin:0 auto}
+/* Grille 20×10 : toute la largeur utile, les cases suivent cette largeur. */
+.tcm-cfr-symmetry-svg{width:100%;max-width:none;height:auto;display:block;margin:0}
 .tcm-cfr-grid-line{stroke:#c8c4d0;stroke-width:0.7}
 .tcm-cfr-figure-line{stroke:var(--ink,#222);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .tcm-cfr-figure-image{stroke:var(--purple,#5b3a8c);stroke-width:2;stroke-dasharray:4 3;stroke-linejoin:round;stroke-linecap:round}

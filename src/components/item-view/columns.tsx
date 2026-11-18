@@ -120,11 +120,56 @@ export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   )
 }
 
+function blankDigits(width: number): string[] {
+  return Array.from({ length: Math.max(1, width) }, () => '')
+}
+
 export function DivisionColumn({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const empty = Boolean(item.blankOperands)
   const workRows = item.digitsPartials ?? []
   const decimalPlaces = item.decimalPlaces ?? 0
+  const fixedRows = item.divisionRows ?? 0
+
+  if (fixedRows > 0) {
+    const width = Math.max(1, item.digitsA?.length ?? 5)
+    const rightWidth = Math.max(1, item.digitsB?.length ?? width)
+    const left = [item.digitsA ?? blankDigits(width), ...workRows]
+    while (left.length < fixedRows) left.push(blankDigits(width))
+    const right = [item.digitsB ?? blankDigits(rightWidth), item.digitsResult ?? blankDigits(rightWidth)]
+    while (right.length < fixedRows) right.push(blankDigits(rightWidth))
+    return (
+      <div className="division-column school is-fixed-grid">
+        {item.prompt && <p className="column-prompt">{item.prompt}</p>}
+        <div className="division-board">
+          <div className="division-work-side">
+            {left.slice(0, fixedRows).map((digits, index) => (
+              <div className="column-line" key={`work-${index}`}>
+                <DigitRow
+                  digits={digits}
+                  empty={index === 0 ? empty : true}
+                  showAnswer={show}
+                  answerDigits={digits}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="division-answer-side">
+            {right.slice(0, fixedRows).map((digits, index) => (
+              <div className="column-line" key={`answer-${index}`}>
+                <DigitRow
+                  digits={digits}
+                  empty={index === 0 ? empty : true}
+                  showAnswer={show}
+                  answerDigits={digits}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="division-column school">
