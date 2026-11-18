@@ -195,6 +195,7 @@ export function ItemView({
     hideNumberOverride ||
     Boolean(item.hideItemNumber) ||
     item.cscTask?.kind === 'large-count' ||
+    item.cscTask?.kind === 'number-grid' ||
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||

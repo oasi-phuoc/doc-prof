@@ -1,6 +1,6 @@
-.csc-number-grid { border-collapse: collapse; width: 150mm; height: auto; margin: 8px auto; table-layout: fixed; }
+.csc-number-grid { border-collapse: collapse; width: 100%; height: auto; margin: 8px 0 0; table-layout: fixed; }
 .is-tcm-csc > .sheet-body { --app-font-scale: var(--sheet-tcm-csc-font-scale, 1.25); }
-.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 15mm; height: 15mm; padding: 0; font-size: calc(12pt * var(--app-font-scale, 1)); font-weight: 700; }
+.csc-number-grid td { border: 1px solid var(--muted); text-align: center; width: 10%; height: 17.6mm; padding: 0; font-size: calc(18pt * var(--app-font-scale, 1)); font-weight: 800; line-height: 1; }
 .csc-heard { background: color-mix(in srgb, var(--purple) 22%, #fff); box-shadow: inset 0 0 0 1.5px var(--purple); print-color-adjust: exact; }
 .csc-operator { display: flex; align-items: baseline; justify-content: center; gap: 10px; font-size: calc(17pt * var(--app-font-scale, 1)); padding: 6px 0; }
 .csc-operator .answer-line-field { width: 2ch; min-width: 2ch; }
