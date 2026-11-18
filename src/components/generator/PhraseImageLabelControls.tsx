@@ -1,5 +1,8 @@
-import { PHRASE_CATEGORY_LABELS, PHRASE_IMAGE_LABEL_CATEGORIES } from '@/francais/phrase-banks'
+import { PHRASE_CATEGORY_LABELS } from '@/francais/phrase-banks'
 import type { PhraseCategory } from '@/math/types'
+import './phrase-image-label-controls.css'
+
+const PHRASE_IMAGE_LABEL_CATEGORIES: PhraseCategory[] = ['pronom', 'nom', 'verbe', 'determinant', 'adjectif', 'adverbe', 'preposition', 'conjonction']
 
 export function PhraseImageLabelControls({ labels, shown, onLabels, onShown }: {
   labels?: boolean
