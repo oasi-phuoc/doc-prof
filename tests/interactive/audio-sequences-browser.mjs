@@ -53,7 +53,8 @@ async function duration(page, parts) {
     finally { await context.close() }
   }, parts)
   const actual = await (await ready(page)).evaluate((audio) => audio.duration)
-  assert.ok(Math.abs(expected - actual) < .05, `${actual} instead of ${expected}`)
+  const calculation = parts.some((part) => /\/(?:plus|moins)\.mp3$/.test(part))
+  assert.ok(calculation ? expected - actual > 0.45 && expected - actual < 1.2 : Math.abs(expected - actual) < .05, `${actual} instead of ${expected}`)
   return Math.round(actual * 100) / 100
 }
 async function disposed(page) {

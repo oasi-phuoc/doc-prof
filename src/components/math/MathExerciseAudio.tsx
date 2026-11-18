@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react'
 import type {WorksheetBlock} from '@/math/types'
 import {mathAudioPrompts} from '@/math/audio-prompts'
-import {concatMp3} from '@/tcm-cfr/audio-nombres'
+import {concatMp3,spokenJunctionSeconds} from '@/tcm-cfr/audio-nombres'
 
 function PromptAudio({parts,label}:{parts:string[];label:string}) {
   const ref=useRef<HTMLAudioElement>(null)
@@ -17,7 +17,8 @@ function PromptAudio({parts,label}:{parts:string[];label:string}) {
     const prepare=()=>{
       if(started)return
       started=true
-      void concatMp3(JSON.parse(key) as string[]).then(blob=>{
+      const parsed=JSON.parse(key) as string[]
+      void concatMp3(parsed, { trimJunctionSeconds: spokenJunctionSeconds(parsed) }).then(blob=>{
         url=URL.createObjectURL(blob)
         if(disposed){URL.revokeObjectURL(url);return}
         setPrepared({key,url})

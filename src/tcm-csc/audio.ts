@@ -1,5 +1,5 @@
 import type { MathItem, WorksheetPage } from '@/math/types'
-import { concatPlaylistsWithGap } from '@/tcm-cfr/audio-nombres'
+import { concatPlaylistsWithGap, spokenJunctionSeconds } from '@/tcm-cfr/audio-nombres'
 import { zipStoreBlob } from '@/lib/zip-store'
 import { recalculateCsc } from './recalculate'
 import { cscNumberParts } from './items'
@@ -41,7 +41,7 @@ export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signa
   const files = []
   for (const group of groups) {
     const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
-    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.number, group.parts), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, groupOptions) })
+    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.number, group.parts), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, { ...groupOptions, trimJunctionSeconds: spokenJunctionSeconds(group.parts.flat()) }) })
   }
   return zipStoreBlob(files, undefined, options.signal)
 }

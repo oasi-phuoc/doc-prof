@@ -131,11 +131,37 @@ function createAudioContext(): AudioContext {
   return new AC()
 }
 
+const JUNCTION_SILENCE = 0.001
+
+/** Raccourcit de 0,5 s chaque silence entre les mots d’un « nombre plus/moins nombre ». */
+export function spokenJunctionSeconds(parts: readonly string[]) {
+  return parts.some((part) => /\/(?:plus|moins)\.mp3$/.test(part)) ? 0.5 : 0
+}
+
+/** Retire jusqu’à `seconds` de silence à chaque jointure, sans couper la parole. */
+export function junctionRanges(lengths: readonly number[], isQuiet: (buffer: number, index: number) => boolean, sampleRate: number, seconds: number) {
+  const ranges = lengths.map((length) => ({ start: 0, end: length }))
+  const budget = Math.max(0, Math.round(seconds * sampleRate))
+  for (let i = 0; i < ranges.length - 1; i++) {
+    let left = budget
+    while (left > 0 && ranges[i]!.end > ranges[i]!.start && isQuiet(i, ranges[i]!.end - 1)) {
+      ranges[i]!.end -= 1
+      left -= 1
+    }
+    const next = ranges[i + 1]!
+    while (left > 0 && next.start < lengths[i + 1]! && isQuiet(i + 1, next.start)) {
+      next.start += 1
+      left -= 1
+    }
+  }
+  return ranges
+}
+
 /**
  * Concatène des fichiers audio (MP3 TTS) en un seul WAV continu.
  * Évite le collage binaire MP3 qui fait avancer / reculer la barre de progression.
  */
-export async function concatMp3(urls: string[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
+export async function concatMp3(urls: string[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void; trimJunctionSeconds?: number } = {}): Promise<Blob> {
   options.signal?.throwIfAborted()
   if (urls.length === 0) return new Blob([], { type: 'audio/wav' })
   if (urls.length === 1) {
@@ -173,16 +199,26 @@ export async function concatMp3(urls: string[], options: { signal?: AbortSignal;
         )
       }
     }
-    const totalLength = decoded.reduce((n, b) => n + b.length, 0)
+    const ranges = junctionRanges(
+      decoded.map((buf) => buf.length),
+      (buffer, index) => {
+        const buf = decoded[buffer]!
+        for (let c = 0; c < buf.numberOfChannels; c++) if (Math.abs(buf.getChannelData(c)[index]!) >= JUNCTION_SILENCE) return false
+        return true
+      },
+      sampleRate,
+      options.trimJunctionSeconds ?? 0,
+    )
+    const totalLength = ranges.reduce((n, range) => n + range.end - range.start, 0)
     const out = ctx.createBuffer(numChannels, totalLength, sampleRate)
     let offset = 0
-    for (const buf of decoded) {
+    decoded.forEach((buf, index) => {
+      const range = ranges[index]!
       for (let c = 0; c < numChannels; c++) {
-        const src = buf.getChannelData(Math.min(c, buf.numberOfChannels - 1))
-        out.getChannelData(c).set(src, offset)
+        out.getChannelData(c).set(buf.getChannelData(Math.min(c, buf.numberOfChannels - 1)).subarray(range.start, range.end), offset)
       }
-      offset += buf.length
-    }
+      offset += range.end - range.start
+    })
     await new Promise(resolve => setTimeout(resolve, 0))
     options.signal?.throwIfAborted()
     return await encodeWavCancellable(out, options.signal)
@@ -198,7 +234,7 @@ export async function concatMp3(urls: string[], options: { signal?: AbortSignal;
 export async function concatPlaylistsWithGap(
   playlists: readonly (readonly string[])[],
   gapUrl = SILENCE_6S_AUDIO,
-  options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {},
+  options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void; trimJunctionSeconds?: number } = {},
 ): Promise<Blob> {
   const urls: string[] = []
   for (let i = 0; i < playlists.length; i++) {
@@ -206,7 +242,22 @@ export async function concatPlaylistsWithGap(
     if (i < playlists.length - 1) urls.push(gapUrl)
   }
   if (urls.length === 0) return new Blob([], { type: 'audio/wav' })
-  return concatMp3(urls, options)
+  if (!options.trimJunctionSeconds) return concatMp3(urls, options)
+  const kept: string[] = []
+  for (let i = 0; i < playlists.length; i++) {
+    const parts = playlists[i]!
+    if (parts.length > 1) {
+      const blob = await concatMp3(parts, { ...options, trimJunctionSeconds: options.trimJunctionSeconds })
+      const url = URL.createObjectURL(blob)
+      kept.push(url)
+    } else if (parts[0]) kept.push(parts[0])
+    if (i < playlists.length - 1) kept.push(gapUrl)
+  }
+  try {
+    return await concatMp3(kept, { ...options, trimJunctionSeconds: 0 })
+  } finally {
+    for (const url of kept) if (url.startsWith('blob:')) URL.revokeObjectURL(url)
+  }
 }
 
 async function downloadBlob(blob: Blob, filename: string) {

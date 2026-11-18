@@ -1,4 +1,4 @@
-import { encodeWav } from '@/tcm-cfr/audio-nombres'
+import { encodeWav, junctionRanges, spokenJunctionSeconds } from '@/tcm-cfr/audio-nombres'
 import { MAX_AUDIO_PARTS } from '../domain/audio'
 import { aborted } from './decode'
 import { acceptableMime, mediaUrl } from './policy'
@@ -70,12 +70,18 @@ export async function composeAudioParts(parts: readonly string[], policy: MediaP
     }
     if (signal.aborted) throw aborted()
     const channels = Math.max(...sequence.map((buffer) => buffer.numberOfChannels))
-    const output = context.createBuffer(channels, sequence.reduce((sum, buffer) => sum + buffer.length, 0), context.sampleRate)
+    const ranges = junctionRanges(sequence.map((buffer) => buffer.length), (buffer, index) => {
+      const data = sequence[buffer]!
+      for (let channel = 0; channel < data.numberOfChannels; channel++) if (Math.abs(data.getChannelData(channel)[index]!) >= 0.001) return false
+      return true
+    }, context.sampleRate, spokenJunctionSeconds(parts))
+    const output = context.createBuffer(channels, ranges.reduce((sum, range) => sum + range.end - range.start, 0), context.sampleRate)
     let offset = 0
-    for (const buffer of sequence) {
-      for (let channel = 0; channel < channels; channel++) output.getChannelData(channel).set(buffer.getChannelData(Math.min(channel, buffer.numberOfChannels - 1)), offset)
-      offset += buffer.length
-    }
+    sequence.forEach((buffer, index) => {
+      const range = ranges[index]!
+      for (let channel = 0; channel < channels; channel++) output.getChannelData(channel).set(buffer.getChannelData(Math.min(channel, buffer.numberOfChannels - 1)).subarray(range.start, range.end), offset)
+      offset += range.end - range.start
+    })
     return encodeWav(output)
   } finally { await context.close().catch(() => {}) }
 }
