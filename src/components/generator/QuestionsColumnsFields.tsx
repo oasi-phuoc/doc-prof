@@ -26,6 +26,7 @@ import {
   tcfIsPeTaggedSlot,
 } from '@/tcf/tagged-picker'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
+import { useEffect, useState } from 'react'
 import type { ExerciseBlock, WorksheetPage } from '@/math/types'
 import { SOUTIEN_LEVEL_FILTERS } from '@/francais/soutien/phrases-data'
 import {
@@ -35,6 +36,57 @@ import {
   INLINE_BLANK_PX_MAX,
   INLINE_BLANK_PX_MIN,
 } from '@/tcf/inline-blank'
+
+/** Total de formes CSC : la saisie reste libre, la valeur n’est retenue qu’entre 12 et 80. */
+function CountIconTotalField({
+  value,
+  onChange,
+}: {
+  value: number | undefined
+  onChange: (total: number | undefined) => void
+}) {
+  const [draft, setDraft] = useState(value == null ? '' : String(value))
+  const [focused, setFocused] = useState(false)
+  useEffect(() => {
+    if (!focused) setDraft(value == null ? '' : String(value))
+  }, [focused, value])
+  return (
+    <input
+      className="pill-input"
+      type="number"
+      inputMode="numeric"
+      min={12}
+      max={80}
+      step={1}
+      aria-label="Nombre total de formes dans le cadre"
+      value={draft}
+      placeholder="Au hasard"
+      onFocus={() => setFocused(true)}
+      onChange={(event) => {
+        const raw = event.target.value
+        setDraft(raw)
+        if (raw.trim() === '') {
+          onChange(undefined)
+          return
+        }
+        const total = Number(raw)
+        if (Number.isInteger(total) && total >= 12 && total <= 80) onChange(total)
+      }}
+      onBlur={(event) => {
+        setFocused(false)
+        const raw = event.currentTarget.value.trim()
+        if (raw === '') {
+          onChange(undefined)
+          setDraft('')
+          return
+        }
+        const total = Math.max(12, Math.min(80, Math.round(Number(raw) || 12)))
+        onChange(total)
+        setDraft(String(total))
+      }}
+    />
+  )
+}
 
 /** Champ points : vide → `undefined` (effectif 1) ; sinon demi-points ≥ 0.5. */
 function parsePointsInput(raw: string): number | undefined {
@@ -366,25 +418,9 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               {activeBlock.exerciseType === 'tcm-csc-ex18' ? (
                 <label className="select-shell">
                   <span>Formes dans le cadre</span>
-                  <input
-                    className="pill-input"
-                    type="number"
-                    inputMode="numeric"
-                    min={12}
-                    max={80}
-                    step={1}
-                    aria-label="Nombre total de formes dans le cadre"
-                    value={activeBlock.countIconTotal ?? ''}
-                    placeholder="Au hasard"
-                    onChange={(event) => {
-                      const raw = event.target.value.trim()
-                      if (raw === '') {
-                        updatePage({ countIconTotal: undefined })
-                        return
-                      }
-                      const total = Math.max(12, Math.min(80, Math.round(Number(raw) || 12)))
-                      updatePage({ countIconTotal: total })
-                    }}
+                  <CountIconTotalField
+                    value={activeBlock.countIconTotal}
+                    onChange={(countIconTotal) => updatePage({ countIconTotal })}
                   />
                   <small className="muted">Nombre total de formes dessinées dans le cadre, de 12 à 80. Laissez vide pour un tirage.</small>
                 </label>
