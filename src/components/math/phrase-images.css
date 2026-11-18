@@ -2,6 +2,12 @@
 .phrase-image-row { display:grid; grid-template-columns:repeat(var(--phrase-image-count),minmax(0,1fr)); gap:8px; width:100%; max-width:calc(var(--phrase-image-count) * 136px); align-items:stretch; break-inside:avoid; }
 .phrase-image-clue { min-width:0; margin:0; border:3px solid; border-radius:8px; padding:4px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#fff; color:#182238; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 .phrase-image-clue > img, .phrase-image-clue > .ci-image-zoom > img { display:block; width:100%; height:96px; min-width:0; object-fit:contain; }
+.exercise-grid:has(.layout-phrase-images:nth-child(4)) .phrase-images-block { gap:6px; }
+.exercise-grid:has(.layout-phrase-images:nth-child(4)) .phrase-image-clue > img,
+.exercise-grid:has(.layout-phrase-images:nth-child(4)) .phrase-image-clue > .ci-image-zoom > img { height:68px; }
+.exercise-grid:has(.layout-phrase-images:nth-child(4)) .phrase-images-block .phrase-answer-slot { min-height:26px; }
+.exercise-grid:has(.layout-phrase-images:nth-child(4)) .phrase-image-clue figcaption,
+.exercise-grid:has(.layout-phrase-images:nth-child(4)) .phrase-image-word > span { font-size:calc(12px * var(--app-font-scale,1)); }
 .phrase-image-clue figcaption { font-size:calc(13px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
 .phrase-image-word { min-height:92px; }
 .phrase-image-word > span { font-size:calc(14px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }

@@ -102,7 +102,11 @@ try{
     assert.deepEqual(parsed.pages[0].phraseItems,input.pages[0].phraseItems)
     const sheets=buildWorksheets(parsed.pages,parsed.seed);assert.deepEqual(sheets[0].blocks[0].items[0].phraseImages,example.phraseImages)
     const four={...parsed,pages:[{...parsed.pages[0],phraseItems:Array.from({length:4},()=>structuredClone(example)),count:4}]},pages=buildWorksheets(four.pages,four.seed)
-    assert.equal(pages.length,2);assert.deepEqual(pages.flatMap(page=>page.blocks.flatMap(block=>block.items)).map(item=>item.responseAnswer),Array(4).fill(example.answer));assert.deepEqual(pages.map(page=>page.blocks[0].itemOffset),[0,3])
+    assert.equal(pages.length,2);assert.deepEqual(pages.flatMap(page=>page.blocks.flatMap(block=>block.items)).map(item=>item.responseAnswer),Array(4).fill(example.answer));assert.deepEqual(pages.map(page=>page.blocks[0].itemOffset),[0,3]);assert.deepEqual(pages.map(page=>page.blocks[0].items.length),[3,1])
+    const eight={...four,pages:[{...four.pages[0],phraseItems:Array.from({length:8},()=>structuredClone(example)),count:8}]},wide=buildWorksheets(eight.pages,eight.seed)
+    assert.deepEqual(wide.map(page=>page.blocks[0].items.length),[3,5]);assert.deepEqual(wide.map(page=>page.blocks[0].itemOffset),[0,3]);assert.equal(wide[0].isContinuation,false);assert.equal(wide[1].isContinuation,true)
+    const later=buildWorksheets([{...defaultPage('gattegno'),topic:'phrase-tableau',exerciseType:'phrase-tableau-vide',count:1,extraBlocks:undefined},eight.pages[0]],eight.seed)
+    assert.deepEqual(later.slice(1).map(page=>page.blocks[0].items.length),[5,3])
   })
   await test('game adaptation copies only the picture clues, keeps the example private and never creates an automatic verdict or competition question',()=>{
     const input={...recipe,pages:[{...page,libreItems:[example]}]},before=structuredClone(input),game=prepareGame(convertRecipe(input)),q=game.questions[0]

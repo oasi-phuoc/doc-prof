@@ -1,6 +1,24 @@
 /* Optional worksheet font; license and pinned source in public/fonts/worksheet/. */
 @font-face{font-family:'Didact Gothic';src:url('/fonts/worksheet/didact-gothic-v1.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
-/* La police de la fiche reste indépendante du document de lecture CE. */
-.worksheet-sheet,.a5-half{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
+/* La police de la fiche change la famille seulement. Le gras et l’italique restent synthétisés si la fonte n’a pas ces graisses. */
+.worksheet-sheet,.a5-half{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif);font-synthesis:weight style}
+.worksheet-sheet .syllable-col-label,
+.worksheet-sheet .syllable-table--script .syllable-table-cell,
+.worksheet-sheet .eq-corr-phase,
+.worksheet-sheet .response-label,
+.worksheet-sheet .geometry-figure .dim-label,
+.worksheet-sheet .coord-grid .origin-label,
+.worksheet-sheet .coord-grid .axis-label,
+.worksheet-sheet .coord-grid .point-label,
+.worksheet-sheet .alg-letter,
+.worksheet-sheet .alg-sqrt,
+.worksheet-sheet .gattegno-chart,
+.worksheet-sheet .vocab-card-word,
+.worksheet-sheet .word-search-cell,
+.worksheet-sheet .phrase-word,
+.worksheet-sheet .phrase-bubble,
+.worksheet-sheet .phrase-verb-prompt,
+.worksheet-sheet .game-series-label,
+.worksheet-sheet .loto-panel-theme-label{font-family:inherit}
 .tcf-ce-doc .tcf-assoc-people,.tcf-ce-doc .tcf-assoc-people-title{font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif)}
 .a4-frame .worksheet-sheet .tcf-audio-cadre-q>.tcf-question-page-chip{top:var(--tcf-audio-text-nudge,0);left:calc(100% + var(--tcf-audio-body-pad-x,3mm) + 1.5px + var(--ex-pad-x) + 2px);right:auto}

@@ -639,7 +639,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       }
       return
     }
-    const phraseImagePages=splitPhraseImagePages(worksheet)
+    const phraseImagePages=splitPhraseImagePages(worksheet,{firstPageHasHeader:out.length===0})
     if(phraseImagePages){out.push(...phraseImagePages.map(sheet=>({...sheet,configIndex:index})));return}
     const cscPages = splitCscColumnPages(worksheet)
     if (cscPages) {

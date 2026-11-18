@@ -977,7 +977,8 @@ html,body,#root{
   display:flex!important;flex-direction:column;
   width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;
   box-sizing:border-box;overflow:hidden!important;background:#fff;
-  font-family:'DM Sans',sans-serif;
+  font-family:var(--sheet-font-family,'DM Sans',Arial,sans-serif);
+  font-synthesis:weight style;
 }
 .worksheet-sheet.is-a5-double{
   width:297mm!important;height:210mm!important;min-height:210mm!important;max-height:210mm!important;
