@@ -95,7 +95,7 @@
 .is-tcm-csc .compare-row.is-line { gap: 10px; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
-.is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; }
+.is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-color: #c5cad3 !important; border-width: 1px; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
