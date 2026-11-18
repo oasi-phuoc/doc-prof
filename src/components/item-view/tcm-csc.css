@@ -84,9 +84,10 @@
 .is-tcm-csc .exercise-instruction { white-space: pre-line; }
 .is-tcm-csc .exercise-instruction .csc-symbol { font-weight: 800; color: var(--purple); }
 .is-tcm-csc { position: relative; }
-.is-tcm-csc::before { content: ""; position: absolute; z-index: 4; pointer-events: none; border: 1px solid var(--ink); top: calc(1cm - 12mm); right: calc(1cm - 16mm); bottom: calc(1cm - 10mm); left: calc(1cm - 16mm); }
+.is-tcm-csc::before { content: ""; position: absolute; z-index: 4; pointer-events: none; border: 1px solid var(--ink); top: 1cm; right: 1cm; bottom: 1cm; left: 1cm; }
 .is-tcm-csc .exercise-block + .exercise-block { margin-top: var(--csc-exercise-gap, 25px); }
-.is-tcm-csc .exercise-heading { border-bottom: 1.5px solid var(--ink); padding-bottom: 4px; }
+.is-tcm-csc .exercise-heading { border-bottom: 0; padding-bottom: 0; }
+.is-tcm-csc .exercise-heading-title-row { width: 100%; border-bottom: 1.5px solid var(--ink); padding-bottom: 4px; }
 .is-tcm-csc .compare-row.is-line { gap: 10px; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
@@ -100,7 +101,5 @@
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }
 @media print {
-  .print-only-sheets .worksheet-sheet.is-tcm-csc.sheet-odd::before { top: calc(1cm - 12mm); right: 0; bottom: calc(1cm - 10mm); left: calc(1cm - 2.5cm); }
-  .print-only-sheets .worksheet-sheet.is-tcm-csc.sheet-even::before { top: calc(1cm - 12mm); right: calc(1cm - 2.5cm); bottom: calc(1cm - 10mm); left: 0; }
   .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-color: #c5cad3 !important; }
 }
