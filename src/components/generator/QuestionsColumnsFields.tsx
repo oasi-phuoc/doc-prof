@@ -326,26 +326,6 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   </small>
                 </label>
               ) : null}
-              {activeBlock.exerciseType.startsWith('tcm-csc-ex') ? (
-                <label className="select-shell">
-                  <span>Espace entre les exercices</span>
-                  <input
-                    className="pill-input"
-                    type="number"
-                    inputMode="numeric"
-                    min={0}
-                    max={80}
-                    step={1}
-                    aria-label="Espace entre les exercices"
-                    value={activeBlock.exerciseGapPx ?? activeSheet?.exerciseGapPx ?? 50}
-                    onChange={(event) => {
-                      const value = Number(event.target.value)
-                      if (Number.isInteger(value) && value >= 0 && value <= 80) updatePage({ exerciseGapPx: value })
-                    }}
-                  />
-                  <small className="muted">Pixels ajoutés entre les exercices. Le premier de la page n’en a pas.</small>
-                </label>
-              ) : null}
               {activeBlock.exerciseType === 'tcm-csc-ex18' ? (
                 <label className="select-shell">
                   <span>Taille des formes</span>

@@ -142,6 +142,16 @@ export function GeneratorPage({
     const value=applyBaseFontSize(size,true,activePage.domain)
     setFontSizes(current=>({...current,[activePage.domain==='tcm-csc'?'csc':'default']:value}))
   }
+  const changeExerciseGap = (value: number) => {
+    if (!Number.isInteger(value) || value < 0 || value > 80) return
+    setPages((current) => current.map((page) => {
+      if (page.domain !== 'tcm-csc') return page
+      const extraBlocks = page.extraBlocks?.some((block) => block.exerciseGapPx != null)
+        ? page.extraBlocks.map((block) => (block.exerciseGapPx == null ? block : { ...block, exerciseGapPx: undefined }))
+        : page.extraBlocks
+      return page.exerciseGapPx === value && extraBlocks === page.extraBlocks ? page : { ...page, exerciseGapPx: value, extraBlocks }
+    }))
+  }
 
   const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion), [pages, seed, pointsPerQuestion])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
@@ -170,11 +180,13 @@ export function GeneratorPage({
    */
   const previewSource =
     libreMode && !activeBlock.coordLibre && libreSnapshot && libreSnapshot.length === pages.length
-      ? libreSnapshot.map((page, index) =>
-          pageBlocks(pages[index] ?? page).some((block) => block.exerciseType === 'tcm-csc-ex18')
-            ? pages[index]!
-            : page,
-        )
+      ? libreSnapshot.map((page, index) => {
+          const live = pages[index] ?? page
+          if (pageBlocks(live).some((block) => block.exerciseType === 'tcm-csc-ex18')) return live
+          return live.domain === 'tcm-csc' && live.exerciseGapPx !== page.exerciseGapPx
+            ? { ...page, exerciseGapPx: live.exerciseGapPx }
+            : page
+        })
       : null
   const previewWorksheets = useMemo(
     () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion) : worksheets),
@@ -616,6 +628,8 @@ export function GeneratorPage({
             onPrintCorrectionsChange={setPrintCorrections}
             hideChrome={hideChrome}
             onHideChromeChange={setHideChrome}
+            exerciseGap={activePage.domain === 'tcm-csc' ? activePage.exerciseGapPx ?? 50 : undefined}
+            onExerciseGapChange={changeExerciseGap}
             pageBorder={pageBorder}
             onTogglePageBorder={() => setPageBorder((on) => !on)}
             footerOpen={footerPanelOpen}

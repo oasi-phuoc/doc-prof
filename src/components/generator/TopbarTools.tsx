@@ -176,6 +176,51 @@ function ColorSection({
   )
 }
 
+function ExerciseGapSection({
+  value,
+  onChange,
+}: {
+  value: number
+  onChange: (gap: number) => void
+}) {
+  const [draft, setDraft] = useState(String(value))
+  useEffect(() => {
+    setDraft(String(value))
+  }, [value])
+  const apply = (raw: string, restore: boolean) => {
+    if (!/^\d+$/.test(raw)) {
+      if (restore) setDraft(String(value))
+      return
+    }
+    const next = Number(raw)
+    if (next <= 80) onChange(next)
+    else if (restore) setDraft(String(value))
+  }
+  return (
+    <div className="settings-section" role="group" aria-label="Espace entre les exercices">
+      <label className="settings-gap-label" htmlFor="exercise-gap">
+        <span>Espace entre les exercices</span>
+        <input
+          id="exercise-gap"
+          type="number"
+          inputMode="numeric"
+          min={0}
+          max={80}
+          step={1}
+          value={draft}
+          onChange={(event) => {
+            const raw = event.currentTarget.value
+            setDraft(raw)
+            apply(raw, false)
+          }}
+          onBlur={() => apply(draft, true)}
+        />
+      </label>
+      <p className="settings-gap-hint">En pixels, entre les exercices d’une même page. Le premier n’en a pas.</p>
+    </div>
+  )
+}
+
 function FontSizeSection({
   fontSize,
   sheetFont,
@@ -334,6 +379,8 @@ function AccountMenu({
   onPrintCorrectionsChange,
   hideChrome,
   onHideChromeChange,
+  exerciseGap,
+  onExerciseGapChange,
   onLogout,
 }: {
   themeColor: string
@@ -348,6 +395,8 @@ function AccountMenu({
   onPrintCorrectionsChange: (include: boolean) => void
   hideChrome: boolean
   onHideChromeChange: (hide: boolean) => void
+  exerciseGap?: number
+  onExerciseGapChange?: (gap: number) => void
   onLogout: () => void
 }) {
   const [open, setOpen] = useState(false)
@@ -390,6 +439,9 @@ function AccountMenu({
           <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
           <PrintCorrectionsSection printCorrections={printCorrections} onChange={onPrintCorrectionsChange} />
           <ChromeSection hideChrome={hideChrome} onChange={onHideChromeChange} />
+          {exerciseGap != null && onExerciseGapChange ? (
+            <ExerciseGapSection value={exerciseGap} onChange={onExerciseGapChange} />
+          ) : null}
           <div className="settings-menu-divider" />
           <button
             type="button"
@@ -427,6 +479,8 @@ export function TopbarTools({
   onPrintCorrectionsChange,
   hideChrome,
   onHideChromeChange,
+  exerciseGap,
+  onExerciseGapChange,
   pageBorder,
   onTogglePageBorder,
   footerOpen,
@@ -450,6 +504,9 @@ export function TopbarTools({
   onPrintCorrectionsChange: (include: boolean) => void
   hideChrome: boolean
   onHideChromeChange: (hide: boolean) => void
+  /** TCM CSC : espace entre les exercices, en pixels. Absent sur les autres fiches. */
+  exerciseGap?: number
+  onExerciseGapChange?: (gap: number) => void
   pageBorder: boolean
   onTogglePageBorder: () => void
   footerOpen: boolean
@@ -529,6 +586,8 @@ export function TopbarTools({
         onPrintCorrectionsChange={onPrintCorrectionsChange}
         hideChrome={hideChrome}
         onHideChromeChange={onHideChromeChange}
+        exerciseGap={exerciseGap}
+        onExerciseGapChange={onExerciseGapChange}
         onLogout={onLogout}
       />
     </div>
