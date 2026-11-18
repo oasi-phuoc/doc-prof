@@ -28,6 +28,7 @@ try {
     assert.equal(TCM_CSC_MAX_SCORE,82)
     const sheets=buildWorksheets(pages,77)
     assert.ok(sheets.some(sheet=>[6,7,8].every(number=>sheet.blocks.some(block=>block.exerciseIndex===number))))
+    assert.ok(sheets.some(sheet=>[15,16].every(number=>sheet.blocks.some(block=>block.exerciseIndex===number))))
     const problemPage=number=>sheets.findIndex(sheet=>sheet.blocks.some(block=>block.exerciseIndex===number))
     assert.equal(problemPage(22),problemPage(23));assert.equal(problemPage(24),problemPage(23)+1)
     for (const sample of samples) for (const step of TCM_CSC_STEPS) assert.equal(sample.get(step.number).length, step.count)

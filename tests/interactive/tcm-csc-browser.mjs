@@ -92,7 +92,7 @@ try {
   await page.goto(`${base}/generateur`)
   await page.getByLabel('Domaine', { exact: true }).click({ timeout: 120000 })
   await page.getByRole('option', { name: 'TCM CSC', exact: true }).click()
-  await page.getByLabel('Page 18', { exact: true }).waitFor()
+  await page.getByLabel('Page 17', { exact: true }).waitFor()
   assert.match(await preview(page).innerText(), /24 exercices/)
   assert.equal(await page.getByRole('spinbutton', { name: 'Points par question de l’exercice sélectionné', exact: true }).count(), 0)
   console.log('CSC : test complet chargé depuis le menu Domaine.')
@@ -141,8 +141,8 @@ try {
   await page.evaluate(async () => { for (const image of document.images) image.loading = 'eager'; await document.fonts.ready; await Promise.all([...document.images].map((image) => image.decode().catch(() => {}))) })
   const printed = page.locator('.print-only-sheets .worksheet-sheet')
   const pages = await printed.count()
-  assert.ok(pages === 18 || pages === 36, `Unexpected print page count ${pages}`)
-  const copiesCount=pages/18
+  assert.ok(pages === 17 || pages === 34, `Unexpected print page count ${pages}`)
+  const copiesCount=pages/17
   const bounds = await printed.evaluateAll((sheets) => sheets.map((sheet, i) => {
     const footer = sheet.querySelector('.doc-footer').getBoundingClientRect()
     const blocks = [...sheet.querySelectorAll('.exercise-block')].map((block) => ({ label: block.querySelector('.exercise-heading')?.textContent?.trim().slice(0, 90), bottom: block.getBoundingClientRect().bottom }))
@@ -155,7 +155,7 @@ try {
   assert.deepEqual(copies[0].map((grid) => grid.scale), [1, 1]); assert.deepEqual(copies[1].map((grid) => grid.scale), [1, 2])
   for (const pair of copies.slice(0, 2)) { assert.ok(pair[0].paths > 0); assert.equal(pair[1].paths, 0); assert.equal(pair[1].cols, pair[0].cols * pair[1].scale); assert.equal(pair[1].rows, pair[0].rows * pair[1].scale) }
   for(const pair of copies)for(const grid of pair){assert.ok(Math.abs(grid.cellMm-4.6)<.01);assert.ok(grid.colors.every(color=>color!=='rgb(24, 34, 56)'&&color!=='rgb(23, 78, 174)'))}
-  if (pages === 38) for (const pair of copies.slice(2)) assert.ok(pair[0].paths > 0)
+  if (pages === 34) for (const pair of copies.slice(2)) assert.ok(pair[0].paths > 0)
   const coords = await printed.locator('.coord-block.is-csc-left').evaluateAll((blocks) => blocks.map((block) => ({ questions: block.querySelectorAll('.coord-question').length, columns: getComputedStyle(block.querySelector('.coord-questions')).gridTemplateColumns.split(' ').length, side: block.querySelector('.coord-side').getBoundingClientRect().x, grid: block.querySelector('.coord-grid').getBoundingClientRect().x, gridWidth: block.querySelector('.coord-grid').getBoundingClientRect().width, legendRight:Math.max(...[...block.querySelectorAll('.coord-question')].map(node=>node.lastElementChild.getBoundingClientRect().right)), names:block.querySelectorAll('.coord-question-label').length, colors:[...new Set([...block.querySelectorAll('.coord-question-icon')].map(node=>getComputedStyle(node).color))], inline:[...block.querySelectorAll('.coord-question')].every(node=>{const icon=node.querySelector('.coord-question-icon').getBoundingClientRect(),pair=node.querySelector('.coord-pair,.coord-given,.filled-answer').getBoundingClientRect();return Math.abs((icon.y+icon.height/2)-(pair.y+pair.height/2))<3}) })))
   for (const coord of coords) { assert.equal(coord.questions, 6); assert.equal(coord.columns, 1); assert.ok(coord.side < coord.grid); assert.ok(Math.abs(coord.gridWidth-140*96/25.4)<1); assert.ok(coord.legendRight<=coord.grid-1,JSON.stringify(coord)); assert.equal(coord.names,0); assert.equal(coord.colors.length,6); assert.equal(coord.inline,true) }
   const frameHeight = await printed.locator('.is-csc-large .count-icons-frame').first().evaluate((node) => node.getBoundingClientRect().height)
@@ -289,7 +289,7 @@ try {
   }
   results.push({axes:'Both coordinate exercises expose independent horizontal and vertical directions in free mode; all four choices render and survive validation/reopening; row numbers stay on the right'})
 
-  await page.getByLabel('Page 13', { exact: true }).click()
+  await page.getByLabel('Page 11', { exact: true }).click()
   await button(page, 'Mode libre').click()
   const editor = page.getByRole('complementary', { name: 'Mode libre', exact: true })
   const logic = editor.getByLabel('Choisir la suite graphique', { exact: true }).first()
@@ -300,7 +300,7 @@ try {
   await button(page, 'Valider les changements').click()
   const current = await logic.inputValue(); assert.equal(current, selected)
   await button(page, 'Fermer le mode libre').click()
-  await page.getByLabel('Page 18', { exact: true }).click()
+  await page.getByLabel('Page 16', { exact: true }).click()
   const pads=preview(page).locator('.csc-problem-text .draft-pad')
   assert.equal(await pads.count(),2);assert.match(await pads.first().getAttribute('class'),/with-grid/)
   await preview(page).getByRole('button',{name:'Grille',exact:true}).first().click()
