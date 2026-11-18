@@ -161,7 +161,7 @@ export function junctionRanges(lengths: readonly number[], isQuiet: (buffer: num
  * Concatène des fichiers audio (MP3 TTS) en un seul WAV continu.
  * Évite le collage binaire MP3 qui fait avancer / reculer la barre de progression.
  */
-export async function concatMp3(urls: string[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void; trimJunctionSeconds?: number } = {}): Promise<Blob> {
+export async function concatMp3(urls: readonly string[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void; trimJunctionSeconds?: number } = {}): Promise<Blob> {
   options.signal?.throwIfAborted()
   if (urls.length === 0) return new Blob([], { type: 'audio/wav' })
   if (urls.length === 1) {
