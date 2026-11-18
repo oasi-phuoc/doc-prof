@@ -95,7 +95,11 @@
 .is-tcm-csc::before { content: ""; position: absolute; z-index: 4; pointer-events: none; border: 1px solid var(--ink); top: 1cm; right: 1cm; bottom: 1cm; left: 1cm; }
 .is-tcm-csc .exercise-block + .exercise-block { margin-top: var(--csc-exercise-gap, 25px); }
 .is-tcm-csc .exercise-heading { border-bottom: 0; padding-bottom: 0; }
-.is-tcm-csc .exercise-heading-title-row { width: 100%; border-bottom: 1.5px solid var(--ink); padding-bottom: 4px; }
+.is-tcm-csc .exercise-heading-title-row { width: 100%; align-items: baseline; border-bottom: 1.5px solid var(--ink); padding-bottom: 0; }
+.is-tcm-csc .exercise-heading h3,
+.is-tcm-csc .instruction-points { line-height: 1; }
+.is-tcm-csc .instruction-points { align-self: baseline; }
+.is-tcm-csc .exercise-heading .exercise-instruction { margin-top: 13px; }
 .is-tcm-csc .compare-row.is-line { gap: 10px; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
