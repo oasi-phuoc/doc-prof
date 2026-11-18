@@ -48,7 +48,7 @@ function cscSheetCopy(type: string, instruction: string): { text: string; exampl
   if (index < 0) return { text: markCscInstruction(instruction), example: null }
   return {
     text: markCscInstruction(lines.filter((_, line) => line !== index).join('\n')),
-    example: lines[index]!,
+    example: lines[index]!.replace(/^Exemple\s*:\s*/, ''),
   }
 }
 
