@@ -61,8 +61,7 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
 const TCM_CFR_PACKED_PAGES: readonly (readonly number[])[] = [
   [1, 2, 3, 4],
   [5, 6, 7],
-  [8],
-  [9],
+  [8, 9],
   [10],
   [11],
   [12, 13],
