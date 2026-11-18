@@ -37,7 +37,7 @@ export function CscLengthBlock({item,mode,children}:{item:MathItem;mode:PreviewM
 export function CscProblemBlock({ item, mode, draftGrid = false }: { item: MathItem; mode: PreviewMode; draftGrid?: boolean }) {
   const parts = (item.prompt ?? '').split('\n\n'), question = parts.pop(), task = item.cscTask
   const operation = task?.kind === 'problem' ? CSC_PROBLEM_BANK.find((entry) => entry.id === task.templateId)?.operation : undefined
-  return <div className="csc-problem-text"><p>{parts.join('\n\n')}</p><p><b>{question}</b></p><div className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de développement">{mode === 'answers' && task?.kind === 'problem' && operation && <strong className="filled-answer draft-pad-answer">{task.a} {operation} {task.b} = {operation === '+' ? task.a + task.b : task.a - task.b}</strong>}</div><span className={`answer-line-field${mode === 'answers' ? ' filled' : ''}`}>{mode === 'answers' ? item.answer : '\u00a0'}</span></div>
+  return <div className="csc-problem-text"><p>{parts.join('\n\n')}</p><p><b>{question}</b></p><div className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de développement">{mode === 'answers' && task?.kind === 'problem' && operation && <strong className="filled-answer draft-pad-answer">{task.a} {operation} {task.b} = {operation === '+' ? task.a + task.b : task.a - task.b}</strong>}</div><p className="csc-problem-answer"><span className="csc-problem-answer-label">Réponse :</span><span className={`answer-line-field${mode === 'answers' ? ' filled' : ''}`}>{mode === 'answers' ? item.answer : '\u00a0'}</span></p></div>
 }
 
 export function CscCopyBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {

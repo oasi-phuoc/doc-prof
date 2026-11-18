@@ -196,6 +196,7 @@ export function ItemView({
     Boolean(item.hideItemNumber) ||
     item.cscTask?.kind === 'large-count' ||
     item.cscTask?.kind === 'number-grid' ||
+    item.cscTask?.kind === 'problem' ||
     item.layout === 'gattegno-chart' ||
     item.layout === 'phrase-write' ||
     item.layout === 'vocab-table' ||

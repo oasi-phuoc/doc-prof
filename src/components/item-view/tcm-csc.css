@@ -60,8 +60,11 @@
 .csc-free-fields img { width: 100%; max-height: 120px; object-fit: contain; }
 .csc-problem-text { white-space: pre-line; }
 .csc-problem-text p { margin: 5px 0; }
-.csc-problem-text .draft-pad.draft-pad-short { --grid-rows: calc(6 * var(--sheet-columns, 1)); }
-.csc-problem-text .draft-pad + .answer-line-field { margin-top: calc(1lh + 3.5px); }
+.csc-problem-text .draft-pad.draft-pad-short { --grid-rows: calc(5 * var(--sheet-columns, 1)); }
+.csc-problem-text .draft-pad + .csc-problem-answer { margin-top: calc(1lh + 3.5px); }
+.csc-problem-answer { display: flex; align-items: baseline; gap: 8px; margin: 0; }
+.csc-problem-answer-label { flex: 0 0 auto; font-weight: 700; }
+.csc-problem-answer .answer-line-field { flex: 1 1 auto; width: auto; min-width: 0; }
 .csc-sequence-hint { display: flex; align-items: center; gap: 0; }
 .csc-step-hint { border: 1.5px solid #6d3ca8; background: #f0e4ff; color: #492171; margin: 0 50px 0 0; display: flex; align-items: center; justify-content: center; font-weight: 700; print-color-adjust: exact; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex04"], [data-exercise-type="tcm-csc-ex05"]) .exercise-grid { row-gap: calc(2mm + 10px); }
