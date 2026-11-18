@@ -260,7 +260,7 @@ export function convertRecipe(
             }
             const q=base();q.mode='oral';q.compatibility='teacher-led';q.prompt='Écrivez une phrase à partir des images.'
             q.phraseImages=clues.map(({category,label,imageSrc})=>({category,label,...(imageSrc?{imageSrc}:{})}))
-            q.phraseImageLabels=item.phraseImageLabels!==false;if(item.phraseQuestion&&!item.phraseQuestionForm)q.phraseImagePrefix=interrogativePrefix(item.tokens??[]);q.images=clues.flatMap(clue=>clue.imageSrc?[clue.imageSrc]:[])
+            q.phraseImageLabels=item.phraseImageLabels===true;q.phraseImageShownCategories=item.phraseImageShownCategories;if(item.phraseQuestion&&!item.phraseQuestionForm)q.phraseImagePrefix=interrogativePrefix(item.tokens??[]);q.images=clues.flatMap(clue=>clue.imageSrc?[clue.imageSrc]:[])
             add(q,item.responseAnswer??item.answer??'Aucun exemple fourni. L’enseignant apprécie la phrase.');return
           }
           const ordering = adaptOrdering(item, (part) => deriveSeed({ originalSeed: recipe.seed, sourceKey: base(part).id, purpose: 'distractors' }))

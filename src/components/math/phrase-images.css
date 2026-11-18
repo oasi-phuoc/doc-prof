@@ -11,6 +11,9 @@
 .phrase-image-clue figcaption { font-size:calc(13px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
 .phrase-image-word { min-height:92px; }
 .phrase-image-word > span { font-size:calc(14px * var(--app-font-scale,1)); line-height:1.2; font-weight:700; text-align:center; overflow-wrap:anywhere; }
+.phrase-image-blank { display:block; width:70%; min-height:1.2em; border-bottom:1px solid currentColor; }
+.phrase-image-word-choices { display:grid; grid-template-columns:1fr 1fr; gap:2px 12px; }
+.phrase-image-word-choices small { grid-column:1 / -1; }
 .phrase-images-block .phrase-answer-slot { min-height:32px; }
 .phrase-image-editor-list { display:flex; flex-direction:column; gap:12px; }
 .phrase-image-editor-clue { border-left:4px solid; padding:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }

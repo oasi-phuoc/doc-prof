@@ -1,4 +1,4 @@
-import type { Figure, FigureDims, PhraseImageClue } from '@/math/types'
+import type { Figure, FigureDims, PhraseCategory, PhraseImageClue } from '@/math/types'
 import type { ManualVote } from './votes'
 import type { GrammarImageSupport } from '@/grammaire/curriculum/types'
 import type {ImageStroke,ImageAnnotations} from './image-annotations'
@@ -58,6 +58,7 @@ export type Question = {
   phraseImages?: PhraseImageClue[]
   phraseImagePrefix?:string
   phraseImageLabels?: boolean
+  phraseImageShownCategories?: PhraseCategory[]
   grammarCountryGender?: 'masculin' | 'féminin' | 'pluriel'
   words?: string[]
   figure?: { type: Figure; dims?: FigureDims }

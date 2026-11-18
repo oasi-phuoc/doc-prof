@@ -58,9 +58,11 @@ try{
     for(const color of ['#8b5a2b','#e67e22','#2e8b57'])assert.ok(student.includes(color))
     assert.ok(!student.includes('<figcaption>Je</figcaption>'))
     const defaultLabels=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:example,mode:'student'}))
-    assert.ok(defaultLabels.includes('<figcaption>Je</figcaption>'))
+    assert.ok(!defaultLabels.includes('<figcaption>'))
     const labeled=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:{...example,phraseImageLabels:true},mode:'student'}))
     assert.ok(labeled.includes('<figcaption>Je</figcaption>'));assert.ok(labeled.includes('<figcaption>manger</figcaption>'));assert.ok(labeled.includes('<figcaption>pomme</figcaption>'))
+    const pronouns=renderToStaticMarkup(createElement(PhraseImagesBlock,{item:{...example,phraseImageLabels:true,phraseImageShownCategories:['pronom'],phraseImages:[...example.phraseImages,{category:'preposition',label:'avec'}]},mode:'student'}))
+    assert.ok(pronouns.includes('<figcaption>Je</figcaption>'));assert.ok(!pronouns.includes('<figcaption>manger</figcaption>'));assert.ok(!pronouns.includes('<figcaption>pomme</figcaption>'));assert.ok(!pronouns.includes('>avec<'));assert.ok(pronouns.includes('phrase-image-blank'))
     assert.equal((student.match(/<figure/g)||[]).length,3)
   })
   await test('interrogative forms use their own Gattegno pictures in generated image clues',async()=>{
@@ -95,6 +97,12 @@ try{
       for(const item of built.blocks[0].items){sentences.add(item.responseAnswer);assert.ok(item.tokens.every(token=>!['adjectif','adverbe','preposition','conjonction'].includes(token.category)))}
     }
     assert.ok(sentences.size>4);assert.deepEqual(recipe,before)
+    const hidden=buildPage(page,3)
+    assert.ok(hidden.blocks[0].items.every(item=>item.phraseImageLabels===false&&item.phraseImageShownCategories===undefined))
+    const selected=buildPage({...page,phraseImageLabels:true,phraseImageShownCategories:['pronom']},3)
+    assert.ok(selected.blocks[0].items.every(item=>item.phraseImageLabels===true&&item.phraseImageShownCategories.join()==='pronom'))
+    const libre=buildPage({...page,verbGroup:'libre',phraseImageLabels:true,phraseImageShownCategories:['pronom'],phraseItems:[{...example,phraseImageLabels:true}]},3)
+    assert.deepEqual(libre.blocks[0].items[0].phraseImageShownCategories,['pronom'])
   })
   await test('edited pictures, captions and teacher examples survive recipe serialization and worksheet regeneration',()=>{
     const input={...recipe,pages:[{...page,verbGroup:'libre',phraseImageLabels:true,phraseItems:[{...example,phraseImageLabels:true}],phraseInstruction:'Écrivez une phrase en contexte.'}]}

@@ -16,8 +16,8 @@ import {
 } from './phrase-sentences'
 import { PRODUCTION_PROMPTS_BY_THEME, type PhraseThemeId } from './phrase-banks'
 import { pick, shuffle, type Rng } from '@/math/rng'
-import type { Difficulty, MathItem, PhraseToken, PhraseVerbGroup } from '@/math/types'
-import {illustratedFrames,phraseImageClues,imageSubjectsForFrame,imageExtraFrames} from './phrase-images'
+import type { Difficulty, MathItem, PhraseCategory, PhraseToken, PhraseVerbGroup } from '@/math/types'
+import {illustratedFrames,phraseImageClues,phraseImageWordFields,imageSubjectsForFrame,imageExtraFrames} from './phrase-images'
 import {passiveFrames,passivePhrase,phraseSentence,phraseSyntaxRoles,syntaxModel,type PhraseSentenceType,type PhraseVoice} from './phrase-forms'
 import {interrogativePhrase,type PhraseQuestionForm} from './phrase-interrogatives'
 
@@ -192,9 +192,10 @@ export function tryGeneratePhraseBatch(
   group: PhraseVerbGroup = 'er',
   polarity?: PhrasePolarity,
   categories?: PhraseCategories,
-  imageLabels=true,
+  imageLabels=false,
   sentenceType:PhraseSentenceType='declarative',
   voice:PhraseVoice='active',
+  shownCategories?:readonly PhraseCategory[],
 ): PhraseBatch | null {
   void difficulty
   const bank = phraseBankGroup(group)
@@ -246,7 +247,7 @@ export function tryGeneratePhraseBatch(
         const phrase=pickPhrase(rng,theme,used,passiveFlags[index]?passives:frames,negative,true,passiveFlags[index],questions[index],categories?.preposition!==false,usedQuestions,categories),clues=phraseImageClues(phrase.tokens,phrase.verbInfinitives,phrase.questionForm)
         if(!clues||seen.has(phrase.sentence))continue
         seen.add(phrase.sentence)
-        items.push({layout:'phrase-images',tokens:phrase.tokens,...(phrase.question?{phraseQuestion:true,phraseQuestionForm:phrase.questionForm}:{}),phraseImages:clues,phraseImageLabels:imageLabels,writeLines:1,answer:phrase.sentence,responseAnswer:phrase.sentence})
+        items.push({layout:'phrase-images',tokens:phrase.tokens,...(phrase.question?{phraseQuestion:true,phraseQuestionForm:phrase.questionForm}:{}),phraseImages:clues,...phraseImageWordFields(imageLabels,shownCategories),writeLines:1,answer:phrase.sentence,responseAnswer:phrase.sentence})
         break
       }
     }

@@ -16,6 +16,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     phraseVoice: page.phraseVoice,
     phraseCategories: page.phraseCategories,
     phraseImageLabels: page.phraseImageLabels,
+    phraseImageShownCategories: page.phraseImageShownCategories,
     contentSeed: page.contentSeed,
     contentSeedTwin: page.contentSeedTwin,
     phraseItems: page.phraseItems,
@@ -100,7 +101,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 }
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
-  return { ...page, ...block, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
+  return { ...page, ...block, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
     grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,extraBlocks:undefined }
