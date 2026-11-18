@@ -3,7 +3,7 @@ import { exerciseTypeById } from '@/math/catalog'
 import { cscSheetNumber, TCM_CSC_DOMAIN } from './catalog'
 
 export const TCM_CSC_STEPS = [
-  { number: 1, count: 5 }, { number: 2, count: 5 }, { number: 3, count: 5 },
+  { number: 3, count: 5 }, { number: 1, count: 5 }, { number: 2, count: 5 },
   { number: 4, count: 4 }, { number: 5, count: 4 }, { number: 6, count: 1 }, { number: 25, count: 1 },
   { number: 7, count: 10, columns: 2 }, { number: 8, count: 4 }, { number: 9, count: 3 },
   { number: 10, count: 8, columns: 2 }, { number: 11, count: 4, columns: 2 },
@@ -19,7 +19,7 @@ function buildConsignesPage(): PageConfig {
   return { domain: TCM_CSC_DOMAIN, topic: type.topic, exerciseType: type.id, difficulty: 'moyen', count: 1, columns: 1, pointsPerQuestion: 0 }
 }
 
-const PAGE_GROUPS = [[1, 2], [3], [4, 5], [6, 25, 7], [8, 9], [10], [11], [12, 13], [14, 15], [16], [17], [18], [19], [20], [22, 23], [24]]
+const PAGE_GROUPS = [[3], [1, 2], [4, 5], [6, 25, 7], [8, 9], [10], [11], [12, 13], [14, 15], [16], [17], [18], [19], [20], [22, 23], [24]]
 
 export function buildTcmCscTestPages(): PageConfig[] {
   return [buildConsignesPage(), ...PAGE_GROUPS.map((numbers): PageConfig => {

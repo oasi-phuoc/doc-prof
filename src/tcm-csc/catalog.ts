@@ -7,9 +7,17 @@ export const TCM_CSC_TOPICS: Topic[] = [
   { id: 'tcm-csc-test', label: 'Test CSC', domain: 'tcm-csc' },
 ]
 
-/** Numéro affiché. L’exercice 25 est le second rangement, inséré en 7 ; les suivants avancent d’un cran. */
+/**
+ * Numéro affiché. Entourer (type 3) ouvre le test, puis les deux écoutes.
+ * Le type 25 est le second rangement, inséré en 7 ; les types 7 à 20 avancent d’un cran.
+ */
 export function cscSheetNumber(typeNumber: number): number {
-  return typeNumber === 25 ? 7 : typeNumber >= 7 && typeNumber <= 20 ? typeNumber + 1 : typeNumber
+  if (typeNumber === 3) return 1
+  if (typeNumber === 1) return 2
+  if (typeNumber === 2) return 3
+  if (typeNumber === 25) return 7
+  if (typeNumber >= 7 && typeNumber <= 20) return typeNumber + 1
+  return typeNumber
 }
 
 /** Plafond du champ Questions quand il compte des éléments d’un seul dessin. */
@@ -35,9 +43,9 @@ export const TCM_CSC_EXERCISE_TYPES: ExerciseType[] = [
     visual: 'texte',
     preferredColumns: 1,
   },
+  exercise(3, 'Entourer les nombres', 'Entourez les nombres entendus.'),
   exercise(1, 'Nombres entendus', 'Écrivez le nombre que vous entendez.'),
   exercise(2, 'Calculs entendus', 'Écrivez le calcul et son résultat.'),
-  exercise(3, 'Entourer les nombres', 'Entourez les nombres entendus.'),
   exercise(4, 'Suites avec indication', 'Complétez les suites de nombres.'),
   exercise(5, 'Suites sans aide', 'Complétez les suites de nombres.'),
   exercise(6, 'Ranger du plus petit au plus grand', 'Rangez les nombres du plus petit au plus grand.'),
