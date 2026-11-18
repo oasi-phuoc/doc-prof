@@ -251,8 +251,32 @@
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side { position: relative; z-index: 1; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side .digit-cell:nth-child(4) { border-right: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side .column-line:first-child .digit-cell { border-bottom: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
-.exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-grid { grid-template-columns: max-content max-content; justify-content: space-between; column-gap: 16mm; }
-.exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-row { width: max-content; grid-template-columns: max-content max-content auto 4.5em max-content; column-gap: 0.28em; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-grid {
+  grid-template-columns:
+    max-content max-content max-content auto 4.5em max-content
+    minmax(8mm, 1fr)
+    max-content max-content max-content auto 4.5em max-content;
+  justify-content: start;
+  column-gap: 0.25em;
+  width: 100%;
+}
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-item {
+  display: grid !important;
+  grid-template-columns: subgrid;
+  column-gap: 0.25em;
+  align-items: baseline;
+  padding-left: 0;
+  padding-right: 0;
+  width: auto;
+}
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-item:nth-child(odd) { grid-column: 1 / span 6; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-item:nth-child(even) { grid-column: 8 / span 6; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .item-number { min-width: 0; width: auto; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .item-content,
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-row { display: contents; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-value,
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-unit { text-align: left; justify-self: start; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-value { margin-left: calc(2px - 0.25em); }
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }
