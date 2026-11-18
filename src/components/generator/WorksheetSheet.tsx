@@ -14,6 +14,7 @@ import {
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { isDraftPadExercise } from '@/math/catalog'
 import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
+import { resolvePromptPlaceholders } from '@/tpm/libre-recalc'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
@@ -41,6 +42,15 @@ function markCscInstruction(text: string): string {
   const marked = CSC_BOLD.reduce((value, word) => value.replaceAll(word, `[[b]]${word}[[/b]]`), text)
   return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
 }
+/** Ex. 26–27 : pas de consigne. L’énoncé sous le titre, la question sur la ligne suivante. */
+function cfrSideQuestionCopy(block: WorksheetBlock): string | null {
+  if (block.exerciseType !== 'tcm-cfr-ex25' && block.exerciseType !== 'tcm-cfr-ex26') return null
+  return block.items
+    .map((item) => resolvePromptPlaceholders(item).trim().replace(/\s+(Quelle\b)/u, '\n$1'))
+    .filter(Boolean)
+    .join('\n\n')
+}
+
 function cscSheetCopy(type: string, instruction: string): { text: string; example: string | null } {
   if (type !== 'tcm-csc-ex08' && type !== 'tcm-cfr-ex05' && !type.startsWith('tpm-decompose')) return { text: markCscInstruction(instruction), example: null }
   const lines = instruction.split('\n')
@@ -267,7 +277,9 @@ export function WorksheetSheet({
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
           const blockHeading = block.title
-          const cscCopy = block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
+          const sideQuestion = cfrSideQuestionCopy(block)
+          const cscCopy = sideQuestion == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
+          const instructionText = sideQuestion ?? (cscCopy ? cscCopy.text : block.instruction)
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
@@ -398,8 +410,8 @@ export function WorksheetSheet({
                     ) : null}
                   </div>
                   {mode==='answers' && hasMathAudioPrompts(block.exerciseType) && <MathExerciseAudio block={block}/>}
-                  {block.instruction ? (
-                    <p className="exercise-instruction">{renderSheetCopy(cscCopy ? cscCopy.text : block.instruction)}</p>
+                  {instructionText ? (
+                    <p className="exercise-instruction">{renderSheetCopy(instructionText)}</p>
                   ) : null}
                   {cscCopy?.example ? <p className="csc-decompose-example">{cscCopy.example}</p> : null}
                   {block.exerciseType === 'addition-decompose' ? <DecomposeExample op="+" /> : null}

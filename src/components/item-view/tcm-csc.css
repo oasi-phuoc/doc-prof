@@ -222,6 +222,14 @@
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answer { display: flex; width: max-content; max-width: 48%; align-items: baseline; column-gap: 0.35em; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answer .answer-line-field { width: 32mm; min-width: 32mm; flex: 0 0 auto; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answer:last-child:not(:only-child) { margin-left: auto; }
+/* Ex. 26–27 : l’énoncé est sous le titre (2e ligne = la question), pas en gras, plus dans l’item. */
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .exercise-instruction,
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .exercise-instruction .sheet-copy-line {
+  font-weight: 400;
+}
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .column-prompt {
+  display: none;
+}
 /* Ex. 26–27 : pas de numéro, la grille reprend la largeur (donc la case) de l’exercice 19. */
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
   width: calc(100% - (1.5 * 13pt * var(--app-font-scale, 1)) - var(--ex-num-gap));
