@@ -1,6 +1,6 @@
 /**
  * Page 1 « Informations » partagée par TPM, TCM CFR et TCM CSC.
- * Même structure (niveaux, organisation, consignes) ; textes adaptés au domaine.
+ * TPM : niveaux, organisation, consignes. TCM CSC et CFR : organisation et consignes.
  */
 import type { MathItem } from '@/math/types'
 
@@ -78,6 +78,19 @@ function specFor(variant: TpmInfoVariant, maxScore: number): InfoSpec {
 /** Items théorie de la page Informations (pas de questions ni de colonnes). */
 export function generateTpmInformations(variant: TpmInfoVariant, maxScore: number): MathItem[] {
   const { levels, organisation, consignes } = specFor(variant, maxScore)
+  const levelsTable: MathItem | null = variant === 'tpm'
+    ? {
+        layout: 'theory',
+        prompt: 'niveaux',
+        answer: '',
+        noPoints: true,
+        theoryBlock: {
+          kind: 'table',
+          headers: ['Niveau', 'Contenu évalué'],
+          rows: levels.map(([niveau, contenu]) => [niveau, contenu]),
+        },
+      }
+    : null
   return [
     {
       layout: 'theory',
@@ -86,17 +99,7 @@ export function generateTpmInformations(variant: TpmInfoVariant, maxScore: numbe
       noPoints: true,
       theoryBlock: { kind: 'heading', text: '' },
     },
-    {
-      layout: 'theory',
-      prompt: 'niveaux',
-      answer: '',
-      noPoints: true,
-      theoryBlock: {
-        kind: 'table',
-        headers: ['Niveau', 'Contenu évalué'],
-        rows: levels.map(([niveau, contenu]) => [niveau, contenu]),
-      },
-    },
+    ...(levelsTable ? [levelsTable] : []),
     {
       layout: 'theory',
       prompt: 'couverture',
