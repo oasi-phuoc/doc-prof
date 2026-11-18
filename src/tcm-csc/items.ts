@@ -46,7 +46,8 @@ function sequences(rng: Rng, count: number, help: boolean): MathItem[] {
     const step = int(rng, 2, 10) * (i % 2 ? -1 : 1), span = (length - 1) * Math.abs(step)
     const start = step < 0 ? int(rng, span, 100) : int(rng, 0, 100 - span)
     const sequence = Array.from({ length }, (_, j) => String(start + j * step))
-    const blankIndexes = help ? [2, 3, 4, 5] : [3, 4, 5, 6, 7]
+    const shown = help ? 2 : 3
+    const blankIndexes = shuffle(rng, Array.from({ length }, (_, j) => j)).slice(0, length - shown).sort((a, b) => a - b)
     return { layout: 'sequence', prompt: help ? `${step > 0 ? '+' : '−'}${Math.abs(step)}` : undefined, ...(help ? { cscTask: { kind: 'sequence-hint' as const, step } } : {}), sequence, blankIndexes, answer: blankIndexes.map((j) => sequence[j]).join(' ; ') }
   })
 }

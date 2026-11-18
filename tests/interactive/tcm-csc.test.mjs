@@ -63,15 +63,22 @@ try {
     assert.match(recalculateCsc(zero, 'tcm-csc-ex03').libreError, /présents dans la grille/)
   })
   await test('sequence exercises contain six terms with four blanks, or eight terms with five blanks', () => {
+    const placements = { 4: new Set(), 5: new Set() }
     for (const sample of samples) for (const exercise of [4, 5]) for (const item of sample.get(exercise)) {
       const values = item.sequence.map(Number), step = values[1] - values[0]
       assert.equal(values.length, exercise === 4 ? 6 : 8)
       assert.ok(values.every((n, i) => Number.isInteger(n) && n >= 0 && n <= 100 && (i === 0 || n - values[i - 1] === step)))
       assert.ok(step !== 0); assert.equal(item.blankIndexes.length, exercise === 4 ? 4 : 5)
+      assert.deepEqual(item.blankIndexes, [...item.blankIndexes].sort((a, b) => a - b))
+      const shown = values.map((_, i) => i).filter((i) => !item.blankIndexes.includes(i))
+      assert.equal(shown.length, exercise === 4 ? 2 : 3)
+      placements[exercise].add(shown.join(','))
       assert.equal(item.answer, item.blankIndexes.map((i) => item.sequence[i]).join(' ; '))
       assert.equal(Boolean(item.prompt), exercise === 4)
       if (exercise === 4) { assert.doesNotMatch(item.prompt,/aide/i); assert.equal(item.cscTask.kind,'sequence-hint'); assert.equal(item.cscTask.step,step) }
     }
+    assert.ok(placements[4].size > 1 && ![...placements[4]].every((place) => place === '0,1'))
+    assert.ok(placements[5].size > 1 && ![...placements[5]].every((place) => place === '0,1,2'))
   })
   await test('sorting contains integers only and ten comparisons balance the three signs', () => {
     for (const sample of samples) {
