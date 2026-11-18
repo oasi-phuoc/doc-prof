@@ -861,6 +861,8 @@ export type ExerciseBlock = {
   sheetTitle?: string
   /** TCM CFR exercice 3 : sens imposé. Absent = les deux sens dans le même exercice. */
   orderAscending?: boolean
+  /** TCM CFR exercices 26 et 27 : afficher la forme comme aide. Absent = affichée. */
+  geoFigureHelp?: boolean
   /**
    * Points par question pour ce bloc (mode évaluation).
    * Si absent, le total utilise le réglage global de la fiche.
@@ -1162,6 +1164,8 @@ export type WorksheetBlock = {
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
   formulaireLetterGrid?: boolean
+  /** TCM CFR exercices 26 et 27 : forme affichée comme aide. */
+  geoFigureHelp?: boolean
   /** Largeur du trait inline (px), propagée depuis ExerciseBlock. */
   inlineBlankPx?: number
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>

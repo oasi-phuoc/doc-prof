@@ -540,6 +540,8 @@ export function WorksheetSheet({
                       index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
+                      stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType)}
+                      showGeoFigure={block.geoFigureHelp !== false}
                       onToggleDraftGrid={
                         interactiveDraftGrids && blockAllowsDraftGrid && onToggleDraftGrid
                           ? () => onToggleDraftGrid(index, blockIndex)

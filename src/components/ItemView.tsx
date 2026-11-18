@@ -95,6 +95,8 @@ export function ItemView({
   onToggleTheoryPageBreakAfter,
   hideTcfFormIcons = false,
   formulaireLetterGrid = false,
+  stackGeo = false,
+  showGeoFigure = true,
   onToggleFormulaireLetterGrid,
   hideMotsBanque = false,
   coordEdit,
@@ -131,6 +133,10 @@ export function ItemView({
   /** Masquer les icônes de forme en marge (ex. dual form sur le titre). */
   hideTcfFormIcons?: boolean
   formulaireLetterGrid?: boolean
+  /** TCM CFR 23–27 : forme centrée, grille de calcul en dessous. */
+  stackGeo?: boolean
+  /** TCM CFR 26–27 : masquer la forme quand l’aide est coupée. */
+  showGeoFigure?: boolean
   onToggleFormulaireLetterGrid?: () => void
   hideMotsBanque?: boolean
   coordEdit?: {
@@ -351,10 +357,10 @@ export function ItemView({
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && (seriesNumber !== undefined && item.geoNameCard ? (
           <ExerciseFrame title={`Forme ${seriesNumber}`} className="cfr-forme-frame">
-            <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />
+            <GeoBlock item={item} mode={mode} draftGrid={draftGrid} stack={stackGeo} showFigure={showGeoFigure} />
           </ExerciseFrame>
         ) : (
-          <GeoBlock item={item} mode={mode} draftGrid={draftGrid} />
+          <GeoBlock item={item} mode={mode} draftGrid={draftGrid} stack={stackGeo} showFigure={showGeoFigure} />
         ))}
         {item.layout === 'coord' && <CoordBlock item={item} mode={mode} coordEdit={coordEdit} />}
         {item.layout === 'algebra' && item.cscTask?.kind === 'problem' && <CscProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}

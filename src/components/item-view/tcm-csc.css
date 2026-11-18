@@ -203,19 +203,33 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-row { grid-template-columns: 1.2em minmax(0, 1fr) 14mm 2.4em; }
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-unit { width: 2.4em; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual.is-tight .geo-dual-figure { aspect-ratio: 9 / 5; min-height: 52mm; }
-/* Ex. 23–27 : cases du brouillon = cases de la grille de l’exercice 19.
-   Même largeur que le texte numéroté (marge du numéro), puis ÷ 24. */
-.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"], [data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .exercise-item { container-type: inline-size; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"], [data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-tight .geo-dual-pad { align-self: start; width: max-content; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"], [data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .draft-pad.draft-pad-geo {
-  --cfr-cell: calc((100cqi - (1.5 * 13pt * var(--app-font-scale, 1)) - var(--ex-num-gap) - 2px) / 24);
-  width: calc(9 * var(--cfr-cell) + 2px);
-  height: calc(4 * var(--cfr-cell) + 2px);
-  aspect-ratio: auto;
+/* Ex. 23–27 : forme centrée, grille de calcul identique à l’exercice 19, puis P à gauche et A à droite. */
+.geo-dual.is-cfr-stack.is-tight .geo-dual-top { display: flex; flex-direction: column; align-items: stretch; gap: 6px; width: 100%; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-figure { aspect-ratio: auto; min-height: 0; max-height: none; width: 100%; align-self: center; justify-content: center; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { width: min(84mm, 100%); height: auto; max-height: 42mm; max-width: 100%; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-pad { width: 100%; align-self: stretch; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
+  --grid-cols: 24;
+  --grid-rows: 5;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 24 / 5;
   flex: 0 0 auto;
   max-height: none;
-  background-size: var(--cfr-cell) var(--cfr-cell);
+  background-size: calc(100% / 24) calc(100% / 5);
+}
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answers { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; width: 100%; padding-top: 8px; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answer { display: flex; width: max-content; max-width: 48%; align-items: baseline; column-gap: 0.35em; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answer .answer-line-field { width: 32mm; min-width: 32mm; flex: 0 0 auto; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answer:last-child:not(:only-child) { margin-left: auto; }
+/* Ex. 26–27 : pas de numéro, la grille reprend la largeur (donc la case) de l’exercice 19. */
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
+  width: calc(100% - (1.5 * 13pt * var(--app-font-scale, 1)) - var(--ex-num-gap));
+  margin-inline: auto;
+}
+/* Deux problèmes + deux grilles : la forme d’aide reste lisible sans déborder l’A4. */
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure {
+  max-height: 28mm;
 }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geometry-figure .dim-label { font-size: calc(16pt * var(--app-font-scale, 1)); }
 .cfr-forme-frame .geo-name-card { border: 0; padding: 0; }

@@ -388,6 +388,30 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   </small>
                 </label>
               ) : null}
+              {activeBlock.exerciseType === 'tcm-cfr-ex25' || activeBlock.exerciseType === 'tcm-cfr-ex26' ? (
+                <div className="mode-toggle-block">
+                  <b>Forme</b>
+                  <div className="mode-toggle is-2" role="group" aria-label="Afficher la forme">
+                    <button
+                      type="button"
+                      className={activeBlock.geoFigureHelp !== false ? 'active' : undefined}
+                      aria-pressed={activeBlock.geoFigureHelp !== false}
+                      onClick={() => updatePage({ geoFigureHelp: true })}
+                    >
+                      Affichée
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.geoFigureHelp === false ? 'active' : undefined}
+                      aria-pressed={activeBlock.geoFigureHelp === false}
+                      onClick={() => updatePage({ geoFigureHelp: false })}
+                    >
+                      Masquée
+                    </button>
+                  </div>
+                  <small className="muted">La forme sert d’aide. Vous pouvez la masquer.</small>
+                </div>
+              ) : null}
               {activeBlock.exerciseType === 'tcm-csc-ex18' ? (
                 <label className="select-shell">
                   <span>Taille des formes</span>

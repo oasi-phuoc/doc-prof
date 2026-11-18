@@ -8,10 +8,15 @@ export function GeoBlock({
   item,
   mode,
   draftGrid = true,
+  stack = false,
+  showFigure = true,
 }: {
   item: MathItem
   mode: PreviewMode
   draftGrid?: boolean
+  /** Forme centrée, puis la grille de calcul pleine largeur. */
+  stack?: boolean
+  showFigure?: boolean
 }) {
   const show = mode === 'answers'
   if (item.geoDualPads) {
@@ -22,19 +27,21 @@ export function GeoBlock({
         ? [item.calcAnswer, item.calcAnswerSecondary].filter(Boolean).join('\n')
         : null
     return (
-      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}`} aria-label="Figure et calcul">
+      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}${stack ? ' is-cfr-stack' : ''}`} aria-label="Figure et calcul">
         {promptText ? <p className="column-prompt">{promptText}</p> : null}
         <div className="geo-dual-top">
-          <div className="geo-dual-figure">
-            {item.compositeScene ? (
-              <CompositeFigure scene={item.compositeScene} />
-            ) : (
-              <GeometryFigure type={item.figure} dims={item.dims} />
-            )}
-          </div>
+          {showFigure ? (
+            <div className="geo-dual-figure">
+              {item.compositeScene ? (
+                <CompositeFigure scene={item.compositeScene} />
+              ) : (
+                <GeometryFigure type={item.figure} dims={item.dims} />
+              )}
+            </div>
+          ) : null}
           <div className="geo-dual-pad">
             <div
-              className={`draft-pad draft-pad-geo ${draftGrid ? 'with-grid' : 'plain'}${
+              className={`draft-pad ${stack ? '' : 'draft-pad-geo '}${draftGrid ? 'with-grid' : 'plain'}${
                 padCorrection ? ' has-correction' : ''
               }`}
               aria-label="Zone de brouillon"

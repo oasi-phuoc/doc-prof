@@ -473,6 +473,7 @@ export function buildPage(
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
       formulaireLetterGrid: block.formulaireLetterGrid,
+      geoFigureHelp: block.geoFigureHelp,
       inlineBlankPx: block.inlineBlankPx,
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,
