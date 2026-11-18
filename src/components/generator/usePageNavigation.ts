@@ -5,7 +5,6 @@ import {
 } from '@/access'
 import { typeChoicesForBlock } from '@/components/generator/generator-derived'
 import { applyType, isOralComprehensionExercise, isProblemExercise } from '@/components/generator/page-helpers'
-import { typeChoicesForBlock } from '@/components/generator/generator-derived'
 import {
   defaultPage,
   exerciseTypeById,
