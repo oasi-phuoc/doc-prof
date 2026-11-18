@@ -427,6 +427,8 @@ export function TopbarTools({
   onPrintCorrectionsChange,
   hideChrome,
   onHideChromeChange,
+  pageBorder,
+  onTogglePageBorder,
   footerOpen,
   onToggleFooter,
   libreOpen,
@@ -448,6 +450,8 @@ export function TopbarTools({
   onPrintCorrectionsChange: (include: boolean) => void
   hideChrome: boolean
   onHideChromeChange: (hide: boolean) => void
+  pageBorder: boolean
+  onTogglePageBorder: () => void
   footerOpen: boolean
   onToggleFooter: () => void
   libreOpen: boolean
@@ -490,6 +494,16 @@ export function TopbarTools({
           <path
             fill="currentColor"
             d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v3h14V5H5zm0 5v9h14v-9H5zm2 6h6v2H7v-2z"
+          />
+        </svg>
+      </IconBtn>
+      <IconBtn label="Cadre de la page" active={pageBorder} onClick={onTogglePageBorder}>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
+          <path
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            d="M5 4h14v16H5z"
           />
         </svg>
       </IconBtn>

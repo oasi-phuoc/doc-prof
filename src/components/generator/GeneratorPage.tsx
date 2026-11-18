@@ -5,6 +5,7 @@ import { waitForGrammarPrintImages } from '@/components/grammar/print-media'
 import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -24,6 +25,7 @@ import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
 import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
+import { readPageBorder, storePageBorder } from '@/components/generator/page-border'
 import { applySheetFont, readSheetFont } from '@/components/generator/sheet-font'
 import {
   isA5DoubleFormat,
@@ -115,6 +117,12 @@ export function GeneratorPage({
   const [printCorrections, setPrintCorrections] = useState(
     () => openedFiche?.recipe.printCorrections ?? true,
   )
+  const [pageBorder, setPageBorder] = useState(readPageBorder)
+  useLayoutEffect(() => {
+    document.documentElement.classList.toggle('has-page-border', pageBorder)
+    storePageBorder(pageBorder)
+    return () => document.documentElement.classList.remove('has-page-border')
+  }, [pageBorder])
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>(() => openedFiche?.recipe.imageOverrides ?? {})
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
@@ -608,6 +616,8 @@ export function GeneratorPage({
             onPrintCorrectionsChange={setPrintCorrections}
             hideChrome={hideChrome}
             onHideChromeChange={setHideChrome}
+            pageBorder={pageBorder}
+            onTogglePageBorder={() => setPageBorder((on) => !on)}
             footerOpen={footerPanelOpen}
             onToggleFooter={() => setFooterPanelOpen((v) => !v)}
             libreOpen={libreMode}

@@ -973,6 +973,11 @@ html,body,#root{
   flex-direction:row!important;
   padding:0!important;
 }
+html.has-page-border .worksheet-sheet::before{
+  content:"";position:absolute;z-index:4;pointer-events:none;
+  border:1px solid var(--ink);top:1cm;right:1cm;bottom:1cm;left:1cm;
+  print-color-adjust:exact;-webkit-print-color-adjust:exact
+}
 .worksheet-sheet{
   display:flex!important;flex-direction:column;
   width:210mm!important;height:297mm!important;min-height:297mm!important;max-height:297mm!important;
@@ -1963,6 +1968,7 @@ html,body,#root{
   .sheet-preview-wrap{display:none!important}
   .print-only-sheets{display:block!important}
   .print-only-sheets .worksheet-sheet{width:210mm;min-height:297mm;max-height:297mm;height:297mm;margin:0;transform:none;border:0;box-shadow:none;display:flex;flex-direction:column;overflow:hidden;position:static;break-after:page;page-break-after:always}
+  html.has-page-border .print-only-sheets .worksheet-sheet{position:relative}
   .print-only-sheets .worksheet-sheet.is-a5-double{
     page:a5-double;
     width:297mm;min-height:210mm;max-height:210mm;height:210mm;
