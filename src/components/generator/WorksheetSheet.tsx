@@ -394,7 +394,7 @@ export function WorksheetSheet({
                       </button>
                     ) : null}
                     {evalMode && blockPts > 0 ? (
-                      <span className="instruction-points">{pointsBadge}</span>
+                      <span className="instruction-points">/ {pointsBadge}</span>
                     ) : null}
                   </div>
                   {mode==='answers' && hasMathAudioPrompts(block.exerciseType) && <MathExerciseAudio block={block}/>}
