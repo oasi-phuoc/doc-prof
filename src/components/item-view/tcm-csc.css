@@ -101,6 +101,7 @@
 .is-tcm-csc .instruction-points { align-self: baseline; }
 .is-tcm-csc .exercise-heading .exercise-instruction { margin-top: 13px; }
 .is-tcm-csc .compare-row.is-line { gap: 10px; }
+.exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-row.is-line { width: max-content; grid-template-columns: max-content auto max-content; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
 .is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
