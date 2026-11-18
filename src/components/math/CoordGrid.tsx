@@ -146,7 +146,6 @@ function CellsScene({
   cellScale = 1,
   shapeColors,
   paddedLabels = false,
-  largeLabels = false,
   rowLabelsRight = false,
   reverseColumns = false,
   reverseRows = false,
@@ -158,13 +157,12 @@ function CellsScene({
   cellScale?: number
   shapeColors?: Partial<Record<CoordShape,string>>
   paddedLabels?: boolean
-  largeLabels?: boolean
   rowLabelsRight?: boolean
   reverseColumns?: boolean
   reverseRows?: boolean
 }) {
   const cellMm = (scene.cellMm ?? 8) * cellScale
-  const { padL, padR, padT, padB } = paddedLabels ? {padL:rowLabelsRight?(largeLabels?0:2):10,padR:rowLabelsRight?(largeLabels?12:10):2,padT:4,padB:largeLabels?14:10} : mmPads('cells')
+  const { padL, padR, padT, padB } = paddedLabels ? {padL:rowLabelsRight?2:10,padR:rowLabelsRight?10:2,padT:4,padB:10} : mmPads('cells')
   const gridW = scene.cols * cellMm
   const gridH = scene.rows * cellMm
   const svgW = padL + gridW + padR
@@ -830,7 +828,6 @@ export function CoordGrid({
   cellScale = 1,
   shapeColors,
   paddedLabels = false,
-  largeLabels = false,
   rowLabelsRight = false,
   reverseColumns = false,
   reverseRows = false,
@@ -847,7 +844,6 @@ export function CoordGrid({
   cellScale?: number
   shapeColors?: Partial<Record<CoordShape,string>>
   paddedLabels?: boolean
-  largeLabels?: boolean
   rowLabelsRight?: boolean
   reverseColumns?: boolean
   reverseRows?: boolean
@@ -872,7 +868,7 @@ export function CoordGrid({
     )
   }
   if (scene?.variant === 'cells') {
-    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} paddedLabels={paddedLabels} largeLabels={largeLabels} rowLabelsRight={rowLabelsRight} reverseColumns={reverseColumns} reverseRows={reverseRows} />
+    return <CellsScene scene={scene} editable={editable} onPlace={onPlace} onRemove={onRemove} cellScale={cellScale} shapeColors={shapeColors} paddedLabels={paddedLabels} rowLabelsRight={rowLabelsRight} reverseColumns={reverseColumns} reverseRows={reverseRows} />
   }
 
   const ticks = Array.from({ length: 2 * RANGE + 1 }, (_, i) => i - RANGE)
