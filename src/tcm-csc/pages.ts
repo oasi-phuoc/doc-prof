@@ -30,6 +30,6 @@ export function buildTcmCscTestPages(): PageConfig[] {
       return { exerciseType: type.id, topic: type.topic, difficulty: 'moyen', count: spec.count, columns: 'columns' in spec ? spec.columns : 1, exerciseNo: cscSheetNumber(number), pointsPerQuestion: 'points' in spec ? spec.points : 1, ...(number >= 22 ? { problemDraftGrids: [true] } : {}) }
     })
     const [first, ...extraBlocks] = blocks
-    return { domain: TCM_CSC_DOMAIN, ...first!, exerciseGapPx: 25, ...(extraBlocks.length ? { extraBlocks } : {}) }
+    return { domain: TCM_CSC_DOMAIN, ...first!, exerciseGapPx: 50, ...(extraBlocks.length ? { extraBlocks } : {}) }
   })]
 }

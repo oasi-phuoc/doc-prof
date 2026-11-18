@@ -337,7 +337,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     max={80}
                     step={1}
                     aria-label="Espace entre les exercices"
-                    value={activeBlock.exerciseGapPx ?? activeSheet?.exerciseGapPx ?? 25}
+                    value={activeBlock.exerciseGapPx ?? activeSheet?.exerciseGapPx ?? 50}
                     onChange={(event) => {
                       const value = Number(event.target.value)
                       if (Number.isInteger(value) && value >= 0 && value <= 80) updatePage({ exerciseGapPx: value })

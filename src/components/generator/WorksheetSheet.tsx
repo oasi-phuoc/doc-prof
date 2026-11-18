@@ -241,7 +241,7 @@ export function WorksheetSheet({
   return (
     <Root
       className={rootClass + domainClass}
-      style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 25}px` } : {}) } as CSSProperties}
+      style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
         <InstitutionalDocumentHeader
