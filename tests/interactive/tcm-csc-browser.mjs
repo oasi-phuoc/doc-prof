@@ -92,7 +92,7 @@ try {
   await page.goto(`${base}/generateur`)
   await page.getByLabel('Domaine', { exact: true }).click({ timeout: 120000 })
   await page.getByRole('option', { name: 'TCM CSC', exact: true }).click()
-  await page.getByLabel('Page 19', { exact: true }).waitFor()
+  await page.getByLabel('Page 18', { exact: true }).waitFor()
   assert.match(await preview(page).innerText(), /24 exercices/)
   assert.equal(await page.getByRole('spinbutton', { name: 'Points par question de l’exercice sélectionné', exact: true }).count(), 0)
   console.log('CSC : test complet chargé depuis le menu Domaine.')
@@ -141,8 +141,8 @@ try {
   await page.evaluate(async () => { for (const image of document.images) image.loading = 'eager'; await document.fonts.ready; await Promise.all([...document.images].map((image) => image.decode().catch(() => {}))) })
   const printed = page.locator('.print-only-sheets .worksheet-sheet')
   const pages = await printed.count()
-  assert.ok(pages === 19 || pages === 38, `Unexpected print page count ${pages}`)
-  const copiesCount=pages/19
+  assert.ok(pages === 18 || pages === 36, `Unexpected print page count ${pages}`)
+  const copiesCount=pages/18
   const bounds = await printed.evaluateAll((sheets) => sheets.map((sheet, i) => {
     const footer = sheet.querySelector('.doc-footer').getBoundingClientRect()
     const blocks = [...sheet.querySelectorAll('.exercise-block')].map((block) => ({ label: block.querySelector('.exercise-heading')?.textContent?.trim().slice(0, 90), bottom: block.getBoundingClientRect().bottom }))
@@ -171,7 +171,7 @@ try {
   const series=exercise(6).first()
   assert.equal(await series.locator('.tcf-audio-frame-head').count(),0)
   assert.equal(await series.locator('.exercise-item').count(),1)
-  assert.equal(await series.evaluate(node=>!!node.closest('.worksheet-sheet').querySelector('[data-exercise-type="tcm-csc-ex25"]')),true)
+  assert.equal(await series.evaluate(node=>!!node.closest('.worksheet-sheet').querySelector('[data-exercise-type="tcm-csc-ex25"]')&&!!node.closest('.worksheet-sheet').querySelector('[data-exercise-type="tcm-csc-ex07"]')),true)
   assert.equal(await exercise(4).locator('.exercise-item').count(),copiesCount*4)
   assert.equal(await exercise(5).locator('.exercise-item').count(),copiesCount*4)
   for(const number of [4,5]) {
