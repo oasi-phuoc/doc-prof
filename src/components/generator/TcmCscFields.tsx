@@ -36,7 +36,7 @@ export function TcmCscFields({ item, typeId, change: onChange }: { item: MathIte
   } else if (item.layout === 'place-value' && typeId === 'tcm-csc-ex08') {
     fields = number('Nombre à décomposer', Number((item.prompt ?? '').replace(/['’\s]/g,'')), value=>change({...item,prompt:String(value)}),11,9999)
   } else if (task?.kind === 'number-grid') {
-    fields = <><p>La grille affiche les nombres de 0 à 100, dans l’ordre.</p><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
+    fields = <><p>La grille affiche les nombres de 1 à 100, dans l’ordre.</p><NumberList key={`heard:${task.heard.join()}`} label="Les cinq nombres à entendre" values={task.heard} change={(heard) => change({ ...item, cscTask: { ...task, heard } })} /></>
   } else if (task?.kind === 'shape-names') {
     fields = task.figures.map((figure, i) => <label key={i}>Forme {i + 1}<select aria-label={`Forme ${i + 1}`} value={figure} onChange={(e) => change({ ...item, cscTask: { ...task, figures: task.figures.map((f, j) => j === i ? e.target.value as Figure : f) } })}>{CSC_FIGURES.map((entry) => <option key={entry.value} value={entry.value}>{entry.label}</option>)}</select></label>)
   } else if (task?.kind === 'copy') {

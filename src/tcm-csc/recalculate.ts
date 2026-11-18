@@ -49,7 +49,7 @@ export function recalculateCsc(item: MathItem, typeId: string): MathItem | null 
       return { ...item, answer: String(result), audioParts: parts, audioSrc: parts[0], libreError: undefined }
     }
     if (task?.kind === 'number-grid') {
-      if (task.numbers.length !== 101 || task.numbers.some((n, index) => n !== index)) throw new Error('La grille contient les nombres de 0 à 100, dans l’ordre.')
+      if (task.numbers.length !== 100 || task.numbers.some((n, index) => n !== index + 1)) throw new Error('La grille contient les nombres de 1 à 100, dans l’ordre.')
       if (task.heard.length !== 5 || new Set(task.heard).size !== 5 || !task.heard.every((n) => task.numbers.includes(n))) throw new Error('Choisissez cinq nombres différents présents dans la grille.')
       const parts = task.heard.flatMap((n, i) => [...(i ? [SILENCE_6S_AUDIO] : []), ...cscNumberParts(n)])
       return { ...item, answer: task.heard.join(' ; '), audioParts: parts, audioSrc: undefined, libreError: undefined }

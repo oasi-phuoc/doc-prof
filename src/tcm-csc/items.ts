@@ -36,7 +36,7 @@ function calculations(rng: Rng, count: number): MathItem[] {
   })
 }
 function numberGrid(rng: Rng): MathItem {
-  const numbers = Array.from({ length: 101 }, (_, i) => i), heard = uniqueNumbers(rng, 5, 1, 100)
+  const numbers = Array.from({ length: 100 }, (_, i) => i + 1), heard = uniqueNumbers(rng, 5, 1, 100)
   const parts = heard.flatMap((n, i) => [...(i ? [SILENCE_6S_AUDIO] : []), ...numberAudioParts(n)])
   return { layout: 'csc-task', answer: heard.join(' ; '), audioParts: parts, cscTask: { kind: 'number-grid', numbers, heard } }
 }

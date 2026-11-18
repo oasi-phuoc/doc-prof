@@ -49,17 +49,18 @@ try {
     }
     for (const src of assets) await access(`public${src}`)
   })
-  await test('the listening grid keeps zero to one hundred in order and five audible targets, including an editable zero', async () => {
+  await test('the listening grid keeps one to one hundred in order and five audible targets', () => {
     for (const sample of samples) {
       const item = sample.get(3)[0], { numbers, heard } = item.cscTask
-      assert.deepEqual(numbers, Array.from({ length: 101 }, (_, i) => i))
-      assert.equal(new Set(heard).size, 5); assert.ok(heard.every((n) => numbers.includes(n) && n > 0))
+      assert.deepEqual(numbers, Array.from({ length: 100 }, (_, i) => i + 1))
+      assert.equal(new Set(heard).size, 5); assert.ok(heard.every((n) => numbers.includes(n)))
       assert.equal(item.audioParts.filter((src) => src.endsWith('silence-6s.mp3')).length, 4)
     }
-    const item = structuredClone(samples[0].get(3)[0]); item.cscTask.numbers = Array.from({ length: 101 }, (_, i) => i); item.cscTask.heard = [0, 1, 2, 3, 4]
-    const zero = recalculateCsc(item, 'tcm-csc-ex03')
-    assert.equal(zero.libreError, undefined); assert.ok(zero.audioParts.includes('/lib/audio/vocabulaire/objets/zéro.mp3'))
-    await access('public/lib/audio/vocabulaire/objets/zéro.mp3')
+    const item = structuredClone(samples[0].get(3)[0]); item.cscTask.heard = [1, 2, 3, 4, 5]
+    const edited = recalculateCsc(item, 'tcm-csc-ex03')
+    assert.equal(edited.libreError, undefined); assert.equal(edited.answer, '1 ; 2 ; 3 ; 4 ; 5')
+    const zero = structuredClone(samples[0].get(3)[0]); zero.cscTask.heard = [0, 1, 2, 3, 4]
+    assert.match(recalculateCsc(zero, 'tcm-csc-ex03').libreError, /présents dans la grille/)
   })
   await test('sequence exercises contain six terms with four blanks, or eight terms with five blanks', () => {
     for (const sample of samples) for (const exercise of [4, 5]) for (const item of sample.get(exercise)) {

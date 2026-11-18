@@ -116,8 +116,10 @@ try {
 
   await page.getByLabel('Page 3', { exact: true }).click()
   await preview(page).locator('.csc-number-grid').waitFor()
-  assert.equal(await preview(page).locator('.csc-number-grid td').count(), 101)
-  assert.equal(await preview(page).locator('.csc-number-grid tr').count(),11)
+  assert.equal(await preview(page).locator('.csc-number-grid td').count(), 100)
+  assert.equal(await preview(page).locator('.csc-number-grid tr').count(), 10)
+  assert.equal((await preview(page).locator('.csc-number-grid td').first().textContent())?.trim(), '1')
+  assert.equal((await preview(page).locator('.csc-number-grid td').last().textContent())?.trim(), '100')
   const gridCells = await preview(page).locator('.csc-number-grid td').evaluateAll(nodes=>nodes.map(node=>({width:node.getBoundingClientRect().width,height:node.getBoundingClientRect().height})))
   assert.ok(gridCells.every(cell=>Math.abs(cell.width-cell.height)<1))
   assert.equal(await preview(page).locator('.csc-number-grid td').first().evaluate(node=>getComputedStyle(node).fontWeight),'700')
