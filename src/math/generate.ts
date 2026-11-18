@@ -356,9 +356,12 @@ function buildSingleBlock(
       items: calligraphie.items,
     }
   }
+  const cfrOrder = config.exerciseType === 'tcm-cfr-ex03' && config.orderAscending != null
+    ? `Rangez les nombres ${config.orderAscending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
+    : null
   return {
     title: fallbackTitle,
-    instruction: type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
+    instruction: cfrOrder ?? type?.instruction ?? 'Calculez, complète ou simplifiez chaque expression.',
     items: generateItems(
       config.exerciseType,
       config.count,
@@ -367,6 +370,7 @@ function buildSingleBlock(
       numberRangeFrom(config),
       config.quadLibre ? config.quadShapes : undefined,
       worksheetSeed,
+      config.orderAscending,
     ),
   }
 }
@@ -458,7 +462,7 @@ export function buildPage(
           ? ((libre?.instruction ?? result.instruction)?.replace(/^Théorie — /, '') || `Théorie`)
           : isJeux
             ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${exerciseIndex}`)
-            : `Exercice ${exerciseIndex}`,
+            : (block.sheetTitle ?? `Exercice ${exerciseIndex}`),
       instruction: libre?.instruction ?? result.instruction,
       // Filet anti bruit binaire (7,2700000000000005) sur toutes les fiches.
       items,

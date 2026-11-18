@@ -6,14 +6,17 @@ export const MAX_BASE_FONT_SIZE = 24
 /** Variable CSS : échelle du texte des feuilles imprimables uniquement. */
 export const SHEET_FONT_SCALE_VAR = '--sheet-font-scale'
 const CSC_FONT_SCALE_VAR = '--sheet-tcm-csc-font-scale'
-const storageKey = (domain?: string) => domain === 'tcm-csc' ? `${FONT_SIZE_STORAGE_KEY}:tcm-csc` : FONT_SIZE_STORAGE_KEY
+const CFR_FONT_SCALE_VAR = '--sheet-tcm-cfr-font-scale'
+const sheetFontDomain = (domain?: string) => domain === 'tcm-csc' || domain === 'tcm-cfr'
+const storageKey = (domain?: string) => sheetFontDomain(domain) ? `${FONT_SIZE_STORAGE_KEY}:${domain}` : FONT_SIZE_STORAGE_KEY
+const fontScaleVar = (domain?: string) => domain === 'tcm-cfr' ? CFR_FONT_SCALE_VAR : domain === 'tcm-csc' ? CSC_FONT_SCALE_VAR : SHEET_FONT_SCALE_VAR
 
 export function normalizeBaseFontSize(value: number): number {
   return Math.min(MAX_BASE_FONT_SIZE, Math.max(MIN_BASE_FONT_SIZE, Math.round(value)))
 }
 
 export function readBaseFontSize(domain?: string): number {
-  const fallback = domain === 'tcm-csc' ? DEFAULT_CSC_FONT_SIZE : DEFAULT_BASE_FONT_SIZE
+  const fallback = sheetFontDomain(domain) ? DEFAULT_CSC_FONT_SIZE : DEFAULT_BASE_FONT_SIZE
   try {
     const stored = window.localStorage.getItem(storageKey(domain))
     if (stored === null) return fallback
@@ -29,7 +32,7 @@ export function readBaseFontSize(domain?: string): number {
 export function applyBaseFontSize(value: number, persist = true, domain?: string): number {
   const size = normalizeBaseFontSize(value)
   const root = document.documentElement.style
-  root.setProperty(domain === 'tcm-csc' ? CSC_FONT_SCALE_VAR : SHEET_FONT_SCALE_VAR, String(size / DEFAULT_BASE_FONT_SIZE))
+  root.setProperty(fontScaleVar(domain), String(size / DEFAULT_BASE_FONT_SIZE))
   // Ancienne échelle globale : ne plus toucher l’UI hors fiche.
   root.removeProperty('--app-font-scale')
   if (persist) {

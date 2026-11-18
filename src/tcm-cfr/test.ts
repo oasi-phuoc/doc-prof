@@ -13,6 +13,8 @@ type BlockSpec = {
   columns?: 1 | 2 | 3
   pointsPerQuestion?: number
   exerciseNo?: number
+  orderAscending?: boolean
+  sheetTitle?: string
 }
 
 type StepSpec = {
@@ -25,7 +27,10 @@ type StepSpec = {
 export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 1, label: 'Nombres entendus', blocks: [{ exerciseType: 'tcm-cfr-ex01', count: 5, columns: 1, pointsPerQuestion: 0.5 }] },
   { id: 2, label: 'Multiplications orales', blocks: [{ exerciseType: 'tcm-cfr-ex02', count: 5, columns: 1, pointsPerQuestion: 0.5 }] },
-  { id: 3, label: 'Ranger', blocks: [{ exerciseType: 'tcm-cfr-ex03', count: 2, columns: 1, pointsPerQuestion: 2 }] },
+  { id: 3, label: 'Ranger', blocks: [
+    { exerciseType: 'tcm-cfr-ex03', count: 1, columns: 1, pointsPerQuestion: 2, orderAscending: true },
+    { exerciseType: 'tcm-cfr-ex03', count: 1, columns: 1, pointsPerQuestion: 2, orderAscending: false, sheetTitle: 'Exercice 3 bis' },
+  ] },
   { id: 4, label: 'Comparer décimaux', blocks: [{ exerciseType: 'tcm-cfr-ex04', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
   { id: 5, label: 'Décomposer', blocks: [{ exerciseType: 'tcm-cfr-ex05', count: 2, columns: 1, pointsPerQuestion: 1 }] },
   { id: 6, label: 'Nommer les opérations', blocks: [{ exerciseType: 'tcm-cfr-ex06', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
@@ -55,8 +60,8 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
 ]
 
 const TCM_CFR_PACKED_PAGES: readonly (readonly number[])[] = [
-  [1, 2],
-  [3, 4, 5, 6],
+  [1, 2, 3],
+  [4, 5, 6],
   [7, 8],
   [9, 10],
   [11, 12],
@@ -100,8 +105,10 @@ function blockFromSpec(
     count: spec.count,
     columns: Math.max(1, Math.min(3, columns)) as 1 | 2 | 3,
     ...(isDraftPadExercise(type.id)
-      ? { problemDraftGrids: Array.from({ length: spec.count }, () => false) }
+      ? { problemDraftGrids: Array.from({ length: spec.count }, () => true) }
       : {}),
+    ...(spec.orderAscending != null ? { orderAscending: spec.orderAscending } : {}),
+    ...(spec.sheetTitle ? { sheetTitle: spec.sheetTitle } : {}),
     ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
     ...(exerciseNo != null || spec.exerciseNo != null
       ? { exerciseNo: spec.exerciseNo ?? exerciseNo }

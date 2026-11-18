@@ -323,7 +323,7 @@ try {
   results.push({ freeMode: 'source logic question selectable; 103 problem contexts available; changing to subtraction with 98 and 54 recomputes 44 books after validation', numbering: 'exercise 21 omitted; exercises 22, 23 and 24 kept' })
   await page.getByLabel('Domaine', { exact: true }).click()
   await page.getByRole('option',{name:'TCM CFR',exact:true}).click()
-  await page.getByLabel('Page 1',{exact:true}).click();await checkTypography(page,16)
+  await page.getByLabel('Page 1',{exact:true}).click();await checkTypography(page,20)
   await page.getByLabel('Page 2',{exact:true}).click()
   await button(page,'Fiche élève (cliquer pour corrigé)').click()
   await checkPlayers(page,'tcm-cfr-ex02','Calcul',true)

@@ -105,7 +105,7 @@ export function GeneratorPage({
   const [seed, setSeed] = useState(() => openedFiche?.recipe.seed ?? randomSeed())
   const [selectedCoordShape, setSelectedCoordShape] = useState<CoordShape | null>('triangle')
   const [themeColor, setThemeColor] = useState(readThemeColor)
-  const [fontSizes, setFontSizes] = useState(() => ({default:readBaseFontSize(),csc:readBaseFontSize('tcm-csc')}))
+  const [fontSizes, setFontSizes] = useState(() => ({default:readBaseFontSize(),csc:readBaseFontSize('tcm-csc'),cfr:readBaseFontSize('tcm-cfr')}))
   const [sheetFont, setSheetFont] = useState(() => openedFiche?.recipe.sheetFont ?? readSheetFont())
   useEffect(() => { applySheetFont(sheetFont, false) }, [sheetFont])
   const [sheetFormat, setSheetFormat] = useState<SheetFormat>(
@@ -140,7 +140,7 @@ export function GeneratorPage({
 
   const changeFontSize = (size: number) => {
     const value=applyBaseFontSize(size,true,activePage.domain)
-    setFontSizes(current=>({...current,[activePage.domain==='tcm-csc'?'csc':'default']:value}))
+    setFontSizes(current=>({...current,[activePage.domain==='tcm-csc'?'csc':activePage.domain==='tcm-cfr'?'cfr':'default']:value}))
   }
   const changeExerciseGap = (value: number) => {
     if (!Number.isInteger(value) || value < 0 || value > 80) return
@@ -161,7 +161,7 @@ export function GeneratorPage({
   const activeSheet = worksheets[safeSheetIndex] ?? worksheets[0]
   const pageIndex = activeSheet?.configIndex ?? Math.min(sheetIndex, Math.max(0, pages.length - 1))
   const activePage = pages[pageIndex] ?? pages[0]!
-  const fontSize = activePage.domain === 'tcm-csc' ? fontSizes.csc : fontSizes.default
+  const fontSize = activePage.domain === 'tcm-csc' ? fontSizes.csc : activePage.domain === 'tcm-cfr' ? fontSizes.cfr : fontSizes.default
   const referenceLocked = isAlphaSoutienDomain(activePage.domain)
   useEffect(() => {
     if (!referenceLocked) return

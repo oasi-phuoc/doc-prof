@@ -82,11 +82,12 @@ function genEx02(rng: Rng, count: number): MathItem[] {
 }
 
 /** Ex. 3 — ranger 7 nombres (Q1 mixtes 10–100 ; Q2 même unité, décimales variables). */
-function genEx03(rng: Rng): MathItem[] {
+function genEx03(rng: Rng, ascending?: boolean): MathItem[] {
   const orderItem = (
-    ascending: boolean,
+    direction: boolean,
     sequence: string[],
     ordered: string[],
+    withPrompt: boolean,
   ): MathItem => ({
     layout: 'order',
     sequence,
@@ -94,9 +95,9 @@ function genEx03(rng: Rng): MathItem[] {
     orderBoxed: true,
     /** Cadres / traits compacts (max. 3 chiffres) pour tenir sur une ligne. */
     orderCompact: true,
-    orderOp: ascending ? '<' : '>',
-    prompt: ascending ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :',
-    answer: ordered.join(ascending ? ' < ' : ' > '),
+    orderOp: direction ? '<' : '>',
+    ...(withPrompt ? { prompt: direction ? 'Du plus petit au plus grand :' : 'Du plus grand au plus petit :' } : {}),
+    answer: ordered.join(direction ? ' < ' : ' > '),
   })
 
   // Q1 — 7 nombres 10–100, 0 ou 1 décimale.
@@ -108,9 +109,10 @@ function genEx03(rng: Rng): MathItem[] {
     if (q1vals.some((x) => Math.abs(x - v) < 1e-9)) continue
     q1vals.push(v)
   }
-  const q1Asc = rng() < 0.5
+  const q1Asc = ascending ?? rng() < 0.5
   const q1Shuf = shuffle(rng, q1vals)
   const q1Ord = [...q1Shuf].sort((a, b) => (q1Asc ? a - b : b - a))
+  if (ascending === true) return [orderItem(true, q1Shuf.map(fmt), q1Ord.map(fmt), false)]
 
   // Q2 — même partie entière, décimales variables (6 · 6,1 · 6,01 · 6,11…).
   const unit = int(rng, 2, 9)
@@ -148,13 +150,14 @@ function genEx03(rng: Rng): MathItem[] {
       q2vals.push(v)
     }
   }
-  const q2Asc = !q1Asc
+  const q2Asc = ascending === false ? false : !q1Asc
   const q2Shuf = shuffle(rng, q2vals)
   const q2Ord = [...q2Shuf].sort((a, b) => (q2Asc ? a - b : b - a))
+  if (ascending === false) return [orderItem(false, q2Shuf.map(fmt), q2Ord.map(fmt), false)]
 
   return [
-    orderItem(q1Asc, q1Shuf.map(fmt), q1Ord.map(fmt)),
-    orderItem(q2Asc, q2Shuf.map(fmt), q2Ord.map(fmt)),
+    orderItem(q1Asc, q1Shuf.map(fmt), q1Ord.map(fmt), true),
+    orderItem(q2Asc, q2Shuf.map(fmt), q2Ord.map(fmt), true),
   ]
 }
 
@@ -198,7 +201,7 @@ function genEx04(rng: Rng, count: number): MathItem[] {
   while (picked.length < count) picked.push(pick(rng, makers))
   return picked.map((make) => {
     const { left, right, answer } = make()
-    return { layout: 'compare' as const, left, right, answer }
+    return { layout: 'compare' as const, left, right, answer, cscTask: { kind: 'compare-line' as const } }
   })
 }
 
@@ -268,7 +271,7 @@ function genAddSubFour(rng: Rng, empty: boolean): MathItem[] {
     }
     return withFixedColumnWidth(columnItem('−', a, b, a - b, empty), width)
   }
-  return shuffle(rng, [mkAdd(), mkAdd(), mkSub(), mkSub()])
+  return [mkAdd(), mkAdd(), mkSub(), mkSub()]
 }
 
 /** × 100–999 × 11–99 et ÷ 1000–9999 ÷ 2–9. */
@@ -488,29 +491,16 @@ function genEx19(rng: Rng): MathItem[] {
     mm,
     unit: units[i]!,
     display: units[i] === 'cm' ? fmt(mm / 10) : String(mm),
+    slope: (rng() < 0.5 ? -1 : 1) * (2 + int(rng, 0, 6)) / 100,
   }))
-  const letters = ['a', 'b', 'c'] as const
   const longest = segments.reduce((best, s, i) => (s.mm > segments[best]!.mm ? i : best), 0)
   const shortest = segments.reduce((best, s, i) => (s.mm < segments[best]!.mm ? i : best), 0)
-  const qLongFirst = rng() < 0.5
   return [
     {
       layout: 'segment-measure' as const,
+      cscTask: { kind: 'length-table' as const, colors: shuffle(rng, [0, 1, 2, 3]).slice(0, 3) },
       segments,
-      selectVariant: 'pills',
-      options: qLongFirst
-        ? [
-            'Quel segment est le plus long ?',
-            'Quel segment est le plus court ?',
-          ]
-        : [
-            'Quel segment est le plus court ?',
-            'Quel segment est le plus long ?',
-          ],
-      answer: qLongFirst
-        ? `${letters[longest]} ; ${letters[shortest]}`
-        : `${letters[shortest]} ; ${letters[longest]}`,
-      labels: segments.map((s) => `${s.display} ${s.unit}`),
+      answer: `${String.fromCharCode(65 + longest)} ; ${String.fromCharCode(65 + shortest)}`,
     },
   ]
 }
@@ -843,6 +833,7 @@ export function tryGenerateTcmCfrItems(
   count: number,
   rng: Rng,
   worksheetSeed = 0,
+  orderAscending?: boolean,
 ): MathItem[] | null {
   if (!isTcmCfrType(typeId)) return null
   // Page Informations : générée via `generateTpmInformations` dans `math/generate.ts`.
@@ -850,7 +841,7 @@ export function tryGenerateTcmCfrItems(
   let items: MathItem[] | null = null
   if (typeId === 'tcm-cfr-ex01') items = genEx01(rng, count)
   else if (typeId === 'tcm-cfr-ex02') items = genEx02(rng, count)
-  else if (typeId === 'tcm-cfr-ex03') items = genEx03(rng).slice(0, Math.max(1, count))
+  else if (typeId === 'tcm-cfr-ex03') items = genEx03(rng, orderAscending).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex04') items = genEx04(rng, count)
   else if (typeId === 'tcm-cfr-ex05') items = genEx05(rng).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex06') items = genEx06(rng).slice(0, Math.max(1, count))

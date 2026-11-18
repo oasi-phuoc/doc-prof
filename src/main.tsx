@@ -6,6 +6,7 @@ import App from './App.tsx'
 
 applyBaseFontSize(readBaseFontSize(), false)
 applyBaseFontSize(readBaseFontSize('tcm-csc'), false, 'tcm-csc')
+applyBaseFontSize(readBaseFontSize('tcm-cfr'), false, 'tcm-cfr')
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

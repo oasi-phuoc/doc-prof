@@ -36,7 +36,7 @@ import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 import { clampInlineBlankPx } from '@/tcf/inline-blank'
 import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
 
-const CSC_BOLD = ['Écrivez', 'Entourez', 'Complétez', 'Rangez', 'Comparez', 'Décomposez', 'Calculez', 'Posez', 'Reproduisez', 'reliez', 'Cochez', 'Dessinez', 'Résolvez', 'centaines', 'dizaines', 'unités']
+const CSC_BOLD = ['Écrivez', 'Entourez', 'Complétez', 'Rangez', 'Comparez', 'Décomposez', 'Calculez', 'calculez', 'Posez', 'Reproduisez', 'reliez', 'Cochez', 'Dessinez', 'Résolvez', 'Coloriez', 'Nommez', 'Mesurez', 'Convertissez', 'Répondez', 'Lisez', 'centaines', 'dizaines', 'unités']
 function markCscInstruction(text: string): string {
   const marked = CSC_BOLD.reduce((value, word) => value.replaceAll(word, `[[b]]${word}[[/b]]`), text)
   return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
@@ -233,7 +233,7 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
-  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : ''
+  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : ''
   const Root = asHalf ? 'div' : 'article'
   const rootClass = asHalf
     ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
@@ -267,7 +267,7 @@ export function WorksheetSheet({
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
           const blockHeading = block.title
-          const cscCopy = block.instruction && block.exerciseType.startsWith('tcm-csc-') ? cscSheetCopy(block.exerciseType, block.instruction) : null
+          const cscCopy = block.instruction && /^tcm-c(?:sc|fr)-/.test(block.exerciseType) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
@@ -435,7 +435,7 @@ export function WorksheetSheet({
                 </div>
               ) : null}
               <WorksheetItems
-                groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
+                groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) || /^tcm-cfr-ex(?:07|08)$/.test(block.exerciseType)}
                 className={`exercise-grid${
                   block.items.every((item) => item.layout === 'algebra')
                     ? ' algebra-grid'

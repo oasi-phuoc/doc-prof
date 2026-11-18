@@ -851,6 +851,10 @@ export type ExerciseBlock = {
    * Si absent, numérotation chronologique.
    */
   exerciseNo?: number
+  /** Titre de fiche à la place de « Exercice N » (ex. « Exercice 3 bis »). */
+  sheetTitle?: string
+  /** TCM CFR exercice 3 : sens imposé. Absent = les deux sens dans le même exercice. */
+  orderAscending?: boolean
   /**
    * Points par question pour ce bloc (mode évaluation).
    * Si absent, le total utilise le réglage global de la fiche.
