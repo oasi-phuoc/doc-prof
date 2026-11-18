@@ -11,6 +11,7 @@ import {
   hueFromPointer,
 } from '@/components/generator/theme'
 import { MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE } from '@/components/generator/typography'
+import type { SheetMargin } from '@/components/generator/page-border'
 import {
   SHEET_FORMAT_LABELS,
   type SheetFormat,
@@ -293,6 +294,78 @@ function FormatSection({
   )
 }
 
+function PageBorderSection({
+  pageBorder,
+  onChange,
+}: {
+  pageBorder: boolean
+  onChange: (on: boolean) => void
+}) {
+  const options = [
+    { on: true, title: 'Avec bordure', hint: 'Cadre autour de la feuille' },
+    { on: false, title: 'Sans bordure', hint: 'Pas de cadre sur la feuille' },
+  ]
+  return (
+    <div className="settings-section" role="radiogroup" aria-label="Bordure de page">
+      <p className="settings-section-title">Bordure de page</p>
+      <div className="settings-format-list">
+        {options.map((option) => (
+          <button
+            key={option.title}
+            type="button"
+            role="radio"
+            aria-checked={pageBorder === option.on}
+            className={`settings-format-option${pageBorder === option.on ? ' active' : ''}`}
+            onClick={() => onChange(option.on)}
+          >
+            <span className="settings-format-radio" aria-hidden="true" />
+            <span className="settings-format-copy">
+              <strong>{option.title}</strong>
+              <span>{option.hint}</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function MarginSection({
+  sheetMargin,
+  onChange,
+}: {
+  sheetMargin: SheetMargin
+  onChange: (margin: SheetMargin) => void
+}) {
+  const options: Array<{ id: SheetMargin; title: string; hint: string }> = [
+    { id: 'facing', title: 'Vis-à-vis, 3 cm et 1 cm', hint: '3 cm côté reliure, 1 cm à l’extérieur' },
+    { id: 'symmetric', title: '2 cm à gauche et à droite', hint: 'Même marge des deux côtés, à l’écran et à l’impression' },
+  ]
+  return (
+    <div className="settings-section" role="radiogroup" aria-label="Marges">
+      <p className="settings-section-title">Marges</p>
+      <div className="settings-format-list">
+        {options.map((option) => (
+          <button
+            key={option.id}
+            type="button"
+            role="radio"
+            aria-checked={sheetMargin === option.id}
+            className={`settings-format-option${sheetMargin === option.id ? ' active' : ''}`}
+            onClick={() => onChange(option.id)}
+          >
+            <span className="settings-format-radio" aria-hidden="true" />
+            <span className="settings-format-copy">
+              <strong>{option.title}</strong>
+              <span>{option.hint}</span>
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function PrintCorrectionsSection({
   printCorrections,
   onChange,
@@ -381,6 +454,10 @@ function AccountMenu({
   onHideChromeChange,
   exerciseGap,
   onExerciseGapChange,
+  pageBorder,
+  onPageBorderChange,
+  sheetMargin,
+  onSheetMarginChange,
   onLogout,
 }: {
   themeColor: string
@@ -397,6 +474,10 @@ function AccountMenu({
   onHideChromeChange: (hide: boolean) => void
   exerciseGap?: number
   onExerciseGapChange?: (gap: number) => void
+  pageBorder: boolean
+  onPageBorderChange: (on: boolean) => void
+  sheetMargin: SheetMargin
+  onSheetMarginChange: (margin: SheetMargin) => void
   onLogout: () => void
 }) {
   const [open, setOpen] = useState(false)
@@ -437,6 +518,8 @@ function AccountMenu({
           <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} sheetFont={sheetFont} onSheetFontChange={onSheetFontChange} />
           <ColorSection themeColor={themeColor} onChange={onThemeColor} />
           <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
+          <PageBorderSection pageBorder={pageBorder} onChange={onPageBorderChange} />
+          <MarginSection sheetMargin={sheetMargin} onChange={onSheetMarginChange} />
           <PrintCorrectionsSection printCorrections={printCorrections} onChange={onPrintCorrectionsChange} />
           <ChromeSection hideChrome={hideChrome} onChange={onHideChromeChange} />
           {exerciseGap != null && onExerciseGapChange ? (
@@ -482,7 +565,9 @@ export function TopbarTools({
   exerciseGap,
   onExerciseGapChange,
   pageBorder,
-  onTogglePageBorder,
+  onPageBorderChange,
+  sheetMargin,
+  onSheetMarginChange,
   footerOpen,
   onToggleFooter,
   libreOpen,
@@ -508,7 +593,9 @@ export function TopbarTools({
   exerciseGap?: number
   onExerciseGapChange?: (gap: number) => void
   pageBorder: boolean
-  onTogglePageBorder: () => void
+  onPageBorderChange: (on: boolean) => void
+  sheetMargin: SheetMargin
+  onSheetMarginChange: (margin: SheetMargin) => void
   footerOpen: boolean
   onToggleFooter: () => void
   libreOpen: boolean
@@ -554,16 +641,6 @@ export function TopbarTools({
           />
         </svg>
       </IconBtn>
-      <IconBtn label="Cadre de la page" active={pageBorder} onClick={onTogglePageBorder}>
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-          <path
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            d="M5 4h14v16H5z"
-          />
-        </svg>
-      </IconBtn>
       <IconBtn label="Mode libre" active={libreOpen} onClick={onToggleLibre}>
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path
@@ -588,6 +665,10 @@ export function TopbarTools({
         onHideChromeChange={onHideChromeChange}
         exerciseGap={exerciseGap}
         onExerciseGapChange={onExerciseGapChange}
+        pageBorder={pageBorder}
+        onPageBorderChange={onPageBorderChange}
+        sheetMargin={sheetMargin}
+        onSheetMarginChange={onSheetMarginChange}
         onLogout={onLogout}
       />
     </div>

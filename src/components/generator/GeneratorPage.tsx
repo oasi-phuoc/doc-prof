@@ -25,7 +25,14 @@ import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
 import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
-import { readPageBorder, storePageBorder } from '@/components/generator/page-border'
+import {
+  applySheetChrome,
+  isTestSheetDomain,
+  readPageBorder,
+  readSheetMargin,
+  storePageBorder,
+  storeSheetMargin,
+} from '@/components/generator/page-border'
 import { applySheetFont, readSheetFont } from '@/components/generator/sheet-font'
 import {
   isA5DoubleFormat,
@@ -90,6 +97,7 @@ export function GeneratorPage({
     accountCanAccessDomain(accessAccount, 'algèbre') ? 'algèbre' : firstAllowedDomain,
   )
   const [pages, setPages] = useState<PageConfig[]>(() => openedFiche?.recipe.pages ?? [initial])
+  const initialDomain = openedFiche?.recipe.pages[0]?.domain ?? initial.domain
   const [sheetIndex, setSheetIndex] = useState(0)
   const [blockIndex, setBlockIndex] = useState(0)
   const [mode, setMode] = useState<PreviewMode>('student')
@@ -117,12 +125,14 @@ export function GeneratorPage({
   const [printCorrections, setPrintCorrections] = useState(
     () => openedFiche?.recipe.printCorrections ?? true,
   )
-  const [pageBorder, setPageBorder] = useState(readPageBorder)
+  const [pageBorder, setPageBorder] = useState(() => readPageBorder(initialDomain))
+  const [sheetMargin, setSheetMargin] = useState(() => readSheetMargin(initialDomain))
   useLayoutEffect(() => {
-    document.documentElement.classList.toggle('has-page-border', pageBorder)
-    storePageBorder(pageBorder)
-    return () => document.documentElement.classList.remove('has-page-border')
-  }, [pageBorder])
+    applySheetChrome(pageBorder, sheetMargin)
+    return () => {
+      document.documentElement.classList.remove('has-page-border', 'is-margin-facing', 'is-margin-symmetric')
+    }
+  }, [pageBorder, sheetMargin])
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>(() => openedFiche?.recipe.imageOverrides ?? {})
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
@@ -161,6 +171,11 @@ export function GeneratorPage({
   const activeSheet = worksheets[safeSheetIndex] ?? worksheets[0]
   const pageIndex = activeSheet?.configIndex ?? Math.min(sheetIndex, Math.max(0, pages.length - 1))
   const activePage = pages[pageIndex] ?? pages[0]!
+  const chromeFamily = isTestSheetDomain(activePage.domain) ? 'test' : 'other'
+  useLayoutEffect(() => {
+    setPageBorder(readPageBorder(activePage.domain))
+    setSheetMargin(readSheetMargin(activePage.domain))
+  }, [chromeFamily, activePage.domain])
   const fontSize = activePage.domain === 'tcm-csc' ? fontSizes.csc : activePage.domain === 'tcm-cfr' ? fontSizes.cfr : fontSizes.default
   const referenceLocked = isAlphaSoutienDomain(activePage.domain)
   useEffect(() => {
@@ -631,7 +646,15 @@ export function GeneratorPage({
             exerciseGap={activePage.domain === 'tcm-csc' ? activePage.exerciseGapPx ?? 50 : undefined}
             onExerciseGapChange={changeExerciseGap}
             pageBorder={pageBorder}
-            onTogglePageBorder={() => setPageBorder((on) => !on)}
+            onPageBorderChange={(on) => {
+              setPageBorder(on)
+              storePageBorder(on, activePage.domain)
+            }}
+            sheetMargin={sheetMargin}
+            onSheetMarginChange={(margin) => {
+              setSheetMargin(margin)
+              storeSheetMargin(margin, activePage.domain)
+            }}
             footerOpen={footerPanelOpen}
             onToggleFooter={() => setFooterPanelOpen((v) => !v)}
             libreOpen={libreMode}

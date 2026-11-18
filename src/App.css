@@ -1027,14 +1027,19 @@ html.has-page-border .worksheet-sheet::before{
 .a5-half .doc-footer-brand strong{
   font-size:calc(9px * var(--app-font-scale, 1));
 }
-/* Marges miroir à l’impression seulement (recto/verso).
-   Aperçu : marges symétriques pour éviter le saut visuel page paire → impaire. */
-.worksheet-sheet.sheet-odd,
-.worksheet-sheet.sheet-even{padding:12mm 16mm 10mm}
-/* Jeux : marges symétriques (aperçu = impression, pas de décalage miroir). */
+/* Vis-à-vis : 3 cm côté reliure, 1 cm à l’extérieur. Aperçu et impression. */
+.worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 3cm}
+.worksheet-sheet.sheet-even{padding:12mm 3cm 10mm 1cm}
+html.is-margin-symmetric .worksheet-sheet.sheet-odd,
+html.is-margin-symmetric .worksheet-sheet.sheet-even{padding:12mm 2cm 10mm 2cm}
+/* Jeux : marges propres, hors du réglage vis-à-vis / 2 cm. */
 .worksheet-sheet.is-jeux,
 .worksheet-sheet.is-jeux.sheet-odd,
-.worksheet-sheet.is-jeux.sheet-even{padding:10mm 12mm 8mm}
+.worksheet-sheet.is-jeux.sheet-even,
+html.is-margin-symmetric .worksheet-sheet.is-jeux.sheet-odd,
+html.is-margin-symmetric .worksheet-sheet.is-jeux.sheet-even,
+html.is-margin-facing .worksheet-sheet.is-jeux.sheet-odd,
+html.is-margin-facing .worksheet-sheet.is-jeux.sheet-even{padding:10mm 12mm 8mm}
 .sheet-body{
   flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;
   font-size:calc(13pt * var(--app-font-scale, 1));
@@ -1298,12 +1303,15 @@ html.has-page-border .worksheet-sheet::before{
 .a4-frame .worksheet-sheet .draft-grid-chip-margin{
   left:auto;right:calc(100% + 2px)
 }
-/* Impression miroir : chip dans la marge large (2,5 cm). */
+/* Impression vis-à-vis : chip dans la marge large (3 cm). */
 .print-only-sheets .worksheet-sheet.sheet-odd .draft-grid-chip-margin{
   left:auto;right:calc(100% + 4px)
 }
 .print-only-sheets .worksheet-sheet.sheet-even .draft-grid-chip-margin{
   left:calc(100% + 4px);right:auto
+}
+html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-grid-chip-margin{
+  left:auto;right:calc(100% + 4px)
 }
 /* TCF : « Page » dans la marge droite (cette question et les suivantes → page suivante). */
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip{
@@ -1975,16 +1983,26 @@ html.has-page-border .worksheet-sheet::before{
     flex-direction:row;padding:0!important
   }
   .print-only-sheets .worksheet-sheet:last-child{break-after:auto;page-break-after:auto}
-  /* Impression : marges miroir (reliure 2,5 cm). */
-  .print-only-sheets .worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 2.5cm!important}
-  .print-only-sheets .worksheet-sheet.sheet-even{padding:12mm 2.5cm 10mm 1cm!important}
+  /* Impression : vis-à-vis 3 cm / 1 cm, ou 2 cm des deux côtés. */
+  .print-only-sheets .worksheet-sheet.sheet-odd{padding:12mm 1cm 10mm 3cm!important}
+  .print-only-sheets .worksheet-sheet.sheet-even{padding:12mm 3cm 10mm 1cm!important}
+  html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-odd,
+  html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even{padding:12mm 2cm 10mm 2cm!important}
   .print-only-sheets .worksheet-sheet.is-a5-double.sheet-odd,
-  .print-only-sheets .worksheet-sheet.is-a5-double.sheet-even{
+  .print-only-sheets .worksheet-sheet.is-a5-double.sheet-even,
+  html.is-margin-symmetric .print-only-sheets .worksheet-sheet.is-a5-double.sheet-odd,
+  html.is-margin-symmetric .print-only-sheets .worksheet-sheet.is-a5-double.sheet-even,
+  html.is-margin-facing .print-only-sheets .worksheet-sheet.is-a5-double.sheet-odd,
+  html.is-margin-facing .print-only-sheets .worksheet-sheet.is-a5-double.sheet-even{
     padding:0!important
   }
   .print-only-sheets .worksheet-sheet.is-jeux,
   .print-only-sheets .worksheet-sheet.is-jeux.sheet-odd,
-  .print-only-sheets .worksheet-sheet.is-jeux.sheet-even{
+  .print-only-sheets .worksheet-sheet.is-jeux.sheet-even,
+  html.is-margin-symmetric .print-only-sheets .worksheet-sheet.is-jeux.sheet-odd,
+  html.is-margin-symmetric .print-only-sheets .worksheet-sheet.is-jeux.sheet-even,
+  html.is-margin-facing .print-only-sheets .worksheet-sheet.is-jeux.sheet-odd,
+  html.is-margin-facing .print-only-sheets .worksheet-sheet.is-jeux.sheet-even{
     padding:10mm 12mm 8mm!important
   }
   .print-only-sheets .worksheet-sheet.is-a5-double.is-jeux,
