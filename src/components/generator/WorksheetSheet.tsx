@@ -41,6 +41,16 @@ function markCscInstruction(text: string): string {
   const marked = CSC_BOLD.reduce((value, word) => value.replaceAll(word, `[[b]]${word}[[/b]]`), text)
   return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
 }
+function cscSheetCopy(type: string, instruction: string): { text: string; example: string | null } {
+  if (type !== 'tcm-csc-ex08') return { text: markCscInstruction(instruction), example: null }
+  const lines = instruction.split('\n')
+  const index = lines.findIndex((line) => line.startsWith('Exemple'))
+  if (index < 0) return { text: markCscInstruction(instruction), example: null }
+  return {
+    text: markCscInstruction(lines.filter((_, line) => line !== index).join('\n')),
+    example: lines[index]!,
+  }
+}
 
 /** Audios du corrigé : figés sur le bloc, sinon recalculés depuis les items. */
 function blockCorrigeAudios(block: WorksheetBlock): string[] {
@@ -257,6 +267,7 @@ export function WorksheetSheet({
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
           const blockHeading = block.title
+          const cscCopy = block.instruction && block.exerciseType.startsWith('tcm-csc-') ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
@@ -388,8 +399,9 @@ export function WorksheetSheet({
                   </div>
                   {mode==='answers' && hasMathAudioPrompts(block.exerciseType) && <MathExerciseAudio block={block}/>}
                   {block.instruction ? (
-                    <p className="exercise-instruction">{renderSheetCopy(block.exerciseType.startsWith('tcm-csc-') ? markCscInstruction(block.instruction) : block.instruction)}</p>
+                    <p className="exercise-instruction">{renderSheetCopy(cscCopy ? cscCopy.text : block.instruction)}</p>
                   ) : null}
+                  {cscCopy?.example ? <p className="csc-decompose-example">{cscCopy.example}</p> : null}
                   {block.exerciseType === 'addition-decompose' ? <DecomposeExample op="+" /> : null}
                   {block.exerciseType === 'soustraction-decompose' ? <DecomposeExample op="−" /> : null}
                   {block.givens && block.givens.length > 0 ? (

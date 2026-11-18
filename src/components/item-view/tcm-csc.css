@@ -81,6 +81,10 @@
 .exercise-block[data-exercise-type="tcm-csc-ex10"] .exercise-grid { row-gap: 15px; }
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .csc-operation-groups { row-gap: 60px; }
 .exercise-block[data-exercise-type="tcm-csc-ex11"] .column-prompt { font-size: 1.5em; color: var(--purple); font-weight: 700; line-height: 1.15; margin: 0 0 16px; text-align: center; padding-left: calc(17.6px * var(--app-font-scale, 1) + 6px); }
+.is-tcm-csc .exercise-block[data-exercise-type="tcm-csc-ex08"] { padding-top: 25px; padding-bottom: 25px; }
+.is-tcm-csc .exercise-block + .exercise-block[data-exercise-type="tcm-csc-ex08"],
+.is-tcm-csc .exercise-block[data-exercise-type="tcm-csc-ex08"] + .exercise-block { margin-top: 0; padding-top: 0; }
+.is-tcm-csc .csc-decompose-example { margin: 10px 0 0; font-size: calc(20pt * var(--app-font-scale, 1)); font-weight: 800; line-height: 1.2; color: var(--purple); print-color-adjust: exact; }
 .is-tcm-csc .exercise-instruction { white-space: pre-line; }
 .is-tcm-csc .exercise-instruction .csc-symbol { font-weight: 800; color: var(--purple); }
 .is-tcm-csc { position: relative; }
