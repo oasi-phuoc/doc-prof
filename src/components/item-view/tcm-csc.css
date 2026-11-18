@@ -145,6 +145,18 @@
   align-content: start;
   align-items: start;
 }
+.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body::before {
+  content: "";
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-self: center;
+  align-self: stretch;
+  width: 1.5px;
+  background: var(--purple);
+  pointer-events: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(1) { grid-column: 1; grid-row: 1; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(2) { grid-column: 2; grid-row: 1; margin-top: 0; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(n + 3) { grid-column: 1 / -1; }
