@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import {
   accountCanAccessDomain,
 } from '@/access'
+import { typeChoicesForBlock } from '@/components/generator/generator-derived'
 import { applyType, isOralComprehensionExercise, isProblemExercise } from '@/components/generator/page-helpers'
 import { typeChoicesForBlock } from '@/components/generator/generator-derived'
 import {
@@ -135,6 +136,7 @@ export function usePageNavigation({
             activePage.domain === 'français' ? (activeBlock.track ?? 'voc') : undefined,
           )
     const currentIdx = currentTypes.findIndex((type) => type.id === activeBlock.exerciseType)
+    // Grammaire : on avance dans le sous-thème actif. Au dernier type, on reste dessus.
     const nextType =
       currentIdx >= 0
         ? currentTypes[Math.min(currentIdx + 1, currentTypes.length - 1)]
@@ -344,7 +346,13 @@ export function usePageNavigation({
         current.course === 'Français' ? { ...current, course: 'Mathématiques' } : current,
       )
     }
-    if (next === 'jeux' || next === 'calligraphie' || next === 'soutien-fr' || next === 'alphabetisation') {
+    if (
+      next === 'jeux' ||
+      next === 'calligraphie' ||
+      next === 'soutien-fr' ||
+      next === 'alphabetisation' ||
+      next === 'grammaire'
+    ) {
       setEvalMode(false)
       setMode('student')
     }

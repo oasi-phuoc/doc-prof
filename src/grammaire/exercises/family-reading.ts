@@ -1,4 +1,4 @@
-/** Twenty family readings and twenty everyday messages, edited independently. */
+/** Récits de famille et messages du quotidien, tirés indépendamment. */
 import { pick, type Rng } from '@/math/rng'
 import type { TcfExercise, TcfQuestion } from '@/tcf/types'
 import readingData from './family-reading-data.json'

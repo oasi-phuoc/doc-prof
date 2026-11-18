@@ -54,6 +54,7 @@ export function ZoneEcriture({
   nbMots,
   nbLignes,
   reponseModele,
+  lignesNumerotees,
   mode,
 }: {
   cadre?: 'message' | 'email'
@@ -62,10 +63,17 @@ export function ZoneEcriture({
   nbMots: TcfNbMots
   nbLignes: number
   reponseModele?: string
+  lignesNumerotees?: boolean
   mode: PreviewMode
 }) {
   const attendu = nbMotsLabel(nbMots)
-  const lignes = <LignesReponse nbLignes={nbLignes} texte={mode === 'answers' ? reponseModele : undefined} />
+  const lignes = (
+    <LignesReponse
+      nbLignes={nbLignes}
+      texte={mode === 'answers' ? reponseModele : undefined}
+      numerotees={lignesNumerotees}
+    />
+  )
   const showConsigne =
     Boolean(consigneSupplementaire?.trim()) && !isTcfBaremeConsigne(consigneSupplementaire)
   const fillPage = cadre === 'message' || cadre === 'email'

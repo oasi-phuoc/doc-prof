@@ -1,6 +1,6 @@
 /** Metadata shared by the generator and the preview, without loading the reading banks. */
 export function isFamilyReadingType(typeId: string): boolean {
-  return /^gram-ex-famille-fam-(?:photo|arbre|recit|email)$/.test(typeId)
+  return /^gram-ex-famille-fam-(?:recit|email)$/.test(typeId)
 }
 
 export function isQuestionReadingType(typeId: string): boolean {
