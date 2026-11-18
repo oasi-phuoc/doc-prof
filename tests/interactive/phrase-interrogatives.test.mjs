@@ -88,7 +88,7 @@ try {
   await test('à qui replaces a human recipient with a correctly formed interrogative', () => {
     const q=get('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom','donner','a-qui')
     assert.equal(sentence(q),'À qui donnes-tu un livre ?')
-    assert.deepEqual(q.tokens.slice(0,2).map(token=>token.text),['à','qui'])
+    assert.deepEqual(q.tokens.slice(0,2).map(token=>token.text),['À','qui'])
     assert.ok(!interrogativeCandidates(tagged('Tu/pronom donnes/verbe un/determinant livre/nom à/preposition un/determinant ami/nom'),['donner'],{preposition:false}).some(item=>item.form==='a-qui'))
   })
   await test('quand, comment, combien and pourquoi are adverbs with no repeated time, manner or counted object', () => {
@@ -114,7 +114,7 @@ try {
   })
   await test('all six formats use varied tagged questions reproducibly and keep independent polarity and voice settings', () => {
     const seen = new Set()
-    for (const kind of ['svc','colorier','ordre','construire','images','ecrire']) for (const theme of ['simple','determinants','pronominaux','preposition','adverbe','adjectif','conjonctions']) for (let seed = 1; seed <= 12; seed++) {
+    for (const kind of ['svc','colorier','ordre','construire','images','ecrire']) for (const theme of ['simple','determinants','pronominaux','preposition','adverbe','adjectif','conjonctions']) for (let seed = 1; seed <= 36; seed++) {
       const generate = () => tryGeneratePhraseBatch(`phrase-${theme}-${kind}`, 6, createRng(seed), 'moyen','mixte','mixed',undefined,false,'mixed','mixed')
       const batch = generate();assert.deepEqual(batch,generate());assert.equal(batch.items.length,6)
       assert.equal(batch.items.filter(i => i.phraseQuestion).length,3)
