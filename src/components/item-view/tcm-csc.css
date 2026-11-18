@@ -103,7 +103,10 @@
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
 .is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
-.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-color: #c5cad3 !important; border-width: 1px; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell:last-child { border-right-color: #c5cad3 !important; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .column-line:has(+ .column-line.rule-line) .digit-cell,
+.exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .column-grid.school > .column-line:last-child .digit-cell { border-bottom-color: #c5cad3 !important; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell.carry { height: 25px; font-size: calc(12px * var(--app-font-scale, 1)); }
 .exercise-block[data-exercise-type="tcm-csc-ex10"] .digit-cell { font-size: min(calc(25.5px * var(--app-font-scale, 1)), 28.05px); }
@@ -111,6 +114,3 @@
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }
-@media print {
-  .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-color: #c5cad3 !important; }
-}
