@@ -603,6 +603,8 @@ export type MathItem = {
   /** Images lexicales et mots de liaison ; le modèle reste dans responseAnswer. */
   phraseImages?: PhraseImageClue[]
   phraseImageLabels?: boolean
+  /** Natures affichées quand les mots sont demandés ; absent = toutes. */
+  phraseImageShownCategories?: PhraseCategory[]
   /** Séquence de pastilles (type 3). */
   pastilles?: PhraseCategory[]
   /** Nombre de lignes d’écriture (type 4). */
@@ -864,8 +866,10 @@ export type ExerciseBlock = {
   phraseVoice?: import('@/francais/phrase-forms').PhraseVoice
   /** Optional Gattegno categories; false excludes complete predicates using them. */
   phraseCategories?: import('@/francais/phrase-themes').PhraseCategories
-  /** Show all word labels under the images, including pronouns and interrogatives. */
+  /** Mots sous les images. Absent ou faux : aucun mot. */
   phraseImageLabels?: boolean
+  /** Natures affichées quand les mots sont demandés ; absent = toutes. */
+  phraseImageShownCategories?: PhraseCategory[]
   /**
    * Graine locale de l’exercice (bouton refresh sur la fiche).
    * Permet de retirer uniquement ce bloc sans régénérer toute la fiche.

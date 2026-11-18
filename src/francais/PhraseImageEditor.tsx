@@ -34,7 +34,6 @@ export function PhraseImageEditor({items,instruction,onChangeItems,onChangeInstr
         <button type="button" disabled={(item.phraseImages?.length??0)>=MAX_PHRASE_IMAGE_CLUES} onClick={()=>cluesFor(itemIndex,[...item.phraseImages??[],{category:'nom',label:'pomme',imageSrc:nounPicture('pomme')}])}>Ajouter une image</button>
         <button type="button" disabled={(item.phraseImages?.length??0)>=MAX_PHRASE_IMAGE_CLUES} onClick={()=>cluesFor(itemIndex,[...item.phraseImages??[],{category:'preposition',label:'avec'}])}>Ajouter un mot indice</button>
       </div>
-      <label className="phrase-image-label-option"><input type="checkbox" checked={item.phraseImageLabels??true} onChange={event=>update(itemIndex,{phraseImageLabels:event.target.checked})}/> Afficher les mots sous les images</label>
       <label className="phrase-libre-field"><span>Phrase exemple</span><textarea aria-label={`Phrase exemple ${itemIndex+1}`} value={item.responseAnswer??item.answer} onChange={event=>update(itemIndex,{answer:event.target.value,responseAnswer:event.target.value})}/></label>
     </div>)}</div>
     <button type="button" onClick={()=>onChangeItems([...items,newPictureSentence()])}>Ajouter une phrase en images</button>

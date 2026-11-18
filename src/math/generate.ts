@@ -21,6 +21,7 @@ import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { tryGenerateAlphabetisationBatch } from '@/alphabetisation/generate'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
+import { phraseImageWordFields } from '@/francais/phrase-images'
 import {splitPhraseImagePages} from '@/francais/phrase-image-pages'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
 import { tryGenerateJeuxBatch } from '@/jeux/generate'
@@ -293,6 +294,7 @@ function buildSingleBlock(
     config.phraseImageLabels,
     config.phraseSentenceType,
     config.phraseVoice,
+    config.phraseImageShownCategories,
   )
   if (phrase) {
     const libre =
@@ -304,7 +306,7 @@ function buildSingleBlock(
       instruction: libre
         ? (config.phraseInstruction ?? phrase.instruction ?? type?.instruction ?? 'Complétez.')
         : (phrase.instruction ?? type?.instruction ?? 'Complétez.'),
-      items: libre ? config.phraseItems! : phrase.items,
+      items: libre ? config.phraseItems!.map(item => item.layout === 'phrase-images' ? { ...item, ...phraseImageWordFields(config.phraseImageLabels, config.phraseImageShownCategories) } : item) : phrase.items,
       bankQuestionCap: libre ? undefined : phrase.bankQuestionCap,
     }
   }

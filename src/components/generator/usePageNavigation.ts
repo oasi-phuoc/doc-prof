@@ -158,6 +158,7 @@ export function usePageNavigation({
       phraseVoice: activeBlock.phraseVoice,
       phraseCategories: activeBlock.phraseCategories,
       phraseImageLabels: activeBlock.phraseImageLabels,
+      phraseImageShownCategories: activeBlock.phraseImageShownCategories,
       grammarCoLevel: fields.grammarCoLevel,
       grammarCoAudioId: fields.grammarCoAudioId,
       problemDraftGrids: isProblemExercise(nextType.id)

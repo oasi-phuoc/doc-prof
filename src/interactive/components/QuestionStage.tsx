@@ -83,7 +83,7 @@ export function QuestionStage({
   number?: number
   onSelect: (id: string) => void
 }) {
-  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.lotoBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.fractionFigure, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
+  const { section, report } = useReadableQuestion(JSON.stringify([q.id, q.memoryBoard, q.lotoBoard, q.prompt, q.context, q.oralSituation, q.numberSequence, q.fractionFigure, q.wordClassification, q.wordSorting, wordPlacements, q.wordBlank, wordDrop, selected, q.phraseImages, q.phraseImageLabels, q.phraseImageShownCategories, q.phraseImagePrefix, q.choices, q.images, q.grammarImages, q.matchingGroup, unavailableChoiceIds, imageOrder, phase, number]))
   const drop=useWordDrop({question:q,canSelect,disabled:interactionsDisabled||phase==='revealed',onSelect,onPropose:onWordDrop})
   const proposed=q.choices.find(choice=>choice.id===(selected??wordDrop))
   const pending=q.choices.find(choice=>choice.id===drop.pending)
@@ -209,7 +209,7 @@ export function QuestionStage({
         </div>
       ) : (
         <section className="ci-manual" tabIndex={report.manualScroll ? 0 : undefined} aria-label={report.manualScroll ? 'Activité à faire défiler' : undefined}>
-          {q.mode==='memory'?memoryContent:q.wordSorting?<WordSortingBoard key={`${q.id}:${attempt}`} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
+          {q.mode==='memory'?memoryContent:q.wordSorting?<WordSortingBoard key={`${q.id}:${attempt}`} sorting={q.wordSorting} placements={wordPlacements} onPlacements={onWordPlacements} disabled={interactionsDisabled||phase==='revealed'} targets={phase==='revealed'?sortingTargets:undefined} onRead={()=>setReading('question')}/>:q.phraseImages ? <>{q.phraseImagePrefix&&<p>{q.phraseImagePrefix}</p>}<PhraseImageRow clues={q.phraseImages} labels={q.phraseImageLabels} shown={q.phraseImageShownCategories} renderImage={clue=><SafeImage src={clue.imageSrc!} alt={clue.label} zoom/>}/></> : q.mode === 'sequence' ? (
             q.words ? <WordSequence key={q.id} words={q.words} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} review={phase==='revealed'} onRead={()=>setReading('question')}/> : <ImageSequence key={q.id} images={q.images} order={imageOrder} onOrder={onImageOrder} disabled={interactionsDisabled || phase === 'revealed'} annotations={imageAnnotations} />
           ) : q.mode==='oral'&&q.images.length ? (
             <div className={`ci-oral-gallery ci-oral-images-${q.images.length}`} role="group" aria-label="Images de la situation orale">{q.images.map((image,index)=><SafeImage key={`${index}:${image}`} src={image} alt={`Document ${index+1}`} zoom annotations={imageAnnotations?.(index)}/>)}</div>
