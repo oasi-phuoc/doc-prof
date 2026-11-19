@@ -42,8 +42,8 @@ function deniseOperator(src: string): string {
 }
 
 /**
- * Consigne, sonnerie d’exemple, 2 s, « Écoute numéro 1 », sonnerie, la série, puis « Écoute numéro 2 ».
- * Nombres, calculs et multiplications gardent la lettre avant chaque énoncé. Entourer n’a pas de lettres.
+ * Consigne, 0,5 s, sonnerie d’exemple, 2 s, puis chaque écoute : « Écoute numéro », 1 s, sonnerie, 1 s, la série.
+ * Cinq secondes ferment la piste. Nombres, calculs et multiplications gardent la lettre. Entourer n’en a pas.
  */
 export function planListeningAudio(kind: ListeningKind, questions: readonly (readonly string[])[], rate?: DeniseRate, announceListens = false): CscAudioSegment[] {
   if (questions.length < 1 || questions.length > LISTENING_LETTERS.length || questions.some((parts) => !parts.length)) {
@@ -55,11 +55,11 @@ export function planListeningAudio(kind: ListeningKind, questions: readonly (rea
   const clip = (src: string): CscAudioSegment => ({ kind: 'clip', src })
   const gap = (seconds: number): CscAudioSegment => ({ kind: 'silence', seconds })
   const sequence: CscAudioSegment[] = announced
-    ? [clip(cscConsigneSrc(kind, chosen, announced)), clip(CSC_TCF_BEEP), gap(2)]
+    ? [clip(cscConsigneSrc(kind, chosen, announced)), gap(0.5), clip(CSC_TCF_BEEP), gap(2)]
     : [clip(cscConsigneSrc(kind, chosen)), gap(2), clip(CSC_TCF_BEEP)]
   for (let listen = 0; listen < 2; listen++) {
     if (listen) sequence.push(gap(5))
-    if (announced) sequence.push(clip(cscEcouteSrc((listen + 1) as 1 | 2, chosen)), clip(CSC_TCF_BEEP))
+    if (announced) sequence.push(clip(cscEcouteSrc((listen + 1) as 1 | 2, chosen)), gap(1), clip(CSC_TCF_BEEP), gap(1))
     else if (listen) sequence.push(clip(CSC_TCF_BEEP))
     questions.forEach((parts, index) => {
       if (index) sequence.push(gap(5))
@@ -70,6 +70,7 @@ export function planListeningAudio(kind: ListeningKind, questions: readonly (rea
       })
     })
   }
+  if (announced) sequence.push(gap(5))
   return sequence
 }
 

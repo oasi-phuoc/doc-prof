@@ -33,11 +33,11 @@ try {
   })
   for (const row of results) {
     assert.equal(row.twoSecondGaps, 1)
-    assert.equal(row.halfSecondGaps, row.exercise === 3 ? 0 : 10)
-    assert.equal(row.fiveSecondGaps, 9)
+    assert.equal(row.halfSecondGaps, row.exercise === 3 ? 1 : 11)
+    assert.equal(row.fiveSecondGaps, 10)
     assert.equal(row.letters, row.exercise === 3 ? 0 : 10)
     assert.equal(row.bips, 3)
-    assert.equal(row.totalSamples, Math.round((row.exercise === 2 ? 61.3 : row.exercise === 3 ? 49.4 : 55.9) * rate))
+    assert.equal(row.totalSamples, Math.round((row.exercise === 2 ? 70.8 : row.exercise === 3 ? 58.9 : 65.4) * rate))
   }
   mkdirSync('/tmp/csc-denise-qa', { recursive: true })
   writeFileSync('/tmp/csc-denise-qa/results.json', JSON.stringify({ passed: true, syntheticFixturesOnly: true, recordingsGenerated: false, results }, null, 2) + '\n')

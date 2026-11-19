@@ -35,11 +35,11 @@ Produis des MP3 mono de bonne qualité, idéalement à 24 kHz. Laisse seulement 
 
 Les nombres du générateur restent variables : on garde leurs clips existants et on assemble les enregistrements, sans figer un exercice complet dans un MP3.
 
-1. Lire la consigne correspondante une fois.
-2. Jouer tout de suite `/lib/audio/tcf/consignes/bip-d-annonce.mp3`, puis laisser deux secondes.
-3. « Écoute numéro 1 », la sonnerie, puis la série. Nombres, calculs et multiplications : A, une demi-seconde, puis l’énoncé, puis cinq secondes. Exercice entourer : le nombre seul, puis cinq secondes.
-4. Après cinq secondes, « Écoute numéro 2 », la sonnerie, puis la même série.
-5. Aucun résultat n’est prononcé dans les calculs. Les silences de début et de fin des clips doivent être pris en compte pour obtenir les battements réels demandés.
+1. Lire la consigne correspondante une fois, puis laisser une demi-seconde.
+2. Jouer `/lib/audio/tcf/consignes/bip-d-annonce.mp3`, puis laisser deux secondes.
+3. « Écoute numéro 1 », une seconde, la sonnerie, une seconde, puis la série. Nombres, calculs et multiplications : A, une demi-seconde, puis l’énoncé, puis cinq secondes. Exercice entourer : le nombre seul, puis cinq secondes.
+4. Après cinq secondes, « Écoute numéro 2 », une seconde, la sonnerie, une seconde, puis la même série.
+5. Laisser cinq secondes après le dernier énoncé. Aucun résultat n’est prononcé dans les calculs. Les silences de début et de fin des clips doivent être pris en compte pour obtenir les battements réels demandés.
 
 Les prises DeniseNeural −25 % sont dans `public/lib/audio/tcm-csc/denise/`. Les consignes CSC, y compris `consigne-nombres-annonce`, existent aussi à −35 % (`-35.mp3`) et −50 % (`-50.mp3`). Les nombres 1 à 100 lus à ces deux débits sont dans `nombres/35/` et `nombres/50/`. Le montage s’active quand le manifeste est `generated`.
 
