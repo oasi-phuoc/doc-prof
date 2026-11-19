@@ -40,6 +40,9 @@ try {
       const numbers = sample.get(1)
       assert.equal(new Set(numbers.map((item) => item.answer)).size, 5)
       for (const item of numbers) { assert.ok(Number(item.answer) >= 1 && Number(item.answer) <= 100); assert.equal(item.audioParts[0], `/lib/audio/nombre/${item.answer}.mp3`); assets.add(item.audioParts[0]) }
+      const operations = sample.get(2).map((item) => item.cscTask.operation)
+      assert.ok(operations.filter((operation) => operation === '+').length >= 2)
+      assert.ok(operations.filter((operation) => operation === '−').length >= 2)
       for (const item of sample.get(2)) {
         const { a, b, operation } = item.cscTask
         assert.equal(Number(item.answer), operation === '+' ? a + b : a - b)
@@ -49,6 +52,14 @@ try {
         item.audioParts.forEach((src) => assets.add(src))
       }
     }
+    const seen = new Set()
+    for (let seed = 1; seed <= 500; seed++) {
+      const operations = generateCscExercise('tcm-csc-ex02', 5, seed).map((item) => item.cscTask.operation)
+      const plus = operations.filter((operation) => operation === '+').length
+      assert.ok(plus === 2 || plus === 3)
+      seen.add(operations.join(''))
+    }
+    assert.equal(seen.size, 20)
     for (const src of assets) await access(`public${src}`)
   })
   await test('the listening grid keeps one to one hundred in order and five audible targets', () => {

@@ -1,4 +1,4 @@
-import { createRng, int, shuffle, type Rng } from '@/math/rng'
+import { createRng, int, pick, shuffle, type Rng } from '@/math/rng'
 import type { Figure, MathItem, PageConfig } from '@/math/types'
 import { columnItem, withFixedColumnWidth } from '@/tpm/items'
 import { numberAudioParts, SILENCE_6S_AUDIO } from '@/tcm-cfr/audio-nombres'
@@ -28,9 +28,18 @@ function audioNumber(value: number): MathItem {
   const parts = numberAudioParts(value)
   return { layout: 'audio-dictation', answer: String(value), audioSrc: parts[0], audioParts: parts }
 }
+/** Au moins deux + et deux −. Pour cinq calculs : trois d’un signe et deux de l’autre, dans n’importe quel ordre. */
+function calculationSigns(rng: Rng, count: number): Array<'+' | '−'> {
+  const signs: Array<'+' | '−'> = []
+  for (let i = 0; i < Math.min(2, count); i++) signs.push('+')
+  for (let i = 0; i < Math.min(2, count - signs.length); i++) signs.push('−')
+  const mixed = shuffle(rng, signs)
+  while (mixed.length < count) mixed.push(pick(rng, ['+', '−']))
+  return shuffle(rng, mixed)
+}
 function calculations(rng: Rng, count: number): MathItem[] {
-  return Array.from({ length: count }, (_, i) => {
-    const operation = i % 2 ? '−' : '+', a = int(rng, 10, 90), b = int(rng, 1, operation === '+' ? 100 - a : a - 1)
+  return calculationSigns(rng, count).map((operation) => {
+    const a = int(rng, 10, 90), b = int(rng, 1, operation === '+' ? 100 - a : a - 1)
     const parts = cscCalculationParts(a, b, operation)
     return { layout: 'audio-dictation', answer: String(operation === '+' ? a + b : a - b), audioSrc: parts[0], audioParts: parts, cscTask: { kind: 'calculation-audio', a, b, operation } }
   })
