@@ -45,7 +45,7 @@ async function checkGridEdges(page, grids) {
 }
 async function checkPlayers(page, type, label, multipart) {
   const block=preview(page).locator(`[data-exercise-type="${type}"]`)
-  const players=block.locator('.math-exercise-audios audio[data-audio-parts]')
+  const players=block.locator('.math-exercise-audios audio[aria-label^="Nombre"], .math-exercise-audios audio[aria-label^="Calcul"]')
   assert.equal(await players.count(),5)
   assert.equal(await block.locator('.exercise-heading-audio').count(),0)
   for(let index=0;index<5;index++) {

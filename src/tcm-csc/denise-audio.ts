@@ -20,6 +20,11 @@ export function cscConsigneSrc(kind: ListeningKind, rate: DeniseRate = '-25%'): 
   return `${CSC_DENISE_DIRECTORY}/${CONSIGNE_FILE[kind]}${suffix}.mp3`
 }
 
+export function cscEcouteSrc(listen: 1 | 2, rate: DeniseRate = '-25%'): string {
+  const suffix = rate === '-35%' ? '-35' : rate === '-50%' ? '-50' : ''
+  return `${CSC_DENISE_DIRECTORY}/ecoute-${listen}${suffix}.mp3`
+}
+
 /** Nombres 1 à 100 lus par Denise à −35 % ou −50 %. −25 % garde la prise d’origine. */
 export function cscRatedSrc(src: string, rate: DeniseRate = '-25%'): string {
   if (rate === '-25%') return src
@@ -36,27 +41,30 @@ function deniseOperator(src: string): string {
 }
 
 /**
- * Consigne Denise, 2 s, bip, puis l’énoncé.
- * Exercices 2 et 3 : lettre, 0,5 s, puis le nombre ou le calcul.
- * Exercice 1 (entourer) : le nombre seul, sans lettre.
- * Après le dernier énoncé : 5 s, bip, et la même série pour la 2e écoute.
+ * Exercices 2 et 3 : consigne, 2 s, bip, lettre, 0,5 s, énoncé, 5 s, puis bip et 2e écoute.
+ * Exercice 1 : consigne, sonnerie d’exemple, 2 s, « Écoute numéro 1 », sonnerie, nombres, puis « Écoute numéro 2 », sonnerie, et la même série.
  */
 export function planListeningAudio(kind: ListeningKind, questions: readonly (readonly string[])[], rate?: DeniseRate): CscAudioSegment[] {
   if (questions.length < 1 || questions.length > LISTENING_LETTERS.length || questions.some((parts) => !parts.length)) {
     throw new Error('Le montage audio demande entre 1 et 12 questions, de A jusqu’à la dernière lettre.')
   }
-  const withLetters = kind !== 'entourer'
+  const chosen = rate ?? '-25%'
+  const announced = kind === 'entourer'
   const clip = (src: string): CscAudioSegment => ({ kind: 'clip', src })
   const gap = (seconds: number): CscAudioSegment => ({ kind: 'silence', seconds })
-  const sequence: CscAudioSegment[] = [clip(cscConsigneSrc(kind, rate ?? '-25%')), gap(2), clip(CSC_TCF_BEEP)]
+  const sequence: CscAudioSegment[] = announced
+    ? [clip(cscConsigneSrc(kind, chosen)), clip(CSC_TCF_BEEP), gap(2)]
+    : [clip(cscConsigneSrc(kind, chosen)), gap(2), clip(CSC_TCF_BEEP)]
   for (let listen = 0; listen < 2; listen++) {
-    if (listen) sequence.push(gap(5), clip(CSC_TCF_BEEP))
+    if (listen) sequence.push(gap(5))
+    if (announced) sequence.push(clip(cscEcouteSrc((listen + 1) as 1 | 2, chosen)), clip(CSC_TCF_BEEP))
+    else if (listen) sequence.push(clip(CSC_TCF_BEEP))
     questions.forEach((parts, index) => {
       if (index) sequence.push(gap(5))
-      if (withLetters) sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${LISTENING_LETTERS[index]}.mp3`), gap(0.5))
+      if (!announced) sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${LISTENING_LETTERS[index]}.mp3`), gap(0.5))
       parts.forEach((src, partIndex) => {
         if (partIndex) sequence.push(gap(0.12))
-        sequence.push(clip(cscRatedSrc(deniseOperator(src), rate ?? '-25%')))
+        sequence.push(clip(cscRatedSrc(deniseOperator(src), chosen)))
       })
     })
   }
