@@ -8,13 +8,15 @@ try {
   const { planCscDeniseAudio, audibleCscSamples, CSC_TCF_BEEP } = await server.ssrLoadModule('/src/tcm-csc/denise-audio.ts')
   const { cscDeniseRecordingsReady } = await server.ssrLoadModule('/src/tcm-csc/denise-recordings.ts')
   const { generateCscExercise } = await server.ssrLoadModule('/src/tcm-csc/items.ts')
+  const { tryGenerateTcmCscBlock } = await server.ssrLoadModule('/src/tcm-csc/generate.ts')
   const { cscAudioPrompts } = await server.ssrLoadModule('/src/tcm-csc/audio.ts')
   const spec = JSON.parse(readFileSync('src/tcm-csc/denise-recordings.json', 'utf8'))
   await test('Denise requests; pronunciation inputs never contain examples or phonetic notation', () => {
     assert.equal(spec.files.length, 19)
     assert.equal(new Set(spec.files.map(f => f.filename)).size, 19)
     assert.deepEqual(spec.files.filter(f => f.filename.startsWith('lettre')).map(f => f.synthesisText), ['a', 'bé', 'cé', 'dé', 'e', 'effe', 'gé', 'ache', 'i', 'ji', 'ka', 'elle'])
-    assert.equal(spec.files.find(f => f.filename === 'consigne-entourer.mp3').synthesisText.startsWith('Entourez les nombres entendus.'), true)
+    assert.equal(spec.files.find(f => f.filename === 'consigne-entourer.mp3').synthesisText, 'Entourez les nombres que vous entendez. Il y a deux écoutes.')
+    assert.ok(spec.files.every(f => !/bip/i.test(f.synthesisText)))
     assert.equal(spec.files.find(f => f.filename === 'consigne-multiplications.mp3').synthesisText.startsWith('Écrivez le résultat de la multiplication.'), true)
     assert.equal(spec.files.find(f => f.filename === 'fois.mp3').synthesisText, 'fois')
     assert.equal(spec.files.find(f => f.filename === 'plus.mp3').synthesisText, 'plusse')
@@ -22,6 +24,7 @@ try {
     assert.equal(spec.voice, 'fr-FR-DeniseNeural')
     assert.equal(spec.rate, '-25%')
     for (const row of spec.files) assert.doesNotMatch(row.synthesisText, /\.mp3|plys|mwɛ̃|deux plus cinq|avec le|moins :/)
+    assert.equal(tryGenerateTcmCscBlock({ exerciseType: 'tcm-csc-ex03', count: 5 }, 4).instruction, 'Entourez les nombres que vous entendez.')
   })
   await test('all validated mono 24k recordings are required before activating the new montage', () => {
     const ready = { ...spec, status: 'generated', files: spec.files.map(f => ({ ...f, bytes: 5000, duration: 1, sha256: 'a'.repeat(64), sampleRate: 24000, channels: 1 })) }

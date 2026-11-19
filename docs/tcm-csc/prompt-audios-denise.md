@@ -6,10 +6,10 @@ Enregistre exactement les textes suivants, sans annoncer les noms des fichiers :
 
 | Fichier | Texte prononcé |
 |---|---|
-| `consigne-entourer.mp3` | Entourez les nombres entendus. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip. |
-| `consigne-nombres.mp3` | Écrivez le nombre que vous entendez. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip. |
-| `consigne-calculs.mp3` | Écrivez le calcul et son résultat. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip. |
-| `consigne-multiplications.mp3` | Écrivez le résultat de la multiplication. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip. |
+| `consigne-entourer.mp3` | Entourez les nombres que vous entendez. Il y a deux écoutes. |
+| `consigne-nombres.mp3` | Écrivez le nombre que vous entendez. Il y a deux écoutes. |
+| `consigne-calculs.mp3` | Écrivez le calcul et son résultat. Il y a deux écoutes. |
+| `consigne-multiplications.mp3` | Écrivez le résultat de la multiplication. Il y a deux écoutes. |
 | `lettre-a.mp3` | A |
 | `lettre-b.mp3` | B |
 | `lettre-c.mp3` | C |

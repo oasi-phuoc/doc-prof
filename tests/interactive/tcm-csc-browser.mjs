@@ -50,12 +50,15 @@ async function checkPlayers(page, type, label, multipart) {
   assert.equal(await block.locator('.exercise-heading-audio').count(),0)
   for(let index=0;index<5;index++) {
     const player=players.nth(index)
-    assert.equal(await player.getAttribute('aria-label'),`${label} ${/^tcm-(?:csc|cfr)-ex0[12]$/.test(type)?String.fromCharCode(65+index):index+1}`)
+    const lettered=/^tcm-(?:csc-ex0[123]|cfr-ex0[12])$/.test(type)
+    assert.equal(await player.getAttribute('aria-label'),`${label} ${lettered?String.fromCharCode(65+index):index+1}`)
     const parts=JSON.parse(await player.getAttribute('data-audio-parts'))
-    assert.equal(parts.length,multipart?3:1);assert.ok(parts.every(src=>!src.includes('silence')))
-    if(multipart) assert.match(parts[1],/\/(?:plus|moins|fois)\.mp3$/)
+    assert.ok(parts.every(src=>!src.includes('silence')))
+    if(lettered) assert.match(parts[0], new RegExp(`/lettre-${String.fromCharCode(97+index)}\\.mp3$`))
+    if(multipart) { assert.equal(parts.length, lettered?4:3); assert.match(parts[lettered?2:1], /\/(?:plus|moins|fois)\.mp3$/) }
+    else assert.equal(parts.length, lettered?2:1)
     await player.scrollIntoViewIfNeeded()
-    if(multipart) await player.evaluate(node=>new Promise((resolve,reject)=>{const check=()=>{if(node.readyState>=1&&node.src.startsWith('blob:'))resolve();else setTimeout(check,100)};setTimeout(()=>reject(new Error('Composed audio not ready')),30000);check()}))
+    if(parts.length>1) await player.evaluate(node=>new Promise((resolve,reject)=>{const check=()=>{if(node.readyState>=1&&node.src.startsWith('blob:'))resolve();else setTimeout(check,100)};setTimeout(()=>reject(new Error('Composed audio not ready')),30000);check()}))
   }
   await players.first().evaluate(async node=>{await node.play()})
   await page.waitForFunction(type=>{const audio=document.querySelector(`.sheet-stage:not(.print-only-sheets) [data-exercise-type="${type}"] audio`);return audio?.currentTime>0.1},type)
@@ -108,14 +111,15 @@ try {
 
   await page.getByLabel('Page 2', { exact: true }).click()
   await button(page,'Fiche élève (cliquer pour corrigé)').click()
-  await checkPlayers(page,'tcm-csc-ex02','Calcul',true)
-  await page.getByLabel('Page 3', { exact: true }).click()
   await checkPlayers(page,'tcm-csc-ex03','Nombre',false)
+  await page.getByLabel('Page 3', { exact: true }).click()
+  await checkPlayers(page,'tcm-csc-ex02','Calcul',true)
   await button(page,'Corrigé (cliquer pour fiche élève)').click()
   results.push({players:'CSC 2: five complete operand/operator/operand recordings, no result; CSC 3: five number recordings, no silence player; real playback verified'})
 
-  await page.getByLabel('Page 3', { exact: true }).click()
+  await page.getByLabel('Page 2', { exact: true }).click()
   await preview(page).locator('.csc-number-grid').waitFor()
+  assert.match(await preview(page).locator('[data-exercise-type="tcm-csc-ex03"] .exercise-instruction').innerText(), /Entourez les nombres que vous entendez/)
   assert.equal(await preview(page).locator('.csc-number-grid td').count(), 100)
   assert.equal(await preview(page).locator('.csc-number-grid tr').count(), 10)
   assert.equal((await preview(page).locator('.csc-number-grid td').first().textContent())?.trim(), '1')

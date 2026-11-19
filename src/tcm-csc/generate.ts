@@ -20,9 +20,8 @@ export function tryGenerateTcmCscBlock(
   const type = TCM_CSC_EXERCISE_TYPES.find((entry) => entry.id === config.exerciseType)
   const ascending = config.exerciseType === 'tcm-csc-ex06' || config.exerciseType === 'tcm-csc-ex25' ? cscOrderAscending(config.exerciseType, seed) : undefined
   const items = scoreCscQuestions(config.exerciseType, generateCscExercise(config.exerciseType, config.count, seed, config.logiqueIds, config.countShapeScale, config.countIconTotal), config.pointsPerQuestion)
-  const heard = items[0]?.cscTask?.kind === 'number-grid' ? items[0].cscTask.heard.length : 0
   const instruction = config.exerciseType === 'tcm-csc-ex03'
-    ? heard <= 1 ? 'Entourez le nombre entendu.' : `Entourez les ${heard} nombres entendus.`
+    ? 'Entourez les nombres que vous entendez.'
     : ascending === undefined ? (type?.instruction ?? '') : cscOrderInstruction(ascending)
   return { instruction, items }
 }

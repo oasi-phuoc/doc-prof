@@ -43,7 +43,7 @@ export const TCM_CSC_EXERCISE_TYPES: ExerciseType[] = [
     visual: 'texte',
     preferredColumns: 1,
   },
-  exercise(3, 'Entourer les nombres', 'Entourez les nombres entendus.'),
+  exercise(3, 'Entourer les nombres', 'Entourez les nombres que vous entendez.'),
   exercise(1, 'Nombres entendus', 'Écrivez le nombre que vous entendez.'),
   exercise(2, 'Calculs entendus', 'Écrivez le calcul et son résultat.'),
   exercise(4, 'Suites avec indication', 'Complétez les suites de nombres.'),

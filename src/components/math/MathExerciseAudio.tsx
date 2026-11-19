@@ -33,9 +33,17 @@ function PromptAudio({parts,label}:{parts:string[];label:string}) {
   return <div className="math-prompt-audio"><span>{label}</span><audio ref={ref} aria-label={label} data-audio-parts={key} controls preload={parts.length===1?'none':src?'metadata':'none'} src={src}/>{failed===key&&<button type="button" onClick={()=>{setFailed('');setRetry(value=>value+1)}}>Réessayer {label.toLowerCase()}</button>}</div>
 }
 
+const LISTENED = /^tcm-(?:csc-ex0[123]|cfr-ex0[12])$/
+
+function lettered(type: string, parts: string[], index: number) {
+  if (!LISTENED.test(type) || index > 11) return parts
+  return [`/lib/audio/tcm-csc/denise/lettre-${String.fromCharCode(97 + index)}.mp3`, ...parts]
+}
+
 export function MathExerciseAudio({block}:{block:WorksheetBlock}) {
   let prompts:string[][]|undefined
   try{prompts=mathAudioPrompts(block)}catch{return <p className="no-print" role="alert">Validez les données de l’exercice pour préparer ses audios.</p>}
   const calculation=block.exerciseType.endsWith('02')
-  return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{prompts?.map((parts,index)=><PromptAudio key={index} parts={parts} label={`${calculation?'Calcul':'Nombre'} ${/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index):index+1}`}/>)}</div>
+  const marked=LISTENED.test(block.exerciseType)
+  return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{prompts?.map((parts,index)=><PromptAudio key={index} parts={lettered(block.exerciseType, parts, index)} label={`${calculation?'Calcul':'Nombre'} ${marked?String.fromCharCode(65+index):index+1}`}/>)}</div>
 }
