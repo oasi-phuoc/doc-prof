@@ -1,5 +1,5 @@
 {
-  "status": "not_generated",
+  "status": "generated",
   "voice": "fr-FR-DeniseNeural",
   "rate": "-25%",
   "volume": "+0%",
@@ -8,14 +8,198 @@
   "channels": 1,
   "prompt": "docs/tcm-csc/prompt-audios-denise.md",
   "files": [
-    {"filename":"consigne-nombres.mp3","text":"Écrivez le nombre que vous entendez. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.","synthesisText":"Écrivez le nombre que vous entendez. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip."},
-    {"filename":"consigne-calculs.mp3","text":"Écrivez le calcul et son résultat. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.","synthesisText":"Écrivez le calcul et son résultat. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip."},
-    {"filename":"lettre-a.mp3","text":"A","synthesisText":"a"},
-    {"filename":"lettre-b.mp3","text":"B","synthesisText":"bé"},
-    {"filename":"lettre-c.mp3","text":"C","synthesisText":"cé"},
-    {"filename":"lettre-d.mp3","text":"D","synthesisText":"dé"},
-    {"filename":"lettre-e.mp3","text":"E","synthesisText":"e"},
-    {"filename":"plus.mp3","text":"plus","synthesisText":"plusse"},
-    {"filename":"moins.mp3","text":"moins","synthesisText":"moins"}
-  ]
+    {
+      "filename": "consigne-entourer.mp3",
+      "text": "Entourez les nombres entendus. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "synthesisText": "Entourez les nombres entendus. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "sha256": "063353494286073ca9610b70ae1ae968ccf24e7ca79f10aad4ea67c4bd7c40ee",
+      "bytes": 109773,
+      "duration": 9.12,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "consigne-nombres.mp3",
+      "text": "Écrivez le nombre que vous entendez. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "synthesisText": "Écrivez le nombre que vous entendez. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "sha256": "7725f867d7c555449b251d4fdb028c707bd99deb24f995770e5604e35f2eed64",
+      "bytes": 114093,
+      "duration": 9.48,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "consigne-calculs.mp3",
+      "text": "Écrivez le calcul et son résultat. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "synthesisText": "Écrivez le calcul et son résultat. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "sha256": "b63369234715ef8d98c19429fd5eb55954fa55e6cd890fdba378e62e370a165b",
+      "bytes": 115245,
+      "duration": 9.576,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "consigne-multiplications.mp3",
+      "text": "Écrivez le résultat de la multiplication. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "synthesisText": "Écrivez le résultat de la multiplication. Il y a deux écoutes. Avant chaque écoute, vous entendez un bip.",
+      "sha256": "2e4015dc2b9a6d1fcec03dcf59912374233c2fba1adcf9a3d2640e0085fadbd8",
+      "bytes": 122445,
+      "duration": 10.176,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-a.mp3",
+      "text": "A",
+      "synthesisText": "a",
+      "sha256": "57b0f48a0a92993b0e2d237412e52f2a486b6b34c11c55112e3f32b38af3a45b",
+      "bytes": 4653,
+      "duration": 0.36,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-b.mp3",
+      "text": "B",
+      "synthesisText": "bé",
+      "sha256": "239ce92a116b54c40dc7bd8f4b39e3b721c6917cfcae8da289bbbbad17a71aba",
+      "bytes": 5805,
+      "duration": 0.456,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-c.mp3",
+      "text": "C",
+      "synthesisText": "cé",
+      "sha256": "09f0e65f1f40a234723d1c866d11d5352a24f9a92da905121542761ea1770f34",
+      "bytes": 6381,
+      "duration": 0.504,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-d.mp3",
+      "text": "D",
+      "synthesisText": "dé",
+      "sha256": "5611ed79319f52a7578cc9ff767b91dfe091e2b2c4596fb8bc2ed6ae5a41b258",
+      "bytes": 5805,
+      "duration": 0.456,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-e.mp3",
+      "text": "E",
+      "synthesisText": "e",
+      "sha256": "bbe888ddf3ddd788439fce026bf2a850e5b33d3dc46979d14b258c7458215040",
+      "bytes": 3213,
+      "duration": 0.24,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-f.mp3",
+      "text": "F",
+      "synthesisText": "effe",
+      "sha256": "c70f618889f985ead2a4386f7e4e9d241b47438f20d53dc4442ac435439f9fbf",
+      "bytes": 6957,
+      "duration": 0.552,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-g.mp3",
+      "text": "G",
+      "synthesisText": "gé",
+      "sha256": "a3bc49db9635d3cccd6c7bbf27e18f0fddc1ded32f50ba7292835f5191708d48",
+      "bytes": 6957,
+      "duration": 0.552,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-h.mp3",
+      "text": "H",
+      "synthesisText": "ache",
+      "sha256": "9e421aeb734910c7c3f1fc36ac91bce5e4979261561aff9b6d454de7814063b4",
+      "bytes": 6669,
+      "duration": 0.528,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-i.mp3",
+      "text": "I",
+      "synthesisText": "i",
+      "sha256": "da746e034abcdce36f6a70caa5dc99944834360e7bc68b03d9d1d51fb561ea5c",
+      "bytes": 3789,
+      "duration": 0.288,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-j.mp3",
+      "text": "J",
+      "synthesisText": "ji",
+      "sha256": "ce48d9816f0ecde5eb4a60dde6e1ce6575f031481d89f649815a284df9c7f1fe",
+      "bytes": 7245,
+      "duration": 0.576,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-k.mp3",
+      "text": "K",
+      "synthesisText": "ka",
+      "sha256": "9432ee46a91daff582d3f4329ebf2a7463c6979ba94731d8df9ccc722c97564a",
+      "bytes": 4941,
+      "duration": 0.384,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "lettre-l.mp3",
+      "text": "L",
+      "synthesisText": "elle",
+      "sha256": "a6bd038fdce7105026f4f404c0fc3ed37191a47e3d2a146270637b5b70f455f9",
+      "bytes": 6957,
+      "duration": 0.552,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "plus.mp3",
+      "text": "plus",
+      "synthesisText": "plusse",
+      "sha256": "a30ec75b64242c32d8a148d14b0ba351902c6b66327df8183ec03f734db2d5a6",
+      "bytes": 7245,
+      "duration": 0.576,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "moins.mp3",
+      "text": "moins",
+      "synthesisText": "moins",
+      "sha256": "2d397e189e85fdf175af5c517217744e70b0e15edb0021aadf2459d9f5afa80b",
+      "bytes": 7821,
+      "duration": 0.624,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "filename": "fois.mp3",
+      "text": "fois",
+      "synthesisText": "fois",
+      "sha256": "393a9055fd11a42f0b81bd97ed386264419d69591d7fff51c2cd45debae803bc",
+      "bytes": 7245,
+      "duration": 0.576,
+      "sampleRate": 24000,
+      "channels": 1
+    }
+  ],
+  "engine": "edge-tts",
+  "engineVersion": "7.3.1",
+  "humanListeningVerified": false
 }

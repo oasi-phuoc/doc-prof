@@ -1,4 +1,4 @@
-"""Nine Denise recordings and their ZIP; never fall back to a different voice.
+"""Denise recordings and their ZIP; never fall back to a different voice.
 
 pip install 'edge-tts>=7.2,<8'
 python scripts/generate-tcm-csc-denise.py --dry-run
@@ -42,7 +42,7 @@ def validate(path: Path) -> dict:
 
 async def generate(args: argparse.Namespace) -> None:
     spec = json.loads(SPEC.read_text())
-    assert len(spec['files']) == len({row['filename'] for row in spec['files']}) == 9
+    assert len(spec['files']) == len({row['filename'] for row in spec['files']}) >= 1
     assert (spec['voice'], spec['rate'], spec['volume'], spec['pitch']) == ('fr-FR-DeniseNeural', '-25%', '+0%', '+0Hz')
     if args.dry_run:
         print(json.dumps({'status': 'plan_only_no_audio_generated', **{key: spec[key] for key in ['voice', 'rate', 'volume', 'pitch', 'sampleRate', 'channels', 'files']}}, ensure_ascii=False, indent=2))
@@ -54,8 +54,8 @@ async def generate(args: argparse.Namespace) -> None:
     args.output.mkdir(parents=True, exist_ok=True)
     if any((args.output / row['filename']).exists() for row in spec['files']) or (args.output / 'TCM-CSC_DENISE_9-MP3.zip').exists():
         raise RuntimeError('Ce dossier contient déjà des prises ; choisissez un nouveau dossier de sortie.')
-    if args.install and DESTINATION.exists():
-        raise RuntimeError('Le dossier Denise existe déjà ; aucune prise existante ne sera écrasée.')
+    if args.install and (DESTINATION / 'denise-installing').exists():
+        raise RuntimeError('Installation précédente à examiner : denise-installing.')
     with tempfile.TemporaryDirectory(prefix='tcm-csc-denise-') as temporary:
         stage = Path(temporary)
         measurements = {}
@@ -67,34 +67,24 @@ async def generate(args: argparse.Namespace) -> None:
             subprocess.run(['ffmpeg', '-nostdin', '-y', '-v', 'error', '-i', str(raw), '-af', 'silenceremove=start_periods=1:start_duration=0.005:start_threshold=-60dB,areverse,silenceremove=start_periods=1:start_duration=0.005:start_threshold=-60dB,areverse,apad=pad_dur=0.02', '-ar', '24000', '-ac', '1', '-codec:a', 'libmp3lame', '-b:a', '96k', str(final)], check=True)
             measurements[row['filename']] = validate(final)
             print(f"Prise validée : {row['filename']}", flush=True)
-        archive = stage / 'TCM-CSC_DENISE_9-MP3.zip'
+        archive = stage / f"TCM-CSC_DENISE_{len(spec['files'])}-MP3.zip"
         with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_STORED) as zip_file:
             for row in spec['files']:
                 zip_file.write(stage / row['filename'], row['filename'])
         with zipfile.ZipFile(archive) as zip_file:
-            assert len(zip_file.namelist()) == 9 and zip_file.testzip() is None
+            assert len(zip_file.namelist()) == len(spec['files']) and zip_file.testzip() is None
         manifest = {**spec, 'status': 'generated', 'engine': 'edge-tts', 'engineVersion': importlib.metadata.version('edge-tts'), 'humanListeningVerified': False, 'files': [{**row, **measurements[row['filename']]} for row in spec['files']]}
         for row in spec['files']:
             shutil.copy2(stage / row['filename'], args.output / row['filename'])
         shutil.copy2(archive, args.output / archive.name)
         (args.output / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
         if args.install:
-            DESTINATION.parent.mkdir(parents=True, exist_ok=True)
-            installed = DESTINATION.with_name('denise-installing')
-            if installed.exists():
-                raise RuntimeError('Installation précédente à examiner : denise-installing.')
-            installed.mkdir()
-            try:
-                for row in spec['files']:
-                    shutil.copy2(stage / row['filename'], installed / row['filename'])
-                installed.rename(DESTINATION)
-                # The app keeps its legacy audio path until this final manifest commit.
-                pending = SPEC.with_suffix('.json.tmp')
-                pending.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
-                pending.replace(SPEC)
-            except BaseException:
-                shutil.rmtree(installed, ignore_errors=True)
-                raise
+            DESTINATION.mkdir(parents=True, exist_ok=True)
+            for row in spec['files']:
+                shutil.copy2(stage / row['filename'], DESTINATION / row['filename'])
+            pending = SPEC.with_suffix('.json.tmp')
+            pending.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+            pending.replace(SPEC)
         print(f'ZIP prêt : {args.output / archive.name}')
 
 

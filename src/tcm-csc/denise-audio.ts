@@ -3,25 +3,53 @@ import { CSC_DENISE_DIRECTORY } from './denise-recordings'
 
 export const CSC_TCF_BEEP = '/lib/audio/tcf/consignes/bip-d-annonce.mp3'
 export type CscAudioSegment = { kind: 'clip'; src: string } | { kind: 'silence'; seconds: number }
+export type ListeningKind = 'entourer' | 'nombres' | 'calculs' | 'multiplications'
 
-/** Exactly five variable prompts, A–E twice, no spoken result or extra recording. */
-export function planCscDeniseAudio(exercise: number, questions: readonly (readonly string[])[]): CscAudioSegment[] {
-  if (![1, 2, 3].includes(exercise) || questions.length !== 5 || questions.some(parts => !parts.length)) throw new Error('Le montage TCM CSC demande cinq questions validées, de A à E.')
+const LISTENING_LETTERS = 'abcdefghijkl'
+const CONSIGNE_FILE: Record<ListeningKind, string> = {
+  entourer: 'consigne-entourer.mp3',
+  nombres: 'consigne-nombres.mp3',
+  calculs: 'consigne-calculs.mp3',
+  multiplications: 'consigne-multiplications.mp3',
+}
+
+function deniseOperator(src: string): string {
+  if (src.endsWith('/plus.mp3')) return `${CSC_DENISE_DIRECTORY}/plus.mp3`
+  if (src.endsWith('/moins.mp3')) return `${CSC_DENISE_DIRECTORY}/moins.mp3`
+  if (src.endsWith('/fois.mp3')) return `${CSC_DENISE_DIRECTORY}/fois.mp3`
+  return src
+}
+
+/**
+ * Consigne Denise, 2 s, bip, puis chaque lettre, 0,5 s, l’énoncé, 5 s.
+ * Après la dernière lettre : 5 s, bip, et la même série pour la 2e écoute.
+ */
+export function planListeningAudio(kind: ListeningKind, questions: readonly (readonly string[])[]): CscAudioSegment[] {
+  if (questions.length < 1 || questions.length > LISTENING_LETTERS.length || questions.some((parts) => !parts.length)) {
+    throw new Error('Le montage audio demande entre 1 et 12 questions, de A jusqu’à la dernière lettre.')
+  }
   const clip = (src: string): CscAudioSegment => ({ kind: 'clip', src })
   const gap = (seconds: number): CscAudioSegment => ({ kind: 'silence', seconds })
-  const sequence: CscAudioSegment[] = [clip(`${CSC_DENISE_DIRECTORY}/consigne-${exercise === 2 ? 'calculs' : 'nombres'}.mp3`), gap(5), clip(CSC_TCF_BEEP)]
+  const sequence: CscAudioSegment[] = [clip(`${CSC_DENISE_DIRECTORY}/${CONSIGNE_FILE[kind]}`), gap(2), clip(CSC_TCF_BEEP)]
   for (let listen = 0; listen < 2; listen++) {
-    if (listen) sequence.push(gap(7), clip(CSC_TCF_BEEP))
+    if (listen) sequence.push(gap(5), clip(CSC_TCF_BEEP))
     questions.forEach((parts, index) => {
-      if (index) sequence.push(gap(7))
-      sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${'abcde'[index]}.mp3`), gap(0.18))
+      if (index) sequence.push(gap(5))
+      sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${LISTENING_LETTERS[index]}.mp3`), gap(0.5))
       parts.forEach((src, partIndex) => {
         if (partIndex) sequence.push(gap(0.12))
-        sequence.push(clip(src === '/lib/audio/nombre/plus.mp3' ? `${CSC_DENISE_DIRECTORY}/plus.mp3` : src === '/lib/audio/nombre/moins.mp3' ? `${CSC_DENISE_DIRECTORY}/moins.mp3` : src))
+        sequence.push(clip(deniseOperator(src)))
       })
     })
   }
   return sequence
+}
+
+/** Type CSC 1 = nombres, 2 = calculs, 3 = entourer. */
+export function planCscDeniseAudio(exercise: number, questions: readonly (readonly string[])[]): CscAudioSegment[] {
+  const kind = exercise === 1 ? 'nombres' : exercise === 2 ? 'calculs' : exercise === 3 ? 'entourer' : null
+  if (!kind) throw new Error('Le montage TCM CSC concerne les exercices entourer, nombres et calculs.')
+  return planListeningAudio(kind, questions)
 }
 
 /** Remove sub-audible clip margins so the added 5/7-second gaps stay real. */

@@ -188,11 +188,14 @@ try {
     const blocks = first.flatMap((sheet) => sheet.blocks)
     assert.equal(new Set(blocks.filter(block=>block.exerciseIndex>0).map(block=>block.exerciseIndex)).size,24)
     assert.ok(blocks.some((block) => block.exerciseIndex === 21))
-    assert.deepEqual(cscAudioGroups(first).map((g) => [g.number, g.parts.length]), [[1, 5], [2, 5], [3, 5]])
-    assert.equal(new Set(cscAudioGroups(first).map((g) => g.name)).size, 3)
+    assert.deepEqual(cscAudioGroups(first).map((g) => [g.number, g.type, g.parts.length, g.name]), [
+      [1, 3, 5, 'TCM-CSC_EXERCICE-01_ENTOURER.wav'],
+      [2, 1, 5, 'TCM-CSC_EXERCICE-02_NOMBRES.wav'],
+      [3, 2, 5, 'TCM-CSC_EXERCICE-03_CALCULS.wav'],
+    ])
     const altered = structuredClone(first)
     for (const block of altered.flatMap(sheet=>sheet.blocks).filter(block=>block.exerciseType==='tcm-csc-ex02')) for (const item of block.items) item.audioParts.push(`/lib/audio/nombre/${item.answer}.mp3`)
-    assert.deepEqual(cscAudioGroups(altered).find(group=>group.number===2).parts,cscAudioGroups(first).find(group=>group.number===2).parts,'The exported calculation never appends its result, including for a stale saved playlist.')
+    assert.deepEqual(cscAudioGroups(altered).find(group=>group.type===2).parts,cscAudioGroups(first).find(group=>group.type===2).parts,'The exported calculation never appends its result, including for a stale saved playlist.')
   })
 
   await test('CSC decomposition has two two-digit and two three-digit values, retaining CFR place-value rendering and legacy edits', () => {

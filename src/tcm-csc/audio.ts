@@ -28,11 +28,17 @@ export function cscAudioPrompts(type: string, items: readonly MathItem[]): strin
   })
 }
 
+const CSC_LISTEN_FILES = [
+  { type: 3, sheet: 1, slug: 'ENTOURER' },
+  { type: 1, sheet: 2, slug: 'NOMBRES' },
+  { type: 2, sheet: 3, slug: 'CALCULS' },
+] as const
+
 export function cscAudioGroups(sheets: WorksheetPage[]) {
-  return [1, 2, 3].flatMap((number) => {
-    const type = `tcm-csc-ex${String(number).padStart(2, '0')}`
-    const parts = sheets.flatMap(sheet=>sheet.blocks.filter(block=>block.exerciseType===type).flatMap(block=>cscAudioPrompts(type,block.items) ?? []))
-    return parts.length ? [{ number, parts, name: `TCM-CSC_EXERCICE-${String(number).padStart(2, '0')}_${['NOMBRES', 'CALCULS', 'ENTOURER'][number - 1]}.wav` }] : []
+  return CSC_LISTEN_FILES.flatMap(({ type, sheet, slug }) => {
+    const typeId = `tcm-csc-ex${String(type).padStart(2, '0')}`
+    const parts = sheets.flatMap(sheetPage=>sheetPage.blocks.filter(block=>block.exerciseType===typeId).flatMap(block=>cscAudioPrompts(typeId,block.items) ?? []))
+    return parts.length ? [{ number: sheet, type, parts, name: `TCM-CSC_EXERCICE-${String(sheet).padStart(2, '0')}_${slug}.wav` }] : []
   })
 }
 export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
@@ -41,7 +47,7 @@ export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signa
   const files = []
   for (const group of groups) {
     const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
-    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.number, group.parts), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, { ...groupOptions, trimJunctionSeconds: spokenJunctionSeconds(group.parts.flat()) }) })
+    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.type, group.parts), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, { ...groupOptions, trimJunctionSeconds: spokenJunctionSeconds(group.parts.flat()) }) })
   }
   return zipStoreBlob(files, undefined, options.signal)
 }

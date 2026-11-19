@@ -27,16 +27,17 @@ try {
         else if (run) { silenceRuns.push(run); run = 0 }
       }
       if (run) silenceRuns.push(run)
-      results.push({ exercise, sampleRate: 24000, channels: 1, fiveSecondGaps: silenceRuns.filter(n => n === 120000).length, sevenSecondGaps: silenceRuns.filter(n => n === 168000).length, letters: plan.filter(s => s.kind === 'clip' && s.src.includes('/lettre-')).length, bips: plan.filter(s => s.kind === 'clip' && s.src.endsWith('/bip-d-annonce.mp3')).length, totalSamples: (bytes.byteLength - 44) / 2, fixtureOnly: true })
+      results.push({ exercise, sampleRate: 24000, channels: 1, twoSecondGaps: silenceRuns.filter(n => n === 48000).length, halfSecondGaps: silenceRuns.filter(n => n === 12000).length, fiveSecondGaps: silenceRuns.filter(n => n === 120000).length, letters: plan.filter(s => s.kind === 'clip' && s.src.includes('/lettre-')).length, bips: plan.filter(s => s.kind === 'clip' && s.src.endsWith('/bip-d-annonce.mp3')).length, totalSamples: (bytes.byteLength - 44) / 2, fixtureOnly: true })
     }
     return results
   })
   for (const row of results) {
-    assert.equal(row.fiveSecondGaps, 1)
-    assert.equal(row.sevenSecondGaps, 9)
+    assert.equal(row.twoSecondGaps, 1)
+    assert.equal(row.halfSecondGaps, 10)
+    assert.equal(row.fiveSecondGaps, 9)
     assert.equal(row.letters, 10)
     assert.equal(row.bips, 2)
-    assert.equal(row.totalSamples, Math.round((row.exercise === 2 ? 78.65 : 73.25) * rate))
+    assert.equal(row.totalSamples, Math.round((row.exercise === 2 ? 60.85 : 55.45) * rate))
   }
   mkdirSync('/tmp/csc-denise-qa', { recursive: true })
   writeFileSync('/tmp/csc-denise-qa/results.json', JSON.stringify({ passed: true, syntheticFixturesOnly: true, recordingsGenerated: false, results }, null, 2) + '\n')

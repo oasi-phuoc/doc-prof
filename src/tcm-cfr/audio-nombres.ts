@@ -324,9 +324,14 @@ export async function downloadTcmCfrAudios(
   if (groups.length === 0) return 0
 
   const files: { name: string; blob: Blob }[] = []
+  const denise = await import('@/tcm-csc/denise-recordings')
+  const montage = denise.cscDeniseRecordingsReady() ? await import('@/tcm-csc/denise-audio') : null
   for (const group of groups) {
     try {
-      const blob = await concatPlaylistsWithGap(group.parts, undefined, { ...options, onProgress: (done, total) => options.onProgress?.(files.length + done / total, groups.length) })
+      const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
+      const blob = montage
+        ? await montage.renderCscDeniseAudio(montage.planListeningAudio(group.kind === 'MULTIPLICATION' ? 'multiplications' : 'nombres', group.parts), groupOptions)
+        : await concatPlaylistsWithGap(group.parts, undefined, groupOptions)
       files.push({
         name: tcmCfrAudioDownloadName({ kind: group.kind, exerciseNo: group.exerciseNo }),
         blob,
