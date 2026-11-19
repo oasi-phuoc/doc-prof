@@ -36,8 +36,8 @@ try {
     assert.equal(row.halfSecondGaps, row.exercise === 3 ? 0 : 10)
     assert.equal(row.fiveSecondGaps, 9)
     assert.equal(row.letters, row.exercise === 3 ? 0 : 10)
-    assert.equal(row.bips, row.exercise === 3 ? 3 : 2)
-    assert.equal(row.totalSamples, Math.round((row.exercise === 2 ? 60.85 : row.exercise === 3 ? 49.4 : 55.45) * rate))
+    assert.equal(row.bips, 3)
+    assert.equal(row.totalSamples, Math.round((row.exercise === 2 ? 61.3 : row.exercise === 3 ? 49.4 : 55.9) * rate))
   }
   mkdirSync('/tmp/csc-denise-qa', { recursive: true })
   writeFileSync('/tmp/csc-denise-qa/results.json', JSON.stringify({ passed: true, syntheticFixturesOnly: true, recordingsGenerated: false, results }, null, 2) + '\n')

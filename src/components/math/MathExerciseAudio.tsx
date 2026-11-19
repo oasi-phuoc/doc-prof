@@ -49,8 +49,6 @@ export function MathExerciseAudio({block}:{block:WorksheetBlock}) {
   const marked=LISTENED.test(block.exerciseType)
   const kind=CONSIGNE_KIND[block.exerciseType]
   const rate: DeniseRate = block.deniseRate === '-35%' || block.deniseRate === '-50%' ? block.deniseRate : '-25%'
-  const consigne = kind === 'entourer'
-    ? <PromptAudio parts={[cscConsigneSrc(kind, rate), CSC_TCF_BEEP]} label="Consigne" />
-    : kind ? <div className="math-prompt-audio"><span>Consigne</span><audio aria-label={`Consigne ${rate}`} controls preload="none" src={cscConsigneSrc(kind, rate)} /></div> : null
+  const consigne = kind ? <PromptAudio parts={[cscConsigneSrc(kind, rate, true), CSC_TCF_BEEP]} label="Consigne" /> : null
   return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{consigne}{prompts?.map((parts,index)=><PromptAudio key={index} parts={lettered(block.exerciseType, parts.map(src => cscRatedSrc(src, rate)), index)} label={`${calculation?'Calcul':'Nombre'} ${marked?String.fromCharCode(65+index):index+1}`}/>)}</div>
 }

@@ -15,9 +15,10 @@ const CONSIGNE_FILE: Record<ListeningKind, string> = {
   multiplications: 'consigne-multiplications',
 }
 
-export function cscConsigneSrc(kind: ListeningKind, rate: DeniseRate = '-25%'): string {
+export function cscConsigneSrc(kind: ListeningKind, rate: DeniseRate = '-25%', extended = false): string {
   const suffix = rate === '-35%' ? '-35' : rate === '-50%' ? '-50' : ''
-  return `${CSC_DENISE_DIRECTORY}/${CONSIGNE_FILE[kind]}${suffix}.mp3`
+  const name = extended && kind === 'nombres' ? 'consigne-nombres-annonce' : CONSIGNE_FILE[kind]
+  return `${CSC_DENISE_DIRECTORY}/${name}${suffix}.mp3`
 }
 
 export function cscEcouteSrc(listen: 1 | 2, rate: DeniseRate = '-25%'): string {
@@ -41,19 +42,20 @@ function deniseOperator(src: string): string {
 }
 
 /**
- * Exercices 2 et 3 : consigne, 2 s, bip, lettre, 0,5 s, énoncé, 5 s, puis bip et 2e écoute.
- * Exercice 1 : consigne, sonnerie d’exemple, 2 s, « Écoute numéro 1 », sonnerie, nombres, puis « Écoute numéro 2 », sonnerie, et la même série.
+ * TCM CSC : consigne, sonnerie d’exemple, 2 s, « Écoute numéro 1 », sonnerie, la série, puis « Écoute numéro 2 ».
+ * Exercices 2 et 3 gardent la lettre avant chaque nombre ou calcul. Le CFR reste sur l’ancien montage.
  */
-export function planListeningAudio(kind: ListeningKind, questions: readonly (readonly string[])[], rate?: DeniseRate): CscAudioSegment[] {
+export function planListeningAudio(kind: ListeningKind, questions: readonly (readonly string[])[], rate?: DeniseRate, announceListens = false): CscAudioSegment[] {
   if (questions.length < 1 || questions.length > LISTENING_LETTERS.length || questions.some((parts) => !parts.length)) {
     throw new Error('Le montage audio demande entre 1 et 12 questions, de A jusqu’à la dernière lettre.')
   }
   const chosen = rate ?? '-25%'
-  const announced = kind === 'entourer'
+  const announced = announceListens || kind === 'entourer'
+  const withLetters = kind !== 'entourer'
   const clip = (src: string): CscAudioSegment => ({ kind: 'clip', src })
   const gap = (seconds: number): CscAudioSegment => ({ kind: 'silence', seconds })
   const sequence: CscAudioSegment[] = announced
-    ? [clip(cscConsigneSrc(kind, chosen)), clip(CSC_TCF_BEEP), gap(2)]
+    ? [clip(cscConsigneSrc(kind, chosen, announced)), clip(CSC_TCF_BEEP), gap(2)]
     : [clip(cscConsigneSrc(kind, chosen)), gap(2), clip(CSC_TCF_BEEP)]
   for (let listen = 0; listen < 2; listen++) {
     if (listen) sequence.push(gap(5))
@@ -61,7 +63,7 @@ export function planListeningAudio(kind: ListeningKind, questions: readonly (rea
     else if (listen) sequence.push(clip(CSC_TCF_BEEP))
     questions.forEach((parts, index) => {
       if (index) sequence.push(gap(5))
-      if (!announced) sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${LISTENING_LETTERS[index]}.mp3`), gap(0.5))
+      if (withLetters) sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${LISTENING_LETTERS[index]}.mp3`), gap(0.5))
       parts.forEach((src, partIndex) => {
         if (partIndex) sequence.push(gap(0.12))
         sequence.push(clip(cscRatedSrc(deniseOperator(src), chosen)))
@@ -75,7 +77,7 @@ export function planListeningAudio(kind: ListeningKind, questions: readonly (rea
 export function planCscDeniseAudio(exercise: number, questions: readonly (readonly string[])[], rate?: DeniseRate): CscAudioSegment[] {
   const kind = exercise === 1 ? 'nombres' : exercise === 2 ? 'calculs' : exercise === 3 ? 'entourer' : null
   if (!kind) throw new Error('Le montage TCM CSC concerne les exercices entourer, nombres et calculs.')
-  return planListeningAudio(kind, questions, rate)
+  return planListeningAudio(kind, questions, rate, true)
 }
 
 /** Remove sub-audible clip margins so the added 5/7-second gaps stay real. */
