@@ -35,7 +35,7 @@ function PromptAudio({parts,label}:{parts:string[];label:string}) {
 }
 
 const LISTENED = /^tcm-(?:csc-ex0[12]|cfr-ex0[12])$/
-const CONSIGNE_KIND: Record<string, ListeningKind> = { 'tcm-csc-ex01': 'nombres', 'tcm-csc-ex02': 'calculs', 'tcm-csc-ex03': 'entourer' }
+const CONSIGNE_KIND: Record<string, ListeningKind> = { 'tcm-csc-ex01': 'nombres', 'tcm-csc-ex02': 'calculs', 'tcm-csc-ex03': 'entourer', 'tcm-cfr-ex01': 'nombres', 'tcm-cfr-ex02': 'multiplications' }
 
 function lettered(type: string, parts: string[], index: number) {
   if (!LISTENED.test(type) || index > 11) return parts

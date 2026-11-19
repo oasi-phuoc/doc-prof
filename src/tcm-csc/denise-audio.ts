@@ -42,8 +42,8 @@ function deniseOperator(src: string): string {
 }
 
 /**
- * TCM CSC : consigne, sonnerie d’exemple, 2 s, « Écoute numéro 1 », sonnerie, la série, puis « Écoute numéro 2 ».
- * Exercices 2 et 3 gardent la lettre avant chaque nombre ou calcul. Le CFR reste sur l’ancien montage.
+ * Consigne, sonnerie d’exemple, 2 s, « Écoute numéro 1 », sonnerie, la série, puis « Écoute numéro 2 ».
+ * Nombres, calculs et multiplications gardent la lettre avant chaque énoncé. Entourer n’a pas de lettres.
  */
 export function planListeningAudio(kind: ListeningKind, questions: readonly (readonly string[])[], rate?: DeniseRate, announceListens = false): CscAudioSegment[] {
   if (questions.length < 1 || questions.length > LISTENING_LETTERS.length || questions.some((parts) => !parts.length)) {
@@ -77,6 +77,11 @@ export function planListeningAudio(kind: ListeningKind, questions: readonly (rea
 export function planCscDeniseAudio(exercise: number, questions: readonly (readonly string[])[], rate?: DeniseRate): CscAudioSegment[] {
   const kind = exercise === 1 ? 'nombres' : exercise === 2 ? 'calculs' : exercise === 3 ? 'entourer' : null
   if (!kind) throw new Error('Le montage TCM CSC concerne les exercices entourer, nombres et calculs.')
+  return planListeningAudio(kind, questions, rate, true)
+}
+
+/** TCM CFR : nombres entendus et multiplications orales, même annonce que le CSC. */
+export function planCfrDeniseAudio(kind: 'nombres' | 'multiplications', questions: readonly (readonly string[])[], rate?: DeniseRate): CscAudioSegment[] {
   return planListeningAudio(kind, questions, rate, true)
 }
 

@@ -330,7 +330,7 @@ export async function downloadTcmCfrAudios(
     try {
       const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
       const blob = montage
-        ? await montage.renderCscDeniseAudio(montage.planListeningAudio(group.kind === 'MULTIPLICATION' ? 'multiplications' : 'nombres', group.parts), groupOptions)
+        ? await montage.renderCscDeniseAudio(montage.planCfrDeniseAudio(group.kind === 'MULTIPLICATION' ? 'multiplications' : 'nombres', group.parts), groupOptions)
         : await concatPlaylistsWithGap(group.parts, undefined, groupOptions)
       files.push({
         name: tcmCfrAudioDownloadName({ kind: group.kind, exerciseNo: group.exerciseNo }),
