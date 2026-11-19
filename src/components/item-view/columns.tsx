@@ -87,7 +87,7 @@ export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   lines.push({ kind: 'digits', digits: item.digitsResult, blank: true, comma: decimalPlaces > 0 })
 
   return (
-    <div className={`column-op${hasPartials ? ' has-partials' : ''}`}>
+    <div className={`column-op${hasPartials ? ' has-partials' : ''}${item.strongColumnRule ? ' has-strong-rule' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <div className="column-grid school">
         {lines.map((line, index) => {

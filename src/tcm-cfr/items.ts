@@ -292,7 +292,10 @@ function padDigitsStart(row: string[] | undefined, width: number): string[] {
 function genMulDivPair(rng: Rng, empty: boolean): MathItem[] {
   const a = int(rng, 100, 999)
   const b = int(rng, 11, 99)
-  const mul = withFixedColumnWidth(columnItem('×', a, b, a * b, empty), 5)
+  const mul = {
+    ...withFixedColumnWidth(columnItem('×', a, b, a * b, empty), 5),
+    strongColumnRule: true,
+  }
   const d = int(rng, 2, 9)
   const qMin = Math.ceil(1000 / d)
   const qMax = Math.floor(9999 / d)
@@ -603,14 +606,17 @@ function genEx22(rng: Rng): MathItem[] {
   const peri = Math.round(4 * side * 10) / 10
   const area = Math.round(side * side * 100) / 100
   return [
-    dualGeo(
-      'square',
-      { side, length: side },
-      `4 × ${fmt(side)}`,
-      `${fmt(side)} × ${fmt(side)}`,
-      peri,
-      area,
-    ),
+    {
+      ...dualGeo(
+        'square',
+        { side, length: side },
+        `4 × ${fmt(side)}`,
+        `${fmt(side)} × ${fmt(side)}`,
+        peri,
+        area,
+      ),
+      hideItemNumber: true,
+    },
   ]
 }
 
@@ -622,14 +628,17 @@ function genEx23(rng: Rng): MathItem[] {
   const peri = Math.round(2 * (length + width) * 10) / 10
   const area = Math.round(length * width * 100) / 100
   return [
-    dualGeo(
-      'rectangle',
-      { length, width },
-      `2 × (${fmt(length)} + ${fmt(width)})`,
-      `${fmt(length)} × ${fmt(width)}`,
-      peri,
-      area,
-    ),
+    {
+      ...dualGeo(
+        'rectangle',
+        { length, width },
+        `2 × (${fmt(length)} + ${fmt(width)})`,
+        `${fmt(length)} × ${fmt(width)}`,
+        peri,
+        area,
+      ),
+      hideItemNumber: true,
+    },
   ]
 }
 
@@ -644,14 +653,17 @@ function genEx24(rng: Rng): MathItem[] {
   const peri = Math.round((a + b + c) * 10) / 10
   const area = Math.round(((a * h) / 2) * 100) / 100
   return [
-    dualGeo(
-      'triangle',
-      { a, b, c, height: h, triangleKind: 'scalene' },
-      `${fmt(a)} + ${fmt(b)} + ${fmt(c)}`,
-      `(${fmt(a)} × ${fmt(h)}) ÷ 2`,
-      peri,
-      area,
-    ),
+    {
+      ...dualGeo(
+        'triangle',
+        { a, b, c, height: h, triangleKind: 'scalene' },
+        `${fmt(a)} + ${fmt(b)} + ${fmt(c)}`,
+        `(${fmt(a)} × ${fmt(h)}) ÷ 2`,
+        peri,
+        area,
+      ),
+      hideItemNumber: true,
+    },
   ]
 }
 

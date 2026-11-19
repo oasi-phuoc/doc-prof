@@ -6,9 +6,9 @@ import { GeometryFigure } from '../math/GeometryFigure'
 
 /** Libellés des réponses empilées (périmètre, aire, côté). */
 function stackAnswerLabel(label: string): string {
-  if (/^périmètre$/i.test(label.trim())) return 'Quelle est son périmètre ?'
+  if (/^périmètre$/i.test(label.trim())) return 'Quel est son périmètre ?'
   if (/^aire$/i.test(label.trim())) return 'Quelle est son aire ?'
-  if (/^côté$/i.test(label.trim())) return 'Réponse'
+  if (/^côté$/i.test(label.trim())) return 'Réponse :'
   return label
 }
 
@@ -61,12 +61,13 @@ export function GeoBlock({
             </div>
           </div>
         </div>
-        <div className={`geo-dual-answers${stack && lines.length > 1 ? ' is-stacked' : ''}`}>
-          {lines.map((line) => {
+        <div className={`geo-dual-answers${stack && lines.length > 1 ? ' is-stacked' : ''}${lines.length === 1 ? ' is-single' : ''}`}>
+          {lines.map((line, index) => {
             const shown = stack ? stackAnswerLabel(line.label) : line.label
             return (
             <div className="geo-dual-answer" key={line.label}>
-              <span className="property-label">{shown}{shown.endsWith('?') ? '' : ' ='}</span>
+              {stack && lines.length > 1 ? <span className="geo-dual-question-number">{index + 1}.</span> : null}
+              <span className="property-label">{shown}{shown.endsWith('?') || shown.endsWith(':') ? '' : ' ='}</span>
               {show ? (
                 <strong className="filled-answer property-answer">{line.answer}</strong>
               ) : (

@@ -432,6 +432,8 @@ export type MathItem = {
   decimalPlaces?: number
   /** Chiffres du reste (division posée). */
   digitsRemainder?: string[]
+  /** Met en évidence le trait de calcul sous les opérandes. */
+  strongColumnRule?: boolean
   dividend?: number
   divisor?: number
   quotient?: number
@@ -531,7 +533,7 @@ export type MathItem = {
   geoDualPads?: boolean
   /** Geo dual : espace réduit de moitié entre la grille et les lignes Périmètre / Aire. */
   geoDualTight?: boolean
-  /** Masquer le numéro de question (ex. problème géométrie 25–26). */
+  /** Masquer le numéro de question lorsque la numérotation est portée par les sous-questions. */
   hideItemNumber?: boolean
   /** Cadre forme + traits (TCM CFR ex. 16–17) : figure à gauche, réponses à droite. */
   geoNameCard?: boolean

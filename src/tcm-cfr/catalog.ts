@@ -44,7 +44,7 @@ export const TCM_CFR_EXERCISE_TYPES: ExerciseType[] = [
   t('tcm-cfr-ex07', 'tcm-cfr-test', '8 — Colonnes + et −', 'Additions et soustractions posées.', 'Calculez les additions et les soustractions.', 2),
   t('tcm-cfr-ex08', 'tcm-cfr-test', '9 — Colonnes + et − (suite)', 'Additions et soustractions à poser (nombres hors grille).', 'Posez les nombres dans la grille, puis calculez.', 2),
   t('tcm-cfr-ex09', 'tcm-cfr-test', '10 — × et ÷ posées', 'Multiplication et division en colonnes.', 'Calculez les multiplications et les divisions.', 2),
-  t('tcm-cfr-ex10', 'tcm-cfr-test', '11 — × et ÷ (hors grille)', 'Multiplication et division à poser (nombres hors grille).', 'Posez et calculez.', 2),
+  t('tcm-cfr-ex10', 'tcm-cfr-test', '11 — × et ÷ (hors grille)', 'Multiplication et division à poser (nombres hors grille).', 'Posez les nombres dans la grille, puis calculez.', 2),
   t('tcm-cfr-ex11', 'tcm-cfr-test', '12 — Fractions en lettres', 'Écrire la fraction correspondant au terme.', 'Pour chaque terme, écrivez la fraction correspondante.', 2),
   t('tcm-cfr-ex12', 'tcm-cfr-test', '13 — Colorier les fractions', 'Colorier la fraction indiquée (formes simples).', 'Coloriez la fraction indiquée.', 2),
   t('tcm-cfr-ex13', 'tcm-cfr-test', '14 — Lire les fractions', 'Lire la fraction d’une forme coloriée.', 'Écrivez la fraction représentée.', 2),
@@ -62,6 +62,6 @@ export const TCM_CFR_EXERCISE_TYPES: ExerciseType[] = [
   t('tcm-cfr-ex24', 'tcm-cfr-test', '25 — Triangle (décimaux)', 'Périmètre et aire d’un triangle (décimaux).', 'Calculez le périmètre et l’aire.', 1),
   t('tcm-cfr-ex25', 'tcm-cfr-test', '26 — Côté du carré', 'Retrouver le côté à partir du périmètre.', '', 1),
   t('tcm-cfr-ex26', 'tcm-cfr-test', '27 — Côté du rectangle', 'Retrouver un côté à partir du périmètre.', '', 1),
-  t('tcm-cfr-ex27', 'tcm-cfr-test', '28 — Repérage (cadran I)', 'Graduer, placer et lire des points (quadrant I).', '', 1),
-  t('tcm-cfr-ex28', 'tcm-cfr-test', '29 — Plan de métro', 'Lire un plan de métro (coordonnées).', 'Répondez aux questions.\nÉcrivez uniquement les coordonnées.', 1),
+  t('tcm-cfr-ex27', 'tcm-cfr-test', '29 — Repérage (cadran I)', 'Graduer, placer et lire des points (quadrant I).', '', 1),
+  t('tcm-cfr-ex28', 'tcm-cfr-test', '28 — Plan de métro', 'Lire un plan de métro (coordonnées).', 'Répondez aux questions.\nÉcrivez uniquement les coordonnées.', 1),
 ]

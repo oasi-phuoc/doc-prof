@@ -174,14 +174,16 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .exercise-block[data-exercise-type="tcm-cfr-ex05"] .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item,
+.exercise-block[data-exercise-type="tcm-cfr-ex05"] .exercise-item { gap: 20px; align-items: baseline; }
 .exercise-block[data-exercise-type="tcm-cfr-ex05"] .place-value-row.is-plain { display: grid; grid-template-columns: 8ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
 .exercise-block[data-exercise-type="tcm-cfr-ex05"] .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
 .is-tcm-cfr .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
-.exercise-block[data-exercise-type="tcm-cfr-ex06"] .op-name-row { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); column-gap: 10px; align-items: baseline; width: 100%; }
+.exercise-block[data-exercise-type="tcm-cfr-ex06"] .op-name-row { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); column-gap: 20px; align-items: baseline; width: 100%; }
 .exercise-block[data-exercise-type="tcm-cfr-ex06"] .op-name-box { width: 1.8em; min-width: 1.8em; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .exercise-grid { row-gap: 100px; }
-.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex07"]):has([data-exercise-type="tcm-cfr-ex08"]) .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .exercise-grid { row-gap: 52px; }
-.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex07"]):has([data-exercise-type="tcm-cfr-ex08"]) .exercise-block[data-exercise-type="tcm-cfr-ex08"] { margin-top: 10px; padding-top: 0; }
+.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex07"]):has([data-exercise-type="tcm-cfr-ex08"]) .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .exercise-grid { row-gap: 32px; }
+.is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex07"]):has([data-exercise-type="tcm-cfr-ex08"]) .exercise-block[data-exercise-type="tcm-cfr-ex08"] { margin-top: 50px; padding-top: 0; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .exercise-item { padding-top: 0; padding-bottom: 0; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"], [data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-grid .digit-cell:last-child { border-right-color: #c5cad3 !important; }
@@ -251,7 +253,29 @@
 }
 /* Deux formes + réponses empilées : la figure reste lisible sans sortir de l’A4. */
 .exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { max-height: 32mm; }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geometry-figure .dim-label { font-size: calc(16pt * var(--app-font-scale, 1)); }
+.is-tcm-cfr .geo-dual-figure .geometry-figure .dim-label { font-size: calc(13pt * var(--app-font-scale, 1)); }
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-single .geo-dual-answer {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  width: 100%;
+  max-width: none;
+  column-gap: 8px;
+}
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-single .answer-line-field {
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked .geo-dual-answer {
+  display: grid;
+  grid-template-columns: 1.4em max-content minmax(0, 1fr);
+  column-gap: 8px;
+}
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked .answer-line-field {
+  width: 100%;
+  min-width: 0;
+}
+.is-tcm-cfr .geo-dual-question-number { color: var(--purple); font-weight: 700; }
 .cfr-forme-frame .geo-name-card { border: 0; padding: 0; }
 .cfr-forme-frame .geo-name-card-inner { grid-template-columns: auto minmax(0, 1fr); justify-items: start; }
 .cfr-forme-frame .geo-name-card-figure { justify-content: flex-start; width: auto; min-height: 32mm; }
@@ -265,8 +289,8 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex17"] .geo-name-card-answers { width: 100%; }
 .exercise-block[data-exercise-type="tcm-cfr-ex17"] .property-line { grid-template-columns: minmax(0, 1fr); }
 .exercise-block[data-exercise-type="tcm-cfr-ex17"] .answer-line-field { width: 100%; }
-.exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal { align-items: baseline; }
-.exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal .answer-line-field { align-self: baseline; position: relative; top: 0.18em; }
+.exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal { align-items: center; }
+.exercise-block[data-exercise-type="tcm-cfr-ex21"] .inline-prompt.equation.frac-eq-decimal .answer-line-field { align-self: flex-end; position: static; top: auto; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side .column-line.rule-line { display: none; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .column-line-sign { display: none; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .digit-cell { border: 1px solid #c5cad3; width: 39px; height: 39px; flex: 0 0 39px; font-size: calc(17px * var(--app-font-scale, 1)); }
@@ -285,6 +309,7 @@
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side { position: relative; z-index: 1; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-work-side .digit-cell:nth-child(4) { border-right: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-answer-side .column-line:first-child .digit-cell { border-bottom: 2.5px solid var(--purple) !important; print-color-adjust: exact; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .column-op.has-strong-rule .column-rule { border-bottom: 2.5px solid var(--purple); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-grid {
   grid-template-columns:
     max-content max-content max-content auto 4.5em max-content
@@ -306,11 +331,18 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-item:nth-child(odd) { grid-column: 1 / span 6; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .exercise-item:nth-child(even) { grid-column: 8 / span 6; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .item-number { min-width: 0; width: auto; }
+.exercise-block[data-exercise-type="tcm-cfr-ex20"] .item-number { padding-right: 20px; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .item-content,
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-row { display: contents; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-value,
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-unit { text-align: left; justify-self: start; }
 .exercise-block[data-exercise-type="tcm-cfr-ex20"] .convert-value { margin-left: calc(2px - 0.25em); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex14"], [data-exercise-type="tcm-cfr-ex15"]) .problem-response-line .response-label,
+.exercise-block:is([data-exercise-type="tcm-cfr-ex14"], [data-exercise-type="tcm-cfr-ex15"]) .problem-response-line .response-value,
+.exercise-block:is([data-exercise-type="tcm-cfr-ex14"], [data-exercise-type="tcm-cfr-ex15"]) .problem-response-line .answer-line-field {
+  font-size: inherit;
+  font-weight: 700;
+}
 /* TPM : mêmes mises en forme que les exercices proches du TCM CSC / CFR. */
 .is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .item-number { flex-basis: 2em; width: 2em; min-width: 2em; justify-content: flex-end; }
 .is-tpm .exercise-block:is([data-exercise-type="tpm-comparer"], [data-exercise-type="nombres-comparer"]) .compare-row.is-line { width: max-content; grid-template-columns: 4ch 2.4em 4ch; gap: 10px; }

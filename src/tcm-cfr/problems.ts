@@ -795,6 +795,7 @@ function itemsFromSpec(spec: ProblemSpec, vars: Record<string, number>): MathIte
     problemVars: { ...vars },
     problemVarDefs: spec.varDefs,
     problemPart: part as 0 | 1,
+    hideItemNumber: true,
   }))
 }
 

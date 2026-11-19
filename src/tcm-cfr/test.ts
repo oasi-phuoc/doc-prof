@@ -1,7 +1,7 @@
 /**
  * Test de connaissance de mathématiques — variante CFR (29 exercices affichés).
  */
-import type { Difficulty, Domain, ExerciseBlock, PageConfig } from '@/math/types'
+import type { Difficulty, Domain, ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { exerciseTypeById, isDraftPadExercise } from '@/math/catalog'
 
 export const TCM_CFR_DOMAIN: Domain = 'tcm-cfr'
@@ -13,6 +13,7 @@ type BlockSpec = {
   columns?: 1 | 2 | 3
   pointsPerQuestion?: number
   exerciseNo?: number
+  initialItems?: MathItem[]
   orderAscending?: boolean
   sheetTitle?: string
   /** Saut de page après l’item d’index i (plan de métro). */
@@ -39,7 +40,44 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 10, label: '× et ÷ posées', blocks: [{ exerciseType: 'tcm-cfr-ex09', count: 2, columns: 2, pointsPerQuestion: 2 }] },
   { id: 11, label: '× et ÷ (nombres hors grille)', blocks: [{ exerciseType: 'tcm-cfr-ex10', count: 2, columns: 2, pointsPerQuestion: 2 }] },
   { id: 12, label: 'Fractions en lettres', blocks: [{ exerciseType: 'tcm-cfr-ex11', count: 4, columns: 2, pointsPerQuestion: 0.5 }] },
-  { id: 13, label: 'Colorier fractions', blocks: [{ exerciseType: 'tcm-cfr-ex12', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
+  { id: 13, label: 'Colorier fractions', blocks: [{
+    exerciseType: 'tcm-cfr-ex12',
+    count: 6,
+    columns: 2,
+    pointsPerQuestion: 0.5,
+    initialItems: [
+      {
+        layout: 'fraction-shape',
+        fracShape: { kind: 'rect', n: 1, d: 3, copies: 1, multi: false, mode: 'color' },
+        answer: '1/3',
+      },
+      {
+        layout: 'fraction-shape',
+        fracShape: { kind: 'square', n: 1, d: 2, copies: 1, multi: false, mode: 'color' },
+        answer: '1/2',
+      },
+      {
+        layout: 'fraction-shape',
+        fracShape: { kind: 'circle', n: 1, d: 4, copies: 1, multi: false, mode: 'color' },
+        answer: '1/4',
+      },
+      {
+        layout: 'fraction-shape',
+        fracShape: { kind: 'triangle', n: 1, d: 1, copies: 1, multi: false, mode: 'color' },
+        answer: '1/1',
+      },
+      {
+        layout: 'fraction-shape',
+        fracShape: { kind: 'semicircle', n: 2, d: 5, copies: 1, multi: false, mode: 'color' },
+        answer: '2/5',
+      },
+      {
+        layout: 'fraction-shape',
+        fracShape: { kind: 'hexagon', n: 5, d: 12, copies: 1, multi: false, mode: 'color' },
+        answer: '5/12',
+      },
+    ],
+  }] },
   { id: 14, label: 'Lire fractions', blocks: [{ exerciseType: 'tcm-cfr-ex13', count: 6, columns: 2, pointsPerQuestion: 0.5 }] },
   { id: 15, label: 'Symétrie axiale', blocks: [{ exerciseType: 'tcm-cfr-ex18', count: 1, columns: 1, pointsPerQuestion: 3 }] },
   { id: 16, label: 'Nommer des formes', blocks: [{ exerciseType: 'tcm-cfr-ex17', count: 3, columns: 1, pointsPerQuestion: 1 }] },
@@ -54,8 +92,8 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 25, label: 'Triangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex24', count: 1, columns: 1, pointsPerQuestion: 4 }] },
   { id: 26, label: 'Côté du carré', blocks: [{ exerciseType: 'tcm-cfr-ex25', count: 1, columns: 1, pointsPerQuestion: 2 }] },
   { id: 27, label: 'Côté du rectangle', blocks: [{ exerciseType: 'tcm-cfr-ex26', count: 1, columns: 1, pointsPerQuestion: 2 }] },
-  { id: 28, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
-  { id: 29, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5, tcfPageBreakAfter: [true] }] },
+  { id: 28, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5, tcfPageBreakAfter: [true] }] },
+  { id: 29, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
 ]
 
 const TCM_CFR_PACKED_PAGES: readonly (readonly number[])[] = [
@@ -110,6 +148,7 @@ function blockFromSpec(
     ...(spec.orderAscending != null ? { orderAscending: spec.orderAscending } : {}),
     ...(spec.sheetTitle ? { sheetTitle: spec.sheetTitle } : {}),
     ...(spec.tcfPageBreakAfter ? { tcfPageBreakAfter: spec.tcfPageBreakAfter } : {}),
+    ...(spec.initialItems ? { libreItems: spec.initialItems.map((item) => ({ ...item })) } : {}),
     ...(spec.pointsPerQuestion != null ? { pointsPerQuestion: spec.pointsPerQuestion } : {}),
     ...(exerciseNo != null || spec.exerciseNo != null
       ? { exerciseNo: spec.exerciseNo ?? exerciseNo }

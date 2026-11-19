@@ -746,6 +746,8 @@ export function ProblemBlock({
   draftGrid?: boolean
 }) {
   const show = mode === 'answers'
+  const promptParts = (item.prompt ?? '').split('\n\n')
+  const question = item.problemTemplateId ? promptParts.pop() : undefined
   const sketch = item.labels?.includes('sketch-vars') ? item.problemVarDefs ?? [] : []
   return (
     <div className="problem-block">
@@ -759,7 +761,15 @@ export function ProblemBlock({
           ))}
         </div>
       ) : null}
-      <p className="problem-prompt">{item.prompt}</p>
+      <p className="problem-prompt">
+        {question ? (
+          <>
+            {promptParts.join('\n\n')}
+            {promptParts.length > 0 ? '\n\n' : ''}
+            <strong>{question}</strong>
+          </>
+        ) : item.prompt}
+      </p>
       {item.labels?.includes('sketch-change') ? (
         <MoneyChangeBoard parts={item.changeParts ?? []} mode={mode} />
       ) : null}
