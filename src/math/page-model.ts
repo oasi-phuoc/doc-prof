@@ -97,6 +97,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     countShapeScale: page.countShapeScale,
     countIconTotal: page.countIconTotal,
     geoFigureHelp: page.geoFigureHelp,
+    deniseRate: page.deniseRate,
   }
 }
 

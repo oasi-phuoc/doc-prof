@@ -863,6 +863,8 @@ export type ExerciseBlock = {
   orderAscending?: boolean
   /** TCM CFR exercices 26 et 27 : afficher la forme comme aide. Absent = affichée. */
   geoFigureHelp?: boolean
+  /** TCM CSC exercices 1 à 3 : vitesse Denise de la consigne audio. Absent = −25 %. */
+  deniseRate?: '-25%' | '-35%' | '-50%'
   /**
    * Points par question pour ce bloc (mode évaluation).
    * Si absent, le total utilise le réglage global de la fiche.
@@ -1166,6 +1168,8 @@ export type WorksheetBlock = {
   formulaireLetterGrid?: boolean
   /** TCM CFR exercices 26 et 27 : forme affichée comme aide. */
   geoFigureHelp?: boolean
+  /** TCM CSC exercices 1 à 3 : vitesse Denise de la consigne audio. */
+  deniseRate?: '-25%' | '-35%' | '-50%'
   /** Largeur du trait inline (px), propagée depuis ExerciseBlock. */
   inlineBlankPx?: number
   oralAnswerModes?: Array<'qcm' | 'text' | 'images'>

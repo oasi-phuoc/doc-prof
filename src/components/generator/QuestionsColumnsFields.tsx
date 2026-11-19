@@ -412,6 +412,25 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   <small className="muted">La forme sert d’aide. Vous pouvez la masquer.</small>
                 </div>
               ) : null}
+              {activeBlock.exerciseType === 'tcm-csc-ex01' || activeBlock.exerciseType === 'tcm-csc-ex02' || activeBlock.exerciseType === 'tcm-csc-ex03' ? (
+                <div className="mode-toggle-block">
+                  <b>Vitesse de Denise</b>
+                  <div className="mode-toggle is-3" role="group" aria-label="Vitesse de la consigne">
+                    {(['-25%', '-35%', '-50%'] as const).map((rate) => (
+                      <button
+                        key={rate}
+                        type="button"
+                        className={(activeBlock.deniseRate ?? '-25%') === rate ? 'active' : undefined}
+                        aria-pressed={(activeBlock.deniseRate ?? '-25%') === rate}
+                        onClick={() => updatePage({ deniseRate: rate })}
+                      >
+                        {rate.replace('-', '−').replace('%', ' %')}
+                      </button>
+                    ))}
+                  </div>
+                  <small className="muted">Vitesse de la consigne audio de cet exercice.</small>
+                </div>
+              ) : null}
               {activeBlock.exerciseType === 'tcm-csc-ex18' ? (
                 <label className="select-shell">
                   <span>Taille des formes</span>

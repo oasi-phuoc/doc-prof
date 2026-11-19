@@ -37,8 +37,10 @@ const CSC_LISTEN_FILES = [
 export function cscAudioGroups(sheets: WorksheetPage[]) {
   return CSC_LISTEN_FILES.flatMap(({ type, sheet, slug }) => {
     const typeId = `tcm-csc-ex${String(type).padStart(2, '0')}`
-    const parts = sheets.flatMap(sheetPage=>sheetPage.blocks.filter(block=>block.exerciseType===typeId).flatMap(block=>cscAudioPrompts(typeId,block.items) ?? []))
-    return parts.length ? [{ number: sheet, type, parts, name: `TCM-CSC_EXERCICE-${String(sheet).padStart(2, '0')}_${slug}.wav` }] : []
+    const blocks = sheets.flatMap(sheetPage => sheetPage.blocks.filter(block => block.exerciseType === typeId))
+    const parts = blocks.flatMap(block => cscAudioPrompts(typeId, block.items) ?? [])
+    const rate = blocks.find(block => block.deniseRate === '-35%' || block.deniseRate === '-50%' || block.deniseRate === '-25%')?.deniseRate
+    return parts.length ? [{ number: sheet, type, parts, rate, name: `TCM-CSC_EXERCICE-${String(sheet).padStart(2, '0')}_${slug}.wav` }] : []
   })
 }
 export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
@@ -47,7 +49,7 @@ export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signa
   const files = []
   for (const group of groups) {
     const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
-    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.type, group.parts), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, { ...groupOptions, trimJunctionSeconds: spokenJunctionSeconds(group.parts.flat()) }) })
+    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.type, group.parts, group.rate), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, { ...groupOptions, trimJunctionSeconds: spokenJunctionSeconds(group.parts.flat()) }) })
   }
   return zipStoreBlob(files, undefined, options.signal)
 }

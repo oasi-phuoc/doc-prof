@@ -12,8 +12,8 @@ try {
   const { cscAudioPrompts } = await server.ssrLoadModule('/src/tcm-csc/audio.ts')
   const spec = JSON.parse(readFileSync('src/tcm-csc/denise-recordings.json', 'utf8'))
   await test('Denise requests; pronunciation inputs never contain examples or phonetic notation', () => {
-    assert.equal(spec.files.length, 19)
-    assert.equal(new Set(spec.files.map(f => f.filename)).size, 19)
+    assert.equal(spec.files.length, 25)
+    assert.equal(new Set(spec.files.map(f => f.filename)).size, 25)
     assert.deepEqual(spec.files.filter(f => f.filename.startsWith('lettre')).map(f => f.synthesisText), ['a', 'bé', 'cé', 'dé', 'e', 'effe', 'gé', 'ache', 'i', 'ji', 'ka', 'elle'])
     assert.equal(spec.files.find(f => f.filename === 'consigne-entourer.mp3').synthesisText, 'Entourez les nombres que vous entendez. Il y a deux écoutes.')
     assert.ok(spec.files.every(f => !/bip/i.test(f.synthesisText)))
@@ -44,11 +44,17 @@ try {
       assert.equal(clips.filter(src => src.includes('/consigne-')).length, 1)
       assert.match(clips.find(src => src.includes('/consigne-')), number === 2 ? /consigne-calculs/ : number === 3 ? /consigne-entourer/ : /consigne-nombres/)
       assert.deepEqual(sequence.slice(0, 3).map(s => s.kind === 'silence' ? s.seconds : 'clip'), ['clip', 2, 'clip'])
-      assert.equal(sequence[3].src.endsWith('/lettre-a.mp3'), true)
-      assert.equal(sequence[4].seconds, 0.5)
-      assert.deepEqual(clips.filter(src => src.includes('/lettre-')).map(src => /lettre-(.).mp3/.exec(src)[1]), [...'abcdeabcde'])
+      if (number === 3) {
+        assert.equal(clips.filter(src => src.includes('/lettre-')).length, 0)
+        assert.equal(sequence.filter(s => s.kind === 'silence' && s.seconds === 0.5).length, 0)
+        assert.equal(sequence[3].src.includes('/nombre/'), true)
+      } else {
+        assert.equal(sequence[3].src.endsWith('/lettre-a.mp3'), true)
+        assert.equal(sequence[4].seconds, 0.5)
+        assert.deepEqual(clips.filter(src => src.includes('/lettre-')).map(src => /lettre-(.).mp3/.exec(src)[1]), [...'abcdeabcde'])
+        assert.equal(sequence.filter(s => s.kind === 'silence' && s.seconds === 0.5).length, 10)
+      }
       assert.equal(sequence.filter(s => s.kind === 'silence' && s.seconds === 2).length, 1)
-      assert.equal(sequence.filter(s => s.kind === 'silence' && s.seconds === 0.5).length, 10)
       assert.equal(sequence.filter(s => s.kind === 'silence' && s.seconds === 5).length, 9)
       const heard = clips.filter(src => src !== CSC_TCF_BEEP && !src.includes('/consigne-') && !src.includes('/lettre-'))
       const expected = questions.flat().map(src => src.replace('/lib/audio/nombre/plus.mp3', '/lib/audio/tcm-csc/denise/plus.mp3').replace('/lib/audio/nombre/moins.mp3', '/lib/audio/tcm-csc/denise/moins.mp3'))
@@ -56,6 +62,10 @@ try {
       assert.equal(heard.length, number === 2 ? 30 : 10)
       assert.equal(sequence.at(-1).kind, 'clip')
     }
+    assert.equal(planCscDeniseAudio(1, [['one']], '-35%')[0].src.endsWith('/consigne-nombres-35.mp3'), true)
+    assert.equal(planCscDeniseAudio(2, [['one']], '-50%')[0].src.endsWith('/consigne-calculs-50.mp3'), true)
+    assert.equal(planCscDeniseAudio(3, [['one']], '-25%')[0].src.endsWith('/consigne-entourer.mp3'), true)
+    assert.equal(planCscDeniseAudio(3, [['one']]).some(s => s.kind === 'clip' && s.src.includes('/lettre-')), false)
     const short = planCscDeniseAudio(1, [['one']])
     assert.deepEqual(short.filter(s => s.kind === 'clip' && s.src.includes('/lettre-')).map(s => /lettre-(.).mp3/.exec(s.src)[1]), ['a', 'a'])
     assert.throws(() => planCscDeniseAudio(1, []), /1 et 12/)

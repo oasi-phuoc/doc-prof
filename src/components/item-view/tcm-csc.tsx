@@ -23,7 +23,8 @@ export function CscTaskBlock({ item, mode }: { item: MathItem; mode: PreviewMode
         {Array.from({ length: pairs }, (_, index) => {
           const from = task.points[index * 2]?.label ?? String.fromCharCode(65 + index * 2)
           const to = task.points[index * 2 + 1]?.label ?? String.fromCharCode(66 + index * 2)
-          return <li key={from}><span className="csc-connect-letter">{from}</span> à <span className="csc-connect-letter">{to}</span> en {CSC_CONNECT_COLORS[index]?.name ?? 'noir'}</li>
+          const color = CSC_CONNECT_COLORS[index]
+          return <li key={from} className="csc-connect-line" style={{ color: color?.ink }}><span>{from} à {to}</span><span>en {color?.name ?? 'noir'}</span></li>
         })}
       </ol>
       <svg viewBox={`0 0 ${frame.width} ${frame.height}`} role="img" aria-label="Points à relier avec la règle">

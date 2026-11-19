@@ -45,12 +45,12 @@ async function checkGridEdges(page, grids) {
 }
 async function checkPlayers(page, type, label, multipart) {
   const block=preview(page).locator(`[data-exercise-type="${type}"]`)
-  const players=block.locator('.math-exercise-audios audio')
+  const players=block.locator('.math-exercise-audios audio[data-audio-parts]')
   assert.equal(await players.count(),5)
   assert.equal(await block.locator('.exercise-heading-audio').count(),0)
   for(let index=0;index<5;index++) {
     const player=players.nth(index)
-    const lettered=/^tcm-(?:csc-ex0[123]|cfr-ex0[12])$/.test(type)
+    const lettered=/^tcm-(?:csc-ex0[12]|cfr-ex0[12])$/.test(type)
     assert.equal(await player.getAttribute('aria-label'),`${label} ${lettered?String.fromCharCode(65+index):index+1}`)
     const parts=JSON.parse(await player.getAttribute('data-audio-parts'))
     assert.ok(parts.every(src=>!src.includes('silence')))

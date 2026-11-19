@@ -480,6 +480,7 @@ export function buildPage(
       problemDraftGrids: block.problemDraftGrids,
       formulaireLetterGrid: block.formulaireLetterGrid,
       geoFigureHelp: block.geoFigureHelp,
+      deniseRate: block.deniseRate,
       inlineBlankPx: block.inlineBlankPx,
       oralAnswerModes: block.oralAnswerModes,
       tcfFormModes: block.tcfFormModes,

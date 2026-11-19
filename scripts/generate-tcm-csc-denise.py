@@ -63,7 +63,7 @@ async def generate(args: argparse.Namespace) -> None:
             raw, final = stage / 'raw.mp3', stage / row['filename']
             # French letter names and "plusse" are pronunciation inputs only.
             # No examples, filenames, phonetic symbols, numbers or real beeps are read.
-            await edge_tts.Communicate(row['synthesisText'], spec['voice'], rate=spec['rate'], volume=spec['volume'], pitch=spec['pitch']).save(str(raw))
+            await edge_tts.Communicate(row['synthesisText'], spec['voice'], rate=row.get('rate', spec['rate']), volume=spec['volume'], pitch=spec['pitch']).save(str(raw))
             subprocess.run(['ffmpeg', '-nostdin', '-y', '-v', 'error', '-i', str(raw), '-af', 'silenceremove=start_periods=1:start_duration=0.005:start_threshold=-60dB,areverse,silenceremove=start_periods=1:start_duration=0.005:start_threshold=-60dB,areverse,apad=pad_dur=0.02', '-ar', '24000', '-ac', '1', '-codec:a', 'libmp3lame', '-b:a', '96k', str(final)], check=True)
             measurements[row['filename']] = validate(final)
             print(f"Prise validée : {row['filename']}", flush=True)
