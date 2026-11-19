@@ -428,7 +428,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                       </button>
                     ))}
                   </div>
-                  <small className="muted">Vitesse de la consigne audio de cet exercice.</small>
+                  <small className="muted">Vitesse de la consigne et de la lecture des nombres.</small>
                 </div>
               ) : null}
               {activeBlock.exerciseType === 'tcm-csc-ex18' ? (

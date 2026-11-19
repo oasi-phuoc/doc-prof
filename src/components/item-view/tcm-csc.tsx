@@ -23,8 +23,9 @@ export function CscTaskBlock({ item, mode }: { item: MathItem; mode: PreviewMode
         {Array.from({ length: pairs }, (_, index) => {
           const from = task.points[index * 2]?.label ?? String.fromCharCode(65 + index * 2)
           const to = task.points[index * 2 + 1]?.label ?? String.fromCharCode(66 + index * 2)
-          const color = CSC_CONNECT_COLORS[index]
-          return <li key={from} className="csc-connect-line" style={{ color: color?.ink }}><span>{from} à {to}</span><span>en {color?.name ?? 'noir'}</span></li>
+          const ink = CSC_CONNECT_COLORS[index]?.ink
+          const letter = (label: string) => <span className="csc-connect-letter" style={{ color: ink }}>{label}</span>
+          return <li key={from} className="csc-connect-line"><span>{letter(from)} à {letter(to)}</span><span>en {CSC_CONNECT_COLORS[index]?.name ?? 'noir'}</span></li>
         })}
       </ol>
       <svg viewBox={`0 0 ${frame.width} ${frame.height}`} role="img" aria-label="Points à relier avec la règle">
@@ -32,7 +33,7 @@ export function CscTaskBlock({ item, mode }: { item: MathItem; mode: PreviewMode
           const a = task.points[index * 2], b = task.points[index * 2 + 1], color = CSC_CONNECT_COLORS[index]?.ink
           return a && b && color ? <line key={a.label} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={color} strokeWidth=".8" /> : null
         })}
-        {task.points.map((point) => <g key={point.label}><circle cx={point.x} cy={point.y} r=".8" fill="#182238" /><text className="csc-connect-point" x={point.x + 2} y={point.y - 2} fontSize="5">{point.label}</text></g>)}
+        {task.points.map((point, index) => <g key={point.label}><circle cx={point.x} cy={point.y} r=".8" fill="#182238" /><text className="csc-connect-point" x={point.x + 2} y={point.y - 2} fontSize="5" fill={CSC_CONNECT_COLORS[Math.floor(index / 2)]?.ink}>{point.label}</text></g>)}
       </svg>
     </div>
   }

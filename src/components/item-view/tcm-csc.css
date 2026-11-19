@@ -13,9 +13,10 @@
 .csc-shape-names .answer-line-field { width: 100%; font-size: calc(11pt * var(--app-font-scale, 1)); }
 .csc-connect { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 8mm; align-items: start; width: 100%; margin: 0; border: 0; }
 .csc-connect ol { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4mm; align-items: flex-start; }
-.csc-connect-line { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; font-weight: 700; line-height: 1.15; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.csc-connect-line { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; font-weight: 700; line-height: 1.15; color: var(--ink); }
+.csc-connect-letter,
+.csc-connect-point { font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .csc-connect svg { display: block; width: 100%; height: auto; }
-.csc-connect-point { color: var(--purple); fill: var(--purple); font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .csc-copy { display: flex; align-items: flex-start; justify-content: center; gap: 6mm; width: 100%; }
 .csc-copy > div { flex: 0 0 auto; text-align: center; }
 .csc-copy p { margin: 2px 0 5px; font-size: calc(11pt * var(--app-font-scale, 1)); }

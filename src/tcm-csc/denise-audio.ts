@@ -20,6 +20,14 @@ export function cscConsigneSrc(kind: ListeningKind, rate: DeniseRate = '-25%'): 
   return `${CSC_DENISE_DIRECTORY}/${CONSIGNE_FILE[kind]}${suffix}.mp3`
 }
 
+/** Nombres 1 à 100 lus par Denise à −35 % ou −50 %. −25 % garde la prise d’origine. */
+export function cscRatedSrc(src: string, rate: DeniseRate = '-25%'): string {
+  if (rate === '-25%') return src
+  const number = /\/nombre\/(\d+)\.mp3$/.exec(src)
+  if (!number) return src
+  return `${CSC_DENISE_DIRECTORY}/nombres/${rate === '-35%' ? '35' : '50'}/${number[1]}.mp3`
+}
+
 function deniseOperator(src: string): string {
   if (src.endsWith('/plus.mp3')) return `${CSC_DENISE_DIRECTORY}/plus.mp3`
   if (src.endsWith('/moins.mp3')) return `${CSC_DENISE_DIRECTORY}/moins.mp3`
@@ -48,7 +56,7 @@ export function planListeningAudio(kind: ListeningKind, questions: readonly (rea
       if (withLetters) sequence.push(clip(`${CSC_DENISE_DIRECTORY}/lettre-${LISTENING_LETTERS[index]}.mp3`), gap(0.5))
       parts.forEach((src, partIndex) => {
         if (partIndex) sequence.push(gap(0.12))
-        sequence.push(clip(deniseOperator(src)))
+        sequence.push(clip(cscRatedSrc(deniseOperator(src), rate ?? '-25%')))
       })
     })
   }

@@ -40,6 +40,6 @@ Les nombres du générateur restent variables : on garde leurs clips existants e
 4. Après cinq secondes, jouer le même bip et répéter la même série pour la seconde écoute.
 5. Aucun résultat n’est prononcé dans les calculs. Les silences de début et de fin des clips doivent être pris en compte pour obtenir les battements réels demandés.
 
-Les prises DeniseNeural −25 % sont dans `public/lib/audio/tcm-csc/denise/`. Les trois consignes CSC existent aussi à −35 % (`-35.mp3`) et −50 % (`-50.mp3`). Le montage s’active quand le manifeste est `generated`.
+Les prises DeniseNeural −25 % sont dans `public/lib/audio/tcm-csc/denise/`. Les trois consignes CSC existent aussi à −35 % (`-35.mp3`) et −50 % (`-50.mp3`). Les nombres 1 à 100 lus à ces deux débits sont dans `nombres/35/` et `nombres/50/`. Le montage s’active quand le manifeste est `generated`.
 
 Le CFR reprend `consigne-nombres.mp3` et `consigne-multiplications.mp3`. Les fichiers téléchargés du CSC suivent l’ordre affiché : exercice 1 entourer, exercice 2 nombres, exercice 3 calculs.
