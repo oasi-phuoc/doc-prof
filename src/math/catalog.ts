@@ -285,7 +285,7 @@ export const exerciseTypes: ExerciseType[] = [
     'tpm-info',
     'Trier des nombres',
     '5 grands nombres puis 5 décimaux ; une question croissant, l’autre décroissant (ordre tiré au hasard).',
-    'Classez les nombres dans l’ordre demandé.',
+    'Écrivez les nombres dans l’ordre demandé.',
     'ligne',
     { preferredColumns: 1 },
   ),

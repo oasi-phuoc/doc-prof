@@ -57,7 +57,7 @@ export function cscOrderAscending(typeId: string, seed: number): boolean {
   return typeId === 'tcm-csc-ex06' ? smallFirst : !smallFirst
 }
 export function cscOrderInstruction(ascending: boolean): string {
-  return `Rangez les nombres ${ascending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
+  return `Écrivez les nombres ${ascending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
 }
 function order(rng: Rng, count: number, ascending: boolean): MathItem[] {
   return Array.from({ length: count }, () => {

@@ -203,25 +203,30 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-row { grid-template-columns: 1.2em minmax(0, 1fr) 14mm 2.4em; }
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-unit { width: 2.4em; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
-/* Ex. 23–27 : forme centrée, grille de calcul identique à l’exercice 19, puis P à gauche et A à droite. */
+/* Ex. 23–27 : forme centrée, puis « Calcul » et la grille (une ligne de moins que l’ex. 19). */
 .geo-dual.is-cfr-stack.is-tight .geo-dual-top { display: flex; flex-direction: column; align-items: stretch; gap: 6px; width: 100%; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-figure { aspect-ratio: auto; min-height: 0; max-height: none; width: 100%; align-self: center; justify-content: center; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { width: min(84mm, 100%); height: auto; max-height: 42mm; max-width: 100%; }
-.geo-dual.is-cfr-stack.is-tight .geo-dual-pad { width: 100%; align-self: stretch; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-pad { display: flex; flex-direction: column; align-items: stretch; gap: 4px; width: 100%; align-self: stretch; margin-bottom: 15px; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
   --grid-cols: 24;
-  --grid-rows: 5;
+  --grid-rows: 4;
   width: 100%;
   height: auto;
-  aspect-ratio: 24 / 5;
+  aspect-ratio: 24 / 4;
   flex: 0 0 auto;
   max-height: none;
-  background-size: calc(100% / 24) calc(100% / 5);
+  background-size: calc(100% / 24) calc(100% / 4);
 }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answers { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; width: 100%; padding-top: 8px; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answer { display: flex; width: max-content; max-width: 48%; align-items: baseline; column-gap: 0.35em; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answer .answer-line-field { width: 32mm; min-width: 32mm; flex: 0 0 auto; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-answer:last-child:not(:only-child) { margin-left: auto; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 4px; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked .geo-dual-answer { width: 100%; max-width: none; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked .geo-dual-answer:last-child { margin-left: 0; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked .property-label { flex: 0 0 auto; }
+.geo-dual.is-cfr-stack.is-tight .geo-dual-answers.is-stacked .answer-line-field { flex: 1 1 auto; width: auto; min-width: 40mm; }
 /* Ex. 26–27 : l’énoncé est sous le titre (2e ligne = la question), pas en gras, plus dans l’item. */
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .exercise-instruction,
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .exercise-instruction .sheet-copy-line {
@@ -231,14 +236,20 @@
   display: none;
 }
 /* Ex. 26–27 : pas de numéro, la grille reprend la largeur (donc la case) de l’exercice 19. */
-.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad {
   width: calc(100% - (1.5 * 13pt * var(--app-font-scale, 1)) - var(--ex-num-gap));
   margin-inline: auto;
+}
+.exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
+  width: 100%;
+  margin-inline: 0;
 }
 /* Deux problèmes + deux grilles : la forme d’aide reste lisible sans déborder l’A4. */
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure {
   max-height: 28mm;
 }
+/* Deux formes + réponses empilées : la figure reste lisible sans sortir de l’A4. */
+.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { max-height: 32mm; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geometry-figure .dim-label { font-size: calc(16pt * var(--app-font-scale, 1)); }
 .cfr-forme-frame .geo-name-card { border: 0; padding: 0; }
 .cfr-forme-frame .geo-name-card-inner { grid-template-columns: auto minmax(0, 1fr); justify-items: start; }
@@ -349,8 +360,8 @@
 .is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .convert-unit { width: max-content; text-align: left; justify-self: start; }
 .is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .convert-value + .convert-unit { margin-left: calc(2px - 0.2em); }
 .is-tpm .exercise-block:is([data-exercise-type="conversions-longueur"], [data-exercise-type="tpm-conversions-mixte"]) .answer-line-field { width: 4.5em; min-width: 4.5em; max-width: 4.5em; }
-.is-tpm .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { max-height: 24mm; }
-.is-tpm .exercise-block { padding-top: 6px; }
+.is-tpm .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { max-height: 15mm; }
+.is-tpm .exercise-block { padding-top: 2px; }
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }

@@ -4,6 +4,14 @@ import { CompositeFigure } from '../math/CompositeFigure'
 import { CoordGrid, CoordShapeButton } from '../math/CoordGrid'
 import { GeometryFigure } from '../math/GeometryFigure'
 
+/** Libellés des réponses empilées (périmètre, aire, côté). */
+function stackAnswerLabel(label: string): string {
+  if (/^périmètre$/i.test(label.trim())) return 'Quelle est son périmètre ?'
+  if (/^aire$/i.test(label.trim())) return 'Quelle est son aire ?'
+  if (/^côté$/i.test(label.trim())) return 'Réponse'
+  return label
+}
+
 export function GeoBlock({
   item,
   mode,
@@ -40,6 +48,7 @@ export function GeoBlock({
             </div>
           ) : null}
           <div className="geo-dual-pad">
+            {stack ? <span className="field-label">Calcul</span> : null}
             <div
               className={`draft-pad ${stack ? '' : 'draft-pad-geo '}${draftGrid ? 'with-grid' : 'plain'}${
                 padCorrection ? ' has-correction' : ''
@@ -52,17 +61,20 @@ export function GeoBlock({
             </div>
           </div>
         </div>
-        <div className="geo-dual-answers">
-          {lines.map((line) => (
+        <div className={`geo-dual-answers${stack && lines.length > 1 ? ' is-stacked' : ''}`}>
+          {lines.map((line) => {
+            const shown = stack ? stackAnswerLabel(line.label) : line.label
+            return (
             <div className="geo-dual-answer" key={line.label}>
-              <span className="property-label">{line.label} =</span>
+              <span className="property-label">{shown}{shown.endsWith('?') ? '' : ' ='}</span>
               {show ? (
                 <strong className="filled-answer property-answer">{line.answer}</strong>
               ) : (
                 <span className="answer-line-field property-blank">{'\u00a0'}</span>
               )}
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     )

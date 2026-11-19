@@ -37,7 +37,7 @@ export const TCM_CFR_EXERCISE_TYPES: ExerciseType[] = [
   ),
   t('tcm-cfr-ex01', 'tcm-cfr-test', '1 — Nombres entendus', 'Écrire le nombre entendu (audio).', 'Écrivez le nombre que vous entendez.', 1),
   t('tcm-cfr-ex02', 'tcm-cfr-test', '2 — Multiplications orales', 'Écrire le résultat d’une multiplication entendue.', 'Écrivez le résultat de la multiplication.', 1),
-  t('tcm-cfr-ex03', 'tcm-cfr-test', '3–4 — Ranger des nombres', 'Ranger 7 nombres (entiers/décimaux). Une question = une liste.', 'Rangez les nombres dans l’ordre indiqué.', 1),
+  t('tcm-cfr-ex03', 'tcm-cfr-test', '3–4 — Ranger des nombres', 'Ranger 7 nombres (entiers/décimaux). Une question = une liste.', 'Écrivez les nombres dans l’ordre indiqué.', 1),
   t('tcm-cfr-ex04', 'tcm-cfr-test', '5 — Comparer des décimaux', 'Comparer des nombres décimaux.', 'Comparez les nombres. Écrivez <, = ou >.', 2),
   t('tcm-cfr-ex05', 'tcm-cfr-test', '6 — Décomposer', 'Décomposer un nombre (milliers, centaines, dizaines, unités).', 'Décomposez les nombres en milliers, centaines, dizaines et unités.\nExemple : 2345 = 2000 + 300 + 40 + 5', 1),
   t('tcm-cfr-ex06', 'tcm-cfr-test', '7 — Nommer les opérations', 'Écrire le nom des opérations.', 'Écrivez le nom des opérations.', 1),

@@ -5911,7 +5911,7 @@ textarea.pill-input,
 .tcm-cfr-metro-svg{width:100%;max-width:100%;height:auto;display:block;margin:0 0 10px}
 .tcm-cfr-metro-cell{fill:none;stroke:#d8d4de;stroke-width:0.6}
 .tcm-cfr-metro-label{font-size:calc(11px * var(--app-font-scale, 1));fill:var(--ink,#222);font-weight:600}
-.tcm-cfr-metro-station{font-size:calc(8px * var(--app-font-scale, 1));font-weight:700}
+.tcm-cfr-metro-station{font-size:calc(8px * var(--app-font-scale, 1));font-weight:700;stroke:#fff;stroke-width:3px;paint-order:stroke fill}
 .tcm-cfr-metro-questions{margin:0;padding:0;display:flex;flex-direction:column;gap:8px;list-style:none}
 .tcm-cfr-metro-questions li{margin:0;display:flex;flex-direction:column;gap:4px;padding-bottom:15px}
 .tcm-cfr-metro-q-head{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:6px;align-items:baseline}

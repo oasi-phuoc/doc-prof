@@ -357,7 +357,7 @@ function buildSingleBlock(
     }
   }
   const cfrOrder = config.exerciseType === 'tcm-cfr-ex03' && config.orderAscending != null
-    ? `Rangez les nombres ${config.orderAscending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
+    ? `Écrivez les nombres ${config.orderAscending ? 'du plus petit au plus grand' : 'du plus grand au plus petit'}.`
     : null
   const generated = generateItems(
     config.exerciseType,

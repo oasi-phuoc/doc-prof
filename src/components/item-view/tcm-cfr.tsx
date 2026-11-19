@@ -247,7 +247,7 @@ function metroLabelOffsets(
   ]
   for (const line of map.lines) {
     const anchor = cellCenter(line.cells[0]!, map.cols, map.rows, width, height, pad)
-    const boxW = Math.max(40, Math.min(72, 8 + line.name.length * 5.2))
+    const boxW = Math.max(48, 12 + line.name.length * 6.2)
     const boxH = 13
     let best = candidates[0]!
     for (const cand of candidates) {
@@ -330,16 +330,22 @@ export function MetroMapBlock({
         {map.lines.map((line) => {
           const pts = line.cells.map((c) => cellCenter(c, map.cols, map.rows, width, height, pad))
           const d = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x},${p.y}`).join(' ')
-          const anchor = pts[0]!
-          const off = labelPos.get(line.id) ?? { dx: 0, dy: -16, boxW: 56 }
-          const lx = anchor.x + off.dx
-          const ly = anchor.y + off.dy
           return (
             <g key={line.id}>
               <path d={d} fill="none" stroke={line.color} strokeWidth={4} strokeLinejoin="round" strokeLinecap="round" />
               {pts.map((p, i) => (
                 <circle key={`${line.id}-n${i}`} cx={p.x} cy={p.y} r={3.5} fill={line.color} stroke="#fff" strokeWidth={1} />
               ))}
+            </g>
+          )
+        })}
+        {map.lines.map((line) => {
+          const anchor = cellCenter(line.cells[0]!, map.cols, map.rows, width, height, pad)
+          const off = labelPos.get(line.id) ?? { dx: 0, dy: -16, boxW: 56 }
+          const lx = anchor.x + off.dx
+          const ly = anchor.y + off.dy
+          return (
+            <g key={`${line.id}-label`}>
               <rect
                 x={lx - off.boxW / 2}
                 y={ly - 7}
