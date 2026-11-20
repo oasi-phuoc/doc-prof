@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 369,
+      "active_reviewed_trio": 372,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 377,
+      "candidate_visual_review": 374,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 207,
+        "active_reviewed_trio": 210,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 55,
+        "candidate_visual_review": 52,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -7556,8 +7556,8 @@
       "semantic_sha256": "88b45caf4fc3014c9b23fde8b20896c9299d20f3fc9f320a23e06abaffa080e2",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-01.mp3",
       "audio_sha256": "1dc3f8691b3c75d33eab574aab3f079f55adcb37e5eb7010120f8b03ea75559e",
-      "status": "candidate_visual_review",
-      "reason": "Train à grande vitesse, train régional et train de fret ; ne pas représenter le numéro 2154 ou une compagnie comme réponse.",
+      "status": "active_reviewed_trio",
+      "reason": "Trois catégories complètes, concrètes et différentes, relues avec la transcription.",
       "choices": [
         {
           "id": "a",
@@ -7584,8 +7584,24 @@
           "brief": "Représenter entièrement « Un train de marchandises » pour « Quel type de train arrive ? ». Vérifier la transcription du support tcf-delf-actif-a1-011-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Train à grande vitesse, train régional et train de fret ; ne pas représenter le numéro 2154 ou une compagnie comme réponse."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-train-tgv.png",
+          "sha256": "60b00b80f7eb40ba287054696a9bb103090661a1939e713fde7a8b66f93909d9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+          "sha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-train-marchandises.png",
+          "sha256": "f379de458bea6f0ad15420ed2909831dc0725b114d222e6ec69b48d9f02c3fab"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -7603,6 +7619,10 @@
         "evidence_quote": "Le TGV 2154",
         "semantic_sha256": "88b45caf4fc3014c9b23fde8b20896c9299d20f3fc9f320a23e06abaffa080e2",
         "note": "Train à grande vitesse, train régional et train de fret ; ne pas représenter le numéro 2154 ou une compagnie comme réponse."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-metaux-trains-20261120.json",
+        "note": "Matériel de ski, natation et tennis complet ; même pendentif en argent, or ou cuivre ; TGV, train régional et marchandises distincts. Aucun montant, date ou numéro ajouté aux images."
       }
     },
     {
@@ -21639,8 +21659,8 @@
       "semantic_sha256": "272d85057ed01dd0d4cef355a8bafc588ce491290e10096cd719ba63bf149c28",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-036-01.mp3",
       "audio_sha256": "79b6a76ab44b0f54af8c6e98989af54e05e8ad4b73e0b1e6776dd2b153e54458",
-      "status": "candidate_visual_review",
-      "reason": "Montrer les trois éléments de chaque choix ; équipement de ski, natation et tennis distincts, aucun élément remplacé par un simple sportif.",
+      "status": "active_reviewed_trio",
+      "reason": "Trois catégories complètes, concrètes et différentes, relues avec la transcription.",
       "choices": [
         {
           "id": "a",
@@ -21667,8 +21687,24 @@
           "brief": "Représenter entièrement « Une raquette, des balles et un filet » pour « Quels objets faut-il apporter pour skier ? ». Vérifier la transcription du support tcf-delf-actif-a1-036-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Montrer les trois éléments de chaque choix ; équipement de ski, natation et tennis distincts, aucun élément remplacé par un simple sportif."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-equipement-ski.png",
+          "sha256": "dfbceb2ec2da5a75df633cf7bd0fbcf92fccae9c881ceb4d38a8e0e7b21c07c4"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-equipement-natation.png",
+          "sha256": "23e68e6c4e31a0c88aae2d0714f8982c8246a474e632bef0a4646c9de0df896b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-equipement-tennis.png",
+          "sha256": "c9f5982781e8ee32cdc50994283b06b0d71184f7a403adfe9f15814e413159e6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -21686,6 +21722,10 @@
         "evidence_quote": "tes gants, ton masque de ski et ton casque",
         "semantic_sha256": "272d85057ed01dd0d4cef355a8bafc588ce491290e10096cd719ba63bf149c28",
         "note": "Montrer les trois éléments de chaque choix ; équipement de ski, natation et tennis distincts, aucun élément remplacé par un simple sportif."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-metaux-trains-20261120.json",
+        "note": "Matériel de ski, natation et tennis complet ; même pendentif en argent, or ou cuivre ; TGV, train régional et marchandises distincts. Aucun montant, date ou numéro ajouté aux images."
       }
     },
     {
@@ -26658,8 +26698,8 @@
       "semantic_sha256": "edc6f0e911f45c41cccbeb24c933cf0c6769977dd97de63e4e5af4b335852e9a",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-047-01.mp3",
       "audio_sha256": "2617c3afe0f92de83dba18d9ecf486fbb4b2da1f6bd517d70e0fcbeb2aa98ed6",
-      "status": "candidate_visual_review",
-      "reason": "Échantillons métalliques d’aspect argenté, doré et cuivré, distincts ; pas de prix ou de bijoux attribués à une composition chimique d’après une photo.",
+      "status": "active_reviewed_trio",
+      "reason": "Trois catégories complètes, concrètes et différentes, relues avec la transcription.",
       "choices": [
         {
           "id": "a",
@@ -26686,8 +26726,24 @@
           "brief": "Représenter entièrement « De cuivre » pour « De quel métal le bijou est-il fait ? ». Vérifier la transcription du support tcf-delf-actif-a1-047-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Échantillons métalliques d’aspect argenté, doré et cuivré, distincts ; pas de prix ou de bijoux attribués à une composition chimique d’après une photo."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-pendentif-eiffel-argent.png",
+          "sha256": "c77882f8b997ceef37546d3cb2f9aa46de6235342062729406b8bbb9464f717e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-pendentif-eiffel-or.png",
+          "sha256": "db815bd460d51213ff579c499225af19085a8e8b53c0f0ef8be37ab858f4a44a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-pendentif-eiffel-cuivre.png",
+          "sha256": "cdeff1031af34afcab4420f4d187bc58b88878a065ad5a2c78acfb1633880db9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -26705,6 +26761,10 @@
         "evidence_quote": "Il est en argent",
         "semantic_sha256": "edc6f0e911f45c41cccbeb24c933cf0c6769977dd97de63e4e5af4b335852e9a",
         "note": "Échantillons métalliques d’aspect argenté, doré et cuivré, distincts ; pas de prix ou de bijoux attribués à une composition chimique d’après une photo."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sports-metaux-trains-20261120.json",
+        "note": "Matériel de ski, natation et tennis complet ; même pendentif en argent, or ou cuivre ; TGV, train régional et marchandises distincts. Aucun montant, date ou numéro ajouté aux images."
       }
     },
     {

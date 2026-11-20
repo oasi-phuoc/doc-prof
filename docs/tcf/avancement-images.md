@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Suite du 20 novembre : trois trios A1 supplémentaires activés**, avec sept PNG natifs 4:3 et deux réemplois contrôlés : matériel de ski/natation/tennis complet, pendentif argent/or/cuivre et TGV/train régional/marchandises. Les objets reprennent le fond ivoire et le style validés ; les trains gardent le décor peint de la référence. Questions, réponses, transcriptions et MP3 conservés. DELF Actif : **372 trios actifs, 374 candidats**. [Preuves et images](revue-trios-sports-metaux-trains-20261120.json).
+
 **Suite du 20 novembre : deux trios A1 sacs et aliments activés**, avec cinq PNG natifs 4:3 et une réutilisation contrôlée. Les sacs sont représentés au pluriel ; les trois groupes d’aliments sont distincts. Textes, réponses, transcriptions et MP3 conservés. DELF Actif : **369 trios actifs, 377 candidats**. [Preuves et images](revue-trios-sacs-aliments-20261120.json).
 
 **Suite du 20 novembre : un trio A1 « objets à apporter » activé**, avec trois PNG natifs 4:3. Chaque réponse montre ses deux objets complets ; le fond ivoire est contrôlé par rapport à la référence validée. Les textes, corrigés et MP3 sont conservés. DELF Actif compte désormais **367 trios actifs et 379 candidats**. [Sources et images](revue-trio-objets-20261120.json).
