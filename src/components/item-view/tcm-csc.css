@@ -210,7 +210,7 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-row { grid-template-columns: 1.2em minmax(0, 1fr) 14mm 2.4em; }
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-unit { width: 2.4em; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex19"] .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
-/* Ex. 23–27 : forme centrée, puis « Calcul » et la grille (une ligne de moins que l’ex. 19). */
+/* Ex. 23–27 : forme centrée, puis « Calcul » et la grille. */
 .geo-dual.is-cfr-stack.is-tight .geo-dual-top { display: flex; flex-direction: column; align-items: stretch; gap: 6px; width: 100%; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-figure { aspect-ratio: auto; min-height: 0; max-height: none; width: 100%; align-self: center; justify-content: center; }
 .geo-dual.is-cfr-stack.is-tight .geo-dual-figure .geometry-figure { width: min(84mm, 100%); height: auto; max-height: 42mm; max-width: 100%; }
@@ -492,3 +492,11 @@
 .cfr-triangle-diagram .is-side-b { left: 60.3333%; top: 47.5%; }
 .cfr-triangle-diagram .is-base { left: 20%; top: 93.75%; }
 .cfr-triangle-diagram .is-height { left: 73.3333%; top: 47.5%; transform: translateY(-50%); }
+
+/* CFR 23–27 : quadrillage pleine largeur, 24 colonnes et 5 lignes comme les problèmes 18–19. */
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-pad .draft-pad {
+  --grid-cols: 24;
+  --grid-rows: 5;
+  aspect-ratio: var(--grid-cols) / var(--grid-rows);
+  background-size: calc(100% / var(--grid-cols)) calc(100% / var(--grid-rows));
+}
