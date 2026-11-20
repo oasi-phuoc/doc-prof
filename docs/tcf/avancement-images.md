@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Suite du 20 novembre : un trio A1 « objets à apporter » activé**, avec trois PNG natifs 4:3. Chaque réponse montre ses deux objets complets ; le fond ivoire est contrôlé par rapport à la référence validée. Les textes, corrigés et MP3 sont conservés. DELF Actif compte désormais **367 trios actifs et 379 candidats**. [Sources et images](revue-trio-objets-20261120.json).
+
 **Contrôle du 17 novembre : les 66 derniers ajouts au catalogue sont examinés**, avec 34 fonds d’objets harmonisés à l’ivoire validé, dix fonds déjà conformes et 22 décors de scènes conservés. Quatre titres sont corrigés d’après les sujets visibles. Les chemins restent identiques. Le contrôle des objets et véhicules sélectionnés dans les questions reste une tâche distincte à inventorier. [Rapport et preuves](../gallery/correction-fonds-ajouts-20261117.md).
 
 **Suite du 17 novembre : six trios fruits, menus et aliments activés**, avec dix-huit PNG natifs sur le fond ivoire validé. Un A1 et cinq A2 ; textes, réponses et audios conservés. Restent **261 trios historiques** et **380 candidats DELF Actif**. [Rapport actuel et reste à faire](trios-fruits-menus-20261117.md).

@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 366,
+      "active_reviewed_trio": 367,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 380,
+      "candidate_visual_review": 379,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 204,
+        "active_reviewed_trio": 205,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 58,
+        "candidate_visual_review": 57,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -5574,8 +5574,8 @@
       "semantic_sha256": "9067c9eae6558e692bd4f4996019e1d967e9aad860320032bb82833c04683e3a",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-005-01.mp3",
       "audio_sha256": "2a546f56383b59122945ef1bb575e6da8dae3509fc5dc994367c16e8a2f36031",
-      "status": "candidate_visual_review",
-      "reason": "Chaque choix doit montrer les deux objets : livre et ordinateur, cahier et règle, dictionnaire et tablette.",
+      "status": "active_reviewed_trio",
+      "reason": "Les trois réponses désignent chacune deux objets concrets et distincts ; la bonne réponse est citée explicitement dans la transcription.",
       "choices": [
         {
           "id": "a",
@@ -5602,8 +5602,24 @@
           "brief": "Représenter entièrement « Un dictionnaire et une tablette » pour « Quels objets faut-il apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-005-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Chaque choix doit montrer les deux objets : livre et ordinateur, cahier et règle, dictionnaire et tablette."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/trio-objets-20261120-livre-ordinateur.png",
+          "sha256": "37ca29006c93920be26d3762fa8365fc2c2eee0f5efda3c3c02ef7d1b71bfc11"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/trio-objets-20261120-cahier-regle.png",
+          "sha256": "ecf82f983c39c6851c0b4385ab79f72026b1e8eaba97964fe9b22554ae01933f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/trio-objets-20261120-dictionnaire-tablette.png",
+          "sha256": "bc1f8f6c26818b0299f9d0d56f413916af923819622c3e3a03f2ef4c3ea7daba"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -5621,6 +5637,10 @@
         "evidence_quote": "ton livre et ton ordinateur",
         "semantic_sha256": "9067c9eae6558e692bd4f4996019e1d967e9aad860320032bb82833c04683e3a",
         "note": "Chaque choix doit montrer les deux objets : livre et ordinateur, cahier et règle, dictionnaire et tablette."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-trio-objets-20261120.json",
+        "note": "Livre et ordinateur portable, cahier et règle, dictionnaire identifié et tablette sans clavier ; les deux objets de chaque réponse restent visibles."
       }
     },
     {

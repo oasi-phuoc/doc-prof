@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-20",
+  "baseline_commit": "7083c184d1e2d89737c7b7918fd71958e94dad95",
+  "scope": "Un trio A1 complet, après recherche infructueuse d’une image réutilisable de chaque paire entière.",
+  "human_audio_listening_performed": false,
+  "images": [
+    {
+      "id": "a",
+      "key": "trio-objets-20261120-livre-ordinateur",
+      "path": "/lib/images/tcf/qcm-audit/trio-objets-20261120-livre-ordinateur.png",
+      "label": "Un livre et un ordinateur",
+      "prompt": "Create ONE educational answer illustration matching the attached approved ClairFLE reference, commit 48a753d8. Native landscape EXACTLY 1448 by 1086 pixels, 4:3. Soft semi-realistic painted drawing, subtle fine contours, believable materials and soft volume, no photograph or 3D render, no bold cartoon outlines. Entire useful objects visible with generous margins. Solid smooth pale ivory background RGB 253,242,225, matching the reference, no table, horizon, room, gradient, texture, frame or vignette; only small soft contact shadows under objects. Show exactly the TWO requested objects, no extra supplies, people, logos, price, date, day, month or number. All three answers in this set must share this scale, three-quarter viewpoint and background. One ordinary closed navy-blue school reading book with a visibly substantial block of white pages, next to ONE open portable LAPTOP computer, entire keyboard, screen and hinged base clearly visible. Plain muted light-blue screen, no writing or app logos. The laptop is unmistakably a laptop, not a desktop monitor, television or tablet. Book and laptop separate and both fully readable. No notebook, ruler, mouse, cable, stationery or other object.",
+      "reference": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+      "sha256": "37ca29006c93920be26d3762fa8365fc2c2eee0f5efda3c3c02ef7d1b71bfc11",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "visual_review": "Les deux objets complets correspondent au choix ; pas d’objet parasite ; fond ivoire cohérent avec la référence réelle.",
+      "corner_median_64px": [
+        252,
+        240,
+        224
+      ]
+    },
+    {
+      "id": "b",
+      "key": "trio-objets-20261120-cahier-regle",
+      "path": "/lib/images/tcf/qcm-audit/trio-objets-20261120-cahier-regle.png",
+      "label": "Un cahier et une règle",
+      "prompt": "Create ONE educational answer illustration matching the attached approved ClairFLE reference, commit 48a753d8. Native landscape EXACTLY 1448 by 1086 pixels, 4:3. Soft semi-realistic painted drawing, subtle fine contours, believable materials and soft volume, no photograph or 3D render, no bold cartoon outlines. Entire useful objects visible with generous margins. Solid smooth pale ivory background RGB 253,242,225, matching the reference, no table, horizon, room, gradient, texture, frame or vignette; only small soft contact shadows under objects. Show exactly the TWO requested objects, no extra supplies, people, logos, price, date, day, month or number. All three answers in this set must share this scale, three-quarter viewpoint and background. One open spiral SCHOOL NOTEBOOK with pale blue evenly ruled empty pages and clearly visible metal binding, next to ONE long straight wooden school RULER with small measurement tick marks but NO printed digits. The ruler lies diagonally beside the notebook with both ends visible, never across or hiding the pages. No pencil, book, computer, tablet or other item.",
+      "reference": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+      "sha256": "ecf82f983c39c6851c0b4385ab79f72026b1e8eaba97964fe9b22554ae01933f",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "visual_review": "Les deux objets complets correspondent au choix ; pas d’objet parasite ; fond ivoire cohérent avec la référence réelle.",
+      "corner_median_64px": [
+        253,
+        241,
+        225
+      ]
+    },
+    {
+      "id": "c",
+      "key": "trio-objets-20261120-dictionnaire-tablette",
+      "path": "/lib/images/tcf/qcm-audit/trio-objets-20261120-dictionnaire-tablette.png",
+      "label": "Un dictionnaire et une tablette",
+      "prompt": "Create ONE educational answer illustration matching the attached approved ClairFLE reference, commit 48a753d8. Native landscape EXACTLY 1448 by 1086 pixels, 4:3. Soft semi-realistic painted drawing, subtle fine contours, believable materials and soft volume, no photograph or 3D render, no bold cartoon outlines. Entire useful objects visible with generous margins. Solid smooth pale ivory background RGB 253,242,225, matching the reference, no table, horizon, room, gradient, texture, frame or vignette; only small soft contact shadows under objects. Show exactly the TWO requested objects, no extra supplies, people, logos, price, date, day, month or number. All three answers in this set must share this scale, three-quarter viewpoint and background. One thick red hardback DICTIONARY, with clearly visible alphabetic thumb notches along the page block and the single generic French word DICTIONNAIRE legibly on its front cover, beside ONE thin electronic TABLET with a plain dark teal screen, no keyboard, no folding laptop base, no stand, no extra device. Both entire objects separated and fully visible. The dictionary must be identifiable as a dictionary, not a blank notebook. No other writing, letters, digits, logos or objects.",
+      "reference": "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp",
+      "sha256": "bc1f8f6c26818b0299f9d0d56f413916af923819622c3e3a03f2ef4c3ea7daba",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "visual_review": "Les deux objets complets correspondent au choix ; pas d’objet parasite ; fond ivoire cohérent avec la référence réelle.",
+      "corner_median_64px": [
+        253,
+        241,
+        223
+      ]
+    }
+  ],
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-005-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-005-01",
+      "question": {
+        "enonce": "Quels objets faut-il apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un livre et un ordinateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un cahier et une règle",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un dictionnaire et une tablette",
+            "correct": false
+          }
+        ],
+        "written_model": "Un livre et un ordinateur"
+      },
+      "source": "Bonjour Lydia. Tu es toujours d’accord pour venir avec Mathilde chez moi demain à 15h00 pour préparer le contrôle de maths ? N’oublie pas d’apporter ton livre et ton ordinateur. Vers 17h00 on fait une promenade dans le quartier, après on continue la révision. Ma mère peut nous aider.",
+      "source_sha256": "1f5b753aee2362d4424599ce0b568af5c5e9a0b7395014d38714ed73d4268068",
+      "semantic_sha256": "9067c9eae6558e692bd4f4996019e1d967e9aad860320032bb82833c04683e3a",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-005-01.mp3",
+      "audio_sha256": "2a546f56383b59122945ef1bb575e6da8dae3509fc5dc994367c16e8a2f36031",
+      "reason": "Les trois réponses désignent chacune deux objets concrets et distincts ; la bonne réponse est citée explicitement dans la transcription.",
+      "evidence": "N’oublie pas d’apporter ton livre et ton ordinateur.",
+      "visual_review": "Livre et ordinateur portable, cahier et règle, dictionnaire identifié et tablette sans clavier ; les deux objets de chaque réponse restent visibles.",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/trio-objets-20261120-livre-ordinateur.png",
+        "/lib/images/tcf/qcm-audit/trio-objets-20261120-cahier-regle.png",
+        "/lib/images/tcf/qcm-audit/trio-objets-20261120-dictionnaire-tablette.png"
+      ],
+      "image_sha256": [
+        "37ca29006c93920be26d3762fa8365fc2c2eee0f5efda3c3c02ef7d1b71bfc11",
+        "ecf82f983c39c6851c0b4385ab79f72026b1e8eaba97964fe9b22554ae01933f",
+        "bc1f8f6c26818b0299f9d0d56f413916af923819622c3e3a03f2ef4c3ea7daba"
+      ]
+    }
+  ],
+  "summary": {
+    "new_native_pngs": 3,
+    "activated_trios": 1,
+    "delf_active_trios": 367,
+    "delf_candidates_remaining": 379
+  },
+  "verification": {
+    "browser": "docs/tcf/trio-objets-20261120-browser.json",
+    "bank_loaded": true,
+    "bank_difference": "Seul le format qcm_image de la question 4 est ajouté ; toutes les autres propriétés restent identiques au parent.",
+    "audio_unchanged": true,
+    "background_corner_medians_within_3": true
+  }
+}
