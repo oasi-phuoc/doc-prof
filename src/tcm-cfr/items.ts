@@ -642,14 +642,17 @@ function genEx23(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 24 — triangle (a, c, h décimaux ; b entier). */
+/** Triangle scalène obtus : trois côtés et hauteur cohérents, base la plus courte. */
 function genEx24(rng: Rng): MathItem[] {
-  const a = oneDecimal(rng, 50, 120)
-  let b = int(rng, 4, 12)
-  while (Math.abs(b - a) < 0.05) b = int(rng, 4, 12)
-  let c = oneDecimal(rng, 40, 110)
-  while (Math.abs(c - a) < 0.05 || Math.abs(c - b) < 0.05) c = oneDecimal(rng, 40, 110)
-  const h = oneDecimal(rng, 20, 60)
+  // Deux triangles rectangles à hauteur commune donnent des mesures décimales exactes.
+  const family = pick(rng, [
+    { a: 7, b: 15, c: 20, h: 12 },
+    { a: 11, b: 13, c: 20, h: 12 },
+    { a: 12, b: 17, c: 25, h: 15 },
+  ])
+  const scale = int(rng, 3, 6) / 10
+  const rounded = (value: number) => Math.round(value * scale * 10) / 10
+  const a = rounded(family.a), b = rounded(family.b), c = rounded(family.c), h = rounded(family.h)
   const peri = Math.round((a + b + c) * 10) / 10
   const area = Math.round(((a * h) / 2) * 100) / 100
   return [
@@ -718,19 +721,19 @@ function genEx26(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 27 — cadran I : 22 cases positives ; graduation 1 u/case (max 22) ou 1 u/2 cases (max 11). */
-function genEx27(rng: Rng): MathItem[] {
-  const positiveCells = 22
+/** Ex. 29 affiché : repère de taille fixe, graduation et maximum paramétrables. */
+function genEx27(rng: Rng, options: { coordRange?: number; coordUnitSquares?: 1 | 2 } = {}): MathItem[] {
   // 1 unité = 1 case → graduation jusqu’à 22 ; 1 unité = 2 cases → jusqu’à 11.
-  const unitSquares = rng() < 0.5 ? 1 : 2
-  const maxUnit = positiveCells / unitSquares
+  const unitSquares = options.coordUnitSquares ?? (rng() < 0.5 ? 1 : 2)
+  const maxUnit = options.coordRange == null ? 22 / unitSquares : Math.max(3, Math.min(30, Math.round(options.coordRange)))
+  const positiveCells = maxUnit * unitSquares
   // 1 u/case → entiers ; 1 u/2 cases → demis (ex. 5,5) sur chaque intersection.
   const step = unitSquares === 2 ? 0.5 : 1
   // Marge négative (−1) toujours 2 cases + trait à −1 + « 0 » au centre — identique
   // pour les deux graduations (1 u/case et 1 u/2 cases). Ne pas lier à unitSquares.
   const originCol = 2
   const originRow = 2
-  // Pas de cases « flèche » en plus : la dernière graduation = +22 (ou +11 si 1 u/2 cases).
+  // Pas de case « flèche » supplémentaire au-delà du maximum choisi.
   // Les flèches dépassent dans le padding SVG, pas dans des cases supplémentaires.
   const visibleCols = originCol + positiveCells
   const visibleRows = visibleCols
@@ -740,8 +743,8 @@ function genEx27(rng: Rng): MathItem[] {
   const cellMmAllowed = [10, 8, 6, 5, 4, 3] as const
   const cellMm =
     cellMmAllowed.find((mm) => visibleCols * mm <= maxGridMm + 0.5) ?? 3
-  // Traits de graduation tous les 2 carrés → 2 u (1 u/case) ou 1 u (1 u/2 cases).
-  const labelStep = unitSquares === 1 ? 2 : 1
+  // Un trait et un nombre à chaque unité, quelle que soit la taille de la case.
+  const labelStep = 1
 
   const placeLetters = shuffle(rng, 'ABCDEGHJKLMNPQRST'.split('')).slice(0, 3)
   const readLetters = shuffle(
@@ -799,8 +802,9 @@ function genEx27(rng: Rng): MathItem[] {
         visibleCols,
         visibleRows,
         axis: 'numeric',
-        rangeX: maxUnit + 1,
-        rangeY: maxUnit + 1,
+        rangeX: maxUnit,
+        rangeY: maxUnit,
+        gridSizeMm: 144,
         originCol,
         originRow,
         hideAxes: false,
@@ -880,6 +884,7 @@ export function tryGenerateTcmCfrItems(
   rng: Rng,
   worksheetSeed = 0,
   orderAscending?: boolean,
+  coordOptions?: { coordRange?: number; coordUnitSquares?: 1 | 2 },
 ): MathItem[] | null {
   if (!isTcmCfrType(typeId)) return null
   // Page Informations : générée via `generateTpmInformations` dans `math/generate.ts`.
@@ -911,7 +916,7 @@ export function tryGenerateTcmCfrItems(
   else if (typeId === 'tcm-cfr-ex24') items = genEx24(rng)
   else if (typeId === 'tcm-cfr-ex25') items = genEx25(rng)
   else if (typeId === 'tcm-cfr-ex26') items = genEx26(rng)
-  else if (typeId === 'tcm-cfr-ex27') items = genEx27(rng)
+  else if (typeId === 'tcm-cfr-ex27') items = genEx27(rng, coordOptions)
   else if (typeId === 'tcm-cfr-ex28') items = genEx28(rng)
   if (!items) return null
   return items.map((item) => sanitizeItemNumberNoise(item))

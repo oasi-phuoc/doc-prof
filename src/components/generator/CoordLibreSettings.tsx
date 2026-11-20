@@ -69,8 +69,24 @@ export function CoordLibreSettings({
   activeSheet,
   safeBlockIndex,
 }: CoordLibreSettingsProps) {
+  const cfrScene = activeSheet?.blocks?.[safeBlockIndex]?.items?.[0]?.coordScene
+  const cfrUnit = activeBlock.coordUnitSquares ?? cfrScene?.unitSquares ?? 1
+  const cfrMax = activeBlock.coordRange ?? cfrScene?.rangeX ?? 22 / cfrUnit
   return (
     <>
+      {activeBlock.exerciseType === 'tcm-cfr-ex27' && (
+        <div className="coord-libre-panel">
+          <b>Graduation du repère</b>
+          <SelectBox label="Graduation des axes" value={String(cfrUnit)} onChange={value => updatePage({ coordUnitSquares: Number(value) as 1 | 2, coordRange: cfrMax, libreItems: undefined, libreInstruction: undefined })}>
+            <option value="1">1 carré = 1 unité</option>
+            <option value="2">2 carrés = 1 unité</option>
+          </SelectBox>
+          <label className="coord-param-label">Valeur maximale des axes
+            <input type="number" min={3} max={30} step={1} value={cfrMax}
+              onChange={event => { const value = event.currentTarget.valueAsNumber; if (Number.isFinite(value)) updatePage({ coordRange: Math.max(3, Math.min(30, Math.round(value))), coordUnitSquares: cfrUnit, libreItems: undefined, libreInstruction: undefined }) }} />
+          </label>
+        </div>
+      )}
               {isFormes ? (
                 <div className="coord-libre-panel">
                   <b>Composition du tableau</b>

@@ -371,7 +371,8 @@ function AxesScene({
   onPlaceOrigin?: (col: number, row: number) => void
   onRemove?: (x: number, y: number) => void
 }) {
-  const cellMm = scene.cellMm ?? 5
+  const cellMm = scene.gridSizeMm ? scene.gridSizeMm / scene.cols : scene.cellMm ?? 5
+  const decorationCellMm = scene.gridSizeMm ? 5 : cellMm
   const unit = scene.unitSquares ?? 1
   const rangeX = scene.rangeX ?? scene.range ?? 5
   const rangeY = scene.rangeY ?? scene.range ?? 5
@@ -417,10 +418,10 @@ function AxesScene({
   const visibleTopY = rowY(visibleRows)
   const visibleRightX = colX(visibleCols)
   const originSvg = to(0, 0)
-  const arrowLen = Math.max(2.2, cellMm * 0.45)
-  const arrowHalf = Math.max(1.1, cellMm * 0.22)
+  const arrowLen = Math.max(2.2, decorationCellMm * 0.45)
+  const arrowHalf = Math.max(1.1, decorationCellMm * 0.22)
   // Cadran I (marge −1) : flèches un peu au-delà de la dernière case, sans case ni graduation supplémentaires.
-  const axisOvershoot = scene.originZeroInNegCell ? Math.max(arrowLen + 0.4, cellMm * 0.55) : 0
+  const axisOvershoot = scene.originZeroInNegCell ? Math.max(arrowLen + 0.4, decorationCellMm * 0.55) : 0
   const axisTipX = colX(cols) + axisOvershoot
   const axisTipY = rowY(rows) - axisOvershoot
 
@@ -521,7 +522,7 @@ function AxesScene({
                 if (col > visibleCols) return null
                 const cx = colX(col)
                 const oy = originSvg.cy
-                const tick = Math.max(1.1, cellMm * 0.28)
+                const tick = Math.max(1.1, decorationCellMm * 0.28)
                 return (
                   <line
                     key={`tick-x-${col}`}
@@ -539,7 +540,7 @@ function AxesScene({
                     (() => {
                       const cx = colX(0)
                       const oy = originSvg.cy
-                      const tick = Math.max(1.1, cellMm * 0.28)
+                      const tick = Math.max(1.1, decorationCellMm * 0.28)
                       return (
                         <line
                           key="tick-x-neg-1"
@@ -566,7 +567,7 @@ function AxesScene({
                 if (row > visibleRows) return null
                 const cy = rowY(row)
                 const ox = originSvg.cx
-                const tick = Math.max(1.1, cellMm * 0.28)
+                const tick = Math.max(1.1, decorationCellMm * 0.28)
                 return (
                   <line
                     key={`tick-y-${row}`}
@@ -583,7 +584,7 @@ function AxesScene({
                     (() => {
                       const cy = rowY(0)
                       const ox = originSvg.cx
-                      const tick = Math.max(1.1, cellMm * 0.28)
+                      const tick = Math.max(1.1, decorationCellMm * 0.28)
                       return (
                         <line
                           key="tick-y-neg-1"
@@ -657,17 +658,17 @@ function AxesScene({
           ) : (
             <>
               <line
-                x1={to(0, 0).cx - cellMm * 0.45}
+                x1={to(0, 0).cx - decorationCellMm * 0.45}
                 y1={to(0, 0).cy}
-                x2={to(0, 0).cx + cellMm * 0.45}
+                x2={to(0, 0).cx + decorationCellMm * 0.45}
                 y2={to(0, 0).cy}
                 className="origin-mark"
               />
               <line
                 x1={to(0, 0).cx}
-                y1={to(0, 0).cy - cellMm * 0.45}
+                y1={to(0, 0).cy - decorationCellMm * 0.45}
                 x2={to(0, 0).cx}
-                y2={to(0, 0).cy + cellMm * 0.45}
+                y2={to(0, 0).cy + decorationCellMm * 0.45}
                 className="origin-mark"
               />
               <text x={to(0, 0).cx + 1.5} y={to(0, 0).cy - 1.4} className="origin-label" fontSize={3.4}>
@@ -771,7 +772,7 @@ function AxesScene({
           : found.label
         return (
           <g key={`m-${found.label ?? i}-${found.x}-${found.y}`}>
-            <circle cx={p.cx} cy={p.cy} r={Math.max(0.85, cellMm * 0.22)} className="grid-point" />
+            <circle cx={p.cx} cy={p.cy} r={Math.max(0.85, decorationCellMm * 0.22)} className="grid-point" />
             {caption ? (
               <text
                 x={p.cx + (flipX ? -1.4 : 1.4)}

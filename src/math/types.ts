@@ -229,6 +229,8 @@ export type CoordScene = {
   rangeY?: number
   /** Côté d’un carré, en millimètres (le tableau grandit avec les cases). */
   cellMm?: CoordCellMm
+  /** Largeur et hauteur physiques fixes du quadrillage, indépendantes du nombre de cases. */
+  gridSizeMm?: number
   /** 1 carré = 1 unité, ou 2 carrés = 1 unité. */
   unitSquares?: CoordUnitSquares
   /** Origine : nombre de carrés depuis le bord gauche. */
@@ -958,7 +960,7 @@ export type ExerciseBlock = {
   coordRows?: number
   coordAxis?: CoordAxis
   coordMarks?: CoordMark[]
-  /** Étendue du repère à 4 cadrans (−n à +n), conservée pour les anciennes fiches. */
+  /** Étendue à 4 cadrans (−n à +n) ; maximum positif de chaque axe pour le TCM CFR 29. */
   coordRange?: number
   /** Côté du carré (3/4/5 mm cadrans, 6/8/10 mm formes). */
   coordCellMm?: CoordCellMm

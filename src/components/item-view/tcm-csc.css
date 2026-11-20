@@ -118,10 +118,10 @@
 .exercise-block[data-exercise-type="tcm-csc-ex14"] .tcm-cfr-segment-row { grid-template-columns: 1.2em minmax(0, 1fr) 14mm 2.4em; }
 .exercise-block[data-exercise-type="tcm-csc-ex14"] .tcm-cfr-segment-unit { width: 2.4em; text-align: left; }
 .is-tcm-csc .compare-row.is-line { gap: 10px; }
-.exercise-block[data-exercise-type="tcm-csc-ex07"] .item-number { flex-basis: 2em; width: 2em; min-width: 2em; justify-content: flex-end; }
-.exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-row.is-line { width: max-content; grid-template-columns: 3.2ch 2.4em 3.2ch; }
-.exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
-.exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex07"], [data-exercise-type="tcm-cfr-ex04"]) .item-number { flex-basis: 2em; width: 2em; min-width: 2em; justify-content: flex-end; line-height: 1.55; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex07"], [data-exercise-type="tcm-cfr-ex04"]) .compare-row.is-line { width: max-content; grid-template-columns: 3.2ch 2.4em 3.2ch; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex07"], [data-exercise-type="tcm-cfr-ex04"]) .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex07"], [data-exercise-type="tcm-cfr-ex04"]) .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex08"], [data-exercise-type="tcm-cfr-ex05"]) .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; line-height: 1.55; }
@@ -171,14 +171,6 @@
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(1) { grid-column: 1; grid-row: 1; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(2) { grid-column: 2; grid-row: 1; margin-top: 0; }
 .is-tcm-cfr:has([data-exercise-type="tcm-cfr-ex01"]) > .sheet-body > .exercise-block:nth-child(n + 3) { grid-column: 1 / -1; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-grid { column-gap: 22mm; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item { gap: 20px; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .item-number { flex-basis: 0.65em; width: 0.65em; min-width: 0.65em; justify-content: flex-end; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-row.is-line { width: max-content; grid-template-columns: 6ch 2.4em 6ch; gap: 10px; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item { gap: 20px; align-items: baseline; }
 .is-tcm-cfr .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
 .exercise-block[data-exercise-type="tcm-cfr-ex11"] .exercise-item,
 .exercise-block[data-exercise-type="tcm-cfr-ex11"] .item-content,
@@ -500,3 +492,20 @@
   aspect-ratio: var(--grid-cols) / var(--grid-rows);
   background-size: calc(100% / var(--grid-cols)) calc(100% / var(--grid-rows));
 }
+
+/* Comparaison CFR 5 : reprise des espacements, tailles et alignements CSC 8. */
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] :is(.item-content, .item-number, .exercise-instruction) { font-size: calc(13pt * var(--app-font-scale, 1)) !important; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item { gap: var(--ex-num-gap); align-items: baseline; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-row.is-line { gap: 10px; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
+.coord-cfr-briefing .column-prompt { font-weight: 400; }
+.coord-cfr-briefing .column-prompt strong { font-weight: 700; }
+/* Les quadrillages restent légers et présents, même sans l’option d’impression des fonds. */
+.worksheet-sheet .draft-pad.with-grid { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+@media print {
+  .exercise-block:is([data-exercise-type="tcm-cfr-ex09"], [data-exercise-type="tcm-cfr-ex10"]) .division-column .digit-cell { border-color: #c5cad3 !important; }
+}
+
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-instruction .csc-symbol { font-weight: 800; color: var(--purple); }
+
+.cfr-triangle-diagram .is-side-b { transform: translateY(-50%); }

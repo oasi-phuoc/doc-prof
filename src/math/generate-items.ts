@@ -83,12 +83,13 @@ export function generateItems(
   shapes?: Figure[],
   worksheetSeed?: number,
   orderAscending?: boolean,
+  coordOptions?: { coordRange?: number; coordUnitSquares?: 1 | 2 },
 ): MathItem[] {
   const tpm = tryGenerateTpmItems(typeId, count, rng)
   if (tpm) return tpm
   const tcmCsc = tryGenerateTcmCscItems(typeId, count, rng, worksheetSeed)
   if (tcmCsc) return tcmCsc
-  const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng, worksheetSeed, orderAscending)
+  const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng, worksheetSeed, orderAscending, coordOptions)
   if (tcmCfr) return tcmCfr
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
