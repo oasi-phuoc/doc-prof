@@ -1,3 +1,4 @@
+import { FigureMeasure, MeasuredDiagram } from './MeasuredDiagram'
 import type { CompositeRight, CompositeScene, CompositeTick } from '@/math/types'
 
 function Tick({ tick }: { tick: CompositeTick }) {
@@ -49,7 +50,7 @@ function Right({ r }: { r: CompositeRight }) {
 
 export function CompositeFigure({ scene }: { scene: CompositeScene }) {
   return (
-    <svg className="geometry-figure cotee composite-figure" viewBox="0 0 260 190" role="img" aria-label="Figure composée">
+    <MeasuredDiagram className="geometry-figure cotee composite-figure" viewBox="0 0 260 190" label="Figure composée" overlay>
       <path
         d={scene.outline}
         fill="currentColor"
@@ -78,18 +79,15 @@ export function CompositeFigure({ scene }: { scene: CompositeScene }) {
         <Tick key={`t-${i}`} tick={t} />
       ))}
       {scene.labels.map((lab, i) => (
-        <text
+        <FigureMeasure
           key={`l-${i}`}
           x={lab.x}
           y={lab.y}
-          textAnchor={lab.anchor ?? 'middle'}
-          className="dim-label"
-          fill="currentColor"
-          stroke="none"
+          anchor={lab.anchor ?? 'middle'}
         >
           {lab.text}
-        </text>
+        </FigureMeasure>
       ))}
-    </svg>
+    </MeasuredDiagram>
   )
 }

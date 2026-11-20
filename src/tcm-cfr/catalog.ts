@@ -63,5 +63,5 @@ export const TCM_CFR_EXERCISE_TYPES: ExerciseType[] = [
   t('tcm-cfr-ex25', 'tcm-cfr-test', '26 — Côté du carré', 'Retrouver le côté à partir du périmètre.', 'Résolvez le problème.', 1),
   t('tcm-cfr-ex26', 'tcm-cfr-test', '27 — Côté du rectangle', 'Retrouver un côté à partir du périmètre.', 'Résolvez le problème.', 1),
   t('tcm-cfr-ex27', 'tcm-cfr-test', '29 — Repérage (cadran I)', 'Graduer, placer et lire des points (quadrant I).', '', 1),
-  t('tcm-cfr-ex28', 'tcm-cfr-test', '28 — Plan de métro', 'Lire un plan de métro (coordonnées).', 'Répondez aux questions.\nÉcrivez uniquement les coordonnées.', 1),
+  t('tcm-cfr-ex28', 'tcm-cfr-test', '28 — Plan de métro', 'Lire un plan de métro (coordonnées).', 'Répondez aux questions. Écrivez uniquement les coordonnées.', 1),
 ]

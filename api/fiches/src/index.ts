@@ -1,3 +1,4 @@
+import { handleAccounts, personalUser, type AccountsEnv } from './accounts'
 import { handleCompetitionRequest, type CompetitionEnv } from './competition'
 export { ClassroomCompetitionRoom } from './competition'
 
@@ -12,7 +13,7 @@ interface D1Database {
   prepare(query: string): D1Prepared
 }
 
-interface Env extends CompetitionEnv {
+interface Env extends CompetitionEnv, AccountsEnv {
   DB: D1Database
   ACCESS_ADMIN?: string
   ACCESS_FULL?: string
@@ -148,7 +149,7 @@ function regularDomains(): string[] {
 
 function partialDomains(env: Env): Set<string> {
   const domains = parseDomainCsv(env.ACCESS_DOMAINS_PARTIAL)
-  return new Set(domains.length > 0 ? domains : ['algèbre', 'géométrie'])
+  return new Set(['algèbre', 'géométrie', 'alphabetisation', ...domains])
 }
 
 function allowedDomains(account: Account, env: Env): Set<string> {
@@ -221,6 +222,7 @@ type FicheRow = {
   recipe: string
   created_at: string
   updated_at: string
+  owner_id: string | null
 }
 
 function toClient(row: FicheRow) {
@@ -272,37 +274,65 @@ export default {
       return json(request, 200, { ok: true })
     }
 
-    if (parts[0] !== 'fiches' || parts.length > 2) {
+    if (parts[0] === 'auth') {
+      try { return await handleAccounts(request, env, (status, body) => json(request, status, body)) }
+      catch { return json(request, 503, { error: 'La gestion des comptes est indisponible. Réessayez plus tard.' }) }
+    }
+
+    if (!['fiches', 'users'].includes(parts[0]) || parts.length > 2) {
       return json(request, 404, { error: 'Adresse inconnue.' })
     }
 
-    const account = accountFromPassword(bearer(request), env)
+    const token = bearer(request)
+    let user: Awaited<ReturnType<typeof personalUser>> = null
+    try { user = await personalUser(token, env) } catch { return json(request, 503, { error: 'La synchronisation est indisponible.' }) }
+    const account = user?.account ?? accountFromPassword(token, env)
     if (!account) return json(request, 401, { error: 'Mot de passe refusé.' })
 
     try {
+      if (parts[0] === 'users') {
+        if (account !== 'admin') return json(request, 403, { error: 'Cet accès est réservé à l’administrateur.' })
+        if (request.method === 'GET' && parts.length === 1) {
+          const { results } = await env.DB.prepare('SELECT id, given_name, family_name, email, account, domains, verified_at FROM users ORDER BY family_name, given_name').all<{id:string;given_name:string;family_name:string;email:string;account:string;domains:string;verified_at:string|null}>()
+          return json(request, 200, { users: (results ?? []).map(r => ({id:r.id,givenName:r.given_name,familyName:r.family_name,email:r.email,account:r.account,verified:Boolean(r.verified_at),domains:JSON.parse(r.domains)})) })
+        }
+        if (request.method === 'PUT' && /^[0-9a-f-]{36}$/i.test(parts[1] ?? '')) {
+          const raw = await request.text()
+          if (raw.length > 4096) return json(request, 413, { error: 'La demande est trop volumineuse.' })
+          let body: unknown; try { body=JSON.parse(raw) } catch { return json(request,400,{error:'La demande est illisible.'}) }
+          if (!isRecord(body) || !Array.isArray(body.domains) || !body.domains.every(d => typeof d === 'string' && (ALL_DOMAINS as readonly string[]).includes(d))) return json(request,400,{error:'Choisissez des domaines du catalogue.'})
+          const target = await env.DB.prepare('SELECT id FROM users WHERE id = ?').bind(parts[1]).first<{id:string}>()
+          if (!target) return json(request,404,{error:'Ce compte n’existe plus.'})
+          const domains = [...new Set(['algèbre','géométrie','alphabetisation', ...body.domains])]
+          await env.DB.prepare('UPDATE users SET domains = ? WHERE id = ?').bind(JSON.stringify(domains),parts[1]).run()
+          return json(request,200,{domains})
+        }
+        return json(request,405,{error:'Méthode refusée.'})
+      }
       if (request.method === 'GET' && parts.length === 1) {
         const { results } = await env.DB.prepare(
-          'SELECT id, name, domains, recipe, created_at, updated_at FROM fiches ORDER BY updated_at DESC',
-        ).all<FicheRow>()
+          `SELECT id, name, domains, recipe, created_at, updated_at, owner_id FROM fiches ${user ? 'WHERE owner_id = ?' : account === 'admin' ? '' : 'WHERE owner_id IS NULL'} ORDER BY updated_at DESC`,
+        ).bind(...(user ? [user.id] : [])).all<FicheRow>()
         const fiches = (results ?? [])
           .map(toClient)
-          .filter((fiche) => canAccess(account, fiche.domains, env))
+          .filter((fiche) => (user ? fiche.domains.every(d => user.domains.includes(d)) : canAccess(account, fiche.domains, env)))
         return json(request, 200, { fiches })
       }
 
       if (request.method === 'POST' && parts.length === 1) {
         const parsed = await readBody(request)
         if (isResponse(parsed)) return parsed
+        if (user) parsed.recipe.savedBy = `${user.givenName} ${user.familyName}`
         const domains = domainsOf(parsed.recipe)
-        if (!canAccess(account, domains, env)) {
+        if (!(user ? domains.every(d => user.domains.includes(d)) : canAccess(account, domains, env))) {
           return json(request, 403, { error: 'Ce compte ne peut pas enregistrer cette fiche.' })
         }
         const id = crypto.randomUUID()
         const now = new Date().toISOString()
         await env.DB.prepare(
-          'INSERT INTO fiches (id, name, domains, recipe, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)',
+          'INSERT INTO fiches (id, name, domains, recipe, created_at, updated_at, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?)',
         )
-          .bind(id, parsed.name, JSON.stringify(domains), JSON.stringify(parsed.recipe), now, now)
+          .bind(id, parsed.name, JSON.stringify(domains), JSON.stringify(parsed.recipe), now, now, user?.id ?? null)
           .run()
         return json(request, 201, {
           fiche: {
@@ -322,14 +352,15 @@ export default {
       }
 
       const existing = await env.DB.prepare(
-        'SELECT id, name, domains, recipe, created_at, updated_at FROM fiches WHERE id = ?',
+        'SELECT id, name, domains, recipe, created_at, updated_at, owner_id FROM fiches WHERE id = ?',
       )
         .bind(id)
         .first<FicheRow>()
 
+      if (existing && (user ? existing.owner_id !== user.id : account !== 'admin' && existing.owner_id !== null)) return json(request, 404, { error: 'Cette fiche n’existe plus.' })
       if (!existing) return json(request, 404, { error: 'Cette fiche n’existe plus.' })
       const existingDomains = JSON.parse(existing.domains) as string[]
-      if (!canAccess(account, existingDomains, env)) {
+      if (!(user ? existingDomains.every(d => user.domains.includes(d)) : canAccess(account, existingDomains, env))) {
         return json(request, 403, { error: 'Ce compte ne peut pas modifier cette fiche.' })
       }
 
@@ -341,8 +372,9 @@ export default {
       if (request.method === 'PUT') {
         const parsed = await readBody(request)
         if (isResponse(parsed)) return parsed
+        if (user) parsed.recipe.savedBy = `${user.givenName} ${user.familyName}`
         const domains = domainsOf(parsed.recipe)
-        if (!canAccess(account, domains, env)) {
+        if (!(user ? domains.every(d => user.domains.includes(d)) : canAccess(account, domains, env))) {
           return json(request, 403, { error: 'Ce compte ne peut pas enregistrer cette fiche.' })
         }
         const now = new Date().toISOString()

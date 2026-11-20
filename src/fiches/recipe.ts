@@ -5,10 +5,14 @@ import type { Domain, PageConfig } from '@/math/types'
 import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
 import { normalizeGrammarCoBlock } from '@/grammaire/exercises/co-themes'
 import { freezeGrammarPages, validGrammarRecipePages } from '@/grammaire/curriculum/recipe'
+import { readSessionUser } from '@/fiches/session'
+import { normalizeFicheAuthor } from '@/fiches/author'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
 export type FicheRecipe = {
   version: 1
+  /** Personne qui a effectué le dernier enregistrement, conservée dans D1 avec la recette. */
+  savedBy?: string
   pages: PageConfig[]
   seed: number
   institutional: InstitutionalHeader
@@ -140,6 +144,7 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
   const hideChrome = value.hideChrome === true ? true : value.hideChrome === false ? false : undefined
   return {
     version: 1,
+    savedBy: normalizeFicheAuthor(value.savedBy) || undefined,
     pages,
     seed: value.seed,
     institutional: value.institutional as InstitutionalHeader,
@@ -161,12 +166,15 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
 export function parseStagedFiche(value: unknown): StagedFiche | null {
   if (!isRecord(value)) return null
   if (typeof value.id !== 'string' || typeof value.name !== 'string') return null
+  const user = readSessionUser()
+  if (user ? value.sessionOwner !== user.id : typeof value.sessionOwner === 'string') return null
   const recipe = parseFicheRecipe(value.recipe)
   if (!recipe) return null
   return { id: value.id, name: value.name, recipe }
 }
 
 export function buildFicheRecipe(input: {
+  savedBy?: string
   pages: PageConfig[]
   seed: number
   institutional: InstitutionalHeader
@@ -198,7 +206,7 @@ export function domainsOfPages(pages: readonly { domain?: string }[]): Domain[] 
 
 /** Ouvre le générateur avec cette fiche dans l’historique de navigation. */
 export function stageFicheNavigation(fiche: StagedFiche) {
-  window.history.pushState({ [HISTORY_KEY]: fiche }, '', '/generateur')
+  window.history.pushState({ [HISTORY_KEY]: { ...fiche, sessionOwner: readSessionUser()?.id ?? null } }, '', '/generateur')
 }
 
 export function readStagedFiche(): StagedFiche | null {
@@ -210,5 +218,5 @@ export function readStagedFiche(): StagedFiche | null {
 
 export function rememberFicheOnHistory(fiche: StagedFiche) {
   const current = isRecord(window.history.state) ? window.history.state : {}
-  window.history.replaceState({ ...current, [HISTORY_KEY]: fiche }, '', window.location.pathname)
+  window.history.replaceState({ ...current, [HISTORY_KEY]: { ...fiche, sessionOwner: readSessionUser()?.id ?? null } }, '', window.location.pathname)
 }

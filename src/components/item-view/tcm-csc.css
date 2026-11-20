@@ -474,7 +474,7 @@
 .is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-single .geo-phrase-answer { width: 100%; }
 
 /* Le carré du 23 reste assez compact pour partager la page avec le 22. */
-.exercise-block[data-exercise-type="tcm-cfr-ex22"] .cfr-measured-shape { height: 45mm; width: 45mm; }
+.exercise-block[data-exercise-type="tcm-cfr-ex22"] .cfr-measured-shape { height: 44mm; width: 44mm; }
 .cfr-measured-figure.is-triangle { display: block; }
 .cfr-triangle-diagram { position: relative; width: 100%; aspect-ratio: 300 / 160; }
 .cfr-measured-figure.is-triangle .cfr-measured-shape { position: absolute; inset: 0; height: 100%; }
@@ -509,3 +509,14 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-instruction .csc-symbol { font-weight: 800; color: var(--purple); }
 
 .cfr-triangle-diagram .is-side-b { transform: translateY(-50%); }
+
+/* CFR : toutes les consignes suivent le corps choisi (20 px par défaut). */
+.is-tcm-cfr :is(.item-content, .item-number, .exercise-heading p, .exercise-instruction, .csc-part-instruction, .coord-cfr-steps) { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)) !important; }
+/* Ex. 26–27 : libellé en gras, ligne de réponse entière en dessous. */
+.is-tcm-cfr .geo-dual-answers.is-single .geo-phrase-answer { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+.is-tcm-cfr .geo-dual-answers.is-single .geo-answer-label { font-weight: 700; }
+.is-tcm-cfr .geo-dual-answers.is-single .geo-phrase-answer .answer-line-field { display: block; width: 100%; min-height: 1.3em; flex: none; }
+/* Anciennes fiches du métro : retirer aussi leur ancien saut de ligne. */
+.exercise-block[data-exercise-type="tcm-cfr-ex28"] .exercise-instruction { white-space: normal; }
+
+.worksheet-sheet.is-tcm-cfr .exercise-block :is(.item-content, .item-number, .exercise-instruction, .exercise-instruction .sheet-copy-line, .csc-part-instruction, .coord-cfr-briefing .column-prompt) { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)) !important; }

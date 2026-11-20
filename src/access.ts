@@ -1,3 +1,5 @@
+import { readSessionUser } from '@/fiches/session'
+import { readAccessPassword } from '@/fiches/password'
 import type { Domain } from '@/math/types'
 
 /**
@@ -148,10 +150,7 @@ function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
     const fromEnv = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [])
     return [...new Set([...(fromEnv.length > 0 ? fromEnv : REGULAR_DOMAIN_IDS), ...FULL_TEST_DOMAINS])]
   }
-  return parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [
-    'algèbre',
-    'géométrie',
-  ])
+  return [...new Set<Domain>(['algèbre', 'géométrie', 'alphabetisation', ...parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [])])]
 }
 
 /**
@@ -179,6 +178,9 @@ export function resolveAccountFromPassword(password: string): AccessAccount | nu
 
 export function readAccessAccount(): AccessAccount | null {
   if (typeof document === 'undefined') return null
+  const user = readSessionUser()
+  if (user) return user.account
+  if (readAccessPassword()?.startsWith('cfu_')) return null
   for (const part of document.cookie.split(';')) {
     const trimmed = part.trim()
     if (!trimmed.startsWith(`${ACCESS_COOKIE}=`)) continue
@@ -205,6 +207,8 @@ export function hasAccessCookie(): boolean {
 /** Domaines autorisés pour le compte connecté (ordre d’affichage). */
 export function domainsForAccount(account: AccessAccount | null): Domain[] {
   if (!account) return []
+  const user = readSessionUser()
+  if (user?.account === account && Array.isArray(user.domains)) return orderDomains(user.domains as Domain[])
   if (account === 'admin') return orderDomains(adminDomainsFromEnv())
   return orderDomains(domainsFromEnv(account))
 }

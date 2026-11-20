@@ -189,7 +189,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     Évaluation
                   </button>
                 </div>
-                {evalMode && !isTpmLike && (
+                {evalMode && !isTpmLike && !isTcf && (
                   <label>
                     Points par question
                     <input

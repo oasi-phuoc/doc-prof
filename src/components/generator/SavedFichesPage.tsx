@@ -147,7 +147,7 @@ export function SavedFichesPage({
     const rows = fiches.filter((fiche) => {
       const inLibrary = ficheLibrary(fiche) === library
       if (!inLibrary) return false
-      const nameOk = !needle || fiche.name.toLowerCase().includes(needle)
+      const nameOk = !needle || `${fiche.name} ${fiche.recipe.savedBy ?? ''}`.toLowerCase().includes(needle)
       const domainOk =
         library === 'alpha' || library === 'soutien' || domainFilter === 'tous' || fiche.domains.includes(domainFilter)
       return nameOk && domainOk
@@ -270,7 +270,7 @@ export function SavedFichesPage({
                   type="search"
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Saisissez quelques lettres du nom"
+                  placeholder="Nom de la fiche ou de la personne"
                 />
               </label>
               <SelectBox
@@ -314,6 +314,7 @@ export function SavedFichesPage({
                 <li key={fiche.id} className="fiches-row">
                   <div className="fiches-row-text">
                     <strong>{fiche.name}</strong>
+                    {fiche.recipe.savedBy && <span>Enregistré par {fiche.recipe.savedBy}</span>}
                     <span>
                       {fiche.domains.map(domainLabel).join(' · ')}
                       {formatUpdated(fiche.updatedAt) ? ` — ${formatUpdated(fiche.updatedAt)}` : ''}

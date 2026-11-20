@@ -46,7 +46,7 @@ function parseSaved(value: unknown): SavedFiche | null {
   }
 }
 
-async function request(path: string, init?: RequestInit): Promise<unknown> {
+export async function request(path: string, init?: RequestInit): Promise<unknown> {
   const base = apiBase()
   if (!base) {
     throw new FichesApiError(
@@ -88,7 +88,7 @@ async function request(path: string, init?: RequestInit): Promise<unknown> {
     throw new FichesApiError('forbidden', 'Ce compte ne peut pas enregistrer cette fiche.')
   }
   if (response.status === 404) {
-    throw new FichesApiError('missing', 'Cette fiche n’existe plus.')
+    throw new FichesApiError('missing', path.startsWith('/users') ? 'La gestion des comptes doit encore être activée sur le serveur.' : 'Cette fiche n’existe plus.')
   }
   if (response.status === 413) {
     throw new FichesApiError(

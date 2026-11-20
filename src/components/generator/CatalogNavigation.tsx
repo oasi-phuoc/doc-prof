@@ -1,4 +1,5 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import { readAccessAccount } from '@/access'
 import { navigateTo } from './routing'
 import { SheetFontSelect } from './SheetFontSelect'
 import { applyBaseFontSize, MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE, readBaseFontSize } from './typography'
@@ -59,7 +60,7 @@ const catalogues = [
 
 export function CatalogMenu() {
   return <ToolbarPopover label="Catalogue" menu icon={<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>}>
-    {close => catalogues.map(item => <a key={item.href} href={item.href} className="catalog-navigation-item" role="menuitem" aria-current={window.location.pathname === item.href ? 'page' : undefined} onClick={event => {
+    {close => [...catalogues, ...(readAccessAccount() === 'admin' ? [{href:'/comptes', label:'Comptes enseignants', icon:<><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M18 7v6M15 10h6"/></>}] : [])].map(item => <a key={item.href} href={item.href} className="catalog-navigation-item" role="menuitem" aria-current={window.location.pathname === item.href ? 'page' : undefined} onClick={event => {
       if (event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return
       event.preventDefault(); close(); navigateTo(item.href); window.dispatchEvent(new PopStateEvent('popstate'))
     }}><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">{item.icon}</svg><span>{item.label}</span></a>)}

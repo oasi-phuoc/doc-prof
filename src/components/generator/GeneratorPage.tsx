@@ -451,9 +451,10 @@ export function GeneratorPage({
     }
   }
 
-  async function persistFiche(input: { name: string; asNew: boolean; password: string }) {
+  async function persistFiche(input: { name: string; savedBy: string; asNew: boolean; password: string }) {
     if (input.password) storeSyncPassword(input.password)
     const recipe = buildFicheRecipe({
+      savedBy: input.savedBy,
       pages,
       seed,
       institutional,

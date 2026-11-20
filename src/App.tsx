@@ -6,7 +6,7 @@ import {
   writeAccessAccount,
   type AccessAccount,
 } from '@/access'
-import { clearAccessPassword } from '@/fiches/password'
+import { logoutPersonal } from '@/fiches/session'
 import { AccessPage } from '@/components/generator/AccessPage'
 import { Landing } from '@/components/generator/Landing'
 import { navigateTo, resolveRoute } from '@/components/generator/routing'
@@ -14,6 +14,7 @@ import { LoadingScreen } from '@/components/LoadingScreen'
 
 const InteractiveApp = lazy(() => import('@/interactive/InteractiveApp'))
 const GeneratorPage = lazy(() => import('@/components/generator/GeneratorPage').then((module) => ({ default: module.GeneratorPage })))
+const AccountsPage = lazy(() => import('@/components/generator/AccountsPage').then(module => ({ default: module.AccountsPage })))
 const SavedFichesPage = lazy(() => import('@/components/generator/SavedFichesPage').then((module) => ({ default: module.SavedFichesPage })))
 const ImageGalleryPage = lazy(() => import('@/gallery/ImageGalleryPage').then(module => ({ default: module.ImageGalleryPage })))
 const AudioCatalogPage = lazy(() => import('@/audio-catalog/AudioCatalogPage').then(module => ({ default: module.AudioCatalogPage })))
@@ -54,7 +55,7 @@ export default function App() {
 
   const logout = () => {
     clearAccessAccount()
-    clearAccessPassword()
+    logoutPersonal()
     navigateTo('/acces')
     setRoute('access')
   }
@@ -62,6 +63,7 @@ export default function App() {
   const path = window.location.pathname.replace(/\/+$/, '')
   const interactiveTitle = path === '/interactif/cartes' ? 'Préparation des cartes' : path === '/interactif/diagnostic' ? 'Ouverture du diagnostic' : path.startsWith('/interactif/rejoindre') ? 'Ouverture de la compétition' : path.startsWith('/interactif/salle/') ? 'Ouverture de la salle' : 'Préparation du jeu'
   if (route === 'interactive') return <Suspense fallback={<LoadingScreen title={interactiveTitle} description="Votre séance arrive…" />}><InteractiveApp key={navigationRevision} /></Suspense>
+  if (route === 'accounts') return <Suspense fallback={<LoadingScreen title="Comptes enseignants" description="Chargement des accès…"/>}><AccountsPage onOpenGenerator={showGenerator} onLogout={logout}/></Suspense>
   if (route === 'fiches') {
     return <Suspense fallback={<LoadingScreen title="Ouverture des fiches" description="Votre bibliothèque se prépare." />}><SavedFichesPage onOpenGenerator={showGenerator} onLogout={logout} /></Suspense>
   }

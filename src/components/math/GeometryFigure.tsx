@@ -1,5 +1,5 @@
-import type { ReactNode } from 'react'
 import { fmt } from '@/math/column-arith'
+import { FigureMeasure as L, MeasuredDiagram } from './MeasuredDiagram'
 import type { Figure, FigureDims } from '@/math/types'
 
 const ALL: Figure[] = [
@@ -21,38 +21,6 @@ const ALL: Figure[] = [
 
 function u(dims?: FigureDims) {
   return dims?.unit ?? 'cm'
-}
-
-function L({
-  x,
-  y,
-  children,
-  anchor = 'middle',
-  rotate,
-  baseline,
-}: {
-  x: number
-  y: number
-  children: ReactNode
-  anchor?: 'start' | 'middle' | 'end'
-  rotate?: number
-  baseline?: 'auto' | 'middle' | 'hanging'
-}) {
-  return (
-    <text
-      x={x}
-      y={y}
-      textAnchor={anchor}
-      dominantBaseline={baseline}
-      className="dim-label"
-      fill="currentColor"
-      fillOpacity={1}
-      stroke="none"
-      transform={rotate != null ? `rotate(${rotate} ${x} ${y})` : undefined}
-    >
-      {children}
-    </text>
-  )
 }
 
 /** Crochet de hauteur à droite (style placement soutien-scolaire). */
@@ -142,11 +110,10 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           : '0 0 260 190'
 
   return (
-    <svg
+    <MeasuredDiagram
       className="geometry-figure cotee"
       viewBox={viewBox}
-      role="img"
-      aria-label="Figure géométrique"
+      label="Figure géométrique"
     >
       <g fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round">
         {type === 'square' && (
@@ -186,13 +153,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <L x={48} y={(118 + 38) / 2} anchor="end" baseline="middle">
               {fmt(d.side!)} {unit}
             </L>
-            <HeightBracket
-              shapeRightX={204}
-              yTop={38}
-              yBot={118}
-              bracketX={248}
-              label={`h = ${fmt(d.height!)} ${unit}`}
-            />
+            {HeightBracket({ shapeRightX: 204, yTop: 38, yBot: 118, bracketX: 248, label: `h = ${fmt(d.height!)} ${unit}` })}
           </>
         )}
 
@@ -242,13 +203,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <L x={(100 + 40) / 2 - 12} y={(10 + 168) / 2} anchor="end">
               {fmt(d.c!)} {unit}
             </L>
-            <HeightBracket
-              shapeRightX={190}
-              yTop={10}
-              yBot={168}
-              bracketX={250}
-              label={`h = ${fmt(d.height!)} ${unit}`}
-            />
+            {HeightBracket({ shapeRightX: 190, yTop: 10, yBot: 168, bracketX: 250, label: `h = ${fmt(d.height!)} ${unit}` })}
           </>
         )}
 
@@ -447,13 +402,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
             <L x={(58 + 88) / 2 - 18} y={(120 + 32) / 2} anchor="end" baseline="middle">
               c = {fmt(d.c ?? d.side!)} {unit}
             </L>
-            <HeightBracket
-              shapeRightX={214}
-              yTop={32}
-              yBot={120}
-              bracketX={250}
-              label={`h = ${fmt(d.height!)} ${unit}`}
-            />
+            {HeightBracket({ shapeRightX: 214, yTop: 32, yBot: 120, bracketX: 250, label: `h = ${fmt(d.height!)} ${unit}` })}
           </>
         )}
 
@@ -719,6 +668,6 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
           </>
         )}
       </g>
-    </svg>
+    </MeasuredDiagram>
   )
 }

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { resolve } from 'node:path'
 import { timingSafeEqual } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { DatabaseSync } from 'node:sqlite'
@@ -7,13 +8,13 @@ import { createServer } from 'vite'
 
 const tests = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr']
 const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
-const schema = await readFile('api/fiches/migrations/0001_fiches.sql', 'utf8')
+const schema = (await readFile('api/fiches/migrations/0001_fiches.sql', 'utf8')) + (await readFile('api/fiches/migrations/0002_personal_accounts.sql', 'utf8'))
 const originalTimingSafeEqual = Object.getOwnPropertyDescriptor(crypto.subtle, 'timingSafeEqual')
 Object.defineProperty(crypto.subtle, 'timingSafeEqual', { value: timingSafeEqual, configurable: true })
 const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
 
 async function clientAccess(domains) {
-  const server = await createServer({ configFile: false, server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom', define: {
+  const server = await createServer({ configFile: false, resolve: { alias: { '@': resolve('src') } }, server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom', define: {
     'import.meta.env.VITE_ACCESS_DOMAINS_FULL': domains === undefined ? 'undefined' : JSON.stringify(domains),
   } })
   try { return await server.ssrLoadModule('/src/access.ts') } finally { await server.close() }
@@ -51,6 +52,7 @@ try {
     assert.equal(new Set(allowed).size, allowed.length)
     assert.equal(accountCanAccessDomain(null, 'tcf-csc'), false)
     assert.equal(accountCanAccessDomain('partial', 'tcf-csc'), false)
+    assert.deepEqual(new Set(domainsForAccount('partial')), new Set(['algèbre','géométrie','alphabetisation']))
   })
 
   await test('an old full domain configuration retains its selection and gains the four requested tests', async () => {
@@ -99,6 +101,7 @@ try {
       assert.equal((await h.request('GET', '/fiches', undefined, null)).status, 401)
       assert.equal((await h.request('POST', '/fiches', data('tcf-csc'), null)).status, 401)
       assert.equal((await h.request('POST', '/fiches', data('algèbre'), 'partial')).status, 201)
+      assert.equal((await h.request('POST', '/fiches', data('alphabetisation'), 'partial')).status, 201)
     } finally { h.close() }
   })
 

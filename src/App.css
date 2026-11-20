@@ -6506,3 +6506,7 @@ textarea.pill-input,
 @media screen and (max-width:700px) {
  .topbar-brand:has(.topbar-play):has(> button) .button { flex:1; min-width:0; max-width:100px; padding:6px 4px; font-size:12px; line-height:1.15; white-space:normal; text-align:center; }
 }
+
+.account-domain-card { max-width: none; margin: 20px 0; }
+.account-domain-options { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; margin: 12px 0 20px; }
+.account-domain-options label { display: flex; align-items: center; gap: 8px; }

@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-20",
+  "parent_commit": "d9e14bc289b4d6bb5755f66f32165f0301c06256",
+  "server_tests": {
+    "passed": 14,
+    "failed": 0,
+    "files": [
+      "tests/interactive/personal-accounts.test.mjs",
+      "tests/interactive/fiches-access.test.mjs"
+    ],
+    "resend": "simulated; no actual email sent"
+  },
+  "browser_reports": [
+    "docs/comptes/navigateur-20261120.json",
+    "docs/tcm-cfr/comptes-mesures-20261120-browser.json"
+  ],
+  "typecheck": {
+    "frontend": "passed",
+    "worker": "passed"
+  },
+  "cloudflare_dry_run": {
+    "passed": true,
+    "upload_kib": 270.22,
+    "gzip_kib": 60.02
+  },
+  "production": {
+    "d1_migration_applied": false,
+    "worker_deployed": false,
+    "resend_authenticated": false,
+    "real_email_sent": false,
+    "reason": "No Cloudflare deployment authentication. Resend MCP added but OAuth discovery failed through network. No verified sender domain supplied; onboarding@resend.dev restricted to setup tests."
+  },
+  "admin_access_preserved": true,
+  "minimum_domains": [
+    "algèbre",
+    "géométrie",
+    "alphabetisation"
+  ]
+}

@@ -1,5 +1,7 @@
 import { useEffect, useId, useState, type FormEvent } from 'react'
 import { readAccessPassword } from '@/fiches/password'
+import { readSessionUser } from '@/fiches/session'
+import { normalizeFicheAuthor, readFicheAuthor, rememberFicheAuthor } from '@/fiches/author'
 
 export function SaveFicheDialog({
   initialName,
@@ -10,10 +12,12 @@ export function SaveFicheDialog({
   initialName: string
   canUpdate: boolean
   onClose: () => void
-  onSubmit: (input: { name: string; asNew: boolean; password: string }) => Promise<void>
+  onSubmit: (input: { name: string; savedBy: string; asNew: boolean; password: string }) => Promise<void>
 }) {
   const titleId = useId()
+  const sessionUser = readSessionUser()
   const [name, setName] = useState(initialName)
+  const [savedBy, setSavedBy] = useState(() => sessionUser ? `${sessionUser.givenName} ${sessionUser.familyName}` : readFicheAuthor())
   const [password, setPassword] = useState('')
   const [needsPassword, setNeedsPassword] = useState(() => !readAccessPassword())
   const [error, setError] = useState<string | null>(null)
@@ -33,6 +37,11 @@ export function SaveFicheDialog({
       setError('Donnez un nom à la fiche.')
       return
     }
+    const author = normalizeFicheAuthor(savedBy)
+    if (!author) {
+      setError('Saisissez le nom de la personne qui enregistre la fiche.')
+      return
+    }
     if (needsPassword && !password.trim()) {
       setError('Saisissez votre mot de passe pour synchroniser les fiches.')
       return
@@ -40,7 +49,8 @@ export function SaveFicheDialog({
     setBusy(true)
     setError(null)
     try {
-      await onSubmit({ name: trimmed, asNew, password: password.trim() })
+      await onSubmit({ name: trimmed, savedBy: author, asNew, password: password.trim() })
+      rememberFicheAuthor(author)
       onClose()
     } catch (caught) {
       const message = caught instanceof Error ? caught.message : 'L’enregistrement n’a pas abouti. Réessayez.'
@@ -98,6 +108,12 @@ export function SaveFicheDialog({
             autoFocus
             placeholder="Saisissez le nom de la fiche"
           />
+        </label>
+        <label className="access-field">
+          <span>Enregistré par</span>
+          <input name="name" autoComplete="name" value={savedBy}
+            onChange={(event) => { setSavedBy(event.target.value); if (error) setError(null) }}
+            maxLength={160} required readOnly={Boolean(sessionUser)} placeholder={readFicheAuthor() || 'Votre prénom et votre nom'} />
         </label>
         {needsPassword ? (
           <label className="access-field">

@@ -1,11 +1,12 @@
 import { hasAccessCookie } from '@/access'
 
-export type AppRoute = 'landing' | 'access' | 'generator' | 'fiches' | 'interactive' | 'images' | 'audios'
+export type AppRoute = 'accounts' | 'landing' | 'access' | 'generator' | 'fiches' | 'interactive' | 'images' | 'audios'
 
 export function pathFromLocation(): AppRoute {
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
   if (path === '/interactif' || path.startsWith('/interactif/')) return 'interactive'
   if (path === '/generateur') return 'generator'
+  if (path === '/comptes') return 'accounts'
   if (path === '/fiches') return 'fiches'
   if (path === '/images') return 'images'
   if (path === '/audios') return 'audios'
@@ -22,13 +23,13 @@ export function navigateTo(path: string) {
 export function resolveRoute(): AppRoute {
   const initial = pathFromLocation()
   const publicCompetition = /^\/interactif\/rejoindre(?:\/\d{6})?\/?$/.test(window.location.pathname)
-  if ((initial === 'generator' || initial === 'fiches' || initial === 'images' || initial === 'audios' || initial === 'interactive' && !publicCompetition) && !hasAccessCookie()) {
+  if ((initial === 'accounts' || initial === 'generator' || initial === 'fiches' || initial === 'images' || initial === 'audios' || initial === 'interactive' && !publicCompetition) && !hasAccessCookie()) {
     if (typeof window !== 'undefined') {
       window.history.replaceState({}, '', '/acces')
     }
     return 'access'
   }
-  if (initial === 'access' && hasAccessCookie()) {
+  if (initial === 'access' && !new URLSearchParams(window.location.search).has('verification') && hasAccessCookie()) {
     if (typeof window !== 'undefined') {
       window.history.replaceState({}, '', '/generateur')
     }
