@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 372,
+      "active_reviewed_trio": 378,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 374,
+      "candidate_visual_review": 368,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 210,
+        "active_reviewed_trio": 215,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 52,
+        "candidate_visual_review": 47,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 137,
-        "candidate_visual_review": 201,
+        "active_reviewed_trio": 138,
+        "candidate_visual_review": 200,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -6129,8 +6129,8 @@
       "semantic_sha256": "3fbc2fb9891462cba76a587c13a2188491cfbc4e0bd7da6e544a18f6e40a07cd",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-007-01.mp3",
       "audio_sha256": "0ca7443e88e1a2641d970d6e7c1afddde51b3f4ee80dd730d89fe737f7790dbf",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux et catégories concrets et distincts.",
       "choices": [
         {
           "id": "a",
@@ -6164,8 +6164,24 @@
           "brief": "Représenter entièrement « Un magasin de musique » pour « Dans quel magasin veulent-ils aller ? ». Vérifier la transcription du support tcf-delf-actif-a1-007-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-magasin-danse.png",
+          "sha256": "25968dbd5d3f0e7f37eb395789bd31365d0f831862daab80c99744610409e17d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co57-magasin-musique.webp",
+          "sha256": "23519589efdf3960e776423e7cdcb1c4d2e91f6a9dad4e0e1fe2666d31a85dbd"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -6176,7 +6192,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-rayons-lieux-20261120.json",
+        "note": "Magasins de danse, sport et musique distincts. Le rayon de sport sert de vue de magasin, sans le confondre avec un cours."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-007-01#3",
@@ -17784,8 +17804,8 @@
       "semantic_sha256": "1a01955cf0b1caee9d5b8b7e1782c9d6fbc5cca8b766cab84895c3516e891179",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
       "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Le repère de couleur est explicitement indiqué dans la transcription.",
       "choices": [
         {
           "id": "a",
@@ -17812,8 +17832,24 @@
           "brief": "Représenter entièrement « Le rayon vert » pour « Dans quel rayon se trouvent les livres de sciences ? ». Vérifier la transcription du support tcf-delf-actif-a1-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-rayon-bibliotheque-orange.png",
+          "sha256": "b221c6f6b8a42583279ebda8cd0f0c345825c86e4606e99654aa229fc07c7753"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-rayon-bibliotheque-bleu.png",
+          "sha256": "2a8c08d47a2af3458ef2a7235edebdca5b7d5e2d03843560a7a7caead20243ce"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-rayon-bibliotheque-vert.png",
+          "sha256": "bfd10e0dad878a406f1186592c5c14ab79b40b4d4193c8c1adca458d8a909360"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -17824,7 +17860,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-rayons-lieux-20261120.json",
+        "note": "Même rayon et mêmes livres pour les trois réponses, seuls les repères orange, bleu et vert diffèrent ; le support dit « rayon orange »."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-031-01#3",
@@ -19625,8 +19665,8 @@
       "semantic_sha256": "c648e6502fce03fb4e04589612c3a90773a2b5aa2fbe08e7db46a2b8605d79cf",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-01.mp3",
       "audio_sha256": "6901be8b4e34dc511efe845a9b7f859147e2eb683cf4dadd82297b6a76db7c67",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux et catégories concrets et distincts.",
       "choices": [
         {
           "id": "a",
@@ -19667,8 +19707,24 @@
           "brief": "Représenter entièrement « Au rayon papeterie » pour « Dans quel rayon les trouve-t-on ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-rayon-multimedia.png",
+          "sha256": "611a566c7a9e07f7dc5ad34082a0158dd8e46392330eed1f313143b562bd0f01"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-papeterie.png",
+          "sha256": "0727c562d39b5d0cd4510dcd6405621246320dbcd99670cfebac729104b17aca"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -19679,7 +19735,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-rayons-lieux-20261120.json",
+        "note": "Écouteurs et casques dans le rayon multimédia ; sport et papeterie distincts, pas de simple objet isolé."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-033-02#1",
@@ -31677,8 +31737,8 @@
       "semantic_sha256": "01fdd14017418b089a91997c5727f05f291b5856ede2c51f39123c40f6212ed1",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
       "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
-      "status": "candidate_visual_review",
-      "reason": "Infirmerie, bibliothèque et gymnase identifiables ; ne pas transformer l’infirmerie scolaire en service d’urgences.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux et catégories concrets et distincts.",
       "choices": [
         {
           "id": "a",
@@ -31719,8 +31779,24 @@
           "brief": "Représenter entièrement « Au gymnase » pour « Où va-t-on l’accompagner ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Infirmerie, bibliothèque et gymnase identifiables ; ne pas transformer l’infirmerie scolaire en service d’urgences."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-infirmerie.webp",
+          "sha256": "74b6e9cbbb8278c447d87a258fe2dee3bcf60e33a6b5e088a860cb70009b44a4"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-gymnase-municipal-dessine.webp",
+          "sha256": "8cc8baeaec008f3baed7df4c8989b43a518394f23739dd6680f424cc27b00cf4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -31738,6 +31814,10 @@
         "evidence_quote": "on va à l’infirmerie",
         "semantic_sha256": "01fdd14017418b089a91997c5727f05f291b5856ede2c51f39123c40f6212ed1",
         "note": "Infirmerie, bibliothèque et gymnase identifiables ; ne pas transformer l’infirmerie scolaire en service d’urgences."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-rayons-lieux-20261120.json",
+        "note": "Images des lieux proposés. La soignante de l’image de lieu ne prétend pas représenter Diego ou son interlocuteur."
       }
     },
     {
@@ -34928,8 +35008,8 @@
       "semantic_sha256": "1540e47ff7b9a31412b83a32e07d01c8226bf571fd398c9b60f829c7e87998ff",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-02-01.mp3",
       "audio_sha256": "8acfc8b19bcf63d6ab645f6aebf0077c2d1554ac616a6e1dee0f562825595681",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux et catégories concrets et distincts.",
       "choices": [
         {
           "id": "a",
@@ -34977,8 +35057,24 @@
           "brief": "Représenter entièrement « Le rayon parfumerie » pour « Quel rayon propose une offre exceptionnelle ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-rayon-informatique.webp",
+          "sha256": "91d205c3f49296346607c771c47dc3ff0f10e936caa78eb34b7ff5d1a2b26592"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-parfumerie.png",
+          "sha256": "6aa6cb1d387f8f408cc8997ea0965a58a524f399d396ccffa92258c0edfe5f20"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -34989,7 +35085,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-rayons-lieux-20261120.json",
+        "note": "Trois rayons reconnaissables. Aucun prix, réduction ou mois illustré."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-052-02-01#2",
@@ -50584,8 +50684,8 @@
       "semantic_sha256": "64314f1a21c60c67c9e1e08d67b78cff2762862c2a580d53ecf432ef856e2fce",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-020-01.mp3",
       "audio_sha256": "92a405c21ffa2ef11d1e499da76bb424964ad95b1a122e18aaf9e4a8a463cabd",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux et catégories concrets et distincts.",
       "choices": [
         {
           "id": "a",
@@ -50612,8 +50712,24 @@
           "brief": "Représenter entièrement « Un magasin de sport » pour « Quel type de magasin rouvre ? ». Vérifier la transcription du support tcf-delf-actif-a2-020-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-magasin-vetements-feminins.png",
+          "sha256": "959f0f933c584016ddaf8ba529f9bfbb225b8ba79b0df1a1a0547f0336d8a8d1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-magasin-chaussures-enfants.png",
+          "sha256": "b3d3bf35d60c05be6262d93fd60803db1eb5e8e798ea8fd237f8a00494204f1f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a2-rayon-sport.png",
+          "sha256": "bf10a59a54259352bb7e8f89c7b62707e33683092e9fb31db5bd85e6ba52a8b4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -50624,7 +50740,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-rayons-lieux-20261120.json",
+        "note": "Vêtements féminins conformes au message, petites chaussures et mobilier enfant, magasin de sport distinct. Le rayon de vêtements surtout masculins existant est écarté."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-020-01#2",

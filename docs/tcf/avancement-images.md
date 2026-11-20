@@ -1,5 +1,7 @@
 # Avancement des illustrations CE / CO
 
+**Suite du 20 novembre : six trios ajoutés, cinq A1 et un A2**, avec sept PNG natifs 4:3 et onze réemplois de huit images examinées. Magasin de danse, rayon multimédia et boutiques de vêtements féminins/chaussures enfant complètent les rayons et lieux de l’école déjà disponibles. Un même rayon de bibliothèque à repères orange, bleu et vert complète le lot. Les textes, corrigés, transcriptions et MP3 sont conservés. DELF Actif : **378 trios actifs, 368 candidats**. [Sources, choix et contrôles](revue-rayons-lieux-20261120.json).
+
 **Suite du 20 novembre : trois trios A1 supplémentaires activés**, avec sept PNG natifs 4:3 et deux réemplois contrôlés : matériel de ski/natation/tennis complet, pendentif argent/or/cuivre et TGV/train régional/marchandises. Les objets reprennent le fond ivoire et le style validés ; les trains gardent le décor peint de la référence. Questions, réponses, transcriptions et MP3 conservés. DELF Actif : **372 trios actifs, 374 candidats**. [Preuves et images](revue-trios-sports-metaux-trains-20261120.json).
 
 **Suite du 20 novembre : deux trios A1 sacs et aliments activés**, avec cinq PNG natifs 4:3 et une réutilisation contrôlée. Les sacs sont représentés au pluriel ; les trois groupes d’aliments sont distincts. Textes, réponses, transcriptions et MP3 conservés. DELF Actif : **369 trios actifs, 377 candidats**. [Preuves et images](revue-trios-sacs-aliments-20261120.json).
