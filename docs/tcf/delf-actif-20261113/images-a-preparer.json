@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 392,
+      "active_reviewed_trio": 395,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 354,
+      "candidate_visual_review": 351,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 223,
+        "active_reviewed_trio": 225,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 39,
+        "candidate_visual_review": 37,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 144,
-        "candidate_visual_review": 194,
+        "active_reviewed_trio": 145,
+        "candidate_visual_review": 193,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -17621,8 +17621,8 @@
       "semantic_sha256": "8a8a969ffce84216b0a6610a8b42c7ed0f109d62994969f21747df0841c15e8f",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-04.mp3",
       "audio_sha256": "e6431956551195d521e833affdb67ae64b635a3ebf5bffbd4773284e19ee94ac",
-      "status": "candidate_visual_review",
-      "reason": "Chaque choix comporte deux productions ; tableaux et dessins, films et photos, livres et poèmes doivent être représentés entièrement, sans œuvres attribuées à Matisse.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image représente les deux éléments de la réponse composée.",
       "choices": [
         {
           "id": "a",
@@ -17649,8 +17649,24 @@
           "brief": "Représenter entièrement « Ses livres et ses poèmes » pour « Quels travaux de l’artiste la professeure présente-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-030-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Chaque choix comporte deux productions ; tableaux et dessins, films et photos, livres et poèmes doivent être représentés entièrement, sans œuvres attribuées à Matisse."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tableaux-dessins.png",
+          "sha256": "e58e96dc800286fff794b42f8efd48803b4d29835f46eb0220d1e0c3e66779fa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-films-photos.png",
+          "sha256": "692604b1e3c55bb593ed5c71f7fe1fde779bc241d83488e561cf610bcf6fe27f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-livres-poemes.png",
+          "sha256": "1e17d8381e9c3add0980f7eb6cc576b5c4f15fb7be4563b229fd3a589372d896"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -17668,6 +17684,10 @@
         "evidence_quote": "je vais vous montrer ses tableaux et ses dessins",
         "semantic_sha256": "8a8a969ffce84216b0a6610a8b42c7ed0f109d62994969f21747df0841c15e8f",
         "note": "Chaque choix comporte deux productions ; tableaux et dessins, films et photos, livres et poèmes doivent être représentés entièrement, sans œuvres attribuées à Matisse."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-duos-20261120.json",
+        "note": "Les trois paires de créations sont complètes : peintures encadrées et dessins au crayon ; caméra/bobine et tirages photographiques ; livres et feuillets structurés en strophes. Les créations sont des exemples génériques des catégories, sans attribution à Matisse ni reproduction annoncée de ses œuvres. Aucun texte lisible nécessaire pour choisir."
       }
     },
     {
@@ -33888,8 +33908,8 @@
       "semantic_sha256": "cb4770ac9ecf2a33058cc3f3da1681574072c1da4ae558d120e0a6400ba51e62",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
       "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
-      "status": "candidate_visual_review",
-      "reason": "Chaque choix représente deux sports ; football et basket, tennis et rugby, natation et vélo, sans n’en montrer qu’un.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image représente les deux éléments de la réponse composée.",
       "choices": [
         {
           "id": "a",
@@ -33916,8 +33936,24 @@
           "brief": "Représenter entièrement « La natation et le vélo » pour « Quels sports pratique-t-il déjà ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Chaque choix représente deux sports ; football et basket, tennis et rugby, natation et vélo, sans n’en montrer qu’un."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-foot-basket.png",
+          "sha256": "8e7983a62521e4dc72a9f639e606f606fd10fa9ef73a17f1d9e6897fccfa7633"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tennis-rugby.png",
+          "sha256": "d3554cb695604823360fd68813ecb7a5f9392ec34f88aae9d842b5066808613d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-natation-velo.png",
+          "sha256": "6ee3c85cf40b6ccd988fc2b7ebc86edb6226b7c149210fe3e2a6f1b2bd9a25fd"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -33935,6 +33971,10 @@
         "evidence_quote": "Je fais du foot, du basket",
         "semantic_sha256": "cb4770ac9ecf2a33058cc3f3da1681574072c1da4ae558d120e0a6400ba51e62",
         "note": "Chaque choix représente deux sports ; football et basket, tennis et rugby, natation et vélo, sans n’en montrer qu’un."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-duos-20261120.json",
+        "note": "Chaque réponse comporte deux sports. Ballons de football et basket distincts ; raquette et balles de tennis avec ballon ovale de rugby ; matériel de natation avec vélo complet. Aucune image limitée à une seule des disciplines, aucun personnage identifié au locuteur."
       }
     },
     {
@@ -60908,8 +60948,8 @@
       "semantic_sha256": "4fbdbfaaa9541efbfde9e7c1781efacb93cdac8079b47efe8f7b1857ff2aca0c",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-037.mp3",
       "audio_sha256": "c0ada643d5862a74e3a2a0303d4b1901c7fe258c4be15f23d4a42ff78c334493",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image représente les deux éléments de la réponse composée.",
       "choices": [
         {
           "id": "a",
@@ -60936,8 +60976,24 @@
           "brief": "Représenter entièrement « Le vélo et la course » pour « Quels sports pratique-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-037 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tennis-natation.png",
+          "sha256": "190b278094ea9c61094fcd8803c267c20f2db17a75a1f018d9204d66ff8c9d3c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-foot-basket.png",
+          "sha256": "8e7983a62521e4dc72a9f639e606f606fd10fa9ef73a17f1d9e6897fccfa7633"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-duo-velo-course.png",
+          "sha256": "2bf079e0ed2592ffe7d6a552b5a023382ad84f6980046e7173894dcabd2413c8"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -60948,7 +61004,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-duos-20261120.json",
+        "note": "La transcription indique tennis et natation ; les deux disciplines sont visibles. Football/basket reprend exactement le même visuel que le trio A1. Vélo/course : bicyclette complète, chaussures de course, maillot à dossard vierge et repère de piste pour identifier l’athlétisme. Pas de déduction sur le genre à partir du matériel."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-037#10",
