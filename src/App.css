@@ -6507,6 +6507,13 @@ textarea.pill-input,
  .topbar-brand:has(.topbar-play):has(> button) .button { flex:1; min-width:0; max-width:100px; padding:6px 4px; font-size:12px; line-height:1.15; white-space:normal; text-align:center; }
 }
 
-.account-domain-card { max-width: none; margin: 20px 0; }
+.account-domain-card { width: min(100%, 960px); max-width: none; margin: 20px 0; }
 .account-domain-options { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; margin: 12px 0 20px; }
 .account-domain-options label { display: flex; align-items: center; gap: 8px; }
+
+.account-domain-card fieldset { min-inline-size: 0; }
+.account-create-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.account-create-fields .access-field { min-width: 0; }
+.account-create-fields input { min-width: 0; }
+.account-create-fields > p { grid-column: 1 / -1; margin: 0; }
+@media (max-width: 600px) { .account-create-fields { grid-template-columns: minmax(0, 1fr); } }

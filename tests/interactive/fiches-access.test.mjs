@@ -8,7 +8,7 @@ import { createServer } from 'vite'
 
 const tests = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr']
 const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
-const schema = (await readFile('api/fiches/migrations/0001_fiches.sql', 'utf8')) + (await readFile('api/fiches/migrations/0002_personal_accounts.sql', 'utf8'))
+const schema = (await readFile('api/fiches/migrations/0001_fiches.sql', 'utf8')) + (await readFile('api/fiches/migrations/0002_personal_accounts.sql', 'utf8') + await readFile('api/fiches/migrations/0003_admin_accounts.sql', 'utf8'))
 const originalTimingSafeEqual = Object.getOwnPropertyDescriptor(crypto.subtle, 'timingSafeEqual')
 Object.defineProperty(crypto.subtle, 'timingSafeEqual', { value: timingSafeEqual, configurable: true })
 const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })

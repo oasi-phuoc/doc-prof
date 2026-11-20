@@ -1,27 +1,36 @@
-# Comptes personnels et configuration Resend
+# Comptes créés par l’administrateur
 
-Le code conserve les accès existants, notamment le rôle administrateur et son mot de passe actuel. Les nouveaux comptes sont personnels : prénom, nom, adresse professionnelle se terminant exactement par `@admin.vs.ch`, puis confirmation par e-mail. Mot de passe de 8 à 128 caractères avec majuscule, minuscule, chiffre et caractère spécial. Les mots de passe sont dérivés avec PBKDF2-SHA256, un sel aléatoire par utilisateur et 100 000 itérations. Les jetons de confirmation et de session ne sont conservés dans D1 que sous forme de condensats SHA-256. Confirmation valable 24 heures, session valable sept jours, révocation à la déconnexion.
+Les comptes personnels sont créés depuis **Catalogue → Comptes enseignants**, avec le compte administrateur existant. Son mot de passe reste inchangé. Il n’y a plus d’inscription publique, de confirmation par e-mail ni de dépendance à Resend. Aucun domaine d’expédition n’est nécessaire.
 
-Chaque utilisateur accède seulement à ses fiches. Le nom du profil remplace côté serveur le nom d’enregistrement envoyé par le navigateur. Les trois accès minimum sont Algèbre, Géométrie et Alphabétisation. L’administrateur peut attribuer d’autres domaines depuis Catalogue → Comptes enseignants ; les nouvelles autorisations apparaissent après reconnexion. Les comptes ne peuvent pas modifier eux-mêmes leurs droits. Les anciennes fiches partagées restent disponibles avec les accès existants ; aucune ancienne fiche n’est attribuée arbitrairement à un nouveau compte.
+## Créer un compte
 
-## État de cette livraison
+1. Ouvrir **Comptes enseignants** avec l’accès admin.
+2. Saisir le prénom, le nom et l’adresse professionnelle `@admin.vs.ch` de la personne. Cette adresse sert d’identifiant ; l’application ne prétend pas en vérifier la propriété.
+3. Choisir un mot de passe de 8 à 128 caractères avec au moins une majuscule, une minuscule, un chiffre et un caractère spécial. Le saisir une seconde fois.
+4. Cocher les domaines supplémentaires souhaités. Algèbre, Géométrie et Alphabétisation sont incluses pour tous.
+5. Cliquer sur **Créer le compte**. Le compte est actif immédiatement. Communiquer directement à la personne son adresse de connexion et le mot de passe choisi ; l’application n’envoie aucun e-mail.
 
-Implémentation et tests locaux prêts. Le Worker de production et la migration D1 ne sont pas déployés depuis cette session : aucune authentification Cloudflare de déploiement n’est disponible. L’authentification OAuth du MCP Resend a été tentée mais la découverte OAuth est refusée par le réseau. Aucune clé publiée dans le chat n’a été utilisée. Aucun e-mail réel n’est annoncé comme envoyé.
+La personne utilise ensuite **Mon compte** sur la page de connexion. Chaque compte voit ses propres fiches, et le nom du profil sert de nom d’enregistrement. Les anciennes fiches partagées restent accessibles avec les accès historiques. L’administrateur peut ajuster les domaines d’un compte ; les droits du serveur changent immédiatement, et la liste des domaines du navigateur est actualisée à la prochaine connexion.
 
-## Expéditeur
+Les mots de passe ne sont ni renvoyés par l’API ni enregistrés en clair : dérivation PBKDF2-SHA256 avec un sel aléatoire par utilisateur et 100 000 itérations. Les sessions durent sept jours et sont révocables à la déconnexion ; seuls leurs condensats sont stockés dans D1. Cinq échecs de connexion bloquent le compte quinze minutes. La création des comptes et la modification des accès exigent le rôle administrateur côté serveur.
 
-`onboarding@resend.dev` sert uniquement à un test vers l’adresse du propriétaire du compte Resend, ou une adresse de test Resend. Ce n’est pas un expéditeur utilisable pour les inscriptions générales `@admin.vs.ch`. Le serveur refuse ce mode pour l’inscription. Les confirmations ne sont jamais redirigées vers une boîte personnelle : cela ne prouverait pas la maîtrise de l’adresse professionnelle.
+## Activation du serveur
 
-Envoyer depuis `@outlook.com` ou `@admin.vs.ch` par Resend demanderait de valider ces domaines ; posséder une boîte mail ne donne pas ce droit. Pour ouvrir les inscriptions à tous, il faut un domaine ou sous-domaine dont les DNS sont administrables. L’adresse d’expédition peut appartenir à ce domaine, indépendamment du domaine professionnel des destinataires.
+Le code et les tests sont prêts. Cette session ne dispose pas d’une authentification Cloudflare de déploiement : la migration distante et le Worker de production ne sont pas annoncés comme déployés.
 
-Documentation officielle lue : <https://resend.com/setup.md>. Le SDK officiel est installé côté Worker, jamais dans la page. Le modèle de confirmation est stocké dans Resend et appelé par son identifiant avec la variable `CONFIRMATION_URL`. Une clé d’idempotence est associée à chaque tentative de confirmation ; les erreurs transitoires sont retentées brièvement.
+Depuis `api/fiches`, avec un accès Cloudflare autorisé :
 
-## Installation côté serveur
+```sh
+npm ci
+npx wrangler login
+npm run db:apply
+npm run deploy
+```
 
-1. Se connecter à Cloudflare avec `npx wrangler login` depuis `api/fiches`, ou fournir un jeton Cloudflare de déploiement par le canal sécurisé de l’environnement. Exécuter `npm ci`, puis `npm run db:apply` pour appliquer `0002_personal_accounts.sql`. Les anciennes lignes sont conservées.
-2. Révoquer toute clé Resend publiée dans un chat. Connecter le MCP Resend par OAuth ou fournir une nouvelle clé par le gestionnaire de secrets. Pour un essai : `node scripts/setup-resend.mjs --test`, depuis `api/fiches`, avec `RESEND_API_KEY` dans l’environnement sécurisé ; destinataire par défaut : la boîte personnelle indiquée par le propriétaire. Pour le modèle : `node scripts/setup-resend.mjs --template` avec un accès autorisant la gestion des modèles. La commande retourne l’identifiant du modèle sans afficher la clé.
-3. Pour l’application, créer une clé Resend d’envoi limitée au domaine validé. Dans Cloudflare Workers, configurer `RESEND_API_KEY`, `RESEND_FROM` et `RESEND_VERIFY_TEMPLATE_ID` avec `npx wrangler secret put NOM_DU_SECRET` (saisie masquée). Aucun de ces secrets ne porte le préfixe `VITE_`. `APP_ORIGIN` doit être l’URL publique du site ; la valeur proposée est `https://doc-prof.vercel.app`.
-4. Exécuter `npm run deploy`. Conserver les secrets existants `ACCESS_ADMIN`, `ACCESS_FULL` et `ACCESS_PARTIAL`. Ne pas les remplacer lors de la configuration des e-mails. Le site utilise déjà `VITE_FICHES_API_URL=https://clairfle-fiches.phuoc-van.workers.dev`.
-5. Vérifier le parcours réel : inscription, réception, confirmation, connexion, enregistrement puis réouverture d’une fiche. Contrôler l’état `delivered` dans Resend. Un autre compte ne doit pas voir cette fiche. Les tests locaux simulent Resend et ne démontrent pas une livraison réelle.
+Conserver les secrets existants `ACCESS_ADMIN`, `ACCESS_FULL` et `ACCESS_PARTIAL`. Aucun secret Resend n’est nécessaire. Le site conserve son URL d’API : `VITE_FICHES_API_URL=https://clairfle-fiches.phuoc-van.workers.dev`.
 
-Le connecteur MCP local `resend` a été ajouté à `https://mcp.resend.com/mcp`. Il reste à terminer `codex mcp login resend` dans un environnement qui peut joindre ce service. Cela ne remplace pas les secrets du Worker.
+La migration `0002_personal_accounts.sql` crée les utilisateurs, sessions et propriétaires des fiches. La migration `0003_admin_accounts.sql` retire uniquement la table des anciens liens de confirmation ; utilisateurs, sessions et fiches sont conservés. La colonne historique `verified_at` indique désormais l’activation lors de la création par l’administrateur. Les anciens comptes en attente ne sont pas activés automatiquement.
+
+Après déploiement : créer deux comptes depuis l’admin, vérifier leur connexion sans e-mail, enregistrer une fiche avec chacun, puis contrôler que chacun retrouve uniquement ses propres fiches. Vérifier aussi l’attribution et le retrait d’un domaine supplémentaire.
+
+Le SDK, le script de configuration et les variables Resend ont été retirés du projet. Si une clé avait été créée dans Resend, elle peut être révoquée ; aucun remplacement n’est nécessaire pour ce fonctionnement.

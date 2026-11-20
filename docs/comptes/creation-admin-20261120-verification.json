@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-20",
+  "parent_commit": "5cb69b938311a87d1b709b5e54a743402d92150e",
+  "creation": "administrator only; POST /users",
+  "public_registration_removed": true,
+  "resend_dependency_removed": true,
+  "email_confirmation_required": false,
+  "account_active_immediately": true,
+  "professional_email_domain": "admin.vs.ch",
+  "default_domains": [
+    "algèbre",
+    "géométrie",
+    "alphabetisation"
+  ],
+  "per_user_domains_editable_by_admin": true,
+  "personal_worksheet_ownership_preserved": true,
+  "legacy_admin_preserved": true,
+  "server_tests": {
+    "passed": 16,
+    "failed": 0,
+    "files": [
+      "tests/interactive/personal-accounts.test.mjs",
+      "tests/interactive/fiches-access.test.mjs"
+    ]
+  },
+  "browser_report": "docs/comptes/creation-admin-20261120-browser.json",
+  "typecheck": {
+    "frontend": "passed",
+    "worker": "passed"
+  },
+  "lint": "passed without warnings",
+  "worker_dry_run": {
+    "passed": true,
+    "upload_kib": 68.15,
+    "gzip_kib": 17.86
+  },
+  "production": {
+    "worker_deployed": false,
+    "d1_migrations_applied": false,
+    "reason": "wrangler whoami: not authenticated; Cloudflare deployment access still needed"
+  }
+}

@@ -1,4 +1,4 @@
-import { handleAccounts, personalUser, type AccountsEnv } from './accounts'
+import { createPersonalAccount, handleAccounts, personalUser, type AccountsEnv } from './accounts'
 import { handleCompetitionRequest, type CompetitionEnv } from './competition'
 export { ClassroomCompetitionRoom } from './competition'
 
@@ -292,9 +292,10 @@ export default {
     try {
       if (parts[0] === 'users') {
         if (account !== 'admin') return json(request, 403, { error: 'Cet accès est réservé à l’administrateur.' })
+        if (request.method === 'POST' && parts.length === 1) return await createPersonalAccount(request, env, ALL_DOMAINS, (status, body) => json(request, status, body))
         if (request.method === 'GET' && parts.length === 1) {
           const { results } = await env.DB.prepare('SELECT id, given_name, family_name, email, account, domains, verified_at FROM users ORDER BY family_name, given_name').all<{id:string;given_name:string;family_name:string;email:string;account:string;domains:string;verified_at:string|null}>()
-          return json(request, 200, { users: (results ?? []).map(r => ({id:r.id,givenName:r.given_name,familyName:r.family_name,email:r.email,account:r.account,verified:Boolean(r.verified_at),domains:JSON.parse(r.domains)})) })
+          return json(request, 200, { users: (results ?? []).map(r => ({id:r.id,givenName:r.given_name,familyName:r.family_name,email:r.email,account:r.account,active:Boolean(r.verified_at),domains:JSON.parse(r.domains)})) })
         }
         if (request.method === 'PUT' && /^[0-9a-f-]{36}$/i.test(parts[1] ?? '')) {
           const raw = await request.text()
