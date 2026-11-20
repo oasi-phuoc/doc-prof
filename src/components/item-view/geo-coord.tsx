@@ -81,7 +81,7 @@ export function GeoBlock({
                 )}
                 {readableGeo ? (
                   <span className="geo-phrase-answer">
-                    <span>Phrase réponse :</span>
+                    {lines.length === 1 && <span>Phrase réponse :</span>}
                     {show ? <strong className="filled-answer property-answer">{line.answer}</strong>
                       : <span className="answer-line-field property-blank">{'\u00a0'}</span>}
                   </span>

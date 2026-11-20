@@ -242,10 +242,10 @@
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .column-prompt {
   display: none;
 }
-/* Ex. 26–27 : pas de numéro, la grille reprend la largeur (donc la case) de l’exercice 19. */
+/* Ex. 26–27 : même largeur de grille que les exercices 23–25. */
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad {
-  width: calc(100% - (1.5 * 13pt * var(--app-font-scale, 1)) - var(--ex-num-gap));
-  margin-inline: auto;
+  width: 100%;
+  margin-inline: 0;
 }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex25"], [data-exercise-type="tcm-cfr-ex26"]) .geo-dual.is-cfr-stack.is-tight .geo-dual-pad .draft-pad {
   width: 100%;
@@ -461,14 +461,14 @@
 .cfr-measured-shape { grid-area: figure; width: 100%; height: 50mm; overflow: visible; }
 .cfr-measured-figure.is-square .cfr-measured-shape { width: 50mm; }
 .cfr-measured-figure.is-triangle .cfr-measured-shape { height: 60mm; }
-.cfr-measure-label { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); font-weight: 600; line-height: 1.3; white-space: nowrap; }
+.cfr-measure-label { color: var(--purple); print-color-adjust: exact; -webkit-print-color-adjust: exact; font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); font-weight: 600; line-height: 1.3; white-space: nowrap; }
 .cfr-measure-label.is-top { grid-area: top; }
 .cfr-measure-label.is-left { grid-area: left; }
 .cfr-measure-label.is-right { grid-area: right; }
 .cfr-measure-label.is-bottom { grid-area: bottom; }
 .cfr-measure-label.is-height { grid-area: height; }
 .exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual-answer { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); }
-.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual-answer + .geo-dual-answer { padding-top: 30px; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual-answer + .geo-dual-answer { padding-top: 20px; }
 .geo-phrase-answer { grid-column: 2; grid-row: 2; display: flex; align-items: baseline; gap: 8px; min-width: 0; width: 100%; }
 .geo-phrase-answer > span:first-child { flex: 0 0 auto; white-space: nowrap; }
 .worksheet-sheet .geo-dual-answer .geo-phrase-answer .answer-line-field,
@@ -480,3 +480,15 @@
 .is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-stacked .geo-dual-answer { grid-template-columns: 1.4em minmax(0, 1fr); }
 .is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-single .geo-dual-answer { display: block; font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); }
 .is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-single .geo-phrase-answer { width: 100%; }
+
+/* Le carré du 23 reste assez compact pour partager la page avec le 22. */
+.exercise-block[data-exercise-type="tcm-cfr-ex22"] .cfr-measured-shape { height: 45mm; width: 45mm; }
+.cfr-measured-figure.is-triangle { display: block; }
+.cfr-triangle-diagram { position: relative; width: 100%; aspect-ratio: 300 / 160; }
+.cfr-measured-figure.is-triangle .cfr-measured-shape { position: absolute; inset: 0; height: 100%; }
+.cfr-external-height { color: var(--purple); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.cfr-triangle-diagram .cfr-measure-label { position: absolute; transform: translate(-50%, -50%); }
+.cfr-triangle-diagram .is-side-c { left: 28.3333%; top: 38.75%; }
+.cfr-triangle-diagram .is-side-b { left: 60.3333%; top: 47.5%; }
+.cfr-triangle-diagram .is-base { left: 20%; top: 93.75%; }
+.cfr-triangle-diagram .is-height { left: 73.3333%; top: 47.5%; transform: translateY(-50%); }
