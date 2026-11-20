@@ -44,7 +44,8 @@ function right(x: number, y: number, ax: number, ay: number, bx: number, by: num
 }
 
 function lab(x: number, y: number, text: string, anchor: CompositeLabel['anchor'] = 'middle'): CompositeLabel {
-  return { x, y, text, anchor }
+  // Écarter les cotes du contour : leur corps HTML ne rétrécit plus avec le SVG.
+  return { x: 130 + (x - 130) * 1.35, y: 100 + (y - 100) * 1.35, text, anchor }
 }
 
 type Draft = {
@@ -93,8 +94,8 @@ function houseAnnex(rng: Rng, difficulty: Difficulty): Draft {
       outline,
       helpers: [{ d: `M ${x0 + bw - ww} ${y0 + wh} H ${x0 + bw} V ${y0 + wh + bh}`, dashed: true }],
       labels: [
-        lab(x0 + (bw - ww) / 2, y0 + wh - 8, cm(a)),
-        lab(x0 + bw - ww / 2, y0 - 6, cm(s)),
+        lab(x0 + (bw - ww) / 2, y0 + wh - 28, cm(a)),
+        lab(x0 + bw - ww / 2, y0 - 22, cm(s)),
         lab(x0 + bw + 8, y0 + 22, cm(c), 'start'),
         lab(x0 + bw + tw + 8, y0 + wh + bh / 2, cm(slant), 'start'),
       ],
@@ -134,7 +135,7 @@ function flagRect(rng: Rng, difficulty: Difficulty): Draft {
       labels: [
         lab(x0 + w / 2, y0 - 8, cm(L)),
         lab(x0 - 10, y0 + h / 2, cm(H), 'end'),
-        lab(x0 + w + tip / 2 + 10, y0 + 22, cm(side), 'start'),
+        lab(x0 + w + tip / 2 + 10, y0 + 2, cm(side), 'start'),
         lab(x0 + w / 2, y0 + h + 14, cm(L)),
       ],
       ticks: [
@@ -171,8 +172,8 @@ function kiteBites(rng: Rng, difficulty: Difficulty): Draft {
         lab(190, 52, cm(b)),
         lab(70, 150, cm(a)),
         lab(190, 150, cm(b)),
-        lab(cx, 58, cm(r)),
-        lab(cx, 140, cm(r)),
+        lab(cx, -10, `r = ${cm(r)}`),
+        lab(cx, 200, `r = ${cm(r)}`),
       ],
       ticks: [tick(40, cy, cx, 28, 1), tick(40, cy, cx, 162, 1)],
     },
@@ -227,7 +228,7 @@ function archBites(rng: Rng, difficulty: Difficulty): Draft {
     scene: {
       outline: `M 36 150 A 94 94 0 0 1 224 150 A 47 47 0 0 1 130 150 A 47 47 0 0 1 36 150 Z`,
       helpers: [{ d: 'M 36 150 H 224', dashed: true }],
-      labels: [lab(83, 168, cm(R))],
+      labels: [lab(83, 194, cm(R))],
       ticks: [tick(36, 150, 130, 150, 1), tick(130, 150, 224, 150, 1)],
     },
     calc: `3,14 × ${fmt(R)} + 3,14 × ${fmt(r)} + 3,14 × ${fmt(r)}`,
@@ -252,7 +253,7 @@ function chapel(rng: Rng, difficulty: Difficulty): Draft {
       helpers: [{ d: `M ${x} ${y} H ${x + w}`, dashed: true }],
       labels: [
         lab(x - 10, y + h / 2, cm(H), 'end'),
-        lab(x + 36, y + 8, cm(r), 'start'),
+        lab(x + w / 2, 3, `r = ${cm(r)}`),
         lab(x + w / 2, y + h + 14, cm(L)),
       ],
       ticks: [
@@ -318,7 +319,7 @@ function stadium(rng: Rng, difficulty: Difficulty): Draft {
         { d: `M ${x} ${y} V ${y + h}`, dashed: true },
         { d: `M ${x + w} ${y} V ${y + h}`, dashed: true },
       ],
-      labels: [lab(x + w / 2, y - 8, cm(L)), lab(x - 12, y + h / 2, cm(H), 'end')],
+      labels: [lab(x + w / 2, y - 8, cm(L)), lab(40, y + h / 2, cm(H), 'end')],
       rights: [
         right(x, y, 1, 0, 0, 1),
         right(x, y + h, 1, 0, 0, -1),
@@ -339,7 +340,7 @@ function threeQuarter(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline,
-      labels: [lab(168, 118, cm(r), 'start')],
+      labels: [lab(130, -10, `r = ${cm(r)}`)],
       helpers: [{ d: 'M 130 110 L 200 110', dashed: false }],
     },
     calc: `(3/4) × 2 × 3,14 × ${fmt(r)} + ${fmt(r)} + ${fmt(r)}`,
@@ -366,7 +367,7 @@ function cutCorner(rng: Rng, difficulty: Difficulty): Draft {
         lab(x0 + w + 10, y0 + h / 2, cm(H), 'start'),
         lab(130, y0 + h + 16, cm(L)),
         lab(x0 - 10, y0 + h / 2 + 10, cm(H - cut), 'end'),
-        lab(x0 + 14, y0 + 16, 'x', 'start'),
+        lab(x0 - 4, y0 - 12, 'x', 'end'),
       ],
       rights: [
         right(x0 + w, y0, -1, 0, 0, 1),
@@ -390,7 +391,7 @@ function notchedSquare(rng: Rng, difficulty: Difficulty): Draft {
       outline,
       labels: [
         lab(188, 82, cm(s), 'start'),
-        lab(168, 108, cm(n), 'start'),
+        lab(220, 135, cm(n), 'start'),
         lab(36, 70, 'x', 'end'),
       ],
       ticks: [tick(50, 70, 80, 40, 1), tick(150, 40, 180, 70, 1)],
@@ -412,7 +413,7 @@ function houseX(rng: Rng, difficulty: Difficulty): Draft {
       labels: [
         lab(130, 168, cm(base)),
         lab(222, 118, cm(h), 'start'),
-        lab(86, 46, cm(roof)),
+        lab(78, 40, cm(roof), 'end'),
         lab(36, 118, 'x', 'end'),
       ],
       ticks: [tick(50, 80, 50, 150, 1), tick(210, 80, 210, 150, 1)],
@@ -489,7 +490,7 @@ function uShape(rng: Rng, difficulty: Difficulty): Draft {
       labels: [
         lab(130, 168, cm(L)),
         lab(28, 95, cm(H), 'end'),
-        lab(130, 110, cm(g)),
+        lab(130, -15, `Ouverture : ${cm(g)}`),
         lab(65, 30, cm(top)),
       ],
       ticks: [
@@ -544,7 +545,7 @@ function stairs2(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline,
-      labels: [lab(28, 100, cm(s), 'end'), lab(95, 40, cm(s)), lab(185, 90, cm(s))],
+      labels: [lab(28, 100, cm(s), 'end'), lab(95, 40, cm(s)), lab(185, 75, cm(s))],
       ticks: [tick(40, 50, 40, 150, 2), tick(40, 150, 220, 150, 2)],
       rights: [right(40, 150, 1, 0, 0, -1), right(220, 150, -1, 0, 0, -1), right(40, 50, 1, 0, 0, 1)],
     },
@@ -574,7 +575,7 @@ function frameRect(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline: `M 40 36 H 220 V 154 H 40 Z M 68 60 H 192 V 130 H 68 Z`,
-      labels: [lab(130, 26, cm(L)), lab(230, 95, cm(H), 'start'), lab(78, 78, cm(t), 'start')],
+      labels: [lab(130, 26, cm(L)), lab(230, 95, cm(H), 'start'), lab(130, 95, cm(t))],
     },
     calc: `2 × (${fmt(L)} + ${fmt(H)}) + 2 × (${fmt(L - 2 * t)} + ${fmt(H - 2 * t)})`,
     value: r2(2 * (L + H) + 2 * (L - 2 * t + H - 2 * t)),
@@ -588,7 +589,7 @@ function halfRing(rng: Rng, difficulty: Difficulty): Draft {
     scene: {
       outline: `M 50 140 A 80 80 0 0 1 210 140 H 176 A 46 46 0 0 0 84 140 Z`,
       helpers: [{ d: 'M 50 140 H 210', dashed: true }],
-      labels: [lab(130, 48, cm(R)), lab(130, 100, cm(r))],
+      labels: [lab(130, 28, `R = ${cm(R)}`), lab(130, 150, `r = ${cm(r)}`)],
     },
     calc: `3,14 × ${fmt(R)} + 3,14 × ${fmt(r)} + ${fmt(R - r)} + ${fmt(R - r)}`,
     value: r2(PI * R + PI * r + 2 * (R - r)),
@@ -617,7 +618,7 @@ function iceCream(rng: Rng, difficulty: Difficulty): Draft {
     scene: {
       outline: `M 80 80 A 50 50 0 0 1 180 80 L 130 165 Z`,
       helpers: [{ d: 'M 80 80 H 180', dashed: true }],
-      labels: [lab(130, 38, cm(r)), lab(200, 120, cm(side), 'start')],
+      labels: [lab(130, 12, `r = ${cm(r)}`), lab(200, 120, cm(side), 'start')],
       ticks: [tick(80, 80, 130, 165, 1), tick(180, 80, 130, 165, 1)],
     },
     calc: `3,14 × ${fmt(r)} + ${fmt(side)} + ${fmt(side)}`,
@@ -715,7 +716,7 @@ function hShape(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline: `M 50 36 H 95 V 78 H 165 V 36 H 210 V 154 H 165 V 112 H 95 V 154 H 50 Z`,
-      labels: [lab(36, 95, cm(H), 'end'), lab(130, 70, cm(g)), lab(72, 26, cm(t))],
+      labels: [lab(36, 95, cm(H), 'end'), lab(130, -10, cm(g)), lab(72, 26, cm(t))],
     },
     calc: `4 × ${fmt(H)} + 2 × ${fmt(g)} + 2 × ${fmt(t)}`,
     value: r2(4 * H + 2 * g + 2 * t),
@@ -730,7 +731,7 @@ function flagTri(rng: Rng, difficulty: Difficulty): Draft {
     scene: {
       outline: `M 40 50 H 150 L 230 95 L 150 140 H 40 Z`,
       helpers: [{ d: 'M 150 50 V 140', dashed: true }],
-      labels: [lab(95, 40, cm(L)), lab(28, 95, cm(H), 'end'), lab(200, 64, cm(s))],
+      labels: [lab(95, 40, cm(L)), lab(28, 95, cm(H), 'end'), lab(200, 44, cm(s))],
       ticks: [tick(150, 50, 230, 95, 1), tick(150, 140, 230, 95, 1)],
       rights: [right(40, 50, 1, 0, 0, 1), right(40, 140, 1, 0, 0, -1)],
     },
@@ -745,7 +746,7 @@ function kiteTail(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline: `M 130 24 L 190 80 L 150 80 L 150 155 H 110 V 80 L 70 80 Z`,
-      labels: [lab(88, 44, cm(s)), lab(100, 168, cm(t))],
+      labels: [lab(88, 44, cm(s), 'end'), lab(100, 168, cm(t))],
       ticks: [tick(130, 24, 70, 80, 1), tick(130, 24, 190, 80, 1)],
     },
     calc: `4 × ${fmt(s)} + 2 × ${fmt(t)}`,
@@ -773,7 +774,7 @@ function rectQuarters(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline: `M 70 50 H 190 A 40 40 0 0 1 190 130 H 70 A 40 40 0 0 1 70 50 Z`,
-      labels: [lab(130, 40, cm(L)), lab(58, 90, cm(H), 'end')],
+      labels: [lab(130, 40, cm(L)), lab(40, 90, cm(H), 'end')],
     },
     calc: `${fmt(L)} + ${fmt(L)} + 3,14 × ${fmt(r)} + 3,14 × ${fmt(r)}`,
     value: r2(2 * L + 2 * PI * r),
@@ -808,7 +809,7 @@ function diamondCut(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline: `M 130 28 L 200 80 L 170 110 L 130 162 L 60 95 Z`,
-      labels: [lab(86, 52, cm(s)), lab(196, 102, cm(c), 'start')],
+      labels: [lab(86, 52, cm(s), 'end'), lab(196, 102, cm(c), 'start')],
       ticks: [tick(130, 28, 60, 95, 1), tick(60, 95, 130, 162, 1), tick(130, 162, 170, 110, 1)],
     },
     calc: `3 × ${fmt(s)} + ${fmt(c)} + ${fmt(c)}`,
@@ -822,7 +823,7 @@ function doubleEll(rng: Rng, difficulty: Difficulty): Draft {
   return {
     scene: {
       outline: `M 40 95 L 80 40 H 180 L 220 95 L 180 150 H 80 Z`,
-      labels: [lab(130, 30, cm(L)), lab(52, 60, cm(s))],
+      labels: [lab(130, 30, cm(L)), lab(52, 60, cm(s), 'end')],
       ticks: [
         tick(40, 95, 80, 40, 1),
         tick(40, 95, 80, 150, 1),

@@ -33,10 +33,12 @@
 .geometry-measures.is-right { grid-area: right; }
 .geometry-measures.is-bottom { grid-area: bottom; }
 .worksheet-sheet .geometry-figure .geometry-measure-label { color: var(--purple); font-size: inherit !important; font-family: inherit; font-weight: 600; line-height: 1.3; white-space: nowrap; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-.worksheet-sheet .geometry-figure.measured-diagram.has-positioned-measures { display: block; position: relative; aspect-ratio: 260 / 190; width: min(100%, 100mm); }
-.has-positioned-measures > .measured-diagram-shape { width: 100%; height: 100%; }
-.has-positioned-measures > .geometry-measure-label { position: absolute; }
+.worksheet-sheet .geometry-figure.measured-diagram.has-positioned-measures { display: block; position: relative; aspect-ratio: auto; width: min(100%, 100mm); padding: 1.8em 3.2em; box-sizing: border-box; }
+.positioned-measures-plot > .measured-diagram-shape { width: 100%; height: 100%; }
+.positioned-measures-plot > .geometry-measure-label { position: absolute; }
 
 .worksheet-sheet .geo-dual .geo-dual-figure .geometry-figure.measured-diagram { max-height: none !important; height: auto; }
 
 .measured-diagram:not(.has-positioned-measures) > .measured-diagram-shape { max-height: 35mm; }
+
+.positioned-measures-plot { position: relative; width: 100%; }

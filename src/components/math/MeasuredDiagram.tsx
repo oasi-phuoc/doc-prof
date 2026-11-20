@@ -38,9 +38,14 @@ export function MeasuredDiagram({ children, viewBox, className = 'geometry-figur
   const side = (m: MeasureProps) => m.y < 45 ? 'top' : m.y >= 145 ? 'bottom' : m.x < 130 ? 'left' : 'right'
   return (
     <div className={`${className} measured-diagram${overlay ? ' has-positioned-measures' : ''}`}>
-      <svg ref={svg} className="measured-diagram-shape" viewBox={overlay ? viewBox : cropped ?? viewBox} role="img" aria-label={label}>{drawing}</svg>
-      {overlay ? measures.map((m, i) => <span key={i} className="dim-label geometry-measure-label" style={{ left: `${m.x / width * 100}%`, top: `${m.y / height * 100}%`, transform: `translate(${m.anchor === 'start' ? '0' : m.anchor === 'end' ? '-100%' : '-50%'}, -50%)` }}>{m.children}</span>)
-        : (['top', 'left', 'right', 'bottom'] as const).map(s => <div key={s} className={`geometry-measures is-${s}`}>{measures.filter(m => side(m) === s).map((m, i) => <span key={i} className="dim-label geometry-measure-label">{m.children}</span>)}</div>)}
+      {overlay ? <div className="positioned-measures-plot" style={{aspectRatio:`${width} / ${height}`}}>
+        <svg ref={svg} className="measured-diagram-shape" viewBox={viewBox} role="img" aria-label={label}>{drawing}</svg>
+        {measures.map((m, i) => <span key={i} className="dim-label geometry-measure-label" style={{ left: `${m.x / width * 100}%`, top: `${m.y / height * 100}%`, transform: `translate(${m.anchor === 'start' ? '0' : m.anchor === 'end' ? '-100%' : '-50%'}, -50%)` }}>{m.children}</span>)}
+      </div> : <>
+        <svg ref={svg} className="measured-diagram-shape" viewBox={cropped ?? viewBox} role="img" aria-label={label}>{drawing}</svg>
+        {(['top', 'left', 'right', 'bottom'] as const).map(s => <div key={s} className={`geometry-measures is-${s}`}>{measures.filter(m => side(m) === s).map((m, i) => <span key={i} className="dim-label geometry-measure-label">{m.children}</span>)}</div>)}
+      </>}
+
     </div>
   )
 }
