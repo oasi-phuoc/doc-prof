@@ -116330,15 +116330,15 @@
       "id": "tcf-cinema-asseoir-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
       "label": "S’asseoir au cinéma",
-      "sha256": "a7251be8129881ccc6e0a49f22b27f39b9f63167aa04179d8f5b0e0de58ed047",
-      "source_sha256": "a7251be8129881ccc6e0a49f22b27f39b9f63167aa04179d8f5b0e0de58ed047",
+      "sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
+      "source_sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
       "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
-      "bytes": 2563907,
+      "bytes": 2362599,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "Créer UNE illustration pédagogique seule en paysage 4:3 exact, idéalement 1448 x 1086. Sujet : S'ASSEOIR dans une salle de cinéma. Peinture numérique semi-réaliste chaleureuse, avec volumes doux, contours fins discrets et matières dessinées, exactement dans le style des deux images de référence jointes ; reproduire leur traitement graphique pour toute la salle aussi, pas de photographie ni de rendu 3D. Ne pas copier leurs personnages. Scène simple et lisible : rangées de fauteuils de cinéma bordeaux, petit écran blanc au fond à gauche, allée dégagée, éclairage tamisé doux mais personnes très visibles. Au premier plan, une femme adulte à peau brun foncé, cheveux très courts, pull bleu et pantalon beige, en train de s'asseoir sur un fauteuil : bassin juste au-dessus de l'assise, genoux pliés, une main sur l'accoudoir ; un autre spectateur adulte aux cheveux gris est déjà assis à côté et regarde l'écran. Les gestes et appuis sont crédibles et reconnaissables. Cadrage large montrant les corps entiers et les fauteuils en entier. L'action principale est s'asseoir, personne n'est debout bras tendus ni en train de sortir. Aucun texte, inscription, date, prix, chiffre, horloge, marque, bandeau, case ou bordure. Aucun symbole de bonne réponse.",
+      "prompt": "REFAIRE entièrement le style de l'image 3 (femme qui s'assoit au cinéma). Les images 1 et 2 sont LES RÉFÉRENCES DE STYLE PRIORITAIRES : illustrations de cours de musique et de photographie. Retrouver précisément leur dessin peint pédagogique, leurs visages aux traits illustrés, modelés souples et mats, bords délicats, proportions naturelles légèrement stylisées, couleurs douces modérément saturées. Repeindre aussi TOUT le cinéma et les vêtements avec le même degré de simplification que le mobilier des images1 et2. Supprimer l'aspect rendu3D, les brillances de peau, les muscles marqués, le microrelief des tissus et du tapis, les ombres noires et l'éclairage dramatique orange. Salle de cinéma éclairée doucement et uniformément : fauteuils bordeaux mats, murs beige chaud, écran blanc visible à gauche. Conserver le contenu pédagogique de l'image3 : femme noire adulte cheveux courts en pull bleu et pantalon beige en train de S'ASSEOIR, bassin près de l'assise et genoux fléchis ; spectateur gris déjà assis à côté. Corps entiers, gestes naturels et fauteuils entiers, une seule femme principale, deux bras et deux jambes. Nouveaux visages distincts des personnes des références1 et2. Pas de gros contours noirs, pas de dessin enfantin. Une seule image paysage4:3 exact, idéalement1448x1086. Aucun texte, date, prix, chiffre, horloge ou cadre. Le résultat doit paraître une autre scène du même illustrateur que les images1 et2, et non une recoloration de l'image3.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116347,14 +116347,15 @@
         "Cinéma et spectacles",
         "Actions et gestes"
       ],
-      "batch": "actions-fetes-athletisme-20261120",
+      "batch": "reprise-style-cinema-athletisme-20261120",
       "style_review": {
-        "status": "aligned",
+        "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-        ]
+        ],
+        "note": "Lumière diffuse et murs beige clair ; rendu mat des visages, tissus, tapis et fauteuils. Femme fléchie vers une assise, pieds au sol, autre spectateur assis."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116364,21 +116365,46 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Action et matériel entiers, posture et appuis examinés. Personnages et décor dans le traitement peint des références réelles. Paysage 4:3 natif, aucune date, somme ou légende."
+      "review_note": "Lumière diffuse et murs beige clair ; rendu mat des visages, tissus, tapis et fauteuils. Femme fléchie vers une assise, pieds au sol, autre spectateur assis.",
+      "revisions": [
+        {
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "sha256": "a7251be8129881ccc6e0a49f22b27f39b9f63167aa04179d8f5b0e0de58ed047",
+          "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        }
+      ],
+      "generation_inputs": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+          "sha256": "a7251be8129881ccc6e0a49f22b27f39b9f63167aa04179d8f5b0e0de58ed047",
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "role": "composition_before_repaint"
+        }
+      ]
     },
     {
       "id": "tcf-cinema-sortir-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-sortir.png",
       "label": "Sortir du cinéma",
-      "sha256": "74e173aa161ab5a4a5b00e9eaa090542c51ea349a3a2298d60150bb30d479711",
-      "source_sha256": "74e173aa161ab5a4a5b00e9eaa090542c51ea349a3a2298d60150bb30d479711",
+      "sha256": "99f991eefa39df4af6622f543051fbf18dc9296a4fa108ac3b68c54f4c27e885",
+      "source_sha256": "99f991eefa39df4af6622f543051fbf18dc9296a4fa108ac3b68c54f4c27e885",
       "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-sortir.png",
-      "bytes": 2407694,
+      "bytes": 2379408,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "Illustration pédagogique UNIQUE, paysage 4:3 exact, idéalement1448x1086. Prendre la première image jointe pour continuité de la salle et des vêtements et la seconde pour le style : peinture numérique semi-réaliste avec contours discrets et textures dessinées partout, pas photographie ni 3D. Sujet distinct : SORTIR DU CINÉMA. Même femme noire adulte aux cheveux courts, pull bleu, pantalon beige et baskets claires ; cette fois elle marche dans l'allée en direction d'une porte de sortie ouverte au fond à droite, et franchit clairement le seuil, corps entier en profil trois quarts dos et une jambe avancée. La porte donne sur le couloir lumineux d'accueil ; les fauteuils rouges et l'écran du cinéma restent identifiables derrière elle. Un spectateur gris reste assis près des rangées. Composition horizontale large, geste et destination sans ambiguïté : elle quitte la salle. Pas simplement debout à côté d'un fauteuil. Appuis, bras et jambes crédibles, une seule femme principale avec deux bras et deux jambes. Personnages et mobilier entiers et dessinés, mêmes couleurs naturelles et modelés doux que les références. Aucun texte, chiffre, heure, prix, date, logo, inscription, bandeau ni symbole de bonne réponse.",
+      "prompt": "Refaire l'image4, SORTIR DU CINÉMA, dans le style graphique prioritaire des images1 et2 (musique et photo). L'image3 montre la nouvelle salle et la même femme à reprendre : fauteuils mats bordeaux, murs beige clair, sol gris taupe doux, lumière diffuse uniforme. Faire une véritable illustration peinte avec visages dessinés, silhouettes souples, matières simplifiées, traits fins et modelés mats comme les images1 et2. Repeindre les murs, la porte, le couloir et les habits aussi. Retirer le traitement3D, les reflets brillants sur la peau, les contre-jours et la dominante orange de l'image4. Conserver exactement son sens : la femme noire adulte cheveux courts en pull bleu pantalon beige et baskets claires marche vers la porte ouverte et FRANCHIT le seuil du cinéma pour entrer dans le couloir ; deux pieds distincts et une jambe avancée, deux bras naturels. Le spectateur gris reste assis dans la salle. Corps, pieds, porte et principaux fauteuils visibles en entier. Ne pas la montrer simplement immobile debout. Conserver un décor cohérent avec l'image3 et une lumière douce, sans effets de mise en scène dramatiques. Palette tempérée et volumes doux, détails du même illustrateur que les images1 et2 ; aucun gros contour noir ni cartoon enfantin. Une seule image4:3 exact paysage, idéalement1448x1086, pas collage. Aucun texte, logo, chiffre, prix, date, horloge, cadre ou symbole de bonne réponse.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116387,14 +116413,15 @@
         "Cinéma et spectacles",
         "Actions et gestes"
       ],
-      "batch": "actions-fetes-athletisme-20261120",
+      "batch": "reprise-style-cinema-athletisme-20261120",
       "style_review": {
-        "status": "aligned",
+        "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-        ]
+        ],
+        "note": "Même décor éclairci et mêmes personnages ; marche vers le couloir à travers une porte cohérente. Corps et pieds entiers, matière et lumière mates."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116404,21 +116431,51 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Action et matériel entiers, posture et appuis examinés. Personnages et décor dans le traitement peint des références réelles. Paysage 4:3 natif, aucune date, somme ou légende."
+      "review_note": "Même décor éclairci et mêmes personnages ; marche vers le couloir à travers une porte cohérente. Corps et pieds entiers, matière et lumière mates.",
+      "revisions": [
+        {
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "sha256": "74e173aa161ab5a4a5b00e9eaa090542c51ea349a3a2298d60150bb30d479711",
+          "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        }
+      ],
+      "generation_inputs": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+          "sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
+          "role": "new_room_continuity"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-sortir.png",
+          "sha256": "74e173aa161ab5a4a5b00e9eaa090542c51ea349a3a2298d60150bb30d479711",
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "role": "composition_before_repaint"
+        }
+      ]
     },
     {
       "id": "tcf-cinema-lever-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
       "label": "Se lever au cinéma",
-      "sha256": "649bcf55942a032e19706a6e784db28d463c05e00c3343b452a5f3e2fc8f2ac4",
-      "source_sha256": "649bcf55942a032e19706a6e784db28d463c05e00c3343b452a5f3e2fc8f2ac4",
+      "sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e",
+      "source_sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e",
       "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
-      "bytes": 2372100,
+      "bytes": 2243027,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "UNE illustration pédagogique, paysage 4:3 exact, idéalement1448x1086. Sujet : SE LEVER DE SON FAUTEUIL AU CINÉMA. Garder la salle et la femme adulte noire aux cheveux courts, pull bleu pantalon beige chaussures claires de la première référence ; garder exactement le style de peinture numérique semi-réaliste chaleureuse et contours fins dessinés des références, y compris meubles et murs. Représenter cette femme qui vient de se lever et se tient maintenant bien DROITE, debout immobile immédiatement devant son fauteuil rouge, jambes droites, dos et torse verticaux, pieds à plat, mains détendues le long du corps. Corps entier en trois quarts face, elle regarde vers l'écran blanc à gauche. Un autre spectateur adulte gris est encore assis à côté. Fauteuil vide clairement visible juste derrière elle. C'est l'action opposée à s'asseoir : aucune flexion vers une assise, aucun mouvement vers une porte. Pas de porte de sortie visible. Cadrage suffisamment large pour montrer ses pieds, sa tête et le fauteuil entiers. Salle de cinéma identifiable par rangées bordeaux et écran. Anatomie et appuis naturels. Aucun texte, chiffre, date, prix, horloge, logo, bulle, flèche ou case. Aucune photographie ni esthétique 3D.",
+      "prompt": "Refaire la troisième réponse d'un QCM « se lever au cinéma », en reconstruisant correctement la géométrie du fauteuil. Les images1 et2 sont les références prioritaires du style peint pédagogique TCF ; l'image3 donne la femme, les couleurs et la salle cohérente avec les deux autres choix. Créer une NOUVELLE composition physique : femme noire adulte cheveux courts en pull bleu, pantalon beige et baskets claires, complètement debout immobile, corps entier et pieds à plat sur le SOL de l'espace libre devant sa place. Elle est à environ trente centimètres DEVANT le bord avant de son fauteuil, aucun de ses membres ne touche le siège ni ne traverse un accoudoir. Placer son fauteuil unique nettement DERRIÈRE et un peu À DROITE d'elle afin qu'il soit bien visible : dossier étroit pour une seule personne, DEUX accoudoirs reliés aux deux côtés du même siège, et assise de cinéma rabattable maintenant RELEVÉE verticalement contre le dossier parce que la personne s’est levée. Le dossier, les deux accoudoirs et le piètement forment UN seul fauteuil cohérent ; pas de banquette, pas d’assise flottante ni d’accoudoir au milieu du corps. Un spectateur gris reste assis sur le fauteuil voisin, orienté vers l’écran à gauche comme tous les sièges. Les sièges des rangées arrière sont simples et alignés, et l’espace devant la femme reste libre. Vue assez latérale et large pour comprendre la place, le fauteuil et l'espace des jambes. Elle regarde l'écran, bras détendus et jambes droites, elle ne sort pas. Reproduire le dessin peint doux des images1 et2 pour TOUT : visages finement dessinés, modelé mat, contours délicats, tissus sans microrelief, murs beige clair et fauteuils bordeaux mats. Lumière diffuse uniforme sans effet3D ni photo, pas de gros contours noirs. Une illustration unique paysage4:3 exact, idéalement1448x1086. Aucun texte, chiffre, flèche, logo, date, prix ou horloge.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116427,14 +116484,15 @@
         "Cinéma et spectacles",
         "Actions et gestes"
       ],
-      "batch": "actions-fetes-athletisme-20261120",
+      "batch": "reprise-style-cinema-athletisme-20261120",
       "style_review": {
-        "status": "aligned",
+        "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-        ]
+        ],
+        "note": "Reconstruction après remarque utilisateur : une place individuelle, dossier et deux accoudoirs cohérents, assise rabattable relevée ; femme debout sur le sol dans l’espace libre devant, sans traverser le siège. Lumière diffuse, couleurs et matières cohérentes avec les autres choix."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116444,21 +116502,45 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Action et matériel entiers, posture et appuis examinés. Personnages et décor dans le traitement peint des références réelles. Paysage 4:3 natif, aucune date, somme ou légende."
+      "review_note": "Reconstruction après remarque utilisateur : une place individuelle, dossier et deux accoudoirs cohérents, assise rabattable relevée ; femme debout sur le sol dans l’espace libre devant, sans traverser le siège. Lumière diffuse, couleurs et matières cohérentes avec les autres choix.",
+      "revisions": [
+        {
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "sha256": "649bcf55942a032e19706a6e784db28d463c05e00c3343b452a5f3e2fc8f2ac4",
+          "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        }
+      ],
+      "generation_inputs": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+          "sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
+          "role": "new_room_continuity"
+        }
+      ]
     },
     {
       "id": "tcf-athle-hauteur-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
       "label": "Le saut en hauteur",
-      "sha256": "c2e05d9d4e1736b861adab5c751e5835c0af342c5cac24e3f502e07a92b8b76a",
-      "source_sha256": "c2e05d9d4e1736b861adab5c751e5835c0af342c5cac24e3f502e07a92b8b76a",
+      "sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853",
+      "source_sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853",
       "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
-      "bytes": 2727417,
+      "bytes": 2641000,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "Une illustration pédagogique UNIQUE, paysage 4:3 exact, idéalement1448x1086. Représenter clairement LE SAUT EN HAUTEUR : terrain d’athlétisme scolaire en plein air, grosse zone de réception en mousse bleue, deux poteaux verticaux séparés portant une unique barre horizontale rouge, et une jeune athlète à peau claire et cheveux noirs attachés, débardeur rouge et short bleu marine, en train de franchir la barre dos vers le tapis avec une posture Fosbury anatomiquement crédible. Montrer le corps entier avec exactement deux bras et deux jambes ; montrer la barre entière, ses deux supports et le tapis entier. Composition large de profil trois quarts, lisible, pas une course de haies ni un saut au-dessus d'un banc. Ni perche ni sable ni ballon. Un entraîneur adulte à peau brune, cheveux poivre et sel et survêtement vert, reste nettement à côté du tapis pour observer, en arrière-plan sans masquer l’action. Style : peinture numérique semi-réaliste détaillée, volumes doux et contours fins discrets identiques aux deux références réelles jointes ; traitement peint des corps, de la piste et des arbres aussi, pas photo ni rendu 3D. Couleurs naturelles chaleureuses, lumière douce. Ne pas copier les personnages des références. Aucun texte, marque, dossard chiffré, mesure, date, prix, légende, cadre ni symbole de réponse.",
+      "prompt": "REPEINDRE ENTIÈREMENT l'image3 de saut en hauteur dans le style exact des références1 et2 (club musique et club photo), qui sont prioritaires pour le graphisme. Illustration pédagogique peinte douce et détaillée, traits fins délicats, visages naturellement illustrés, ombres diffuses, couleurs naturelles modérées, proportions souples. Simplifier les matières et les volumes des peaux, du tapis, des arbres, des vêtements et des poteaux comme les meubles et personnes des références1 et2. Éliminer la peau brillante et huilée, le relief musculaire appuyé, les reflets plastiques du tapis, le contraste photographique et tout rendu3D ; ne pas convertir en dessin enfantin ou en gros contours noirs. Conserver le sujet complet et reconnaissable : une jeune athlète à cheveux noirs attachés, haut rouge mat et short bleu marine franchit une barre horizontale rouge entre deux poteaux, dos tourné vers un grand tapis de réception bleu. Deux bras, deux jambes et anatomie naturelle en position de saut ; barre et tapis entiers. Entraîneur adulte à peau brune aux cheveux gris en survêtement vert observant à côté, hors de la réception. Terrain d’athlétisme et pelouse en lumière douce uniforme, arbres peints sans arrière-plan photographique. Conserver la diversité des personnages, leurs vêtements et les équipements identifiant le saut en hauteur ; ne pas copier les personnes des références1 et2. UNE image native4:3 paysage, idéalement1448x1086. Aucun texte, chiffre, prix, date, graduation, horloge, flèche, légende ou cadre.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116467,14 +116549,15 @@
         "Sports et loisirs",
         "Athlétisme"
       ],
-      "batch": "actions-fetes-athletisme-20261120",
+      "batch": "reprise-style-cinema-athletisme-20261120",
       "style_review": {
-        "status": "aligned",
+        "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-        ]
+        ],
+        "note": "Peau et tapis mats, contraste adouci, arbres et vêtements peints. Barre, supports, tapis et corps entiers ; geste de franchissement conservé."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116484,21 +116567,46 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Action et matériel entiers, posture et appuis examinés. Personnages et décor dans le traitement peint des références réelles. Paysage 4:3 natif, aucune date, somme ou légende."
+      "review_note": "Peau et tapis mats, contraste adouci, arbres et vêtements peints. Barre, supports, tapis et corps entiers ; geste de franchissement conservé.",
+      "revisions": [
+        {
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "sha256": "c2e05d9d4e1736b861adab5c751e5835c0af342c5cac24e3f502e07a92b8b76a",
+          "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        }
+      ],
+      "generation_inputs": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
+          "sha256": "c2e05d9d4e1736b861adab5c751e5835c0af342c5cac24e3f502e07a92b8b76a",
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "role": "composition_before_repaint"
+        }
+      ]
     },
     {
       "id": "tcf-athle-longueur-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-longueur.png",
       "label": "Le saut en longueur",
-      "sha256": "b1157c98b7346d217bcd9834503346719c897606e2bb296ce9ae7f414d9f5bec",
-      "source_sha256": "b1157c98b7346d217bcd9834503346719c897606e2bb296ce9ae7f414d9f5bec",
+      "sha256": "5c6e42022594f80124df39a6fd431daa8b59164975e4da7ae42f847470101c22",
+      "source_sha256": "5c6e42022594f80124df39a6fd431daa8b59164975e4da7ae42f847470101c22",
       "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-athletisme-longueur.png",
-      "bytes": 3107592,
+      "bytes": 2750192,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "Créer UNE illustration pédagogique en paysage 4:3 exact, idéalement1448x1086, dans le même style peint semi-réaliste des références jointes : volumes doux et contours fins, couleurs naturelles, tout le décor dessiné sans photo ni rendu3D. Sujet sans ambiguïté : LE SAUT EN LONGUEUR. Vue latérale trois quarts d'un jeune athlète à peau brun foncé, cheveux courts bouclés, maillot vert sans numéro et short gris, qui vient de quitter une piste d’élan rouge et atterrit les DEUX pieds en avant dans un large bac rectangulaire de sable blond. Corps entier visible ; deux jambes distinctes tendues devant lui, genoux légèrement fléchis et deux bras en avant pour l'équilibre, sable déplacé sous ses talons. Montrer clairement la longue piste d’élan terminée par une planche d’appel blanche et le bac de réception en sable entouré de bordures basses. Pas de barre horizontale, poteau de saut, grand tapis en mousse, perche, boule ou poids. Cadre large lisible montrant le matériel entier, arbres et pelouse peints en arrière-plan et un petit bâtiment sportif discret. Apparence de l’athlète différente des personnages des références. Aucun texte, logo, numéro, date, montant, horloge, graduation, légende, bordure ou symbole de réponse. Anatomie humaine naturelle : un seul athlète, deux bras et deux jambes avec pieds cohérents, aucune silhouette superposée.",
+      "prompt": "REFAIRE le style de l'image3 de saut en longueur pour qu’elle appartienne exactement à la même collection que les références1 et2 (musique et photo), qui sont les guides prioritaires du trait, des visages, des vêtements et des décors. Peinture pédagogique douce, modelés souples et mats, dessin fin discret, visages naturellement illustrés, ombres diffuses et couleurs tempérées. Repeindre aussi la piste, le sable, l’herbe, les arbres et le bâtiment. Enlever l'effet photographie/3D, les brillances sur la peau, les muscles très sculptés, les microtextures et la netteté photographique des décors. Garder une illustration détaillée comme les références, pas de gros contours noirs ni de cartoon enfantin. Garder le sens très lisible du SAUT EN LONGUEUR : jeune athlète à peau brun foncé, cheveux courts, maillot vert mat sans numéro et short gris, atterrissant les deux pieds en avant dans un bac à sable ; corps entier, deux bras en avant et deux jambes distinctes, talons soulevant un peu de sable. Une piste d’élan rouge avec une planche d’appel blanche se termine devant le bac rectangulaire entier. Anatomie et mouvement crédibles. Pas de barre de saut, grand tapis, poids ou perche. Palette naturelle et lumière douce uniforme comme dans les images1 et2 ; conserver la personne différente de ces références. Une seule image paysage4:3 exact, idéalement1448x1086. Aucun texte, chiffre, marque, graduation, date, prix, horloge, flèche ou cadre.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116507,14 +116615,15 @@
         "Sports et loisirs",
         "Athlétisme"
       ],
-      "batch": "actions-fetes-athletisme-20261120",
+      "batch": "reprise-style-cinema-athletisme-20261120",
       "style_review": {
-        "status": "aligned",
+        "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-        ]
+        ],
+        "note": "Peau moins brillante et volumes plus souples ; piste, planche d’appel, sable et arbres repeints. Réception des deux pieds dans le bac à sable, corps entier."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116524,21 +116633,46 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Action et matériel entiers, posture et appuis examinés. Personnages et décor dans le traitement peint des références réelles. Paysage 4:3 natif, aucune date, somme ou légende."
+      "review_note": "Peau moins brillante et volumes plus souples ; piste, planche d’appel, sable et arbres repeints. Réception des deux pieds dans le bac à sable, corps entier.",
+      "revisions": [
+        {
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "sha256": "b1157c98b7346d217bcd9834503346719c897606e2bb296ce9ae7f414d9f5bec",
+          "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        }
+      ],
+      "generation_inputs": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-longueur.png",
+          "sha256": "b1157c98b7346d217bcd9834503346719c897606e2bb296ce9ae7f414d9f5bec",
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "role": "composition_before_repaint"
+        }
+      ]
     },
     {
       "id": "tcf-athle-poids-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-poids.png",
       "label": "Le lancer du poids",
-      "sha256": "0b4ee56a986da8ed2a6bc3ef5092e780225b6b870d1cbc039b3b8a450ca9f77f",
-      "source_sha256": "0b4ee56a986da8ed2a6bc3ef5092e780225b6b870d1cbc039b3b8a450ca9f77f",
+      "sha256": "135951d4fe4c30a9a0a3347b3c09bd2f1bf5f6dbd0e8340931a75cb09cee5d2f",
+      "source_sha256": "135951d4fe4c30a9a0a3347b3c09bd2f1bf5f6dbd0e8340931a75cb09cee5d2f",
       "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-athletisme-poids.png",
-      "bytes": 3083518,
+      "bytes": 2778187,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "UNE illustration pédagogique seule en paysage4:3 exact, idéalement1448x1086. Sujet : LE LANCER DU POIDS en athlétisme, à distinguer du bowling, du lancer de disque et du lancer de balle. Montrer une jeune athlète à peau olive, cheveux châtains courts attachés, morphologie sportive robuste, maillot turquoise sans inscription et short bordeaux. Corps entier visible de profil trois quarts, dans un cercle de lancer en béton blanc au sol, avec une petite butée blanche arrondie au bord avant du cercle. Elle prépare le lancer : une petite boule de métal sombre, de diamètre environ celui d'une orange, est soutenue par sa main droite CONTRE LE COU juste sous sa mâchoire ; coude droit relevé, bras gauche tendu vers la zone de lancer pour l'équilibre ; genoux un peu fléchis, deux pieds solidement dans le cercle. La main pousse le poids depuis l'épaule, ne le tient pas à bout de bras. Le poids est l'unique objet tenu. Deux lignes blanches s'écartent du cercle dans la pelouse vers le fond. Pas de quilles, grand ballon, haltère, disque, sable, grand tapis ou barre de saut. Peinture numérique semi-réaliste détaillée, volumes doux et contours fins comme les vraies références jointes, décor entièrement peint aussi ; pas photographie ni rendu3D. Cadrage large et matériel identifiable, couleurs naturelles et lumière douce. Aucun texte, nombre, date, prix, graduation, marque, horloge, légende ou flèche. Anatomie naturelle avec deux bras et deux jambes, doigts et prise plausibles. Personnage différent des références.",
+      "prompt": "REPEINDRE l'image3 du lancer du poids en suivant PRIORITAIREMENT le style des références1 et2, les illustrations TCF du club musique et photo. Toute la scène doit avoir ce dessin peint pédagogique détaillé, modelés doux et mats, visages finement dessinés, contours discrets, proportions naturelles et ombres diffuses. Repeindre les peaux, les habits, le cercle de lancer, le béton, la pelouse et les arbres. Réduire nettement la brillance et le relief musculaire de l'image3 ; la peau et les vêtements ont des volumes doux comme ceux des personnes des références1 et2. Aucun fini photographique ni rendu3D, pas de gros contours noirs, pas de cartoon enfantin. Garder l'action et le matériel complets : athlète à peau olive, cheveux châtains attachés, morphologie sportive robuste, maillot turquoise mat et short bordeaux, dans un cercle de lancer avec une petite butée blanche à l’avant. Une petite boule de métal sombre maintenue par la main droite CONTRE LE COU sous la mâchoire, coude relevé ; bras gauche vers la zone de lancer, genoux légèrement fléchis et pieds bien dans le cercle. Exactement deux bras et deux jambes, mains naturelles. Corps et cercle entiers. Deux lignes délimitent le secteur dans la pelouse. Conserver sa morphologie et son geste sans exagérer les muscles. Pas de disque, ballon, haltère ou quilles. Lumière douce uniforme, couleurs naturelles tempérées ; le décor paraît peint par le même illustrateur que les références. Une image paysage4:3 exacte, idéalement1448x1086. Aucun texte, chiffre, logo, graduation, date, prix, horloge, flèche ou cadre.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116547,14 +116681,15 @@
         "Sports et loisirs",
         "Athlétisme"
       ],
-      "batch": "actions-fetes-athletisme-20261120",
+      "batch": "reprise-style-cinema-athletisme-20261120",
       "style_review": {
-        "status": "aligned",
+        "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
         "references": [
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
-        ]
+        ],
+        "note": "Modelé de la peau et des muscles adouci ; vêtements, béton et pelouse repeints. Petite boule contre le cou, cercle et butée, corps entier conservés."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116564,7 +116699,32 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Action et matériel entiers, posture et appuis examinés. Personnages et décor dans le traitement peint des références réelles. Paysage 4:3 natif, aucune date, somme ou légende."
+      "review_note": "Modelé de la peau et des muscles adouci ; vêtements, béton et pelouse repeints. Petite boule contre le cou, cercle et butée, corps entier conservés.",
+      "revisions": [
+        {
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "sha256": "0b4ee56a986da8ed2a6bc3ef5092e780225b6b870d1cbc039b3b8a450ca9f77f",
+          "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        }
+      ],
+      "generation_inputs": [
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "sha256": "7d7736a51455a582260d466798296059b7feb4f8657b9ec090fec4e0f7bcf68d",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+          "sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+          "role": "validated_style"
+        },
+        {
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-poids.png",
+          "sha256": "0b4ee56a986da8ed2a6bc3ef5092e780225b6b870d1cbc039b3b8a450ca9f77f",
+          "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
+          "role": "composition_before_repaint"
+        }
+      ]
     }
   ]
 }

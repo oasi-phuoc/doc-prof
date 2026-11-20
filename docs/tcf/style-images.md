@@ -37,3 +37,9 @@ L’utilisateur demande : « Continue valide directement les scène et je les ch
 ## Cohérence des scènes — corrections du 15 novembre 2026
 
 Dans un couloir, placer les élèves assis sur un banc contre le mur et conserver un passage dégagé ; ne pas poser des chaises isolées au milieu du passage. Vérifier les appuis réels des objets : casserole posée sur une table ou un plan de travail, prise crédible sur le manche et fouet dans la préparation. Le cadrage en entier ne justifie ni mobilier impossible ni objets flottants. Les versions corrigées sont tracées dans [le registre des cadrages](cadrages-finaux-20261115.json).
+
+## Reprise du cinéma et de l’athlétisme — 20 novembre 2026
+
+L’utilisateur a écarté le rendu des six images ajoutées dans `3df7466ee` pour manque de cohérence graphique. Leurs reprises sont suivies dans [le registre dédié](reprise-style-cinema-athletisme-20261120.json). Les références validées de musique et de photo restent prioritaires ; joindre ces références ne suffit pas à valider un résultat. Comparer ensuite les visages, les peaux, les tissus, le mobilier, les arbres et la lumière. Les brillances de peau, le relief musculaire trop appuyé, les matières de rendu 3D et les éclairages orange très contrastés s’écartent de ces références. Garder des modelés doux, des matières mates et des contours fins sans basculer vers un dessin enfantin.
+
+Pour la série du cinéma, les trois gestes gardent le même décor peint et la même lumière diffuse. Contrôler aussi la géométrie des places : un dossier, une assise et deux accoudoirs appartenant au même fauteuil ; quand la personne se lève, ses pieds reposent dans l’espace libre devant sa place. La reprise au fauteuil incohérent a été écartée, puis remplacée par une place individuelle à assise rabattable relevée.
