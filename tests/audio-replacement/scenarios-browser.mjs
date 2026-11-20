@@ -4,6 +4,7 @@ import { createServer } from 'vite'
 import { chromium } from 'playwright'
 
 const base = 'http://127.0.0.1:5194'
+const dialogueRepairMode = process.argv.includes('--dialogue-repair')
 const priorityMode = process.argv.includes('--priority')
 const genderReviewMode = process.argv.includes('--gender-review')
 const b1SuiteMode = process.argv.includes('--b1-suite')
@@ -20,13 +21,22 @@ try {
   const { buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
   const { drawAssociationCompose } = await server.ssrLoadModule('/src/tcf/draw-series.ts')
   const { createRng } = await server.ssrLoadModule('/src/math/rng.ts')
-  const { tcfImageSrc } = await server.ssrLoadModule('/src/tcf/media.ts')
+  const { tcfImageSrc, tcfScenarioImageSrc } = await server.ssrLoadModule('/src/tcf/media.ts')
   const configs = buildTpfFamilyTestPages('tpf', 923)
   const sample = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
   const genderAudit = genderReviewMode ? JSON.parse(await readFile('docs/tcf/recontrole-genres-scenes-20261114.json', 'utf8')) : null
   const correction = genderAudit?.corrections[0]
   const motherCorrection = b1ComplementMode ? JSON.parse(await readFile('docs/tcf/correction-interlocuteurs-pluie-20261114.json', 'utf8')).images[0] : null
-  const specs = genderReviewMode ? [
+  const specs = dialogueRepairMode ? [
+    { level: 'A0-A1', difficulty: 'facile', rawSlots: [
+      '/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3',
+      '/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3',
+      '/lib/audio/tcf/co/delf-actif-a1/a1-032-02.mp3',
+      '/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3',
+    ] },
+    { level: 'A0-A1', difficulty: 'facile', clips: ['a1-031-04', 'a1-052-04-01', 'a1-044-02', 'a1-030-01'] },
+    { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-030-03', 'a2-031-04', 'a2-032-01', 'a1-044-03'] },
+  ] : genderReviewMode ? [
     { level: 'A0-A1', difficulty: 'facile', rawSlots: genderAudit.sources.filter(s => s.exercise === correction.exercise).sort((a, b) => a.dialogue - b.dialogue).map(s => s.audio) },
   ] : b1ComplementMode ? [
     { level: 'A2-B1', difficulty: 'avance', clips: ['b1-012-01', 'b1-001-01', 'b1-002-03', 'b1-041-01-01'] },
@@ -56,10 +66,12 @@ try {
     { level: 'A0-A1', difficulty: 'facile', clips: ['a1-047-01', 'a1-048-01', 'a1-051-04-02', 'a1-044-01'] },
     { level: 'A1-A2', difficulty: 'moyen', clips: ['a2-044-04-03', 'a2-045-04-01', 'a2-032-02', 'a2-033-01'] },
   ]
-  const pages = specs.map(spec => {
+  const pages = specs.map((spec, index) => {
     const slots = spec.rawSlots ?? spec.clips.map(id => `/lib/audio/tcf/co/delf-actif-${id.slice(0, 2)}/${id}.mp3`)
     const exercise = drawAssociationCompose(spec.level, createRng(923), { audioSlots: slots })
     assert.ok(exercise)
+    // A saved association may contain the old shared pool background.
+    if (dialogueRepairMode && index === 0) exercise.situations.find(s => s.dialogue === 1).image = '/lib/images/tcf/co/bg/piscine.webp'
     if (genderReviewMode) exercise.situations.find(s => s.dialogue === correction.dialogue).image = correction.previous_image
     if (b1ComplementMode) exercise.situations.find(s => s.dialogue === 2).image = motherCorrection.previous_image
     const config = configs.find(c => c.difficulty === spec.difficulty && c.exerciseType === 'tcf-co-ex-4')
@@ -78,7 +90,7 @@ try {
   const stage = page.locator('.sheet-stage:not(.print-only-sheets)')
   for (const [index, config] of pages.entries()) {
     if (index) await page.getByLabel(`Page ${index + 1}`, { exact: true }).click()
-    const expected = config.tcfExercise.situations.map(s => tcfImageSrc(s.image))
+    const expected = config.tcfExercise.situations.map(s => tcfScenarioImageSrc(s.image))
     for (const src of expected) {
       const image = stage.locator(`img[src="${src}"]`).first()
       await image.waitFor({ timeout: 120000 })
@@ -109,14 +121,22 @@ try {
     if (a2FinalMode) await stage.screenshot({ path: `/tmp/scenarios-a2-final-20261114-page-${index + 1}.png` })
     if (genderReviewMode) {
       assert.equal(await stage.locator(`img[src="${correction.previous_image}"]`).count(), 0)
-      assert.equal(await stage.locator(`img[src="${correction.path}"]`).count(), 1)
+      assert.equal(await stage.locator(`img[src="${tcfImageSrc(correction.path)}"]`).count(), 1)
       await stage.screenshot({ path: '/tmp/scenarios-genres-20261114-ancienne-recette.png' })
     }
     if (priorityMode) await stage.screenshot({ path: `/tmp/scenarios-priorite-20261114-page-${index + 1}.png` })
   }
   assert.deepEqual(errors, [])
   const nativeNewPngs = new Set(results.flatMap(r => r.images).filter(p => p.includes('/delf-actif/'))).size
-  if (!a1ComplementMode && !a2ComplementMode && !a2FinalMode) assert.equal(nativeNewPngs, genderReviewMode ? 1 : (b1SuiteMode || b1ComplementMode) ? 4 : priorityMode ? 21 : suiteMode ? 4 : 7)
+  if (dialogueRepairMode) {
+    const repairs = JSON.parse(await readFile('docs/tcf/reprise-dialogues-provisoires-20261114.json', 'utf8'))
+    const loaded = new Set(results.flatMap(r => r.images))
+    for (const asset of repairs.images) assert.ok(loaded.has(asset.path), `New scene displayed: ${asset.path}`)
+  } else if (!a1ComplementMode && !a2ComplementMode && !a2FinalMode) {
+    // Further replacements can add native PNGs to these historical fixtures.
+    const minimum = genderReviewMode ? 1 : (b1SuiteMode || b1ComplementMode) ? 4 : priorityMode ? 21 : suiteMode ? 4 : 7
+    assert.ok(nativeNewPngs >= minimum)
+  }
   let galleryImages = 0
   if (suiteMode || a1ComplementMode || a2ComplementMode || a2FinalMode) {
     const suite = JSON.parse(await readFile(a2FinalMode ? 'docs/tcf/generation-scenarios-a2-final-20261114.json' : a2ComplementMode ? 'docs/tcf/generation-scenarios-a2-complement-20261114.json' : a1ComplementMode ? 'docs/tcf/generation-scenarios-a1-complement-20261114.json' : 'docs/tcf/generation-scenarios-a2-suite-20261114.json', 'utf8'))
@@ -142,8 +162,8 @@ try {
     }
     await page.screenshot({ path: a2FinalMode ? '/tmp/scenarios-a2-final-20261114-gallery.png' : a2ComplementMode ? '/tmp/scenarios-a2-complement-20261114-gallery.png' : a1ComplementMode ? '/tmp/scenarios-a1-complement-20261114-gallery.png' : '/tmp/scenarios-a2-suite-20261114-gallery.png' })
   }
-  const report = b1ComplementMode ? 'docs/tcf/scenarios-b1-complement-20261114-browser.json' : b1SuiteMode ? 'docs/tcf/scenarios-b1-suite-20261114-browser.json' : genderReviewMode ? 'docs/tcf/scenarios-genres-20261114-browser.json' : a2FinalMode ? 'docs/tcf/scenarios-a2-final-20261114-browser.json' : a2ComplementMode ? 'docs/tcf/scenarios-a2-complement-20261114-browser.json' : a1ComplementMode ? 'docs/tcf/scenarios-a1-complement-20261114-browser.json' : suiteMode ? 'docs/tcf/scenarios-a2-suite-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
-  await writeFile(report, JSON.stringify({ date: '2026-11-14', results, gallery_images: galleryImages, errors, human_audio_listening_performed: false }, null, 2) + '\n')
+  const report = dialogueRepairMode ? 'docs/tcf/reprise-dialogues-provisoires-20261114-browser.json' : b1ComplementMode ? 'docs/tcf/scenarios-b1-complement-20261114-browser.json' : b1SuiteMode ? 'docs/tcf/scenarios-b1-suite-20261114-browser.json' : genderReviewMode ? 'docs/tcf/scenarios-genres-20261114-browser.json' : a2FinalMode ? 'docs/tcf/scenarios-a2-final-20261114-browser.json' : a2ComplementMode ? 'docs/tcf/scenarios-a2-complement-20261114-browser.json' : a1ComplementMode ? 'docs/tcf/scenarios-a1-complement-20261114-browser.json' : suiteMode ? 'docs/tcf/scenarios-a2-suite-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
+  await writeFile(report, JSON.stringify({ date: new Date().toISOString().slice(0, 10), results, gallery_images: galleryImages, errors, human_audio_listening_performed: false }, null, 2) + '\n')
   console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), gallery_images: galleryImages, errors }))
   await context.close()
 } finally { await browser?.close(); await server.close() }

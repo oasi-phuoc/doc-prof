@@ -1,0 +1,2496 @@
+{
+  "date": "2026-11-14",
+  "baseline_commit": "af1069ba0",
+  "scope": "Reprise des scènes à interlocuteurs absents et activation des variantes déjà adaptées ; choix provisoires explicites pour les genres non précisés. Scènes avant les trios.",
+  "user_authorization": {
+    "quote": "si tu en sait pas mets un autre hasard et je changer par la suite",
+    "interpretation": "Choisir provisoirement le genre non documenté, sans bloquer les dialogues ni cacher un interlocuteur.",
+    "latest_visual_corrections": "Le coureur et son interlocutrice doivent se parler et se regarder ; porte de classe correctement placée."
+  },
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "summary": {
+    "original_pngs": 12,
+    "reused_images": 24,
+    "prepared_scene_uses": 38,
+    "replaced_bindings": 21,
+    "new_scenario_audio_bindings": 21,
+    "awaiting_gender_confirmation": 0,
+    "remaining_scenes": 9,
+    "remaining_interlocutor_repairs": 11,
+    "total_bound_scenario_sources": 108
+  },
+  "images": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-piscine-deux-interlocuteurs.png",
+      "sha256": "db578ee3f6c749296e5bcbc401b41994a80a5a65df420f5a8337ff8bfb058daa",
+      "visual_review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "exercise_ids": [
+        "tcf-a1-s3-co-4",
+        "tcf-delf-actif-a1-031-03",
+        "tcf-delf-actif-a1-044-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 3,
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+          "transcription": "Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
+          "source_sha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+          "audio_sha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+          "previous_image": "/lib/images/tcf/co/bg/piscine.webp"
+        },
+        {
+          "exercise": "tcf-delf-actif-a1-031-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+          "transcription": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+          "source_sha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
+          "audio_sha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
+          "previous_image": "/lib/images/tcf/co/bg/piscine.webp"
+        },
+        {
+          "exercise": "tcf-delf-actif-a1-044-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+          "transcription": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+          "source_sha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
+          "audio_sha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
+          "previous_image": "/lib/images/tcf/co/bg/piscine.webp"
+        }
+      ],
+      "key": "dialogue-repair-a1-piscine",
+      "label": "Deux interlocuteurs parlent de natation à la piscine",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Use the old empty pool image as architectural background reference and add exactly TWO MAIN INTERLOCUTORS on the dry entrance area, the pool and lanes recognizable behind a full-height glass partition. An adult WOMAN about 40 with medium-brown skin, a short natural curly bob, plain teal polo shirt, charcoal sports trousers and white trainers speaks with a teenage BOY about 15 with fair freckled skin, short dark hair, a muted mustard T-shirt, navy shorts and plain sandals. Both people are OUT of the water, standing fully visible in the dry lobby/poolside entrance and talking face to face with open conversational gestures. The woman can be the school instructor explicitly addressed as Madame in one source. The boy holds a plain folded towel, never swims during the conversation. The scene is reusable for an end-of-class pool exchange and discussions about a swimming habit or future visit: do not show a swimming race, medal, test result, timetable, tournament, written temperature or completed future activity. No other foreground person. The instructor's female role is documented; the other visual casting is provisional and user-authorized. These production notes must never be lettered in the picture. Recompose the foreground to fit BOTH whole people and their feet without blocking the entire pool, retaining the approved soft painted style.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Enseignante femme respectée pour le dialogue scolaire ; autre interlocuteur garçon. Pour météo et habitude de natation, casting femme/garçon provisoire et non confirmé par écoute.",
+      "known_roles": [
+        {
+          "source": "tcf-delf-actif-a1-031-03#1",
+          "role": "enseignante femme",
+          "quote": "Nous revenons la semaine prochaine à la piscine madame ?"
+        }
+      ],
+      "edit_input_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-deux-eleves-repas-self.png",
+      "sha256": "db94c6c999f9927ea668acd26f2444d8420937a06f40353d2c7f367b359b8772",
+      "visual_review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+          "transcription": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+          "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+          "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-self",
+      "label": "Deux élèves discutent du repas à la cantine ou chez soi",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly TWO teenage STUDENTS around 15 talking face to face by the entrance of a generic school: one GIRL with dark-brown skin, a short natural afro, a plain rust sweatshirt, light trousers and sneakers; one BOY with fair skin, straight dark-brown ear-length hair, a muted slate-blue hoodie, dark trousers and canvas shoes. Each has one ordinary backpack. The girl casually asks whether the boy will eat in the school canteen; he explains his plan to go home instead. Their genders are provisional user-authorized casting, not claims about the voices. A school doorway and courtyard establish a neutral illustrative setting. The MOTHER is only a THIRD PARTY mentioned in the conversation: do NOT show the mother as if she is one of the two speakers, do not show her arriving for a pickup, do not show the students already eating at the canteen or already at home, no vehicle, meal tray, calendar or clock. This must replace the misleading image of a lone mother waiting at a gate. Both actual student interlocutors, friendly faces, conversational gestures and all four shoes fully visible; whole scene, no text or named real school.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Deux élèves choisis provisoirement : fille et garçon. La mère mentionnée reste un tiers, elle ne remplace aucun locuteur.",
+      "known_roles": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-photo-dossier-deux-personnes.png",
+      "sha256": "54f370a789da07378b5384a52fc157835751e7789a43e65a82a43422a481643b",
+      "visual_review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
+          "transcription": "Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+          "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+          "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-photo",
+      "label": "Une élève remet sa photo pour le dossier de classe de neige",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Edit the attached school-photo scene to show BOTH speakers. Keep the adult MAN explicitly addressed as Monsieur, neutral ordinary clothing, at a modest school administrative desk with a plain open folder. ADD a teenage GIRL about 14 with light-brown skin, long dark hair in one loose braid, a muted brick-red jacket over a cream top, dark trousers and trainers, facing him on the visitor side of the desk. Her casting is provisional where the source gives no gender. She hands him ONE small loose photo-paper for her school-trip application; its reverse faces the viewer so no invented identity document or personal text is legible. He gestures toward the folder while asking about the class trip. The trip to the snow is only planned: no ski slope, snow outfit, passport, identity card, car or holiday already underway. Keep the photo as a photo, not a bank card. Recompose or move the desk to show both whole figures with all feet visible, nobody reduced to a disembodied hand or viewpoint. No school name, date, personal details, written destination or text.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Monsieur homme conservé ; élève fille choisie provisoirement.",
+      "known_roles": [
+        {
+          "source": "tcf-delf-actif-a1-052-04-01#1",
+          "role": "adulte homme",
+          "quote": "Bonjour Monsieur."
+        }
+      ],
+      "edit_input_sha256": "a0870125023408689752a8424d83383d6164f5741966336beae898b636949f55"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-invitation-dejeuner-deux-amis.png",
+      "sha256": "420c09e293bae49195e7411cbbfd50d4a237e0db21ef53d36a4ee58d564ef9d1",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-019-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-019-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
+          "transcription": "Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart.",
+          "source_sha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+          "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-dejeuner",
+      "label": "Invitation à déjeuner, deux amis",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly two main adult friends, one WOMAN with fair freckled skin, short auburn hair, navy cardigan and cream trousers, and one MAN with deep-brown skin, short natural curls, a muted rust overshirt and olive trousers. They face one another and talk warmly outdoors by a modest residential doorway, both entire bodies and shoes visible. The woman suggests a future lunch together and gestures lightly toward the street; the man listens with a friendly open gesture. No already served meal, no food, no phone call, no restaurant booking, no clock, no written day or appointment time. The dialogue is an invitation and future pickup, never portray it as already happening. The genders are unspecified and provisionally chosen on the user request.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-anissa-et-enseignante.png",
+      "sha256": "2986902b4cab0a0602556bb85aa11301ae9e973b1e8f524ba13c61eee2d22fd2",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-032-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-032-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-02.mp3",
+          "transcription": "Je vous présente votre nouvelle camarade. Bonjour, tu veux te présenter ? Bonjour je m’appelle Anissa, j’arrive du Maroc et j’habite votre ville. Anissa, va t’assoir à côté de Sarah.",
+          "source_sha256": "ee4d95b47ab51a17bc3d47f80f18361fd98b497138fca2394e4c21202fbd0f39",
+          "audio_sha256": "8218fd8125a86a5a3eac8cd30f2f111cdb94b9b4029816706d09ff9a6c0d198b",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-anissa",
+      "label": "Anissa se présente avec son enseignante",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show a female adult teacher around 45 with light-brown skin, short dark curly hair, a blue-grey cardigan, cream blouse and dark trousers standing beside ANISSA, a teenage GIRL with warm brown skin, long dark hair tied loosely, a soft teal sweatshirt, jeans and trainers. The teacher invites Anissa to introduce herself, hand open toward her; Anissa answers looking at the teacher and classmates with one gentle hand near chest. Both teacher and Anissa must be completely visible, faces and feet included. In the background a second teenage girl SARAH sits in an ordinary wheelchair beside an EMPTY school chair, with a couple of pupils at desks; Sarah is a mentioned classmate, not a substitute for the speaking teacher. No child teacher, no Morocco flag or ethnic costume, no text, map, name labels. This is the classroom introduction before Anissa sits down. Anissa and Sarah are girls as named in the story, teacher female chosen provisionally.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-musique-lecture-deux-personnes.png",
+      "sha256": "4edfcb273a32167f91b3413511d117cacefc9a9768805b1c39e4bfadb83bfff6",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+          "transcription": "Vous écoutez souvent de la musique ? Oui j’aime beaucoup. Et vous n’aimez pas la lecture ? Si, j’aime bien lire des livres.",
+          "source_sha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+          "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-musique",
+      "label": "Deux personnes parlent de musique et de lecture",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly two adult WOMEN in a quiet bright living room having an ordinary face-to-face conversation. One is about 60, fair skin, short straight silver hair, muted coral cardigan, navy trousers and flat shoes; she holds a plain open book on her lap, with compact headphones resting on the side table rather than covering her ears. The other is about 30, deep-brown skin, braided hair in a bun, a muted mustard shirt, olive trousers and trainers, seated facing her with an interested conversational open hand. Both entire figures, hands and feet visible. Book and headphones provide the reading/music preference cues, no television, no phone, no dancing performance, no written title or music notes. They are speaking to one another, not one isolated reader. Both female roles are provisional since the transcript does not specify them.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png",
+      "sha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-a1-s3-co-4"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 4,
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+          "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+          "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+          "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-coureur-regards",
+      "label": "Le coureur motivé et son interlocutrice",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "EDIT THE FIRST ATTACHED IMAGE, preserving exactly its two characters, park, bench, clothing, full-body composition and soft painted style. The user identifies a specific error: the runner looks away from the woman, so they do not appear to speak to one another. CORRECT THEIR EYE CONTACT: the man on the LEFT turns his HEAD AND BOTH EYES to the RIGHT and slightly downward, looking directly into the eyes of the woman on the RIGHT. The woman turns her head and both eyes LEFT toward his face. Their noses point toward each other, both faces in complementary three-quarter profiles, no one looks at the viewer, tree, sky or outside the frame. Their shared direct eye-line must be unmistakable. They are actively speaking to each other: she has an inquisitive open-mouth expression and open hand, he responds warmly with a small natural conversational gesture. He can keep his safe quad stretch, left hand holding his raised foot and the other hand gesturing toward HER; reorient upper body slightly toward her if needed. Keep the man male (the source says fou and motivé); the female friend is provisional and user-authorized. Exactly two whole people with all hands and feet visible, no extra person, no captions, numbers, distance sign, speech bubbles, money, day or date. Keep the warm semi-realistic painted editorial finish of the second style reference. Original landscape 4:3 EXACTLY 1448 by 1086 pixels, no border, crop or resizing.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Coureur homme conservé ; interlocutrice femme choisie provisoirement.",
+      "known_roles": [
+        {
+          "source": "tcf-a1-s3-co-4#4",
+          "role": "coureur homme",
+          "quote": "Je suis motivé."
+        }
+      ],
+      "edit_input_sha256": "8c94f3715b3235c5c2e281619a65e9f18399583e854bd19af541a2b58125b649"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
+      "sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3",
+          "transcription": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+          "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+          "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-film-porte",
+      "label": "Film en classe : enseignant et élève",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "EDIT THE FIRST ATTACHED CLASSROOM SCENE to correct the spatial architecture of the misplaced door. Preserve the teacher, talking female pupil, two arriving pupils, film projector and unlit projection screen, approved warm softly painted semi-realistic style. REDESIGN THE ROOM PERSPECTIVE AND DOOR: put ONE normal rectangular open doorway clearly IN THE REAR LEFT CLASSROOM WALL, behind the teacher and pupils, with both straight jambs and a complete lintel visibly connected to that wall. A short indoor school corridor is visible through it. Two background pupils enter quietly through this rear doorway, their feet visibly on one continuous level floor. The door leaf is properly hinged on its jamb and folded open against the adjoining wall, fully behind the people; never put a gigantic door leaf in the left foreground, a floating frame, two conflicting openings or an outdoor courtyard instead of the corridor. Put the adult male teacher at centre-left and the female pupil at centre-right, a few steps INSIDE the classroom and clear of the doorway. They face and LOOK DIRECTLY AT EACH OTHER, genuinely speaking: pupil asks with an open hand and teacher replies with a gentle welcoming gesture toward the entering pupils. All four people visible, both main people completely from head to shoes with margins. Projector and blank dark screen at rear right, a few empty classroom chairs; no actual film still or actor, no finished oral presentation, grades, visible writing, name, logo, date or amount. Keep the same distinct faces and clothing as the target, do not copy the style-reference people. Native landscape 4:3, EXACTLY 1448 by 1086 pixels, no collage, border, crop, stretch or conversion.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": [],
+      "edit_input_sha256": "a445d2c0aea46d3eb657e6baa09fc108c7d13d2d7e4efccddf64b8b9b2bb424c"
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-ordinateur-deux-interlocuteurs.png",
+      "sha256": "e2da6c0d36479b75708e23550e5bdfc4eb7606ecafbfc144ce2e09bda44c774f",
+      "visual_review": "Deux personnes entières en dialogue, regard mutuel clair ; accessoires pertinents et action conformes au texte. Aucun texte, horaire ou montant ; natif 4:3 et style peint relus.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+          "transcription": "Le soir vous regardez la télé ? Pas tous les soirs. Je n’aime pas tellement. Je préfère jouer à l’ordinateur.",
+          "source_sha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+          "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+          "previous_image": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-ordinateur",
+      "label": "Deux personnes parlent de jeux sur ordinateur",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly two adult interlocutors indoors at a modest computer desk, both whole figures including feet visible. A WOMAN about 55 with fair skin, chin-length grey hair and thin spectacles, a muted teal cardigan, pale blouse and dark trousers sits in a simple chair, with a game controller resting in her lap. A MAN about 35 with warm brown skin, a short beard, dark wavy hair, a muted terracotta jumper, beige trousers and plain shoes sits on another chair facing her and asks a question. She replies with a calm open hand and glances at him. A recognisable desktop computer, keyboard and monitor on the desk show a generic abstract colour puzzle, NO letters, branded game, movie or television screen. No TV. The computer preference is the cue; the two people must clearly speak to each other, not stare together silently at a screen. The user authorizes this provisional female/male casting; no inferred family relationship.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-claudine-et-camarade.png",
+      "sha256": "cf06aa353c71379d4f06b6ab12b713db3a7127d824deb9468d5b646afe157291",
+      "visual_review": "Deux personnes entières en dialogue, regard mutuel clair ; accessoires pertinents et action conformes au texte. Aucun texte, horaire ou montant ; natif 4:3 et style peint relus.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-030-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-030-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-03.mp3",
+          "transcription": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête. Tu me rends un grand service. Tu es super, merci.",
+          "source_sha256": "d1825e4858c747db79268ac406b2e9566e92c541d3ee8787d7f84ba1f61f3dd3",
+          "audio_sha256": "0a0705237eb3f43cef77617ff0db7f8be650bd589e1371b4f345f81a02e516a7",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png"
+        }
+      ],
+      "key": "dialogue-repair-a2-claudine",
+      "label": "Claudine et sa camarade avant interrogation",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed.  CRITICAL: the ACTUAL speakers must face EACH OTHER, their heads, both eyes and open conversational gestures directed at the other speaker, never looking at the viewer or off-frame. Distinguish mentioned absent people from actual speaking interlocutors. Exactly two teenage female students talk face to face beside school desks BEFORE an oral test. CLAUDINE, a confident girl with medium-brown skin, long dark hair in a loose braid, a muted blue knit sweater, olive trousers and white trainers, calmly holds a plain closed notebook and says she is ready. Her grateful peer is a fair-skinned girl with a short auburn bob, freckles, a terracotta sweatshirt and navy trousers. Both stand completely visible, mutually looking at each other; the grateful girl gives a small appreciative gesture. No teacher interlocutor, no pupil already at the blackboard being tested, no grade, no exam already over. Claudine female documented by prête, other girl provisionally chosen.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités dans le texte respectés ; autres personnages choisis provisoirement sur demande utilisateur, sans écoute déclarée.",
+      "known_roles": []
+    },
+    {
+      "key": "dialogue-a2-pere-refuse-sortie-enfant",
+      "label": "Le père refuse la sortie de son enfant",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-pere-refuse-sortie-enfant.png",
+      "sha256": "2f23d97019fd6a24bbf6a0590339655a46ad7ea22a7aafffd15eef8ee84a6354",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed.  CRITICAL: the ACTUAL speakers must face EACH OTHER, their heads, both eyes and open conversational gestures directed at the other speaker, never looking at the viewer or off-frame. Distinguish mentioned absent people from actual speaking interlocutors. Exactly two main people at home: a bald middle-aged FATHER with medium-brown skin, a close beard, burgundy cardigan and tan trousers, and his teenage DAUGHTER with warm-brown skin, dark short curly hair, mustard sweatshirt, jeans and trainers. They face one another, looking into each other eyes and discussing the refusal to go bowling. Father gently raises one calm open palm to refuse, daughter looks disappointed and explains with a small open hand. Father is firm, never threatening or violent, no finger to viewer. Both entirely visible in a simple entrance/living room. No bowling game, tournament trophy, phone, time, calendar, outing already achieved, friend present. Father male documented by papa, child girl provisional.",
+      "prompt_is_summary": false,
+      "visual_review": "Père et enfant présents en entier, se parlent et se regardent ; refus explicite, sans sortie déjà accomplie. Le père respecte papa ; fille choisie provisoirement.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-031-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "provisional_cast": "Rôles explicités dans le texte respectés ; autres personnages choisis provisoirement sur demande utilisateur, sans écoute déclarée.",
+      "known_roles": [],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-031-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+          "transcription": "Papa, ce soir je sors avec Mathieu, nous allons au bowling ! Absolument pas ! il est hors de question de sortir le jeudi maintenant ! Mais papa, il y a un tournoi... Je te dis non ! Un point c’est tout !",
+          "source_sha256": "58da669b458862df4dd2256a5dd0a2e63128dc6888004132d408ff64b1cb3aa0",
+          "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png"
+        }
+      ]
+    },
+    {
+      "key": "dialogue-a2-fleuriste-et-client-roses",
+      "label": "La fleuriste reçoit une commande de roses",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-fleuriste-et-client-roses.png",
+      "sha256": "45e58059634f0f811fca96aa269cacd7ff573178d16077765fb2a792cb6e1c21",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed.  CRITICAL: the ACTUAL speakers must face EACH OTHER, their heads, both eyes and open conversational gestures directed at the other speaker, never looking at the viewer or off-frame. Distinguish mentioned absent people from actual speaking interlocutors. Exactly two adults in a flower shop: a WOMAN florist with fair skin, short wavy copper hair, dark green apron, simple plum blouse and cream trousers stands with ONE single sample WHITE ROSE, and a MAN customer with deep-brown skin, short greying hair, a muted blue shirt and charcoal trousers sits in a realistic ordinary manual wheelchair. Both faces, hands, shoes and full wheelchair visible. They face each other and converse across the low side of the work counter; the customer gives her a small plain address paper, no writing visible. This is an order for a future birthday bouquet of white roses. Do NOT show a completed bouquet of an arbitrary wrong count, no birthday cake, gift already delivered, coins, numbers or written address. White flowers and greenery in background. Florist female by Madame, male customer provisional.",
+      "prompt_is_summary": false,
+      "visual_review": "Fleuriste et client en fauteuil visibles en entier, regard mutuel et échange réel. Rose blanche seule comme échantillon ; bouquet commandé non représenté avec un mauvais nombre, adresse sans texte. Fleuriste femme selon Madame ; client homme provisoire.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-032-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "provisional_cast": "Rôles explicités dans le texte respectés ; autres personnages choisis provisoirement sur demande utilisateur, sans écoute déclarée.",
+      "known_roles": [],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-032-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+          "transcription": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie. Oui, vous voulez combien de roses ? Elle fête ses 18 ans, alors 18 roses… Vous me laissez son adresse ? La voici.",
+          "source_sha256": "e23cab572380665012a69d406e0da49a79416b837321c3e5949274e4a8fbb121",
+          "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png"
+        }
+      ]
+    }
+  ],
+  "reuses": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+      "visual_review": "Deux garçons, Diego accompagné ; ventre douloureux et infirmerie conformes, aucune consultation déjà réalisée.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-050-04-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-050-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
+          "transcription": "Diego, comment ça va, tu es malade ? J’ai mal au ventre, je n’en peux plus ! Viens on va à l’infirmerie. Je t’accompagne.",
+          "source_sha256": "0a9edb008025cf9f55d47a724ca898d836aeb7e848f95a0be05fe5c68e4cf117",
+          "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "sha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+      "visual_review": "Professeur homme appelé Monsieur et élève fille choisie provisoirement ; place de devant et absence des lunettes non encore reçues.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-02.mp3",
+          "transcription": "Monsieur, je peux changer de place ? Pour aujourd’hui ou définitivement ? Pour aujourd’hui, mes lunettes arrivent demain Oui, mets-toi devant.",
+          "source_sha256": "a56dc7ce1b32ca5cad3479c26eff355d6ee051e8b50d93415b058a5373e84897",
+          "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-devant.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "sha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+      "visual_review": "Adulte femme appelée Madame et élève garçon choisi provisoirement ; sac découvert sous un blouson bleu.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-04.mp3",
+          "transcription": "Madame, mon sac n’est plus au vestiaire ! Je ne trouve plus mes affaires. Demande à tes copains ! Regarde sous le blouson bleu. Ah oui, le voilà.",
+          "source_sha256": "5228b83efc1ffbeecc7e84ad06779e6855bdb38b6017b3565eefaf8eeca97579",
+          "audio_sha256": "d6855aca7095f4f5236eb5067749d78ea3b7e90e757163345ee0a943943d0704",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu-roles-documentes.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+      "sha256": "f31d384ceb6143c76ecf050ee5ce6fb0a8a0609fd6c33a0071f1469bfd59f630",
+      "visual_review": "Scène scolaire avec enseignante femme et élève en discussion autour du travail ; pas de contrôle déjà corrigé ni de note imposée. Élève fille choisie provisoirement.",
+      "exercise_ids": [
+        "tcf-delf-actif-b1-032-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-b1-032-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-01.mp3",
+          "transcription": "Alors pour demain révisez pour le contrôle ! Mais madame, ce n’est pas possible. Trente pages à réviser en un jour, on n’aura jamais de bonnes notes !",
+          "source_sha256": "d245a2de70bc1ec6f5f36a45c5b598d6f28778ec393a4e8827f21529eac87a27",
+          "audio_sha256": "534d75004bf38cb1b147e5cc3ff32884872020a8d6ee57f8cbc39e9e27ec5c23",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "sha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "visual_review": "Deux élèves face à face près de la gare et du chemin ; genre non précisé choisi provisoirement.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-030-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-030-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
+          "transcription": "Pour aller au lycée, tu utilises le train ou le bus ? Je prends toujours le train. Mais la gare est loin du lycée ! Oui c’est vrai ! Mais je marche vite et j’arrive à l’heure.",
+          "source_sha256": "db9a1d1c77b971d5a3026a5a8ad9a2aa15e6e79bdeabfacd92395bb3c6440675",
+          "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
+          "previous_image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "sha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+      "visual_review": "Deux voyageurs discutent de la place réservée, billets sans numéro ; casting provisoire.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-033-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-033-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-033-03.mp3",
+          "transcription": "Madame, cette place est réservée. Ah bon ? Oui, regardez mon billet. Place numéro 22. Oh, excusez-moi. Je n’ai pas mes lunettes… Ah oui j’ai le numéro 28. Ce n’est pas grave Madame, vous êtes tout excusée.",
+          "source_sha256": "b9e4b650df8052a706204564a5602ec27ac51259e292034345969dde3f3c4b90",
+          "audio_sha256": "83ea51bba661f5174449efe9a8868ce25ee42fbe219fb38f0319413d801751d9",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "sha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "visual_review": "Deux amis devant le bateau amarré, projet de visite futur ; casting provisoire, pas déjà embarqués.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-046-04-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-046-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-01.mp3",
+          "transcription": "Ces îles ne sont pas loin. On peut prendre un bateau pour aller les visiter. Tu viens ? Pourquoi pas, je veux bien. Alors on prend un billet pour demain ? Oui... mais pas le matin.",
+          "source_sha256": "bf41f928db7e63e672313d28e6a85c4f42986d70b6125977c425889116e881ff",
+          "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
+          "previous_image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "sha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-029-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-029-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+          "transcription": "Salut Mahdi. Tu viens t’entraîner pour le match de rugby de mercredi après-midi ? Oui, volontiers. Je demande à mes parents.",
+          "source_sha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+          "audio_sha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "sha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+          "transcription": "Aujourd’hui encore tu as mal au ventre ? Oui madame, hier déjà, et aujourd’hui j’ai encore mal. Et bien je te conseille d’aller voir ton médecin.",
+          "source_sha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+          "audio_sha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "sha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
+          "transcription": "Que cherches-tu ? Je dois préparer un exposé sur les volcans madame. Nous avons des livres de sciences dans le rayon orange et des revues sur le présentoir à l’entrée.",
+          "source_sha256": "c00afe476616420f42ad11be304ddbdfabb2ebbe32c77c2d12d849c8d2a62a2e",
+          "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "sha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+          "transcription": "Pendant votre temps libre, que faites-vous avec vos copains ? Nous faisons du vélo et des promenades. Ça me plaît. Et vous ne faites pas les magasins ? Ah non ! j’ai horreur de ça !",
+          "source_sha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+          "audio_sha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "sha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-049-04-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-049-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+          "transcription": "Pour toi aussi du poisson avec des légumes ? Je veux bien du poisson mais avec du riz. Voilà ton poisson et ton riz. Je te mets de la sauce ?",
+          "source_sha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+          "audio_sha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "sha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-049-04-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-049-04-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
+          "transcription": "Tu peux me prêter ton compas s’il te plaît ? Encore ? Allez, sois sympa ! Bon d’accord, mais n’oublie plus tes affaires.",
+          "source_sha256": "1603bc74a0f51c1680f940facd9c888be7fc3c065872e7e87ef5dd7ffe1eae08",
+          "audio_sha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "sha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-051-04-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-051-04-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+          "transcription": "Tu aimes le saut en hauteur ? C’est ma première fois ! Je fais du foot, du basket, mais pas de saut en hauteur. Ne t’inquiète pas ! Tu vas aimer!",
+          "source_sha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+          "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "sha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-031-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-031-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-02.mp3",
+          "transcription": "C’est difficile de repartir après de si belles vacances. Pour moi aussi c’est difficile de te laisser repartir de chez moi. Tu es super de m’avoir fait connaître ta région, tes copains, tes traditions… Mais, on va se revoir !",
+          "source_sha256": "5c25b12798e2063f4f0d4a87b5a7a037297a9ce27fbb72cc33a01c7d570f806d",
+          "audio_sha256": "7218f1d01fc05b0fe5051ef5153f1e98f3296498418ecb889c2ea18834d5357a",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "sha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-031-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-031-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+          "transcription": "Pour ce soir, qu’est-ce que tu voudrais manger ? Qu’est-ce que tu dis d’une pizza ? Il y a tout à la maison? Oui, on peut faire une pizza aux fromages. C’est une très bonne idée.",
+          "source_sha256": "839b6f7e4d77e9c7ce53ec6c600650f6c47b09151e6e117b3caf1425a2004f53",
+          "audio_sha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "sha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-034-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-034-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
+          "transcription": "C’est pour une information... Qu’est-ce qu’on peut voir dans la château de Versailles ? À l’intérieur du château ? C’est ça. Vous avez l’appartement, la galerie des glaces, le salon d’Hercule, des tableaux, des sculptures, des peintures, des meubles...",
+          "source_sha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+          "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "sha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-035-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-035-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+          "transcription": "Tu sais si le fleuriste ferme à 19h00 ? Oui, tous les jours. Et je vais où pour prendre une plante pour l’anniversaire de ma mère ? Va voir au supermarché ! Il ferme à 21h00.",
+          "source_sha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+          "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "sha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-043-04-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-043-04-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+          "transcription": "Excusez-moi, vous pouvez garder mon chien 1 minute s’il vous plaît ? Oui mais vous allez où ? Je rentre dans la pâtisserie prendre un gâteau. Pas de problèmes, allez-y.",
+          "source_sha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+          "audio_sha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "sha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-044-04-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-044-04-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+          "transcription": "Ce shampoing va bien pour mes cheveux frisés ? Oui, ma cousine le prend et dit qu’il est super. Et ce dentifrice il est bon aussi ? Je ne sais pas, je ne le connais pas.",
+          "source_sha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+          "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "sha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-044-04-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-044-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+          "transcription": "Je cherche un dernier modèle de téléphone portable. Nous venons de recevoir ces deux derniers modèles. Qu’est-ce qu’il a de particulier ce modèle-ci ? Il a une très bonne autonomie, les photos sont de bonne qualité et le prix est avantageux.",
+          "source_sha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+          "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "sha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-045-04-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-045-04-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-02.mp3",
+          "transcription": "Ce soir, tu viens avec nous manger une raclette ? On va dans le petit restaurant de la station touristique. Volontiers. Tu connais la raclette ? C’est un plat montagnard avec du bon fromage. Moi, je connais la fondue.",
+          "source_sha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+          "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "sha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-045-04-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-045-04-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-03.mp3",
+          "transcription": "Demain tu sais si la météo annonce du beau temps ? Non, je ne sais pas, j’espère que oui. Alors il faut regarder la météo ce soir. Bien sûr, ensuite on décide pour demain.",
+          "source_sha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+          "audio_sha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png"
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "sha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+      "visual_review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-045-04-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-045-04-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+          "transcription": "On va comment en haut de la montagne ? Par la route ? Non il y a un téléphérique toutes les demi-heures. C’est le seul moyen. Super ! Oui le point de vue est magnifique même si c’est impressionnant.",
+          "source_sha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+          "audio_sha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png"
+        }
+      ]
+    }
+  ],
+  "visual_audit": [
+    {
+      "index": 1,
+      "path": "/lib/images/tcf/co/scenes/restaurant/boire-le-jus-d-une-amie.webp",
+      "source_keys": [
+        "tcf-a1-s3-co-4#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 2,
+      "path": "/lib/images/tcf/co/scenes/magasins/demander-un-rayon.webp",
+      "source_keys": [
+        "tcf-a1-s3-co-4#2"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 3,
+      "path": "/lib/images/tcf/co/bg/piscine.webp",
+      "source_keys": [
+        "tcf-a1-s3-co-4#3",
+        "tcf-delf-actif-a1-031-03#1",
+        "tcf-delf-actif-a1-044-01#1"
+      ],
+      "visible_main_people": 0,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 4,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
+      "source_keys": [
+        "tcf-a1-s3-co-4#4"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 5,
+      "path": "/lib/images/tcf/co/scenes/ecole/demander-une-salle.webp",
+      "source_keys": [
+        "tcf-a1-s4-co-4#2"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 6,
+      "path": "/lib/images/tcf/co/scenes/travail/se-serrer-la-main.webp",
+      "source_keys": [
+        "tcf-a1-s4-co-4#4"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 7,
+      "path": "/lib/images/tcf/co/scenes/sante/demander-a-l-accueil.webp",
+      "source_keys": [
+        "tcf-a1-s4-co-4#3"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 8,
+      "path": "/lib/images/tcf/co/scenes/vie-quotidienne/montrer-son-sac.webp",
+      "source_keys": [
+        "tcf-a1-s4-co-4#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 9,
+      "path": "/lib/images/tcf/co/scenes/bibliotheque/prendre-un-livre.webp",
+      "source_keys": [
+        "tcf-a1-s4-co-4#5"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 10,
+      "path": "/lib/images/tcf/co/scenes/famille/aider-aux-devoirs.webp",
+      "source_keys": [
+        "tcf-a1-tpa-co-4#2"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 11,
+      "path": "/lib/images/tcf/co/scenes/ecole/professeure-avec-des-livres.webp",
+      "source_keys": [
+        "tcf-a1-tpa-co-4#4"
+      ],
+      "visible_main_people": 3,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 12,
+      "path": "/lib/images/tcf/co/scenes/famille/preparer-un-repas.webp",
+      "source_keys": [
+        "tcf-a1-tpa-co-4#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 13,
+      "path": "/lib/images/tcf/co/scenes/bibliotheque/aller-a-la-bibliotheque.webp",
+      "source_keys": [
+        "tcf-a1-tpa-co-4#3"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 14,
+      "path": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-1.webp",
+      "source_keys": [
+        "tcf-a2-sa-co-4#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 15,
+      "path": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-2.webp",
+      "source_keys": [
+        "tcf-a2-sa-co-4#2"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 16,
+      "path": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-3.webp",
+      "source_keys": [
+        "tcf-a2-sa-co-4#3"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 17,
+      "path": "/lib/images/tcf/qcm-audit/revue-20261107-f680821041.webp",
+      "source_keys": [
+        "tcf-a2-sa-co-4#4"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 18,
+      "path": "/lib/images/tcf/qcm-audit/co-personnages-20261112-54.png",
+      "source_keys": [
+        "tcf-a2-sb-co-4#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 19,
+      "path": "/lib/images/tcf/qcm-audit/co-personnages-20261112-55.png",
+      "source_keys": [
+        "tcf-a2-sb-co-4#2"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 20,
+      "path": "/lib/images/tcf/qcm-audit/co-personnages-20261112-56.png",
+      "source_keys": [
+        "tcf-a2-sb-co-4#3"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 21,
+      "path": "/lib/images/tcf/qcm-audit/co-personnages-20261112-57.png",
+      "source_keys": [
+        "tcf-a2-sb-co-4#4"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 22,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-019-03#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 23,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-029-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 24,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouveau-professeur.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-029-02#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 25,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-029-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 26,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-retard-professeur.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-029-04#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 27,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-chemin-spectacle.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-029-05#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 28,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-029-06#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 29,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-030-01#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace",
+      "note": "La mère est un tiers, les deux élèves locuteurs doivent la remplacer."
+    },
+    {
+      "index": 30,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-030-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 31,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-certificat-scolarite.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-030-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 32,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-matisse.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-030-04#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 33,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-031-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 34,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-revision-cahier-sans-calculatrice.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-031-02#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 35,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-031-04#1"
+      ],
+      "visible_main_people": 5,
+      "reviewed_visually": true,
+      "status": "replace",
+      "note": "Cinq élèves visibles mais enseignant locuteur absent : ajouter le véritable interlocuteur adulte."
+    },
+    {
+      "index": 36,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-recreation-blousons-froid.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-032-01#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 37,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-032-02#1"
+      ],
+      "visible_main_people": 7,
+      "reviewed_visually": true,
+      "status": "replace",
+      "note": "Les élèves Sarah et Anissa sont présentes mais enseignant locuteur hors cadre ; ajouter cet adulte."
+    },
+    {
+      "index": 38,
+      "path": "/lib/images/tcf/co/scenes/ecole/12-ecole-preter-le-dictionnaire.webp",
+      "source_keys": [
+        "tcf-delf-actif-a1-032-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 39,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-ranger-tapis-gym.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-032-04#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 40,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-044-02#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 41,
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-044-03#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 42,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-044-04#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 43,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-bijouterie.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-047-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 44,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-pharmacie-jambe.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-048-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 45,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-049-04-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 46,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-049-04-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 47,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-augmenter-volume-classe-roles-documentes.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-049-04-03#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 48,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-osman-correction-tableau.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-049-04-04#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 49,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-course-piste.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-050-04-01#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 50,
+      "path": "/lib/images/tcf/co/scenes/ecole/26-ecole-oublier-livre-mathematiques.webp",
+      "source_keys": [
+        "tcf-delf-actif-a1-050-04-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 51,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-050-04-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 52,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-050-04-04#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 53,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-rencontre-luca-tessa.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-051-04-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 54,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-couloir-salle.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-051-04-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 55,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-051-04-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 56,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-preparer-visite-tour-eiffel-roles-documentes.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-051-04-04#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 57,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-052-04-01#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 58,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-devant.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-052-04-02#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace",
+      "note": "Professeur au premier plan mais élève demandeur explicitement hors cadre dans le registre, des figurants restent au fond."
+    },
+    {
+      "index": 59,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-resultats-mateo.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-052-04-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 60,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu-roles-documentes.png",
+      "source_keys": [
+        "tcf-delf-actif-a1-052-04-04#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 61,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-inviter-enseignante-repas-classe.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-030-01#1"
+      ],
+      "visible_main_people": 4,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 62,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-030-03#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 63,
+      "path": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+      "source_keys": [
+        "tcf-delf-actif-a2-030-04#1"
+      ],
+      "visible_main_people": 0,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 64,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-decoration-mere-fille.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-031-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 65,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-031-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 66,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-031-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 67,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-031-04#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 68,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-032-01#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 69,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-paquet-bleu.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-032-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 70,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-032-03#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 71,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-032-04#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 72,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-billetterie-jeune.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-033-01#1",
+        "tcf-delf-actif-a2-034-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 73,
+      "path": "/lib/images/tcf/catalogue/actions/acheter-un-billet-au-guichet.webp",
+      "source_keys": [
+        "tcf-delf-actif-a2-033-02#1",
+        "tcf-delf-actif-a2-046-04-02#1",
+        "tcf-delf-actif-a2-046-04-04#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 74,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-033-03#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 75,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-bagage-porte-bagages.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-033-04#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 76,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-034-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 77,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remercier-guide-ville.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-034-03#1"
+      ],
+      "visible_main_people": 6,
+      "reviewed_visually": true,
+      "status": "keep",
+      "note": "Guide et groupe visibles ; un des visiteurs sera choisi provisoirement comme locuteur remerciant, aucune personne ajoutée nécessaire."
+    },
+    {
+      "index": 78,
+      "path": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "source_keys": [
+        "tcf-delf-actif-a2-034-04#1"
+      ],
+      "visible_main_people": 0,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 79,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-035-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 80,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-035-02#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 81,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-035-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 82,
+      "path": "/lib/images/tcf/catalogue/actions/montrer-le-chemin.webp",
+      "source_keys": [
+        "tcf-delf-actif-a2-035-04#1",
+        "tcf-delf-actif-b1-002-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 83,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-043-04-01#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 84,
+      "path": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "source_keys": [
+        "tcf-delf-actif-a2-043-04-02#1",
+        "tcf-delf-actif-a2-043-04-04#1"
+      ],
+      "visible_main_people": 0,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 85,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-043-04-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 86,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-044-04-01#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 87,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-044-04-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 88,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-biscuits-jaunes.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-044-04-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 89,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-044-04-04#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 90,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-anorak.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-045-04-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 91,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-045-04-02#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 92,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-045-04-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 93,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-045-04-04#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 94,
+      "path": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+      "source_keys": [
+        "tcf-delf-actif-a2-046-04-01#1"
+      ],
+      "visible_main_people": 0,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 95,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+      "source_keys": [
+        "tcf-delf-actif-a2-046-04-03#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 96,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-001-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 97,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-desaccord-file-guichet.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-001-03#1"
+      ],
+      "visible_main_people": 3,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 98,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-001-04#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 99,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-temoin-accident-velo.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-002-03#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 100,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-controle-moto-agent.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-012-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    },
+    {
+      "index": 101,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enseignante-demande-revisions.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-032-01#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 102,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-032-05#1"
+      ],
+      "visible_main_people": 1,
+      "reviewed_visually": true,
+      "status": "replace"
+    },
+    {
+      "index": 103,
+      "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-enquete-boites-livres.png",
+      "source_keys": [
+        "tcf-delf-actif-b1-041-01-01#1"
+      ],
+      "visible_main_people": 2,
+      "reviewed_visually": true,
+      "status": "keep"
+    }
+  ],
+  "remaining_interlocutor_repairs": [
+    {
+      "exercise": "tcf-delf-actif-a2-032-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-conseil-pull-coton.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-032-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-04.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-horaires-magasin-cadeaux.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-04.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co306-entree-musee-dessine.webp",
+      "visible_people": 0,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-02.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-aide-monnaie-machine.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-projet-voiture-du-pere.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-02.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "visible_people": 0,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-04.mp3",
+      "image": "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+      "visible_people": 0,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-01.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-renseignement-patisserie.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-046-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-046-04-03.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-remerciements-retour-iles.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-04.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-elsa-accord-sortie-cinema.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-05",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-05.mp3",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-b1-deborde-de-travail.png",
+      "visible_people": 1,
+      "reason": "Interlocuteur manquant ou lieu sans personne."
+    }
+  ],
+  "not_yet_illustrated": [
+    {
+      "exercise": "tcf-delf-actif-b1-001-02",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-02.mp3"
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-001-05",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-001-05.mp3"
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-02",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-02.mp3"
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-03",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-03.mp3"
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-04",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-04.mp3"
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-038-01-01",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-01-01.mp3"
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-040-01-01",
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-01-01.mp3"
+    }
+  ],
+  "rejected_first_takes": [
+    {
+      "path": "/workspace/work/image-review-rejected/dialogue-retakes-20261114/dialogue-a1-coureur-et-amie.png",
+      "sha256": "8c94f3715b3235c5c2e281619a65e9f18399583e854bd19af541a2b58125b649",
+      "reason": "Rejet utilisateur : le coureur regardait hors champ au lieu de son interlocutrice.",
+      "activated": false
+    },
+    {
+      "path": "/workspace/work/image-review-rejected/dialogue-retakes-20261114/dialogue-a1-film-enseignant-et-eleve.png",
+      "sha256": "a445d2c0aea46d3eb657e6baa09fc108c7d13d2d7e4efccddf64b8b9b2bb424c",
+      "reason": "Rejet utilisateur : porte mal placée dans la classe.",
+      "activated": false
+    }
+  ],
+  "updated_on": "2026-11-15"
+}

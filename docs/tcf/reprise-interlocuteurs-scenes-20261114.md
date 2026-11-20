@@ -1,5 +1,7 @@
 # Reprise des interlocuteurs visibles — 14 novembre 2026
 
+**État courant :** [12 nouvelles images et 24 réemplois intégrés](reprise-dialogues-provisoires-20261114.json), avec 108 liaisons actives. Les personnages non précisés sont choisis provisoirement sur demande utilisateur ; aucun interlocuteur ne doit être caché pour cette raison. Il reste 11 liaisons à reprendre pour leurs personnages manquants et sept autres scènes B1 sans image. Le détail ci-dessous décrit l’audit initial avant ces nouvelles corrections.
+
 Le choix de laisser un interlocuteur hors cadre pour ne pas inventer son genre ne répond pas à la demande : **un dialogue doit montrer les personnes qui parlent, avec au moins deux interlocuteurs visibles**. Un tiers mentionné ou des figurants ne remplacent pas un locuteur. Cette règle remplace l’option précédente du hors-cadre.
 
 La première correction montre **la mère et Bastien ensemble**, avant le départ, avec les vêtements de pluie. Le PNG natif conserve le style approuvé et le format 1 448 × 1 086. L’ancienne image de la mère seule reste conservée pour la traçabilité ; les fiches enregistrées avec son chemin chargent également la correction. Les rôles sont établis d’après le texte, sans prétendre avoir entendu les voix.

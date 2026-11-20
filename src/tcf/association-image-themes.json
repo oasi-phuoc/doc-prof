@@ -20,6 +20,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Marine et l’accord féminin concordent. Le genre de la propriétaire du verre n’est pas précisé dans les paroles ; sa voix reste à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -41,6 +48,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Employé homme conforme à monsieur ; genre de la cliente non précisé par le texte, à confirmer avec la voix."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -49,8 +63,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
       "transcription": "Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
       "sourceSha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
-      "image": "/lib/images/tcf/co/bg/piscine.webp",
-      "imageSha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-piscine-deux-interlocuteurs.png",
+      "imageSha256": "db578ee3f6c749296e5bcbc401b41994a80a5a65df420f5a8337ff8bfb058daa",
       "themes": [
         "sport"
       ],
@@ -61,6 +75,22 @@
         "status": "no_visible_character",
         "voice_confirmation_pending": false,
         "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+      },
+      "review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -69,8 +99,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
       "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
       "sourceSha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png",
-      "imageSha256": "b89d4c1d02f5f82541675bd50f097111f07e736f3384351f308aaa8b313b02d7",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png",
+      "imageSha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
       "themes": [
         "sport"
       ],
@@ -82,7 +112,22 @@
         "voice_confirmation_pending": false,
         "note": "Le coureur qui se dit motivé est masculin dans les paroles ; l’image place la femme dans le rôle sportif et l’homme dans le rôle surpris. Générer un coureur homme, interlocuteur non documenté hors cadre."
       },
-      "review": "Sportif homme actif à la place de la femme qui s’échauffait ; accords fou et motivé recoupés avec les reconnaissances Parakeet et Whisper du SHA du MP3 installé. Interlocuteur non genré hors cadre. Aucun texte, bulle, distance, score ou résultat ajouté ; tête et deux chaussures dans le cadre, PNG natif 4:3 sans conversion."
+      "review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -102,6 +147,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Le destinataire homme concorde avec monsieur ; le genre de la personne qui demande la salle n’est pas précisé par le texte."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -122,6 +174,13 @@
         "status": "documented_match",
         "voice_confirmation_pending": false,
         "note": "Deux rôles féminins explicités par les prénoms, articles et accord ; image cohérente."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -142,6 +201,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Aucun titre ou accord ne précise le genre de l’accueil ou du patient dans ce dialogue. Aucun écart documentaire démontré ; voix à vérifier. Le médecin de l’affiche ne représente pas le docteur Charpentier."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -162,6 +228,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Aucun genre des deux interlocuteurs n’est donné dans les paroles. Pas de contradiction documentaire démontrée ; les voix restent à vérifier."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -183,6 +256,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Le texte permet de demander et emprunter des livres sans préciser le genre des personnes ; voix à vérifier."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -203,6 +283,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Père homme conforme à Papa ; le genre de l’enfant n’est pas précisé dans les paroles."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -223,6 +310,13 @@
         "status": "documented_match",
         "voice_confirmation_pending": false,
         "note": "Le personnage montré avec les livres est bien féminin. Les observateurs ne sont pas identifiés par genre dans le dialogue et restent des élèves figurants."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 3,
+        "visible_people": 3,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -243,6 +337,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "La personne qui préfère préparer ses repas et son interlocuteur ne sont pas genrés dans le texte. La répartition de voix reste à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -265,6 +366,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Personnage Éric nommé et représenté au masculin ; genre de la personne qui lui pose la question non précisé par les paroles."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -285,6 +393,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Kate nommée et représentée au féminin ; autre interlocutrice non genrée par les paroles. Aucun genre réel des voix certifié."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -305,6 +420,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Les deux interlocuteurs ne sont pas genrés par les paroles ; distribution des voix à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -325,6 +447,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Marc est nommé et représenté au masculin ; l’autre interlocuteur n’est pas genré dans le texte. Le projet d’invitation n’ajoute pas de genre confirmé pour cet autre personnage."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -345,6 +474,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Thomas est masculin comme frère et il ; les deux personnes qui parlent de lui ne sont pas genrées par les paroles."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -365,6 +501,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "La préférence pour le sac vert ne donne aucun genre des interlocuteurs ; voix à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -385,6 +528,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Les deux interlocuteurs ne sont pas genrés dans la transcription. Voix à confirmer avant de certifier leur répartition."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -405,6 +555,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Ni la personne qui a raté la crème ni la personne aidante ne sont genrées dans le dialogue. Répartition vocale à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -425,6 +582,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Emma et l’accord contente concordent ; Alex est un prénom mixte et le genre de la personne qui félicite reste à confirmer dans la voix."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -434,20 +598,35 @@
       "audioSha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
       "transcription": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
       "sourceSha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
-      "image": "/lib/images/tcf/co/bg/piscine.webp",
-      "imageSha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-piscine-deux-interlocuteurs.png",
+      "imageSha256": "db578ee3f6c749296e5bcbc401b41994a80a5a65df420f5a8337ff8bfb058daa",
       "themes": [
         "sport",
         "education"
       ],
       "sceneKey": "piscine",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Le bassin, les lignes de nage et les vestiaires établissent la piscine ; aucun faux horaire, élève ou professeur de genre contradictoire.",
+      "review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "no_visible_character",
         "voice_confirmation_pending": false,
         "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+      },
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -470,6 +649,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Le masculin de il est un peu vieux concerne le dictionnaire, pas les personnes. Aucun genre de prêteur ou emprunteur n’est donné ; voix à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -479,19 +665,34 @@
       "audioSha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
       "transcription": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
       "sourceSha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
-      "image": "/lib/images/tcf/co/bg/piscine.webp",
-      "imageSha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-piscine-deux-interlocuteurs.png",
+      "imageSha256": "db578ee3f6c749296e5bcbc401b41994a80a5a65df420f5a8337ff8bfb058daa",
       "themes": [
         "sport"
       ],
       "sceneKey": "piscine",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "review": "Lieu générique de natation contrôlé ; les jours et horaires ne sont pas écrits dans la scène.",
+      "review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
       "genderAudit": {
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "no_visible_character",
         "voice_confirmation_pending": false,
         "note": "Image de lieu sans personne représentée : aucune distribution de genre visuelle à opposer aux voix, y compris la professeure citée dans une des sources."
+      },
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -514,6 +715,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Léna est représentée au féminin. La personne appelée Madame n’est pas montrée ; le jeune homme visible est un camarade, pas le professeur. Pas de remplacement motivé uniquement par sa présence."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -536,6 +744,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Employé homme conforme à Monsieur ; genre de la personne qui demande le départ non précisé dans les paroles."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -559,6 +774,13 @@
         "status": "documented_match",
         "voice_confirmation_pending": false,
         "note": "La fille et le préposé homme correspondent à mademoiselle et Monsieur ; âge exact laissé à l’oral."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -581,6 +803,13 @@
         "status": "no_visible_character",
         "voice_confirmation_pending": false,
         "note": "Le monsieur auquel on demande les horaires n’est pas représenté ; les figures des œuvres ne jouent aucun rôle dans le dialogue."
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 0,
+        "visible_people": 0,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -604,6 +833,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Le texte ne donne le genre d’aucun interlocuteur. Répartition vocale à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -626,6 +862,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Employé homme conforme à monsieur ; genre de la personne demandant les horaires non précisé."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -648,6 +891,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Employé homme conforme à monsieur ; genre de la personne demandant les prix non précisé."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -670,6 +920,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "L’orientation et le bus ne donnent pas le genre des personnes. Répartition vocale à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -692,6 +949,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Le membre du personnel est homme conformément à Monsieur. Mme Faure est une professeure citée mais absente de l’image. Le genre de la personne nouvellement arrivée n’est pas donné dans la transcription."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -714,6 +978,13 @@
         "status": "documented_match",
         "voice_confirmation_pending": false,
         "note": "Les deux rôles représentés correspondent aux titres explicitement échangés. La sœur destinataire du cadeau n’est pas montrée."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -737,6 +1008,13 @@
         "status": "documented_match",
         "voice_confirmation_pending": false,
         "note": "Pharmacien homme et client jeune homme correspondent aux titres explicitement échangés ; aucun changement nécessaire."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -760,6 +1038,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Aidant masculin conforme à jeune homme. Le genre de la personne qui demande de l’aide n’est pas précisé, et sa petite portée ne prouve pas un fauteuil : ce dernier reste un choix illustratif inclusif, pas une information de l’audio."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -782,6 +1067,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Ma mère est une personne citée, pas un des deux interlocuteurs. Le texte ne donne pas le genre du prêteur ou de la personne qui emprunte ; voix à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -804,6 +1096,13 @@
         "status": "partial_documented_match",
         "voice_confirmation_pending": true,
         "note": "Vendeuse femme conforme à Madame ; le jeune homme est cité comme destinataire du cadeau. Il n’est pas certain que cette mention identifie le locuteur client : ce rôle reste à confirmer avec la voix."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -826,6 +1125,13 @@
         "status": "roles_not_specified",
         "voice_confirmation_pending": true,
         "note": "Cette autre source partage l’image mais ne donne aucun titre ou accord de genre : ne pas lui transférer la preuve mademoiselle de l’autre audio. Distribution des voix à confirmer."
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -853,6 +1159,13 @@
             "quote": "Bonjour, je suis votre nouveau professeur de Français. Bonjour Monsieur."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -884,6 +1197,13 @@
             "quote": "Désolée … j’oublie toujours ton cahier."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -911,6 +1231,13 @@
             "quote": "Bonjour monsieur. Bonjour Nicolas."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -938,6 +1265,13 @@
             "quote": "Je peux t’aider Nina ? Oui madame, je dois préparer un exposé."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -966,6 +1300,13 @@
             "quote": "S’il vous plaît, madame, la salle de spectacle Mitterrand ? Ce n’est pas très loin jeune homme."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -993,6 +1334,13 @@
             "quote": "Bonjour Madame. Ma famille a besoin d’un certificat de scolarité au collège. À quel nom ? Carlos Garcia."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1021,6 +1369,13 @@
             "quote": "Madame je m’occupe des tapis ? Très bien Tonin."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1049,6 +1404,13 @@
             "quote": "Et après on va faire quoi madame ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1076,6 +1438,13 @@
             "quote": "Monsieur on peut utiliser la calculatrice ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1103,6 +1472,13 @@
             "quote": "Mais madame il fait froid aujourd’hui."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1130,6 +1506,13 @@
             "quote": "Dania ? Oui, Madame."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1144,23 +1527,23 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png",
-      "imageSha256": "09ddb7ddec1b1c50d5b342fde8df729c3f9abe9d563cb9a8158f353330f7b9ca",
-      "review": "Nouvelle camarade Anissa accueillie par Sarah avec une chaise libre à côté. Accord féminin et prénoms respectés ; enseignant volontairement hors cadre car son genre n’est pas précisé. Aucun drapeau ou cliché de nationalité.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-anissa-et-enseignante.png",
+      "imageSha256": "2986902b4cab0a0602556bb85aa11301ae9e973b1e8f524ba13c61eee2d22fd2",
+      "review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Accord féminin nouvelle camarade et prénom Anissa ; Sarah nommée. Enseignant hors cadre car son genre n’est pas précisé.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "nouvelle élève féminine",
-            "quote": "Je vous présente votre nouvelle camarade."
-          },
-          {
-            "role": "Anissa et Sarah",
-            "quote": "Anissa, va t’assoir à côté de Sarah."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1192,6 +1575,13 @@
             "quote": "Mon sac de voyage est lourd. Je suis petit."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1219,6 +1609,13 @@
             "quote": "C’est très gentil mademoiselle, de laisser votre place à une dame de mon âge ! Je vous en prie Madame."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1246,6 +1643,13 @@
             "quote": "Non Monsieur. Vous pouvez augmenter le volume ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1274,6 +1678,13 @@
             "quote": "Madame c’est la semaine prochaine qu’on va visiter l’exposition de Matisse ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1302,6 +1713,13 @@
             "quote": "À quelle heure on part Monsieur ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1317,19 +1735,23 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png",
-      "imageSha256": "465d2c0fee8b14c5d40eab92faac6e1d29682a947c15c67bbdfcd309209250df",
-      "review": "Classe mixte regardant un film projeté, cahiers fermés et professeur hors cadre car son genre n’est pas précisé. Aucun visage d’acteur ou faux extrait de Lupin ; silhouettes et roue du fauteuil principales dans le cadre.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
+      "imageSha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+      "review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Aucun professeur visible puisque son genre n’est pas précisé ; classe mixte figurante sans attribution individuelle de la voix. Film sans fausse image de Lupin.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "groupe de classe, professeur hors champ",
-            "quote": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ?"
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1344,19 +1766,23 @@
       ],
       "sceneKey": "fleuriste",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png",
-      "imageSha256": "c2160f8c16161890d170a100abee0e1ae2461350b50835595142b2b23e919f30",
-      "review": "Revue visuelle : fleuriste femme en pied, une rose blanche de démonstration et carnet de commande vierge. Client hors cadre ; aucun bouquet de dix-huit roses déjà constitué, ni adresse, âge ou montant visible. Dessin chaud en 4:3 cohérent avec la référence approuvée.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-fleuriste-et-client-roses.png",
+      "imageSha256": "45e58059634f0f811fca96aa269cacd7ff573178d16077765fb2a792cb6e1c21",
+      "review": "Fleuriste et client en fauteuil visibles en entier, regard mutuel et échange réel. Rose blanche seule comme échantillon ; bouquet commandé non représenté avec un mauvais nombre, adresse sans texte. Fleuriste femme selon Madame ; client homme provisoire.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Fleuriste explicitement appelée Madame ; client hors cadre et bouquet encore en commande, sans nombre de fleurs inventé.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "fleuriste femme",
-            "quote": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1384,6 +1810,13 @@
             "quote": "Bonjour Monsieur, avez-vous des pulls légers en laine ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 1,
+        "visible_people": 1,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1412,6 +1845,13 @@
             "quote": "Madame, quelle belle visite !"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 6,
+        "visible_people": 6,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1439,6 +1879,13 @@
             "quote": "Pardon Monsieur. Vous avez la monnaie de 5 euros s’il vous plaît."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 1,
+        "visible_people": 1,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1471,6 +1918,13 @@
             "quote": "Vous êtes invitée à ce repas"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1485,19 +1939,23 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png",
-      "imageSha256": "6150f45f2f08e2bfdd9a94cc747d8182ccd0b41a490b1f7cd55a7dc5734c5b00",
-      "review": "Revue visuelle : Claudine seule en pied lève la main avec assurance, cahier ouvert sur une table en classe. Camarade et enseignant hors cadre ; aucune attribution arbitraire de leur voix, note ou matière inventée. Image 4:3 conforme au dessin de référence.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-claudine-et-camarade.png",
+      "imageSha256": "cf06aa353c71379d4f06b6ab12b713db3a7127d824deb9468d5b646afe157291",
+      "review": "Deux personnes entières en dialogue, regard mutuel clair ; accessoires pertinents et action conformes au texte. Aucun texte, horaire ou montant ; natif 4:3 et style peint relus.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Claudine nommée et accord prête au féminin ; camarade et enseignant hors cadre, aucune voix attribuée à un figurant.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "Claudine, élève prête à répondre",
-            "quote": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1512,19 +1970,23 @@
       ],
       "sceneKey": "refus-sortie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png",
-      "imageSha256": "f61771bae236c8db373d314a8421720970b6bf82d0d1cf73c165027681dfaa6c",
-      "review": "Revue visuelle : père homme en pied, expression ferme et main ouverte de refus dans l’entrée du logement. Enfant hors cadre ; aucune sortie au bowling représentée comme réalisée, ni jour ou date. Chaussons visibles, sans bulles ni texte, style approuvé en 4:3.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-pere-refuse-sortie-enfant.png",
+      "imageSha256": "2f23d97019fd6a24bbf6a0590339655a46ad7ea22a7aafffd15eef8ee84a6354",
+      "review": "Père et enfant présents en entier, se parlent et se regardent ; refus explicite, sans sortie déjà accomplie. Le père respecte papa ; fille choisie provisoirement.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Père explicitement appelé Papa ; enfant locuteur hors cadre, sans genre inventé. Refus conservé, pas de sortie déjà réalisée.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "père homme",
-            "quote": "Papa, ce soir je sors avec Mathieu, nous allons au bowling !"
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1552,6 +2014,13 @@
             "quote": "Excusez-moi Monsieur, quels sont vos horaires d’ouverture demain ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 1,
+        "visible_people": 1,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1580,6 +2049,13 @@
             "quote": "Pardon monsieur. Vous êtes ouverts demain matin ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 1,
+        "visible_people": 1,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1607,6 +2083,13 @@
             "quote": "Oui, tu dois être content, parce que tu adores les voitures sport. Très content."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 1,
+        "visible_people": 1,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1635,6 +2118,13 @@
             "quote": "Tu es contente ? Oui vraiment, très contente. Merci encore !"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 1,
+        "visible_people": 1,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1657,6 +2147,13 @@
         "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 0,
+        "visible_people": 0,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1679,6 +2176,13 @@
         "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
         "audio_listening_performed": false,
         "evidence": []
+      },
+      "sceneReview": {
+        "status": "needs_interlocutor_repair",
+        "visible_interlocutors": 0,
+        "visible_people": 0,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1706,6 +2210,13 @@
             "quote": "Alors Osman, tu viens au tableau corriger les exercices de compréhension écrite ? Oui madame !"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "visible_people": 4,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1733,6 +2244,13 @@
             "quote": "Mateo je dois te parler 2 minutes. Oui Madame."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1761,6 +2279,13 @@
             "quote": "Je m’appelle Luca et j’arrive d’Italie. Moi, c’est Tessa et je suis américaine."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1775,19 +2300,23 @@
       ],
       "sceneKey": "invitation-repas",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png",
-      "imageSha256": "7a1219d7d21e62dda7f19cb601d83f9fa15ee01693a98c4a1d5dc555b9b7c85d",
-      "review": "Mère explicitement citée, seule personne principale attendant à la sortie du collège ; enfant locuteur hors cadre pour ne pas inventer son genre. Aucun mode de transport ou repas au self ajouté.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-deux-eleves-repas-self.png",
+      "imageSha256": "db94c6c999f9927ea668acd26f2444d8420937a06f40353d2c7f367b359b8772",
+      "review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Mère explicitement citée ; enfant locuteur hors cadre parce que son genre n’est pas précisé. Le transport n’est pas inventé.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "mère femme",
-            "quote": "Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1802,19 +2331,23 @@
       ],
       "sceneKey": "secretariat-scolaire",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png",
-      "imageSha256": "a0870125023408689752a8424d83383d6164f5741966336beae898b636949f55",
-      "review": "Employé homme conforme à Monsieur, photo au verso et dossier scolaire ; élève demandeur hors cadre, sans portrait ou genre inventé. La photo n’est pas remplacée par une carte d’identité.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-photo-dossier-deux-personnes.png",
+      "imageSha256": "54f370a789da07378b5384a52fc157835751e7789a43e65a82a43422a481643b",
+      "review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Interlocuteur appelé Monsieur ; élève hors cadre et verso de photo pour ne pas lui attribuer un genre absent du texte.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "employé homme",
-            "quote": "Bonjour Monsieur. Voici ma photo pour mon dossier."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1830,23 +2363,23 @@
       ],
       "sceneKey": "infirmerie",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-diego-vers-infirmerie.png",
-      "imageSha256": "b654f423a271ba708fe9cbf0745db7c7b1162499388d46727a6a0e8bfd34fe28",
-      "review": "Diego devant l’infirmerie, main au ventre ; image vue depuis l’accompagnant laissé hors cadre parce que son genre n’est pas précisé. Ni médecin visible ni consultation accomplie, chaussures entières.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+      "imageSha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+      "review": "Deux garçons, Diego accompagné ; ventre douloureux et infirmerie conformes, aucune consultation déjà réalisée.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Diego nommé ; accompagnant hors cadre car son genre n’est pas précisé. La scène adopte son point de vue, sans affirmer que Diego va seul.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "élève Diego",
-            "quote": "Diego, comment ça va, tu es malade ?"
-          },
-          {
-            "role": "accompagnement sans personne visible inventée",
-            "quote": "Viens on va à l’infirmerie. Je t’accompagne."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1861,23 +2394,23 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-devant.png",
-      "imageSha256": "8db3d2f5b54cacd9613e3f69fc2fcc9af07f89a30ba09c2d3afd5ace8692920f",
-      "review": "Professeur homme conforme à Monsieur montrant une place libre devant ; élève demandeur hors cadre. Aucune paire de lunettes déjà reçue, aucun genre attribué au locuteur non identifié.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-changer-place-vers-avant.png",
+      "imageSha256": "20abde651dbce6d052b1dbcd9bf58082bd9b23ab9efa5151f7f3c6d7b112d7a9",
+      "review": "Professeur homme appelé Monsieur et élève fille choisie provisoirement ; place de devant et absence des lunettes non encore reçues.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Professeur appelé Monsieur ; élève demandant la place hors cadre, sans genre ou lunettes reçues inventés.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "enseignant homme",
-            "quote": "Monsieur, je peux changer de place ?"
-          },
-          {
-            "role": "place de devant",
-            "quote": "Oui, mets-toi devant."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1892,23 +2425,23 @@
       ],
       "sceneKey": "vestiaire",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu-roles-documentes.png",
-      "imageSha256": "6570088ab7a8d45a56835dc158ffbfcb34ec53fe74efb34ba15f5934f5dc9444",
-      "review": "Adulte femme conforme à Madame révélant un sac sous un blouson bleu au vestiaire. Élève hors cadre ; couleur et cachette conservées, aucun personnage dénudé ou milieu médical.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-sac-sous-blouson-bleu.png",
+      "imageSha256": "e2a5a8c007e3b4ae423a2456b06aca95ad8d6f41e333c11150961a5a60ba79a7",
+      "review": "Adulte femme appelée Madame et élève garçon choisi provisoirement ; sac découvert sous un blouson bleu.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Adulte appelée Madame ; élève hors cadre. Cachette sous le blouson bleu conservée sans attribution de genre au locuteur inconnu.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "adulte femme",
-            "quote": "Madame, mon sac n’est plus au vestiaire !"
-          },
-          {
-            "role": "cachette confirmée",
-            "quote": "Regarde sous le blouson bleu. Ah oui, le voilà."
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1936,6 +2469,13 @@
             "quote": "Oh, Mélanie, heureusement que tu es là. Je peux te demander un service ? Bien sûr maman."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -1950,23 +2490,23 @@
       ],
       "sceneKey": "place-reservee",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-erreur-place-reservee.png",
-      "imageSha256": "e244aa7b8eb64b8a68f7d866b02cee53d594f09c5713b5eae08923c6a8881a50",
-      "review": "Voyageuse femme conforme à Madame se levant après une erreur, sans lunettes. Deux billets distincts sans numéro ni montant ; autre voyageur hors cadre, seul son billet apparaît depuis le point de vue du spectateur.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-erreur-place-reservee.png",
+      "imageSha256": "de0beb84f9f2525ed412a2fe4fe47c9ad3feefa684fd40a06ae3f338ab129569",
+      "review": "Deux voyageurs discutent de la place réservée, billets sans numéro ; casting provisoire.",
       "genderReview": {
-        "status": "documented_roles_match",
-        "basis": "Voyageuse explicitement appelée Madame ; autre voyageur hors champ, billet seul montré depuis son point de vue. Aucun genre, numéro de place ou montant ajouté.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": [
-          {
-            "role": "voyageuse femme",
-            "quote": "Madame, cette place est réservée."
-          },
-          {
-            "role": "absence de lunettes",
-            "quote": "Je n’ai pas mes lunettes…"
-          }
-        ]
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -1982,14 +2522,23 @@
       ],
       "sceneKey": "trajet-train",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-      "imageSha256": "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-      "review": "Train entier à quai avec cheminement piéton visible, sans voyageur, nom de gare ou lycée inventé. Illustration du trajet ferroviaire choisi, sans bus ou arrivée déjà obtenue ; pas de genre attribué au locuteur.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-train-marche-vers-lycee.png",
+      "imageSha256": "afabb870eeacdd56e5038fc55487aab9b1781beeaa7108cce810b32051959b99",
+      "review": "Deux élèves face à face près de la gare et du chemin ; genre non précisé choisi provisoirement.",
       "genderReview": {
-        "status": "no_visible_character",
-        "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": []
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -2004,14 +2553,23 @@
       ],
       "sceneKey": "bateau-iles",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-      "imageSha256": "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-      "review": "Bateau de promenade dans un paysage côtier non identifié, aucun personnage à bord. Évocation du moyen d’excursion proposé sans faire embarquer les locuteurs ni donner une île réelle ou un horaire ; pas d’image d’objet isolé sur fond uni.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-bateau-visiter-iles.png",
+      "imageSha256": "018bb5cae6f67b9b46263f47b8cb01b24f51ac47ae44a6dbac31e403cba32384",
+      "review": "Deux amis devant le bateau amarré, projet de visite futur ; casting provisoire, pas déjà embarqués.",
       "genderReview": {
-        "status": "no_visible_character",
-        "basis": "Scène de transport complète, sans personnage visible ni attribution de voix ; contrôle de genre visuel sans objet.",
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
         "audio_listening_performed": false,
-        "evidence": []
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     },
     {
@@ -2045,13 +2603,11 @@
         ]
       },
       "sceneReview": {
-        "status": "two_interlocutors_visible",
+        "status": "interlocutors_visible",
         "visible_interlocutors": 2,
-        "minimum_visible_interlocutors": 2,
-        "roles": [
-          "mère",
-          "Bastien"
-        ]
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -2083,6 +2639,13 @@
             "quote": "Devant moi il y avait cette dame avec la veste blanche qui est maintenant au guichet."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 3,
+        "visible_people": 3,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -2114,6 +2677,13 @@
             "quote": "Monsieur l’agent, j’étais arrêté au feu rouge sur mon vélo"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -2142,6 +2712,13 @@
             "quote": "Bonjour Madame, puis-je vous retenir quelques instants s’il vous plaît ? C’est à quel sujet jeune homme ?"
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
       }
     },
     {
@@ -2170,6 +2747,671 @@
             "quote": "Bonjour jeune homme, Police municipale. Bonjour Monsieur l’Agent."
           }
         ]
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "visible_people": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-019-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
+      "audioSha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
+      "transcription": "Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart.",
+      "sourceSha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "invitation-repas",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-invitation-dejeuner-deux-amis.png",
+      "imageSha256": "420c09e293bae49195e7411cbbfd50d4a237e0db21ef53d36a4ee58d564ef9d1",
+      "review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+      "audioSha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+      "transcription": "Vous écoutez souvent de la musique ? Oui j’aime beaucoup. Et vous n’aimez pas la lecture ? Si, j’aime bien lire des livres.",
+      "sourceSha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+      "themes": [
+        "culture",
+        "lecture"
+      ],
+      "sceneKey": "loisirs-lecture-musique",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-musique-lecture-deux-personnes.png",
+      "imageSha256": "4edfcb273a32167f91b3413511d117cacefc9a9768805b1c39e4bfadb83bfff6",
+      "review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+      "audioSha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+      "transcription": "Le soir vous regardez la télé ? Pas tous les soirs. Je n’aime pas tellement. Je préfère jouer à l’ordinateur.",
+      "sourceSha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "jeux-ordinateur",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-ordinateur-deux-interlocuteurs.png",
+      "imageSha256": "e2da6c0d36479b75708e23550e5bdfc4eb7606ecafbfc144ce2e09bda44c774f",
+      "review": "Deux personnes entières en dialogue, regard mutuel clair ; accessoires pertinents et action conformes au texte. Aucun texte, horaire ou montant ; natif 4:3 et style peint relus.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-b1-032-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-032-01.mp3",
+      "audioSha256": "534d75004bf38cb1b147e5cc3ff32884872020a8d6ee57f8cbc39e9e27ec5c23",
+      "transcription": "Alors pour demain révisez pour le contrôle ! Mais madame, ce n’est pas possible. Trente pages à réviser en un jour, on n’aura jamais de bonnes notes !",
+      "sourceSha256": "d245a2de70bc1ec6f5f36a45c5b598d6f28778ec393a4e8827f21529eac87a27",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-cours",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-aide-expose.png",
+      "imageSha256": "f31d384ceb6143c76ecf050ee5ce6fb0a8a0609fd6c33a0071f1469bfd59f630",
+      "review": "Scène scolaire avec enseignante femme et élève en discussion autour du travail ; pas de contrôle déjà corrigé ni de note imposée. Élève fille choisie provisoirement.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-029-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-01.mp3",
+      "audioSha256": "715e5f9ac40aa1c60cde048eb85417c9f177af37b4c56b2ffe1cca0ea96a17f1",
+      "transcription": "Salut Mahdi. Tu viens t’entraîner pour le match de rugby de mercredi après-midi ? Oui, volontiers. Je demande à mes parents.",
+      "sourceSha256": "beb40943e0d7f97f0a49cbb58f9e94c549f53a342eea81ec556c230fe44e406a",
+      "themes": [
+        "sport"
+      ],
+      "sceneKey": "rugby",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-rugby.png",
+      "imageSha256": "ff29b4d317e57ac4b1bce12f2ebbc4f57cde49a0fea3f4148f3d4718e6841d90",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-030-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-02.mp3",
+      "audioSha256": "3d57fb6c56dca61cd519b5285a023ade63f8799fb3d4a82bab01e6aa0b7c4e0e",
+      "transcription": "Aujourd’hui encore tu as mal au ventre ? Oui madame, hier déjà, et aujourd’hui j’ai encore mal. Et bien je te conseille d’aller voir ton médecin.",
+      "sourceSha256": "7bbb2f2d269fd934dc6e95c79c719780628d1ec0f1dda13ec2e91774df9fdd93",
+      "themes": [
+        "sante",
+        "education"
+      ],
+      "sceneKey": "mal-ventre",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-mal-ventre.png",
+      "imageSha256": "a599defbcd5fdb9d9e49ab9636d8ad06d3f0e4bfc61cd93c499467ca7a10c0fe",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
+      "audioSha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
+      "transcription": "Que cherches-tu ? Je dois préparer un exposé sur les volcans madame. Nous avons des livres de sciences dans le rayon orange et des revues sur le présentoir à l’entrée.",
+      "sourceSha256": "c00afe476616420f42ad11be304ddbdfabb2ebbe32c77c2d12d849c8d2a62a2e",
+      "themes": [
+        "lecture",
+        "culture",
+        "education"
+      ],
+      "sceneKey": "bibliotheque",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-bibliotheque-volcans.png",
+      "imageSha256": "5934a9020a82551cfcda647c1ff0385305e3170e99403d570f7e27a6a0b9d047",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-044-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-04.mp3",
+      "audioSha256": "0cabf393d89799eaf9defcd7d2d9f47ef6efdad5a7879b7c4a1c5e264d9f64bc",
+      "transcription": "Pendant votre temps libre, que faites-vous avec vos copains ? Nous faisons du vélo et des promenades. Ça me plaît. Et vous ne faites pas les magasins ? Ah non ! j’ai horreur de ça !",
+      "sourceSha256": "f3113acc1f2924b1427fca9881207e0949ee71fd4c51da17ad3d8f680ae561d0",
+      "themes": [
+        "sport",
+        "deplacements"
+      ],
+      "sceneKey": "velo-promenade",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-velo-et-promenade-amis.png",
+      "imageSha256": "012da9a23877ab2ac1bf38d33e92910725f37864fe3bb79f6ee4671794108ab3",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 4,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-01.mp3",
+      "audioSha256": "6f31eef2578ae1cb4b9a22ecc964152df82b7b50714fc1a168bc9e0234389128",
+      "transcription": "Pour toi aussi du poisson avec des légumes ? Je veux bien du poisson mais avec du riz. Voilà ton poisson et ton riz. Je te mets de la sauce ?",
+      "sourceSha256": "8d1b7a74ee94285a05b9163cf9d45dbb97805bf538548cd253fb8a41a8f0bbd4",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "service-repas",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-service-poisson-riz.png",
+      "imageSha256": "465c00a76e83b22c41ef803b7cdb60a49fbe78852819cb8ec8ecaa4b38e4fe1a",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-049-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-02.mp3",
+      "audioSha256": "a1d77501ee612a41ad27571c1adc80e1ba5eca24b774d54f74733e0c70e1401b",
+      "transcription": "Tu peux me prêter ton compas s’il te plaît ? Encore ? Allez, sois sympa ! Bon d’accord, mais n’oublie plus tes affaires.",
+      "sourceSha256": "1603bc74a0f51c1680f940facd9c888be7fc3c065872e7e87ef5dd7ffe1eae08",
+      "themes": [
+        "education"
+      ],
+      "sceneKey": "classe-cours",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-pret-compas-geometrie.png",
+      "imageSha256": "17bdfc2a80a194d14ac5f17e649fcfa52e5961290c224033c0c22a419cd1b9b8",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-051-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+      "audioSha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+      "transcription": "Tu aimes le saut en hauteur ? C’est ma première fois ! Je fais du foot, du basket, mais pas de saut en hauteur. Ne t’inquiète pas ! Tu vas aimer!",
+      "sourceSha256": "59a694bc4318dbc52444294499d77e36b450b9403296303e18beb037f7360970",
+      "themes": [
+        "sport",
+        "education"
+      ],
+      "sceneKey": "saut-hauteur",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-premier-saut-hauteur.png",
+      "imageSha256": "06f2e4b88578edc69fe476459e3879cdb6e652c889e79f9627d9b632f177eff8",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-02.mp3",
+      "audioSha256": "7218f1d01fc05b0fe5051ef5153f1e98f3296498418ecb889c2ea18834d5357a",
+      "transcription": "C’est difficile de repartir après de si belles vacances. Pour moi aussi c’est difficile de te laisser repartir de chez moi. Tu es super de m’avoir fait connaître ta région, tes copains, tes traditions… Mais, on va se revoir !",
+      "sourceSha256": "5c25b12798e2063f4f0d4a87b5a7a037297a9ce27fbb72cc33a01c7d570f806d",
+      "themes": [
+        "deplacements"
+      ],
+      "sceneKey": "depart-vacances",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-dire-au-revoir-fin-vacances.png",
+      "imageSha256": "e8c581647aaedb1fdc08641786bd4500a736955511135b69201e30859a37fce4",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-031-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-03.mp3",
+      "audioSha256": "a54967244ffd26d148a41c06c0408c1c83a71930d3a7818280b9330ca7838ac8",
+      "transcription": "Pour ce soir, qu’est-ce que tu voudrais manger ? Qu’est-ce que tu dis d’une pizza ? Il y a tout à la maison? Oui, on peut faire une pizza aux fromages. C’est une très bonne idée.",
+      "sourceSha256": "839b6f7e4d77e9c7ce53ec6c600650f6c47b09151e6e117b3caf1425a2004f53",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "cuisine-pizza",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-projet-pizza-aux-fromages.png",
+      "imageSha256": "69a72634e3ab550baee6f6ae4517e5f3873da42d7eb41e925a8950702ad30883",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-034-01",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
+      "audioSha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
+      "transcription": "C’est pour une information... Qu’est-ce qu’on peut voir dans la château de Versailles ? À l’intérieur du château ? C’est ça. Vous avez l’appartement, la galerie des glaces, le salon d’Hercule, des tableaux, des sculptures, des peintures, des meubles...",
+      "sourceSha256": "13f65ebf8fb40441ffd79590d14fea25adcaf4d1fa2cf3ad1af6838a423cb408",
+      "themes": [
+        "culture"
+      ],
+      "sceneKey": "visite-versailles",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-renseignements-visite-versailles.png",
+      "imageSha256": "993ff744b19cdf3b1b3c57887a97c54b4b2e0bff10b434b70f9eed8ed7e0208c",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-035-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
+      "audioSha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
+      "transcription": "Tu sais si le fleuriste ferme à 19h00 ? Oui, tous les jours. Et je vais où pour prendre une plante pour l’anniversaire de ma mère ? Va voir au supermarché ! Il ferme à 21h00.",
+      "sourceSha256": "be5e367eb338ff2f765f04202faa6bfd3b202d41384d5561d8607d0ec7bb9222",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "plante-supermarche",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-conseil-plante-supermarche.png",
+      "imageSha256": "81d0bb1f7cb40ca62a539f0ce928c0659269b36ac536fa603d86c2ab0ed1d708",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-043-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-04-03.mp3",
+      "audioSha256": "1602983632dfa1891577678667007dc27c706b8699a12c1666405c82401005ea",
+      "transcription": "Excusez-moi, vous pouvez garder mon chien 1 minute s’il vous plaît ? Oui mais vous allez où ? Je rentre dans la pâtisserie prendre un gâteau. Pas de problèmes, allez-y.",
+      "sourceSha256": "8b70251ff9e7e8c3fe555e3ffac96231dc5f853baf7656662d56361518fe5288",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "chien-patisserie",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-chien-devant-patisserie.png",
+      "imageSha256": "0b49667349a454376942a42b45c4443c96d3f53a570d269768416f21fa626d6c",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-02.mp3",
+      "audioSha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
+      "transcription": "Ce shampoing va bien pour mes cheveux frisés ? Oui, ma cousine le prend et dit qu’il est super. Et ce dentifrice il est bon aussi ? Je ne sais pas, je ne le connais pas.",
+      "sourceSha256": "8b715b6717d7856330fab3f80237a7b18b4eaa451ad45bc7d52a915e37cf6f4b",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "produits-hygiene",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-shampoing-dentifrice.png",
+      "imageSha256": "7809b22f9b9a897314269b0c561b7a10537e5ee00ca88c19698c9805b3377032",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-044-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-04-04.mp3",
+      "audioSha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
+      "transcription": "Je cherche un dernier modèle de téléphone portable. Nous venons de recevoir ces deux derniers modèles. Qu’est-ce qu’il a de particulier ce modèle-ci ? Il a une très bonne autonomie, les photos sont de bonne qualité et le prix est avantageux.",
+      "sourceSha256": "444d8f9b7ee9e02ac91d8d928d910b507b97b37ea8372410a8f3defa6f61b7cb",
+      "themes": [
+        "achats"
+      ],
+      "sceneKey": "telephonie",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-comparer-deux-telephones.png",
+      "imageSha256": "30f2c08ec1948735b38a0c095426bf5193ea9576de63f86af520ee1c6dd2f26f",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-02",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-02.mp3",
+      "audioSha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
+      "transcription": "Ce soir, tu viens avec nous manger une raclette ? On va dans le petit restaurant de la station touristique. Volontiers. Tu connais la raclette ? C’est un plat montagnard avec du bon fromage. Moi, je connais la fondue.",
+      "sourceSha256": "e5ee5357b30a218787e94f1896bd70d39dd75f82eb3157ba63ad869fb4bc6b99",
+      "themes": [
+        "alimentation"
+      ],
+      "sceneKey": "restaurant-raclette",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-invitation-raclette-restaurant.png",
+      "imageSha256": "68fee46da877975adbc0024fafd399ef05ef6a6aab0bb566208a7dee451e584d",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-03",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-03.mp3",
+      "audioSha256": "ab486a23c3cb82b3a00bebadd32cb9c4bee3b73c001ace9e61ca29a64cef4007",
+      "transcription": "Demain tu sais si la météo annonce du beau temps ? Non, je ne sais pas, j’espère que oui. Alors il faut regarder la météo ce soir. Bien sûr, ensuite on décide pour demain.",
+      "sourceSha256": "6f4b60736b4b753691edfb136212a738451226ec9b3189b39b4ad2d48f73f0cc",
+      "themes": [
+        "loisirs"
+      ],
+      "sceneKey": "prevision-meteo",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-attendre-previsions-meteo.png",
+      "imageSha256": "e5050a51c4ec52e6bf4a266d1f83cd2833f6177d255b03315a1f5d4cd008ea7e",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a2-045-04-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-04-04.mp3",
+      "audioSha256": "d4a0fb7aae899ad11bee7fa9bd3316d86a36d5b466ed66d7b570320a92dc209e",
+      "transcription": "On va comment en haut de la montagne ? Par la route ? Non il y a un téléphérique toutes les demi-heures. C’est le seul moyen. Super ! Oui le point de vue est magnifique même si c’est impressionnant.",
+      "sourceSha256": "c4eec47ef9089ebad1f29c5d461564c341c648b0bd11856ed3be6f7660ae6edb",
+      "themes": [
+        "deplacements",
+        "sport"
+      ],
+      "sceneKey": "telepherique",
+      "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+      "imageSha256": "0efd296d1bdb5c32fb999e35d2ef364afbdace7dc282c6fd6697f3a740586791",
+      "review": "Variante existante revue en contexte : les interlocuteurs sont visibles. Les rôles non précisés sont choisis provisoirement à la demande utilisateur.",
+      "genderReview": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "sceneReview": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "reviewed_visually": true,
+        "register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+        "casting_is_provisional": true
       }
     }
   ],

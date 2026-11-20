@@ -19,7 +19,7 @@ import {
   type TcfSlotMeta,
 } from './catalog'
 import { isAssociationAnnonce } from './association-documents'
-import { tcfAudioSrc } from './media'
+import { tcfAudioSrc, tcfScenarioImageSrc } from './media'
 import { threeThemeImageSrc } from './three-themes-images'
 import { limitTcfCeQuestions } from './ce-questions'
 import { tcfCoConsigneForSlot, tcfCoConsigneForType, tcfPeConsigne } from './consignes'
@@ -399,7 +399,7 @@ export function tcfExerciseItems(
           nbDialogues: ex.support.nb_dialogues,
           situations: ex.situations.map((s, i) => ({
             lettre: TCF_LETTRES_SITUATIONS[i] ?? String(i + 1),
-            image: s.image_pending ? '' : s.image,
+            image: s.image_pending ? '' : tcfScenarioImageSrc(s.image),
             dialogue: s.dialogue,
             audioSrc: s.dialogue != null && ((ex.support.audios?.length ?? 0) > 1 || ex.support.nb_dialogues === 1)
               ? coFrameAudioSrc(ex, s.dialogue) : undefined,

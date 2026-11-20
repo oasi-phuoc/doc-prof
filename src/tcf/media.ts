@@ -4,6 +4,8 @@
  * - chemin relatif (`vocabulaire/fruits/pomme.webp`) : sous `public/lib/images|audio/`.
  * Les anciens chemins PO et objets CO sont redirigés vers leur nouveau dossier.
  */
+import scenarioReplacements from './scenario-image-replacements.json'
+
 export const TCF_IMAGE_DIR = '/lib/images/'
 export const TCF_AUDIO_DIR = '/lib/audio/'
 
@@ -17,7 +19,7 @@ function resolve(src: string, dir: string): string {
 export function tcfImageSrc(src: string | null | undefined): string {
   if (!src) return ''
   // Les fiches déjà enregistrées peuvent encore contenir l'ancien dossier PO.
-  return resolve(src, TCF_IMAGE_DIR).replace(
+  const resolved = resolve(src, TCF_IMAGE_DIR).replace(
     // Cette série a été remise dans l'ordre narratif. Les anciennes fiches
     // doivent retrouver la même scène malgré la nouvelle numérotation.
     /^\/lib\/images\/comprehension\/po-a1\/pause-cafe-travail-([134])\.webp(?=$|[?#])/,
@@ -40,6 +42,20 @@ export function tcfImageSrc(src: string | null | undefined): string {
     /^\/lib\/images\/tcf\/co\/scenes\/delf-actif\/scenario-b1-conseil-vetements-pluie\.png(?=$|[?#])/,
     '/lib/images/tcf/co/scenes/delf-actif/scenario-b1-pluie-mere-bastien-dialogue.png',
   )
+  const [, path = resolved, suffix = ''] = resolved.match(/^([^?#]+)(.*)$/) ?? []
+  // Les chemins de scènes remplacées restent valables sur les anciennes fiches.
+  // Les images partagées avec un QCM sont mises à jour uniquement en scénario.
+  const replacement = path.includes('/co/scenes/')
+    ? (scenarioReplacements as Record<string, string>)[path] : undefined
+  return replacement ? replacement + suffix : resolved
+}
+
+/** Remplace aussi un ancien décor/QCM réutilisé dans une association de dialogues. */
+export function tcfScenarioImageSrc(src: string): string {
+  const resolved = tcfImageSrc(src)
+  const [, path = resolved, suffix = ''] = resolved.match(/^([^?#]+)(.*)$/) ?? []
+  const replacement = (scenarioReplacements as Record<string, string>)[path]
+  return replacement ? replacement + suffix : resolved
 }
 
 export function tcfAudioSrc(src: string | null | undefined): string {

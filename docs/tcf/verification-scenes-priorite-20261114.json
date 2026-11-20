@@ -1,7 +1,7 @@
 {
   "date": "2026-11-14",
   "baseline_commit": "b25b73a5c608e4f2e555fb3fb3c47d2d3e7b7555",
-  "scope": "Consolidation des scènes A1/A2, suite B1 et correction du coureur ; conservation des questions, réponses et MP3.",
+  "scope": "Reprise des interlocuteurs, regards et architecture des scènes ; conservation des questions, réponses, transcriptions et MP3.",
   "banks": [
     {
       "path": "src/tcf/content/a0-a1/ce.json",
@@ -10,10 +10,10 @@
     },
     {
       "path": "src/tcf/content/a0-a1/co.json",
-      "sha256": "8d2883d6133803f724487c6e53e28ffdc1028de5275ce003fa0ccf40c01e8c1c",
+      "sha256": "97c4f63d649f489d80d1916cfbfd4a41dacb5b5eef0377577ce2e8c8d3854c20",
       "identical_to_baseline": false,
-      "only_change": "URL de la scène du coureur, rôle masculin confirmé dans la source.",
-      "identical_except_reviewed_scene_image": true
+      "only_change": "Images du dialogue de piscine et du coureur dans l’association A1 ; tous les autres champs sont identiques.",
+      "identical_except_reviewed_scene_images": true
     },
     {
       "path": "src/tcf/content/a1-a2/ce.json",
@@ -41,9 +41,9 @@
   "transcriptions_modified": 0,
   "questions_modified": 0,
   "answers_modified": 0,
-  "reviewed_scene_images_replaced": 1,
+  "reviewed_scene_images_replaced": 2,
   "native_pngs": {
-    "count": 96,
+    "count": 115,
     "priority_scenes": 46,
     "historical_scene_correction": 1,
     "width": 1448,
@@ -53,7 +53,10 @@
     "b1_suite": 4,
     "first_batch_already_in_baseline": 7,
     "b1_complement": 4,
-    "visible_interlocutor_correction": 1
+    "visible_interlocutor_correction": 1,
+    "dialogue_repairs": 12,
+    "total_scenario_pngs": 114,
+    "total_with_historical_scene_correction": 115
   },
   "human_audio_listening_performed": false,
   "checks": {
@@ -62,8 +65,8 @@
     "catalogue_tests": 12,
     "typescript": true,
     "bank_exercises": 1355,
-    "scenario_sources": 87,
-    "gallery_images": 6956,
+    "scenario_sources": 108,
+    "gallery_images": 6968,
     "browser": {
       "report": "docs/tcf/scenarios-priorite-20261114-browser.json",
       "pages": 6,
@@ -118,6 +121,13 @@
       "images": 6,
       "legacy_mother_image_replaced": true,
       "errors": []
+    },
+    "dialogue_scene_browser": {
+      "report": "docs/tcf/reprise-dialogues-provisoires-20261114-browser.json",
+      "pages": 3,
+      "images": 18,
+      "clipped_frames": [],
+      "errors": []
     }
   },
   "priority_batch_summary": {
@@ -130,17 +140,35 @@
     "total_bound_scenario_sources": 81
   },
   "summary": {
-    "active_scenario_sources": 87,
-    "delf_scenario_sources": 66,
-    "remaining_scenes": 30,
-    "pending_with_prepared_image": 23,
+    "active_scenario_sources": 108,
+    "delf_scenario_sources": 87,
+    "remaining_scenes": 9,
+    "pending_with_prepared_image": 2,
     "pending_without_prepared_image": 7,
-    "distinct_generated_scenario_pngs": 102,
+    "distinct_generated_scenario_pngs": 114,
     "historical_corrections": 1,
-    "interlocutor_corrections": 1
+    "interlocutor_corrections": 1,
+    "interlocutor_repairs_remaining": 11,
+    "provisional_cast_authorized_bindings": 38
   },
   "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json",
-  "interlocutor_rework_register": "docs/tcf/reprise-interlocuteurs-scenes-20261114.json",
-  "full_interlocutor_audit_finished": false,
-  "voice_check_available": false
+  "interlocutor_rework_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json",
+  "full_interlocutor_audit_finished": true,
+  "voice_check_available": false,
+  "updated_on": "2026-11-20",
+  "bank_scene_changes": [
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 3,
+      "before": "/lib/images/tcf/co/bg/piscine.webp",
+      "after": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-piscine-deux-interlocuteurs.png"
+    },
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "before": "/lib/images/tcf/co/scenes/loisirs/s-echauffer.webp",
+      "after": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png"
+    }
+  ],
+  "all_scene_repairs_completed": false
 }
