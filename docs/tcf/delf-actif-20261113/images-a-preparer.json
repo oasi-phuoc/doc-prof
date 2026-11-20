@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 386,
+      "active_reviewed_trio": 392,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 360,
+      "candidate_visual_review": 354,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 219,
+        "active_reviewed_trio": 223,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 43,
+        "candidate_visual_review": 39,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 142,
-        "candidate_visual_review": 196,
+        "active_reviewed_trio": 144,
+        "candidate_visual_review": 194,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -12254,8 +12254,8 @@
       "semantic_sha256": "4285a78961cb2ab205055b82bf2229ac7dc0d05e3fbaaf2551b9d85e57df3551",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-05.mp3",
       "audio_sha256": "bca362004fad58be1734331f7a070f86b447aa136336d6c73d53e0de7e05dd3e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux distincts, vues extérieures pour les réponses devant.",
       "choices": [
         {
           "id": "a",
@@ -12289,8 +12289,24 @@
           "brief": "Représenter entièrement « À l’aéroport » pour « Où le rendez-vous a-t-il lieu ? ». Vérifier la transcription du support tcf-delf-actif-a1-019-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-gare-routiere.png",
+          "sha256": "6cd234010becbbb4ec7db9764110de60609660f06c447bccfb8cf5de55899f50"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+          "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co57-aeroport.webp",
+          "sha256": "9e8d8335ccec3b1d603e35509e6a44a5096e9afe8b7c7fddf786cbd53a75fd04"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12301,7 +12317,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-lieux-rdv-20261120.json",
+        "note": "Gare routière avec deux autocars, gare ferroviaire avec train et pictogramme de train, aéroport avec avion visible. Trois lieux de transport distincts ; aucun horaire illustré."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-019-05#3",
@@ -12832,8 +12852,8 @@
       "semantic_sha256": "a5957edac4dace26b2c8d02217aeebb1e25a6fbafdaa5cce47f17526102e3251",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-021-01.mp3",
       "audio_sha256": "33305497189bc6ad04e14337b14b821a9992350c048bd7a3a3672748a22272d0",
-      "status": "candidate_visual_review",
-      "reason": "Glacier vendant des glaces, cinéma et bibliothèque ; ne pas dessiner un drapeau pour prouver l’origine italienne de l’établissement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux distincts, vues extérieures pour les réponses devant.",
       "choices": [
         {
           "id": "a",
@@ -12874,8 +12894,24 @@
           "brief": "Représenter entièrement « À la bibliothèque » pour « Où les amis se retrouvent-ils ? ». Vérifier la transcription du support tcf-delf-actif-a1-021-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Glacier vendant des glaces, cinéma et bibliothèque ; ne pas dessiner un drapeau pour prouver l’origine italienne de l’établissement."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-glacier-italien.png",
+          "sha256": "9e75d86bdd9d81d958580ebef16000f2cd47dc1be5c145b6f7b2954cb93f88c5"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp",
+          "sha256": "d6ee5b5ae9d03c94d9694d6a19bc019a016884ba62411ffe82862d2719dfacc9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12893,6 +12929,10 @@
         "evidence_quote": "chez le glacier italien",
         "semantic_sha256": "a5957edac4dace26b2c8d02217aeebb1e25a6fbafdaa5cce47f17526102e3251",
         "note": "Glacier vendant des glaces, cinéma et bibliothèque ; ne pas dessiner un drapeau pour prouver l’origine italienne de l’établissement."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-lieux-rdv-20261120.json",
+        "note": "Glacier italien identifiable par son comptoir à glaces et son enseigne. Cinéma vu depuis le parvis pour la réponse devant le cinéma ; bibliothèque avec rayonnages pour à la bibliothèque. Les figurants des lieux ne représentent pas Eva ou sa sœur."
       }
     },
     {
@@ -16531,8 +16571,8 @@
       "semantic_sha256": "54a1c44c97a563e0deb92c0c95d167e86007546920297bb069ac8bf4d103e819",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-05.mp3",
       "audio_sha256": "83eb8a2f70fd1c3500af917ae5f6ffa653d21a2306dfda1f25255f8b15dbc9b5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux distincts, vues extérieures pour les réponses devant.",
       "choices": [
         {
           "id": "a",
@@ -16579,8 +16619,24 @@
           "brief": "Représenter entièrement « Du musée » pour « À côté de quel bâtiment se trouve-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a1-029-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-gymnase-facade.png",
+          "sha256": "b64c119636a4b1b9f342d7793a29ec563f8c21b61b4acd659019a7bc83d7efa7"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png",
+          "sha256": "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+          "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -16591,7 +16647,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-lieux-rdv-20261120.json",
+        "note": "Les trois bâtiments sont vus de l’extérieur. Gymnase avec salle de sport visible, collège avec salles de classe, musée avec sculpture. L’image intérieure du gymnase est écartée pour cette question qui demande un bâtiment voisin."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-029-05#3",
@@ -31160,8 +31220,8 @@
       "semantic_sha256": "9a41643063cd62451df2faa2b81fa9669f88d27827ae80349ddcb0293eaa23df",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-03-01.mp3",
       "audio_sha256": "498c4db6f2fd0967fb5b63c349b2556d8ee1dc10440203d7a02e96cda1482f80",
-      "status": "candidate_visual_review",
-      "reason": "Théâtre, piscine et mairie ; le rendez-vous précède l’activité à la piscine, ce ne sont pas le même lieu.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux distincts, vues extérieures pour les réponses devant.",
       "choices": [
         {
           "id": "a",
@@ -31188,8 +31248,24 @@
           "brief": "Représenter entièrement « Devant la mairie » pour « Où les amis se donnent-ils rendez-vous ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Théâtre, piscine et mairie ; le rendez-vous précède l’activité à la piscine, ce ne sont pas le même lieu."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-piscine-facade.png",
+          "sha256": "f2d37bcbe5294ca475d1c07419f5ce903c2ed0627655dcefa6ed2110a197cc17"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -31207,6 +31283,10 @@
         "evidence_quote": "Rendez-vous devant le théâtre",
         "semantic_sha256": "9a41643063cd62451df2faa2b81fa9669f88d27827ae80349ddcb0293eaa23df",
         "note": "Théâtre, piscine et mairie ; le rendez-vous précède l’activité à la piscine, ce ne sont pas le même lieu."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-lieux-rdv-20261120.json",
+        "note": "Trois entrées vues depuis le parvis : théâtre, piscine et mairie. La vue intérieure de piscine disponible est écartée ici car chaque réponse précise devant."
       }
     },
     {
@@ -70048,8 +70128,8 @@
       "semantic_sha256": "9fe8c8a74e4a4f808ed3c060cd94071d000173d2c2305ca1f5e39db41346f8c9",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-044-03-01.mp3",
       "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux distincts, vues extérieures pour les réponses devant.",
       "choices": [
         {
           "id": "a",
@@ -70090,8 +70170,24 @@
           "brief": "Représenter entièrement « Un musée » pour « Devant quel établissement faut-il passer ? ». Vérifier la transcription du support tcf-delf-actif-a2-044-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-hotel-facade.png",
+          "sha256": "18f4bf2305ec4c48b39a770ca122ae736d2d1fc3c13d4c775f15d50f65c49f0e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-musee-facade.png",
+          "sha256": "0764aa06ddb47ab5616d030743debad9bb68dd9a381c5b580ab6839aa1d95e27"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -70102,7 +70198,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-lieux-rdv-20261120.json",
+        "note": "Trois façades pour identifier l’établissement devant lequel passer. La réponse porte sur la catégorie hôtel, pas sur le nom Lux ; les numéros et le détail du trajet restent dans le texte."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-044-03-01#6",
@@ -74659,8 +74759,8 @@
       "semantic_sha256": "ff21cac98ad784bc6e348327795d7c66b370dee4b0bdd59b6c356f5a7ae6d5cb",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-045-03-01.mp3",
       "audio_sha256": "215e31a254ece0fbc7d793dcbe1b5793bb1f59bb83e07ba204f62c937f82a59c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; lieux distincts, vues extérieures pour les réponses devant.",
       "choices": [
         {
           "id": "a",
@@ -74707,8 +74807,24 @@
           "brief": "Représenter entièrement « Au cinéma » pour « Où faut-il emmener l’enfant ? ». Vérifier la transcription du support tcf-delf-actif-a2-045-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-parc-public-dessine.webp",
+          "sha256": "6e1e83cef7c4e1b17877712e6aa685408d4e7c2798446a57931eaa646ebbf466"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-piscine-dessine.webp",
+          "sha256": "7eea2d44d3db8813a295363e6e8a1537fc5bea87b2945c07a5a477b7a241f456"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -74719,7 +74835,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-lieux-rdv-20261120.json",
+        "note": "Parc avec jeux adaptés à l’enfant, bassin de piscine et cinéma. L’image du bassin déjà disponible convient à la réponse à la piscine ; aucun figurant n’est identifié comme Nicolas ou la baby-sitter."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-045-03-01#9",
