@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 395,
+      "active_reviewed_trio": 396,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 351,
+      "candidate_visual_review": 350,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 225,
+        "active_reviewed_trio": 226,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 37,
+        "candidate_visual_review": 36,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -13705,8 +13705,8 @@
       "semantic_sha256": "03a5164ed721848432e30f9824cdd22ea0b9eef6e0e7bd75b71826267c15b9b1",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-023-01.mp3",
       "audio_sha256": "d82cf3116c331eeb88355819cf8bcee13d3cd3b7bac2bb6c7378b3499f5153ac",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; le lac correspond au lieu explicitement cité, stade et gare sont deux lieux distincts.",
       "choices": [
         {
           "id": "a",
@@ -13740,8 +13740,24 @@
           "brief": "Représenter entièrement « D’une gare » pour « Près de quoi se trouve la maison ? ». Vérifier la transcription du support tcf-delf-actif-a1-023-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+          "sha256": "de3204f0e3b77351fae0f96ef677aa31a136bcfff2d9cdee091b0725096e89b9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+          "sha256": "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+          "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -13752,7 +13768,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trio-lieux-proches-20261120.json",
+        "note": "La question demande le lieu voisin, pas une position relative à déduire de l’image. Lac aux berges visibles ; stade entier avec terrain et tribunes ; gare avec pictogramme et train. Les figurants du stade ne représentent pas Marc ou ses cousins. Aucun jour ou horaire de la transcription n’est illustré."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-023-01#5",

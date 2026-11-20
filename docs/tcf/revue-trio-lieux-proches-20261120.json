@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-20",
+  "baseline_commit": "24b7ba5428e2a2569eea8e49676f20ec93e42683",
+  "human_audio_listening_performed": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "images": [],
+  "reuses": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+      "sha256": "de3204f0e3b77351fae0f96ef677aa31a136bcfff2d9cdee091b0725096e89b9",
+      "visual_review": "Examinée individuellement : catégorie du lieu ou du rayon complète, style peint compatible et format 4:3."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+      "sha256": "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6",
+      "visual_review": "Examinée individuellement : catégorie du lieu ou du rayon complète, style peint compatible et format 4:3."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+      "sha256": "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+      "visual_review": "Examinée individuellement : catégorie du lieu ou du rayon complète, style peint compatible et format 4:3."
+    }
+  ],
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-023-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-023-01",
+      "question": {
+        "enonce": "Près de quoi se trouve la maison ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "D’un lac",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "D’un stade",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "D’une gare",
+            "correct": false
+          }
+        ],
+        "written_model": "D’un lac"
+      },
+      "source": "Salut c’est Marc, rappelle-toi le rendez-vous de demain à 8h00. On part à la montagne avec mes cousins. La maison est près d’un lac et il y a des randonnées à faire. On rentre jeudi vers 18h00. N’oublie pas tes chaussures de marche. Et oui, on va marcher !",
+      "source_sha256": "ae34082228fc5eeb8b91532d0f20ddca7ef5ced5ce2688af2ff0ac3104618606",
+      "semantic_sha256": "03a5164ed721848432e30f9824cdd22ea0b9eef6e0e7bd75b71826267c15b9b1",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-023-01.mp3",
+      "audio_sha256": "d82cf3116c331eeb88355819cf8bcee13d3cd3b7bac2bb6c7378b3499f5153ac",
+      "reason": "Question et trois choix relus avec la transcription complète ; le lac correspond au lieu explicitement cité, stade et gare sont deux lieux distincts.",
+      "visual_review": "La question demande le lieu voisin, pas une position relative à déduire de l’image. Lac aux berges visibles ; stade entier avec terrain et tribunes ; gare avec pictogramme et train. Les figurants du stade ne représentent pas Marc ou ses cousins. Aucun jour ou horaire de la transcription n’est illustré.",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-bord-lac.webp",
+        "/lib/images/tcf/qcm-audit/co834-aller-stade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png"
+      ],
+      "image_sha256": [
+        "de3204f0e3b77351fae0f96ef677aa31a136bcfff2d9cdee091b0725096e89b9",
+        "34237cbd11f8a648bf1c49a104d462ab33dd0eb7faf1d0969e3c4366dcf97ba6",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517"
+      ]
+    }
+  ],
+  "summary": {
+    "activated_trios": 1,
+    "new_a1_trios": 1,
+    "new_a2_trios": 0,
+    "native_pngs": 0,
+    "reused_image_usages": 3,
+    "distinct_reused_images": 3,
+    "active_delf_trios": 396,
+    "delf_candidates_remaining": 350
+  },
+  "bank_comparison": "Seul un format qcm_image ajouté à la banque A1 ; les autres champs sont identiques au parent.",
+  "verification": {
+    "browser_report": "docs/tcf/proches-20261120-browser.json",
+    "all_three_images_loaded": true,
+    "student_answers_hidden": true,
+    "text_image_toggle": true,
+    "question_answers_transcript_and_mp3_unchanged": true
+  }
+}
