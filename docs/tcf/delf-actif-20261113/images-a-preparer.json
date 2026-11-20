@@ -8,25 +8,25 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 378,
+      "active_reviewed_trio": 386,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 368,
+      "candidate_visual_review": 360,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 215,
+        "active_reviewed_trio": 219,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 47,
+        "candidate_visual_review": 43,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 138,
-        "candidate_visual_review": 200,
+        "active_reviewed_trio": 142,
+        "candidate_visual_review": 196,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -20192,8 +20192,8 @@
       "semantic_sha256": "9d9474ba3dc54c782d47e09cfc0218beed0eb1d5fccd0d02a8848653e313ab02",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-033-04.mp3",
       "audio_sha256": "2f6ac40fb01add5e834fb1e2824e99ddb2daaf5bb4f66470a25beac5a1a4f67b",
-      "status": "candidate_visual_review",
-      "reason": "Trois coupes de bâtiment identiques, rez-de-chaussée repéré et article placé au premier, deuxième ou troisième étage ; compter les niveaux, sans simple façade générique.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -20220,8 +20220,24 @@
           "brief": "Représenter entièrement « Au troisième étage » pour « À quel étage se trouve cet article ? ». Vérifier la transcription du support tcf-delf-actif-a1-033-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois coupes de bâtiment identiques, rez-de-chaussée repéré et article placé au premier, deuxième ou troisième étage ; compter les niveaux, sans simple façade générique."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-3-aligne.png",
+          "sha256": "23fe34fee09edf0202e18c63c7eeedbbfa2fbe7d377623cb8ad29572ac769f97"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -20239,6 +20255,10 @@
         "evidence_quote": "au 2e étage",
         "semantic_sha256": "9d9474ba3dc54c782d47e09cfc0218beed0eb1d5fccd0d02a8848653e313ab02",
         "note": "Trois coupes de bâtiment identiques, rez-de-chaussée repéré et article placé au premier, deuxième ou troisième étage ; compter les niveaux, sans simple façade générique."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -22582,8 +22602,8 @@
       "semantic_sha256": "aba5e343c40d83a39c129de15cf314df3ba6703a4cb8263b28a02b3f8d0cca98",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-039-01.mp3",
       "audio_sha256": "1339fdb115ada4ca16db5ee12451ded82015a678dfe3f6e77b83e41c294b941d",
-      "status": "candidate_visual_review",
-      "reason": "Coupes de maison identiques avec chambre au rez-de-chaussée, premier ou deuxième étage ; aucun plan réel de la maison de Salima n’est prétendu.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -22610,8 +22630,24 @@
           "brief": "Représenter entièrement « Au rez-de-chaussée » pour « À quel étage se trouve la chambre ? ». Vérifier la transcription du support tcf-delf-actif-a1-039-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coupes de maison identiques avec chambre au rez-de-chaussée, premier ou deuxième étage ; aucun plan réel de la maison de Salima n’est prétendu."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-0.png",
+          "sha256": "5e42afb564463144dc6cec550c9b1142ff0feebfc2645247ae26f769aeddd05f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -22629,6 +22665,10 @@
         "evidence_quote": "au premier étage",
         "semantic_sha256": "aba5e343c40d83a39c129de15cf314df3ba6703a4cb8263b28a02b3f8d0cca98",
         "note": "Coupes de maison identiques avec chambre au rez-de-chaussée, premier ou deuxième étage ; aucun plan réel de la maison de Salima n’est prétendu."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -30743,8 +30783,8 @@
       "semantic_sha256": "f017d5dfbd56ecae820f91a729dfcbc3f68fb2200cc8151e4595e0d00c516080",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-02-01.mp3",
       "audio_sha256": "574f5eb3935646bbae31593e77695f994617490fa111dd4abf3f22b4951bbe03",
-      "status": "candidate_visual_review",
-      "reason": "Coupe identique de magasin, rez-de-chaussée visible, casques placés au premier, deuxième ou troisième étage ; ne pas se contenter d’un casque seul.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -30771,8 +30811,24 @@
           "brief": "Représenter entièrement « Au deuxième étage » pour « À quel étage trouve-t-on les casques de vélo ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coupe identique de magasin, rez-de-chaussée visible, casques placés au premier, deuxième ou troisième étage ; ne pas se contenter d’un casque seul."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-3-aligne.png",
+          "sha256": "23fe34fee09edf0202e18c63c7eeedbbfa2fbe7d377623cb8ad29572ac769f97"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -30790,6 +30846,10 @@
         "evidence_quote": "au troisième étage",
         "semantic_sha256": "f017d5dfbd56ecae820f91a729dfcbc3f68fb2200cc8151e4595e0d00c516080",
         "note": "Coupe identique de magasin, rez-de-chaussée visible, casques placés au premier, deuxième ou troisième étage ; ne pas se contenter d’un casque seul."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -32694,8 +32754,8 @@
       "semantic_sha256": "44f1cb1d17aa381fc8f55006fbecb26e4b5dd2c92148f7153124ca3e935f0cc6",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-02-01.mp3",
       "audio_sha256": "b007f2d704f6cdefb54bba5b47632261db5b1d5e65ad00aaacae069faaf4d006",
-      "status": "candidate_visual_review",
-      "reason": "Trois coupes identiques de magasin avec rez-de-chaussée repéré ; rayon vêtements placé au niveau demandé, pas trois vêtements isolés.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -32722,8 +32782,24 @@
           "brief": "Représenter entièrement « Au troisième étage » pour « À quel étage se trouve le rayon vêtements ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois coupes identiques de magasin avec rez-de-chaussée repéré ; rayon vêtements placé au niveau demandé, pas trois vêtements isolés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-3-aligne.png",
+          "sha256": "23fe34fee09edf0202e18c63c7eeedbbfa2fbe7d377623cb8ad29572ac769f97"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32741,6 +32817,10 @@
         "evidence_quote": "au deuxième étage",
         "semantic_sha256": "44f1cb1d17aa381fc8f55006fbecb26e4b5dd2c92148f7153124ca3e935f0cc6",
         "note": "Trois coupes identiques de magasin avec rez-de-chaussée repéré ; rayon vêtements placé au niveau demandé, pas trois vêtements isolés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -41346,8 +41426,8 @@
       "semantic_sha256": "9cb599e29d352fd6b91db35fdb1351a0969fed0f014a3c842612790dba207bd9",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-06.mp3",
       "audio_sha256": "fb4b8e02a75f89f618cf910ddd8d1bb8d13b3cde0a0b82ea7dc296eb747929a6",
-      "status": "candidate_visual_review",
-      "reason": "Coupe identique du magasin avec rez-de-chaussée repéré et parfumerie au premier, deuxième ou rez-de-chaussée ; aucun numéro de prix.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -41374,8 +41454,24 @@
           "brief": "Représenter entièrement « Au rez-de-chaussée » pour « À quel étage se trouve ce rayon ? ». Vérifier la transcription du support tcf-delf-actif-a2-005-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coupe identique du magasin avec rez-de-chaussée repéré et parfumerie au premier, deuxième ou rez-de-chaussée ; aucun numéro de prix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-0.png",
+          "sha256": "5e42afb564463144dc6cec550c9b1142ff0feebfc2645247ae26f769aeddd05f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -41393,6 +41489,10 @@
         "evidence_quote": "situé au premier étage",
         "semantic_sha256": "9cb599e29d352fd6b91db35fdb1351a0969fed0f014a3c842612790dba207bd9",
         "note": "Coupe identique du magasin avec rez-de-chaussée repéré et parfumerie au premier, deuxième ou rez-de-chaussée ; aucun numéro de prix."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -43112,8 +43212,8 @@
       "semantic_sha256": "14c4d51dedc23b0e437e7c1a837e1d9ab4bc0e2657bd3a4fda94d8697dc1d16a",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-02.mp3",
       "audio_sha256": "82a530facdf2664aadb8f21eaf41ec64d417c620f4a5b85b6f447d2674eb3460",
-      "status": "candidate_visual_review",
-      "reason": "Coupe de médiathèque avec étage DVD au deuxième, premier ou troisième ; rez-de-chaussée et points de vue constants.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -43140,8 +43240,24 @@
           "brief": "Représenter entièrement « Au troisième étage » pour « À quel étage se trouve-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coupe de médiathèque avec étage DVD au deuxième, premier ou troisième ; rez-de-chaussée et points de vue constants."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-3-aligne.png",
+          "sha256": "23fe34fee09edf0202e18c63c7eeedbbfa2fbe7d377623cb8ad29572ac769f97"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -43159,6 +43275,10 @@
         "evidence_quote": "situé au deuxième étage",
         "semantic_sha256": "14c4d51dedc23b0e437e7c1a837e1d9ab4bc0e2657bd3a4fda94d8697dc1d16a",
         "note": "Coupe de médiathèque avec étage DVD au deuxième, premier ou troisième ; rez-de-chaussée et points de vue constants."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -60515,8 +60635,8 @@
       "semantic_sha256": "c2938b7d4dc3d5e254623eae4e72bba0fb1048a6b6415ff93444d427f1a9be1a",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-037.mp3",
       "audio_sha256": "c0ada643d5862a74e3a2a0303d4b1901c7fe258c4be15f23d4a42ff78c334493",
-      "status": "candidate_visual_review",
-      "reason": "Coupes identiques d’immeuble, rez-de-chaussée repéré et appartement au troisième, premier ou deuxième étage ; aucun plan réel prétendu.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -60543,8 +60663,24 @@
           "brief": "Représenter entièrement « Au deuxième étage » pour « À quel étage se trouve son appartement ? ». Vérifier la transcription du support tcf-delf-actif-a2-037 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coupes identiques d’immeuble, rez-de-chaussée repéré et appartement au troisième, premier ou deuxième étage ; aucun plan réel prétendu."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-3-aligne.png",
+          "sha256": "23fe34fee09edf0202e18c63c7eeedbbfa2fbe7d377623cb8ad29572ac769f97"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -60562,6 +60698,10 @@
         "evidence_quote": "au troisième étage",
         "semantic_sha256": "c2938b7d4dc3d5e254623eae4e72bba0fb1048a6b6415ff93444d427f1a9be1a",
         "note": "Coupes identiques d’immeuble, rez-de-chaussée repéré et appartement au troisième, premier ou deuxième étage ; aucun plan réel prétendu."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
@@ -64112,8 +64252,8 @@
       "semantic_sha256": "9777f72e8b72e58c03224206d192db02351617e41e0759d6c51a9f4bfa7f56c3",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-04.mp3",
       "audio_sha256": "f9678a836fd54d5b38366abf4061f3cba51f38cbb98adec4339fc12eab676cc1",
-      "status": "candidate_visual_review",
-      "reason": "Coupes identiques du magasin avec écouteurs au rez-de-chaussée, premier ou deuxième étage ; niveaux et entrée repérés.",
+      "status": "active_reviewed_trio",
+      "reason": "Question et trois choix relus avec la transcription complète ; chaque image désigne exactement le niveau de sa réponse.",
       "choices": [
         {
           "id": "a",
@@ -64140,8 +64280,24 @@
           "brief": "Représenter entièrement « Au deuxième étage » pour « À quel niveau se trouvent-ils ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-01-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Coupes identiques du magasin avec écouteurs au rez-de-chaussée, premier ou deuxième étage ; niveaux et entrée repérés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-0.png",
+          "sha256": "5e42afb564463144dc6cec550c9b1142ff0feebfc2645247ae26f769aeddd05f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-1-aligne.png",
+          "sha256": "675112b7261e0660e74a0df31022dfd5e50aa5af9f9b4ac5dd087d0e01da3c27"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-etage-2-aligne.png",
+          "sha256": "94461bb45324400eef12d8d4a32f33480ec1002b3bd03a3844e53d235b84d5c2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -64159,6 +64315,10 @@
         "evidence_quote": "Au rez-de-chaussée",
         "semantic_sha256": "9777f72e8b72e58c03224206d192db02351617e41e0759d6c51a9f4bfa7f56c3",
         "note": "Coupes identiques du magasin avec écouteurs au rez-de-chaussée, premier ou deuxième étage ; niveaux et entrée repérés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-etages-20261120.json",
+        "note": "Les trois niveaux proposés sont distincts et relus avec la transcription. Le bâtiment sert de repère d’étage, sans prétendre représenter son architecture. Chiffres 0/1/2/3 alignés sur une même colonne, un seul niveau coloré et une seule flèche, rez-de-chaussée au niveau de la porte ; aucun prix, jour ou date illustré."
       }
     },
     {
