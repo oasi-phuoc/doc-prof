@@ -8,18 +8,18 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 367,
+      "active_reviewed_trio": 369,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 379,
+      "candidate_visual_review": 377,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 205,
+        "active_reviewed_trio": 207,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 57,
+        "candidate_visual_review": 55,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
         "keep_text_amount": 37
@@ -9004,8 +9004,8 @@
       "semantic_sha256": "eee8db6fe70d07e3beca826ee11c9b12b0e6b5248ffb437d3712e6ccef4c4785",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-013-01.mp3",
       "audio_sha256": "7bdde590c3e82a701620ebe2e9e016cf5e58b64f63608f279b162150abe2afc9",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trois catégories complètes, concrètes et différentes, relues avec la transcription.",
       "choices": [
         {
           "id": "a",
@@ -9032,8 +9032,24 @@
           "brief": "Représenter entièrement « Des sacs de voyage » pour « Quels sacs sont proposés en promotion ? ». Vérifier la transcription du support tcf-delf-actif-a1-013-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-sacs-dos-fond-ivoire.png",
+          "sha256": "8f12f9670d49ff752f3aa2df20413f338d95ad3b149878a3d9b33a2a175cc490"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-sacs-main.png",
+          "sha256": "759d3ac65ade73681847800729f131f1992271afdb09d1fd734a417fe37cb50d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-sacs-voyage-fond-ivoire.png",
+          "sha256": "d1e86a7e9d45aac7b64b00e2a2f6b231c2284b788b022d336c2ef7c03b1b91c9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -9044,7 +9060,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sacs-aliments-20261120.json",
+        "note": "Deux sacs de chaque catégorie dans le trio sacs ; fruits et légumes, bonbons et gâteaux, chips et biscuits salés distingués dans le trio aliments. Aucun prix, date ou pourcentage illustré."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-013-01#5",
@@ -10097,8 +10117,8 @@
       "semantic_sha256": "c912d346064820b6621211b0a091e64062d7c6279125f5decc8fb7887152f0df",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-017-01.mp3",
       "audio_sha256": "4e9f0bab9904d7bba3763398e27aa5232c5408eac711eb35e28fe73dbffac7bc",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trois catégories complètes, concrètes et différentes, relues avec la transcription.",
       "choices": [
         {
           "id": "a",
@@ -10125,8 +10145,24 @@
           "brief": "Représenter entièrement « Les chips et les biscuits salés » pour « Quels aliments le message recommande-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-017-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-fruits-legumes-dessine.webp",
+          "sha256": "a2c16cb8e61354daf3b1a09793d3e08e5c050498f353b3e2fd25ebd94b6e2469"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-bonbons-gateaux.png",
+          "sha256": "f3fba4dd99cf80ef2d7041c1bcf478b84f14872a65dacd7c9f2d843da64c60ad"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-20261120-chips-biscuits-sales.png",
+          "sha256": "5a9e95da66f494a25fe486beb0752885480e7fc55ea862034d88f2b9b799f8fe"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -10137,7 +10173,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/revue-trios-sacs-aliments-20261120.json",
+        "note": "Deux sacs de chaque catégorie dans le trio sacs ; fruits et légumes, bonbons et gâteaux, chips et biscuits salés distingués dans le trio aliments. Aucun prix, date ou pourcentage illustré."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-017-01#2",
