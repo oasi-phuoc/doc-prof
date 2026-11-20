@@ -8,20 +8,20 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 396,
+      "active_reviewed_trio": 399,
       "keep_text_calendar_or_duration": 139,
-      "candidate_visual_review": 350,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
+      "candidate_visual_review": 347,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 226,
+        "active_reviewed_trio": 229,
         "keep_text_calendar_or_duration": 46,
-        "candidate_visual_review": 36,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
+        "candidate_visual_review": 33,
         "keep_text_amount": 37
       },
       "A1-A2": {
@@ -3554,8 +3554,8 @@
       "semantic_sha256": "e80b1515886934fe01fb0393f5ecbe4a2b9cf28af7d89c593e28b08b634fc318",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-001-03.mp3",
       "audio_sha256": "e198bcca509bcf359cf823d7c2a15464a65a6a0ff62f9b7b04570eb741ac5162",
-      "status": "candidate_visual_review",
-      "reason": "Fête musicale publique, anniversaire et mariage sont distinguables ; ne mettre ni date ni montant dans les scènes.",
+      "status": "active_reviewed_trio",
+      "reason": "Question, trois choix et bonne réponse relus avec la transcription complète ; trois situations concrètes distinctes.",
       "choices": [
         {
           "id": "a",
@@ -3589,8 +3589,24 @@
           "brief": "Représenter entièrement « À un mariage » pour « À quel événement la personne ne peut-elle pas participer ? ». Vérifier la transcription du support tcf-delf-actif-a1-001-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Fête musicale publique, anniversaire et mariage sont distinguables ; ne mettre ni date ni montant dans les scènes."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-fete-musique.webp",
+          "sha256": "1c0bef0db8a0dae2ee587705a64bc618a9474e4b96c66dfc9296a5cfb8073ed9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+          "sha256": "a12bec799deebc4950fbe72189a81dbb57537735c35a0e8322c8cc143fa03faa"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+          "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -3608,6 +3624,10 @@
         "evidence_quote": "fête de la musique",
         "semantic_sha256": "e80b1515886934fe01fb0393f5ecbe4a2b9cf28af7d89c593e28b08b634fc318",
         "note": "Fête musicale publique, anniversaire et mariage sont distinguables ; ne mettre ni date ni montant dans les scènes."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-actions-fetes-athletisme-20261120.json",
+        "note": "Le refus concerne la fête de la musique, expressément citée. Musique publique, bougie d’anniversaire et échange d’alliances distinguent les trois événements. Images existantes comparées côte à côte au style validé ; aucune date ni somme. Les personnages sont illustratifs et ne prétendent pas identifier le locuteur du message."
       }
     },
     {
@@ -8496,8 +8516,8 @@
       "semantic_sha256": "5b5e73b148bf1f1ab6cbdfa287e7fb9e143bb6acf43c3c0e3ee775f23823362c",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-06.mp3",
       "audio_sha256": "db78f92ab2a2938f76f10b83e9a791c2202e412f527c63caf3de4b6d5506d857",
-      "status": "candidate_visual_review",
-      "reason": "S’asseoir, sortir et se lever sont trois gestes ; même salle de cinéma et cadrage cohérent pour éviter que le décor donne la réponse.",
+      "status": "active_reviewed_trio",
+      "reason": "Question, trois choix et bonne réponse relus avec la transcription complète ; trois situations concrètes distinctes.",
       "choices": [
         {
           "id": "a",
@@ -8524,8 +8544,24 @@
           "brief": "Représenter entièrement « De se lever » pour « Que demande-t-on aux spectateurs ? ». Vérifier la transcription du support tcf-delf-actif-a1-011-06 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : S’asseoir, sortir et se lever sont trois gestes ; même salle de cinéma et cadrage cohérent pour éviter que le décor donne la réponse."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+          "sha256": "a7251be8129881ccc6e0a49f22b27f39b9f63167aa04179d8f5b0e0de58ed047"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-sortir.png",
+          "sha256": "74e173aa161ab5a4a5b00e9eaa090542c51ea349a3a2298d60150bb30d479711"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
+          "sha256": "649bcf55942a032e19706a6e784db28d463c05e00c3343b452a5f3e2fc8f2ac4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -8543,6 +8579,10 @@
         "evidence_quote": "Asseyez-vous",
         "semantic_sha256": "5b5e73b148bf1f1ab6cbdfa287e7fb9e143bb6acf43c3c0e3ee775f23823362c",
         "note": "S’asseoir, sortir et se lever sont trois gestes ; même salle de cinéma et cadrage cohérent pour éviter que le décor donne la réponse."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-actions-fetes-athletisme-20261120.json",
+        "note": "L’annonce dit explicitement Asseyez-vous. Les trois images gardent la même salle et la même femme pour que seule l’action distingue les choix : flexion vers le fauteuil, marche à travers la porte, posture droite immobile devant le fauteuil. Les autres spectateurs restent assis. Le choix de personnes illustre un public générique, pas le genre de la voix d’annonce. Corps, mains, appuis et fauteuils examinés ; aucun chiffre ni texte."
       }
     },
     {
@@ -33868,8 +33908,8 @@
       "semantic_sha256": "6a5e7a06ce6715c0f078101e1b93263b66cf8bdfc75b5fce0a42f43770e3c529",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
       "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
-      "status": "candidate_visual_review",
-      "reason": "Saut en hauteur avec barre, saut en longueur et lancer du poids ; matériels et gestes entiers, pas un athlète générique.",
+      "status": "active_reviewed_trio",
+      "reason": "Question, trois choix et bonne réponse relus avec la transcription complète ; trois situations concrètes distinctes.",
       "choices": [
         {
           "id": "a",
@@ -33896,8 +33936,24 @@
           "brief": "Représenter entièrement « Le lancer de poids » pour « Quel sport l’élève découvre-t-il ? ». Vérifier la transcription du support tcf-delf-actif-a1-051-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Saut en hauteur avec barre, saut en longueur et lancer du poids ; matériels et gestes entiers, pas un athlète générique."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
+          "sha256": "c2e05d9d4e1736b861adab5c751e5835c0af342c5cac24e3f502e07a92b8b76a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-longueur.png",
+          "sha256": "b1157c98b7346d217bcd9834503346719c897606e2bb296ce9ae7f414d9f5bec"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-poids.png",
+          "sha256": "0b4ee56a986da8ed2a6bc3ef5092e780225b6b870d1cbc039b3b8a450ca9f77f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -33915,6 +33971,10 @@
         "evidence_quote": "Tu aimes le saut en hauteur",
         "semantic_sha256": "6a5e7a06ce6715c0f078101e1b93263b66cf8bdfc75b5fce0a42f43770e3c529",
         "note": "Saut en hauteur avec barre, saut en longueur et lancer du poids ; matériels et gestes entiers, pas un athlète générique."
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-actions-fetes-athletisme-20261120.json",
+        "note": "La personne découvre le saut en hauteur, cité deux fois dans le dialogue. Barre horizontale entre deux supports et tapis de réception ; piste d’élan et bac à sable ; petite boule maintenue au cou, cercle et butée de lancer. Chaque discipline est montrée par son geste et son matériel. Les athlètes illustrent les disciplines et ne sont pas présentés comme les interlocuteurs du dialogue. Personnages distincts et variés, pas de mesures ou de dossards chiffrés."
       }
     },
     {
