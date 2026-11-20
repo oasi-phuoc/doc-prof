@@ -3,6 +3,7 @@ import { resolvePromptPlaceholders } from '@/tpm/libre-recalc'
 import { CompositeFigure } from '../math/CompositeFigure'
 import { CoordGrid, CoordShapeButton } from '../math/CoordGrid'
 import { GeometryFigure } from '../math/GeometryFigure'
+import { MeasuredPlaneFigure } from '../math/MeasuredPlaneFigure'
 
 /** Libellés des réponses empilées (périmètre, aire, côté). */
 function stackAnswerLabel(label: string): string {
@@ -18,6 +19,7 @@ export function GeoBlock({
   draftGrid = true,
   stack = false,
   showFigure = true,
+  readableGeo = false,
 }: {
   item: MathItem
   mode: PreviewMode
@@ -25,25 +27,32 @@ export function GeoBlock({
   /** Forme centrée, puis la grille de calcul pleine largeur. */
   stack?: boolean
   showFigure?: boolean
+  readableGeo?: boolean
 }) {
   const show = mode === 'answers'
   if (item.geoDualPads) {
     const lines = item.propertyLines ?? []
     const promptText = resolvePromptPlaceholders(item)
+    const questionStart = readableGeo ? promptText.search(/(?:Quelle|Quel|Combien)\b[^?]*\?\s*$/u) : -1
+    const statement = questionStart < 0 ? promptText : promptText.slice(0, questionStart).trim()
+    const question = questionStart < 0 ? null : promptText.slice(questionStart)
     const padCorrection =
       show && (item.calcAnswer || item.calcAnswerSecondary)
         ? [item.calcAnswer, item.calcAnswerSecondary].filter(Boolean).join('\n')
         : null
     return (
-      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}${stack ? ' is-cfr-stack' : ''}`} aria-label="Figure et calcul">
-        {promptText ? <p className="column-prompt">{promptText}</p> : null}
+      <div className={`geo-block geo-dual${item.geoDualTight ? ' is-tight' : ''}${stack ? ' is-cfr-stack' : ''}${readableGeo ? ' has-readable-geo' : ''}`} aria-label="Figure et calcul">
+        {promptText ? (
+          readableGeo ? <p className="geo-problem-prompt">{statement}{question && <>{'\n\n'}<strong>{question}</strong></>}</p>
+            : <p className="column-prompt">{promptText}</p>
+        ) : null}
         <div className="geo-dual-top">
           {showFigure ? (
             <div className="geo-dual-figure">
               {item.compositeScene ? (
                 <CompositeFigure scene={item.compositeScene} />
               ) : (
-                <GeometryFigure type={item.figure} dims={item.dims} />
+                readableGeo ? <MeasuredPlaneFigure type={item.figure} dims={item.dims} /> : <GeometryFigure type={item.figure} dims={item.dims} />
               )}
             </div>
           ) : null}
@@ -65,15 +74,23 @@ export function GeoBlock({
           {lines.map((line, index) => {
             const shown = stack ? stackAnswerLabel(line.label) : line.label
             return (
-            <div className="geo-dual-answer" key={line.label}>
-              {stack && lines.length > 1 ? <span className="geo-dual-question-number">{index + 1}.</span> : null}
-              <span className="property-label">{shown}{shown.endsWith('?') || shown.endsWith(':') ? '' : ' ='}</span>
-              {show ? (
-                <strong className="filled-answer property-answer">{line.answer}</strong>
-              ) : (
-                <span className="answer-line-field property-blank">{'\u00a0'}</span>
-              )}
-            </div>
+              <div className="geo-dual-answer" key={line.label}>
+                {stack && lines.length > 1 ? <span className="geo-dual-question-number">{index + 1}.</span> : null}
+                {(!readableGeo || lines.length > 1) && (
+                  <span className="property-label">{shown}{shown.endsWith('?') || shown.endsWith(':') ? '' : ' ='}</span>
+                )}
+                {readableGeo ? (
+                  <span className="geo-phrase-answer">
+                    <span>Phrase réponse :</span>
+                    {show ? <strong className="filled-answer property-answer">{line.answer}</strong>
+                      : <span className="answer-line-field property-blank">{'\u00a0'}</span>}
+                  </span>
+                ) : show ? (
+                  <strong className="filled-answer property-answer">{line.answer}</strong>
+                ) : (
+                  <span className="answer-line-field property-blank">{'\u00a0'}</span>
+                )}
+              </div>
             )
           })}
         </div>

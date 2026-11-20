@@ -14,7 +14,6 @@ import {
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { isDraftPadExercise } from '@/math/catalog'
 import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
-import { resolvePromptPlaceholders } from '@/tpm/libre-recalc'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
   CoordReply,
@@ -42,13 +41,10 @@ function markCscInstruction(text: string): string {
   const marked = CSC_BOLD.reduce((value, word) => value.replaceAll(word, `[[b]]${word}[[/b]]`), text)
   return marked.startsWith('[[b]]Comparez[[/b]]') ? marked.replaceAll('<', '[[c]]<[[/c]]').replaceAll('>', '[[c]]>[[/c]]').replaceAll('=', '[[c]]=[[/c]]') : marked
 }
-/** Ex. 26–27 : pas de consigne. L’énoncé sous le titre, la question sur la ligne suivante. */
-function cfrSideQuestionCopy(block: WorksheetBlock): string | null {
+/** Les anciennes fiches peuvent encore avoir une consigne vide pour ces problèmes. */
+function cfrSideProblemInstruction(block: WorksheetBlock): string | null {
   if (block.exerciseType !== 'tcm-cfr-ex25' && block.exerciseType !== 'tcm-cfr-ex26') return null
-  return block.items
-    .map((item) => resolvePromptPlaceholders(item).trim().replace(/\s+(Quelle\b)/u, '\n$1'))
-    .filter(Boolean)
-    .join('\n\n')
+  return markCscInstruction('Résolvez le problème.')
 }
 
 function cscSheetCopy(type: string, instruction: string): { text: string; example: string | null } {
@@ -277,9 +273,9 @@ export function WorksheetSheet({
               (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
           )
           const blockHeading = block.title
-          const sideQuestion = cfrSideQuestionCopy(block)
-          const cscCopy = sideQuestion == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
-          const instructionText = sideQuestion ?? (cscCopy ? cscCopy.text : block.instruction)
+          const sideProblemInstruction = cfrSideProblemInstruction(block)
+          const cscCopy = sideProblemInstruction == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
+          const instructionText = sideProblemInstruction ?? (cscCopy ? cscCopy.text : block.instruction)
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
@@ -553,6 +549,7 @@ export function WorksheetSheet({
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType) || block.exerciseType.includes('peri-aire')}
+                      readableGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType)}
                       showGeoFigure={block.geoFigureHelp !== false}
                       onToggleDraftGrid={
                         interactiveDraftGrids && blockAllowsDraftGrid && onToggleDraftGrid

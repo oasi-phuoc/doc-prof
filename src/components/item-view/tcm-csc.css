@@ -124,9 +124,9 @@
 .exercise-block[data-exercise-type="tcm-csc-ex07"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
 .is-tcm-csc .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
 .is-tcm-csc .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
-.exercise-block[data-exercise-type="tcm-csc-ex08"] .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; }
-.exercise-block[data-exercise-type="tcm-csc-ex08"] .place-value-row.is-plain { display: grid; grid-template-columns: 5ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
-.exercise-block[data-exercise-type="tcm-csc-ex08"] .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex08"], [data-exercise-type="tcm-cfr-ex05"]) .item-number { flex-basis: 1.6em; width: 1.6em; min-width: 1.6em; line-height: 1.55; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex08"], [data-exercise-type="tcm-cfr-ex05"]) .place-value-row.is-plain { display: grid; grid-template-columns: 5ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
+.exercise-block:is([data-exercise-type="tcm-csc-ex08"], [data-exercise-type="tcm-cfr-ex05"]) .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
 .is-tcm-csc .tcm-cfr-segment-line.is-sloped { display: block; overflow: visible; height: auto; border: 0; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell { border-style: solid; border-width: 1px; border-color: #c5cad3 transparent transparent #c5cad3 !important; }
 .exercise-block:is([data-exercise-type="tcm-csc-ex10"], [data-exercise-type="tcm-csc-ex11"]) .digit-cell:last-child { border-right-color: #c5cad3 !important; }
@@ -178,11 +178,7 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.left { justify-self: stretch; justify-content: flex-end; text-align: right; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-side.right { justify-self: stretch; justify-content: flex-start; text-align: left; }
 .exercise-block[data-exercise-type="tcm-cfr-ex04"] .compare-write { flex: 0 0 2.4em; width: 2.4em; min-width: 2.4em; text-align: center; font-weight: 800; }
-.exercise-block[data-exercise-type="tcm-cfr-ex05"] .item-number { flex-basis: 0.65em; width: 0.65em; min-width: 0.65em; }
-.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item,
-.exercise-block[data-exercise-type="tcm-cfr-ex05"] .exercise-item { gap: 20px; align-items: baseline; }
-.exercise-block[data-exercise-type="tcm-cfr-ex05"] .place-value-row.is-plain { display: grid; grid-template-columns: 8ch auto minmax(0, 1fr); column-gap: 6px; align-items: baseline; }
-.exercise-block[data-exercise-type="tcm-cfr-ex05"] .place-value-num { text-align: right; font-variant-numeric: tabular-nums; }
+.exercise-block[data-exercise-type="tcm-cfr-ex04"] .exercise-item { gap: 20px; align-items: baseline; }
 .is-tcm-cfr .place-value-row.is-plain .place-value-line { flex: 1 1 auto; width: auto; }
 .exercise-block[data-exercise-type="tcm-cfr-ex11"] .exercise-item,
 .exercise-block[data-exercise-type="tcm-cfr-ex11"] .item-content,
@@ -452,3 +448,35 @@
 .math-exercise-audios { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .math-prompt-audio { display: grid; gap: 3px; font-size: 11px; }
 .math-prompt-audio audio { width: 120px; height: 32px; }
+
+/* Décomposition : même alignement des numéros, nombres, signe et réponse en CSC/CFR. */
+.exercise-block:is([data-exercise-type="tcm-csc-ex08"], [data-exercise-type="tcm-cfr-ex05"]) .exercise-item { gap: var(--ex-num-gap); align-items: baseline; }
+/* CFR, exercices affichés 8 et 9 : trait de résultat bien marqué, également à l’impression. */
+.exercise-block:is([data-exercise-type="tcm-cfr-ex07"], [data-exercise-type="tcm-cfr-ex08"]) .column-rule { border-bottom: 3px solid var(--purple); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+/* CFR, exercice affiché 20 : espacement avant la seconde consigne. */
+.exercise-block[data-exercise-type="tcm-cfr-ex19"] .csc-length-parts > section:nth-child(2) > .csc-part-instruction { padding-top: 25px; }
+
+/* CFR 23–27 : figures agrandies et mesures HTML à la taille du texte choisie. */
+.cfr-measured-figure { display: grid; grid-template-areas: ". top ." "left figure right" ". bottom ." ". height ."; grid-template-columns: max-content minmax(0, 1fr) max-content; align-items: center; justify-items: center; gap: 6px 12px; width: min(116mm, 100%); margin: 8px auto 12px; color: var(--ink); }
+.cfr-measured-shape { grid-area: figure; width: 100%; height: 50mm; overflow: visible; }
+.cfr-measured-figure.is-square .cfr-measured-shape { width: 50mm; }
+.cfr-measured-figure.is-triangle .cfr-measured-shape { height: 60mm; }
+.cfr-measure-label { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); font-weight: 600; line-height: 1.3; white-space: nowrap; }
+.cfr-measure-label.is-top { grid-area: top; }
+.cfr-measure-label.is-left { grid-area: left; }
+.cfr-measure-label.is-right { grid-area: right; }
+.cfr-measure-label.is-bottom { grid-area: bottom; }
+.cfr-measure-label.is-height { grid-area: height; }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual-answer { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); }
+.exercise-block:is([data-exercise-type="tcm-cfr-ex22"], [data-exercise-type="tcm-cfr-ex23"], [data-exercise-type="tcm-cfr-ex24"]) .geo-dual-answer + .geo-dual-answer { padding-top: 30px; }
+.geo-phrase-answer { grid-column: 2; grid-row: 2; display: flex; align-items: baseline; gap: 8px; min-width: 0; width: 100%; }
+.geo-phrase-answer > span:first-child { flex: 0 0 auto; white-space: nowrap; }
+.worksheet-sheet .geo-dual-answer .geo-phrase-answer .answer-line-field,
+.worksheet-sheet .geo-dual-answer .geo-phrase-answer .property-answer { flex: 1 1 auto; min-width: 0; width: auto; }
+
+/* Les problèmes 26–27 gardent leur énoncé dans le bloc, comme les exercices 18–19. */
+.has-readable-geo .geo-problem-prompt { white-space: pre-line; margin: 0 0 12px; font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); }
+.has-readable-geo .geo-problem-prompt strong { font-weight: 700; }
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-stacked .geo-dual-answer { grid-template-columns: 1.4em minmax(0, 1fr); }
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-single .geo-dual-answer { display: block; font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)); }
+.is-tcm-cfr .geo-dual.is-cfr-stack.is-tight.has-readable-geo .geo-dual-answers.is-single .geo-phrase-answer { width: 100%; }
