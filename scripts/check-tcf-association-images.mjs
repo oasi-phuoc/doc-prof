@@ -121,9 +121,9 @@ try {
       assert.equal(recognition.source_sha256, correction.audio_sha256)
       assert.ok(recognition.text.includes('tu es fou'))
     }
-    assert.equal(tcfImageSrc(correction.previous_image), correction.path)
-    assert.equal(tcfImageSrc(`${correction.previous_image}?revision=1#test`), `${correction.path}?revision=1#test`)
-    assert.equal(tcfImageSrc(correction.previous_image.slice('/lib/images/'.length)), correction.path)
+    assert.equal(tcfImageSrc(correction.previous_image), tcfImageSrc(correction.path))
+    assert.equal(tcfImageSrc(`${correction.previous_image}?revision=1#test`), `${tcfImageSrc(correction.path)}?revision=1#test`)
+    assert.equal(tcfImageSrc(correction.previous_image.slice('/lib/images/'.length)), tcfImageSrc(correction.path))
   }
   const entries = tcfScenarioAudioEntries(bank)
   assert.deepEqual(new Set(entries.map((e) => e.audio)), new Set(catalog.sources.map((s) => s.audio)))
@@ -177,9 +177,11 @@ try {
   const completeDialogues = read('docs/tcf/dialogues-complets-20261115.json')
   const finalFraming = read('docs/tcf/cadrages-finaux-20261115.json')
   const audioDecoys = read('docs/tcf/leurres-audios-scenarios-20261115.json')
+  const detailCorrections = read('docs/tcf/corrections-regards-porte-20261120.json')
   const userAccepted = (source, image = source?.image) => {
     if (!source) return false
-    const accepted = [...directReview.sources, ...completeDialogues.sources, ...finalFraming.sources].find(row => row.audio === source.audio && row.exercise === source.exercise && row.dialogue === source.dialogue && row.image === image)
+    image = detailCorrections.sources.find(row => row.audio === source.audio && row.previous_image === image)?.image ?? image
+    const accepted = [...directReview.sources, ...completeDialogues.sources, ...finalFraming.sources, ...detailCorrections.sources].find(row => row.audio === source.audio && row.exercise === source.exercise && row.dialogue === source.dialogue && row.image === image)
     if (!accepted) return false
     assert.equal(source.editorialReview.status, 'user_accepted')
     assert.equal(source.editorialReview.audio_listening_performed, false)
@@ -216,7 +218,7 @@ try {
     assert.equal(source.audioSha256, binding.audio_sha256)
     assert.equal(source.sourceSha256, binding.source_sha256)
   }
-  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length) + framingCorrections.images.length + directReview.images.length + completeDialogues.images.length + finalFraming.images.length, review.summary.new_original_pngs)
+  assert.equal(expansions.reduce((n, b) => n + b.images.length, generation.images.length) + framingCorrections.images.length + directReview.images.length + completeDialogues.images.length + finalFraming.images.length + detailCorrections.images.length, review.summary.new_original_pngs)
   assert.equal(priority.summary.new_scenario_audio_bindings + priority.summary.awaiting_gender_confirmation, priority.summary.prepared_scene_uses)
   assert.equal(suite.images.length, suite.summary.original_pngs)
   assert.equal(suite.summary.new_scenario_audio_bindings + suite.summary.awaiting_gender_confirmation, suite.summary.prepared_scene_uses)
@@ -272,7 +274,7 @@ try {
   assert.equal(drawAssociationCompose('A1-A2', createRng(923), { audioSlots: busSources.map(source => source.audio) }), null, 'The reused bus scene cannot compete with itself')
   const suitePreparation = read('docs/gallery/preparation-scenarios-a2-suite-20261114.json')
   assert.equal(suitePreparation.generated_images, suite.images.length)
-  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images), ...framingCorrections.images, ...directReview.images, ...completeDialogues.images, ...finalFraming.images]) {
+  for (const asset of [...generation.images, ...expansions.flatMap(b => b.images), ...framingCorrections.images, ...directReview.images, ...completeDialogues.images, ...finalFraming.images, ...detailCorrections.images]) {
     const bytes = readFileSync(`public${asset.path}`)
     assert.equal(sha(bytes), asset.sha256)
     assert.equal(bytes.toString('hex', 0, 8), '89504e470d0a1a0a')
@@ -350,6 +352,10 @@ try {
       assert.ok(['documented_roles_match', 'no_visible_character'].includes(source.genderReview.status) || userAccepted(source))
     }
   }
+  assert.equal(detailCorrections.human_audio_listening_performed, false)
+  assert.equal(detailCorrections.summary.active_replacements, 2)
+  assert.equal(detailCorrections.summary.additional_variants, 10)
+  assert.equal(detailCorrections.images.length, 12)
   assert.equal(directReview.human_audio_listening_performed, false)
   assert.equal(directReview.voice_gender_validated, false)
   assert.equal(directReview.sources.filter(row => row.action === 'activate_prepared').length, directReview.summary.activated_prepared_scenes)
@@ -377,7 +383,7 @@ try {
     assert.equal(tcfImageSrc(previous.slice('/lib/images/'.length)), image)
   }
   assert.equal(review.summary.scenario_pending, 0)
-  for (const accepted of [...directReview.sources, ...completeDialogues.sources, ...finalFraming.sources]) {
+  for (const accepted of [...directReview.sources, ...completeDialogues.sources, ...finalFraming.sources, ...detailCorrections.sources]) {
     const source = catalog.sources.find(row => row.audio === accepted.audio)
     assert.ok(userAccepted(source, accepted.image))
     assert.equal(sha(readFileSync(`public${accepted.image}`)), accepted.image_sha256)
@@ -388,7 +394,7 @@ try {
       const pinned = drawAssociationCompose(level, createRng(923), { audioSlots: [accepted.audio] })
       assert.ok(pinned, `Accepted source remains selectable: ${accepted.exercise}`)
       assert.equal(pinned.support.audios[0], accepted.audio)
-      assert.equal(pinned.situations.find(scene => scene.dialogue === 1).image, accepted.image)
+      assert.equal(pinned.situations.find(scene => scene.dialogue === 1).image, source.image)
     }
   }
   // Keep this guard once the last pending scene has been illustrated too.

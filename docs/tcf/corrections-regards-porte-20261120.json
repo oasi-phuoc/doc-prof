@@ -1,0 +1,684 @@
+{
+  "date": "2026-11-20",
+  "generation_lot_date": "2026-11-14",
+  "remote_baseline_commit": "72d98eb13c809bab369fc852b6e5eba8d9a6ff9e",
+  "scope": "Réconciliation avec main : préserver les 117 liaisons et les validations ultérieures, publier 12 PNG, remplacer uniquement le coureur et la porte demandés ; les dix autres nouveaux PNG sont des variantes disponibles.",
+  "user_instruction": "Le coureur et son interlocutrice doivent se parler et se regarder ; la porte de classe doit être bien placée. Pousser sur origin main.",
+  "human_audio_listening_performed": false,
+  "voice_gender_validated": false,
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "summary": {
+    "original_pngs": 12,
+    "active_replacements": 2,
+    "additional_variants": 10,
+    "new_audio_bindings": 0,
+    "active_scenario_sources": 117,
+    "scenario_pending": 0
+  },
+  "images": [
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-piscine-deux-interlocuteurs.png",
+      "sha256": "db578ee3f6c749296e5bcbc401b41994a80a5a65df420f5a8337ff8bfb058daa",
+      "visual_review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "exercise_ids": [
+        "tcf-a1-s3-co-4",
+        "tcf-delf-actif-a1-031-03",
+        "tcf-delf-actif-a1-044-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 3,
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+          "transcription": "Il va faire beau cet après-midi.\n— Oui, j’ai écouté la météo.\nIl va faire 30 degrés.\n— Vraiment ?\nJe vais aller à la piscine, alors.",
+          "source_sha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+          "audio_sha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+          "previous_image": "/lib/images/tcf/co/bg/piscine.webp"
+        },
+        {
+          "exercise": "tcf-delf-actif-a1-031-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-03.mp3",
+          "transcription": "C’est terminé pour aujourd’hui. Sortez du bassin ! Nous revenons la semaine prochaine à la piscine madame ? Oui, et mercredi après-midi aussi pour préparer le tournois inter collège.",
+          "source_sha256": "7849ff985eeb9588eca6d4654e3fe4e622cf5b90b87b4da921d7098132a6335a",
+          "audio_sha256": "6184509c62d2f711d288aa65df1df81bcc21e85d80b4b67e1e9cd1eaa0e0d6bf",
+          "previous_image": "/lib/images/tcf/co/bg/piscine.webp"
+        },
+        {
+          "exercise": "tcf-delf-actif-a1-044-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-01.mp3",
+          "transcription": "Qu’est-ce que vous faites le samedi ? Le samedi je me lève tard et après je fais de la natation. J’adore nager !",
+          "source_sha256": "e6d13ffb0001b6e5b1a5212e417a74c5db22501cf9cca7d9a09bfaa57697f951",
+          "audio_sha256": "7ae5813a59079de19398f3f5aa1868276bac4bcb546837079eccd6fec25f292a",
+          "previous_image": "/lib/images/tcf/co/bg/piscine.webp"
+        }
+      ],
+      "key": "dialogue-repair-a1-piscine",
+      "label": "Deux interlocuteurs parlent de natation à la piscine",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Use the old empty pool image as architectural background reference and add exactly TWO MAIN INTERLOCUTORS on the dry entrance area, the pool and lanes recognizable behind a full-height glass partition. An adult WOMAN about 40 with medium-brown skin, a short natural curly bob, plain teal polo shirt, charcoal sports trousers and white trainers speaks with a teenage BOY about 15 with fair freckled skin, short dark hair, a muted mustard T-shirt, navy shorts and plain sandals. Both people are OUT of the water, standing fully visible in the dry lobby/poolside entrance and talking face to face with open conversational gestures. The woman can be the school instructor explicitly addressed as Madame in one source. The boy holds a plain folded towel, never swims during the conversation. The scene is reusable for an end-of-class pool exchange and discussions about a swimming habit or future visit: do not show a swimming race, medal, test result, timetable, tournament, written temperature or completed future activity. No other foreground person. The instructor's female role is documented; the other visual casting is provisional and user-authorized. These production notes must never be lettered in the picture. Recompose the foreground to fit BOTH whole people and their feet without blocking the entire pool, retaining the approved soft painted style.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Enseignante femme respectée pour le dialogue scolaire ; autre interlocuteur garçon. Pour météo et habitude de natation, casting femme/garçon provisoire et non confirmé par écoute.",
+      "known_roles": [
+        {
+          "source": "tcf-delf-actif-a1-031-03#1",
+          "role": "enseignante femme",
+          "quote": "Nous revenons la semaine prochaine à la piscine madame ?"
+        }
+      ],
+      "edit_input_sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-deux-eleves-repas-self.png",
+      "sha256": "db94c6c999f9927ea668acd26f2444d8420937a06f40353d2c7f367b359b8772",
+      "visual_review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-030-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-030-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-030-01.mp3",
+          "transcription": "Tu manges au self aujourd’hui ? Non, cette semaine je rentre chez moi. Ma mère est en vacances, elle vient me chercher et elle me raccompagne à 14h00.",
+          "source_sha256": "53871377d09c28d519c589151363431da11043d1ec72d5e6252466f88b7d23e1",
+          "audio_sha256": "8e8867c5f675b3e3e9b17a77af72cb656d5be38d3189bd401e0e3feb477cc9d4",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-mere-attend-sortie-college.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-self",
+      "label": "Deux élèves discutent du repas à la cantine ou chez soi",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly TWO teenage STUDENTS around 15 talking face to face by the entrance of a generic school: one GIRL with dark-brown skin, a short natural afro, a plain rust sweatshirt, light trousers and sneakers; one BOY with fair skin, straight dark-brown ear-length hair, a muted slate-blue hoodie, dark trousers and canvas shoes. Each has one ordinary backpack. The girl casually asks whether the boy will eat in the school canteen; he explains his plan to go home instead. Their genders are provisional user-authorized casting, not claims about the voices. A school doorway and courtyard establish a neutral illustrative setting. The MOTHER is only a THIRD PARTY mentioned in the conversation: do NOT show the mother as if she is one of the two speakers, do not show her arriving for a pickup, do not show the students already eating at the canteen or already at home, no vehicle, meal tray, calendar or clock. This must replace the misleading image of a lone mother waiting at a gate. Both actual student interlocutors, friendly faces, conversational gestures and all four shoes fully visible; whole scene, no text or named real school.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Deux élèves choisis provisoirement : fille et garçon. La mère mentionnée reste un tiers, elle ne remplace aucun locuteur.",
+      "known_roles": [],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-photo-dossier-deux-personnes.png",
+      "sha256": "54f370a789da07378b5384a52fc157835751e7789a43e65a82a43422a481643b",
+      "visual_review": "Deux interlocuteurs entiers en interaction, contexte conforme au texte, style peint validé en natif 4:3. Cast non précisé provisoire autorisé.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-052-04-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-052-04-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3",
+          "transcription": "Bonjour Monsieur. Voici ma photo pour mon dossier. C’est pour partir en classe de neige ? Oui, c’est ça.",
+          "source_sha256": "bf4a004b10af73130937f1728923f135c67eeaaf5d9cb4090835d7e197faadcd",
+          "audio_sha256": "76dd94d7b7e2bc2d778b92b0d527c08a9305a2797d80e86a4305ce9c0eb851f8",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-photo-dossier-classe-neige-roles-documentes.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-photo",
+      "label": "Une élève remet sa photo pour le dossier de classe de neige",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Edit the attached school-photo scene to show BOTH speakers. Keep the adult MAN explicitly addressed as Monsieur, neutral ordinary clothing, at a modest school administrative desk with a plain open folder. ADD a teenage GIRL about 14 with light-brown skin, long dark hair in one loose braid, a muted brick-red jacket over a cream top, dark trousers and trainers, facing him on the visitor side of the desk. Her casting is provisional where the source gives no gender. She hands him ONE small loose photo-paper for her school-trip application; its reverse faces the viewer so no invented identity document or personal text is legible. He gestures toward the folder while asking about the class trip. The trip to the snow is only planned: no ski slope, snow outfit, passport, identity card, car or holiday already underway. Keep the photo as a photo, not a bank card. Recompose or move the desk to show both whole figures with all feet visible, nobody reduced to a disembodied hand or viewpoint. No school name, date, personal details, written destination or text.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Monsieur homme conservé ; élève fille choisie provisoirement.",
+      "known_roles": [
+        {
+          "source": "tcf-delf-actif-a1-052-04-01#1",
+          "role": "adulte homme",
+          "quote": "Bonjour Monsieur."
+        }
+      ],
+      "edit_input_sha256": "a0870125023408689752a8424d83383d6164f5741966336beae898b636949f55",
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-invitation-dejeuner-deux-amis.png",
+      "sha256": "420c09e293bae49195e7411cbbfd50d4a237e0db21ef53d36a4ee58d564ef9d1",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-019-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-019-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-019-03.mp3",
+          "transcription": "Tu es libre samedi ? Nous pourrions déjeuner ensemble. Si tu veux, je passe chez toi à une heure moins le quart.",
+          "source_sha256": "27c6842be3b9d05574c7e507799456d6ef6400791a5177ec649ece0ed66e3d9e",
+          "audio_sha256": "29e549e9e0aa053b9f232ed8fcedc8321b94659660ce6a689bdb73e45de36b88",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-proposer-dejeuner-ensemble.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-dejeuner",
+      "label": "Invitation à déjeuner, deux amis",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly two main adult friends, one WOMAN with fair freckled skin, short auburn hair, navy cardigan and cream trousers, and one MAN with deep-brown skin, short natural curls, a muted rust overshirt and olive trousers. They face one another and talk warmly outdoors by a modest residential doorway, both entire bodies and shoes visible. The woman suggests a future lunch together and gestures lightly toward the street; the man listens with a friendly open gesture. No already served meal, no food, no phone call, no restaurant booking, no clock, no written day or appointment time. The dialogue is an invitation and future pickup, never portray it as already happening. The genders are unspecified and provisionally chosen on the user request.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": [],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-anissa-et-enseignante.png",
+      "sha256": "2986902b4cab0a0602556bb85aa11301ae9e973b1e8f524ba13c61eee2d22fd2",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-032-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-032-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-032-02.mp3",
+          "transcription": "Je vous présente votre nouvelle camarade. Bonjour, tu veux te présenter ? Bonjour je m’appelle Anissa, j’arrive du Maroc et j’habite votre ville. Anissa, va t’assoir à côté de Sarah.",
+          "source_sha256": "ee4d95b47ab51a17bc3d47f80f18361fd98b497138fca2394e4c21202fbd0f39",
+          "audio_sha256": "8218fd8125a86a5a3eac8cd30f2f111cdb94b9b4029816706d09ff9a6c0d198b",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-nouvelle-camarade-anissa.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-anissa",
+      "label": "Anissa se présente avec son enseignante",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show a female adult teacher around 45 with light-brown skin, short dark curly hair, a blue-grey cardigan, cream blouse and dark trousers standing beside ANISSA, a teenage GIRL with warm brown skin, long dark hair tied loosely, a soft teal sweatshirt, jeans and trainers. The teacher invites Anissa to introduce herself, hand open toward her; Anissa answers looking at the teacher and classmates with one gentle hand near chest. Both teacher and Anissa must be completely visible, faces and feet included. In the background a second teenage girl SARAH sits in an ordinary wheelchair beside an EMPTY school chair, with a couple of pupils at desks; Sarah is a mentioned classmate, not a substitute for the speaking teacher. No child teacher, no Morocco flag or ethnic costume, no text, map, name labels. This is the classroom introduction before Anissa sits down. Anissa and Sarah are girls as named in the story, teacher female chosen provisionally.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": [],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-musique-lecture-deux-personnes.png",
+      "sha256": "4edfcb273a32167f91b3413511d117cacefc9a9768805b1c39e4bfadb83bfff6",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-02"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-02",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
+          "transcription": "Vous écoutez souvent de la musique ? Oui j’aime beaucoup. Et vous n’aimez pas la lecture ? Si, j’aime bien lire des livres.",
+          "source_sha256": "3bed27f1c38084472f531a86bf1991235204ff8592892b03a2b53a6c811f4315",
+          "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-musique-et-lecture.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-musique",
+      "label": "Deux personnes parlent de musique et de lecture",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly two adult WOMEN in a quiet bright living room having an ordinary face-to-face conversation. One is about 60, fair skin, short straight silver hair, muted coral cardigan, navy trousers and flat shoes; she holds a plain open book on her lap, with compact headphones resting on the side table rather than covering her ears. The other is about 30, deep-brown skin, braided hair in a bun, a muted mustard shirt, olive trousers and trainers, seated facing her with an interested conversational open hand. Both entire figures, hands and feet visible. Book and headphones provide the reading/music preference cues, no television, no phone, no dancing performance, no written title or music notes. They are speaking to one another, not one isolated reader. Both female roles are provisional since the transcript does not specify them.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": [],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png",
+      "sha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-a1-s3-co-4"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 4,
+          "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+          "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+          "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+          "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-coureur-homme-motive.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-coureur-regards",
+      "label": "Le coureur motivé et son interlocutrice",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "EDIT THE FIRST ATTACHED IMAGE, preserving exactly its two characters, park, bench, clothing, full-body composition and soft painted style. The user identifies a specific error: the runner looks away from the woman, so they do not appear to speak to one another. CORRECT THEIR EYE CONTACT: the man on the LEFT turns his HEAD AND BOTH EYES to the RIGHT and slightly downward, looking directly into the eyes of the woman on the RIGHT. The woman turns her head and both eyes LEFT toward his face. Their noses point toward each other, both faces in complementary three-quarter profiles, no one looks at the viewer, tree, sky or outside the frame. Their shared direct eye-line must be unmistakable. They are actively speaking to each other: she has an inquisitive open-mouth expression and open hand, he responds warmly with a small natural conversational gesture. He can keep his safe quad stretch, left hand holding his raised foot and the other hand gesturing toward HER; reorient upper body slightly toward her if needed. Keep the man male (the source says fou and motivé); the female friend is provisional and user-authorized. Exactly two whole people with all hands and feet visible, no extra person, no captions, numbers, distance sign, speech bubbles, money, day or date. Keep the warm semi-realistic painted editorial finish of the second style reference. Original landscape 4:3 EXACTLY 1448 by 1086 pixels, no border, crop or resizing.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Coureur homme conservé ; interlocutrice femme choisie provisoirement.",
+      "known_roles": [
+        {
+          "source": "tcf-a1-s3-co-4#4",
+          "role": "coureur homme",
+          "quote": "Je suis motivé."
+        }
+      ],
+      "edit_input_sha256": "8c94f3715b3235c5c2e281619a65e9f18399583e854bd19af541a2b58125b649",
+      "binding_action": "replace_existing_scene",
+      "active_bindings": [
+        {
+          "exercise": "tcf-a1-s3-co-4",
+          "dialogue": 4
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
+      "sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+      "visual_review": "Deux interlocuteurs principaux entiers se regardent et parlent ; décor, action et rôles conformes au texte. Style peint validé en 4:3 natif. Les figurants ne remplacent pas les locuteurs.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-031-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3",
+          "transcription": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+          "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+          "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe-roles-documentes.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-film-porte",
+      "label": "Film en classe : enseignant et élève",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "EDIT THE FIRST ATTACHED CLASSROOM SCENE to correct the spatial architecture of the misplaced door. Preserve the teacher, talking female pupil, two arriving pupils, film projector and unlit projection screen, approved warm softly painted semi-realistic style. REDESIGN THE ROOM PERSPECTIVE AND DOOR: put ONE normal rectangular open doorway clearly IN THE REAR LEFT CLASSROOM WALL, behind the teacher and pupils, with both straight jambs and a complete lintel visibly connected to that wall. A short indoor school corridor is visible through it. Two background pupils enter quietly through this rear doorway, their feet visibly on one continuous level floor. The door leaf is properly hinged on its jamb and folded open against the adjoining wall, fully behind the people; never put a gigantic door leaf in the left foreground, a floating frame, two conflicting openings or an outdoor courtyard instead of the corridor. Put the adult male teacher at centre-left and the female pupil at centre-right, a few steps INSIDE the classroom and clear of the doorway. They face and LOOK DIRECTLY AT EACH OTHER, genuinely speaking: pupil asks with an open hand and teacher replies with a gentle welcoming gesture toward the entering pupils. All four people visible, both main people completely from head to shoes with margins. Projector and blank dark screen at rear right, a few empty classroom chairs; no actual film still or actor, no finished oral presentation, grades, visible writing, name, logo, date or amount. Keep the same distinct faces and clothing as the target, do not copy the style-reference people. Native landscape 4:3, EXACTLY 1448 by 1086 pixels, no collage, border, crop, stretch or conversion.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": [],
+      "edit_input_sha256": "a445d2c0aea46d3eb657e6baa09fc108c7d13d2d7e4efccddf64b8b9b2bb424c",
+      "binding_action": "replace_existing_scene",
+      "active_bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-031-04",
+          "dialogue": 1
+        }
+      ]
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-ordinateur-deux-interlocuteurs.png",
+      "sha256": "e2da6c0d36479b75708e23550e5bdfc4eb7606ecafbfc144ce2e09bda44c774f",
+      "visual_review": "Deux personnes entières en dialogue, regard mutuel clair ; accessoires pertinents et action conformes au texte. Aucun texte, horaire ou montant ; natif 4:3 et style peint relus.",
+      "exercise_ids": [
+        "tcf-delf-actif-a1-044-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a1-044-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-03.mp3",
+          "transcription": "Le soir vous regardez la télé ? Pas tous les soirs. Je n’aime pas tellement. Je préfère jouer à l’ordinateur.",
+          "source_sha256": "875748bae7f06672055accb4cb768fa099c4047d186f0ae9ae16f04b71e6a675",
+          "audio_sha256": "210e1f9e7b0a7c1e8b8f8d82944da867abeaf619f2148fdf06da1a11d06dd8c6",
+          "previous_image": "/lib/images/tcf/qcm-audit/qcm-a1-jouer-ordinateur.png"
+        }
+      ],
+      "key": "dialogue-repair-a1-ordinateur",
+      "label": "Deux personnes parlent de jeux sur ordinateur",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed. Show exactly two adult interlocutors indoors at a modest computer desk, both whole figures including feet visible. A WOMAN about 55 with fair skin, chin-length grey hair and thin spectacles, a muted teal cardigan, pale blouse and dark trousers sits in a simple chair, with a game controller resting in her lap. A MAN about 35 with warm brown skin, a short beard, dark wavy hair, a muted terracotta jumper, beige trousers and plain shoes sits on another chair facing her and asks a question. She replies with a calm open hand and glances at him. A recognisable desktop computer, keyboard and monitor on the desk show a generic abstract colour puzzle, NO letters, branded game, movie or television screen. No TV. The computer preference is the cue; the two people must clearly speak to each other, not stare together silently at a screen. The user authorizes this provisional female/male casting; no inferred family relationship.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités respectés ; personnages non précisés choisis provisoirement sur demande utilisateur.",
+      "known_roles": [],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-claudine-et-camarade.png",
+      "sha256": "cf06aa353c71379d4f06b6ab12b713db3a7127d824deb9468d5b646afe157291",
+      "visual_review": "Deux personnes entières en dialogue, regard mutuel clair ; accessoires pertinents et action conformes au texte. Aucun texte, horaire ou montant ; natif 4:3 et style peint relus.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-030-03"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-030-03",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-03.mp3",
+          "transcription": "Claudine, c’est très gentil à toi de te faire interroger à ma place. Moi, j’étudie toujours en avance. Je me sens prête. Tu me rends un grand service. Tu es super, merci.",
+          "source_sha256": "d1825e4858c747db79268ac406b2e9566e92c541d3ee8787d7f84ba1f61f3dd3",
+          "audio_sha256": "0a0705237eb3f43cef77617ff0db7f8be650bd589e1371b4f345f81a02e516a7",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-claudine-prete-interrogation.png"
+        }
+      ],
+      "key": "dialogue-repair-a2-claudine",
+      "label": "Claudine et sa camarade avant interrogation",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed.  CRITICAL: the ACTUAL speakers must face EACH OTHER, their heads, both eyes and open conversational gestures directed at the other speaker, never looking at the viewer or off-frame. Distinguish mentioned absent people from actual speaking interlocutors. Exactly two teenage female students talk face to face beside school desks BEFORE an oral test. CLAUDINE, a confident girl with medium-brown skin, long dark hair in a loose braid, a muted blue knit sweater, olive trousers and white trainers, calmly holds a plain closed notebook and says she is ready. Her grateful peer is a fair-skinned girl with a short auburn bob, freckles, a terracotta sweatshirt and navy trousers. Both stand completely visible, mutually looking at each other; the grateful girl gives a small appreciative gesture. No teacher interlocutor, no pupil already at the blackboard being tested, no grade, no exam already over. Claudine female documented by prête, other girl provisionally chosen.",
+      "prompt_is_summary": false,
+      "provisional_cast": "Rôles explicités dans le texte respectés ; autres personnages choisis provisoirement sur demande utilisateur, sans écoute déclarée.",
+      "known_roles": [],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "key": "dialogue-a2-pere-refuse-sortie-enfant",
+      "label": "Le père refuse la sortie de son enfant",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-pere-refuse-sortie-enfant.png",
+      "sha256": "2f23d97019fd6a24bbf6a0590339655a46ad7ea22a7aafffd15eef8ee84a6354",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed.  CRITICAL: the ACTUAL speakers must face EACH OTHER, their heads, both eyes and open conversational gestures directed at the other speaker, never looking at the viewer or off-frame. Distinguish mentioned absent people from actual speaking interlocutors. Exactly two main people at home: a bald middle-aged FATHER with medium-brown skin, a close beard, burgundy cardigan and tan trousers, and his teenage DAUGHTER with warm-brown skin, dark short curly hair, mustard sweatshirt, jeans and trainers. They face one another, looking into each other eyes and discussing the refusal to go bowling. Father gently raises one calm open palm to refuse, daughter looks disappointed and explains with a small open hand. Father is firm, never threatening or violent, no finger to viewer. Both entirely visible in a simple entrance/living room. No bowling game, tournament trophy, phone, time, calendar, outing already achieved, friend present. Father male documented by papa, child girl provisional.",
+      "prompt_is_summary": false,
+      "visual_review": "Père et enfant présents en entier, se parlent et se regardent ; refus explicite, sans sortie déjà accomplie. Le père respecte papa ; fille choisie provisoirement.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-031-04"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "provisional_cast": "Rôles explicités dans le texte respectés ; autres personnages choisis provisoirement sur demande utilisateur, sans écoute déclarée.",
+      "known_roles": [],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-031-04",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-04.mp3",
+          "transcription": "Papa, ce soir je sors avec Mathieu, nous allons au bowling ! Absolument pas ! il est hors de question de sortir le jeudi maintenant ! Mais papa, il y a un tournoi... Je te dis non ! Un point c’est tout !",
+          "source_sha256": "58da669b458862df4dd2256a5dd0a2e63128dc6888004132d408ff64b1cb3aa0",
+          "audio_sha256": "f278a67dc2680f40ed66f8dde47a15193a5cb1322093143579b1162b8785595c",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-pere-refuse-sortie.png"
+        }
+      ],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    },
+    {
+      "key": "dialogue-a2-fleuriste-et-client-roses",
+      "label": "La fleuriste reçoit une commande de roses",
+      "path": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a2-fleuriste-et-client-roses.png",
+      "sha256": "45e58059634f0f811fca96aa269cacd7ff573178d16077765fb2a792cb6e1c21",
+      "width": 1448,
+      "height": 1086,
+      "source_bytes_preserved": true,
+      "reference": "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+      "reference_sha256": "3912297b79fc7fa60d1c2722afdeba242d2f2c504e8140e08f8ce28ce9d71538",
+      "prompt": "Create a single coherent educational dialogue scene in native LANDSCAPE 4:3, exactly 1448 by 1086 pixels. Match the attached approved ClairFLE reference: warm softly painted semi-realistic editorial drawing, natural muted colours, detailed materials, subtle thin contours, believable faces and anatomy. No photograph, 3D render, hard comic outlines, collage or split panels. The people who SPEAK must be visible TOGETHER and interacting, never a viewpoint with an absent interlocutor. Show both main people completely from head through shoes and all useful objects with margins. Use distinct varied characters, hair, ages, skin tones and body shapes, without nationality stereotypes. No speech bubbles, captions, readable text, numbers, dates, days, months, calendar, money, logos or watermark. Keep the audio situation and its outcome; do not depict a proposed activity as already performed.  CRITICAL: the ACTUAL speakers must face EACH OTHER, their heads, both eyes and open conversational gestures directed at the other speaker, never looking at the viewer or off-frame. Distinguish mentioned absent people from actual speaking interlocutors. Exactly two adults in a flower shop: a WOMAN florist with fair skin, short wavy copper hair, dark green apron, simple plum blouse and cream trousers stands with ONE single sample WHITE ROSE, and a MAN customer with deep-brown skin, short greying hair, a muted blue shirt and charcoal trousers sits in a realistic ordinary manual wheelchair. Both faces, hands, shoes and full wheelchair visible. They face each other and converse across the low side of the work counter; the customer gives her a small plain address paper, no writing visible. This is an order for a future birthday bouquet of white roses. Do NOT show a completed bouquet of an arbitrary wrong count, no birthday cake, gift already delivered, coins, numbers or written address. White flowers and greenery in background. Florist female by Madame, male customer provisional.",
+      "prompt_is_summary": false,
+      "visual_review": "Fleuriste et client en fauteuil visibles en entier, regard mutuel et échange réel. Rose blanche seule comme échantillon ; bouquet commandé non représenté avec un mauvais nombre, adresse sans texte. Fleuriste femme selon Madame ; client homme provisoire.",
+      "exercise_ids": [
+        "tcf-delf-actif-a2-032-01"
+      ],
+      "gender_review": {
+        "status": "provisional_cast_authorized",
+        "basis": "Rôles explicités respectés ; genre des personnages non précisés choisi provisoirement sur demande utilisateur. Aucune écoute des voix déclarée.",
+        "audio_listening_performed": false,
+        "evidence": [],
+        "authorization_register": "docs/tcf/reprise-dialogues-provisoires-20261114.json"
+      },
+      "scene_review": {
+        "status": "interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2
+      },
+      "provisional_cast": "Rôles explicités dans le texte respectés ; autres personnages choisis provisoirement sur demande utilisateur, sans écoute déclarée.",
+      "known_roles": [],
+      "bindings": [
+        {
+          "exercise": "tcf-delf-actif-a2-032-01",
+          "dialogue": 1,
+          "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
+          "transcription": "Bonjour Madame, je voudrais vous commander un bouquet de roses blanches à apporter chez une amie. Oui, vous voulez combien de roses ? Elle fête ses 18 ans, alors 18 roses… Vous me laissez son adresse ? La voici.",
+          "source_sha256": "e23cab572380665012a69d406e0da49a79416b837321c3e5949274e4a8fbb121",
+          "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
+          "previous_image": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-commande-roses-blanches.png"
+        }
+      ],
+      "binding_action": "alternative_only",
+      "active_bindings": []
+    }
+  ],
+  "reuses": [],
+  "sources": [
+    {
+      "exercise": "tcf-a1-s3-co-4",
+      "dialogue": 4,
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
+      "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
+      "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+      "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png",
+      "image_sha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
+      "previous_image": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png",
+      "previous_image_sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+      "action": "replace_requested_visual_detail",
+      "visual_review": "Le coureur masculin et son interlocutrice se regardent directement et se répondent ; corps entiers, course encore projetée.",
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "eye_contact_verified": true,
+        "spatial_layout_reviewed": true,
+        "register": "docs/tcf/corrections-regards-porte-20261120.json"
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/corrections-regards-porte-20261120.json",
+        "date": "2026-11-20",
+        "instruction": "Corriger le regard mutuel du coureur et de son interlocutrice et la porte de classe mal placée ; conserver les autres corrections déjà validées.",
+        "image_sha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
+        "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
+        "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    },
+    {
+      "exercise": "tcf-delf-actif-a1-031-04",
+      "dialogue": 1,
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3",
+      "transcription": "Alors rentrez en classe en silence s’il vous plaît. On va finir de regarder le film aujourd’hui ? Oui, et après c’est à toi de présenter ton travail sur Lupin.",
+      "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+      "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
+      "image_sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+      "previous_image": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+      "previous_image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+      "action": "replace_requested_visual_detail",
+      "visual_review": "Le professeur et l’élève se regardent pendant leur échange ; porte correctement intégrée au mur du fond, donnant sur le couloir par lequel entrent les deux autres élèves.",
+      "scene_review": {
+        "status": "all_main_interlocutors_visible",
+        "visible_interlocutors": 2,
+        "minimum_visible_interlocutors": 2,
+        "foreground_people": 2,
+        "full_body_visible": true,
+        "audio_listening_performed": false,
+        "eye_contact_verified": true,
+        "spatial_layout_reviewed": true,
+        "register": "docs/tcf/corrections-regards-porte-20261120.json"
+      },
+      "acceptance": {
+        "status": "user_accepted",
+        "register": "docs/tcf/corrections-regards-porte-20261120.json",
+        "date": "2026-11-20",
+        "instruction": "Corriger le regard mutuel du coureur et de son interlocutrice et la porte de classe mal placée ; conserver les autres corrections déjà validées.",
+        "image_sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+        "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+        "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+        "audio_listening_performed": false,
+        "reserves_retained": true
+      }
+    }
+  ],
+  "non_regression": {
+    "sources_retained": 117,
+    "decoys_retained": 80,
+    "questions_changed": 0,
+    "answers_changed": 0,
+    "audio_changed": 0,
+    "transcripts_changed": 0,
+    "retained_main_approvals": true
+  }
+}

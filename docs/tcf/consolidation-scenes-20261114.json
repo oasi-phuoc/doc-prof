@@ -16,7 +16,8 @@
     "docs/tcf/generation-scenarios-b1-final-20261115.json",
     "docs/tcf/validation-directe-scenes-20261115.json",
     "docs/tcf/dialogues-complets-20261115.json",
-    "docs/tcf/cadrages-finaux-20261115.json"
+    "docs/tcf/cadrages-finaux-20261115.json",
+    "docs/tcf/corrections-regards-porte-20261120.json"
   ],
   "summary": {
     "active_scenario_sources": 117,
@@ -24,14 +25,16 @@
     "remaining_scenes": 0,
     "pending_with_prepared_image": 0,
     "pending_without_prepared_image": 0,
-    "distinct_generated_scenario_pngs": 158,
+    "distinct_generated_scenario_pngs": 170,
     "historical_corrections": 1,
     "interlocutor_corrections": 1,
     "framing_corrections_20261115": 4,
     "prepared_interlocutor_corrections_20261115": 3,
     "user_accepted_scene_bindings": 79,
     "complete_dialogue_corrections_20261115": 17,
-    "final_framing_corrections_20261115": 21
+    "final_framing_corrections_20261115": 21,
+    "requested_detail_replacements_20261120": 2,
+    "additional_variants_20261120": 10
   },
   "bindings": [
     {
@@ -72,11 +75,11 @@
       "dialogue": 4,
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
       "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
-      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png",
-      "image_sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png",
+      "image_sha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
       "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
-      "selected_register": "docs/tcf/dialogues-complets-20261115.json",
-      "reason": "Le coureur masculin motivé et son interlocutrice se répondent sur le chemin du parc, avant la course projetée. Deux personnes entières ; aucun kilométrage ni course accomplie."
+      "selected_register": "docs/tcf/corrections-regards-porte-20261120.json",
+      "reason": "Le coureur masculin et son interlocutrice se regardent directement et se répondent ; corps entiers, course encore projetée."
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -655,11 +658,11 @@
       "dialogue": 1,
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3",
       "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
-      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
-      "image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
+      "image_sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
       "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
-      "selected_register": "docs/tcf/validation-directe-scenes-20261115.json",
-      "reason": "Validation directe autorisée par l’utilisateur ; réserves éditoriales conservées sans attente bloquante."
+      "selected_register": "docs/tcf/corrections-regards-porte-20261120.json",
+      "reason": "Le professeur et l’élève se regardent pendant leur échange ; porte correctement intégrée au mur du fond, donnant sur le couloir par lequel entrent les deux autres élèves."
     },
     {
       "exercise": "tcf-delf-actif-a2-032-01",

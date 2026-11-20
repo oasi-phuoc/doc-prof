@@ -6393,7 +6393,7 @@ textarea.pill-input,
 .tcf-situations{row-gap:6mm;column-gap:3mm;--situation-image-height:42mm}
 .tcf-situations.is-many{--situation-image-height:32mm}
 /* L'en-tête institutionnel doit laisser visibles les six scènes sur la première page. */
-.worksheet-sheet:has(.doc-header) .tcf-situations{row-gap:4mm;--situation-image-height:26mm}
+.worksheet-sheet:has(.doc-header) .tcf-situations{row-gap:2mm;--situation-image-height:22mm}
 .tcf-situations>li.tcf-situation-frame{margin:0;padding:0;gap:0;border-color:var(--purple);break-inside:avoid}
 .tcf-situation-body{display:grid;grid-template-columns:minmax(0,1fr) 26mm;align-items:center;gap:3mm;padding:2mm;min-width:0}
 .tcf-situations .tcf-situation-body .tcf-image{width:100%;height:var(--situation-image-height);max-height:var(--situation-image-height);object-fit:contain}

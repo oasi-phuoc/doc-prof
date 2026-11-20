@@ -121,8 +121,8 @@
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3",
       "transcription": "Je suis en forme aujourd’hui.\nJe veux courir 10 km.\n— 10 km ?\nMais tu es fou ?\n— Non, je ne suis pas fou.\nJe suis motivé.",
       "sourceSha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
-      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-coureur-motive-ami.png",
-      "imageSha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-coureur-et-amie-regards.png",
+      "imageSha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
       "themes": [
         "sport"
       ],
@@ -132,14 +132,14 @@
         "register": "docs/tcf/recontrole-genres-scenes-20261114.json",
         "status": "corrected_documented_match",
         "voice_confirmation_pending": false,
-        "note": "Le coureur masculin motivé et son interlocutrice se répondent sur le chemin du parc, avant la course projetée. Deux personnes entières ; aucun kilométrage ni course accomplie. Réserves de concordance non bloquantes, sans écoute des voix.",
+        "note": "Le coureur masculin et son interlocutrice se regardent directement et se répondent ; corps entiers, course encore projetée.",
         "previous_note": "Le coureur qui se dit motivé est masculin dans les paroles ; l’image place la femme dans le rôle sportif et l’homme dans le rôle surpris. Générer un coureur homme, interlocuteur non documenté hors cadre.",
         "status_origin": "historical_baseline_audit",
         "current_visual_status": "all_main_interlocutors_visible",
         "voice_review_non_blocking": true,
-        "later_correction_register": "docs/tcf/dialogues-complets-20261115.json"
+        "later_correction_register": "docs/tcf/corrections-regards-porte-20261120.json"
       },
-      "review": "Le coureur masculin motivé et son interlocutrice se répondent sur le chemin du parc, avant la course projetée. Deux personnes entières ; aucun kilométrage ni course accomplie.",
+      "review": "Le coureur masculin et son interlocutrice se regardent directement et se répondent ; corps entiers, course encore projetée.",
       "genderReview": {
         "status": "needs_voice_review",
         "basis": "Deux interlocuteurs représentés après lecture du texte et inspection visuelle ; apparences non précisées acceptées directement selon la consigne utilisateur. Réserves conservées comme notes non bloquantes, sans écoute des voix.",
@@ -152,20 +152,23 @@
         "minimum_visible_interlocutors": 2,
         "foreground_people": 2,
         "full_body_visible": true,
-        "audio_listening_performed": false
+        "audio_listening_performed": false,
+        "eye_contact_verified": true,
+        "spatial_layout_reviewed": true,
+        "register": "docs/tcf/corrections-regards-porte-20261120.json"
       },
       "editorialReview": {
         "status": "user_accepted",
-        "register": "docs/tcf/dialogues-complets-20261115.json",
-        "date": "2026-11-15",
-        "instruction": "Continue valide directement les scène et je les changerai au besoin",
-        "image_sha256": "8d3b0e0d27a5242e74e3f8f13077912846293e6d89e07ecfa00000f50156dccc",
+        "register": "docs/tcf/corrections-regards-porte-20261120.json",
+        "date": "2026-11-20",
+        "instruction": "Corriger le regard mutuel du coureur et de son interlocutrice et la porte de classe mal placée ; conserver les autres corrections déjà validées.",
+        "image_sha256": "0748bdaea47d661d61e80eab0dcae4878c9d1a939212d137799e39c9848a5aee",
         "source_sha256": "f5f24b1d85ccffc72fda202a794d7613fbc30ece27fd0b8a3773881a2160ad6b",
         "audio_sha256": "c036506b352bf0ac218e6c86dac144fcdc9ad28e8f616b613f14879dd2ff01f1",
         "audio_listening_performed": false,
         "reserves_retained": true
       },
-      "imageCorrectionRegister": "docs/tcf/dialogues-complets-20261115.json"
+      "imageCorrectionRegister": "docs/tcf/corrections-regards-porte-20261120.json"
     },
     {
       "exercise": "tcf-a1-s4-co-4",
@@ -2435,9 +2438,9 @@
       ],
       "sceneKey": "classe-cours",
       "reviewRegister": "docs/tcf/scenarios-audio-20261114.json",
-      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
-      "imageSha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
-      "review": "L’enseignant et l’élève discutent avant la suite prévue du film. Projecteur au repos et écran vierge ; pas de film ou exposé déjà en cours, pas de fausse scène Lupin. Les deux interlocuteurs sont présents en entier.",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
+      "imageSha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+      "review": "Le professeur et l’élève se regardent pendant leur échange ; porte correctement intégrée au mur du fond, donnant sur le couloir par lequel entrent les deux autres élèves.",
       "genderReview": {
         "status": "needs_voice_review",
         "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
@@ -2455,19 +2458,23 @@
         "minimum_visible_interlocutors": 2,
         "foreground_people": 2,
         "full_body_visible": true,
-        "audio_listening_performed": false
+        "audio_listening_performed": false,
+        "eye_contact_verified": true,
+        "spatial_layout_reviewed": true,
+        "register": "docs/tcf/corrections-regards-porte-20261120.json"
       },
       "editorialReview": {
         "status": "user_accepted",
-        "register": "docs/tcf/validation-directe-scenes-20261115.json",
-        "date": "2026-11-15",
-        "instruction": "Continue valide directement les scène et je les changerai au besoin",
-        "image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+        "register": "docs/tcf/corrections-regards-porte-20261120.json",
+        "date": "2026-11-20",
+        "instruction": "Corriger le regard mutuel du coureur et de son interlocutrice et la porte de classe mal placée ; conserver les autres corrections déjà validées.",
+        "image_sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
         "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
         "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
         "audio_listening_performed": false,
         "reserves_retained": true
-      }
+      },
+      "imageCorrectionRegister": "docs/tcf/corrections-regards-porte-20261120.json"
     },
     {
       "exercise": "tcf-delf-actif-a2-032-01",

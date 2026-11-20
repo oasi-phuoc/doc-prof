@@ -40,7 +40,7 @@
         "keep_temporal_exchange": 1
       }
     },
-    "new_original_pngs": 158,
+    "new_original_pngs": 170,
     "new_scene_image_uses": 46,
     "priority_scene_reuses": 4,
     "priority_prepared_scene_uses": 51,
@@ -67,7 +67,9 @@
     "editorial_reserves_non_blocking": true,
     "complete_dialogue_corrections_20261115": 17,
     "final_framing_corrections_20261115": 21,
-    "user_accepted_scene_bindings": 79
+    "user_accepted_scene_bindings": 79,
+    "requested_detail_replacements_20261120": 2,
+    "additional_variants_20261120": 10
   },
   "supports": [
     {
@@ -1379,7 +1381,7 @@
       "evidenceQuote": "finir de regarder le film",
       "reason": "Film regardé en classe avec travail à présenter, pas une sortie dans une salle de cinéma.",
       "decision": "eligible_bound_scene",
-      "image": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+      "image": "/lib/images/tcf/co/scenes/delf-actif/dialogue-a1-film-classe-porte-corrigee.png",
       "genderReview": {
         "status": "needs_voice_review",
         "basis": "Rôles et personnages illustratifs acceptés directement par l’utilisateur ; réserves de concordance conservées comme notes non bloquantes. Aucune écoute des voix déclarée.",
@@ -1391,9 +1393,9 @@
           }
         ]
       },
-      "imageSha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
-      "visualReview": "L’enseignant et l’élève discutent avant la suite prévue du film. Projecteur au repos et écran vierge ; pas de film ou exposé déjà en cours, pas de fausse scène Lupin. Les deux interlocuteurs sont présents en entier.",
-      "generationRegister": "docs/tcf/generation-scenarios-priorite-20261114.json",
+      "imageSha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
+      "visualReview": "Le professeur et l’élève se regardent pendant leur échange ; porte correctement intégrée au mur du fond, donnant sur le couloir par lequel entrent les deux autres élèves.",
+      "generationRegister": "docs/tcf/corrections-regards-porte-20261120.json",
       "alternativeSceneImages": [
         {
           "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-film-en-classe.png",
@@ -1434,6 +1436,14 @@
           },
           "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
           "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408"
+        },
+        {
+          "path": "/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png",
+          "sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+          "register": "docs/tcf/dialogues-complets-20261115.json",
+          "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
+          "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
+          "reason": "Version antérieure conservée ; nouvelle reprise demandée du regard ou de la porte."
         }
       ],
       "sceneReview": {
@@ -1442,14 +1452,17 @@
         "minimum_visible_interlocutors": 2,
         "foreground_people": 2,
         "full_body_visible": true,
-        "audio_listening_performed": false
+        "audio_listening_performed": false,
+        "eye_contact_verified": true,
+        "spatial_layout_reviewed": true,
+        "register": "docs/tcf/corrections-regards-porte-20261120.json"
       },
       "editorialReview": {
         "status": "user_accepted",
-        "register": "docs/tcf/validation-directe-scenes-20261115.json",
-        "date": "2026-11-15",
-        "instruction": "Continue valide directement les scène et je les changerai au besoin",
-        "image_sha256": "89d152d87f6b881627350f46f702ea457ef34d7594630a17f8a5da68333e9a42",
+        "register": "docs/tcf/corrections-regards-porte-20261120.json",
+        "date": "2026-11-20",
+        "instruction": "Corriger le regard mutuel du coureur et de son interlocutrice et la porte de classe mal placée ; conserver les autres corrections déjà validées.",
+        "image_sha256": "2d65356491ae27467644c1d0bfb665cce0e47e4a45cad6392061b45805f66154",
         "source_sha256": "323c9043f78ca2952c4d0b72223d48e7ef774bfa4620399895a9a4a66519f51d",
         "audio_sha256": "80ab635c9a30366d0cde7bae092d571350a5899454766e9b68361d5192467408",
         "audio_listening_performed": false,
@@ -9226,7 +9239,8 @@
     "docs/tcf/generation-scenarios-b1-complement-20261114.json",
     "docs/tcf/correction-interlocuteurs-pluie-20261114.json",
     "docs/tcf/dialogues-complets-20261115.json",
-    "docs/tcf/cadrages-finaux-20261115.json"
+    "docs/tcf/cadrages-finaux-20261115.json",
+    "docs/tcf/corrections-regards-porte-20261120.json"
   ],
   "previous_scenes_gender_audit": "docs/tcf/recontrole-genres-scenes-20261114.json",
   "consolidation_register": "docs/tcf/consolidation-scenes-20261114.json",

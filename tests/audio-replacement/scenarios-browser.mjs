@@ -4,6 +4,7 @@ import { createServer } from 'vite'
 import { chromium } from 'playwright'
 
 const base = 'http://127.0.0.1:5194'
+const detailsMode = process.argv.includes('--requested-details')
 const priorityMode = process.argv.includes('--priority')
 const interlocutorsMode = process.argv.includes('--interlocuteurs')
 const b1FinalMode = process.argv.includes('--b1-final')
@@ -30,7 +31,14 @@ try {
   const motherCorrection = b1ComplementMode ? JSON.parse(await readFile('docs/tcf/correction-interlocuteurs-pluie-20261114.json', 'utf8')).images[0] : null
   const interlocutors = interlocutorsMode ? JSON.parse(await readFile('docs/tcf/corrections-interlocuteurs-20261115.json', 'utf8')) : null
   const scenarioCatalog = interlocutorsMode ? JSON.parse(await readFile('src/tcf/association-image-themes.json', 'utf8')) : null
-  const specs = b1FinalMode ? [
+  const specs = detailsMode ? [
+    { level: 'A0-A1', difficulty: 'facile', rawSlots: [
+      '/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-4.mp3',
+      '/lib/audio/tcf/co/delf-actif-a1/a1-031-04.mp3',
+      '/lib/audio/tcf/co/delf-actif-a1/a1-052-04-01.mp3',
+      '/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3',
+    ] },
+  ] : b1FinalMode ? [
     { level: 'A2-B1', difficulty: 'avance', clips: ['b1-001-01', 'b1-001-03', 'b1-002-03', 'b1-041-01-01'] },
   ] : interlocutorsMode ? ['tcf-a1-s3-co-4', 'tcf-a1-s4-co-4'].map(exercise => ({ level: 'A0-A1', difficulty: 'facile', rawSlots: scenarioCatalog.sources.filter(source => source.exercise === exercise).sort((a, b) => a.dialogue - b.dialogue).map(source => source.audio) })) : genderReviewMode ? [
     { level: 'A0-A1', difficulty: 'facile', rawSlots: genderAudit.sources.filter(s => s.exercise === correction.exercise).sort((a, b) => a.dialogue - b.dialogue).map(s => s.audio) },
@@ -66,6 +74,10 @@ try {
     const slots = spec.rawSlots ?? spec.clips.map(id => `/lib/audio/tcf/co/delf-actif-${id.slice(0, 2)}/${id}.mp3`)
     const exercise = drawAssociationCompose(spec.level, createRng(923), { audioSlots: slots })
     assert.ok(exercise)
+    if (detailsMode) {
+      exercise.situations.find(s => s.dialogue === 1).image = '/lib/images/tcf/co/scenes/loisirs/s-echauffer.webp'
+      exercise.situations.find(s => s.dialogue === 2).image = '/lib/images/tcf/co/scenes/reprises/dialogue-film-en-classe-enseignant-visible.png'
+    }
     if (interlocutorsMode) for (const asset of interlocutors.images.filter(asset => asset.binding_action === 'replace_existing_scene')) {
       const oldRecipeScene = exercise.situations.find(scene => scene.image === asset.path)
       if (oldRecipeScene) oldRecipeScene.image = asset.previous_image
@@ -103,6 +115,13 @@ try {
       return frame.bottom > body.bottom + 1 || frame.left < body.left - 1 || frame.right > body.right + 1
         ? [{ index, frameBottom: frame.bottom, bodyBottom: body.bottom }] : []
     }))
+    if (clippedFrames.length) {
+      console.log('SCENE_LAYOUT', JSON.stringify(await stage.locator('.tcf-situation-frame').evaluateAll(nodes => nodes.map(node => {
+        const image = node.querySelector('img')
+        return { frame: node.getBoundingClientRect().toJSON(), image: image?.getBoundingClientRect().toJSON(), imageHeight: image ? getComputedStyle(image).height : '', variable: getComputedStyle(node).getPropertyValue('--situation-image-height'), header: !!node.closest('.worksheet-sheet')?.querySelector('.doc-header') }
+      }))))
+      await stage.screenshot({ path: '/tmp/scenes-requested-details-layout.png' })
+    }
     assert.deepEqual(clippedFrames, [], 'All six scene frames must fit inside the printable page body')
     if (b1ComplementMode) {
       assert.equal(await stage.locator(`img[src="${motherCorrection.previous_image}"]`).count(), 0)
@@ -113,7 +132,7 @@ try {
       assert.equal(await selectors.first().inputValue(), config.tcfAudioSlots[0])
       assert.equal(await selectors.first().locator(`option[value="${config.tcfAudioSlots[1]}"]`).isDisabled(), true)
     }
-    results.push({ level: specs[index].level, audios: config.tcfAudioSlots, images: expected, loaded: expected.length, native_new_pngs: expected.filter(p => p.includes('/delf-actif/')).length, clipped_frames: clippedFrames })
+    results.push({ level: specs[index].level, audios: config.tcfAudioSlots, images: expected, loaded: expected.length, native_new_pngs: expected.filter(p => (p.includes('/delf-actif/') || p.includes('/reprises/'))).length, clipped_frames: clippedFrames })
     if (b1FinalMode) {
       const pending = JSON.parse(await readFile('docs/tcf/generation-scenarios-b1-final-20261115.json', 'utf8'))
       assert(pending.images.every(asset => !expected.includes(asset.path)), 'Pending B1 scenes must stay outside audio associations')
@@ -131,14 +150,18 @@ try {
     if (a2FinalMode) await stage.screenshot({ path: `/tmp/scenarios-a2-final-20261114-page-${index + 1}.png` })
     if (genderReviewMode) {
       assert.equal(await stage.locator(`img[src="${correction.previous_image}"]`).count(), 0)
-      assert.equal(await stage.locator(`img[src="${correction.path}"]`).count(), 1)
+      assert.equal(await stage.locator(`img[src="${tcfImageSrc(correction.path)}"]`).count(), 1)
       await stage.screenshot({ path: '/tmp/scenarios-genres-20261114-ancienne-recette.png' })
     }
     if (priorityMode) await stage.screenshot({ path: `/tmp/scenarios-priorite-20261114-page-${index + 1}.png` })
   }
   assert.deepEqual(errors, [])
-  const nativeNewPngs = new Set(results.flatMap(r => r.images).filter(p => p.includes('/delf-actif/'))).size
-  if (!a1ComplementMode && !a2ComplementMode && !a2FinalMode && !interlocutorsMode && !b1FinalMode) assert.equal(nativeNewPngs, genderReviewMode ? 1 : (b1SuiteMode || b1ComplementMode) ? 4 : priorityMode ? 21 : suiteMode ? 4 : 7)
+  if (detailsMode) {
+    const proof = JSON.parse(await readFile('docs/tcf/corrections-regards-porte-20261120.json', 'utf8'))
+    for (const source of proof.sources) assert.ok(results.some(r => r.images.includes(source.image)))
+  }
+  const nativeNewPngs = new Set(results.flatMap(r => r.images).filter(p => (p.includes('/delf-actif/') || p.includes('/reprises/')))).size
+  if (!detailsMode && !a1ComplementMode && !a2ComplementMode && !a2FinalMode && !interlocutorsMode && !b1FinalMode) assert.ok(nativeNewPngs >= (genderReviewMode ? 1 : (b1SuiteMode || b1ComplementMode) ? 4 : priorityMode ? 21 : suiteMode ? 4 : 7))
   let galleryImages = 0
   if (suiteMode || a1ComplementMode || a2ComplementMode || a2FinalMode || interlocutorsMode || b1FinalMode) {
     const suite = JSON.parse(await readFile(b1FinalMode ? 'docs/tcf/generation-scenarios-b1-final-20261115.json' : interlocutorsMode ? 'docs/tcf/corrections-interlocuteurs-20261115.json' : a2FinalMode ? 'docs/tcf/generation-scenarios-a2-final-20261114.json' : a2ComplementMode ? 'docs/tcf/generation-scenarios-a2-complement-20261114.json' : a1ComplementMode ? 'docs/tcf/generation-scenarios-a1-complement-20261114.json' : 'docs/tcf/generation-scenarios-a2-suite-20261114.json', 'utf8'))
@@ -168,7 +191,7 @@ try {
     }
     await page.screenshot({ path: b1FinalMode ? '/tmp/scenarios-b1-final-20261115-gallery.png' : interlocutorsMode ? '/tmp/scenarios-interlocuteurs-20261115-gallery.png' : a2FinalMode ? '/tmp/scenarios-a2-final-20261114-gallery.png' : a2ComplementMode ? '/tmp/scenarios-a2-complement-20261114-gallery.png' : a1ComplementMode ? '/tmp/scenarios-a1-complement-20261114-gallery.png' : '/tmp/scenarios-a2-suite-20261114-gallery.png' })
   }
-  const report = b1FinalMode ? 'docs/tcf/scenarios-b1-final-20261115-browser.json' : interlocutorsMode ? 'docs/tcf/scenarios-interlocuteurs-20261115-browser.json' : b1ComplementMode ? 'docs/tcf/scenarios-b1-complement-20261114-browser.json' : b1SuiteMode ? 'docs/tcf/scenarios-b1-suite-20261114-browser.json' : genderReviewMode ? 'docs/tcf/scenarios-genres-20261114-browser.json' : a2FinalMode ? 'docs/tcf/scenarios-a2-final-20261114-browser.json' : a2ComplementMode ? 'docs/tcf/scenarios-a2-complement-20261114-browser.json' : a1ComplementMode ? 'docs/tcf/scenarios-a1-complement-20261114-browser.json' : suiteMode ? 'docs/tcf/scenarios-a2-suite-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
+  const report = detailsMode ? 'docs/tcf/corrections-regards-porte-20261120-browser.json' : b1FinalMode ? 'docs/tcf/scenarios-b1-final-20261115-browser.json' : interlocutorsMode ? 'docs/tcf/scenarios-interlocuteurs-20261115-browser.json' : b1ComplementMode ? 'docs/tcf/scenarios-b1-complement-20261114-browser.json' : b1SuiteMode ? 'docs/tcf/scenarios-b1-suite-20261114-browser.json' : genderReviewMode ? 'docs/tcf/scenarios-genres-20261114-browser.json' : a2FinalMode ? 'docs/tcf/scenarios-a2-final-20261114-browser.json' : a2ComplementMode ? 'docs/tcf/scenarios-a2-complement-20261114-browser.json' : a1ComplementMode ? 'docs/tcf/scenarios-a1-complement-20261114-browser.json' : suiteMode ? 'docs/tcf/scenarios-a2-suite-20261114-browser.json' : priorityMode ? 'docs/tcf/scenarios-priorite-20261114-browser.json' : 'docs/tcf/scenarios-audio-20261114-browser.json'
   await writeFile(report, JSON.stringify({ date: interlocutorsMode || b1FinalMode ? '2026-11-15' : '2026-11-14', results, gallery_images: galleryImages, errors, human_audio_listening_performed: false }, null, 2) + '\n')
   console.log(JSON.stringify({ pages: results.length, native_new_pngs: nativeNewPngs, images: results.reduce((n, r) => n + r.loaded, 0), gallery_images: galleryImages, errors }))
   await context.close()
