@@ -8,12 +8,12 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 484,
+      "active_reviewed_trio": 504,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73,
-      "candidate_visual_review": 262
+      "candidate_visual_review": 242
     },
     "by_level": {
       "A0-A1": {
@@ -24,10 +24,10 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 197,
+        "active_reviewed_trio": 217,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
-        "candidate_visual_review": 141,
+        "candidate_visual_review": 121,
         "keep_text_calendar_or_duration": 58,
         "keep_text_amount": 24
       },
@@ -41274,8 +41274,8 @@
       "semantic_sha256": "0a7b2e097251b634db9b881370f30a5bd5bbe7b35f33565f0eebbf7c4e7b8e55",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-005-01.mp3",
       "audio_sha256": "f2702c5779ca5c9567ba2e40da6ae7e23d0603e60f72df80cd33758b443fb807",
-      "status": "candidate_visual_review",
-      "reason": "Descendre, monter et changer de voiture ; pour changer de voiture montrer deux voitures du même train, pas une simple montée.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -41302,8 +41302,24 @@
           "brief": "Représenter entièrement « Changer de voiture » pour « Que doivent faire tous les voyageurs ? ». Vérifier la transcription du support tcf-delf-actif-a2-005-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Descendre, monter et changer de voiture ; pour changer de voiture montrer deux voitures du même train, pas une simple montée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-descendre-train.png",
+          "sha256": "33dfea96af942ce8e5b553310e7b74f2ffeb8c2a9d2a525df71a892719608d56"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-monter-train.png",
+          "sha256": "6646718edbdcad71563c76d724c01e26509aa53d77e89b5d1fc831321ec48f66"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-changer-voiture.png",
+          "sha256": "57d9311125be4679700e35b64da7995931cdad1319d03061f5124b7c4f305e44"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -41321,6 +41337,10 @@
         "evidence_quote": "Tous les voyageurs sont invités à descendre",
         "semantic_sha256": "0a7b2e097251b634db9b881370f30a5bd5bbe7b35f33565f0eebbf7c4e7b8e55",
         "note": "Descendre, monter et changer de voiture ; pour changer de voiture montrer deux voitures du même train, pas une simple montée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Descendre du train vers le quai, monter depuis le quai et changer de voiture par un passage intérieur continu. Trois mouvements distincts ; portes, marches et plancher sont visibles. La référence au passage souterrain et le mot voiture conduisent à conserver le contexte ferroviaire, sans numéro de train ou indication de côté ajoutée à cette question."
       }
     },
     {
@@ -46918,8 +46938,8 @@
       "semantic_sha256": "b89542eedab49fbafe7f59d7a5fba15379388d1f882e8cd94e1344df2e331050",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-05.mp3",
       "audio_sha256": "fa880c15708ea81af871a52fa30455ed2d7bf8c2efec5ab24632a4707ab157c9",
-      "status": "candidate_visual_review",
-      "reason": "Beau ET chaud, froid ET pluie, vent ET neige ; chaque image doit conserver les deux caractéristiques du choix et la question vise le temps avant le changement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -46946,8 +46966,24 @@
           "brief": "Représenter entièrement « Venteux et neigeux » pour « Comment était le temps avant le changement ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Beau ET chaud, froid ET pluie, vent ET neige ; chaque image doit conserver les deux caractéristiques du choix et la question vise le temps avant le changement."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+          "sha256": "ed196465ce44a198fba5dd12cd806752b480d93901370a0c8fcd06bbed948c2e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-pluie-froid-dessine.webp",
+          "sha256": "7a8a3715480bcff8bf6327d17e28093a295c3f04c5cb74a11f0b904a92ce5227"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-neige-vent-dessine.webp",
+          "sha256": "aefa77d906164639c604e06edc7b9bdc5ad174ae712564b8c67a5b93742c1820"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -46965,6 +47001,10 @@
         "evidence_quote": "beau temps et même chaud dans le sud",
         "semantic_sha256": "b89542eedab49fbafe7f59d7a5fba15379388d1f882e8cd94e1344df2e331050",
         "note": "Beau ET chaud, froid ET pluie, vent ET neige ; chaque image doit conserver les deux caractéristiques du choix et la question vise le temps avant le changement."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Soleil et chaleur avec personne qui s’évente, froid ET pluie avec personne emmitouflée sous parapluie, neige ET vent avec flocons obliques et écharpe soufflée. Les deux caractéristiques de chaque réponse sont présentes. La question porte sur le temps AVANT le changement, confirmé par la source entière."
       }
     },
     {
@@ -47031,8 +47071,8 @@
       "semantic_sha256": "f5a95dec0d9d55ddbb8951176e9234bd4e52feedde35217848c187fd52176c68",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-05.mp3",
       "audio_sha256": "fa880c15708ea81af871a52fa30455ed2d7bf8c2efec5ab24632a4707ab157c9",
-      "status": "candidate_visual_review",
-      "reason": "Deux thermomètres comparatifs par choix ou variation sans valeurs absolues : baisse, hausse et stabilité distinctes ; ne pas inventer des degrés.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -47059,8 +47099,24 @@
           "brief": "Représenter entièrement « Une température stable » pour « Quel changement de température est annoncé ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Deux thermomètres comparatifs par choix ou variation sans valeurs absolues : baisse, hausse et stabilité distinctes ; ne pas inventer des degrés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-temperature-baisse.png",
+          "sha256": "90abf2f280cfc412a270c87070d1203d98a158be6e95af3b149a877d7fba1d6d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-temperature-hausse.png",
+          "sha256": "32e5f598d81c7a33f7660c136b121862196d69332c4c8a7936f73c1198b8c48e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-temperature-stable.png",
+          "sha256": "c62ebba0f4dd6e1662907f78878d928d8ff1702446da80d23e3e4f364781ac4e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47078,6 +47134,10 @@
         "evidence_quote": "Une nette baisse de température",
         "semantic_sha256": "f5a95dec0d9d55ddbb8951176e9234bd4e52feedde35217848c187fd52176c68",
         "note": "Deux thermomètres comparatifs par choix ou variation sans valeurs absolues : baisse, hausse et stabilité distinctes ; ne pas inventer des degrés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Deux thermomètres comparés par choix, titrés AVANT et APRÈS, sans degrés chiffrés. Même niveau initial dans les trois vues ; niveau final inférieur, supérieur ou identique. La variation de température est visible dans les colonnes de liquide et n’est pas remplacée par une simple flèche."
       }
     },
     {
@@ -47775,8 +47835,8 @@
       "semantic_sha256": "c5f53dae995e4997940057f9a4e6d8f2b07e211915da1a1d9cbc7d2c8d41b40e",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-010-02.mp3",
       "audio_sha256": "57b3008c4c0b45005db123da5b6737a7bf19bf5698efc23349f3fa685d659bb5",
-      "status": "candidate_visual_review",
-      "reason": "Écran de plateforme de cours, livre audio avec dispositif d’écoute et jeu de société ; ne pas remplacer la plateforme par un ordinateur fermé.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -47803,8 +47863,24 @@
           "brief": "Représenter entièrement « Les jeux de société » pour « Quelle technologie transforme les cours ? ». Vérifier la transcription du support tcf-delf-actif-a2-010-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Écran de plateforme de cours, livre audio avec dispositif d’écoute et jeu de société ; ne pas remplacer la plateforme par un ordinateur fermé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-plateforme-cours.png",
+          "sha256": "d848c6fbd5f423b3738a32d04cc900723216847017bcd89349592a0033096862"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-livres-audio.png",
+          "sha256": "46d4c88dfba5dfd89e9ec2584a733b107caa4751090e86575f3aeef6c9701007"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-jeu-societe.png",
+          "sha256": "952185d1618f78d792eb8a352affdf72a247e146155a9499aef91b3e2bebbf95"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -47822,6 +47898,10 @@
         "evidence_quote": "Place aux plateformes numériques",
         "semantic_sha256": "c5f53dae995e4997940057f9a4e6d8f2b07e211915da1a1d9cbc7d2c8d41b40e",
         "note": "Écran de plateforme de cours, livre audio avec dispositif d’écoute et jeu de société ; ne pas remplacer la plateforme par un ordinateur fermé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Plateforme de cours et exercices visible à l’écran, livres audio avec couvertures et dispositif d’écoute, jeu de société avec plateau et pions. La plateforme ne se réduit pas à un ordinateur fermé, et les livres audio ne sont pas une illustration de musique. Interfaces génériques sans donnée personnelle, coût ou date. Première génération avec trois boissons devant l’ordinateur écartée ; plateforme seule régénérée et relue."
       }
     },
     {
@@ -49016,8 +49096,8 @@
       "semantic_sha256": "56c0d3cc6b8da446d63ff605d643e83d277331f078b6342a4b96013a1bd1a023",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-011-03.mp3",
       "audio_sha256": "8dd3eb44633fd19a382d90689e3c6a06d0305e3ff5877ae94bde813cfb6571b1",
-      "status": "candidate_visual_review",
-      "reason": "Achat sur site web, poste et train ; ne pas reproduire une URL tronquée, un tarif ou une date dans les scènes.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -49057,8 +49137,24 @@
           "brief": "Représenter entièrement « Dans le train » pour « Comment peut-on acheter un billet ? ». Vérifier la transcription du support tcf-delf-actif-a2-011-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Achat sur site web, poste et train ; ne pas reproduire une URL tronquée, un tarif ou une date dans les scènes."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-billets-salon-livre.png",
+          "sha256": "bb972d5528e8656601ab43997c6bcb17c53cb33ad8801d0db9d818e8882f136c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+          "sha256": "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-trains.webp",
+          "sha256": "2c9c83522eaffe47c25e792ca04ccd724ca92ce1ba54b7ea5db12a52ff51ab55"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -49076,6 +49172,10 @@
         "evidence_quote": "Consultez le site",
         "semantic_sha256": "56c0d3cc6b8da446d63ff605d643e83d277331f078b6342a4b96013a1bd1a023",
         "note": "Achat sur site web, poste et train ; ne pas reproduire une URL tronquée, un tarif ou une date dans les scènes."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Site de billetterie du salon du livre avec livres et bouton d’achat, guichet postal et intérieur d’un train. La vue web illustre un achat effectif, les autres images des lieux proposés. Ni château, concert, tarif ou date ajoutés au site du salon. Les choix demeurent des modes ou lieux d’achat comparables."
       }
     },
     {
@@ -53931,8 +54031,8 @@
       "semantic_sha256": "24bbb34b47c96b59a65c3222a5734afad66c3e884f376f3068454a87e0022256",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-025.mp3",
       "audio_sha256": "e81c791f40e63542dd094fbede46ac218cedfec5b6e7dff5e772197c524e340c",
-      "status": "candidate_visual_review",
-      "reason": "Apporter un objet générique, fermer une porte et allumer un appareil sont trois actions ; ne pas prétendre que l’objet non précisé était un livre ou un cadeau particulier.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -53959,8 +54059,24 @@
           "brief": "Représenter entièrement « Allumer un appareil » pour « Quelle action la première formule demande-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-025 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Apporter un objet générique, fermer une porte et allumer un appareil sont trois actions ; ne pas prétendre que l’objet non précisé était un livre ou un cadeau particulier."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png",
+          "sha256": "ce501acd3390edeca99c17403188154b721379146a11beab5c8d19a9c97bc220"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-fermer-porte.png",
+          "sha256": "c825d637bda94bcc06173955d11035127386f6aadf50920a208d838ad443a49f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png",
+          "sha256": "f48b114573c34efbbd407f94bff885ce33a3b86b64cef89c27a0df5a0d730cff"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53978,6 +54094,10 @@
         "evidence_quote": "Pouvez- vous m’apporter",
         "semantic_sha256": "24bbb34b47c96b59a65c3222a5734afad66c3e884f376f3068454a87e0022256",
         "note": "Apporter un objet générique, fermer une porte et allumer un appareil sont trois actions ; ne pas prétendre que l’objet non précisé était un livre ou un cadeau particulier."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Apporter un cahier à une autre personne, fermer une porte et mettre en marche une radio. Le cahier et la radio sont des exemples d’objets pour les formules génériques, sans prétendre que la source nomme ces objets. Les deux interlocutrices de l’apport se parlent et se regardent ; gestes de porte et bouton visibles. Geste de radio repris pour placer le doigt sur le bouton de mise en marche et non sur la grille du haut-parleur."
       }
     },
     {
@@ -54672,8 +54792,8 @@
       "semantic_sha256": "b46f9c549bd79dd935adb0cc2b632d81f5dc25f0fa3c036bc9fea64072463d11",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-027.mp3",
       "audio_sha256": "96aca95fe832bc0c04bdc9ee8f42bb71c79a5ba7683220b341ee2c49f8b8d2b7",
-      "status": "candidate_visual_review",
-      "reason": "Chaleur, froid et pluie : indices météorologiques et corporels distincts, sans température chiffrée inventée.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -54707,8 +54827,24 @@
           "brief": "Représenter entièrement « Il pleut » pour « Pourquoi la personne fait-elle cette demande ? ». Vérifier la transcription du support tcf-delf-actif-a2-027 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Chaleur, froid et pluie : indices météorologiques et corporels distincts, sans température chiffrée inventée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-soleil-chaleur-dessine.webp",
+          "sha256": "ed196465ce44a198fba5dd12cd806752b480d93901370a0c8fcd06bbed948c2e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-froid-sans-pluie.png",
+          "sha256": "4c215d1fefedb69a5cc41e78e5c89ad2aa87685eb2ac04567ff4fc70b789ca7e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-pluie-dessinee.webp",
+          "sha256": "6ccb6b5096ecf702d59c15fed580cc96029d45435a1c31b6fd6d693d56fdd6f1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54726,6 +54862,10 @@
         "evidence_quote": "il fait chaud",
         "semantic_sha256": "b46f9c549bd79dd935adb0cc2b632d81f5dc25f0fa3c036bc9fea64072463d11",
         "note": "Chaleur, froid et pluie : indices météorologiques et corporels distincts, sans température chiffrée inventée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Chaleur, froid et pluie distincts. L’image de chaleur est réemployée depuis la question de météo ; elle illustre la condition il fait chaud, sans prétendre identifier la pièce où l’on demande d’ouvrir la fenêtre. Pas de thermomètre à valeur inventée."
       }
     },
     {
@@ -56396,8 +56536,8 @@
       "semantic_sha256": "0efb199c8f7480e6e8b22e0c433d8a44ff3bc86a7f73a65c801c87dd65290536",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-04.mp3",
       "audio_sha256": "8699f34db32e43328b392eb09aad79b802da11993a7a4bd185784b48ebefdb20",
-      "status": "candidate_visual_review",
-      "reason": "Marche rapide, taxi et vélo ; montrer le déplacement à pied sans le transformer en course ou en train.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -56424,8 +56564,24 @@
           "brief": "Représenter entièrement « Il emprunte un vélo » pour « Comment l’élève va-t-il de la gare au lycée ? ». Vérifier la transcription du support tcf-delf-actif-a2-030-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Marche rapide, taxi et vélo ; montrer le déplacement à pied sans le transformer en course ou en train."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-marcher-vite.png",
+          "sha256": "1aa5ae7da221e7a8838cee99ef14d2c4aa9cfb7c00ef510e56c455fd268505f2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+          "sha256": "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-velo-lycee.png",
+          "sha256": "0c38bf56150187b66988c5f3cf848d2c62bc4781ab36b39f1b980012559c342d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -56443,6 +56599,10 @@
         "evidence_quote": "je marche vite",
         "semantic_sha256": "0efb199c8f7480e6e8b22e0c433d8a44ff3bc86a7f73a65c801c87dd65290536",
         "note": "Marche rapide, taxi et vélo ; montrer le déplacement à pied sans le transformer en course ou en train."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Garçon avec sac à dos marchant d’un pas rapide, taxi générique et garçon à vélo vers un établissement scolaire. Les deux actions humaines sont au masculin, compatibles avec l’élève de la question, et la marche garde un pied au sol. Le taxi est un exemple du mode de transport, pas une course réellement prise par l’élève."
       }
     },
     {
@@ -56516,8 +56676,8 @@
       "semantic_sha256": "3229e8b08c7c13dceba7a713acdc5055ec4888608228f02e79039039c162caf0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-01.mp3",
       "audio_sha256": "217297adccfd72a352430de30dae4ff38d82970dec705ba5af14ebff6507fb46",
-      "status": "candidate_visual_review",
-      "reason": "Décorer, dresser la table et préparer le repas ; tâches complètes et distinctes, sans réutiliser une simple table pour les trois.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -56544,8 +56704,24 @@
           "brief": "Représenter entièrement « Préparer le repas » pour « Quelle tâche Mélanie préfère-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-a2-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Décorer, dresser la table et préparer le repas ; tâches complètes et distinctes, sans réutiliser une simple table pour les trois."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-decoration-mere-fille.png",
+          "sha256": "3cf14e8e5dcc40b906c9b352da507dd46048d469da8a69b8a567f9beb2c6e2fd"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-dresser-table.png",
+          "sha256": "967b9a87c106e74091a3101891ade89704111b176bc8eed4e30e9633f2e4d72e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/actions/preparer-un-repas.webp",
+          "sha256": "81e2a3404bddc84cf8d0551193c7e5896d3fc57d7744c77215be3aa7fe75de42"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -56563,6 +56739,10 @@
         "evidence_quote": "J’adore faire la décoration",
         "semantic_sha256": "3229e8b08c7c13dceba7a713acdc5055ec4888608228f02e79039039c162caf0",
         "note": "Décorer, dresser la table et préparer le repas ; tâches complètes et distinctes, sans réutiliser une simple table pour les trois."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Mère et fille installant des décorations, mère et fille dressant une table, femme préparant un repas. Actions complètes et au féminin, sans mélanger décoration et mise de table dans le choix visé. Les participantes sont des exemples d’activités compatibles avec Mélanie, sans prétendre être des portraits des voix."
       }
     },
     {
@@ -56576,8 +56756,8 @@
       "semantic_sha256": "bc3b3525509ee831e7bfd1d57a892d4273dce1e9f3ec014f645f197396bbb37e",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-031-01.mp3",
       "audio_sha256": "217297adccfd72a352430de30dae4ff38d82970dec705ba5af14ebff6507fb46",
-      "status": "candidate_visual_review",
-      "reason": "L’autre proposition est dresser la table ; courses et lavage de fenêtres ne sont pas proposés. Gestes et objets distincts.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -56604,8 +56784,24 @@
           "brief": "Représenter entièrement « Laver les fenêtres » pour « Quelle autre tâche lui propose-t-on ? ». Vérifier la transcription du support tcf-delf-actif-a2-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : L’autre proposition est dresser la table ; courses et lavage de fenêtres ne sont pas proposés. Gestes et objets distincts."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-dresser-table.png",
+          "sha256": "967b9a87c106e74091a3101891ade89704111b176bc8eed4e30e9633f2e4d72e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-1.webp",
+          "sha256": "0d7a36ddf7969c2b35cf7bed0b03e7f1d960e49424e1b7e981348b84b2d9f661"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-nettoyer-fenetres.png",
+          "sha256": "142d15d374dc65ef0ec7fc2383854e6b702c90b94d609bba4b05da07f44bf782"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -56623,6 +56819,10 @@
         "evidence_quote": "mettre les décorations ou dresser la table",
         "semantic_sha256": "bc3b3525509ee831e7bfd1d57a892d4273dce1e9f3ec014f645f197396bbb37e",
         "note": "L’autre proposition est dresser la table ; courses et lavage de fenêtres ne sont pas proposés. Gestes et objets distincts."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Dresser une table avec assiettes, verres et couverts ; faire des courses avec vendeuse ou vendeur et cliente ; laver les fenêtres avec chiffon. Les tâches sont distinctes. Les lieux des deux leurres sont des exemples d’actions et ne sont pas présentés comme la maison réelle de Mélanie."
       }
     },
     {
@@ -57400,8 +57600,8 @@
       "semantic_sha256": "9af9af50d0992d9c54ce4e0428cafdfea5e824e5bc45212327b42fa5705512d2",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
       "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
-      "status": "candidate_visual_review",
-      "reason": "Blanc, rouge et jaune distincts ; si les roses sont représentées, garder leur espèce et le pluriel au lieu de substituer d’autres fleurs.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -57428,8 +57628,24 @@
           "brief": "Représenter entièrement « Jaunes » pour « De quelle couleur doivent-elles être ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Blanc, rouge et jaune distincts ; si les roses sont représentées, garder leur espèce et le pluriel au lieu de substituer d’autres fleurs."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-blanches.png",
+          "sha256": "b795b3cc0c1d59f0bf779b04f2f58d86a9773f86131364dd0b52ef03a4551a43"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-rouges.png",
+          "sha256": "e7764424e10edc52c55d7ff335462197a52b7afef4660a7633c7ca97fb4f2c77"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-roses-jaunes.png",
+          "sha256": "e41eaffc4e19d8cae5c0ce61bf67dfcfc3e9c83e903b20b9b993d8920319a07b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -57447,6 +57663,10 @@
         "evidence_quote": "roses blanches",
         "semantic_sha256": "9af9af50d0992d9c54ce4e0428cafdfea5e824e5bc45212327b42fa5705512d2",
         "note": "Blanc, rouge et jaune distincts ; si les roses sont représentées, garder leur espèce et le pluriel au lieu de substituer d’autres fleurs."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Roses blanches, rouges et jaunes : les mêmes visuels sont réemployés dans un ordre correspondant aux réponses de cette question. L’image blanche conserve le bouquet de roses de la source ; aucune autre espèce de fleur ou montant n’est ajouté. Le corrigé reste blanc."
       }
     },
     {
@@ -57520,8 +57740,8 @@
       "semantic_sha256": "0a380b5ef748423516f5dbf762375c15dcd263571a8e3eb801db8dbff99cc3a1",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-01.mp3",
       "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
-      "status": "candidate_visual_review",
-      "reason": "Anniversaire, mariage et naissance sont trois événements ; pas d’âge, date ou nombre de bougies arbitraire nécessaire pour l’occasion seule.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -57568,8 +57788,24 @@
           "brief": "Représenter entièrement « Une naissance » pour « Pour quelle occasion ce bouquet est-il offert ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Anniversaire, mariage et naissance sont trois événements ; pas d’âge, date ou nombre de bougies arbitraire nécessaire pour l’occasion seule."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+          "sha256": "a12bec799deebc4950fbe72189a81dbb57537735c35a0e8322c8cc143fa03faa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+          "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-naissance.png",
+          "sha256": "67e0c762a224e29f17344aa108334e309c394e9386fc974b03ddd5666c623ba0"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -57587,6 +57823,10 @@
         "evidence_quote": "Elle fête ses 18 ans",
         "semantic_sha256": "0a380b5ef748423516f5dbf762375c15dcd263571a8e3eb801db8dbff99cc3a1",
         "note": "Anniversaire, mariage et naissance sont trois événements ; pas d’âge, date ou nombre de bougies arbitraire nécessaire pour l’occasion seule."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Anniversaire avec gâteau et bougies, mariage avec échange d’alliances, naissance avec nouveau-né couvert et parents. Événements distincts, sans âge chiffré ni calendrier. Les personnages illustrent des catégories d’occasions, pas l’amie de dix-huit ans de la commande de roses."
       }
     },
     {
@@ -57660,8 +57900,8 @@
       "semantic_sha256": "0a1b2492c2baabb10c7a0e0adb85ee2fb643891cfb2e6e64d8ca075249f80965",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
       "audio_sha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
-      "status": "candidate_visual_review",
-      "reason": "Anniversaire, mariage et naissance ; la couleur du paquet est une autre question et ne prouve pas l’occasion.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -57708,8 +57948,24 @@
           "brief": "Représenter entièrement « Une naissance » pour « Pour quelle occasion le cadeau est-il prévu ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Anniversaire, mariage et naissance ; la couleur du paquet est une autre question et ne prouve pas l’occasion."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+          "sha256": "a12bec799deebc4950fbe72189a81dbb57537735c35a0e8322c8cc143fa03faa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
+          "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-naissance.png",
+          "sha256": "67e0c762a224e29f17344aa108334e309c394e9386fc974b03ddd5666c623ba0"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -57727,6 +57983,10 @@
         "evidence_quote": "un cadeau d’anniversaire",
         "semantic_sha256": "0a1b2492c2baabb10c7a0e0adb85ee2fb643891cfb2e6e64d8ca075249f80965",
         "note": "Anniversaire, mariage et naissance ; la couleur du paquet est une autre question et ne prouve pas l’occasion."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Même trio d’occasions réemployé : anniversaire, mariage et naissance. Aucun âge, genre, nombre de bougies ou lien de parenté de la scène générique n’est attribué au jeune homme destinataire du paquet. Le cadeau est bien d’anniversaire dans la source."
       }
     },
     {
@@ -57740,8 +58000,8 @@
       "semantic_sha256": "08c369cdbf39d3ec91b5aba977e932a1d98b0fd066aeefacdfb45849eab0d588",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
       "audio_sha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
-      "status": "candidate_visual_review",
-      "reason": "Même papier cadeau en bleu clair, bleu foncé ou blanc ; ne pas prendre la couleur du ruban pour celle du papier.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -57775,8 +58035,24 @@
           "brief": "Représenter entièrement « Blanc » pour « De quelle couleur est le papier ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Même papier cadeau en bleu clair, bleu foncé ou blanc ; ne pas prendre la couleur du ruban pour celle du papier."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-papier-bleu-clair.png",
+          "sha256": "30d5e68b708fc223e124144a8014ed0dce1b1122efdcc819f34722ad6df1d78b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-papier-bleu-fonce.png",
+          "sha256": "a75658791da3e4bdd27d20e59fab7cad6f2790ae214439e025af94c74a941877"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-papier-blanc.png",
+          "sha256": "b2841bee09f0978aa31f129c9d87c81f1be12ce9105d82985284cd4322c25fbc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -57794,6 +58070,10 @@
         "evidence_quote": "papier bleu clair",
         "semantic_sha256": "08c369cdbf39d3ec91b5aba977e932a1d98b0fd066aeefacdfb45849eab0d588",
         "note": "Même papier cadeau en bleu clair, bleu foncé ou blanc ; ne pas prendre la couleur du ruban pour celle du papier."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Même paquet et même ruban bleu foncé pour trois couleurs de PAPIER : bleu clair, bleu foncé et blanc. Géométrie, plis, nœud et lumière conservés. La couleur du ruban ne doit pas devenir un indice variable dans cette question de papier."
       }
     },
     {
@@ -57807,8 +58087,8 @@
       "semantic_sha256": "9fa1f4162b9e599f872b55b0368e507e997b41c2269ee60b5c0e1bc764b0519d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-02.mp3",
       "audio_sha256": "c8491d66e30886f84e8b393f56023b192ebcfabe2ae8fed6cc226edeee03a1e8",
-      "status": "candidate_visual_review",
-      "reason": "Rubans bleu foncé, bleu clair et rouge ; le bleu clair entendu concerne le papier, pas le ruban.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -57842,8 +58122,24 @@
           "brief": "Représenter entièrement « Rouge » pour « De quelle couleur est le ruban ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Rubans bleu foncé, bleu clair et rouge ; le bleu clair entendu concerne le papier, pas le ruban."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-papier-bleu-clair.png",
+          "sha256": "30d5e68b708fc223e124144a8014ed0dce1b1122efdcc819f34722ad6df1d78b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-ruban-bleu-clair.png",
+          "sha256": "c85195ba809b647f1ba77fef8359aa049d53f36491ff4fa4dbfa10227fde3687"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-ruban-rouge.png",
+          "sha256": "72ca9f228f8340b176c9e63ab94b8e932b11f7c2d1176688034ed81632dd5ee3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -57861,6 +58157,10 @@
         "evidence_quote": "ruban bleu foncé",
         "semantic_sha256": "9fa1f4162b9e599f872b55b0368e507e997b41c2269ee60b5c0e1bc764b0519d",
         "note": "Rubans bleu foncé, bleu clair et rouge ; le bleu clair entendu concerne le papier, pas le ruban."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Même paquet à papier bleu clair pour trois couleurs de RUBAN : bleu foncé, bleu clair et rouge. Le premier visuel est exactement celui du choix correct sur le papier, afin de respecter la combinaison bleu clair et bleu foncé explicitement annoncée. Aucune autre couleur de papier ou décoration ajoutée."
       }
     },
     {
@@ -59573,8 +59873,8 @@
       "semantic_sha256": "0fb67016f3673abfb4b7f2fd26a5d63c56d4a9189455f34c299bcf11622a3a02",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-034-01.mp3",
       "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
-      "status": "candidate_visual_review",
-      "reason": "Intérieur, jardin et parking ; conserver le contexte de château et des références exactes si Versailles est représenté.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -59615,8 +59915,24 @@
           "brief": "Représenter entièrement « Le parking » pour « Quelle partie du château intéresse la personne ? ». Vérifier la transcription du support tcf-delf-actif-a2-034-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Intérieur, jardin et parking ; conserver le contexte de château et des références exactes si Versailles est représenté."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-interieur.png",
+          "sha256": "eca0122b28650c68b97d3fe1e234bb265a0fa6ec0a7e64d25aabbc01b6cb2933"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-jardin.png",
+          "sha256": "9bd667918ab4d356fc171aaf6dedc090a5f273cd339fc062146c2a82a7934cdb"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-parking.png",
+          "sha256": "e3f441813e72d1992b389598ce7a327f52d721180ca728056a0c7cb43bd151fe"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -59634,6 +59950,10 @@
         "evidence_quote": "À l’intérieur du château",
         "semantic_sha256": "0fb67016f3673abfb4b7f2fd26a5d63c56d4a9189455f34c299bcf11622a3a02",
         "note": "Intérieur, jardin et parking ; conserver le contexte de château et des références exactes si Versailles est représenté."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Intérieur de château avec galerie et œuvres, jardin formel avec château en arrière-plan, parking de visiteurs devant château. Chaque vue montre la partie demandée et son contexte. Ce sont des illustrations génériques des parties d’un château, sans prétendre reconstruire exactement Versailles ni une pièce particulière."
       }
     },
     {
@@ -61538,8 +61858,8 @@
       "semantic_sha256": "be912279b9a643e145ebe2a9720c0bcd7899ea1ca17ba43c38de2a49865914f9",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-04.mp3",
       "audio_sha256": "b982e025b9d294b4b67b9b76886b3fbee95ff4a1437e81827bf1633c2217830e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -61586,8 +61906,24 @@
           "brief": "Représenter entièrement « Faire du vélo » pour « Quelle est sa préférence personnelle ? ». Vérifier la transcription du support tcf-delf-actif-a2-035-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/actions/marcher.webp",
+          "sha256": "2438361464b2ccc25fed1f2df021613a9106d3e36543fc91dcf94850394e6002"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+          "sha256": "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+          "sha256": "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -61598,7 +61934,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Marche à pied, taxi et cyclisme sont trois moyens de déplacement. Images existantes réemployées après examen des gestes et véhicules. La personne de la source préfère marcher ; les personnages des images sont des exemples génériques et ne sont pas présentés comme les locuteurs réels."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-036#1",
@@ -63460,8 +63800,8 @@
       "semantic_sha256": "cdfed0fbdd1c1d772cd27fbd7929856f1a52b92cd42f0514f3b1f4adb44406d0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-039.mp3",
       "audio_sha256": "d56be75331c7cde5962ca5870a91f5dd8775d6d27063f48680163c3df153884e",
-      "status": "candidate_visual_review",
-      "reason": "Feuille vierge, téléphone et manuel ; la feuille ne doit contenir ni sujet, note ou identité inventés.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -63495,8 +63835,24 @@
           "brief": "Représenter entièrement « Un manuel » pour « Quel support peut-on utiliser pour préparer sa réponse ? ». Vérifier la transcription du support tcf-delf-actif-a2-039 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Feuille vierge, téléphone et manuel ; la feuille ne doit contenir ni sujet, note ou identité inventés."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-feuille-papier.webp",
+          "sha256": "009c8b37eadd4b6ffaad17080af7b693fc51094acff4bd66e6a942bc35fa9cc3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-telephone.png",
+          "sha256": "e78fbdb96a2b2e6cc154433a5dcf0b2a26c5c051ce0bd8e290350267d7ef2a35"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-livre-francais-dessine.webp",
+          "sha256": "b5130611a84c7ff4c30e59b11e3078383fb8532f1c5ad16e4f4180e7add992a3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -63514,6 +63870,10 @@
         "evidence_quote": "une feuille blanche",
         "semantic_sha256": "cdfed0fbdd1c1d772cd27fbd7929856f1a52b92cd42f0514f3b1f4adb44406d0",
         "note": "Feuille vierge, téléphone et manuel ; la feuille ne doit contenir ni sujet, note ou identité inventés."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Une feuille blanche vierge, un téléphone et un manuel scolaire de français. Trois supports entiers distincts, pas un ensemble de feuilles et stylos pour la réponse singulière. Le livre de français illustre la catégorie manuel, sans attribuer une matière au sujet de l’oral."
       }
     },
     {
@@ -65955,8 +66315,8 @@
       "semantic_sha256": "4118490c41c66e9dc74c0c4709e0747f1ccae3d56ddd582230499c61f73d6ff7",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-01-03.mp3",
       "audio_sha256": "b3c00733ce1d5e6046410026c101759fa61715164b81e74ed7fdf01bbad9c98d",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -65990,8 +66350,24 @@
           "brief": "Représenter entièrement « Les stylos » pour « Quels objets servent à tracer des lignes ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-01-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-regle.webp",
+          "sha256": "a52668a93f30836d33ce51d0989c5bdae30e89c33724d8f886b8a6b0095e5aaa"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-gomme.webp",
+          "sha256": "28e85508af9c09739ee1bbe5a9727a8fbbc809a9163fa44059a604a710947c28"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-stylos.webp",
+          "sha256": "a76351a618d040b81575d97b7990965cc3293e515fab0e9a5216a3eb52caf350"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -66002,7 +66378,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Règle graduée, gomme et stylos à bille. Chaque image identifie une catégorie d’objet de la liste de la source. Les pluriels règles et gommes sont des catégories, aucun nombre d’objets n’est demandé. Pas de cahier ou crayons mêlés aux images du seul outil visé."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-043-01-03#4",
@@ -67942,8 +68322,8 @@
       "semantic_sha256": "4594ca0dce2b3a680eab8f9d3e0c193d30fcb51fef12fbb8ff392d6834c29138",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-043-03-01.mp3",
       "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
-      "status": "candidate_visual_review",
-      "reason": "Rouge, blanc et jaune ; si des fleurs sont montrées, ce sont des roses et non d’autres espèces.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -67970,8 +68350,24 @@
           "brief": "Représenter entièrement « Jaunes » pour « De quelle couleur doivent être les fleurs ? ». Vérifier la transcription du support tcf-delf-actif-a2-043-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Rouge, blanc et jaune ; si des fleurs sont montrées, ce sont des roses et non d’autres espèces."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-rouges.png",
+          "sha256": "e7764424e10edc52c55d7ff335462197a52b7afef4660a7633c7ca97fb4f2c77"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-roses-blanches.png",
+          "sha256": "b795b3cc0c1d59f0bf779b04f2f58d86a9773f86131364dd0b52ef03a4551a43"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-roses-jaunes.png",
+          "sha256": "e41eaffc4e19d8cae5c0ce61bf67dfcfc3e9c83e903b20b9b993d8920319a07b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -67989,6 +68385,10 @@
         "evidence_quote": "roses rouges",
         "semantic_sha256": "4594ca0dce2b3a680eab8f9d3e0c193d30fcb51fef12fbb8ff392d6834c29138",
         "note": "Rouge, blanc et jaune ; si des fleurs sont montrées, ce sont des roses et non d’autres espèces."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
+        "note": "Roses rouges dans un vase, roses blanches en bouquet et roses jaunes dans le même vase que les rouges. Espèce et couleurs reconnaissables. La question vise la couleur ; le bouquet blanc de dix-huit roses n’est pas utilisé pour certifier un nombre de fleurs dans la commande du restaurant. Aucun âge, nom, prix, date ou adresse illustré."
       }
     },
     {
