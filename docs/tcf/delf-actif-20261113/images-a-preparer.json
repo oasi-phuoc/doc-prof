@@ -8,25 +8,24 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 424,
+      "active_reviewed_trio": 444,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73,
-      "candidate_visual_review": 322
+      "candidate_visual_review": 302
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 254,
+        "active_reviewed_trio": 262,
         "keep_text_calendar_or_duration": 46,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
-        "keep_text_amount": 37,
-        "candidate_visual_review": 8
+        "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 145,
-        "candidate_visual_review": 193,
+        "active_reviewed_trio": 157,
+        "candidate_visual_review": 181,
         "keep_text_contextual": 201,
         "keep_text_named_identity_or_code": 28,
         "keep_text_calendar_or_duration": 58,
@@ -9084,8 +9083,8 @@
       "semantic_sha256": "5366e679940f0937b8fdebce0210ebf0fd627f15b4f307e4378a744507f68f8a",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-013-01.mp3",
       "audio_sha256": "7bdde590c3e82a701620ebe2e9e016cf5e58b64f63608f279b162150abe2afc9",
-      "status": "candidate_visual_review",
-      "reason": "Trois schémas de magasin avec entrée commune et rayon à droite, à gauche ou au fond ; point de vue explicite, pas une flèche seule.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -9112,8 +9111,24 @@
           "brief": "Représenter entièrement « Au fond du magasin » pour « Où se trouve le rayon papeterie ? ». Vérifier la transcription du support tcf-delf-actif-a1-013-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois schémas de magasin avec entrée commune et rayon à droite, à gauche ou au fond ; point de vue explicite, pas une flèche seule."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-papeterie-droite.png",
+          "sha256": "fae1859f88480a38594fc5c491aa375f55c54cabe7675520b26167d87ea47668"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-papeterie-gauche.png",
+          "sha256": "9b0799f94c67c42b72ba2b9599db50ecb4b541c5173a38c037e559d07ab744df"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-papeterie-fond.png",
+          "sha256": "63d2a8d48a01031de6b1037deaa8bd2aa359f9b1916785b3e1b23ccf6984c682"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -9131,6 +9146,10 @@
         "evidence_quote": "à droite de l’entrée",
         "semantic_sha256": "5366e679940f0937b8fdebce0210ebf0fd627f15b4f307e4378a744507f68f8a",
         "note": "Trois schémas de magasin avec entrée commune et rayon à droite, à gauche ou au fond ; point de vue explicite, pas une flèche seule."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Trois vues du même magasin avec l’entrée au bas du cadre et l’axe de progression vers le haut. Papeterie à droite, à gauche ou au mur du fond ; mêmes personnages et allée, rayons réellement déplacés sans miroir des mots. La signalétique identifie le rayon, pas sa position."
       }
     },
     {
@@ -12669,8 +12688,8 @@
       "semantic_sha256": "5a0edc74b80cd2cf1b02f4f5d690d438e898ff0e1cd3fc48720a15fd774fd966",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-020-01.mp3",
       "audio_sha256": "498ae51d5e334051b91d7fc5d85c05c91d18e1cb4b63d1efc68e06cd12d3e89c",
-      "status": "candidate_visual_review",
-      "reason": "Représenter la maison derrière la boulangerie, devant le théâtre ou à côté de la gare avec un point de vue constant et les deux bâtiments visibles.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -12697,8 +12716,24 @@
           "brief": "Représenter entièrement « À côté de la gare » pour « Où se trouve la maison de la tante ? ». Vérifier la transcription du support tcf-delf-actif-a1-020-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Représenter la maison derrière la boulangerie, devant le théâtre ou à côté de la gare avec un point de vue constant et les deux bâtiments visibles."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-maison-boulangerie.png",
+          "sha256": "ac876d37852c1be80a3ff7bdb872f10421879e71248d4596566773bd8baa5d24"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-maison-theatre.png",
+          "sha256": "7394d08e27399d664b72b178542eb75290471a44dab460f729a4323964e3e10e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-maison-gare.png",
+          "sha256": "332c9fcf8f551ba580a3362e3a5204e6d706a7c680ab4cf0a3f232f7d03853ed"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12716,6 +12751,10 @@
         "evidence_quote": "habite derrière la boulangerie",
         "semantic_sha256": "5a0edc74b80cd2cf1b02f4f5d690d438e898ff0e1cd3fc48720a15fd774fd966",
         "note": "Représenter la maison derrière la boulangerie, devant le théâtre ou à côté de la gare avec un point de vue constant et les deux bâtiments visibles."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Même type de maison d’habitation crème à toit rouge, derrière une boulangerie, devant un théâtre ou à côté d’une gare. Les deux bâtiments et leurs entrées sont visibles ; profondeur ou alignement latéral rendent la relation explicite. Aucun nom de rue, numéro ou horaire."
       }
     },
     {
@@ -16555,8 +16594,8 @@
       "semantic_sha256": "e08a1acf73ef653912a39b96a0507f35ec03ca82683f5087c60014d099e5d936",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-029-03.mp3",
       "audio_sha256": "3b2affb2af76de276cd7ac0e9edf9fbc201808417cdb0810ba4fafdeed7760da",
-      "status": "candidate_visual_review",
-      "reason": "Recherche dans un sac, dans un casier et sur un bureau ; montrer la relation de recherche, pas trois objets isolés sans action.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -16583,8 +16622,24 @@
           "brief": "Représenter entièrement « Sur son bureau » pour « Où Zara cherche-t-elle le cahier ? ». Vérifier la transcription du support tcf-delf-actif-a1-029-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Recherche dans un sac, dans un casier et sur un bureau ; montrer la relation de recherche, pas trois objets isolés sans action."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-cahier-oublie.png",
+          "sha256": "37e4b974a8c70c2d158e78f1a60cccecda07917401959d7f3095bf30f748be83"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-chercher-casier.png",
+          "sha256": "6d46040ec17e90fc63979663c06bea191b9a6b5016fd7552b667a8ba4fa8aac2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-chercher-bureau.png",
+          "sha256": "b8b2152d7d66b85de86843e28cf5bd2af41ffe03837cb5bcf86f05866be29f3e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -16602,6 +16657,10 @@
         "evidence_quote": "je cherche dans mon sac",
         "semantic_sha256": "e08a1acf73ef653912a39b96a0507f35ec03ca82683f5087c60014d099e5d936",
         "note": "Recherche dans un sac, dans un casier et sur un bureau ; montrer la relation de recherche, pas trois objets isolés sans action."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Deux mêmes élèves dans les trois choix : fille en sweat moutarde qui cherche et amie rousse en chemise bordeaux qui lui parle. Mains dans le sac ouvert, dans le casier ouvert ou soulevant des feuilles sur le bureau. L’ancienne vue d’un homme fouillant un sac n’a pas été retenue pour Zara."
       }
     },
     {
@@ -18237,8 +18296,8 @@
       "semantic_sha256": "49d32f305de10216e6e6ad9693e1d3196f0ae5b1c3f7d6b9c4eeda0e267e4073",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-031-01.mp3",
       "audio_sha256": "7195c6082cd6d5641c028c6a1d95871e3a27478196a6f692e95a6a984261d7cb",
-      "status": "candidate_visual_review",
-      "reason": "Présentoir de revues à l’entrée, près des fenêtres ou à un étage ; montrer le repère et les revues, pas une porte seule.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -18272,8 +18331,24 @@
           "brief": "Représenter entièrement « Au premier étage » pour « Où sont présentées les revues ? ». Vérifier la transcription du support tcf-delf-actif-a1-031-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Présentoir de revues à l’entrée, près des fenêtres ou à un étage ; montrer le repère et les revues, pas une porte seule."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-revues-entree.png",
+          "sha256": "63a0b6c4bcfff5adcd3e5115b4efe52fab7b1ecaaef59164f829f3856e9b4a56"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-revues-fenetres.png",
+          "sha256": "143f2ce4321d1d19b801c2b78c5234779cf31d29c21438e5b67d3b9a672d8c0e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-revues-etage.png",
+          "sha256": "44156eb2fbcb0f36d19aaa09ec47036750c1c0bc30eeb3200ddc3d20d717530d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -18291,6 +18366,10 @@
         "evidence_quote": "le présentoir à l’entrée",
         "semantic_sha256": "49d32f305de10216e6e6ad9693e1d3196f0ae5b1c3f7d6b9c4eeda0e267e4073",
         "note": "Présentoir de revues à l’entrée, près des fenêtres ou à un étage ; montrer le repère et les revues, pas une porte seule."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Présentoir de revues entier près du seuil, près des fenêtres ou sur le palier d’un niveau au-dessus du rez-de-chaussée. Porte, fenêtres et escalier visibles avec le présentoir ; couvertures sans date, pas un simple repère isolé."
       }
     },
     {
@@ -30044,8 +30123,8 @@
       "semantic_sha256": "8e271c4b63773eca925df644b12d1a5be53b72da7760eaebf4495f7cc2ea321d",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-049-04-03.mp3",
       "audio_sha256": "0fb5924eafc0480ab2195e9c3fc5912523198c4532360b2181d322d7a61c7947",
-      "status": "candidate_visual_review",
-      "reason": "Le fond de classe, le couloir et le bureau sont distincts ; préciser l’énoncé pour viser la zone où les élèves doivent entendre, pas la position supposée du professeur.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -30072,8 +30151,24 @@
           "brief": "Représenter entièrement « Aux élèves près du bureau » pour « À quels élèves le professeur demande-t-il s’ils entendent bien ? ». Vérifier la transcription du support tcf-delf-actif-a1-049-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Le fond de classe, le couloir et le bureau sont distincts ; préciser l’énoncé pour viser la zone où les élèves doivent entendre, pas la position supposée du professeur."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-fond.png",
+          "sha256": "b3f50fe3dde753e7d844514122b73294bf142f6c709a9f64f0619d0bf94af0ca"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-couloir.png",
+          "sha256": "9e9d18b6e1f2898bf8610c22a4239d0def913db50dfde1c13866d6b3a9f51d53"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-devant.png",
+          "sha256": "05b6e5596cde6413ee1791b36c2b4a623aff60acda253ecf85039c7c2a2a5eea"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -30091,6 +30186,10 @@
         "evidence_quote": "vous entendez du fond de la classe",
         "semantic_sha256": "8e271c4b63773eca925df644b12d1a5be53b72da7760eaebf4495f7cc2ea321d",
         "note": "Le fond de classe, le couloir et le bureau sont distincts ; préciser l’énoncé pour viser la zone où les élèves doivent entendre, pas la position supposée du professeur."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Même salle et même professeur homme à l’avant, mêmes deux élèves au dernier rang, assis dans le couloir ou au premier rang près du bureau. Rangées vides et séparation du couloir rendent la zone visée non ambiguë, sans surbrillance ou flèche. Aucun élève dupliqué."
       }
     },
     {
@@ -32255,8 +32354,8 @@
       "semantic_sha256": "97dc19f28d191f8b16869f4a925fc3f9f66afc2164fe3759229896df4e26e46c",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-03.mp3",
       "audio_sha256": "7e26e8ea0a0e274651ba88849421b5b887b74ff07aa71b64e6e7ebbf9395ed57",
-      "status": "candidate_visual_review",
-      "reason": "Correction d’un exercice, inscription d’une absence et dessin de plan ; scènes complètes avec fonction des documents, sans date ou nom inventé.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -32283,8 +32382,24 @@
           "brief": "Représenter entièrement « Pour dessiner un plan » pour « Pourquoi la professeure veut-elle ce cahier ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-04-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Correction d’un exercice, inscription d’une absence et dessin de plan ; scènes complètes avec fonction des documents, sans date ou nom inventé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-corriger-exercice.png",
+          "sha256": "9bbb674d36b2da9ad098d97ec4f8ef34762e37878bf5e0fe04f4911f871be6c7"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-noter-absence.png",
+          "sha256": "545fe4589360a56bf3333a307db20ba607efaa034062580f81472365f8fd419a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-dessiner-plan.png",
+          "sha256": "c491d54ed3c4ecc9bf6f57a712d809cff17b928ca3a91c91a6da477254d0f424"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32302,6 +32417,10 @@
         "evidence_quote": "Je veux corriger ton exercice",
         "semantic_sha256": "97dc19f28d191f8b16869f4a925fc3f9f66afc2164fe3759229896df4e26e46c",
         "note": "Correction d’un exercice, inscription d’une absence et dessin de plan ; scènes complètes avec fonction des documents, sans date ou nom inventé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Professeure et élève au cahier corrigé en rouge ; professeure inscrivant une croix dans un registre ABSENCES sans nom ni date ; professeure traçant un plan au crayon avec règle. Trois fonctions du cahier distinctes, sans note chiffrée ou identité inventée."
       }
     },
     {
@@ -32491,8 +32610,8 @@
       "semantic_sha256": "b3d7836d2f59cb8eaf67a5428f13351b4b2960bff8c74599e8df4bffbdd5f803",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-04.mp3",
       "audio_sha256": "a9f7450d048097695796133dac1d8846d0e527bb25c308795f2d4623153aad53",
-      "status": "candidate_visual_review",
-      "reason": "Accompagner la personne jusqu’à l’infirmerie, appeler un taxi et offrir un repas ; pas un diagnostic inventé.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -32519,8 +32638,24 @@
           "brief": "Représenter entièrement « De lui donner un repas » pour « Que propose la personne qui lui parle ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-04-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Accompagner la personne jusqu’à l’infirmerie, appeler un taxi et offrir un repas ; pas un diagnostic inventé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+          "sha256": "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-appeler-taxi.png",
+          "sha256": "066b789ce4f3a4da18466bf4494f0a5aacd1e7709589db30fb84bf13179e866f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-offrir-repas.png",
+          "sha256": "a9bc52e42046dc5bde69e673de2d2a2d07ec6223d765e80c045ada2d6d196a35"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -32538,6 +32673,10 @@
         "evidence_quote": "Je t’accompagne",
         "semantic_sha256": "b3d7836d2f59cb8eaf67a5428f13351b4b2960bff8c74599e8df4bffbdd5f803",
         "note": "Accompagner la personne jusqu’à l’infirmerie, appeler un taxi et offrir un repas ; pas un diagnostic inventé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Accompagnement visible : un ami marche avec Diego vers l’infirmerie et lui parle ; appel au téléphone avec taxi identifiable dehors ; remise d’un plateau-repas à un camarade. Deux interlocuteurs visibles dans chaque scène. La vue de Diego seul n’a pas été retenue pour illustrer l’accompagnement. Les leurres sont des exemples d’actions, pas un traitement médical ajouté à la source."
       }
     },
     {
@@ -36803,8 +36942,8 @@
       "semantic_sha256": "e72bd4294934eb058830084c728c60d7b5a028bbc1852bb298816f95e84c1734",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-052-04-02.mp3",
       "audio_sha256": "ad9dcdfbdb88e5f3121c25cc7a87bfdd306ce108d4b1b87645090cdc637bf82a",
-      "status": "candidate_visual_review",
-      "reason": "Même classe avec place devant, au fond ou dans le couloir ; ne pas ajouter les lunettes qui n’arrivent que demain.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -36838,8 +36977,24 @@
           "brief": "Représenter entièrement « Dans le couloir » pour « Où le professeur lui propose-t-il de s’installer ? ». Vérifier la transcription du support tcf-delf-actif-a1-052-04-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Même classe avec place devant, au fond ou dans le couloir ; ne pas ajouter les lunettes qui n’arrivent que demain."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-devant.png",
+          "sha256": "05b6e5596cde6413ee1791b36c2b4a623aff60acda253ecf85039c7c2a2a5eea"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-fond.png",
+          "sha256": "b3f50fe3dde753e7d844514122b73294bf142f6c709a9f64f0619d0bf94af0ca"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-couloir.png",
+          "sha256": "9e9d18b6e1f2898bf8610c22a4239d0def913db50dfde1c13866d6b3a9f51d53"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -36857,6 +37012,10 @@
         "evidence_quote": "mets-toi devant",
         "semantic_sha256": "e72bd4294934eb058830084c728c60d7b5a028bbc1852bb298816f95e84c1734",
         "note": "Même classe avec place devant, au fond ou dans le couloir ; ne pas ajouter les lunettes qui n’arrivent que demain."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Réemploi des trois vues cohérentes de classe : mêmes élèves installés devant, au fond ou dans le couloir, sans lunettes ajoutées. Le tableau et le bureau définissent l’avant ; la porte et le mur définissent le couloir. Images de positions, sans prétendre identifier l’élève de la voix."
       }
     },
     {
@@ -37935,8 +38094,8 @@
       "semantic_sha256": "64342aa5d10b5724e2945d6ab714a0ca406af6bb99118a64142f4bef78e59fa4",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-001.mp3",
       "audio_sha256": "82737f9bdf2765a671cf89f8eb93e97d60cb12b6fa5b0161b09c19c9e519e4af",
-      "status": "candidate_visual_review",
-      "reason": "Filmer, photographier et téléphoner avec fonctions visibles et distinctes ; l’interdiction figure dans l’énoncé, pas dans une identité de personnage.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -37970,8 +38129,24 @@
           "brief": "Représenter entièrement « Téléphoner » pour « Quelle action est interdite ? ». Vérifier la transcription du support tcf-delf-actif-a2-001 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Filmer, photographier et téléphoner avec fonctions visibles et distinctes ; l’interdiction figure dans l’énoncé, pas dans une identité de personnage."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-filmer-spectacle.png",
+          "sha256": "364f5d59899f9e0d6c0ac6ea5c2419d65c6f9d00b23f8a84b5c3e6c94e1fdd4e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-photographier-eleves.png",
+          "sha256": "5fc37b989c95fb8e0489b1fc8b242c000cce44639c893bba83a0c146575b9f8c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
+          "sha256": "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -37989,6 +38164,10 @@
         "evidence_quote": "Il est interdit de filmer",
         "semantic_sha256": "64342aa5d10b5724e2945d6ab714a0ca406af6bb99118a64142f4bef78e59fa4",
         "note": "Filmer, photographier et téléphoner avec fonctions visibles et distinctes ; l’interdiction figure dans l’énoncé, pas dans une identité de personnage."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Filmer avec téléphone montrant la scène cadrée et commande vidéo ; photographier avec appareil dirigé vers les élèves ; fonction d’appel téléphonique identifiée par un combiné vert. Aucun pictogramme d’interdiction dans le seul choix correct, afin de conserver la question d’écoute."
       }
     },
     {
@@ -38382,8 +38561,8 @@
       "semantic_sha256": "5c259fb47a5b1bfceb6ddd3f48b75a711c2e5df411fb41840c27f8ef0bd6a442",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-03.mp3",
       "audio_sha256": "07e70863654f0422007bd0fe9dc081254676f7c28773ffc31d684243770568c7",
-      "status": "candidate_visual_review",
-      "reason": "Spectacle, cours et réunion : activités collectives distinctes, sans inventer le genre précis du spectacle.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -38430,8 +38609,24 @@
           "brief": "Représenter entièrement « Une réunion » pour « Quel événement va commencer ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Spectacle, cours et réunion : activités collectives distinctes, sans inventer le genre précis du spectacle."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-cours-sciences.png",
+          "sha256": "c3bbc6bf6ae128f51a1ac1a7ccdbe2009fe2a5f434285c2aafe0025c6be6819d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/actions/reunion.webp",
+          "sha256": "51fa824d52db68cba50fabdf8d1113bb1d67e985609c06c7b70a87863229242a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38449,6 +38644,10 @@
         "evidence_quote": "le spectacle va commencer",
         "semantic_sha256": "5c259fb47a5b1bfceb6ddd3f48b75a711c2e5df411fb41840c27f8ef0bd6a442",
         "note": "Spectacle, cours et réunion : activités collectives distinctes, sans inventer le genre précis du spectacle."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Spectacle devant public, cours de sciences avec enseignante et élèves, réunion autour d’une table. Situations collectives distinctes ; la danse est un exemple de spectacle, son genre n’est pas présenté comme une information de la source."
       }
     },
     {
@@ -38616,8 +38815,8 @@
       "semantic_sha256": "b0694f43144f0a1584663344bd97da02fa4548d7502a3f1b17bd7dac91168004",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-04.mp3",
       "audio_sha256": "cd2f90d06fcc72bf5e15f4ddfc5d65d7a9ae4cd971567be32660d047daeab62b",
-      "status": "candidate_visual_review",
-      "reason": "Dessinateur travaillant, photographe et journaliste en reportage ; personnages génériques sans portrait attribué à Léo Hubert.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -38658,8 +38857,24 @@
           "brief": "Représenter entièrement « Un journaliste » pour « Quel professionnel peut-on rencontrer ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Dessinateur travaillant, photographe et journaliste en reportage ; personnages génériques sans portrait attribué à Léo Hubert."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-dessinateur-bd.png",
+          "sha256": "dec30f6d341e19322ea7ebee7af9e4ad058b897818e5fc4ad612688b587cc94b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/catalogue/metiers/photographe.webp",
+          "sha256": "b5e977be3d66a1848c6ebf2042707a41c12a4feec9efc24c21df2a17b54032e7"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co57-journaliste.webp",
+          "sha256": "5ed38581c52342390feb77b79e03ebd062587abd6a95dabd23a11100068dca10"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38677,6 +38892,10 @@
         "evidence_quote": "le dessinateur Léo Hubert",
         "semantic_sha256": "b0694f43144f0a1584663344bd97da02fa4548d7502a3f1b17bd7dac91168004",
         "note": "Dessinateur travaillant, photographe et journaliste en reportage ; personnages génériques sans portrait attribué à Léo Hubert."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Dessinateur homme travaillant sur une planche de BD à cases et bulles vides, photographe au travail et journaliste en reportage. Les personnes illustrent les métiers ; le dessinateur n’est pas présenté comme un portrait réel de Léo Hubert, et aucun nom n’apparaît."
       }
     },
     {
@@ -38690,8 +38909,8 @@
       "semantic_sha256": "c72a3712e1775def2aa6399aed4c867e74278f7b923353896f8612da3a34cef0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-05.mp3",
       "audio_sha256": "b7cd489692cf2c43a663d7fdc746e4122e8bb464851a57a6012bb155eca9feca",
-      "status": "candidate_visual_review",
-      "reason": "Chariot, panier et sac ; ne pas remplacer l’objet pris par erreur par un rayon de magasin.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -38732,8 +38951,24 @@
           "brief": "Représenter entièrement « Un sac » pour « Quel objet une personne a-t-elle pris par erreur ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Chariot, panier et sac ; ne pas remplacer l’objet pris par erreur par un rayon de magasin."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-chariot.png",
+          "sha256": "c03d24d74e904a69e322b2def01e23f993805cdc4fae13fb0de2a47ed4c50d27"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-panier-vide-dessine.webp",
+          "sha256": "d486afcb022c7ebec0c12dde5370910920fc5f87feec3f6d3795c011acfcd8d3"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/b48c69f2021e.webp",
+          "sha256": "6b93cbe2659a4ece110b3aab1503718f72bd70f5809fe352cda84ea996471e1a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38751,6 +38986,10 @@
         "evidence_quote": "s’est trompée de chariot",
         "semantic_sha256": "c72a3712e1775def2aa6399aed4c867e74278f7b923353896f8612da3a34cef0",
         "note": "Chariot, panier et sac ; ne pas remplacer l’objet pris par erreur par un rayon de magasin."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Chariot de courses vide, panier à main vide et sac : trois objets entiers distincts sur fond ivoire. Le choix chariot ne se réduit pas à un rayon de magasin ; aucun contenu inventé n’est nécessaire pour répondre."
       }
     },
     {
@@ -39486,8 +39725,8 @@
       "semantic_sha256": "ac5c28319658644020f18adc9bbb6e003aa1c6cc810ec4f4e9e744aa78f9e608",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-03.mp3",
       "audio_sha256": "c5b47fe1b6fc49a3bc79f4e07b9c72939115ee16ec0d3b4d9dfb1ab21323d80b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -39534,8 +39773,24 @@
           "brief": "Représenter entièrement « Le voyage » pour « Qu’est-ce qui va commencer ? ». Vérifier la transcription du support tcf-delf-actif-a2-003-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co57-repas-gastronomique-francais.webp",
+          "sha256": "59f1b4b23c42e9d3322485188cbb83a1fbfc6283931912089717140b8f7422ef"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co57-voyage.webp",
+          "sha256": "67daabeb8f9467a22c8acaffc7a9f5998c1aa1e2a6eb6ad65ca2d4956c4685b3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -39546,7 +39801,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Spectacle vivant devant public, repas partagé et voyageurs avec bagages sur un quai. Images génériques d’événements, pas des portraits des locuteurs ni une date de programme."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-003-03#2",
@@ -40728,8 +40987,8 @@
       "semantic_sha256": "01d472c3c09814207e7929f138a64ff6d971b41d9ee333e42b38b8e109e3b81b",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-004.mp3",
       "audio_sha256": "859f446958319c3886c6e16686e251be01c30af341c468c59b440b048e1d1275",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -40770,8 +41029,24 @@
           "brief": "Représenter entièrement « Des chaussettes » pour « Quels articles faut-il acheter ? ». Vérifier la transcription du support tcf-delf-actif-a2-004 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-baskets.webp",
+          "sha256": "c635478376c7c8bf7d1a6df3371946bccb33df04cc8d053d68bca52f68bcf1be"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-lunettes-vue-dessine.webp",
+          "sha256": "4ac6813cf46bd0006c902ab979474337c00683ed4c01d8df7dde19c9ab7af245"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/quotidien/accessoires/chaussette.webp",
+          "sha256": "b167ed487caacf26dba1b351394f755cf65ddb9d2af28396f4cd3e08ed7755da"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40782,7 +41057,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Paire de baskets, lunettes de vue et paire de chaussettes, objets entiers distincts et quantité grammaticale cohérente. Aucun prix ni marque ; la source demande les baskets."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-005-01#1",
@@ -44059,8 +44338,8 @@
       "semantic_sha256": "a8fb7fe19d3fe0184976adad0a679eaa366b113269b05048a7dfac309ec7ec6f",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-03.mp3",
       "audio_sha256": "70dad7471860b327971333179d1106a795cd424f40d26250f76e028ceae39718",
-      "status": "candidate_visual_review",
-      "reason": "Représentation, compétition et cours ; trois situations collectives distinctes, pas une salle vide commune.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -44094,8 +44373,24 @@
           "brief": "Représenter entièrement « Un cours » pour « Quel événement va commencer ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Représentation, compétition et cours ; trois situations collectives distinctes, pas une salle vide commune."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
+          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-cours-sciences.png",
+          "sha256": "c3bbc6bf6ae128f51a1ac1a7ccdbe2009fe2a5f434285c2aafe0025c6be6819d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -44113,6 +44408,10 @@
         "evidence_quote": "le spectacle va commencer",
         "semantic_sha256": "a8fb7fe19d3fe0184976adad0a679eaa366b113269b05048a7dfac309ec7ec6f",
         "note": "Représentation, compétition et cours ; trois situations collectives distinctes, pas une salle vide commune."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Spectacle devant public, match illustrant une compétition sportive et cours avec enseignante et élèves. Ce sont des exemples de catégories ; aucune compétition particulière ou discipline n’est attribuée à l’annonce."
       }
     },
     {
@@ -44466,8 +44765,8 @@
       "semantic_sha256": "bd81e27aad9b777f1b41a50fa5aefc6e98191f16edf333b2bd41cdc788a9c0fe",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-04.mp3",
       "audio_sha256": "830d341542f88af67b9c44ee346500b9c9baaf45968e09bcabe4d9dac5ab6862",
-      "status": "candidate_visual_review",
-      "reason": "Téléphone, liseuse et appareil photo ; ne pas les distinguer uniquement par une couleur d’écran.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -44501,8 +44800,24 @@
           "brief": "Représenter entièrement « L’appareil photo » pour « Quel appareil doit être éteint ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-04 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Téléphone, liseuse et appareil photo ; ne pas les distinguer uniquement par une couleur d’écran."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-telephone.png",
+          "sha256": "e78fbdb96a2b2e6cc154433a5dcf0b2a26c5c051ce0bd8e290350267d7ef2a35"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-liseuse.png",
+          "sha256": "7d074330cc1542c7a30752600d0850c76c5dd23d9360baa709d3fd9ced185d22"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+          "sha256": "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -44520,6 +44835,10 @@
         "evidence_quote": "Les téléphones portables doivent être éteints",
         "semantic_sha256": "bd81e27aad9b777f1b41a50fa5aefc6e98191f16edf333b2bd41cdc788a9c0fe",
         "note": "Téléphone, liseuse et appareil photo ; ne pas les distinguer uniquement par une couleur d’écran."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Smartphone avec icônes d’applications, liseuse large à page de lecture et boutons de page, appareil photo avec objectif. Fonctions et formes distinctes, pas seulement trois couleurs d’écran. Aucun horaire, texte personnel, prix ou marque."
       }
     },
     {
@@ -50843,8 +51162,8 @@
       "semantic_sha256": "5d2b982136b6fd0deb8d88e1902116ea6a63b86a015ca6e81333a281af85c43b",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-018-01.mp3",
       "audio_sha256": "0576ae06942c458bdabfdc85bc4a75aeeb82cff510e455ff55f479ba5c1b1fee",
-      "status": "candidate_visual_review",
-      "reason": "Magasin dans le centre urbain, près d’un aéroport ou à la campagne ; conserver le repère complet du deuxième choix.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -50878,8 +51197,24 @@
           "brief": "Représenter entièrement « À la campagne » pour « Dans quelle partie de la ville se trouve le magasin ? ». Vérifier la transcription du support tcf-delf-actif-a2-018-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Magasin dans le centre urbain, près d’un aéroport ou à la campagne ; conserver le repère complet du deuxième choix."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/ville.webp",
+          "sha256": "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-magasin-aeroport.png",
+          "sha256": "dfb691ac1871f46833291d5590c859ddec4e80e8d80d11ea42a373801087d45f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/bg/campagne.webp",
+          "sha256": "37f5ebeba7538bbedba0bbc46bf7b851cfe30b261c4438d70a63509d6eccfe18"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -50897,6 +51232,10 @@
         "evidence_quote": "Au centre-ville",
         "semantic_sha256": "5d2b982136b6fd0deb8d88e1902116ea6a63b86a015ca6e81333a281af85c43b",
         "note": "Magasin dans le centre urbain, près d’un aéroport ou à la campagne ; conserver le repère complet du deuxième choix."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Réemploi du trio de lieux contrôlé : centre urbain commerçant, magasin de sport ET aéroport voisin dans une même vue, campagne. Le deuxième choix conserve terminal, tour et avion ; aucun prix de la promotion n’est imprimé."
       }
     },
     {
@@ -53399,8 +53738,8 @@
       "semantic_sha256": "ea092d11875372c463f95025f497c70d7d68717c7ad15e371f8220b5adb56585",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-027.mp3",
       "audio_sha256": "96aca95fe832bc0c04bdc9ee8f42bb71c79a5ba7683220b341ee2c49f8b8d2b7",
-      "status": "candidate_visual_review",
-      "reason": "Plateau de journal télévisé, fiction et match sur écran ; pas de marque de chaîne, visage réel ou horaire inventé.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -53434,8 +53773,24 @@
           "brief": "Représenter entièrement « Un match » pour « Quel programme est cité dans la première question ? ». Vérifier la transcription du support tcf-delf-actif-a2-027 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Plateau de journal télévisé, fiction et match sur écran ; pas de marque de chaîne, visage réel ou horaire inventé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-journal-tv.png",
+          "sha256": "28fda8b9b1cbfb4a9ca01f4a01fb162f26ee700f40c05820eb26da146653adb0"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+          "sha256": "f45b5baad64efe8001dde2856b80375199b1faa73ac97401cfc388f23e98f630"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co57-regarder-match.webp",
+          "sha256": "eafcde337436f398eb45a78640c5087d12f05dcccc8bc855cf811976e5cab313"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53453,6 +53808,10 @@
         "evidence_quote": "le journal télévisé",
         "semantic_sha256": "ea092d11875372c463f95025f497c70d7d68717c7ad15e371f8220b5adb56585",
         "note": "Plateau de journal télévisé, fiction et match sur écran ; pas de marque de chaîne, visage réel ou horaire inventé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Plateau de journal télévisé, fiction et match présentés sur des écrans de télévision visibles. La première question du support nomme le journal ; aucune chaîne, célébrité, heure ou marque inventée."
       }
     },
     {
@@ -54469,8 +54828,8 @@
       "semantic_sha256": "62facad7c54e0c6a8685fd6b383da7581519a45bf43793eed0861066544309a7",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-030-01.mp3",
       "audio_sha256": "979dc92796938f30e882749387da0ac5a562ac7458478bf068e02db85ab25d81",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -54511,8 +54870,24 @@
           "brief": "Représenter entièrement « Une promenade » pour « À quelle activité la dame est-elle invitée ? ». Vérifier la transcription du support tcf-delf-actif-a2-030-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-repas-gastronomique-francais.webp",
+          "sha256": "59f1b4b23c42e9d3322485188cbb83a1fbfc6283931912089717140b8f7422ef"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-faire-promenade-dessine.webp",
+          "sha256": "df61225be45134f696668dbfcb00b1c2376da9151b7d44b7c7793ddf97e8622f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54523,7 +54898,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Repas partagé, concert et promenade montrent les trois activités proposées. Les participants sont des exemples d’activités, sans prétendre représenter exactement la classe ou la dame invitée au repas de fin d’année."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-030-01#3",
@@ -59835,8 +60214,8 @@
       "semantic_sha256": "f01a9441ed6049a167a4d733d5ea188e7d78aca90c007885634b34e7ef4e38e5",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-035-03.mp3",
       "audio_sha256": "aba395ff38ead4b22bb0d48b0396ce08662d8d38607cc75e1414b15ad47a4350",
-      "status": "candidate_visual_review",
-      "reason": "Plante, parfum et livre ; ne pas remplacer la plante par un bouquet coupé si la réponse exige une plante entière.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -59877,8 +60256,24 @@
           "brief": "Représenter entièrement « Un livre » pour « Quel cadeau la personne veut-elle acheter ? ». Vérifier la transcription du support tcf-delf-actif-a2-035-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Plante, parfum et livre ; ne pas remplacer la plante par un bouquet coupé si la réponse exige une plante entière."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-plante.png",
+          "sha256": "f1a9cd53dbce41ab653377efb1b82d73ab2e3e2016b40b95429b91bbfa66fe41"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-parfum.webp",
+          "sha256": "5a9e59b463603f40dc5f2d2035eabdca9c883138d5c699f069e8a9e11a22ab72"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-livre-dessine.webp",
+          "sha256": "73b86876898820010571df5731f532855fbba462297e5d9f4e651a5bfee505f2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -59896,6 +60291,10 @@
         "evidence_quote": "prendre une plante",
         "semantic_sha256": "f01a9441ed6049a167a4d733d5ea188e7d78aca90c007885634b34e7ef4e38e5",
         "note": "Plante, parfum et livre ; ne pas remplacer la plante par un bouquet coupé si la réponse exige une plante entière."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
+        "note": "Plante vivante entière avec terre, pot et soucoupe, flacon de parfum et livre relié. Une plante en pot est conservée au lieu d’un bouquet coupé ; aucun nom, date, jour, montant ou marque sur les cadeaux."
       }
     },
     {
