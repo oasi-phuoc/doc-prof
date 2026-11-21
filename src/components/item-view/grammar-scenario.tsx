@@ -2,7 +2,7 @@ import type { PreviewMode } from '@/math/types'
 import type { GrammarQuestion } from '@/grammaire/curriculum/types'
 import { grammarScenarioChild } from '@/grammaire/curriculum/scenario'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
-import { GrammarSentence } from './grammar-fields'
+import { GrammarSentence, GrammarTextHints } from './grammar-fields'
 
 export function GrammarScenarioView({question:q,mode}:{question:GrammarQuestion;mode:PreviewMode}) {
   const u=q.unit,corrected=mode==='answers'
@@ -20,7 +20,7 @@ export function GrammarScenarioView({question:q,mode}:{question:GrammarQuestion;
   }
   return <div className={`grammar-question grammar-scenario-${u.contract==='open'?'open':'support'}`} data-scenario-id={u.id}>
     <h3>{u.prompt}{q.scenarioPart?.kind==='support'&&q.scenarioPart.continued?' (suite)':''}</h3>
-    <p>{u.situation}</p>
+    <p className="grammar-profile-facts"><GrammarTextHints text={u.situation}/></p>
     <GrammarImageSupports supports={u.imageSupports}/>
     <ul className="grammar-scenario-roles">{u.roles.map(r=><li key={r.id}><b>{r.label} :</b> {r.goal}</li>)}</ul>
     {u.contract==='closed'||!corrected?<div className="grammar-dialogue">{u.turns.map(t=><p key={t.id}><b>{u.roles.find(r=>r.id===t.roleId)!.label} :</b>{' '}

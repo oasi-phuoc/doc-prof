@@ -62,5 +62,5 @@ for(const s of manifest.supports) {
 const mediaById=new Map(manifest.supports.map(s=>[s.id,s]))
 for(const b of set)for(const u of b.units)for(const s of u.imageSupports??[])assert.deepEqual(s,mediaById.get(s.id))
 const r=require('../docs/grammaire/implementation/target-registry.json')
-assert.equal(r.offerings.filter(o=>o.themeId==='gram-se-presenter'&&o.availability==='pilot_preview').length,13)
+assert.equal(r.offerings.filter(o=>set.some(b=>b.activityId===o.activityId)&&o.availability==='pilot_preview').length,13)
 console.log('Se présenter A1 : 13 offres, 450 unités, pronoms non ambigus, élisions, genres, 20 médias immuables, 2 images en PE, oral et recettes vérifiés.')

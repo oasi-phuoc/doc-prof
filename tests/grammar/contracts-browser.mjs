@@ -31,10 +31,12 @@ const openRecipe=async(page,recipe)=>{
  await page.evaluate(()=>document.fonts.ready)
 }
 const launch=async(page,total)=>{
- await page.getByRole('button',{name:'Jouer avec la classe',exact:true}).click()
+ await page.getByRole('button',{name:/^Jouer (?:avec la classe|cette fiche)$/}).click()
  await page.waitForURL('**/interactif**')
  await page.getByRole('button',{name:/Commencer la séance/}).waitFor({timeout:120000})
+ const content=page.getByRole('button',{name:/^Contenu\b/});if(await content.count())await content.click()
  assert.equal(await page.locator('.ci-question-list fieldset > label').count(),total)
+ const close=page.getByRole('button',{name:'Fermer · Contenu',exact:true});if(await close.count())await close.click()
  await page.getByRole('button',{name:/Commencer la séance/}).click()
  await page.locator('.ci-question-prompt').waitFor()
 }

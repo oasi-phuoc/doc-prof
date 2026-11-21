@@ -7,6 +7,10 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  if (q.unit.kind==='form') return 160
+  // The correction includes a non-exclusive model and the full teacher rubric.
+  if (q.unit.kind==='personal-gap') return 160
+  if (q.unit.kind==='completion'&&q.unit.prompt.includes('\n')) return q.presentation==='choice'?50:40
   if (q.unit.imageSupports?.length) return 160
   if (q.unit.kind==='production') return 160
   const long=q.unit.responseLines===2
@@ -16,8 +20,9 @@ function cost(item: MathItem): number {
   }
   if (q.presentation==='transform') return 58
   if (q.presentation==='correct') return long?55:38
-  if (q.presentation==='order') return long?55:40
+  if (q.presentation==='order') return long?55:q.unit.cue?(q.unit.cue.length>50?60:50):40
   if (q.unit.reference) return 45
+  if (q.unit.countryGender) return q.presentation==='choice'?40:35
   // Register and context cues need room even when no infinitive is supplied.
   if (q.unit.cue) {
     if (q.presentation==='choice') return 45
@@ -28,7 +33,7 @@ function cost(item: MathItem): number {
   // Destination rules can wrap even without an infinitive hint. Reserve room
   // for those extra correction lines on both student and correction pages.
   const explanationExtra=Math.max(0,Math.ceil((q.unit.explanation.length-90)/70))*7
-  return (q.presentation==='choice'?32:23)+explanationExtra
+  return (q.presentation==='choice'?40:28)+explanationExtra
 }
 export function splitGradedGrammarPages(page: WorksheetPage): WorksheetPage[] | null {
   if (!page.blocks.some(b=>b.items.some(i=>i.layout==='grammar'))) return null

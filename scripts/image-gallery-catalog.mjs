@@ -77,8 +77,10 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], keywords: [image.action] })
   }
-  for (const image of read(root, 'docs/grammaire/implementation/media-supports.json', {}).supports ?? []) {
-    add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'] })
+  for (const manifest of ['media-supports', 'presentation-media', 'family-media']) {
+    for (const image of read(root, `docs/grammaire/implementation/${manifest}.json`, {}).supports ?? []) {
+      add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'] })
+    }
   }
   for(const image of read(root,'docs/gattegno/illustrations-generation-20261114.json',{}).images??[])add(image.path,{labels:[image.label],themes:['Gattegno','Style TCF validé',image.category==='pronom'?'Pronoms personnels':'Verbes d’action'],types:[image.category==='pronom'?'Personnage':'Action']})
   for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'] })

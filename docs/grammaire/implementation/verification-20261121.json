@@ -1,0 +1,842 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-21",
+  "timezone": "Europe/Zurich",
+  "status": "passed_for_pilot_preview",
+  "developmentBaseCommit": "a5f66fb995be1f7f7d41b19d9df83de0e126300c",
+  "scope": "L20-01 à L20-20 : identité, nationalités et premiers types de famille, A1",
+  "delivery": {
+    "activities": 20,
+    "offerings": 24,
+    "selectableUnits": 880,
+    "variants": 1320,
+    "documents": 80,
+    "documentQuestions": 320,
+    "teacherApprovedUnits": 0
+  },
+  "registryTotals": {
+    "notions": 22,
+    "notionLevelPairs": 26,
+    "activities": 109,
+    "offerings": 146,
+    "selectableUnits": 5640,
+    "variants": 7450,
+    "documents": 140,
+    "documentQuestions": 500,
+    "teacherApprovedVariants": 0
+  },
+  "checks": [
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit -p tsconfig.app.json",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:presentation-extension",
+      "status": "passed",
+      "variants": 1320
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 7450
+    },
+    {
+      "command": "npm run test:grammar:presentation",
+      "status": "passed",
+      "existingOfferings": 13
+    },
+    {
+      "command": "npm run test:grammar:contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:image-urls",
+      "status": "passed",
+      "cases": [
+        "concurrent URL sharing",
+        "release after last reference",
+        "unmount before verification",
+        "changed bytes",
+        "missing bytes"
+      ]
+    },
+    {
+      "command": "node --test tests/interactive/source-adapters.test.mjs tests/interactive/word-drop.test.mjs",
+      "status": "passed",
+      "modules": 2
+    }
+  ],
+  "deterministicRebuild": {
+    "status": "passed",
+    "files": {
+      "src/grammaire/curriculum/data/a1.json": "5695b0f892978f9afe6f55deea8f4d49642dc875d96f272f7e6b281ddec7beed",
+      "src/grammaire/curriculum/data/a3.json": "cfad30961ff38c57194985424afb617db2f848109fe9a7d0d681d3de8d7a48a2",
+      "src/grammaire/curriculum/data/famille.json": "c7db59a050b6b58db79a30026b61fc89b4134a144163c8047baaaffe5cb2b3df",
+      "docs/grammaire/implementation/family-media.json": "db086c22d972017bd9344a589982c5dfc49a414804746d13017d6d973b010faa"
+    },
+    "rebuilds": 3
+  },
+  "browser": {
+    "engine": "Chromium / Playwright",
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "fixedA4Millimetres": [
+      210,
+      297
+    ],
+    "extension": {
+      "status": "passed",
+      "offerings": 24,
+      "printedResponses": 2640,
+      "classroomLaunches": 13,
+      "results": [
+        {
+          "activity": "gram-ex-a1-infos-perso",
+          "presentation": "gap",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-verbe-pastilles",
+          "presentation": "choice",
+          "printedResponses": 100,
+          "sheets": 34,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-verbe-pastilles",
+          "presentation": "gap",
+          "printedResponses": 100,
+          "sheets": 26,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-ordre",
+          "presentation": "order",
+          "printedResponses": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-repondre-phrase",
+          "presentation": "open-written",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-ecrire-question",
+          "presentation": "transform",
+          "printedResponses": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-formulaire",
+          "presentation": "open-written",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-ce-texte",
+          "presentation": "document-set",
+          "printedResponses": 120,
+          "sheets": 80,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-portrait",
+          "presentation": "open-written",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-po-images",
+          "presentation": "open-oral",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-curriculum-s",
+          "presentation": "scenario-set",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-image",
+          "presentation": "choice",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-image",
+          "presentation": "gap",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-feminin",
+          "presentation": "transform",
+          "printedResponses": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-masculin",
+          "presentation": "transform",
+          "printedResponses": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-pluriel",
+          "presentation": "transform",
+          "printedResponses": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-accorder",
+          "presentation": "choice",
+          "printedResponses": 100,
+          "sheets": 34,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-nat-accorder",
+          "presentation": "gap",
+          "printedResponses": 100,
+          "sheets": 26,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a3-curriculum-p",
+          "presentation": "open-oral",
+          "printedResponses": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-famille-fam-det",
+          "presentation": "choice",
+          "printedResponses": 100,
+          "sheets": 28,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-famille-fam-det",
+          "presentation": "gap",
+          "printedResponses": 100,
+          "sheets": 20,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-famille-fam-faire-part",
+          "presentation": "document-set",
+          "printedResponses": 120,
+          "sheets": 120,
+          "images": 120,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-famille-fam-photo",
+          "presentation": "document-set",
+          "printedResponses": 200,
+          "sheets": 200,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-famille-fam-email",
+          "presentation": "document-set",
+          "printedResponses": 200,
+          "sheets": 200,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a1-infos-perso",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a1-formulaire",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a1-ecrire-question",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a1-po-images",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a1-curriculum-s",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a1-ce-texte",
+          "classroom": true,
+          "gameQuestions": 3,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a3-nat-image",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a3-nat-accorder",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a3-nat-pluriel",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-famille-fam-det",
+          "classroom": true,
+          "gameQuestions": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-famille-fam-faire-part",
+          "classroom": true,
+          "gameQuestions": 3,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-famille-fam-photo",
+          "classroom": true,
+          "gameQuestions": 5,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-famille-fam-email",
+          "classroom": true,
+          "gameQuestions": 5,
+          "status": "passed"
+        }
+      ],
+      "errors": []
+    },
+    "existingPresentation": {
+      "status": "passed",
+      "results": [
+        {
+          "activity": "gram-ex-a2-qcm-verbe",
+          "presentation": "choice",
+          "printedQuestions": 100,
+          "sheets": 34,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a2-qcm-verbe",
+          "presentation": "gap",
+          "printedQuestions": 100,
+          "sheets": 34,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a2-curriculum-a",
+          "presentation": "match",
+          "printedQuestions": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a2-curriculum-t",
+          "presentation": "transform",
+          "printedQuestions": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-pays",
+          "presentation": "choice",
+          "printedQuestions": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-pays",
+          "presentation": "gap",
+          "printedQuestions": 100,
+          "sheets": 100,
+          "images": 100,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-prep",
+          "presentation": "choice",
+          "printedQuestions": 100,
+          "sheets": 26,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-prep",
+          "presentation": "gap",
+          "printedQuestions": 100,
+          "sheets": 26,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-verbe",
+          "presentation": "choice",
+          "printedQuestions": 100,
+          "sheets": 26,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-verbe",
+          "presentation": "gap",
+          "printedQuestions": 100,
+          "sheets": 20,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-prov-phrases",
+          "presentation": "open-written",
+          "printedQuestions": 100,
+          "sheets": 100,
+          "images": 200,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-curriculum-a",
+          "presentation": "match",
+          "printedQuestions": 100,
+          "sheets": 50,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a6-curriculum-p",
+          "presentation": "open-oral",
+          "printedQuestions": 100,
+          "sheets": 100,
+          "images": 0,
+          "overflow": false
+        },
+        {
+          "activity": "gram-ex-a2-curriculum-a",
+          "classroom": true,
+          "sourceProblems": 3,
+          "gameQuestions": 9,
+          "images": 0,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a2-curriculum-t",
+          "classroom": true,
+          "sourceProblems": 3,
+          "gameQuestions": 3,
+          "images": 0,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a6-prov-pays",
+          "classroom": true,
+          "sourceProblems": 3,
+          "gameQuestions": 3,
+          "images": 1,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a6-prov-prep",
+          "classroom": true,
+          "sourceProblems": 3,
+          "gameQuestions": 3,
+          "images": 0,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a6-prov-phrases",
+          "classroom": true,
+          "sourceProblems": 3,
+          "gameQuestions": 3,
+          "images": 2,
+          "status": "passed"
+        },
+        {
+          "activity": "gram-ex-a6-curriculum-p",
+          "classroom": true,
+          "sourceProblems": 3,
+          "gameQuestions": 3,
+          "images": 0,
+          "status": "passed"
+        }
+      ],
+      "errors": []
+    },
+    "technicalContracts": {
+      "results": [
+        {
+          "case": "closed",
+          "presentation": "scenario-set",
+          "responses": 4,
+          "printedResponses": 8,
+          "sheets": 6,
+          "overflow": false
+        },
+        {
+          "scenarioBreak": "reversible; all four child IDs preserved"
+        },
+        {
+          "classroom": "closed",
+          "status": "passed"
+        },
+        {
+          "case": "open",
+          "presentation": "scenario-set",
+          "responses": 1,
+          "printedResponses": 2,
+          "sheets": 2,
+          "overflow": false
+        },
+        {
+          "classroom": "open",
+          "status": "passed"
+        },
+        {
+          "case": "imageChoice",
+          "presentation": "choice",
+          "responses": 1,
+          "printedResponses": 2,
+          "sheets": 2,
+          "overflow": false
+        },
+        {
+          "classroom": "imageChoice",
+          "status": "passed"
+        },
+        {
+          "case": "imageChoice",
+          "presentation": "gap",
+          "responses": 1,
+          "printedResponses": 2,
+          "sheets": 2,
+          "overflow": false
+        },
+        {
+          "case": "imageWriting",
+          "presentation": "open-written",
+          "responses": 1,
+          "printedResponses": 2,
+          "sheets": 2,
+          "overflow": false
+        },
+        {
+          "imageFailure": "changed",
+          "status": "diagnostic shown; no replacement image"
+        },
+        {
+          "imageFailure": "missing",
+          "status": "diagnostic shown; no replacement image"
+        },
+        {
+          "printReadiness": "waits for verified and decoded image bytes; changed/missing images block the print button"
+        }
+      ],
+      "errors": []
+    },
+    "wholeRegistryBrowserRun": false
+  },
+  "historicalCompatibility": {
+    "status": "passed",
+    "baseCommit": "a5f66fb99",
+    "legacyAndCoOutputs": 735,
+    "protectedFiles": 256,
+    "historicalG0DifferencesAlreadyPresent": 66,
+    "g0Recaptured": false,
+    "g0DeclaredPassing": false
+  },
+  "media": {
+    "generatedImages": 0,
+    "newImmutableCopies": 1,
+    "babySha256": "576ff826e945a47a819053f34a9cee7b0b553d36a37dabca25faa98d7aa5b0b0",
+    "existingPresentationFilesReused": 20,
+    "globalGalleryIndexRebuilt": false
+  },
+  "banks": [
+    {
+      "activityId": "gram-ex-a1-infos-perso",
+      "revision": "a1-infos-perso-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "gap"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-verbe-pastilles",
+      "revision": "a1-verbe-pastilles-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "choice",
+        "gap"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-ordre",
+      "revision": "a1-ordre-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "order"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-repondre-phrase",
+      "revision": "a1-repondre-phrase-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "open-written"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-ecrire-question",
+      "revision": "a1-ecrire-question-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "transform"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-formulaire",
+      "revision": "a1-formulaire-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "open-written"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-ce-texte",
+      "revision": "a1-ce-texte-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "document-set"
+      ],
+      "units": 20,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-portrait",
+      "revision": "a1-portrait-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "open-written"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-po-images",
+      "revision": "a1-po-images-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "open-oral"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a1-curriculum-s",
+      "revision": "a1-curriculum-s-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "scenario-set"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a3-nat-image",
+      "revision": "a3-nat-image-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "choice",
+        "gap"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a3-nat-feminin",
+      "revision": "a3-nat-feminin-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "transform"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a3-nat-masculin",
+      "revision": "a3-nat-masculin-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "transform"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a3-nat-pluriel",
+      "revision": "a3-nat-pluriel-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "transform"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a3-nat-accorder",
+      "revision": "a3-nat-accorder-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "choice",
+        "gap"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-a3-curriculum-p",
+      "revision": "a3-curriculum-p-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "open-oral"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-famille-fam-det",
+      "revision": "famille-fam-det-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "choice",
+        "gap"
+      ],
+      "units": 50,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-famille-fam-faire-part",
+      "revision": "famille-fam-faire-part-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "document-set"
+      ],
+      "units": 20,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-famille-fam-photo",
+      "revision": "famille-fam-photo-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "document-set"
+      ],
+      "units": 20,
+      "humanReview": "pending"
+    },
+    {
+      "activityId": "gram-ex-famille-fam-email",
+      "revision": "famille-fam-email-2026-11-21.1",
+      "level": "A1",
+      "presentations": [
+        "document-set"
+      ],
+      "units": 20,
+      "humanReview": "pending"
+    }
+  ],
+  "limitations": [
+    "Teacher approval remains pending for every new unit.",
+    "Three family offerings remain for the next batch: matching, oral and PE.",
+    "Other grammar themes, obligations I, G6 and G7 remain tracked in the registry.",
+    "The historical theory-count mismatch is unchanged.",
+    "Global lint/build and the browser run for all 146 pilot offerings were not performed."
+  ],
+  "integration": {
+    "upstreamCommit": "99db92b0b0c6a8c0643fcc62044a6d46e93b8275",
+    "upstreamCommits": 3,
+    "rebase": "passed_without_conflict",
+    "upstreamChanges": "TCF content and image catalogues; no overlapping grammar, component, script or test changes.",
+    "postRebaseChecks": {
+      "typescript": "passed",
+      "presentationExtension": "passed",
+      "all7450Variants": "passed",
+      "technicalContracts": "passed"
+    },
+    "browserChecksRepeatedAfterRebase": false,
+    "browserChecksDevelopmentBase": "a5f66fb99"
+  }
+}

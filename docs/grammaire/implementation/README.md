@@ -4,13 +4,31 @@ Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf3
 
 Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-charges-v2.md) ; les 424 activités cibles et les décisions sont suivies dans `target-registry.json`. L’option recommandée d’intégration des 43 activités omises est retenue comme hypothèse de construction au lancement ; aucun ancien type n’est supprimé. Les cinq décisions pédagogiques précédentes sont conservées.
 
-**État au 14 novembre 2026 : 19 notions, 89 activités et 122 offres en pilote**, soit 4 760 unités sélectionnables et 6 130 variantes. Validation enseignante en attente. **Entrer en contact** dispose de ses 19 offres A1 et **Conjuguer au présent** de ses 72 offres prévues. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
+**État au 21 novembre 2026 : 22 notions, 109 activités et 146 offres en pilote**, soit 5 640 unités sélectionnables et 7 450 variantes. Validation enseignante en attente. **Se présenter** atteint 37 offres sur 40 ; **Entrer en contact** dispose de ses 19 offres A1 et **Conjuguer au présent** de ses 72 offres prévues. Le [bilan à jour](avancement-20261121.md) détaille la couverture et le reste à fournir.
 
-**Planification du 21 novembre 2026 :** le [cahier détaillé des 20 prochaines activités](lot-suivant-20-activites-se-presenter.md) couvre l’identité, les nationalités et une première tranche de famille, soit 24 offres A1 à réaliser. Il comprend les contrats de réponse personnelle et de formulaire, quatre banques CE, les supports à reprendre et la recette du lot. Cette mise à jour est documentaire ; les compteurs de pilotes ci-dessus ne changent pas.
+Le [cahier détaillé du lot de 20 activités](lot-suivant-20-activites-se-presenter.md) est implémenté : identité, nationalités et première tranche de famille, soit **24 nouvelles offres A1**. Il comprend les contrats de réponse personnelle et de formulaire, quatre banques CE et les supports réemployés. Les banques restent au statut `reviewed`, avec `humanReview: pending` et zéro unité approuvée par un enseignant.
 
-La [suite, activités 21 à 40](lot-21-40-famille-questions.md), termine la famille, détaille les questions fermées et ouvertes et commence les questions avec quel : 21 offres A1 supplémentaires à réaliser. Les deux annexes préparent **40 activités et 45 offres** ; les banques et leurs validations ne sont pas déclarées livrées par cette rédaction.
+La [suite, activités 21 à 40](lot-21-40-famille-questions.md), reste à implémenter : elle termine la famille, détaille les questions fermées et ouvertes et commence les questions avec quel, soit 21 offres A1 supplémentaires. Les deux annexes décrivent **40 activités et 45 offres** ; seuls les 20 premiers types et leurs 24 offres sont ajoutés par la tranche actuelle.
 
 ## Disponible dans ce lot
+
+### Identité, nationalités et famille — 21 novembre 2026
+
+Dans **Grammaire → Se présenter**, choisir **Qui suis-je ?**, **Adjectifs de nationalité** ou **Parler de sa famille**, puis **A1 — pilote**. Les activités conservent leurs identifiants et un seul type propose les présentations QCM / Lacune lorsqu’elles existent.
+
+| Notion | Activités | Offres | Banque ajoutée |
+| --- | ---: | ---: | --- |
+| Qui suis-je ? | 10 | 11 | 450 questions/situations et 20 textes, 60 questions de lecture |
+| Adjectifs de nationalité | 6 | 8 | 300 unités, dont accord, transformations et oral |
+| Parler de sa famille | 4 | 5 | 50 déterminants possessifs et 60 textes, 260 questions de lecture |
+
+Les **880 unités sélectionnables et 1 320 variantes** comprennent 80 documents avec 320 questions enfants. Les 50 contextes d’identité et les 50 contextes de nationalité sont partagés entre tâches ; ils ne constituent pas 880 histoires inédites. Les 20 lectures Photo de famille et les 20 Message et email sont adaptées des sources historiques, qui restent conservées. Les faire-part proposent le bébé réemployé à gauche et les phrases sur des lignes distinctes à droite, dont les trois phrases demandées pour Lucas.
+
+Les réponses personnelles et les formulaires possèdent un rendu et un contrat de correction propres : informations fictives autorisées, champs réellement distincts et modèles réservés au corrigé. Les portraits respectent les faits de leur fiche. Au tableau, les productions libres sont appréciées par l’enseignant ; elles ne sont pas réduites à une valeur modèle automatiquement obligatoire.
+
+Le genre et les indices d’accord apparaissent en couleur ; la nationalité est une donnée explicite. Les verbes donnés sont placés après le trait. Les lectures utilisent **Nombre de textes** et gardent toutes leurs questions ainsi que les sauts de page par question. Les modèles, preuves et grilles restent masqués dans l’énoncé élève.
+
+Relectures et sources : [identité](a1-a1-extension-relecture.md), [nationalités](a3-a1-extension-relecture.md), [famille](famille-a1-extension-relecture.md), [bébé réemployé](family-media.json), [reconstruction des banques](../../../scripts/grammar_curriculum/README.md). L’association, l’oral et la PE de famille constituent les trois offres restantes de Se présenter.
 
 ### Se présenter — premiers pilotes A1
 
@@ -20,7 +38,7 @@ Les pronoms disposent de 50 complétions réemployées et précisées, 50 associ
 
 Le [manifeste de réemploi](presentation-media.json) trace 20 fichiers existants : 17 pays et trois personnages/référents, copiés sans modification dans un chemin immuable. Aucun média n’est généré. L’image du Japon est écartée pour couleurs inversées. Provenance et nationalité sont deux données explicites des fiches fictives. Le genre du pays apparaît en couleur à droite du trait dans le choix de préposition et au tableau. Les productions ouvertes ont un modèle non exclusif et une grille au corrigé.
 
-Les [relectures des pronoms](a2-a1-relecture.md) et de la [provenance](a6-a1-relecture.md) couvrent toutes les unités. Se présenter atteint **13/40 offres** ; restent l’identité, les nationalités et la famille. Les onze obligations I des autres notions restent distinctes.
+Les [relectures des pronoms](a2-a1-relecture.md) et de la [provenance](a6-a1-relecture.md) couvrent toutes les unités. Cette première tranche représentait **13/40 offres** ; l’extension décrite ci-dessus porte le total à **37/40**. Les onze obligations I des autres notions restent distinctes.
 
 ### Entrer en contact — A1
 

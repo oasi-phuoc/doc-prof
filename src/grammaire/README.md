@@ -10,6 +10,7 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 | `exercises/bank/lessons-revised.ts` | 90 banques de 50 phrases, une par sous-thème repris |
 | `exercises/bank/lessons-protected.ts` | 7 banques d’introduction conservées et complétées à 50 |
 | `exercises/communication-data.json` | 160 situations, dix variantes de CE/PE/PO par thème communicatif |
+| `curriculum/` | Banques pilotes par niveau, contrats canoniques, validation, snapshots et pagination |
 | `scripts/grammar_curriculum/` | Sources éditoriales et reconstruction des contenus |
 | `generate.ts` | Théorie **ou** exercices selon le type |
 
@@ -19,7 +20,15 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 2. **Sous-thème** = notion (Être, Avoir, -er… / Passé composé… / fiche théorie)
 3. **Type** = **Théorie** + exercices du sous-thème (libellés de leçon)
 
-Les 99 fiches de théorie sont conservées dans leur état antérieur au commit `b04247cb`, hors ancien thème Aide-mémoire. La reconstruction des exercices ne les modifie plus. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
+Les fiches de théorie sont conservées dans leur état antérieur au commit `b04247cb`, hors ancien thème Aide-mémoire. La reconstruction des exercices ne les modifie plus. Chaque sous-thème repris a une banque de 50 phrases distinctes avec une seule réponse, trois choix et une variante inline dans le même type d’exercice. Les activités communicatives historiques proposent dix situations par type CE, PE et PO. Les modules particuliers de présentation restent disponibles. Le [rapport de reprise](../../docs/grammaire/README.md) décrit la couverture et la validation.
+
+## Curriculum par niveau — pilotes
+
+Le [cahier des charges v2](../../docs/grammaire/implementation/cahier-des-charges-v2.md) et le [suivi d’implémentation](../../docs/grammaire/implementation/README.md) distinguent les banques historiques des pilotes accessibles par **Niveau de grammaire → A1 — pilote**, A2 ou B1 selon la notion. Les recettes sauvegardent le niveau, la présentation et les unités canoniques ; **Banque actuelle** conserve l’accès historique.
+
+Au 21 novembre 2026, Se présenter comporte 37 offres pilotes sur 40 : pronoms, provenance, identité, nationalités et premiers types de famille. La dernière tranche ajoute 20 activités et 24 offres : 50 unités par activité courte et 20 textes pour chacune des quatre banques CE. L’enseignant choisit le nombre de textes ; les questions enfants et les sauts de page restent associés au document. Les réponses personnelles et les formulaires disposent d’un contrat ouvert, d’un modèle non exclusif au corrigé et d’une appréciation enseignante au tableau.
+
+Ces banques ont fait l’objet d’une relecture par l’assistant. Leur approbation enseignante reste en attente ; aucun compteur ne les déclare publiées ou approuvées. Les sources éditoriales et les commandes de reconstruction sont documentées dans [scripts/grammar_curriculum](../../scripts/grammar_curriculum/README.md).
 
 ## Types d’exercice (kinds)
 

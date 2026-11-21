@@ -6,7 +6,7 @@
 
 **Base inspectée :** `af2607853abf265edab37c4ab59e0c3625b8fd05`.
 
-**Statut :** spécification documentaire du prochain lot G3 A1. Les exemples illustrent les contrats ; les banques complètes et leur approbation restent à réaliser.
+**Statut au 21 novembre 2026 :** les 20 activités et leurs 24 offres A1 sont implémentées en pilote explicite ; approbation enseignante en attente. Le [bilan de réalisation](avancement-20261121.md) distingue les quotas effectivement livrés des minima du présent contrat. Les sections ci-dessous conservent la spécification de référence.
 
 ## 1. Place du lot dans le plan
 

@@ -31,9 +31,13 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     const q=item.grammar, u=q.unit
     const imageSupport={...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
     const model=u.answers.join(' / ')+'\n'+u.explanation
-    const rawPrompt=u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
+    const rawPrompt=u.kind==='completion' && u.agreementHint?u.prompt.replace('___',`___ (${u.agreementHint})`):u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
       u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
     const prompt=u.cue?u.cue+'\n'+rawPrompt:rawPrompt
+    if(u.kind==='personal-gap'||u.kind==='form')return {items:[{...imageSupport,part:0,
+      prompt:u.kind==='personal-gap'?`${prompt} (${u.information})\n${u.task}`:`${u.prompt}\n${u.task}\n${u.fields.map(f=>`${f.label}${f.required?' *':''} : ___${f.hint?` (${f.hint})`:''}`).join('\n')}`,
+      instruction:sourceInstruction,choices:[],mode:'oral',teacherLed:true,
+      model:'Exemple possible — d’autres informations sont recevables.\n'+(u.kind==='form'?u.fields.map(f=>`${f.label} : ${f.model}`).join('\n'):u.prompt.replace('___',u.answers[0]!))+'\n'+u.explanation+'\nRepères enseignant :\n'+u.rubric.map(r=>'□ '+r.label).join('\n')}],issues:[]}
     if(u.kind==='scenario') {
       const common={...imageSupport,part:0,instruction:sourceInstruction,context:grammarScenarioContext(u),scenarioId:u.id}
       if(u.contract==='open')return {items:[{...common,prompt:[u.task,'Pour poursuivre l’échange :',...u.followUps].join('\n'),choices:[],mode:'oral',teacherLed:true,

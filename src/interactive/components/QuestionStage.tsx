@@ -103,7 +103,7 @@ export function QuestionStage({
           {number !== undefined && (
             <span className="ci-question-number">{number}.</span>
           )}
-          <span className="ci-question-prompt">{drop.available?<WordBlankPrompt question={q} target={drop.target} value={proposed?.text} pending={pending?.text} hover={drop.drag?.target===0?dragged?.text:undefined} disabled={drop.blocked||!pending&&!proposed} onDeposit={drop.deposit} onEscape={drop.escape}/>:fractions?<FractionText text={playPrompt(q.prompt)}/>:<GrammarCountryPrompt text={playPrompt(q.prompt)} gender={q.grammarCountryGender}/>}</span>
+          <span className="ci-question-prompt">{drop.available?<WordBlankPrompt question={q} target={drop.target} value={proposed?.text} pending={pending?.text} hover={drop.drag?.target===0?dragged?.text:undefined} disabled={drop.blocked||!pending&&!proposed} onDeposit={drop.deposit} onEscape={drop.escape}/>:fractions?<FractionText text={playPrompt(q.prompt)}/>:<GrammarCountryPrompt text={playPrompt(q.prompt)} gender={q.grammarCountryGender} exerciseType={q.source.exerciseType}/>}</span>
         </h1>
         {drop.available&&phase!=='revealed'&&<p className="ci-word-drop-help">{canSelect?'Glissez une carte, ou touchez-la.':'Glissez une carte, ou touchez-la puis le blanc.'}</p>}
         {q.matchingGroup && !q.lotoBoard && <p className="ci-matching-progress">Groupe {q.matchingGroup.number}/{q.matchingGroup.total} · {availableWords} {availableWords>1?'mots disponibles':'mot disponible'}<span className="ci-sr-only">. Les mots déjà associés sont grisés et indisponibles.</span></p>}

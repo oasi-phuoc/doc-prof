@@ -5,10 +5,13 @@ import { GrammarReadingView } from './grammar-reading'
 import { GrammarProductionView } from './grammar-production'
 import { GrammarScenarioView } from './grammar-scenario'
 import { GrammarImageSupports } from '@/components/grammar/GrammarImageSupports'
-import { GrammarSentence as Sentence, GrammarVerbHint as VerbHint } from './grammar-fields'
+import { GrammarSentence as Sentence, GrammarVerbHint as VerbHint, GrammarTextHints } from './grammar-fields'
+import { GrammarPersonalView, GrammarFormView } from './grammar-personal'
 
 export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuestion;mode:PreviewMode}) {
   const u=q.unit, corrected=mode==='answers'
+  if (u.kind==='personal-gap') return <GrammarPersonalView unit={u} mode={mode}/>
+  if (u.kind==='form') return <GrammarFormView unit={u} mode={mode}/>
   if (u.kind==='reading') return <GrammarReadingView question={q} mode={mode}/>
   if (u.kind==='production') return <GrammarProductionView unit={u} mode={mode}/>
   if (u.kind==='scenario') return <GrammarScenarioView question={q} mode={mode}/>
@@ -16,7 +19,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
     <GrammarImageSupports supports={u.imageSupports}/>
     {u.cue?<p className="grammar-cue">{u.cue}</p>:null}
     {u.kind==='completion'?<>
-      <p><Sentence text={u.prompt} answer={corrected?u.answers[0]:undefined} givenVerb={u.givenVerb} countryGender={u.countryGender}/></p>
+      <p><Sentence text={u.prompt} answer={corrected?u.answers[0]:undefined} givenVerb={u.givenVerb} countryGender={u.countryGender} agreementHint={u.agreementHint}/></p>
       {q.presentation==='choice'?<ul className="grammar-choices" aria-label="Propositions">
         {q.options?.map((option,index)=><li key={option.id}><span className="grammar-choice-box" aria-hidden="true">{corrected&&u.answers.includes(option.text)?'✓':'\u00a0'}</span> <b>{String.fromCharCode(65+index)}.</b> {option.text}</li>)}
       </ul>:null}
@@ -27,8 +30,8 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
         <ol type="A">{q.rightOptions?.map(o=><li key={o.id}>{o.text}</li>)}</ol>
       </div>
     </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode}/>:<>
-      <p>{u.prompt}</p>
-      {u.kind==='transform'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive">{u.directive}</p>:null}
+      <p><GrammarTextHints text={u.prompt}/></p>
+      {u.kind==='transform'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive"><GrammarTextHints text={u.directive??''}/></p>:null}
       <div className="grammar-written-response">
         <span className={`answer-line-field${corrected?' filled':''}`}>{corrected?u.answers.join(' / '):'\u00a0'}</span>
         <VerbHint verb={u.givenVerb}/>

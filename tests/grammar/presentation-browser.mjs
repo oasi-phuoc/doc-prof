@@ -23,7 +23,7 @@ try {
   if(await control.locator('.select-control-value').textContent()===option)return
   await control.click();await page.getByRole('option',{name:option,exact:true}).click()
  }
- const open=async()=>{await page.goto(base+'/generateur',{waitUntil:'networkidle',timeout:120000});await choose('Domaine','Grammaire');await choose('Thème','Se présenter')}
+ const open=async()=>{await page.goto(base+'/generateur',{waitUntil:'domcontentloaded',timeout:120000});await choose('Domaine','Grammaire');await choose('Thème','Se présenter')}
  const images=async(selector,count)=>{
   if(!count)return
   await page.waitForFunction(({selector,count})=>{
@@ -71,9 +71,11 @@ try {
   console.log('Lancement tableau : '+id)
   await images('.a4-frame',3*(b.units[0].imageSupports?.length??0))
   if(id.endsWith('prov-phrases'))await page.locator('.a4-frame').first().screenshot({path:join(evidence,'a6-two-images-a1.png')})
-  await page.getByRole('button',{name:'Jouer avec la classe',exact:true}).click();await page.waitForURL('**/interactif**')
+  await page.getByRole('button',{name:/^Jouer (?:avec la classe|cette fiche)$/}).click();await page.waitForURL('**/interactif**')
   const start=page.getByRole('button',{name:/Commencer la séance/});await start.waitFor({timeout:120000})
+  const content=page.getByRole('button',{name:/^Contenu\b/});if(await content.count())await content.click()
   const matching=id.endsWith('curriculum-a');assert.equal(await page.locator('.ci-question-list fieldset > label').count(),matching?9:3)
+  const close=page.getByRole('button',{name:'Fermer · Contenu',exact:true});if(await close.count())await close.click()
   await start.click();await page.locator('.ci-question-prompt').waitFor()
   const interactiveImages=b.units[0].imageSupports?.length??0
   await images('.ci-question',interactiveImages)

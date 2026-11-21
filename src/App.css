@@ -6468,6 +6468,19 @@ textarea.pill-input,
 .grammar-level-note { color: var(--muted); line-height: 1.5; }
 .grammar-verb-hint { white-space: nowrap; margin-left: .3em; }
 .grammar-country-hint { white-space: nowrap; margin: 0 .3em; }
+.grammar-agreement-hint, .grammar-personal-hint { margin: 0 .3em; }
+.grammar-form h3 { margin: 0 0 3mm; font-size: 1.05em; }
+.grammar-personal-gap p, .grammar-profile-facts { white-space: pre-line; }
+.grammar-form-fields { margin: 3mm 0; }
+.grammar-form-field { display: grid; grid-template-columns: minmax(32mm, .42fr) minmax(0, 1fr); gap: 4mm; align-items: end; margin: 2mm 0; }
+.grammar-form-field dt { font-weight: 600; }
+.grammar-form-field dt small { display: block; font-weight: 400; }
+.grammar-form-field dd { margin: 0; min-width: 0; }
+.grammar-form-field .answer-line-field { width: 100%; min-height: 8mm; overflow-wrap: anywhere; }
+.grammar-form-note { color: var(--muted); font-size: .85em; }
+.grammar-reading-image-left { display: grid; grid-template-columns: minmax(22mm, .28fr) minmax(0, 1fr); gap: 6mm; align-items: start; }
+.grammar-reading-image-left .grammar-support-images { margin: 0; }
+.grammar-reading-image-left .grammar-support-image img { max-height: 36mm; }
 .grammar-written-response { display: flex; align-items: flex-end; gap: 2mm; min-width: 0; }
 .grammar-written-response .answer-line-field { flex: 1 1 auto; min-width: 0; white-space: normal; overflow-wrap: anywhere; line-height: 8mm; min-height: 8mm; }
 .grammar-written-response .grammar-verb-hint { flex: 0 0 auto; padding-bottom: 1mm; }
@@ -6488,8 +6501,11 @@ textarea.pill-input,
 .grammar-support-image { margin: 2mm 0; min-width: 0; text-align: center; }
 .grammar-support-image img { max-height: 45mm; max-width: 100%; width: auto; object-fit: contain; }
 .grammar-production .grammar-support-image img { max-height: 35mm; }
+.grammar-production-profile { display: grid; grid-template-columns: 36mm minmax(0, 1fr); gap: 6mm; align-items: start; margin: 2mm 0; }
+.grammar-production-profile .grammar-support-images { margin: 0; }
 /* Two reference images leave room for the facts, task and full writing area. */
-.grammar-production-paired-images .grammar-support-image img { max-height: 32mm; }
+.grammar-production-paired-images .grammar-support-image img { max-height: 28mm; }
+.grammar-production-paired-images .grammar-profile-facts { white-space: normal; }
 .grammar-media-status, .grammar-media-error { display: block; }
 .grammar-media-error { color: var(--ink); font-weight: 600; }
 .grammar-scenario-support h3, .grammar-scenario-open h3 { margin: 0 0 2mm; font-size: 1em; font-weight: 700; }

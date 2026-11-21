@@ -5,6 +5,10 @@ export type GrammarPresentation = 'choice' | 'gap' | 'correct' | 'order' | 'matc
 export const GRAMMAR_PRESENTATIONS: GrammarPresentation[] = ['choice','gap','correct','order','match','transform','document-set','scenario-set','open-written','open-oral']
 export type GrammarChoice = { id: string; text: string }
 export type GrammarCriterion = { id: string; label: string }
+export type GrammarFormField = {
+  id: string; label: string; required: boolean; format: 'text' | 'number' | 'date' | 'email'
+  hint?: string; model: string
+}
 export type GrammarImageSupport = {
   id: string; src: string; sha256: string; alt: string; width: number; height: number
   source: { path: string; manifest: string; rights: 'project-generated' | 'permitted-reuse'; note: string }
@@ -25,6 +29,7 @@ type BaseUnit = {
   id: string; prompt: string; answers: string[]; explanation: string; source: Source
   givenVerb?: string
   countryGender?: 'masculin' | 'féminin' | 'pluriel'
+  agreementHint?: string
   responseLines?: 1 | 2
   cue?: string
   imageSupports?: GrammarImageSupport[]
@@ -36,11 +41,13 @@ export type GrammarReadingQuestion = {
 }
 export type GrammarUnit = BaseUnit & (
   | { kind: 'completion'; options: GrammarChoice[] }
+  | { kind: 'personal-gap'; information: string; task: string; rubric: GrammarCriterion[] }
+  | { kind: 'form'; task: string; fields: GrammarFormField[]; rubric: GrammarCriterion[] }
   | { kind: 'correct'; error?: { segmentId: 'prompt'; start: number; end: number; text: string } }
   | ({ kind: 'transform' } & ({ targetSubject: string; directive?: never } | { directive: string; targetSubject?: never }))
   | { kind: 'order'; tokens: Array<{ id: string; text: string; category: PhraseCategory }> }
   | { kind: 'match'; pairs: Array<{ id: string; left: string; right: string; sourceId: string }> }
-  | { kind: 'reading'; genre: string; text: string; questions: GrammarReadingQuestion[] }
+  | { kind: 'reading'; genre: string; text: string; questions: GrammarReadingQuestion[]; supportLayout?: 'image-left' }
   | { kind: 'production'; mode: 'written' | 'oral'; task: string; rubric: Array<{id: string; label: string}>; writeLines: number }
   | GrammarScenario
 )
