@@ -7,6 +7,8 @@
 **Base technique inspectée :** `origin/main`, commit `23b5990adede460f0198ec52228f9e7a60df7555`.  
 **Livrable actuel :** ce cahier des charges et ses annexes ; il ne constitue pas une implémentation du logiciel ni une approbation linguistique de toutes les banques.
 
+**Complément du 21 novembre 2026 :** le [prochain lot de 20 activités de Se présenter](lot-suivant-20-activites-se-presenter.md) précise les consignes, les banques, les corrections, les dépendances et les critères de recette. Cette préparation documentaire conserve les décisions ci-dessous et les compteurs d’implémentation existants.
+
 ## 1. Portée et autorité des spécifications
 
 **PER-01.** Le périmètre pédagogique comprend les 19 thèmes et les 98 notions listés intégralement en annexe A. Chaque combinaison notion/niveau précise son objectif et les familles de formats à couvrir. Les affectations de niveau reprises du plan sont conservées, avec l'ajout A2 explicitement choisi pour la comparaison et le superlatif. Pour les notions avancées, rédiger des tâches guidées et soumettre les exemples à la revue pédagogique ; il n'est pas demandé de démontrer une maîtrise autonome de niveau supérieur au niveau affiché.
@@ -525,6 +527,12 @@ Le nombre de variantes à produire ne vaut pas nombre de phrases inédites. Mesu
 
 **LIV-10.** Les IDs et schémas techniques servent aux sources, recettes et diagnostics. Le parcours enseignant expose l'objectif, les modes disponibles et les limites utiles ; il n'affiche pas les IDs de migration, types TCF internes ou phases G0–G7 comme des choix d'exercice.
 
+
+### 10.7 Prochain lot de 20 activités — Se présenter
+
+Le [contrat détaillé du lot](lot-suivant-20-activites-se-presenter.md) développe les dix activités d’identité, les six de nationalité et les quatre premières de famille. Il vise **24 offres A1** : seize banques de 50 questions/situations et quatre banques CE de 20 textes avec au moins 50 questions chacune. Les quatre activités QCM/lacune gardent un seul type de menu. Les réponses personnelles et les formulaires ont un contrat ouvert explicite.
+
+Le lot représente **880 unités sélectionnables cibles**, documents compris, et **au moins 1 200 variantes de réponse**. Les questions enfants des documents ne sont pas des unités sélectionnables supplémentaires. Ces volumes sont des objectifs de production et de validation ; la rédaction de cette annexe ne les ajoute pas aux banques disponibles. Les trois activités famille restantes sont prévues dans le lot suivant.
 
 ## 11. Scénarios de recette et traçabilité
 

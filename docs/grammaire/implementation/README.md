@@ -6,6 +6,8 @@ Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-cha
 
 **État au 14 novembre 2026 : 19 notions, 89 activités et 122 offres en pilote**, soit 4 760 unités sélectionnables et 6 130 variantes. Validation enseignante en attente. **Entrer en contact** dispose de ses 19 offres A1 et **Conjuguer au présent** de ses 72 offres prévues. Le [bilan à jour](avancement-20261114.md) détaille la couverture et le reste à fournir.
 
+**Planification du 21 novembre 2026 :** le [cahier détaillé des 20 prochaines activités](lot-suivant-20-activites-se-presenter.md) couvre l’identité, les nationalités et une première tranche de famille, soit 24 offres A1 à réaliser. Il comprend les contrats de réponse personnelle et de formulaire, quatre banques CE, les supports à reprendre et la recette du lot. Cette mise à jour est documentaire ; les compteurs de pilotes ci-dessus ne changent pas.
+
 ## Disponible dans ce lot
 
 ### Se présenter — premiers pilotes A1
