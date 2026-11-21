@@ -8,12 +8,12 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 464,
+      "active_reviewed_trio": 484,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
       "keep_text_amount": 73,
-      "candidate_visual_review": 282
+      "candidate_visual_review": 262
     },
     "by_level": {
       "A0-A1": {
@@ -24,10 +24,10 @@
         "keep_text_amount": 37
       },
       "A1-A2": {
-        "active_reviewed_trio": 177,
+        "active_reviewed_trio": 197,
         "keep_text_contextual": 201,
-        "candidate_visual_review": 161,
         "keep_text_named_identity_or_code": 28,
+        "candidate_visual_review": 141,
         "keep_text_calendar_or_duration": 58,
         "keep_text_amount": 24
       },
@@ -38401,8 +38401,8 @@
       "semantic_sha256": "3354f121906f0c5fff4e52917dc6a949ea7d744f2cbefe51558b1217c1c61ff0",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-002-01.mp3",
       "audio_sha256": "051d30ca0e91e3c3f8130dd4b58f16b1bd08d5066e8fbb1a1454a730e20d5a69",
-      "status": "candidate_visual_review",
-      "reason": "Descente du véhicule, maintien assis et présentation d’un billet ; mouvement et contexte de transport complets.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -38429,8 +38429,24 @@
           "brief": "Représenter entièrement « Montrer leur billet » pour « Que doivent faire les voyageurs ? ». Vérifier la transcription du support tcf-delf-actif-a2-002-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Descente du véhicule, maintien assis et présentation d’un billet ; mouvement et contexte de transport complets."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-descendre-car.png",
+          "sha256": "f48fa0c28858855809ab485c5fbffd34cd040cf37e6aa768a83edc770f944db2"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-assis-car.png",
+          "sha256": "6190fd5bcdedf13e38d3aacff33920dda792de2d9f02093fecf24f54a3902bfe"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-montrer-billet.png",
+          "sha256": "f269ad36f08dc9cbc850f4fc7c918b5b9cf2bd80945d32333eb867621f57cd39"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -38448,6 +38464,10 @@
         "evidence_quote": "invités à descendre",
         "semantic_sha256": "3354f121906f0c5fff4e52917dc6a949ea7d744f2cbefe51558b1217c1c61ff0",
         "note": "Descente du véhicule, maintien assis et présentation d’un billet ; mouvement et contexte de transport complets."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Descente d’un car avec marches et trottoir visibles, voyageurs restant assis à bord, et présentation immobile d’un billet au conducteur. Le car illustre la catégorie du transport au terminus, sans prétendre préciser un modèle ou une ligne absents de la source. Gestes, jambes, porte et sièges examinés ; aucun texte de billet ou montant."
       }
     },
     {
@@ -40214,8 +40234,8 @@
       "semantic_sha256": "f75ca838dde44c8824d5b1a608154c947cfc56a041131ae258901295aed5d005",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-05.mp3",
       "audio_sha256": "b4096b3bac9225077bcab497f8cd4aacf620e8479e5e95c7c0f5ada036e1470d",
-      "status": "candidate_visual_review",
-      "reason": "Manger, lire et écouter de la musique à bord ; trois actions entières, sans les cumuler sur un même personnage.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -40262,8 +40282,24 @@
           "brief": "Représenter entièrement « Écouter de la musique » pour « Quelle action est interdite à bord ? ». Vérifier la transcription du support tcf-delf-actif-a2-003-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Manger, lire et écouter de la musique à bord ; trois actions entières, sans les cumuler sur un même personnage."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-manger-car.png",
+          "sha256": "a184221db42dbefe8f70f1857c1c2fc626811a5b1c0d199d1159fdd1e82a6432"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-lire-car.png",
+          "sha256": "6fd9de40f20f875d6eed6282abc4dc4d89ba3ee888dbb1fdbba66580670c253e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-musique-car.png",
+          "sha256": "dd0892f0891fff9ebf7b61613483f5552b01f3b42b61ea15414b1d9f8f8080e9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40281,6 +40317,10 @@
         "evidence_quote": "il est interdit de manger",
         "semantic_sha256": "f75ca838dde44c8824d5b1a608154c947cfc56a041131ae258901295aed5d005",
         "note": "Manger, lire et écouter de la musique à bord ; trois actions entières, sans les cumuler sur un même personnage."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Trois actions à bord d’un car : manger un sandwich, lire un livre et écouter au casque avec pictogramme musical. L’environnement du car est conservé pour tous les choix. Une seule action principale par sujet, sans signe d’interdiction révélant le corrigé, et sièges orientés dans le même sens."
       }
     },
     {
@@ -40647,8 +40687,8 @@
       "semantic_sha256": "0e37667717eda92f3211c5921868fe8f21b5ef973d5d13c121e74add714349f8",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-003-08.mp3",
       "audio_sha256": "63b82bed399364040fb2fe3905bd09914a805f47ea23eb76596cf5e0b3eae1b5",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -40682,8 +40722,24 @@
           "brief": "Représenter entièrement « Un salon du sport » pour « À quel événement les visiteurs participent-ils ? ». Vérifier la transcription du support tcf-delf-actif-a2-003-08 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-salon-livre.webp",
+          "sha256": "9d9a32e07940ea52f0f425ee3b064b4faca2aea49a7570f49a3e95fdb3870f4c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-salon-musique.png",
+          "sha256": "1298698942eadb8d7b8d8ab46647ccdb45fdb6604515ddc63d73559733b7db14"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-salon-sport.png",
+          "sha256": "3866e0c6f88e78a657d4a27e8a98094879946bc4a7862e1179cce82365373a60"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40694,7 +40750,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Le salon du livre réutilisé montre stands, livres et dédicace. Les deux nouveaux salons montrent plusieurs stands d’instruments ou de matériel sportif, des visiteurs et des présentateurs : ni simple concert ni compétition. Trois événements comparables, sans date, horaires ou prix."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-003-08#2",
@@ -40847,8 +40907,8 @@
       "semantic_sha256": "91941d8dc00c7edc95358d16f2062cd6e42985f558c28279e60647d74b539ecf",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-004.mp3",
       "audio_sha256": "859f446958319c3886c6e16686e251be01c30af341c468c59b440b048e1d1275",
-      "status": "candidate_visual_review",
-      "reason": "Bord de quai, guichet et salle d’attente ; montrer précisément la limite proche des voies, pas une gare générique.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -40875,8 +40935,24 @@
           "brief": "Représenter entièrement « La salle d’attente » pour « De quelle partie de la gare faut-il s’éloigner ? ». Vérifier la transcription du support tcf-delf-actif-a2-004 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bord de quai, guichet et salle d’attente ; montrer précisément la limite proche des voies, pas une gare générique."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-bordure-quai.png",
+          "sha256": "01d38dc7d95bbc39e89ac05b3963f7eae122d2221495a7830d7d29d532048065"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp",
+          "sha256": "d368a9fe753d72f75166488c2866531e74590e69224c63b1f8a582684a2cfb79"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png",
+          "sha256": "8be94cca8c9d11ba8219d2bc78604956178af43dc9d40062ed67ae6bb47f3770"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -40894,6 +40970,10 @@
         "evidence_quote": "la bordure du quai",
         "semantic_sha256": "91941d8dc00c7edc95358d16f2062cd6e42985f558c28279e60647d74b539ecf",
         "note": "Bord de quai, guichet et salle d’attente ; montrer précisément la limite proche des voies, pas une gare générique."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "La bordure du quai est mise au premier plan avec bande tactile, dénivelé et voies en contrebas ; le guichet est identifié par un comptoir et la salle d’attente par ses bancs et sa vitre sur le train. Le choix correct représente une partie précise du quai, pas seulement une gare entière."
       }
     },
     {
@@ -43641,8 +43721,8 @@
       "semantic_sha256": "fd6d3dcfbd485e9ee5cb254e832c71e91eb70015ae3f723cff923664881e1b37",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-006-05.mp3",
       "audio_sha256": "fc1e93e3d139304d24afbaded76fd50efbb6412e785ceeb4bd3e6d01286a324e",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -43683,8 +43763,24 @@
           "brief": "Représenter entièrement « Dans les couloirs » pour « Où les enfants peuvent-ils attendre ? ». Vérifier la transcription du support tcf-delf-actif-a2-006-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-enfants.png",
+          "sha256": "a2cf0bd1b0a32e46d791f1c610ee46a572a6277c7fad4f86f5cd9f632ea6e784"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-chambre-hopital.png",
+          "sha256": "76f4e65fd284580984973140b95ae7f757cd417391b9a3d438d93f8705a8ef61"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-couloir-hopital.png",
+          "sha256": "4d93fe933f81ea5de4d8fb57f80f00056bf189afb2f808779aca9a92e761cf2e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -43695,7 +43791,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Salle d’attente hospitalière avec livres et jeux pour enfants, chambre avec lit médical et patiente ou patient adulte, couloir avec mains courantes et matériel hospitalier. Les anciennes images de chambres et couloirs d’hôtel sont écartées. Les leurres restent dans le même contexte hospitalier ; pas d’enfant dans une chambre de malade."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-006-05#3",
@@ -44665,8 +44765,8 @@
       "semantic_sha256": "9f77d676dcaee43fadde6466ccf74da9e34b0c2e7a3a91b52650ffe0738c08e9",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-03.mp3",
       "audio_sha256": "70dad7471860b327971333179d1106a795cd424f40d26250f76e028ceae39718",
-      "status": "candidate_visual_review",
-      "reason": "Places de spectateurs, hall et zone de sortie ; montrer la position dans la salle sans inventer un siège numéroté.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -44693,8 +44793,24 @@
           "brief": "Représenter entièrement « Près de la sortie » pour « Où les spectateurs doivent-ils s’installer ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Places de spectateurs, hall et zone de sortie ; montrer la position dans la salle sans inventer un siège numéroté."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co834-places-theatre-dessinees.webp",
+          "sha256": "fb430aae5f0b4b7f93ade793939cfe9f82ae448dfa76b1737bab8ad9b87fcbd1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/extension573-hall.webp",
+          "sha256": "ef71d2208cca1f23dec40f2abd65d423982b4dc5b760d408ad4eb025c3e5bc16"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-attendre-sortie.png",
+          "sha256": "fcfcc74062064d36094a1f8443e2f95e570ea4516d4d5ac7426d0e45d77006c1"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -44712,6 +44828,10 @@
         "evidence_quote": "vous asseoir à vos places",
         "semantic_sha256": "9f77d676dcaee43fadde6466ccf74da9e34b0c2e7a3a91b52650ffe0738c08e9",
         "note": "Places de spectateurs, hall et zone de sortie ; montrer la position dans la salle sans inventer un siège numéroté."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Public assis à ses places devant une scène, hall public, et groupe debout près d’une porte de sortie dans une salle de spectacle. Le dernier groupe attend sans franchir la porte, afin de représenter près de la sortie plutôt que sortir. Les lieux sont des exemples génériques, sans identifier les spectateurs de l’annonce."
       }
     },
     {
@@ -45266,8 +45386,8 @@
       "semantic_sha256": "bfae493b24d7405ad49fb9f9aaf1525daa9c1b68f8b8accaa71f986fa9084e8d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-007-05.mp3",
       "audio_sha256": "132edb266408ec3ea320783808f15cf2a2e5f1967d7f2cec3e28cc87f1e9287d",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -45294,8 +45414,24 @@
           "brief": "Représenter entièrement « Des boîtes et des paniers » pour « Quels articles de rangement scolaire sont cités ? ». Vérifier la transcription du support tcf-delf-actif-a2-007-05 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-classeurs-trousses.png",
+          "sha256": "0cda61164f96a9c180947a127387657fbe172f3ccc6ad0af4b0e9a0a4a17263b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-valises-sacs.png",
+          "sha256": "7e740357367069f77de49cbb02a4bab04e9833dca32725e417b04ee3b4668abf"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-boites-paniers.png",
+          "sha256": "1e09c0a28e7f2510a77f477903fe3b64daa7185c362ccd535919a2521930d3af"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -45306,7 +45442,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Chaque image couvre les DEUX catégories et leurs pluriels : classeurs ET trousses, valises ET sacs de sport, boîtes ET paniers. Objets entiers sur ivoire, rangement scolaire distinct des bagages et des contenants domestiques. Aucun prix, étiquette personnelle ou numéro."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-007-06#1",
@@ -45622,8 +45762,8 @@
       "semantic_sha256": "92e1b5c399ec5dc8e27d9404e05f203a5118c85ce5440ec074bceac59a18c55d",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-01.mp3",
       "audio_sha256": "e1c33e7d65106b0fc07c48460bd74277632005e6213c9d8c9e09b047362b18f7",
-      "status": "candidate_visual_review",
-      "reason": "Autoroute à chaussées séparées, rue urbaine et route de montagne ; circulation et type de voie lisibles, sans date ou couleur de trafic utilisée comme météo.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -45657,8 +45797,24 @@
           "brief": "Représenter entièrement « Les routes de montagne » pour « Sur quelles routes la circulation est-elle chargée ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Autoroute à chaussées séparées, rue urbaine et route de montagne ; circulation et type de voie lisibles, sans date ou couleur de trafic utilisée comme météo."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+          "sha256": "2d327b14aff22e4a991ff897348f7e41c09ac88b21761b5f55aa7a9d082895bb"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/ville.webp",
+          "sha256": "e78242a71b7a92603511158469ce7781ca6cf3971dc1cca923f4b59d3d2e828c"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-route-montagne.png",
+          "sha256": "44304b2e28bf030e3a258eb38fa04e960b6cea2d4c589ca85c75a54411c8a4df"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -45676,6 +45832,10 @@
         "evidence_quote": "circulation sur les autoroutes",
         "semantic_sha256": "92e1b5c399ec5dc8e27d9404e05f203a5118c85ce5440ec074bceac59a18c55d",
         "note": "Autoroute à chaussées séparées, rue urbaine et route de montagne ; circulation et type de voie lisibles, sans date ou couleur de trafic utilisée comme météo."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Autoroutes à chaussées séparées et échangeur, rues commerçantes de centre-ville, route asphaltée en lacets dans les montagnes. Le paysage de montagne seul ne suffit pas au troisième choix et n’est pas utilisé pour représenter la route. La question vise le type de route, pas une mesure de congestion inventée."
       }
     },
     {
@@ -45881,8 +46041,8 @@
       "semantic_sha256": "926c48d5cd066f7e361b47be99f1109fd300e929bb2fb9f72f0650cb20a25001",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-008-02.mp3",
       "audio_sha256": "64ccb905f0c3f047c2075e05f0069458c4dce0bcd50c432b8105e0ffbbf25bdc",
-      "status": "candidate_visual_review",
-      "reason": "Course à pied, course cycliste et défilé ; groupes, équipements et activité distincts, pas un seul passant.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -45916,8 +46076,24 @@
           "brief": "Représenter entièrement « Un défilé » pour « Quel événement provoque la fermeture de l’avenue ? ». Vérifier la transcription du support tcf-delf-actif-a2-008-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Course à pied, course cycliste et défilé ; groupes, équipements et activité distincts, pas un seul passant."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co57-course-pied.webp",
+          "sha256": "66d1e5adcf059e01ed0beaec07d4618f4d2c1b13e52108424b17fee1834e7812"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-course-cycliste.png",
+          "sha256": "0443d5e39523cdd91251452ebe89882ca0152d824f321690be6324a5ad773b24"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-defile.png",
+          "sha256": "d3c881803a87e87e933da5c3c270e5f7f599966ba2484395971fd57e764d45b8"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -45935,6 +46111,10 @@
         "evidence_quote": "passage de la course à pied",
         "semantic_sha256": "926c48d5cd066f7e361b47be99f1109fd300e929bb2fb9f72f0650cb20a25001",
         "note": "Course à pied, course cycliste et défilé ; groupes, équipements et activité distincts, pas un seul passant."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Course à pied avec plusieurs coureurs et arche, course cycliste avec peloton et spectateurs, défilé de fanfare au pas. Le cycliste sportif isolé a été écarté pour illustrer une course. Pas de dossards, date, panneau d’avenue ou nombre dans les nouveaux visuels."
       }
     },
     {
@@ -48749,8 +48929,8 @@
       "semantic_sha256": "dbd1e96dc7defed38d0d4f0f492b6d9a786dfef5cfac3a06d8d00df297ef857f",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-011-03.mp3",
       "audio_sha256": "8dd3eb44633fd19a382d90689e3c6a06d0305e3ff5877ae94bde813cfb6571b1",
-      "status": "candidate_visual_review",
-      "reason": "Auteurs en dédicace, chanteurs et médecins en activité ; pas de portraits nommés ou de personnes distinguées seulement par leurs visages.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -48784,8 +48964,24 @@
           "brief": "Représenter entièrement « Des médecins » pour « Qui peut-on y rencontrer ? ». Vérifier la transcription du support tcf-delf-actif-a2-011-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Auteurs en dédicace, chanteurs et médecins en activité ; pas de portraits nommés ou de personnes distinguées seulement par leurs visages."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/actions/dedicace.webp",
+          "sha256": "761f520af462370db7607395c4b8f51efac60d8524d6b5da2f3850ecded7ba44"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/vocab-medecins.webp",
+          "sha256": "7825fdc1d43c4d31b83aadd4bb0bbb45b8eeaa302264a4b75770912703cf2162"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -48803,6 +48999,10 @@
         "evidence_quote": "rencontrer des auteurs",
         "semantic_sha256": "dbd1e96dc7defed38d0d4f0f492b6d9a786dfef5cfac3a06d8d00df297ef857f",
         "note": "Auteurs en dédicace, chanteurs et médecins en activité ; pas de portraits nommés ou de personnes distinguées seulement par leurs visages."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Auteur signant un livre pour une lectrice, chanteuse sur scène devant public, et deux médecins au travail. Les deux premières images donnent des exemples reconnaissables des catégories de personnes au pluriel, pas leur nombre exact à l’événement. Aucun nom réel, identité de voix ou détail de programme ajouté."
       }
     },
     {
@@ -48889,8 +49089,8 @@
       "semantic_sha256": "2779a2a2a2f2a3adb3b24403c4ce8b78ee4272dfef0450c96625672105660506",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-012-01.mp3",
       "audio_sha256": "a299dca0bd0da6196f1a576f66a13a8cec568bcc59d153ec5c5cc9a5344d9573",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -48917,8 +49117,24 @@
           "brief": "Représenter entièrement « Un parc forestier » pour « Quel type de parc est présenté ? ». Vérifier la transcription du support tcf-delf-actif-a2-012-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-parc-marin.png",
+          "sha256": "9b7deba7b79af8a882c198df1b353f4304847cfd586c1981e7dcb1938237610a"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co57-parc-naturel.webp",
+          "sha256": "f6681463caef39e50c9140717fc45bfb23677df2487d2f9795232decafb4e778"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+          "sha256": "aeeed7ab78e592299cbba947a3b510d8e6f9077ce2eae9fa1b60f7057109b35f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -48929,7 +49145,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Parc marin générique avec bassins et faune marine, parc naturel de montagne avec sentier et sommets, et parc forestier avec chemin sous les arbres. L’image du parc marin n’est ni une plage ni un parc aquatique à toboggans, et ne prétend pas représenter fidèlement Marineland."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-012-01#2",
@@ -48995,8 +49215,8 @@
       "semantic_sha256": "3ae427ac7a20cce93dfa2349cdcd611be724ca33a30b3a994093243c5338caf4",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-012-01.mp3",
       "audio_sha256": "a299dca0bd0da6196f1a576f66a13a8cec568bcc59d153ec5c5cc9a5344d9573",
-      "status": "candidate_visual_review",
-      "reason": "Observation guidée d’animaux, apprentissage de cuisine et entraînement de course ; la dimension de découverte doit être visible, pas un poisson isolé.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -49023,8 +49243,24 @@
           "brief": "Représenter entièrement « S’entraîner à courir » pour « Quel est le but des animations pédagogiques ? ». Vérifier la transcription du support tcf-delf-actif-a2-012-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Observation guidée d’animaux, apprentissage de cuisine et entraînement de course ; la dimension de découverte doit être visible, pas un poisson isolé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-decouvrir-animaux.png",
+          "sha256": "6ca6ffe075076a76f10fcf837fb18ab1c7d5a7ccbe21ae1f1962f343ef9157b8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-cours-cuisine-dessine.webp",
+          "sha256": "adcf49233bb429f177fb5985655d0c24b73677caed21214f94b3583874e0bad2"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+          "sha256": "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -49042,6 +49278,10 @@
         "evidence_quote": "animations pédagogiques pour découvrir",
         "semantic_sha256": "3ae427ac7a20cce93dfa2349cdcd611be724ca33a30b3a994093243c5338caf4",
         "note": "Observation guidée d’animaux, apprentissage de cuisine et entraînement de course ; la dimension de découverte doit être visible, pas un poisson isolé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Découverte d’animaux derrière la vitre d’un bassin avec animatrice et visiteurs regardant la faune ; apprentissage de cuisine avec enseignant et participants ; entraînement à la course. Les actions pédagogiques sont visibles, pas uniquement un animal ou une casserole isolés. Les participants sont des exemples génériques."
       }
     },
     {
@@ -49852,8 +50092,8 @@
       "semantic_sha256": "ec5aa0025d7e52a18237082cd36274be2b657a70c56237a9f7f36f9f2cf74e54",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-013-01.mp3",
       "audio_sha256": "d75a458cdd316768fdce9f24028bbd353799ebfd3a5b9192ef1fbcfae3067e58",
-      "status": "candidate_visual_review",
-      "reason": "Poste, théâtre et mairie ; façades et fonctions distinctes, sans horaire inventé.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -49880,8 +50120,24 @@
           "brief": "Représenter entièrement « Devant la mairie » pour « Où ont-elles rendez-vous ? ». Vérifier la transcription du support tcf-delf-actif-a2-013-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Poste, théâtre et mairie ; façades et fonctions distinctes, sans horaire inventé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-devant-poste.png",
+          "sha256": "4a6ca5b607944a6014f935c973c4f83843673b9552909a5cea45a4cdc674e293"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp",
+          "sha256": "99f986d751ea4f636f0254ed7d560de30c0b40c7461098d7fd291a124987cf02"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+          "sha256": "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -49899,6 +50155,10 @@
         "evidence_quote": "Rendez-vous devant la poste",
         "semantic_sha256": "ec5aa0025d7e52a18237082cd36274be2b657a70c56237a9f7f36f9f2cf74e54",
         "note": "Poste, théâtre et mairie ; façades et fonctions distinctes, sans horaire inventé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Façade et parvis de poste avec deux femmes qui se parlent dehors, façade du théâtre et façade de mairie. La vue intérieure de guichet postal n’a pas été retenue pour devant la poste. Porte et espace devant chaque bâtiment restent visibles, sans heure, date ou adresse."
       }
     },
     {
@@ -50699,8 +50959,8 @@
       "semantic_sha256": "a2e1cccd0ebcf5d1ecd3e3ab0db61c2b981d2d6f3b7cb8c161c1c86d9f75f280",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-015-01.mp3",
       "audio_sha256": "64fba8569ddca2e55dd1d14e48bb7ce50a8465999fc0d4bc79556680b31dd0e6",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -50727,8 +50987,24 @@
           "brief": "Représenter entièrement « Des biscuits et des fruits » pour « Quel repas emportent-ils ? ». Vérifier la transcription du support tcf-delf-actif-a2-015-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-sandwichs-chocolat.png",
+          "sha256": "8376f5e3c55e5235e3dda4394a4e1039ae7576039f358bc6b5df798de701f68b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-salade-fromage.png",
+          "sha256": "8bf148df5d5de06fb29b7733c6dd2d5ff18ad69905e0c400239534b36d4b8e74"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-biscuits-fruits.png",
+          "sha256": "d7419971d17e5c04aae4f66dbd5a65ce270be0b3ffb32705f7e1cccec0d73eaa"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -50739,7 +51015,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Sandwichs ET tablette de chocolat, salade ET fromage, biscuits ET fruits : chaque réponse est illustrée entièrement et les catégories concurrentes ne se mélangent pas. Les trois ensembles alimentaires sont présentés sur ivoire, sans emballage de marque, prix ou donnée chiffrée. Première génération avec famille et pique-nique écartée ; version d’objets seuls régénérée et relue."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-016-01#1",
@@ -51316,8 +51596,8 @@
       "semantic_sha256": "0251b3ef92ab9b94384b3fa72711d76c0cd8bf46d803ddc7cb1db18d033c49c7",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-017-01.mp3",
       "audio_sha256": "3abb440fcf3ad4a8daa1238c0ded9ed8b5dbaa77d9b1a84c37ad075b7c1ebe23",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -51344,8 +51624,24 @@
           "brief": "Représenter entièrement « Une soirée cinéma » pour « À quelle soirée veut-il inviter Gabin ? ». Vérifier la transcription du support tcf-delf-actif-a2-017-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-soiree-crepes.png",
+          "sha256": "0fccc0a75a5b0d9ccee6aa46d7fa910645f4d724f63d2bccd83f0efa47561360"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-soiree-pizza.png",
+          "sha256": "52f3d4cd5b2c4337a164a104bccde5ae02c52cc0a1aa3b360f19d87bebb0843d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -51356,7 +51652,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Soirée à domicile avec amis partageant des crêpes, autre soirée partageant une pizza, et séance de cinéma avec public devant l’écran. Les piles de crêpes ou pizzas isolées ont été écartées : les repas montrent aussi la réunion entre amis et le soir. Personnages variés, assises et regards cohérents, sans fête calendaire illustrée."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-017-01#5",
@@ -53011,8 +53311,8 @@
       "semantic_sha256": "7cd8580961318fc218a7d64048ecab7a3262693cd57fbc7c2fb3fe8b5e147f83",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-022-01.mp3",
       "audio_sha256": "61e1e4be47e325381ec15896c0e142d478f6986898d2edd295e185919e333db4",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -53053,8 +53353,24 @@
           "brief": "Représenter entièrement « À la poste » pour « Comment achète-t-elle les billets ? ». Vérifier la transcription du support tcf-delf-actif-a2-022-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-billets-internet.png",
+          "sha256": "0d3c45596142fd3a8973324ec5fdfbb5a22bf9b12a5f7aa62887b4ecdb6fabd1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-par-telephone.webp",
+          "sha256": "2e4da2ec038af189e650d9bc4dc7b31a657fbc120935b0567fa2bdfd185c5f78"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+          "sha256": "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -53065,7 +53381,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Achat de billets de château sur un site web visible à l’écran, appel téléphonique et guichet postal. L’ancienne vue d’achat au théâtre sur téléphone a été écartée pour éviter un lieu contradictoire ; le nouveau site ne porte ni prix, date ou donnée personnelle. La femme âgée est un exemple de la grand-mère, pas un portrait réel."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-022-01#5",
@@ -54185,8 +54505,8 @@
       "semantic_sha256": "3f9c4159f5992a8c494b687ea8b44f9a57280f52c0b74221204761eac45919f4",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-027.mp3",
       "audio_sha256": "96aca95fe832bc0c04bdc9ee8f42bb71c79a5ba7683220b341ee2c49f8b8d2b7",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -54227,8 +54547,24 @@
           "brief": "Représenter entièrement « Au lycée » pour « Pour aller dans quel lieu demande-t-on des moyens de transport ? ». Vérifier la transcription du support tcf-delf-actif-a2-027 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/plage.webp",
+          "sha256": "7a1140e47436cfe2fa63bfd37063b59659e06acf99f221f98e04a4645c6ec5a3"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/gare.webp",
+          "sha256": "bac7d09bbb1bd7edfbb483740c8bc06ab10eeb94c2ac085dc78f3aba2ae30fc8"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/bg/ecole.webp",
+          "sha256": "4fcf7175a3d93a6657389c0020a9e292e9d79f7884be9f5fed27c70c1faf91b6"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54239,7 +54575,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Plage, gare avec train et quais, établissement scolaire avec entrée : trois lieux complets. Le lycée est un exemple générique d’école secondaire, sans prétendre identifier un établissement de la source. Aucun moyen de transport précis n’est ajouté au corrigé de cette question de lieu."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-027#3",
@@ -54252,8 +54592,8 @@
       "semantic_sha256": "d8e25025896db65053bdab460b76d158515bf3cac90e1aeb96fd08272a26eff1",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-027.mp3",
       "audio_sha256": "96aca95fe832bc0c04bdc9ee8f42bb71c79a5ba7683220b341ee2c49f8b8d2b7",
-      "status": "candidate_visual_review",
-      "reason": "Ouverture de fenêtre, fermeture de porte et extinction de lumière ; mêmes types de scènes et gestes distincts.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -54280,8 +54620,24 @@
           "brief": "Représenter entièrement « Éteindre la lumière » pour « Quelle action est demandée à cause de la chaleur ? ». Vérifier la transcription du support tcf-delf-actif-a2-027 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Ouverture de fenêtre, fermeture de porte et extinction de lumière ; mêmes types de scènes et gestes distincts."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-ouvrir-fenetre.png",
+          "sha256": "21d9899186bfaec9fc5ec77f74009730cb78534cfa188e99a121e42e1b7247b1"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-fermer-porte.png",
+          "sha256": "c825d637bda94bcc06173955d11035127386f6aadf50920a208d838ad443a49f"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-eteindre-lumiere.png",
+          "sha256": "72771c890ba41a5b739c542a18b89173e2e406c53f055723816371d35e639b6e"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54299,6 +54655,10 @@
         "evidence_quote": "ouvrir la fenêtre",
         "semantic_sha256": "d8e25025896db65053bdab460b76d158515bf3cac90e1aeb96fd08272a26eff1",
         "note": "Ouverture de fenêtre, fermeture de porte et extinction de lumière ; mêmes types de scènes et gestes distincts."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Personne ouvrant un battant de fenêtre, personne fermant une porte et personne actionnant un interrupteur avec lampe éteinte. Les objets, gonds et états sont visibles et distincts ; pas une simple fenêtre ou porte isolée. Personnages génériques, sans attribuer un genre aux voix des phrases. Première version avec bulle de zoom écartée ; reprise en scène continue plus lisible, sans encart, lampe éteinte."
       }
     },
     {
@@ -54765,8 +55125,8 @@
       "semantic_sha256": "87079cb9a5d3371655d519b3e72528a24fc6faccb974b92eb8f77e998d2dab7e",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-028.mp3",
       "audio_sha256": "f88f04eaf57c57ad358968302532acde00f7df027af032fda2d9e0d12ddf025b",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -54800,8 +55160,24 @@
           "brief": "Représenter entièrement « Les cinémas » pour « Sur quels lieux porte la dernière question ? ». Vérifier la transcription du support tcf-delf-actif-a2-028 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp",
+          "sha256": "a9116d2cc17df59e118a080e9fb11d90b35c583b447abcbfcd8e8028717ce843"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-magasins-dessine.webp",
+          "sha256": "f7b8b80be3d7c1c55cea93a448f446c71851a3253491f008639d40af3d97c807"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/extension573-cinema-facade.webp",
+          "sha256": "6e8465f5f0037f68775a737f82ac89ad99b0f53038be6479cbe9ec8fd85e8914"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -54812,7 +55188,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Musée avec œuvres et visiteurs, galerie de plusieurs magasins et façade de cinéma. Ce sont des exemples des catégories de lieux au pluriel. Les phrases précédentes de la source sont relues pour confirmer que la dernière question porte bien sur les musées."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-029#1",
@@ -57746,8 +58126,8 @@
       "semantic_sha256": "1d5062bb97e7e44b203d143ffe6a988bf1dbd74e987ec743ad0adf4c24f154ae",
       "audio": "/lib/audio/tcf/co/delf-actif-a2/a2-032-03.mp3",
       "audio_sha256": "39a6d51e7573398c427093dc5f6969fc21a85a68f7bf4b2853291929a2eac61f",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Transcription complète, énoncé, trois réponses et corrigé relus ; trois images distinctes et adaptées.",
       "choices": [
         {
           "id": "a",
@@ -57787,8 +58167,24 @@
           "brief": "Représenter entièrement « Au bureau » pour « Où le client veut-il porter ce vêtement ? ». Vérifier la transcription du support tcf-delf-actif-a2-032-03 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/co/bg/montagne.webp",
+          "sha256": "39613dde49c00c2a888fc53055daf7a227950dc3683467cca9fc5f080ae5d344"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/co/bg/plage.webp",
+          "sha256": "7a1140e47436cfe2fa63bfd37063b59659e06acf99f221f98e04a4645c6ec5a3"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/bg/bureau.webp",
+          "sha256": "5bb7e121a9087ed6e90e14c7111fdad9d055e254aa5be0f666143546c5fee56f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -57799,7 +58195,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lot20-a2-suite-20261121.json",
+        "note": "Paysage de montagne, plage et bureau de travail intérieur. La question vise le lieu où porter le vêtement, sans demander de montrer un vêtement ou une matière inventée ; les lieux génériques suffisent. La montagne ne se réduit pas à une route ou au magasin de la conversation."
+      }
     },
     {
       "key": "tcf-delf-actif-a2-032-03#5",
