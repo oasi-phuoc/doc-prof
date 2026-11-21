@@ -1,0 +1,241 @@
+{
+  "date": "2026-11-21",
+  "baseline_commit": "62a5f80df908a61e4318fdee4b956f2c7e63fd11",
+  "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+  "human_audio_listening_performed": false,
+  "images": [
+    {
+      "key": "21-cinema-assis",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+      "label": "S’asseoir au cinéma",
+      "action": "replace",
+      "note": "Scène entièrement redessinée de profil : écran à gauche, tous les fauteuils et les deux spectateurs orientés vers la gauche, dossiers à droite des assises. La femme fléchit les genoux pour s’asseoir, pieds et siège entiers.",
+      "prompt": "Créer de zéro une nouvelle scène de cinéma pour illustrer S’ASSEOIR. Les images1 et2 sont les références prioritaires du style peint TCF : visages finement dessinés, volumes doux et mats, contours délicats, couleurs naturelles, décor entièrement peint. L'image3 sert seulement pour les couleurs du cinéma et la tenue de la femme ; ne pas reprendre son cadrage ou la géométrie des sièges. Nouvelle vue LATÉRALE de la salle. Un écran blanc est visible tout à GAUCHE. TOUS les fauteuils, y compris celui de la femme au premier plan, sont STRICTEMENT orientés dans la même direction, vers l’écran À GAUCHE. On les voit de profil ou léger trois quarts latéral : dossiers à DROITE des assises, assises qui avancent vers la GAUCHE, pieds et genoux des spectateurs dirigés à GAUCHE. Aucun fauteuil face à la caméra ou tourné dans une autre direction. Au premier plan à droite, une femme noire adulte cheveux courts bouclés, pull bleu et pantalon beige, est montrée DE PROFIL REGARDANT À GAUCHE, en train de s'asseoir sur son fauteuil bordeaux. Son bassin descend devant le dossier situé à sa droite, ses genoux fléchis pointent à gauche, ses pieds reposent sur le sol à gauche de l’assise. Les deux accoudoirs appartiennent au même fauteuil et sont parallèles à l’assise. Corps, tête et chaussures visibles en entier. Un homme gris est déjà assis dans une rangée un peu plus loin, dans LA MÊME ORIENTATION À GAUCHE. Rangées de fauteuils cohérentes et allée dégagée. Le geste de la femme est réellement s'asseoir, pas se lever ou marcher. Murs beige clair, fauteuils mats bordeaux, sol gris taupe et lumière diffuse uniforme. Pas de peau brillante, effet3D, texture photographique ou gros contours noirs. Une seule illustration paysage4:3 exact, idéalement1448x1086, aucun texte, chiffre, prix, date, logo, horloge, flèche ou cadre.",
+      "before_sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
+      "sha256": "542c1f004683a9eed246d8bb9d58380587ebdc7d9728acba57cadf4ce2cf4a10",
+      "width": 1448,
+      "height": 1086,
+      "original_generated_bytes_preserved": true
+    },
+    {
+      "key": "21-cinema-debout",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
+      "label": "Se lever au cinéma",
+      "action": "replace",
+      "note": "Nouvelle composition : femme debout dans une large allée latérale dégagée ; sièges sur le côté gauche orientés vers l’écran, aucun fauteuil directement derrière elle ni autour de ses jambes.",
+      "prompt": "Créer une scène entièrement nouvelle d'une personne DEBOUT dans un cinéma, cohérente avec les couleurs et la femme de la troisième image. Les deux premières images sont les références du style peint pédagogique TCF : visages aux traits délicats, modelés doux et mats, contours fins, décors dessinés, sans rendu3D ou photographie. Une large vue de trois quarts LATÉRALE montre l'écran blanc tout à gauche, des rangées de fauteuils bordeaux tournés vers la gauche et quelques spectateurs variés assis à gauche de l'image. Une grande ALLÉE LATÉRALE dégagée occupe le côté droit et le premier plan. Dans cette allée, à droite au premier plan, une femme noire adulte cheveux courts bouclés, pull bleu, pantalon beige et baskets claires est COMPLÈTEMENT DEBOUT ET IMMOBILE, regard vers l'écran à gauche, jambes droites, deux pieds au sol, bras détendus. Corps entier. AUCUN fauteuil, dossier, assise ou accoudoir ne se trouve directement derrière elle ni près de ses jambes. Montrer beaucoup de sol libre autour d'elle. Tous les sièges sont regroupés sur le côté gauche et sont orientés vers l'écran, sans siège tourné vers la caméra ou vers le dos de la salle. Un homme gris est assis parmi les spectateurs à gauche. Les fauteuils sont des places individuelles cohérentes avec dossier, assise et deux accoudoirs, pieds au sol. Murs beige clair, sol gris taupe, lumière diffuse uniforme et matières mates, mêmes palette et dessin que la troisième référence. Pas de porte de sortie visible et aucune marche : elle est simplement debout. Une illustration native paysage4:3 exact, idéalement1448x1086. Aucun texte, chiffre, date, prix, logo, horloge, flèche ou cadre.",
+      "before_sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e",
+      "sha256": "abe4645f31f1dff29deab57c149edef7c8eb2aeb14dc1fd0aa0bb3c344920b0e",
+      "width": 1448,
+      "height": 1086,
+      "original_generated_bytes_preserved": true
+    },
+    {
+      "key": "21-hauteur-deux-pieds",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
+      "label": "Le saut en hauteur",
+      "action": "replace",
+      "note": "Deux jambes et deux pieds au premier plan. La barre rouge est masquée séparément aux deux croisements ; elle ne recouvre ni le premier membre ni le second. Athlète, deux supports et tapis entiers.",
+      "prompt": "Corriger l’image1 de saut en hauteur. IMPORTANT : LES DEUX JAMBES ET LES DEUX PIEDS sont DU MÊME CÔTÉ DE LA BARRE, AU PREMIER PLAN DEVANT ELLE. Pas un pied devant et l’autre derrière. Garder le corps et sa pose, mais placer la barre rouge DERRIÈRE l’ensemble des deux jambes, chaussettes et chaussures. Là où elle croise la jambe et le pied de GAUCHE dans l’image, la barre doit disparaître derrière leur silhouette. Là où elle croise la jambe et le pied de DROITE dans l’image, elle doit ÉGALEMENT disparaître derrière leur silhouette. Il y a donc DEUX interruptions distinctes de la barre rouge dues aux deux membres au premier plan. Entre ces deux jambes, un petit segment rouge de la barre peut rester visible dans le vide. AUCUNE portion rouge ne doit être dessinée PAR-DESSUS une jambe, une chaussette ou une chaussure. Les deux pieds doivent être nettement visibles entiers et du même côté, pas chevaucher l’un derrière l’autre : exactement deux jambes et deux pieds anatomiquement naturels. Préserver l’athlète complète, la barre horizontale posée entre ses deux poteaux, le tapis bleu, le coach et le terrain. Conserver le traitement peint doux et mat des images2 et3, les détails des vêtements, les visages, les couleurs et le format paysage4:3 exact idéalement1448x1086. Sans texte, chiffre, date, prix, mesure, logo ou flèche. L’erreur à éviter absolument : une barre rouge recouvrant encore le tibia ou la cheville du second pied. Les DEUX jambes occultent la barre.",
+      "before_sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853",
+      "sha256": "90b254d03ec43c39fad9f9c48a8cddb91d5e46fb7e0ea8e4c3f2e0acf251d32a",
+      "width": 1448,
+      "height": 1086,
+      "original_generated_bytes_preserved": true
+    },
+    {
+      "key": "21-document-carte",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-document-carte-membre.png",
+      "label": "Une carte de membre",
+      "action": "add",
+      "note": "Carte de membre générique, entière, sans bibliothèque ou service inventé ; titre de catégorie et champs vides, sans identité, date ni montant.",
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Documents et démarches"
+      ],
+      "prompt": "UNE illustration pédagogique d’objet isolé, paysage4:3 exact idéalement1448x1086, style peint doux et détaillé des boissons de la référence1. Une carte de membre générique de club, bleue claire et mate, rectangulaire à coins arrondis, entièrement visible au centre avec marges autour. Très léger trois quarts. Seul texte lisible en haut : CARTE DE MEMBRE. Petit pictogramme de trois silhouettes pour l’adhésion, trois traits de champs vides. Aucun nom réel, photo, nombre, date, montant, adresse, code, logo, livre, bibliothèque ou transport. Ne pas inventer une carte d’un service spécifique. Un seul objet, sans main ni portefeuille. Fond ivoire clair, lisse et presque uniforme exactement comme la référence1, repère #FDF2E1 ; aucune texture de papier ou de toile dans les zones vides, pas de vignettage. Petites ombres de contact peintes et contours délicats, pas de rendu3D ou photographie. La référence2 est le choix billets du même trio : garder des matières et un fond compatibles. Pas de cadre ni de coche.",
+      "before_sha256": null,
+      "sha256": "a4166d54123c2162663af9c174a0659002b401b32681919119858be5f4f411ef",
+      "width": 1448,
+      "height": 1086,
+      "original_generated_bytes_preserved": true
+    },
+    {
+      "key": "21-document-ordonnance",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+      "label": "Une ordonnance",
+      "action": "add",
+      "note": "Ordonnance isolée, document entier avec titre et pictogramme médical, champs vides. Aucune dose, identité, date ou somme.",
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Documents et démarches",
+        "Santé"
+      ],
+      "prompt": "UNE illustration pédagogique d'une ordonnance médicale comme objet isolé, paysage4:3 exact idéalement1448x1086, style peint doux de la référence1 boissons. Au centre, une feuille blanche ivoire format vertical entière, légèrement inclinée avec de bonnes marges. Seul texte lisible : ORDONNANCE, correctement écrit en haut ; petit pictogramme de stéthoscope et petite croix médicale bleue en dessous, puis quatre traits gris de lignes vides. Aucun médicament, nom réel, traitement, dose, nombre, date, mois, jour, montant, logo ou code. Un seul document sans stylo, carte, mains, médecin ni scène de consultation. Bords fins et très légère texture peinte réservée au papier, ombre de contact douce. Fond ivoire clair parfaitement lisse presque uniforme comme la référence1, repère #FDF2E1, sans grain de papier, toile, vignette ou effet de studio dans les zones vides. La référence2 est le choix billets du même trio, garder un fond et des matières compatibles. L'ordonnance doit être immédiatement identifiable comme document médical. Pas de rendu3D, photographie, gros contour noir, cadre ou coche.",
+      "before_sha256": null,
+      "sha256": "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+      "width": 1448,
+      "height": 1086,
+      "original_generated_bytes_preserved": true
+    }
+  ],
+  "trios": [
+    {
+      "key": "tcf-delf-actif-a1-011-06#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-011-06",
+      "question": {
+        "enonce": "Que demande-t-on aux spectateurs ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "De s’asseoir",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "De sortir",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "De se lever",
+            "correct": false
+          }
+        ],
+        "written_model": "De s’asseoir"
+      },
+      "source": "Mesdames et messieurs, le film commence dans 5 minutes. Asseyez-vous !",
+      "source_sha256": "67087415e8f7243c668bad3edcddc87638361ed04e5e48616283dd546305346e",
+      "semantic_sha256": "5b5e73b148bf1f1ab6cbdfa287e7fb9e143bb6acf43c3c0e3ee775f23823362c",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-06.mp3",
+      "audio_sha256": "db78f92ab2a2938f76f10b83e9a791c2202e412f527c63caf3de4b6d5506d857",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cinema-sortir.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png"
+      ],
+      "image_sha256": [
+        "542c1f004683a9eed246d8bb9d58380587ebdc7d9728acba57cadf4ce2cf4a10",
+        "99f991eefa39df4af6622f543051fbf18dc9296a4fa108ac3b68c54f4c27e885",
+        "abe4645f31f1dff29deab57c149edef7c8eb2aeb14dc1fd0aa0bb3c344920b0e"
+      ],
+      "reason": "Énoncé, choix et bonne réponse relus avec la transcription complète.",
+      "visual_review": "Les trois choix ont été réexaminés avec la transcription complète. Scène assise de profil : tous les fauteuils vers le même écran à gauche. Scène debout dans une allée vide, sans fauteuil derrière la femme. Les personnages illustrent les gestes et ne prétendent pas représenter la voix de l’annonce."
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-04-03#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-051-04-03",
+      "question": {
+        "enonce": "Quel sport l’élève découvre-t-il ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Le saut en hauteur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le saut en longueur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le lancer de poids",
+            "correct": false
+          }
+        ],
+        "written_model": "Le saut en hauteur"
+      },
+      "source": "Tu aimes le saut en hauteur ? C’est ma première fois ! Je fais du foot, du basket, mais pas de saut en hauteur. Ne t’inquiète pas ! Tu vas aimer!",
+      "source_sha256": "5d28a5b3975f87bf6abb9927133277e420b0a0974540963614439e5d0298b011",
+      "semantic_sha256": "6a5e7a06ce6715c0f078101e1b93263b66cf8bdfc75b5fce0a42f43770e3c529",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
+      "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-longueur.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-poids.png"
+      ],
+      "image_sha256": [
+        "90b254d03ec43c39fad9f9c48a8cddb91d5e46fb7e0ea8e4c3f2e0acf251d32a",
+        "5c6e42022594f80124df39a6fd431daa8b59164975e4da7ae42f847470101c22",
+        "135951d4fe4c30a9a0a3347b3c09bd2f1bf5f6dbd0e8340931a75cb09cee5d2f"
+      ],
+      "reason": "Énoncé, choix et bonne réponse relus avec la transcription complète.",
+      "visual_review": "Les trois choix ont été réexaminés avec la transcription complète. Les deux jambes et les deux pieds passent devant la barre, avec deux occultations distinctes. Les disciplines sont des exemples illustrés et ne prétendent pas identifier les locuteurs du dialogue."
+    },
+    {
+      "key": "tcf-delf-actif-a1-020-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-020-01",
+      "question": {
+        "enonce": "Quel document Maeva doit-elle apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Les billets",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une carte de membre",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une ordonnance",
+            "correct": false
+          }
+        ],
+        "written_model": "Les billets"
+      },
+      "source": "Maeva, depuis jeudi je suis chez ma tante qui habite derrière la boulangerie. Pour notre soirée de samedi viens me chercher à 18h00 chez-elle pour arriver en avance à la salle de concert. Apporte les billets. Il faut arriver au moins à 19h00.",
+      "source_sha256": "f825454868502c81b466cbbdfc8212fb381adbd0c730cb40ffebe47ff3bc197d",
+      "semantic_sha256": "222e33fd740f943afac05004cb903ee8ce8f0e87621124f159e95c3566caaf47",
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-020-01.mp3",
+      "audio_sha256": "498ae51d5e334051b91d7fc5d85c05c91d18e1cb4b63d1efc68e06cd12d3e89c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-carte-membre.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png"
+      ],
+      "image_sha256": [
+        "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115",
+        "a4166d54123c2162663af9c174a0659002b401b32681919119858be5f4f411ef",
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f"
+      ],
+      "reason": "Énoncé, choix et bonne réponse relus avec la transcription complète.",
+      "visual_review": "La sortie est à la salle de concert et le message demande Apporte les billets. Deux billets vierges représentent le pluriel, sans imposer une quantité annoncée. Carte de membre générique et ordonnance isolée ; titres de catégorie seulement, aucune date, identité, dose ou somme. Fonds ivoire comparés à la référence boissons."
+    }
+  ],
+  "summary": {
+    "images_replaced": 3,
+    "new_images": 2,
+    "reused_image_usages": 1,
+    "newly_activated_trios": 1,
+    "active_delf_trios": 400,
+    "delf_candidates_remaining": 346,
+    "gallery_entries": 7388
+  },
+  "bank_comparison": "Un seul format qcm_image ajouté pour les documents ; tous les autres champs des banques, textes, réponses, transcriptions et MP3 sont conservés.",
+  "verification": {
+    "browser_report": "docs/tcf/cinema-athletisme-documents-20261121-browser.json",
+    "trios_verified": 3,
+    "images_loaded": 9,
+    "native_aspect_ratio": "4:3",
+    "text_image_toggle": true,
+    "student_answers_hidden": true,
+    "only_new_document_qcm_image_added": true,
+    "all_question_texts_answers_transcripts_and_audio_hashes_unchanged": true,
+    "cinema_orientation_review": "Écran à gauche ; fauteuils, dossiers, assises, genoux et pieds dans la même direction. Choix debout dans une allée sans fauteuil derrière.",
+    "jump_occlusion_review": "Deux membres au premier plan : deux interruptions distinctes de la barre rouge, derrière les deux jambes et pieds.",
+    "gallery_entries": 7388,
+    "scope": "Contrôles du lot et comparaison au parent publié ; aucune nouvelle écoute humaine revendiquée."
+  }
+}

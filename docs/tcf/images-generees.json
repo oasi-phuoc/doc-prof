@@ -116330,15 +116330,15 @@
       "id": "tcf-cinema-asseoir-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
       "label": "S’asseoir au cinéma",
-      "sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
-      "source_sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
-      "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
-      "bytes": 2362599,
+      "sha256": "542c1f004683a9eed246d8bb9d58380587ebdc7d9728acba57cadf4ce2cf4a10",
+      "source_sha256": "542c1f004683a9eed246d8bb9d58380587ebdc7d9728acba57cadf4ce2cf4a10",
+      "source_png": "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
+      "bytes": 2336196,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "REFAIRE entièrement le style de l'image 3 (femme qui s'assoit au cinéma). Les images 1 et 2 sont LES RÉFÉRENCES DE STYLE PRIORITAIRES : illustrations de cours de musique et de photographie. Retrouver précisément leur dessin peint pédagogique, leurs visages aux traits illustrés, modelés souples et mats, bords délicats, proportions naturelles légèrement stylisées, couleurs douces modérément saturées. Repeindre aussi TOUT le cinéma et les vêtements avec le même degré de simplification que le mobilier des images1 et2. Supprimer l'aspect rendu3D, les brillances de peau, les muscles marqués, le microrelief des tissus et du tapis, les ombres noires et l'éclairage dramatique orange. Salle de cinéma éclairée doucement et uniformément : fauteuils bordeaux mats, murs beige chaud, écran blanc visible à gauche. Conserver le contenu pédagogique de l'image3 : femme noire adulte cheveux courts en pull bleu et pantalon beige en train de S'ASSEOIR, bassin près de l'assise et genoux fléchis ; spectateur gris déjà assis à côté. Corps entiers, gestes naturels et fauteuils entiers, une seule femme principale, deux bras et deux jambes. Nouveaux visages distincts des personnes des références1 et2. Pas de gros contours noirs, pas de dessin enfantin. Une seule image paysage4:3 exact, idéalement1448x1086. Aucun texte, date, prix, chiffre, horloge ou cadre. Le résultat doit paraître une autre scène du même illustrateur que les images1 et2, et non une recoloration de l'image3.",
+      "prompt": "Créer de zéro une nouvelle scène de cinéma pour illustrer S’ASSEOIR. Les images1 et2 sont les références prioritaires du style peint TCF : visages finement dessinés, volumes doux et mats, contours délicats, couleurs naturelles, décor entièrement peint. L'image3 sert seulement pour les couleurs du cinéma et la tenue de la femme ; ne pas reprendre son cadrage ou la géométrie des sièges. Nouvelle vue LATÉRALE de la salle. Un écran blanc est visible tout à GAUCHE. TOUS les fauteuils, y compris celui de la femme au premier plan, sont STRICTEMENT orientés dans la même direction, vers l’écran À GAUCHE. On les voit de profil ou léger trois quarts latéral : dossiers à DROITE des assises, assises qui avancent vers la GAUCHE, pieds et genoux des spectateurs dirigés à GAUCHE. Aucun fauteuil face à la caméra ou tourné dans une autre direction. Au premier plan à droite, une femme noire adulte cheveux courts bouclés, pull bleu et pantalon beige, est montrée DE PROFIL REGARDANT À GAUCHE, en train de s'asseoir sur son fauteuil bordeaux. Son bassin descend devant le dossier situé à sa droite, ses genoux fléchis pointent à gauche, ses pieds reposent sur le sol à gauche de l’assise. Les deux accoudoirs appartiennent au même fauteuil et sont parallèles à l’assise. Corps, tête et chaussures visibles en entier. Un homme gris est déjà assis dans une rangée un peu plus loin, dans LA MÊME ORIENTATION À GAUCHE. Rangées de fauteuils cohérentes et allée dégagée. Le geste de la femme est réellement s'asseoir, pas se lever ou marcher. Murs beige clair, fauteuils mats bordeaux, sol gris taupe et lumière diffuse uniforme. Pas de peau brillante, effet3D, texture photographique ou gros contours noirs. Une seule illustration paysage4:3 exact, idéalement1448x1086, aucun texte, chiffre, prix, date, logo, horloge, flèche ou cadre.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116347,7 +116347,7 @@
         "Cinéma et spectacles",
         "Actions et gestes"
       ],
-      "batch": "reprise-style-cinema-athletisme-20261120",
+      "batch": "cinema-athletisme-documents-20261121",
       "style_review": {
         "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
@@ -116355,7 +116355,7 @@
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
         ],
-        "note": "Lumière diffuse et murs beige clair ; rendu mat des visages, tissus, tapis et fauteuils. Femme fléchie vers une assise, pieds au sol, autre spectateur assis."
+        "note": "Scène entièrement redessinée de profil : écran à gauche, tous les fauteuils et les deux spectateurs orientés vers la gauche, dossiers à droite des assises. La femme fléchit les genoux pour s’asseoir, pieds et siège entiers."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116365,12 +116365,17 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Lumière diffuse et murs beige clair ; rendu mat des visages, tissus, tapis et fauteuils. Femme fléchie vers une assise, pieds au sol, autre spectateur assis.",
+      "review_note": "Scène entièrement redessinée de profil : écran à gauche, tous les fauteuils et les deux spectateurs orientés vers la gauche, dossiers à droite des assises. La femme fléchit les genoux pour s’asseoir, pieds et siège entiers.",
       "revisions": [
         {
           "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
           "sha256": "a7251be8129881ccc6e0a49f22b27f39b9f63167aa04179d8f5b0e0de58ed047",
           "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        },
+        {
+          "commit": "62a5f80df908a61e4318fdee4b956f2c7e63fd11",
+          "sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28",
+          "reason": "Scène entièrement redessinée de profil : écran à gauche, tous les fauteuils et les deux spectateurs orientés vers la gauche, dossiers à droite des assises. La femme fléchit les genoux pour s’asseoir, pieds et siège entiers."
         }
       ],
       "generation_inputs": [
@@ -116467,15 +116472,15 @@
       "id": "tcf-cinema-lever-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
       "label": "Se lever au cinéma",
-      "sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e",
-      "source_sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e",
-      "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
-      "bytes": 2243027,
+      "sha256": "abe4645f31f1dff29deab57c149edef7c8eb2aeb14dc1fd0aa0bb3c344920b0e",
+      "source_sha256": "abe4645f31f1dff29deab57c149edef7c8eb2aeb14dc1fd0aa0bb3c344920b0e",
+      "source_png": "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
+      "bytes": 2303387,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "Refaire la troisième réponse d'un QCM « se lever au cinéma », en reconstruisant correctement la géométrie du fauteuil. Les images1 et2 sont les références prioritaires du style peint pédagogique TCF ; l'image3 donne la femme, les couleurs et la salle cohérente avec les deux autres choix. Créer une NOUVELLE composition physique : femme noire adulte cheveux courts en pull bleu, pantalon beige et baskets claires, complètement debout immobile, corps entier et pieds à plat sur le SOL de l'espace libre devant sa place. Elle est à environ trente centimètres DEVANT le bord avant de son fauteuil, aucun de ses membres ne touche le siège ni ne traverse un accoudoir. Placer son fauteuil unique nettement DERRIÈRE et un peu À DROITE d'elle afin qu'il soit bien visible : dossier étroit pour une seule personne, DEUX accoudoirs reliés aux deux côtés du même siège, et assise de cinéma rabattable maintenant RELEVÉE verticalement contre le dossier parce que la personne s’est levée. Le dossier, les deux accoudoirs et le piètement forment UN seul fauteuil cohérent ; pas de banquette, pas d’assise flottante ni d’accoudoir au milieu du corps. Un spectateur gris reste assis sur le fauteuil voisin, orienté vers l’écran à gauche comme tous les sièges. Les sièges des rangées arrière sont simples et alignés, et l’espace devant la femme reste libre. Vue assez latérale et large pour comprendre la place, le fauteuil et l'espace des jambes. Elle regarde l'écran, bras détendus et jambes droites, elle ne sort pas. Reproduire le dessin peint doux des images1 et2 pour TOUT : visages finement dessinés, modelé mat, contours délicats, tissus sans microrelief, murs beige clair et fauteuils bordeaux mats. Lumière diffuse uniforme sans effet3D ni photo, pas de gros contours noirs. Une illustration unique paysage4:3 exact, idéalement1448x1086. Aucun texte, chiffre, flèche, logo, date, prix ou horloge.",
+      "prompt": "Créer une scène entièrement nouvelle d'une personne DEBOUT dans un cinéma, cohérente avec les couleurs et la femme de la troisième image. Les deux premières images sont les références du style peint pédagogique TCF : visages aux traits délicats, modelés doux et mats, contours fins, décors dessinés, sans rendu3D ou photographie. Une large vue de trois quarts LATÉRALE montre l'écran blanc tout à gauche, des rangées de fauteuils bordeaux tournés vers la gauche et quelques spectateurs variés assis à gauche de l'image. Une grande ALLÉE LATÉRALE dégagée occupe le côté droit et le premier plan. Dans cette allée, à droite au premier plan, une femme noire adulte cheveux courts bouclés, pull bleu, pantalon beige et baskets claires est COMPLÈTEMENT DEBOUT ET IMMOBILE, regard vers l'écran à gauche, jambes droites, deux pieds au sol, bras détendus. Corps entier. AUCUN fauteuil, dossier, assise ou accoudoir ne se trouve directement derrière elle ni près de ses jambes. Montrer beaucoup de sol libre autour d'elle. Tous les sièges sont regroupés sur le côté gauche et sont orientés vers l'écran, sans siège tourné vers la caméra ou vers le dos de la salle. Un homme gris est assis parmi les spectateurs à gauche. Les fauteuils sont des places individuelles cohérentes avec dossier, assise et deux accoudoirs, pieds au sol. Murs beige clair, sol gris taupe, lumière diffuse uniforme et matières mates, mêmes palette et dessin que la troisième référence. Pas de porte de sortie visible et aucune marche : elle est simplement debout. Une illustration native paysage4:3 exact, idéalement1448x1086. Aucun texte, chiffre, date, prix, logo, horloge, flèche ou cadre.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116484,7 +116489,7 @@
         "Cinéma et spectacles",
         "Actions et gestes"
       ],
-      "batch": "reprise-style-cinema-athletisme-20261120",
+      "batch": "cinema-athletisme-documents-20261121",
       "style_review": {
         "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
@@ -116492,7 +116497,7 @@
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
         ],
-        "note": "Reconstruction après remarque utilisateur : une place individuelle, dossier et deux accoudoirs cohérents, assise rabattable relevée ; femme debout sur le sol dans l’espace libre devant, sans traverser le siège. Lumière diffuse, couleurs et matières cohérentes avec les autres choix."
+        "note": "Nouvelle composition : femme debout dans une large allée latérale dégagée ; sièges sur le côté gauche orientés vers l’écran, aucun fauteuil directement derrière elle ni autour de ses jambes."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116502,12 +116507,17 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Reconstruction après remarque utilisateur : une place individuelle, dossier et deux accoudoirs cohérents, assise rabattable relevée ; femme debout sur le sol dans l’espace libre devant, sans traverser le siège. Lumière diffuse, couleurs et matières cohérentes avec les autres choix.",
+      "review_note": "Nouvelle composition : femme debout dans une large allée latérale dégagée ; sièges sur le côté gauche orientés vers l’écran, aucun fauteuil directement derrière elle ni autour de ses jambes.",
       "revisions": [
         {
           "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
           "sha256": "649bcf55942a032e19706a6e784db28d463c05e00c3343b452a5f3e2fc8f2ac4",
           "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        },
+        {
+          "commit": "62a5f80df908a61e4318fdee4b956f2c7e63fd11",
+          "sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e",
+          "reason": "Nouvelle composition : femme debout dans une large allée latérale dégagée ; sièges sur le côté gauche orientés vers l’écran, aucun fauteuil directement derrière elle ni autour de ses jambes."
         }
       ],
       "generation_inputs": [
@@ -116532,15 +116542,15 @@
       "id": "tcf-athle-hauteur-20261120",
       "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
       "label": "Le saut en hauteur",
-      "sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853",
-      "source_sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853",
-      "source_png": "/tmp/scene-publish-overlay/public/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
-      "bytes": 2641000,
+      "sha256": "90b254d03ec43c39fad9f9c48a8cddb91d5e46fb7e0ea8e4c3f2e0acf251d32a",
+      "source_sha256": "90b254d03ec43c39fad9f9c48a8cddb91d5e46fb7e0ea8e4c3f2e0acf251d32a",
+      "source_png": "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
+      "bytes": 2461783,
       "width": 1448,
       "height": 1086,
       "aspect_ratio": "4:3",
       "status": "visually_reviewed",
-      "prompt": "REPEINDRE ENTIÈREMENT l'image3 de saut en hauteur dans le style exact des références1 et2 (club musique et club photo), qui sont prioritaires pour le graphisme. Illustration pédagogique peinte douce et détaillée, traits fins délicats, visages naturellement illustrés, ombres diffuses, couleurs naturelles modérées, proportions souples. Simplifier les matières et les volumes des peaux, du tapis, des arbres, des vêtements et des poteaux comme les meubles et personnes des références1 et2. Éliminer la peau brillante et huilée, le relief musculaire appuyé, les reflets plastiques du tapis, le contraste photographique et tout rendu3D ; ne pas convertir en dessin enfantin ou en gros contours noirs. Conserver le sujet complet et reconnaissable : une jeune athlète à cheveux noirs attachés, haut rouge mat et short bleu marine franchit une barre horizontale rouge entre deux poteaux, dos tourné vers un grand tapis de réception bleu. Deux bras, deux jambes et anatomie naturelle en position de saut ; barre et tapis entiers. Entraîneur adulte à peau brune aux cheveux gris en survêtement vert observant à côté, hors de la réception. Terrain d’athlétisme et pelouse en lumière douce uniforme, arbres peints sans arrière-plan photographique. Conserver la diversité des personnages, leurs vêtements et les équipements identifiant le saut en hauteur ; ne pas copier les personnes des références1 et2. UNE image native4:3 paysage, idéalement1448x1086. Aucun texte, chiffre, prix, date, graduation, horloge, flèche, légende ou cadre.",
+      "prompt": "Corriger l’image1 de saut en hauteur. IMPORTANT : LES DEUX JAMBES ET LES DEUX PIEDS sont DU MÊME CÔTÉ DE LA BARRE, AU PREMIER PLAN DEVANT ELLE. Pas un pied devant et l’autre derrière. Garder le corps et sa pose, mais placer la barre rouge DERRIÈRE l’ensemble des deux jambes, chaussettes et chaussures. Là où elle croise la jambe et le pied de GAUCHE dans l’image, la barre doit disparaître derrière leur silhouette. Là où elle croise la jambe et le pied de DROITE dans l’image, elle doit ÉGALEMENT disparaître derrière leur silhouette. Il y a donc DEUX interruptions distinctes de la barre rouge dues aux deux membres au premier plan. Entre ces deux jambes, un petit segment rouge de la barre peut rester visible dans le vide. AUCUNE portion rouge ne doit être dessinée PAR-DESSUS une jambe, une chaussette ou une chaussure. Les deux pieds doivent être nettement visibles entiers et du même côté, pas chevaucher l’un derrière l’autre : exactement deux jambes et deux pieds anatomiquement naturels. Préserver l’athlète complète, la barre horizontale posée entre ses deux poteaux, le tapis bleu, le coach et le terrain. Conserver le traitement peint doux et mat des images2 et3, les détails des vêtements, les visages, les couleurs et le format paysage4:3 exact idéalement1448x1086. Sans texte, chiffre, date, prix, mesure, logo ou flèche. L’erreur à éviter absolument : une barre rouge recouvrant encore le tibia ou la cheville du second pied. Les DEUX jambes occultent la barre.",
       "original_bytes_preserved": true,
       "gallery_types": [
         "Scénario"
@@ -116549,7 +116559,7 @@
         "Sports et loisirs",
         "Athlétisme"
       ],
-      "batch": "reprise-style-cinema-athletisme-20261120",
+      "batch": "cinema-athletisme-documents-20261121",
       "style_review": {
         "status": "aligned_after_redraw",
         "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
@@ -116557,7 +116567,7 @@
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
           "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
         ],
-        "note": "Peau et tapis mats, contraste adouci, arbres et vêtements peints. Barre, supports, tapis et corps entiers ; geste de franchissement conservé."
+        "note": "Deux jambes et deux pieds au premier plan. La barre rouge est masquée séparément aux deux croisements ; elle ne recouvre ni le premier membre ni le second. Athlète, deux supports et tapis entiers."
       },
       "reference_images": [
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
@@ -116567,12 +116577,17 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
         "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
       ],
-      "review_note": "Peau et tapis mats, contraste adouci, arbres et vêtements peints. Barre, supports, tapis et corps entiers ; geste de franchissement conservé.",
+      "review_note": "Deux jambes et deux pieds au premier plan. La barre rouge est masquée séparément aux deux croisements ; elle ne recouvre ni le premier membre ni le second. Athlète, deux supports et tapis entiers.",
       "revisions": [
         {
           "commit": "3df7466ee6f29f5e80bb15fec163a946ea5374cd",
           "sha256": "c2e05d9d4e1736b861adab5c751e5835c0af342c5cac24e3f502e07a92b8b76a",
           "reason": "Version remplacée à la demande de l’utilisateur pour harmoniser le rendu graphique."
+        },
+        {
+          "commit": "62a5f80df908a61e4318fdee4b956f2c7e63fd11",
+          "sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853",
+          "reason": "Deux jambes et deux pieds au premier plan. La barre rouge est masquée séparément aux deux croisements ; elle ne recouvre ni le premier membre ni le second. Athlète, deux supports et tapis entiers."
         }
       ],
       "generation_inputs": [
@@ -116725,6 +116740,81 @@
           "role": "composition_before_repaint"
         }
       ]
+    },
+    {
+      "id": "21-document-carte",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-document-carte-membre.png",
+      "label": "Une carte de membre",
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Documents et démarches"
+      ],
+      "sha256": "a4166d54123c2162663af9c174a0659002b401b32681919119858be5f4f411ef",
+      "source_sha256": "a4166d54123c2162663af9c174a0659002b401b32681919119858be5f4f411ef",
+      "source_png": "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-a1-document-carte-membre.png",
+      "bytes": 1386377,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "prompt": "UNE illustration pédagogique d’objet isolé, paysage4:3 exact idéalement1448x1086, style peint doux et détaillé des boissons de la référence1. Une carte de membre générique de club, bleue claire et mate, rectangulaire à coins arrondis, entièrement visible au centre avec marges autour. Très léger trois quarts. Seul texte lisible en haut : CARTE DE MEMBRE. Petit pictogramme de trois silhouettes pour l’adhésion, trois traits de champs vides. Aucun nom réel, photo, nombre, date, montant, adresse, code, logo, livre, bibliothèque ou transport. Ne pas inventer une carte d’un service spécifique. Un seul objet, sans main ni portefeuille. Fond ivoire clair, lisse et presque uniforme exactement comme la référence1, repère #FDF2E1 ; aucune texture de papier ou de toile dans les zones vides, pas de vignettage. Petites ombres de contact peintes et contours délicats, pas de rendu3D ou photographie. La référence2 est le choix billets du même trio : garder des matières et un fond compatibles. Pas de cadre ni de coche.",
+      "original_bytes_preserved": true,
+      "batch": "cinema-athletisme-documents-20261121",
+      "review_note": "Carte de membre générique, entière, sans bibliothèque ou service inventé ; titre de catégorie et champs vides, sans identité, date ni montant.",
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "note": "Carte de membre générique, entière, sans bibliothèque ou service inventé ; titre de catégorie et champs vides, sans identité, date ni montant."
+      }
+    },
+    {
+      "id": "21-document-ordonnance",
+      "path": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+      "label": "Une ordonnance",
+      "gallery_types": [
+        "Document"
+      ],
+      "gallery_themes": [
+        "Documents et démarches",
+        "Santé"
+      ],
+      "sha256": "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+      "source_sha256": "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+      "source_png": "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+      "bytes": 1448336,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "prompt": "UNE illustration pédagogique d'une ordonnance médicale comme objet isolé, paysage4:3 exact idéalement1448x1086, style peint doux de la référence1 boissons. Au centre, une feuille blanche ivoire format vertical entière, légèrement inclinée avec de bonnes marges. Seul texte lisible : ORDONNANCE, correctement écrit en haut ; petit pictogramme de stéthoscope et petite croix médicale bleue en dessous, puis quatre traits gris de lignes vides. Aucun médicament, nom réel, traitement, dose, nombre, date, mois, jour, montant, logo ou code. Un seul document sans stylo, carte, mains, médecin ni scène de consultation. Bords fins et très légère texture peinte réservée au papier, ombre de contact douce. Fond ivoire clair parfaitement lisse presque uniforme comme la référence1, repère #FDF2E1, sans grain de papier, toile, vignette ou effet de studio dans les zones vides. La référence2 est le choix billets du même trio, garder un fond et des matières compatibles. L'ordonnance doit être immédiatement identifiable comme document médical. Pas de rendu3D, photographie, gros contour noir, cadre ou coche.",
+      "original_bytes_preserved": true,
+      "batch": "cinema-athletisme-documents-20261121",
+      "review_note": "Ordonnance isolée, document entier avec titre et pictogramme médical, champs vides. Aucune dose, identité, date ou somme.",
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ],
+        "note": "Ordonnance isolée, document entier avec titre et pictogramme médical, champs vides. Aucune dose, identité, date ou somme."
+      }
     }
   ]
 }

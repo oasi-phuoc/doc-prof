@@ -103667,6 +103667,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Les billets"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-document-carte-membre.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png"
+              }
+            ]
           }
         }
       },

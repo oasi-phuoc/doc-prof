@@ -8,20 +8,20 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 399,
+      "active_reviewed_trio": 400,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
-      "candidate_visual_review": 347,
+      "candidate_visual_review": 346,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 229,
+        "active_reviewed_trio": 230,
         "keep_text_calendar_or_duration": 46,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
-        "candidate_visual_review": 33,
+        "candidate_visual_review": 32,
         "keep_text_amount": 37
       },
       "A1-A2": {
@@ -8517,7 +8517,7 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-011-06.mp3",
       "audio_sha256": "db78f92ab2a2938f76f10b83e9a791c2202e412f527c63caf3de4b6d5506d857",
       "status": "active_reviewed_trio",
-      "reason": "Question, trois choix et bonne réponse relus avec la transcription complète ; trois situations concrètes distinctes.",
+      "reason": "Énoncé, choix et bonne réponse relus avec la transcription complète.",
       "choices": [
         {
           "id": "a",
@@ -8548,7 +8548,7 @@
         {
           "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-asseoir.png",
-          "sha256": "fb70bd43a061802a06cf29312032321f27c5315466080239b3b551c34ceb1b28"
+          "sha256": "542c1f004683a9eed246d8bb9d58380587ebdc7d9728acba57cadf4ce2cf4a10"
         },
         {
           "id": "b",
@@ -8558,7 +8558,7 @@
         {
           "id": "c",
           "path": "/lib/images/tcf/qcm-audit/qcm-a1-cinema-lever.png",
-          "sha256": "c4b1a61bf403d8d77fa7eba4c80377a43cf2a39fc81fb96cdb64772d0a663c8e"
+          "sha256": "abe4645f31f1dff29deab57c149edef7c8eb2aeb14dc1fd0aa0bb3c344920b0e"
         }
       ],
       "candidate_review_required": false,
@@ -8581,8 +8581,8 @@
         "note": "S’asseoir, sortir et se lever sont trois gestes ; même salle de cinéma et cadrage cohérent pour éviter que le décor donne la réponse."
       },
       "visual_review": {
-        "register": "docs/tcf/reprise-style-cinema-athletisme-20261120.json",
-        "note": "L’annonce dit explicitement Asseyez-vous. Les trois images gardent la même salle et la même femme pour que seule l’action distingue les choix : flexion vers le fauteuil, marche à travers la porte, posture droite immobile devant le fauteuil. Les autres spectateurs restent assis. Le choix de personnes illustre un public générique, pas le genre de la voix d’annonce. Corps, mains, appuis et fauteuils examinés ; aucun chiffre ni texte. Reprise graphique : lumière diffuse, matières mates, modelés adoucis et contours discrets. Le fauteuil de la personne debout est reconstruit avec une assise relevée et un espace libre devant."
+        "register": "docs/tcf/cinema-athletisme-documents-20261121.json",
+        "note": "Les trois choix ont été réexaminés avec la transcription complète. Scène assise de profil : tous les fauteuils vers le même écran à gauche. Scène debout dans une allée vide, sans fauteuil derrière la femme. Les personnages illustrent les gestes et ne prétendent pas représenter la voix de l’annonce."
       }
     },
     {
@@ -12644,8 +12644,8 @@
       "semantic_sha256": "222e33fd740f943afac05004cb903ee8ce8f0e87621124f159e95c3566caaf47",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-020-01.mp3",
       "audio_sha256": "498ae51d5e334051b91d7fc5d85c05c91d18e1cb4b63d1efc68e06cd12d3e89c",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Énoncé, choix et bonne réponse relus avec la transcription complète.",
       "choices": [
         {
           "id": "a",
@@ -12679,8 +12679,24 @@
           "brief": "Représenter entièrement « Une ordonnance » pour « Quel document Maeva doit-elle apporter ? ». Vérifier la transcription du support tcf-delf-actif-a1-020-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-billets-2.png",
+          "sha256": "b470ba46d91a4e2c3abfb4fb4e70feb6ee015eb747247231ded4ff085530a115"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-document-carte-membre.png",
+          "sha256": "a4166d54123c2162663af9c174a0659002b401b32681919119858be5f4f411ef"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+          "sha256": "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -12691,7 +12707,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/cinema-athletisme-documents-20261121.json",
+        "note": "La sortie est à la salle de concert et le message demande Apporte les billets. Deux billets vierges représentent le pluriel, sans imposer une quantité annoncée. Carte de membre générique et ordonnance isolée ; titres de catégorie seulement, aucune date, identité, dose ou somme. Fonds ivoire comparés à la référence boissons."
+      }
     },
     {
       "key": "tcf-delf-actif-a1-020-01#5",
@@ -33909,7 +33929,7 @@
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-051-04-03.mp3",
       "audio_sha256": "fd18939e4fac9e4b0492066beb8d094322f48e09dec2c470f2aa70c0c68238d9",
       "status": "active_reviewed_trio",
-      "reason": "Question, trois choix et bonne réponse relus avec la transcription complète ; trois situations concrètes distinctes.",
+      "reason": "Énoncé, choix et bonne réponse relus avec la transcription complète.",
       "choices": [
         {
           "id": "a",
@@ -33940,7 +33960,7 @@
         {
           "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
-          "sha256": "d4b8d20bc64f32c386ffcb746b7998667364d890ebe6524c80a14fe9869f7853"
+          "sha256": "90b254d03ec43c39fad9f9c48a8cddb91d5e46fb7e0ea8e4c3f2e0acf251d32a"
         },
         {
           "id": "b",
@@ -33973,8 +33993,8 @@
         "note": "Saut en hauteur avec barre, saut en longueur et lancer du poids ; matériels et gestes entiers, pas un athlète générique."
       },
       "visual_review": {
-        "register": "docs/tcf/reprise-style-cinema-athletisme-20261120.json",
-        "note": "La personne découvre le saut en hauteur, cité deux fois dans le dialogue. Barre horizontale entre deux supports et tapis de réception ; piste d’élan et bac à sable ; petite boule maintenue au cou, cercle et butée de lancer. Chaque discipline est montrée par son geste et son matériel. Les athlètes illustrent les disciplines et ne sont pas présentés comme les interlocuteurs du dialogue. Personnages distincts et variés, pas de mesures ou de dossards chiffrés. Reprise graphique : matières mates, modelés adoucis, visages et décors repeints suivant les références réelles validées."
+        "register": "docs/tcf/cinema-athletisme-documents-20261121.json",
+        "note": "Les trois choix ont été réexaminés avec la transcription complète. Les deux jambes et les deux pieds passent devant la barre, avec deux occultations distinctes. Les disciplines sont des exemples illustrés et ne prétendent pas identifier les locuteurs du dialogue."
       }
     },
     {
