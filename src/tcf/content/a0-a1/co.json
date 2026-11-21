@@ -101440,6 +101440,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Un bon d’achat"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-bon-achat.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-corbeille-fruits.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp"
+              }
+            ]
           }
         }
       },
@@ -110482,6 +110500,24 @@
           "lignes": {
             "nb_lignes": 1,
             "reponse_modele": "Lire"
+          },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/vocab-dessin.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-ecrire-chansons.png"
+              }
+            ]
           }
         }
       },

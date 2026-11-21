@@ -8,20 +8,20 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 402,
+      "active_reviewed_trio": 404,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
-      "candidate_visual_review": 344,
+      "candidate_visual_review": 342,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 232,
+        "active_reviewed_trio": 234,
         "keep_text_calendar_or_duration": 46,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
-        "candidate_visual_review": 30,
+        "candidate_visual_review": 28,
         "keep_text_amount": 37
       },
       "A1-A2": {
@@ -8738,8 +8738,8 @@
       "semantic_sha256": "cdfd53b220eabde3afa108af38990bfb198b246d951de691b79588e8c5d2ae03",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-012-01.mp3",
       "audio_sha256": "480980e6620c29b66ab3604eb3cb2f3f4ddede12167ec1a524b8bc819c7c6fd3",
-      "status": "candidate_visual_review",
-      "reason": "Bon d’achat sans valeur imprimée, panier de fruits et billet de concert sans date ; le montant n’est pas demandé dans cette question.",
+      "status": "active_reviewed_trio",
+      "reason": "Énoncé, trois réponses et bonne réponse relus avec la transcription complète ; trois propositions visuelles distinctes.",
       "choices": [
         {
           "id": "a",
@@ -8766,8 +8766,24 @@
           "brief": "Représenter entièrement « Un billet de concert » pour « Quel cadeau peut-on gagner ? ». Vérifier la transcription du support tcf-delf-actif-a1-012-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Bon d’achat sans valeur imprimée, panier de fruits et billet de concert sans date ; le montant n’est pas demandé dans cette question."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-bon-achat.png",
+          "sha256": "8b58740614cf90e6151dca1408e25d031583d235972b0957c877e22d45ade7b5"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-corbeille-fruits.webp",
+          "sha256": "82833e40d341ece9d8233bc155c487a9d6bbdbf2791934fd112972e49d5c604d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co306-place-concert-dessine.webp",
+          "sha256": "05e1302b6cdb4bfc13876e375789b222aad9b90b67346e71d38b291f51f52818"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -8785,6 +8801,10 @@
         "evidence_quote": "un bon de 100 €",
         "semantic_sha256": "cdfd53b220eabde3afa108af38990bfb198b246d951de691b79588e8c5d2ae03",
         "note": "Bon d’achat sans valeur imprimée, panier de fruits et billet de concert sans date ; le montant n’est pas demandé dans cette question."
+      },
+      "visual_review": {
+        "register": "docs/tcf/trios-cadeaux-loisirs-20261121.json",
+        "note": "La promotion propose un bon d’achat. Le coupon montre sa nature sans afficher les 100 euros, montant qui n’est pas demandé. Panier de fruits et billet de concert sont des cadeaux distincts ; le billet est sans date et le concert au fond clarifie son usage. Les trois images ont été examinées avec la transcription complète."
       }
     },
     {
@@ -25079,8 +25099,8 @@
       "semantic_sha256": "e6a3d8b8a2dbe53bed459a0970dbd8c7cca5c34c5aeb3b8e0888e0bbc9b57ae9",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-044-02.mp3",
       "audio_sha256": "b5749c8fa2228721d565cbf224c8b6ec023e8797ba2a7ed192fa26d1a868f390",
-      "status": "candidate_visual_review",
-      "reason": "Lecture, dessin et écriture de chansons : chaque scène doit montrer l’activité, pas seulement un livre fermé.",
+      "status": "active_reviewed_trio",
+      "reason": "Énoncé, trois réponses et bonne réponse relus avec la transcription complète ; trois propositions visuelles distinctes.",
       "choices": [
         {
           "id": "a",
@@ -25107,8 +25127,24 @@
           "brief": "Représenter entièrement « Écrire des chansons » pour « Quelle activité la personne aime-t-elle faire avec des livres ? ». Vérifier la transcription du support tcf-delf-actif-a1-044-02 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Lecture, dessin et écriture de chansons : chaque scène doit montrer l’activité, pas seulement un livre fermé."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp",
+          "sha256": "3e520c9d1e970d9c6b37c41631d88affe2d45268f8247c126c6cd5674b8109b9"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/vocab-dessin.webp",
+          "sha256": "5c3aaaac8a02bd406789236fb87df22ea016df4adcb6ddd4bdbdc7033d8813f0"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-ecrire-chansons.png",
+          "sha256": "39c1ce8043e9bae3d8bca2b6acd8d0245374584bee4139614cf905afb2ccadb8"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -25126,6 +25162,10 @@
         "evidence_quote": "j’aime bien lire des livres",
         "semantic_sha256": "e6a3d8b8a2dbe53bed459a0970dbd8c7cca5c34c5aeb3b8e0888e0bbc9b57ae9",
         "note": "Lecture, dessin et écriture de chansons : chaque scène doit montrer l’activité, pas seulement un livre fermé."
+      },
+      "visual_review": {
+        "register": "docs/tcf/trios-cadeaux-loisirs-20261121.json",
+        "note": "La personne dit aimer lire des livres. Livre ouvert regardé, dessin en cours et écriture de notes et de paroles distinguent les trois activités. Les personnes sont des exemples d’activités, sans identité ni genre de locuteur imposé par cette question. Leurs apparences diffèrent ; aucune simple image de livre fermé ne remplace l’action."
       }
     },
     {
