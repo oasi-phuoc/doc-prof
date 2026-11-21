@@ -8,20 +8,20 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 400,
+      "active_reviewed_trio": 402,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
-      "candidate_visual_review": 346,
+      "candidate_visual_review": 344,
       "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
-        "active_reviewed_trio": 230,
+        "active_reviewed_trio": 232,
         "keep_text_calendar_or_duration": 46,
         "keep_text_contextual": 98,
         "keep_text_named_identity_or_code": 23,
-        "candidate_visual_review": 32,
+        "candidate_visual_review": 30,
         "keep_text_amount": 37
       },
       "A1-A2": {
@@ -31260,8 +31260,8 @@
       "semantic_sha256": "8551edb95b6c846bc785c2837584a830a85f09e30da83a1544dadea89ae42a5b",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-03-01.mp3",
       "audio_sha256": "498c4db6f2fd0967fb5b63c349b2556d8ee1dc10440203d7a02e96cda1482f80",
-      "status": "candidate_visual_review",
-      "reason": "Vélo immergé, plongeon et water-polo en piscine ; activités et équipements distincts.",
+      "status": "active_reviewed_trio",
+      "reason": "Énoncé, trois réponses et bonne réponse relus avec la transcription complète ; activités concrètes et distinctes.",
       "choices": [
         {
           "id": "a",
@@ -31288,8 +31288,24 @@
           "brief": "Représenter entièrement « Le water-polo » pour « Quelle activité André veut-il essayer ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Vélo immergé, plongeon et water-polo en piscine ; activités et équipements distincts."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sports-aquabike.png",
+          "sha256": "7a0b8fac798b02022a69033d1a9764809db30df9182805ca4bfad4520375ae0c"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sports-plongeon.png",
+          "sha256": "42a2a49e62cf4a174c14224fd88cf04092124120c7bb62869cb0f48b9ed230a8"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sports-water-polo.png",
+          "sha256": "c22dffa63fd2a99330953889272f66a8759d9818bfbf0cbc88eab137175214f4"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -31307,6 +31323,10 @@
         "evidence_quote": "faire de l’aquabike",
         "semantic_sha256": "8551edb95b6c846bc785c2837584a830a85f09e30da83a1544dadea89ae42a5b",
         "note": "Vélo immergé, plongeon et water-polo en piscine ; activités et équipements distincts."
+      },
+      "visual_review": {
+        "register": "docs/tcf/trios-piscine-echauffement-20261121.json",
+        "note": "Le message dit Moi je veux faire de l’aquabike. Les trois choix sont des activités de piscine distinctes par leur équipement et geste : vélo fixe immergé, plongeoir au-dessus de l’eau et plongeur en vol, ballon et but flottant. Les pratiquants sont des exemples des disciplines ; aucune identité de voix n’est affirmée. Les visages, carnations et morphologies varient sans copier les références."
       }
     },
     {
@@ -31400,8 +31420,8 @@
       "semantic_sha256": "78b026cc5dc5e8ed31407b414f47f66580e759551007a1d15ad9ca65f7b4461e",
       "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-050-04-01.mp3",
       "audio_sha256": "f234fb7ac3bd72458b7ba8eb3f485b6db17c84e830e05f5d0d5ef9f8c195e722",
-      "status": "candidate_visual_review",
-      "reason": "Montrer la piste et un tour comme parcours complet, des étirements et un saut ; pas une personne courant sans indication de parcours.",
+      "status": "active_reviewed_trio",
+      "reason": "Énoncé, trois réponses et bonne réponse relus avec la transcription complète ; activités concrètes et distinctes.",
       "choices": [
         {
           "id": "a",
@@ -31428,8 +31448,24 @@
           "brief": "Représenter entièrement « Un saut » pour « Que faut-il faire pour commencer ? ». Vérifier la transcription du support tcf-delf-actif-a1-050-04-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Montrer la piste et un tour comme parcours complet, des étirements et un saut ; pas une personne courant sans indication de parcours."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sports-tour-piste.png",
+          "sha256": "f41583b2d3916b9e7658c7aaeb3dc77041a539333534ab3220856c6114f4bb4f"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-sports-etirements.png",
+          "sha256": "f2bd59bdbc6f6e639588c1e5d282dc56aff093c53f1504a8165cb173ff4cbb90"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-athletisme-hauteur.png",
+          "sha256": "90b254d03ec43c39fad9f9c48a8cddb91d5e46fb7e0ea8e4c3f2e0acf251d32a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -31447,6 +31483,10 @@
         "evidence_quote": "un tour de la piste",
         "semantic_sha256": "78b026cc5dc5e8ed31407b414f47f66580e759551007a1d15ad9ca65f7b4461e",
         "note": "Montrer la piste et un tour comme parcours complet, des étirements et un saut ; pas une personne courant sans indication de parcours."
+      },
+      "visual_review": {
+        "register": "docs/tcf/trios-piscine-echauffement-20261121.json",
+        "note": "La consigne commence par Pour commencer un tour de la piste. Course sur piste ovale, étirements immobiles et saut sont distingués sans mélanger leurs gestes. L’image de la piste illustre l’activité demandée ; elle ne prétend pas montrer un comptage des tours. Les sportifs illustrés ne sont pas présentés comme les locuteurs ou des élèves identifiés."
       }
     },
     {
