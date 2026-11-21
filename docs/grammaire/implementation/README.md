@@ -8,6 +8,8 @@ Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-cha
 
 **Planification du 21 novembre 2026 :** le [cahier détaillé des 20 prochaines activités](lot-suivant-20-activites-se-presenter.md) couvre l’identité, les nationalités et une première tranche de famille, soit 24 offres A1 à réaliser. Il comprend les contrats de réponse personnelle et de formulaire, quatre banques CE, les supports à reprendre et la recette du lot. Cette mise à jour est documentaire ; les compteurs de pilotes ci-dessus ne changent pas.
 
+La [suite, activités 21 à 40](lot-21-40-famille-questions.md), termine la famille, détaille les questions fermées et ouvertes et commence les questions avec quel : 21 offres A1 supplémentaires à réaliser. Les deux annexes préparent **40 activités et 45 offres** ; les banques et leurs validations ne sont pas déclarées livrées par cette rédaction.
+
 ## Disponible dans ce lot
 
 ### Se présenter — premiers pilotes A1

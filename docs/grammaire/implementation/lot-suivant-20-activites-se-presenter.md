@@ -330,3 +330,5 @@ Après ces 20 activités restent trois activités de famille, soit trois offres 
 3. **Écrire sur sa famille** — `gram-ex-famille-fam-pe` : 50 situations, grille et modèle non exclusif, style PE ligné ; ce type reste **tout en bas de la liste**.
 
 Leur position dans la suite de production ne change pas les types historiques déjà accessibles. Une fois cette tranche famille achevée, poursuivre les autres thèmes dans l’ordre du cahier des charges, dont **Poser une question** et ses activités spécialisées.
+
+Ces trois activités de famille et la suite des questions sont détaillées dans le [deuxième lot, activités 21 à 40](lot-21-40-famille-questions.md). Les deux lots constituent une préparation documentaire ; leur mise en œuvre conserve les étapes de validation décrites ci-dessus.

@@ -7,7 +7,7 @@
 **Base technique inspectée :** `origin/main`, commit `23b5990adede460f0198ec52228f9e7a60df7555`.  
 **Livrable actuel :** ce cahier des charges et ses annexes ; il ne constitue pas une implémentation du logiciel ni une approbation linguistique de toutes les banques.
 
-**Complément du 21 novembre 2026 :** le [prochain lot de 20 activités de Se présenter](lot-suivant-20-activites-se-presenter.md) précise les consignes, les banques, les corrections, les dépendances et les critères de recette. Cette préparation documentaire conserve les décisions ci-dessous et les compteurs d’implémentation existants.
+**Compléments du 21 novembre 2026 :** les [activités 1 à 20 de Se présenter](lot-suivant-20-activites-se-presenter.md) puis les [activités 21 à 40, famille et questions](lot-21-40-famille-questions.md) précisent les consignes, les banques, les corrections, les dépendances et les critères de recette. Cette préparation documentaire conserve les décisions ci-dessous et les compteurs d’implémentation existants.
 
 ## 1. Portée et autorité des spécifications
 
@@ -533,6 +533,12 @@ Le nombre de variantes à produire ne vaut pas nombre de phrases inédites. Mesu
 Le [contrat détaillé du lot](lot-suivant-20-activites-se-presenter.md) développe les dix activités d’identité, les six de nationalité et les quatre premières de famille. Il vise **24 offres A1** : seize banques de 50 questions/situations et quatre banques CE de 20 textes avec au moins 50 questions chacune. Les quatre activités QCM/lacune gardent un seul type de menu. Les réponses personnelles et les formulaires ont un contrat ouvert explicite.
 
 Le lot représente **880 unités sélectionnables cibles**, documents compris, et **au moins 1 200 variantes de réponse**. Les questions enfants des documents ne sont pas des unités sélectionnables supplémentaires. Ces volumes sont des objectifs de production et de validation ; la rédaction de cette annexe ne les ajoute pas aux banques disponibles. Les trois activités famille restantes sont prévues dans le lot suivant.
+
+### 10.8 Activités 21 à 40 — Famille et questions
+
+Le [deuxième lot détaillé](lot-21-40-famille-questions.md) prépare les trois activités restantes de famille, les neuf activités de questions fermées, les sept de questions ouvertes et la première activité avec quel. Ces **20 activités correspondent à 21 offres A1** : seize banques de 50 questions/situations et quatre banques CE de 20 textes avec au moins 50 questions ou cibles d’écriture chacune.
+
+Le lot vise **880 unités sélectionnables** et **au moins 1 050 variantes de réponse**. Il distingue les réponses factuelles des questions à inventer, précise la cible des transformations, les changements de personne, les critères d’inversion et les corrections humaines. Les deux lots décrivent ainsi **40 activités et 45 offres à réaliser**, sans augmenter les compteurs de banques pilotes. Les cinq autres activités avec quel, soit six offres, restent dans la suite.
 
 ## 11. Scénarios de recette et traçabilité
 
