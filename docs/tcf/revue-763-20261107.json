@@ -1721,7 +1721,7 @@
       "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
       "reviewed": true,
       "review_method": "Source, énoncé, trois réponses et originaux relus individuellement le 13 novembre 2026 ; aucune nouvelle écoute humaine.",
-      "reason": "L'annonce de Julien vend explicitement un vélo de ville bleu avec panier et lumière. La bonne image reprend ces trois détails ; vélo de course et vélo d'enfant ne sont pas proposés à la vente dans le texte. Trois types de vélos cohérents, aucune autre réponse ne décrit l'objet annoncé. Trois vélos bleus entiers comparés : ville adulte à cadre bas avec panier et phare, course à cadre triangulaire et guidon recourbé, puis petit vélo d'enfant à roulettes. Les détails distinctifs et proportions se lisent sans texte, prix ni date ; fond crème peint, même format exact 4:3.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "brief": {
         "context_question": "Quel objet Julien vend-il ?",
         "choices_to_illustrate": [
@@ -1763,7 +1763,11 @@
         "cf99d0508f6b04df9602dd3bfbe85d2b3353f578817b18adc9d58275c38802d4",
         "ef251bc4c01441c10ee7a96922fe8bab24412f486e19a6993bd17e45d29551de"
       ],
-      "incremental_review": "docs/tcf/revue-trios-ecole-aeroport-velos-20261113.json"
+      "incremental_review": "docs/tcf/revue-trios-ecole-aeroport-velos-20261113.json",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1v-ce-013#3",
@@ -12529,7 +12533,7 @@
       "semantic_sha256": "1d2ed1993c3d7aa4502ac993be4ae6ab662a2832aa1e1d2e62bac4265f518966",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "L’annonce demande de prendre le bus touristique pour visiter la ville, d’acheter un ticket au musée puis de monter dans ce bus. Bateau et métro ne sont pas proposés. Nouveau bus de visite à deux étages avec étage supérieur ouvert et sièges visibles. Bateau de passagers entier et rame en station souterraine réutilisés. Pas de simple bus de ligne substitué au bus touristique, aucune destination ou marque inventée.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "brief": {
         "context_question": "Quel moyen de transport est proposé pour visiter la ville ?",
         "choices_to_illustrate": [
@@ -12551,16 +12555,20 @@
         ]
       },
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-car-touristique-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
       ],
       "selected_sha256": [
-        "330ce9feb76da804656f3270f07f4a55fe94bfa9194be84c28b20deba84fcb63",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+        "5b42a4a8698f0eba92d13a05de335da97cc9fcab00ab7e4fd7669aecd86190fe",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
       ],
-      "visual_review_20261113": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json"
+      "visual_review_20261113": "docs/tcf/revue-trios-voyages-loisirs-couleurs-20261113.json",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-13#3",
@@ -15933,19 +15941,23 @@
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54-3.mp3",
       "review_index": 358,
       "selected_images": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "selected_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "semantic_sha256": "9c829a764c857c1167b498c0b7cbaa4335d04851717a0df8d576eb36eda6fc1f",
       "reviewed": true,
       "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex5-55-1#2",

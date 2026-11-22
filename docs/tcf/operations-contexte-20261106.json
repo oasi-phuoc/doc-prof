@@ -33731,6 +33731,4689 @@
       "source_sha256": "2637c9750420477822c5c8090ba3a9c135d695ea2d2e8ec7ede8123db2310c01",
       "reason": "La transcription entière de l’entretien avec Johan a été relue. Il aime fraises, bananes et oranges, n’aime pas pommes et poires, et préfère boire du jus. La réponse vise les fruits nommés ; aucune nouvelle écoute n’est attestée.",
       "review_ledger": "docs/tcf/revue-763-20261107.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a0a1-ce-001",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "21ff87644f230352565ebb7cbb2384f447f8ff72325fbab0cbfc717df62e2c38",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1j-s3-ce-2",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1j-s3-ce-4",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1p-s3-ce-4",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "tcf-a1-tpa-ce-2",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-005",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "1ff12fdeacf9354b7d73bfac91fd25f5be8947ca9996c8fad87405be51d69364",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-023",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "d26e1a17e2124baae43989488fd2c0b65936699d06496682727ff45cf2a5abb6",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1v-ce-037",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-scooter.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-020",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "205b6c10f631a72c0d558b37856ba6fcc9d3fc0fa6206cee1be8b601b3c4ed78",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1s-ce-021",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "d8d6ed45c5467eafa338f4181f16d1202b677f6bda6fe03f717c36ac6cb1565a",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "exercise": "delf-a1-2022-ce-ex1-carte",
+      "question": 9,
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1j-s1-co-1",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "e303a09e210ba1fcbc8cafe3f1dbc1de0d5d300219642a5a059998e9c1defe73",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Vélo pour arriver chez Driss, puis voiture pour le restaurant ; la question porte sur la première étape.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-a1-tpb-co-1",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "082ee3169f3306c9f9e1d114dd5f4e162b6b3ed68800492a4b6b6e699f6ce8e4",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s9-co-4",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "b44e3e1a0ef946e7a6912795ad58ba7e2087b55909a1f0022dbe406411d6b9c7",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s30-co-3",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "72e2d5d20a68bd14f9dfe4e7c1639c302dd12ac021d542a3c9f33eb37935eec6",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s44-co-3",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "d61a4c243bf9833e8e72d73ce04d1aedabc88b85b9953e9a237d81dc75d10440",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s45-co-1",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s47-co-1",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "f90fb8f081785483b9fb351ed66b6e570abf50024947603ca66c0859b1da1d3e",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s47-co-3",
+      "question": 9,
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "40c8a4e8d1a8ca9752fd838e42d91f3afd08624b53c8c086994e0ebd0332ff26",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s49-co-1",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "732c2f1fcf379b55f1c69bb9a3608478b6b775cc1c8f9232f4644a787fe5fe36",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s52-co-3",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "26b3cdcef562bc96da67d8e1c658651856161641f5ee16550f4ae43a3d8575a8",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ss-a1-s54-co-3",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "867bd09551feee2afc8e6e8cb4a98b3c89be6f41cb95cfc993295c5e4ff77ff1",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-ecole-bus-pour-la-piscine-co-4",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "9a9edaaa1d15efd9c8f177ac57e5d947e1dd5c4167f36b085607bcaba49346c2",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-ssx-a1-ecole-rentrer-de-l-ecole-co-4",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "e6ff9972ed97327defa2f2b5369d1782795841370b33fd92941946a8f4f110ab",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-12",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "c6724fc010d2050a1cb185b396af27dc98e76b88fdaefa4ce3b4790f494d0069",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-12",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-car-touristique-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "e2b218892bf42faa4f64c78f95212475db76ce38d8782e89c719e87d8d7b7b94",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex2-20",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "c2ed6fd6d6b3d68211da0719542efbff95b4e094a18e1511bf4c744fecc992f2",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex2-20",
+      "question": 9,
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "d0276f04ded96aec4adda0b4407a32e2c8a0d5971638dfd349a859486e5b07fb",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex2-25",
+      "question": 10,
+      "node": [
+        "questions",
+        9,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "f42b8d19f33520e12cfd4270a06590cf2d3b5aa00f74d241a80deb15c58e59c9",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex1-60",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "e3df4b8e1900e0728e4722e35acc913e89b770f10e0cf9806b369dc10881c098",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex4-70",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "fa505738044b76c6cd98f0a18d738995ab12d6b17f6227630d3e759db2447d08",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-80",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "4093bb1be71393e30a78140b6d3c9420c6513b6623e9291e62afa3f34be984c8",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-83",
+      "question": 10,
+      "node": [
+        "questions",
+        9,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "66d42500b8f307894517f0fc81476c5479e229b0ce2cb05a7e1ed547fccc1eb8",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-54-3",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "9e448582d3c795f13744e09e298771f813d890c6d1142acadced9041d25247dd",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-58-3",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "56a2f1e2b1cf5aa2598d3139798f2dfb5bd24279aa0ac54c6979c2034041243e",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "delf-a1-2022-co-ex5-58-3",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "56a2f1e2b1cf5aa2598d3139798f2dfb5bd24279aa0ac54c6979c2034041243e",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-002-01",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-003-01",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "3583736e738653c2b5107d647dc5edf7796d9e465469519e8add9ed5cd1e6ae0",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-006-01",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "6b8944ed77905c56c952ebb2f78b4a07092431901692b69029dbded7057fb14c",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-009-01",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "f7d7dabbe90665dade51c32c96d62ec17c0b80798365c4798a11165e649dd2c9",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Bus à l’aller, voiture du père au retour ; la question vise le spectacle.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-028-01",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "068a0f853f418e256f6dc88078ef7a54f231d292c0f253791bbcecd64ccdbf62",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Voiture pour rejoindre la gare, puis train ; ne pas confondre les étapes.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-044-04",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-scooter.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+          }
+        ]
+      },
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-046",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-046",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-051-01-01",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "250e234af8db9c005f3a74373861eb5556e14375f13572e8ad7c6f777b648946",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "exercise": "tcf-delf-actif-a1-051-02-01",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-scooter.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+          }
+        ]
+      },
+      "source_sha256": "186a269e5436d014cbbd596f01d59e3fa053b4a214a587a2052ecd28e0781bb0",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2p-s1-ce-1",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2p-s2-ce-2",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "fb1df1f61d32d5c1b6166883b1fbf3d614c1c6c5fb55db3249097fc4d9c50d22",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "tcf-a2-sc-ce-1",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "598bcd3a9ed1386e771c69d606c563b60209a5c6fbd4efa5ae6796715ac1e566",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-021",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "bc477cceb3051c7e7693e6cb684cd2dfc7ac9bcb4bcafc280c22d101923e420f",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Vélo pour la plage ; le bus annoncé ensuite concerne la bibliothèque.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-021",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "bc477cceb3051c7e7693e6cb684cd2dfc7ac9bcb4bcafc280c22d101923e420f",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Bus pour la bibliothèque après l’annonce de pluie ; le vélo correspond aux sorties à la plage.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2j-ce-038",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "ef27062f7f6089ce25bbd7a0dd447361b590135e186d16d7e7fe0b140e20ac74",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-024",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "4654e3dbccff8c4936314bf6cea82a5f3bad6d3584124268c93ec74d806c187b",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2j-s2-co-1",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "5ddf2ee949b2c820cab9496e28afb096ce6a6e96832a885cb42b03b12c1590f9",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2j-s2-co-3",
+      "question": 6,
+      "node": [
+        "questions",
+        5,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "ea630423e992ebdc295c72a2a3482730a9ad3db34e9f0a31054cc996c1a35e0d",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-a2-sa-co-3",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "15d651a72585fe5729a043bad7d442c3d90132eb333d357e1d8aa3bd50bb44a9",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s8b-co-3",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "64e0d8d8542a7949ec84f04ae2600fab08c44774ad84b04b1b5db796516b2a5d",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s12-co-1",
+      "question": 9,
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "c728e5363aa0f8b8f993ad6efdf7a3e3c225b297d9a42db348b584ccabd82d3d",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s38-co-2",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "b4fe96e275cc3f7edd43b29b374bf7052ad3b9d5c6f52b0bf3bbd6d29f2bf346",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Tramway pour Tours et Nantes ; le bulletin traite séparément le métro parisien.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s48-co-3",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "65f11e137492393370ca0a120125698bb312107e0bfafd803c26442f02ab6ef9",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s49-co-1",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "baafcf60bc7c669cce1477595d42fc77a9322720a37f41846ef5a545b39dc8aa",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s56-co-3",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "419aa7652ea5d9aa0c02a2fafca8924d2701440a40eee2717fcd6421abda7c32",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Métro à l’aller et voiture au retour ; la question vise l’aller.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-conversation-32-co-4",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "ce17ad917c4693b375d6e93b3008bef93f16bcd5418ae46ed4acbab34bc2f16d",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. La voiture est proposée ; elle ne constitue pas le choix final.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-conversation-32-co-4",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "ce17ad917c4693b375d6e93b3008bef93f16bcd5418ae46ed4acbab34bc2f16d",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Le bus avec Mathilde est le choix final, après refus de la voiture.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-annonce-5-2-co-2",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "e71d689900aed41e6455b1de54e013b6e203a3ec6a47f08c157072f31995f0c1",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ssx-a2-transport-comment-tu-rentres-co-4",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "3ec1adbb9d67bf73092e8b14987b1d96a76e6dbc29a0bc9d336ea8495089a225",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex1-02",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "1e1afff3c85f99727ef6fa5d9d6ccd0dd5302c8ae5dd63f83c7ee6d56c0bc5ed",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex3-23",
+      "question": 10,
+      "node": [
+        "questions",
+        9,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "e1dce16fdc7e0a92bbfa3e3757ef0643abb035e962fa6cbe760aa57421120166",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex2-37",
+      "question": 11,
+      "node": [
+        "questions",
+        10,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "9f724e2422692af024ebb7bac50c61f7aba75c1e13f38d6c65ad629d5deef2e5",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex4-42",
+      "question": 9,
+      "node": [
+        "questions",
+        8,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "f1a16b6d9a50c01d3e2079b961fb6c54587550b4a96afafb0fe8712264316670",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "delf-a2-2021-co-ex4-45",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "264a8c324ac175c17921764373b315ba835179fd971aa1682c4c3e4c109ce622",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-001",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "c180a7959adf7ce92b3b3ee908d1d7ce47123f33abfd3cdb1b7bb81836a0c95a",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-003-05",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "db8690b51ec434945fc3fe9bd26f06e0e0003fed4234790383702d2b886e6e75",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Le car fermé convient à cette annonce de trajet, indépendamment du bus touristique découvert.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-006-04",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "524e78e6afa2d955a463dc7781289262ec06f29c195e1f9239c5679cfab85e08",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-015-01",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-vtt-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "f0c7956024c32254a75655b7529b0d8318d91e79c020335bb436a8452698abe0",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les personnes envisagent leurs VTT ; pneus à crampons et suspension distinguent cette catégorie des autres vélos.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-016-01",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "0f6f693aeda0ceb36ab7f955d28cd5aad22a214f5c0cab2c2a29aa7dc07a2d34",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-030-04",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "86dac8e2a2abe79db9eefeef776fe521bbcc8dfee3b6ff884e400a5d4b38fc79",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-035-04",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "65a9cafe29cf01f13d88c3a8c87c7a89bca36ae25ba87372b59984e87d53e649",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-043-04-04",
+      "question": 3,
+      "node": [
+        "questions",
+        2,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "69623f8b2e56032eb040301b0f0a79c05a4b3d9b129dd3fb89405121bd8451aa",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-044-03-01",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-045-01-06",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "04a7c51b8513906e31eba551a1ba86d97728f7a859fb38f5c2f2c75a8d0b540a",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Le car emprunte l’autoroute et marque des arrêts ; réemploi d’un autocar fermé.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-045-04-04",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/co/scenes/delf-actif/scenario-demander-montee-telepherique.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-telepherique-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "5d962a7043edbe96f8d964b22e81cfc81241e2b71daad01ea29154628198ca30",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-046-04-01",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "ecf859a42a26dbcd7a1308edc74707261e86a59293d052096751f4813fb83ad4",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-delf-actif-a2-046-04-03",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "fbc6e73c584af746cb934d5f6d97a9e1aa78fbaf80d7c484e6321f8459cfb8b3",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s3-co-4",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "4cd0c07c42c009dceb211131be15fc55110f14491344c63e29457c8878bb627f",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s5-co-2",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          }
+        ]
+      },
+      "source_sha256": "c1add9fee12cea918e8417bf13652458ed535ae56bfcc85a1ecb39a1dfd719fb",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-ss-b1-s13-co-4",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-002-03",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+          }
+        ]
+      },
+      "source_sha256": "c2f9985c57fbbc0b4a16f86e7e006174092864ceded171b2de41f75efd9c2786",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Le témoin est sur son vélo ; le scooter est le véhicule renversé.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-002-03",
+      "question": 5,
+      "node": [
+        "questions",
+        4,
+        "formes",
+        "qcm_image"
+      ],
+      "before": null,
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-camion-demenagement-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "c2f9985c57fbbc0b4a16f86e7e006174092864ceded171b2de41f75efd9c2786",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Le scooter est renversé ; le vélo appartient au témoin.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-004-01",
+      "question": 8,
+      "node": [
+        "questions",
+        7,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "b1f74b7f99b56d1f3888b8e5ea43928f0fb9de311e03900ddaff3164705f34a6",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-005-01",
+      "question": 4,
+      "node": [
+        "questions",
+        3,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "f4cc46820901fb8ff584f3b4af8a818fe5842c08cf4262a5206b1b1c4fec355d",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-032-02",
+      "question": 1,
+      "node": [
+        "questions",
+        0,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-scooter.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png"
+          }
+        ]
+      },
+      "source_sha256": "68c2c8ec66d8938a9712293c102a9d08709327d971cdaf9648b844698fa953c2",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-033",
+      "question": 2,
+      "node": [
+        "questions",
+        1,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+          }
+        ]
+      },
+      "source_sha256": "ed8491fa7b5aa1cac89d0674e60c16d1fd068bfe74a071f34f513280db991a93",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "exercise": "tcf-delf-actif-b1-040-01-01",
+      "question": 7,
+      "node": [
+        "questions",
+        6,
+        "formes",
+        "qcm_image"
+      ],
+      "before": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          }
+        ]
+      },
+      "after": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          }
+        ]
+      },
+      "source_sha256": "60b06b53e8be15d04cad3effc0076046a6c71d21fccfb043d5d59ef584498fc0",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "review_ledger": "docs/tcf/revue-vehicules-ivoire-20261122.json"
     }
   ]
 }

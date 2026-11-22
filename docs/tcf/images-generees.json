@@ -123574,6 +123574,818 @@
         "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
       ],
       "review_note": "Image examinée avec la transcription complète, l’énoncé et les trois réponses. Sens, personnes, positions, accessoires, format natif 4:3 et style peint TCF contrôlés."
+    },
+    {
+      "id": "qcm-vehicule-train-ivoire",
+      "label": "Un train bleu et blanc isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep the entire modern articulated blue and white passenger train with its multiple carriages, visible wheels and pointed cab. No rails or platform.",
+      "source_png": "/workspace/generated_images/exec-32772549-b069-42d0-8161-928fc1969039.png",
+      "source_sha256": "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+      "sha256": "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+      "bytes": 1342083,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Train bleu et blanc à trois voitures, roues et cabine profilée visibles ; aucun quai, rail ou paysage. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-bateau-ivoire",
+      "label": "Un bateau de passagers bleu et blanc isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+      "prompt": "Correct only the empty background of the FIRST supplied boat image. The SECOND image is the exact approved ivory reference. Keep the entire blue and white passenger boat unchanged, same shape, size, soft painted rendering, windows and railings. The current upper-left background median RGB 254 241 221 is too yellow. Match the second reference's smooth light ivory RGB 253 242 225 (#FDF2E1) exactly, with no grain, vignette, gradient or yellow cast. Increase background blue to 225 and green to 242. Keep the small soft contact shadow. Native PNG landscape EXACTLY 1448x1086. No water, people, scenery, text or extra objects.",
+      "source_png": "/workspace/generated_images/exec-d25065ca-5fb7-4f9b-8e61-1ab57d23ea56.png",
+      "source_sha256": "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+      "sha256": "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+      "bytes": 1530988,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Bateau de passagers bleu et blanc, coque entière, fenêtres, sièges, garde-corps et mât ; aucune eau ni rive. Seconde version au fond harmonisé. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-tramway-ivoire",
+      "label": "Un tramway articulé isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep the whole low-floor articulated urban tram, its cream, grey and yellow body, large windows and clear roof pantograph. No cables overhead, street or rails. It must be distinct from a long intercity train.",
+      "source_png": "/workspace/generated_images/exec-1c3c1a0b-be6b-4726-b260-13138ad350de.png",
+      "source_sha256": "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea",
+      "sha256": "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea",
+      "bytes": 1497205,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/vocab-tramway.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Tramway articulé crème et bleu avec portes, vitrages et pantographe, sans rue ni voie ; silhouette distincte du train. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-taxi-ivoire",
+      "label": "Un taxi jaune isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep ONE yellow taxi car with its small natural TAXI roof sign. Remove the road, grass and all scenery. The roof sign word TAXI is the only permitted writing and is part of the vehicle.",
+      "source_png": "/workspace/generated_images/exec-95b2026f-d44b-4749-8b9e-e1f24a31ded9.png",
+      "source_sha256": "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d",
+      "sha256": "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d",
+      "bytes": 1546651,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Voiture jaune avec enseigne TAXI naturelle sur le toit, roues et carrosserie entières, sans chaussée ni végétation. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-scooter-ivoire",
+      "label": "Un scooter bleu isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep ONE blue motor scooter with a black seat, mirrors, two wheels and recognisable step-through body, supported by its stand. Match the exact light ivory reference, avoiding the current yellow cast.",
+      "source_png": "/workspace/generated_images/exec-31360e5c-9c16-4110-a218-92a596f1f2ea.png",
+      "source_sha256": "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+      "sha256": "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+      "bytes": 1700949,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Scooter bleu, selle noire, rétroviseurs, deux roues et béquille ; absence de conducteur et de décor. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-car-touristique-ivoire",
+      "label": "Un bus touristique rouge à deux niveaux",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-car-touristique-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep ONE red and cream sightseeing double-decker bus with an open top deck and two rows of visible seats. Remove all trees, plants, road and buildings. Full vehicle entirely visible, wheels on one small soft contact shadow.",
+      "source_png": "/workspace/generated_images/exec-75000688-ee8b-41bf-8144-ad59c8a5f70b.png",
+      "source_sha256": "5b42a4a8698f0eba92d13a05de335da97cc9fcab00ab7e4fd7669aecd86190fe",
+      "sha256": "5b42a4a8698f0eba92d13a05de335da97cc9fcab00ab7e4fd7669aecd86190fe",
+      "bytes": 1615680,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Bus touristique rouge et crème à deux niveaux, étage supérieur découvert avec sièges, sans arbre, rue ni passagers. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-telepherique-ivoire",
+      "label": "Une cabine rouge de téléphérique isolée",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-telepherique-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep ONE red cable-car cabin with large dark windows and its suspension arm and pulley mechanism. Include only a short visible piece of supporting cable belonging to the object, entirely within frame. No mountains, station, pole, people or landscape.",
+      "source_png": "/workspace/generated_images/exec-6ea0f216-e4b3-456d-8b08-b8bbfd1da859.png",
+      "source_sha256": "93cf5275ef155930371c9245bc9e22291757a43ed3d40405dfd2571deaf96a01",
+      "sha256": "93cf5275ef155930371c9245bc9e22291757a43ed3d40405dfd2571deaf96a01",
+      "bytes": 1445666,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/catalogue/vehicules/telepherique.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Cabine rouge vitrée de téléphérique, suspension, poulies et court segment de câble visibles, sans montagne ni station. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-deplacement-marche-ivoire",
+      "label": "Une personne marchant sur fond ivoire",
+      "path": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep the same adult walking naturally in profile, entirely visible head to shoes, with a small backpack, burgundy jacket, blue jeans and light trainers. Preserve a credible walking gesture with one foot forward and relaxed arms. Remove the entire street, walls, tree, houses and background. Human walking is the meaning, not detached feet or shoes. Fine painted style and a small shadow beneath the feet.",
+      "source_png": "/workspace/generated_images/exec-a03c9aea-c05c-47a1-ab05-7827a0e1cb77.png",
+      "source_sha256": "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+      "sha256": "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+      "bytes": 1443929,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Personne entière en mouvement de marche, veste bordeaux, jean bleu, baskets claires et sac à dos noir, sans rue ; pieds et ombre visibles. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Action"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-avion-ivoire",
+      "label": "Un avion de ligne blanc isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep ONE unbranded white passenger airplane, complete tail, both wings, two engines and nose, entire silhouette inside frame. Remove EVERY cloud and all sky/haze. Uniform smooth pale ivory empty background like the reference. No landing strip, people, aircraft livery, letters or numbers.",
+      "source_png": "/workspace/generated_images/exec-d25c4d37-ab68-4f47-b2a6-99ebeb0bb6e0.png",
+      "source_sha256": "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+      "sha256": "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+      "bytes": 1311668,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Avion de ligne blanc entier, deux ailes et deux réacteurs, sans nuage, ciel, compagnie ou légende. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "qcm-vehicule-vtt-ivoire",
+      "label": "Un VTT vert isolé",
+      "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-vtt-ivoire.png",
+      "prompt": "Edit the FIRST supplied image in the approved TCF style shown by the SECOND supplied image. Preserve the subject identity, colours, proportions, fine discreet painted contours, soft volumes and detailed materials. Isolate the specified subject on the same smooth almost uniform light IVORY background RGB 253 242 225 (#FDF2E1) as the second image. No room, street, platform, garden, mountains, sea, horizon, road patch, plant, clouds, paper grain, canvas texture, gradient or vignette. Only a small soft contact shadow. No person inside a vehicle, logos, brands, prices, dates, number plates or floating labels. Entire subject within frame, generous clear margins. Native landscape PNG EXACT 1448x1086, 4:3. Keep ONLY the green MOUNTAIN BIKE from the first image, remove the cyclist and ALL scenery completely. Show one complete mountain bike with straight handlebars, thick knobbly tyres, front suspension fork, disc brakes, pedals and chain, standing alone. Entire wheels within frame. No rider, helmet, luggage, plants, trail, mountain, road, text or other object. Clear differentiation from a thin-tyred road racing bicycle and from a step-through city bicycle.",
+      "source_png": "/workspace/generated_images/exec-b950a663-6ca1-4f22-be46-59b585138fe0.png",
+      "source_sha256": "5942330c759e8afbf1f82400533adc3eeddb52896fe6a8859940634e879ced80",
+      "sha256": "5942330c759e8afbf1f82400533adc3eeddb52896fe6a8859940634e879ced80",
+      "bytes": 1937069,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "vehicules-ivoire-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "VTT vert isolé, pneus à crampons larges, guidon droit, fourche suspendue et freins à disque ; sans cycliste, montagne ou chemin. Fond ivoire lisse comparé à la référence réelle, peinture et ombre douce contrôlées.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "original_bytes_preserved": true,
+      "gallery_types": [
+        "Véhicule"
+      ],
+      "gallery_themes": [
+        "Déplacements sur fond ivoire",
+        "Style TCF validé"
+      ]
+    },
+    {
+      "id": "reuse-registre-23-loisirs-location-de-velos-20261122",
+      "label": "Trois personnes dans un magasin de vélos",
+      "path": "/lib/images/tcf/co/scenes/scenes-courtes/23-loisirs-location-de-velos.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/scenes/scenes-courtes/23-loisirs-location-de-velos.webp",
+      "source_sha256": "7f854e97a0c558142ef0178d3262bf5e06a4a9024518b5ed7aedfbd14c4d22e7",
+      "sha256": "7f854e97a0c558142ef0178d3262bf5e06a4a9024518b5ed7aedfbd14c4d22e7",
+      "bytes": 394320,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/scenes/scenes-courtes/23-loisirs-location-de-velos.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Trois personnes dans un magasin de vélos. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-plage-20261122",
+      "label": "Une plage avec des transats et un parasol",
+      "path": "/lib/images/tcf/co/bg/plage.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/plage.webp",
+      "source_sha256": "7a1140e47436cfe2fa63bfd37063b59659e06acf99f221f98e04a4645c6ec5a3",
+      "sha256": "7a1140e47436cfe2fa63bfd37063b59659e06acf99f221f98e04a4645c6ec5a3",
+      "bytes": 493324,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/plage.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Une plage avec des transats et un parasol. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-gymnase-20261122",
+      "label": "Un gymnase avec des paniers de basket et un but",
+      "path": "/lib/images/tcf/co/bg/gymnase.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/gymnase.webp",
+      "source_sha256": "4de8ed82a271e5897adf86dca59c89edec291686c8c562ca0388e2a2ba3cad01",
+      "sha256": "4de8ed82a271e5897adf86dca59c89edec291686c8c562ca0388e2a2ba3cad01",
+      "bytes": 271980,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/gymnase.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Un gymnase avec des paniers de basket et un but. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-campagne-20261122",
+      "label": "Des maisons à la campagne près des montagnes",
+      "path": "/lib/images/tcf/co/bg/campagne.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/campagne.webp",
+      "source_sha256": "37f5ebeba7538bbedba0bbc46bf7b851cfe30b261c4438d70a63509d6eccfe18",
+      "sha256": "37f5ebeba7538bbedba0bbc46bf7b851cfe30b261c4438d70a63509d6eccfe18",
+      "bytes": 700090,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/campagne.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Des maisons à la campagne près des montagnes. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-bibliotheque-20261122",
+      "label": "Une bibliothèque avec des livres et des tables",
+      "path": "/lib/images/tcf/co/bg/bibliotheque.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/bibliotheque.webp",
+      "source_sha256": "ad3eea66d0f7c58f6bd794b917e02e920b91c551f2c0ff4a89e94703260e4886",
+      "sha256": "ad3eea66d0f7c58f6bd794b917e02e920b91c551f2c0ff4a89e94703260e4886",
+      "bytes": 391714,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/bibliotheque.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Une bibliothèque avec des livres et des tables. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-chaussette-20261122",
+      "label": "Une paire de chaussettes grises",
+      "path": "/lib/images/tcf/catalogue/quotidien/accessoires/chaussette.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/catalogue/quotidien/accessoires/chaussette.webp",
+      "source_sha256": "b167ed487caacf26dba1b351394f755cf65ddb9d2af28396f4cd3e08ed7755da",
+      "sha256": "b167ed487caacf26dba1b351394f755cf65ddb9d2af28396f4cd3e08ed7755da",
+      "bytes": 204162,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/catalogue/quotidien/accessoires/chaussette.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Une paire de chaussettes grises. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "gallery_types": [
+        "Objet"
+      ]
+    },
+    {
+      "id": "reuse-registre-chambre-20261122",
+      "label": "Une chambre avec un lit et une armoire",
+      "path": "/lib/images/tcf/co/bg/chambre.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/chambre.webp",
+      "source_sha256": "d11d946dd10e83cbef41c1d443e2f4ec294e2fbf0443398398c750fedb687433",
+      "sha256": "d11d946dd10e83cbef41c1d443e2f4ec294e2fbf0443398398c750fedb687433",
+      "bytes": 329034,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/chambre.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Une chambre avec un lit et une armoire. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-gare-20261122",
+      "label": "Une gare avec un train rouge et une horloge",
+      "path": "/lib/images/tcf/co/bg/gare.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/gare.webp",
+      "source_sha256": "bac7d09bbb1bd7edfbb483740c8bc06ab10eeb94c2ac085dc78f3aba2ae30fc8",
+      "sha256": "bac7d09bbb1bd7edfbb483740c8bc06ab10eeb94c2ac085dc78f3aba2ae30fc8",
+      "bytes": 499868,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/gare.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Une gare avec un train rouge et une horloge. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-montagne-20261122",
+      "label": "Un paysage de montagne avec un lac",
+      "path": "/lib/images/tcf/co/bg/montagne.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/montagne.webp",
+      "source_sha256": "39613dde49c00c2a888fc53055daf7a227950dc3683467cca9fc5f080ae5d344",
+      "sha256": "39613dde49c00c2a888fc53055daf7a227950dc3683467cca9fc5f080ae5d344",
+      "bytes": 716458,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/montagne.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Un paysage de montagne avec un lac. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-zoo-20261122",
+      "label": "L’entrée d’un zoo",
+      "path": "/lib/images/tcf/co/bg/zoo.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/co/bg/zoo.webp",
+      "source_sha256": "909cd9c5f7c684efef7a3683783c09ce346a93dd0ae653c9221c3a671ca53086",
+      "sha256": "909cd9c5f7c684efef7a3683783c09ce346a93dd0ae653c9221c3a671ca53086",
+      "bytes": 587596,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/co/bg/zoo.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : L’entrée d’un zoo. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+          "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scénario"
+      ]
+    },
+    {
+      "id": "reuse-registre-autocar-20261122",
+      "label": "Un autocar blanc et bleu",
+      "path": "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+      "prompt": "Réemploi du fichier existant, sans génération ni modification des pixels.",
+      "source_image": "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+      "source_sha256": "a19c4a1fe4be7931b0db5705d7c4f5deee278d6d8da4c48252ccc97ab875b5ab",
+      "sha256": "a19c4a1fe4be7931b0db5705d7c4f5deee278d6d8da4c48252ccc97ab875b5ab",
+      "bytes": 111744,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "rattrapage-registre-20261122",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+        "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+      ],
+      "review_note": "Fichier existant examiné visuellement : Un autocar blanc et bleu. Format, sujet et traitement peint contrôlés ; pixels conservés.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+        ]
+      },
+      "gallery_types": [
+        "Véhicule"
+      ]
     }
   ]
 }

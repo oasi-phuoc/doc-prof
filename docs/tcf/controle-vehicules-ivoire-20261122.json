@@ -1,0 +1,3659 @@
+{
+  "date": "2026-11-22",
+  "baseline_commit": "a67c622a775ed2f48aab900ce7358e5da2ede662",
+  "scope": "Repérage lexical des questions CE/CO actives mentionnant un transport ; ne couvre pas encore tous les autres objets.",
+  "summary": {
+    "reviewed": 95,
+    "pending_context_or_visual_review": 76
+  },
+  "questions": [
+    {
+      "key": "tcf-a0a1-ce-001#2",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Comment Léa voyage-t-elle ?",
+      "labels": [
+        "En train",
+        "En bus",
+        "En avion"
+      ],
+      "source_sha256": "21ff87644f230352565ebb7cbb2384f447f8ff72325fbab0cbfc717df62e2c38",
+      "semantic_sha256": "67694a9bbae922dab1eb5c66c183bff4e72cf7caed19864c9511c2990a3f8949",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1j-s3-ce-2#4",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel moyen de transport faut-il prendre ?",
+      "labels": [
+        "Un bateau",
+        "Un train",
+        "Un avion"
+      ],
+      "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
+      "semantic_sha256": "eded9c298b2c7463959c99a17b7d65576bd7968f253e0ef38d9c4b1260429538",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1j-s3-ce-4#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel moyen de transport permet de découvrir Zurich ?",
+      "labels": [
+        "Le bus",
+        "Le métro",
+        "Le bateau"
+      ],
+      "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
+      "semantic_sha256": "073538b12310f0689d4579b9a84a7c22907db5ec368327c8b0b5b84793873ec0",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1p-s4-ce-1#7",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quelle activité Thomas adore-t-il ?",
+      "labels": [
+        "Faire du vélo",
+        "Jouer au tennis",
+        "Aller au cinéma"
+      ],
+      "source_sha256": "01af2ac4d153c8ae9ca61076e64b2bf3d7361b4ecc328caf6627c5dd7f92950e",
+      "semantic_sha256": "43dfa64a2935e953db2e45218e40e9b1e85baf2c1ed8ac526d3932f934b479b7",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a1p-s3-ce-4#2",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel moyen de transport est proposé le soir par beau temps ?",
+      "labels": [
+        "Le bateau",
+        "Le bus",
+        "Le vélo"
+      ],
+      "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
+      "semantic_sha256": "542aabe0e720fc96222df5df62eb089281de9b1dbfaed39f98cbb230b2b56b14",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1-tpa-ce-2#5",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Comment le texte propose-t-il de découvrir la ville ?",
+      "labels": [
+        "À pied",
+        "En voiture",
+        "En bateau"
+      ],
+      "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
+      "semantic_sha256": "b236d211f0cf7f87f4e56e44bb353eaf1d53877d9e77141d315fb9db194d5c98",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1v-ce-005#2",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel moyen de transport est prévu ?",
+      "labels": [
+        "Un bateau",
+        "Un train",
+        "Un bus"
+      ],
+      "source_sha256": "1ff12fdeacf9354b7d73bfac91fd25f5be8947ca9996c8fad87405be51d69364",
+      "semantic_sha256": "4057fa7ab9f02e8166e3acce610dc1c93d59015e957d25348b5893fb1b36c3a6",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1v-ce-013#1",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel objet Julien vend-il ?",
+      "labels": [
+        "Un vélo de ville",
+        "Un vélo de course",
+        "Un vélo d'enfant"
+      ],
+      "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
+      "semantic_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-course.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-enfant.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "cf99d0508f6b04df9602dd3bfbe85d2b3353f578817b18adc9d58275c38802d4",
+        "ef251bc4c01441c10ee7a96922fe8bab24412f486e19a6993bd17e45d29551de"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1v-ce-023#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel transport est prévu ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "Le bateau"
+      ],
+      "source_sha256": "d26e1a17e2124baae43989488fd2c0b65936699d06496682727ff45cf2a5abb6",
+      "semantic_sha256": "8adb6386a1354747fc8a2f63850816fed28cc659090870141e32ec9b4de6a575",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1v-ce-037#1",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel véhicule est à vendre ?",
+      "labels": [
+        "Un scooter",
+        "Une moto",
+        "Une voiture"
+      ],
+      "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
+      "semantic_sha256": "579c061faa34a750cae2d6037e0a00a428b7440c4255ee736594e22382db631c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1s-ce-020#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel moyen de transport Hugo conseille-t-il ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le vélo"
+      ],
+      "source_sha256": "205b6c10f631a72c0d558b37856ba6fcc9d3fc0fa6206cee1be8b601b3c4ed78",
+      "semantic_sha256": "00aaef5cd744957fdc207720d3a7a104f817810e19339205729de0fb63ed674d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1s-ce-021#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel moyen de transport est prévu ?",
+      "labels": [
+        "La voiture",
+        "Le train",
+        "Le vélo"
+      ],
+      "source_sha256": "d8d6ed45c5467eafa338f4181f16d1202b677f6bda6fe03f717c36ac6cb1565a",
+      "semantic_sha256": "533963a35bc7542bd269778e70d4df3695a21e50a4cfbf5e6c4f4802f5a46136",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1s-ce-024#5",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quel type de véhicule peut-on louer ?",
+      "labels": [
+        "Des vélos",
+        "Des voitures",
+        "Des motos"
+      ],
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
+      "semantic_sha256": "eb53216e1b401008ac25b3707f5803a92798b987c9bf598a4eb8d5fa46b59ead",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-motos.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-ce-ex1-carte#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Quelle activité Ana pratique-t-elle en plus des promenades ?",
+      "labels": [
+        "Faire du vélo",
+        "Le ski",
+        "La natation"
+      ],
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
+      "semantic_sha256": "65ae7ae456f71ef2db8fbd40ef03ac89c2d250634639d88f04030d4ac4c03818",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-ce-ex1-carte#9",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "enonce": "Comment Ana rentrera-t-elle à Zurich ?",
+      "labels": [
+        "En train",
+        "En voiture",
+        "En avion"
+      ],
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
+      "semantic_sha256": "7cdcb5b50ed675317393211a0b326300f9628ddebe06a990c119f18ca04806c7",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1j-s1-co-1#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment faut-il aller chez Driss ?",
+      "labels": [
+        "À vélo",
+        "En bus",
+        "À pied"
+      ],
+      "source_sha256": "e303a09e210ba1fcbc8cafe3f1dbc1de0d5d300219642a5a059998e9c1defe73",
+      "semantic_sha256": "69fcca48502a964b04b3ea388fe99875a30375a2899d6f9af2bbac0abb36e0aa",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1j-s2-co-2#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel objet peut-on gagner ?",
+      "labels": [
+        "Un ballon",
+        "Une raquette",
+        "Un vélo"
+      ],
+      "source_sha256": "e85df35b27b6f7e0d08706318a98081557d86096fd16745ba227f90c734190eb",
+      "semantic_sha256": "ed2436f11b6116c24f17dcb3188a5d0f1db82172a58d534718711c8c59a587be",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquette.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a1j-s3-co-5#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel accessoire faut-il prendre pour la tête ?",
+      "labels": [
+        "Un chapeau",
+        "Un casque de vélo",
+        "Un bonnet de laine"
+      ],
+      "source_sha256": "30c05d14861663754c06cb30fcc5bda7756cacc0f0dd03cea6e25a89ff47eb34",
+      "semantic_sha256": "ca36aa476918098663324736d2fdeb84d7e2160985e656020664ec53c9d456d5",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a1-s1-co-3#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel document faut-il montrer ?",
+      "labels": [
+        "L’ordonnance",
+        "Le contrat de travail",
+        "Le billet de train"
+      ],
+      "source_sha256": "99673ff8182474a8c42b9edafad0552e11c01d828552ebe86a9925e9357ea221",
+      "semantic_sha256": "fd295fcad09768f0cb5482dd3e829afefb72b9c249c82cfd036b10c74b2d2bc9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-contrat-travail.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a1-s1-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel document lui demande-t-on ?",
+      "labels": [
+        "Une pièce d’identité",
+        "Une ordonnance",
+        "Un billet de train"
+      ],
+      "source_sha256": "4bf177aa1043f9692787e867c0f372a6e7fc54716bd85e6d1ebf6f56e4767348",
+      "semantic_sha256": "8818453bc2b3fdbde07fbe6a498cd75ff56965e6891847181a9a1832ee76e5a8",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a1-tpb-co-1#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel moyen de transport faut-il prendre ?",
+      "labels": [
+        "Le bus",
+        "Le métro",
+        "Le train"
+      ],
+      "source_sha256": "082ee3169f3306c9f9e1d114dd5f4e162b6b3ed68800492a4b6b6e699f6ce8e4",
+      "semantic_sha256": "d29b9f6440654c654af8f563af043ef5734803124d37ff89fc91f4c637f6e768",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a1-tpbb-co-2#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où Sammy pense-t-il avoir laissé son livre ?",
+      "labels": [
+        "Chez lui",
+        "Au restaurant",
+        "Dans le bus"
+      ],
+      "source_sha256": "06edabaea51532ad2f512152f618c661f0fd282d88b731833f67b519ee4a31ef",
+      "semantic_sha256": "ed4a710f67c32948b91f75ad89c08a43ae6a5c8b2d766e6249aa3347b7cb3a46",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-interieur-bus.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a1-sem1-co-2#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel document la personne peut-elle montrer au médecin ?",
+      "labels": [
+        "Son ordonnance",
+        "Son permis de conduire",
+        "Son billet de train"
+      ],
+      "source_sha256": "c3fdd5f5481b439494d35f3bfcbc81f8a728f92c48c28c18ad489c9e279759b7",
+      "semantic_sha256": "ea01a201a1fd6f11c70fc7b2d901183e0688983a2252db11b3ff8507cb36815a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s9-co-2#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle est la cause de son retard ?",
+      "labels": [
+        "Une panne de métro",
+        "Une panne de voiture",
+        "Un embouteillage"
+      ],
+      "source_sha256": "0f1fb3cea616b69b7bf2e71cc86eb7374d2527b7efc552598ae2d10ee5a0937f",
+      "semantic_sha256": "c711ffc2cb93e7243f0c1a9bd087c0ebcb232d8804be5a6cb23a737ae3771258",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s9-co-4#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel moyen de transport prend-elle ensuite ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "L’avion"
+      ],
+      "source_sha256": "b44e3e1a0ef946e7a6912795ad58ba7e2087b55909a1f0022dbe406411d6b9c7",
+      "semantic_sha256": "ffb8995ee8952ca96a24d5fd69c16cf074928d85f1f07912fd9e7d469157df8f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s14-co-3#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel accessoire faut-il porter sur la tête ?",
+      "labels": [
+        "Une casquette",
+        "Un casque de vélo",
+        "Un bonnet de laine"
+      ],
+      "source_sha256": "6e84c53682c736bba9e636610778005723f05e8d8397e911992d4d34d6ca26f1",
+      "semantic_sha256": "69b9da941b90cb6b5dae71bc36d9cb414b7cfa280418608ecfec415e8e6a9da9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s22-co-3#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Dans la troisième situation, quels documents recevra-t-elle bientôt ?",
+      "labels": [
+        "Ses billets d’avion",
+        "Son passeport",
+        "Son permis de conduire"
+      ],
+      "source_sha256": "7035266578db2b042b3ed201b9d88f0855a65062571f5da4b638b86df4fb6d0c",
+      "semantic_sha256": "02f8de5cedd1e48da421d30891f45ca199b09108548601765626f800c3e86ea2",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-billets-avion-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s23-co-2#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où peut-on trouver des recettes ?",
+      "labels": [
+        "Sur le site Internet",
+        "Dans le train",
+        "À la poste"
+      ],
+      "source_sha256": "f036de63b8517b37217c218d6d0d638e0a69e7dc627c4958bd3448de4d0752a2",
+      "semantic_sha256": "b9ebe9d93743abd1acda626526c8016ff6ac06b911a8efedbc8fe11b35f17e25",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-internet.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trains.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s25-co-1#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel appareil peut-elle notamment réparer ?",
+      "labels": [
+        "Un réfrigérateur",
+        "Une voiture",
+        "Un vélo"
+      ],
+      "source_sha256": "fbacd66d6ebf49fd3470577b8512181d6d8c30b52fc8e249afaf1aa984d26576",
+      "semantic_sha256": "887d0c0a6355d9ff40e2750340a5b4fb71df8e3a675124154cab176f6e30df81",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s25-co-4#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quels objets faut-il ranger dans le local ?",
+      "labels": [
+        "Les vélos",
+        "Les chaises",
+        "Les poussettes"
+      ],
+      "source_sha256": "2652733227774f3f4426223044a912f558196d4f562d064c6c1bf2bbb151b36b",
+      "semantic_sha256": "4b0a9346bae969d842174db9a0a70de3d9368d124a185bd07a7b7440351ef3d8",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaises.webp",
+        "/lib/images/tcf/qcm-audit/extension573-poussettes-pluriel.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s26-co-1#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel objet est laissé dans le couloir ?",
+      "labels": [
+        "Une poubelle",
+        "Un vélo",
+        "Une chaise"
+      ],
+      "source_sha256": "397a907a8bc77e4848001b48933204e32740593b65250df5ba866b711d9cf0a7",
+      "semantic_sha256": "c013602bc69d580807aded75c4f845a311104d4c659320e945b1724e4d8b28f2",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-poubelle.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaise.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s30-co-3#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment son père viendra-t-il la chercher ?",
+      "labels": [
+        "En voiture",
+        "En bus",
+        "À vélo"
+      ],
+      "source_sha256": "72e2d5d20a68bd14f9dfe4e7c1639c302dd12ac021d542a3c9f33eb37935eec6",
+      "semantic_sha256": "46136ab8658c07902c92a56335c5b610310bbd1c5fdea389aa0a975d2a4c1fe0",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s32-co-3#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel document les passagers doivent-ils avoir ?",
+      "labels": [
+        "Leur passeport",
+        "Leur carte de bibliothèque",
+        "Leur billet de train"
+      ],
+      "source_sha256": "8503360840788eb1c4e1fd4ed3efc0da4592d4b456a7cb8717f8c6cda829b744",
+      "semantic_sha256": "79f7a09539ac5b7d790cf6e277b121a5f4c4d11ea037c4c88ef25380191b1403",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s34-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel sport est proposé en premier ?",
+      "labels": [
+        "Le tennis",
+        "Le VTT",
+        "L’escalade"
+      ],
+      "source_sha256": "4a0376de55fc66c2ecd1cad1115d972aeea5a1655d45738bdc69ed0f353bd0c6",
+      "semantic_sha256": "a98b505ce89ee17dd5f3d0cd056755765dba90cb6fa76618fbb19986a8807414",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s34-co-3#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle activité l’une des personnes décide-t-elle de faire aujourd’hui ?",
+      "labels": [
+        "Faire du vélo",
+        "Du tennis",
+        "De l’escalade"
+      ],
+      "source_sha256": "4a0376de55fc66c2ecd1cad1115d972aeea5a1655d45738bdc69ed0f353bd0c6",
+      "semantic_sha256": "d47a1930ba848b25853c5b0fb1e2815f7d445235cfa228e0785c9f968e4aae3a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel objet bloque le passage dans le hall ?",
+      "labels": [
+        "Des vélos",
+        "Des fauteuils",
+        "Des cartons"
+      ],
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "59088f494d7738760b7e67f686476582f034a513d23e9ab65c5497a40ea5979a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/extension573-fauteuils-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-cartons-pluriel.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où devrait-on ranger les vélos ?",
+      "labels": [
+        "Dans le local à vélos",
+        "Dans les escaliers",
+        "Dans les couloirs"
+      ],
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "1866caa3c378be0ebbdb6f5ac9dbcda77223d6689c48fbe35991ca20b79d1856",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où peut-on jeter les bouteilles en verre ?",
+      "labels": [
+        "Dans une poubelle pour le verre",
+        "Dans le local à vélos",
+        "Dans le garage"
+      ],
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "4eb47c8722991c8c61a5b063b697a246dca0e85e8bca33f8ca1f6b322939fc49",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s44-co-3#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport est le plus rapide ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le vélo"
+      ],
+      "source_sha256": "d61a4c243bf9833e8e72d73ce04d1aedabc88b85b9953e9a237d81dc75d10440",
+      "semantic_sha256": "2b4d28eef682deba3b0b631524ab754f43b12424c89d88e594072e18236b36f2",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s45-co-1#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel document le client demande-t-il ?",
+      "labels": [
+        "Un plan de la ville",
+        "Un horaire de train",
+        "Un ticket de métro"
+      ],
+      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
+      "semantic_sha256": "054a90d1f14b0af5aa3b12fbd3dcdf59a60343e2afe96c2031ff517c0e328b5e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-plan-ville.webp",
+        "/lib/images/tcf/qcm-audit/extension573-horaire-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s45-co-1#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quels transports peut-il prendre ?",
+      "labels": [
+        "Le métro ou le bus",
+        "Le train ou le tramway",
+        "Le taxi ou le bateau"
+      ],
+      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
+      "semantic_sha256": "27f1f1f7d79ea8a3c688f0b2bee22c55ea075210d768cae6ba01b3d067fda228",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s45-co-1#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport préfère-t-il ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le taxi"
+      ],
+      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
+      "semantic_sha256": "a490e0b8f8bd6e1baf88a9f2c73f4097b724cd19c0319d2e701800c61ce9b035",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s47-co-1#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport utilise son père ?",
+      "labels": [
+        "Une voiture",
+        "Un vélo",
+        "Un bus"
+      ],
+      "source_sha256": "f90fb8f081785483b9fb351ed66b6e570abf50024947603ca66c0859b1da1d3e",
+      "semantic_sha256": "2944c06878e7164f982b08798b8f0189693419f4732010c8287bc09041ada78f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s47-co-3#9",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment va-t-elle s'y rendre ?",
+      "labels": [
+        "À vélo",
+        "En bus",
+        "À pied"
+      ],
+      "source_sha256": "40c8a4e8d1a8ca9752fd838e42d91f3afd08624b53c8c086994e0ebd0332ff26",
+      "semantic_sha256": "58ed6e20e4a1480ac6ebd4ef4a2726ff11ca74e78cbe5a526e57959fa7be27da",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s48-co-4#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel objet ses parents lui ont-ils acheté ?",
+      "labels": [
+        "Un ballon",
+        "Un vélo",
+        "Une console"
+      ],
+      "source_sha256": "e36a1c502fc4b8ad268311de0e6b275ad422ae39ea707aff1ccc573409e81024",
+      "semantic_sha256": "b4e84114be224434584652f4f39d45817bc0783e5f6b8a297b54db4c04b32691",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-console-jeux.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a1-s49-co-1#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment la mère de Nina peut-elle les emmener ?",
+      "labels": [
+        "En voiture",
+        "À vélo",
+        "En bus"
+      ],
+      "source_sha256": "732c2f1fcf379b55f1c69bb9a3608478b6b775cc1c8f9232f4644a787fe5fe36",
+      "semantic_sha256": "77d0c80ae64d2a9e9e9954374985fcf86f155af333d39a4543ae4ff16167cf19",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s52-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport est annoncé ?",
+      "labels": [
+        "Un train",
+        "Un avion",
+        "Un bateau"
+      ],
+      "source_sha256": "26b3cdcef562bc96da67d8e1c658651856161641f5ee16550f4ae43a3d8575a8",
+      "semantic_sha256": "55651e54934f8817c833a9bc32616da217d8b84ae58735157d03238c4991b36d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s54-co-3#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport est conseillé ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "La voiture"
+      ],
+      "source_sha256": "867bd09551feee2afc8e6e8cb4a98b3c89be6f41cb95cfc993295c5e4ff77ff1",
+      "semantic_sha256": "affc6ef35e799fe6c5b37595a314fde89b92ac8c30e0035ac22b45e2d924d770",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a1-s55-co-2#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Qu'est-ce qui manque en covoiturage selon elle ?",
+      "labels": [
+        "Une voiture-bar",
+        "Une fenêtre",
+        "Une radio"
+      ],
+      "source_sha256": "cfefee90740bf88b2eae0b129442eac8d6b85c5ff74694367e72873c189beb58",
+      "semantic_sha256": "45e064fa61aa090e31fa7773200ab254f452c5cfc8b5b94dc959cfa1e1c76f72",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+        "/lib/images/tcf/qcm-audit/co57-fenetre.webp",
+        "/lib/images/tcf/qcm-audit/co57-radio.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ssx-a1-ecole-bus-pour-la-piscine-co-4#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport attend les élèves ?",
+      "labels": [
+        "Un bus",
+        "Un train",
+        "Un tramway"
+      ],
+      "source_sha256": "9a9edaaa1d15efd9c8f177ac57e5d947e1dd5c4167f36b085607bcaba49346c2",
+      "semantic_sha256": "8a75ea313a4fadf7bcf7d538787faa7e12b83b501fe029b6bba047587405fce4",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ssx-a1-ecole-rentrer-de-l-ecole-co-4#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment la personne qui répond rentre-t-elle de l'école ?",
+      "labels": [
+        "En bus",
+        "En train",
+        "À vélo"
+      ],
+      "source_sha256": "e6ff9972ed97327defa2f2b5369d1782795841370b33fd92941946a8f4f110ab",
+      "semantic_sha256": "983c8552ee3937f05ea6f8a0c68f892956c741a203fae35df0a49f04d2532f06",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-11#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où Jacques travaille-t-il ?",
+      "labels": [
+        "Dans un magasin de motos",
+        "Dans un magasin de vélos",
+        "Dans un restaurant"
+      ],
+      "source_sha256": "360382147e26dd144bee7a0ed03cf01c15617e678a531c1b019150cb6c0806ec",
+      "semantic_sha256": "25aea8be04a350af930dff4e3cd3e49a6b71cf08fab7eb0f950c6458aca08c48",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-11#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle activité propose-t-il au parc ?",
+      "labels": [
+        "Faire du vélo",
+        "Jouer au football",
+        "Courir"
+      ],
+      "source_sha256": "360382147e26dd144bee7a0ed03cf01c15617e678a531c1b019150cb6c0806ec",
+      "semantic_sha256": "1c08210f160e8a95934fb9ba9cf8623be0929987ba2694dd56c52a2518995184",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-12#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport est conseillé ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "L'avion"
+      ],
+      "source_sha256": "c6724fc010d2050a1cb185b396af27dc98e76b88fdaefa4ce3b4790f494d0069",
+      "semantic_sha256": "e65c99a4915188c1e8213a4595dca77f2a6ec57a3e1d3d80da8ed1bbf5e6716e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-12#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel moyen de transport est proposé pour visiter la ville ?",
+      "labels": [
+        "Le bus touristique",
+        "Le bateau",
+        "Le métro"
+      ],
+      "source_sha256": "e2b218892bf42faa4f64c78f95212475db76ce38d8782e89c719e87d8d7b7b94",
+      "semantic_sha256": "1d2ed1993c3d7aa4502ac993be4ae6ab662a2832aa1e1d2e62bac4265f518966",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-car-touristique-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "5b42a4a8698f0eba92d13a05de335da97cc9fcab00ab7e4fd7669aecd86190fe",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-20#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Dans quel transport les voyageurs vont-ils monter ?",
+      "labels": [
+        "Un avion",
+        "Un train",
+        "Un bateau"
+      ],
+      "source_sha256": "c2ed6fd6d6b3d68211da0719542efbff95b4e094a18e1511bf4c744fecc992f2",
+      "semantic_sha256": "76f0fa156b436a9189f75eb6e19927ae053fe9a650f8d4653b6776d80b7fbb6d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-20#9",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Dans quel moyen de transport ce service est-il proposé ?",
+      "labels": [
+        "Le train",
+        "L'avion",
+        "Le bateau"
+      ],
+      "source_sha256": "d0276f04ded96aec4adda0b4407a32e2c8a0d5971638dfd349a859486e5b07fb",
+      "semantic_sha256": "ce472e011941c2c69916196987f13c873a2de3bd77b0940ed47df9cb7fbcb7be",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex2-25#10",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel type de transport est annoncé ?",
+      "labels": [
+        "Un avion",
+        "Un train",
+        "Un bateau"
+      ],
+      "source_sha256": "f42b8d19f33520e12cfd4270a06590cf2d3b5aa00f74d241a80deb15c58e59c9",
+      "semantic_sha256": "2c0e27ff8d5b1df6bfb11a8001b51c90980b60db062e75672c360779cb90719c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-60#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment Jeannette propose-t-elle d'aller chez Louis ?",
+      "labels": [
+        "En voiture",
+        "En métro",
+        "À pied"
+      ],
+      "source_sha256": "e3df4b8e1900e0728e4722e35acc913e89b770f10e0cf9806b369dc10881c098",
+      "semantic_sha256": "aba391c642112fda662cc09b1dbc764667ce694f05b88adbbde77afe3a917074",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex3-66#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Que faut-il aussi réserver pour demain ?",
+      "labels": [
+        "Le restaurant",
+        "Un hôtel",
+        "Un taxi"
+      ],
+      "source_sha256": "057f5a6302ef1f9fde19a49b5f70662dffabe21fc11a5b0809c2299fc16d2f3d",
+      "semantic_sha256": "b3a67cef93a340830c6f3f77da9b01c240381827c3cafb1f86be2ccfb18c0ef9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/co/bg/hotel.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-co-ex4-70#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment l'étudiant va-t-il à l'université ?",
+      "labels": [
+        "À pied",
+        "En bus",
+        "À vélo"
+      ],
+      "source_sha256": "fa505738044b76c6cd98f0a18d738995ab12d6b17f6227630d3e759db2447d08",
+      "semantic_sha256": "f5a00ebe60edf3b0a569096a64489ab94e2d5be4027dfdb4041f5f67601f2348",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-75#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle activité fait-elle le samedi avant le cinéma ?",
+      "labels": [
+        "Faire du vélo",
+        "Du tennis",
+        "De la natation"
+      ],
+      "source_sha256": "5f08a7d7de1259005e9fa2f29ee18fd0fa0c415bf7c8a5adff705752b8734d39",
+      "semantic_sha256": "4159dbe175b2c04645413cd5bc7e6262cca5ee939e4505edc3abd1e755fa0f4c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-co-80#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport les deux dernières personnes ne prennent-elles pas ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le train"
+      ],
+      "source_sha256": "4093bb1be71393e30a78140b6d3c9420c6513b6623e9291e62afa3f34be984c8",
+      "semantic_sha256": "eef16d197a80b5d230c1d3c33ae199e08cb35aa56f90e3c5154a7c7decc6fff6",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-83#10",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment les deux personnes viennent-elles à l'école ?",
+      "labels": [
+        "En métro",
+        "En bus",
+        "À pied"
+      ],
+      "source_sha256": "66d42500b8f307894517f0fc81476c5479e229b0ce2cb05a7e1ed547fccc1eb8",
+      "semantic_sha256": "f1b66463f5e1874ae82ed357719a0319da19556bfd13a02aa51065d96874ae42",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-54-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel moyen de transport utilise-t-elle ?",
+      "labels": [
+        "Sa voiture",
+        "Le train",
+        "Le bus"
+      ],
+      "source_sha256": "9e448582d3c795f13744e09e298771f813d890c6d1142acadced9041d25247dd",
+      "semantic_sha256": "9c829a764c857c1167b498c0b7cbaa4335d04851717a0df8d576eb36eda6fc1f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-58-2#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel objet faut-il payer ?",
+      "labels": [
+        "Une carte postale",
+        "Un billet de train",
+        "Un journal"
+      ],
+      "source_sha256": "73bfaa6298e13bd8cc2b00a7fdb6a5bffa4466847c1fb042872f1a9207b0617e",
+      "semantic_sha256": "0cd0d32af2b8fba54c9adeeef7b57fabc66683f6311086bbcde222e18c004fed",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-carte-postale.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-58-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport la personne prend-elle tous les jours ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "Le métro"
+      ],
+      "source_sha256": "56a2f1e2b1cf5aa2598d3139798f2dfb5bd24279aa0ac54c6979c2034041243e",
+      "semantic_sha256": "1d4ae30b2c94b95622d311162410e205af7135da40107579c516400d8c2f0632",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-58-3#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel véhicule la personne ne possède-t-elle pas ?",
+      "labels": [
+        "Une voiture",
+        "Un vélo",
+        "Une moto"
+      ],
+      "source_sha256": "56a2f1e2b1cf5aa2598d3139798f2dfb5bd24279aa0ac54c6979c2034041243e",
+      "semantic_sha256": "9ae90dd75c405d11b72b3bf5bf2bf23442c9def7e1a495990cdc1211e8eb7621",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment les amis vont-ils à la campagne ?",
+      "labels": [
+        "À vélo",
+        "En voiture",
+        "En train"
+      ],
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "cbfa0db2bebf01adbe66b6aeb2ef96d4255a745bfec9e86277fc80038b5166ff",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où les amis ont-ils rendez-vous ?",
+      "labels": [
+        "À l’arrêt de bus",
+        "Devant la gare",
+        "Devant le collège"
+      ],
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "6fde7d3dc1f2566778b43a984cbba286971d40e93197fbd1f276d40a6b194167",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-003-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment les amis rentrent-ils ?",
+      "labels": [
+        "En voiture",
+        "À pied",
+        "À vélo"
+      ],
+      "source_sha256": "3583736e738653c2b5107d647dc5edf7796d9e465469519e8add9ed5cd1e6ae0",
+      "semantic_sha256": "40d948b5d73db823e2032be409345fa6da045aaeca88b6978ce8374c29f9e485",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-006-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment les amis peuvent-ils aller chez Thomas ?",
+      "labels": [
+        "À vélo",
+        "En bus",
+        "En métro"
+      ],
+      "source_sha256": "6b8944ed77905c56c952ebb2f78b4a07092431901692b69029dbded7057fb14c",
+      "semantic_sha256": "2660237a76e984c4ee03fbd8bd97724566472ea89de8f087739df5d3f016a3c1",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-009-01#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment les amis se rendent-ils au spectacle ?",
+      "labels": [
+        "En bus",
+        "En voiture",
+        "À vélo"
+      ],
+      "source_sha256": "f7d7dabbe90665dade51c32c96d62ec17c0b80798365c4798a11165e649dd2c9",
+      "semantic_sha256": "d8752fc9041835258611bb9f16a432f640b41cc31fea86f9fa9e1f83d450a013",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-010-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où Adam vient-il chercher son ami ?",
+      "labels": [
+        "À la gare",
+        "À l’aéroport",
+        "À l’arrêt de bus"
+      ],
+      "source_sha256": "d3634f92935a48fbdc56b847f78c07605c006fa7ddd045115213f8eec0dc73e4",
+      "semantic_sha256": "5175912cb229e73cd044c2733c5a85f2358d8ee50f389455aca572d45701a47c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-011-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel type de train arrive ?",
+      "labels": [
+        "Un TGV",
+        "Un train régional",
+        "Un train de marchandises"
+      ],
+      "source_sha256": "93cf2546cea90c6e25574c282b4c3a70514e4e47c590063f94b10f12cdf2577c",
+      "semantic_sha256": "88b45caf4fc3014c9b23fde8b20896c9299d20f3fc9f320a23e06abaffa080e2",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-20261120-train-tgv.png",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-train-marchandises.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-014-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel service est proposé à bord ?",
+      "labels": [
+        "Un service de restauration",
+        "Un service de coiffure",
+        "Un service de location de vélos"
+      ],
+      "source_sha256": "0f49aa742436dc116151a6ee435583620a00188ec2df5e40f7b552d4b2a233a0",
+      "semantic_sha256": "88b40ab13ecbf9f5cf896f04310033b37a0860812d9804f5dfc53420c13d8736",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-lot20-restauration.png",
+        "/lib/images/tcf/qcm-audit/co57-salon-coiffure.webp",
+        "/lib/images/tcf/co/scenes/scenes-courtes/23-loisirs-location-de-velos.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-019-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle activité est prévue ?",
+      "labels": [
+        "Du jogging",
+        "Du vélo",
+        "Du tennis"
+      ],
+      "source_sha256": "b601780d8699902eee8a242ccaff76b248c24f80d9cc84ca9c641da48701fbfb",
+      "semantic_sha256": "6fe46cd8a064dd93ca0477565a0c9ebccfd13d8c4d0cb5d253c00dc37cc0982d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-026-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel titre de transport doit-elle acheter ?",
+      "labels": [
+        "Un ticket de bus",
+        "Un billet de train",
+        "Un ticket de métro"
+      ],
+      "source_sha256": "881566ef5a6f40a455f38f4c6262f05c7434966a697c1a22dee40f41145ab9c0",
+      "semantic_sha256": "e9062e2201dbceb2d6399119ff2bc349a45c597664f369eea8da223827ba664e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-028-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Comment Viviane propose-t-elle d’aller à la gare ?",
+      "labels": [
+        "En voiture",
+        "À vélo",
+        "En bus"
+      ],
+      "source_sha256": "068a0f853f418e256f6dc88078ef7a54f231d292c0f253791bbcecd64ccdbf62",
+      "semantic_sha256": "56889a0904964ca825e483f0c4fcb7af69e5380b97434ea58c4deca635c500ef",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Pourquoi la professeure impose-t-elle de sortir ?",
+      "labels": [
+        "Pour prendre l’air",
+        "Pour prendre le bus",
+        "Pour rentrer chez soi"
+      ],
+      "source_sha256": "c4faa3a459bbde26b5797bd5fcc148c7c3e82289746ea74ae8e19e6a356b76f9",
+      "semantic_sha256": "eab2355524dceb57a4909f2862295b35a0601ab72a5852c601e93684f359c2aa",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-lot20-prendre-air.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-lot20-monter-bus.png",
+        "/lib/images/tcf/catalogue/actions/rentrer-a-pied.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel matériel peut-on acheter ?",
+      "labels": [
+        "Des skis",
+        "Des vélos",
+        "Des raquettes"
+      ],
+      "source_sha256": "852bffdf960dd2552fbd66879d005465930a98a9a109567ece5dcf2ae935ed67",
+      "semantic_sha256": "fc1365c1d7d68c588cf0c2d51e5c78fb94d7b3a45ddd45661aed9c12984144ed",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquettes.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-035-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel cadeau Sébastien a-t-il reçu de ses parents ?",
+      "labels": [
+        "Un vélo",
+        "Un ordinateur",
+        "Un téléphone"
+      ],
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "c1757ab9a0f924467a840337eb5e9366f59351b87d47a699f0dcd9027e20759d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-036-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Où le rendez-vous est-il fixé ?",
+      "labels": [
+        "À la gare",
+        "À l’arrêt de bus",
+        "Devant le collège"
+      ],
+      "source_sha256": "72dece5739ac886c7e3e4fb00ca413ccb2e0165492d646a0713ed0e87e55a259",
+      "semantic_sha256": "51f2837ae39c9ff5cb9e2a9b05873d3e27b8d812498c28efb27b1d42c077acde",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-044-04#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel véhicule les amis utilisent-ils pendant leurs loisirs ?",
+      "labels": [
+        "Le vélo",
+        "Le scooter",
+        "La trottinette"
+      ],
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "semantic_sha256": "e1c43f8339bc50645503c13417bd76531d5dc02e7120121e3e3aa8562618d3b8",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-044-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle activité la personne déteste-t-elle ?",
+      "labels": [
+        "Faire les magasins",
+        "Aller au cinéma",
+        "Faire du vélo"
+      ],
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "semantic_sha256": "8f030850f46e4b8ad84fa65da5ea4e91e7b2af825ea3e0c1f9b883bf79a1a144",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-faire-magasins.png",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel moyen de transport est cité dans la question commençant par « Pourquoi » ?",
+      "labels": [
+        "Le bus",
+        "Le train",
+        "Le métro"
+      ],
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "5c79699455dd53c8dbe6e4bc7f0f3d5c456fc04e9d66e24d82e25320d28c341e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-046#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel véhicule est cité dans la question sur la possession ?",
+      "labels": [
+        "Un vélo",
+        "Une voiture",
+        "Une moto"
+      ],
+      "source_sha256": "cf4d8c6c73ea0db2d52fdc791941be478d41efecb75dc047881986c5e94f438f",
+      "semantic_sha256": "fe5e0a30aa758df30d9d04bf01244630e3199ae8896f171fc6936f0e8e68479b",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-048-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quelle activité le jeune homme faisait-il ?",
+      "labels": [
+        "Du vélo",
+        "Du football",
+        "Du ski"
+      ],
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "ed530d26954fbdad521915e29cdb469da621e9aa48098366a68b3bfc00631618",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-04-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Que propose la personne qui lui parle ?",
+      "labels": [
+        "De l’accompagner",
+        "D’appeler un taxi",
+        "De lui donner un repas"
+      ],
+      "source_sha256": "20f554fb3de867456d24fa974359ca29060ad13a8a7c00342da26facd8a42e70",
+      "semantic_sha256": "b3d7836d2f59cb8eaf67a5428f13351b4b2960bff8c74599e8df4bffbdd5f803",
+      "image_paths": [
+        "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20b-appeler-taxi.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20b-offrir-repas.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-01-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel transport prendront-ils à la gare ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le tram"
+      ],
+      "source_sha256": "250e234af8db9c005f3a74373861eb5556e14375f13572e8ad7c6f777b648946",
+      "semantic_sha256": "160e5d71ec3c36e4921f973c84c9adcb0bd10c51af6e1b3074fd6da5ed1c34b0",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-02-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel véhicule peut-on gagner au jeu ?",
+      "labels": [
+        "Un vélo électrique",
+        "Un scooter",
+        "Une trottinette"
+      ],
+      "source_sha256": "186a269e5436d014cbbd596f01d59e3fa053b4a214a587a2052ecd28e0781bb0",
+      "semantic_sha256": "0f3cd6b1adbe6595345bf37ccc617f7dc48b9165e49482a082a5715ca1919753",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-velo-electrique.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "0184f651d39618425ce428427e659b2a0b267ecab0ee06c95175434548f40347",
+        "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-04-03#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quels sports pratique-t-il déjà ?",
+      "labels": [
+        "Le foot et le basket",
+        "Le tennis et le rugby",
+        "La natation et le vélo"
+      ],
+      "source_sha256": "5d28a5b3975f87bf6abb9927133277e420b0a0974540963614439e5d0298b011",
+      "semantic_sha256": "cb4770ac9ecf2a33058cc3f3da1681574072c1da4ae558d120e0a6400ba51e62",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-foot-basket.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tennis-rugby.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-natation-velo.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "enonce": "Quel cadeau est proposé ?",
+      "labels": [
+        "Un support de téléphone pour vélo",
+        "Un casque de musique",
+        "Un jeu de société"
+      ],
+      "source_sha256": "144bedf3de0f064fcd8340d9f9be956aa5b8bc0286c946020294884bce9d63bf",
+      "semantic_sha256": "4a377d2c3a9361ec4f8983bf88f772831d838f9cc8fd7235e3182b37d08220b4",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+        "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp",
+        "/lib/images/tcf/qcm-audit/extension573-jeu-societe.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2j-s1-ce-1#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Où se trouvent les participants du jeu 5 ?",
+      "labels": [
+        "Dans un sous-marin",
+        "Dans un avion",
+        "Dans une fusée"
+      ],
+      "source_sha256": "ed8f773b18dd8d0339e7620690046a8596895de87fa52398ffd381e7dab40d82",
+      "semantic_sha256": "d3a7a1ffbf593e45cea998724708f0f56570cc337b28407e1061fc9c89edc55e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-sous-marin.webp",
+        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
+        "/lib/images/tcf/qcm-audit/vocab-fusee.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2j-s2-ce-3#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Document 1 — Quel objet peut-on gagner ?",
+      "labels": [
+        "Une montre",
+        "Un vélo",
+        "Un téléphone"
+      ],
+      "source_sha256": "ed7ce84a4c562e894dde28d4b8e8ee503e8aaf4e78dc5b76077900d3e5a2c29a",
+      "semantic_sha256": "5d5b203d740fcf471a4b539a8b3456614a04f1e19a6090209c26c4f6572b17b0",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2p-s1-ce-1#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Document 3 — Comment les trois amis voyagent-ils ?",
+      "labels": [
+        "En train",
+        "En avion",
+        "En voiture"
+      ],
+      "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
+      "semantic_sha256": "faa10de3e311686d97574ede4e8f96a2c1b0869352122a472eb804831dc8f8e4",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a2p-s2-ce-2#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Comment la famille va-t-elle voyager ?",
+      "labels": [
+        "En bateau",
+        "En train",
+        "En avion"
+      ],
+      "source_sha256": "fb1df1f61d32d5c1b6166883b1fbf3d614c1c6c5fb55db3249097fc4d9c50d22",
+      "semantic_sha256": "8618de293a8d58ec003e8c818ba4cad449738d9a82e6c99101812060d8f68e37",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a2p-s4-ce-2#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quel objet l’équipe conseille-t-elle d’apporter ?",
+      "labels": [
+        "Un appareil photo",
+        "Un ordinateur portable",
+        "Un casque de vélo"
+      ],
+      "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
+      "semantic_sha256": "c06ef6e73a1e687c94978ef7b6d57dd14744f853126512fa5a24b8916457cf0a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2-sb-ce-4#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Que peut-on fabriquer soi-même ?",
+      "labels": [
+        "Une étagère",
+        "Une voiture de sport",
+        "Un téléphone portable"
+      ],
+      "source_sha256": "8d17c9a1c433204f885a942103cfba9df70f74d479064432d6d0d36cae9f21a4",
+      "semantic_sha256": "e54a8e45008f24bd9310e824c478791b20771f9a54af8b943c35af1d2a5e184b",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2-sc-ce-1#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Document 3 — Comment peut-on découvrir la ville ?",
+      "labels": [
+        "À vélo",
+        "En bateau",
+        "En tramway"
+      ],
+      "source_sha256": "598bcd3a9ed1386e771c69d606c563b60209a5c6fbd4efa5ae6796715ac1e566",
+      "semantic_sha256": "7e0e291298184e7450daf55d9cd76e53e5b3fbfc10d29e20b720aafdf9a6a434",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a2-sc-ce-4#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quelle activité les plus grands pratiquent-ils devant la grande roue ?",
+      "labels": [
+        "Le ski",
+        "Le patin à glace",
+        "Le vélo"
+      ],
+      "source_sha256": "c76153c626491e88706e71304f7fb00516920f4642f1296ef8ee995761e38716",
+      "semantic_sha256": "ab07a21f91a3b77163761a34d2c6b4e38fd39185748b4156bc03b811bdb4ed6f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-ea2a2daf84.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a2j-ce-003#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quel sport utilise un vélo ?",
+      "labels": [
+        "Le VTT",
+        "L’escalade",
+        "Le poney"
+      ],
+      "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
+      "semantic_sha256": "af63c8d7c2b51666214d2638dcc7cd77b0d96081860180f1bcc3e2e8e926aeec",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-faire-du-poney.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a2j-ce-021#2",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Comment les deux filles vont-elles à la plage ?",
+      "labels": [
+        "À vélo",
+        "En bus",
+        "À pied"
+      ],
+      "source_sha256": "bc477cceb3051c7e7693e6cb684cd2dfc7ac9bcb4bcafc280c22d101923e420f",
+      "semantic_sha256": "3f2b7de4f02a641e4ff5b05c82c958c1d90a301e80da52e7ce6e1e42f51ed72f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2j-ce-021#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Comment iront-elles à la bibliothèque ?",
+      "labels": [
+        "En bus",
+        "À vélo",
+        "En voiture"
+      ],
+      "source_sha256": "bc477cceb3051c7e7693e6cb684cd2dfc7ac9bcb4bcafc280c22d101923e420f",
+      "semantic_sha256": "b8c8f8e9a0f53b35195e0d8f6fd234aa5170dad3891cda99c8888679e1b0c14c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2j-ce-038#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quel transport est conseillé ?",
+      "labels": [
+        "Le bus",
+        "La voiture",
+        "Le taxi"
+      ],
+      "source_sha256": "ef27062f7f6089ce25bbd7a0dd447361b590135e186d16d7e7fe0b140e20ac74",
+      "semantic_sha256": "99adbd4835ffadaf4188c7172d477d2381acac8fe122e319d8eb2c99b92f09af",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2j-ce-062#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quel objet la publicité présente-t-elle ?",
+      "labels": [
+        "Un réveil",
+        "Un téléphone",
+        "Une radio de voiture"
+      ],
+      "source_sha256": "0bea6a3b88d15fc733daa27e04799a5e08a16d14f1051fbb46de5a4083fb0ab0",
+      "semantic_sha256": "20ecb00c5a454cdc1bc6d778ea8f5d16d1fa6becccb05a7a3b8dd3db8dd82111",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-9121037011.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a2j-ce-064#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Où Gaël et Jasmine se rencontrent-ils ?",
+      "labels": [
+        "À un concert",
+        "À l’école",
+        "Dans un train"
+      ],
+      "source_sha256": "69f8ccdae16bafd7301bb019d9edc29d28b79aa67dca948bd14bfdaa1501be93",
+      "semantic_sha256": "b94d12ba2c3976fdf1afc0b0d11bc5bab264ce6fe458a5fb224f227e02fbe564",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a2r-ce-024#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quel moyen de transport le couple utilisera-t-il ?",
+      "labels": [
+        "Le train",
+        "L’avion",
+        "La voiture"
+      ],
+      "source_sha256": "4654e3dbccff8c4936314bf6cea82a5f3bad6d3584124268c93ec74d806c187b",
+      "semantic_sha256": "4f5d0358f29a02175d89c89c4c39773db808835e2dfbdc3f758321c0a7145257",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2r-ce-031#9",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Où peut-on consulter le programme ?",
+      "labels": [
+        "Sur le site Internet du festival",
+        "Uniquement à la mairie",
+        "Uniquement dans le train"
+      ],
+      "source_sha256": "224ded834c8a1059e9f29647dd573fc67d0c1231ea690de853d9169d5f10454a",
+      "semantic_sha256": "10b3e8356703943a2d1daa832f185e2f3f28003a7c486a9b5c7a2f7f4f7d164e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-site-festivals.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a2r-ce-062#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "enonce": "Quel moyen de transport relie Täsch à Zermatt ?",
+      "labels": [
+        "Un petit train",
+        "Un bateau",
+        "Un avion"
+      ],
+      "source_sha256": "a98ffd5bd210417065370d742b96bcf36cff38734adcabaaba8a99c3f861f0b9",
+      "semantic_sha256": "942705fbed27897633ef84a7ec4206068a9b4db5f8cab469426f217f718c7e40",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/revue-20261107-36fb5f5b7e.webp",
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2j-s1-co-1#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quels véhicules remplacent le métro ?",
+      "labels": [
+        "Des bus",
+        "Des tramways",
+        "Des taxis"
+      ],
+      "source_sha256": "e8dd7a4c50c3e83ce16c48bd03a9363ead49e1aaded4842f0282b89a096142a8",
+      "semantic_sha256": "149e13fd6885da1c4b8e5a783cf5683a0a46c84899c666c50795646a806e06b2",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-tramways.webp",
+        "/lib/images/tcf/qcm-audit/vocab-taxis.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2j-s1-co-1#12",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Que peut-on gagner en répondant aux questions ?",
+      "labels": [
+        "Des livres",
+        "Des vêtements",
+        "Des vélos"
+      ],
+      "source_sha256": "040701b0d971fed68a240a393ea0cff03230e04ec18d9c7b869289431e6d2b36",
+      "semantic_sha256": "00349151d3287932779fdf4a3505c6d27db37f302c8b145b8281da5dd602e1eb",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-a2j-s2-co-1#7",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment les élèves vont-ils au Mont-Saint-Michel ?",
+      "labels": [
+        "En bus",
+        "En train",
+        "En voiture"
+      ],
+      "source_sha256": "5ddf2ee949b2c820cab9496e28afb096ce6a6e96832a885cb42b03b12c1590f9",
+      "semantic_sha256": "f71178724863c598e6353bf37ac5e2c5a0ce211ff83693ef129f89f077f1f63a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a2j-s2-co-3#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment les jeunes vont-ils au stade ?",
+      "labels": [
+        "En voiture",
+        "En bus",
+        "À vélo"
+      ],
+      "source_sha256": "ea630423e992ebdc295c72a2a3482730a9ad3db34e9f0a31054cc996c1a35e0d",
+      "semantic_sha256": "9cf776e1f268baaf433b376654ba4b8f7c42e30f3b4e3587d045b92ce1cd45e8",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a2-sa-co-3#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment viendra-t-elle à l’hôtel ?",
+      "labels": [
+        "En voiture",
+        "En train",
+        "En bus"
+      ],
+      "source_sha256": "15d651a72585fe5729a043bad7d442c3d90132eb333d357e1d8aa3bd50bb44a9",
+      "semantic_sha256": "4487d87b74851b43dc7785dcd4da440b85c0c0974d25673a370b23ce42f980d9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-a2-sa-co-4#13",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Où la personne a-t-elle croisé Thomas ?",
+      "labels": [
+        "Dans le bus",
+        "Dans le train",
+        "Dans le métro"
+      ],
+      "source_sha256": "0224cfb73fb213514fc951949f2d2fe3f6d839accb59b16eb6e6644de21e7dca",
+      "semantic_sha256": "23f1b177c9b4fde1beafa0ce5b754ad9926ab98ad0f3d8a83927a7cac520d2c9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a2-s3-co-3#12",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel cadeau l’annonce conseille-t-elle d’acheter ?",
+      "labels": [
+        "Une carte cadeau",
+        "Un billet de train",
+        "Un abonnement sportif"
+      ],
+      "source_sha256": "431506743fc62d80a811bba14fa41f1aa1bcbdfae62ed03c05d849c2dfe7a03e",
+      "semantic_sha256": "51d6eff05c166c733380b263f3bcd7d6ee3bbc51b5fceda84483c7917ac8c231",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-carte-cadeau.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-abonnement-sportif.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a2-s8b-co-3#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment les personnes iront-elles au tournoi ?",
+      "labels": [
+        "En voiture",
+        "En bus",
+        "À pied"
+      ],
+      "source_sha256": "64e0d8d8542a7949ec84f04ae2600fab08c44774ad84b04b1b5db796516b2a5d",
+      "semantic_sha256": "fbf14f30b0214c2e21a1f64871a85556523e3acd12af4318cbe70bcbf8b6ce16",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a2-s12-co-1#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport devront-ils prendre ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le tramway"
+      ],
+      "source_sha256": "c728e5363aa0f8b8f993ad6efdf7a3e3c225b297d9a42db348b584ccabd82d3d",
+      "semantic_sha256": "536c9f907060491b7095a6807df2ea2989d98a9ade8504ce374f5da7984fdf02",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a2-s38-co-2#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport reste ouvert à Tours et à Nantes selon le bulletin ?",
+      "labels": [
+        "Le tramway",
+        "Le métro",
+        "Le bateau"
+      ],
+      "source_sha256": "b4fe96e275cc3f7edd43b29b374bf7052ad3b9d5c6f52b0bf3bbd6d29f2bf346",
+      "semantic_sha256": "9e0b88f0f4b48237f07e5a50a1f30139a6c799a0cbcd7ea7902baa0ac528951a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a2-s48-co-3#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen de transport attend les enfants ?",
+      "labels": [
+        "Le bus",
+        "Le train",
+        "Le bateau"
+      ],
+      "source_sha256": "65f11e137492393370ca0a120125698bb312107e0bfafd803c26442f02ab6ef9",
+      "semantic_sha256": "747919052179b3dc63205c835d597e5b8bf63b3c5189ae079fd8259f998685fb",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a2-s49-co-1#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel cadeau les parents ont-ils offert ?",
+      "labels": [
+        "Un vélo",
+        "Une trottinette",
+        "Un ordinateur"
+      ],
+      "source_sha256": "d7c85012a9558166771001323aa9d1ec40f384893465947a99c14107e5760619",
+      "semantic_sha256": "32b2acd47eefbbc9a342b3fbb92d77cc26eb7dbd25ffa6808b5ee6d5cc6ab0c9",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a2-s49-co-1#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport les personnes ont-elles raté ?",
+      "labels": [
+        "Le bus",
+        "Le train",
+        "Le métro"
+      ],
+      "source_sha256": "baafcf60bc7c669cce1477595d42fc77a9322720a37f41846ef5a545b39dc8aa",
+      "semantic_sha256": "7b7713e5059e52e9f94dc52c437742563a5219b370279c8570d6eb5434198ded",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-a2-s51-co-4#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel sport pratique Julien ?",
+      "labels": [
+        "Le surf",
+        "Le ski",
+        "Faire du vélo"
+      ],
+      "source_sha256": "5b71c4bbdaedd1df092b784f2c555b742d5d3bf1870493c61dcccc8655d5c3f4",
+      "semantic_sha256": "5cedc29e875fb9fc3aae969b34b3ad86dba4a77a24666a91682ac5d59b372c5f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-a2-s56-co-3#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport les amis prendront-ils à l'aller ?",
+      "labels": [
+        "Le métro",
+        "Le bus",
+        "Le train"
+      ],
+      "source_sha256": "419aa7652ea5d9aa0c02a2fafca8924d2701440a40eee2717fcd6421abda7c32",
+      "semantic_sha256": "946ee8e6a771c5be120abc421a1de2aca8a8fc584e18452c6ad0d38838b35912",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-6-5-co-2#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel nouveau service est proposé ?",
+      "labels": [
+        "Une laverie",
+        "Une boulangerie",
+        "Un taxi"
+      ],
+      "source_sha256": "a5b23be796883d3e5f71583949ee9a4c3af715d97e22f1557d7fc185ec2ea46b",
+      "semantic_sha256": "bdfe2bb0250557fc49251b25634987413c7e7abc1f0592a628af421003df027c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ssx-a2-conversation-32-co-4#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport lui propose-t-on ?",
+      "labels": [
+        "La voiture",
+        "Le train",
+        "Le vélo"
+      ],
+      "source_sha256": "ce17ad917c4693b375d6e93b3008bef93f16bcd5418ae46ed4acbab34bc2f16d",
+      "semantic_sha256": "f40704206a8486a440b963dccfd98abcf4f56dd3cb15d7df92150d0505a7a6eb",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ssx-a2-conversation-32-co-4#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport choisit-elle finalement ?",
+      "labels": [
+        "Le bus",
+        "La voiture",
+        "La marche à pied"
+      ],
+      "source_sha256": "ce17ad917c4693b375d6e93b3008bef93f16bcd5418ae46ed4acbab34bc2f16d",
+      "semantic_sha256": "7a5667292e85f9dd287d6aabe557c3b0db0b8ae0c4310ff5595a345a6c6ca908",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ssx-a2-radio-17-1-co-3#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quels sports sont conseillés aux plus sportifs ?",
+      "labels": [
+        "Le vélo et la natation",
+        "Le football et le tennis",
+        "La course et le ski"
+      ],
+      "source_sha256": "0824677c7866e18508abe6e69900959451228ef07d4fee3799e0efd3bdbb958f",
+      "semantic_sha256": "5f12d072348129108da37e4978415989b0d1744f55fc543353767989dc53c778",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-5-2-co-2#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel véhicule doit être déplacé ?",
+      "labels": [
+        "Une moto",
+        "Une voiture",
+        "Un vélo"
+      ],
+      "source_sha256": "e71d689900aed41e6455b1de54e013b6e203a3ec6a47f08c157072f31995f0c1",
+      "semantic_sha256": "ae8bff130f2ad57044acaee0899112b3554ece45f7eabd51f5ebbfda5524764e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ssx-a2-radio-14-3-co-3#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Où y a-t-il un problème de circulation ?",
+      "labels": [
+        "Dans le métro",
+        "Sur l’autoroute",
+        "À l’aéroport"
+      ],
+      "source_sha256": "157f644ae7d61a6d6848024ded3c803af563623496e98c640bb5d7c7a2f5f84f",
+      "semantic_sha256": "3fe48d05a5870df989f3fec04e0af43765940b8515a3dc36fdf3655da80270c8",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ssx-a2-radio-fete-de-la-ville-co-3#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel événement est annoncé ?",
+      "labels": [
+        "La fête de la ville",
+        "Un marché de Noël",
+        "Une course à pied"
+      ],
+      "source_sha256": "86dd85be40820791f67b6dee7b973f122fb0e0b18f6293295c31bfc70251eaf9",
+      "semantic_sha256": "31c3fd729a119aaf6921b5d51aed3bcede3e194cc6cf179efbc2a27beeedd99b",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-fete-ville.webp",
+        "/lib/images/tcf/qcm-audit/co57-marche-noel.webp",
+        "/lib/images/tcf/qcm-audit/co57-course-pied.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ssx-a2-transport-comment-tu-rentres-co-4#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment Jules rentre-t-il chez lui ?",
+      "labels": [
+        "En bus",
+        "À pied",
+        "À vélo"
+      ],
+      "source_sha256": "3ec1adbb9d67bf73092e8b14987b1d96a76e6dbc29a0bc9d336ea8495089a225",
+      "semantic_sha256": "0331d679bec00f0274f149004b74689634333b923f04ea36f154243f02a9a7c0",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ssx-a2-transport-comment-tu-rentres-co-4#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Que lui prête Jules ?",
+      "labels": [
+        "Un parapluie",
+        "Un ticket de bus",
+        "Une veste"
+      ],
+      "source_sha256": "3ec1adbb9d67bf73092e8b14987b1d96a76e6dbc29a0bc9d336ea8495089a225",
+      "semantic_sha256": "605c287d7dcb5a984ccec49554baa524755777ace99d6ed214e0b406a7fc650f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "delf-a2-2021-co-ex1-02#8",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "À quel moyen de transport ces portes appartiennent-elles ?",
+      "labels": [
+        "Un train",
+        "Un avion",
+        "Un bateau"
+      ],
+      "source_sha256": "1e1afff3c85f99727ef6fa5d9d6ccd0dd5302c8ae5dd63f83c7ee6d56c0bc5ed",
+      "semantic_sha256": "f6529e60a447d7fd6d7e9166817526fa84c853eabc620a93ba161fe9db5a9bc6",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2-2021-co-ex3-23#10",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen de transport est apprécié ?",
+      "labels": [
+        "Le vélo",
+        "La voiture",
+        "Le bus"
+      ],
+      "source_sha256": "e1dce16fdc7e0a92bbfa3e3757ef0643abb035e962fa6cbe760aa57421120166",
+      "semantic_sha256": "a63ef4cf37aeb26c115cef6c1f4e37b713bb3035fb95430eca10dcc161f69f74",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2-2021-co-ex2-37#11",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport est conseillé ?",
+      "labels": [
+        "Le train",
+        "La voiture",
+        "La moto"
+      ],
+      "source_sha256": "9f724e2422692af024ebb7bac50c61f7aba75c1e13f38d6c65ad629d5deef2e5",
+      "semantic_sha256": "91cffa7f7d495b9784f4c205372e7c69a911aa43d9a299042cd2ad0e19fafc25",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2-2021-co-ex4-42#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport a-t-elle manqué ?",
+      "labels": [
+        "Le bus",
+        "Le train",
+        "L'avion"
+      ],
+      "source_sha256": "f1a16b6d9a50c01d3e2079b961fb6c54587550b4a96afafb0fe8712264316670",
+      "semantic_sha256": "259c075486dcec3ddb7b81d772b7fba06f8e10289f6cc8f47f2200fef370069e",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "delf-a2-2021-co-ex4-45#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen de transport a été réservé ?",
+      "labels": [
+        "L'avion",
+        "Le train",
+        "Le bus"
+      ],
+      "source_sha256": "264a8c324ac175c17921764373b315ba835179fd971aa1682c4c3e4c109ce622",
+      "semantic_sha256": "a6f20e42027398225a1430f1cfe423482442d6ba8b80c1e2d9ef6c1affcf50d4",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-001#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Dans quel véhicule faut-il monter ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "L’avion"
+      ],
+      "source_sha256": "c180a7959adf7ce92b3b3ee908d1d7ce47123f33abfd3cdb1b7bb81836a0c95a",
+      "semantic_sha256": "bb222c1df310cacf7a18a51d48111f363b834411eb1e9f3481e2d31796c2fcb2",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-003-05#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Dans quel véhicule l’annonce est-elle faite ?",
+      "labels": [
+        "Un car",
+        "Un train",
+        "Un avion"
+      ],
+      "source_sha256": "db8690b51ec434945fc3fe9bd26f06e0e0003fed4234790383702d2b886e6e75",
+      "semantic_sha256": "8154dcb29aac016a9f4ffe1ace5fe81eff9246f1e0713c30a9c55bf47a8e9b52",
+      "image_paths": [
+        "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "a19c4a1fe4be7931b0db5705d7c4f5deee278d6d8da4c48252ccc97ab875b5ab",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Que doivent faire tous les voyageurs ?",
+      "labels": [
+        "Descendre",
+        "Monter",
+        "Changer de voiture"
+      ],
+      "source_sha256": "2b70b0e1f20dd38f27a5e4536d3144d9e1b1e147e5fc5f92d057dc042b8dae45",
+      "semantic_sha256": "0a7b2e097251b634db9b881370f30a5bd5bbe7b35f33565f0eebbf7c4e7b8e55",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-descendre-train.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-monter-train.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-changer-voiture.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-006-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "De quel véhicule les voyageurs vont-ils descendre ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "L’avion"
+      ],
+      "source_sha256": "524e78e6afa2d955a463dc7781289262ec06f29c195e1f9239c5679cfab85e08",
+      "semantic_sha256": "a36afcee160a3fc4a92e440e512d78e01f9ac9ff56758773012ce388e41dffa4",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-006-05#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Qu’y trouvent-ils pour s’occuper ?",
+      "labels": [
+        "Des livres et des jeux",
+        "Des vélos et des ballons",
+        "Des instruments de musique"
+      ],
+      "source_sha256": "d8c0d25ae29ac389a16afb9f933f08d2556e356064513a3298855cf6ba01aafd",
+      "semantic_sha256": "2dfcf16777f1373bbdfd22488cdbb1dd49c26a92103083934d0f2ef2e30fac47",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-velos-ballons.png",
+        "/lib/images/tcf/qcm-audit/co306-instruments-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-008-02#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel événement provoque la fermeture de l’avenue ?",
+      "labels": [
+        "Une course à pied",
+        "Une course cycliste",
+        "Un défilé"
+      ],
+      "source_sha256": "e0733a5d82737c9be1dd140771510b0a2056bb9062339324a12853cbf3b85652",
+      "semantic_sha256": "926c48d5cd066f7e361b47be99f1109fd300e929bb2fb9f72f0650cb20a25001",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-course-pied.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20d-course-cycliste.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20d-defile.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-011-03#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment peut-on acheter un billet ?",
+      "labels": [
+        "Sur le site Internet",
+        "À la poste",
+        "Dans le train"
+      ],
+      "source_sha256": "05765f46d68183293d9d2a4915061f3d8c9997f9788d53b163b6d30d6637b5db",
+      "semantic_sha256": "56c0d3cc6b8da446d63ff605d643e83d277331f078b6342a4b96013a1bd1a023",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-billets-salon-livre.png",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trains.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-015-01#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen de transport envisagent-ils ?",
+      "labels": [
+        "Le VTT",
+        "Le bus",
+        "Le train"
+      ],
+      "source_sha256": "f0c7956024c32254a75655b7529b0d8318d91e79c020335bb436a8452698abe0",
+      "semantic_sha256": "e10c2198c1983baac75c3de43159e975f4a52becffb4d94d4485817683c6684d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-vtt-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "5942330c759e8afbf1f82400533adc3eeddb52896fe6a8859940634e879ced80",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-016-01#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Par quel moyen de transport arrive-t-il ?",
+      "labels": [
+        "En avion",
+        "En train",
+        "En voiture"
+      ],
+      "source_sha256": "0f6f693aeda0ceb36ab7f955d28cd5aad22a214f5c0cab2c2a29aa7dc07a2d34",
+      "semantic_sha256": "0da63ee6a4102623416c8e87b68c2065c031c21bc39a79d3e6f96c1db1a5a438",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-030-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport l’élève prend-il pour aller au lycée ?",
+      "labels": [
+        "Le train",
+        "Le bus",
+        "Le métro"
+      ],
+      "source_sha256": "86dac8e2a2abe79db9eefeef776fe521bbcc8dfee3b6ff884e400a5d4b38fc79",
+      "semantic_sha256": "245a5d7a3a3ae01eab925387b8b865199661acfdc1828853bcc9d8c5a9434b22",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-030-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Comment l’élève va-t-il de la gare au lycée ?",
+      "labels": [
+        "Il marche vite",
+        "Il prend un taxi",
+        "Il emprunte un vélo"
+      ],
+      "source_sha256": "86dac8e2a2abe79db9eefeef776fe521bbcc8dfee3b6ff884e400a5d4b38fc79",
+      "semantic_sha256": "0efb199c8f7480e6e8b22e0c433d8a44ff3bc86a7f73a65c801c87dd65290536",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-marcher-vite.png",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-velo-lycee.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-04#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport lui conseille-t-on ?",
+      "labels": [
+        "Le bus",
+        "Le métro",
+        "Le tram"
+      ],
+      "source_sha256": "65a9cafe29cf01f13d88c3a8c87c7a89bca36ae25ba87372b59984e87d53e649",
+      "semantic_sha256": "30123ced19bcc7649f0a810d6b8830c905b4d2362e5168b6cc308eed1dce57bd",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-04#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quelle est sa préférence personnelle ?",
+      "labels": [
+        "Marcher",
+        "Prendre un taxi",
+        "Faire du vélo"
+      ],
+      "source_sha256": "65a9cafe29cf01f13d88c3a8c87c7a89bca36ae25ba87372b59984e87d53e649",
+      "semantic_sha256": "be912279b9a643e145ebe2a9720c0bcd7899ea1ca17ba43c38de2a49865914f9",
+      "image_paths": [
+        "/lib/images/tcf/catalogue/actions/marcher.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-037#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quels sports pratique-t-elle ?",
+      "labels": [
+        "Le tennis et la natation",
+        "Le football et le basket",
+        "Le vélo et la course"
+      ],
+      "source_sha256": "873aebaa5191f55106b83dc2ed2d2551406016c8b42d6af4881ad748a4c891be",
+      "semantic_sha256": "4fbdbfaaa9541efbfde9e7c1781efacb93cdac8079b47efe8f7b1857ff2aca0c",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tennis-natation.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-foot-basket.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-velo-course.png"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-a2-043-04-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport est proposé à la place ?",
+      "labels": [
+        "Le bus",
+        "Le tram",
+        "Le métro"
+      ],
+      "source_sha256": "69623f8b2e56032eb040301b0f0a79c05a4b3d9b129dd3fb89405121bd8451aa",
+      "semantic_sha256": "27146dbc412dd1048ae3b1e1750636cc9033e97decac7867730417b2cfee1516",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-044-03-01#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen de déplacement Chloé décrit-elle d’abord ?",
+      "labels": [
+        "La marche",
+        "Le vélo",
+        "Le métro"
+      ],
+      "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
+      "semantic_sha256": "90dce6ca68a9bc237bb73e00ac5260ea9a0d0a6e878dfb7047008ae200c68595",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-01-06#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Dans quel véhicule les passagers voyagent-ils ?",
+      "labels": [
+        "Un car",
+        "Un train",
+        "Un avion"
+      ],
+      "source_sha256": "04a7c51b8513906e31eba551a1ba86d97728f7a859fb38f5c2f2c75a8d0b540a",
+      "semantic_sha256": "7db494ad5c3dec89e325d5cff2423399945657b1b0b80404d44380552b932c4e",
+      "image_paths": [
+        "/lib/images/tcf/catalogue/vehicules/autocar.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "a19c4a1fe4be7931b0db5705d7c4f5deee278d6d8da4c48252ccc97ab875b5ab",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-045-04-04#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen permet de monter en haut de la montagne ?",
+      "labels": [
+        "Le téléphérique",
+        "Le train",
+        "Le bus"
+      ],
+      "source_sha256": "5d962a7043edbe96f8d964b22e81cfc81241e2b71daad01ea29154628198ca30",
+      "semantic_sha256": "75d8960d7fe6c7d3a2a344e92f23b196e293076a0d392ff4ea28e69003217acb",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-telepherique-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "93cf5275ef155930371c9245bc9e22291757a43ed3d40405dfd2571deaf96a01",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel moyen de transport est proposé ?",
+      "labels": [
+        "Un bateau",
+        "Un avion",
+        "Un train"
+      ],
+      "source_sha256": "ecf859a42a26dbcd7a1308edc74707261e86a59293d052096751f4813fb83ad4",
+      "semantic_sha256": "93aeb282710a0583f295a21ac37187c9a89129fd0c4e414a83aaa54ce1899ff3",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-a2-046-04-03#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "enonce": "Quel transport les amis ont-ils utilisé ?",
+      "labels": [
+        "Le bateau",
+        "L’avion",
+        "Le train"
+      ],
+      "source_sha256": "fbc6e73c584af746cb934d5f6d97a9e1aa78fbaf80d7c484e6321f8459cfb8b3",
+      "semantic_sha256": "defb30685175ea06cbff3abfd06d6686886062258d19f75df60e1061f87610d5",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-b1-s3-co-1#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel vêtement Madame Thierry met-elle sur la tête de sa petite fille ?",
+      "labels": [
+        "Un chapeau en toile",
+        "Un bonnet en laine",
+        "Un casque de vélo"
+      ],
+      "source_sha256": "490bae1174160d83b7c686bf1e15ad6d0767f0a4cbf2eb584a4b3477f2d6793c",
+      "semantic_sha256": "9f54ee105ed62a46aa6bd24369c2be455fdcd9350c2f1bfc559b9ea20c833dba",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-ss-b1-s3-co-4#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel moyen de transport le narrateur cherche-t-il dans la foule ?",
+      "labels": [
+        "Un taxi",
+        "Un bus",
+        "Un vélo"
+      ],
+      "source_sha256": "4cd0c07c42c009dceb211131be15fc55110f14491344c63e29457c8878bb627f",
+      "semantic_sha256": "7c62bc230734efb23c9b0b5f30a9e55fa3e66543605d3eba3642ec87ffef9acb",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-b1-s5-co-2#4",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Comment Eddy va-t-il au collège le matin ?",
+      "labels": [
+        "En bateau",
+        "En bus",
+        "À vélo"
+      ],
+      "source_sha256": "c1add9fee12cea918e8417bf13652458ed535ae56bfcc85a1ecb39a1dfd719fb",
+      "semantic_sha256": "a8c2a5440adf9be89b1d32876faab225a709aae066fbf2ccae4dcca410a5f415",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-b1-s13-co-4#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Dans quel moyen de transport la scène se déroule-t-elle ?",
+      "labels": [
+        "Un train",
+        "Un avion",
+        "Un bus"
+      ],
+      "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
+      "semantic_sha256": "530e347b25293c992d95c87ad657bf40129c5683781997e56cf09d9cb786bc24",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-ss-b1-s13-co-4#10",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel objet le voyageur lui tend-il à la fin ?",
+      "labels": [
+        "Son paquet de biscuits",
+        "Son billet de train",
+        "Son téléphone portable"
+      ],
+      "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
+      "semantic_sha256": "26c63c3fdd204f55fc9bf6e9f9705f6877ef14f65cce6cc8d71fd777f9a021ea",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-paquet-biscuits.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+      ],
+      "status": "pending_context_or_visual_review"
+    },
+    {
+      "key": "tcf-delf-actif-b1-002-03#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel véhicule le témoin utilisait-il ?",
+      "labels": [
+        "Un vélo",
+        "Une voiture",
+        "Une moto"
+      ],
+      "source_sha256": "c2f9985c57fbbc0b4a16f86e7e006174092864ceded171b2de41f75efd9c2786",
+      "semantic_sha256": "85b1527c9154caed2201c5c7cec2e8810fe71e8c8d4b7851d738e71f5b22fab4",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-004-01#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel moyen de transport est prévu ?",
+      "labels": [
+        "Le train",
+        "L’avion",
+        "Le bateau"
+      ],
+      "source_sha256": "b1f74b7f99b56d1f3888b8e5ea43928f0fb9de311e03900ddaff3164705f34a6",
+      "semantic_sha256": "de8700494382328fd43a4a403ed899b18a1eece7ab5c38f57161a606c868c25f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-005-01#4",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Comment Léo rejoint-il habituellement le club ?",
+      "labels": [
+        "À vélo",
+        "En train",
+        "À pied"
+      ],
+      "source_sha256": "f4cc46820901fb8ff584f3b4af8a818fe5842c08cf4262a5206b1b1c4fec355d",
+      "semantic_sha256": "200e13b7cdfd593b8d3a5668c514f0601f9d37d1dda4256890d1784661cca46d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-032-02#1",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel objet la personne a-t-elle acheté ?",
+      "labels": [
+        "Une trottinette",
+        "Un vélo",
+        "Un scooter"
+      ],
+      "source_sha256": "68c2c8ec66d8938a9712293c102a9d08709327d971cdaf9648b844698fa953c2",
+      "semantic_sha256": "9523e2c3f086091fec37d0423c4ab45b0ca405d9068cf7c01c1cbfc0c3b41524",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-033#2",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Quel moyen de déplacement resterait possible dans la deuxième opinion ?",
+      "labels": [
+        "La marche",
+        "La voiture",
+        "Le métro"
+      ],
+      "source_sha256": "ed8491fa7b5aa1cac89d0674e60c16d1fd068bfe74a071f34f513280db991a93",
+      "semantic_sha256": "7f7f885ff296632c19e028318352fccd14f5f302664004d1f8402ffdeb305d34",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-040-01-01#7",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "enonce": "Pour quel véhicule envisagent-elles finalement un accessoire ?",
+      "labels": [
+        "Une moto",
+        "Un vélo",
+        "Une voiture"
+      ],
+      "source_sha256": "60b06b53e8be15d04cad3effc0076046a6c71d21fccfb043d5d59ef584498fc0",
+      "semantic_sha256": "c85458f399b847c8e101e8acd85c772dd6706101c922033ae994e772a8c09875",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+      ],
+      "status": "reviewed",
+      "image_sha256": [
+        "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    },
+    {
+      "key": "tcf-delf-actif-b1-002-03#5",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "source_sha256": "c2f9985c57fbbc0b4a16f86e7e006174092864ceded171b2de41f75efd9c2786",
+      "semantic_sha256": "1ac6c5e158af0661e551b6e09fde8c4529c7b22fd54665aa096a33b610ff51c7",
+      "enonce": "Quel véhicule a été renversé ?",
+      "labels": [
+        "Un scooter",
+        "Un camion",
+        "Un autobus"
+      ],
+      "status": "reviewed",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
+        "/lib/images/tcf/qcm-audit/co306-camion-demenagement-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
+      ],
+      "image_sha256": [
+        "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+        "5a3f1daac741c8c82a9f12ce1f1ceb2dfae7353e17c6cb600eb8865c29f61a3a",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
+      ],
+      "review_register": "docs/tcf/revue-vehicules-ivoire-20261122.json"
+    }
+  ]
+}

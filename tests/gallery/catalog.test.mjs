@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { readFileSync, statSync } from 'node:fs'
 import { createHash } from 'node:crypto'
+import { execFileSync } from 'node:child_process'
 import { buildGalleryCatalog, repositoryImages } from '../../scripts/image-gallery-catalog.mjs'
 import { gallerySubjectTypes } from '../../scripts/gallery-subject-types.mjs'
 
@@ -64,10 +65,19 @@ test('animal, plant, profession and illness filters preserve the actual meaning'
 test('gallery replacements require approved images and retain the original bytes', () => {
   const classes = JSON.parse(readFileSync('docs/gallery/classement-tcf-20261113.json'))
   const manifest = new Map(JSON.parse(readFileSync('docs/tcf/images-generees.json')).images.map(image => [image.path, image]))
+  const initialVersions = new Map(JSON.parse(readFileSync('docs/gallery/fonds-initiaux-conserves-20261122.json')).images.map(image => [image.path, image]))
   const catalog = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
   const hash = path => createHash('sha256').update(readFileSync(`public${path}`)).digest('hex')
   for (const image of classes.images) {
-    assert.equal(manifest.get(image.path)?.status, 'visually_reviewed')
+    const initial = initialVersions.get(image.path)
+    if (initial) {
+      assert.equal(initial.review_status, 'visually_reviewed')
+      assert.equal(initial.original_bytes_preserved, true)
+      const originalBytes = execFileSync('git', ['show', `${initial.source_commit}:public${initial.original_path}`], { maxBuffer: 32 * 1024 * 1024 })
+      assert.equal(createHash('sha256').update(originalBytes).digest('hex'), image.sha256)
+      assert(!manifest.has(image.path), 'retained initial backgrounds are gallery choices, not newly approved QCM replacements')
+      assert(catalog.has(initial.corrected_path), 'the corrected version remains available alongside the original')
+    } else assert.equal(manifest.get(image.path)?.status, 'visually_reviewed')
     assert.equal(hash(image.path), image.sha256)
     // The historical manifest predates the four more specific subject types.
     assert(image.types.filter(type => !['Objet', 'Végétal'].includes(type)).every(type => catalog.get(image.path).types.includes(type)))
@@ -214,6 +224,7 @@ test('school, household and furniture complements are reviewed, searchable and c
 test('daily-life illustrations keep reviewed originals and searchable family names', () => {
   const manifest = JSON.parse(readFileSync('docs/gallery/quotidien-20261116.json', 'utf8'))
   const catalog = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
+  const visualReviews = new Map(JSON.parse(readFileSync('docs/gallery/audit-mots-cles-tcf-20261117.json')).images.filter(image => image.status === 'visually_reviewed').map(image => [image.path, image]))
   assert.equal(manifest.jobs.length, 161)
   assert(manifest.images.length > 0 && manifest.images.length <= manifest.jobs.length)
   assert.equal(new Set(manifest.images.map(image => image.path)).size, manifest.images.length)
@@ -224,7 +235,7 @@ test('daily-life illustrations keep reviewed originals and searchable family nam
     assert.equal(createHash('sha256').update(readFileSync('public' + image.path)).digest('hex'), image.sha256)
     assert.equal(statSync('public' + image.path).size, image.bytes)
     assert.deepEqual(catalog.get(image.path).types, ['Objet'])
-    assert.equal(catalog.get(image.path).label, image.label)
+    assert.equal(catalog.get(image.path).label, visualReviews.get(image.path)?.visual_label ?? image.label)
     assert(catalog.get(image.path).themes.includes(image.subtype))
   }
   for (const subject of manifest.subjects) {

@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-22",
+  "baseline_commit": "a67c622a775ed2f48aab900ce7358e5da2ede662",
+  "scope": {
+    "reviewed_trios": 95,
+    "modified_existing_trios": 93,
+    "retained_conforming_trios": 1,
+    "added_trios": 1,
+    "new_images": 10,
+    "existing_distinct_images_reused": 11,
+    "new_image_usages": 122,
+    "reused_image_usages": 163,
+    "approval_registry_rows_added": 11,
+    "imagegen_calls": 11,
+    "rejected_generations": 1
+  },
+  "six_bank_comparison": [
+    {
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "source_text_answers_and_all_other_fields_preserved": true,
+      "exercises": 162
+    },
+    {
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "source_text_answers_and_all_other_fields_preserved": true,
+      "exercises": 507
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "source_text_answers_and_all_other_fields_preserved": true,
+      "exercises": 177
+    },
+    {
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "source_text_answers_and_all_other_fields_preserved": true,
+      "exercises": 379
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/ce.json",
+      "source_text_answers_and_all_other_fields_preserved": true,
+      "exercises": 0
+    },
+    {
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "source_text_answers_and_all_other_fields_preserved": true,
+      "exercises": 130
+    }
+  ],
+  "existing_image_pixels_changed": 0,
+  "audio_files_changed": 0,
+  "human_audio_listening_performed": false,
+  "native_png_bytes_preserved": 10,
+  "initial_image_bytes_restored_separately": 34,
+  "old_bank_images_and_variants_both_available": true,
+  "approval_registry_existing_files_reconciled": 11,
+  "visual_metadata_reviews_added": 65,
+  "visual_metadata_progress": {
+    "total": 7608,
+    "visually_reviewed": 167,
+    "pending": 3887,
+    "not_started": 3554,
+    "by_collection": {
+      "TCF": 4054,
+      "Vocabulaire": 2226,
+      "Gattegno": 225,
+      "Grammaire": 33,
+      "Logique": 952,
+      "Jeux et interactif": 106,
+      "Identité visuelle": 12
+    }
+  },
+  "trio_browser": {
+    "views": 24,
+    "question_views": 26,
+    "image_views": 78,
+    "distinct_assets": 21,
+    "errors": []
+  },
+  "gallery_browser": {
+    "original_files_loaded": 34,
+    "pair_views": 6,
+    "initial_background_results": 34,
+    "errors": []
+  },
+  "catalogue_tests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "checks": {
+    "historical_763": true,
+    "delf_actif_346_supports": true,
+    "context_reviews_1021": true,
+    "qcm_image_variants": 2631,
+    "qcm_shuffle_regressions": 12,
+    "bank_exercises": 1355,
+    "audio_pools": 1371,
+    "game_types": 697,
+    "object_concepts": 211,
+    "eligible_object_audios": 134,
+    "object_draw": "3 OUI / 2 NON, positions shuffled",
+    "associations": 5,
+    "scenario_sources": 117,
+    "scenario_decoys": 80,
+    "association_draws": 600,
+    "co_compilation_formats": 5
+  },
+  "remaining": {
+    "historical_trios": 261,
+    "historical_by_level": {
+      "A1": 98,
+      "A2": 144,
+      "B1": 19
+    },
+    "delf_actif_candidates": 221,
+    "delf_actif_by_level": {
+      "A1": 0,
+      "A2": 101,
+      "B1": 120
+    },
+    "transport_entries_to_qualify": 76,
+    "other_object_questions": "Inventory pending",
+    "tcf_visual_keywords_pending": 3887,
+    "production_saved_fiches": "Server validation pending"
+  },
+  "production_build_performed": false,
+  "application_logic_changed": false
+}

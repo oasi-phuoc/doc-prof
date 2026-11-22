@@ -46,20 +46,20 @@
         "En avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "21ff87644f230352565ebb7cbb2384f447f8ff72325fbab0cbfc717df62e2c38",
       "semantic_before_sha256": "67694a9bbae922dab1eb5c66c183bff4e72cf7caed19864c9511c2990a3f8949",
       "semantic_after_sha256": "67694a9bbae922dab1eb5c66c183bff4e72cf7caed19864c9511c2990a3f8949",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -67,7 +67,11 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a0a1-ce-001#3",
@@ -2815,20 +2819,20 @@
         "Un avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "266af4fad8b3ef006b4c86685872d794e1c0efbeaa68bcfea693f7b03280c4c3",
       "semantic_before_sha256": "eded9c298b2c7463959c99a17b7d65576bd7968f253e0ef38d9c4b1260429538",
       "semantic_after_sha256": "eded9c298b2c7463959c99a17b7d65576bd7968f253e0ef38d9c4b1260429538",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
@@ -2836,7 +2840,7 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "before_upstream_integration": {
         "source_sha256": "68f9088df76fc6fade85383b92d4eca2351ddc02d2406f577611d57196c2d503",
         "semantic_before_sha256": "eded9c298b2c7463959c99a17b7d65576bd7968f253e0ef38d9c4b1260429538",
@@ -2847,6 +2851,10 @@
           "Un train",
           "Un avion"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -3665,20 +3673,20 @@
         "Le bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "d12c1cea5a18d3c60c09e241b71741780b3493bafcc0924b14d31e81676fbf99",
       "semantic_before_sha256": "073538b12310f0689d4579b9a84a7c22907db5ec368327c8b0b5b84793873ec0",
       "semantic_after_sha256": "073538b12310f0689d4579b9a84a7c22907db5ec368327c8b0b5b84793873ec0",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -3686,7 +3694,7 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "before_upstream_integration": {
         "source_sha256": "51ea5560297ecdb7474a25a4daf8276c3494d366d49d338fd88ef6694563ade7",
         "semantic_before_sha256": "00ffc15fbd71b6bb275b111efb52c676abb606736a7c5c718447df0944031b7c",
@@ -3697,6 +3705,10 @@
           "Le métro",
           "Le bateau"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -10457,20 +10469,20 @@
         "Le vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "11f33cfaa4023affbf4ac77d1d1820896686dd303a52f5c6590ef56639f895f0",
       "semantic_before_sha256": "542aabe0e720fc96222df5df62eb089281de9b1dbfaed39f98cbb230b2b56b14",
       "semantic_after_sha256": "542aabe0e720fc96222df5df62eb089281de9b1dbfaed39f98cbb230b2b56b14",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
@@ -10478,7 +10490,7 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "before_upstream_integration": {
         "source_sha256": "ee88d03c9a3f5344d38441f440c86e1fa813121ec1617f136ef332cf8753d6bc",
         "semantic_before_sha256": "542aabe0e720fc96222df5df62eb089281de9b1dbfaed39f98cbb230b2b56b14",
@@ -10489,6 +10501,10 @@
           "Le bus",
           "Le vélo"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -11051,20 +11067,20 @@
         "En bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "9d826e830da8da19fb3dd2888dbd30debe22ef2ab0d89473be36b96dea25b9e5",
       "semantic_before_sha256": "b236d211f0cf7f87f4e56e44bb353eaf1d53877d9e77141d315fb9db194d5c98",
       "semantic_after_sha256": "b236d211f0cf7f87f4e56e44bb353eaf1d53877d9e77141d315fb9db194d5c98",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
@@ -11072,7 +11088,7 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "before_upstream_integration": {
         "source_sha256": "d948ebee3ccdc164e1d5464708b48ae158c2931b2c4b742aca5edc8b210e364a",
         "semantic_before_sha256": "b236d211f0cf7f87f4e56e44bb353eaf1d53877d9e77141d315fb9db194d5c98",
@@ -11083,6 +11099,10 @@
           "En voiture",
           "En bateau"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -14285,20 +14305,20 @@
         "Un bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "1ff12fdeacf9354b7d73bfac91fd25f5be8947ca9996c8fad87405be51d69364",
       "semantic_before_sha256": "4057fa7ab9f02e8166e3acce610dc1c93d59015e957d25348b5893fb1b36c3a6",
       "semantic_after_sha256": "4057fa7ab9f02e8166e3acce610dc1c93d59015e957d25348b5893fb1b36c3a6",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
@@ -14306,7 +14326,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1v-ce-005#3",
@@ -16401,7 +16425,7 @@
         "Un vélo d'enfant"
       ],
       "status": "reviewed_trio",
-      "method": "individual_763_candidate_review",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "58c18321822f6a07e218e010873a2d9464f60b1317a0fc177531be5592578f46",
       "semantic_before_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
       "semantic_after_sha256": "c363b85cd0b9080cae3ff05dd0a916e90080e87f5b56eaed77f1f2fc3e9853b1",
@@ -16418,7 +16442,7 @@
       ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "L'annonce de Julien vend explicitement un vélo de ville bleu avec panier et lumière. La bonne image reprend ces trois détails ; vélo de course et vélo d'enfant ne sont pas proposés à la vente dans le texte. Trois types de vélos cohérents, aucune autre réponse ne décrit l'objet annoncé. Trois vélos bleus entiers comparés : ville adulte à cadre bas avec panier et phare, course à cadre triangulaire et guidon recourbé, puis petit vélo d'enfant à roulettes. Les détails distinctifs et proportions se lisent sans texte, prix ni date ; fond crème peint, même format exact 4:3.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "review_763_decision": "active_reviewed_trio",
       "review_763_reason": "L'annonce de Julien vend explicitement un vélo de ville bleu avec panier et lumière. La bonne image reprend ces trois détails ; vélo de course et vélo d'enfant ne sont pas proposés à la vente dans le texte. Trois types de vélos cohérents, aucune autre réponse ne décrit l'objet annoncé. Trois vélos bleus entiers comparés : ville adulte à cadre bas avec panier et phare, course à cadre triangulaire et guidon recourbé, puis petit vélo d'enfant à roulettes. Les détails distinctifs et proportions se lisent sans texte, prix ni date ; fond crème peint, même format exact 4:3.",
       "before_upstream_integration": {
@@ -16431,6 +16455,10 @@
           "Un vélo de course",
           "Un vélo d'enfant"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -18952,20 +18980,20 @@
         "Le bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "d26e1a17e2124baae43989488fd2c0b65936699d06496682727ff45cf2a5abb6",
       "semantic_before_sha256": "8adb6386a1354747fc8a2f63850816fed28cc659090870141e32ec9b4de6a575",
       "semantic_after_sha256": "8adb6386a1354747fc8a2f63850816fed28cc659090870141e32ec9b4de6a575",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -18973,7 +19001,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1v-ce-023#7",
@@ -22505,20 +22537,20 @@
         "Une voiture"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "7541eb05b0f5bb726d09eafb7e16e620fed9d561c89557a8b9ecb76ece824b9b",
       "semantic_before_sha256": "579c061faa34a750cae2d6037e0a00a428b7440c4255ee736594e22382db631c",
       "semantic_after_sha256": "579c061faa34a750cae2d6037e0a00a428b7440c4255ee736594e22382db631c",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
       ],
       "target_sha256": [
-        "87bacb6a0e08976f329ae5c4016482d98ed65a0965c36cd4e3c680bdf263f590",
+        "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
         "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/vocab-scooter.webp",
@@ -22526,7 +22558,7 @@
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "before_upstream_integration": {
         "source_sha256": "4899ac17d2cdac41cb08ca09fe056a931589cc62c6bd3e8d55827206bad67cec",
         "semantic_before_sha256": "579c061faa34a750cae2d6037e0a00a428b7440c4255ee736594e22382db631c",
@@ -22537,6 +22569,10 @@
           "Une moto",
           "Une voiture"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -34905,20 +34941,20 @@
         "Le vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "205b6c10f631a72c0d558b37856ba6fcc9d3fc0fa6206cee1be8b601b3c4ed78",
       "semantic_before_sha256": "00aaef5cd744957fdc207720d3a7a104f817810e19339205729de0fb63ed674d",
       "semantic_after_sha256": "00aaef5cd744957fdc207720d3a7a104f817810e19339205729de0fb63ed674d",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -34926,7 +34962,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1s-ce-020#7",
@@ -35159,20 +35199,20 @@
         "Le vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "d8d6ed45c5467eafa338f4181f16d1202b677f6bda6fe03f717c36ac6cb1565a",
       "semantic_before_sha256": "533963a35bc7542bd269778e70d4df3695a21e50a4cfbf5e6c4f4802f5a46136",
       "semantic_after_sha256": "533963a35bc7542bd269778e70d4df3695a21e50a4cfbf5e6c4f4802f5a46136",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -35180,7 +35220,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1s-ce-021#7",
@@ -44019,20 +44063,20 @@
         "En avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
       "semantic_before_sha256": "7cdcb5b50ed675317393211a0b326300f9628ddebe06a990c119f18ca04806c7",
       "semantic_after_sha256": "7cdcb5b50ed675317393211a0b326300f9628ddebe06a990c119f18ca04806c7",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -44040,7 +44084,7 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "before_upstream_integration": {
         "source_sha256": "1069d4c40ddf3003cd4adfc3bc51c3c06d768118dabcf0b8fc810e753b0e2d12",
         "semantic_before_sha256": "de94bdb0392c2d84802eaa20c32a96a32d32223d207c4da9a833534092304a21",
@@ -44051,6 +44095,10 @@
           "En voiture",
           "En avion"
         ]
+      },
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
       }
     },
     {
@@ -45339,20 +45387,20 @@
         "À pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "e303a09e210ba1fcbc8cafe3f1dbc1de0d5d300219642a5a059998e9c1defe73",
       "semantic_before_sha256": "69fcca48502a964b04b3ea388fe99875a30375a2899d6f9af2bbac0abb36e0aa",
       "semantic_after_sha256": "69fcca48502a964b04b3ea388fe99875a30375a2899d6f9af2bbac0abb36e0aa",
       "audio": "/lib/audio/tcf/co/fetes/01-fêtes_anniversaire-de-Driss.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
@@ -45360,7 +45408,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Vélo pour arriver chez Driss, puis voiture pour le restaurant ; la question porte sur la première étape.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a1j-s1-co-1#6",
@@ -52432,20 +52484,20 @@
         "Le train"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "082ee3169f3306c9f9e1d114dd5f4e162b6b3ed68800492a4b6b6e699f6ce8e4",
       "semantic_before_sha256": "d29b9f6440654c654af8f563af043ef5734803124d37ff89fc91f4c637f6e768",
       "semantic_after_sha256": "d29b9f6440654c654af8f563af043ef5734803124d37ff89fc91f4c637f6e768",
       "audio": "/lib/audio/tcf/co/fetes/03-fêtes_anniversaire-de-Lorie.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -52453,7 +52505,11 @@
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a1-tpb-co-1#6",
@@ -60034,20 +60090,20 @@
         "L’avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "b44e3e1a0ef946e7a6912795ad58ba7e2087b55909a1f0022dbe406411d6b9c7",
       "semantic_before_sha256": "ffb8995ee8952ca96a24d5fd69c16cf074928d85f1f07912fd9e7d469157df8f",
       "semantic_after_sha256": "ffb8995ee8952ca96a24d5fd69c16cf074928d85f1f07912fd9e7d469157df8f",
       "audio": "/lib/audio/tcf/co/fetes/14-invitation-aller-à-la-montagne.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -60055,7 +60111,11 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s9-co-4#5",
@@ -73812,20 +73872,20 @@
         "À vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "72e2d5d20a68bd14f9dfe4e7c1639c302dd12ac021d542a3c9f33eb37935eec6",
       "semantic_before_sha256": "46136ab8658c07902c92a56335c5b610310bbd1c5fdea389aa0a975d2a4c1fe0",
       "semantic_after_sha256": "46136ab8658c07902c92a56335c5b610310bbd1c5fdea389aa0a975d2a4c1fe0",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/allo-papa-ca-va-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -73833,7 +73893,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s30-co-3#8",
@@ -83142,20 +83206,20 @@
         "Le vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "d61a4c243bf9833e8e72d73ce04d1aedabc88b85b9953e9a237d81dc75d10440",
       "semantic_before_sha256": "2b4d28eef682deba3b0b631524ab754f43b12424c89d88e594072e18236b36f2",
       "semantic_after_sha256": "2b4d28eef682deba3b0b631524ab754f43b12424c89d88e594072e18236b36f2",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/excusez-moi-pourriez-m-aider-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -83163,7 +83227,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s44-co-3#7",
@@ -83468,20 +83536,20 @@
         "Le taxi"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
       "semantic_before_sha256": "a490e0b8f8bd6e1baf88a9f2c73f4097b724cd19c0319d2e701800c61ce9b035",
       "semantic_after_sha256": "a490e0b8f8bd6e1baf88a9f2c73f4097b724cd19c0319d2e701800c61ce9b035",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-avez-plan-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -83489,7 +83557,11 @@
         "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s45-co-1#5",
@@ -84666,20 +84738,20 @@
         "Un bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "f90fb8f081785483b9fb351ed66b6e570abf50024947603ca66c0859b1da1d3e",
       "semantic_before_sha256": "2944c06878e7164f982b08798b8f0189693419f4732010c8287bc09041ada78f",
       "semantic_after_sha256": "2944c06878e7164f982b08798b8f0189693419f4732010c8287bc09041ada78f",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-1-2.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -84687,7 +84759,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s47-co-1#6",
@@ -85310,20 +85386,20 @@
         "À pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "40c8a4e8d1a8ca9752fd838e42d91f3afd08624b53c8c086994e0ebd0332ff26",
       "semantic_before_sha256": "58ed6e20e4a1480ac6ebd4ef4a2726ff11ca74e78cbe5a526e57959fa7be27da",
       "semantic_after_sha256": "58ed6e20e4a1480ac6ebd4ef4a2726ff11ca74e78cbe5a526e57959fa7be27da",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-1-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
@@ -85331,7 +85407,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s47-co-3#10",
@@ -86234,20 +86314,20 @@
         "En bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "732c2f1fcf379b55f1c69bb9a3608478b6b775cc1c8f9232f4644a787fe5fe36",
       "semantic_before_sha256": "77d0c80ae64d2a9e9e9954374985fcf86f155af333d39a4543ae4ff16167cf19",
       "semantic_after_sha256": "77d0c80ae64d2a9e9e9954374985fcf86f155af333d39a4543ae4ff16167cf19",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-adil.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -86255,7 +86335,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s49-co-2#1",
@@ -87763,20 +87847,20 @@
         "Un bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "0fe844a4909f05e881a6c8578ba40b634b8dcf930ee78c452b236f21aecdac8a",
       "semantic_before_sha256": "55651e54934f8817c833a9bc32616da217d8b84ae58735157d03238c4991b36d",
       "semantic_after_sha256": "55651e54934f8817c833a9bc32616da217d8b84ae58735157d03238c4991b36d",
       "audio": "/lib/audio/tcf/co/transports/les-passagers-vol-air-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -87784,7 +87868,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s52-co-3#2",
@@ -88857,20 +88945,20 @@
         "La voiture"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "867bd09551feee2afc8e6e8cb4a98b3c89be6f41cb95cfc993295c5e4ff77ff1",
       "semantic_before_sha256": "affc6ef35e799fe6c5b37595a314fde89b92ac8c30e0035ac22b45e2d924d770",
       "semantic_after_sha256": "affc6ef35e799fe6c5b37595a314fde89b92ac8c30e0035ac22b45e2d924d770",
       "audio": "/lib/audio/tcf/co/transports/bonjour-ici-cabinet-dentaire.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -88878,7 +88966,11 @@
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a1-s54-co-4#1",
@@ -91567,20 +91659,20 @@
         "Un tramway"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "9a9edaaa1d15efd9c8f177ac57e5d947e1dd5c4167f36b085607bcaba49346c2",
       "semantic_before_sha256": "8a75ea313a4fadf7bcf7d538787faa7e12b83b501fe029b6bba047587405fce4",
       "semantic_after_sha256": "8a75ea313a4fadf7bcf7d538787faa7e12b83b501fe029b6bba047587405fce4",
       "audio": "/lib/audio/tcf/co/ecole/09-école-bus-attend-les-élèves.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -91588,7 +91680,11 @@
         "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ssx-a1-ecole-bus-pour-la-piscine-co-4#2",
@@ -92033,20 +92129,20 @@
         "À vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "e6ff9972ed97327defa2f2b5369d1782795841370b33fd92941946a8f4f110ab",
       "semantic_before_sha256": "983c8552ee3937f05ea6f8a0c68f892956c741a203fae35df0a49f04d2532f06",
       "semantic_after_sha256": "983c8552ee3937f05ea6f8a0c68f892956c741a203fae35df0a49f04d2532f06",
       "audio": "/lib/audio/tcf/co/ecole/16-école-comment-renter-à-la-maison.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -92054,7 +92150,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ssx-a1-ecole-rentrer-de-l-ecole-co-4#2",
@@ -95209,20 +95309,20 @@
         "L'avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "c6724fc010d2050a1cb185b396af27dc98e76b88fdaefa4ce3b4790f494d0069",
       "semantic_before_sha256": "e65c99a4915188c1e8213a4595dca77f2a6ec57a3e1d3d80da8ed1bbf5e6716e",
       "semantic_after_sha256": "e65c99a4915188c1e8213a4595dca77f2a6ec57a3e1d3d80da8ed1bbf5e6716e",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -95230,7 +95330,11 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-12#3",
@@ -95382,26 +95486,30 @@
         "Le métro"
       ],
       "status": "reviewed_trio",
-      "method": "individual_763_candidate_review",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "e2b218892bf42faa4f64c78f95212475db76ce38d8782e89c719e87d8d7b7b94",
       "semantic_before_sha256": "1d2ed1993c3d7aa4502ac993be4ae6ab662a2832aa1e1d2e62bac4265f518966",
       "semantic_after_sha256": "1d2ed1993c3d7aa4502ac993be4ae6ab662a2832aa1e1d2e62bac4265f518966",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_12-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/extension573-bus-touristique.png",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-car-touristique-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
       ],
       "target_sha256": [
-        "330ce9feb76da804656f3270f07f4a55fe94bfa9194be84c28b20deba84fcb63",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+        "5b42a4a8698f0eba92d13a05de335da97cc9fcab00ab7e4fd7669aecd86190fe",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
       ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "L’annonce demande de prendre le bus touristique pour visiter la ville, d’acheter un ticket au musée puis de monter dans ce bus. Bateau et métro ne sont pas proposés. Nouveau bus de visite à deux étages avec étage supérieur ouvert et sièges visibles. Bateau de passagers entier et rame en station souterraine réutilisés. Pas de simple bus de ligne substitué au bus touristique, aucune destination ou marque inventée.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "review_763_decision": "active_reviewed_trio",
-      "review_763_reason": "L’annonce demande de prendre le bus touristique pour visiter la ville, d’acheter un ticket au musée puis de monter dans ce bus. Bateau et métro ne sont pas proposés. Nouveau bus de visite à deux étages avec étage supérieur ouvert et sièges visibles. Bateau de passagers entier et rame en station souterraine réutilisés. Pas de simple bus de ligne substitué au bus touristique, aucune destination ou marque inventée."
+      "review_763_reason": "L’annonce demande de prendre le bus touristique pour visiter la ville, d’acheter un ticket au musée puis de monter dans ce bus. Bateau et métro ne sont pas proposés. Nouveau bus de visite à deux étages avec étage supérieur ouvert et sièges visibles. Bateau de passagers entier et rame en station souterraine réutilisés. Pas de simple bus de ligne substitué au bus touristique, aucune destination ou marque inventée.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-12#8",
@@ -97496,20 +97604,20 @@
         "Un bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "c2ed6fd6d6b3d68211da0719542efbff95b4e094a18e1511bf4c744fecc992f2",
       "semantic_before_sha256": "76f0fa156b436a9189f75eb6e19927ae053fe9a650f8d4653b6776d80b7fbb6d",
       "semantic_after_sha256": "76f0fa156b436a9189f75eb6e19927ae053fe9a650f8d4653b6776d80b7fbb6d",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-1.mp3",
       "targets": [
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
@@ -97517,7 +97625,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex2-20#4",
@@ -97670,20 +97782,20 @@
         "Le bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "d74a91d2d39c93992adeaed96f3a62cc5bd736d288e989525db10727ef40d1ba",
       "semantic_before_sha256": "ce472e011941c2c69916196987f13c873a2de3bd77b0940ed47df9cb7fbcb7be",
       "semantic_after_sha256": "ce472e011941c2c69916196987f13c873a2de3bd77b0940ed47df9cb7fbcb7be",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_20-2.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -97691,7 +97803,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex2-20#10",
@@ -99144,20 +99260,20 @@
         "Un bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "f42b8d19f33520e12cfd4270a06590cf2d3b5aa00f74d241a80deb15c58e59c9",
       "semantic_before_sha256": "2c0e27ff8d5b1df6bfb11a8001b51c90980b60db062e75672c360779cb90719c",
       "semantic_after_sha256": "2c0e27ff8d5b1df6bfb11a8001b51c90980b60db062e75672c360779cb90719c",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_25-1.mp3",
       "targets": [
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
@@ -99165,7 +99281,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex2-25#11",
@@ -106052,20 +106172,20 @@
         "À pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "e3df4b8e1900e0728e4722e35acc913e89b770f10e0cf9806b369dc10881c098",
       "semantic_before_sha256": "aba391c642112fda662cc09b1dbc764667ce694f05b88adbbde77afe3a917074",
       "semantic_after_sha256": "aba391c642112fda662cc09b1dbc764667ce694f05b88adbbde77afe3a917074",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_60.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -106073,7 +106193,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex1-61#1",
@@ -108136,20 +108260,20 @@
         "À vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "fa505738044b76c6cd98f0a18d738995ab12d6b17f6227630d3e759db2447d08",
       "semantic_before_sha256": "f5a00ebe60edf3b0a569096a64489ab94e2d5be4027dfdb4041f5f67601f2348",
       "semantic_after_sha256": "f5a00ebe60edf3b0a569096a64489ab94e2d5be4027dfdb4041f5f67601f2348",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_70-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
@@ -108157,7 +108281,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex4-70#6",
@@ -110332,20 +110460,20 @@
         "Le train"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "4093bb1be71393e30a78140b6d3c9420c6513b6623e9291e62afa3f34be984c8",
       "semantic_before_sha256": "eef16d197a80b5d230c1d3c33ae199e08cb35aa56f90e3c5154a7c7decc6fff6",
       "semantic_after_sha256": "eef16d197a80b5d230c1d3c33ae199e08cb35aa56f90e3c5154a7c7decc6fff6",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_80.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -110353,7 +110481,11 @@
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-81#1",
@@ -111128,20 +111260,20 @@
         "À pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "66d42500b8f307894517f0fc81476c5479e229b0ce2cb05a7e1ed547fccc1eb8",
       "semantic_before_sha256": "f1b66463f5e1874ae82ed357719a0319da19556bfd13a02aa51065d96874ae42",
       "semantic_after_sha256": "f1b66463f5e1874ae82ed357719a0319da19556bfd13a02aa51065d96874ae42",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_83.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -111149,7 +111281,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-84#1",
@@ -116305,26 +116441,30 @@
         "Le bus"
       ],
       "status": "reviewed_trio",
-      "method": "individual_763_candidate_review",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "9e448582d3c795f13744e09e298771f813d890c6d1142acadced9041d25247dd",
       "semantic_before_sha256": "9c829a764c857c1167b498c0b7cbaa4335d04851717a0df8d576eb36eda6fc1f",
       "semantic_after_sha256": "9c829a764c857c1167b498c0b7cbaa4335d04851717a0df8d576eb36eda6fc1f",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_54-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
       "review_763_decision": "active_reviewed_trio",
-      "review_763_reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés."
+      "review_763_reason": "Trois illustrations contrôlées visuellement, distinctes et fidèles aux catégories, couleurs ou quantités demandées. Source et corrigé conservés.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex5-54-3#3",
@@ -117339,20 +117479,20 @@
         "Le métro"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "56a2f1e2b1cf5aa2598d3139798f2dfb5bd24279aa0ac54c6979c2034041243e",
       "semantic_before_sha256": "1d4ae30b2c94b95622d311162410e205af7135da40107579c516400d8c2f0632",
       "semantic_after_sha256": "1d4ae30b2c94b95622d311162410e205af7135da40107579c516400d8c2f0632",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -117360,7 +117500,11 @@
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex5-58-3#3",
@@ -117374,19 +117518,19 @@
         "Une moto"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "56a2f1e2b1cf5aa2598d3139798f2dfb5bd24279aa0ac54c6979c2034041243e",
       "semantic_before_sha256": "9ae90dd75c405d11b72b3bf5bf2bf23442c9def7e1a495990cdc1211e8eb7621",
       "semantic_after_sha256": "9ae90dd75c405d11b72b3bf5bf2bf23442c9def7e1a495990cdc1211e8eb7621",
       "audio": "/lib/audio/tcf/co/temporaire/delf_a1_2022_piste_58-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
         "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
       ],
       "old_images": [
@@ -117395,7 +117539,11 @@
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a1-2022-co-ex5-58-3#4",
@@ -120911,20 +121059,20 @@
         "En voiture"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "ef89c30165d74212eae79b18bbfff41cbadd5944a4e7cca3b88300b37d4876a5",
       "semantic_before_sha256": "faa10de3e311686d97574ede4e8f96a2c1b0869352122a472eb804831dc8f8e4",
       "semantic_after_sha256": "faa10de3e311686d97574ede4e8f96a2c1b0869352122a472eb804831dc8f8e4",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -120932,7 +121080,11 @@
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a2p-s1-ce-1#5",
@@ -122003,20 +122155,20 @@
         "En avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "fb1df1f61d32d5c1b6166883b1fbf3d614c1c6c5fb55db3249097fc4d9c50d22",
       "semantic_before_sha256": "8618de293a8d58ec003e8c818ba4cad449738d9a82e6c99101812060d8f68e37",
       "semantic_after_sha256": "8618de293a8d58ec003e8c818ba4cad449738d9a82e6c99101812060d8f68e37",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
@@ -122024,7 +122176,11 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a2p-s2-ce-2#7",
@@ -124988,24 +125144,28 @@
         "En tramway"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "598bcd3a9ed1386e771c69d606c563b60209a5c6fbd4efa5ae6796715ac1e566",
       "semantic_before_sha256": "7e0e291298184e7450daf55d9cd76e53e5b3fbfc10d29e20b720aafdf9a6a434",
       "semantic_after_sha256": "7e0e291298184e7450daf55d9cd76e53e5b3fbfc10d29e20b720aafdf9a6a434",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
       ],
       "target_sha256": [
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf"
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
       ],
       "old_images": [],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a2-sc-ce-1#5",
@@ -129834,20 +129994,20 @@
         "À pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "bc477cceb3051c7e7693e6cb684cd2dfc7ac9bcb4bcafc280c22d101923e420f",
       "semantic_before_sha256": "3f2b7de4f02a641e4ff5b05c82c958c1d90a301e80da52e7ce6e1e42f51ed72f",
       "semantic_after_sha256": "3f2b7de4f02a641e4ff5b05c82c958c1d90a301e80da52e7ce6e1e42f51ed72f",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
@@ -129855,7 +130015,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Vélo pour la plage ; le bus annoncé ensuite concerne la bibliothèque.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2j-ce-021#3",
@@ -129904,20 +130068,20 @@
         "En voiture"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "bc477cceb3051c7e7693e6cb684cd2dfc7ac9bcb4bcafc280c22d101923e420f",
       "semantic_before_sha256": "b8c8f8e9a0f53b35195e0d8f6fd234aa5170dad3891cda99c8888679e1b0c14c",
       "semantic_after_sha256": "b8c8f8e9a0f53b35195e0d8f6fd234aa5170dad3891cda99c8888679e1b0c14c",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -129925,7 +130089,11 @@
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Bus pour la bibliothèque après l’annonce de pluie ; le vélo correspond aux sorties à la plage.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2j-ce-021#5",
@@ -133369,20 +133537,20 @@
         "Le taxi"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "ef27062f7f6089ce25bbd7a0dd447361b590135e186d16d7e7fe0b140e20ac74",
       "semantic_before_sha256": "99adbd4835ffadaf4188c7172d477d2381acac8fe122e319d8eb2c99b92f09af",
       "semantic_after_sha256": "99adbd4835ffadaf4188c7172d477d2381acac8fe122e319d8eb2c99b92f09af",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -133390,7 +133558,11 @@
         "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2j-ce-038#6",
@@ -144641,20 +144813,20 @@
         "La voiture"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "4654e3dbccff8c4936314bf6cea82a5f3bad6d3584124268c93ec74d806c187b",
       "semantic_before_sha256": "4f5d0358f29a02175d89c89c4c39773db808835e2dfbdc3f758321c0a7145257",
       "semantic_after_sha256": "4f5d0358f29a02175d89c89c4c39773db808835e2dfbdc3f758321c0a7145257",
       "audio": null,
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -144662,7 +144834,11 @@
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2r-ce-024#6",
@@ -157453,20 +157629,20 @@
         "En voiture"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "97187e5640acb82ad43caf7f494368de955a99566ac03a01974d5e2e115fbff4",
       "semantic_before_sha256": "f71178724863c598e6353bf37ac5e2c5a0ce211ff83693ef129f89f077f1f63a",
       "semantic_after_sha256": "f71178724863c598e6353bf37ac5e2c5a0ce211ff83693ef129f89f077f1f63a",
       "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-2-2.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -157474,7 +157650,11 @@
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a2j-s2-co-1#8",
@@ -158321,20 +158501,20 @@
         "À vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "ea630423e992ebdc295c72a2a3482730a9ad3db34e9f0a31054cc996c1a35e0d",
       "semantic_before_sha256": "9cf776e1f268baaf433b376654ba4b8f7c42e30f3b4e3587d045b92ce1cd45e8",
       "semantic_after_sha256": "9cf776e1f268baaf433b376654ba4b8f7c42e30f3b4e3587d045b92ce1cd45e8",
       "audio": "/lib/audio/tcf/co/loisirs/le-sport-2.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -158342,7 +158522,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a2j-s2-co-3#7",
@@ -159915,20 +160099,20 @@
         "En bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "b072ab4a7c1df5b608753b7798d168bc1da098f32fa0b163e88e09018268ec44",
       "semantic_before_sha256": "4487d87b74851b43dc7785dcd4da440b85c0c0974d25673a370b23ce42f980d9",
       "semantic_after_sha256": "4487d87b74851b43dc7785dcd4da440b85c0c0974d25673a370b23ce42f980d9",
       "audio": "/lib/audio/tcf/co/hotel/01-hôtel-réservation-chambres-Langloi.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -159936,7 +160120,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-a2-sa-co-4#1",
@@ -164934,20 +165122,20 @@
         "À pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "dcce41885c38ed151493bb1bccce51b4d67a2e4df9be5962c2873ae94edda4f2",
       "semantic_before_sha256": "fbf14f30b0214c2e21a1f64871a85556523e3acd12af4318cbe70bcbf8b6ce16",
       "semantic_after_sha256": "fbf14f30b0214c2e21a1f64871a85556523e3acd12af4318cbe70bcbf8b6ce16",
       "audio": "/lib/audio/tcf/co/ecole/29-école-tournoi-basketball.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -164955,7 +165143,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a2-s8-co-2#1",
@@ -165735,20 +165927,20 @@
         "Le tramway"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "c728e5363aa0f8b8f993ad6efdf7a3e3c225b297d9a42db348b584ccabd82d3d",
       "semantic_before_sha256": "536c9f907060491b7095a6807df2ea2989d98a9ade8504ce374f5da7984fdf02",
       "semantic_after_sha256": "536c9f907060491b7095a6807df2ea2989d98a9ade8504ce374f5da7984fdf02",
       "audio": "/lib/audio/tcf/co/fetes/16-invitation-confirmation-du-concert.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -165756,7 +165948,11 @@
         "/lib/images/tcf/qcm-audit/vocab-tramway.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a2-s12-co-1#10",
@@ -172829,20 +173025,20 @@
         "Le bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "fe2f6190745c39f3b3d060a02759c1bef3c11fd8fb485886e97a153be7beedba",
       "semantic_before_sha256": "9e0b88f0f4b48237f07e5a50a1f30139a6c799a0cbcd7ea7902baa0ac528951a",
       "semantic_after_sha256": "9e0b88f0f4b48237f07e5a50a1f30139a6c799a0cbcd7ea7902baa0ac528951a",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/en-moins-d-une-dizaine-2.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/vocab-tramway.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "1bd163ec73ed18626b1d9a6f44beffd6589feb8d0dfa23469dedf95d66bb2abf",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "67928110f991946894effd8cb0def987b40bd2b0160d1cc3881b06a6c62ca6ea",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/vocab-tramway.webp",
@@ -172850,7 +173046,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Tramway pour Tours et Nantes ; le bulletin traite séparément le métro parisien.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a2-s38-co-2#9",
@@ -172910,20 +173110,20 @@
         "Le bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "65f11e137492393370ca0a120125698bb312107e0bfafd803c26442f02ab6ef9",
       "semantic_before_sha256": "747919052179b3dc63205c835d597e5b8bf63b3c5189ae079fd8259f998685fb",
       "semantic_after_sha256": "747919052179b3dc63205c835d597e5b8bf63b3c5189ae079fd8259f998685fb",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-21-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -172931,7 +173131,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a2-s48-co-3#2",
@@ -174029,20 +174233,20 @@
         "Le métro"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "baafcf60bc7c669cce1477595d42fc77a9322720a37f41846ef5a545b39dc8aa",
       "semantic_before_sha256": "7b7713e5059e52e9f94dc52c437742563a5219b370279c8570d6eb5434198ded",
       "semantic_after_sha256": "7b7713e5059e52e9f94dc52c437742563a5219b370279c8570d6eb5434198ded",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-2-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -174050,7 +174254,11 @@
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a2-s49-co-1#9",
@@ -178584,20 +178792,20 @@
         "Le train"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "419aa7652ea5d9aa0c02a2fafca8924d2701440a40eee2717fcd6421abda7c32",
       "semantic_before_sha256": "946ee8e6a771c5be120abc421a1de2aca8a8fc584e18452c6ad0d38838b35912",
       "semantic_after_sha256": "946ee8e6a771c5be120abc421a1de2aca8a8fc584e18452c6ad0d38838b35912",
       "audio": "/lib/audio/tcf/co/transports/transports-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png"
       ],
       "target_sha256": [
-        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp",
@@ -178605,7 +178813,11 @@
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Métro à l’aller et voiture au retour ; la question vise l’aller.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-a2-s56-co-3#5",
@@ -182872,20 +183084,20 @@
         "Le vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "ce17ad917c4693b375d6e93b3008bef93f16bcd5418ae46ed4acbab34bc2f16d",
       "semantic_before_sha256": "f40704206a8486a440b963dccfd98abcf4f56dd3cb15d7df92150d0505a7a6eb",
       "semantic_after_sha256": "f40704206a8486a440b963dccfd98abcf4f56dd3cb15d7df92150d0505a7a6eb",
       "audio": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
@@ -182893,7 +183105,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. La voiture est proposée ; elle ne constitue pas le choix final.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ssx-a2-conversation-32-co-4#4",
@@ -182907,20 +183123,20 @@
         "La marche à pied"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "ce17ad917c4693b375d6e93b3008bef93f16bcd5418ae46ed4acbab34bc2f16d",
       "semantic_before_sha256": "7a5667292e85f9dd287d6aabe557c3b0db0b8ae0c4310ff5595a345a6c6ca908",
       "semantic_after_sha256": "7a5667292e85f9dd287d6aabe557c3b0db0b8ae0c4310ff5595a345a6c6ca908",
       "audio": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -182928,7 +183144,11 @@
         "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Le bus avec Mathilde est le choix final, après refus de la voiture.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ssx-a2-conversation-32-co-4#5",
@@ -184346,20 +184566,20 @@
         "Un vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "e71d689900aed41e6455b1de54e013b6e203a3ec6a47f08c157072f31995f0c1",
       "semantic_before_sha256": "ae8bff130f2ad57044acaee0899112b3554ece45f7eabd51f5ebbfda5524764e",
       "semantic_after_sha256": "ae8bff130f2ad57044acaee0899112b3554ece45f7eabd51f5ebbfda5524764e",
       "audio": "/lib/audio/tcf/co/transports/moyen-a2__annonce-5.2.mp3",
       "targets": [
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
         "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp",
@@ -184367,7 +184587,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ssx-a2-annonce-5-2-co-2#2",
@@ -187928,20 +188152,20 @@
         "À vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "f0e38cd1aa4eca939a9ceff9c4470bd183fea7b4498f95345b38a4c2a8428450",
       "semantic_before_sha256": "0331d679bec00f0274f149004b74689634333b923f04ea36f154243f02a9a7c0",
       "semantic_after_sha256": "0331d679bec00f0274f149004b74689634333b923f04ea36f154243f02a9a7c0",
       "audio": "/lib/audio/tcf/co/transports/01-transport-comment-tu-rentres.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-marche-pied-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "5872f7d4de04c38b9295f269cef9e0d88237d558be7ac976157563c890c29c1a",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -187949,7 +188173,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ssx-a2-transport-comment-tu-rentres-co-4#2",
@@ -188914,20 +189142,20 @@
         "Un bateau"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "1e1afff3c85f99727ef6fa5d9d6ccd0dd5302c8ae5dd63f83c7ee6d56c0bc5ed",
       "semantic_before_sha256": "f6529e60a447d7fd6d7e9166817526fa84c853eabc620a93ba161fe9db5a9bc6",
       "semantic_after_sha256": "f6529e60a447d7fd6d7e9166817526fa84c853eabc620a93ba161fe9db5a9bc6",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_02-4.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -188935,7 +189163,11 @@
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex1-02#9",
@@ -192795,20 +193027,20 @@
         "Le bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "e1dce16fdc7e0a92bbfa3e3757ef0643abb035e962fa6cbe760aa57421120166",
       "semantic_before_sha256": "a63ef4cf37aeb26c115cef6c1f4e37b713bb3035fb95430eca10dcc161f69f74",
       "semantic_after_sha256": "a63ef4cf37aeb26c115cef6c1f4e37b713bb3035fb95430eca10dcc161f69f74",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_23-5.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
@@ -192816,7 +193048,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex3-23#11",
@@ -196268,19 +196504,19 @@
         "La moto"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "9f724e2422692af024ebb7bac50c61f7aba75c1e13f38d6c65ad629d5deef2e5",
       "semantic_before_sha256": "91cffa7f7d495b9784f4c205372e7c69a911aa43d9a299042cd2ad0e19fafc25",
       "semantic_after_sha256": "91cffa7f7d495b9784f4c205372e7c69a911aa43d9a299042cd2ad0e19fafc25",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_37-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
         "a7385e6bcdf0d099cee6ede68902ce6e0639fe49fcb36039ef23800048194434"
       ],
       "old_images": [
@@ -196289,7 +196525,11 @@
         "/lib/images/tcf/qcm-audit/co306-moto-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex2-37#12",
@@ -197348,20 +197588,20 @@
         "L'avion"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "f1a16b6d9a50c01d3e2079b961fb6c54587550b4a96afafb0fe8712264316670",
       "semantic_before_sha256": "259c075486dcec3ddb7b81d772b7fba06f8e10289f6cc8f47f2200fef370069e",
       "semantic_after_sha256": "259c075486dcec3ddb7b81d772b7fba06f8e10289f6cc8f47f2200fef370069e",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_42-3.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png"
       ],
       "target_sha256": [
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb"
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
@@ -197369,7 +197609,11 @@
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex4-42#10",
@@ -198443,20 +198687,20 @@
         "Le bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "264a8c324ac175c17921764373b315ba835179fd971aa1682c4c3e4c109ce622",
       "semantic_before_sha256": "a6f20e42027398225a1430f1cfe423482442d6ba8b80c1e2d9ef6c1affcf50d4",
       "semantic_after_sha256": "a6f20e42027398225a1430f1cfe423482442d6ba8b80c1e2d9ef6c1affcf50d4",
       "audio": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_45-1.mp3",
       "targets": [
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
@@ -198464,7 +198708,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "delf-a2-2021-co-ex4-45#2",
@@ -202920,20 +203168,20 @@
         "Un vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "4cd0c07c42c009dceb211131be15fc55110f14491344c63e29457c8878bb627f",
       "semantic_before_sha256": "7c62bc230734efb23c9b0b5f30a9e55fa3e66543605d3eba3642ec87ffef9acb",
       "semantic_after_sha256": "7c62bc230734efb23c9b0b5f30a9e55fa3e66543605d3eba3642ec87ffef9acb",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/les-souvenirs-david-foenkinos.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-taxi-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "d6e8494f5b14a2c0538a7397c934e91e79a1aef7e2d8b97a98fceff37ff7441d",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
@@ -202941,7 +203189,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-b1-s3-co-4#9",
@@ -204239,20 +204491,20 @@
         "À vélo"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "4b0e3755fda95dc9303521abcc374d5b2b8deb64c35d2241e2f69a73424342cd",
       "semantic_before_sha256": "a8c2a5440adf9be89b1d32876faab225a709aae066fbf2ccae4dcca410a5f415",
       "semantic_after_sha256": "a8c2a5440adf9be89b1d32876faab225a709aae066fbf2ccae4dcca410a5f415",
       "audio": "/lib/audio/tcf/co/vie-quotidienne/journee-radio-1.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-bateau-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png"
       ],
       "target_sha256": [
-        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
-        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+        "d5db2947ac01d05d210a489d8fb523c87c5e4e8ebc73334d6a6f834fa771b2d3",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420",
+        "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
@@ -204260,7 +204512,11 @@
         "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-b1-s5-co-2#5",
@@ -212377,20 +212633,20 @@
         "Un bus"
       ],
       "status": "reviewed_trio",
-      "method": "reviewed_whole_answer_catalog",
+      "method": "individual_visual_review_20261122",
       "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
       "semantic_before_sha256": "530e347b25293c992d95c87ad657bf40129c5683781997e56cf09d9cb786bc24",
       "semantic_after_sha256": "530e347b25293c992d95c87ad657bf40129c5683781997e56cf09d9cb786bc24",
       "audio": "/lib/audio/tcf/co/transports/un-geste-desagreable-effectue.mp3",
       "targets": [
-        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
-        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
-        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-vehicule-avion-ivoire.png",
+        "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp"
       ],
       "target_sha256": [
-        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
-        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
-        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe"
+        "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+        "9cc4cc029cb5ca3796f840e8c0fd954a74597bfcf051bf961b82a1297b1e7a39",
+        "4aa08ede25ad44b804dfbdad58b5233a4111c9d39a2b820e35fd7614f5f27420"
       ],
       "old_images": [
         "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
@@ -212398,7 +212654,11 @@
         "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
       ],
       "requested_text_edits": {},
-      "reason": "Sens entier des choix, quantités éventuelles et contexte de la source contrôlés ; réutilisation de la banque peinte quand disponible."
+      "reason": "Source intégrale et trois réponses relues ; reconnaissance du véhicule ou du mode de déplacement demandé. Les illustrations montrent les catégories des réponses, sans inventer une identité, un numéro ou un détail de trajet.",
+      "visual_review": {
+        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
+        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+      }
     },
     {
       "key": "tcf-ss-b1-s13-co-4#2",
