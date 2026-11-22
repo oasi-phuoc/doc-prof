@@ -20,12 +20,13 @@ import origins from './data/a6.json'
 import identities from './data/a1.json'
 import nationalities from './data/a3.json'
 import families from './data/famille.json'
+import familyCompletion from './data/famille-completion.json'
 import type { ExerciseType } from '@/math/types'
 import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {
@@ -43,6 +44,10 @@ export function defaultGrammarPilot(typeId: string) {
 }
 
 export const isNewGrammarPilotType = (typeId: string): boolean => typeId.includes('-curriculum-')
+
+/** Completed Se présenter uses graded banks for new blocks. Loading an archived
+ * block without a level still follows its unchanged historical generator. */
+export const grammarUsesGradedDefault = (typeId:string):boolean => isNewGrammarPilotType(typeId)||grammarBanksForType(typeId).some(bank=>bank.topic==='gram-se-presenter')
 
 export const GRAMMAR_NEW_PILOT_TYPES: ExerciseType[] = GRAMMAR_PILOT_BANKS.filter((bank,index,banks)=>
   isNewGrammarPilotType(bank.activityId) && banks.findIndex(b=>b.activityId===bank.activityId)===index).map(bank=>({

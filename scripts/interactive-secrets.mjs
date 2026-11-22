@@ -20,7 +20,7 @@ const delfEvidence = [
   'signature-52-2-caaca983b5dd.json',
 ].map(file => `docs/tcf/delf-actif-20261113/relectures/${file}`)
 const existingSceneRecords=(await Promise.all(['20261114','20261115'].map(async date=>JSON.parse(await readFile(`docs/interactive/revue-identifiants-scenes-${date}.json`,'utf8')).reviewed))).flat()
-const sceneRecords=[...existingSceneRecords,...JSON.parse(await readFile('docs/interactive/revue-identifiants-pool-integration-20261116.json','utf8')).reviewed]
+const sceneRecords=[...existingSceneRecords,...JSON.parse(await readFile('docs/interactive/revue-identifiants-pool-integration-20261116.json','utf8')).reviewed,...JSON.parse(await readFile('docs/interactive/revue-identifiants-tcf-20261122.json','utf8')).reviewed]
 const sceneEvidence=[...new Set(sceneRecords.map(record=>record.file))]
 const normalizedEvidence = [...modelEvidence, ...delfEvidence,...sceneEvidence]
 async function separateJsonLines(file) {

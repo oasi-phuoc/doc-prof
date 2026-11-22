@@ -15,6 +15,7 @@ function cost(item: MathItem): number {
   if (q.unit.kind==='production') return 160
   const long=q.unit.responseLines===2
   if (q.presentation==='match') {
+    if(q.unit.source.typeId==='gram-ex-famille-curriculum-a')return 120
     const longSet=q.unit.kind==='match' && q.unit.pairs.length>=3 && q.unit.pairs.reduce((n,p)=>n+p.left.length,0)>260
     return longSet?90:70
   }

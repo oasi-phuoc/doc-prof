@@ -7,7 +7,7 @@ import { grammarReadingChild } from '@/grammaire/curriculum/items'
 import { grammarScenarioChild, grammarScenarioContext } from '@/grammaire/curriculum/scenario'
 import {sourceWordBlank} from './word-drop'
 
-type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; wordBlank?: Question['wordBlank']; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; wordBlank?: Question['wordBlank']; wordSorting?: Question['wordSorting']; sortingTargets?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
 type Result = { items: Adaptation[]; issues: string[] }
 const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
 const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
@@ -66,6 +66,14 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       return {items:[{...imageSupport,part:0,prompt,instruction:'',choices:q.options!,wordBlank:sourceWordBlank(prompt,q.options!),correctId:correct.id,choiceOrderPolicy:'fixed',
         model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
     }
+    if(u.kind==='match'&&exerciseType==='gram-ex-famille-curriculum-a'){
+      const categoryId=(id:string)=>`relation-${hash(`${u.id}:${id}`)}`
+      return {items:[{...imageSupport,part:0,
+      prompt:'Associez les personnes et les liens de parenté.',context:u.prompt,
+      instruction:'Glissez chaque prénom vers son lien de parenté, ou choisissez un prénom puis sa destination.',
+      choices:[],mode:'sorting',teacherLed:true,
+      wordSorting:{sentence:{tokens:u.pairs.map(pair=>pair.left),ending:''},categories:q.rightOptions!.map(option=>({id:categoryId(option.id),label:option.text}))},
+      sortingTargets:u.pairs.map(pair=>categoryId(pair.id)),model}],issues:[]}}
     if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({...imageSupport,part,prompt:pair.left,
       instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,wordBlank:sourceWordBlank(pair.left,q.rightOptions!),correctId:pair.id,choiceOrderPolicy:'fixed' as const,
       model:pair.left.replace('___',pair.right)})),issues:[]}

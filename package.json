@@ -79,7 +79,9 @@
     "test:grammar:image-urls": "node scripts/test-grammar-image-urls.cjs",
     "test:grammar:presentation-extension": "node scripts/test-grammar-presentation-extension.cjs",
     "test:grammar:presentation-extension:browser": "node tests/grammar/presentation-extension-browser.mjs",
-    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs && node tests/grammar/present-g3-browser.mjs && node tests/grammar/ir-re-browser.mjs && node tests/grammar/present-a1-next-browser.mjs && node tests/grammar/negation-a2-browser.mjs && node tests/grammar/contact-browser.mjs && node tests/grammar/presentation-browser.mjs && node tests/grammar/presentation-extension-browser.mjs",
+    "test:grammar:family-completion": "node scripts/test-grammar-family-completion.cjs",
+    "test:grammar:family-completion:browser": "node tests/grammar/family-completion-browser.mjs",
+    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs && node tests/grammar/present-g3-browser.mjs && node tests/grammar/ir-re-browser.mjs && node tests/grammar/present-a1-next-browser.mjs && node tests/grammar/negation-a2-browser.mjs && node tests/grammar/contact-browser.mjs && node tests/grammar/presentation-browser.mjs && node tests/grammar/presentation-extension-browser.mjs && node tests/grammar/family-completion-browser.mjs",
     "audio:index": "node scripts/audio-catalog.mjs",
     "test:audio-catalog": "node --test tests/audio-catalog/catalog.test.mjs",
     "test:audio-catalog:browser": "node tests/audio-catalog/browser.mjs",
@@ -99,7 +101,8 @@
     "test:interactive:duel-settings": "node tests/interactive/duel-settings-browser.mjs",
     "test:interactive:duel-infinite": "node tests/interactive/duel-infinite-browser.mjs",
     "test:interactive:duel-clearance": "node tests/interactive/duel-clearance-browser.mjs",
-    "test:interactive:rounded-beam": "node tests/interactive/rounded-beam-browser.mjs"
+    "test:interactive:rounded-beam": "node tests/interactive/rounded-beam-browser.mjs",
+    "test:grammar:legacy-compat": "node scripts/audit-grammar-legacy-usage.cjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

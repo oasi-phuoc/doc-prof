@@ -2173,7 +2173,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -2187,12 +2187,21 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
-      "targetEditorialSourcePath": "src/grammaire/curriculum/data/famille.json",
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "targetEditorialSourcePath": "src/grammaire/curriculum/data/famille-completion.json",
       "instructionsByPresentation": {
-        "open-written": "Lisez la consigne et rédigez votre texte."
+        "open-written": "Écrivez le texte demandé à partir de la famille fictive. Aucune information personnelle n’est demandée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/famille-completion.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14224,7 +14233,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -14238,12 +14247,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
-      "targetEditorialSourcePath": "src/grammaire/curriculum/data/famille.json",
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "targetEditorialSourcePath": "src/grammaire/curriculum/data/famille-completion.json",
       "instructionsByPresentation": {
-        "match": "Associez chaque élément à la proposition qui convient."
+        "match": "Lisez les faits. Associez chaque personne à son lien avec la personne de référence."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/famille-completion.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -14271,7 +14289,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -14285,12 +14303,21 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
-      "targetEditorialSourcePath": "src/grammaire/curriculum/data/famille.json",
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "targetEditorialSourcePath": "src/grammaire/curriculum/data/famille-completion.json",
       "instructionsByPresentation": {
-        "open-oral": "Exprimez-vous dans la situation proposée."
+        "open-oral": "Présentez la famille fictive selon la situation. Utilisez les faits de la fiche."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/famille-completion.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending"
       }
     },
     {
@@ -24462,16 +24489,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Présenter liens de parenté et possessifs, décrire sa famille sans imposer d'informations personnelles",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/famille.ts",
       "sourceRawCount": 1,
       "existingTypeIds": "gram-ex-famille-fam-pe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "famille-open-written-2026-11-22.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/famille-completion.json"
     },
     {
       "offeringId": "gram-ex-etre-corriger-erreur@A1@correct",
@@ -33835,16 +33867,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Présenter liens de parenté et possessifs, décrire sa famille sans imposer d'informations personnelles",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "famille-match-2026-11-22.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/famille-completion.json"
     },
     {
       "offeringId": "gram-ex-famille-curriculum-p@A1@open-oral",
@@ -33859,16 +33896,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Présenter liens de parenté et possessifs, décrire sa famille sans imposer d'informations personnelles",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "famille-open-oral-2026-11-22.1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/famille-completion.json"
     },
     {
       "offeringId": "gram-ex-etre-curriculum-a@A1@match",
@@ -39644,11 +39686,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 7450,
+    "reviewedVariants": 7600,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Se présenter : 37 offres sur 40 en pilote ; restent l’association, l’oral et la PE de famille. Entrer en contact et Conjuguer au présent complets en pilote. Approbation enseignante, autres thèmes, obligations I, révisions et recette finale en attente.",
-    "reviewedActivityUnits": 5640,
+    "remaining": "Se présenter : 40/40 offres A1 en pilote. Entrer en contact et Conjuguer au présent complets en pilote. Prochain thème : Les questions, avant de poursuivre les thèmes suivants. Approbation enseignante, obligations I, révisions et recette finale en attente.",
+    "reviewedActivityUnits": 5790,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -39672,14 +39714,15 @@
       "a6 provenance A1 (G3)",
       "a1 identité A1 (G3)",
       "a3 nationalités A1 (G3)",
-      "famille A1 — premiers types (G3)"
+      "famille A1 — premiers types (G3)",
+      "famille A1 — thème Se présenter terminé (G3)"
     ],
-    "reviewedOfferings": 146,
-    "lastUpdated": "2026-11-21",
-    "reviewedSelectableUnits": 5640,
+    "reviewedOfferings": 149,
+    "lastUpdated": "2026-11-22",
+    "reviewedSelectableUnits": 5790,
     "reviewedDocuments": 140,
     "reviewedDocumentQuestions": 500,
-    "reviewedActivities": 109,
+    "reviewedActivities": 112,
     "reviewedPilotNotions": 5,
     "reviewedNotions": 22,
     "technicalContracts": {

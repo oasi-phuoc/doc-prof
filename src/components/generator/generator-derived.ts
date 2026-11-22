@@ -132,7 +132,14 @@ export function typeChoicesForBlock(
       return exerciseTypeById[id]
     }).filter((t): t is NonNullable<typeof t> => Boolean(t))
     const graded=GRAMMAR_NEW_PILOT_TYPES.filter(type=>grammarBanksForType(type.id).some(bank=>bank.subthemeId===sub.id))
-    return [...theory, ...practice, ...graded]
+    const choices=[...theory, ...practice, ...graded]
+    if(sub.id==='famille'){
+      // New reading tasks are merged into Photo de famille. An archived récit
+      // keeps its own selected type and generator while the writing stays last.
+      const available=choices.filter(t=>t.id!=='gram-ex-famille-fam-recit'||block.exerciseType===t.id)
+      return [...available.filter(t=>t.id!=='gram-ex-famille-fam-pe'),...available.filter(t=>t.id==='gram-ex-famille-fam-pe')]
+    }
+    return choices
   }
   return typesForTopic(
     block.topic,

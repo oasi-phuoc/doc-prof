@@ -21,7 +21,7 @@ import {
 } from '@/francais/vocab-learn'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
-import { defaultGrammarPilot } from '@/grammaire/curriculum/registry'
+import { defaultGrammarPilot, grammarUsesGradedDefault } from '@/grammaire/curriculum/registry'
 import { QUI_SUIS_JE_DEFAULT_COUNT, isQuiSuisJeKind } from '@/grammaire/exercises/qui-suis-je'
 import {
   NATIONALITE_DEFAULT_COUNT,
@@ -230,7 +230,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     grammarPreview: undefined,
     grammarDocumentCount: undefined,
     grammarPageBreakAfterQuestionIds: undefined,
-    ...(type.id.includes('-curriculum-') ? defaultGrammarPilot(type.id) : {}),
+    ...(grammarUsesGradedDefault(type.id) ? defaultGrammarPilot(type.id) : {}),
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
     ...(isDecompose

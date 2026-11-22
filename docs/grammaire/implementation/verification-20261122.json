@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-22",
+  "timezone": "Europe/Zurich",
+  "status": "passed_for_pilot_preview_with_preexisting_game_budget_failure",
+  "baseCommit": "f095e1ba1a449193c292d0d0ab3072c70bc5c037",
+  "delivery": {
+    "theme": "Se présenter",
+    "level": "A1",
+    "themeOfferings": 40,
+    "themeOfferingsWithPilot": 40,
+    "newActivities": 3,
+    "newUnits": 150,
+    "sharedContexts": 50,
+    "associationProblems": 50,
+    "associationPairs": 157,
+    "newImages": 0,
+    "newAudio": 0,
+    "teacherApprovedUnits": 0
+  },
+  "registryTotals": {
+    "activities": 112,
+    "offerings": 149,
+    "units": 5790,
+    "variants": 7600,
+    "documents": 140,
+    "documentQuestions": 500
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:family-completion",
+      "status": "passed",
+      "cases": "150 units, full source problems, private keys, new defaults, old recipes and durable placements."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 7600
+    },
+    {
+      "command": "npm run test:grammar:contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:presentation",
+      "status": "passed",
+      "existingOfferings": 13
+    },
+    {
+      "command": "npm run test:grammar:presentation-extension",
+      "status": "passed",
+      "existingOfferings": 24
+    },
+    {
+      "command": "node --test tests/interactive/word-sorting.test.mjs",
+      "status": "passed",
+      "tests": 8
+    },
+    {
+      "command": "node scripts/audit-grammar-legacy-usage.cjs --base=f095e1ba1",
+      "status": "passed",
+      "outputs": 837,
+      "listening": 132,
+      "protectedFiles": 276
+    },
+    {
+      "command": "node tests/grammar/family-completion-browser.mjs",
+      "status": "passed",
+      "offerings": 3,
+      "printedResponses": 300,
+      "classroomLaunches": 3
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build --manifest",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "existingWarningsRemain": true
+    },
+    {
+      "command": "npm run check:interactive:budgets",
+      "status": "failed",
+      "preexisting": true,
+      "comparison": {
+        "competition": {
+          "pulledMain": {
+            "gzip": 208464,
+            "maximumGzip": 204800,
+            "passed": false
+          },
+          "working": {
+            "gzip": 208863,
+            "maximumGzip": 204800,
+            "passed": false
+          }
+        },
+        "game": {
+          "pulledMain": {
+            "gzip": 3256958,
+            "maximumGzip": 3145728,
+            "passed": false
+          },
+          "working": {
+            "gzip": 3277542,
+            "maximumGzip": 3145728,
+            "passed": false
+          }
+        }
+      }
+    },
+    {
+      "command": "python3 scripts/build-grammar-family-completion-a1.py",
+      "status": "passed",
+      "deterministicBytes": true
+    },
+    {
+      "command": "Live Chromium menu check",
+      "status": "passed",
+      "scope": "Family reading merged, writing last, A1 directly offered; all 40 theme offerings independently checked for direct graded defaults."
+    }
+  ],
+  "browserResults": [
+    {
+      "activity": "gram-ex-famille-curriculum-a",
+      "presentation": "match",
+      "printedResponses": 100,
+      "sheets": 100,
+      "images": 0,
+      "overflow": false
+    },
+    {
+      "activity": "gram-ex-famille-curriculum-p",
+      "presentation": "open-oral",
+      "printedResponses": 100,
+      "sheets": 100,
+      "images": 0,
+      "overflow": false
+    },
+    {
+      "activity": "gram-ex-famille-fam-pe",
+      "presentation": "open-written",
+      "printedResponses": 100,
+      "sheets": 100,
+      "images": 0,
+      "overflow": false
+    },
+    {
+      "activity": "gram-ex-famille-curriculum-a",
+      "classroom": true,
+      "gameQuestions": 1,
+      "people": 3,
+      "completeProblem": true,
+      "nativeMouseDrag": true,
+      "nativeTouch": true,
+      "keyboard": true,
+      "undo": true,
+      "resume": true,
+      "privateBeforeReveal": true,
+      "status": "passed"
+    },
+    {
+      "activity": "gram-ex-famille-curriculum-p",
+      "classroom": true,
+      "gameQuestions": 1,
+      "humanAssessment": true,
+      "privateBeforeReveal": true,
+      "status": "passed"
+    },
+    {
+      "activity": "gram-ex-famille-fam-pe",
+      "classroom": true,
+      "gameQuestions": 1,
+      "humanAssessment": true,
+      "privateBeforeReveal": true,
+      "status": "passed"
+    }
+  ],
+  "legacyRetention": {
+    "loadedHistoricalBanks": 125,
+    "safeDeletionCandidates": [],
+    "reason": "Aucune suppression n’est validée par cet audit : les recettes sans niveau et les contenus non repris conservent des dépendances historiques. La présence d’un pilote ou une fusion de menu ne prouve pas l’absence d’usage des anciennes données. Les nouvelles fiches Se présenter utilisent A1 directement, sans réécrire les archives."
+  },
+  "secrets": {
+    "status": "passed",
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 5526,
+    "publicTcfReferencesReviewed": 37,
+    "reviewFile": "docs/interactive/revue-identifiants-tcf-20261122.json",
+    "scope": "Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence."
+  },
+  "limitations": [
+    "Teacher approval remains pending; no new bank is declared pedagogically approved.",
+    "No new physical ENI or printer test.",
+    "Global game download budgets already fail on the pulled commit; their limits were not increased.",
+    "The unrelated global gallery, audio and Gattegno generated indexes are preserved from main.",
+    "The complete multi-theme browser suite and old G0 baseline were not rerun; prior dated reports remain intact."
+  ],
+  "menu": {
+    "passed": true,
+    "newFamilyMenu": [
+      "Théorie",
+      "Compréhension orale",
+      "Déterminants possessifs",
+      "Faire-part de naissance",
+      "Photo de famille",
+      "Message et email",
+      "Associer les liens de parenté",
+      "S’exprimer à l’oral",
+      "Écrire sur sa famille"
+    ],
+    "writingLast": true,
+    "mergedReadingOnly": true,
+    "defaultLevel": "A1 — pilote",
+    "historicalBankNotOfferedOnNewBlock": true,
+    "pageErrors": []
+  },
+  "sourceFiles": [
+    {
+      "path": "scripts/build-grammar-family-completion-a1.py",
+      "sha256": "98c69a2e6c71162f1929c4e262b7942f818292cf7d11d9244b1ce277af13c7ab"
+    },
+    {
+      "path": "scripts/grammar_curriculum/family-a1-situations.tsv",
+      "sha256": "f81b7d0b16dab93191573d44283f4f2ff9a86d1570c06328df7d841d8cee8a5e"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/famille-completion.json",
+      "sha256": "0958dd937bdcb832a89e705a03fb6b22eaf066c4f861e6d0d64be5ffe26085da"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "e605cb33d718fbd28c51d4e4bf98f5b463a713527907f26cf325d32dc7028886"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "f6dc6ac70027f1449d163e5979e0577984f31c8bad34d57c9a0da1bdbc1ea3c3"
+    },
+    {
+      "path": "src/grammaire/exercises/catalog-exercises.ts",
+      "sha256": "ca3011fe8178589a4a6c1bb9c7fca9d4c4e567812ddc43cf4ada5490cfb658f1"
+    },
+    {
+      "path": "src/components/generator/page-helpers.ts",
+      "sha256": "66096ac615c2b5ae82a320bd53d46ea74446471c1a6d12968f0f07e90fe56768"
+    },
+    {
+      "path": "src/components/generator/GrammarLevelControl.tsx",
+      "sha256": "a729c799854f5b50a12f11ada1b0326cd5d0ec6083dfd4b3011243724b3a6779"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "e9c52bcfb19c68e0cfa6bd085140ad4e6193b53f87a87e457e5cde154e95434e"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "d0483ecd2d71783893668cb50e0dfd3fc065d9ecf0b645505a223fc7394639d7"
+    },
+    {
+      "path": "src/interactive/domain/convert.ts",
+      "sha256": "fba07f945ac2bd498030b793d3c0980e07d010241b433ad2b34f1896efd3bdab"
+    },
+    {
+      "path": "src/interactive/domain/word-sorting.ts",
+      "sha256": "dfd5e6f3eb2abf67238f7d6d1f410d6e4c792bc513fe52d89ef788b725b75da6"
+    },
+    {
+      "path": "src/interactive/components/PresetPanel.tsx",
+      "sha256": "550b64f13c4c7a54116101a4bea540f5ef4d1df68ce918b4cb20b01febc351ea"
+    },
+    {
+      "path": "scripts/test-grammar-family-completion.cjs",
+      "sha256": "031ebf41eb2a2c6c6b9b139d1fab91b2f12afbc2b8af282dcd1eca7e8a2cea8b"
+    },
+    {
+      "path": "tests/grammar/family-completion-browser.mjs",
+      "sha256": "abf210e22a9ad7aa9d19438a3e54b9ec3768b1297cae4cf169ce01456b43c189"
+    },
+    {
+      "path": "src/components/generator/generator-derived.ts",
+      "sha256": "96a225bbc2f25c685945cee566eb0ecd336b6dd745361303fb760ab798bd520c"
+    },
+    {
+      "path": "scripts/audit-grammar-legacy-usage.cjs",
+      "sha256": "1b82efcf6d1ec8fef3b38054303936247b93a96657b17ca4e3c9d340e76a08c3"
+    },
+    {
+      "path": "scripts/interactive-secrets.mjs",
+      "sha256": "4efc35729adfe3b8e961868aa70f114ccb2428681f69ed6d1f74b55918a0afef"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "sha256": "4fa98f09cfe39ab0b51c19e53ef811de693be9427801f9b70e73bc51637ec944"
+    }
+  ]
+}

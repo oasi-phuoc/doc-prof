@@ -4,6 +4,9 @@ import {positionOf} from './source-position'
 import type {Game,Question,WordSorting} from './types'
 
 const groupKey=(q:Question)=>[q.source.page,q.source.block,q.source.item,q.source.exerciseType].join(':')
+/** Only word-by-word grammar classification has an alternate column format.
+ * Whole association problems already use their complete source unit. */
+export const canSwitchWordSorting=(q:Question)=>!!q.wordClassification||!!q.wordSorting?.categories.length&&q.wordSorting.categories.every(category=>category.id.startsWith('category-'))
 export function sortingSentence(sentence:WordSorting['sentence']):string {
   return (sentence.prefix??'')+sentence.tokens.map((word,index)=>(sentence.joins?.[index]||(index>0&&!/[’']$/.test(sentence.tokens[index-1]!)?' ':''))+word).join('')+(sentence.ending??'.')
 }
@@ -18,7 +21,7 @@ export function sortingSelection(keys:string[],questions:Question[],enabled:bool
   for(const key of keys){
     const q=questions.find(q=>positionOf(q)===key)
     if(enabled&&q?.wordClassification)result.push([q.source.page,q.source.block,q.source.item,0].join(':'))
-    else if(!enabled&&q?.wordSorting)for(let part=0;part<q.wordSorting.sentence.tokens.length;part++)result.push([q.source.page,q.source.block,q.source.item,part].join(':'))
+    else if(!enabled&&q?.wordSorting&&canSwitchWordSorting(q))for(let part=0;part<q.wordSorting.sentence.tokens.length;part++)result.push([q.source.page,q.source.block,q.source.item,part].join(':'))
     else result.push(key)
   }
   return [...new Set(result)]

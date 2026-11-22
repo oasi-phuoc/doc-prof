@@ -65,3 +65,21 @@ condition = "AND"
 paths = ['''(^|/)docs/tcf/preparation-433-trios-20261112\.json$''']
 regexTarget = "match"
 regexes = ['''^key"\s*:\s*"tcf-ssx-a2-ecole-nouvel-eleve-co-4#2"?$''']
+
+[[rules.allowlists]]
+description = "37 alias publics exacts d’images TCF, reliés aux banques et fichiers vérifiés le 22 novembre. Les clés aléatoires restent détectées."
+condition = "AND"
+paths = [
+  '''(^|/)docs/tcf/cinema\-athletisme\-documents\-20261121\.json$''',
+  '''(^|/)docs/tcf/revue\-actions\-fetes\-athletisme\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-duos\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-etages\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-lieux\-rdv\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-rayons\-lieux\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-trio\-objets\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-trios\-sacs\-aliments\-20261120\.json$''',
+  '''(^|/)docs/tcf/revue\-trios\-sports\-metaux\-trains\-20261120\.json$''',
+  '''(^|/)docs/tcf/trios\-cadeaux\-loisirs\-20261121\.json$''',
+]
+regexTarget = "match"
+regexes = ['''^key"\s*:\s*"(?:21\-cinema\-debout|21\-hauteur\-deux\-pieds|qcm\-20261120\-bonbons\-gateaux|qcm\-20261120\-chips\-biscuits\-sales|qcm\-20261120\-duo\-foot\-basket|qcm\-20261120\-duo\-livres\-poemes|qcm\-20261120\-duo\-natation\-velo|qcm\-20261120\-duo\-tennis\-natation|qcm\-20261120\-duo\-tennis\-rugby|qcm\-20261120\-equipement\-natation|qcm\-20261120\-equipement\-ski|qcm\-20261120\-equipement\-tennis|qcm\-20261120\-etage\-1\-aligne|qcm\-20261120\-etage\-2\-aligne|qcm\-20261120\-etage\-3\-aligne|qcm\-20261120\-gare\-routiere|qcm\-20261120\-glacier\-italien|qcm\-20261120\-gymnase\-facade|qcm\-20261120\-magasin\-chaussures\-enfants|qcm\-20261120\-magasin\-danse|qcm\-20261120\-pendentif\-eiffel\-cuivre|qcm\-20261120\-pendentif\-eiffel\-or|qcm\-20261120\-piscine\-facade|qcm\-20261120\-rayon\-bibliotheque\-bleu|qcm\-20261120\-rayon\-bibliotheque\-vert|qcm\-20261120\-sacs\-voyage|qcm\-20261120\-train\-tgv|tcf\-athle\-hauteur\-20261120|tcf\-athle\-longueur\-20261120|tcf\-athle\-poids\-20261120|tcf\-cadeaux\-loisirs\-bon\-20261121|tcf\-cadeaux\-loisirs\-chansons\-20261121|tcf\-cinema\-asseoir\-20261120|tcf\-cinema\-lever\-20261120|tcf\-cinema\-sortir\-20261120|trio\-objets\-20261120\-cahier\-regle|trio\-objets\-20261120\-livre\-ordinateur)"?$''']

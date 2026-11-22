@@ -1,0 +1,70 @@
+const assert=require('node:assert/strict')
+const {load,root}=require('./gattegno-loader.cjs')
+const {GRAMMAR_PILOT_BANKS:banks,defaultGrammarPilot,grammarUsesGradedDefault}=load(root+'/src/grammaire/curriculum/registry.ts')
+const {isGrammarSnapshot,validGrammarUnit}=load(root+'/src/grammaire/curriculum/validation.ts')
+const {generateGrammarSelection:select}=load(root+'/src/grammaire/curriculum/generate.ts')
+const {buildFicheRecipe,parseFicheRecipe}=load(root+'/src/fiches/recipe.ts')
+const {convertRecipe}=load(root+'/src/interactive/domain/convert.ts')
+const {buildWorksheets}=load(root+'/src/math/generate.ts')
+const {buildGrammairePracticeTypes}=load(root+'/src/grammaire/exercises/catalog-exercises.ts')
+const {applyType}=load(root+'/src/components/generator/page-helpers.ts')
+const {typeChoicesForBlock}=load(root+'/src/components/generator/generator-derived.ts')
+const {startSession,transition}=load(root+'/src/interactive/domain/session.ts')
+const {runtimeFor}=load(root+'/src/interactive/domain/round-runtime.ts')
+const {newRecord,compactSession,replaySession,planIdentity}=load(root+'/src/interactive/domain/persistence.ts')
+const {validWordPlacements,sortingSelection,canSwitchWordSorting}=load(root+'/src/interactive/domain/word-sorting.ts')
+const set=require('../src/grammaire/curriculum/data/famille-completion.json'),types=buildGrammairePracticeTypes()
+const block=(b,n=50)=>({domain:'grammaire',topic:b.topic,exerciseType:b.activityId,count:n,columns:1,difficulty:'facile',...defaultGrammarPilot(b.activityId)})
+const recipe=(b,n=50)=>buildFicheRecipe({pages:[block(b,n)],seed:2207,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
+;(async()=>{
+assert.equal(set.length,3);assert.equal(set.reduce((n,b)=>n+b.units.length,0),150)
+for(const b of set){
+ assert(banks.some(other=>other.activityId===b.activityId));assert.equal(b.review.humanReview,'pending');assert.equal(b.level,'A1')
+ assert.equal(new Set(b.units.map(u=>u.prompt)).size,50)
+ assert.equal(applyType(types.find(t=>t.id===b.activityId)).grammarLevel,'A1')
+ for(const seed of [17,839,2026]){
+  const selected=select(block(b),seed);assert(isGrammarSnapshot(selected));assert.equal(selected.questions.length,50);assert.equal(new Set(selected.questions.map(q=>q.id)).size,50)
+ }
+ const r=recipe(b),before=structuredClone(r),parsed=parseFicheRecipe(JSON.parse(JSON.stringify(r)));assert(parsed)
+ const game=convertRecipe(r);assert.equal(game.questions.length,50);assert.deepEqual(game.issues,[])
+ const pages=buildWorksheets([block(b)],2207);assert.equal(pages.flatMap(p=>p.items).length,50)
+ for(const q of game.questions){
+  const u=r.pages[0].grammarSnapshot.questions[q.source.item].unit
+  assert(!JSON.stringify(q).includes(u.answers[0]));assert(!('sortingTargets'in q));assert(!('model'in q))
+  if(u.kind==='match'){
+   assert.equal(q.mode,'sorting');assert.equal(q.context,u.prompt);assert.equal(q.choices.length,0)
+   assert.equal(canSwitchWordSorting(q),false)
+   const sourceKey=[q.source.page,q.source.block,q.source.item,q.source.part].join(':')
+   assert.deepEqual(sortingSelection([sourceKey],game.questions,false),[sourceKey])
+   assert.deepEqual(q.wordSorting.sentence.tokens,u.pairs.map(p=>p.left));assert.equal(q.wordSorting.categories.length,u.pairs.length)
+   const targets=game.corrections[q.id].sortingTargets
+   assert.equal(targets.length,u.pairs.length);assert(validWordPlacements(q,targets));assert(!validWordPlacements(q,targets.map(()=>'unknown')))
+   u.pairs.forEach((p,i)=>assert.equal(q.wordSorting.categories.find(c=>c.id===targets[i]).label,p.right))
+   assert(!validGrammarUnit({...u,pairs:[u.pairs[0],u.pairs[0]]}))
+  }else{
+   assert.equal(q.mode,'oral');assert.equal(q.compatibility,'teacher-led');assert(q.prompt.includes(u.task));assert(q.prompt.includes(u.prompt))
+   assert.equal(u.rubric.length,5);assert(game.corrections[q.id].text.includes('d’autres formulations'))
+   assert.equal(u.writeLines,u.mode==='written'?6:0)
+   if(u.mode==='oral')assert(u.explanation.includes('Relance pour l’enseignant'))
+  }
+ }
+ assert.deepEqual(r,before)
+}
+const match=set.find(b=>b.presentations[0]==='match'),pairs=match.units.flatMap(u=>u.pairs)
+assert.equal(pairs.length,157);assert.deepEqual([...new Set(match.units.map(u=>u.pairs.length))].sort(),[3,4,5])
+for(const relation of ['père','mère','fils','fille','frère','sœur','grand-père','grand-mère','oncle','tante','cousin','cousine','neveu','nièce'])assert(pairs.some(p=>p.right.endsWith(relation)),relation)
+const game=convertRecipe(recipe(match,2)),q=game.questions[0],targets=game.corrections[q.id].sortingTargets
+const state=transition(game,startSession(game),{type:'WORD_SORT_SET',questionId:q.id,placements:targets})
+const saved=compactSession(await newRecord(game,'class'),state),replayed=replaySession(game,saved,await planIdentity(game))
+assert.deepEqual(runtimeFor(game,replayed.state).wordSorts[q.id],targets)
+assert(!JSON.stringify(saved).includes('sortingTargets'))
+const familyTypes=typeChoicesForBlock('grammaire',block(match));assert.equal(familyTypes.at(-1).id,'gram-ex-famille-fam-pe')
+assert(!familyTypes.some(t=>t.id==='gram-ex-famille-fam-recit'))
+assert(typeChoicesForBlock('grammaire',{topic:'gram-se-presenter',exerciseType:'gram-ex-famille-fam-recit'}).some(t=>t.id==='gram-ex-famille-fam-recit'))
+for(const b of banks.filter(b=>b.topic==='gram-se-presenter'))assert(grammarUsesGradedDefault(b.activityId))
+const old=buildFicheRecipe({pages:[{domain:'grammaire',topic:'gram-se-presenter',exerciseType:'gram-ex-famille-fam-pe',count:1,columns:1,difficulty:'facile'}],seed:2207,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
+assert.equal(old.pages[0].grammarLevel,undefined);assert.equal(parseFicheRecipe(JSON.parse(JSON.stringify(old))).pages[0].grammarLevel,undefined)
+const registry=require('../docs/grammaire/implementation/target-registry.json'),theme=new Set(registry.notionLevels.filter(n=>n.themeLabel==='Se présenter').map(n=>n.pedagogicalNotionId))
+const offers=registry.offerings.filter(o=>theme.has(o.pedagogicalNotionId));assert.equal(offers.length,40);assert(offers.every(o=>o.availability==='pilot_preview'))
+console.log('Se présenter : 40/40 offres A1 ; 150 nouvelles unités, 157 liens, 50 problèmes complets manipulables, oral/PE privés, nouvelles fiches graduées et anciennes recettes conservées. Validation enseignante en attente.')
+})().catch(e=>{console.error(e);process.exitCode=1})

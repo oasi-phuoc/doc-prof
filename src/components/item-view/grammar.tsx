@@ -25,6 +25,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
       </ul>:null}
       {corrected&&u.answers.length>1?<p className="grammar-explanation">Autre forme acceptée : {u.answers.slice(1).join(' / ')}.</p>:null}
     </>:u.kind==='match'?<>
+      {u.source.typeId==='gram-ex-famille-curriculum-a'?<p className="grammar-profile-facts"><GrammarTextHints text={u.prompt}/></p>:null}
       <div className="grammar-match-columns">
         <ol>{u.pairs.map((pair,index)=><li key={pair.id}><Sentence text={pair.left} answer={corrected?pair.right:undefined}/>{corrected?<strong className="grammar-match-answer"> → {String.fromCharCode(65+(q.rightOptions?.findIndex(o=>o.id===pair.id)??0))}</strong>:<span className="grammar-match-slot" aria-label={`Réponse ${index+1}`}>___</span>}</li>)}</ol>
         <ol type="A">{q.rightOptions?.map(o=><li key={o.id}>{o.text}</li>)}</ol>

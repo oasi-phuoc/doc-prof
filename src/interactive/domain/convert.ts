@@ -387,9 +387,11 @@ export function convertRecipe(
               if (item.grammarCountryGender!==undefined) q.grammarCountryGender=item.grammarCountryGender
               if (item.words) q.words = item.words
               if (item.wordBlank) q.wordBlank = item.wordBlank
+              if (item.wordSorting) q.wordSorting = item.wordSorting
               if (item.choiceOrderPolicy) q.choiceOrderPolicy = item.choiceOrderPolicy
               if (item.teacherLed) q.compatibility = 'teacher-led'
               add(q, item.model, item.correctId)
+              if(item.sortingTargets)game.corrections[q.id]!.sortingTargets=[...item.sortingTargets]
             })
             return
           }

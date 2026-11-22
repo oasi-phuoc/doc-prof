@@ -1,5 +1,7 @@
 # Implémentation du curriculum Grammaire — pilotes et extension A1
 
+**22 novembre 2026 — Se présenter terminé en pilote A1 : 40/40 offres.** Les trois dernières activités de famille ajoutent 150 unités et des associations manipulables par problèmes complets. Les nouvelles fiches de ce thème proposent directement A1 ; les recettes anciennes sans niveau gardent leur rendu. L’[audit des banques historiques](audit-banques-historiques-20261122.json) ne valide aucune suppression des anciennes données encore référencées. Voir le [bilan du thème](avancement-20261122.md).
+
 Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf36a0004474`.
 
 Le cahier des charges complet est dans [cahier-des-charges-v2.md](cahier-des-charges-v2.md) ; les 424 activités cibles et les décisions sont suivies dans `target-registry.json`. L’option recommandée d’intégration des 43 activités omises est retenue comme hypothèse de construction au lancement ; aucun ancien type n’est supprimé. Les cinq décisions pédagogiques précédentes sont conservées.

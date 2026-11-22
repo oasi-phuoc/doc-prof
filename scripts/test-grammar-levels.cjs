@@ -79,7 +79,9 @@ for (const bank of banks) {
   assert.deepEqual(roundTrip.pages[0].grammarSnapshot,recipe.pages[0].grammarSnapshot)
   assert.deepEqual(buildPage(roundTrip.pages[0],839).items,buildPage(block,839).items)
   const game=convertRecipe(roundTrip)
-  assert.equal(game.questions.length,reading?selected.questions.reduce((n,q)=>n+q.unit.questions.length,0):presentation==='match'?selected.questions.reduce((n,q)=>n+q.unit.pairs.length,0):50)
+  const wholeFamilyProblem=bank.activityId==='gram-ex-famille-curriculum-a'
+  assert.equal(game.questions.length,reading?selected.questions.reduce((n,q)=>n+q.unit.questions.length,0):presentation==='match'&&!wholeFamilyProblem?selected.questions.reduce((n,q)=>n+q.unit.pairs.length,0):50)
+  if(wholeFamilyProblem)assert(game.questions.every(q=>q.mode==='sorting'&&q.wordSorting.sentence.tokens.length===q.wordSorting.categories.length))
   assert(game.questions.every(q=>!('answer' in q)&&!('correctId' in q)))
   assert(game.questions.every(q=>game.corrections[q.id]?.text))
   const prepared=prepareGame(game)
