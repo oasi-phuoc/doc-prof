@@ -88,7 +88,7 @@ export function assertGrammarBank(bank: GrammarBank): void {
   if (bank.presentations.includes('document-set') && bank.units.some(u=>u.kind==='reading'&&u.questions.length>5)) fail()
   if (!unique([...bank.units.map(u=>u.id),...bank.units.flatMap(u=>u.kind==='reading'||u.kind==='scenario'&&u.contract==='closed'?u.questions.map(q=>q.id):[])])) fail()
   if(!consistentGrammarImages(bank.units))fail()
-  const meanings=bank.units.map(u=>key(u.kind==='reading'?u.text:u.kind==='scenario'?u.situation+'|'+u.turns.map(t=>t.text).join('|'):u.kind==='order'?u.answers[0]!:u.kind==='match'?u.pairs.map(p=>p.left).sort().join('|'):u.prompt))
+  const meanings=bank.units.map(u=>key(u.kind==='reading'?u.text:u.kind==='scenario'?u.situation+'|'+u.turns.map(t=>t.text).join('|'):u.kind==='order'?u.answers[0]!:u.kind==='match'?u.pairs.map(p=>p.left).sort().join('|'):(u.cue?u.cue+'|':'')+u.prompt))
   if (!unique(meanings) || !bank.presentations.length || bank.presentations.some(p=>!text(bank.instructions[p]))) fail()
   for (const p of bank.presentations) if (bank.units.some(u=>
     p==='choice'?u.kind!=='completion':p==='gap'?u.kind!=='completion'&&u.kind!=='personal-gap':p==='document-set'?u.kind!=='reading':p==='scenario-set'?u.kind!=='scenario':

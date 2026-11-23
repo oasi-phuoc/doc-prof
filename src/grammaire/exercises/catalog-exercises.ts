@@ -116,7 +116,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
       seen.add(id)
       const les = lessonForType(id)
       const graded=grammarBanksForType(id)[0]
-      const label=graded?.subthemeId==='c4'?graded.label:les?.label??kind.label
+      const label=graded&&['c4','d1','d2','d3'].includes(graded.subthemeId)?graded.label:les?.label??kind.label
       types.push({
         id,
         topic: sub.topic,
