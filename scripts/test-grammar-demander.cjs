@@ -68,7 +68,7 @@ const readings=banks.flatMap(b=>b.units).filter(u=>u.kind==='reading');assert.eq
 for(const u of readings){assert.deepEqual(u.answers,[]);for(const q of u.questions)assert(q.evidence.every(e=>u.text.includes(e)))}
 const retired=require('../src/grammaire/curriculum/retired-subthemes.json')
 const before=JSON.parse(cp.execFileSync('git',['show','e4e22deae:src/grammaire/exercises/bank/lessons-revised.ts'],{encoding:'utf8'}).split('= ').slice(1).join('= '));const after=JSON.parse(fs.readFileSync(root+'/src/grammaire/exercises/bank/lessons-revised.ts','utf8').split('= ').slice(1).join('= '));assert.deepEqual(after,before.filter(x=>!retired.includes(x.subId)))
-const beforeCommunication=JSON.parse(cp.execFileSync('git',['show','e4e22deae:src/grammaire/exercises/communication-data.json'],{encoding:'utf8'}));assert.deepEqual(require('../src/grammaire/exercises/communication-data.json'),beforeCommunication.filter(x=>x.subId!=='f3'))
+const beforeCommunication=JSON.parse(cp.execFileSync('git',['show','e4e22deae:src/grammaire/exercises/communication-data.json'],{encoding:'utf8'}));assert.deepEqual(require('../src/grammaire/exercises/communication-data.json'),beforeCommunication.filter(x=>!require('../src/grammaire/curriculum/retired-subthemes.json').includes(x.subId)))
 const cases=[]
 for(const sub of ['f1','f2','f3']){
  const b=banks.find(b=>b.subthemeId===sub&&b.presentations.includes('choice')),old={domain:'grammaire',exerciseType:b.activityId,topic:b.topic,count:1,columns:1,difficulty:'facile'},fresh={...old,...defaultGrammarPilot(old.exerciseType)}

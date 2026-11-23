@@ -1,0 +1,349 @@
+[
+  {
+    "id": "accueil-atelier",
+    "portrait": "ana-petrov",
+    "genre": "Message d’accueil",
+    "title": "Retrouver la personne qui vous attend",
+    "text": [
+      "Vous arrivez à un atelier. Une personne vous attend près de l’entrée. Elle a",
+      "les cheveux longs et ondulés. Elle porte des lunettes noires et un chemisier",
+      "bleu. Montrez ce message à l’accueil si vous ne la trouvez pas. Les",
+      "vêtements servent seulement à la reconnaître aujourd’hui."
+    ],
+    "questions": [
+      {"prompt": "Quelle est la longueur de ses cheveux ?", "answer": "Ils sont longs.", "distractors": ["Ils sont courts.", "Ils sont rasés."], "evidence": "les cheveux longs"},
+      {"prompt": "Quel accessoire permet de la reconnaître ?", "answer": "Des lunettes noires.", "distractors": ["Un chapeau noir.", "Une écharpe noire."], "evidence": "des lunettes noires"},
+      {"prompt": "De quelle couleur est son chemisier ?", "answer": "Il est bleu.", "evidence": "un chemisier bleu"}
+    ]
+  },
+  {
+    "id": "dessin-lunettes",
+    "portrait": "ana-petrov",
+    "genre": "Note de dessin",
+    "title": "Compléter un portrait",
+    "text": [
+      "Pour votre dessin, regardez le portrait A. Les cheveux descendent sur les",
+      "épaules et présentent des ondulations. Les lunettes ont une monture noire.",
+      "Le haut est bleu. Dessinez d’abord les cheveux, puis les lunettes. Ne",
+      "dessinez pas un chapeau : il n’y en a pas sur le portrait."
+    ],
+    "questions": [
+      {"prompt": "Les cheveux sont-ils raides ou ondulés ?", "answer": "Ils sont ondulés.", "distractors": ["Ils sont raides.", "Ils sont rasés."], "evidence": "présentent des ondulations"},
+      {"prompt": "Quelle est la couleur de la monture ?", "answer": "Elle est noire.", "distractors": ["Elle est blanche.", "Elle est rouge."], "evidence": "une monture noire"},
+      {"prompt": "Quel accessoire ne faut-il pas ajouter au dessin ?", "answer": "Un chapeau.", "evidence": "Ne dessinez pas un chapeau"}
+    ]
+  },
+  {
+    "id": "cours-coiffure",
+    "portrait": "kenji-sato",
+    "genre": "Fiche d’observation",
+    "title": "Décrire une coupe",
+    "text": [
+      "Le portrait B est un exemple pour un cours de coiffure. Cette personne a les",
+      "cheveux courts, noirs et raides. La photo ne montre pas de cheveux longs sur",
+      "les épaules. Pour cet exercice, décrivez seulement la coupe. La chemise",
+      "blanche aide à retrouver la bonne image sur la table."
+    ],
+    "questions": [
+      {"prompt": "Comment sont les cheveux du portrait B ?", "answer": "Courts, noirs et raides.", "distractors": ["Longs, noirs et raides.", "Courts, blonds et bouclés."], "evidence": "les cheveux courts, noirs et raides"},
+      {"prompt": "Quel vêtement aide à retrouver l’image ?", "answer": "Une chemise blanche.", "distractors": ["Une veste rouge.", "Un pull noir."], "evidence": "La chemise blanche"},
+      {"prompt": "Faut-il décrire toute la personne ou seulement la coupe ?", "answer": "Seulement la coupe.", "evidence": "décrivez seulement la coupe"}
+    ]
+  },
+  {
+    "id": "jeu-chemise",
+    "portrait": "kenji-sato",
+    "genre": "Règle de jeu",
+    "title": "Choisir le bon portrait",
+    "text": [
+      "Posez les portraits sur la table. Une personne lit la description et l’autre",
+      "choisit une image. Pour cette manche, cherchez des cheveux noirs et courts",
+      "ainsi qu’une chemise blanche. Ne choisissez pas seulement selon la couleur",
+      "des cheveux : plusieurs portraits ont les cheveux noirs. Vérifiez aussi le",
+      "vêtement."
+    ],
+    "questions": [
+      {"prompt": "Quelle longueur de cheveux faut-il chercher ?", "answer": "Des cheveux courts.", "distractors": ["Des cheveux longs.", "Des cheveux jusqu’aux épaules."], "evidence": "des cheveux noirs et courts"},
+      {"prompt": "Quelle chemise est indiquée ?", "answer": "Une chemise blanche.", "distractors": ["Une chemise bleue.", "Une chemise noire."], "evidence": "une chemise blanche"},
+      {"prompt": "Pourquoi la couleur des cheveux ne suffit-elle pas ?", "answer": "Plusieurs portraits ont les cheveux noirs.", "evidence": "plusieurs portraits ont les cheveux noirs"}
+    ]
+  },
+  {
+    "id": "rendezvous-orange",
+    "portrait": "lisa-morel",
+    "genre": "Message de rendez-vous",
+    "title": "Devant la médiathèque",
+    "text": [
+      "Pour notre rencontre devant la médiathèque, regardez mon portrait. J’ai les",
+      "cheveux longs, châtains et ondulés. Aujourd’hui, je porte une chemise",
+      "orange. Sur la photo, je souris et on voit mes dents. Si plusieurs personnes",
+      "attendent, utilisez ces détails ensemble pour me reconnaître."
+    ],
+    "questions": [
+      {"prompt": "De quelle couleur sont les cheveux ?", "answer": "Ils sont châtains.", "distractors": ["Ils sont blancs.", "Ils sont noirs."], "evidence": "les cheveux longs, châtains et ondulés"},
+      {"prompt": "Quel vêtement est porté aujourd’hui ?", "answer": "Une chemise orange.", "distractors": ["Une chemise blanche.", "Une veste beige."], "evidence": "une chemise orange"},
+      {"prompt": "Quel détail du sourire est visible ?", "answer": "On voit ses dents.", "evidence": "on voit mes dents"}
+    ]
+  },
+  {
+    "id": "legende-photo",
+    "portrait": "lisa-morel",
+    "genre": "Consigne d’album",
+    "title": "Écrire une légende neutre",
+    "text": [
+      "Cette page d’album présente le portrait C. La personne a les cheveux longs",
+      "et ondulés. Sa chemise est orange. Pour la légende, écrivez une phrase avec",
+      "« avoir » sur les cheveux, puis une phrase avec « porter » sur la chemise.",
+      "Évitez les jugements comme « belle » ou « laide » : décrivez des détails",
+      "visibles."
+    ],
+    "questions": [
+      {"prompt": "Quelle description des cheveux correspond au texte ?", "answer": "Elle a les cheveux longs et ondulés.", "distractors": ["Elle a les cheveux courts et raides.", "Elle a les cheveux rasés."], "evidence": "les cheveux longs et ondulés"},
+      {"prompt": "Quel verbe est demandé pour la chemise ?", "answer": "Porter.", "distractors": ["Habiter.", "Courir."], "evidence": "une phrase avec « porter » sur la chemise"},
+      {"prompt": "Quelle couleur doit figurer dans la phrase sur le vêtement ?", "answer": "Orange.", "evidence": "Sa chemise est orange"}
+    ]
+  },
+  {
+    "id": "accueil-gare",
+    "portrait": "marco-bianchi",
+    "genre": "Message pratique",
+    "title": "Une personne à retrouver",
+    "text": [
+      "Une personne du groupe vous attend dans le hall de la gare. Elle a les",
+      "cheveux courts, noirs et bouclés. Elle porte une chemise noire au col",
+      "ouvert. La photo montre seulement le haut du corps : elle ne permet pas de",
+      "connaître sa taille. Demandez à l’accueil si vous avez besoin d’aide."
+    ],
+    "questions": [
+      {"prompt": "Quelle est la texture des cheveux ?", "answer": "Ils sont bouclés.", "distractors": ["Ils sont raides.", "Ils sont rasés."], "evidence": "les cheveux courts, noirs et bouclés"},
+      {"prompt": "Comment est le col de la chemise ?", "answer": "Il est ouvert.", "distractors": ["Il est fermé.", "Il est blanc."], "evidence": "au col ouvert"},
+      {"prompt": "Peut-on connaître la taille de la personne avec cette photo ?", "answer": "Non, la photo ne permet pas de connaître sa taille.", "evidence": "elle ne permet pas de connaître sa taille"}
+    ]
+  },
+  {
+    "id": "correction-portrait",
+    "portrait": "marco-bianchi",
+    "genre": "Note de correction",
+    "title": "Corriger une description",
+    "text": [
+      "Un élève a écrit : « Cette personne a les cheveux longs et une chemise",
+      "blanche. » Comparez avec le portrait D. La description correcte indique des",
+      "cheveux courts et bouclés, ainsi qu’une chemise noire. Le col est ouvert.",
+      "Corrigez les détails visibles sans inventer un âge ni une profession."
+    ],
+    "questions": [
+      {"prompt": "Quelle longueur remplace « longs » ?", "answer": "Courts.", "distractors": ["Très longs.", "Jusqu’aux épaules."], "evidence": "des cheveux courts et bouclés"},
+      {"prompt": "Quelle couleur remplace « blanche » ?", "answer": "Noire.", "distractors": ["Rouge.", "Beige."], "evidence": "une chemise noire"},
+      {"prompt": "Quelles informations ne faut-il pas inventer ?", "answer": "Il ne faut inventer ni un âge ni une profession.", "evidence": "sans inventer un âge ni une profession"}
+    ]
+  },
+  {
+    "id": "veste-beige",
+    "portrait": "mei-chen",
+    "genre": "Message d’accueil",
+    "title": "À l’entrée de l’exposition",
+    "text": [
+      "À l’entrée de l’exposition, cherchez le personnage du portrait E. Cette",
+      "personne a les cheveux longs, noirs et raides. Elle porte une veste beige",
+      "avec un haut rouge dessous. Il faut vérifier la veste et le haut, car",
+      "d’autres personnes ont aussi les cheveux noirs. Le portrait est fictif."
+    ],
+    "questions": [
+      {"prompt": "Comment sont les cheveux ?", "answer": "Longs, noirs et raides.", "distractors": ["Courts, noirs et bouclés.", "Longs, blonds et ondulés."], "evidence": "les cheveux longs, noirs et raides"},
+      {"prompt": "Quelle est la couleur de la veste ?", "answer": "Beige.", "distractors": ["Noire.", "Blanche."], "evidence": "une veste beige"},
+      {"prompt": "Quel vêtement rouge voit-on sous la veste ?", "answer": "Un haut rouge.", "evidence": "un haut rouge dessous"}
+    ]
+  },
+  {
+    "id": "fiche-personnage",
+    "portrait": "mei-chen",
+    "genre": "Fiche de personnage",
+    "title": "Préparer une description",
+    "text": [
+      "Le personnage E appartient à une histoire inventée. Sa fiche décrit des",
+      "cheveux noirs et raides, une veste beige et un haut rouge. Le dessin ne",
+      "donne ni adresse ni nationalité. Pour présenter ce personnage, dites ce",
+      "qu’il porte et comment sont ses cheveux. Gardez les informations de la",
+      "fiche."
+    ],
+    "questions": [
+      {"prompt": "Quelle phrase convient aux cheveux ?", "answer": "Ses cheveux sont noirs et raides.", "distractors": ["Ses cheveux sont blancs et bouclés.", "Ses cheveux sont blonds et ondulés."], "evidence": "des cheveux noirs et raides"},
+      {"prompt": "Quelle combinaison de vêtements est indiquée ?", "answer": "Une veste beige et un haut rouge.", "distractors": ["Une veste noire et un haut blanc.", "Une chemise orange et un chapeau noir."], "evidence": "une veste beige et un haut rouge"},
+      {"prompt": "Le dessin donne-t-il la nationalité du personnage ?", "answer": "Non.", "evidence": "Le dessin ne donne ni adresse ni nationalité"}
+    ]
+  },
+  {
+    "id": "groupe-lecture",
+    "portrait": "nadia-hassan",
+    "genre": "Message de groupe",
+    "title": "Reconnaître un personnage",
+    "text": [
+      "Dans notre jeu, le portrait F représente la personne qui vous accueille au",
+      "groupe de lecture. Elle a les cheveux longs, bruns et bouclés. Elle porte un",
+      "pull bordeaux. Son visage est ovale. Utilisez deux de ces détails pour la",
+      "décrire à votre partenaire. Le jeu ne demande aucune information sur une",
+      "personne réelle."
+    ],
+    "questions": [
+      {"prompt": "Quelle est la texture des cheveux ?", "answer": "Ils sont bouclés.", "distractors": ["Ils sont raides.", "Ils sont rasés."], "evidence": "les cheveux longs, bruns et bouclés"},
+      {"prompt": "De quelle couleur est le pull ?", "answer": "Bordeaux.", "distractors": ["Bleu.", "Blanc."], "evidence": "un pull bordeaux"},
+      {"prompt": "Quelle est la forme du visage indiquée ?", "answer": "Il est ovale.", "evidence": "Son visage est ovale"}
+    ]
+  },
+  {
+    "id": "atelier-adjectifs",
+    "portrait": "nadia-hassan",
+    "genre": "Consigne de classe",
+    "title": "Décrire sans juger",
+    "text": [
+      "Regardez le portrait F et choisissez des détails visibles. Vous pouvez",
+      "écrire : les cheveux sont bruns et bouclés ; le pull est bordeaux. N’écrivez",
+      "pas que cette personne est gentille ou sérieuse : un portrait ne suffit pas",
+      "pour connaître son caractère. Votre description doit aider à retrouver",
+      "l’image."
+    ],
+    "questions": [
+      {"prompt": "Quel détail est donné pour les cheveux ?", "answer": "Ils sont bruns et bouclés.", "distractors": ["Ils sont blancs et raides.", "Ils sont blonds et courts."], "evidence": "les cheveux sont bruns et bouclés"},
+      {"prompt": "Quelle couleur est donnée pour le vêtement ?", "answer": "Bordeaux.", "distractors": ["Orange.", "Beige."], "evidence": "le pull est bordeaux"},
+      {"prompt": "Pourquoi ne faut-il pas décrire le caractère à partir du portrait ?", "answer": "Un portrait ne suffit pas pour connaître son caractère.", "evidence": "un portrait ne suffit pas pour connaître son caractère"}
+    ]
+  },
+  {
+    "id": "point-rencontre",
+    "portrait": "omar-diallo",
+    "genre": "Message de rendez-vous",
+    "title": "Près de l’accueil",
+    "text": [
+      "Pour le jeu de rôle, le personnage G vous attend près de l’accueil. Il a les",
+      "cheveux noirs et très courts. Il porte une chemise bleue au col ouvert. Sur",
+      "la photo, il sourit et on voit ses dents. Décrivez le personnage sans",
+      "inventer son travail : le vêtement ne donne pas cette information."
+    ],
+    "questions": [
+      {"prompt": "Comment sont les cheveux ?", "answer": "Ils sont noirs et très courts.", "distractors": ["Ils sont longs et bruns.", "Ils sont blancs et ondulés."], "evidence": "les cheveux noirs et très courts"},
+      {"prompt": "Quelle est la couleur de la chemise ?", "answer": "Bleue.", "distractors": ["Noire.", "Blanche."], "evidence": "une chemise bleue"},
+      {"prompt": "Le vêtement permet-il de connaître son travail ?", "answer": "Non.", "evidence": "le vêtement ne donne pas cette information"}
+    ]
+  },
+  {
+    "id": "portrait-sourire",
+    "portrait": "omar-diallo",
+    "genre": "Note d’observation",
+    "title": "Décrire le moment de la photo",
+    "text": [
+      "Le portrait G montre un personnage qui sourit. Sa bouche est ouverte et ses",
+      "dents sont visibles. Sa chemise est bleue et le col est ouvert. Vous",
+      "décrivez ce moment précis, pas son humeur habituelle. Une autre photo",
+      "pourrait montrer une autre expression ou un autre vêtement."
+    ],
+    "questions": [
+      {"prompt": "Quel détail du sourire est visible ?", "answer": "Ses dents sont visibles.", "distractors": ["Sa bouche est cachée.", "Ses dents ne sont pas visibles."], "evidence": "ses dents sont visibles"},
+      {"prompt": "Comment est le col ?", "answer": "Il est ouvert.", "distractors": ["Il est fermé.", "Il est rouge."], "evidence": "le col est ouvert"},
+      {"prompt": "Décrit-on son humeur habituelle ou un moment précis ?", "answer": "Un moment précis.", "evidence": "Vous décrivez ce moment précis, pas son humeur habituelle"}
+    ]
+  },
+  {
+    "id": "tablier-blanc",
+    "portrait": "paul-dupont",
+    "genre": "Fiche de portrait",
+    "title": "Des détails pour reconnaître",
+    "text": [
+      "Le portrait H montre une personne aux cheveux bruns et courts. Elle a une",
+      "barbe courte. Elle porte une veste blanche et un tablier blanc. Pour notre",
+      "jeu, ces éléments servent à retrouver le portrait. On ne donne pas de métier",
+      "au personnage : plusieurs activités peuvent demander un tablier."
+    ],
+    "questions": [
+      {"prompt": "Comment est la barbe ?", "answer": "Elle est courte.", "distractors": ["Elle est longue.", "Elle est blanche."], "evidence": "une barbe courte"},
+      {"prompt": "Quel accessoire vestimentaire est mentionné ?", "answer": "Un tablier blanc.", "distractors": ["Une écharpe blanche.", "Un chapeau blanc."], "evidence": "un tablier blanc"},
+      {"prompt": "Le texte donne-t-il un métier au personnage ?", "answer": "Non.", "evidence": "On ne donne pas de métier au personnage"}
+    ]
+  },
+  {
+    "id": "deux-phrases",
+    "portrait": "paul-dupont",
+    "genre": "Consigne d’écriture",
+    "title": "Cheveux et vêtements",
+    "text": [
+      "Pour décrire le portrait H, préparez deux phrases. Dans la première, parlez",
+      "des cheveux : ils sont bruns et courts. Dans la seconde, utilisez « porter »",
+      "pour parler du tablier blanc. Vous pouvez ensuite ajouter la barbe courte",
+      "comme troisième détail. N’inventez pas de détail caché par la photo."
+    ],
+    "questions": [
+      {"prompt": "De quoi doit parler la première phrase ?", "answer": "Des cheveux bruns et courts.", "distractors": ["Des yeux verts.", "Des chaussures noires."], "evidence": "Dans la première, parlez des cheveux : ils sont bruns et courts"},
+      {"prompt": "Quel verbe est demandé dans la seconde phrase ?", "answer": "Porter.", "distractors": ["Voyager.", "Habiter."], "evidence": "utilisez « porter »"},
+      {"prompt": "Quel troisième détail peut-on ajouter ?", "answer": "La barbe courte.", "evidence": "la barbe courte comme troisième détail"}
+    ]
+  },
+  {
+    "id": "reunion-rouge",
+    "portrait": "sofia-alvarez",
+    "genre": "Message d’accueil",
+    "title": "Un vêtement repérable",
+    "text": [
+      "Le personnage du portrait I vous accueille pour une réunion fictive. Ses",
+      "cheveux bruns et ondulés descendent jusqu’aux épaules. Son vêtement est",
+      "rouge. La photo le montre avec un sourire où les dents sont visibles. Pour",
+      "le reconnaître, décrivez les cheveux et le vêtement plutôt que de donner un",
+      "jugement sur son apparence."
+    ],
+    "questions": [
+      {"prompt": "Jusqu’où descendent les cheveux ?", "answer": "Jusqu’aux épaules.", "distractors": ["Jusqu’à la taille.", "Au-dessus des oreilles."], "evidence": "descendent jusqu’aux épaules"},
+      {"prompt": "De quelle couleur est le vêtement ?", "answer": "Rouge.", "distractors": ["Blanc.", "Beige."], "evidence": "Son vêtement est rouge"},
+      {"prompt": "Quels deux éléments faut-il décrire pour reconnaître le personnage ?", "answer": "Les cheveux et le vêtement.", "evidence": "décrivez les cheveux et le vêtement"}
+    ]
+  },
+  {
+    "id": "carte-devinette",
+    "portrait": "sofia-alvarez",
+    "genre": "Carte de jeu",
+    "title": "Lire les indices",
+    "text": [
+      "Lisez cette carte à votre partenaire sans montrer le portrait I. Premier",
+      "indice : les cheveux sont bruns et ondulés. Deuxième indice : le vêtement",
+      "est rouge. Troisième indice : la personne sourit et montre les dents. Votre",
+      "partenaire choisit ensuite une image et explique quels indices l’ont aidé."
+    ],
+    "questions": [
+      {"prompt": "Quel est le premier indice ?", "answer": "Des cheveux bruns et ondulés.", "distractors": ["Des cheveux noirs et raides.", "Des cheveux blonds et courts."], "evidence": "les cheveux sont bruns et ondulés"},
+      {"prompt": "Quel est le troisième indice ?", "answer": "La personne sourit et montre les dents.", "distractors": ["La personne porte des lunettes.", "La personne porte un chapeau."], "evidence": "la personne sourit et montre les dents"},
+      {"prompt": "Faut-il montrer le portrait en lisant la carte ?", "answer": "Non.", "evidence": "sans montrer le portrait I"}
+    ]
+  },
+  {
+    "id": "veste-noire",
+    "portrait": "thomas-weber",
+    "genre": "Message de rendez-vous",
+    "title": "Retrouver un personnage",
+    "text": [
+      "Pour cette scène inventée, retrouvez le personnage J devant la salle. Il a",
+      "les cheveux bruns et courts ainsi qu’une barbe courte. Il porte une veste",
+      "noire sur un tee-shirt gris. La photo ne montre pas ses chaussures. Utilisez",
+      "seulement les détails donnés pour expliquer à un camarade qui il doit",
+      "chercher."
+    ],
+    "questions": [
+      {"prompt": "Quelle description de la barbe convient ?", "answer": "Une barbe courte.", "distractors": ["Une barbe longue.", "Une barbe blanche."], "evidence": "une barbe courte"},
+      {"prompt": "Que porte-t-il sous sa veste ?", "answer": "Un tee-shirt gris.", "distractors": ["Une chemise blanche.", "Un pull rouge."], "evidence": "sur un tee-shirt gris"},
+      {"prompt": "Peut-on décrire ses chaussures à partir de la photo ?", "answer": "Non, elles ne sont pas montrées.", "evidence": "La photo ne montre pas ses chaussures"}
+    ]
+  },
+  {
+    "id": "signe-particulier",
+    "portrait": "thomas-weber",
+    "genre": "Note pour un jeu",
+    "title": "Donner plusieurs détails",
+    "text": [
+      "Le portrait J et le portrait H ont tous deux une barbe courte. Pour les",
+      "distinguer dans le jeu, ajoutez un détail du vêtement. J porte une veste",
+      "noire et un tee-shirt gris ; H porte du blanc. La barbe seule ne suffit donc",
+      "pas. Donnez au moins deux informations à votre partenaire."
+    ],
+    "questions": [
+      {"prompt": "Quel détail J et H ont-ils en commun ?", "answer": "Une barbe courte.", "distractors": ["Une veste noire.", "Un tee-shirt gris."], "evidence": "ont tous deux une barbe courte"},
+      {"prompt": "Quel détail distingue le vêtement de J ?", "answer": "Une veste noire et un tee-shirt gris.", "distractors": ["Une chemise orange.", "Une veste blanche et un tablier blanc."], "evidence": "J porte une veste noire et un tee-shirt gris"},
+      {"prompt": "Combien d’informations faut-il donner au minimum ?", "answer": "Deux informations.", "evidence": "au moins deux informations"}
+    ]
+  }
+]

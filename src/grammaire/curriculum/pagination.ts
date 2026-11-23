@@ -7,6 +7,9 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // Three-candidate facts, decision criteria and illustrated portraits retain
+  // their full correction and answer area on the first A4 sheet too.
+  if(/^gram-ex-(?:f13|f14|description-physique)-/.test(q.unit.source.typeId))return 160
   // A2 order corrections retain the context and the full meaning explanation.
   if(q.unit.source.typeId.startsWith('gram-ex-f12-'))return q.unit.kind==='correct'||q.unit.kind==='transform'||q.unit.kind==='order'&&q.unit.source.partition==='a2'?160:80
   // A2 compares multiple options and criteria; reserve a full A4 block.

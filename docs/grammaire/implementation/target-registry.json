@@ -5650,7 +5650,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": 50,
       "currentGenerationQuestionCap": 5,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -5664,12 +5664,30 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/description-physique.json",
       "instructionsByPresentation": {
         "document-set": "Lisez le document et répondez aux questions."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/description-physique.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "document-set"
+            ],
+            "units": 20
+          }
+        ]
       }
     },
     {
@@ -5702,7 +5720,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -5716,12 +5734,30 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/description-physique.json",
       "instructionsByPresentation": {
         "open-written": "Écrivez une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/description-physique.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5754,7 +5790,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -5768,12 +5804,30 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/description-physique.json",
       "instructionsByPresentation": {
         "open-oral": "Dites une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/description-physique.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5806,7 +5860,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -5821,13 +5875,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/description-physique.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/description-physique.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -10776,7 +10849,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -10796,13 +10869,41 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f13.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f13.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -10836,7 +10937,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -10856,13 +10957,41 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f14.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f14.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19574,7 +19703,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19592,12 +19721,38 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f13.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f13.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19626,7 +19781,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -19644,12 +19799,38 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f13.json",
       "instructionsByPresentation": {
         "open-written": "Rédigez votre réponse dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f13.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19678,7 +19859,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -19696,12 +19877,38 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f13.json",
       "instructionsByPresentation": {
         "open-oral": "Exprimez-vous dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f13.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19730,7 +19937,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19748,12 +19955,38 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f14.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f14.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19782,7 +20015,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -19800,12 +20033,38 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f14.json",
       "instructionsByPresentation": {
         "open-written": "Rédigez votre réponse dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f14.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19833,7 +20092,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19847,12 +20106,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/description-physique.json",
       "instructionsByPresentation": {
         "match": "Associez chaque élément à la proposition qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/description-physique.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "match"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -29037,16 +29314,21 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer détails et visuels, décrire sans jugement discriminant",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-description-physique-communication-ce",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 20,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "physique-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/description-physique.json"
     },
     {
       "offeringId": "gram-ex-description-physique-communication-pe@A1@open-written",
@@ -29061,16 +29343,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer détails et visuels, décrire sans jugement discriminant",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-description-physique-communication-pe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "physique-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/description-physique.json"
     },
     {
       "offeringId": "gram-ex-description-physique-communication-po@A1@open-oral",
@@ -29085,16 +29372,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer détails et visuels, décrire sans jugement discriminant",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-description-physique-communication-po",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "physique-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/description-physique.json"
     },
     {
       "offeringId": "gram-ex-description-physique-qcm-verbe@A1@choice",
@@ -29109,16 +29401,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer détails et visuels, décrire sans jugement discriminant",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-description-physique-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "physique-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/description-physique.json"
     },
     {
       "offeringId": "gram-ex-description-physique-qcm-verbe@A1@gap",
@@ -29133,16 +29430,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer détails et visuels, décrire sans jugement discriminant",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-description-physique-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "physique-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/description-physique.json"
     },
     {
       "offeringId": "gram-ex-a1-infos-perso@A1@gap",
@@ -32580,16 +32882,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire le plus/le moins dans des situations concrètes",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f13-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-qcm-verbe@A1@gap",
@@ -32604,16 +32911,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire le plus/le moins dans des situations concrètes",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f13-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-qcm-verbe@A2@choice",
@@ -32628,16 +32940,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer le superlatif pour choisir parmi plusieurs possibilités ; préciser le groupe de comparaison et justifier le choix en contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f13-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-qcm-verbe@A2@gap",
@@ -32652,16 +32969,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer le superlatif pour choisir parmi plusieurs possibilités ; préciser le groupe de comparaison et justifier le choix en contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f13-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f14-qcm-verbe@A1@choice",
@@ -32676,16 +32998,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Plus de/moins de/autant de ; comparer deux activités ou quantités",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f14-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f14-qcm-verbe@A1@gap",
@@ -32700,16 +33027,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Plus de/moins de/autant de ; comparer deux activités ou quantités",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f14-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f14-qcm-verbe@A2@choice",
@@ -32724,16 +33056,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Comparer des quantités et des activités en contexte avec plus de/moins de/autant de ou plus/moins/autant ; formuler un choix justifié",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f14-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f14-qcm-verbe@A2@gap",
@@ -32748,16 +33085,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Comparer des quantités et des activités en contexte avec plus de/moins de/autant de ou plus/moins/autant ; formuler un choix justifié",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f14-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f10-communication-ce@A2@document-set",
@@ -38453,16 +38795,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire le plus/le moins dans des situations concrètes",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-curriculum-t@A2@transform",
@@ -38477,16 +38824,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer le superlatif pour choisir parmi plusieurs possibilités ; préciser le groupe de comparaison et justifier le choix en contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-curriculum-e@A1@open-written",
@@ -38501,16 +38853,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire le plus/le moins dans des situations concrètes",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-curriculum-e@A2@open-written",
@@ -38525,16 +38882,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer le superlatif pour choisir parmi plusieurs possibilités ; préciser le groupe de comparaison et justifier le choix en contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-curriculum-p@A1@open-oral",
@@ -38549,16 +38911,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire le plus/le moins dans des situations concrètes",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f13-curriculum-p@A2@open-oral",
@@ -38573,16 +38940,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Employer le superlatif pour choisir parmi plusieurs possibilités ; préciser le groupe de comparaison et justifier le choix en contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "superlatif-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f13.json"
     },
     {
       "offeringId": "gram-ex-f14-curriculum-t@A1@transform",
@@ -38597,16 +38969,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Plus de/moins de/autant de ; comparer deux activités ou quantités",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f14-curriculum-t@A2@transform",
@@ -38621,16 +38998,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Comparer des quantités et des activités en contexte avec plus de/moins de/autant de ou plus/moins/autant ; formuler un choix justifié",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f14-curriculum-e@A1@open-written",
@@ -38645,16 +39027,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Plus de/moins de/autant de ; comparer deux activités ou quantités",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-f14-curriculum-e@A2@open-written",
@@ -38669,16 +39056,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Comparer des quantités et des activités en contexte avec plus de/moins de/autant de ou plus/moins/autant ; formuler un choix justifié",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "quantites-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f14.json"
     },
     {
       "offeringId": "gram-ex-description-physique-curriculum-a@A1@match",
@@ -38693,16 +39085,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Associer détails et visuels, décrire sans jugement discriminant",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "physique-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/description-physique.json"
     },
     {
       "offeringId": "gram-ex-f10-curriculum-s@A2@scenario-set",
@@ -42180,12 +42577,16 @@
       "level": "A1",
       "hostActivityId": "gram-ex-description-physique-qcm-verbe",
       "targetIllustratedSituations": 50,
-      "approvedIllustratedSituations": null,
+      "approvedIllustratedSituations": 0,
       "additionalActivity": false,
       "additionalUnitQuota": false,
       "contextObjective": "Associer détails et visuels, décrire sans jugement discriminant",
-      "mediaStatus": "à inventorier ; aucun média généré",
-      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément"
+      "mediaStatus": "réemploi vérifié ; validation enseignante en attente",
+      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément",
+      "reviewedIllustratedSituations": 50,
+      "distinctImages": 10,
+      "manifest": "docs/grammaire/implementation/physique-media-manifest.json",
+      "humanReview": "pending"
     },
     {
       "obligationId": "IMG-g1-A1",
@@ -42277,11 +42678,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 15400,
+    "reviewedVariants": 16610,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Décrire : 39/63 offres en pilote. À poursuivre : Description physique, Le superlatif, Comparer un nom ou un verbe. Approbation enseignante, révisions et recette finale restent en attente.",
-    "reviewedActivityUnits": 11410,
+    "remaining": "Décrire : 63/63 offres en pilote. À poursuivre : validation du thème. Approbation enseignante, révisions et recette finale restent en attente.",
+    "reviewedActivityUnits": 12330,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -42315,22 +42716,23 @@
       "f1/f2/f3 A1 — thème Demander et proposer terminé",
       "f4/f5/f6/f7/f8 A1 — Décrire, première tranche (21/63 offres)",
       "f9 A1/A2 — comparaisons (10 offres)",
-      "f12 A1/A2 — place de l’adjectif (8 offres)"
+      "f12 A1/A2 — place de l’adjectif (8 offres)",
+      "f13/f14/description-physique — 24 offres"
     ],
-    "reviewedOfferings": 298,
+    "reviewedOfferings": 322,
     "lastUpdated": "2026-11-23",
-    "reviewedSelectableUnits": 11410,
-    "reviewedDocuments": 360,
-    "reviewedDocumentQuestions": 1400,
-    "reviewedActivities": 216,
+    "reviewedSelectableUnits": 12330,
+    "reviewedDocuments": 380,
+    "reviewedDocumentQuestions": 1460,
+    "reviewedActivities": 228,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 46,
+    "reviewedNotions": 49,
     "technicalContracts": {
       "scenarios": "closed and open; prototypes excluded from all bank quotas",
       "images": "20 supports de présentation réemployés et un bébé historique restauré sous empreinte immuable. Aucun média généré. Les onze obligations I des autres notions restent à préparer.",
       "reference": "docs/grammaire/implementation/contrats-situations-images.md",
       "countedInBankCoverage": false
     },
-    "reviewedNotionLevelPairs": 57
+    "reviewedNotionLevelPairs": 62
   }
 }

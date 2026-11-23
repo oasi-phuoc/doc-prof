@@ -7,7 +7,7 @@ export function GrammarProductionView({unit:u,mode}:{unit:Extract<GrammarUnit,{k
   const corrected=mode==='answers'
   const [title,...facts]=u.prompt.split('\n')
   const profile=facts.length>0&&u.imageSupports?.length===1
-  return <div className={`grammar-question grammar-production${(u.imageSupports?.length??0)>1?' grammar-production-paired-images':''}`}>
+  return <div className={`grammar-question grammar-production${u.source.typeId.startsWith('gram-ex-description-physique-')?' grammar-production-portrait':''}${(u.imageSupports?.length??0)>1?' grammar-production-paired-images':''}`}>
     {profile?<><h3><GrammarTextHints text={title}/></h3><div className="grammar-production-profile">
       <GrammarImageSupports supports={u.imageSupports}/><p className="grammar-profile-facts"><GrammarTextHints text={facts.join('\n')}/></p>
     </div></>:<>

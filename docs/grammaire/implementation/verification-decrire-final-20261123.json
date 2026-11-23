@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "31c9081c3",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Grammar only; no gamemode feature development.",
+  "delivery": {
+    "theme": "Décrire",
+    "finalNotions": [
+      "f13",
+      "f14",
+      "description-physique"
+    ],
+    "activities": 12,
+    "banks": 19,
+    "offerings": 24,
+    "units": 920,
+    "variants": 1210,
+    "authoredSourceObservations": 250,
+    "readingDocuments": 20,
+    "readingQuestions": 60,
+    "teacherApprovedUnits": 0
+  },
+  "themeCoverage": {
+    "notions": 10,
+    "notionLevelPairs": 14,
+    "activities": 36,
+    "banks": 49,
+    "offerings": 63,
+    "plannedOfferings": 63,
+    "units": 2420,
+    "variants": 3160,
+    "allPlannedOfferingsImplemented": true
+  },
+  "checks": {
+    "authoredContentAndNumericalComparisons": "passed",
+    "isolatedDeterministicRebuild": "passed",
+    "globalVariants": 16610,
+    "sourceAdaptersAndFrozenRecipes": "passed by global grammar suite",
+    "protectedFiles": 276,
+    "previousThemeAndF9F12Regressions": "passed",
+    "browser": {
+      "server": "Vite preview of production build",
+      "offerings": 24,
+      "renderedQuestionUnits": 2420,
+      "renderedAnswerFields": 2520,
+      "sheets": 2420,
+      "horizontalOverflow": false,
+      "footerOverflow": false,
+      "worstFirstPageBudget": "Verified for every format and both student/correction sheets, with separate reading support and question roles.",
+      "errors": []
+    },
+    "actualPdfPreviews": 7,
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "lint": "passed with existing warnings",
+    "catalogBuildGate": "passed; existing 765 game catalog entries left unchanged",
+    "secretScan": {
+      "files": 6687,
+      "findings": 0
+    }
+  },
+  "media": {
+    "newlyGenerated": 0,
+    "distinctReusedPortraits": 10,
+    "observationsPerPortrait": 5,
+    "immutableCopies": true,
+    "manifest": "docs/grammaire/implementation/physique-media-manifest.json"
+  },
+  "retirement": {
+    "removedWrittenNotions": [
+      "f13",
+      "f14",
+      "description-physique"
+    ],
+    "totalRetiredNotions": 49,
+    "remainingWrittenBanks": 49,
+    "removedLegacyCommunicationGroup": "description-physique",
+    "otherCommunicationGroupsPreserved": 7,
+    "otherActivityAndOfferingRowsPreserved": true,
+    "coAndTheoriesPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no remote fiche read or delete",
+    "workerDeployment": false
+  },
+  "globalCoverage": {
+    "reviewedActivities": 228,
+    "reviewedOfferings": 322,
+    "reviewedSelectableUnits": 12330,
+    "reviewedVariants": 16610,
+    "reviewedDocuments": 380,
+    "reviewedDocumentQuestions": 1460
+  },
+  "limitations": [
+    "Human pedagogical approval, physical printing and ENI classroom acceptance pending.",
+    "Gamemode feature work paused; no new game pool catalog entries or competition changes.",
+    "Static bank loading and previously exceeded game route download limits remain outside this grammar delivery.",
+    "Other grammar themes remain separate work; no new theme started in this delivery."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-superlatif.py",
+      "sha256": "eb4aeca6aea01e41b4b4b74941dadf439ec509103bae0960f19b25ee77f12c71"
+    },
+    {
+      "path": "scripts/build-grammar-quantites.py",
+      "sha256": "bbf92f03fc75a8f20d0be8932d6968e9cac7791123cb2ca3a1ce10a721a3cd3b"
+    },
+    {
+      "path": "scripts/build-grammar-physique.py",
+      "sha256": "45320d16e37591d68122053f3c801e1308221a725f56e8a7044ceaa4eedcfc7c"
+    },
+    {
+      "path": "scripts/grammar_curriculum/superlatif-f13-a1.tsv",
+      "sha256": "bd63f4f53a4cec9e749ef0ee9eabf3f1bb697bb29b7c4cd9ce8c40d9d9ed0873"
+    },
+    {
+      "path": "scripts/grammar_curriculum/superlatif-f13-a2.tsv",
+      "sha256": "8ad399604741412b0bc49fe3c8665454e5663d89e1301e840c608d07d8266036"
+    },
+    {
+      "path": "scripts/grammar_curriculum/quantites-f14-a1.tsv",
+      "sha256": "a7b4b9d14a73151455d842ac3c83fcc95a336bc77a2a094f12dc2df5c7f9f1f3"
+    },
+    {
+      "path": "scripts/grammar_curriculum/quantites-f14-a2.tsv",
+      "sha256": "ad6f70686c9f0a04ee539d003055d55c81ba445e37411868781098ca9f1bf4f5"
+    },
+    {
+      "path": "scripts/grammar_curriculum/physique-description-physique-a1.tsv",
+      "sha256": "55dfe34177d94806fb48341508f190adea5f000d1fd3d0f346b99722190c5060"
+    },
+    {
+      "path": "scripts/grammar_curriculum/physique-lectures-a1.json",
+      "sha256": "b3c8483b0d340b9647ed3123b9c97b2ab4a0c48d3ba15fe482dddaf939aadb01"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f13.json",
+      "sha256": "8f9b5344e1264d85ef2dab270b8397c192da2dc5a30e433f04b48af062aee0e0"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f14.json",
+      "sha256": "08c6f1ddd1325218bba3e0d0b89bf17b123b1af00fa4c6686ac60601bc51f3ac"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/description-physique.json",
+      "sha256": "ab92f2e2d858f613540ab7efad7a19047004ecc94164c7a060786665cda49895"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "8e56a6bb34fa9ff0f3d2b08b435d08bbfb4d25d99f09a003371326758177c61c"
+    },
+    {
+      "path": "src/components/item-view/grammar-production.tsx",
+      "sha256": "e2c1fca8fd66e23f2626f12a2ad5bb565c1651ce1ef17851357649e3ad08982e"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "190d2b563b6dc2fb7f99f643bb0c16f20adf6033974a36f495c1abd202e27767"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "9dacea74f71a2111a009f4031494519df1fd3af75dec325a6d131e745476f3ab"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "8e1cccaf4d782a575d412d721292c8302d475fe26e0cfa28c68123c56f92f8f8"
+    }
+  ],
+  "productionManifestSha256": "5b2ff3abdf7f7b4cb88e03c8736f4fe74a90d7d39ebe4d92e3d957f3ff52fdca"
+}
