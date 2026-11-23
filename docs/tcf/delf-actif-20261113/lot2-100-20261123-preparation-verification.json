@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-23",
+  "status": "passed_for_published_preparation",
+  "generation_status": "blocked_by_usage_limit",
+  "baseline_commit": "fd05e4de5c7f59c1ebbf7cba2c467452ac94092b",
+  "summary": {
+    "target_trios": 100,
+    "prepared_trios": 43,
+    "unfinished_trios": 57,
+    "activated_trios": 0,
+    "published_images": 102,
+    "native_png": 94,
+    "procedural_common_clocks": 8,
+    "existing_distinct_reuses": 47,
+    "planned_new_images": 238,
+    "images_still_to_finalize": 136,
+    "new_images_still_to_generate": 131,
+    "retakes_pending": 5,
+    "remaining_candidates_in_bank": 121
+  },
+  "checks": [
+    {
+      "name": "preparation",
+      "chunk_id": "1b5d35",
+      "wall_time_seconds": 2.722155445,
+      "exit_code": 0,
+      "original_token_count": 50,
+      "output": "102 catalogue images verified (94 native PNGs, 8 common clocks); 43 complete trios prepared, 0 activated; all 100 sources, six banks, MP3s and original images preserved; 136 images still to finalize.\n"
+    },
+    {
+      "name": "historique",
+      "chunk_id": "ecb6b7",
+      "wall_time_seconds": 7.217532536,
+      "exit_code": 0,
+      "original_token_count": 24,
+      "output": "763 décisions vérifiées : 390 trios actifs, 112 textes conservés, 261 trios à préparer.\n"
+    },
+    {
+      "name": "delf",
+      "chunk_id": "0b1e0d",
+      "wall_time_seconds": 7.436152851,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "346 supports et 1 663 questions suivis ; 625 trios actifs liés à leur relecture, images et MP3 vérifiés.\n"
+    },
+    {
+      "name": "contexte",
+      "chunk_id": "ac20d8",
+      "wall_time_seconds": 1.522446545,
+      "exit_code": 0,
+      "original_token_count": 35,
+      "output": "1 021 questions relues sur 323 supports ; 41 corrections, 376 candidatures, 645 questions en texte ; sources, réponses et MP3 vérifiés.\n"
+    },
+    {
+      "name": "catalogues",
+      "chunk_id": "0d249e",
+      "wall_time_seconds": 3.774371549,
+      "exit_code": 0,
+      "original_token_count": 1387,
+      "output": "# Subtest: the committed catalogue reproduces all available audio files and every detail count without changing the banks\nok 1 - the committed catalogue reproduces all available audio files and every detail count without changing the banks\n  ---\n  duration_ms: 1158.695708\n  type: 'test'\n  ...\n# Subtest: every prepared TCF question, all its response forms and the exact per-track transcript are retained\nok 2 - every prepared TCF question, all its response forms and the exact per-track transcript are retained\n  ---\n  duration_ms: 120.241621\n  type: 'test'\n  ...\n# Subtest: reviewed scenario recordings retain their exact source, searchable category and bound scene in catalogue exports\nok 3 - reviewed scenario recordings retain their exact source, searchable category and bound scene in catalogue exports\n  ---\n  duration_ms: 7.186563\n  type: 'test'\n  ...\n# Subtest: multi-track audio and replacement aliases cannot receive another dialogue’s text or questions\nok 4 - multi-track audio and replacement aliases cannot receive another dialogue’s text or questions\n  ---\n  duration_ms: 14.416004\n  type: 'test'\n  ...\n# Subtest: short, medium and long catalogue filters agree with every active question pool in the exercise generator\nok 5 - short, medium and long catalogue filters agree with every active question pool in the exercise generator\n  ---\n  duration_ms: 711.912141\n  type: 'test'\n  ...\n# Subtest: accent-insensitive searches combine with every filter, including exact levels and prepared content\nok 6 - accent-insensitive searches combine with every filter, including exact levels and prepared content\n  ---\n  duration_ms: 59.285609\n  type: 'test'\n  ...\n# Subtest: Word contains real tables, letters, unchecked boxes, every response form, answer keys and embedded images\nok 7 - Word contains real tables, letters, unchecked boxes, every response form, answer keys and embedded images\n  ---\n  duration_ms: 65.582704\n  type: 'test'\n  ...\n# Subtest: Word never silently drops an available image after a fetch failure and respects cancellation\nok 8 - Word never silently drops an available image after a fetch failure and respects cancellation\n  ---\n  duration_ms: 2.732746\n  type: 'test'\n  ...\n# Subtest: all repository images appear once, including documents, logos and source assets\nok 9 - all repository images appear once, including documents, logos and source assets\n  ---\n  duration_ms: 3363.428759\n  type: 'test'\n  ...\n# Subtest: reused clock choices stay searchable by time without inheriting unrelated exercise subjects\nok 10 - reused clock choices stay searchable by time without inheriting unrelated exercise subjects\n  ---\n  duration_ms: 2070.929355\n  type: 'test'\n  ...\n# Subtest: animal, plant, profession and illness filters preserve the actual meaning\nok 11 - animal, plant, profession and illness filters preserve the actual meaning\n  ---\n  duration_ms: 1860.650662\n  type: 'test'\n  ...\n# Subtest: gallery replacements require approved images and retain the original bytes\nok 12 - gallery replacements require approved images and retain the original bytes\n  ---\n  duration_ms: 4230.022252\n  type: 'test'\n  ...\n# Subtest: visual search keywords exclude exercise prompts and audio transcriptions\nok 13 - visual search keywords exclude exercise prompts and audio transcriptions\n  ---\n  duration_ms: 1833.875542\n  type: 'test'\n  ...\n# Subtest: CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios\nok 14 - CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios\n  ---\n  duration_ms: 1755.138278\n  type: 'test'\n  ...\n# Subtest: gallery uses the requested content categories and keeps originals and logos\nok 15 - gallery uses the requested content categories and keeps originals and logos\n  ---\n  duration_ms: 1749.120614\n  type: 'test'\n  ...\n# Subtest: food and vehicle types describe the illustrated subject, including ambiguous French words\nok 16 - food and vehicle types describe the illustrated subject, including ambiguous French words\n  ---\n  duration_ms: 1.586533\n  type: 'test'\n  ...\n# Subtest: botanical category contains plants and excludes fruits, vegetables, meals and nonbotanical leaves\nok 17 - botanical category contains plants and excludes fruits, vegetables, meals and nonbotanical leaves\n  ---\n  duration_ms: 1815.141728\n  type: 'test'\n  ...\n# Subtest: gallery complements cover every announced subject with a reviewed full-size original\nok 18 - gallery complements cover every announced subject with a reviewed full-size original\n  ---\n  duration_ms: 1838.875607\n  type: 'test'\n  ...\n# Subtest: Gattegno keeps nominal clues after food and vehicle reclassification\nok 19 - Gattegno keeps nominal clues after food and vehicle reclassification\n  ---\n  duration_ms: 3.721109\n  type: 'test'\n  ...\n# Subtest: school, household and furniture complements are reviewed, searchable and complete\nok 20 - school, household and furniture complements are reviewed, searchable and complete\n  ---\n  duration_ms: 1722.575112\n  type: 'test'\n  ...\n# Subtest: daily-life illustrations keep reviewed originals and searchable family names\nok 21 - daily-life illustrations keep reviewed originals and searchable family names\n  ---\n  duration_ms: 1724.9507\n  type: 'test'\n  ...\n# Subtest: November 17 image additions are searchable WebP variants\nok 22 - November 17 image additions are searchable WebP variants\n  ---\n  duration_ms: 1784.733907\n  type: 'test'\n  ...\n1..22\n# tests 22\n# suites 0\n# pass 22\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 41820.966271\n"
+    },
+    {
+      "name": "qcm",
+      "chunk_id": "b6dd60",
+      "wall_time_seconds": 2.1281e-05,
+      "exit_code": 0,
+      "original_token_count": 17,
+      "output": "QCM rendering verified: 12 shuffle regressions, 2731 bank variants\n"
+    },
+    {
+      "name": "banques",
+      "chunk_id": "ce37ce",
+      "wall_time_seconds": 1.6827e-05,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "TCF: 1355 exercises loaded, 1371 audios indexed, 1371 pools classified by reviewed tag or duration\n"
+    },
+    {
+      "name": "objets",
+      "chunk_id": "1652ef",
+      "wall_time_seconds": 1.530070975,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "211 concepts illustrés ; 134/1371 audios éligibles ; 3 OUI/2 NON, sources et mélange vérifiés.\n"
+    },
+    {
+      "name": "playlists",
+      "chunk_id": "1f6d2d",
+      "wall_time_seconds": 1.8548e-05,
+      "exit_code": 0,
+      "original_token_count": 23,
+      "output": "5 formats CO : ordre des deux écoutes, pauses, annonces uniques et fichiers vérifiés.\n"
+    },
+    {
+      "name": "scenarios",
+      "chunk_id": "68fc8a",
+      "wall_time_seconds": 1.9405e-05,
+      "exit_code": 0,
+      "original_token_count": 27,
+      "output": "5 associations, 117 sources, 80 leurres ; A0-A1 200/200, A1-A2 200/200, A2-B1 200/200 tirages contrôlés.\n"
+    },
+    {
+      "name": "apercu",
+      "chunk_id": "8f8548",
+      "wall_time_seconds": 1.8072e-05,
+      "exit_code": 0,
+      "original_token_count": 16,
+      "output": "{\"views\":36,\"question_views\":46,\"image_views\":138,\"errors\":[]}\n"
+    },
+    {
+      "name": "galerie_navigateur",
+      "exit_code": 0,
+      "output": "8 vues de recherche sur ordinateur et mobile ; aucune erreur ; images 4:3 et absence d’horloges hors recherche horaire vérifiées."
+    }
+  ],
+  "browser": {
+    "fixture_only": true,
+    "questions_activated": false,
+    "question_views": 46,
+    "image_views": 138,
+    "gallery_search_views": 8
+  },
+  "source_preservation": "All six bank files byte-identical to the publication baseline; all 100 question/source/audio digests verified; original image files preserved.",
+  "limitations": [
+    "Second batch remains incomplete: 43 of 100 trios prepared, 0 newly activated.",
+    "Image tool returned HTTP 429 usage_limit_reached; reset announced 2026-11-23 19:33:45 Europe/Zurich.",
+    "No new human audio listening."
+  ]
+}

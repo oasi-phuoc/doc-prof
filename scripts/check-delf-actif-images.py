@@ -2,6 +2,7 @@
 from collections import Counter
 import hashlib
 import json
+from audio_replacement.editorial_json import loads as editorial_json_loads
 from tcf_context_audit import ROOT, BANKS, digest, semantic_question, source_for, text_form
 from tcf_replace_vocabulary_images import checked_images
 
@@ -14,7 +15,7 @@ def verify():
     directory = 'docs/tcf/delf-actif-20261113'
     installed = {r['exercise_id']: r for r in read(f'{directory}/installation.json')['units']}
     plan = read(f'{directory}/images-a-preparer.json')
-    exercises = {e['id']: e for p in BANKS for e in json.loads(p.read_text())}
+    exercises = {e['id']: e for p in BANKS for e in editorial_json_loads(p.read_text())}
     rows = {r['key']: r for r in plan['questions']}
     supports = {r['exercise']: r for r in plan['supports']}
     approved = checked_images(read('docs/tcf/images-generees.json'))

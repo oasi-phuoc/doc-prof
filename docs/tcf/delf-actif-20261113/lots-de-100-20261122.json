@@ -115,7 +115,7 @@
     {
       "number": 2,
       "count": 100,
-      "status": "pending",
+      "status": "blocked_image_generation",
       "keys": [
         "tcf-delf-actif-a2-046-04-04#4",
         "tcf-delf-actif-b1-001-01#1",
@@ -217,7 +217,8 @@
         "tcf-delf-actif-b1-037-01#7",
         "tcf-delf-actif-b1-038-01-01#7",
         "tcf-delf-actif-b1-038-01-01#9"
-      ]
+      ],
+      "preparation_register": "docs/tcf/delf-actif-20261113/lot2-100-20261123-preparation.json"
     },
     {
       "number": 3,
@@ -2666,5 +2667,40 @@
   "completed_first_batch": "2026-11-23",
   "integration_baseline_commit": "3278e1af3c0dededfecddd422d89057413d75b62",
   "remaining_candidates": 121,
-  "next_batch_number": 2
+  "next_batch_number": 2,
+  "second_batch_preparation": {
+    "target_trios": 100,
+    "prepared_trios": 43,
+    "unfinished_trios": 57,
+    "activated_trios": 0,
+    "published_images": 102,
+    "native_png": 94,
+    "procedural_common_clocks": 8,
+    "existing_distinct_reuses": 47,
+    "planned_new_images": 238,
+    "images_still_to_finalize": 136,
+    "new_images_still_to_generate": 131,
+    "retakes_pending": 5,
+    "remaining_candidates_in_bank": 121
+  },
+  "second_batch_generation_limit": {
+    "date": "2026-11-23",
+    "status": "blocked_by_image_generation_usage_limit",
+    "error_type": "usage_limit_reached",
+    "http_status": 429,
+    "resets_at_epoch": 1795458825,
+    "reset_at_utc": "2026-11-23T18:33:45+00:00",
+    "reset_at_europe_zurich": "2026-11-23T19:33:45+01:00",
+    "failed_ids": [
+      "qcm-delf2-yacht",
+      "qcm-delf2-seisme",
+      "qcm-delf2-satellite",
+      "qcm-delf2-montgolfiere",
+      "qcm-delf2-vent-ouest"
+    ],
+    "scope": "Image generation only; continue source/visual reviews, approved common clock rendering, documentation and repository preservation."
+  },
+  "completed_trios_in_requested_221": 100,
+  "current_batch_number": 2,
+  "last_updated_date": "2026-11-23"
 }

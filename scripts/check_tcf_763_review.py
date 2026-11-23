@@ -1,6 +1,7 @@
 """Verify every decision and every activated trio in the 763-question review."""
 from collections import Counter
 import json
+from audio_replacement.editorial_json import loads as editorial_json_loads
 from tcf_context_audit import ROOT,BANKS,source_for,digest,semantic_question,text_form
 from tcf_replace_vocabulary_images import checked_images
 from tcf_visual_durations import duration,exact_duration_seconds
@@ -11,7 +12,7 @@ def verify():
  assert review['review_pending']==0
  assert len(review['questions'])==len({r['key'] for r in review['questions']})==763
  assert {r['review_index'] for r in review['questions']}==set(range(763))
- bank={e['id']:e for path in BANKS for e in json.loads(path.read_text())}
+ bank={e['id']:e for path in BANKS for e in editorial_json_loads(path.read_text())}
  approved=checked_images(json.loads((ROOT/'docs/tcf/images-generees.json').read_text()))
  counts=Counter()
  for row in review['questions']:

@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+from audio_replacement.editorial_json import loads as editorial_json_loads
 import subprocess
 from tcf_context_audit import ROOT, BANKS, digest, semantic_question, source_for, source_words, text_form
 
@@ -33,7 +34,7 @@ def verify(audit_only=False):
     assert len(edits) == len(changes['changes']) == changes['summary']['questions'] == 41
     assert {r['ordinal'] for r in rows.values()} == set(range(1, 1022))
     assert set(rows) == set(initial)
-    exercises = {e['id']: (str(p.relative_to(ROOT)), e) for p in BANKS for e in json.loads(p.read_text())}
+    exercises = {e['id']: (str(p.relative_to(ROOT)), e) for p in BANKS for e in editorial_json_loads(p.read_text())}
     supports = {r['exercise']: r for r in review['supports']}
     assert len(supports) == len(review['supports']) == 323
     planned = {r['key']: r for r in plan['questions']}
