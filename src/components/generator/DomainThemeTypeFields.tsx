@@ -5,6 +5,7 @@ import { PhraseCategoryControls } from './PhraseCategoryControls'
 import { PhraseImageLabelControls } from './PhraseImageLabelControls'
 import { GrammarCoLevelControl } from './GrammarCoLevelControl'
 import { GrammarLevelControl } from './GrammarLevelControl'
+import { grammarBankFor } from '@/grammaire/curriculum/registry'
 import { grammarEligibleCount } from '@/grammaire/curriculum/generate'
 import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
 import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
@@ -157,7 +158,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     quadPool,
   } = p
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
-  const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order'
+  const grammarOrderBank=activeBlock.grammarLevel?grammarBankFor(activeBlock.exerciseType,activeBlock.grammarLevel):undefined
+  const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order' && !grammarOrderBank?.units.every(u=>u.kind==='order'&&u.tokenUnit==='clause')
   const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isGrammarOrder
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')

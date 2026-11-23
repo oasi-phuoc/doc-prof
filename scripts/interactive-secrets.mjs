@@ -23,6 +23,10 @@ const existingSceneRecords=(await Promise.all(['20261114','20261115'].map(async 
 const sceneRecords=[...existingSceneRecords,...JSON.parse(await readFile('docs/interactive/revue-identifiants-pool-integration-20261116.json','utf8')).reviewed,...JSON.parse(await readFile('docs/interactive/revue-identifiants-tcf-20261122.json','utf8')).reviewed]
 const sceneEvidence=[...new Set(sceneRecords.map(record=>record.file))]
 const normalizedEvidence = [...modelEvidence, ...delfEvidence,...sceneEvidence]
+const publicImageHashes=JSON.parse(await readFile('docs/interactive/revue-empreintes-delf-lot2-20261123.json','utf8')).reviewed
+for(const record of publicImageHashes){
+  if(record.file!=='docs/tcf/delf-actif-20261113/lot2-100-20261123-preparation.json'||!/^public\/lib\/images\/tcf\/qcm-audit\/qcm-delf2-[a-z-]+\.png$/.test(record.path)||createHash('sha256').update(await readFile(record.path)).digest('hex')!==record.sha256)throw new Error('Empreinte publique de référence incohérente.')
+}
 async function separateJsonLines(file) {
   const source = await readFile(file, 'utf8')
   JSON.parse(source)
@@ -87,13 +91,17 @@ try {
     await writeFile(evidenceCanary,JSON.stringify({padding:'A'.repeat(100_000),key,api_key:genericCanary,reviewed:sceneRecords.filter(record=>record.file===file).map(record=>({key:record.sceneId}))},null,2))
     await separateJsonLines(evidenceCanary)
   }
+  const hashEvidence=path.join(canaryDirectory,publicImageHashes[0].file)
+  await mkdir(path.dirname(hashEvidence),{recursive:true})
+  await writeFile(hashEvidence,JSON.stringify({padding:'A'.repeat(100_000),...Object.fromEntries(publicImageHashes.map(record=>[record.field,randomBytes(32).toString('hex')])),api_key:genericCanary,reviewed:publicImageHashes.map(record=>({[record.field]:record.sha256}))},null,2))
   const outsideEvidence = path.join(evidenceDirectory,'unreviewed.json')
   await writeFile(outsideEvidence,JSON.stringify({ '/tmp/clairfle-model/tokens.txt':randomBytes(32).toString('hex') },null,2))
   const selfTest = await scan(binary, ['dir', canaryDirectory], 'canary')
   const canaryReport = await readFile(path.join(temporary, 'canary.json'), 'utf8')
-  if (selfTest.length !== normalizedEvidence.length + sceneEvidence.length + 2 || !selfTest.some((finding) => finding.rule.includes('github')) ||
+  if (selfTest.length !== normalizedEvidence.length + sceneEvidence.length + publicImageHashes.length + 3 || !selfTest.some((finding) => finding.rule.includes('github')) ||
     normalizedEvidence.some(file => !selfTest.some(finding => finding.rule === 'generic-api-key' && finding.file.endsWith(file))) ||
     !selfTest.some(finding => finding.rule === 'generic-api-key' && finding.file.endsWith('unreviewed.json')) ||
+    selfTest.filter(finding=>finding.rule==='generic-api-key'&&finding.file.endsWith(publicImageHashes[0].file)).length!==publicImageHashes.length+1||
     sceneEvidence.some(file=>selfTest.filter(finding=>finding.rule==='generic-api-key'&&finding.file.endsWith(file)).length!==2)||
     canaryReport.includes(canary) || canaryReport.includes(genericCanary)||sceneKeyCanaries.some(key=>canaryReport.includes(key))) throw new Error('L’autotest de détection, d’exception ou de masquage du scanner a échoué.')
   await required('git', ['cat-file', '-e', `${baseline}^{commit}`])
@@ -110,7 +118,7 @@ try {
   }
   const history = await scan(binary, ['git', `--log-opts=${baseline}..HEAD`, root], 'history')
   const changed = await scan(binary, ['dir', tree], 'changed')
-  const report = { tool: `Gitleaks ${version}`, selfTest: `Jeton GitHub et clés génériques synthétiques non émis détectés dans ${normalizedEvidence.length} rapports, contenus masqués ; key et api_key restent détectés dans les ${sceneEvidence.length} rapports de références publiques, seuls ${sceneRecords.length} identifiants publics exacts sont admis ; empreintes de vocabulaires admises dans huit rapports précis et détectées ailleurs.`, baseline, changedFiles: files.length, findings: [...history, ...changed], scope: 'Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.' }
+  const report = { tool: `Gitleaks ${version}`, selfTest: `Jeton GitHub et clés génériques synthétiques non émis détectés dans ${normalizedEvidence.length} rapports, contenus masqués ; key et api_key restent détectés dans les ${sceneEvidence.length} rapports de références publiques, seuls ${sceneRecords.length} identifiants publics exacts sont admis ; empreintes de vocabulaires admises dans huit rapports précis et détectées ailleurs ; deux empreintes de PNG publics exactes admises dans le rapport DELF du 23 novembre, avec des empreintes aléatoires et api_key toujours détectées dans ce même fichier.`, baseline, changedFiles: files.length, findings: [...history, ...changed], scope: 'Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.' }
   await writeFile('docs/interactive/secrets-results.json', JSON.stringify(report, null, 2) + '\n')
   if (report.findings.length) { console.error(JSON.stringify(report.findings, null, 2)); throw new Error('Gitleaks a trouvé des valeurs à vérifier ; leur contenu est masqué.') }
   console.log(`Gitleaks ${version} : aucun secret détecté dans le périmètre des modifications (${files.length} fichiers).`)

@@ -68,7 +68,7 @@ export function PhraseColorBlock({ item, mode }: { item: MathItem; mode: Preview
   )
 }
 
-export function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+export function PhraseOrderBlock({ item, mode, colorTokens=true }: { item: MathItem; mode: PreviewMode; colorTokens?: boolean }) {
   const show = mode === 'answers'
   const tokens = item.tokens ?? []
   const graphemes = item.themeGraphemes ?? []
@@ -84,7 +84,7 @@ export function PhraseOrderBlock({ item, mode }: { item: MathItem; mode: Preview
       {item.phraseQuestion&&<p>{item.phraseQuestionForm?'Écrivez une phrase interrogative.':'Écrivez une question avec « Est-ce que ».'}</p>}
       <div className="phrase-bubble-row">
         {tokens.map((token, i) => {
-          const fill = PHRASE_COLORS[token.category]
+          const fill = colorTokens ? PHRASE_COLORS[token.category] : '#f2f4f7'
           const ink = isDarkPhraseColor(fill) ? '#fff' : '#111'
           return (
             <span

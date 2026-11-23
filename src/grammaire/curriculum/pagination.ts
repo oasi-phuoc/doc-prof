@@ -7,6 +7,11 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // Temporal contexts, clauses and full rubrics need space in both student and correction layouts.
+  if(/^gram-ex-e[2345]-/.test(q.unit.source.typeId)) {
+    if(q.unit.imageSupports?.length||q.unit.kind==='production'||q.unit.kind==='transform'||q.unit.kind==='order'&&q.unit.tokenUnit==='clause')return 160
+    return q.unit.kind==='match'?120:80
+  }
   // A2 tonic references need the context, the target group and a full corrected sentence.
   // Full contexts and alternative directions need one A4 block per transformation.
   if(q.unit.source.typeId==='gram-ex-e6-curriculum-t')return 160

@@ -40,7 +40,7 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
         </div>
       </div>:null}
       <small className="grammar-level-note">{bank.objective} {bank.editorialStatus!=='approved'?'Banque pilote : à relire avant diffusion.':''}</small>
-      {block.grammarPresentation==='order' && bank.editorialStatus!=='approved'?<small className="grammar-level-note">Phrases disponibles : {orderUnits.length-negativeCount} positives, {negativeCount} négatives. Les autres filtres peuvent réduire ces nombres.</small>:null}
+      {block.grammarPresentation==='order' && !orderUnits.every(u=>u.kind==='order'&&u.tokenUnit==='clause') && bank.editorialStatus!=='approved'?<small className="grammar-level-note">Phrases disponibles : {orderUnits.length-negativeCount} positives, {negativeCount} négatives. Les autres filtres peuvent réduire ces nombres.</small>:null}
       {block.grammarBankRevision!==bank.revision?<button type="button" className="button secondary" onClick={()=>change({grammarBankRevision:bank.revision})}>Utiliser la banque actuelle</button>:null}
     </>:null}
   </>

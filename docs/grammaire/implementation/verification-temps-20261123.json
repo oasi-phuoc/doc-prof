@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "fd05e4de5",
+  "status": "passed_for_pilot_with_preexisting_download_limits",
+  "delivery": {
+    "theme": "Se situer dans le temps",
+    "levels": [
+      "A1",
+      "A2"
+    ],
+    "activities": 18,
+    "banks": 22,
+    "offerings": 28,
+    "selectableUnits": 1040,
+    "variants": 1420,
+    "authoredSourceRows": 320,
+    "illustratedSituations": 50,
+    "distinctImages": 10,
+    "documents": 40,
+    "documentQuestions": 120,
+    "groupedAssociationUnits": 50,
+    "associationPairs": 100,
+    "openScenarios": 50,
+    "teacherApprovedUnits": 0
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:temps",
+      "status": "passed",
+      "coverage": "One key per QCM; equivalent pour/pendant and puis/ensuite gaps; canonical correction spans; ne…jamais; default mixed capacity; whole-clause filter independence; recipe round trips; private teacher-led models; image integrity; text evidence; retirement; isolated deterministic compiler."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 12640
+    },
+    {
+      "command": "npm run test:grammar:contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:questions",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:family-completion",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:activite",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:espace",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:image-urls",
+      "status": "passed"
+    },
+    {
+      "command": "node tests/grammar/temps-browser.mjs",
+      "status": "passed",
+      "offerings": 28,
+      "printedQuestionUnits": 2840,
+      "expectedAnswers": 2940,
+      "sheets": 2160,
+      "classroomLaunches": 28,
+      "errors": [],
+      "note": "Each matching unit contains two expected answers. Both student and corrected A4 layouts measured at maximum selectable counts."
+    },
+    {
+      "command": "node tests/grammar/temps-pdf.mjs",
+      "status": "passed",
+      "actualPdfPreviews": 4,
+      "visualReview": "Calendar/icon within frame; choice letters; paired association letters/slots; neutral whole-step chips; response lines and complete margins."
+    },
+    {
+      "command": "node tests/grammar/temps-order-browser.mjs",
+      "status": "passed",
+      "viewports": [
+        {
+          "width": 1366,
+          "height": 768
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "coverage": "Native pointer and touch drag, tap destination, keyboard, undo, neutral A4 tokens, no polarity filters, privacy before reveal, teacher model after reveal, all step cards visible, Axe 0. Wider two-column clause cards correct mobile clipping."
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "types": 115,
+      "seeds": 3,
+      "sourcePositions": 16
+    },
+    {
+      "command": "npm run test:gallery",
+      "status": "passed",
+      "tests": 14
+    },
+    {
+      "command": "npm run test:comprehension:json",
+      "status": "passed",
+      "tests": 6
+    },
+    {
+      "command": "node --test tests/interactive/long-word-order.test.mjs tests/interactive/word-sorting.test.mjs",
+      "status": "passed",
+      "tests": 13
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed_with_existing_warnings"
+    },
+    {
+      "command": "TypeScript project build and Vite build --manifest",
+      "status": "passed"
+    }
+  ],
+  "retirement": {
+    "removedWrittenBanks": [
+      "e2",
+      "e3",
+      "e4",
+      "e5"
+    ],
+    "removedCommunicationGroups": [
+      "e2"
+    ],
+    "remainingHistoricalWrittenBanks": 62,
+    "totalRetiredNotions": 36,
+    "otherWrittenRowsUnchanged": true,
+    "otherCommunicationGroupsUnchanged": true,
+    "protectedFiles": 276,
+    "savedWorksheets": "Untouched. Real cleanup and API inspection deferred by owner; no remote deletion or Worker deployment.",
+    "maintenance": "Query updated for shared policy consistency; only local synthetic SQLite verification used."
+  },
+  "globalCoverage": {
+    "reviewedActivities": 179,
+    "reviewedOfferings": 243,
+    "reviewedActivityUnits": 9290,
+    "reviewedVariants": 12640,
+    "reviewedDocuments": 340,
+    "reviewedDocumentQuestions": 1340
+  },
+  "media": {
+    "manifest": "temps-media-manifest.json",
+    "galleryAdded": 10,
+    "galleryChangedExisting": 0,
+    "immutableCopies": true,
+    "clockAndCalendarScope": "Date and morning/afternoon fixed by text; generic calendars and seasons are symbolic, not evidence of fictional dates."
+  },
+  "limits": {
+    "humanReview": "pending",
+    "physicalPrinting": "not performed",
+    "classroomHardware": "not performed",
+    "downloadBudgets": {
+      "competition": {
+        "gzip": 209180,
+        "maximumGzip": 204800,
+        "withinBudget": false
+      },
+      "game": {
+        "gzip": 3508870,
+        "maximumGzip": 3145728,
+        "withinBudget": false
+      }
+    },
+    "preexistingBudgets": "Exceeded before this lot; measured without raising limits. Game needs domain-bank splitting.",
+    "preexistingGlobalPoolFailure": "tcm-csc-ex17 remains outside this grammar scope; see questions-20261122-proofs/pool-preexisting-failure.json."
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 6315,
+    "publicHashReview": "docs/interactive/revue-empreintes-delf-lot2-20261123.json",
+    "exceptionScope": "Two exact SHA-256 digests in one exact report, matching public PNG bytes; randomized same-field and api_key canaries stay detected."
+  },
+  "next": "Demander et proposer",
+  "hashes": [
+    {
+      "path": "scripts/grammar_curriculum/temps-e2-a1.tsv",
+      "sha256": "08cfc76cddf35e8b4388c86037ac689057e8ea3fddce44832aede26315c04d85"
+    },
+    {
+      "path": "scripts/grammar_curriculum/temps-e5-a2.tsv",
+      "sha256": "b8a477857c25caa54df2b13274732517c81f6b254a38d1e3d93e0b7551c7b460"
+    },
+    {
+      "path": "scripts/grammar_curriculum/temps-e4-a1.tsv",
+      "sha256": "22147b8ba4931626c3059bc753f709c5616b4d2b55a9806a84b40f32da22fd22"
+    },
+    {
+      "path": "scripts/grammar_curriculum/temps-lectures-a1.tsv",
+      "sha256": "4ae2360cdeae1340206c6241d325c8fed2ee1889eea719c1dcc8f62a865a188c"
+    },
+    {
+      "path": "scripts/grammar_curriculum/temps-e3-a2.tsv",
+      "sha256": "15ecf90bfb13bb798baef66869c4a881555ade2fe13b9d74b259464925b619e5"
+    },
+    {
+      "path": "scripts/grammar_curriculum/temps-e5-a1.tsv",
+      "sha256": "7339fdaf1abfccc8c78b06b7232cc0f96c55878f57377118941d2b53668271ef"
+    },
+    {
+      "path": "scripts/grammar_curriculum/temps-e3-a1.tsv",
+      "sha256": "a35037a18379917f2e347ad5ab4ce71a910a56dde17ab5e31fa84ee57b39cf3d"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e2.json",
+      "sha256": "563bc62aae38e1f59009c7c5f63e72d61a9329eee5be7ae899a95c1761c37b4e"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e3.json",
+      "sha256": "6ce96c537fe7af7530ea97c41727d32ff2004a4df59fe33b03af6fec792ec1cf"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e4.json",
+      "sha256": "9923187f38456eeb7c677b9525a38d34daca091bf62ed9725303c1d65be5e641"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e5.json",
+      "sha256": "a0eee6890e581f83c373f3942662efab4319b15c09827688af4c71938074e149"
+    },
+    {
+      "path": "scripts/build-grammar-temps.py",
+      "sha256": "4f2ac1d4c1d45f0050218d9ca9c5236864a8b0fa8ff7c049d6412705fdd54e7c"
+    },
+    {
+      "path": "scripts/test-grammar-temps.cjs",
+      "sha256": "afb7356b6beb2f378e5560f0ce0eddc4c9685ef2c01580d2f957d8b6cbeac6b3"
+    },
+    {
+      "path": "scripts/test-grammar-temps-build.py",
+      "sha256": "86a745741c2744354a9afec02150af4f0a1af48f8fa4c6ae7d05d1458627bd07"
+    },
+    {
+      "path": "src/grammaire/curriculum/types.ts",
+      "sha256": "377ffd25c63416d546a7908183133a567859c386ba3c71a1ad4bab2330933349"
+    },
+    {
+      "path": "src/grammaire/curriculum/generate.ts",
+      "sha256": "993ac00e9880e4152c817cc1450c5dc920c1efaeb9175da122f0431c2ab07e16"
+    },
+    {
+      "path": "src/grammaire/curriculum/validation.ts",
+      "sha256": "8244ad9601be4cd268ac6fcfbce4370559accf78916804c4f3658530e722d630"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "83041f79a17f660435a30ce8e8b47a55680c50f360b2182d7062965ce06e10e3"
+    },
+    {
+      "path": "src/interactive/components/WordSequence.tsx",
+      "sha256": "61082fbadb094b8a87599339eb66383f3177e127f2104f78fb18dabcd8b5bf30"
+    },
+    {
+      "path": "src/interactive/components/sequence-order.css",
+      "sha256": "55cc0da17121f2444c3f13e1cfa0b02b663c02bde2700479e1bd13391cda8c4a"
+    },
+    {
+      "path": ".gitleaks.toml",
+      "sha256": "0a7b2ef6f9928219ddcb136bf87bf1bfefcc60db830fcc5c6c078cc60926d8fd"
+    },
+    {
+      "path": "scripts/interactive-secrets.mjs",
+      "sha256": "bce35c39381bb97179383f83fcc244271f813831dfe27af60a015b70bebaf765"
+    },
+    {
+      "path": "docs/interactive/revue-empreintes-delf-lot2-20261123.json",
+      "sha256": "04b7c2ca5ef402156a91efc66882543846f433203f90e77d2f26fe16814abd9b"
+    }
+  ],
+  "integration": {
+    "incomingCommit": "b6030a12f",
+    "scope": "102 DELF catalogue entries: 94 native PNGs and eight shared clocks; registries, generated phrase picture metadata, reports and checks. No grammar bank changes.",
+    "conflict": "Gallery regenerated from merged sources; all incoming entries preserved, ten grammar images added.",
+    "checks": [
+      "Gallery: 14 tests passed.",
+      "DELF preparation: 102 references verified, zero activated, original sources/banks/audio preserved.",
+      "TypeScript and production build passed.",
+      "Lint passed with existing warnings.",
+      "Secret scanner passed after two verified public-image digest exceptions; random values and api_key in the same report remain detected."
+    ]
+  }
+}

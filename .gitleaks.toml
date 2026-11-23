@@ -83,3 +83,10 @@ paths = [
 ]
 regexTarget = "match"
 regexes = ['''^key"\s*:\s*"(?:21\-cinema\-debout|21\-hauteur\-deux\-pieds|qcm\-20261120\-bonbons\-gateaux|qcm\-20261120\-chips\-biscuits\-sales|qcm\-20261120\-duo\-foot\-basket|qcm\-20261120\-duo\-livres\-poemes|qcm\-20261120\-duo\-natation\-velo|qcm\-20261120\-duo\-tennis\-natation|qcm\-20261120\-duo\-tennis\-rugby|qcm\-20261120\-equipement\-natation|qcm\-20261120\-equipement\-ski|qcm\-20261120\-equipement\-tennis|qcm\-20261120\-etage\-1\-aligne|qcm\-20261120\-etage\-2\-aligne|qcm\-20261120\-etage\-3\-aligne|qcm\-20261120\-gare\-routiere|qcm\-20261120\-glacier\-italien|qcm\-20261120\-gymnase\-facade|qcm\-20261120\-magasin\-chaussures\-enfants|qcm\-20261120\-magasin\-danse|qcm\-20261120\-pendentif\-eiffel\-cuivre|qcm\-20261120\-pendentif\-eiffel\-or|qcm\-20261120\-piscine\-facade|qcm\-20261120\-rayon\-bibliotheque\-bleu|qcm\-20261120\-rayon\-bibliotheque\-vert|qcm\-20261120\-sacs\-voyage|qcm\-20261120\-train\-tgv|tcf\-athle\-hauteur\-20261120|tcf\-athle\-longueur\-20261120|tcf\-athle\-poids\-20261120|tcf\-cadeaux\-loisirs\-bon\-20261121|tcf\-cadeaux\-loisirs\-chansons\-20261121|tcf\-cinema\-asseoir\-20261120|tcf\-cinema\-lever\-20261120|tcf\-cinema\-sortir\-20261120|trio\-objets\-20261120\-cahier\-regle|trio\-objets\-20261120\-livre\-ordinateur)"?$''']
+
+[[rules.allowlists]]
+description = "Deux empreintes exactes du lot DELF, reliées aux PNG publics vérifiés le 23 novembre. Le mot papier déclenche le détecteur API. Valeurs aléatoires toujours détectées."
+condition = "AND"
+paths = ['''(^|/)docs/tcf/delf-actif-20261113/lot2-100-20261123-preparation\.json$''']
+regexTarget = "secret"
+regexes = ['''^4644a20fa86f5e0f218779af5100506f86c5a6ca8437145d562c3a645cb24ffd$''', '''^7237320b96f4ea98569a9e701e86c9b7e609e727521eaede172cbbf15f71870e$''']

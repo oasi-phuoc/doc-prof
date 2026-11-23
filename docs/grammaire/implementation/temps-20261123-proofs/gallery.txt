@@ -1,0 +1,25 @@
+> doc-prof-react@0.0.0 test:gallery
+> node --test tests/gallery/catalog.test.mjs
+
+✔ all repository images appear once, including documents, logos and source assets (2339.287763ms)
+✔ reused clock choices stay searchable by time without inheriting unrelated exercise subjects (1904.508233ms)
+✔ animal, plant, profession and illness filters preserve the actual meaning (1349.768769ms)
+✔ gallery replacements require approved images and retain the original bytes (2778.326662ms)
+✔ visual search keywords exclude exercise prompts and audio transcriptions (1763.618756ms)
+✔ CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios (1997.447562ms)
+✔ gallery uses the requested content categories and keeps originals and logos (1652.791686ms)
+✔ food and vehicle types describe the illustrated subject, including ambiguous French words (1.780783ms)
+✔ botanical category contains plants and excludes fruits, vegetables, meals and nonbotanical leaves (2025.692581ms)
+✔ gallery complements cover every announced subject with a reviewed full-size original (2418.768389ms)
+✔ Gattegno keeps nominal clues after food and vehicle reclassification (2.671866ms)
+✔ school, household and furniture complements are reviewed, searchable and complete (1844.858636ms)
+✔ daily-life illustrations keep reviewed originals and searchable family names (1759.368225ms)
+✔ November 17 image additions are searchable WebP variants (1472.162978ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 23518.668507

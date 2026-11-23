@@ -31,7 +31,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
     const imageSupport={...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
-    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
+    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe','gram-ex-e2-qcm-verbe','gram-ex-e3-qcm-verbe','gram-ex-e4-qcm-verbe','gram-ex-e5-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
     const model=models.join(' / ')+'\n'+u.explanation
     const rawPrompt=u.kind==='completion' && u.agreementHint?u.prompt.replace('___',`___ (${u.agreementHint})`):u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
       u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
@@ -79,7 +79,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({...imageSupport,part,prompt:pair.left,
       instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,wordBlank:sourceWordBlank(pair.left,q.rightOptions!),correctId:pair.id,choiceOrderPolicy:'fixed' as const,
       model:pair.left.replace('___',pair.right)})),issues:[]}
-    if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.cue?'\n'+u.cue:'')+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
+    if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.cue?'\n'+u.cue:'')+(u.givenVerb?` (${u.givenVerb})`:''),instruction:u.tokenUnit==='clause'?'Déplacez une étape vers sa place, ou touchez une étape puis sa destination. Les flèches du clavier déplacent l’étape ciblée.':'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
       choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
     const instruction=u.kind==='transform'?(u.targetSubject?`Réécrivez avec le sujet « ${u.targetSubject} ».`:u.directive):sourceInstruction
     // Oral stages display the prompt. The target subject must be visible there,

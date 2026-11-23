@@ -46,7 +46,7 @@ export type GrammarUnit = BaseUnit & (
   | { kind: 'form'; task: string; fields: GrammarFormField[]; rubric: GrammarCriterion[] }
   | { kind: 'correct'; error?: { segmentId: 'prompt'; start: number; end: number; text: string } }
   | ({ kind: 'transform'; directiveDisplay?: 'heading' } & ({ targetSubject: string; directive?: never } | { directive: string; targetSubject?: never }))
-  | { kind: 'order'; tokens: Array<{ id: string; text: string; category: PhraseCategory }> }
+  | { kind: 'order'; tokenUnit?: 'clause'; tokens: Array<{ id: string; text: string; category: PhraseCategory }> }
   | { kind: 'match'; pairs: Array<{ id: string; left: string; right: string; sourceId: string }> }
   | { kind: 'reading'; genre: string; text: string; questions: GrammarReadingQuestion[]; supportLayout?: 'image-left' }
   | { kind: 'production'; mode: 'written' | 'oral'; task: string; rubric: Array<{id: string; label: string}>; writeLines: number }
@@ -105,5 +105,5 @@ export class GrammarCurriculumError extends Error {
 
 /** Associations that require their shared facts and remain one grouped activity in class. */
 export function isContextualGrammarMatch(typeId: string): boolean {
-  return ['gram-ex-famille-curriculum-a','gram-ex-e1-curriculum-a','gram-ex-e7-curriculum-a'].includes(typeId)
+  return ['gram-ex-famille-curriculum-a','gram-ex-e1-curriculum-a','gram-ex-e7-curriculum-a','gram-ex-e4-curriculum-a'].includes(typeId)
 }

@@ -30,7 +30,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
         <ol>{u.pairs.map((pair,index)=><li key={pair.id}><Sentence text={pair.left} answer={corrected?pair.right:undefined}/>{corrected?<strong className="grammar-match-answer"> → {String.fromCharCode(65+(q.rightOptions?.findIndex(o=>o.id===pair.id)??0))}</strong>:<span className="grammar-match-slot" aria-label={`Lettre de la réponse ${index+1}`}>→ ___</span>}</li>)}</ol>
         <ol type="A">{q.rightOptions?.map((o,index)=><li key={o.id}><b className="grammar-match-option-letter">{String.fromCharCode(65+index)}.</b> {o.text}</li>)}</ol>
       </div>
-    </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode}/>:<>
+    </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode} colorTokens={u.tokenUnit!=='clause'}/>:<>
       <p><GrammarTextHints text={u.prompt}/></p>
       {u.kind==='transform'&&u.directiveDisplay!=='heading'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive"><GrammarTextHints text={u.directive??''}/></p>:null}
       <div className="grammar-written-response">
