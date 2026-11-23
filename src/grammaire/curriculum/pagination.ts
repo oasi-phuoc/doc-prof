@@ -7,6 +7,7 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  if(q.unit.source.typeId.startsWith('gram-ex-c4-')&&q.unit.kind!=='production')return q.presentation==='gap'?60:80
   if(q.unit.source.typeId==='gram-ex-c1-curriculum-complete'||q.unit.source.typeId==='gram-ex-c1-curriculum-o')return 80
   if(['gram-ex-c2-curriculum-complete','gram-ex-c3-curriculum-complete'].includes(q.unit.source.typeId))return q.presentation==='choice'?70:55
   if (q.unit.kind==='form') return 160

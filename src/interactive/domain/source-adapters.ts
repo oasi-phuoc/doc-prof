@@ -30,7 +30,8 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
     const imageSupport={...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
-    const model=u.answers.join(' / ')+'\n'+u.explanation
+    const models=u.kind==='completion'&&u.source.typeId==='gram-ex-c4-qcm-verbe'?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
+    const model=models.join(' / ')+'\n'+u.explanation
     const rawPrompt=u.kind==='completion' && u.agreementHint?u.prompt.replace('___',`___ (${u.agreementHint})`):u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
       u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
     const prompt=u.cue?u.cue+'\n'+rawPrompt:rawPrompt

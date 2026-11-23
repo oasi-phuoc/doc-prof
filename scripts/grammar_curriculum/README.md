@@ -36,3 +36,11 @@ La clôture du thème du 22 novembre utilise `npm run test:grammar:family-comple
 Les anciennes banques des notions migrées sont supprimées du code applicatif, sur demande explicite du propriétaire. Le constructeur historique filtre `retired-subthemes.json` pour ne pas les recréer. Les compléments du présent et modaux ne doivent plus être reconstruits dans l’ancien dossier ; leur base courante est dans `curriculum/data/`. La reconstruction Famille lit seulement ses 40 supports utiles dans `family-a1-reading-sources.json`. Les tests de comparaison historique utilisent Git en lecture seule.
 
 Contrôles : `npm run test:grammar:questions`, `npm run test:grammar:questions:browser`, puis `node scripts/update-grammar-questions-progress.cjs --verified` une fois les preuves obtenues. Les fiches distantes n’ont pas encore pu être nettoyées à cause du blocage réseau 403 ; voir le [rapport de retrait](../../docs/grammaire/implementation/retrait-banques-20261122.md).
+
+## La phrase exclamative — 23 novembre 2026
+
+`python3 scripts/build-grammar-exclamation.py` compile les 50 scènes de `exclamation-a1.tsv` et les 50 scènes de `exclamation-a2.tsv` dans `curriculum/data/c4.json` : sept banques, neuf offres A1/A2, 350 unités et 450 variantes. Les sources sont réemployées entre les activités ; il ne s’agit pas de 350 situations originales. Les alternatives comme/que/qu’ sont admises sans mettre deux bonnes réponses dans un QCM. Les modèles gardent l’apostrophe attachée au mot suivant.
+
+Contrôles : `npm run test:grammar:exclamation` et `npm run test:grammar:exclamation:browser`. Après ces preuves, `node scripts/update-grammar-exclamation-progress.cjs --verified` actualise le registre, le CSV du 23 novembre et les types gradués disponibles. Les niveaux d’une activité partagée sont regroupés dans ses métadonnées, sans écraser A1 par A2.
+
+L’ancienne banque c4 est retirée. `node scripts/build-retired-grammar-sql.cjs` reconstruit la liste de notions dans la requête D1 depuis `retired-subthemes.json`. Le contrôle de pools écrit `current-pools-verification.json` ; `--evidence=docs/grammaire/implementation/exclamation-20261123-proofs/pools.json` conserve une preuve datée supplémentaire sans réécrire celle du thème précédent. La suppression distante reste soumise à l’accès effectif au serveur, bloqué 403 lors du dernier essai.

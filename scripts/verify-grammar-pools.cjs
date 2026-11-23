@@ -15,5 +15,9 @@ for(const type of entries){
  }
  results.push({type:type.type,positions:16,seeds:3,status:'passed'})
 }
-const file=root+'/docs/grammaire/implementation/questions-20261122-proofs/pools.json'
-fs.writeFileSync(file,JSON.stringify({status:'passed',types:results.length,results},null,2)+'\n');console.log(JSON.stringify({poolTypes:results.length,positions:16,seeds:3,status:'passed'}))
+const file=root+'/docs/grammaire/implementation/current-pools-verification.json'
+const serialized=JSON.stringify({status:'passed',types:results.length,results},null,2)+'\n'
+fs.writeFileSync(file,serialized)
+const evidence=process.argv.find(arg=>arg.startsWith('--evidence='))?.slice(11)
+if(evidence){if(!evidence.startsWith('docs/grammaire/implementation/')||evidence.includes('..'))throw Error('Invalid evidence path');fs.writeFileSync(root+'/'+evidence,serialized)}
+console.log(JSON.stringify({poolTypes:results.length,positions:16,seeds:3,status:'passed'}))

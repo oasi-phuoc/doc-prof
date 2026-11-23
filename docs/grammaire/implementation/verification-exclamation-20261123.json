@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "3278e1af3",
+  "status": "passed_for_pilot_with_preexisting_global_game_limits_and_remote_cleanup_blocked",
+  "delivery": {
+    "theme": "La phrase exclamative",
+    "levels": [
+      "A1",
+      "A2"
+    ],
+    "activities": 5,
+    "banks": 7,
+    "offerings": 9,
+    "selectableUnits": 350,
+    "variants": 450,
+    "authoredSourceScenes": 100,
+    "teacherApprovedUnits": 0
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:exclamation",
+      "status": "passed",
+      "coverage": "Four determiner agreements, accepted alternatives, unique-key MCQ, canonical error spans, frozen recipes, private complete examples, app/D1 retirement parity."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 9550
+    },
+    {
+      "command": "npm run test:grammar:questions",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:family-completion",
+      "status": "passed"
+    },
+    {
+      "command": "node tests/grammar/exclamation-browser.mjs",
+      "status": "passed",
+      "offerings": 9,
+      "printedResponses": 900,
+      "sheets": 550,
+      "classroomLaunches": 9
+    },
+    {
+      "command": "node tests/grammar/exclamation-pdf.mjs",
+      "status": "passed",
+      "actualPdfPreviews": 3
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "types": 75,
+      "seeds": 3,
+      "positions": 16
+    },
+    {
+      "command": "python3 scripts/build-grammar-exclamation.py",
+      "status": "passed",
+      "deterministicBytes": true
+    },
+    {
+      "command": "TypeScript + Vite production build after integration",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "existingWarningsRemain": true
+    }
+  ],
+  "registryTotals": {
+    "activities": 139,
+    "offerings": 182,
+    "selectableUnits": 7060,
+    "variants": 9550,
+    "documentUsages": 260,
+    "documentQuestions": 1100
+  },
+  "retirement": {
+    "notion": "c4",
+    "removedLegacyBanks": 1,
+    "removedLegacyItems": 50,
+    "retiredNotionsTotal": 26,
+    "remainingUnmigratedLegacyBanks": 72,
+    "remoteSavedFiches": {
+      "status": "not_deleted_network_403",
+      "sql": "api/fiches/maintenance/purge-retired-grammar.sql",
+      "cli": "scripts/prune-retired-grammar-fiches.cjs"
+    },
+    "existingGradedRecipes": "preserved"
+  },
+  "knownPreexistingFailures": [
+    {
+      "check": "Global interactive download budgets",
+      "reference": "verification-questions-20261122.json",
+      "rerunThisSlice": true,
+      "measurements": {
+        "competition": {
+          "gzip": 209037,
+          "maximumGzip": 204800
+        },
+        "game": {
+          "gzip": 3281324,
+          "maximumGzip": 3145728
+        }
+      }
+    },
+    {
+      "check": "Global pool sample tcm-csc-ex17 (generator label 18 — Nommer les formes)",
+      "reference": "questions-20261122-proofs/pool-preexisting-failure.json",
+      "rerunThisSlice": false
+    }
+  ],
+  "limitations": [
+    "Teacher approval remains pending.",
+    "No physical printer or ENI test.",
+    "The full multi-theme browser suite and full global pool suite were not rerun.",
+    "No remote fiche deletion or Worker deployment."
+  ],
+  "secrets": {
+    "status": "passed",
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 5911
+  },
+  "sourceFiles": [
+    {
+      "path": "scripts/build-grammar-exclamation.py",
+      "sha256": "d2bd7d99135fb2b4961a2c86bea3b21fefaad079c242c3ac6977ded21ce72a87"
+    },
+    {
+      "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+      "sha256": "e3be4e3dc116b60dccb04f5a46bfcbbd198dbdfb68c8ed3a4af37bb0eef648e0"
+    },
+    {
+      "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+      "sha256": "96fcd6e6fb61c127305c25a358e4529441431ee89c668382bb44fdfca2e04202"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/c4.json",
+      "sha256": "966751964f6ce645bd998d82d8a03501bfc9f039e965b93b328a16ccc5dbacaa"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "e9e8f294f49b7763bea3c72c8eb4388d2c5448340570d0b2963eacc81da8a994"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "d149ab466bbd6166ed07f3e6d9026c8fd84fffaee7b650ee34bd0df83ee14385"
+    },
+    {
+      "path": "src/grammaire/curriculum/retired-subthemes.json",
+      "sha256": "c9d8cc2b77a7824bfe193df402a06a26f4c69d35a8c78ff9ada6444a55936806"
+    },
+    {
+      "path": "src/grammaire/curriculum/graded-activities.json",
+      "sha256": "d1867ab31293518b8c2e597720e89f99965b80509e22297ea66927afa8eb1ecb"
+    },
+    {
+      "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+      "sha256": "e74e7cf3bb53e558b17397d0c57bbc5b1bc67fc9be6bd2c9139e28a68ba05e00"
+    },
+    {
+      "path": "src/grammaire/exercises/catalog-exercises.ts",
+      "sha256": "7cd34dbaf16fae30718b1f0e9d51708d87aedd033e4fbe7c1181009147875932"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "9d0142338dab44a5188aa3a5b778340e269d28c6577c162f0f24aca0e77b189d"
+    },
+    {
+      "path": "src/interactive/pools/catalog.generated.json",
+      "sha256": "036d7990c94e75f171d63429224c1064cea9a72ffa5d3f21c9acd271fd6a94b9"
+    },
+    {
+      "path": "scripts/verify-grammar-pools.cjs",
+      "sha256": "87a552317f9b4e058653759b9eef50aab1775f7a7367a62b93b84cc6d926d7d6"
+    },
+    {
+      "path": "scripts/build-retired-grammar-sql.cjs",
+      "sha256": "0ca612ec4514227596759e3420c07746bc0da5358d6ee353b5179cb32f4baf3a"
+    },
+    {
+      "path": "api/fiches/maintenance/purge-retired-grammar.sql",
+      "sha256": "4047d88c45742359e0abcd698c94f5689f72c7ded098a0341357007cc907b391"
+    },
+    {
+      "path": "scripts/test-grammar-exclamation.cjs",
+      "sha256": "d76df48668e86c466d5a1391315dec5c8d5abf3f8192631abdfa70ec01f08c07"
+    },
+    {
+      "path": "tests/grammar/exclamation-browser.mjs",
+      "sha256": "fdcad0a80c7e467e4c8bd609c5f8daf80fc459a56f65ea6f3ad38f1b016b1391"
+    },
+    {
+      "path": "tests/grammar/exclamation-pdf.mjs",
+      "sha256": "b9f193a197026385d782cbe157ac6a4a63c0b69620bb7f28b68f28484b550aef"
+    }
+  ],
+  "integratedMainCommit": "0380e73f8927e7b81d01945f0b7a0559fdfd293c"
+}
