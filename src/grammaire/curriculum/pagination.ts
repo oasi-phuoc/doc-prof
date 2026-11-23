@@ -7,6 +7,12 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // Contextual requests and two-situation associations need full corrections on A4.
+  if(q.unit.source.typeId.startsWith('gram-ex-f3-'))return 160
+  if(/^gram-ex-f[12]-/.test(q.unit.source.typeId)) {
+    if(q.unit.kind==='production'||q.unit.kind==='match')return 160
+    return 80
+  }
   // Temporal contexts, clauses and full rubrics need space in both student and correction layouts.
   if(/^gram-ex-e[2345]-/.test(q.unit.source.typeId)) {
     if(q.unit.imageSupports?.length||q.unit.kind==='production'||q.unit.kind==='transform'||q.unit.kind==='order'&&q.unit.tokenUnit==='clause')return 160

@@ -58,6 +58,17 @@ const {canonicalEditorialJson}=load(root+'/src/tcf/editorial-json.mjs')
 for(const [p,hash] of Object.entries(protectedFiles)){
  const bytes=fs.readFileSync(root+'/'+p),actual=crypto.createHash('sha256').update(bytes).digest('hex')
  if(actual===hash)continue
+ if(p==='src/grammaire/theory/demander.ts'){
+  const proof=require('../docs/grammaire/implementation/correction-demonstratifs-h-muet-20261123.json')
+  assert.equal(proof.beforeSha256,hash);assert.equal(proof.afterSha256,actual)
+  let previous=bytes.toString()
+  for(const [after,before]of [
+   ['Devant une voyelle ou un h muet, le masculin singulier devient','Devant une voyelle ou un h, le masculin singulier devient'],
+   ['masculin + voyelle / h muet','masculin + voyelle / h'],
+  ]){assert.equal(previous.split(after).length-1,1);previous=previous.replace(after,before)}
+  assert.equal(crypto.createHash('sha256').update(previous).digest('hex'),hash,p)
+  continue
+ }
  if(p==='src/grammaire/exercises/co-bank.ts'){
   const before=bytes.toString().replace("import { normalizeEditorialBank } from '@/tcf/editorial-json.mjs'\n",'').replace('normalizeEditorialBank(rawBank) as GrammarCoEntry[]','rawBank as GrammarCoEntry[]')
   assert.equal(crypto.createHash('sha256').update(before).digest('hex'),hash,p)

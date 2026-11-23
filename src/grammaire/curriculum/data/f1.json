@@ -1,0 +1,4379 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "demander-2026-11-23-v1",
+    "activityId": "gram-ex-f1-qcm-verbe",
+    "subthemeId": "f1",
+    "topic": "gram-demander",
+    "level": "A1",
+    "label": "Choisir ce, cet, cette, ces",
+    "objective": "Choisir ce, cet, cette ou ces selon le nom montré, son genre, son nombre et son début.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations, formes et variantes relues ; modèles ouverts non exclusifs. Rôles fictifs, sans imposer une préférence personnelle. Approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez ce, cet, cette ou ces selon le nom. Au début de la phrase, mettez une majuscule.",
+      "gap": "Complétez avec ce, cet, cette ou ces, avec une majuscule en début de phrase."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-livre",
+        "prompt": "___ livre contient les horaires du centre.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-ab8f678199",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-768ff5f7ac",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-767b3e7df0",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-e481d15af6",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce livre contient les horaires du centre."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-stylo",
+        "prompt": "___ stylo écrit en bleu.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un stylo à votre partenaire. Nom : stylo (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-3b9f1c35be",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-419639d881",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-ae498103d1",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-e38b0f7391",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce stylo écrit en bleu."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-sac",
+        "prompt": "___ sac contient mes affaires de sport.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un sac dans le vestiaire. Nom : sac (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-70899ae8c7",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-66a326d7d8",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-4a8c8fecb1",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-4d00ca0e9c",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce sac contient mes affaires de sport."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-bus",
+        "prompt": "___ bus va à la gare.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un bus sur le plan des transports. Nom : bus (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-a986717192",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-bf027e8a71",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-96f2d52ffd",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-436539110f",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce bus va à la gare."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-train",
+        "prompt": "___ train part à midi.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un train sur le panneau des départs. Nom : train (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-9026a68065",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-6e284c99be",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-6a9a738c5f",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-3560ec0cd3",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce train part à midi."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-manteau",
+        "prompt": "___ manteau est trop grand pour moi.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous essayez un manteau dans un magasin. Nom : manteau (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-b53d0666c9",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-f899dfb765",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-c2ae3bba21",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-35fd4edc69",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce manteau est trop grand pour moi."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-telephone",
+        "prompt": "___ téléphone fonctionne très bien.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez le téléphone que vous utilisez. Nom : téléphone (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-1bdf172f16",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-55bda708e6",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-03ac033039",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-7d4673c35f",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce téléphone fonctionne très bien."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-formulaire",
+        "prompt": "___ formulaire sert à demander une carte.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez un formulaire à l’accueil. Nom : formulaire (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-652481fe48",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-0be46e823e",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-4486340523",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-7ffbe58c74",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce formulaire sert à demander une carte."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-quartier",
+        "prompt": "___ quartier est près du centre.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un quartier sur le plan de la ville. Nom : quartier (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-042f46407b",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-2d50e07b2e",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-25662ccd9b",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-8ba110310a",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce quartier est près du centre."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-pantalon",
+        "prompt": "___ pantalon coûte vingt euros.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un pantalon à la personne qui vous accompagne. Nom : pantalon (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-5c2ee1fc6d",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-361d524e51",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-bbf98f9407",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-b15b25f4be",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce pantalon coûte vingt euros."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-repas",
+        "prompt": "___ repas comprend une soupe et du riz.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un repas sur le menu. Nom : repas (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-bad6237693",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-e9d50fa292",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-9874785fd0",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-8b50738258",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce repas comprend une soupe et du riz."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-heros",
+        "prompt": "___ héros aide les autres personnages.",
+        "answers": [
+          "Ce"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un héros dans une histoire. Le h de héros est aspiré : on dit le héros. Nom : héros (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-f033d16940",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-9cc2b5e148",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-15c54f0c78",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-370bf9cdea",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ce héros aide les autres personnages."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-ami",
+        "prompt": "___ ami vient avec moi.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-252c8a69fc",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-448e88e270",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-846a5fb483",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-0baf3a92b7",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet ami vient avec moi."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-arbre",
+        "prompt": "___ arbre donne beaucoup d’ombre.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un arbre dans le parc. Nom : arbre (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-93ce4e6799",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-d7a3775d45",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-4f5ca6b134",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-5f25824dbf",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet arbre donne beaucoup d’ombre."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-appartement",
+        "prompt": "___ appartement a deux chambres.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un appartement dans une annonce. Nom : appartement (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-e5f541c23c",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-92316aeb6e",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-a7f1d31528",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-f232d7d78a",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet appartement a deux chambres."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-avion",
+        "prompt": "___ avion arrive à dix heures.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un avion sur un écran de l’aéroport. Nom : avion (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-d26f394a4f",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-bc0675e61d",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-b0d779c2a5",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-6f4d5142e9",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet avion arrive à dix heures."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-exercice",
+        "prompt": "___ exercice se fait à deux.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un exercice dans votre cahier. Nom : exercice (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-24399aa8ce",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-2d51795353",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-4c1b38f416",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-f25f81260f",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet exercice se fait à deux."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-immeuble",
+        "prompt": "___ immeuble possède un ascenseur.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un immeuble depuis la rue. Nom : immeuble (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-81513024b6",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-faf5ef68bf",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-cabfee105e",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-449c14c47f",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet immeuble possède un ascenseur."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-ordinateur",
+        "prompt": "___ ordinateur est disponible pour le cours.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un ordinateur dans la salle. Nom : ordinateur (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-68df849890",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-038548d18c",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-dec0e86a47",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-5cd601238b",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet ordinateur est disponible pour le cours."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-outil",
+        "prompt": "___ outil sert à réparer le vélo.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez un outil à l’atelier. Nom : outil (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-9d29e41c6a",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-18e0f07184",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-8dd3093f8b",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-78cf94bccb",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet outil sert à réparer le vélo."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-autobus",
+        "prompt": "___ autobus s’arrête devant la piscine.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez un autobus sur la photo de l’arrêt. Nom : autobus (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-0e7eddd48c",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-f148190a19",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-e7c8144ed9",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-2563cb18a8",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet autobus s’arrête devant la piscine."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-hotel",
+        "prompt": "___ hôtel est près de la gare.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un hôtel sur le plan. Le h de hôtel est muet. Nom : hôtel (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-2b9fae4d7d",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-751de2a2d4",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-373574195d",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-651a4daf4c",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet hôtel est près de la gare."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-hopital",
+        "prompt": "___ hôpital reçoit les patients chaque jour.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez un hôpital sur la carte. Le h de hôpital est muet. Nom : hôpital (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-492b3986fa",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-864feeda7f",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-903f728a2d",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-4f39a4e673",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet hôpital reçoit les patients chaque jour."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-homme",
+        "prompt": "___ homme attend son rendez-vous.",
+        "answers": [
+          "Cet"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Dans une scène fictive, vous désignez un homme dans la salle d’attente. Le h de homme est muet. Nom : homme (masculin singulier).",
+        "options": [
+          {
+            "id": "forme-e51142a804",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-52a0a9a28d",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-4291968825",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-d6b422afce",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cet homme attend son rendez-vous."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-carte",
+        "prompt": "___ carte permet de prendre le bus.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-e98592b744",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-10bfbccaca",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-610dcb68e9",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-2a6bb9f905",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette carte permet de prendre le bus."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-maison",
+        "prompt": "___ maison a un petit jardin.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez une maison dans la rue. Nom : maison (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-ece664afdc",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-95a83ca325",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-463406a9c9",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-836d6b8064",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette maison a un petit jardin."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-chaise",
+        "prompt": "___ chaise est libre.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous proposez une chaise à une personne qui arrive. Nom : chaise (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-553bb9ddb1",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-509d61be85",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-118317c585",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-699b203af7",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette chaise est libre."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-rue",
+        "prompt": "___ rue mène au marché.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez une rue sur le plan. Nom : rue (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-46635a97bf",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-8152c764b3",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-177cf4f241",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-40ee0bb43a",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette rue mène au marché."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-veste",
+        "prompt": "___ veste est assez chaude.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez la veste que vous voulez essayer. Nom : veste (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-a4670283ef",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-a6aed9e99f",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-e02486995f",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-da43e3fefc",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette veste est assez chaude."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-trousse",
+        "prompt": "___ trousse contient mes crayons.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez une trousse sur votre table. Nom : trousse (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-fddd31ea5c",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-52d9035b36",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-ac993551bf",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-5e67d5e37f",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette trousse contient mes crayons."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-photo",
+        "prompt": "___ photo montre notre jardin.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez une photo à votre voisin. Nom : photo (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-adcae3ea56",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-3510ad7900",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-2b329efead",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-2a16a177c6",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette photo montre notre jardin."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-valise",
+        "prompt": "___ valise est très lourde.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez une valise avant le départ. Nom : valise (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-99227f28c8",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-ef48567fa2",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-aa4df90131",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-2bc8ef41cd",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette valise est très lourde."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-adresse",
+        "prompt": "___ adresse est celle du centre.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez une adresse sur un document. Nom : adresse (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-1e6d151865",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-960e17f7f3",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-bb2966de50",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-6003cd7338",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette adresse est celle du centre."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-ecole",
+        "prompt": "___ école propose des cours du soir.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez une école sur une carte. Nom : école (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-751a6d709c",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-8c2256fe09",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-a8c0cc637f",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-d7a1037208",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette école propose des cours du soir."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-image",
+        "prompt": "___ image représente un vélo.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez une image dans le catalogue. Nom : image (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-fd9b8d0d8b",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-e06a9d2cb4",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-590d6bc1ff",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-70c8a9739d",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette image représente un vélo."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-armoire",
+        "prompt": "___ armoire sert à ranger les livres.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez une armoire dans la classe. Nom : armoire (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-7c72a8c3e7",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-ec54a46b0d",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-bd2e1ac066",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-271b4e8c93",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette armoire sert à ranger les livres."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-heure",
+        "prompt": "___ heure me convient pour le rendez-vous.",
+        "answers": [
+          "Cette"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez une heure proposée dans un message. Le nom heure est féminin. Nom : heure (féminin singulier).",
+        "options": [
+          {
+            "id": "forme-caa1d3720f",
+            "text": "Cette"
+          },
+          {
+            "id": "forme-88c377fa89",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-e6c741e689",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-640e3637b5",
+            "text": "Ces"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Cette heure me convient pour le rendez-vous."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-livres",
+        "prompt": "___ livres sont pour le cours de français.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "options": [
+          {
+            "id": "forme-1492acf98e",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-56598df176",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-19e24d703b",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-b85cf3f44d",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces livres sont pour le cours de français."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-stylos",
+        "prompt": "___ stylos écrivent en noir.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez plusieurs stylos dans une boîte. Nom : stylos (masculin pluriel).",
+        "options": [
+          {
+            "id": "forme-428361c505",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-d3c8d7dffe",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-309fcef4a4",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-cfff0dfe94",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces stylos écrivent en noir."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-sacs",
+        "prompt": "___ sacs sont prêts pour la sortie.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez les sacs de votre groupe. Nom : sacs (masculin pluriel).",
+        "options": [
+          {
+            "id": "forme-249efddbfb",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-742b4d050e",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-77ac9698ea",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-250167c836",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces sacs sont prêts pour la sortie."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-ordinateurs",
+        "prompt": "___ ordinateurs sont disponibles cet après-midi.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez plusieurs ordinateurs dans la bibliothèque. Nom : ordinateurs (masculin pluriel).",
+        "options": [
+          {
+            "id": "forme-8a84075c46",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-5593091e8b",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-411f806f9e",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-435c499c51",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces ordinateurs sont disponibles cet après-midi."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-hotels",
+        "prompt": "___ hôtels sont près de la plage.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous comparez plusieurs hôtels sur une carte. Nom : hôtels (masculin pluriel).",
+        "options": [
+          {
+            "id": "forme-359f50284e",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-de2f5b8af7",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-434ee6cd3f",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-94fb1512b3",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces hôtels sont près de la plage."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-exercices",
+        "prompt": "___ exercices se font en groupe.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez plusieurs exercices de la fiche. Nom : exercices (masculin pluriel).",
+        "options": [
+          {
+            "id": "forme-247be2d68e",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-8ed96bdffd",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-790ac2153f",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-9b2433cebb",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces exercices se font en groupe."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-cartes",
+        "prompt": "___ cartes sont à imprimer.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez plusieurs cartes de réponse. Nom : cartes (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-b5dbdc0802",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-fa5456de73",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-c64eb4a2ad",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-6e65247bb7",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces cartes sont à imprimer."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-chaises",
+        "prompt": "___ chaises sont pour les visiteurs.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez plusieurs chaises près de la porte. Nom : chaises (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-88be7742b4",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-4d6f1ee8af",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-f671d9c01d",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-70b8a4663c",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces chaises sont pour les visiteurs."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-photos",
+        "prompt": "___ photos montrent les étapes de la recette.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez plusieurs photos à votre partenaire. Nom : photos (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-29b4bd6a4e",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-70e24f0919",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-4505400273",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-15772deb36",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces photos montrent les étapes de la recette."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-adresses",
+        "prompt": "___ adresses sont celles des deux centres.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez deux adresses sur une feuille. Nom : adresses (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-98a23838b8",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-aa10d7c6bf",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-e360f07ece",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-96ac70b8c2",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces adresses sont celles des deux centres."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-ecoles",
+        "prompt": "___ écoles proposent des cours de français.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous désignez plusieurs écoles sur le plan. Nom : écoles (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-a577c61f7b",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-61f4c6f316",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-9bd69ec2ef",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-eaaec0672b",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces écoles proposent des cours de français."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-images",
+        "prompt": "___ images sont dans le catalogue.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez plusieurs images sur l’écran. Nom : images (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-af67e1a8c3",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-fcf3cb900c",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-47afff9be2",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-9a72e0f910",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces images sont dans le catalogue."
+      },
+      {
+        "id": "gram-ex-f1-qcm-verbe-a1-armoires",
+        "prompt": "___ armoires ferment à clé.",
+        "answers": [
+          "Ces"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez plusieurs armoires de la salle. Nom : armoires (féminin pluriel).",
+        "options": [
+          {
+            "id": "forme-6dc299c0ba",
+            "text": "Ces"
+          },
+          {
+            "id": "forme-8ff47b3961",
+            "text": "Ce"
+          },
+          {
+            "id": "forme-96d008030b",
+            "text": "Cet"
+          },
+          {
+            "id": "forme-f285d40dac",
+            "text": "Cette"
+          }
+        ],
+        "explanation": "La forme dépend du genre, du nombre et du début du nom. Cet s’emploie au masculin singulier devant une voyelle ou un h muet, pas devant un h aspiré. Phrase : Ces armoires ferment à clé."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "demander-2026-11-23-v1",
+    "activityId": "gram-ex-f1-curriculum-a",
+    "subthemeId": "f1",
+    "topic": "gram-demander",
+    "level": "A1",
+    "label": "Associer",
+    "objective": "Choisir ce, cet, cette ou ces selon le nom montré, son genre, son nombre et son début.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations, formes et variantes relues ; modèles ouverts non exclusifs. Rôles fictifs, sans imposer une préférence personnelle. Approbation enseignante en attente."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez chaque phrase à son déterminant. Les deux situations précisent les noms montrés."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-livre",
+        "prompt": "Situation 1 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).\nSituation 2 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "answers": [
+          "Ce livre contient les horaires du centre.\nCet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "livre-p1",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          },
+          {
+            "id": "livre-p2",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-stylo",
+        "prompt": "Situation 1 : Vous montrez un stylo à votre partenaire. Nom : stylo (masculin singulier).\nSituation 2 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "answers": [
+          "Ce stylo écrit en bleu.\nCet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "stylo-p1",
+            "left": "___ stylo écrit en bleu.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:stylo"
+          },
+          {
+            "id": "stylo-p2",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-sac",
+        "prompt": "Situation 1 : Vous désignez un sac dans le vestiaire. Nom : sac (masculin singulier).\nSituation 2 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "answers": [
+          "Ce sac contient mes affaires de sport.\nCet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "sac-p1",
+            "left": "___ sac contient mes affaires de sport.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:sac"
+          },
+          {
+            "id": "sac-p2",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-bus",
+        "prompt": "Situation 1 : Vous montrez un bus sur le plan des transports. Nom : bus (masculin singulier).\nSituation 2 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "answers": [
+          "Ce bus va à la gare.\nCet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "bus-p1",
+            "left": "___ bus va à la gare.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:bus"
+          },
+          {
+            "id": "bus-p2",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-train",
+        "prompt": "Situation 1 : Vous désignez un train sur le panneau des départs. Nom : train (masculin singulier).\nSituation 2 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "answers": [
+          "Ce train part à midi.\nCet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "train-p1",
+            "left": "___ train part à midi.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:train"
+          },
+          {
+            "id": "train-p2",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-manteau",
+        "prompt": "Situation 1 : Vous essayez un manteau dans un magasin. Nom : manteau (masculin singulier).\nSituation 2 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "answers": [
+          "Ce manteau est trop grand pour moi.\nCet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "manteau-p1",
+            "left": "___ manteau est trop grand pour moi.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:manteau"
+          },
+          {
+            "id": "manteau-p2",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-telephone",
+        "prompt": "Situation 1 : Vous montrez le téléphone que vous utilisez. Nom : téléphone (masculin singulier).\nSituation 2 : Vous désignez un arbre dans le parc. Nom : arbre (masculin singulier).",
+        "answers": [
+          "Ce téléphone fonctionne très bien.\nCet arbre donne beaucoup d’ombre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "telephone-p1",
+            "left": "___ téléphone fonctionne très bien.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:telephone"
+          },
+          {
+            "id": "telephone-p2",
+            "left": "___ arbre donne beaucoup d’ombre.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:arbre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-formulaire",
+        "prompt": "Situation 1 : Vous présentez un formulaire à l’accueil. Nom : formulaire (masculin singulier).\nSituation 2 : Vous montrez un appartement dans une annonce. Nom : appartement (masculin singulier).",
+        "answers": [
+          "Ce formulaire sert à demander une carte.\nCet appartement a deux chambres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "formulaire-p1",
+            "left": "___ formulaire sert à demander une carte.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:formulaire"
+          },
+          {
+            "id": "formulaire-p2",
+            "left": "___ appartement a deux chambres.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:appartement"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-quartier",
+        "prompt": "Situation 1 : Vous montrez un quartier sur le plan de la ville. Nom : quartier (masculin singulier).\nSituation 2 : Vous désignez un avion sur un écran de l’aéroport. Nom : avion (masculin singulier).",
+        "answers": [
+          "Ce quartier est près du centre.\nCet avion arrive à dix heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "quartier-p1",
+            "left": "___ quartier est près du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:quartier"
+          },
+          {
+            "id": "quartier-p2",
+            "left": "___ avion arrive à dix heures.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:avion"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-pantalon",
+        "prompt": "Situation 1 : Vous montrez un pantalon à la personne qui vous accompagne. Nom : pantalon (masculin singulier).\nSituation 2 : Vous montrez un exercice dans votre cahier. Nom : exercice (masculin singulier).",
+        "answers": [
+          "Ce pantalon coûte vingt euros.\nCet exercice se fait à deux."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "pantalon-p1",
+            "left": "___ pantalon coûte vingt euros.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:pantalon"
+          },
+          {
+            "id": "pantalon-p2",
+            "left": "___ exercice se fait à deux.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:exercice"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-repas",
+        "prompt": "Situation 1 : Vous désignez un repas sur le menu. Nom : repas (masculin singulier).\nSituation 2 : Vous désignez un immeuble depuis la rue. Nom : immeuble (masculin singulier).",
+        "answers": [
+          "Ce repas comprend une soupe et du riz.\nCet immeuble possède un ascenseur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "repas-p1",
+            "left": "___ repas comprend une soupe et du riz.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:repas"
+          },
+          {
+            "id": "repas-p2",
+            "left": "___ immeuble possède un ascenseur.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:immeuble"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-heros",
+        "prompt": "Situation 1 : Vous désignez un héros dans une histoire. Le h de héros est aspiré : on dit le héros. Nom : héros (masculin singulier).\nSituation 2 : Vous montrez un ordinateur dans la salle. Nom : ordinateur (masculin singulier).",
+        "answers": [
+          "Ce héros aide les autres personnages.\nCet ordinateur est disponible pour le cours."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "heros-p1",
+            "left": "___ héros aide les autres personnages.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:heros"
+          },
+          {
+            "id": "heros-p2",
+            "left": "___ ordinateur est disponible pour le cours.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ordinateur"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-ami",
+        "prompt": "Situation 1 : Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).\nSituation 2 : Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "answers": [
+          "Cet ami vient avec moi.\nCette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ami-p1",
+            "left": "___ ami vient avec moi.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ami"
+          },
+          {
+            "id": "ami-p2",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-arbre",
+        "prompt": "Situation 1 : Vous désignez un arbre dans le parc. Nom : arbre (masculin singulier).\nSituation 2 : Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "answers": [
+          "Cet arbre donne beaucoup d’ombre.\nCette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "arbre-p1",
+            "left": "___ arbre donne beaucoup d’ombre.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:arbre"
+          },
+          {
+            "id": "arbre-p2",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-appartement",
+        "prompt": "Situation 1 : Vous montrez un appartement dans une annonce. Nom : appartement (masculin singulier).\nSituation 2 : Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "answers": [
+          "Cet appartement a deux chambres.\nCette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "appartement-p1",
+            "left": "___ appartement a deux chambres.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:appartement"
+          },
+          {
+            "id": "appartement-p2",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-avion",
+        "prompt": "Situation 1 : Vous désignez un avion sur un écran de l’aéroport. Nom : avion (masculin singulier).\nSituation 2 : Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "answers": [
+          "Cet avion arrive à dix heures.\nCette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "avion-p1",
+            "left": "___ avion arrive à dix heures.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:avion"
+          },
+          {
+            "id": "avion-p2",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-exercice",
+        "prompt": "Situation 1 : Vous montrez un exercice dans votre cahier. Nom : exercice (masculin singulier).\nSituation 2 : Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "answers": [
+          "Cet exercice se fait à deux.\nCette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "exercice-p1",
+            "left": "___ exercice se fait à deux.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:exercice"
+          },
+          {
+            "id": "exercice-p2",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-immeuble",
+        "prompt": "Situation 1 : Vous désignez un immeuble depuis la rue. Nom : immeuble (masculin singulier).\nSituation 2 : Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "answers": [
+          "Cet immeuble possède un ascenseur.\nCette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "immeuble-p1",
+            "left": "___ immeuble possède un ascenseur.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:immeuble"
+          },
+          {
+            "id": "immeuble-p2",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-ordinateur",
+        "prompt": "Situation 1 : Vous montrez un ordinateur dans la salle. Nom : ordinateur (masculin singulier).\nSituation 2 : Vous désignez une maison dans la rue. Nom : maison (féminin singulier).",
+        "answers": [
+          "Cet ordinateur est disponible pour le cours.\nCette maison a un petit jardin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ordinateur-p1",
+            "left": "___ ordinateur est disponible pour le cours.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:ordinateur"
+          },
+          {
+            "id": "ordinateur-p2",
+            "left": "___ maison a un petit jardin.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:maison"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-outil",
+        "prompt": "Situation 1 : Vous présentez un outil à l’atelier. Nom : outil (masculin singulier).\nSituation 2 : Vous proposez une chaise à une personne qui arrive. Nom : chaise (féminin singulier).",
+        "answers": [
+          "Cet outil sert à réparer le vélo.\nCette chaise est libre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "outil-p1",
+            "left": "___ outil sert à réparer le vélo.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:outil"
+          },
+          {
+            "id": "outil-p2",
+            "left": "___ chaise est libre.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:chaise"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-autobus",
+        "prompt": "Situation 1 : Vous désignez un autobus sur la photo de l’arrêt. Nom : autobus (masculin singulier).\nSituation 2 : Vous montrez une rue sur le plan. Nom : rue (féminin singulier).",
+        "answers": [
+          "Cet autobus s’arrête devant la piscine.\nCette rue mène au marché."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "autobus-p1",
+            "left": "___ autobus s’arrête devant la piscine.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:autobus"
+          },
+          {
+            "id": "autobus-p2",
+            "left": "___ rue mène au marché.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:rue"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-hotel",
+        "prompt": "Situation 1 : Vous montrez un hôtel sur le plan. Le h de hôtel est muet. Nom : hôtel (masculin singulier).\nSituation 2 : Vous montrez la veste que vous voulez essayer. Nom : veste (féminin singulier).",
+        "answers": [
+          "Cet hôtel est près de la gare.\nCette veste est assez chaude."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "hotel-p1",
+            "left": "___ hôtel est près de la gare.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:hotel"
+          },
+          {
+            "id": "hotel-p2",
+            "left": "___ veste est assez chaude.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:veste"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-hopital",
+        "prompt": "Situation 1 : Vous montrez un hôpital sur la carte. Le h de hôpital est muet. Nom : hôpital (masculin singulier).\nSituation 2 : Vous désignez une trousse sur votre table. Nom : trousse (féminin singulier).",
+        "answers": [
+          "Cet hôpital reçoit les patients chaque jour.\nCette trousse contient mes crayons."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "hopital-p1",
+            "left": "___ hôpital reçoit les patients chaque jour.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:hopital"
+          },
+          {
+            "id": "hopital-p2",
+            "left": "___ trousse contient mes crayons.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:trousse"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-homme",
+        "prompt": "Situation 1 : Dans une scène fictive, vous désignez un homme dans la salle d’attente. Le h de homme est muet. Nom : homme (masculin singulier).\nSituation 2 : Vous montrez une photo à votre voisin. Nom : photo (féminin singulier).",
+        "answers": [
+          "Cet homme attend son rendez-vous.\nCette photo montre notre jardin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "homme-p1",
+            "left": "___ homme attend son rendez-vous.",
+            "right": "Cet",
+            "sourceId": "demander-f1-a1:homme"
+          },
+          {
+            "id": "homme-p2",
+            "left": "___ photo montre notre jardin.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:photo"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-carte",
+        "prompt": "Situation 1 : Vous présentez une carte de transport. Nom : carte (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette carte permet de prendre le bus.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "carte-p1",
+            "left": "___ carte permet de prendre le bus.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:carte"
+          },
+          {
+            "id": "carte-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-maison",
+        "prompt": "Situation 1 : Vous désignez une maison dans la rue. Nom : maison (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette maison a un petit jardin.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "maison-p1",
+            "left": "___ maison a un petit jardin.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:maison"
+          },
+          {
+            "id": "maison-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-chaise",
+        "prompt": "Situation 1 : Vous proposez une chaise à une personne qui arrive. Nom : chaise (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette chaise est libre.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "chaise-p1",
+            "left": "___ chaise est libre.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:chaise"
+          },
+          {
+            "id": "chaise-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-rue",
+        "prompt": "Situation 1 : Vous montrez une rue sur le plan. Nom : rue (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette rue mène au marché.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "rue-p1",
+            "left": "___ rue mène au marché.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:rue"
+          },
+          {
+            "id": "rue-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-veste",
+        "prompt": "Situation 1 : Vous montrez la veste que vous voulez essayer. Nom : veste (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette veste est assez chaude.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "veste-p1",
+            "left": "___ veste est assez chaude.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:veste"
+          },
+          {
+            "id": "veste-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-trousse",
+        "prompt": "Situation 1 : Vous désignez une trousse sur votre table. Nom : trousse (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette trousse contient mes crayons.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "trousse-p1",
+            "left": "___ trousse contient mes crayons.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:trousse"
+          },
+          {
+            "id": "trousse-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-photo",
+        "prompt": "Situation 1 : Vous montrez une photo à votre voisin. Nom : photo (féminin singulier).\nSituation 2 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "answers": [
+          "Cette photo montre notre jardin.\nCes livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "photo-p1",
+            "left": "___ photo montre notre jardin.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:photo"
+          },
+          {
+            "id": "photo-p2",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-valise",
+        "prompt": "Situation 1 : Vous désignez une valise avant le départ. Nom : valise (féminin singulier).\nSituation 2 : Vous montrez plusieurs stylos dans une boîte. Nom : stylos (masculin pluriel).",
+        "answers": [
+          "Cette valise est très lourde.\nCes stylos écrivent en noir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "valise-p1",
+            "left": "___ valise est très lourde.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:valise"
+          },
+          {
+            "id": "valise-p2",
+            "left": "___ stylos écrivent en noir.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:stylos"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-adresse",
+        "prompt": "Situation 1 : Vous montrez une adresse sur un document. Nom : adresse (féminin singulier).\nSituation 2 : Vous désignez les sacs de votre groupe. Nom : sacs (masculin pluriel).",
+        "answers": [
+          "Cette adresse est celle du centre.\nCes sacs sont prêts pour la sortie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "adresse-p1",
+            "left": "___ adresse est celle du centre.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:adresse"
+          },
+          {
+            "id": "adresse-p2",
+            "left": "___ sacs sont prêts pour la sortie.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:sacs"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-ecole",
+        "prompt": "Situation 1 : Vous désignez une école sur une carte. Nom : école (féminin singulier).\nSituation 2 : Vous montrez plusieurs ordinateurs dans la bibliothèque. Nom : ordinateurs (masculin pluriel).",
+        "answers": [
+          "Cette école propose des cours du soir.\nCes ordinateurs sont disponibles cet après-midi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ecole-p1",
+            "left": "___ école propose des cours du soir.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:ecole"
+          },
+          {
+            "id": "ecole-p2",
+            "left": "___ ordinateurs sont disponibles cet après-midi.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:ordinateurs"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-image",
+        "prompt": "Situation 1 : Vous montrez une image dans le catalogue. Nom : image (féminin singulier).\nSituation 2 : Vous comparez plusieurs hôtels sur une carte. Nom : hôtels (masculin pluriel).",
+        "answers": [
+          "Cette image représente un vélo.\nCes hôtels sont près de la plage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "image-p1",
+            "left": "___ image représente un vélo.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:image"
+          },
+          {
+            "id": "image-p2",
+            "left": "___ hôtels sont près de la plage.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:hotels"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-armoire",
+        "prompt": "Situation 1 : Vous désignez une armoire dans la classe. Nom : armoire (féminin singulier).\nSituation 2 : Vous montrez plusieurs exercices de la fiche. Nom : exercices (masculin pluriel).",
+        "answers": [
+          "Cette armoire sert à ranger les livres.\nCes exercices se font en groupe."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "armoire-p1",
+            "left": "___ armoire sert à ranger les livres.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:armoire"
+          },
+          {
+            "id": "armoire-p2",
+            "left": "___ exercices se font en groupe.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:exercices"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-heure",
+        "prompt": "Situation 1 : Vous montrez une heure proposée dans un message. Le nom heure est féminin. Nom : heure (féminin singulier).\nSituation 2 : Vous présentez plusieurs cartes de réponse. Nom : cartes (féminin pluriel).",
+        "answers": [
+          "Cette heure me convient pour le rendez-vous.\nCes cartes sont à imprimer."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "heure-p1",
+            "left": "___ heure me convient pour le rendez-vous.",
+            "right": "Cette",
+            "sourceId": "demander-f1-a1:heure"
+          },
+          {
+            "id": "heure-p2",
+            "left": "___ cartes sont à imprimer.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:cartes"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-livres",
+        "prompt": "Situation 1 : Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces livres sont pour le cours de français.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "livres-p1",
+            "left": "___ livres sont pour le cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:livres"
+          },
+          {
+            "id": "livres-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-stylos",
+        "prompt": "Situation 1 : Vous montrez plusieurs stylos dans une boîte. Nom : stylos (masculin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces stylos écrivent en noir.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "stylos-p1",
+            "left": "___ stylos écrivent en noir.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:stylos"
+          },
+          {
+            "id": "stylos-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-sacs",
+        "prompt": "Situation 1 : Vous désignez les sacs de votre groupe. Nom : sacs (masculin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces sacs sont prêts pour la sortie.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "sacs-p1",
+            "left": "___ sacs sont prêts pour la sortie.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:sacs"
+          },
+          {
+            "id": "sacs-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-ordinateurs",
+        "prompt": "Situation 1 : Vous montrez plusieurs ordinateurs dans la bibliothèque. Nom : ordinateurs (masculin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces ordinateurs sont disponibles cet après-midi.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ordinateurs-p1",
+            "left": "___ ordinateurs sont disponibles cet après-midi.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:ordinateurs"
+          },
+          {
+            "id": "ordinateurs-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-hotels",
+        "prompt": "Situation 1 : Vous comparez plusieurs hôtels sur une carte. Nom : hôtels (masculin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces hôtels sont près de la plage.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "hotels-p1",
+            "left": "___ hôtels sont près de la plage.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:hotels"
+          },
+          {
+            "id": "hotels-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-exercices",
+        "prompt": "Situation 1 : Vous montrez plusieurs exercices de la fiche. Nom : exercices (masculin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces exercices se font en groupe.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "exercices-p1",
+            "left": "___ exercices se font en groupe.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:exercices"
+          },
+          {
+            "id": "exercices-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-cartes",
+        "prompt": "Situation 1 : Vous présentez plusieurs cartes de réponse. Nom : cartes (féminin pluriel).\nSituation 2 : Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "answers": [
+          "Ces cartes sont à imprimer.\nCe livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cartes-p1",
+            "left": "___ cartes sont à imprimer.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:cartes"
+          },
+          {
+            "id": "cartes-p2",
+            "left": "___ livre contient les horaires du centre.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:livre"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-chaises",
+        "prompt": "Situation 1 : Vous désignez plusieurs chaises près de la porte. Nom : chaises (féminin pluriel).\nSituation 2 : Vous montrez un stylo à votre partenaire. Nom : stylo (masculin singulier).",
+        "answers": [
+          "Ces chaises sont pour les visiteurs.\nCe stylo écrit en bleu."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "chaises-p1",
+            "left": "___ chaises sont pour les visiteurs.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:chaises"
+          },
+          {
+            "id": "chaises-p2",
+            "left": "___ stylo écrit en bleu.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:stylo"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-photos",
+        "prompt": "Situation 1 : Vous montrez plusieurs photos à votre partenaire. Nom : photos (féminin pluriel).\nSituation 2 : Vous désignez un sac dans le vestiaire. Nom : sac (masculin singulier).",
+        "answers": [
+          "Ces photos montrent les étapes de la recette.\nCe sac contient mes affaires de sport."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "photos-p1",
+            "left": "___ photos montrent les étapes de la recette.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:photos"
+          },
+          {
+            "id": "photos-p2",
+            "left": "___ sac contient mes affaires de sport.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:sac"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-adresses",
+        "prompt": "Situation 1 : Vous montrez deux adresses sur une feuille. Nom : adresses (féminin pluriel).\nSituation 2 : Vous montrez un bus sur le plan des transports. Nom : bus (masculin singulier).",
+        "answers": [
+          "Ces adresses sont celles des deux centres.\nCe bus va à la gare."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "adresses-p1",
+            "left": "___ adresses sont celles des deux centres.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:adresses"
+          },
+          {
+            "id": "adresses-p2",
+            "left": "___ bus va à la gare.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:bus"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-ecoles",
+        "prompt": "Situation 1 : Vous désignez plusieurs écoles sur le plan. Nom : écoles (féminin pluriel).\nSituation 2 : Vous désignez un train sur le panneau des départs. Nom : train (masculin singulier).",
+        "answers": [
+          "Ces écoles proposent des cours de français.\nCe train part à midi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ecoles-p1",
+            "left": "___ écoles proposent des cours de français.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:ecoles"
+          },
+          {
+            "id": "ecoles-p2",
+            "left": "___ train part à midi.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:train"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-images",
+        "prompt": "Situation 1 : Vous montrez plusieurs images sur l’écran. Nom : images (féminin pluriel).\nSituation 2 : Vous essayez un manteau dans un magasin. Nom : manteau (masculin singulier).",
+        "answers": [
+          "Ces images sont dans le catalogue.\nCe manteau est trop grand pour moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "images-p1",
+            "left": "___ images sont dans le catalogue.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:images"
+          },
+          {
+            "id": "images-p2",
+            "left": "___ manteau est trop grand pour moi.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:manteau"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-a-a1-armoires",
+        "prompt": "Situation 1 : Vous présentez plusieurs armoires de la salle. Nom : armoires (féminin pluriel).\nSituation 2 : Vous montrez le téléphone que vous utilisez. Nom : téléphone (masculin singulier).",
+        "answers": [
+          "Ces armoires ferment à clé.\nCe téléphone fonctionne très bien."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-a",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "armoires-p1",
+            "left": "___ armoires ferment à clé.",
+            "right": "Ces",
+            "sourceId": "demander-f1-a1:armoires"
+          },
+          {
+            "id": "armoires-p2",
+            "left": "___ téléphone fonctionne très bien.",
+            "right": "Ce",
+            "sourceId": "demander-f1-a1:telephone"
+          }
+        ],
+        "explanation": "Chaque phrase garde son nom et sa situation. Associez les deux déterminants selon le genre, le nombre et le début des noms."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "demander-2026-11-23-v1",
+    "activityId": "gram-ex-f1-curriculum-c",
+    "subthemeId": "f1",
+    "topic": "gram-demander",
+    "level": "A1",
+    "label": "Corriger l’erreur",
+    "objective": "Choisir ce, cet, cette ou ces selon le nom montré, son genre, son nombre et son début.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations, formes et variantes relues ; modèles ouverts non exclusifs. Rôles fictifs, sans imposer une préférence personnelle. Approbation enseignante en attente."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez le déterminant démonstratif puis réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-livre",
+        "prompt": "Cette livre contient les horaires du centre.",
+        "answers": [
+          "Ce livre contient les horaires du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un livre posé devant vous. Nom : livre (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-stylo",
+        "prompt": "Cette stylo écrit en bleu.",
+        "answers": [
+          "Ce stylo écrit en bleu."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un stylo à votre partenaire. Nom : stylo (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-sac",
+        "prompt": "Cette sac contient mes affaires de sport.",
+        "answers": [
+          "Ce sac contient mes affaires de sport."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un sac dans le vestiaire. Nom : sac (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-bus",
+        "prompt": "Cette bus va à la gare.",
+        "answers": [
+          "Ce bus va à la gare."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un bus sur le plan des transports. Nom : bus (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-train",
+        "prompt": "Cette train part à midi.",
+        "answers": [
+          "Ce train part à midi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un train sur le panneau des départs. Nom : train (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-manteau",
+        "prompt": "Cette manteau est trop grand pour moi.",
+        "answers": [
+          "Ce manteau est trop grand pour moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous essayez un manteau dans un magasin. Nom : manteau (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-telephone",
+        "prompt": "Cette téléphone fonctionne très bien.",
+        "answers": [
+          "Ce téléphone fonctionne très bien."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez le téléphone que vous utilisez. Nom : téléphone (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-formulaire",
+        "prompt": "Cette formulaire sert à demander une carte.",
+        "answers": [
+          "Ce formulaire sert à demander une carte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez un formulaire à l’accueil. Nom : formulaire (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-quartier",
+        "prompt": "Cette quartier est près du centre.",
+        "answers": [
+          "Ce quartier est près du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un quartier sur le plan de la ville. Nom : quartier (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-pantalon",
+        "prompt": "Cette pantalon coûte vingt euros.",
+        "answers": [
+          "Ce pantalon coûte vingt euros."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un pantalon à la personne qui vous accompagne. Nom : pantalon (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-repas",
+        "prompt": "Cette repas comprend une soupe et du riz.",
+        "answers": [
+          "Ce repas comprend une soupe et du riz."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un repas sur le menu. Nom : repas (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-heros",
+        "prompt": "Cette héros aide les autres personnages.",
+        "answers": [
+          "Ce héros aide les autres personnages."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un héros dans une histoire. Le h de héros est aspiré : on dit le héros. Nom : héros (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ce ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-ami",
+        "prompt": "Ce ami vient avec moi.",
+        "answers": [
+          "Cet ami vient avec moi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez un ami à votre groupe. Nom : ami (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-arbre",
+        "prompt": "Ce arbre donne beaucoup d’ombre.",
+        "answers": [
+          "Cet arbre donne beaucoup d’ombre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un arbre dans le parc. Nom : arbre (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-appartement",
+        "prompt": "Ce appartement a deux chambres.",
+        "answers": [
+          "Cet appartement a deux chambres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un appartement dans une annonce. Nom : appartement (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-avion",
+        "prompt": "Ce avion arrive à dix heures.",
+        "answers": [
+          "Cet avion arrive à dix heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un avion sur un écran de l’aéroport. Nom : avion (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-exercice",
+        "prompt": "Ce exercice se fait à deux.",
+        "answers": [
+          "Cet exercice se fait à deux."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un exercice dans votre cahier. Nom : exercice (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-immeuble",
+        "prompt": "Ce immeuble possède un ascenseur.",
+        "answers": [
+          "Cet immeuble possède un ascenseur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un immeuble depuis la rue. Nom : immeuble (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-ordinateur",
+        "prompt": "Ce ordinateur est disponible pour le cours.",
+        "answers": [
+          "Cet ordinateur est disponible pour le cours."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un ordinateur dans la salle. Nom : ordinateur (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-outil",
+        "prompt": "Ce outil sert à réparer le vélo.",
+        "answers": [
+          "Cet outil sert à réparer le vélo."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez un outil à l’atelier. Nom : outil (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-autobus",
+        "prompt": "Ce autobus s’arrête devant la piscine.",
+        "answers": [
+          "Cet autobus s’arrête devant la piscine."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez un autobus sur la photo de l’arrêt. Nom : autobus (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-hotel",
+        "prompt": "Ce hôtel est près de la gare.",
+        "answers": [
+          "Cet hôtel est près de la gare."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un hôtel sur le plan. Le h de hôtel est muet. Nom : hôtel (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-hopital",
+        "prompt": "Ce hôpital reçoit les patients chaque jour.",
+        "answers": [
+          "Cet hôpital reçoit les patients chaque jour."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez un hôpital sur la carte. Le h de hôpital est muet. Nom : hôpital (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-homme",
+        "prompt": "Ce homme attend son rendez-vous.",
+        "answers": [
+          "Cet homme attend son rendez-vous."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Dans une scène fictive, vous désignez un homme dans la salle d’attente. Le h de homme est muet. Nom : homme (masculin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 2,
+          "text": "Ce"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cet ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-carte",
+        "prompt": "Cet carte permet de prendre le bus.",
+        "answers": [
+          "Cette carte permet de prendre le bus."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez une carte de transport. Nom : carte (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-maison",
+        "prompt": "Cet maison a un petit jardin.",
+        "answers": [
+          "Cette maison a un petit jardin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez une maison dans la rue. Nom : maison (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-chaise",
+        "prompt": "Cet chaise est libre.",
+        "answers": [
+          "Cette chaise est libre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous proposez une chaise à une personne qui arrive. Nom : chaise (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-rue",
+        "prompt": "Cet rue mène au marché.",
+        "answers": [
+          "Cette rue mène au marché."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez une rue sur le plan. Nom : rue (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-veste",
+        "prompt": "Cet veste est assez chaude.",
+        "answers": [
+          "Cette veste est assez chaude."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez la veste que vous voulez essayer. Nom : veste (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-trousse",
+        "prompt": "Cet trousse contient mes crayons.",
+        "answers": [
+          "Cette trousse contient mes crayons."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez une trousse sur votre table. Nom : trousse (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-photo",
+        "prompt": "Cet photo montre notre jardin.",
+        "answers": [
+          "Cette photo montre notre jardin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez une photo à votre voisin. Nom : photo (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-valise",
+        "prompt": "Cet valise est très lourde.",
+        "answers": [
+          "Cette valise est très lourde."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez une valise avant le départ. Nom : valise (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-adresse",
+        "prompt": "Cet adresse est celle du centre.",
+        "answers": [
+          "Cette adresse est celle du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez une adresse sur un document. Nom : adresse (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-ecole",
+        "prompt": "Cet école propose des cours du soir.",
+        "answers": [
+          "Cette école propose des cours du soir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez une école sur une carte. Nom : école (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-image",
+        "prompt": "Cet image représente un vélo.",
+        "answers": [
+          "Cette image représente un vélo."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez une image dans le catalogue. Nom : image (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-armoire",
+        "prompt": "Cet armoire sert à ranger les livres.",
+        "answers": [
+          "Cette armoire sert à ranger les livres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez une armoire dans la classe. Nom : armoire (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-heure",
+        "prompt": "Cet heure me convient pour le rendez-vous.",
+        "answers": [
+          "Cette heure me convient pour le rendez-vous."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez une heure proposée dans un message. Le nom heure est féminin. Nom : heure (féminin singulier).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Cet"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Cette ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-livres",
+        "prompt": "Cette livres sont pour le cours de français.",
+        "answers": [
+          "Ces livres sont pour le cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez plusieurs livres sur une étagère. Nom : livres (masculin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-stylos",
+        "prompt": "Cette stylos écrivent en noir.",
+        "answers": [
+          "Ces stylos écrivent en noir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez plusieurs stylos dans une boîte. Nom : stylos (masculin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-sacs",
+        "prompt": "Cette sacs sont prêts pour la sortie.",
+        "answers": [
+          "Ces sacs sont prêts pour la sortie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez les sacs de votre groupe. Nom : sacs (masculin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-ordinateurs",
+        "prompt": "Cette ordinateurs sont disponibles cet après-midi.",
+        "answers": [
+          "Ces ordinateurs sont disponibles cet après-midi."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez plusieurs ordinateurs dans la bibliothèque. Nom : ordinateurs (masculin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-hotels",
+        "prompt": "Cette hôtels sont près de la plage.",
+        "answers": [
+          "Ces hôtels sont près de la plage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous comparez plusieurs hôtels sur une carte. Nom : hôtels (masculin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-exercices",
+        "prompt": "Cette exercices se font en groupe.",
+        "answers": [
+          "Ces exercices se font en groupe."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez plusieurs exercices de la fiche. Nom : exercices (masculin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-cartes",
+        "prompt": "Cette cartes sont à imprimer.",
+        "answers": [
+          "Ces cartes sont à imprimer."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez plusieurs cartes de réponse. Nom : cartes (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-chaises",
+        "prompt": "Cette chaises sont pour les visiteurs.",
+        "answers": [
+          "Ces chaises sont pour les visiteurs."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez plusieurs chaises près de la porte. Nom : chaises (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-photos",
+        "prompt": "Cette photos montrent les étapes de la recette.",
+        "answers": [
+          "Ces photos montrent les étapes de la recette."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez plusieurs photos à votre partenaire. Nom : photos (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-adresses",
+        "prompt": "Cette adresses sont celles des deux centres.",
+        "answers": [
+          "Ces adresses sont celles des deux centres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez deux adresses sur une feuille. Nom : adresses (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-ecoles",
+        "prompt": "Cette écoles proposent des cours de français.",
+        "answers": [
+          "Ces écoles proposent des cours de français."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous désignez plusieurs écoles sur le plan. Nom : écoles (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-images",
+        "prompt": "Cette images sont dans le catalogue.",
+        "answers": [
+          "Ces images sont dans le catalogue."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez plusieurs images sur l’écran. Nom : images (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      },
+      {
+        "id": "gram-ex-f1-curriculum-c-a1-armoires",
+        "prompt": "Cette armoires ferment à clé.",
+        "answers": [
+          "Ces armoires ferment à clé."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+          "typeId": "gram-ex-f1-curriculum-c",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez plusieurs armoires de la salle. Nom : armoires (féminin pluriel).",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Cette"
+        },
+        "explanation": "Remplacez seulement le déterminant par « Ces ». Conservez le nom et les autres informations."
+      }
+    ]
+  }
+]

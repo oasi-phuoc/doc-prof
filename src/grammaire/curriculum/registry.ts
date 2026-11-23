@@ -27,6 +27,9 @@ import quelQuestions from './data/c3.json'
 import exclamations from './data/c4.json'
 import activities from './data/d1.json'
 import tonicPronouns from './data/d3.json'
+import demonstratives from './data/f1.json'
+import requests from './data/f2.json'
+import acceptances from './data/f3.json'
 import moments from './data/e2.json'
 import durations from './data/e3.json'
 import frequencies from './data/e4.json'
@@ -40,7 +43,7 @@ import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {
@@ -54,7 +57,7 @@ export function defaultGrammarPilot(typeId: string) {
   const bank=grammarBanksForType(typeId)[0]
   return bank ? {grammarActivityId:bank.activityId,grammarLevel:bank.level,
     grammarPresentation:bank.presentations[0]!,grammarBankRevision:bank.revision,grammarPreview:true,
-    ...(typeId==='gram-ex-e4-curriculum-o'?{phrasePolarity:'mixed' as const}:{}),
+    ...(['gram-ex-e4-curriculum-o','gram-ex-f3-curriculum-o'].includes(typeId)?{phrasePolarity:'mixed' as const}:{}),
     ...(bank.presentations.includes('document-set')?{grammarDocumentCount:1}:{})} : {}
 }
 

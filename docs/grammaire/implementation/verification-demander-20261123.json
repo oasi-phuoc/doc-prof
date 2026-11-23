@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "e4e22deae",
+  "status": "passed_for_pilot_with_preexisting_download_limits",
+  "delivery": {
+    "theme": "Demander et proposer",
+    "levels": [
+      "A1"
+    ],
+    "activities": 13,
+    "banks": 13,
+    "offerings": 16,
+    "selectableUnits": 620,
+    "variants": 810,
+    "authoredSourceRows": 170,
+    "documents": 20,
+    "documentQuestions": 60,
+    "groupedAssociationUnits": 100,
+    "associationPairs": 200,
+    "openScenarios": 100,
+    "teacherApprovedUnits": 0
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:demander",
+      "status": "passed",
+      "coverage": "Ce/cet/cette/ces with gender, number, vowel, h muet and h aspiré cases; canonical correction spans; modal conjugations and one QCM key; grouped associations with preserved facts/private targets; positive/negative word-order capacities; non-exclusive teacher-led productions; reading evidence; retirement parity; isolated deterministic reconstruction."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 13450
+    },
+    {
+      "command": "npm run test:grammar:contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:questions",
+      "status": "passed",
+      "protectedFilesVerified": 276,
+      "newTargetedTheoryCorrections": 1,
+      "note": "Only two h → h muet clarifications in one theory file; prior source reconstructed and checked against the original protected SHA-256. Existing owner-authorized lossless CO JSON formatting bridge retained."
+    },
+    {
+      "command": "npm run test:grammar:temps",
+      "status": "passed",
+      "variants": 1420,
+      "note": "Historical deletion assertion follows the shared retirement list as subsequent authorized themes are migrated; unchanged remaining rows still compared to baseline."
+    },
+    {
+      "command": "node tests/grammar/demander-browser.mjs",
+      "status": "passed",
+      "offerings": 16,
+      "printedQuestionUnits": 1620,
+      "expectedAnswers": 1820,
+      "sheets": 1330,
+      "classroomLaunches": 16,
+      "errors": [],
+      "metric": "Both student and correction layouts; a matching unit contains two expected answers. Full-bank counts checked against A4 body/footer bounds and horizontal overflow."
+    },
+    {
+      "command": "node tests/grammar/demander-pdf.mjs",
+      "status": "passed",
+      "actualPdfPreviews": 4,
+      "visualReview": "Four PDF pages rendered: four demonstrative choices, complete open roles/context, linked proposition/reply tables with letters and slots, word-order tokens and response lines. No clipping observed."
+    },
+    {
+      "command": "node tests/grammar/demander-interactions-browser.mjs",
+      "status": "passed",
+      "viewports": [
+        {
+          "width": 1366,
+          "height": 768
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "coverage": "Native pointer/touch sorting, keyboard, undo, all destinations inside viewport, complete two-situation context, private models before reveal, 2/2 review after reveal and Axe 0."
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "poolTypes": 128,
+      "seeds": 3,
+      "sourcePositions": 16
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed_with_existing_warnings"
+    },
+    {
+      "command": "TypeScript project build; Vite build --manifest",
+      "status": "passed"
+    }
+  ],
+  "editorial": {
+    "sources": "Four authored TSV files; 170 source situations/documents reused across response mechanics, not 620 independent stories.",
+    "f1": "12 ce, 12 cet, 13 cette and 13 ces. Gender/number cues and h muet/aspiré cases explicit.",
+    "f2": "Requests, permission, offers, wishes and obligations with pouvoir/devoir/vouloir in the present; roles and follow-up facts supplied. Existing graded modal bank preserved.",
+    "f3": "Intentions assigned to fictional roles. Equivalent free replies accepted, no two synonymous QCM keys. 25 positive and 25 negative order models, mixed by default. Polite refusals need not be grammatically negative in general.",
+    "freeResponses": "Teacher-led, non-exclusive models, no automatic verdict on personal answers.",
+    "images": "No image obligation in this theme matrix; no generated media or new-image quota claimed."
+  },
+  "retirement": {
+    "removedWrittenBanks": [
+      "f1",
+      "f2",
+      "f3"
+    ],
+    "removedCommunicationGroups": [
+      "f3"
+    ],
+    "remainingHistoricalWrittenBanks": 59,
+    "totalRetiredNotions": 39,
+    "otherWrittenRowsUnchanged": true,
+    "otherCommunicationGroupsUnchanged": true,
+    "savedWorksheets": "Untouched; owner deferred cleanup. No real API inspection/deletion and no Worker deployment.",
+    "maintenance": "Shared retirement query updated, verified only on local synthetic SQLite cases."
+  },
+  "theoryCorrection": {
+    "proof": "correction-demonstratifs-h-muet-20261123.json",
+    "path": "src/grammaire/theory/demander.ts",
+    "scope": "Two exact h muet clarifications only; all other bytes reconstruct to the original protected digest. No general theory rewrite."
+  },
+  "globalCoverage": {
+    "reviewedActivities": 192,
+    "reviewedOfferings": 259,
+    "reviewedActivityUnits": 9910,
+    "reviewedVariants": 13450,
+    "reviewedDocuments": 360,
+    "reviewedDocumentQuestions": 1400
+  },
+  "limits": {
+    "humanReview": "pending",
+    "physicalPrinting": "not performed",
+    "classroomHardware": "not performed",
+    "downloadBudgets": {
+      "competition": {
+        "gzip": 209187,
+        "maximumGzip": 204800,
+        "withinBudget": false
+      },
+      "game": {
+        "gzip": 3569361,
+        "maximumGzip": 3145728,
+        "withinBudget": false
+      }
+    },
+    "budgetScope": "Limits exceeded before this lot; no thresholds raised. Domain-bank splitting remains open.",
+    "preexistingGlobalPoolFailure": "tcm-csc-ex17 remains outside grammar scope; prior evidence in questions-20261122-proofs/pool-preexisting-failure.json."
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 6367
+  },
+  "next": "Décrire",
+  "hashes": [
+    {
+      "path": "scripts/grammar_curriculum/demander-lectures-a1.tsv",
+      "sha256": "ebfc180db9997ab72b50b61f8dbeb0a89799139b673e4e0698b0d065fcbf2004"
+    },
+    {
+      "path": "scripts/grammar_curriculum/demander-f3-a1.tsv",
+      "sha256": "dd099a1363b58fa3c7f37ff5249b58794e90dd32caff99e6ea45d0dc5178c74c"
+    },
+    {
+      "path": "scripts/grammar_curriculum/demander-f1-a1.tsv",
+      "sha256": "d9bbb1855da4bd21e7dad38656acd0b8b0c0b4cd194f671981215b5e8e92b0ee"
+    },
+    {
+      "path": "scripts/grammar_curriculum/demander-f2-a1.tsv",
+      "sha256": "627e78c6331191a1da9607a4d029d4db9843c9ed3a8e4721ec86d62a5b8f0f2c"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f1.json",
+      "sha256": "3b001a7269da74b8c66e172dabadc19f37e94a2bebceea102f18b6b002e13bb4"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f2.json",
+      "sha256": "c1cef312ebb006a150946bb40b96c0fc06295d13ca91acc3d90e78175b98adf4"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f3.json",
+      "sha256": "8fe54123ba065de3aae711e03192556d411c4e1a5f43a92d5c38fd669abe4efa"
+    },
+    {
+      "path": "scripts/build-grammar-demander.py",
+      "sha256": "212c53447efaf8a467035476a48ab82e1fc8a06732bea2aefafc776ad8607b6f"
+    },
+    {
+      "path": "scripts/test-grammar-demander.cjs",
+      "sha256": "02a4d5fe852d354a6a5b74cc0b72ea2615545f36af06858651ba6130c95c6612"
+    },
+    {
+      "path": "scripts/test-grammar-demander-build.py",
+      "sha256": "6fa7434602d65753664fd36a72fb616ffd397e44a8a0604accb8d352866fd44e"
+    },
+    {
+      "path": "scripts/test-grammar-questions.cjs",
+      "sha256": "e2c536ba4289e25f7822f88091ba480a1ca8f13d93e4db1a87c73c8d995a4af4"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "ce89ddad6eb41cf500668860b1ab043d3440ce9ebf182902f8c362c2f2f1cf18"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "34c3bf8f63c5207304e008ba2e5e4df92a73232aef02215b8cb3e67492bd8f35"
+    },
+    {
+      "path": "src/grammaire/curriculum/types.ts",
+      "sha256": "373ea659070d556881643dea68547697ce0bfc1d588f9e9390d96328bee4c8b8"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "7647ef97d5b63c52c234470cf2012f4d447e3e48e9b03dec613845df5b5a2fd6"
+    },
+    {
+      "path": "src/grammaire/theory/demander.ts",
+      "sha256": "b8900322ddb5217d54db45785cf5f8a80277ae0fc28cb9e4e3d63c96df6f7ceb"
+    }
+  ]
+}

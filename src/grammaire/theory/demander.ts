@@ -22,7 +22,7 @@ export const demanderDocs: GrammaireTheoryDoc[] = [
       expliquer: [
         p('Le déterminant se place {c}devant{/c} le nom.'),
         p('Je choisis selon le genre et le nombre du nom.'),
-        p('Devant une voyelle ou un h, le masculin singulier devient {c}cet{/c}.'),
+        p('Devant une voyelle ou un h muet, le masculin singulier devient {c}cet{/c}.'),
         ligne,
         ex([
           '{tab:+2++}{g}Nom{/g} | {g}Forme{/g} | {g}Exemple{/g}',
@@ -39,7 +39,7 @@ export const demanderDocs: GrammaireTheoryDoc[] = [
           ['Cas', 'Forme', 'Exemple'],
           [
             ['masculin + consonne', 'ce', 'ce stylo'],
-            ['masculin + voyelle / h', 'cet', 'cet hôtel'],
+            ['masculin + voyelle / h muet', 'cet', 'cet hôtel'],
             ['féminin', 'cette', 'cette carte'],
             ['pluriel', 'ces', 'ces clés'],
           ],

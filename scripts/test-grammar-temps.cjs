@@ -84,5 +84,5 @@ for(const sub of ['e2','e3','e4','e5']){
 }
 const before=JSON.parse(cp.execFileSync('git',['show','fd05e4de5:src/grammaire/exercises/bank/lessons-revised.ts'],{encoding:'utf8'}).split('= ').slice(1).join('= '))
 const after=fs.readFileSync(root+'/src/grammaire/exercises/bank/lessons-revised.ts','utf8').split('= ').slice(1).join('= ')
-assert.deepEqual(JSON.parse(after),before.filter(x=>!['e2','e3','e4','e5'].includes(x.subId)))
+assert.deepEqual(JSON.parse(after),before.filter(x=>!require('../src/grammaire/curriculum/retired-subthemes.json').includes(x.subId)))
 console.log(JSON.stringify({status:'passed',activities:18,banks:22,offerings:28,units:1040,variants,documents:40,documentQuestions:120,groupedAssociations:50,openScenarios:50,illustratedSituations:50,distinctImages:10,retiredHistoricalBanks:4,savedWorksheets:'untouched, deferred by owner'}))
