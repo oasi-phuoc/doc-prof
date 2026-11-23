@@ -1,5 +1,4 @@
 import type { MathItem, WorksheetPage } from '@/math/types'
-import { concatPlaylistsWithGap, spokenJunctionSeconds } from '@/tcm-cfr/audio-nombres'
 import { zipStoreBlob } from '@/lib/zip-store'
 import { recalculateCsc } from './recalculate'
 import { cscNumberParts } from './items'
@@ -46,10 +45,11 @@ export function cscAudioGroups(sheets: WorksheetPage[]) {
 export async function buildCscAudioZip(sheets: WorksheetPage[], options: { signal?: AbortSignal; onProgress?: (done: number, total: number) => void } = {}): Promise<Blob> {
   const groups = cscAudioGroups(sheets)
   if (!groups.length) throw new Error('Aucun audio CSC n’est présent dans cette fiche.')
+  if (!cscDeniseRecordingsReady()) throw new Error('Les consignes audio CSC ne sont pas disponibles. Réessayez après leur chargement.')
   const files = []
   for (const group of groups) {
     const groupOptions = { ...options, onProgress: (done: number, total: number) => options.onProgress?.(files.length + done / total, groups.length) }
-    files.push({ name: group.name, data: cscDeniseRecordingsReady() ? await renderCscDeniseAudio(planCscDeniseAudio(group.type, group.parts, group.rate), groupOptions) : await concatPlaylistsWithGap(group.parts, undefined, { ...groupOptions, trimJunctionSeconds: spokenJunctionSeconds(group.parts.flat()) }) })
+    files.push({ name: group.name, data: await renderCscDeniseAudio(planCscDeniseAudio(group.type, group.parts, group.rate), groupOptions) })
   }
   return zipStoreBlob(files, undefined, options.signal)
 }

@@ -61,7 +61,7 @@ async function checkPlayers(page, type, label, multipart) {
     if(parts.length>1) await player.evaluate(node=>new Promise((resolve,reject)=>{const check=()=>{if(node.readyState>=1&&node.src.startsWith('blob:'))resolve();else setTimeout(check,100)};setTimeout(()=>reject(new Error('Composed audio not ready')),30000);check()}))
   }
   await players.first().evaluate(async node=>{await node.play()})
-  await page.waitForFunction(type=>{const audio=document.querySelector(`.sheet-stage:not(.print-only-sheets) [data-exercise-type="${type}"] audio`);return audio?.currentTime>0.1},type)
+  await page.waitForFunction(type=>{const audio=document.querySelector(`.sheet-stage:not(.print-only-sheets) [data-exercise-type="${type}"] audio[aria-label^="Nombre"],.sheet-stage:not(.print-only-sheets) [data-exercise-type="${type}"] audio[aria-label^="Calcul"]`);return audio?.currentTime>0.1},type)
   await players.first().evaluate(node=>node.pause())
 }
 async function setFont(page,value) {
@@ -71,7 +71,7 @@ async function setFont(page,value) {
   assert.equal(await slider.inputValue(),String(value))
 }
 async function checkTypography(page,expected) {
-  await button(page,'Menu').click()
+  await button(page,'Paramètres').click()
   const slider=page.getByRole('slider',{name:'Taille du corps du texte',exact:true})
   assert.equal(await slider.inputValue(),String(expected))
   const chrome=preview(page).locator('.doc-header,.doc-header *,.doc-footer,.doc-footer *')
@@ -84,7 +84,7 @@ async function checkTypography(page,expected) {
     const size=await body.evaluate(node=>parseFloat(getComputedStyle(node).fontSize))
     assert.ok(Math.abs(size-original*value/expected)<.01)
   }
-  await setFont(page,expected);await button(page,'Menu').click()
+  await setFont(page,expected);await button(page,'Paramètres').click()
 }
 try {
   await mkdir('docs/tcm-csc/screenshots', { recursive: true })
@@ -100,13 +100,13 @@ try {
   assert.equal(await page.getByRole('spinbutton', { name: 'Points par question de l’exercice sélectionné', exact: true }).count(), 0)
   console.log('CSC : test complet chargé depuis le menu Domaine.')
   await checkTypography(page,20)
-  await button(page,'Menu').click();await setFont(page,22);await button(page,'Menu').click()
+  await button(page,'Paramètres').click();await setFont(page,22);await button(page,'Paramètres').click()
   await page.reload()
   await page.getByLabel('Domaine',{exact:true}).click({timeout:120000});await page.getByRole('option',{name:'TCM CSC',exact:true}).click()
-  await button(page,'Menu').click();assert.equal(await page.getByRole('slider',{name:'Taille du corps du texte',exact:true}).inputValue(),'22');await setFont(page,20)
-  await page.getByRole('radio',{name:/Paysage — double A5/}).click();await button(page,'Menu').click()
+  await button(page,'Paramètres').click();assert.equal(await page.getByRole('slider',{name:'Taille du corps du texte',exact:true}).inputValue(),'22');await setFont(page,20)
+  await page.getByRole('radio',{name:/Paysage — double A5/}).click();await button(page,'Paramètres').click()
   await checkTypography(page,20)
-  await button(page,'Menu').click();await page.getByRole('radio',{name:/Portrait A4/}).click();await button(page,'Menu').click()
+  await button(page,'Paramètres').click();await page.getByRole('radio',{name:/Portrait A4/}).click();await button(page,'Paramètres').click()
   results.push({typography:'CSC base size defaults to 20px; only body text changes at 10–24px; A4/A5 headers and footers stay fixed; custom CSC setting survives reload'})
 
   await page.getByLabel('Page 2', { exact: true }).click()
@@ -140,6 +140,7 @@ try {
   })
   results.push({ audio: 'three real decoded WAV files, five prompts each and six-second gaps', files: audio })
   console.log('CSC : trois pistes WAV décodées et téléchargées.')
+  await page.getByRole('dialog',{name:'Préparation audio',exact:true}).getByRole('button',{name:'Fermer',exact:true}).click()
 
   await page.emulateMedia({ media: 'print' })
   await page.evaluate(async () => { for (const image of document.images) image.loading = 'eager'; await document.fonts.ready; await Promise.all([...document.images].map((image) => image.decode().catch(() => {}))) })

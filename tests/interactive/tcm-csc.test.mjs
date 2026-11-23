@@ -34,6 +34,13 @@ try {
     const oneDrawing = new Set([3, 14, 15, 17, 18, 19, 20])
     for (const sample of samples) for (const step of TCM_CSC_STEPS) assert.equal(sample.get(step.number).length, oneDrawing.has(step.number) ? 1 : step.count)
   })
+  await test('CSC announces a fixed 100 points while the test scoring and other domains stay independent', async () => {
+    const {generateTpmInformations}=await server.ssrLoadModule('/src/tpm/informations.ts')
+    const score=(variant,points)=>generateTpmInformations(variant,points).find(item=>item.prompt==='consigne-1').theoryBlock.text
+    for(const points of [1,82,150])assert.equal(score('tcm-csc',points),'Le score maximum est de 100 points.')
+    assert.equal(score('tcm-cfr',42),'Le score maximum est de 42 points.')
+    assert.equal(score('tpm',1),'Le score maximum est de 1 point.')
+  })
   await test('five numbers and five spoken calculations stay within CSC bounds across 100 seeds', async () => {
     const assets = new Set()
     for (const sample of samples) {

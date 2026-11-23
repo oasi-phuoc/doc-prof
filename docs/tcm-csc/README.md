@@ -1,5 +1,7 @@
 # Test TCM CSC
 
+**23 novembre 2026 — audios complets et consignes.** Les trois exercices oraux CSC proposent un lecteur « Exercice complet » comprenant la consigne et les deux écoutes dans le corrigé, avec les mêmes pistes et pauses que le ZIP. Les consignes DeniseNeural et leurs fichiers sont déjà présents ; aucun enregistrement vocal nouveau n’est revendiqué. Un export ne revient plus silencieusement à une série sans consigne si le pack narré est indisponible. La première page affiche désormais la mention fixe « Le score maximum est de 100 points. », indépendamment du barème modifiable. Les problèmes 22–24 proposent leur grille à l’écran, mais l’impression conserve toujours le cadre blanc, même avec l’impression des arrière-plans activée. Voir [les vérifications](consignes-score-grilles-20261123.json).
+
 Le domaine **TCM CSC** charge les exercices 1 à 20 et 22 à 24, précédés d’une page d’informations. L’exercice 21 reste réservé. La révision du 13 novembre 2026 produit **dix-sept pages élèves** et **trente-quatre pages avec les corrigés**. Les dix-sept pages de configuration gardent les exercices 6 et 7 ensemble et placent le 24 sur une nouvelle page ; les huit calculs de l’exercice 10 tiennent sur une page. Aucun exercice ne déborde sous son pied de page.
 
 La demande initiale provient de `tcmcsc.txt`. Les précisions du propriétaire du 12 novembre remplacent les comparaisons de l’exercice 8 par la décomposition du TCM CFR, exercice 5 ; l’exercice 9 devient la lecture écrite des trois signes `+`, `−` et `=` suivant la présentation du TCM CFR, exercice 6.
@@ -23,7 +25,7 @@ La demande initiale provient de `tcmcsc.txt`. Les précisions du propriétaire d
 | 17 | Carré, rectangle, cercle et triangle ; deux cadres par ligne sur deux lignes, avec bandeaux « Forme 1 » à « Forme 4 », figures centrées et agrandies de 50 %, 12,5 px avant la zone de réponse et 15 px sous le trait |
 | 18 | Cadre de comptage réduit de moitié : hauteur de 97,5 mm et marge intérieure de 25 px sur les quatre côtés, formes comprises ; repère coloré uniquement dans la consigne, formes du cadre noires ; pas de « 1. » ; 10 px supplémentaires avant la phrase de réponse ; pictogramme de la forme à la place de son nom |
 | 19–20 | Cases du quadrillage doublées à 16 mm ; six couleurs distinctes ; forme et coordonnées sur la même ligne à gauche, sans nom écrit ; grille alignée à droite et nombres à droite du quadrillage ; sens horizontal et vertical sélectionnables en mode libre et tirés au hasard à chaque régénération ; axes centrés sur chaque ligne et colonne, écartés du quadrillage, agrandis en gras dans la couleur du thème ; pictogrammes à la même taille physique que dans la grille et 30 px entre les lignes |
-| 22–24 | Trois problèmes ; hauteur du brouillon doublée et distance au trait de réponse doublée ; le 24 commence sur une autre page ; sans grille par défaut, avec bascule individuelle |
+| 22–24 | Trois problèmes ; hauteur du brouillon doublée et distance au trait de réponse doublée ; le 24 commence sur une autre page ; grille à l’écran par défaut avec bascule individuelle, cadre blanc à l’impression |
 
 La taille de base du corps CSC passe à **20 px**. Le réglage **Taille du corps du texte** ne modifie plus l’en-tête ni le pied de page, en A4 et double A5. Le réglage CSC est mémorisé séparément de celui des autres domaines (16 px par défaut).
 
@@ -33,11 +35,11 @@ Le mode libre permet également de choisir explicitement chacune des deux suites
 
 Dans l’aperçu du corrigé, les exercices 1, 2 et 3 affichent chacun **cinq lecteurs audio**. Chaque lecteur du 2 lit un calcul complet (« deux plus cinq », « dix moins trois »), sans son résultat. Le 3 propose cinq nombres, sans lecteur supplémentaire pour les silences. Les exercices oraux CFR utilisent également un lecteur par consigne complète et les lettres A à E ; leurs nombres, multiplications, consignes imprimées et corrigés numériques sont conservés. Les grilles d’opérations CSC et CFR ont des bordures entières de 1 px, sans marges négatives ; les retenues sont assombries à l’impression.
 
-Le [prompt des neuf prises CSC DeniseNeural −25 % et du complément CFR](prompt-audios-denise.md) et le montage prévu à deux écoutes sont prêts. **La nouvelle narration reste à intégrer après réception de ces enregistrements** ; l’accès Microsoft est bloqué dans cet environnement. Les « plus / moins » existants restent ceux décrits dans `operator-audio.json`. Aucun remplacement par une autre voix n’est annoncé.
+Les prises de consigne, lettres et opérateurs DeniseNeural sont installées dans `public/lib/audio/tcm-csc/denise/`, avec un manifeste `generated`. Le [prompt](prompt-audios-denise.md) conserve les textes sources et les réglages. La validation humaine de prononciation reste distincte des contrôles de fichiers et de montage.
 
-L’icône audio télécharge `TCM-CSC_AUDIOS.zip`, contenant trois WAV séparés : nombres de l’exercice 1, calculs de l’exercice 2 et nombres à entourer de l’exercice 3. Chaque piste comprend cinq consignes séparées par six secondes. Les clips sont décodés avant composition ; les MP3 ne sont pas simplement collés. Un échec de chargement est signalé et permet de réessayer. Les mots d’opérateur et leur provenance sont décrits dans [operator-audio.json](operator-audio.json).
+L’icône audio télécharge `TCM-CSC_AUDIOS.zip`, avec trois WAV dans l’ordre affiché : entourer (exercice 1), nombres (exercice 2), calculs (exercice 3). Le montage lit une consigne, un bip d’exemple, puis annonce les écoutes 1 et 2 avec leurs bips ; les séries sont identiques, les nombres/calculs ont leurs lettres A à E et aucun résultat de calcul n’est prononcé. Les mêmes plans sont utilisés par le nouveau lecteur complet. Les cinq lecteurs individuels restent disponibles. Voir le [détail des pauses](prompt-audios-denise.md).
 
-Le barème par défaut vaut 82 points et se modifie dans le générateur. Les grilles comprenant plusieurs réponses regroupent leurs points dans un même bloc. Les fiches TCM CFR et TPM gardent leurs types et leurs générateurs.
+La mention de première page est fixée à **100 points**. Les barèmes des questions se règlent séparément ; la phrase ne suit plus automatiquement ces réglages.
 
 ## Jeu interactif
 
@@ -47,7 +49,7 @@ Une incohérence entre énoncé, nombres et corrigé, ou une ancienne égalité 
 
 ## Vérification
 
-### Prises Denise demandées — préparation, génération encore bloquée
+### Historique du 12 novembre — préparation avant réception des prises
 
 Le [prompt des neuf enregistrements](prompt-audios-denise.md) est désormais conservé dans le dépôt. `scripts/generate-tcm-csc-denise.py` prépare deux consignes, les cinq lettres françaises et les mots « plus » (/plys/) et « moins », avec **fr-FR-DeniseNeural, −25 %, volume normal, mono 24 kHz, MP3 96 kb/s**, puis un ZIP de neuf fichiers. Il ne remplace jamais la voix demandée par une autre.
 

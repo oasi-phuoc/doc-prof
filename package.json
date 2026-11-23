@@ -117,7 +117,8 @@
     "test:grammar:temps": "node scripts/test-grammar-temps.cjs && python3 scripts/test-grammar-temps-build.py",
     "test:grammar:temps:browser": "node tests/grammar/temps-browser.mjs && node tests/grammar/temps-pdf.mjs && node tests/grammar/temps-order-browser.mjs",
     "test:grammar:demander": "node scripts/test-grammar-demander.cjs && python3 scripts/test-grammar-demander-build.py",
-    "test:grammar:demander:browser": "node tests/grammar/demander-browser.mjs && node tests/grammar/demander-pdf.mjs && node tests/grammar/demander-interactions-browser.mjs"
+    "test:grammar:demander:browser": "node tests/grammar/demander-browser.mjs && node tests/grammar/demander-pdf.mjs && node tests/grammar/demander-interactions-browser.mjs",
+    "test:tcm-csc:consignes:browser": "node tests/interactive/tcm-csc-consignes-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -520,3 +520,8 @@
 .exercise-block[data-exercise-type="tcm-cfr-ex28"] .exercise-instruction { white-space: normal; }
 
 .worksheet-sheet.is-tcm-cfr .exercise-block :is(.item-content, .item-number, .exercise-instruction, .exercise-instruction .sheet-copy-line, .csc-part-instruction, .coord-cfr-briefing .column-prompt) { font-size: calc(16px * var(--sheet-tcm-cfr-font-scale, 1.25)) !important; }
+
+/* CSC problems: the optional screen guide never appears on paper or in print exports. */
+@media print {
+  .worksheet-sheet .csc-problem-text .draft-pad { background-image: none !important; }
+}

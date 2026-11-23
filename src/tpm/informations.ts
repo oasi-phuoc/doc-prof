@@ -1,6 +1,6 @@
 /**
  * Page 1 « Consignes » partagée par TPM, TCM CFR et TCM CSC.
- * Le nombre d’exercices et le score suivent la recette de chaque test.
+ * Le nombre d’exercices suit la recette. Le score annoncé CSC reste fixé à 100.
  */
 import type { MathItem } from '@/math/types'
 import { TCM_CSC_STEPS } from '@/tcm-csc/pages'
@@ -36,7 +36,7 @@ export function generateTpmInformations(variant: TpmInfoVariant, maxScore: numbe
   const pointWord = maxScore === 1 ? 'point' : 'points'
   const lines = [
     count === 1 ? 'Il y a 1 exercice.' : `Il y a ${count} exercices.`,
-    `Le score maximum est de ${points} ${pointWord}.`,
+    variant === 'tcm-csc' ? 'Le score maximum est de 100 points.' : `Le score maximum est de ${points} ${pointWord}.`,
     'Lisez chaque consigne avant de répondre.',
     'Répondez sur la feuille de test.',
     'Si vous ne savez pas répondre, passez à la question suivante.',

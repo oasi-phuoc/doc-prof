@@ -2,24 +2,27 @@ import {useEffect,useRef,useState} from 'react'
 import type {WorksheetBlock} from '@/math/types'
 import {mathAudioPrompts} from '@/math/audio-prompts'
 import {concatMp3,spokenJunctionSeconds} from '@/tcm-cfr/audio-nombres'
-import {CSC_TCF_BEEP, cscConsigneSrc, cscRatedSrc, type DeniseRate, type ListeningKind} from '@/tcm-csc/denise-audio'
+import {CSC_TCF_BEEP, cscConsigneSrc, cscRatedSrc, type DeniseRate, type ListeningKind, planCscDeniseAudio, renderCscDeniseAudio, type CscAudioSegment} from '@/tcm-csc/denise-audio'
 
-function PromptAudio({parts,label}:{parts:string[];label:string}) {
+function PromptAudio({parts,label,sequence}:{parts:string[];label:string;sequence?:CscAudioSegment[]}) {
   const ref=useRef<HTMLAudioElement>(null)
-  const key=JSON.stringify(parts)
+  const composed=sequence!==undefined
+  const key=JSON.stringify(sequence??parts)
   const [prepared,setPrepared]=useState<{key:string;url:string}>()
   const [failed,setFailed]=useState('')
   const [retry,setRetry]=useState(0)
   useEffect(()=>{
-    if (parts.length<2) return
+    if (parts.length<2 && !composed) return
     const node=ref.current
     if (!node) return
     let disposed=false,started=false,url:string|undefined
+    const controller=new AbortController()
     const prepare=()=>{
       if(started)return
       started=true
-      const parsed=JSON.parse(key) as string[]
-      void concatMp3(parsed, { trimJunctionSeconds: spokenJunctionSeconds(parsed) }).then(blob=>{
+      const parsed=JSON.parse(key) as string[] | CscAudioSegment[]
+      const work=composed ? renderCscDeniseAudio(parsed as CscAudioSegment[],{signal:controller.signal}) : concatMp3(parsed as string[], {signal:controller.signal,trimJunctionSeconds:spokenJunctionSeconds(parsed as string[])})
+      void work.then(blob=>{
         url=URL.createObjectURL(blob)
         if(disposed){URL.revokeObjectURL(url);return}
         setPrepared({key,url})
@@ -28,10 +31,10 @@ function PromptAudio({parts,label}:{parts:string[];label:string}) {
     const observer=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting))prepare()}):undefined
     if(observer)observer.observe(node)
     else if(node.getClientRects().length)prepare()
-    return()=>{disposed=true;observer?.disconnect();if(url)URL.revokeObjectURL(url)}
-  },[key,retry,parts.length])
-  const src=parts.length===1?parts[0]:prepared?.key===key?prepared.url:undefined
-  return <div className="math-prompt-audio"><span>{label}</span><audio ref={ref} aria-label={label} data-audio-parts={key} controls preload={parts.length===1?'none':src?'metadata':'none'} src={src}/>{failed===key&&<button type="button" onClick={()=>{setFailed('');setRetry(value=>value+1)}}>Réessayer {label.toLowerCase()}</button>}</div>
+    return()=>{disposed=true;controller.abort();observer?.disconnect();if(url)URL.revokeObjectURL(url)}
+  },[key,retry,parts.length,composed])
+  const src=parts.length===1&&!composed?parts[0]:prepared?.key===key?prepared.url:undefined
+  return <div className="math-prompt-audio"><span title={label}>{composed?'Exercice complet':label}</span><audio ref={ref} aria-label={label} data-audio-parts={JSON.stringify(parts)} data-audio-sequence={composed?key:undefined} controls preload={parts.length===1&&!composed?'none':src?'metadata':'none'} src={src}/>{failed===key&&<button type="button" onClick={()=>{setFailed('');setRetry(value=>value+1)}}>Réessayer {label.toLowerCase()}</button>}</div>
 }
 
 const LISTENED = /^tcm-(?:csc-ex0[12]|cfr-ex0[12])$/
@@ -49,6 +52,7 @@ export function MathExerciseAudio({block}:{block:WorksheetBlock}) {
   const marked=LISTENED.test(block.exerciseType)
   const kind=CONSIGNE_KIND[block.exerciseType]
   const rate: DeniseRate = block.deniseRate === '-35%' || block.deniseRate === '-50%' ? block.deniseRate : '-25%'
+  const sequence=/^tcm-csc-ex0[123]$/.test(block.exerciseType)&&prompts?.length&&prompts.length<=12 ? planCscDeniseAudio(Number(block.exerciseType.slice(-2)),prompts,rate) : undefined
   const consigne = kind ? <PromptAudio parts={[cscConsigneSrc(kind, rate, true), CSC_TCF_BEEP]} label="Consigne" /> : null
-  return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{consigne}{prompts?.map((parts,index)=><PromptAudio key={index} parts={lettered(block.exerciseType, parts.map(src => cscRatedSrc(src, rate)), index)} label={`${calculation?'Calcul':'Nombre'} ${marked?String.fromCharCode(65+index):index+1}`}/>)}</div>
+  return <div className="math-exercise-audios no-print" role="group" aria-label={`Audios de l’exercice ${block.exerciseIndex}`}>{sequence?<PromptAudio parts={sequence.flatMap(segment=>segment.kind==='clip'?[segment.src]:[])} sequence={sequence} label="Exercice complet : consigne et deux écoutes"/>:consigne}{prompts?.map((parts,index)=><PromptAudio key={index} parts={lettered(block.exerciseType, parts.map(src => cscRatedSrc(src, rate)), index)} label={`${calculation?'Calcul':'Nombre'} ${marked?String.fromCharCode(65+index):index+1}`}/>)}</div>
 }

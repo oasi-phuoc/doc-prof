@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "703b706c6",
+  "status": "passed_for_requested_changes",
+  "changes": {
+    "audio": "CSC complete-exercise player replaces the standalone consigne player. It uses the same narrated plan as the ZIP: instruction, example beep, two announced listens, beeps, letters for numbers/calculations, five-second question intervals and no calculation result. Individual players remain available. No silent fallback to an instruction-free download.",
+    "score": "The introductory CSC sentence is fixed at 100 points even after editing question weights; scoring weights and other test domains remain independent.",
+    "problemGrid": "Enabled by default on screen, optional per problem. CSC problem quadrillage is always hidden in print CSS; white answer-zone frames and corrected workings remain."
+  },
+  "checks": [
+    {
+      "command": "node --test tests/interactive/csc-denise-audio.test.mjs tests/interactive/tcm-csc.test.mjs",
+      "status": "passed",
+      "tests": 20,
+      "coverage": "100 seeds, operand/operator/operand narration without result, two listens and timing, fixed CSC announcement with varied score inputs, other domains preserved."
+    },
+    {
+      "command": "npm run test:tcm-csc:consignes:browser",
+      "status": "passed",
+      "completePlayers": 3,
+      "realPlayback": true,
+      "downloadedWavs": 3,
+      "screenZipBytesIdentical": true,
+      "fixedScoreAfterEditingWeights": 100,
+      "screenProblemGridToggle": true,
+      "blankPrintedProblemZones": 6,
+      "actualPdfPages": 6,
+      "printBackgroundsEnabled": true,
+      "errors": []
+    },
+    {
+      "command": "TypeScript project build; Vite build --manifest",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed_with_existing_warnings"
+    },
+    {
+      "command": "npm run check:interactive:secrets",
+      "status": "passed",
+      "tool": "Gitleaks 8.30.1",
+      "changedFiles": 6377,
+      "findings": 0
+    }
+  ],
+  "audioAssets": {
+    "existingDeniseRecordings": 34,
+    "manifestHashesVerified": true,
+    "newVoiceRecordingsGenerated": 0,
+    "voice": "fr-FR-DeniseNeural",
+    "rate": "-25%",
+    "outputSampleRate": 24000,
+    "outputChannels": 1,
+    "humanPronunciationReview": false
+  },
+  "pdf": {
+    "path": "docs/tcm-csc/consignes-score-grilles-20261123-proofs/csc-100-points-cadres-sans-grille.pdf",
+    "firstPageFixed100Points": true,
+    "visualReview": "Actual problem PDF page inspected: white frames, no internal grid, response lines and page margins preserved."
+  },
+  "limitations": {
+    "physicalPrinter": "Not tested.",
+    "historicalFullBrowser": "The broad historical tcm-csc-browser.mjs scenario stops at its square-number-grid assertion. Number-grid geometry rules are unchanged by this patch. No full-suite pass is claimed; requested audio/score/problem behavior is covered by the focused real-browser/PDF scenario."
+  },
+  "privacy": "Only locally generated example worksheets used; no saved-fiche deletion or Worker deployment.",
+  "hashes": [
+    {
+      "path": "src/components/math/MathExerciseAudio.tsx",
+      "sha256": "0519f0aea0ef2347a3c79f2c5c42eba3e017c1c9257409c0045248a8b74e36d2"
+    },
+    {
+      "path": "src/tcm-csc/audio.ts",
+      "sha256": "116c42828e77e891fb2e0fde1a47e2819aefaf9d8a78bdfc1f28e84237430ffb"
+    },
+    {
+      "path": "src/tpm/informations.ts",
+      "sha256": "f67d83275b852cc003086c265ecc183c6ced6c38c0837ae954bf6806f1593cb7"
+    },
+    {
+      "path": "src/components/item-view/tcm-csc.tsx",
+      "sha256": "cb3b257feac108ee836dfaadb8b31f59e4320ddc93a3f4bf9c2b38b86ed22994"
+    },
+    {
+      "path": "src/components/item-view/tcm-csc.css",
+      "sha256": "ba9deb23d256d3063405667dace22633c16f46c3f57313197ef40d20cc76bd90"
+    },
+    {
+      "path": "tests/interactive/tcm-csc-consignes-browser.mjs",
+      "sha256": "94047927b3d2ee2b652b487c34e56810e20efb417d8adf18dbc564d3f349c819"
+    },
+    {
+      "path": "tests/interactive/tcm-csc.test.mjs",
+      "sha256": "8d0a65d6a7af330f092e1acdeed4f21d6b729ec13af4ea3e2bff6d1b9697d1f3"
+    }
+  ]
+}
