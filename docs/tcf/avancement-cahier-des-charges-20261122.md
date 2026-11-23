@@ -9,7 +9,7 @@ Ce bilan utilise les banques et registres actuels après récupération de `main
 | Trios historiques CE/CO | **261 trios** | 98 A1, 144 A2 et 19 B1 ; 219 scènes ou lieux contextuels, 31 ensembles de concepts et onze familles de documents |
 | Nouveaux supports DELF Actif | **121 candidats** | un A2 et 120 B1 ; deuxième lot de 100 : 43 trios préparés, 57 à compléter, aucun nouveau trio activé ; dernier lot de 21 ensuite |
 | Questions d’objets et véhicules | **76 entrées de transport encore à qualifier**, puis autres objets à inventorier | Distinguer objet, véhicule, action, accessoire, document et lieu ; contrôler les images effectivement sélectionnées et leurs fonds |
-| Titres et mots-clés des images TCF | **2 630 fichiers TCF en attente de revue visuelle** | Vérifier le contenu visible, les noms, catégories et synonymes ; conserver l’empreinte et le statut de chaque fichier |
+| Titres et mots-clés des images TCF | **1 844 fichiers TCF en attente de revue visuelle** | Vérifier le contenu visible, les noms, catégories et synonymes ; conserver l’empreinte et le statut de chaque fichier |
 | Bibliothèque audio et corrigés | Contrôle éditorial final de l’ensemble à poursuivre | Les installations historiques sont terminées ; les rapprochements documentaires incomplets et les contrôles de source restent suivis séparément |
 | Fiches enregistrées et production | Validation serveur des anciennes fiches à confirmer | Vérifier le parcours réel des comptes et les anciennes recettes enregistrées, notamment après les changements de comptes enseignants reçus par le pull |
 

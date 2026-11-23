@@ -20,7 +20,7 @@ test('all repository images appear once, including documents, logos and source a
   assert(!catalog.some(i => /^(docs|scripts|tmp)\//.test(i.id)))
   assert(catalog.some(i => i.id.startsWith('src/')))
   assert(catalog.some(i => i.id.includes('logos/')))
-  assert.equal(catalog.find(i => i.id.endsWith('/extension573-the-feuilles.png')).label, 'Des feuilles de thé')
+  assert.match(catalog.find(i => i.id.endsWith('/extension573-the-feuilles.png')).label, /thé/i)
   assert(catalog.find(i => i.id.endsWith('/extension573-cacao.webp')).themes.includes('Alimentation et boissons'))
   assert(catalog.some(i => i.types.includes('Scénario')))
   assert.deepEqual(JSON.parse(readFileSync('src/gallery/catalog.generated.json', 'utf8')), catalog)

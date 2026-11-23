@@ -2,7 +2,7 @@
 
 Le registre actuel contient **4 377 images TCF**. Avant cette reprise, **566** avaient une revue des mots-clés et **3 811** attendaient cette revue. Le chiffre de **3 887** dans l’ancien README était périmé.
 
-**1 181 fichiers supplémentaires examinés**, dans 30 lots traçables ; **1 747 revues au total** et **2 630 fichiers TCF encore en attente**. Le [suivi JSON](suivi.json) et le [registre individuel](../audit-mots-cles-tcf-20261117.json) portent les compteurs actuels.
+**1 967 fichiers supplémentaires examinés**, dans 40 lots traçables ; **2 533 revues au total** et **1 844 fichiers TCF encore en attente**. Le [suivi JSON](suivi.json) et le [registre individuel](../audit-mots-cles-tcf-20261117.json) portent les compteurs actuels.
 
 Chaque lot conserve le chemin, l’empreinte du fichier examiné, l’ancienne empreinte d’audit, le titre retenu et les mots-clés. Les planches de contrôle ont été vues avant annotation. Les mots-clés sont saisis ou dérivés des titres examinés ; aucun statut n’est attribué à partir du seul nom de fichier ou d’un ancien prompt. La revue décrit aussi les originaux conservés, sans les réhabiliter comme images de remplacement lorsque leur style est refusé.
 
