@@ -16,21 +16,43 @@ Les mots de passe ne sont ni renvoyés par l’API ni enregistrés en clair : d�
 
 ## Activation du serveur
 
-Le code et les tests sont prêts. Cette session ne dispose pas d’une authentification Cloudflare de déploiement : la migration distante et le Worker de production ne sont pas annoncés comme déployés.
+Le 23 novembre 2026, après correction des réglages de build Cloudflare, le contrôle effectué par l’utilisateur sur l’URL du Worker affiche `{"ok":true}`. Cela confirme que l’API est servie, mais ne vérifie ni le schéma D1 ni les accès administrateur. La création des comptes et la sauvegarde de leurs fiches en production restent à confirmer. Cette session ne dispose pas d’une authentification Cloudflare permettant de vérifier directement ces opérations distantes.
+
+Dans **Workers & Pages → clairfle-fiches → Settings → Builds**, utiliser :
+
+| Réglage | Valeur |
+|---|---|
+| Branche de production | `main` |
+| Root directory | `api/fiches` |
+| Build command | `npm ci` |
+| Deploy command | `npm run deploy` |
+
+Un build lancé depuis la racine avec `npm run build` construit l’interface du site. Le Worker des comptes doit exécuter `api/fiches/src/index.ts`, avec la liaison D1 `DB` définie dans `api/fiches/wrangler.toml`. Le déploiement seul n’applique pas les migrations D1.
 
 Depuis `api/fiches`, avec un accès Cloudflare autorisé :
 
 ```sh
 npm ci
 npx wrangler login
+npx wrangler d1 migrations list clairfle-fiches --remote
 npm run db:apply
 npm run deploy
 ```
 
 Conserver les secrets existants `ACCESS_ADMIN`, `ACCESS_FULL` et `ACCESS_PARTIAL`. Aucun secret Resend n’est nécessaire. Le site conserve son URL d’API : `VITE_FICHES_API_URL=https://clairfle-fiches.phuoc-van.workers.dev`.
 
+Ces secrets d’accès du Worker doivent correspondre aux mots de passe des accès existants du site : `ACCESS_ADMIN` à `VITE_ACCESS_ADMIN`, `ACCESS_FULL` à `VITE_ACCESS_FULL`, et `ACCESS_PARTIAL` à `VITE_ACCESS_PARTIAL`. Ils se règlent dans **Variables and Secrets**, de type **Secret**, sans en publier les valeurs. Le jeton de gestion `CLOUDFLARE_API_TOKEN` sert aux outils de déploiement ; ce n’est pas un mot de passe de l’application et il n’est pas requis dans les variables d’exécution du Worker.
+
 La migration `0002_personal_accounts.sql` crée les utilisateurs, sessions et propriétaires des fiches. La migration `0003_admin_accounts.sql` retire uniquement la table des anciens liens de confirmation ; utilisateurs, sessions et fiches sont conservés. La colonne historique `verified_at` indique désormais l’activation lors de la création par l’administrateur. Les anciens comptes en attente ne sont pas activés automatiquement.
 
 Après déploiement : créer deux comptes depuis l’admin, vérifier leur connexion sans e-mail, enregistrer une fiche avec chacun, puis contrôler que chacun retrouve uniquement ses propres fiches. Vérifier aussi l’attribution et le retrait d’un domaine supplémentaire.
+
+## Reprendre après un refus de mot de passe
+
+Le message **« Le mot de passe n’est pas reconnu par la synchronisation »** correspond à un refus HTTP 401. Le navigateur efface alors le mot de passe de synchronisation refusé, tout en pouvant conserver l’accès administrateur à l’interface. Le message **« Saisissez votre mot de passe pour synchroniser les fiches »** indique que ce mot de passe n’est plus mémorisé ; il ne prouve pas une panne D1.
+
+La page **Comptes enseignants** propose désormais **Confirmer l’accès administrateur** dans ces deux cas. Saisir le mot de passe administrateur puis cliquer sur **Accéder aux comptes** relance le chargement avec une vérification côté serveur. Si le refus intervient pendant une création, les champs restent saisis ; la création n’est pas rejouée automatiquement et exige un nouveau clic sur **Créer le compte**. Une autre solution reste de se déconnecter puis de revenir par **Admin / accès existant**.
+
+Vérification de cette reprise : `node --test tests/interactive/accounts-auth-browser.mjs` couvre quatre scénarios navigateur (mot de passe absent, refus puis nouvelle saisie, création interrompue sans doublon, accès non administrateur refusé). Ce contrôle utilise une API simulée et ne remplace pas la vérification de production. Les comptes et sauvegardes ont également été vérifiés dans cette session avec un Worker et une D1 locaux isolés : 15 scénarios ont passé, dont la séparation des fiches, le retrait des droits et la persistance après redémarrage ; aucune donnée de production n’a été modifiée par ces tests.
 
 Le SDK, le script de configuration et les variables Resend ont été retirés du projet. Si une clé avait été créée dans Resend, elle peut être révoquée ; aucun remplacement n’est nécessaire pour ce fonctionnement.
